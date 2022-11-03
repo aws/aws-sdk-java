@@ -92,7 +92,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String instanceId;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -552,10 +553,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -564,11 +567,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -577,11 +582,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,16 @@ public class InstanceSpecification implements Serializable, Cloneable {
      * </p>
      */
     private Boolean excludeBootVolume;
+    /**
+     * <p>
+     * The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of
+     * the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.
+     * </p>
+     * <p>
+     * You can specify up to 40 volume IDs per request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> excludeDataVolumeIds;
 
     /**
      * <p>
@@ -132,6 +142,107 @@ public class InstanceSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of
+     * the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.
+     * </p>
+     * <p>
+     * You can specify up to 40 volume IDs per request.
+     * </p>
+     * 
+     * @return The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the
+     *         ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
+     *         <p>
+     *         You can specify up to 40 volume IDs per request.
+     */
+
+    public java.util.List<String> getExcludeDataVolumeIds() {
+        if (excludeDataVolumeIds == null) {
+            excludeDataVolumeIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return excludeDataVolumeIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of
+     * the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.
+     * </p>
+     * <p>
+     * You can specify up to 40 volume IDs per request.
+     * </p>
+     * 
+     * @param excludeDataVolumeIds
+     *        The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the
+     *        ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
+     *        <p>
+     *        You can specify up to 40 volume IDs per request.
+     */
+
+    public void setExcludeDataVolumeIds(java.util.Collection<String> excludeDataVolumeIds) {
+        if (excludeDataVolumeIds == null) {
+            this.excludeDataVolumeIds = null;
+            return;
+        }
+
+        this.excludeDataVolumeIds = new com.amazonaws.internal.SdkInternalList<String>(excludeDataVolumeIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of
+     * the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.
+     * </p>
+     * <p>
+     * You can specify up to 40 volume IDs per request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExcludeDataVolumeIds(java.util.Collection)} or {@link #withExcludeDataVolumeIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param excludeDataVolumeIds
+     *        The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the
+     *        ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
+     *        <p>
+     *        You can specify up to 40 volume IDs per request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSpecification withExcludeDataVolumeIds(String... excludeDataVolumeIds) {
+        if (this.excludeDataVolumeIds == null) {
+            setExcludeDataVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(excludeDataVolumeIds.length));
+        }
+        for (String ele : excludeDataVolumeIds) {
+            this.excludeDataVolumeIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of
+     * the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.
+     * </p>
+     * <p>
+     * You can specify up to 40 volume IDs per request.
+     * </p>
+     * 
+     * @param excludeDataVolumeIds
+     *        The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the
+     *        ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
+     *        <p>
+     *        You can specify up to 40 volume IDs per request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSpecification withExcludeDataVolumeIds(java.util.Collection<String> excludeDataVolumeIds) {
+        setExcludeDataVolumeIds(excludeDataVolumeIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -146,7 +257,9 @@ public class InstanceSpecification implements Serializable, Cloneable {
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getExcludeBootVolume() != null)
-            sb.append("ExcludeBootVolume: ").append(getExcludeBootVolume());
+            sb.append("ExcludeBootVolume: ").append(getExcludeBootVolume()).append(",");
+        if (getExcludeDataVolumeIds() != null)
+            sb.append("ExcludeDataVolumeIds: ").append(getExcludeDataVolumeIds());
         sb.append("}");
         return sb.toString();
     }
@@ -169,6 +282,10 @@ public class InstanceSpecification implements Serializable, Cloneable {
             return false;
         if (other.getExcludeBootVolume() != null && other.getExcludeBootVolume().equals(this.getExcludeBootVolume()) == false)
             return false;
+        if (other.getExcludeDataVolumeIds() == null ^ this.getExcludeDataVolumeIds() == null)
+            return false;
+        if (other.getExcludeDataVolumeIds() != null && other.getExcludeDataVolumeIds().equals(this.getExcludeDataVolumeIds()) == false)
+            return false;
         return true;
     }
 
@@ -179,6 +296,7 @@ public class InstanceSpecification implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getExcludeBootVolume() == null) ? 0 : getExcludeBootVolume().hashCode());
+        hashCode = prime * hashCode + ((getExcludeDataVolumeIds() == null) ? 0 : getExcludeDataVolumeIds().hashCode());
         return hashCode;
     }
 

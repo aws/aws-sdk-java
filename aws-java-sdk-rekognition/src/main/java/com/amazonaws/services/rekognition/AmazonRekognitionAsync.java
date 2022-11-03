@@ -38,130 +38,364 @@ import com.amazonaws.services.rekognition.model.*;
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CompareFaces.html">CompareFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateCollection.html">CreateCollection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteCollection.html">DeleteCollection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteFaces.html">DeleteFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeCollection.html">DescribeCollection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectFaces.html">DetectFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectLabels.html">DetectLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectModerationLabels.html">
+ * DetectModerationLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectProtectiveEquipment.html">
+ * DetectProtectiveEquipment</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectText.html">DetectText</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html">ListCollections</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_RecognizeCelebrities.html">
+ * RecognizeCelebrities</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFaces.html">SearchFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Amazon Rekognition Custom Labels</b>
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html">CreateDataset</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProject.html">CreateProject</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProjectVersion.html">
+ * CreateProjectVersion</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteDataset.html">DeleteDataset</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html">DeleteProject</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html">DeleteProjectPolicy
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectVersion.html">
+ * DeleteProjectVersion</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeDataset.html">DescribeDataset</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeProjects.html">DescribeProjects</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeProjectVersions.html">
+ * DescribeProjectVersions</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectCustomLabels.html">DetectCustomLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DistributeDatasetEntries.html">
+ * DistributeDatasetEntries</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetEntries.html">ListDatasetEntries</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html">ListDatasetLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html">ListProjectPolicies
+ * </a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html">PutProjectPolicy</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartProjectVersion.html">StartProjectVersion
+ * </a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopProjectVersion.html">StopProjectVersion</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateDatasetEntries.html">
+ * UpdateDatasetEntries</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Amazon Rekognition Video Stored Video</b>
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityRecognition.html">
+ * GetCelebrityRecognition</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html">
+ * GetContentModeration</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceDetection.html">GetFaceDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceSearch.html">GetFaceSearch</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetLabelDetection.html">GetLabelDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetPersonTracking.html">GetPersonTracking</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetSegmentDetection.html">GetSegmentDetection
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetTextDetection.html">GetTextDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartCelebrityRecognition.html">
+ * StartCelebrityRecognition</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html">
+ * StartContentModeration</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartFaceDetection.html">StartFaceDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartFaceSearch.html">StartFaceSearch</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartLabelDetection.html">StartLabelDetection
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartPersonTracking.html">StartPersonTracking
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartSegmentDetection.html">
+ * StartSegmentDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartTextDetection.html">StartTextDetection</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Amazon Rekognition Video Streaming Video</b>
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateStreamProcessor.html">
+ * CreateStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteStreamProcessor.html">
+ * DeleteStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeStreamProcessor.html">
+ * DescribeStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListStreamProcessors.html">
+ * ListStreamProcessors</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartStreamProcessor.html">
+ * StartStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html">StopStreamProcessor
+ * </a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">
+ * UpdateStreamProcessor</a>
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -319,6 +553,83 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<CompareFacesResult> compareFacesAsync(CompareFacesRequest compareFacesRequest,
             com.amazonaws.handlers.AsyncHandler<CompareFacesRequest, CompareFacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The
+     * source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't
+     * copy a model to another AWS service.
+     * </p>
+     * <p>
+     * To copy a model version to a different AWS account, you need to create a resource-based policy known as a
+     * <i>project policy</i>. You attach the project policy to the source project by calling <a>PutProjectPolicy</a>.
+     * The project policy gives permission to copy the model version from a trusting AWS account to a trusted account.
+     * </p>
+     * <p>
+     * For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the
+     * <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you are copying a model version to a project in the same AWS account, you don't need to create a project
+     * policy.
+     * </p>
+     * <note>
+     * <p>
+     * To copy a model, the destination project, source project, and source model version must already exist.
+     * </p>
+     * </note>
+     * <p>
+     * Copying a model version takes a while to complete. To get the current status, call <a>DescribeProjectVersions</a>
+     * and check the value of <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy operation has
+     * finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.
+     * </p>
+     * 
+     * @param copyProjectVersionRequest
+     * @return A Java Future containing the result of the CopyProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsync.CopyProjectVersion
+     */
+    java.util.concurrent.Future<CopyProjectVersionResult> copyProjectVersionAsync(CopyProjectVersionRequest copyProjectVersionRequest);
+
+    /**
+     * <p>
+     * Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The
+     * source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't
+     * copy a model to another AWS service.
+     * </p>
+     * <p>
+     * To copy a model version to a different AWS account, you need to create a resource-based policy known as a
+     * <i>project policy</i>. You attach the project policy to the source project by calling <a>PutProjectPolicy</a>.
+     * The project policy gives permission to copy the model version from a trusting AWS account to a trusted account.
+     * </p>
+     * <p>
+     * For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the
+     * <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you are copying a model version to a project in the same AWS account, you don't need to create a project
+     * policy.
+     * </p>
+     * <note>
+     * <p>
+     * To copy a model, the destination project, source project, and source model version must already exist.
+     * </p>
+     * </note>
+     * <p>
+     * Copying a model version takes a while to complete. To get the current status, call <a>DescribeProjectVersions</a>
+     * and check the value of <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy operation has
+     * finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.
+     * </p>
+     * 
+     * @param copyProjectVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.CopyProjectVersion
+     */
+    java.util.concurrent.Future<CopyProjectVersionResult> copyProjectVersionAsync(CopyProjectVersionRequest copyProjectVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyProjectVersionRequest, CopyProjectVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -509,7 +820,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <note>
      * <p>
-     * You can train a modelin a project that doesn't have associated datasets by specifying manifest files in the
+     * You can train a model in a project that doesn't have associated datasets by specifying manifest files in the
      * <code>TrainingData</code> and <code>TestingData</code> fields.
      * </p>
      * <p>
@@ -560,7 +871,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <note>
      * <p>
-     * You can train a modelin a project that doesn't have associated datasets by specifying manifest files in the
+     * You can train a model in a project that doesn't have associated datasets by specifying manifest files in the
      * <code>TrainingData</code> and <code>TestingData</code> fields.
      * </p>
      * <p>
@@ -829,7 +1140,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call
-     * <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the response.
+     * <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the response. Be aware that
+     * deleting a given project will also delete any <code>ProjectPolicies</code> associated with that project.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -848,7 +1160,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call
-     * <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the response.
+     * <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the response. Be aware that
+     * deleting a given project will also delete any <code>ProjectPolicies</code> associated with that project.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -864,6 +1177,41 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest deleteProjectRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing project policy.
+     * </p>
+     * <p>
+     * To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>. To attach a project
+     * policy to a project, call <a>PutProjectPolicy</a>.
+     * </p>
+     * 
+     * @param deleteProjectPolicyRequest
+     * @return A Java Future containing the result of the DeleteProjectPolicy operation returned by the service.
+     * @sample AmazonRekognitionAsync.DeleteProjectPolicy
+     */
+    java.util.concurrent.Future<DeleteProjectPolicyResult> deleteProjectPolicyAsync(DeleteProjectPolicyRequest deleteProjectPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes an existing project policy.
+     * </p>
+     * <p>
+     * To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>. To attach a project
+     * policy to a project, call <a>PutProjectPolicy</a>.
+     * </p>
+     * 
+     * @param deleteProjectPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProjectPolicy operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DeleteProjectPolicy
+     */
+    java.util.concurrent.Future<DeleteProjectPolicyResult> deleteProjectPolicyAsync(DeleteProjectPolicyRequest deleteProjectPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProjectPolicyRequest, DeleteProjectPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -3067,6 +3415,41 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Gets a list of the project policies attached to a project.
+     * </p>
+     * <p>
+     * To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a project policy from a project,
+     * call <a>DeleteProjectPolicy</a>.
+     * </p>
+     * 
+     * @param listProjectPoliciesRequest
+     * @return A Java Future containing the result of the ListProjectPolicies operation returned by the service.
+     * @sample AmazonRekognitionAsync.ListProjectPolicies
+     */
+    java.util.concurrent.Future<ListProjectPoliciesResult> listProjectPoliciesAsync(ListProjectPoliciesRequest listProjectPoliciesRequest);
+
+    /**
+     * <p>
+     * Gets a list of the project policies attached to a project.
+     * </p>
+     * <p>
+     * To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a project policy from a project,
+     * call <a>DeleteProjectPolicy</a>.
+     * </p>
+     * 
+     * @param listProjectPoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProjectPolicies operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.ListProjectPolicies
+     */
+    java.util.concurrent.Future<ListProjectPoliciesResult> listProjectPoliciesAsync(ListProjectPoliciesRequest listProjectPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProjectPoliciesRequest, ListProjectPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>.
      * </p>
      * 
@@ -3124,6 +3507,69 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project
+     * policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in
+     * the trusted AWS account. To copy a model version you use the <a>CopyProjectVersion</a> operation.
+     * </p>
+     * <p>
+     * For more information about the format of a project policy document, see Attaching a project policy (SDK) in the
+     * <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * </p>
+     * <p>
+     * The response from <code>PutProjectPolicy</code> is a revision ID for the project policy. You can attach multiple
+     * project policies to a project. You can also update an existing project policy by specifying the policy revision
+     * ID of the existing policy.
+     * </p>
+     * <p>
+     * To remove a project policy from a project, call <a>DeleteProjectPolicy</a>. To get a list of project policies
+     * attached to a project, call <a>ListProjectPolicies</a>.
+     * </p>
+     * <p>
+     * You copy a model version by calling <a>CopyProjectVersion</a>.
+     * </p>
+     * 
+     * @param putProjectPolicyRequest
+     * @return A Java Future containing the result of the PutProjectPolicy operation returned by the service.
+     * @sample AmazonRekognitionAsync.PutProjectPolicy
+     */
+    java.util.concurrent.Future<PutProjectPolicyResult> putProjectPolicyAsync(PutProjectPolicyRequest putProjectPolicyRequest);
+
+    /**
+     * <p>
+     * Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project
+     * policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in
+     * the trusted AWS account. To copy a model version you use the <a>CopyProjectVersion</a> operation.
+     * </p>
+     * <p>
+     * For more information about the format of a project policy document, see Attaching a project policy (SDK) in the
+     * <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * </p>
+     * <p>
+     * The response from <code>PutProjectPolicy</code> is a revision ID for the project policy. You can attach multiple
+     * project policies to a project. You can also update an existing project policy by specifying the policy revision
+     * ID of the existing policy.
+     * </p>
+     * <p>
+     * To remove a project policy from a project, call <a>DeleteProjectPolicy</a>. To get a list of project policies
+     * attached to a project, call <a>ListProjectPolicies</a>.
+     * </p>
+     * <p>
+     * You copy a model version by calling <a>CopyProjectVersion</a>.
+     * </p>
+     * 
+     * @param putProjectPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutProjectPolicy operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.PutProjectPolicy
+     */
+    java.util.concurrent.Future<PutProjectPolicyResult> putProjectPolicyAsync(PutProjectPolicyRequest putProjectPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutProjectPolicyRequest, PutProjectPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -3741,6 +4187,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
+     * For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon
+     * Rekognition Custom Labels Guide.
+     * </p>
+     * <p>
      * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
      * </p>
      * 
@@ -3764,6 +4214,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <a>StopProjectVersion</a>.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon
+     * Rekognition Custom Labels Guide.
+     * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
      * </p>

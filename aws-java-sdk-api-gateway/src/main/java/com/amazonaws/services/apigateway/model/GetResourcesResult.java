@@ -17,10 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a collection of <a>Resource</a> resources.
+ * Represents a collection of Resource resources.
  * </p>
- * <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

@@ -258,13 +258,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.SdkInternalList<String> owners;
     /**
      * <p>
-     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
-     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * Specifies whether to include deprecated AMIs.
+     * </p>
+     * <p>
+     * Default: No deprecated AMIs are included in the response.
      * </p>
      * <note>
      * <p>
-     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
-     * or <code>false</code>) that you set for this parameter.
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this
+     * parameter.
      * </p>
      * </note>
      */
@@ -2224,23 +2226,27 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
-     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * Specifies whether to include deprecated AMIs.
+     * </p>
+     * <p>
+     * Default: No deprecated AMIs are included in the response.
      * </p>
      * <note>
      * <p>
-     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
-     * or <code>false</code>) that you set for this parameter.
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this
+     * parameter.
      * </p>
      * </note>
      * 
      * @param includeDeprecated
-     *        If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
-     *        deprecated AMIs are included in the response. If no value is specified, the default value is
-     *        <code>false</code>.</p> <note>
+     *        Specifies whether to include deprecated AMIs.</p>
      *        <p>
-     *        If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
-     *        <code>true</code> or <code>false</code>) that you set for this parameter.
+     *        Default: No deprecated AMIs are included in the response.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for
+     *        this parameter.
      *        </p>
      */
 
@@ -2250,22 +2256,26 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
-     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * Specifies whether to include deprecated AMIs.
+     * </p>
+     * <p>
+     * Default: No deprecated AMIs are included in the response.
      * </p>
      * <note>
      * <p>
-     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
-     * or <code>false</code>) that you set for this parameter.
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this
+     * parameter.
      * </p>
      * </note>
      * 
-     * @return If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
-     *         deprecated AMIs are included in the response. If no value is specified, the default value is
-     *         <code>false</code>.</p> <note>
+     * @return Specifies whether to include deprecated AMIs.</p>
      *         <p>
-     *         If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
-     *         <code>true</code> or <code>false</code>) that you set for this parameter.
+     *         Default: No deprecated AMIs are included in the response.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for
+     *         this parameter.
      *         </p>
      */
 
@@ -2275,23 +2285,27 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
-     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * Specifies whether to include deprecated AMIs.
+     * </p>
+     * <p>
+     * Default: No deprecated AMIs are included in the response.
      * </p>
      * <note>
      * <p>
-     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
-     * or <code>false</code>) that you set for this parameter.
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this
+     * parameter.
      * </p>
      * </note>
      * 
      * @param includeDeprecated
-     *        If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
-     *        deprecated AMIs are included in the response. If no value is specified, the default value is
-     *        <code>false</code>.</p> <note>
+     *        Specifies whether to include deprecated AMIs.</p>
      *        <p>
-     *        If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
-     *        <code>true</code> or <code>false</code>) that you set for this parameter.
+     *        Default: No deprecated AMIs are included in the response.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for
+     *        this parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2303,22 +2317,26 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
-     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * Specifies whether to include deprecated AMIs.
+     * </p>
+     * <p>
+     * Default: No deprecated AMIs are included in the response.
      * </p>
      * <note>
      * <p>
-     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
-     * or <code>false</code>) that you set for this parameter.
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this
+     * parameter.
      * </p>
      * </note>
      * 
-     * @return If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
-     *         deprecated AMIs are included in the response. If no value is specified, the default value is
-     *         <code>false</code>.</p> <note>
+     * @return Specifies whether to include deprecated AMIs.</p>
      *         <p>
-     *         If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
-     *         <code>true</code> or <code>false</code>) that you set for this parameter.
+     *         Default: No deprecated AMIs are included in the response.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for
+     *         this parameter.
      *         </p>
      */
 

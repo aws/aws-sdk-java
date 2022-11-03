@@ -84,7 +84,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>aws-</code>
+     * <code>aws</code>
      * </p>
      * </li>
      * <li>
@@ -111,7 +111,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional field specifying the version of the artifact you are creating with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      * </p>
      */
     private String versionName;
@@ -553,7 +553,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>aws-</code>
+     * <code>aws</code>
      * </p>
      * </li>
      * <li>
@@ -578,7 +578,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aws-</code>
+     *        <code>aws</code>
      *        </p>
      *        </li>
      *        <li>
@@ -610,7 +610,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>aws-</code>
+     * <code>aws</code>
      * </p>
      * </li>
      * <li>
@@ -634,7 +634,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aws-</code>
+     *         <code>aws</code>
      *         </p>
      *         </li>
      *         <li>
@@ -666,7 +666,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>aws-</code>
+     * <code>aws</code>
      * </p>
      * </li>
      * <li>
@@ -691,7 +691,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aws-</code>
+     *        <code>aws</code>
      *        </p>
      *        </li>
      *        <li>
@@ -765,12 +765,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional field specifying the version of the artifact you are creating with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
      *        An optional field specifying the version of the artifact you are creating with the document. For example,
-     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     *        <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      */
 
     public void setVersionName(String versionName) {
@@ -780,11 +780,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional field specifying the version of the artifact you are creating with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @return An optional field specifying the version of the artifact you are creating with the document. For example,
-     *         "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     *         <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      */
 
     public String getVersionName() {
@@ -794,12 +794,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional field specifying the version of the artifact you are creating with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
      *        An optional field specifying the version of the artifact you are creating with the document. For example,
-     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     *        <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

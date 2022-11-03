@@ -42,8 +42,40 @@ public class AwsEksClusterDetails implements Serializable, Cloneable, Structured
     private String certificateAuthorityData;
     /**
      * <p>
-     * The status of the cluster.
+     * The status of the cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String clusterStatus;
     /**
@@ -166,11 +198,74 @@ public class AwsEksClusterDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the cluster.
+     * The status of the cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clusterStatus
-     *        The status of the cluster.
+     *        The status of the cluster. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      */
 
     public void setClusterStatus(String clusterStatus) {
@@ -179,10 +274,73 @@ public class AwsEksClusterDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the cluster.
+     * The status of the cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the cluster.
+     * @return The status of the cluster. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code>
+     *         </p>
+     *         </li>
      */
 
     public String getClusterStatus() {
@@ -191,11 +349,74 @@ public class AwsEksClusterDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the cluster.
+     * The status of the cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clusterStatus
-     *        The status of the cluster.
+     *        The status of the cluster. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

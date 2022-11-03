@@ -1,0 +1,243 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.backupstorage.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backupstorage-2018-04-10/ListChunks" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListChunksRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /** Storage job id */
+    private String storageJobId;
+    /** Object token */
+    private String objectToken;
+    /** Maximum number of chunks */
+    private Integer maxResults;
+    /** Pagination token */
+    private String nextToken;
+
+    /**
+     * Storage job id
+     * 
+     * @param storageJobId
+     *        Storage job id
+     */
+
+    public void setStorageJobId(String storageJobId) {
+        this.storageJobId = storageJobId;
+    }
+
+    /**
+     * Storage job id
+     * 
+     * @return Storage job id
+     */
+
+    public String getStorageJobId() {
+        return this.storageJobId;
+    }
+
+    /**
+     * Storage job id
+     * 
+     * @param storageJobId
+     *        Storage job id
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChunksRequest withStorageJobId(String storageJobId) {
+        setStorageJobId(storageJobId);
+        return this;
+    }
+
+    /**
+     * Object token
+     * 
+     * @param objectToken
+     *        Object token
+     */
+
+    public void setObjectToken(String objectToken) {
+        this.objectToken = objectToken;
+    }
+
+    /**
+     * Object token
+     * 
+     * @return Object token
+     */
+
+    public String getObjectToken() {
+        return this.objectToken;
+    }
+
+    /**
+     * Object token
+     * 
+     * @param objectToken
+     *        Object token
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChunksRequest withObjectToken(String objectToken) {
+        setObjectToken(objectToken);
+        return this;
+    }
+
+    /**
+     * Maximum number of chunks
+     * 
+     * @param maxResults
+     *        Maximum number of chunks
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * Maximum number of chunks
+     * 
+     * @return Maximum number of chunks
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * Maximum number of chunks
+     * 
+     * @param maxResults
+     *        Maximum number of chunks
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChunksRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * Pagination token
+     * 
+     * @param nextToken
+     *        Pagination token
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * Pagination token
+     * 
+     * @return Pagination token
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * Pagination token
+     * 
+     * @param nextToken
+     *        Pagination token
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChunksRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getStorageJobId() != null)
+            sb.append("StorageJobId: ").append(getStorageJobId()).append(",");
+        if (getObjectToken() != null)
+            sb.append("ObjectToken: ").append(getObjectToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListChunksRequest == false)
+            return false;
+        ListChunksRequest other = (ListChunksRequest) obj;
+        if (other.getStorageJobId() == null ^ this.getStorageJobId() == null)
+            return false;
+        if (other.getStorageJobId() != null && other.getStorageJobId().equals(this.getStorageJobId()) == false)
+            return false;
+        if (other.getObjectToken() == null ^ this.getObjectToken() == null)
+            return false;
+        if (other.getObjectToken() != null && other.getObjectToken().equals(this.getObjectToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getStorageJobId() == null) ? 0 : getStorageJobId().hashCode());
+        hashCode = prime * hashCode + ((getObjectToken() == null) ? 0 : getObjectToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListChunksRequest clone() {
+        return (ListChunksRequest) super.clone();
+    }
+
+}

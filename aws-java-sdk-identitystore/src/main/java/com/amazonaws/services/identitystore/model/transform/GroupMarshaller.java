@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.identitystore.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,12 @@ public class GroupMarshaller {
             .marshallLocationName("GroupId").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
+    private static final MarshallingInfo<List> EXTERNALIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ExternalIds").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> IDENTITYSTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityStoreId").build();
 
     private static final GroupMarshaller instance = new GroupMarshaller();
 
@@ -50,6 +57,9 @@ public class GroupMarshaller {
         try {
             protocolMarshaller.marshall(group.getGroupId(), GROUPID_BINDING);
             protocolMarshaller.marshall(group.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(group.getExternalIds(), EXTERNALIDS_BINDING);
+            protocolMarshaller.marshall(group.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(group.getIdentityStoreId(), IDENTITYSTOREID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

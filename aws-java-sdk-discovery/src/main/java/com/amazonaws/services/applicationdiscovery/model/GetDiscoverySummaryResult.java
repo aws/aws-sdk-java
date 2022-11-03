@@ -54,6 +54,14 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private CustomerConnectorInfo connectorSummary;
+    /**
+     * <p>
+     * Details about Migration Evaluator collectors, including collector status and health.
+     * </p>
+     */
+    private CustomerMeCollectorInfo meCollectorSummary;
+
+    private CustomerAgentlessCollectorInfo agentlessCollectorSummary;
 
     /**
      * <p>
@@ -296,6 +304,72 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Details about Migration Evaluator collectors, including collector status and health.
+     * </p>
+     * 
+     * @param meCollectorSummary
+     *        Details about Migration Evaluator collectors, including collector status and health.
+     */
+
+    public void setMeCollectorSummary(CustomerMeCollectorInfo meCollectorSummary) {
+        this.meCollectorSummary = meCollectorSummary;
+    }
+
+    /**
+     * <p>
+     * Details about Migration Evaluator collectors, including collector status and health.
+     * </p>
+     * 
+     * @return Details about Migration Evaluator collectors, including collector status and health.
+     */
+
+    public CustomerMeCollectorInfo getMeCollectorSummary() {
+        return this.meCollectorSummary;
+    }
+
+    /**
+     * <p>
+     * Details about Migration Evaluator collectors, including collector status and health.
+     * </p>
+     * 
+     * @param meCollectorSummary
+     *        Details about Migration Evaluator collectors, including collector status and health.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDiscoverySummaryResult withMeCollectorSummary(CustomerMeCollectorInfo meCollectorSummary) {
+        setMeCollectorSummary(meCollectorSummary);
+        return this;
+    }
+
+    /**
+     * @param agentlessCollectorSummary
+     */
+
+    public void setAgentlessCollectorSummary(CustomerAgentlessCollectorInfo agentlessCollectorSummary) {
+        this.agentlessCollectorSummary = agentlessCollectorSummary;
+    }
+
+    /**
+     * @return
+     */
+
+    public CustomerAgentlessCollectorInfo getAgentlessCollectorSummary() {
+        return this.agentlessCollectorSummary;
+    }
+
+    /**
+     * @param agentlessCollectorSummary
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDiscoverySummaryResult withAgentlessCollectorSummary(CustomerAgentlessCollectorInfo agentlessCollectorSummary) {
+        setAgentlessCollectorSummary(agentlessCollectorSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -318,7 +392,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
         if (getAgentSummary() != null)
             sb.append("AgentSummary: ").append(getAgentSummary()).append(",");
         if (getConnectorSummary() != null)
-            sb.append("ConnectorSummary: ").append(getConnectorSummary());
+            sb.append("ConnectorSummary: ").append(getConnectorSummary()).append(",");
+        if (getMeCollectorSummary() != null)
+            sb.append("MeCollectorSummary: ").append(getMeCollectorSummary()).append(",");
+        if (getAgentlessCollectorSummary() != null)
+            sb.append("AgentlessCollectorSummary: ").append(getAgentlessCollectorSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +435,14 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getConnectorSummary() != null && other.getConnectorSummary().equals(this.getConnectorSummary()) == false)
             return false;
+        if (other.getMeCollectorSummary() == null ^ this.getMeCollectorSummary() == null)
+            return false;
+        if (other.getMeCollectorSummary() != null && other.getMeCollectorSummary().equals(this.getMeCollectorSummary()) == false)
+            return false;
+        if (other.getAgentlessCollectorSummary() == null ^ this.getAgentlessCollectorSummary() == null)
+            return false;
+        if (other.getAgentlessCollectorSummary() != null && other.getAgentlessCollectorSummary().equals(this.getAgentlessCollectorSummary()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +457,8 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getServersMappedtoTags() == null) ? 0 : getServersMappedtoTags().hashCode());
         hashCode = prime * hashCode + ((getAgentSummary() == null) ? 0 : getAgentSummary().hashCode());
         hashCode = prime * hashCode + ((getConnectorSummary() == null) ? 0 : getConnectorSummary().hashCode());
+        hashCode = prime * hashCode + ((getMeCollectorSummary() == null) ? 0 : getMeCollectorSummary().hashCode());
+        hashCode = prime * hashCode + ((getAgentlessCollectorSummary() == null) ? 0 : getAgentlessCollectorSummary().hashCode());
         return hashCode;
     }
 

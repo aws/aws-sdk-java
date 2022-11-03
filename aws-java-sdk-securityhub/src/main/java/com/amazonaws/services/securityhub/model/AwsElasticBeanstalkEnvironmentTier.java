@@ -30,13 +30,13 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the environment tier.
+     * The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of environment tier.
+     * The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      * </p>
      */
     private String type;
@@ -49,11 +49,11 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the environment tier.
+     * The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      * </p>
      * 
      * @param name
-     *        The name of the environment tier.
+     *        The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the environment tier.
+     * The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      * </p>
      * 
-     * @return The name of the environment tier.
+     * @return The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the environment tier.
+     * The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      * </p>
      * 
      * @param name
-     *        The name of the environment tier.
+     *        The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The type of environment tier.
+     * The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      * </p>
      * 
      * @param type
-     *        The type of environment tier.
+     *        The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      */
 
     public void setType(String type) {
@@ -102,10 +102,10 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The type of environment tier.
+     * The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      * </p>
      * 
-     * @return The type of environment tier.
+     * @return The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      */
 
     public String getType() {
@@ -114,11 +114,11 @@ public class AwsElasticBeanstalkEnvironmentTier implements Serializable, Cloneab
 
     /**
      * <p>
-     * The type of environment tier.
+     * The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      * </p>
      * 
      * @param type
-     *        The type of environment tier.
+     *        The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,8 +38,17 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     private Boolean sourceDestCheck;
     /**
      * <p>
-     * The name of the attribute.
+     * The name of the attribute to modify.
      * </p>
+     * <important>
+     * <p>
+     * You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     * <code>disableApiStop</code> | <code>enclaveOptions</code>
+     * </p>
+     * </important>
      */
     private String attribute;
     /**
@@ -155,6 +164,15 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * <p/>
+     */
+    private Boolean disableApiStop;
 
     /**
      * Default constructor for ModifyInstanceAttributeRequest object. Callers should use the setter or fluent setter
@@ -170,7 +188,15 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param instanceId
      *        The ID of the instance.
      * @param attribute
-     *        The name of the attribute.
+     *        The name of the attribute to modify.</p> <important>
+     *        <p>
+     *        You can modify the following attributes only: <code>disableApiTermination</code> |
+     *        <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *        <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> |
+     *        <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *        <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *        <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *        </p>
      */
     public ModifyInstanceAttributeRequest(String instanceId, String attribute) {
         setInstanceId(instanceId);
@@ -184,7 +210,15 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param instanceId
      *        The ID of the instance.
      * @param attribute
-     *        The name of the attribute.
+     *        The name of the attribute to modify.</p> <important>
+     *        <p>
+     *        You can modify the following attributes only: <code>disableApiTermination</code> |
+     *        <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *        <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> |
+     *        <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *        <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *        <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *        </p>
      */
     public ModifyInstanceAttributeRequest(String instanceId, InstanceAttributeName attribute) {
         setInstanceId(instanceId);
@@ -277,11 +311,28 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the attribute.
+     * The name of the attribute to modify.
      * </p>
+     * <important>
+     * <p>
+     * You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     * <code>disableApiStop</code> | <code>enclaveOptions</code>
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The name of the attribute.
+     *        The name of the attribute to modify.</p> <important>
+     *        <p>
+     *        You can modify the following attributes only: <code>disableApiTermination</code> |
+     *        <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *        <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> |
+     *        <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *        <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *        <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *        </p>
      * @see InstanceAttributeName
      */
 
@@ -291,10 +342,27 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the attribute.
+     * The name of the attribute to modify.
      * </p>
+     * <important>
+     * <p>
+     * You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     * <code>disableApiStop</code> | <code>enclaveOptions</code>
+     * </p>
+     * </important>
      * 
-     * @return The name of the attribute.
+     * @return The name of the attribute to modify.</p> <important>
+     *         <p>
+     *         You can modify the following attributes only: <code>disableApiTermination</code> |
+     *         <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *         <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code>
+     *         | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *         <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *         <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *         </p>
      * @see InstanceAttributeName
      */
 
@@ -304,11 +372,28 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the attribute.
+     * The name of the attribute to modify.
      * </p>
+     * <important>
+     * <p>
+     * You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     * <code>disableApiStop</code> | <code>enclaveOptions</code>
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The name of the attribute.
+     *        The name of the attribute to modify.</p> <important>
+     *        <p>
+     *        You can modify the following attributes only: <code>disableApiTermination</code> |
+     *        <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *        <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> |
+     *        <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *        <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *        <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceAttributeName
      */
@@ -320,11 +405,28 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the attribute.
+     * The name of the attribute to modify.
      * </p>
+     * <important>
+     * <p>
+     * You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     * <code>disableApiStop</code> | <code>enclaveOptions</code>
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The name of the attribute.
+     *        The name of the attribute to modify.</p> <important>
+     *        <p>
+     *        You can modify the following attributes only: <code>disableApiTermination</code> |
+     *        <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *        <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> |
+     *        <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *        <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *        <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *        </p>
      * @see InstanceAttributeName
      */
 
@@ -334,11 +436,28 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the attribute.
+     * The name of the attribute to modify.
      * </p>
+     * <important>
+     * <p>
+     * You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     * <code>disableApiStop</code> | <code>enclaveOptions</code>
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The name of the attribute.
+     *        The name of the attribute to modify.</p> <important>
+     *        <p>
+     *        You can modify the following attributes only: <code>disableApiTermination</code> |
+     *        <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     *        <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> |
+     *        <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> |
+     *        <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> |
+     *        <code>disableApiStop</code> | <code>enclaveOptions</code>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceAttributeName
      */
@@ -1217,6 +1336,82 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Indicates whether an instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * <p/>
+     * 
+     * @param disableApiStop
+     *        Indicates whether an instance is enabled for stop protection. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *        Protection</a>.
+     *        </p>
+     */
+
+    public void setDisableApiStop(Boolean disableApiStop) {
+        this.disableApiStop = disableApiStop;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * <p/>
+     * 
+     * @return Indicates whether an instance is enabled for stop protection. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *         Protection</a>.
+     *         </p>
+     */
+
+    public Boolean getDisableApiStop() {
+        return this.disableApiStop;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * <p/>
+     * 
+     * @param disableApiStop
+     *        Indicates whether an instance is enabled for stop protection. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *        Protection</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyInstanceAttributeRequest withDisableApiStop(Boolean disableApiStop) {
+        setDisableApiStop(disableApiStop);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * <p/>
+     * 
+     * @return Indicates whether an instance is enabled for stop protection. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *         Protection</a>.
+     *         </p>
+     */
+
+    public Boolean isDisableApiStop() {
+        return this.disableApiStop;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1268,7 +1463,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
         if (getUserData() != null)
             sb.append("UserData: ").append(getUserData()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getDisableApiStop() != null)
+            sb.append("DisableApiStop: ").append(getDisableApiStop());
         sb.append("}");
         return sb.toString();
     }
@@ -1344,6 +1541,10 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getDisableApiStop() == null ^ this.getDisableApiStop() == null)
+            return false;
+        if (other.getDisableApiStop() != null && other.getDisableApiStop().equals(this.getDisableApiStop()) == false)
+            return false;
         return true;
     }
 
@@ -1367,6 +1568,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getDisableApiStop() == null) ? 0 : getDisableApiStop().hashCode());
         return hashCode;
     }
 

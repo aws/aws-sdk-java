@@ -39,9 +39,9 @@ public class AssociatePersonasToEntitiesRequest extends com.amazonaws.AmazonWebS
     private String indexId;
     /**
      * <p>
-     * The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity
-     * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
-     * information on these personas, see <a href=
+     * The personas that define the specific permissions of users or groups in your IAM Identity Center identity source.
+     * The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+     * these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      * >Providing access to your search page</a>.
      * </p>
@@ -130,16 +130,16 @@ public class AssociatePersonasToEntitiesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity
-     * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
-     * information on these personas, see <a href=
+     * The personas that define the specific permissions of users or groups in your IAM Identity Center identity source.
+     * The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+     * these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      * >Providing access to your search page</a>.
      * </p>
      * 
-     * @return The personas that define the specific permissions of users or groups in your Amazon Web Services SSO
-     *         identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
-     *         For more information on these personas, see <a href=
+     * @return The personas that define the specific permissions of users or groups in your IAM Identity Center identity
+     *         source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
+     *         information on these personas, see <a href=
      *         "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      *         >Providing access to your search page</a>.
      */
@@ -150,17 +150,17 @@ public class AssociatePersonasToEntitiesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity
-     * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
-     * information on these personas, see <a href=
+     * The personas that define the specific permissions of users or groups in your IAM Identity Center identity source.
+     * The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+     * these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      * >Providing access to your search page</a>.
      * </p>
      * 
      * @param personas
-     *        The personas that define the specific permissions of users or groups in your Amazon Web Services SSO
-     *        identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
-     *        For more information on these personas, see <a href=
+     *        The personas that define the specific permissions of users or groups in your IAM Identity Center identity
+     *        source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
+     *        information on these personas, see <a href=
      *        "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      *        >Providing access to your search page</a>.
      */
@@ -176,9 +176,9 @@ public class AssociatePersonasToEntitiesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity
-     * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
-     * information on these personas, see <a href=
+     * The personas that define the specific permissions of users or groups in your IAM Identity Center identity source.
+     * The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+     * these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      * >Providing access to your search page</a>.
      * </p>
@@ -189,9 +189,9 @@ public class AssociatePersonasToEntitiesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param personas
-     *        The personas that define the specific permissions of users or groups in your Amazon Web Services SSO
-     *        identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
-     *        For more information on these personas, see <a href=
+     *        The personas that define the specific permissions of users or groups in your IAM Identity Center identity
+     *        source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
+     *        information on these personas, see <a href=
      *        "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      *        >Providing access to your search page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -209,17 +209,17 @@ public class AssociatePersonasToEntitiesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity
-     * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
-     * information on these personas, see <a href=
+     * The personas that define the specific permissions of users or groups in your IAM Identity Center identity source.
+     * The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+     * these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      * >Providing access to your search page</a>.
      * </p>
      * 
      * @param personas
-     *        The personas that define the specific permissions of users or groups in your Amazon Web Services SSO
-     *        identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
-     *        For more information on these personas, see <a href=
+     *        The personas that define the specific permissions of users or groups in your IAM Identity Center identity
+     *        source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
+     *        information on these personas, see <a href=
      *        "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      *        >Providing access to your search page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

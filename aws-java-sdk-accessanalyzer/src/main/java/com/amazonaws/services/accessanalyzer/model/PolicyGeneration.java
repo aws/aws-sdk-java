@@ -30,12 +30,6 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A timestamp of when the policy generation was completed.
-     * </p>
-     */
-    private java.util.Date completedOn;
-    /**
-     * <p>
      * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
      * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
      * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
@@ -50,56 +44,22 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
     private String principalArn;
     /**
      * <p>
+     * The status of the policy generation request.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
      * A timestamp of when the policy generation started.
      * </p>
      */
     private java.util.Date startedOn;
     /**
      * <p>
-     * The status of the policy generation request.
-     * </p>
-     */
-    private String status;
-
-    /**
-     * <p>
      * A timestamp of when the policy generation was completed.
      * </p>
-     * 
-     * @param completedOn
-     *        A timestamp of when the policy generation was completed.
      */
-
-    public void setCompletedOn(java.util.Date completedOn) {
-        this.completedOn = completedOn;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the policy generation was completed.
-     * </p>
-     * 
-     * @return A timestamp of when the policy generation was completed.
-     */
-
-    public java.util.Date getCompletedOn() {
-        return this.completedOn;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the policy generation was completed.
-     * </p>
-     * 
-     * @param completedOn
-     *        A timestamp of when the policy generation was completed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PolicyGeneration withCompletedOn(java.util.Date completedOn) {
-        setCompletedOn(completedOn);
-        return this;
-    }
+    private java.util.Date completedOn;
 
     /**
      * <p>
@@ -195,46 +155,6 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A timestamp of when the policy generation started.
-     * </p>
-     * 
-     * @param startedOn
-     *        A timestamp of when the policy generation started.
-     */
-
-    public void setStartedOn(java.util.Date startedOn) {
-        this.startedOn = startedOn;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the policy generation started.
-     * </p>
-     * 
-     * @return A timestamp of when the policy generation started.
-     */
-
-    public java.util.Date getStartedOn() {
-        return this.startedOn;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the policy generation started.
-     * </p>
-     * 
-     * @param startedOn
-     *        A timestamp of when the policy generation started.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PolicyGeneration withStartedOn(java.util.Date startedOn) {
-        setStartedOn(startedOn);
-        return this;
-    }
-
-    /**
-     * <p>
      * The status of the policy generation request.
      * </p>
      * 
@@ -293,6 +213,86 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A timestamp of when the policy generation started.
+     * </p>
+     * 
+     * @param startedOn
+     *        A timestamp of when the policy generation started.
+     */
+
+    public void setStartedOn(java.util.Date startedOn) {
+        this.startedOn = startedOn;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the policy generation started.
+     * </p>
+     * 
+     * @return A timestamp of when the policy generation started.
+     */
+
+    public java.util.Date getStartedOn() {
+        return this.startedOn;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the policy generation started.
+     * </p>
+     * 
+     * @param startedOn
+     *        A timestamp of when the policy generation started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyGeneration withStartedOn(java.util.Date startedOn) {
+        setStartedOn(startedOn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the policy generation was completed.
+     * </p>
+     * 
+     * @param completedOn
+     *        A timestamp of when the policy generation was completed.
+     */
+
+    public void setCompletedOn(java.util.Date completedOn) {
+        this.completedOn = completedOn;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the policy generation was completed.
+     * </p>
+     * 
+     * @return A timestamp of when the policy generation was completed.
+     */
+
+    public java.util.Date getCompletedOn() {
+        return this.completedOn;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the policy generation was completed.
+     * </p>
+     * 
+     * @param completedOn
+     *        A timestamp of when the policy generation was completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyGeneration withCompletedOn(java.util.Date completedOn) {
+        setCompletedOn(completedOn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,16 +304,16 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCompletedOn() != null)
-            sb.append("CompletedOn: ").append(getCompletedOn()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
         if (getPrincipalArn() != null)
             sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStartedOn() != null)
             sb.append("StartedOn: ").append(getStartedOn()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getCompletedOn() != null)
+            sb.append("CompletedOn: ").append(getCompletedOn());
         sb.append("}");
         return sb.toString();
     }
@@ -328,10 +328,6 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof PolicyGeneration == false)
             return false;
         PolicyGeneration other = (PolicyGeneration) obj;
-        if (other.getCompletedOn() == null ^ this.getCompletedOn() == null)
-            return false;
-        if (other.getCompletedOn() != null && other.getCompletedOn().equals(this.getCompletedOn()) == false)
-            return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
@@ -340,13 +336,17 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getStartedOn() == null ^ this.getStartedOn() == null)
             return false;
         if (other.getStartedOn() != null && other.getStartedOn().equals(this.getStartedOn()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getCompletedOn() == null ^ this.getCompletedOn() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getCompletedOn() != null && other.getCompletedOn().equals(this.getCompletedOn()) == false)
             return false;
         return true;
     }
@@ -356,11 +356,11 @@ public class PolicyGeneration implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCompletedOn() == null) ? 0 : getCompletedOn().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
-        hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
+        hashCode = prime * hashCode + ((getCompletedOn() == null) ? 0 : getCompletedOn().hashCode());
         return hashCode;
     }
 

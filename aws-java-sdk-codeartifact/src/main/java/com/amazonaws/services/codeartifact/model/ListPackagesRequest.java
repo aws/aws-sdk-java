@@ -27,49 +27,33 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested packages.
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
     /**
      * <p>
-     * The name of the repository from which packages are to be listed.
+     * The name of the repository that contains the requested packages.
      * </p>
      */
     private String repository;
     /**
      * <p>
-     * The format of the packages. The valid package types are:
+     * The format used to filter requested packages. Only packages from the provided format will be returned.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
+     * package component that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -84,7 +68,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
@@ -92,7 +77,7 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String namespace;
     /**
      * <p>
-     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code>
      * are returned.
      * </p>
      */
@@ -110,14 +95,32 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     */
+    private String publish;
+    /**
+     * <p>
+     * The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     */
+    private String upstream;
 
     /**
      * <p>
-     * The name of the domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested packages.
      * </p>
      * 
      * @param domain
-     *        The name of the domain that contains the repository that contains the requested list of packages.
+     *        The name of the domain that contains the repository that contains the requested packages.
      */
 
     public void setDomain(String domain) {
@@ -126,10 +129,10 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested packages.
      * </p>
      * 
-     * @return The name of the domain that contains the repository that contains the requested list of packages.
+     * @return The name of the domain that contains the repository that contains the requested packages.
      */
 
     public String getDomain() {
@@ -138,11 +141,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested packages.
      * </p>
      * 
      * @param domain
-     *        The name of the domain that contains the repository that contains the requested list of packages.
+     *        The name of the domain that contains the repository that contains the requested packages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +156,13 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -166,11 +171,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -179,11 +185,13 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +202,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository from which packages are to be listed.
+     * The name of the repository that contains the requested packages.
      * </p>
      * 
      * @param repository
-     *        The name of the repository from which packages are to be listed.
+     *        The name of the repository that contains the requested packages.
      */
 
     public void setRepository(String repository) {
@@ -207,10 +215,10 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository from which packages are to be listed.
+     * The name of the repository that contains the requested packages.
      * </p>
      * 
-     * @return The name of the repository from which packages are to be listed.
+     * @return The name of the repository that contains the requested packages.
      */
 
     public String getRepository() {
@@ -219,11 +227,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository from which packages are to be listed.
+     * The name of the repository that contains the requested packages.
      * </p>
      * 
      * @param repository
-     *        The name of the repository from which packages are to be listed.
+     *        The name of the repository that contains the requested packages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,45 +242,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The format of the packages. The valid package types are:
+     * The format used to filter requested packages. Only packages from the provided format will be returned.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the packages. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format used to filter requested packages. Only packages from the provided format will be returned.
      * @see PackageFormat
      */
 
@@ -282,44 +256,10 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The format of the packages. The valid package types are:
+     * The format used to filter requested packages. Only packages from the provided format will be returned.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the packages. The valid package types are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>: A Node Package Manager (npm) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>: A Python Package Index (PyPI) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *         file.
-     *         </p>
-     *         </li>
+     * @return The format used to filter requested packages. Only packages from the provided format will be returned.
      * @see PackageFormat
      */
 
@@ -329,45 +269,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The format of the packages. The valid package types are:
+     * The format used to filter requested packages. Only packages from the provided format will be returned.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the packages. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format used to filter requested packages. Only packages from the provided format will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -379,45 +285,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The format of the packages. The valid package types are:
+     * The format used to filter requested packages. Only packages from the provided format will be returned.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the packages. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format used to filter requested packages. Only packages from the provided format will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -429,8 +301,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
+     * package component that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -445,14 +317,15 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        The namespace used to filter requested packages. Only packages with the provided namespace will be
+     *        returned. The package component that specifies its namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -466,7 +339,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *        a namespace.
      *        </p>
      *        </li>
      */
@@ -477,8 +351,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
+     * package component that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -493,13 +367,14 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *         example: </p>
+     * @return The namespace used to filter requested packages. Only packages with the provided namespace will be
+     *         returned. The package component that specifies its namespace depends on its type. For example:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -513,7 +388,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *         a namespace.
      *         </p>
      *         </li>
      */
@@ -524,8 +400,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
+     * package component that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -540,14 +416,15 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        The namespace used to filter requested packages. Only packages with the provided namespace will be
+     *        returned. The package component that specifies its namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -561,7 +438,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *        a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -574,12 +452,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code>
      * are returned.
      * </p>
      * 
      * @param packagePrefix
-     *        A prefix used to filter returned packages. Only packages with names that start with
+     *        A prefix used to filter requested packages. Only packages with names that start with
      *        <code>packagePrefix</code> are returned.
      */
 
@@ -589,11 +467,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code>
      * are returned.
      * </p>
      * 
-     * @return A prefix used to filter returned packages. Only packages with names that start with
+     * @return A prefix used to filter requested packages. Only packages with names that start with
      *         <code>packagePrefix</code> are returned.
      */
 
@@ -603,12 +481,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code>
      * are returned.
      * </p>
      * 
      * @param packagePrefix
-     *        A prefix used to filter returned packages. Only packages with names that start with
+     *        A prefix used to filter requested packages. Only packages with names that start with
      *        <code>packagePrefix</code> are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -705,6 +583,172 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @param publish
+     *        The value of the <code>Publish</code> package origin control restriction used to filter requested
+     *        packages. Only packages with the provided restriction are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a>.
+     * @see AllowPublish
+     */
+
+    public void setPublish(String publish) {
+        this.publish = publish;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @return The value of the <code>Publish</code> package origin control restriction used to filter requested
+     *         packages. Only packages with the provided restriction are returned. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *         >PackageOriginRestrictions</a>.
+     * @see AllowPublish
+     */
+
+    public String getPublish() {
+        return this.publish;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @param publish
+     *        The value of the <code>Publish</code> package origin control restriction used to filter requested
+     *        packages. Only packages with the provided restriction are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllowPublish
+     */
+
+    public ListPackagesRequest withPublish(String publish) {
+        setPublish(publish);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @param publish
+     *        The value of the <code>Publish</code> package origin control restriction used to filter requested
+     *        packages. Only packages with the provided restriction are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllowPublish
+     */
+
+    public ListPackagesRequest withPublish(AllowPublish publish) {
+        this.publish = publish.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @param upstream
+     *        The value of the <code>Upstream</code> package origin control restriction used to filter requested
+     *        packages. Only packages with the provided restriction are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a>.
+     * @see AllowUpstream
+     */
+
+    public void setUpstream(String upstream) {
+        this.upstream = upstream;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @return The value of the <code>Upstream</code> package origin control restriction used to filter requested
+     *         packages. Only packages with the provided restriction are returned. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *         >PackageOriginRestrictions</a>.
+     * @see AllowUpstream
+     */
+
+    public String getUpstream() {
+        return this.upstream;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @param upstream
+     *        The value of the <code>Upstream</code> package origin control restriction used to filter requested
+     *        packages. Only packages with the provided restriction are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllowUpstream
+     */
+
+    public ListPackagesRequest withUpstream(String upstream) {
+        setUpstream(upstream);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only
+     * packages with the provided restriction are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a>.
+     * </p>
+     * 
+     * @param upstream
+     *        The value of the <code>Upstream</code> package origin control restriction used to filter requested
+     *        packages. Only packages with the provided restriction are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllowUpstream
+     */
+
+    public ListPackagesRequest withUpstream(AllowUpstream upstream) {
+        this.upstream = upstream.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -731,7 +775,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPublish() != null)
+            sb.append("Publish: ").append(getPublish()).append(",");
+        if (getUpstream() != null)
+            sb.append("Upstream: ").append(getUpstream());
         sb.append("}");
         return sb.toString();
     }
@@ -778,6 +826,14 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getPublish() == null ^ this.getPublish() == null)
+            return false;
+        if (other.getPublish() != null && other.getPublish().equals(this.getPublish()) == false)
+            return false;
+        if (other.getUpstream() == null ^ this.getUpstream() == null)
+            return false;
+        if (other.getUpstream() != null && other.getUpstream().equals(this.getUpstream()) == false)
+            return false;
         return true;
     }
 
@@ -794,6 +850,8 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPackagePrefix() == null) ? 0 : getPackagePrefix().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
+        hashCode = prime * hashCode + ((getUpstream() == null) ? 0 : getUpstream().hashCode());
         return hashCode;
     }
 

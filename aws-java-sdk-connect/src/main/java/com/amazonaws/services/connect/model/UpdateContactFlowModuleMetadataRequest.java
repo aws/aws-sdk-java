@@ -33,25 +33,25 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
     private String instanceId;
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      */
     private String contactFlowModuleId;
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The state of contact flow module.
+     * The state of flow module.
      * </p>
      */
     private String state;
@@ -98,11 +98,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param contactFlowModuleId
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      */
 
     public void setContactFlowModuleId(String contactFlowModuleId) {
@@ -111,10 +111,10 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
-     * @return The identifier of the contact flow module.
+     * @return The identifier of the flow module.
      */
 
     public String getContactFlowModuleId() {
@@ -123,11 +123,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param contactFlowModuleId
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      */
 
     public void setName(String name) {
@@ -151,10 +151,10 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
-     * @return The name of the contact flow module.
+     * @return The name of the flow module.
      */
 
     public String getName() {
@@ -163,11 +163,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow module.
+     *        The description of the flow module.
      */
 
     public void setDescription(String description) {
@@ -191,10 +191,10 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
-     * @return The description of the contact flow module.
+     * @return The description of the flow module.
      */
 
     public String getDescription() {
@@ -203,11 +203,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow module.
+     *        The description of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The state of contact flow module.
+     * The state of flow module.
      * </p>
      * 
      * @param state
-     *        The state of contact flow module.
+     *        The state of flow module.
      * @see ContactFlowModuleState
      */
 
@@ -232,10 +232,10 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The state of contact flow module.
+     * The state of flow module.
      * </p>
      * 
-     * @return The state of contact flow module.
+     * @return The state of flow module.
      * @see ContactFlowModuleState
      */
 
@@ -245,11 +245,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The state of contact flow module.
+     * The state of flow module.
      * </p>
      * 
      * @param state
-     *        The state of contact flow module.
+     *        The state of flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */
@@ -261,11 +261,11 @@ public class UpdateContactFlowModuleMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The state of contact flow module.
+     * The state of flow module.
      * </p>
      * 
      * @param state
-     *        The state of contact flow module.
+     *        The state of flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */

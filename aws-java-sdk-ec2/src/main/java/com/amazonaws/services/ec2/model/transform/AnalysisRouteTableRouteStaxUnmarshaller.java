@@ -92,6 +92,11 @@ public class AnalysisRouteTableRouteStaxUnmarshaller implements Unmarshaller<Ana
                     analysisRouteTableRoute.setVpcPeeringConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("state", targetDepth)) {
+                    analysisRouteTableRoute.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return analysisRouteTableRoute;

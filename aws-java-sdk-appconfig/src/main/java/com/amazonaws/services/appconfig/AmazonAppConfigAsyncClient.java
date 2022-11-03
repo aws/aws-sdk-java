@@ -255,6 +255,72 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExtensionResult> createExtensionAsync(CreateExtensionRequest request) {
+
+        return createExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtensionResult> createExtensionAsync(final CreateExtensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExtensionRequest, CreateExtensionResult> asyncHandler) {
+        final CreateExtensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateExtensionResult>() {
+            @Override
+            public CreateExtensionResult call() throws Exception {
+                CreateExtensionResult result = null;
+
+                try {
+                    result = executeCreateExtension(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtensionAssociationResult> createExtensionAssociationAsync(CreateExtensionAssociationRequest request) {
+
+        return createExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtensionAssociationResult> createExtensionAssociationAsync(final CreateExtensionAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExtensionAssociationRequest, CreateExtensionAssociationResult> asyncHandler) {
+        final CreateExtensionAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateExtensionAssociationResult>() {
+            @Override
+            public CreateExtensionAssociationResult call() throws Exception {
+                CreateExtensionAssociationResult result = null;
+
+                try {
+                    result = executeCreateExtensionAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
             CreateHostedConfigurationVersionRequest request) {
 
@@ -406,6 +472,72 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
 
                 try {
                     result = executeDeleteEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionResult> deleteExtensionAsync(DeleteExtensionRequest request) {
+
+        return deleteExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionResult> deleteExtensionAsync(final DeleteExtensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteExtensionRequest, DeleteExtensionResult> asyncHandler) {
+        final DeleteExtensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteExtensionResult>() {
+            @Override
+            public DeleteExtensionResult call() throws Exception {
+                DeleteExtensionResult result = null;
+
+                try {
+                    result = executeDeleteExtension(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionAssociationResult> deleteExtensionAssociationAsync(DeleteExtensionAssociationRequest request) {
+
+        return deleteExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionAssociationResult> deleteExtensionAssociationAsync(final DeleteExtensionAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteExtensionAssociationRequest, DeleteExtensionAssociationResult> asyncHandler) {
+        final DeleteExtensionAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteExtensionAssociationResult>() {
+            @Override
+            public DeleteExtensionAssociationResult call() throws Exception {
+                DeleteExtensionAssociationResult result = null;
+
+                try {
+                    result = executeDeleteExtensionAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -657,6 +789,72 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetExtensionResult> getExtensionAsync(GetExtensionRequest request) {
+
+        return getExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExtensionResult> getExtensionAsync(final GetExtensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExtensionRequest, GetExtensionResult> asyncHandler) {
+        final GetExtensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExtensionResult>() {
+            @Override
+            public GetExtensionResult call() throws Exception {
+                GetExtensionResult result = null;
+
+                try {
+                    result = executeGetExtension(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExtensionAssociationResult> getExtensionAssociationAsync(GetExtensionAssociationRequest request) {
+
+        return getExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExtensionAssociationResult> getExtensionAssociationAsync(final GetExtensionAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExtensionAssociationRequest, GetExtensionAssociationResult> asyncHandler) {
+        final GetExtensionAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExtensionAssociationResult>() {
+            @Override
+            public GetExtensionAssociationResult call() throws Exception {
+                GetExtensionAssociationResult result = null;
+
+                try {
+                    result = executeGetExtensionAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request) {
 
         return getHostedConfigurationVersionAsync(request, null);
@@ -840,6 +1038,72 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
 
                 try {
                     result = executeListEnvironments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionAssociationsResult> listExtensionAssociationsAsync(ListExtensionAssociationsRequest request) {
+
+        return listExtensionAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionAssociationsResult> listExtensionAssociationsAsync(final ListExtensionAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExtensionAssociationsRequest, ListExtensionAssociationsResult> asyncHandler) {
+        final ListExtensionAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExtensionAssociationsResult>() {
+            @Override
+            public ListExtensionAssociationsResult call() throws Exception {
+                ListExtensionAssociationsResult result = null;
+
+                try {
+                    result = executeListExtensionAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionsResult> listExtensionsAsync(ListExtensionsRequest request) {
+
+        return listExtensionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionsResult> listExtensionsAsync(final ListExtensionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExtensionsRequest, ListExtensionsResult> asyncHandler) {
+        final ListExtensionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExtensionsResult>() {
+            @Override
+            public ListExtensionsResult call() throws Exception {
+                ListExtensionsResult result = null;
+
+                try {
+                    result = executeListExtensions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1172,6 +1436,72 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
 
                 try {
                     result = executeUpdateEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionResult> updateExtensionAsync(UpdateExtensionRequest request) {
+
+        return updateExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionResult> updateExtensionAsync(final UpdateExtensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateExtensionRequest, UpdateExtensionResult> asyncHandler) {
+        final UpdateExtensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateExtensionResult>() {
+            @Override
+            public UpdateExtensionResult call() throws Exception {
+                UpdateExtensionResult result = null;
+
+                try {
+                    result = executeUpdateExtension(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionAssociationResult> updateExtensionAssociationAsync(UpdateExtensionAssociationRequest request) {
+
+        return updateExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionAssociationResult> updateExtensionAssociationAsync(final UpdateExtensionAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateExtensionAssociationRequest, UpdateExtensionAssociationResult> asyncHandler) {
+        final UpdateExtensionAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateExtensionAssociationResult>() {
+            @Override
+            public UpdateExtensionAssociationResult call() throws Exception {
+                UpdateExtensionAssociationResult result = null;
+
+                try {
+                    result = executeUpdateExtensionAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

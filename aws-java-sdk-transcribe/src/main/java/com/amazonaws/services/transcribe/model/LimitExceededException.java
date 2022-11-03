@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a
- * smaller file and resend the request.
+ * You've either sent too many requests or your input file is too long. Wait before retrying your request, or use a
+ * smaller file and try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

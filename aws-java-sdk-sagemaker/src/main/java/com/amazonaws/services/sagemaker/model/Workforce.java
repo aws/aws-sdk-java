@@ -86,6 +86,24 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createDate;
+    /**
+     * <p>
+     * The configuration of a VPC workforce.
+     * </p>
+     */
+    private WorkforceVpcConfigResponse workforceVpcConfig;
+    /**
+     * <p>
+     * The status of your workforce.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The reason your workforce failed.
+     * </p>
+     */
+    private String failureReason;
 
     /**
      * <p>
@@ -447,6 +465,145 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration of a VPC workforce.
+     * </p>
+     * 
+     * @param workforceVpcConfig
+     *        The configuration of a VPC workforce.
+     */
+
+    public void setWorkforceVpcConfig(WorkforceVpcConfigResponse workforceVpcConfig) {
+        this.workforceVpcConfig = workforceVpcConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of a VPC workforce.
+     * </p>
+     * 
+     * @return The configuration of a VPC workforce.
+     */
+
+    public WorkforceVpcConfigResponse getWorkforceVpcConfig() {
+        return this.workforceVpcConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of a VPC workforce.
+     * </p>
+     * 
+     * @param workforceVpcConfig
+     *        The configuration of a VPC workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workforce withWorkforceVpcConfig(WorkforceVpcConfigResponse workforceVpcConfig) {
+        setWorkforceVpcConfig(workforceVpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of your workforce.
+     * </p>
+     * 
+     * @param status
+     *        The status of your workforce.
+     * @see WorkforceStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of your workforce.
+     * </p>
+     * 
+     * @return The status of your workforce.
+     * @see WorkforceStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of your workforce.
+     * </p>
+     * 
+     * @param status
+     *        The status of your workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkforceStatus
+     */
+
+    public Workforce withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of your workforce.
+     * </p>
+     * 
+     * @param status
+     *        The status of your workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkforceStatus
+     */
+
+    public Workforce withStatus(WorkforceStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason your workforce failed.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason your workforce failed.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason your workforce failed.
+     * </p>
+     * 
+     * @return The reason your workforce failed.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason your workforce failed.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason your workforce failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workforce withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -473,7 +630,13 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
         if (getOidcConfig() != null)
             sb.append("OidcConfig: ").append(getOidcConfig()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: ").append(getCreateDate());
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
+        if (getWorkforceVpcConfig() != null)
+            sb.append("WorkforceVpcConfig: ").append(getWorkforceVpcConfig()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: ").append(getFailureReason());
         sb.append("}");
         return sb.toString();
     }
@@ -520,6 +683,18 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
+        if (other.getWorkforceVpcConfig() == null ^ this.getWorkforceVpcConfig() == null)
+            return false;
+        if (other.getWorkforceVpcConfig() != null && other.getWorkforceVpcConfig().equals(this.getWorkforceVpcConfig()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
         return true;
     }
 
@@ -536,6 +711,9 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCognitoConfig() == null) ? 0 : getCognitoConfig().hashCode());
         hashCode = prime * hashCode + ((getOidcConfig() == null) ? 0 : getOidcConfig().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getWorkforceVpcConfig() == null) ? 0 : getWorkforceVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         return hashCode;
     }
 

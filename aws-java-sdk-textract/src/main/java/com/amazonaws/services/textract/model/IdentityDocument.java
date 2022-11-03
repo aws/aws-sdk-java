@@ -42,6 +42,12 @@ public class IdentityDocument implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<IdentityDocumentField> identityDocumentFields;
+    /**
+     * <p>
+     * Individual word recognition, as returned by document detection.
+     * </p>
+     */
+    private java.util.List<Block> blocks;
 
     /**
      * <p>
@@ -168,6 +174,76 @@ public class IdentityDocument implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Individual word recognition, as returned by document detection.
+     * </p>
+     * 
+     * @return Individual word recognition, as returned by document detection.
+     */
+
+    public java.util.List<Block> getBlocks() {
+        return blocks;
+    }
+
+    /**
+     * <p>
+     * Individual word recognition, as returned by document detection.
+     * </p>
+     * 
+     * @param blocks
+     *        Individual word recognition, as returned by document detection.
+     */
+
+    public void setBlocks(java.util.Collection<Block> blocks) {
+        if (blocks == null) {
+            this.blocks = null;
+            return;
+        }
+
+        this.blocks = new java.util.ArrayList<Block>(blocks);
+    }
+
+    /**
+     * <p>
+     * Individual word recognition, as returned by document detection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlocks(java.util.Collection)} or {@link #withBlocks(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param blocks
+     *        Individual word recognition, as returned by document detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IdentityDocument withBlocks(Block... blocks) {
+        if (this.blocks == null) {
+            setBlocks(new java.util.ArrayList<Block>(blocks.length));
+        }
+        for (Block ele : blocks) {
+            this.blocks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Individual word recognition, as returned by document detection.
+     * </p>
+     * 
+     * @param blocks
+     *        Individual word recognition, as returned by document detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IdentityDocument withBlocks(java.util.Collection<Block> blocks) {
+        setBlocks(blocks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +258,9 @@ public class IdentityDocument implements Serializable, Cloneable, StructuredPojo
         if (getDocumentIndex() != null)
             sb.append("DocumentIndex: ").append(getDocumentIndex()).append(",");
         if (getIdentityDocumentFields() != null)
-            sb.append("IdentityDocumentFields: ").append(getIdentityDocumentFields());
+            sb.append("IdentityDocumentFields: ").append(getIdentityDocumentFields()).append(",");
+        if (getBlocks() != null)
+            sb.append("Blocks: ").append(getBlocks());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +283,10 @@ public class IdentityDocument implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getIdentityDocumentFields() != null && other.getIdentityDocumentFields().equals(this.getIdentityDocumentFields()) == false)
             return false;
+        if (other.getBlocks() == null ^ this.getBlocks() == null)
+            return false;
+        if (other.getBlocks() != null && other.getBlocks().equals(this.getBlocks()) == false)
+            return false;
         return true;
     }
 
@@ -215,6 +297,7 @@ public class IdentityDocument implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getDocumentIndex() == null) ? 0 : getDocumentIndex().hashCode());
         hashCode = prime * hashCode + ((getIdentityDocumentFields() == null) ? 0 : getIdentityDocumentFields().hashCode());
+        hashCode = prime * hashCode + ((getBlocks() == null) ? 0 : getBlocks().hashCode());
         return hashCode;
     }
 

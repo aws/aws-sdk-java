@@ -39,7 +39,7 @@ public class GetGeofenceResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String geofenceId;
     /**
      * <p>
-     * Contains the geofence geometry details describing a polygon.
+     * Contains the geofence geometry details describing a polygon or a circle.
      * </p>
      */
     private GeofenceGeometry geometry;
@@ -179,11 +179,11 @@ public class GetGeofenceResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Contains the geofence geometry details describing a polygon.
+     * Contains the geofence geometry details describing a polygon or a circle.
      * </p>
      * 
      * @param geometry
-     *        Contains the geofence geometry details describing a polygon.
+     *        Contains the geofence geometry details describing a polygon or a circle.
      */
 
     public void setGeometry(GeofenceGeometry geometry) {
@@ -192,10 +192,10 @@ public class GetGeofenceResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Contains the geofence geometry details describing a polygon.
+     * Contains the geofence geometry details describing a polygon or a circle.
      * </p>
      * 
-     * @return Contains the geofence geometry details describing a polygon.
+     * @return Contains the geofence geometry details describing a polygon or a circle.
      */
 
     public GeofenceGeometry getGeometry() {
@@ -204,11 +204,11 @@ public class GetGeofenceResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Contains the geofence geometry details describing a polygon.
+     * Contains the geofence geometry details describing a polygon or a circle.
      * </p>
      * 
      * @param geometry
-     *        Contains the geofence geometry details describing a polygon.
+     *        Contains the geofence geometry details describing a polygon or a circle.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

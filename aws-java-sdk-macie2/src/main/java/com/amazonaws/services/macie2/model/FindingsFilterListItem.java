@@ -55,7 +55,7 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
     private String name;
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -249,10 +249,10 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      * </p>
      * 
-     * @return A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     * @return A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -261,11 +261,11 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -274,11 +274,11 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

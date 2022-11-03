@@ -27,9 +27,8 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A single line format of the access logs of data, as specified by selected <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     * >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     * A single line format of the access logs of data, as specified by selected $context variables. The format must
+     * include at least <code>$context.requestId</code>.
      * </p>
      */
     private String format;
@@ -44,15 +43,13 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A single line format of the access logs of data, as specified by selected <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     * >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     * A single line format of the access logs of data, as specified by selected $context variables. The format must
+     * include at least <code>$context.requestId</code>.
      * </p>
      * 
      * @param format
-     *        A single line format of the access logs of data, as specified by selected <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     *        >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     *        A single line format of the access logs of data, as specified by selected $context variables. The format
+     *        must include at least <code>$context.requestId</code>.
      */
 
     public void setFormat(String format) {
@@ -61,14 +58,12 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A single line format of the access logs of data, as specified by selected <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     * >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     * A single line format of the access logs of data, as specified by selected $context variables. The format must
+     * include at least <code>$context.requestId</code>.
      * </p>
      * 
-     * @return A single line format of the access logs of data, as specified by selected <a href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     *         >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     * @return A single line format of the access logs of data, as specified by selected $context variables. The format
+     *         must include at least <code>$context.requestId</code>.
      */
 
     public String getFormat() {
@@ -77,15 +72,13 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A single line format of the access logs of data, as specified by selected <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     * >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     * A single line format of the access logs of data, as specified by selected $context variables. The format must
+     * include at least <code>$context.requestId</code>.
      * </p>
      * 
      * @param format
-     *        A single line format of the access logs of data, as specified by selected <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference"
-     *        >$context variables</a>. The format must include at least <code>$context.requestId</code>.
+     *        A single line format of the access logs of data, as specified by selected $context variables. The format
+     *        must include at least <code>$context.requestId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -152,8 +152,24 @@ public class PutBucketLifecycleConfigurationRequestMarshaller implements
                                             }
                                             xmlWriter.endElement();
                                         }
+
+                                        if (and.getObjectSizeGreaterThan() != null) {
+                                            xmlWriter.startElement("ObjectSizeGreaterThan").value(and.getObjectSizeGreaterThan()).endElement();
+                                        }
+
+                                        if (and.getObjectSizeLessThan() != null) {
+                                            xmlWriter.startElement("ObjectSizeLessThan").value(and.getObjectSizeLessThan()).endElement();
+                                        }
                                         xmlWriter.endElement();
                                     }
+                                }
+
+                                if (filter.getObjectSizeGreaterThan() != null) {
+                                    xmlWriter.startElement("ObjectSizeGreaterThan").value(filter.getObjectSizeGreaterThan()).endElement();
+                                }
+
+                                if (filter.getObjectSizeLessThan() != null) {
+                                    xmlWriter.startElement("ObjectSizeLessThan").value(filter.getObjectSizeLessThan()).endElement();
                                 }
                                 xmlWriter.endElement();
                             }
@@ -215,6 +231,11 @@ public class PutBucketLifecycleConfigurationRequestMarshaller implements
 
                                 if (noncurrentVersionExpiration.getNoncurrentDays() != null) {
                                     xmlWriter.startElement("NoncurrentDays").value(noncurrentVersionExpiration.getNoncurrentDays()).endElement();
+                                }
+
+                                if (noncurrentVersionExpiration.getNewerNoncurrentVersions() != null) {
+                                    xmlWriter.startElement("NewerNoncurrentVersions").value(noncurrentVersionExpiration.getNewerNoncurrentVersions())
+                                            .endElement();
                                 }
                                 xmlWriter.endElement();
                             }

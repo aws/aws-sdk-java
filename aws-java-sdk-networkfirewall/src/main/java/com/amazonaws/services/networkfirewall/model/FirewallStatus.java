@@ -63,6 +63,14 @@ public class FirewallStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, SyncState> syncStates;
+    /**
+     * <p>
+     * Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     * calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference
+     * sets in a firewall.
+     * </p>
+     */
+    private CapacityUsageSummary capacityUsageSummary;
 
     /**
      * <p>
@@ -373,6 +381,58 @@ public class FirewallStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     * calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference
+     * sets in a firewall.
+     * </p>
+     * 
+     * @param capacityUsageSummary
+     *        Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     *        calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the
+     *        reference sets in a firewall.
+     */
+
+    public void setCapacityUsageSummary(CapacityUsageSummary capacityUsageSummary) {
+        this.capacityUsageSummary = capacityUsageSummary;
+    }
+
+    /**
+     * <p>
+     * Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     * calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference
+     * sets in a firewall.
+     * </p>
+     * 
+     * @return Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     *         calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the
+     *         reference sets in a firewall.
+     */
+
+    public CapacityUsageSummary getCapacityUsageSummary() {
+        return this.capacityUsageSummary;
+    }
+
+    /**
+     * <p>
+     * Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     * calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference
+     * sets in a firewall.
+     * </p>
+     * 
+     * @param capacityUsageSummary
+     *        Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall
+     *        calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the
+     *        reference sets in a firewall.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FirewallStatus withCapacityUsageSummary(CapacityUsageSummary capacityUsageSummary) {
+        setCapacityUsageSummary(capacityUsageSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -389,7 +449,9 @@ public class FirewallStatus implements Serializable, Cloneable, StructuredPojo {
         if (getConfigurationSyncStateSummary() != null)
             sb.append("ConfigurationSyncStateSummary: ").append(getConfigurationSyncStateSummary()).append(",");
         if (getSyncStates() != null)
-            sb.append("SyncStates: ").append(getSyncStates());
+            sb.append("SyncStates: ").append(getSyncStates()).append(",");
+        if (getCapacityUsageSummary() != null)
+            sb.append("CapacityUsageSummary: ").append(getCapacityUsageSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -417,6 +479,10 @@ public class FirewallStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSyncStates() != null && other.getSyncStates().equals(this.getSyncStates()) == false)
             return false;
+        if (other.getCapacityUsageSummary() == null ^ this.getCapacityUsageSummary() == null)
+            return false;
+        if (other.getCapacityUsageSummary() != null && other.getCapacityUsageSummary().equals(this.getCapacityUsageSummary()) == false)
+            return false;
         return true;
     }
 
@@ -428,6 +494,7 @@ public class FirewallStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getConfigurationSyncStateSummary() == null) ? 0 : getConfigurationSyncStateSummary().hashCode());
         hashCode = prime * hashCode + ((getSyncStates() == null) ? 0 : getSyncStates().hashCode());
+        hashCode = prime * hashCode + ((getCapacityUsageSummary() == null) ? 0 : getCapacityUsageSummary().hashCode());
         return hashCode;
     }
 

@@ -32,6 +32,8 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
      * (IV).
      */
     private String constantInitializationVector;
+
+    private String encryptionMethod;
     /** Time (in seconds) between each encryption key rotation. */
     private Integer keyRotationIntervalSeconds;
 
@@ -80,6 +82,46 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
 
     public CmafEncryption withConstantInitializationVector(String constantInitializationVector) {
         setConstantInitializationVector(constantInitializationVector);
+        return this;
+    }
+
+    /**
+     * @param encryptionMethod
+     * @see CmafEncryptionMethod
+     */
+
+    public void setEncryptionMethod(String encryptionMethod) {
+        this.encryptionMethod = encryptionMethod;
+    }
+
+    /**
+     * @return
+     * @see CmafEncryptionMethod
+     */
+
+    public String getEncryptionMethod() {
+        return this.encryptionMethod;
+    }
+
+    /**
+     * @param encryptionMethod
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafEncryptionMethod
+     */
+
+    public CmafEncryption withEncryptionMethod(String encryptionMethod) {
+        setEncryptionMethod(encryptionMethod);
+        return this;
+    }
+
+    /**
+     * @param encryptionMethod
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafEncryptionMethod
+     */
+
+    public CmafEncryption withEncryptionMethod(CmafEncryptionMethod encryptionMethod) {
+        this.encryptionMethod = encryptionMethod.toString();
         return this;
     }
 
@@ -157,6 +199,8 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getConstantInitializationVector() != null)
             sb.append("ConstantInitializationVector: ").append(getConstantInitializationVector()).append(",");
+        if (getEncryptionMethod() != null)
+            sb.append("EncryptionMethod: ").append(getEncryptionMethod()).append(",");
         if (getKeyRotationIntervalSeconds() != null)
             sb.append("KeyRotationIntervalSeconds: ").append(getKeyRotationIntervalSeconds()).append(",");
         if (getSpekeKeyProvider() != null)
@@ -179,6 +223,10 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConstantInitializationVector() != null && other.getConstantInitializationVector().equals(this.getConstantInitializationVector()) == false)
             return false;
+        if (other.getEncryptionMethod() == null ^ this.getEncryptionMethod() == null)
+            return false;
+        if (other.getEncryptionMethod() != null && other.getEncryptionMethod().equals(this.getEncryptionMethod()) == false)
+            return false;
         if (other.getKeyRotationIntervalSeconds() == null ^ this.getKeyRotationIntervalSeconds() == null)
             return false;
         if (other.getKeyRotationIntervalSeconds() != null && other.getKeyRotationIntervalSeconds().equals(this.getKeyRotationIntervalSeconds()) == false)
@@ -196,6 +244,7 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConstantInitializationVector() == null) ? 0 : getConstantInitializationVector().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionMethod() == null) ? 0 : getEncryptionMethod().hashCode());
         hashCode = prime * hashCode + ((getKeyRotationIntervalSeconds() == null) ? 0 : getKeyRotationIntervalSeconds().hashCode());
         hashCode = prime * hashCode + ((getSpekeKeyProvider() == null) ? 0 : getSpekeKeyProvider().hashCode());
         return hashCode;

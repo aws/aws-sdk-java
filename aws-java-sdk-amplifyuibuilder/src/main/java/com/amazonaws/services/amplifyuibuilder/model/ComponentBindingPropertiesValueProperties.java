@@ -69,6 +69,12 @@ public class ComponentBindingPropertiesValueProperties implements Serializable, 
     private java.util.List<Predicate> predicates;
     /**
      * <p>
+     * The name of a component slot.
+     * </p>
+     */
+    private String slotName;
+    /**
+     * <p>
      * An authenticated user attribute.
      * </p>
      */
@@ -346,6 +352,46 @@ public class ComponentBindingPropertiesValueProperties implements Serializable, 
 
     /**
      * <p>
+     * The name of a component slot.
+     * </p>
+     * 
+     * @param slotName
+     *        The name of a component slot.
+     */
+
+    public void setSlotName(String slotName) {
+        this.slotName = slotName;
+    }
+
+    /**
+     * <p>
+     * The name of a component slot.
+     * </p>
+     * 
+     * @return The name of a component slot.
+     */
+
+    public String getSlotName() {
+        return this.slotName;
+    }
+
+    /**
+     * <p>
+     * The name of a component slot.
+     * </p>
+     * 
+     * @param slotName
+     *        The name of a component slot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentBindingPropertiesValueProperties withSlotName(String slotName) {
+        setSlotName(slotName);
+        return this;
+    }
+
+    /**
+     * <p>
      * An authenticated user attribute.
      * </p>
      * 
@@ -408,6 +454,8 @@ public class ComponentBindingPropertiesValueProperties implements Serializable, 
             sb.append("Model: ").append(getModel()).append(",");
         if (getPredicates() != null)
             sb.append("Predicates: ").append(getPredicates()).append(",");
+        if (getSlotName() != null)
+            sb.append("SlotName: ").append(getSlotName()).append(",");
         if (getUserAttribute() != null)
             sb.append("UserAttribute: ").append(getUserAttribute());
         sb.append("}");
@@ -448,6 +496,10 @@ public class ComponentBindingPropertiesValueProperties implements Serializable, 
             return false;
         if (other.getPredicates() != null && other.getPredicates().equals(this.getPredicates()) == false)
             return false;
+        if (other.getSlotName() == null ^ this.getSlotName() == null)
+            return false;
+        if (other.getSlotName() != null && other.getSlotName().equals(this.getSlotName()) == false)
+            return false;
         if (other.getUserAttribute() == null ^ this.getUserAttribute() == null)
             return false;
         if (other.getUserAttribute() != null && other.getUserAttribute().equals(this.getUserAttribute()) == false)
@@ -466,6 +518,7 @@ public class ComponentBindingPropertiesValueProperties implements Serializable, 
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
         hashCode = prime * hashCode + ((getPredicates() == null) ? 0 : getPredicates().hashCode());
+        hashCode = prime * hashCode + ((getSlotName() == null) ? 0 : getSlotName().hashCode());
         hashCode = prime * hashCode + ((getUserAttribute() == null) ? 0 : getUserAttribute().hashCode());
         return hashCode;
     }

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The configuration that specifies how traffic is shifted from one version of a Lambda function to another version
- * during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
+ * during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TrafficRoutingConfig" target="_top">AWS
@@ -46,9 +46,9 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     private TimeBasedCanary timeBasedCanary;
     /**
      * <p>
-     * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal
-     * increments, with an equal number of minutes between each increment. The original and target Lambda function
-     * versions or ECS task sets are specified in the deployment's AppSpec file.
+     * A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in
+     * equal increments, with an equal number of minutes between each increment. The original and target Lambda function
+     * versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      * </p>
      */
     private TimeBasedLinear timeBasedLinear;
@@ -174,15 +174,15 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal
-     * increments, with an equal number of minutes between each increment. The original and target Lambda function
-     * versions or ECS task sets are specified in the deployment's AppSpec file.
+     * A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in
+     * equal increments, with an equal number of minutes between each increment. The original and target Lambda function
+     * versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      * </p>
      * 
      * @param timeBasedLinear
-     *        A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in
-     *        equal increments, with an equal number of minutes between each increment. The original and target Lambda
-     *        function versions or ECS task sets are specified in the deployment's AppSpec file.
+     *        A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to
+     *        another in equal increments, with an equal number of minutes between each increment. The original and
+     *        target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      */
 
     public void setTimeBasedLinear(TimeBasedLinear timeBasedLinear) {
@@ -191,14 +191,14 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal
-     * increments, with an equal number of minutes between each increment. The original and target Lambda function
-     * versions or ECS task sets are specified in the deployment's AppSpec file.
+     * A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in
+     * equal increments, with an equal number of minutes between each increment. The original and target Lambda function
+     * versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      * </p>
      * 
-     * @return A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in
-     *         equal increments, with an equal number of minutes between each increment. The original and target Lambda
-     *         function versions or ECS task sets are specified in the deployment's AppSpec file.
+     * @return A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to
+     *         another in equal increments, with an equal number of minutes between each increment. The original and
+     *         target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      */
 
     public TimeBasedLinear getTimeBasedLinear() {
@@ -207,15 +207,15 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal
-     * increments, with an equal number of minutes between each increment. The original and target Lambda function
-     * versions or ECS task sets are specified in the deployment's AppSpec file.
+     * A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in
+     * equal increments, with an equal number of minutes between each increment. The original and target Lambda function
+     * versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      * </p>
      * 
      * @param timeBasedLinear
-     *        A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in
-     *        equal increments, with an equal number of minutes between each increment. The original and target Lambda
-     *        function versions or ECS task sets are specified in the deployment's AppSpec file.
+     *        A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to
+     *        another in equal increments, with an equal number of minutes between each increment. The original and
+     *        target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

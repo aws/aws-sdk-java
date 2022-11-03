@@ -72,7 +72,7 @@ public interface AWSPanorama {
 
     /**
      * <p>
-     * Creates a job to run on one or more devices.
+     * Creates a job to run on one or more devices. A job can update a device's software or reboot it.
      * </p>
      * 
      * @param createJobForDevicesRequest
@@ -702,6 +702,28 @@ public interface AWSPanorama {
      *      target="_top">AWS API Documentation</a>
      */
     RemoveApplicationInstanceResult removeApplicationInstance(RemoveApplicationInstanceRequest removeApplicationInstanceRequest);
+
+    /**
+     * <p>
+     * Signal camera nodes to stop or resume.
+     * </p>
+     * 
+     * @param signalApplicationInstanceNodeInstancesRequest
+     * @return Result of the SignalApplicationInstanceNodeInstances operation returned by the service.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a limit to be exceeded.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @sample AWSPanorama.SignalApplicationInstanceNodeInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SignalApplicationInstanceNodeInstancesResult signalApplicationInstanceNodeInstances(
+            SignalApplicationInstanceNodeInstancesRequest signalApplicationInstanceNodeInstancesRequest);
 
     /**
      * <p>

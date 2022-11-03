@@ -22,7 +22,8 @@ public enum ResourceType {
 
     GROUP("GROUP"),
     USER("USER"),
-    IDENTITY_STORE("IDENTITY_STORE");
+    IDENTITY_STORE("IDENTITY_STORE"),
+    GROUP_MEMBERSHIP("GROUP_MEMBERSHIP");
 
     private String value;
 

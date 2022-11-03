@@ -52,7 +52,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -91,7 +92,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -116,7 +118,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
     private String dbName;
     /**
      * <p>
-     * The unique identifier of the cluster that contains the database for which your are requesting credentials. This
+     * The unique identifier of the cluster that contains the database for which you are requesting credentials. This
      * parameter is case sensitive.
      * </p>
      */
@@ -204,7 +206,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -249,8 +252,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *        hyphen.
+     *        Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     *        or hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -300,7 +303,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -344,8 +348,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *         hyphen.
+     *         Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     *         or hyphen.
      *         </p>
      *         </li>
      *         <li>
@@ -395,7 +399,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -440,8 +445,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *        hyphen.
+     *        Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     *        or hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -485,7 +490,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -521,8 +527,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *        hyphen.
+     *        Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     *        or hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -564,7 +570,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -599,8 +606,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *         hyphen.
+     *         Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     *         or hyphen.
      *         </p>
      *         </li>
      *         <li>
@@ -642,7 +649,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -678,8 +686,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *        hyphen.
+     *        Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     *        or hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -709,12 +717,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier of the cluster that contains the database for which your are requesting credentials. This
+     * The unique identifier of the cluster that contains the database for which you are requesting credentials. This
      * parameter is case sensitive.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier of the cluster that contains the database for which your are requesting credentials.
+     *        The unique identifier of the cluster that contains the database for which you are requesting credentials.
      *        This parameter is case sensitive.
      */
 
@@ -724,12 +732,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier of the cluster that contains the database for which your are requesting credentials. This
+     * The unique identifier of the cluster that contains the database for which you are requesting credentials. This
      * parameter is case sensitive.
      * </p>
      * 
-     * @return The unique identifier of the cluster that contains the database for which your are requesting
-     *         credentials. This parameter is case sensitive.
+     * @return The unique identifier of the cluster that contains the database for which you are requesting credentials.
+     *         This parameter is case sensitive.
      */
 
     public String getClusterIdentifier() {
@@ -738,12 +746,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier of the cluster that contains the database for which your are requesting credentials. This
+     * The unique identifier of the cluster that contains the database for which you are requesting credentials. This
      * parameter is case sensitive.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier of the cluster that contains the database for which your are requesting credentials.
+     *        The unique identifier of the cluster that contains the database for which you are requesting credentials.
      *        This parameter is case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

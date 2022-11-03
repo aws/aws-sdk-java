@@ -227,6 +227,71 @@ public class AmazonForecastQueryClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Retrieves a what-if forecast.
+     * </p>
+     * 
+     * @param queryWhatIfForecastRequest
+     * @return Result of the QueryWhatIfForecast operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find that resource. Check the information that you've provided and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws InvalidInputException
+     *         The value is invalid or is too long.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @sample AmazonForecastQuery.QueryWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public QueryWhatIfForecastResult queryWhatIfForecast(QueryWhatIfForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeQueryWhatIfForecast(request);
+    }
+
+    @SdkInternalApi
+    final QueryWhatIfForecastResult executeQueryWhatIfForecast(QueryWhatIfForecastRequest queryWhatIfForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(queryWhatIfForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<QueryWhatIfForecastRequest> request = null;
+        Response<QueryWhatIfForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new QueryWhatIfForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryWhatIfForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecastquery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "QueryWhatIfForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<QueryWhatIfForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new QueryWhatIfForecastResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
      * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
      * operation, so it's available through this separate, diagnostic interface.

@@ -49,8 +49,7 @@ public class StartTargetedSentimentDetectionJobRequest extends com.amazonaws.Ama
     private String jobName;
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
-     * All documents must be in the same language.
+     * The language of the input documents. Currently, English is the only supported language.
      * </p>
      */
     private String languageCode;
@@ -257,13 +256,11 @@ public class StartTargetedSentimentDetectionJobRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
-     * All documents must be in the same language.
+     * The language of the input documents. Currently, English is the only supported language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *        Comprehend. All documents must be in the same language.
+     *        The language of the input documents. Currently, English is the only supported language.
      * @see LanguageCode
      */
 
@@ -273,12 +270,10 @@ public class StartTargetedSentimentDetectionJobRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
-     * All documents must be in the same language.
+     * The language of the input documents. Currently, English is the only supported language.
      * </p>
      * 
-     * @return The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *         Comprehend. All documents must be in the same language.
+     * @return The language of the input documents. Currently, English is the only supported language.
      * @see LanguageCode
      */
 
@@ -288,13 +283,11 @@ public class StartTargetedSentimentDetectionJobRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
-     * All documents must be in the same language.
+     * The language of the input documents. Currently, English is the only supported language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *        Comprehend. All documents must be in the same language.
+     *        The language of the input documents. Currently, English is the only supported language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -306,13 +299,11 @@ public class StartTargetedSentimentDetectionJobRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
-     * All documents must be in the same language.
+     * The language of the input documents. Currently, English is the only supported language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *        Comprehend. All documents must be in the same language.
+     *        The language of the input documents. Currently, English is the only supported language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

@@ -38,8 +38,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      * select as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AddIpamOperatingRegion> operatingRegions;
@@ -109,16 +110,18 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      * select as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is
      *         allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *         Regions you select as operating Regions.</p>
      *         <p>
-     *         For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *         IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         For more information about operating Regions, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *         VPC IPAM User Guide</i>.
      */
 
     public java.util.List<AddIpamOperatingRegion> getOperatingRegions() {
@@ -135,8 +138,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      * select as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param operatingRegions
@@ -144,8 +148,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      *        allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *        Regions you select as operating Regions.</p>
      *        <p>
-     *        For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *        IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        For more information about operating Regions, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setOperatingRegions(java.util.Collection<AddIpamOperatingRegion> operatingRegions) {
@@ -164,8 +169,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      * select as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,8 +184,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      *        allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *        Regions you select as operating Regions.</p>
      *        <p>
-     *        For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *        IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        For more information about operating Regions, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,8 +207,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      * select as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param operatingRegions
@@ -209,8 +217,9 @@ public class CreateIpamRequest extends AmazonWebServiceRequest implements Serial
      *        allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *        Regions you select as operating Regions.</p>
      *        <p>
-     *        For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *        IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        For more information about operating Regions, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

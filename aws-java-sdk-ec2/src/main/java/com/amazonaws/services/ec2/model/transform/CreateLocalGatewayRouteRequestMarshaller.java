@@ -53,6 +53,10 @@ public class CreateLocalGatewayRouteRequestMarshaller implements Marshaller<Requ
                     StringUtils.fromString(createLocalGatewayRouteRequest.getLocalGatewayVirtualInterfaceGroupId()));
         }
 
+        if (createLocalGatewayRouteRequest.getNetworkInterfaceId() != null) {
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(createLocalGatewayRouteRequest.getNetworkInterfaceId()));
+        }
+
         return request;
     }
 

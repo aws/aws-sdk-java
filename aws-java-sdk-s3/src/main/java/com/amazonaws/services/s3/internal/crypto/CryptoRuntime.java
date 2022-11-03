@@ -25,6 +25,18 @@ public class CryptoRuntime {
     public static final String BOUNCY_CASTLE_PROVIDER = "BC";
     private static final String BC_PROVIDER_FQCN = "org.bouncycastle.jce.provider.BouncyCastleProvider";
 
+    /**
+     * @return {@code com.amazonaws.services.s3.crypto.preferDefaultSecurityProvider} system property
+     * parsed as a boolean or false if the property is unset.
+     */
+    public static boolean preferDefaultSecurityProvider() {
+        final String preferDefaultSecurityProvider = System.getProperty("com.amazonaws.services.s3.crypto.preferDefaultSecurityProvider");
+        if (preferDefaultSecurityProvider == null) {
+            return false;
+        }
+        return Boolean.parseBoolean(preferDefaultSecurityProvider);
+    }
+
     public static synchronized boolean isBouncyCastleAvailable() {
         return Security.getProvider(BOUNCY_CASTLE_PROVIDER) != null;
     }

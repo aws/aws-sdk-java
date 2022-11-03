@@ -21,12 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the
  * types of updated objects on the file system that will be automatically exported to the data repository. As you
- * create, modify, or delete files, Amazon FSx automatically exports the defined changes asynchronously once your
- * application finishes modifying the file.
+ * create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once
+ * your application finishes modifying the file.
  * </p>
  * <p>
- * This <code>AutoExportPolicy</code> is supported only for file systems with the <code>Persistent_2</code> deployment
- * type.
+ * This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the
+ * <code>Persistent_2</code> deployment type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AutoExportPolicy" target="_top">AWS API
@@ -42,14 +42,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are
-     * added to the file system.
+     * <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added
+     * to the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to
-     * the data repository.
+     * <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data
+     * repository.
      * </p>
      * </li>
      * <li>
@@ -72,14 +72,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are
-     * added to the file system.
+     * <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added
+     * to the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to
-     * the data repository.
+     * <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data
+     * repository.
      * </p>
      * </li>
      * <li>
@@ -97,14 +97,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as
-     *         they are added to the file system.
+     *         <code>NEW</code> - New files and directories are automatically exported to the data repository as they
+     *         are added to the file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file
-     *         system to the data repository.
+     *         <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to
+     *         the data repository.
      *         </p>
      *         </li>
      *         <li>
@@ -130,14 +130,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are
-     * added to the file system.
+     * <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added
+     * to the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to
-     * the data repository.
+     * <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data
+     * repository.
      * </p>
      * </li>
      * <li>
@@ -156,14 +156,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as
-     *        they are added to the file system.
+     *        <code>NEW</code> - New files and directories are automatically exported to the data repository as they are
+     *        added to the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file
-     *        system to the data repository.
+     *        <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to
+     *        the data repository.
      *        </p>
      *        </li>
      *        <li>
@@ -194,14 +194,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are
-     * added to the file system.
+     * <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added
+     * to the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to
-     * the data repository.
+     * <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data
+     * repository.
      * </p>
      * </li>
      * <li>
@@ -225,14 +225,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as
-     *        they are added to the file system.
+     *        <code>NEW</code> - New files and directories are automatically exported to the data repository as they are
+     *        added to the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file
-     *        system to the data repository.
+     *        <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to
+     *        the data repository.
      *        </p>
      *        </li>
      *        <li>
@@ -265,14 +265,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are
-     * added to the file system.
+     * <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added
+     * to the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to
-     * the data repository.
+     * <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data
+     * repository.
      * </p>
      * </li>
      * <li>
@@ -291,14 +291,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as
-     *        they are added to the file system.
+     *        <code>NEW</code> - New files and directories are automatically exported to the data repository as they are
+     *        added to the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file
-     *        system to the data repository.
+     *        <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to
+     *        the data repository.
      *        </p>
      *        </li>
      *        <li>
@@ -326,14 +326,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are
-     * added to the file system.
+     * <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added
+     * to the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to
-     * the data repository.
+     * <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data
+     * repository.
      * </p>
      * </li>
      * <li>
@@ -352,14 +352,14 @@ public class AutoExportPolicy implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as
-     *        they are added to the file system.
+     *        <code>NEW</code> - New files and directories are automatically exported to the data repository as they are
+     *        added to the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file
-     *        system to the data repository.
+     *        <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to
+     *        the data repository.
      *        </p>
      *        </li>
      *        <li>

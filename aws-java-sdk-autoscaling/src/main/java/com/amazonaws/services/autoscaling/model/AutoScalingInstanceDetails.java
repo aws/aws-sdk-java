@@ -58,7 +58,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
      * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
@@ -273,7 +273,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
      * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
@@ -288,7 +288,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      *        lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      *        <p>
-     *        Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     *        Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      *        <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
      *        <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
      *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |
@@ -310,7 +310,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
      * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
@@ -324,7 +324,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      *         lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      *         <p>
-     *         Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     *         Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      *         <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
      *         <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
      *         <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |
@@ -346,7 +346,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     * Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
      * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
@@ -361,7 +361,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      *        lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      *        <p>
-     *        Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
+     *        Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      *        <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
      *        <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
      *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |

@@ -60,6 +60,10 @@ public class VolumeSpecificationJsonUnmarshaller implements Unmarshaller<VolumeS
                     context.nextToken();
                     volumeSpecification.setSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Throughput", targetDepth)) {
+                    context.nextToken();
+                    volumeSpecification.setThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

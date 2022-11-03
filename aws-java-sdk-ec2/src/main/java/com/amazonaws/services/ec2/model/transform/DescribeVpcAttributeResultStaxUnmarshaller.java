@@ -57,6 +57,11 @@ public class DescribeVpcAttributeResultStaxUnmarshaller implements Unmarshaller<
                     describeVpcAttributeResult.setEnableDnsSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("enableNetworkAddressUsageMetrics/value", targetDepth)) {
+                    describeVpcAttributeResult.setEnableNetworkAddressUsageMetrics(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVpcAttributeResult;

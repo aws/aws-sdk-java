@@ -30,80 +30,81 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
-     * source location or write data to the EFS destination. By default, DataSync uses the root directory.
+     * Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on
+     * if this is a source or destination location). By default, DataSync uses the root directory, but you can also
+     * include subdirectories.
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
+     * You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      * </p>
      * </note>
      */
     private String subdirectory;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     * Specifies the ARN for the Amazon EFS file system.
      * </p>
      */
     private String efsFilesystemArn;
     /**
      * <p>
-     * The subnet and security group that the Amazon EFS file system uses. The security group that you provide needs to
-     * be able to communicate with the security group on the mount target in the subnet specified.
+     * Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      * </p>
-     * <p>
-     * The exact relationship between security group M (of the mount target) and security group S (which you provide for
-     * DataSync to use at this stage) is as follows:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group M (which you associate with the mount target) must allow inbound access for the Transmission
-     * Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by
-     * IP address (CIDR range) or security group.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the
-     * NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address
-     * (CIDR range) or security group.
-     * </p>
-     * <p>
-     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
-     * Targets in the <i>Amazon EFS User Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
      */
     private Ec2Config ec2Config;
     /**
      * <p>
-     * The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string.
-     * This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for
-     * your location.
+     * Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an
+     * empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a
+     * name tag for your location.
      * </p>
      */
     private java.util.List<TagListEntry> tags;
+    /**
+     * <p>
+     * Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file
+     * system.
+     * </p>
+     */
+    private String accessPointArn;
+    /**
+     * <p>
+     * Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file
+     * system.
+     * </p>
+     */
+    private String fileSystemAccessRoleArn;
+    /**
+     * <p>
+     * Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to
+     * or from the Amazon EFS file system.
+     * </p>
+     * <p>
+     * If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * </p>
+     */
+    private String inTransitEncryption;
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
-     * source location or write data to the EFS destination. By default, DataSync uses the root directory.
+     * Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on
+     * if this is a source or destination location). By default, DataSync uses the root directory, but you can also
+     * include subdirectories.
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
+     * You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      * </p>
      * </note>
      * 
      * @param subdirectory
-     *        A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from
-     *        the EFS source location or write data to the EFS destination. By default, DataSync uses the root
-     *        directory.</p> <note>
+     *        Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data
+     *        (depending on if this is a source or destination location). By default, DataSync uses the root directory,
+     *        but you can also include subdirectories.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
-     *        <code>/path/to/folder</code>.
+     *        You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      *        </p>
      */
 
@@ -113,21 +114,21 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
-     * source location or write data to the EFS destination. By default, DataSync uses the root directory.
+     * Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on
+     * if this is a source or destination location). By default, DataSync uses the root directory, but you can also
+     * include subdirectories.
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
+     * You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      * </p>
      * </note>
      * 
-     * @return A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from
-     *         the EFS source location or write data to the EFS destination. By default, DataSync uses the root
-     *         directory.</p> <note>
+     * @return Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data
+     *         (depending on if this is a source or destination location). By default, DataSync uses the root directory,
+     *         but you can also include subdirectories.</p> <note>
      *         <p>
-     *         <code>Subdirectory</code> must be specified with forward slashes. For example,
-     *         <code>/path/to/folder</code>.
+     *         You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      *         </p>
      */
 
@@ -137,22 +138,22 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
-     * source location or write data to the EFS destination. By default, DataSync uses the root directory.
+     * Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on
+     * if this is a source or destination location). By default, DataSync uses the root directory, but you can also
+     * include subdirectories.
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
+     * You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      * </p>
      * </note>
      * 
      * @param subdirectory
-     *        A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from
-     *        the EFS source location or write data to the EFS destination. By default, DataSync uses the root
-     *        directory.</p> <note>
+     *        Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data
+     *        (depending on if this is a source or destination location). By default, DataSync uses the root directory,
+     *        but you can also include subdirectories.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
-     *        <code>/path/to/folder</code>.
+     *        You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -164,11 +165,11 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     * Specifies the ARN for the Amazon EFS file system.
      * </p>
      * 
      * @param efsFilesystemArn
-     *        The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     *        Specifies the ARN for the Amazon EFS file system.
      */
 
     public void setEfsFilesystemArn(String efsFilesystemArn) {
@@ -177,10 +178,10 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     * Specifies the ARN for the Amazon EFS file system.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     * @return Specifies the ARN for the Amazon EFS file system.
      */
 
     public String getEfsFilesystemArn() {
@@ -189,11 +190,11 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     * Specifies the ARN for the Amazon EFS file system.
      * </p>
      * 
      * @param efsFilesystemArn
-     *        The Amazon Resource Name (ARN) for the Amazon EFS file system.
+     *        Specifies the ARN for the Amazon EFS file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,60 +205,11 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subnet and security group that the Amazon EFS file system uses. The security group that you provide needs to
-     * be able to communicate with the security group on the mount target in the subnet specified.
+     * Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      * </p>
-     * <p>
-     * The exact relationship between security group M (of the mount target) and security group S (which you provide for
-     * DataSync to use at this stage) is as follows:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group M (which you associate with the mount target) must allow inbound access for the Transmission
-     * Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by
-     * IP address (CIDR range) or security group.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the
-     * NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address
-     * (CIDR range) or security group.
-     * </p>
-     * <p>
-     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
-     * Targets in the <i>Amazon EFS User Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param ec2Config
-     *        The subnet and security group that the Amazon EFS file system uses. The security group that you provide
-     *        needs to be able to communicate with the security group on the mount target in the subnet specified.</p>
-     *        <p>
-     *        The exact relationship between security group M (of the mount target) and security group S (which you
-     *        provide for DataSync to use at this stage) is as follows:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Security group M (which you associate with the mount target) must allow inbound access for the
-     *        Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound
-     *        connections either by IP address (CIDR range) or security group.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections
-     *        to the NFS port on one of the file system’s mount targets. You can enable outbound connections either by
-     *        IP address (CIDR range) or security group.
-     *        </p>
-     *        <p>
-     *        For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and
-     *        Mount Targets in the <i>Amazon EFS User Guide.</i>
-     *        </p>
-     *        </li>
+     *        Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      */
 
     public void setEc2Config(Ec2Config ec2Config) {
@@ -266,59 +218,10 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subnet and security group that the Amazon EFS file system uses. The security group that you provide needs to
-     * be able to communicate with the security group on the mount target in the subnet specified.
+     * Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      * </p>
-     * <p>
-     * The exact relationship between security group M (of the mount target) and security group S (which you provide for
-     * DataSync to use at this stage) is as follows:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group M (which you associate with the mount target) must allow inbound access for the Transmission
-     * Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by
-     * IP address (CIDR range) or security group.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the
-     * NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address
-     * (CIDR range) or security group.
-     * </p>
-     * <p>
-     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
-     * Targets in the <i>Amazon EFS User Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The subnet and security group that the Amazon EFS file system uses. The security group that you provide
-     *         needs to be able to communicate with the security group on the mount target in the subnet specified.</p>
-     *         <p>
-     *         The exact relationship between security group M (of the mount target) and security group S (which you
-     *         provide for DataSync to use at this stage) is as follows:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Security group M (which you associate with the mount target) must allow inbound access for the
-     *         Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound
-     *         connections either by IP address (CIDR range) or security group.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Security group S (provided to DataSync to access EFS) should have a rule that enables outbound
-     *         connections to the NFS port on one of the file system’s mount targets. You can enable outbound
-     *         connections either by IP address (CIDR range) or security group.
-     *         </p>
-     *         <p>
-     *         For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and
-     *         Mount Targets in the <i>Amazon EFS User Guide.</i>
-     *         </p>
-     *         </li>
+     * @return Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      */
 
     public Ec2Config getEc2Config() {
@@ -327,60 +230,11 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subnet and security group that the Amazon EFS file system uses. The security group that you provide needs to
-     * be able to communicate with the security group on the mount target in the subnet specified.
+     * Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      * </p>
-     * <p>
-     * The exact relationship between security group M (of the mount target) and security group S (which you provide for
-     * DataSync to use at this stage) is as follows:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group M (which you associate with the mount target) must allow inbound access for the Transmission
-     * Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by
-     * IP address (CIDR range) or security group.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the
-     * NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address
-     * (CIDR range) or security group.
-     * </p>
-     * <p>
-     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
-     * Targets in the <i>Amazon EFS User Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param ec2Config
-     *        The subnet and security group that the Amazon EFS file system uses. The security group that you provide
-     *        needs to be able to communicate with the security group on the mount target in the subnet specified.</p>
-     *        <p>
-     *        The exact relationship between security group M (of the mount target) and security group S (which you
-     *        provide for DataSync to use at this stage) is as follows:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Security group M (which you associate with the mount target) must allow inbound access for the
-     *        Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound
-     *        connections either by IP address (CIDR range) or security group.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections
-     *        to the NFS port on one of the file system’s mount targets. You can enable outbound connections either by
-     *        IP address (CIDR range) or security group.
-     *        </p>
-     *        <p>
-     *        For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and
-     *        Mount Targets in the <i>Amazon EFS User Guide.</i>
-     *        </p>
-     *        </li>
+     *        Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,14 +245,14 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string.
-     * This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for
-     * your location.
+     * Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an
+     * empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a
+     * name tag for your location.
      * </p>
      * 
-     * @return The key-value pair that represents a tag that you want to add to the resource. The value can be an empty
-     *         string. This value helps you manage, filter, and search for your resources. We recommend that you create
-     *         a name tag for your location.
+     * @return Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be
+     *         an empty string. This value helps you manage, filter, and search for your resources. We recommend that
+     *         you create a name tag for your location.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -407,15 +261,15 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string.
-     * This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for
-     * your location.
+     * Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an
+     * empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a
+     * name tag for your location.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents a tag that you want to add to the resource. The value can be an empty
-     *        string. This value helps you manage, filter, and search for your resources. We recommend that you create a
-     *        name tag for your location.
+     *        Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be
+     *        an empty string. This value helps you manage, filter, and search for your resources. We recommend that you
+     *        create a name tag for your location.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -429,9 +283,9 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string.
-     * This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for
-     * your location.
+     * Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an
+     * empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a
+     * name tag for your location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -440,9 +294,9 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents a tag that you want to add to the resource. The value can be an empty
-     *        string. This value helps you manage, filter, and search for your resources. We recommend that you create a
-     *        name tag for your location.
+     *        Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be
+     *        an empty string. This value helps you manage, filter, and search for your resources. We recommend that you
+     *        create a name tag for your location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,20 +312,207 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string.
-     * This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for
-     * your location.
+     * Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an
+     * empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a
+     * name tag for your location.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents a tag that you want to add to the resource. The value can be an empty
-     *        string. This value helps you manage, filter, and search for your resources. We recommend that you create a
-     *        name tag for your location.
+     *        Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be
+     *        an empty string. This value helps you manage, filter, and search for your resources. We recommend that you
+     *        create a name tag for your location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLocationEfsRequest withTags(java.util.Collection<TagListEntry> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file
+     * system.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS
+     *        file system.
+     */
+
+    public void setAccessPointArn(String accessPointArn) {
+        this.accessPointArn = accessPointArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file
+     * system.
+     * </p>
+     * 
+     * @return Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS
+     *         file system.
+     */
+
+    public String getAccessPointArn() {
+        return this.accessPointArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file
+     * system.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS
+     *        file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLocationEfsRequest withAccessPointArn(String accessPointArn) {
+        setAccessPointArn(accessPointArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file
+     * system.
+     * </p>
+     * 
+     * @param fileSystemAccessRoleArn
+     *        Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS
+     *        file system.
+     */
+
+    public void setFileSystemAccessRoleArn(String fileSystemAccessRoleArn) {
+        this.fileSystemAccessRoleArn = fileSystemAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file
+     * system.
+     * </p>
+     * 
+     * @return Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS
+     *         file system.
+     */
+
+    public String getFileSystemAccessRoleArn() {
+        return this.fileSystemAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file
+     * system.
+     * </p>
+     * 
+     * @param fileSystemAccessRoleArn
+     *        Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS
+     *        file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLocationEfsRequest withFileSystemAccessRoleArn(String fileSystemAccessRoleArn) {
+        setFileSystemAccessRoleArn(fileSystemAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to
+     * or from the Amazon EFS file system.
+     * </p>
+     * <p>
+     * If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * </p>
+     * 
+     * @param inTransitEncryption
+     *        Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies
+     *        data to or from the Amazon EFS file system.</p>
+     *        <p>
+     *        If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     *        <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * @see EfsInTransitEncryption
+     */
+
+    public void setInTransitEncryption(String inTransitEncryption) {
+        this.inTransitEncryption = inTransitEncryption;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to
+     * or from the Amazon EFS file system.
+     * </p>
+     * <p>
+     * If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * </p>
+     * 
+     * @return Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies
+     *         data to or from the Amazon EFS file system.</p>
+     *         <p>
+     *         If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     *         <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * @see EfsInTransitEncryption
+     */
+
+    public String getInTransitEncryption() {
+        return this.inTransitEncryption;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to
+     * or from the Amazon EFS file system.
+     * </p>
+     * <p>
+     * If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * </p>
+     * 
+     * @param inTransitEncryption
+     *        Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies
+     *        data to or from the Amazon EFS file system.</p>
+     *        <p>
+     *        If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     *        <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EfsInTransitEncryption
+     */
+
+    public CreateLocationEfsRequest withInTransitEncryption(String inTransitEncryption) {
+        setInTransitEncryption(inTransitEncryption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to
+     * or from the Amazon EFS file system.
+     * </p>
+     * <p>
+     * If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * </p>
+     * 
+     * @param inTransitEncryption
+     *        Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies
+     *        data to or from the Amazon EFS file system.</p>
+     *        <p>
+     *        If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+     *        <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EfsInTransitEncryption
+     */
+
+    public CreateLocationEfsRequest withInTransitEncryption(EfsInTransitEncryption inTransitEncryption) {
+        this.inTransitEncryption = inTransitEncryption.toString();
         return this;
     }
 
@@ -494,7 +535,13 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getEc2Config() != null)
             sb.append("Ec2Config: ").append(getEc2Config()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAccessPointArn() != null)
+            sb.append("AccessPointArn: ").append(getAccessPointArn()).append(",");
+        if (getFileSystemAccessRoleArn() != null)
+            sb.append("FileSystemAccessRoleArn: ").append(getFileSystemAccessRoleArn()).append(",");
+        if (getInTransitEncryption() != null)
+            sb.append("InTransitEncryption: ").append(getInTransitEncryption());
         sb.append("}");
         return sb.toString();
     }
@@ -525,6 +572,18 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAccessPointArn() == null ^ this.getAccessPointArn() == null)
+            return false;
+        if (other.getAccessPointArn() != null && other.getAccessPointArn().equals(this.getAccessPointArn()) == false)
+            return false;
+        if (other.getFileSystemAccessRoleArn() == null ^ this.getFileSystemAccessRoleArn() == null)
+            return false;
+        if (other.getFileSystemAccessRoleArn() != null && other.getFileSystemAccessRoleArn().equals(this.getFileSystemAccessRoleArn()) == false)
+            return false;
+        if (other.getInTransitEncryption() == null ^ this.getInTransitEncryption() == null)
+            return false;
+        if (other.getInTransitEncryption() != null && other.getInTransitEncryption().equals(this.getInTransitEncryption()) == false)
+            return false;
         return true;
     }
 
@@ -537,6 +596,9 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getEfsFilesystemArn() == null) ? 0 : getEfsFilesystemArn().hashCode());
         hashCode = prime * hashCode + ((getEc2Config() == null) ? 0 : getEc2Config().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemAccessRoleArn() == null) ? 0 : getFileSystemAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getInTransitEncryption() == null) ? 0 : getInTransitEncryption().hashCode());
         return hashCode;
     }
 

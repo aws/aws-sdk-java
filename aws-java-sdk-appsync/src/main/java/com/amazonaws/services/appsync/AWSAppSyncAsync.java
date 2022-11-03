@@ -610,6 +610,53 @@ public interface AWSAppSyncAsync extends AWSAppSync {
 
     /**
      * <p>
+     * Evaluates a given template and returns the response. The mapping template can be a request or response template.
+     * </p>
+     * <p>
+     * Request templates take the incoming request after a GraphQL operation is parsed and convert it into a request
+     * configuration for the selected data source operation. Response templates interpret responses from the data source
+     * and map it to the shape of the GraphQL field output type.
+     * </p>
+     * <p>
+     * Mapping templates are written in the Apache Velocity Template Language (VTL).
+     * </p>
+     * 
+     * @param evaluateMappingTemplateRequest
+     * @return A Java Future containing the result of the EvaluateMappingTemplate operation returned by the service.
+     * @sample AWSAppSyncAsync.EvaluateMappingTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EvaluateMappingTemplateResult> evaluateMappingTemplateAsync(EvaluateMappingTemplateRequest evaluateMappingTemplateRequest);
+
+    /**
+     * <p>
+     * Evaluates a given template and returns the response. The mapping template can be a request or response template.
+     * </p>
+     * <p>
+     * Request templates take the incoming request after a GraphQL operation is parsed and convert it into a request
+     * configuration for the selected data source operation. Response templates interpret responses from the data source
+     * and map it to the shape of the GraphQL field output type.
+     * </p>
+     * <p>
+     * Mapping templates are written in the Apache Velocity Template Language (VTL).
+     * </p>
+     * 
+     * @param evaluateMappingTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EvaluateMappingTemplate operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.EvaluateMappingTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EvaluateMappingTemplateResult> evaluateMappingTemplateAsync(EvaluateMappingTemplateRequest evaluateMappingTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<EvaluateMappingTemplateRequest, EvaluateMappingTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Flushes an <code>ApiCache</code> object.
      * </p>
      * 

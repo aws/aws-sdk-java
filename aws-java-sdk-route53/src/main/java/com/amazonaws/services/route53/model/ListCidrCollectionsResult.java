@@ -1,0 +1,230 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.route53.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListCidrCollectionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * An opaque pagination token to indicate where the service is to begin enumerating results.
+     * </p>
+     * <p>
+     * If no value is provided, the listing of results starts from the beginning.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * A complex type with information about the CIDR collection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CollectionSummary> cidrCollections;
+
+    /**
+     * <p>
+     * An opaque pagination token to indicate where the service is to begin enumerating results.
+     * </p>
+     * <p>
+     * If no value is provided, the listing of results starts from the beginning.
+     * </p>
+     * 
+     * @param nextToken
+     *        An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+     *        <p>
+     *        If no value is provided, the listing of results starts from the beginning.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * An opaque pagination token to indicate where the service is to begin enumerating results.
+     * </p>
+     * <p>
+     * If no value is provided, the listing of results starts from the beginning.
+     * </p>
+     * 
+     * @return An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+     *         <p>
+     *         If no value is provided, the listing of results starts from the beginning.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * An opaque pagination token to indicate where the service is to begin enumerating results.
+     * </p>
+     * <p>
+     * If no value is provided, the listing of results starts from the beginning.
+     * </p>
+     * 
+     * @param nextToken
+     *        An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+     *        <p>
+     *        If no value is provided, the listing of results starts from the beginning.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCidrCollectionsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type with information about the CIDR collection.
+     * </p>
+     * 
+     * @return A complex type with information about the CIDR collection.
+     */
+
+    public java.util.List<CollectionSummary> getCidrCollections() {
+        if (cidrCollections == null) {
+            cidrCollections = new com.amazonaws.internal.SdkInternalList<CollectionSummary>();
+        }
+        return cidrCollections;
+    }
+
+    /**
+     * <p>
+     * A complex type with information about the CIDR collection.
+     * </p>
+     * 
+     * @param cidrCollections
+     *        A complex type with information about the CIDR collection.
+     */
+
+    public void setCidrCollections(java.util.Collection<CollectionSummary> cidrCollections) {
+        if (cidrCollections == null) {
+            this.cidrCollections = null;
+            return;
+        }
+
+        this.cidrCollections = new com.amazonaws.internal.SdkInternalList<CollectionSummary>(cidrCollections);
+    }
+
+    /**
+     * <p>
+     * A complex type with information about the CIDR collection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCidrCollections(java.util.Collection)} or {@link #withCidrCollections(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param cidrCollections
+     *        A complex type with information about the CIDR collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCidrCollectionsResult withCidrCollections(CollectionSummary... cidrCollections) {
+        if (this.cidrCollections == null) {
+            setCidrCollections(new com.amazonaws.internal.SdkInternalList<CollectionSummary>(cidrCollections.length));
+        }
+        for (CollectionSummary ele : cidrCollections) {
+            this.cidrCollections.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type with information about the CIDR collection.
+     * </p>
+     * 
+     * @param cidrCollections
+     *        A complex type with information about the CIDR collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCidrCollectionsResult withCidrCollections(java.util.Collection<CollectionSummary> cidrCollections) {
+        setCidrCollections(cidrCollections);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getCidrCollections() != null)
+            sb.append("CidrCollections: ").append(getCidrCollections());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListCidrCollectionsResult == false)
+            return false;
+        ListCidrCollectionsResult other = (ListCidrCollectionsResult) obj;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getCidrCollections() == null ^ this.getCidrCollections() == null)
+            return false;
+        if (other.getCidrCollections() != null && other.getCidrCollections().equals(this.getCidrCollections()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getCidrCollections() == null) ? 0 : getCidrCollections().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListCidrCollectionsResult clone() {
+        try {
+            return (ListCidrCollectionsResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

@@ -88,6 +88,18 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setUserFeedback(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("additionalInfo", targetDepth)) {
+                    context.nextToken();
+                    service.setAdditionalInfo(ServiceAdditionalInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("featureName", targetDepth)) {
+                    context.nextToken();
+                    service.setFeatureName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ebsVolumeScanDetails", targetDepth)) {
+                    context.nextToken();
+                    service.setEbsVolumeScanDetails(EbsVolumeScanDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

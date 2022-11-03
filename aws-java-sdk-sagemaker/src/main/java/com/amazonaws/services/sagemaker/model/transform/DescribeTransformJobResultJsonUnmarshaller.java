@@ -97,6 +97,10 @@ public class DescribeTransformJobResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeTransformJobResult.setTransformOutput(TransformOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DataCaptureConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTransformJobResult.setDataCaptureConfig(BatchDataCaptureConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TransformResources", targetDepth)) {
                     context.nextToken();
                     describeTransformJobResult.setTransformResources(TransformResourcesJsonUnmarshaller.getInstance().unmarshall(context));

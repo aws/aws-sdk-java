@@ -244,6 +244,11 @@ public class RequestLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<R
                             context));
                     continue;
                 }
+
+                if (context.testExpression("DisableApiStop", targetDepth)) {
+                    requestLaunchTemplateData.setDisableApiStop(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return requestLaunchTemplateData;

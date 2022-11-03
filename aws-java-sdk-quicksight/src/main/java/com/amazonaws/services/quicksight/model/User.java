@@ -36,7 +36,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     * QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
      * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      */
@@ -179,13 +180,15 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     * QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
      * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      * 
      * @param userName
-     *        The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the
-     *        value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
+     *        The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     *        QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     *        <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      */
 
     public void setUserName(String userName) {
@@ -194,12 +197,14 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     * QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
      * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      * 
-     * @return The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the
-     *         value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
+     * @return The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     *         QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     *         <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      */
 
     public String getUserName() {
@@ -208,13 +213,15 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     * QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
      * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      * 
      * @param userName
-     *        The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the
-     *        value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
+     *        The user's user name. This value is required if you are registering a user that will be managed in Amazon
+     *        QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     *        <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

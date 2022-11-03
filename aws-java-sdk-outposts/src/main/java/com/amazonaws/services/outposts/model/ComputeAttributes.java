@@ -30,18 +30,43 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The host ID of any Dedicated Hosts on the asset.
+     * The host ID of the Dedicated Host on the asset.
      * </p>
      */
     private String hostId;
+    /**
+     * <p>
+     * The state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACTIVE - The asset is available and can provide capacity for new compute resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing
+     * compute resources on the asset are not affected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced.
+     * Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String state;
 
     /**
      * <p>
-     * The host ID of any Dedicated Hosts on the asset.
+     * The host ID of the Dedicated Host on the asset.
      * </p>
      * 
      * @param hostId
-     *        The host ID of any Dedicated Hosts on the asset.
+     *        The host ID of the Dedicated Host on the asset.
      */
 
     public void setHostId(String hostId) {
@@ -50,10 +75,10 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The host ID of any Dedicated Hosts on the asset.
+     * The host ID of the Dedicated Host on the asset.
      * </p>
      * 
-     * @return The host ID of any Dedicated Hosts on the asset.
+     * @return The host ID of the Dedicated Host on the asset.
      */
 
     public String getHostId() {
@@ -62,16 +87,227 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The host ID of any Dedicated Hosts on the asset.
+     * The host ID of the Dedicated Host on the asset.
      * </p>
      * 
      * @param hostId
-     *        The host ID of any Dedicated Hosts on the asset.
+     *        The host ID of the Dedicated Host on the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ComputeAttributes withHostId(String hostId) {
         setHostId(hostId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACTIVE - The asset is available and can provide capacity for new compute resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing
+     * compute resources on the asset are not affected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced.
+     * Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param state
+     *        The state.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACTIVE - The asset is available and can provide capacity for new compute resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources.
+     *        Existing compute resources on the asset are not affected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is
+     *        reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can
+     *        be replaced.
+     *        </p>
+     *        </li>
+     * @see ComputeAssetState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACTIVE - The asset is available and can provide capacity for new compute resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing
+     * compute resources on the asset are not affected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced.
+     * Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The state.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACTIVE - The asset is available and can provide capacity for new compute resources.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources.
+     *         Existing compute resources on the asset are not affected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is
+     *         reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can
+     *         be replaced.
+     *         </p>
+     *         </li>
+     * @see ComputeAssetState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACTIVE - The asset is available and can provide capacity for new compute resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing
+     * compute resources on the asset are not affected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced.
+     * Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param state
+     *        The state.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACTIVE - The asset is available and can provide capacity for new compute resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources.
+     *        Existing compute resources on the asset are not affected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is
+     *        reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can
+     *        be replaced.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeAssetState
+     */
+
+    public ComputeAttributes withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACTIVE - The asset is available and can provide capacity for new compute resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing
+     * compute resources on the asset are not affected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced.
+     * Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param state
+     *        The state.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACTIVE - The asset is available and can provide capacity for new compute resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources.
+     *        Existing compute resources on the asset are not affected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is
+     *        reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can
+     *        be replaced.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeAssetState
+     */
+
+    public ComputeAttributes withState(ComputeAssetState state) {
+        this.state = state.toString();
         return this;
     }
 
@@ -88,7 +324,9 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostId() != null)
-            sb.append("HostId: ").append(getHostId());
+            sb.append("HostId: ").append(getHostId()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +345,10 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +358,7 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

@@ -22,7 +22,8 @@ public enum ResourceType {
 
     APPLICATION_LOAD_BALANCER("APPLICATION_LOAD_BALANCER"),
     API_GATEWAY("API_GATEWAY"),
-    APPSYNC("APPSYNC");
+    APPSYNC("APPSYNC"),
+    COGNITO_USER_POOL("COGNITO_USER_POOL");
 
     private String value;
 

@@ -34,14 +34,16 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
-     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * specified for the <code>Domain</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation must match.
      * </p>
      * <p>
      * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
      * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
      * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.
      * </p>
      */
     private String domain;
@@ -66,8 +68,9 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset
      * <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your
-     * training data. For information about the required fields for a specific dataset domain and type, see
-     * <a>howitworks-domains-ds-types</a>.
+     * training data. For information about the required fields for a specific dataset domain and type, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and
+     * Dataset Types</a>.
      * </p>
      */
     private Schema schema;
@@ -175,26 +178,31 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
-     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * specified for the <code>Domain</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation must match.
      * </p>
      * <p>
      * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
      * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
      * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.
      * </p>
      * 
      * @param domain
      *        The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
-     *        value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
-     *        match.</p>
+     *        value specified for the <code>Domain</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     *        operation must match.</p>
      *        <p>
      *        The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
      *        present in the training data that you import to the dataset. For example, if you choose the
      *        <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
      *        Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     *        present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     *        present in your data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+     *        datasets</a>.
      * @see Domain
      */
 
@@ -205,25 +213,30 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
-     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * specified for the <code>Domain</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation must match.
      * </p>
      * <p>
      * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
      * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
      * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.
      * </p>
      * 
      * @return The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
-     *         value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
-     *         match.</p>
+     *         value specified for the <code>Domain</code> parameter of the <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     *         operation must match.</p>
      *         <p>
      *         The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
      *         present in the training data that you import to the dataset. For example, if you choose the
      *         <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
      *         Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     *         present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     *         present in your data. For more information, see <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+     *         datasets</a>.
      * @see Domain
      */
 
@@ -234,26 +247,31 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
-     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * specified for the <code>Domain</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation must match.
      * </p>
      * <p>
      * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
      * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
      * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.
      * </p>
      * 
      * @param domain
      *        The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
-     *        value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
-     *        match.</p>
+     *        value specified for the <code>Domain</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     *        operation must match.</p>
      *        <p>
      *        The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
      *        present in the training data that you import to the dataset. For example, if you choose the
      *        <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
      *        Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     *        present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     *        present in your data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+     *        datasets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -266,26 +284,31 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
-     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * specified for the <code>Domain</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation must match.
      * </p>
      * <p>
      * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
      * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
      * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.
      * </p>
      * 
      * @param domain
      *        The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
-     *        value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
-     *        match.</p>
+     *        value specified for the <code>Domain</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     *        operation must match.</p>
      *        <p>
      *        The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
      *        present in the training data that you import to the dataset. For example, if you choose the
      *        <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
      *        Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     *        present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     *        present in your data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+     *        datasets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -425,15 +448,18 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset
      * <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your
-     * training data. For information about the required fields for a specific dataset domain and type, see
-     * <a>howitworks-domains-ds-types</a>.
+     * training data. For information about the required fields for a specific dataset domain and type, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and
+     * Dataset Types</a>.
      * </p>
      * 
      * @param schema
      *        The schema for the dataset. The schema attributes and their order must match the fields in your data. The
      *        dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required
      *        fields in your training data. For information about the required fields for a specific dataset domain and
-     *        type, see <a>howitworks-domains-ds-types</a>.
+     *        type, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and
+     *        Dataset Types</a>.
      */
 
     public void setSchema(Schema schema) {
@@ -444,14 +470,17 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset
      * <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your
-     * training data. For information about the required fields for a specific dataset domain and type, see
-     * <a>howitworks-domains-ds-types</a>.
+     * training data. For information about the required fields for a specific dataset domain and type, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and
+     * Dataset Types</a>.
      * </p>
      * 
      * @return The schema for the dataset. The schema attributes and their order must match the fields in your data. The
      *         dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required
      *         fields in your training data. For information about the required fields for a specific dataset domain and
-     *         type, see <a>howitworks-domains-ds-types</a>.
+     *         type, see <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains
+     *         and Dataset Types</a>.
      */
 
     public Schema getSchema() {
@@ -462,15 +491,18 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset
      * <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your
-     * training data. For information about the required fields for a specific dataset domain and type, see
-     * <a>howitworks-domains-ds-types</a>.
+     * training data. For information about the required fields for a specific dataset domain and type, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and
+     * Dataset Types</a>.
      * </p>
      * 
      * @param schema
      *        The schema for the dataset. The schema attributes and their order must match the fields in your data. The
      *        dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required
      *        fields in your training data. For information about the required fields for a specific dataset domain and
-     *        type, see <a>howitworks-domains-ds-types</a>.
+     *        type, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and
+     *        Dataset Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class ListThesauriRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to list.
+     * The identifier of the index with one or more thesauri.
      * </p>
      */
     private String indexId;
@@ -48,11 +48,11 @@ public class ListThesauriRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to list.
+     * The identifier of the index with one or more thesauri.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to list.
+     *        The identifier of the index with one or more thesauri.
      */
 
     public void setIndexId(String indexId) {
@@ -61,10 +61,10 @@ public class ListThesauriRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to list.
+     * The identifier of the index with one or more thesauri.
      * </p>
      * 
-     * @return The identifier of the index associated with the thesaurus to list.
+     * @return The identifier of the index with one or more thesauri.
      */
 
     public String getIndexId() {
@@ -73,11 +73,11 @@ public class ListThesauriRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to list.
+     * The identifier of the index with one or more thesauri.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to list.
+     *        The identifier of the index with one or more thesauri.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

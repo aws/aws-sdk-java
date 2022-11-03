@@ -50,12 +50,13 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * Client for accessing AWS Application Discovery Service. All service calls made using this client are blocking, and
  * will not return until the service call completes.
  * <p>
- * <fullname>AWS Application Discovery Service</fullname>
+ * <fullname>Amazon Web Services Application Discovery Service</fullname>
  * <p>
- * AWS Application Discovery Service helps you plan application migration projects. It automatically identifies servers,
- * virtual machines (VMs), and network dependencies in your on-premises data centers. For more information, see the <a
- * href="http://aws.amazon.com/application-discovery/faqs/">AWS Application Discovery Service FAQ</a>. Application
- * Discovery Service offers three ways of performing discovery and collecting data about your on-premises servers:
+ * Amazon Web Services Application Discovery Service helps you plan application migration projects. It automatically
+ * identifies servers, virtual machines (VMs), and network dependencies in your on-premises data centers. For more
+ * information, see the <a href="http://aws.amazon.com/application-discovery/faqs/">Amazon Web Services Application
+ * Discovery Service FAQ</a>. Application Discovery Service offers three ways of performing discovery and collecting
+ * data about your on-premises servers:
  * </p>
  * <ul>
  * <li>
@@ -82,8 +83,8 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <b>Agent-based discovery</b> collects a richer set of data than agentless discovery by using the AWS Application
- * Discovery Agent, which you install on one or more hosts in your data center.
+ * <b>Agent-based discovery</b> collects a richer set of data than agentless discovery by using the Amazon Web Services
+ * Application Discovery Agent, which you install on one or more hosts in your data center.
  * </p>
  * <ul>
  * <li>
@@ -104,15 +105,15 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <b>AWS Partner Network (APN) solutions</b> integrate with Application Discovery Service, enabling you to import
- * details of your on-premises environment directly into Migration Hub without using the discovery connector or
- * discovery agent.
+ * <b>Amazon Web Services Partner Network (APN) solutions</b> integrate with Application Discovery Service, enabling you
+ * to import details of your on-premises environment directly into Migration Hub without using the discovery connector
+ * or discovery agent.
  * </p>
  * <ul>
  * <li>
  * <p>
- * Third-party application discovery tools can query AWS Application Discovery Service, and they can write to the
- * Application Discovery Service database using the public API.
+ * Third-party application discovery tools can query Amazon Web Services Application Discovery Service, and they can
+ * write to the Application Discovery Service database using the public API.
  * </p>
  * </li>
  * <li>
@@ -139,8 +140,9 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
- * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
- * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+ * Alternatively, you can use one of the Amazon Web Services SDKs to access an API that is tailored to the programming
+ * language or platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon
+ * Web Services SDKs</a>.
  * </p>
  * <note>
  * <ul>
@@ -175,13 +177,13 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * </note>
  * <p>
  * This guide is intended for use with the <a
- * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">AWS Application Discovery Service User
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">Amazon Web Services Application Discovery
+ * Service User Guide</a>.
  * </p>
  * <important>
  * <p>
- * All data is handled according to the <a href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can operate
- * Application Discovery Service offline to inspect collected data before it is shared with the service.
+ * All data is handled according to the <a href="http://aws.amazon.com/privacy/">Amazon Web Services Privacy Policy</a>.
+ * You can operate Application Discovery Service offline to inspect collected data before it is shared with the service.
  * </p>
  * </important>
  */
@@ -446,8 +448,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param associateConfigurationItemsToApplicationRequest
      * @return Result of the AssociateConfigurationItemsToApplication operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -512,17 +514,17 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * that can identify servers or applications.
      * </p>
      * <p>
-     * AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match
-     * existing entries that you've previously discovered, the information for the already-existing discovered server is
-     * updated. When you delete an import task that contains records that were used to match, the information in those
-     * matched records that comes from the deleted records will also be deleted.
+     * Amazon Web Services Application Discovery Service has built-in matching logic that will identify when discovered
+     * servers match existing entries that you've previously discovered, the information for the already-existing
+     * discovered server is updated. When you delete an import task that contains records that were used to match, the
+     * information in those matched records that comes from the deleted records will also be deleted.
      * </p>
      * 
      * @param batchDeleteImportDataRequest
      * @return Result of the BatchDeleteImportData operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -587,8 +589,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -649,12 +651,17 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API
      * accepts a list of multiple configuration items.
      * </p>
+     * <important>
+     * <p>
+     * Do not store sensitive information (like personal data) in tags.
+     * </p>
+     * </important>
      * 
      * @param createTagsRequest
      * @return Result of the CreateTags operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
      * @throws InvalidParameterException
@@ -720,8 +727,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param deleteApplicationsRequest
      * @return Result of the DeleteApplications operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -786,8 +793,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param deleteTagsRequest
      * @return Result of the DeleteTags operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
      * @throws InvalidParameterException
@@ -854,8 +861,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param describeAgentsRequest
      * @return Result of the DescribeAgents operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -949,15 +956,16 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * <p>
      * For a complete list of outputs for each asset type, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations"
-     * >Using the DescribeConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the DescribeConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * </note>
      * 
      * @param describeConfigurationsRequest
      * @return Result of the DescribeConfigurations operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1023,8 +1031,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param describeContinuousExportsRequest
      * @return Result of the DescribeContinuousExports operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1090,14 +1098,14 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * <p>
      * <code>DescribeExportConfigurations</code> is deprecated. Use <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
-     * >DescribeImportTasks</a>, instead.
+     * >DescribeExportTasks</a>, instead.
      * </p>
      * 
      * @param describeExportConfigurationsRequest
      * @return Result of the DescribeExportConfigurations operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
      * @throws InvalidParameterException
@@ -1166,8 +1174,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param describeExportTasksRequest
      * @return Result of the DescribeExportTasks operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1232,8 +1240,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param describeImportTasksRequest
      * @return Result of the DescribeImportTasks operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1322,8 +1330,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param describeTagsRequest
      * @return Result of the DescribeTags operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
      * @throws InvalidParameterException
@@ -1389,8 +1397,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param disassociateConfigurationItemsFromApplicationRequest
      * @return Result of the DisassociateConfigurationItemsFromApplication operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1464,8 +1472,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param exportConfigurationsRequest
      * @return Result of the ExportConfigurations operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1535,8 +1543,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param getDiscoverySummaryRequest
      * @return Result of the GetDiscoverySummary operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1601,8 +1609,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param listConfigurationsRequest
      * @return Result of the ListConfigurations operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
      * @throws InvalidParameterException
@@ -1668,8 +1676,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param listServerNeighborsRequest
      * @return Result of the ListServerNeighbors operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1734,8 +1742,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @return Result of the StartContinuousExport operation returned by the service.
      * @throws ConflictErrorException
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1807,8 +1815,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param startDataCollectionByAgentIdsRequest
      * @return Result of the StartDataCollectionByAgentIds operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1877,16 +1885,16 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * data is limited to five concurrently running exports.
      * </p>
      * <p>
-     * If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless
-     * Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two
-     * exports per day.
+     * If you do not include an <code>agentIds</code> filter, summary data is exported that includes both Amazon Web
+     * Services Agentless Discovery Connector data and summary data from Amazon Web Services Discovery Agents. Export of
+     * summary data is limited to two exports per day.
      * </p>
      * 
      * @param startExportTaskRequest
      * @return Result of the StartExportTask operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -1946,10 +1954,11 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Starts an import task, which allows you to import details of your on-premises environment directly into AWS
-     * Migration Hub without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector
-     * or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your
-     * imported data, including the ability to group your devices as applications and track their migration status.
+     * Starts an import task, which allows you to import details of your on-premises environment directly into Amazon
+     * Web Services Migration Hub without having to use the Application Discovery Service (ADS) tools such as the
+     * Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning
+     * directly from your imported data, including the ability to group your devices as applications and track their
+     * migration status.
      * </p>
      * <p>
      * To start an import request, do this:
@@ -1958,8 +1967,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * <li>
      * <p>
      * Download the specially formatted comma separated value (CSV) import template, which you can find here: <a
-     * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv"
-     * >https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
+     * href="https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv"
+     * >https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
      * </p>
      * </li>
      * <li>
@@ -1975,22 +1984,23 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the
-     * records from your file.
+     * Use the console or the <code>StartImportTask</code> command with the Amazon Web Services CLI or one of the Amazon
+     * Web Services SDKs to import the records from your file.
      * </p>
      * </li>
      * </ol>
      * <p>
      * For more information, including step-by-step procedures, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
-     * Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * Import</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * There are limits to the number of import tasks you can create (and delete) in an AWS account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
-     * Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * There are limits to the number of import tasks you can create (and delete) in an Amazon Web Services account. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">Amazon Web
+     * Services Application Discovery Service Limits</a> in the <i>Amazon Web Services Application Discovery Service
+     * User Guide</i>.
      * </p>
      * </note>
      * 
@@ -2002,8 +2012,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
      *         be different, use a different <code>clientRequestToken</code>, and try again.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -2067,8 +2077,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param stopContinuousExportRequest
      * @return Result of the StopContinuousExport operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -2141,8 +2151,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param stopDataCollectionByAgentIdsRequest
      * @return Result of the StopDataCollectionByAgentIds operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
@@ -2208,8 +2218,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.
      * @throws AuthorizationErrorException
-     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
-     *         this account.
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
      * @throws InvalidParameterException
      *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException

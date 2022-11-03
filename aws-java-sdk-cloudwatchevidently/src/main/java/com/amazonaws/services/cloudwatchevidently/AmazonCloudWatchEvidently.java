@@ -102,6 +102,10 @@ public interface AmazonCloudWatchEvidently {
      * provides clear recommendations about which variations perform better.
      * </p>
      * <p>
+     * You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in
+     * the experiment, such as using only user sessions from a certain location or who use a certain internet browser.
+     * </p>
+     * <p>
      * Don't use this operation to update an existing experiment. Instead, use <a
      * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html"
      * >UpdateExperiment</a>.
@@ -221,6 +225,38 @@ public interface AmazonCloudWatchEvidently {
 
     /**
      * <p>
+     * Use this operation to define a <i>segment</i> of your audience. A segment is a portion of your audience that
+     * share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser
+     * users in Europe who also fit other criteria that your application collects, such as age.
+     * </p>
+     * <p>
+     * Using a segment in an experiment limits that experiment to evaluate only the users who match the segment
+     * criteria. Using one or more segments in a launch allows you to define different traffic splits for the different
+     * audience segments.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt; Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;, which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt; operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param createSegmentRequest
+     * @return Result of the CreateSegment operation returned by the service.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.CreateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest);
+
+    /**
+     * <p>
      * Deletes an Evidently experiment. The feature used for the experiment is not deleted.
      * </p>
      * <p>
@@ -327,6 +363,30 @@ public interface AmazonCloudWatchEvidently {
 
     /**
      * <p>
+     * Deletes a segment. You can't delete a segment that is being used in a launch or experiment, even if that launch
+     * or experiment is not currently running.
+     * </p>
+     * 
+     * @param deleteSegmentRequest
+     * @return Result of the DeleteSegment operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.DeleteSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSegmentResult deleteSegment(DeleteSegmentRequest deleteSegmentRequest);
+
+    /**
+     * <p>
      * This operation assigns a feature variation to one given user session. You pass in an <code>entityID</code> that
      * represents the user. Evidently then checks the evaluation rules and assigns the variation.
      * </p>
@@ -334,20 +394,10 @@ public interface AmazonCloudWatchEvidently {
      * The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an
      * override rule, the user is served the variation specified by that rule.
      * </p>
-     * <p>
-     * Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of
-     * this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch,
-     * the variation they are served depends on the allocation of the various feature variations used for the launch.
-     * </p>
-     * <p>
-     * If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be
-     * assigned to a variation in the experiment. The chance of this depends on the percentage of users that are
-     * allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on
-     * the allocation of the various feature variations used for the experiment.
-     * </p>
-     * <p>
-     * If the user is not assigned to a launch or experiment, they are served the default variation.
-     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;If there is a current launch with this feature that uses segment overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt; &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt; values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param evaluateFeatureRequest
      * @return Result of the EvaluateFeature operation returned by the service.
@@ -391,7 +441,15 @@ public interface AmazonCloudWatchEvidently {
 
     /**
      * <p>
-     * Retrieves the results of a running or completed experiment.
+     * Retrieves the results of a running or completed experiment. No results are available until there have been 100
+     * events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the
+     * statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment.
+     * Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during
+     * the experiment do not find statistical significance.
+     * </p>
+     * <p>
+     * Experiment results are available up to 63 days after the start of the experiment. They are not available after
+     * that because of CloudWatch data retention policies.
      * </p>
      * 
      * @param getExperimentResultsRequest
@@ -486,6 +544,27 @@ public interface AmazonCloudWatchEvidently {
 
     /**
      * <p>
+     * Returns information about the specified segment. Specify the segment you want to view by specifying its ARN.
+     * </p>
+     * 
+     * @param getSegmentRequest
+     * @return Result of the GetSegment operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.GetSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest);
+
+    /**
+     * <p>
      * Returns configuration details about all the experiments in the specified project.
      * </p>
      * 
@@ -561,6 +640,46 @@ public interface AmazonCloudWatchEvidently {
      *      Documentation</a>
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
+
+    /**
+     * <p>
+     * Use this operation to find which experiments or launches are using a specified segment.
+     * </p>
+     * 
+     * @param listSegmentReferencesRequest
+     * @return Result of the ListSegmentReferences operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.ListSegmentReferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSegmentReferencesResult listSegmentReferences(ListSegmentReferencesRequest listSegmentReferencesRequest);
+
+    /**
+     * <p>
+     * Returns a list of audience segments that you have created in your account in this Region.
+     * </p>
+     * 
+     * @param listSegmentsRequest
+     * @return Result of the ListSegments operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.ListSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSegmentsResult listSegments(ListSegmentsRequest listSegmentsRequest);
 
     /**
      * <p>
@@ -748,6 +867,28 @@ public interface AmazonCloudWatchEvidently {
 
     /**
      * <p>
+     * Use this operation to test a rules pattern that you plan to use to create an audience segment. For more
+     * information about segments, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html"
+     * >CreateSegment</a>.
+     * </p>
+     * 
+     * @param testSegmentPatternRequest
+     * @return Result of the TestSegmentPattern operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.TestSegmentPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TestSegmentPatternResult testSegmentPattern(TestSegmentPatternRequest testSegmentPatternRequest);
+
+    /**
+     * <p>
      * Removes one or more tags from the specified resource.
      * </p>
      * 
@@ -865,6 +1006,8 @@ public interface AmazonCloudWatchEvidently {
      * @return Result of the UpdateProject operation returned by the service.
      * @throws ValidationException
      *         The value of a parameter in the request caused an error.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
      * @throws ServiceQuotaExceededException
      *         The request would cause a service quota to be exceeded.
      * @throws ResourceNotFoundException

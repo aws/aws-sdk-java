@@ -58,6 +58,13 @@ public class RuleGroupReferenceStatementJsonUnmarshaller implements Unmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("RuleActionOverrides", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupReferenceStatement.setRuleActionOverrides(new ListUnmarshaller<RuleActionOverride>(RuleActionOverrideJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum IAMAuthMode {
 
     DISABLED("DISABLED"),
-    REQUIRED("REQUIRED");
+    REQUIRED("REQUIRED"),
+    ENABLED("ENABLED");
 
     private String value;
 

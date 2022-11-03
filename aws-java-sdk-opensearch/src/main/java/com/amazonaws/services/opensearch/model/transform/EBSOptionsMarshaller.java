@@ -35,6 +35,8 @@ public class EBSOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSize").build();
     private static final MarshallingInfo<Integer> IOPS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Iops").build();
+    private static final MarshallingInfo<Integer> THROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Throughput").build();
 
     private static final EBSOptionsMarshaller instance = new EBSOptionsMarshaller();
 
@@ -56,6 +58,7 @@ public class EBSOptionsMarshaller {
             protocolMarshaller.marshall(eBSOptions.getVolumeType(), VOLUMETYPE_BINDING);
             protocolMarshaller.marshall(eBSOptions.getVolumeSize(), VOLUMESIZE_BINDING);
             protocolMarshaller.marshall(eBSOptions.getIops(), IOPS_BINDING);
+            protocolMarshaller.marshall(eBSOptions.getThroughput(), THROUGHPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

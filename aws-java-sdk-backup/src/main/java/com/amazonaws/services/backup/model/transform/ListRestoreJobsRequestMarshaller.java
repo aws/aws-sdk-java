@@ -39,6 +39,10 @@ public class ListRestoreJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("createdAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> BYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> BYCOMPLETEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeBefore").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> BYCOMPLETEAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeAfter").timestampFormat("iso8601").build();
 
     private static final ListRestoreJobsRequestMarshaller instance = new ListRestoreJobsRequestMarshaller();
 
@@ -62,6 +66,8 @@ public class ListRestoreJobsRequestMarshaller {
             protocolMarshaller.marshall(listRestoreJobsRequest.getByCreatedBefore(), BYCREATEDBEFORE_BINDING);
             protocolMarshaller.marshall(listRestoreJobsRequest.getByCreatedAfter(), BYCREATEDAFTER_BINDING);
             protocolMarshaller.marshall(listRestoreJobsRequest.getByStatus(), BYSTATUS_BINDING);
+            protocolMarshaller.marshall(listRestoreJobsRequest.getByCompleteBefore(), BYCOMPLETEBEFORE_BINDING);
+            protocolMarshaller.marshall(listRestoreJobsRequest.getByCompleteAfter(), BYCOMPLETEAFTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

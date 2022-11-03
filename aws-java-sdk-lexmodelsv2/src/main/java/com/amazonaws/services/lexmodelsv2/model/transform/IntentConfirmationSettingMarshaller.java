@@ -33,6 +33,26 @@ public class IntentConfirmationSettingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("declinationResponse").build();
     private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("active").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIRMATIONRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("confirmationResponse").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIRMATIONNEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("confirmationNextStep").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIRMATIONCONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("confirmationConditional").build();
+    private static final MarshallingInfo<StructuredPojo> DECLINATIONNEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("declinationNextStep").build();
+    private static final MarshallingInfo<StructuredPojo> DECLINATIONCONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("declinationConditional").build();
+    private static final MarshallingInfo<StructuredPojo> FAILURERESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureResponse").build();
+    private static final MarshallingInfo<StructuredPojo> FAILURENEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureNextStep").build();
+    private static final MarshallingInfo<StructuredPojo> FAILURECONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureConditional").build();
+    private static final MarshallingInfo<StructuredPojo> CODEHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeHook").build();
+    private static final MarshallingInfo<StructuredPojo> ELICITATIONCODEHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("elicitationCodeHook").build();
 
     private static final IntentConfirmationSettingMarshaller instance = new IntentConfirmationSettingMarshaller();
 
@@ -53,6 +73,16 @@ public class IntentConfirmationSettingMarshaller {
             protocolMarshaller.marshall(intentConfirmationSetting.getPromptSpecification(), PROMPTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(intentConfirmationSetting.getDeclinationResponse(), DECLINATIONRESPONSE_BINDING);
             protocolMarshaller.marshall(intentConfirmationSetting.getActive(), ACTIVE_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getConfirmationResponse(), CONFIRMATIONRESPONSE_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getConfirmationNextStep(), CONFIRMATIONNEXTSTEP_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getConfirmationConditional(), CONFIRMATIONCONDITIONAL_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getDeclinationNextStep(), DECLINATIONNEXTSTEP_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getDeclinationConditional(), DECLINATIONCONDITIONAL_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getFailureResponse(), FAILURERESPONSE_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getFailureNextStep(), FAILURENEXTSTEP_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getFailureConditional(), FAILURECONDITIONAL_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getCodeHook(), CODEHOOK_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getElicitationCodeHook(), ELICITATIONCODEHOOK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

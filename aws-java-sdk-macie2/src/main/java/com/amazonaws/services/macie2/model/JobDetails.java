@@ -55,8 +55,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * </p>
      */
     private String isDefinedInJob;
     /**
@@ -133,8 +131,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * </p>
      * 
      * @param isDefinedInJob
      *        Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible
@@ -160,8 +156,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
      * @see IsDefinedInJob
      */
 
@@ -195,8 +189,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * </p>
      * 
      * @return Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible
      *         values are:</p>
@@ -221,8 +213,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *         UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
      * @see IsDefinedInJob
      */
 
@@ -256,8 +246,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * </p>
      * 
      * @param isDefinedInJob
      *        Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible
@@ -283,8 +271,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IsDefinedInJob
      */
@@ -320,8 +306,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * </p>
      * 
      * @param isDefinedInJob
      *        Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible
@@ -347,8 +331,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IsDefinedInJob
      */

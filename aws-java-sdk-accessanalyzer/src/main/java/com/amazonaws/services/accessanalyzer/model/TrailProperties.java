@@ -30,13 +30,6 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
-     * retrieves CloudTrail data from all regions to analyze and generate a policy.
-     * </p>
-     */
-    private Boolean allRegions;
-    /**
-     * <p>
      * Specifies the ARN of the trail. The format of a trail ARN is
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.
      * </p>
@@ -48,66 +41,13 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> regions;
-
     /**
      * <p>
      * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
      * retrieves CloudTrail data from all regions to analyze and generate a policy.
      * </p>
-     * 
-     * @param allRegions
-     *        Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
-     *        Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
      */
-
-    public void setAllRegions(Boolean allRegions) {
-        this.allRegions = allRegions;
-    }
-
-    /**
-     * <p>
-     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
-     * retrieves CloudTrail data from all regions to analyze and generate a policy.
-     * </p>
-     * 
-     * @return Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
-     *         Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
-     */
-
-    public Boolean getAllRegions() {
-        return this.allRegions;
-    }
-
-    /**
-     * <p>
-     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
-     * retrieves CloudTrail data from all regions to analyze and generate a policy.
-     * </p>
-     * 
-     * @param allRegions
-     *        Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
-     *        Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TrailProperties withAllRegions(Boolean allRegions) {
-        setAllRegions(allRegions);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
-     * retrieves CloudTrail data from all regions to analyze and generate a policy.
-     * </p>
-     * 
-     * @return Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
-     *         Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
-     */
-
-    public Boolean isAllRegions() {
-        return this.allRegions;
-    }
+    private Boolean allRegions;
 
     /**
      * <p>
@@ -226,6 +166,66 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
+     * retrieves CloudTrail data from all regions to analyze and generate a policy.
+     * </p>
+     * 
+     * @param allRegions
+     *        Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
+     *        Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
+     */
+
+    public void setAllRegions(Boolean allRegions) {
+        this.allRegions = allRegions;
+    }
+
+    /**
+     * <p>
+     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
+     * retrieves CloudTrail data from all regions to analyze and generate a policy.
+     * </p>
+     * 
+     * @return Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
+     *         Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
+     */
+
+    public Boolean getAllRegions() {
+        return this.allRegions;
+    }
+
+    /**
+     * <p>
+     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
+     * retrieves CloudTrail data from all regions to analyze and generate a policy.
+     * </p>
+     * 
+     * @param allRegions
+     *        Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
+     *        Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrailProperties withAllRegions(Boolean allRegions) {
+        setAllRegions(allRegions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer
+     * retrieves CloudTrail data from all regions to analyze and generate a policy.
+     * </p>
+     * 
+     * @return Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access
+     *         Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
+     */
+
+    public Boolean isAllRegions() {
+        return this.allRegions;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -237,12 +237,12 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAllRegions() != null)
-            sb.append("AllRegions: ").append(getAllRegions()).append(",");
         if (getCloudTrailArn() != null)
             sb.append("CloudTrailArn: ").append(getCloudTrailArn()).append(",");
         if (getRegions() != null)
-            sb.append("Regions: ").append(getRegions());
+            sb.append("Regions: ").append(getRegions()).append(",");
+        if (getAllRegions() != null)
+            sb.append("AllRegions: ").append(getAllRegions());
         sb.append("}");
         return sb.toString();
     }
@@ -257,10 +257,6 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof TrailProperties == false)
             return false;
         TrailProperties other = (TrailProperties) obj;
-        if (other.getAllRegions() == null ^ this.getAllRegions() == null)
-            return false;
-        if (other.getAllRegions() != null && other.getAllRegions().equals(this.getAllRegions()) == false)
-            return false;
         if (other.getCloudTrailArn() == null ^ this.getCloudTrailArn() == null)
             return false;
         if (other.getCloudTrailArn() != null && other.getCloudTrailArn().equals(this.getCloudTrailArn()) == false)
@@ -268,6 +264,10 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
         if (other.getRegions() == null ^ this.getRegions() == null)
             return false;
         if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
+            return false;
+        if (other.getAllRegions() == null ^ this.getAllRegions() == null)
+            return false;
+        if (other.getAllRegions() != null && other.getAllRegions().equals(this.getAllRegions()) == false)
             return false;
         return true;
     }
@@ -277,9 +277,9 @@ public class TrailProperties implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAllRegions() == null) ? 0 : getAllRegions().hashCode());
         hashCode = prime * hashCode + ((getCloudTrailArn() == null) ? 0 : getCloudTrailArn().hashCode());
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
+        hashCode = prime * hashCode + ((getAllRegions() == null) ? 0 : getAllRegions().hashCode());
         return hashCode;
     }
 

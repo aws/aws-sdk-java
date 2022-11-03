@@ -28,12 +28,25 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
     private String projectVersionArn;
     /**
      * <p>
-     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can
-     * support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model.
-     * You are charged for the number of inference units that you use.
+     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     * </p>
+     * <p>
+     * For information about the number of transactions per second (TPS) that an inference unit can support, see
+     * <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide.
+     * </p>
+     * <p>
+     * Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference
+     * units that you use.
      * </p>
      */
     private Integer minInferenceUnits;
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Rekognition Custom Labels doesn't auto-scale the model.
+     * </p>
+     */
+    private Integer maxInferenceUnits;
 
     /**
      * <p>
@@ -77,15 +90,28 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can
-     * support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model.
-     * You are charged for the number of inference units that you use.
+     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     * </p>
+     * <p>
+     * For information about the number of transactions per second (TPS) that an inference unit can support, see
+     * <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide.
+     * </p>
+     * <p>
+     * Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference
+     * units that you use.
      * </p>
      * 
      * @param minInferenceUnits
-     *        The minimum number of inference units to use. A single inference unit represents 1 hour of processing and
-     *        can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of
-     *        your model. You are charged for the number of inference units that you use.
+     *        The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     *        </p>
+     *        <p>
+     *        For information about the number of transactions per second (TPS) that an inference unit can support, see
+     *        <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels
+     *        Guide.
+     *        </p>
+     *        <p>
+     *        Use a higher number to increase the TPS throughput of your model. You are charged for the number of
+     *        inference units that you use.
      */
 
     public void setMinInferenceUnits(Integer minInferenceUnits) {
@@ -94,14 +120,27 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can
-     * support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model.
-     * You are charged for the number of inference units that you use.
+     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     * </p>
+     * <p>
+     * For information about the number of transactions per second (TPS) that an inference unit can support, see
+     * <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide.
+     * </p>
+     * <p>
+     * Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference
+     * units that you use.
      * </p>
      * 
-     * @return The minimum number of inference units to use. A single inference unit represents 1 hour of processing and
-     *         can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of
-     *         your model. You are charged for the number of inference units that you use.
+     * @return The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     *         </p>
+     *         <p>
+     *         For information about the number of transactions per second (TPS) that an inference unit can support, see
+     *         <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels
+     *         Guide.
+     *         </p>
+     *         <p>
+     *         Use a higher number to increase the TPS throughput of your model. You are charged for the number of
+     *         inference units that you use.
      */
 
     public Integer getMinInferenceUnits() {
@@ -110,20 +149,79 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can
-     * support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model.
-     * You are charged for the number of inference units that you use.
+     * The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     * </p>
+     * <p>
+     * For information about the number of transactions per second (TPS) that an inference unit can support, see
+     * <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide.
+     * </p>
+     * <p>
+     * Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference
+     * units that you use.
      * </p>
      * 
      * @param minInferenceUnits
-     *        The minimum number of inference units to use. A single inference unit represents 1 hour of processing and
-     *        can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of
-     *        your model. You are charged for the number of inference units that you use.
+     *        The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
+     *        </p>
+     *        <p>
+     *        For information about the number of transactions per second (TPS) that an inference unit can support, see
+     *        <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels
+     *        Guide.
+     *        </p>
+     *        <p>
+     *        Use a higher number to increase the TPS throughput of your model. You are charged for the number of
+     *        inference units that you use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartProjectVersionRequest withMinInferenceUnits(Integer minInferenceUnits) {
         setMinInferenceUnits(minInferenceUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Rekognition Custom Labels doesn't auto-scale the model.
+     * </p>
+     * 
+     * @param maxInferenceUnits
+     *        The maximum number of inference units to use for auto-scaling the model. If you don't specify a value,
+     *        Amazon Rekognition Custom Labels doesn't auto-scale the model.
+     */
+
+    public void setMaxInferenceUnits(Integer maxInferenceUnits) {
+        this.maxInferenceUnits = maxInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Rekognition Custom Labels doesn't auto-scale the model.
+     * </p>
+     * 
+     * @return The maximum number of inference units to use for auto-scaling the model. If you don't specify a value,
+     *         Amazon Rekognition Custom Labels doesn't auto-scale the model.
+     */
+
+    public Integer getMaxInferenceUnits() {
+        return this.maxInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Rekognition Custom Labels doesn't auto-scale the model.
+     * </p>
+     * 
+     * @param maxInferenceUnits
+     *        The maximum number of inference units to use for auto-scaling the model. If you don't specify a value,
+     *        Amazon Rekognition Custom Labels doesn't auto-scale the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartProjectVersionRequest withMaxInferenceUnits(Integer maxInferenceUnits) {
+        setMaxInferenceUnits(maxInferenceUnits);
         return this;
     }
 
@@ -142,7 +240,9 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getProjectVersionArn() != null)
             sb.append("ProjectVersionArn: ").append(getProjectVersionArn()).append(",");
         if (getMinInferenceUnits() != null)
-            sb.append("MinInferenceUnits: ").append(getMinInferenceUnits());
+            sb.append("MinInferenceUnits: ").append(getMinInferenceUnits()).append(",");
+        if (getMaxInferenceUnits() != null)
+            sb.append("MaxInferenceUnits: ").append(getMaxInferenceUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +265,10 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMinInferenceUnits() != null && other.getMinInferenceUnits().equals(this.getMinInferenceUnits()) == false)
             return false;
+        if (other.getMaxInferenceUnits() == null ^ this.getMaxInferenceUnits() == null)
+            return false;
+        if (other.getMaxInferenceUnits() != null && other.getMaxInferenceUnits().equals(this.getMaxInferenceUnits()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +279,7 @@ public class StartProjectVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getProjectVersionArn() == null) ? 0 : getProjectVersionArn().hashCode());
         hashCode = prime * hashCode + ((getMinInferenceUnits() == null) ? 0 : getMinInferenceUnits().hashCode());
+        hashCode = prime * hashCode + ((getMaxInferenceUnits() == null) ? 0 : getMaxInferenceUnits().hashCode());
         return hashCode;
     }
 

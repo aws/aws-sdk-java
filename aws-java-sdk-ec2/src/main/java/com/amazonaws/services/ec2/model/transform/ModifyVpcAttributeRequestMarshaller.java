@@ -52,6 +52,11 @@ public class ModifyVpcAttributeRequestMarshaller implements Marshaller<Request<M
             request.addParameter("VpcId", StringUtils.fromString(modifyVpcAttributeRequest.getVpcId()));
         }
 
+        if (modifyVpcAttributeRequest.getEnableNetworkAddressUsageMetrics() != null) {
+            request.addParameter("EnableNetworkAddressUsageMetrics.Value",
+                    StringUtils.fromBoolean(modifyVpcAttributeRequest.getEnableNetworkAddressUsageMetrics()));
+        }
+
         return request;
     }
 

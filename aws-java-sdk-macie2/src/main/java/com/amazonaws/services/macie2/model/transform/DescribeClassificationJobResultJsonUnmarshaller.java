@@ -48,6 +48,12 @@ public class DescribeClassificationJobResultJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("allowListIds", targetDepth)) {
+                    context.nextToken();
+                    describeClassificationJobResult.setAllowListIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("clientToken", targetDepth)) {
                     context.nextToken();
                     describeClassificationJobResult.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));

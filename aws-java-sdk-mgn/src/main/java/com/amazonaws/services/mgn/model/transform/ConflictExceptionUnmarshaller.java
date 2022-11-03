@@ -56,6 +56,12 @@ public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller
                     context.nextToken();
                     conflictException.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("errors", targetDepth)) {
+                    context.nextToken();
+                    conflictException.setErrors(new ListUnmarshaller<ErrorDetails>(ErrorDetailsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     conflictException.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));

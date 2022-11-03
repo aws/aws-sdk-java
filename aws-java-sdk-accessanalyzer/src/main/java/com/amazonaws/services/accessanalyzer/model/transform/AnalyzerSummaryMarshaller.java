@@ -31,22 +31,22 @@ public class AnalyzerSummaryMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> LASTRESOURCEANALYZED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResourceAnalyzed").build();
     private static final MarshallingInfo<java.util.Date> LASTRESOURCEANALYZEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResourceAnalyzedAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<StructuredPojo> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
 
     private static final AnalyzerSummaryMarshaller instance = new AnalyzerSummaryMarshaller();
 
@@ -65,14 +65,14 @@ public class AnalyzerSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(analyzerSummary.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(analyzerSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(analyzerSummary.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getLastResourceAnalyzed(), LASTRESOURCEANALYZED_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getLastResourceAnalyzedAt(), LASTRESOURCEANALYZEDAT_BINDING);
-            protocolMarshaller.marshall(analyzerSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(analyzerSummary.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getStatusReason(), STATUSREASON_BINDING);
-            protocolMarshaller.marshall(analyzerSummary.getTags(), TAGS_BINDING);
-            protocolMarshaller.marshall(analyzerSummary.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

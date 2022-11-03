@@ -112,6 +112,10 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                     context.nextToken();
                     transcriptionJob.setIdentifyLanguage(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IdentifyMultipleLanguages", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setIdentifyMultipleLanguages(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("LanguageOptions", targetDepth)) {
                     context.nextToken();
                     transcriptionJob.setLanguageOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -121,6 +125,12 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                 if (context.testExpression("IdentifiedLanguageScore", targetDepth)) {
                     context.nextToken();
                     transcriptionJob.setIdentifiedLanguageScore(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (context.testExpression("LanguageCodes", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setLanguageCodes(new ListUnmarshaller<LanguageCodeItem>(LanguageCodeItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

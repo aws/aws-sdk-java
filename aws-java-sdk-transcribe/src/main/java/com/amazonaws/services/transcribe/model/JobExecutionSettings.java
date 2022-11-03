@@ -19,7 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about when a transcription job should be executed.
+ * Allows you to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code>
+ * modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.
+ * </p>
+ * <p>
+ * If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters:
+ * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/JobExecutionSettings" target="_top">AWS
@@ -30,61 +35,67 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
-     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.
+     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
+     * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
+     * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
+     * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for call analytics jobs.
+     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     * <code>DataAccessRoleArn</code>.
      * </p>
      */
     private Boolean allowDeferredExecution;
     /**
      * <p>
-     * The Amazon Resource Name (ARN), in the form
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access to the
-     * S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media files. If you
-     * have specified an output S3 bucket for the transcription results, this role should have access to the output
-     * bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * </p>
+     * <p>
+     * Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     * <code>AllowDeferredExecution</code>.
      * </p>
      */
     private String dataAccessRoleArn;
 
     /**
      * <p>
-     * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
-     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.
+     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
+     * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
+     * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
+     * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for call analytics jobs.
+     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     * <code>DataAccessRoleArn</code>.
      * </p>
      * 
      * @param allowDeferredExecution
-     *        Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *        exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
-     *        the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
-     *        Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     *        Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     *        <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
+     *        a queue until the number of jobs falls below the concurrent request limit. If
+     *        <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
+     *        requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
      *        <p>
-     *        Note that job queuing is enabled by default for call analytics jobs.
+     *        Note that job queuing is enabled by default for Call Analytics jobs.
      *        </p>
      *        <p>
-     *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *        <code>DataAccessRoleArn</code> field.
+     *        If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     *        <code>DataAccessRoleArn</code>.
      */
 
     public void setAllowDeferredExecution(Boolean allowDeferredExecution) {
@@ -93,29 +104,31 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
-     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.
+     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
+     * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
+     * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
+     * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for call analytics jobs.
+     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     * <code>DataAccessRoleArn</code>.
      * </p>
      * 
-     * @return Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *         exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
-     *         the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
-     *         Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     * @return Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     *         <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
+     *         a queue until the number of jobs falls below the concurrent request limit. If
+     *         <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
+     *         requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
      *         <p>
-     *         Note that job queuing is enabled by default for call analytics jobs.
+     *         Note that job queuing is enabled by default for Call Analytics jobs.
      *         </p>
      *         <p>
-     *         If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *         <code>DataAccessRoleArn</code> field.
+     *         If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     *         <code>DataAccessRoleArn</code>.
      */
 
     public Boolean getAllowDeferredExecution() {
@@ -124,30 +137,32 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
-     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.
+     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
+     * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
+     * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
+     * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for call analytics jobs.
+     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     * <code>DataAccessRoleArn</code>.
      * </p>
      * 
      * @param allowDeferredExecution
-     *        Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *        exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
-     *        the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
-     *        Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     *        Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     *        <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
+     *        a queue until the number of jobs falls below the concurrent request limit. If
+     *        <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
+     *        requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
      *        <p>
-     *        Note that job queuing is enabled by default for call analytics jobs.
+     *        Note that job queuing is enabled by default for Call Analytics jobs.
      *        </p>
      *        <p>
-     *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *        <code>DataAccessRoleArn</code> field.
+     *        If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     *        <code>DataAccessRoleArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,29 +173,31 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
-     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.
+     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
+     * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
+     * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
+     * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for call analytics jobs.
+     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     * <code>DataAccessRoleArn</code>.
      * </p>
      * 
-     * @return Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *         exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
-     *         the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
-     *         Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     * @return Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     *         <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
+     *         a queue until the number of jobs falls below the concurrent request limit. If
+     *         <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
+     *         requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
      *         <p>
-     *         Note that job queuing is enabled by default for call analytics jobs.
+     *         Note that job queuing is enabled by default for Call Analytics jobs.
      *         </p>
      *         <p>
-     *         If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *         <code>DataAccessRoleArn</code> field.
+     *         If you include <code>AllowDeferredExecution</code> in your request, you must also include
+     *         <code>DataAccessRoleArn</code>.
      */
 
     public Boolean isAllowDeferredExecution() {
@@ -189,26 +206,33 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN), in the form
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access to the
-     * S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media files. If you
-     * have specified an output S3 bucket for the transcription results, this role should have access to the output
-     * bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * </p>
+     * <p>
+     * Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     * <code>AllowDeferredExecution</code>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN), in the form
-     *        <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access
-     *        to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media
-     *        files. If you have specified an output S3 bucket for the transcription results, this role should have
-     *        access to the output bucket as well.</p>
+     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *        specified Amazon S3 location, your request fails.</p>
      *        <p>
-     *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *        <code>DataAccessRoleArn</code> field.
+     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *        ARNs</a>.
+     *        </p>
+     *        <p>
+     *        Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     *        <code>AllowDeferredExecution</code>.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -217,25 +241,32 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN), in the form
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access to the
-     * S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media files. If you
-     * have specified an output S3 bucket for the transcription results, this role should have access to the output
-     * bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * </p>
+     * <p>
+     * Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     * <code>AllowDeferredExecution</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN), in the form
-     *         <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access
-     *         to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media
-     *         files. If you have specified an output S3 bucket for the transcription results, this role should have
-     *         access to the output bucket as well.</p>
+     * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *         specified Amazon S3 location, your request fails.</p>
      *         <p>
-     *         If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *         <code>DataAccessRoleArn</code> field.
+     *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *         example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *         ARNs</a>.
+     *         </p>
+     *         <p>
+     *         Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     *         <code>AllowDeferredExecution</code>.
      */
 
     public String getDataAccessRoleArn() {
@@ -244,26 +275,33 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN), in the form
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access to the
-     * S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media files. If you
-     * have specified an output S3 bucket for the transcription results, this role should have access to the output
-     * bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
      * </p>
      * <p>
-     * If you specify the <code>AllowDeferredExecution</code> field, you must specify the <code>DataAccessRoleArn</code>
-     * field.
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * </p>
+     * <p>
+     * Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     * <code>AllowDeferredExecution</code>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN), in the form
-     *        <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role that has access
-     *        to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued media
-     *        files. If you have specified an output S3 bucket for the transcription results, this role should have
-     *        access to the output bucket as well.</p>
+     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *        specified Amazon S3 location, your request fails.</p>
      *        <p>
-     *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-     *        <code>DataAccessRoleArn</code> field.
+     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *        ARNs</a>.
+     *        </p>
+     *        <p>
+     *        Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include
+     *        <code>AllowDeferredExecution</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

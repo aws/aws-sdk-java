@@ -55,6 +55,12 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
     private ShrinkPolicy shrinkPolicy;
     /**
      * <p>
+     * Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * </p>
+     */
+    private String reconfigurationType;
+    /**
+     * <p>
      * A list of new or modified configurations to apply for an instance group.
      * </p>
      */
@@ -284,6 +290,65 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * </p>
+     * 
+     * @param reconfigurationType
+     *        Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * @see ReconfigurationType
+     */
+
+    public void setReconfigurationType(String reconfigurationType) {
+        this.reconfigurationType = reconfigurationType;
+    }
+
+    /**
+     * <p>
+     * Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * </p>
+     * 
+     * @return Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * @see ReconfigurationType
+     */
+
+    public String getReconfigurationType() {
+        return this.reconfigurationType;
+    }
+
+    /**
+     * <p>
+     * Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * </p>
+     * 
+     * @param reconfigurationType
+     *        Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReconfigurationType
+     */
+
+    public InstanceGroupModifyConfig withReconfigurationType(String reconfigurationType) {
+        setReconfigurationType(reconfigurationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * </p>
+     * 
+     * @param reconfigurationType
+     *        Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReconfigurationType
+     */
+
+    public InstanceGroupModifyConfig withReconfigurationType(ReconfigurationType reconfigurationType) {
+        this.reconfigurationType = reconfigurationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of new or modified configurations to apply for an instance group.
      * </p>
      * 
@@ -375,6 +440,8 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
             sb.append("EC2InstanceIdsToTerminate: ").append(getEC2InstanceIdsToTerminate()).append(",");
         if (getShrinkPolicy() != null)
             sb.append("ShrinkPolicy: ").append(getShrinkPolicy()).append(",");
+        if (getReconfigurationType() != null)
+            sb.append("ReconfigurationType: ").append(getReconfigurationType()).append(",");
         if (getConfigurations() != null)
             sb.append("Configurations: ").append(getConfigurations());
         sb.append("}");
@@ -407,6 +474,10 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getShrinkPolicy() != null && other.getShrinkPolicy().equals(this.getShrinkPolicy()) == false)
             return false;
+        if (other.getReconfigurationType() == null ^ this.getReconfigurationType() == null)
+            return false;
+        if (other.getReconfigurationType() != null && other.getReconfigurationType().equals(this.getReconfigurationType()) == false)
+            return false;
         if (other.getConfigurations() == null ^ this.getConfigurations() == null)
             return false;
         if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
@@ -423,6 +494,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getEC2InstanceIdsToTerminate() == null) ? 0 : getEC2InstanceIdsToTerminate().hashCode());
         hashCode = prime * hashCode + ((getShrinkPolicy() == null) ? 0 : getShrinkPolicy().hashCode());
+        hashCode = prime * hashCode + ((getReconfigurationType() == null) ? 0 : getReconfigurationType().hashCode());
         hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
         return hashCode;
     }

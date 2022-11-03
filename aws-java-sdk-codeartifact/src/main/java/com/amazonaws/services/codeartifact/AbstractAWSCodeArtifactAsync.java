@@ -160,6 +160,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePackageResult> describePackageAsync(DescribePackageRequest request) {
+
+        return describePackageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePackageResult> describePackageAsync(DescribePackageRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePackageRequest, DescribePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePackageVersionResult> describePackageVersionAsync(DescribePackageVersionRequest request) {
 
         return describePackageVersionAsync(request, null);
@@ -402,6 +415,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     @Override
     public java.util.concurrent.Future<PutDomainPermissionsPolicyResult> putDomainPermissionsPolicyAsync(PutDomainPermissionsPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDomainPermissionsPolicyRequest, PutDomainPermissionsPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPackageOriginConfigurationResult> putPackageOriginConfigurationAsync(PutPackageOriginConfigurationRequest request) {
+
+        return putPackageOriginConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPackageOriginConfigurationResult> putPackageOriginConfigurationAsync(PutPackageOriginConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPackageOriginConfigurationRequest, PutPackageOriginConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

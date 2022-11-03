@@ -109,12 +109,22 @@ public class AbstractAmazonDevOpsGuru implements AmazonDevOpsGuru {
     }
 
     @Override
+    public ListAnomalousLogGroupsResult listAnomalousLogGroups(ListAnomalousLogGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEventsResult listEvents(ListEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListInsightsResult listInsights(ListInsightsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMonitoredResourcesResult listMonitoredResources(ListMonitoredResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

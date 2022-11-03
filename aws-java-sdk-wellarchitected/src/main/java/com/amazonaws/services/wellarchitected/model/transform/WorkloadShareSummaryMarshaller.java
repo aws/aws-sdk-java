@@ -35,6 +35,8 @@ public class WorkloadShareSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionType").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
 
     private static final WorkloadShareSummaryMarshaller instance = new WorkloadShareSummaryMarshaller();
 
@@ -56,6 +58,7 @@ public class WorkloadShareSummaryMarshaller {
             protocolMarshaller.marshall(workloadShareSummary.getSharedWith(), SHAREDWITH_BINDING);
             protocolMarshaller.marshall(workloadShareSummary.getPermissionType(), PERMISSIONTYPE_BINDING);
             protocolMarshaller.marshall(workloadShareSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workloadShareSummary.getStatusMessage(), STATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

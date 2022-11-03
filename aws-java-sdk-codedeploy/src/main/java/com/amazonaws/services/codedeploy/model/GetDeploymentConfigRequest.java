@@ -30,18 +30,18 @@ public class GetDeploymentConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      */
     private String deploymentConfigName;
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or AWS account.
+     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      */
 
     public void setDeploymentConfigName(String deploymentConfigName) {
@@ -50,10 +50,10 @@ public class GetDeploymentConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the IAM user or AWS account.
+     * @return The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      */
 
     public String getDeploymentConfigName() {
@@ -62,11 +62,11 @@ public class GetDeploymentConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or AWS account.
+     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

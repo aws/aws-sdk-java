@@ -27,18 +27,18 @@ public class CancelOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the order to cancel.
+     * The ID of the order.
      * </p>
      */
     private String orderId;
 
     /**
      * <p>
-     * The ID of the order to cancel.
+     * The ID of the order.
      * </p>
      * 
      * @param orderId
-     *        The ID of the order to cancel.
+     *        The ID of the order.
      */
 
     public void setOrderId(String orderId) {
@@ -47,10 +47,10 @@ public class CancelOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the order to cancel.
+     * The ID of the order.
      * </p>
      * 
-     * @return The ID of the order to cancel.
+     * @return The ID of the order.
      */
 
     public String getOrderId() {
@@ -59,11 +59,11 @@ public class CancelOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the order to cancel.
+     * The ID of the order.
      * </p>
      * 
      * @param orderId
-     *        The ID of the order to cancel.
+     *        The ID of the order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

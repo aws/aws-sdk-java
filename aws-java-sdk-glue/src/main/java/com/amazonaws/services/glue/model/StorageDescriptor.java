@@ -41,7 +41,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String location;
-
+    /**
+     * <p>
+     * A list of locations that point to the path where a Delta table is located.
+     * </p>
+     */
     private java.util.List<String> additionalLocations;
     /**
      * <p>
@@ -232,7 +236,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * A list of locations that point to the path where a Delta table is located.
+     * </p>
+     * 
+     * @return A list of locations that point to the path where a Delta table is located.
      */
 
     public java.util.List<String> getAdditionalLocations() {
@@ -240,7 +248,12 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A list of locations that point to the path where a Delta table is located.
+     * </p>
+     * 
      * @param additionalLocations
+     *        A list of locations that point to the path where a Delta table is located.
      */
 
     public void setAdditionalLocations(java.util.Collection<String> additionalLocations) {
@@ -254,12 +267,16 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * A list of locations that point to the path where a Delta table is located.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalLocations(java.util.Collection)} or {@link #withAdditionalLocations(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param additionalLocations
+     *        A list of locations that point to the path where a Delta table is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,7 +291,12 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A list of locations that point to the path where a Delta table is located.
+     * </p>
+     * 
      * @param additionalLocations
+     *        A list of locations that point to the path where a Delta table is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

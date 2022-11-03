@@ -31,11 +31,11 @@ public class DeleteArchiveRuleRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("analyzerName").build();
+    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("ruleName").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("ruleName").build();
 
     private static final DeleteArchiveRuleRequestMarshaller instance = new DeleteArchiveRuleRequestMarshaller();
 
@@ -54,8 +54,8 @@ public class DeleteArchiveRuleRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteArchiveRuleRequest.getAnalyzerName(), ANALYZERNAME_BINDING);
-            protocolMarshaller.marshall(deleteArchiveRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(deleteArchiveRuleRequest.getRuleName(), RULENAME_BINDING);
+            protocolMarshaller.marshall(deleteArchiveRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

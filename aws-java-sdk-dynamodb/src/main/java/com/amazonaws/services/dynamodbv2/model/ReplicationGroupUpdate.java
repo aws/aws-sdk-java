@@ -41,6 +41,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </li>
  * </ul>
+ * <note>
+ * <p>
+ * When you manually remove a table or global table replica, you do not automatically remove any associated scalable
+ * targets, scaling policies, or CloudWatch alarms.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicationGroupUpdate" target="_top">AWS
  *      API Documentation</a>

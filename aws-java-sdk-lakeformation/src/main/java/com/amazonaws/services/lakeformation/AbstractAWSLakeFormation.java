@@ -33,6 +33,11 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public AssumeDecoratedRoleWithSAMLResult assumeDecoratedRoleWithSAML(AssumeDecoratedRoleWithSAMLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGrantPermissionsResult batchGrantPermissions(BatchGrantPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

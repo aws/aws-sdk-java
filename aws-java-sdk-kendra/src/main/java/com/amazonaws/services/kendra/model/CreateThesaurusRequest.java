@@ -27,19 +27,19 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier of the index for the new thesaurus.
+     * The identifier of the index for the thesaurus.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The name for the new thesaurus.
+     * A name for the thesaurus.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description for the new thesaurus.
+     * A description for the thesaurus.
      * </p>
      */
     private String description;
@@ -58,7 +58,7 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The thesaurus file Amazon S3 source path.
+     * The path to the thesaurus file in S3.
      * </p>
      */
     private S3Path sourceS3Path;
@@ -72,11 +72,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier of the index for the new thesaurus.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The unique identifier of the index for the new thesaurus.
+     *        The identifier of the index for the thesaurus.
      */
 
     public void setIndexId(String indexId) {
@@ -85,10 +85,10 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier of the index for the new thesaurus.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
-     * @return The unique identifier of the index for the new thesaurus.
+     * @return The identifier of the index for the thesaurus.
      */
 
     public String getIndexId() {
@@ -97,11 +97,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier of the index for the new thesaurus.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The unique identifier of the index for the new thesaurus.
+     *        The identifier of the index for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +112,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for the new thesaurus.
+     * A name for the thesaurus.
      * </p>
      * 
      * @param name
-     *        The name for the new thesaurus.
+     *        A name for the thesaurus.
      */
 
     public void setName(String name) {
@@ -125,10 +125,10 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for the new thesaurus.
+     * A name for the thesaurus.
      * </p>
      * 
-     * @return The name for the new thesaurus.
+     * @return A name for the thesaurus.
      */
 
     public String getName() {
@@ -137,11 +137,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for the new thesaurus.
+     * A name for the thesaurus.
      * </p>
      * 
      * @param name
-     *        The name for the new thesaurus.
+     *        A name for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +152,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The description for the new thesaurus.
+     * A description for the thesaurus.
      * </p>
      * 
      * @param description
-     *        The description for the new thesaurus.
+     *        A description for the thesaurus.
      */
 
     public void setDescription(String description) {
@@ -165,10 +165,10 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The description for the new thesaurus.
+     * A description for the thesaurus.
      * </p>
      * 
-     * @return The description for the new thesaurus.
+     * @return A description for the thesaurus.
      */
 
     public String getDescription() {
@@ -177,11 +177,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The description for the new thesaurus.
+     * A description for the thesaurus.
      * </p>
      * 
      * @param description
-     *        The description for the new thesaurus.
+     *        A description for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The thesaurus file Amazon S3 source path.
+     * The path to the thesaurus file in S3.
      * </p>
      * 
      * @param sourceS3Path
-     *        The thesaurus file Amazon S3 source path.
+     *        The path to the thesaurus file in S3.
      */
 
     public void setSourceS3Path(S3Path sourceS3Path) {
@@ -326,10 +326,10 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The thesaurus file Amazon S3 source path.
+     * The path to the thesaurus file in S3.
      * </p>
      * 
-     * @return The thesaurus file Amazon S3 source path.
+     * @return The path to the thesaurus file in S3.
      */
 
     public S3Path getSourceS3Path() {
@@ -338,11 +338,11 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The thesaurus file Amazon S3 source path.
+     * The path to the thesaurus file in S3.
      * </p>
      * 
      * @param sourceS3Path
-     *        The thesaurus file Amazon S3 source path.
+     *        The path to the thesaurus file in S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,9 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Required when you use Dolby Vision (DolbyVision) processing. Set Profile (DolbyVisionProfile) to Profile 5
- * (Profile_5) to only include frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1
- * (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata in your output.
+ * Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your
+ * output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+ * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision
+ * metadata.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DolbyVisionProfile {

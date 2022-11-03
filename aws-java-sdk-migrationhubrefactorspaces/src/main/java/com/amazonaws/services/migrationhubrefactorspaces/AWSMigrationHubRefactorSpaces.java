@@ -31,7 +31,7 @@ import com.amazonaws.services.migrationhubrefactorspaces.model.*;
  * </p>
  * 
  * <pre>
- * <code> &lt;p&gt;This API reference provides descriptions, syntax, and other details about each of the actions and data types for Amazon Web Services Migration Hub Refactor Spaces (Refactor Spaces). The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the Amazon Web Services SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see &lt;a href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon Web Services SDKs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;To share Refactor Spaces environments with other Amazon Web Services accounts or with Organizations and their OUs, use Resource Access Manager's &lt;code&gt;CreateResourceShare&lt;/code&gt; API. See &lt;a href=&quot;https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html&quot;&gt;CreateResourceShare&lt;/a&gt; in the &lt;i&gt;Amazon Web Services RAM API Reference&lt;/i&gt;.&lt;/p&gt; </code>
+ * <code> &lt;p&gt;This API reference provides descriptions, syntax, and other details about each of the actions and data types for Amazon Web Services Migration Hub Refactor Spaces (Refactor Spaces). The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the Amazon Web Services SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see &lt;a href=&quot;https://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon Web Services SDKs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;To share Refactor Spaces environments with other Amazon Web Services accounts or with Organizations and their OUs, use Resource Access Manager's &lt;code&gt;CreateResourceShare&lt;/code&gt; API. See &lt;a href=&quot;https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html&quot;&gt;CreateResourceShare&lt;/a&gt; in the &lt;i&gt;Amazon Web Services RAM API Reference&lt;/i&gt;.&lt;/p&gt; </code>
  * </pre>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -114,6 +114,11 @@ public interface AWSMigrationHubRefactorSpaces {
      * <code>DEFAULT</code> <code>RouteType</code>.
      * </p>
      * <p>
+     * When created, the default route defaults to an active state so state is not a required input. However, like all
+     * other state values the state of the default route can be updated after creation, but only when all other routes
+     * are also inactive. Conversely, no route can be active without the default route also being active.
+     * </p>
+     * <p>
      * When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic to the target service
      * as follows:
      * </p>
@@ -138,8 +143,10 @@ public interface AWSMigrationHubRefactorSpaces {
      * </li>
      * </ul>
      * <p>
-     * A one-time health check is performed on the service when the route is created. If the health check fails, the
-     * route transitions to <code>FAILED</code>, and no traffic is sent to the service.
+     * A one-time health check is performed on the service when either the route is updated from inactive to active, or
+     * when it is created with an active state. If the health check fails, the route transitions the route state to
+     * <code>FAILED</code>, an error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no
+     * traffic is sent to the service.
      * </p>
      * <p>
      * For Lambda functions, the Lambda function state is checked. If the function is not active, the function
@@ -149,20 +156,22 @@ public interface AWSMigrationHubRefactorSpaces {
      * >GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.
      * </p>
      * <p>
-     * For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check
-     * fails. For private URLs, a target group is created and the target group health check is run.
+     * For Lambda endpoints, a check is performed to determine that a Lambda function with the specified ARN exists. If
+     * it does not exist, the health check fails. For public URLs, a connection is opened to the public endpoint. If the
+     * URL is not reachable, the health check fails.
      * </p>
      * <p>
-     * The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code> are the same
-     * protocol, port, and path specified in the URL or health URL, if used. All other settings use the default values,
-     * as described in <a
+     * For private URLS, a target group is created on the Elastic Load Balancing and the target group health check is
+     * run. The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code> are the
+     * same protocol, port, and path specified in the URL or health URL, if used. All other settings use the default
+     * values, as described in <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
      * checks for your target groups</a>. The health check is considered successful if at least one target within the
      * target group transitions to a healthy state.
      * </p>
      * <p>
      * Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates are supported.
-     * Private Certificate Authorities (CAs) are permitted only if the CA's domain is publicly resolvable.
+     * Private Certificate Authorities (CAs) are permitted only if the CA's domain is also publicly resolvable.
      * </p>
      * 
      * @param createRouteRequest
@@ -690,6 +699,29 @@ public interface AWSMigrationHubRefactorSpaces {
      *      target="_top">AWS API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon Web Services Migration Hub Refactor Spaces route.
+     * </p>
+     * 
+     * @param updateRouteRequest
+     * @return Result of the UpdateRoute operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing the request.
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Service.
+     * @throws ThrottlingException
+     *         Request was denied because the request was throttled.
+     * @throws AccessDeniedException
+     *         The user does not have sufficient access to perform this action.
+     * @sample AWSMigrationHubRefactorSpaces.UpdateRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRouteResult updateRoute(UpdateRouteRequest updateRouteRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

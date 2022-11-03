@@ -35,6 +35,17 @@ public class RedactChannelMessageResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String messageId;
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when redacting messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -117,6 +128,70 @@ public class RedactChannelMessageResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when redacting messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the response.</p> <note>
+     *        <p>
+     *        Only required when redacting messages in a SubChannel that the user belongs to.
+     *        </p>
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when redacting messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     * 
+     * @return The ID of the SubChannel in the response.</p> <note>
+     *         <p>
+     *         Only required when redacting messages in a SubChannel that the user belongs to.
+     *         </p>
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when redacting messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the response.</p> <note>
+     *        <p>
+     *        Only required when redacting messages in a SubChannel that the user belongs to.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedactChannelMessageResult withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +206,9 @@ public class RedactChannelMessageResult extends com.amazonaws.AmazonWebServiceRe
         if (getChannelArn() != null)
             sb.append("ChannelArn: ").append(getChannelArn()).append(",");
         if (getMessageId() != null)
-            sb.append("MessageId: ").append(getMessageId());
+            sb.append("MessageId: ").append(getMessageId()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +231,10 @@ public class RedactChannelMessageResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMessageId() != null && other.getMessageId().equals(this.getMessageId()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +245,7 @@ public class RedactChannelMessageResult extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

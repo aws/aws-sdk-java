@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or
- * a time interval.
+ * <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore for snapshots created by snapshot
+ * policies. You can enable fast snapshot restore based on either a count or a time interval.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/FastRestoreRule" target="_top">AWS API

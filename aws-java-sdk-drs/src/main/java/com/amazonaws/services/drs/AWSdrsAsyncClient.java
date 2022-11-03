@@ -74,6 +74,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(CreateExtendedSourceServerRequest request) {
+
+        return createExtendedSourceServerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(final CreateExtendedSourceServerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExtendedSourceServerRequest, CreateExtendedSourceServerResult> asyncHandler) {
+        final CreateExtendedSourceServerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateExtendedSourceServerResult>() {
+            @Override
+            public CreateExtendedSourceServerResult call() throws Exception {
+                CreateExtendedSourceServerResult result = null;
+
+                try {
+                    result = executeCreateExtendedSourceServer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationConfigurationTemplateResult> createReplicationConfigurationTemplateAsync(
             CreateReplicationConfigurationTemplateRequest request) {
 
@@ -627,6 +660,72 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeInitializeService(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensibleSourceServersResult> listExtensibleSourceServersAsync(ListExtensibleSourceServersRequest request) {
+
+        return listExtensibleSourceServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensibleSourceServersResult> listExtensibleSourceServersAsync(final ListExtensibleSourceServersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExtensibleSourceServersRequest, ListExtensibleSourceServersResult> asyncHandler) {
+        final ListExtensibleSourceServersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExtensibleSourceServersResult>() {
+            @Override
+            public ListExtensibleSourceServersResult call() throws Exception {
+                ListExtensibleSourceServersResult result = null;
+
+                try {
+                    result = executeListExtensibleSourceServers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest request) {
+
+        return listStagingAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(final ListStagingAccountsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStagingAccountsRequest, ListStagingAccountsResult> asyncHandler) {
+        final ListStagingAccountsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStagingAccountsResult>() {
+            @Override
+            public ListStagingAccountsResult call() throws Exception {
+                ListStagingAccountsResult result = null;
+
+                try {
+                    result = executeListStagingAccounts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

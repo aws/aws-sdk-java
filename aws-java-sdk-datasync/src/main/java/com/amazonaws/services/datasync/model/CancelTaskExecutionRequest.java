@@ -30,18 +30,18 @@ public class CancelTaskExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution to cancel.
+     * The Amazon Resource Name (ARN) of the task execution to stop.
      * </p>
      */
     private String taskExecutionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution to cancel.
+     * The Amazon Resource Name (ARN) of the task execution to stop.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task execution to cancel.
+     *        The Amazon Resource Name (ARN) of the task execution to stop.
      */
 
     public void setTaskExecutionArn(String taskExecutionArn) {
@@ -50,10 +50,10 @@ public class CancelTaskExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution to cancel.
+     * The Amazon Resource Name (ARN) of the task execution to stop.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution to cancel.
+     * @return The Amazon Resource Name (ARN) of the task execution to stop.
      */
 
     public String getTaskExecutionArn() {
@@ -62,11 +62,11 @@ public class CancelTaskExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution to cancel.
+     * The Amazon Resource Name (ARN) of the task execution to stop.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task execution to cancel.
+     *        The Amazon Resource Name (ARN) of the task execution to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

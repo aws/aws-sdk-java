@@ -27,24 +27,24 @@ public class DeleteQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the you want to delete a block list from.
+     * The identifier of the index for the block list.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The unique identifier of the block list that needs to be deleted.
+     * The identifier of the block list you want to delete.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The identifier of the you want to delete a block list from.
+     * The identifier of the index for the block list.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the you want to delete a block list from.
+     *        The identifier of the index for the block list.
      */
 
     public void setIndexId(String indexId) {
@@ -53,10 +53,10 @@ public class DeleteQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the you want to delete a block list from.
+     * The identifier of the index for the block list.
      * </p>
      * 
-     * @return The identifier of the you want to delete a block list from.
+     * @return The identifier of the index for the block list.
      */
 
     public String getIndexId() {
@@ -65,11 +65,11 @@ public class DeleteQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the you want to delete a block list from.
+     * The identifier of the index for the block list.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the you want to delete a block list from.
+     *        The identifier of the index for the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of the block list that needs to be deleted.
+     * The identifier of the block list you want to delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the block list that needs to be deleted.
+     *        The identifier of the block list you want to delete.
      */
 
     public void setId(String id) {
@@ -93,10 +93,10 @@ public class DeleteQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of the block list that needs to be deleted.
+     * The identifier of the block list you want to delete.
      * </p>
      * 
-     * @return The unique identifier of the block list that needs to be deleted.
+     * @return The identifier of the block list you want to delete.
      */
 
     public String getId() {
@@ -105,11 +105,11 @@ public class DeleteQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of the block list that needs to be deleted.
+     * The identifier of the block list you want to delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the block list that needs to be deleted.
+     *        The identifier of the block list you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,6 +33,8 @@ public class ListInstalledComponentsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> TOPOLOGYFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("topologyFilter").build();
 
     private static final ListInstalledComponentsRequestMarshaller instance = new ListInstalledComponentsRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListInstalledComponentsRequestMarshaller {
             protocolMarshaller.marshall(listInstalledComponentsRequest.getCoreDeviceThingName(), COREDEVICETHINGNAME_BINDING);
             protocolMarshaller.marshall(listInstalledComponentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listInstalledComponentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listInstalledComponentsRequest.getTopologyFilter(), TOPOLOGYFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -26,6 +26,12 @@ public class ConflictException extends com.amazonaws.services.mgn.model.AWSmgnEx
     private String code;
     /**
      * <p>
+     * Conflict Exception specific errors.
+     * </p>
+     */
+    private java.util.List<ErrorDetails> errors;
+    /**
+     * <p>
      * A conflict occurred when prompting for the Resource ID.
      * </p>
      */
@@ -72,6 +78,78 @@ public class ConflictException extends com.amazonaws.services.mgn.model.AWSmgnEx
 
     public ConflictException withCode(String code) {
         setCode(code);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Conflict Exception specific errors.
+     * </p>
+     * 
+     * @return Conflict Exception specific errors.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("errors")
+    public java.util.List<ErrorDetails> getErrors() {
+        return errors;
+    }
+
+    /**
+     * <p>
+     * Conflict Exception specific errors.
+     * </p>
+     * 
+     * @param errors
+     *        Conflict Exception specific errors.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("errors")
+    public void setErrors(java.util.Collection<ErrorDetails> errors) {
+        if (errors == null) {
+            this.errors = null;
+            return;
+        }
+
+        this.errors = new java.util.ArrayList<ErrorDetails>(errors);
+    }
+
+    /**
+     * <p>
+     * Conflict Exception specific errors.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrors(java.util.Collection)} or {@link #withErrors(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param errors
+     *        Conflict Exception specific errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withErrors(ErrorDetails... errors) {
+        if (this.errors == null) {
+            setErrors(new java.util.ArrayList<ErrorDetails>(errors.length));
+        }
+        for (ErrorDetails ele : errors) {
+            this.errors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Conflict Exception specific errors.
+     * </p>
+     * 
+     * @param errors
+     *        Conflict Exception specific errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withErrors(java.util.Collection<ErrorDetails> errors) {
+        setErrors(errors);
         return this;
     }
 

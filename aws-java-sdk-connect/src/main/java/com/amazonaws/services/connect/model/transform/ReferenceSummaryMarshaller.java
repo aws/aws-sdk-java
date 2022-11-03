@@ -31,6 +31,14 @@ public class ReferenceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Url").build();
     private static final MarshallingInfo<StructuredPojo> ATTACHMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Attachment").build();
+    private static final MarshallingInfo<StructuredPojo> STRING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("String").build();
+    private static final MarshallingInfo<StructuredPojo> NUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Number").build();
+    private static final MarshallingInfo<StructuredPojo> DATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Date").build();
+    private static final MarshallingInfo<StructuredPojo> EMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Email").build();
 
     private static final ReferenceSummaryMarshaller instance = new ReferenceSummaryMarshaller();
 
@@ -50,6 +58,10 @@ public class ReferenceSummaryMarshaller {
         try {
             protocolMarshaller.marshall(referenceSummary.getUrl(), URL_BINDING);
             protocolMarshaller.marshall(referenceSummary.getAttachment(), ATTACHMENT_BINDING);
+            protocolMarshaller.marshall(referenceSummary.getString(), STRING_BINDING);
+            protocolMarshaller.marshall(referenceSummary.getNumber(), NUMBER_BINDING);
+            protocolMarshaller.marshall(referenceSummary.getDate(), DATE_BINDING);
+            protocolMarshaller.marshall(referenceSummary.getEmail(), EMAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

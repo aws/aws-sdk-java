@@ -19,18 +19,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an integration response. The status code must map to an existing <a>MethodResponse</a>, and parameters and
+ * Represents an integration response. The status code must map to an existing MethodResponse, and parameters and
  * templates can be used to transform the back-end response.
  * </p>
- * <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IntegrationResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * Specifies the status code that is used to map the integration response to an existing MethodResponse.
      * </p>
      */
     private String statusCode;
@@ -70,19 +68,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * Specifies how to handle response payload content type conversions. Supported values are
      * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If this property is not defined, the response payload will be passed through from the integration response to the
      * method response without modification.
@@ -92,12 +77,11 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * Specifies the status code that is used to map the integration response to an existing MethodResponse.
      * </p>
      * 
      * @param statusCode
-     *        Specifies the status code that is used to map the integration response to an existing
-     *        <a>MethodResponse</a>.
+     *        Specifies the status code that is used to map the integration response to an existing MethodResponse.
      */
 
     public void setStatusCode(String statusCode) {
@@ -106,11 +90,10 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * Specifies the status code that is used to map the integration response to an existing MethodResponse.
      * </p>
      * 
-     * @return Specifies the status code that is used to map the integration response to an existing
-     *         <a>MethodResponse</a>.
+     * @return Specifies the status code that is used to map the integration response to an existing MethodResponse.
      */
 
     public String getStatusCode() {
@@ -119,12 +102,11 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * Specifies the status code that is used to map the integration response to an existing MethodResponse.
      * </p>
      * 
      * @param statusCode
-     *        Specifies the status code that is used to map the integration response to an existing
-     *        <a>MethodResponse</a>.
+     *        Specifies the status code that is used to map the integration response to an existing MethodResponse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,19 +377,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * Specifies how to handle response payload content type conversions. Supported values are
      * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If this property is not defined, the response payload will be passed through from the integration response to the
      * method response without modification.
@@ -416,19 +385,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @param contentHandling
      *        Specifies how to handle response payload content type conversions. Supported values are
      *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
-     *        corresponding binary blob.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If this property is not defined, the response payload will be passed through from the integration response
      *        to the method response without modification.
@@ -444,19 +400,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * Specifies how to handle response payload content type conversions. Supported values are
      * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If this property is not defined, the response payload will be passed through from the integration response to the
      * method response without modification.
@@ -464,19 +407,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * 
      * @return Specifies how to handle response payload content type conversions. Supported values are
      *         <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
-     *         corresponding binary blob.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         If this property is not defined, the response payload will be passed through from the integration
      *         response to the method response without modification.
@@ -492,19 +422,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * Specifies how to handle response payload content type conversions. Supported values are
      * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If this property is not defined, the response payload will be passed through from the integration response to the
      * method response without modification.
@@ -513,19 +430,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @param contentHandling
      *        Specifies how to handle response payload content type conversions. Supported values are
      *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
-     *        corresponding binary blob.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If this property is not defined, the response payload will be passed through from the integration response
      *        to the method response without modification.
@@ -543,19 +447,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * Specifies how to handle response payload content type conversions. Supported values are
      * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If this property is not defined, the response payload will be passed through from the integration response to the
      * method response without modification.
@@ -564,19 +455,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @param contentHandling
      *        Specifies how to handle response payload content type conversions. Supported values are
      *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
-     *        corresponding binary blob.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If this property is not defined, the response payload will be passed through from the integration response
      *        to the method response without modification.
@@ -592,19 +470,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * Specifies how to handle response payload content type conversions. Supported values are
      * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If this property is not defined, the response payload will be passed through from the integration response to the
      * method response without modification.
@@ -613,19 +478,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @param contentHandling
      *        Specifies how to handle response payload content type conversions. Supported values are
      *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
-     *        corresponding binary blob.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If this property is not defined, the response payload will be passed through from the integration response
      *        to the method response without modification.

@@ -48,23 +48,23 @@ public class CloudTrailDetailsJsonUnmarshaller implements Unmarshaller<CloudTrai
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("accessRole", targetDepth)) {
-                    context.nextToken();
-                    cloudTrailDetails.setAccessRole(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("endTime", targetDepth)) {
-                    context.nextToken();
-                    cloudTrailDetails.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("startTime", targetDepth)) {
-                    context.nextToken();
-                    cloudTrailDetails.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("trails", targetDepth)) {
                     context.nextToken();
                     cloudTrailDetails.setTrails(new ListUnmarshaller<Trail>(TrailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("accessRole", targetDepth)) {
+                    context.nextToken();
+                    cloudTrailDetails.setAccessRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("startTime", targetDepth)) {
+                    context.nextToken();
+                    cloudTrailDetails.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("endTime", targetDepth)) {
+                    context.nextToken();
+                    cloudTrailDetails.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

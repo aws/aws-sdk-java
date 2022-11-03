@@ -48,8 +48,8 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
     private String hyperParameterTuningJobStatus;
     /**
      * <p>
-     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     * iteration. Currently, the only valid value is Bayesian.
+     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each
+     * iteration.
      * </p>
      */
     private String strategy;
@@ -234,13 +234,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     * iteration. Currently, the only valid value is Bayesian.
+     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each
+     * iteration.
      * </p>
      * 
      * @param strategy
-     *        Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     *        iteration. Currently, the only valid value is Bayesian.
+     *        Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at
+     *        each iteration.
      * @see HyperParameterTuningJobStrategyType
      */
 
@@ -250,12 +250,12 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     * iteration. Currently, the only valid value is Bayesian.
+     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each
+     * iteration.
      * </p>
      * 
-     * @return Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     *         iteration. Currently, the only valid value is Bayesian.
+     * @return Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at
+     *         each iteration.
      * @see HyperParameterTuningJobStrategyType
      */
 
@@ -265,13 +265,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     * iteration. Currently, the only valid value is Bayesian.
+     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each
+     * iteration.
      * </p>
      * 
      * @param strategy
-     *        Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     *        iteration. Currently, the only valid value is Bayesian.
+     *        Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at
+     *        each iteration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HyperParameterTuningJobStrategyType
      */
@@ -283,13 +283,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     * iteration. Currently, the only valid value is Bayesian.
+     * Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each
+     * iteration.
      * </p>
      * 
      * @param strategy
-     *        Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each
-     *        iteration. Currently, the only valid value is Bayesian.
+     *        Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at
+     *        each iteration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HyperParameterTuningJobStrategyType
      */

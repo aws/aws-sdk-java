@@ -80,11 +80,6 @@ public class LifecycleRule implements Serializable, Cloneable {
      * <p>
      * The noncurrent version expiration of the lifecycle rule.
      * </p>
-     * <note>
-     * <p>
-     * This is not supported by Amazon S3 on Outposts buckets.
-     * </p>
-     * </note>
      */
     private NoncurrentVersionExpiration noncurrentVersionExpiration;
     /**
@@ -515,17 +510,9 @@ public class LifecycleRule implements Serializable, Cloneable {
      * <p>
      * The noncurrent version expiration of the lifecycle rule.
      * </p>
-     * <note>
-     * <p>
-     * This is not supported by Amazon S3 on Outposts buckets.
-     * </p>
-     * </note>
      * 
      * @param noncurrentVersionExpiration
-     *        The noncurrent version expiration of the lifecycle rule.</p> <note>
-     *        <p>
-     *        This is not supported by Amazon S3 on Outposts buckets.
-     *        </p>
+     *        The noncurrent version expiration of the lifecycle rule.
      */
 
     public void setNoncurrentVersionExpiration(NoncurrentVersionExpiration noncurrentVersionExpiration) {
@@ -536,16 +523,8 @@ public class LifecycleRule implements Serializable, Cloneable {
      * <p>
      * The noncurrent version expiration of the lifecycle rule.
      * </p>
-     * <note>
-     * <p>
-     * This is not supported by Amazon S3 on Outposts buckets.
-     * </p>
-     * </note>
      * 
-     * @return The noncurrent version expiration of the lifecycle rule.</p> <note>
-     *         <p>
-     *         This is not supported by Amazon S3 on Outposts buckets.
-     *         </p>
+     * @return The noncurrent version expiration of the lifecycle rule.
      */
 
     public NoncurrentVersionExpiration getNoncurrentVersionExpiration() {
@@ -556,17 +535,9 @@ public class LifecycleRule implements Serializable, Cloneable {
      * <p>
      * The noncurrent version expiration of the lifecycle rule.
      * </p>
-     * <note>
-     * <p>
-     * This is not supported by Amazon S3 on Outposts buckets.
-     * </p>
-     * </note>
      * 
      * @param noncurrentVersionExpiration
-     *        The noncurrent version expiration of the lifecycle rule.</p> <note>
-     *        <p>
-     *        This is not supported by Amazon S3 on Outposts buckets.
-     *        </p>
+     *        The noncurrent version expiration of the lifecycle rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

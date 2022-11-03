@@ -48,6 +48,13 @@ public class FulfillmentCodeHookSettings implements Serializable, Cloneable, Str
      * </p>
      */
     private FulfillmentUpdatesSpecification fulfillmentUpdatesSpecification;
+    /**
+     * <p>
+     * Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't
+     * run.
+     * </p>
+     */
+    private Boolean active;
 
     /**
      * <p>
@@ -194,6 +201,66 @@ public class FulfillmentCodeHookSettings implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't
+     * run.
+     * </p>
+     * 
+     * @param active
+     *        Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook
+     *        doesn't run.
+     */
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    /**
+     * <p>
+     * Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't
+     * run.
+     * </p>
+     * 
+     * @return Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook
+     *         doesn't run.
+     */
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't
+     * run.
+     * </p>
+     * 
+     * @param active
+     *        Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook
+     *        doesn't run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FulfillmentCodeHookSettings withActive(Boolean active) {
+        setActive(active);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't
+     * run.
+     * </p>
+     * 
+     * @return Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook
+     *         doesn't run.
+     */
+
+    public Boolean isActive() {
+        return this.active;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -210,7 +277,9 @@ public class FulfillmentCodeHookSettings implements Serializable, Cloneable, Str
         if (getPostFulfillmentStatusSpecification() != null)
             sb.append("PostFulfillmentStatusSpecification: ").append(getPostFulfillmentStatusSpecification()).append(",");
         if (getFulfillmentUpdatesSpecification() != null)
-            sb.append("FulfillmentUpdatesSpecification: ").append(getFulfillmentUpdatesSpecification());
+            sb.append("FulfillmentUpdatesSpecification: ").append(getFulfillmentUpdatesSpecification()).append(",");
+        if (getActive() != null)
+            sb.append("Active: ").append(getActive());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +308,10 @@ public class FulfillmentCodeHookSettings implements Serializable, Cloneable, Str
         if (other.getFulfillmentUpdatesSpecification() != null
                 && other.getFulfillmentUpdatesSpecification().equals(this.getFulfillmentUpdatesSpecification()) == false)
             return false;
+        if (other.getActive() == null ^ this.getActive() == null)
+            return false;
+        if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +323,7 @@ public class FulfillmentCodeHookSettings implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getPostFulfillmentStatusSpecification() == null) ? 0 : getPostFulfillmentStatusSpecification().hashCode());
         hashCode = prime * hashCode + ((getFulfillmentUpdatesSpecification() == null) ? 0 : getFulfillmentUpdatesSpecification().hashCode());
+        hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         return hashCode;
     }
 

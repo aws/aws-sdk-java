@@ -43,7 +43,7 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
     private String invocationRole;
     /**
      * <p>
-     * The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to stop sharing.
      * </p>
      */
     private String directoryId;
@@ -136,11 +136,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to stop sharing.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     *        The identifier of the Directory Service directory that you want to stop sharing.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -149,10 +149,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to stop sharing.
      * </p>
      * 
-     * @return The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     * @return The identifier of the Directory Service directory that you want to stop sharing.
      */
 
     public String getDirectoryId() {
@@ -161,11 +161,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to stop sharing.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.
+     *        The identifier of the Directory Service directory that you want to stop sharing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

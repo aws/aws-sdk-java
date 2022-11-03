@@ -34,6 +34,18 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
      * </p>
      */
     private Boolean addGwMetadata;
+    /**
+     * <p>
+     * The DrMin value.
+     * </p>
+     */
+    private Integer drMin;
+    /**
+     * <p>
+     * The DrMax value.
+     * </p>
+     */
+    private Integer drMax;
 
     /**
      * <p>
@@ -88,6 +100,86 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The DrMin value.
+     * </p>
+     * 
+     * @param drMin
+     *        The DrMin value.
+     */
+
+    public void setDrMin(Integer drMin) {
+        this.drMin = drMin;
+    }
+
+    /**
+     * <p>
+     * The DrMin value.
+     * </p>
+     * 
+     * @return The DrMin value.
+     */
+
+    public Integer getDrMin() {
+        return this.drMin;
+    }
+
+    /**
+     * <p>
+     * The DrMin value.
+     * </p>
+     * 
+     * @param drMin
+     *        The DrMin value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANServiceProfile withDrMin(Integer drMin) {
+        setDrMin(drMin);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DrMax value.
+     * </p>
+     * 
+     * @param drMax
+     *        The DrMax value.
+     */
+
+    public void setDrMax(Integer drMax) {
+        this.drMax = drMax;
+    }
+
+    /**
+     * <p>
+     * The DrMax value.
+     * </p>
+     * 
+     * @return The DrMax value.
+     */
+
+    public Integer getDrMax() {
+        return this.drMax;
+    }
+
+    /**
+     * <p>
+     * The DrMax value.
+     * </p>
+     * 
+     * @param drMax
+     *        The DrMax value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANServiceProfile withDrMax(Integer drMax) {
+        setDrMax(drMax);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +192,11 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddGwMetadata() != null)
-            sb.append("AddGwMetadata: ").append(getAddGwMetadata());
+            sb.append("AddGwMetadata: ").append(getAddGwMetadata()).append(",");
+        if (getDrMin() != null)
+            sb.append("DrMin: ").append(getDrMin()).append(",");
+        if (getDrMax() != null)
+            sb.append("DrMax: ").append(getDrMax());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +215,14 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
             return false;
         if (other.getAddGwMetadata() != null && other.getAddGwMetadata().equals(this.getAddGwMetadata()) == false)
             return false;
+        if (other.getDrMin() == null ^ this.getDrMin() == null)
+            return false;
+        if (other.getDrMin() != null && other.getDrMin().equals(this.getDrMin()) == false)
+            return false;
+        if (other.getDrMax() == null ^ this.getDrMax() == null)
+            return false;
+        if (other.getDrMax() != null && other.getDrMax().equals(this.getDrMax()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +232,8 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAddGwMetadata() == null) ? 0 : getAddGwMetadata().hashCode());
+        hashCode = prime * hashCode + ((getDrMin() == null) ? 0 : getDrMin().hashCode());
+        hashCode = prime * hashCode + ((getDrMax() == null) ? 0 : getDrMax().hashCode());
         return hashCode;
     }
 

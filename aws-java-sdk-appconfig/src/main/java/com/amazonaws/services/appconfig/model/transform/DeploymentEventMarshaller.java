@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appconfig.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class DeploymentEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredBy").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> ACTIONINVOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActionInvocations").build();
     private static final MarshallingInfo<java.util.Date> OCCURREDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OccurredAt").timestampFormat("iso8601").build();
 
@@ -55,6 +58,7 @@ public class DeploymentEventMarshaller {
             protocolMarshaller.marshall(deploymentEvent.getEventType(), EVENTTYPE_BINDING);
             protocolMarshaller.marshall(deploymentEvent.getTriggeredBy(), TRIGGEREDBY_BINDING);
             protocolMarshaller.marshall(deploymentEvent.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(deploymentEvent.getActionInvocations(), ACTIONINVOCATIONS_BINDING);
             protocolMarshaller.marshall(deploymentEvent.getOccurredAt(), OCCURREDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

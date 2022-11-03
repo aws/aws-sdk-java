@@ -27,7 +27,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six
      * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.
      * </p>
@@ -64,7 +64,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six
      * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.
      * </p>
@@ -72,7 +72,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * Array Members: Maximum number of 50 IDs.
      * </p>
      * 
-     * @return The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
+     * @return The activity IDs of the desired scaling activities. If you omit this property, all activities for the
      *         past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
      *         specify an Auto Scaling group, the results are limited to that group.</p>
      *         <p>
@@ -88,7 +88,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six
      * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.
      * </p>
@@ -97,8 +97,8 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param activityIds
-     *        The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
-     *        past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *        The activity IDs of the desired scaling activities. If you omit this property, all activities for the past
+     *        six weeks are described. If unknown activities are requested, they are ignored with no error. If you
      *        specify an Auto Scaling group, the results are limited to that group.</p>
      *        <p>
      *        Array Members: Maximum number of 50 IDs.
@@ -115,7 +115,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six
      * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.
      * </p>
@@ -129,8 +129,8 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param activityIds
-     *        The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
-     *        past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *        The activity IDs of the desired scaling activities. If you omit this property, all activities for the past
+     *        six weeks are described. If unknown activities are requested, they are ignored with no error. If you
      *        specify an Auto Scaling group, the results are limited to that group.</p>
      *        <p>
      *        Array Members: Maximum number of 50 IDs.
@@ -149,7 +149,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six
      * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.
      * </p>
@@ -158,8 +158,8 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param activityIds
-     *        The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
-     *        past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *        The activity IDs of the desired scaling activities. If you omit this property, all activities for the past
+     *        six weeks are described. If unknown activities are requested, they are ignored with no error. If you
      *        specify an Auto Scaling group, the results are limited to that group.</p>
      *        <p>
      *        Array Members: Maximum number of 50 IDs.

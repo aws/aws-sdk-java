@@ -41,7 +41,13 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
     private String createTime;
     /**
      * <p>
-     * Whether the volume is encrypted.
+     * The device name for the volume that is attached to the instance.
+     * </p>
+     */
+    private String deviceName;
+    /**
+     * <p>
+     * Specifies whether the volume is encrypted.
      * </p>
      */
     private Boolean encrypted;
@@ -59,8 +65,40 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
     private String snapshotId;
     /**
      * <p>
-     * The volume state.
+     * The volume state. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>error</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>in-use</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -75,6 +113,24 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.List<AwsEc2VolumeAttachment> attachments;
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     */
+    private String volumeId;
+    /**
+     * <p>
+     * The volume type.
+     * </p>
+     */
+    private String volumeType;
+    /**
+     * <p>
+     * Indicates whether the volume was scanned or skipped.
+     * </p>
+     */
+    private String volumeScanStatus;
 
     /**
      * <p>
@@ -145,11 +201,51 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the volume is encrypted.
+     * The device name for the volume that is attached to the instance.
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name for the volume that is attached to the instance.
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name for the volume that is attached to the instance.
+     * </p>
+     * 
+     * @return The device name for the volume that is attached to the instance.
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name for the volume that is attached to the instance.
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name for the volume that is attached to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2VolumeDetails withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the volume is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Whether the volume is encrypted.
+     *        Specifies whether the volume is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -158,10 +254,10 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the volume is encrypted.
+     * Specifies whether the volume is encrypted.
      * </p>
      * 
-     * @return Whether the volume is encrypted.
+     * @return Specifies whether the volume is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -170,11 +266,11 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the volume is encrypted.
+     * Specifies whether the volume is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Whether the volume is encrypted.
+     *        Specifies whether the volume is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,10 +281,10 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the volume is encrypted.
+     * Specifies whether the volume is encrypted.
      * </p>
      * 
-     * @return Whether the volume is encrypted.
+     * @return Specifies whether the volume is encrypted.
      */
 
     public Boolean isEncrypted() {
@@ -277,11 +373,74 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume state.
+     * The volume state. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>error</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>in-use</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The volume state.
+     *        The volume state. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>creating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>error</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>in-use</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -290,10 +449,73 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume state.
+     * The volume state. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>error</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>in-use</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The volume state.
+     * @return The volume state. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>creating</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleted</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>error</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>in-use</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -302,11 +524,74 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume state.
+     * The volume state. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>error</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>in-use</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The volume state.
+     *        The volume state. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>creating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>error</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>in-use</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,6 +711,126 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @return The ID of the volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2VolumeDetails withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The volume type.
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type.
+     */
+
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+
+    /**
+     * <p>
+     * The volume type.
+     * </p>
+     * 
+     * @return The volume type.
+     */
+
+    public String getVolumeType() {
+        return this.volumeType;
+    }
+
+    /**
+     * <p>
+     * The volume type.
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2VolumeDetails withVolumeType(String volumeType) {
+        setVolumeType(volumeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume was scanned or skipped.
+     * </p>
+     * 
+     * @param volumeScanStatus
+     *        Indicates whether the volume was scanned or skipped.
+     */
+
+    public void setVolumeScanStatus(String volumeScanStatus) {
+        this.volumeScanStatus = volumeScanStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume was scanned or skipped.
+     * </p>
+     * 
+     * @return Indicates whether the volume was scanned or skipped.
+     */
+
+    public String getVolumeScanStatus() {
+        return this.volumeScanStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume was scanned or skipped.
+     * </p>
+     * 
+     * @param volumeScanStatus
+     *        Indicates whether the volume was scanned or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2VolumeDetails withVolumeScanStatus(String volumeScanStatus) {
+        setVolumeScanStatus(volumeScanStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -439,6 +844,8 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
+        if (getDeviceName() != null)
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getEncrypted() != null)
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getSize() != null)
@@ -450,7 +857,13 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getAttachments() != null)
-            sb.append("Attachments: ").append(getAttachments());
+            sb.append("Attachments: ").append(getAttachments()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
+        if (getVolumeType() != null)
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
+        if (getVolumeScanStatus() != null)
+            sb.append("VolumeScanStatus: ").append(getVolumeScanStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +881,10 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
         if (other.getCreateTime() == null ^ this.getCreateTime() == null)
             return false;
         if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
+            return false;
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+            return false;
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
         if (other.getEncrypted() == null ^ this.getEncrypted() == null)
             return false;
@@ -493,6 +910,18 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
             return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
+            return false;
+        if (other.getVolumeType() == null ^ this.getVolumeType() == null)
+            return false;
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
+            return false;
+        if (other.getVolumeScanStatus() == null ^ this.getVolumeScanStatus() == null)
+            return false;
+        if (other.getVolumeScanStatus() != null && other.getVolumeScanStatus().equals(this.getVolumeScanStatus()) == false)
+            return false;
         return true;
     }
 
@@ -502,12 +931,16 @@ public class AwsEc2VolumeDetails implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getVolumeScanStatus() == null) ? 0 : getVolumeScanStatus().hashCode());
         return hashCode;
     }
 

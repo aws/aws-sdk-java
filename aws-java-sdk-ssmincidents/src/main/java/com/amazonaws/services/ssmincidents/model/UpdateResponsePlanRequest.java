@@ -60,7 +60,8 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
     private String displayName;
     /**
      * <p>
-     * The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      */
     private java.util.List<String> engagements;
@@ -120,6 +121,14 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String incidentTemplateSummary;
+    /**
+     * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident. To call this action, you must also have permission to
+     * call the <code>TagResource</code> API action for the incident record resource.
+     * </p>
+     */
+    private java.util.Map<String, String> incidentTemplateTags;
     /**
      * <p>
      * The short format name of the incident. The title can't contain spaces.
@@ -374,10 +383,12 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
-     * @return The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     * @return The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages
+     *         during an incident.
      */
 
     public java.util.List<String> getEngagements() {
@@ -386,11 +397,13 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      */
 
     public void setEngagements(java.util.Collection<String> engagements) {
@@ -404,7 +417,8 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -413,7 +427,8 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,11 +444,13 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that Incident Manager engages at the start of the incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,6 +844,86 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident. To call this action, you must also have permission to
+     * call the <code>TagResource</code> API action for the incident record resource.
+     * </p>
+     * 
+     * @return Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident
+     *         Manager assigns the tags specified in the template to the incident. To call this action, you must also
+     *         have permission to call the <code>TagResource</code> API action for the incident record resource.
+     */
+
+    public java.util.Map<String, String> getIncidentTemplateTags() {
+        return incidentTemplateTags;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident. To call this action, you must also have permission to
+     * call the <code>TagResource</code> API action for the incident record resource.
+     * </p>
+     * 
+     * @param incidentTemplateTags
+     *        Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     *        assigns the tags specified in the template to the incident. To call this action, you must also have
+     *        permission to call the <code>TagResource</code> API action for the incident record resource.
+     */
+
+    public void setIncidentTemplateTags(java.util.Map<String, String> incidentTemplateTags) {
+        this.incidentTemplateTags = incidentTemplateTags;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident. To call this action, you must also have permission to
+     * call the <code>TagResource</code> API action for the incident record resource.
+     * </p>
+     * 
+     * @param incidentTemplateTags
+     *        Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     *        assigns the tags specified in the template to the incident. To call this action, you must also have
+     *        permission to call the <code>TagResource</code> API action for the incident record resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResponsePlanRequest withIncidentTemplateTags(java.util.Map<String, String> incidentTemplateTags) {
+        setIncidentTemplateTags(incidentTemplateTags);
+        return this;
+    }
+
+    /**
+     * Add a single IncidentTemplateTags entry
+     *
+     * @see UpdateResponsePlanRequest#withIncidentTemplateTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResponsePlanRequest addIncidentTemplateTagsEntry(String key, String value) {
+        if (null == this.incidentTemplateTags) {
+            this.incidentTemplateTags = new java.util.HashMap<String, String>();
+        }
+        if (this.incidentTemplateTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.incidentTemplateTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into IncidentTemplateTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResponsePlanRequest clearIncidentTemplateTagsEntries() {
+        this.incidentTemplateTags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The short format name of the incident. The title can't contain spaces.
      * </p>
      * 
@@ -897,6 +994,8 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("IncidentTemplateNotificationTargets: ").append(getIncidentTemplateNotificationTargets()).append(",");
         if (getIncidentTemplateSummary() != null)
             sb.append("IncidentTemplateSummary: ").append(getIncidentTemplateSummary()).append(",");
+        if (getIncidentTemplateTags() != null)
+            sb.append("IncidentTemplateTags: ").append(getIncidentTemplateTags()).append(",");
         if (getIncidentTemplateTitle() != null)
             sb.append("IncidentTemplateTitle: ").append(getIncidentTemplateTitle());
         sb.append("}");
@@ -954,6 +1053,10 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getIncidentTemplateSummary() != null && other.getIncidentTemplateSummary().equals(this.getIncidentTemplateSummary()) == false)
             return false;
+        if (other.getIncidentTemplateTags() == null ^ this.getIncidentTemplateTags() == null)
+            return false;
+        if (other.getIncidentTemplateTags() != null && other.getIncidentTemplateTags().equals(this.getIncidentTemplateTags()) == false)
+            return false;
         if (other.getIncidentTemplateTitle() == null ^ this.getIncidentTemplateTitle() == null)
             return false;
         if (other.getIncidentTemplateTitle() != null && other.getIncidentTemplateTitle().equals(this.getIncidentTemplateTitle()) == false)
@@ -976,6 +1079,7 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getIncidentTemplateImpact() == null) ? 0 : getIncidentTemplateImpact().hashCode());
         hashCode = prime * hashCode + ((getIncidentTemplateNotificationTargets() == null) ? 0 : getIncidentTemplateNotificationTargets().hashCode());
         hashCode = prime * hashCode + ((getIncidentTemplateSummary() == null) ? 0 : getIncidentTemplateSummary().hashCode());
+        hashCode = prime * hashCode + ((getIncidentTemplateTags() == null) ? 0 : getIncidentTemplateTags().hashCode());
         hashCode = prime * hashCode + ((getIncidentTemplateTitle() == null) ? 0 : getIncidentTemplateTitle().hashCode());
         return hashCode;
     }

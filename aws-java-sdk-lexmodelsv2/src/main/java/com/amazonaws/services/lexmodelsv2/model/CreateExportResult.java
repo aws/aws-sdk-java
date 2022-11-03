@@ -44,8 +44,8 @@ public class CreateExportResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The status of the export. When the status is <code>Completed</code>, you can use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the
-     * pre-signed S3 URL link to your exported bot or bot locale.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
+     * the pre-signed S3 URL link to your exported bot or bot locale.
      * </p>
      */
     private String exportStatus;
@@ -198,14 +198,14 @@ public class CreateExportResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The status of the export. When the status is <code>Completed</code>, you can use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the
-     * pre-signed S3 URL link to your exported bot or bot locale.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
+     * the pre-signed S3 URL link to your exported bot or bot locale.
      * </p>
      * 
      * @param exportStatus
      *        The status of the export. When the status is <code>Completed</code>, you can use the <a
-     *        href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
-     *        the pre-signed S3 URL link to your exported bot or bot locale.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to
+     *        get the pre-signed S3 URL link to your exported bot or bot locale.
      * @see ExportStatus
      */
 
@@ -216,13 +216,13 @@ public class CreateExportResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The status of the export. When the status is <code>Completed</code>, you can use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the
-     * pre-signed S3 URL link to your exported bot or bot locale.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
+     * the pre-signed S3 URL link to your exported bot or bot locale.
      * </p>
      * 
      * @return The status of the export. When the status is <code>Completed</code>, you can use the <a
-     *         href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
-     *         the pre-signed S3 URL link to your exported bot or bot locale.
+     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation
+     *         to get the pre-signed S3 URL link to your exported bot or bot locale.
      * @see ExportStatus
      */
 
@@ -233,14 +233,14 @@ public class CreateExportResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The status of the export. When the status is <code>Completed</code>, you can use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the
-     * pre-signed S3 URL link to your exported bot or bot locale.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
+     * the pre-signed S3 URL link to your exported bot or bot locale.
      * </p>
      * 
      * @param exportStatus
      *        The status of the export. When the status is <code>Completed</code>, you can use the <a
-     *        href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
-     *        the pre-signed S3 URL link to your exported bot or bot locale.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to
+     *        get the pre-signed S3 URL link to your exported bot or bot locale.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportStatus
      */
@@ -253,14 +253,14 @@ public class CreateExportResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The status of the export. When the status is <code>Completed</code>, you can use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the
-     * pre-signed S3 URL link to your exported bot or bot locale.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
+     * the pre-signed S3 URL link to your exported bot or bot locale.
      * </p>
      * 
      * @param exportStatus
      *        The status of the export. When the status is <code>Completed</code>, you can use the <a
-     *        href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get
-     *        the pre-signed S3 URL link to your exported bot or bot locale.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to
+     *        get the pre-signed S3 URL link to your exported bot or bot locale.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportStatus
      */

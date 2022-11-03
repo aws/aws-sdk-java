@@ -34,6 +34,11 @@ public class AbstractAWSProton implements AWSProton {
     }
 
     @Override
+    public CancelComponentDeploymentResult cancelComponentDeployment(CancelComponentDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelEnvironmentDeploymentResult cancelEnvironmentDeployment(CancelEnvironmentDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -45,6 +50,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public CancelServicePipelineDeploymentResult cancelServicePipelineDeployment(CancelServicePipelineDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateComponentResult createComponent(CreateComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,6 +100,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public CreateTemplateSyncConfigResult createTemplateSyncConfig(CreateTemplateSyncConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,6 +155,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetComponentResult getComponent(GetComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -200,6 +220,21 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public GetTemplateSyncStatusResult getTemplateSyncStatus(GetTemplateSyncStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListComponentOutputsResult listComponentOutputs(ListComponentOutputsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListComponentProvisionedResourcesResult listComponentProvisionedResources(ListComponentProvisionedResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListComponentsResult listComponents(ListComponentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -310,6 +345,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateComponentResult updateComponent(UpdateComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

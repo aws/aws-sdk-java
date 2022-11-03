@@ -33,8 +33,8 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
     private String tableArn;
     /**
      * <p>
-     * Time in the past from which to export table data. The table export will be a snapshot of the table's state at
-     * this point in time.
+     * Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table
+     * export will be a snapshot of the table's state at this point in time.
      * </p>
      */
     private java.util.Date exportTime;
@@ -50,7 +50,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     * window, DynamoDB returns an <code>ImportConflictException</code>.
      * </p>
      */
     private String clientToken;
@@ -147,13 +147,13 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Time in the past from which to export table data. The table export will be a snapshot of the table's state at
-     * this point in time.
+     * Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table
+     * export will be a snapshot of the table's state at this point in time.
      * </p>
      * 
      * @param exportTime
-     *        Time in the past from which to export table data. The table export will be a snapshot of the table's state
-     *        at this point in time.
+     *        Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The
+     *        table export will be a snapshot of the table's state at this point in time.
      */
 
     public void setExportTime(java.util.Date exportTime) {
@@ -162,12 +162,12 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Time in the past from which to export table data. The table export will be a snapshot of the table's state at
-     * this point in time.
+     * Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table
+     * export will be a snapshot of the table's state at this point in time.
      * </p>
      * 
-     * @return Time in the past from which to export table data. The table export will be a snapshot of the table's
-     *         state at this point in time.
+     * @return Time in the past from which to export table data, counted in seconds from the start of the Unix epoch.
+     *         The table export will be a snapshot of the table's state at this point in time.
      */
 
     public java.util.Date getExportTime() {
@@ -176,13 +176,13 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Time in the past from which to export table data. The table export will be a snapshot of the table's state at
-     * this point in time.
+     * Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table
+     * export will be a snapshot of the table's state at this point in time.
      * </p>
      * 
      * @param exportTime
-     *        Time in the past from which to export table data. The table export will be a snapshot of the table's state
-     *        at this point in time.
+     *        Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The
+     *        table export will be a snapshot of the table's state at this point in time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,7 +203,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     * window, DynamoDB returns an <code>ImportConflictException</code>.
      * </p>
      * 
      * @param clientToken
@@ -216,7 +216,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <p>
      *        If you submit a request with the same client token but a change in other parameters within the 8-hour
-     *        idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     *        idempotency window, DynamoDB returns an <code>ImportConflictException</code>.
      */
 
     public void setClientToken(String clientToken) {
@@ -235,7 +235,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     * window, DynamoDB returns an <code>ImportConflictException</code>.
      * </p>
      * 
      * @return Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code>
@@ -247,7 +247,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      *         </p>
      *         <p>
      *         If you submit a request with the same client token but a change in other parameters within the 8-hour
-     *         idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     *         idempotency window, DynamoDB returns an <code>ImportConflictException</code>.
      */
 
     public String getClientToken() {
@@ -266,7 +266,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     * window, DynamoDB returns an <code>ImportConflictException</code>.
      * </p>
      * 
      * @param clientToken
@@ -279,7 +279,7 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <p>
      *        If you submit a request with the same client token but a change in other parameters within the 8-hour
-     *        idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.
+     *        idempotency window, DynamoDB returns an <code>ImportConflictException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

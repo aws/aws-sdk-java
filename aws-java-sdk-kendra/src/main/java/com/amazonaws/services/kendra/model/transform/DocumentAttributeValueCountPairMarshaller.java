@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kendra.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class DocumentAttributeValueCountPairMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentAttributeValue").build();
     private static final MarshallingInfo<Integer> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Count").build();
+    private static final MarshallingInfo<List> FACETRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FacetResults").build();
 
     private static final DocumentAttributeValueCountPairMarshaller instance = new DocumentAttributeValueCountPairMarshaller();
 
@@ -50,6 +53,7 @@ public class DocumentAttributeValueCountPairMarshaller {
         try {
             protocolMarshaller.marshall(documentAttributeValueCountPair.getDocumentAttributeValue(), DOCUMENTATTRIBUTEVALUE_BINDING);
             protocolMarshaller.marshall(documentAttributeValueCountPair.getCount(), COUNT_BINDING);
+            protocolMarshaller.marshall(documentAttributeValueCountPair.getFacetResults(), FACETRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

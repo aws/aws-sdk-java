@@ -103,6 +103,20 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date endTimestamp;
+    /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     */
+    private String statusReason;
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     */
+    private StackSetOperationStatusDetails statusDetails;
+
+    private StackSetOperationPreferences operationPreferences;
 
     /**
      * <p>
@@ -816,6 +830,112 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     * 
+     * @param statusReason
+     *        The status of the operation in details.
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     * 
+     * @return The status of the operation in details.
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     * 
+     * @param statusReason
+     *        The status of the operation in details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperationSummary withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the stack set operation.
+     */
+
+    public void setStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     * 
+     * @return Detailed information about the stack set operation.
+     */
+
+    public StackSetOperationStatusDetails getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the stack set operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperationSummary withStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
+     * @param operationPreferences
+     */
+
+    public void setOperationPreferences(StackSetOperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+    }
+
+    /**
+     * @return
+     */
+
+    public StackSetOperationPreferences getOperationPreferences() {
+        return this.operationPreferences;
+    }
+
+    /**
+     * @param operationPreferences
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperationSummary withOperationPreferences(StackSetOperationPreferences operationPreferences) {
+        setOperationPreferences(operationPreferences);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -836,7 +956,13 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
         if (getCreationTimestamp() != null)
             sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getEndTimestamp() != null)
-            sb.append("EndTimestamp: ").append(getEndTimestamp());
+            sb.append("EndTimestamp: ").append(getEndTimestamp()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
+        if (getOperationPreferences() != null)
+            sb.append("OperationPreferences: ").append(getOperationPreferences());
         sb.append("}");
         return sb.toString();
     }
@@ -871,6 +997,18 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
             return false;
         if (other.getEndTimestamp() != null && other.getEndTimestamp().equals(this.getEndTimestamp()) == false)
             return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
+        if (other.getOperationPreferences() == null ^ this.getOperationPreferences() == null)
+            return false;
+        if (other.getOperationPreferences() != null && other.getOperationPreferences().equals(this.getOperationPreferences()) == false)
+            return false;
         return true;
     }
 
@@ -884,6 +1022,9 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEndTimestamp() == null) ? 0 : getEndTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
+        hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         return hashCode;
     }
 

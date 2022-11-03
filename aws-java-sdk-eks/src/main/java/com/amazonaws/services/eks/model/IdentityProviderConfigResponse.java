@@ -30,18 +30,18 @@ public class IdentityProviderConfigResponse implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     * An object representing an OpenID Connect (OIDC) identity provider configuration.
      * </p>
      */
     private OidcIdentityProviderConfig oidc;
 
     /**
      * <p>
-     * An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     * An object representing an OpenID Connect (OIDC) identity provider configuration.
      * </p>
      * 
      * @param oidc
-     *        An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     *        An object representing an OpenID Connect (OIDC) identity provider configuration.
      */
 
     public void setOidc(OidcIdentityProviderConfig oidc) {
@@ -50,10 +50,10 @@ public class IdentityProviderConfigResponse implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     * An object representing an OpenID Connect (OIDC) identity provider configuration.
      * </p>
      * 
-     * @return An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     * @return An object representing an OpenID Connect (OIDC) identity provider configuration.
      */
 
     public OidcIdentityProviderConfig getOidc() {
@@ -62,11 +62,11 @@ public class IdentityProviderConfigResponse implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     * An object representing an OpenID Connect (OIDC) identity provider configuration.
      * </p>
      * 
      * @param oidc
-     *        An object that represents an OpenID Connect (OIDC) identity provider configuration.
+     *        An object representing an OpenID Connect (OIDC) identity provider configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

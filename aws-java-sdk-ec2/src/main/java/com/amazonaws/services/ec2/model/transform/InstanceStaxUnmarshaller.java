@@ -356,6 +356,11 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("tpmSupport", targetDepth)) {
+                    instance.setTpmSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("maintenanceOptions", targetDepth)) {
                     instance.setMaintenanceOptions(InstanceMaintenanceOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

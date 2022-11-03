@@ -149,6 +149,15 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param deleteAlternateContactRequest
      * @return Result of the DeleteAlternateContact operation returned by the service.
@@ -220,6 +229,15 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param getAlternateContactRequest
      * @return Result of the GetAlternateContact operation returned by the service.
@@ -283,6 +301,77 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
 
     /**
      * <p>
+     * Retrieves the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param getContactInformationRequest
+     * @return Result of the GetContactInformation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation failed because it specified a resource that can't be found.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.GetContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetContactInformationResult getContactInformation(GetContactInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContactInformation(request);
+    }
+
+    @SdkInternalApi
+    final GetContactInformationResult executeGetContactInformation(GetContactInformationRequest getContactInformationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContactInformationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactInformationRequest> request = null;
+        Response<GetContactInformationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactInformationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactInformationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Account");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactInformation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContactInformationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetContactInformationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the specified alternate contact attached to an Amazon Web Services account.
      * </p>
      * <p>
@@ -290,6 +379,15 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param putAlternateContactRequest
      * @return Result of the PutAlternateContact operation returned by the service.
@@ -339,6 +437,75 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
 
             HttpResponseHandler<AmazonWebServiceResponse<PutAlternateContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutAlternateContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param putContactInformationRequest
+     * @return Result of the PutContactInformation operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.PutContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutContactInformationResult putContactInformation(PutContactInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutContactInformation(request);
+    }
+
+    @SdkInternalApi
+    final PutContactInformationResult executePutContactInformation(PutContactInformationRequest putContactInformationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putContactInformationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutContactInformationRequest> request = null;
+        Response<PutContactInformationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutContactInformationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putContactInformationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Account");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutContactInformation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutContactInformationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutContactInformationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

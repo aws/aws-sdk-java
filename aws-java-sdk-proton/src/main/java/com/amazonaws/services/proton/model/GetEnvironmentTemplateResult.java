@@ -25,18 +25,18 @@ public class GetEnvironmentTemplateResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the requested environment template.
      * </p>
      */
     private EnvironmentTemplate environmentTemplate;
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the requested environment template.
      * </p>
      * 
      * @param environmentTemplate
-     *        The environment template detail data that's returned by Proton.
+     *        The detailed data of the requested environment template.
      */
 
     public void setEnvironmentTemplate(EnvironmentTemplate environmentTemplate) {
@@ -45,10 +45,10 @@ public class GetEnvironmentTemplateResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the requested environment template.
      * </p>
      * 
-     * @return The environment template detail data that's returned by Proton.
+     * @return The detailed data of the requested environment template.
      */
 
     public EnvironmentTemplate getEnvironmentTemplate() {
@@ -57,11 +57,11 @@ public class GetEnvironmentTemplateResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the requested environment template.
      * </p>
      * 
      * @param environmentTemplate
-     *        The environment template detail data that's returned by Proton.
+     *        The detailed data of the requested environment template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

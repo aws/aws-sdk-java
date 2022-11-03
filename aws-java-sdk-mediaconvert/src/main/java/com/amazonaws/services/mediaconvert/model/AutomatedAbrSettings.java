@@ -47,6 +47,12 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
      * uses 600,000 (600 kb/s) by default.
      */
     private Integer minAbrBitrate;
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in
+     * your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you
+     * still want MediaConvert to optimize for video quality and overall file size.
+     */
+    private java.util.List<AutomatedAbrRule> rules;
 
     /**
      * Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on
@@ -196,6 +202,84 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in
+     * your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you
+     * still want MediaConvert to optimize for video quality and overall file size.
+     * 
+     * @return Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will
+     *         create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size
+     *         requirements, but you still want MediaConvert to optimize for video quality and overall file size.
+     */
+
+    public java.util.List<AutomatedAbrRule> getRules() {
+        return rules;
+    }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in
+     * your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you
+     * still want MediaConvert to optimize for video quality and overall file size.
+     * 
+     * @param rules
+     *        Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create
+     *        in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements,
+     *        but you still want MediaConvert to optimize for video quality and overall file size.
+     */
+
+    public void setRules(java.util.Collection<AutomatedAbrRule> rules) {
+        if (rules == null) {
+            this.rules = null;
+            return;
+        }
+
+        this.rules = new java.util.ArrayList<AutomatedAbrRule>(rules);
+    }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in
+     * your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you
+     * still want MediaConvert to optimize for video quality and overall file size.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param rules
+     *        Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create
+     *        in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements,
+     *        but you still want MediaConvert to optimize for video quality and overall file size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomatedAbrSettings withRules(AutomatedAbrRule... rules) {
+        if (this.rules == null) {
+            setRules(new java.util.ArrayList<AutomatedAbrRule>(rules.length));
+        }
+        for (AutomatedAbrRule ele : rules) {
+            this.rules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in
+     * your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you
+     * still want MediaConvert to optimize for video quality and overall file size.
+     * 
+     * @param rules
+     *        Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create
+     *        in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements,
+     *        but you still want MediaConvert to optimize for video quality and overall file size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomatedAbrSettings withRules(java.util.Collection<AutomatedAbrRule> rules) {
+        setRules(rules);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +296,9 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
         if (getMaxRenditions() != null)
             sb.append("MaxRenditions: ").append(getMaxRenditions()).append(",");
         if (getMinAbrBitrate() != null)
-            sb.append("MinAbrBitrate: ").append(getMinAbrBitrate());
+            sb.append("MinAbrBitrate: ").append(getMinAbrBitrate()).append(",");
+        if (getRules() != null)
+            sb.append("Rules: ").append(getRules());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +325,10 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getMinAbrBitrate() != null && other.getMinAbrBitrate().equals(this.getMinAbrBitrate()) == false)
             return false;
+        if (other.getRules() == null ^ this.getRules() == null)
+            return false;
+        if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +340,7 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getMaxAbrBitrate() == null) ? 0 : getMaxAbrBitrate().hashCode());
         hashCode = prime * hashCode + ((getMaxRenditions() == null) ? 0 : getMaxRenditions().hashCode());
         hashCode = prime * hashCode + ((getMinAbrBitrate() == null) ? 0 : getMinAbrBitrate().hashCode());
+        hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         return hashCode;
     }
 

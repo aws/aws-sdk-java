@@ -47,6 +47,12 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
     private static final MarshallingInfo<String> USERFEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userFeedback").build();
+    private static final MarshallingInfo<StructuredPojo> ADDITIONALINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalInfo").build();
+    private static final MarshallingInfo<String> FEATURENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featureName").build();
+    private static final MarshallingInfo<StructuredPojo> EBSVOLUMESCANDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebsVolumeScanDetails").build();
 
     private static final ServiceMarshaller instance = new ServiceMarshaller();
 
@@ -74,6 +80,9 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getResourceRole(), RESOURCEROLE_BINDING);
             protocolMarshaller.marshall(service.getServiceName(), SERVICENAME_BINDING);
             protocolMarshaller.marshall(service.getUserFeedback(), USERFEEDBACK_BINDING);
+            protocolMarshaller.marshall(service.getAdditionalInfo(), ADDITIONALINFO_BINDING);
+            protocolMarshaller.marshall(service.getFeatureName(), FEATURENAME_BINDING);
+            protocolMarshaller.marshall(service.getEbsVolumeScanDetails(), EBSVOLUMESCANDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -70,6 +70,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * consumes.
      * </p>
      * <p>
+     * Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection,
+     * Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
+     * </p>
+     * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
      * Python</a> topic in the developer guide.
@@ -104,9 +108,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This parameter is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      */
@@ -143,7 +147,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -192,14 +196,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      */
     private Integer numberOfWorkers;
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -220,9 +222,44 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      */
     private String workerType;
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     */
+    private java.util.Map<String, CodeGenConfigurationNode> codeGenConfigurationNodes;
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     */
+    private String executionClass;
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     */
+    private SourceControlDetails sourceControlDetails;
 
     /**
      * <p>
@@ -473,6 +510,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * consumes.
      * </p>
      * <p>
+     * Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection,
+     * Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
+     * </p>
+     * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
      * Python</a> topic in the developer guide.
@@ -487,6 +528,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <p>
      *         You can specify arguments here that your own job-execution script consumes, as well as arguments that
      *         Glue itself consumes.
+     *         </p>
+     *         <p>
+     *         Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue
+     *         Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the
+     *         Job.
      *         </p>
      *         <p>
      *         For information about how to specify and consume your own Job arguments, see the <a
@@ -512,6 +558,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * consumes.
      * </p>
      * <p>
+     * Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection,
+     * Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
+     * </p>
+     * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
      * Python</a> topic in the developer guide.
@@ -527,6 +577,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue
      *        itself consumes.
+     *        </p>
+     *        <p>
+     *        Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue
+     *        Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the
+     *        Job.
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
@@ -552,6 +607,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * consumes.
      * </p>
      * <p>
+     * Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection,
+     * Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
+     * </p>
+     * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
      * Python</a> topic in the developer guide.
@@ -567,6 +626,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue
      *        itself consumes.
+     *        </p>
+     *        <p>
+     *        Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue
+     *        Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the
+     *        Job.
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
@@ -766,16 +830,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This parameter is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      * 
      * @param allocatedCapacity
      *        This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *        <p>
-     *        The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100
+     *        The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2
      *        DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
@@ -790,15 +854,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This parameter is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      * 
      * @return This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *         <p>
-     *         The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100
+     *         The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2
      *         DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *         compute capacity and 16 GB of memory. For more information, see the <a
      *         href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
@@ -813,16 +877,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This parameter is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      * 
      * @param allocatedCapacity
      *        This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *        <p>
-     *        The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100
+     *        The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2
      *        DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
@@ -904,7 +968,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -936,8 +1000,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
-     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
+     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      *        </ul>
@@ -974,7 +1038,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1005,7 +1069,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
      *         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *         </p>
      *         </li>
@@ -1043,7 +1107,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1075,8 +1139,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
-     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
+     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      *        </ul>
@@ -1341,14 +1405,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      * 
      * @param numberOfWorkers
-     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-     *        <p>
-     *        The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      */
 
     public void setNumberOfWorkers(Integer numberOfWorkers) {
@@ -1359,13 +1418,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      * 
-     * @return The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-     *         <p>
-     *         The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * @return The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      */
 
     public Integer getNumberOfWorkers() {
@@ -1376,14 +1430,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      * 
      * @param numberOfWorkers
-     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-     *        <p>
-     *        The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1394,7 +1443,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1415,11 +1465,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *        G.2X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *        or G.025X.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1439,6 +1496,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *        This worker type is only available for Glue version 3.0 streaming jobs.
+     *        </p>
+     *        </li>
      * @see WorkerType
      */
 
@@ -1448,7 +1512,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1469,10 +1534,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *         G.2X.</p>
+     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *         or G.025X.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1492,6 +1564,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *         disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *         This worker type is only available for Glue version 3.0 streaming jobs.
+     *         </p>
+     *         </li>
      * @see WorkerType
      */
 
@@ -1501,7 +1580,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1522,11 +1602,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *        G.2X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *        or G.025X.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1544,6 +1631,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *        This worker type is only available for Glue version 3.0 streaming jobs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1557,7 +1651,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1578,11 +1673,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *        G.2X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *        or G.025X.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1602,12 +1704,267 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *        This worker type is only available for Glue version 3.0 streaming jobs.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkerType
      */
 
     public CreateJobRequest withWorkerType(WorkerType workerType) {
         this.workerType = workerType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     * 
+     * @return The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue
+     *         Studio code generation is based.
+     */
+
+    public java.util.Map<String, CodeGenConfigurationNode> getCodeGenConfigurationNodes() {
+        return codeGenConfigurationNodes;
+    }
+
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     * 
+     * @param codeGenConfigurationNodes
+     *        The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue
+     *        Studio code generation is based.
+     */
+
+    public void setCodeGenConfigurationNodes(java.util.Map<String, CodeGenConfigurationNode> codeGenConfigurationNodes) {
+        this.codeGenConfigurationNodes = codeGenConfigurationNodes;
+    }
+
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     * 
+     * @param codeGenConfigurationNodes
+     *        The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue
+     *        Studio code generation is based.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withCodeGenConfigurationNodes(java.util.Map<String, CodeGenConfigurationNode> codeGenConfigurationNodes) {
+        setCodeGenConfigurationNodes(codeGenConfigurationNodes);
+        return this;
+    }
+
+    /**
+     * Add a single CodeGenConfigurationNodes entry
+     *
+     * @see CreateJobRequest#withCodeGenConfigurationNodes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest addCodeGenConfigurationNodesEntry(String key, CodeGenConfigurationNode value) {
+        if (null == this.codeGenConfigurationNodes) {
+            this.codeGenConfigurationNodes = new java.util.HashMap<String, CodeGenConfigurationNode>();
+        }
+        if (this.codeGenConfigurationNodes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.codeGenConfigurationNodes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CodeGenConfigurationNodes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest clearCodeGenConfigurationNodesEntries() {
+        this.codeGenConfigurationNodes = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @param executionClass
+     *        Indicates whether the job is run with a standard or flexible execution class. The standard execution-class
+     *        is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+     *        <p>
+     *        The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may
+     *        vary.
+     *        </p>
+     *        <p>
+     *        Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *        <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *        jobs.
+     * @see ExecutionClass
+     */
+
+    public void setExecutionClass(String executionClass) {
+        this.executionClass = executionClass;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @return Indicates whether the job is run with a standard or flexible execution class. The standard
+     *         execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated
+     *         resources.</p>
+     *         <p>
+     *         The flexible execution class is appropriate for time-insensitive jobs whose start and completion times
+     *         may vary.
+     *         </p>
+     *         <p>
+     *         Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *         <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *         jobs.
+     * @see ExecutionClass
+     */
+
+    public String getExecutionClass() {
+        return this.executionClass;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @param executionClass
+     *        Indicates whether the job is run with a standard or flexible execution class. The standard execution-class
+     *        is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+     *        <p>
+     *        The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may
+     *        vary.
+     *        </p>
+     *        <p>
+     *        Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *        <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *        jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionClass
+     */
+
+    public CreateJobRequest withExecutionClass(String executionClass) {
+        setExecutionClass(executionClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @param executionClass
+     *        Indicates whether the job is run with a standard or flexible execution class. The standard execution-class
+     *        is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+     *        <p>
+     *        The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may
+     *        vary.
+     *        </p>
+     *        <p>
+     *        Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *        <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *        jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionClass
+     */
+
+    public CreateJobRequest withExecutionClass(ExecutionClass executionClass) {
+        this.executionClass = executionClass.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     * 
+     * @param sourceControlDetails
+     *        The details for a source control configuration for a job, allowing synchronization of job artifacts to or
+     *        from a remote repository.
+     */
+
+    public void setSourceControlDetails(SourceControlDetails sourceControlDetails) {
+        this.sourceControlDetails = sourceControlDetails;
+    }
+
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     * 
+     * @return The details for a source control configuration for a job, allowing synchronization of job artifacts to or
+     *         from a remote repository.
+     */
+
+    public SourceControlDetails getSourceControlDetails() {
+        return this.sourceControlDetails;
+    }
+
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     * 
+     * @param sourceControlDetails
+     *        The details for a source control configuration for a job, allowing synchronization of job artifacts to or
+     *        from a remote repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withSourceControlDetails(SourceControlDetails sourceControlDetails) {
+        setSourceControlDetails(sourceControlDetails);
         return this;
     }
 
@@ -1660,7 +2017,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getNumberOfWorkers() != null)
             sb.append("NumberOfWorkers: ").append(getNumberOfWorkers()).append(",");
         if (getWorkerType() != null)
-            sb.append("WorkerType: ").append(getWorkerType());
+            sb.append("WorkerType: ").append(getWorkerType()).append(",");
+        if (getCodeGenConfigurationNodes() != null)
+            sb.append("CodeGenConfigurationNodes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getExecutionClass() != null)
+            sb.append("ExecutionClass: ").append(getExecutionClass()).append(",");
+        if (getSourceControlDetails() != null)
+            sb.append("SourceControlDetails: ").append(getSourceControlDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1751,6 +2114,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getWorkerType() != null && other.getWorkerType().equals(this.getWorkerType()) == false)
             return false;
+        if (other.getCodeGenConfigurationNodes() == null ^ this.getCodeGenConfigurationNodes() == null)
+            return false;
+        if (other.getCodeGenConfigurationNodes() != null && other.getCodeGenConfigurationNodes().equals(this.getCodeGenConfigurationNodes()) == false)
+            return false;
+        if (other.getExecutionClass() == null ^ this.getExecutionClass() == null)
+            return false;
+        if (other.getExecutionClass() != null && other.getExecutionClass().equals(this.getExecutionClass()) == false)
+            return false;
+        if (other.getSourceControlDetails() == null ^ this.getSourceControlDetails() == null)
+            return false;
+        if (other.getSourceControlDetails() != null && other.getSourceControlDetails().equals(this.getSourceControlDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1778,6 +2153,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
         hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
         hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
+        hashCode = prime * hashCode + ((getCodeGenConfigurationNodes() == null) ? 0 : getCodeGenConfigurationNodes().hashCode());
+        hashCode = prime * hashCode + ((getExecutionClass() == null) ? 0 : getExecutionClass().hashCode());
+        hashCode = prime * hashCode + ((getSourceControlDetails() == null) ? 0 : getSourceControlDetails().hashCode());
         return hashCode;
     }
 

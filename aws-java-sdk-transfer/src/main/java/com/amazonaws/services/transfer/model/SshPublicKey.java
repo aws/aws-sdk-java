@@ -41,6 +41,9 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      */
     private String sshPublicKeyBody;
     /**
@@ -94,9 +97,14 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      * 
      * @param sshPublicKeyBody
-     *        Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     *        Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
+     *        <p>
+     *        Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      */
 
     public void setSshPublicKeyBody(String sshPublicKeyBody) {
@@ -107,8 +115,13 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      * 
-     * @return Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     * @return Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
+     *         <p>
+     *         Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      */
 
     public String getSshPublicKeyBody() {
@@ -119,9 +132,14 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      * 
      * @param sshPublicKeyBody
-     *        Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     *        Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
+     *        <p>
+     *        Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

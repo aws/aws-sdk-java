@@ -30,7 +30,7 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * <code>TRUE</code> to index attachments to service catalog items.
      * </p>
      */
     private Boolean crawlAttachments;
@@ -82,11 +82,11 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * <code>TRUE</code> to index attachments to service catalog items.
      * </p>
      * 
      * @param crawlAttachments
-     *        Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     *        <code>TRUE</code> to index attachments to service catalog items.
      */
 
     public void setCrawlAttachments(Boolean crawlAttachments) {
@@ -95,10 +95,10 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * <code>TRUE</code> to index attachments to service catalog items.
      * </p>
      * 
-     * @return Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * @return <code>TRUE</code> to index attachments to service catalog items.
      */
 
     public Boolean getCrawlAttachments() {
@@ -107,11 +107,11 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * <code>TRUE</code> to index attachments to service catalog items.
      * </p>
      * 
      * @param crawlAttachments
-     *        Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     *        <code>TRUE</code> to index attachments to service catalog items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,10 +122,10 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * <code>TRUE</code> to index attachments to service catalog items.
      * </p>
      * 
-     * @return Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
+     * @return <code>TRUE</code> to index attachments to service catalog items.
      */
 
     public Boolean isCrawlAttachments() {

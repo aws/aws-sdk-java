@@ -60,6 +60,10 @@ public class ReplicationConfigurationReplicatedDiskJsonUnmarshaller implements U
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setIsBootDisk(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("optimizedStagingDiskType", targetDepth)) {
+                    context.nextToken();
+                    replicationConfigurationReplicatedDisk.setOptimizedStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("stagingDiskType", targetDepth)) {
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));

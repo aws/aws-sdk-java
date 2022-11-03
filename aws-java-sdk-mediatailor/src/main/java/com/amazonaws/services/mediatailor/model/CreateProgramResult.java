@@ -31,19 +31,19 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<AdBreak> adBreaks;
     /**
      * <p>
-     * The ARN of the program.
+     * The ARN to assign to the program.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the channel that the program belongs to.
+     * The name to assign to the channel for this program.
      * </p>
      */
     private String channelName;
     /**
      * <p>
-     * The timestamp of when the program was created.
+     * The time the program was created.
      * </p>
      */
     private java.util.Date creationTime;
@@ -55,20 +55,19 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
     private String liveSourceName;
     /**
      * <p>
-     * The name of the program.
+     * The name to assign to this program.
      * </p>
      */
     private String programName;
     /**
      * <p>
-     * The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC).
-     * For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+     * The scheduled start time for this Program.
      * </p>
      */
     private java.util.Date scheduledStartTime;
     /**
      * <p>
-     * The source location name.
+     * The name to assign to the source location for this program.
      * </p>
      */
     private String sourceLocationName;
@@ -151,11 +150,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the program.
+     * The ARN to assign to the program.
      * </p>
      * 
      * @param arn
-     *        The ARN of the program.
+     *        The ARN to assign to the program.
      */
 
     public void setArn(String arn) {
@@ -164,10 +163,10 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the program.
+     * The ARN to assign to the program.
      * </p>
      * 
-     * @return The ARN of the program.
+     * @return The ARN to assign to the program.
      */
 
     public String getArn() {
@@ -176,11 +175,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the program.
+     * The ARN to assign to the program.
      * </p>
      * 
      * @param arn
-     *        The ARN of the program.
+     *        The ARN to assign to the program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +190,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the channel that the program belongs to.
+     * The name to assign to the channel for this program.
      * </p>
      * 
      * @param channelName
-     *        The name of the channel that the program belongs to.
+     *        The name to assign to the channel for this program.
      */
 
     public void setChannelName(String channelName) {
@@ -204,10 +203,10 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the channel that the program belongs to.
+     * The name to assign to the channel for this program.
      * </p>
      * 
-     * @return The name of the channel that the program belongs to.
+     * @return The name to assign to the channel for this program.
      */
 
     public String getChannelName() {
@@ -216,11 +215,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the channel that the program belongs to.
+     * The name to assign to the channel for this program.
      * </p>
      * 
      * @param channelName
-     *        The name of the channel that the program belongs to.
+     *        The name to assign to the channel for this program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,11 +230,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The timestamp of when the program was created.
+     * The time the program was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp of when the program was created.
+     *        The time the program was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -244,10 +243,10 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The timestamp of when the program was created.
+     * The time the program was created.
      * </p>
      * 
-     * @return The timestamp of when the program was created.
+     * @return The time the program was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -256,11 +255,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The timestamp of when the program was created.
+     * The time the program was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp of when the program was created.
+     *        The time the program was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,11 +310,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the program.
+     * The name to assign to this program.
      * </p>
      * 
      * @param programName
-     *        The name of the program.
+     *        The name to assign to this program.
      */
 
     public void setProgramName(String programName) {
@@ -324,10 +323,10 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the program.
+     * The name to assign to this program.
      * </p>
      * 
-     * @return The name of the program.
+     * @return The name to assign to this program.
      */
 
     public String getProgramName() {
@@ -336,11 +335,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the program.
+     * The name to assign to this program.
      * </p>
      * 
      * @param programName
-     *        The name of the program.
+     *        The name to assign to this program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,13 +350,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC).
-     * For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+     * The scheduled start time for this Program.
      * </p>
      * 
      * @param scheduledStartTime
-     *        The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time
-     *        (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+     *        The scheduled start time for this Program.
      */
 
     public void setScheduledStartTime(java.util.Date scheduledStartTime) {
@@ -366,13 +363,10 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC).
-     * For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+     * The scheduled start time for this Program.
      * </p>
      * 
-     * @return The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal
-     *         Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751
-     *         UTC.
+     * @return The scheduled start time for this Program.
      */
 
     public java.util.Date getScheduledStartTime() {
@@ -381,13 +375,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC).
-     * For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+     * The scheduled start time for this Program.
      * </p>
      * 
      * @param scheduledStartTime
-     *        The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time
-     *        (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+     *        The scheduled start time for this Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,11 +390,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The source location name.
+     * The name to assign to the source location for this program.
      * </p>
      * 
      * @param sourceLocationName
-     *        The source location name.
+     *        The name to assign to the source location for this program.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -411,10 +403,10 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The source location name.
+     * The name to assign to the source location for this program.
      * </p>
      * 
-     * @return The source location name.
+     * @return The name to assign to the source location for this program.
      */
 
     public String getSourceLocationName() {
@@ -423,11 +415,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The source location name.
+     * The name to assign to the source location for this program.
      * </p>
      * 
      * @param sourceLocationName
-     *        The source location name.
+     *        The name to assign to the source location for this program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

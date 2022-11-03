@@ -33,7 +33,8 @@ public enum AutoMLMetricExtendedEnum {
     PrecisionMacro("PrecisionMacro"),
     Recall("Recall"),
     RecallMacro("RecallMacro"),
-    LogLoss("LogLoss");
+    LogLoss("LogLoss"),
+    InferenceLatency("InferenceLatency");
 
     private String value;
 

@@ -498,7 +498,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean enableGlobalWriteForwarding;
     /**
      * <p>
-     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not
+     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not
      * all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -547,9 +547,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid Iops values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -634,7 +634,52 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
@@ -643,6 +688,40 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer performanceInsightsRetentionPeriod;
 
     private ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration;
+    /**
+     * <p>
+     * The network type of the DB cluster.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>IPV4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DUAL</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     * <code>DUAL</code>).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private String networkType;
 
     /**
      * <p>
@@ -3748,7 +3827,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not
+     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not
      * all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3761,9 +3840,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dBClusterInstanceClass
-     *        The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
-     *        Not all DB instance classes are available in all Amazon Web Services Regions, or for all database
-     *        engines.</p>
+     *        The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example
+     *        db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
+     *        database engines.</p>
      *        <p>
      *        For the full list of DB instance classes and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance
@@ -3779,7 +3858,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not
+     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not
      * all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3792,7 +3871,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example
-     *         db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
+     *         db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
      *         database engines.</p>
      *         <p>
      *         For the full list of DB instance classes and availability for your engine, see <a
@@ -3809,7 +3888,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not
+     * The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not
      * all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3822,9 +3901,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dBClusterInstanceClass
-     *        The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
-     *        Not all DB instance classes are available in all Amazon Web Services Regions, or for all database
-     *        engines.</p>
+     *        The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example
+     *        db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
+     *        database engines.</p>
      *        <p>
      *        For the full list of DB instance classes and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance
@@ -4028,9 +4107,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid Iops values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -4043,9 +4122,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB
      *        instance in the Multi-AZ DB cluster.</p>
      *        <p>
-     *        For information about valid Iops values, see <a
+     *        For information about valid IOPS values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
-     *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     *        Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -4064,9 +4143,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid Iops values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -4078,9 +4157,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB
      *         instance in the Multi-AZ DB cluster.</p>
      *         <p>
-     *         For information about valid Iops values, see <a
+     *         For information about valid IOPS values, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
-     *         Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     *         Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -4099,9 +4178,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid Iops values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -4114,9 +4193,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB
      *        instance in the Multi-AZ DB cluster.</p>
      *        <p>
-     *        For information about valid Iops values, see <a
+     *        For information about valid IOPS values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
-     *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+     *        Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
@@ -4631,14 +4710,105 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
+     *        valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        7
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, the following values are valid:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        93 (3 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        341 (11 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        589 (19 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *        </p>
      *        <p>
      *        Valid for: Multi-AZ DB clusters only
      */
@@ -4649,14 +4819,104 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
-     * @return The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2
-     *         years).</p>
+     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
+     *         valid:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         7
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         731
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, the following values are valid:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         93 (3 months * 31)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         341 (11 months * 31)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         589 (19 months * 31)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         731
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *         </p>
      *         <p>
      *         Valid for: Multi-AZ DB clusters only
      */
@@ -4667,14 +4927,105 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
+     *        valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        7
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, the following values are valid:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        93 (3 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        341 (11 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        589 (19 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *        </p>
      *        <p>
      *        Valid for: Multi-AZ DB clusters only
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -4708,6 +5059,211 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     public ModifyDBClusterRequest withServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
         setServerlessV2ScalingConfiguration(serverlessV2ScalingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type of the DB cluster.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>IPV4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DUAL</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     * <code>DUAL</code>).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param networkType
+     *        The network type of the DB cluster.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>IPV4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DUAL</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     *        <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     *        <code>DUAL</code>).
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     *        Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * The network type of the DB cluster.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>IPV4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DUAL</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     * <code>DUAL</code>).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return The network type of the DB cluster.</p>
+     *         <p>
+     *         Valid values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>IPV4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DUAL</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     *         <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     *         <code>DUAL</code>).
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"
+     *         > Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     *         </p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * The network type of the DB cluster.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>IPV4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DUAL</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     * <code>DUAL</code>).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param networkType
+     *        The network type of the DB cluster.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>IPV4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DUAL</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     *        <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
+     *        <code>DUAL</code>).
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     *        Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withNetworkType(String networkType) {
+        setNetworkType(networkType);
         return this;
     }
 
@@ -4792,7 +5348,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getPerformanceInsightsRetentionPeriod() != null)
             sb.append("PerformanceInsightsRetentionPeriod: ").append(getPerformanceInsightsRetentionPeriod()).append(",");
         if (getServerlessV2ScalingConfiguration() != null)
-            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration());
+            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType());
         sb.append("}");
         return sb.toString();
     }
@@ -4951,6 +5509,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getServerlessV2ScalingConfiguration() != null
                 && other.getServerlessV2ScalingConfiguration().equals(this.getServerlessV2ScalingConfiguration()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
         return true;
     }
 
@@ -4994,6 +5556,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsRetentionPeriod() == null) ? 0 : getPerformanceInsightsRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         return hashCode;
     }
 

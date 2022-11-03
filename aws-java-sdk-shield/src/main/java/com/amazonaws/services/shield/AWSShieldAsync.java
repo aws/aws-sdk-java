@@ -44,8 +44,8 @@ public interface AWSShieldAsync extends AWSShield {
      * </p>
      * <p>
      * To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to
-     * the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
-     * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * 
      * @param associateDRTLogBucketRequest
@@ -64,8 +64,8 @@ public interface AWSShieldAsync extends AWSShield {
      * </p>
      * <p>
      * To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to
-     * the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
-     * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * 
      * @param associateDRTLogBucketRequest
@@ -116,8 +116,8 @@ public interface AWSShieldAsync extends AWSShield {
      * </p>
      * <p>
      * To use the services of the SRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the
-     * <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
-     * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * 
      * @param associateDRTRoleRequest
@@ -163,8 +163,8 @@ public interface AWSShieldAsync extends AWSShield {
      * </p>
      * <p>
      * To use the services of the SRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the
-     * <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
-     * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * 
      * @param associateDRTRoleRequest
@@ -297,8 +297,9 @@ public interface AWSShieldAsync extends AWSShield {
     /**
      * <p>
      * Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront
-     * distribution, Elastic Load Balancing load balancer, Global Accelerator accelerator, Elastic IP Address, or an
-     * Amazon Route 53 hosted zone.
+     * distribution, Amazon Route 53 hosted zone, Global Accelerator standard accelerator, Elastic IP Address,
+     * Application Load Balancer, or a Classic Load Balancer. You can protect Amazon EC2 instances and Network Load
+     * Balancers by association with protected Amazon EC2 Elastic IP addresses.
      * </p>
      * <p>
      * You can add protection to only a single resource with each <code>CreateProtection</code> request. You can add
@@ -322,8 +323,9 @@ public interface AWSShieldAsync extends AWSShield {
     /**
      * <p>
      * Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront
-     * distribution, Elastic Load Balancing load balancer, Global Accelerator accelerator, Elastic IP Address, or an
-     * Amazon Route 53 hosted zone.
+     * distribution, Amazon Route 53 hosted zone, Global Accelerator standard accelerator, Elastic IP Address,
+     * Application Load Balancer, or a Classic Load Balancer. You can protect Amazon EC2 instances and Network Load
+     * Balancers by association with protected Amazon EC2 Elastic IP addresses.
      * </p>
      * <p>
      * You can add protection to only a single resource with each <code>CreateProtection</code> request. You can add
@@ -386,8 +388,14 @@ public interface AWSShieldAsync extends AWSShield {
      * <p>
      * Activates Shield Advanced for an account.
      * </p>
+     * <note>
      * <p>
-     * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
+     * For accounts that are members of an Organizations organization, Shield Advanced subscriptions are billed against
+     * the organization's payer account, regardless of whether the payer account itself is subscribed.
+     * </p>
+     * </note>
+     * <p>
+     * When you initially create a subscription, your subscription is set to be automatically renewed at the end of the
      * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
      * 
@@ -403,8 +411,14 @@ public interface AWSShieldAsync extends AWSShield {
      * <p>
      * Activates Shield Advanced for an account.
      * </p>
+     * <note>
      * <p>
-     * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
+     * For accounts that are members of an Organizations organization, Shield Advanced subscriptions are billed against
+     * the organization's payer account, regardless of whether the payer account itself is subscribed.
+     * </p>
+     * </note>
+     * <p>
+     * When you initially create a subscription, your subscription is set to be automatically renewed at the end of the
      * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
      * 
@@ -767,8 +781,9 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Disable the Shield Advanced automatic application layer DDoS mitigation feature for the resource. This stops
-     * Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource.
+     * Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This
+     * stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the
+     * resource.
      * </p>
      * 
      * @param disableApplicationLayerAutomaticResponseRequest
@@ -783,8 +798,9 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Disable the Shield Advanced automatic application layer DDoS mitigation feature for the resource. This stops
-     * Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource.
+     * Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This
+     * stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the
+     * resource.
      * </p>
      * 
      * @param disableApplicationLayerAutomaticResponseRequest
@@ -950,11 +966,11 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
+     * Enable the Shield Advanced automatic application layer DDoS mitigation for the protected resource.
      * </p>
      * <note>
      * <p>
-     * This feature is available for Amazon CloudFront distributions only.
+     * This feature is available for Amazon CloudFront distributions and Application Load Balancers only.
      * </p>
      * </note>
      * <p>
@@ -965,22 +981,21 @@ public interface AWSShieldAsync extends AWSShield {
      * "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
      * Advanced automatic application layer DDoS mitigation</a>.
      * </p>
+     * <note>
      * <p>
      * Don't use this action to make changes to automatic mitigation settings when it's already enabled for a resource.
      * Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
      * </p>
+     * </note>
      * <p>
      * To use this feature, you must associate a web ACL with the protected resource. The web ACL must be created using
      * the latest version of WAF (v2). You can associate the web ACL through the Shield Advanced console at <a
      * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with
-     * Shield Advanced</a>.
-     * </p>
-     * <p>
-     * You can also do this through the WAF console or the WAF API, but you must manage Shield Advanced automatic
-     * mitigation through Shield Advanced. For information about WAF, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.
+     * Shield Advanced</a>. You can also associate the web ACL to the resource through the WAF console or the WAF API,
+     * but you must manage Shield Advanced automatic mitigation through Shield Advanced. For information about WAF, see
+     * <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.
      * </p>
      * 
      * @param enableApplicationLayerAutomaticResponseRequest
@@ -995,11 +1010,11 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
+     * Enable the Shield Advanced automatic application layer DDoS mitigation for the protected resource.
      * </p>
      * <note>
      * <p>
-     * This feature is available for Amazon CloudFront distributions only.
+     * This feature is available for Amazon CloudFront distributions and Application Load Balancers only.
      * </p>
      * </note>
      * <p>
@@ -1010,22 +1025,21 @@ public interface AWSShieldAsync extends AWSShield {
      * "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
      * Advanced automatic application layer DDoS mitigation</a>.
      * </p>
+     * <note>
      * <p>
      * Don't use this action to make changes to automatic mitigation settings when it's already enabled for a resource.
      * Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
      * </p>
+     * </note>
      * <p>
      * To use this feature, you must associate a web ACL with the protected resource. The web ACL must be created using
      * the latest version of WAF (v2). You can associate the web ACL through the Shield Advanced console at <a
      * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with
-     * Shield Advanced</a>.
-     * </p>
-     * <p>
-     * You can also do this through the WAF console or the WAF API, but you must manage Shield Advanced automatic
-     * mitigation through Shield Advanced. For information about WAF, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.
+     * Shield Advanced</a>. You can also associate the web ACL to the resource through the WAF console or the WAF API,
+     * but you must manage Shield Advanced automatic mitigation through Shield Advanced. For information about WAF, see
+     * <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.
      * </p>
      * 
      * @param enableApplicationLayerAutomaticResponseRequest
@@ -1142,7 +1156,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve all protection groups or you can
+     * provide filtering criteria and retrieve just the subset of protection groups that match the criteria.
      * </p>
      * 
      * @param listProtectionGroupsRequest
@@ -1155,7 +1170,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve all protection groups or you can
+     * provide filtering criteria and retrieve just the subset of protection groups that match the criteria.
      * </p>
      * 
      * @param listProtectionGroupsRequest
@@ -1173,7 +1189,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Lists all <a>Protection</a> objects for the account.
+     * Retrieves <a>Protection</a> objects for the account. You can retrieve all protections or you can provide
+     * filtering criteria and retrieve just the subset of protections that match the criteria.
      * </p>
      * 
      * @param listProtectionsRequest
@@ -1186,7 +1203,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Lists all <a>Protection</a> objects for the account.
+     * Retrieves <a>Protection</a> objects for the account. You can retrieve all protections or you can provide
+     * filtering criteria and retrieve just the subset of protections that match the criteria.
      * </p>
      * 
      * @param listProtectionsRequest
@@ -1444,6 +1462,12 @@ public interface AWSShieldAsync extends AWSShield {
      * Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty
      * parameters are not updated.
      * </p>
+     * <note>
+     * <p>
+     * For accounts that are members of an Organizations organization, Shield Advanced subscriptions are billed against
+     * the organization's payer account, regardless of whether the payer account itself is subscribed.
+     * </p>
+     * </note>
      * 
      * @param updateSubscriptionRequest
      * @return A Java Future containing the result of the UpdateSubscription operation returned by the service.
@@ -1458,6 +1482,12 @@ public interface AWSShieldAsync extends AWSShield {
      * Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty
      * parameters are not updated.
      * </p>
+     * <note>
+     * <p>
+     * For accounts that are members of an Organizations organization, Shield Advanced subscriptions are billed against
+     * the organization's payer account, regardless of whether the payer account itself is subscribed.
+     * </p>
+     * </note>
      * 
      * @param updateSubscriptionRequest
      * @param asyncHandler

@@ -68,7 +68,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * 
      * @return An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *         two parts: </p>
+     *         two parts:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -112,7 +112,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param tags
      *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *        two parts: </p>
+     *        two parts:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -156,7 +156,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param tags
      *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *        two parts: </p>
+     *        two parts:</p>
      *        <ul>
      *        <li>
      *        <p>

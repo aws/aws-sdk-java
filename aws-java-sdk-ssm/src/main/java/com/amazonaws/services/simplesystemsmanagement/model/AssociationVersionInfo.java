@@ -173,6 +173,13 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
      * </p>
      */
     private Integer scheduleOffset;
+    /**
+     * <p>
+     * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
+     * together.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>> targetMaps;
 
     /**
      * <p>
@@ -1331,6 +1338,87 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
+     * together.
+     * </p>
+     * 
+     * @return A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be
+     *         specified together.
+     */
+
+    public java.util.List<java.util.Map<String, java.util.List<String>>> getTargetMaps() {
+        if (targetMaps == null) {
+            targetMaps = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>();
+        }
+        return targetMaps;
+    }
+
+    /**
+     * <p>
+     * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
+     * together.
+     * </p>
+     * 
+     * @param targetMaps
+     *        A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be
+     *        specified together.
+     */
+
+    public void setTargetMaps(java.util.Collection<java.util.Map<String, java.util.List<String>>> targetMaps) {
+        if (targetMaps == null) {
+            this.targetMaps = null;
+            return;
+        }
+
+        this.targetMaps = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>(targetMaps);
+    }
+
+    /**
+     * <p>
+     * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
+     * together.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetMaps(java.util.Collection)} or {@link #withTargetMaps(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param targetMaps
+     *        A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be
+     *        specified together.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationVersionInfo withTargetMaps(java.util.Map<String, java.util.List<String>>... targetMaps) {
+        if (this.targetMaps == null) {
+            setTargetMaps(new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>(targetMaps.length));
+        }
+        for (java.util.Map<String, java.util.List<String>> ele : targetMaps) {
+            this.targetMaps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
+     * together.
+     * </p>
+     * 
+     * @param targetMaps
+     *        A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be
+     *        specified together.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationVersionInfo withTargetMaps(java.util.Collection<java.util.Map<String, java.util.List<String>>> targetMaps) {
+        setTargetMaps(targetMaps);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1377,7 +1465,9 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
         if (getTargetLocations() != null)
             sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
         if (getScheduleOffset() != null)
-            sb.append("ScheduleOffset: ").append(getScheduleOffset());
+            sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
+        if (getTargetMaps() != null)
+            sb.append("TargetMaps: ").append(getTargetMaps());
         sb.append("}");
         return sb.toString();
     }
@@ -1464,6 +1554,10 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
             return false;
         if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
             return false;
+        if (other.getTargetMaps() == null ^ this.getTargetMaps() == null)
+            return false;
+        if (other.getTargetMaps() != null && other.getTargetMaps().equals(this.getTargetMaps()) == false)
+            return false;
         return true;
     }
 
@@ -1490,6 +1584,7 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getCalendarNames() == null) ? 0 : getCalendarNames().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
+        hashCode = prime * hashCode + ((getTargetMaps() == null) ? 0 : getTargetMaps().hashCode());
         return hashCode;
     }
 

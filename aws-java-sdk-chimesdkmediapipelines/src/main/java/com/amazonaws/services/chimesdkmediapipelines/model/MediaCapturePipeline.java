@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A media capture pipeline object consisting of an ID, source type, source ARN, a sink type, a sink ARN, and a
- * configuration object.
+ * A media pipeline object consisting of an ID, source type, source ARN, a sink type, a sink ARN, and a configuration
+ * object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/MediaCapturePipeline"
@@ -31,13 +31,13 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of a media pipeline.
      * </p>
      */
     private String mediaPipelineId;
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media capture pipeline
      * </p>
      */
     private String mediaPipelineArn;
@@ -55,7 +55,7 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
     private String sourceArn;
     /**
      * <p>
-     * The status of the media capture pipeline.
+     * The status of the media pipeline.
      * </p>
      */
     private String status;
@@ -73,31 +73,30 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
     private String sinkArn;
     /**
      * <p>
-     * The time at which the capture pipeline was created, in ISO 8601 format.
+     * The time at which the pipeline was created, in ISO 8601 format.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The time at which the capture pipeline was updated, in ISO 8601 format.
+     * The time at which the pipeline was updated, in ISO 8601 format.
      * </p>
      */
     private java.util.Date updatedTimestamp;
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      */
     private ChimeSdkMeetingConfiguration chimeSdkMeetingConfiguration;
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of a media pipeline.
      * </p>
      * 
      * @param mediaPipelineId
-     *        The ID of a media capture pipeline.
+     *        The ID of a media pipeline.
      */
 
     public void setMediaPipelineId(String mediaPipelineId) {
@@ -106,10 +105,10 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of a media pipeline.
      * </p>
      * 
-     * @return The ID of a media capture pipeline.
+     * @return The ID of a media pipeline.
      */
 
     public String getMediaPipelineId() {
@@ -118,11 +117,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of a media pipeline.
      * </p>
      * 
      * @param mediaPipelineId
-     *        The ID of a media capture pipeline.
+     *        The ID of a media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +132,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media capture pipeline
      * </p>
      * 
      * @param mediaPipelineArn
-     *        The ARN of a media capture pipeline.
+     *        The ARN of the media capture pipeline
      */
 
     public void setMediaPipelineArn(String mediaPipelineArn) {
@@ -146,10 +145,10 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media capture pipeline
      * </p>
      * 
-     * @return The ARN of a media capture pipeline.
+     * @return The ARN of the media capture pipeline
      */
 
     public String getMediaPipelineArn() {
@@ -158,11 +157,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media capture pipeline
      * </p>
      * 
      * @param mediaPipelineArn
-     *        The ARN of a media capture pipeline.
+     *        The ARN of the media capture pipeline
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,11 +271,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the media capture pipeline.
+     * The status of the media pipeline.
      * </p>
      * 
      * @param status
-     *        The status of the media capture pipeline.
+     *        The status of the media pipeline.
      * @see MediaPipelineStatus
      */
 
@@ -286,10 +285,10 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the media capture pipeline.
+     * The status of the media pipeline.
      * </p>
      * 
-     * @return The status of the media capture pipeline.
+     * @return The status of the media pipeline.
      * @see MediaPipelineStatus
      */
 
@@ -299,11 +298,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the media capture pipeline.
+     * The status of the media pipeline.
      * </p>
      * 
      * @param status
-     *        The status of the media capture pipeline.
+     *        The status of the media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaPipelineStatus
      */
@@ -315,11 +314,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the media capture pipeline.
+     * The status of the media pipeline.
      * </p>
      * 
      * @param status
-     *        The status of the media capture pipeline.
+     *        The status of the media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaPipelineStatus
      */
@@ -430,11 +429,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time at which the capture pipeline was created, in ISO 8601 format.
+     * The time at which the pipeline was created, in ISO 8601 format.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which the capture pipeline was created, in ISO 8601 format.
+     *        The time at which the pipeline was created, in ISO 8601 format.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -443,10 +442,10 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time at which the capture pipeline was created, in ISO 8601 format.
+     * The time at which the pipeline was created, in ISO 8601 format.
      * </p>
      * 
-     * @return The time at which the capture pipeline was created, in ISO 8601 format.
+     * @return The time at which the pipeline was created, in ISO 8601 format.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -455,11 +454,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time at which the capture pipeline was created, in ISO 8601 format.
+     * The time at which the pipeline was created, in ISO 8601 format.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time at which the capture pipeline was created, in ISO 8601 format.
+     *        The time at which the pipeline was created, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +469,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time at which the capture pipeline was updated, in ISO 8601 format.
+     * The time at which the pipeline was updated, in ISO 8601 format.
      * </p>
      * 
      * @param updatedTimestamp
-     *        The time at which the capture pipeline was updated, in ISO 8601 format.
+     *        The time at which the pipeline was updated, in ISO 8601 format.
      */
 
     public void setUpdatedTimestamp(java.util.Date updatedTimestamp) {
@@ -483,10 +482,10 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time at which the capture pipeline was updated, in ISO 8601 format.
+     * The time at which the pipeline was updated, in ISO 8601 format.
      * </p>
      * 
-     * @return The time at which the capture pipeline was updated, in ISO 8601 format.
+     * @return The time at which the pipeline was updated, in ISO 8601 format.
      */
 
     public java.util.Date getUpdatedTimestamp() {
@@ -495,11 +494,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time at which the capture pipeline was updated, in ISO 8601 format.
+     * The time at which the pipeline was updated, in ISO 8601 format.
      * </p>
      * 
      * @param updatedTimestamp
-     *        The time at which the capture pipeline was updated, in ISO 8601 format.
+     *        The time at which the pipeline was updated, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,12 +509,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      * 
      * @param chimeSdkMeetingConfiguration
-     *        The configuration for a specified media capture pipeline. <code>SourceType</code> must be
+     *        The configuration for a specified media pipeline. <code>SourceType</code> must be
      *        <code>ChimeSdkMeeting</code>.
      */
 
@@ -525,11 +523,10 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      * 
-     * @return The configuration for a specified media capture pipeline. <code>SourceType</code> must be
+     * @return The configuration for a specified media pipeline. <code>SourceType</code> must be
      *         <code>ChimeSdkMeeting</code>.
      */
 
@@ -539,12 +536,11 @@ public class MediaCapturePipeline implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      * 
      * @param chimeSdkMeetingConfiguration
-     *        The configuration for a specified media capture pipeline. <code>SourceType</code> must be
+     *        The configuration for a specified media pipeline. <code>SourceType</code> must be
      *        <code>ChimeSdkMeeting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

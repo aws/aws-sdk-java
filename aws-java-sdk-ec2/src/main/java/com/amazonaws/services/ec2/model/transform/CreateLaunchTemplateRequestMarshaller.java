@@ -884,6 +884,10 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                     request.addParameter("LaunchTemplateData.MaintenanceOptions.AutoRecovery", StringUtils.fromString(maintenanceOptions.getAutoRecovery()));
                 }
             }
+
+            if (launchTemplateData.getDisableApiStop() != null) {
+                request.addParameter("LaunchTemplateData.DisableApiStop", StringUtils.fromBoolean(launchTemplateData.getDisableApiStop()));
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createLaunchTemplateRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createLaunchTemplateRequest

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes a global network. This is a single private network acting as a high-level container for your network
- * objects, including an Amazon Web Services-manged Core Network.
+ * objects, including an Amazon Web Services-managed Core Network.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GlobalNetwork" target="_top">AWS API

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on the users or groups in your Amazon Web Services SSO identity source that failed to properly configure
- * with your Amazon Kendra experience.
+ * Information on the users or groups in your IAM Identity Center identity source that failed to properly configure with
+ * your Amazon Kendra experience.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FailedEntity" target="_top">AWS API
@@ -31,28 +31,28 @@ public class FailedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be
+     * an email.
      * </p>
      */
     private String entityId;
     /**
      * <p>
-     * The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with
-     * your Amazon Kendra experience.
+     * The reason the user or group in your IAM Identity Center identity source failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be
+     * an email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user
-     *        ID could be an email.
+     *        The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID
+     *        could be an email.
      */
 
     public void setEntityId(String entityId) {
@@ -61,12 +61,12 @@ public class FailedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be
+     * an email.
      * </p>
      * 
-     * @return The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user
-     *         ID could be an email.
+     * @return The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID
+     *         could be an email.
      */
 
     public String getEntityId() {
@@ -75,13 +75,13 @@ public class FailedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be
+     * an email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user
-     *        ID could be an email.
+     *        The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID
+     *        could be an email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,13 +92,13 @@ public class FailedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with
-     * your Amazon Kendra experience.
+     * The reason the user or group in your IAM Identity Center identity source failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * 
      * @param errorMessage
-     *        The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure
-     *        with your Amazon Kendra experience.
+     *        The reason the user or group in your IAM Identity Center identity source failed to properly configure with
+     *        your Amazon Kendra experience.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -107,11 +107,11 @@ public class FailedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with
-     * your Amazon Kendra experience.
+     * The reason the user or group in your IAM Identity Center identity source failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * 
-     * @return The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure
+     * @return The reason the user or group in your IAM Identity Center identity source failed to properly configure
      *         with your Amazon Kendra experience.
      */
 
@@ -121,13 +121,13 @@ public class FailedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with
-     * your Amazon Kendra experience.
+     * The reason the user or group in your IAM Identity Center identity source failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * 
      * @param errorMessage
-     *        The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure
-     *        with your Amazon Kendra experience.
+     *        The reason the user or group in your IAM Identity Center identity source failed to properly configure with
+     *        your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -124,6 +124,12 @@ public class TestCaseRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String failure;
+    /**
+     * <p>
+     * Provides the test scenarios for the test case run.
+     * </p>
+     */
+    private java.util.List<TestCaseScenario> testScenarios;
 
     /**
      * <p>
@@ -841,6 +847,76 @@ public class TestCaseRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides the test scenarios for the test case run.
+     * </p>
+     * 
+     * @return Provides the test scenarios for the test case run.
+     */
+
+    public java.util.List<TestCaseScenario> getTestScenarios() {
+        return testScenarios;
+    }
+
+    /**
+     * <p>
+     * Provides the test scenarios for the test case run.
+     * </p>
+     * 
+     * @param testScenarios
+     *        Provides the test scenarios for the test case run.
+     */
+
+    public void setTestScenarios(java.util.Collection<TestCaseScenario> testScenarios) {
+        if (testScenarios == null) {
+            this.testScenarios = null;
+            return;
+        }
+
+        this.testScenarios = new java.util.ArrayList<TestCaseScenario>(testScenarios);
+    }
+
+    /**
+     * <p>
+     * Provides the test scenarios for the test case run.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTestScenarios(java.util.Collection)} or {@link #withTestScenarios(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param testScenarios
+     *        Provides the test scenarios for the test case run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestCaseRun withTestScenarios(TestCaseScenario... testScenarios) {
+        if (this.testScenarios == null) {
+            setTestScenarios(new java.util.ArrayList<TestCaseScenario>(testScenarios.length));
+        }
+        for (TestCaseScenario ele : testScenarios) {
+            this.testScenarios.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides the test scenarios for the test case run.
+     * </p>
+     * 
+     * @param testScenarios
+     *        Provides the test scenarios for the test case run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestCaseRun withTestScenarios(java.util.Collection<TestCaseScenario> testScenarios) {
+        setTestScenarios(testScenarios);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -869,7 +945,9 @@ public class TestCaseRun implements Serializable, Cloneable, StructuredPojo {
         if (getWarnings() != null)
             sb.append("Warnings: ").append(getWarnings()).append(",");
         if (getFailure() != null)
-            sb.append("Failure: ").append(getFailure());
+            sb.append("Failure: ").append(getFailure()).append(",");
+        if (getTestScenarios() != null)
+            sb.append("TestScenarios: ").append(getTestScenarios());
         sb.append("}");
         return sb.toString();
     }
@@ -920,6 +998,10 @@ public class TestCaseRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFailure() != null && other.getFailure().equals(this.getFailure()) == false)
             return false;
+        if (other.getTestScenarios() == null ^ this.getTestScenarios() == null)
+            return false;
+        if (other.getTestScenarios() != null && other.getTestScenarios().equals(this.getTestScenarios()) == false)
+            return false;
         return true;
     }
 
@@ -937,6 +1019,7 @@ public class TestCaseRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLogUrl() == null) ? 0 : getLogUrl().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode + ((getFailure() == null) ? 0 : getFailure().hashCode());
+        hashCode = prime * hashCode + ((getTestScenarios() == null) ? 0 : getTestScenarios().hashCode());
         return hashCode;
     }
 

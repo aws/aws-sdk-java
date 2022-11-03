@@ -32,6 +32,8 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /** Offering to purchase, e.g. '87654321' */
     private String offeringId;
+    /** Renewal settings for the reservation */
+    private RenewalSettings renewalSettings;
     /** Unique request ID to be specified. This is needed to prevent retries from creating multiple resources. */
     private String requestId;
     /**
@@ -141,6 +143,40 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
 
     public PurchaseOfferingRequest withOfferingId(String offeringId) {
         setOfferingId(offeringId);
+        return this;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @param renewalSettings
+     *        Renewal settings for the reservation
+     */
+
+    public void setRenewalSettings(RenewalSettings renewalSettings) {
+        this.renewalSettings = renewalSettings;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @return Renewal settings for the reservation
+     */
+
+    public RenewalSettings getRenewalSettings() {
+        return this.renewalSettings;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @param renewalSettings
+     *        Renewal settings for the reservation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseOfferingRequest withRenewalSettings(RenewalSettings renewalSettings) {
+        setRenewalSettings(renewalSettings);
         return this;
     }
 
@@ -298,6 +334,8 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Name: ").append(getName()).append(",");
         if (getOfferingId() != null)
             sb.append("OfferingId: ").append(getOfferingId()).append(",");
+        if (getRenewalSettings() != null)
+            sb.append("RenewalSettings: ").append(getRenewalSettings()).append(",");
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getStart() != null)
@@ -330,6 +368,10 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
+        if (other.getRenewalSettings() == null ^ this.getRenewalSettings() == null)
+            return false;
+        if (other.getRenewalSettings() != null && other.getRenewalSettings().equals(this.getRenewalSettings()) == false)
+            return false;
         if (other.getRequestId() == null ^ this.getRequestId() == null)
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
@@ -353,6 +395,7 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getRenewalSettings() == null) ? 0 : getRenewalSettings().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

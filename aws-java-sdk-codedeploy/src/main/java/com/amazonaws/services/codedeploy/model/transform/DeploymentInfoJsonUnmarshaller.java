@@ -166,6 +166,10 @@ public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentIn
                     context.nextToken();
                     deploymentInfo.setRelatedDeployments(RelatedDeploymentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("overrideAlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setOverrideAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

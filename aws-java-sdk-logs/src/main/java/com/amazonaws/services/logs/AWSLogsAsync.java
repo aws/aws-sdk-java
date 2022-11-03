@@ -1372,6 +1372,46 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
+     * Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support
+     * tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSLogsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support
+     * tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSLogsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a> instead.
+     * </p>
+     * </important>
+     * <p>
      * Lists the tags for the specified log group.
      * </p>
      * 
@@ -1381,9 +1421,17 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest);
 
     /**
+     * <important>
+     * <p>
+     * The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Lists the tags for the specified log group.
      * </p>
@@ -1398,6 +1446,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler);
 
@@ -2060,15 +2109,22 @@ public interface AWSLogsAsync extends AWSLogs {
             com.amazonaws.handlers.AsyncHandler<StopQueryRequest, StopQueryResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * The TagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+     * instead.
+     * </p>
+     * </important>
      * <p>
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To remove tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
-     * >UntagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a>.
      * </p>
      * <p>
      * For more information about tags, see <a href=
@@ -2089,18 +2145,26 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest);
 
     /**
+     * <important>
+     * <p>
+     * The TagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+     * instead.
+     * </p>
+     * </important>
      * <p>
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To remove tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
-     * >UntagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a>.
      * </p>
      * <p>
      * For more information about tags, see <a href=
@@ -2125,8 +2189,76 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only
+     * CloudWatch Logs resources that can be tagged are log groups and destinations.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key
+     * that is already associated with the alarm, the new tag value that you specify replaces the previous value for
+     * that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a CloudWatch Logs resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLogsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only
+     * CloudWatch Logs resources that can be tagged are log groups and destinations.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key
+     * that is already associated with the alarm, the new tag value that you specify replaces the previous value for
+     * that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a CloudWatch Logs resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLogsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -2162,14 +2294,21 @@ public interface AWSLogsAsync extends AWSLogs {
             com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To add tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
      * </p>
      * <p>
      * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
@@ -2182,17 +2321,25 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest);
 
     /**
+     * <important>
+     * <p>
+     * The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To add tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
      * </p>
      * <p>
      * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
@@ -2209,7 +2356,39 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLogsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLogsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to change information about an <a>ApiKey</a> resource.
+ * A request to change information about an ApiKey resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,25 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     * The identifier of the ApiKey resource to be updated.
      * </p>
      */
     private String apiKey;
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     * The identifier of the ApiKey resource to be updated.
      * </p>
      * 
      * @param apiKey
-     *        [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     *        The identifier of the ApiKey resource to be updated.
      */
 
     public void setApiKey(String apiKey) {
@@ -53,10 +54,10 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     * The identifier of the ApiKey resource to be updated.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     * @return The identifier of the ApiKey resource to be updated.
      */
 
     public String getApiKey() {
@@ -65,11 +66,11 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     * The identifier of the ApiKey resource to be updated.
      * </p>
      * 
      * @param apiKey
-     *        [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+     *        The identifier of the ApiKey resource to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +81,12 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -93,12 +95,13 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -112,7 +115,8 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,8 +125,8 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,12 +142,13 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

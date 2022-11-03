@@ -27,25 +27,31 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Maximum number of records to return.
+     * The maximum number of playback configurations that you want MediaTailor to return in response to the current
+     * request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     * <code>NextToken</code> in the response to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
-     * the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Maximum number of records to return.
+     * The maximum number of playback configurations that you want MediaTailor to return in response to the current
+     * request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     * <code>NextToken</code> in the response to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to return.
+     *        The maximum number of playback configurations that you want MediaTailor to return in response to the
+     *        current request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     *        <code>NextToken</code> in the response to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -54,10 +60,14 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Maximum number of records to return.
+     * The maximum number of playback configurations that you want MediaTailor to return in response to the current
+     * request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     * <code>NextToken</code> in the response to get the next page of results.
      * </p>
      * 
-     * @return Maximum number of records to return.
+     * @return The maximum number of playback configurations that you want MediaTailor to return in response to the
+     *         current request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     *         <code>NextToken</code> in the response to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -66,11 +76,15 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Maximum number of records to return.
+     * The maximum number of playback configurations that you want MediaTailor to return in response to the current
+     * request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     * <code>NextToken</code> in the response to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to return.
+     *        The maximum number of playback configurations that you want MediaTailor to return in response to the
+     *        current request. If there are more than <code>MaxResults</code> playback configurations, use the value of
+     *        <code>NextToken</code> in the response to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,13 +95,13 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
-     * the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
-     *        to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -96,12 +110,12 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
-     * the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
-     * @return Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
-     *         to fetch the next page of results.
+     * @return Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *         fetch the next page of results.
      */
 
     public String getNextToken() {
@@ -110,13 +124,13 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
-     * the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
-     *        to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the AWS accounts with access to the portfolio.
+     * Information about the Amazon Web Services accounts with access to the portfolio.
      * </p>
      */
     private java.util.List<String> accountIds;
@@ -39,10 +39,10 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the AWS accounts with access to the portfolio.
+     * Information about the Amazon Web Services accounts with access to the portfolio.
      * </p>
      * 
-     * @return Information about the AWS accounts with access to the portfolio.
+     * @return Information about the Amazon Web Services accounts with access to the portfolio.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -51,11 +51,11 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the AWS accounts with access to the portfolio.
+     * Information about the Amazon Web Services accounts with access to the portfolio.
      * </p>
      * 
      * @param accountIds
-     *        Information about the AWS accounts with access to the portfolio.
+     *        Information about the Amazon Web Services accounts with access to the portfolio.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -69,7 +69,7 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the AWS accounts with access to the portfolio.
+     * Information about the Amazon Web Services accounts with access to the portfolio.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param accountIds
-     *        Information about the AWS accounts with access to the portfolio.
+     *        Information about the Amazon Web Services accounts with access to the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the AWS accounts with access to the portfolio.
+     * Information about the Amazon Web Services accounts with access to the portfolio.
      * </p>
      * 
      * @param accountIds
-     *        Information about the AWS accounts with access to the portfolio.
+     *        Information about the Amazon Web Services accounts with access to the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

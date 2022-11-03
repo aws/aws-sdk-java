@@ -1,0 +1,189 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.chimesdkmediapipelines.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The summary of the media pipeline.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/MediaPipelineSummary"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class MediaPipelineSummary implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The ID of the media pipeline in the summary.
+     * </p>
+     */
+    private String mediaPipelineId;
+    /**
+     * <p>
+     * The ARN of the media pipeline in the summary.
+     * </p>
+     */
+    private String mediaPipelineArn;
+
+    /**
+     * <p>
+     * The ID of the media pipeline in the summary.
+     * </p>
+     * 
+     * @param mediaPipelineId
+     *        The ID of the media pipeline in the summary.
+     */
+
+    public void setMediaPipelineId(String mediaPipelineId) {
+        this.mediaPipelineId = mediaPipelineId;
+    }
+
+    /**
+     * <p>
+     * The ID of the media pipeline in the summary.
+     * </p>
+     * 
+     * @return The ID of the media pipeline in the summary.
+     */
+
+    public String getMediaPipelineId() {
+        return this.mediaPipelineId;
+    }
+
+    /**
+     * <p>
+     * The ID of the media pipeline in the summary.
+     * </p>
+     * 
+     * @param mediaPipelineId
+     *        The ID of the media pipeline in the summary.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPipelineSummary withMediaPipelineId(String mediaPipelineId) {
+        setMediaPipelineId(mediaPipelineId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the media pipeline in the summary.
+     * </p>
+     * 
+     * @param mediaPipelineArn
+     *        The ARN of the media pipeline in the summary.
+     */
+
+    public void setMediaPipelineArn(String mediaPipelineArn) {
+        this.mediaPipelineArn = mediaPipelineArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the media pipeline in the summary.
+     * </p>
+     * 
+     * @return The ARN of the media pipeline in the summary.
+     */
+
+    public String getMediaPipelineArn() {
+        return this.mediaPipelineArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the media pipeline in the summary.
+     * </p>
+     * 
+     * @param mediaPipelineArn
+     *        The ARN of the media pipeline in the summary.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPipelineSummary withMediaPipelineArn(String mediaPipelineArn) {
+        setMediaPipelineArn(mediaPipelineArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getMediaPipelineId() != null)
+            sb.append("MediaPipelineId: ").append(getMediaPipelineId()).append(",");
+        if (getMediaPipelineArn() != null)
+            sb.append("MediaPipelineArn: ").append(getMediaPipelineArn());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof MediaPipelineSummary == false)
+            return false;
+        MediaPipelineSummary other = (MediaPipelineSummary) obj;
+        if (other.getMediaPipelineId() == null ^ this.getMediaPipelineId() == null)
+            return false;
+        if (other.getMediaPipelineId() != null && other.getMediaPipelineId().equals(this.getMediaPipelineId()) == false)
+            return false;
+        if (other.getMediaPipelineArn() == null ^ this.getMediaPipelineArn() == null)
+            return false;
+        if (other.getMediaPipelineArn() != null && other.getMediaPipelineArn().equals(this.getMediaPipelineArn()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getMediaPipelineId() == null) ? 0 : getMediaPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getMediaPipelineArn() == null) ? 0 : getMediaPipelineArn().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public MediaPipelineSummary clone() {
+        try {
+            return (MediaPipelineSummary) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.chimesdkmediapipelines.model.transform.MediaPipelineSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

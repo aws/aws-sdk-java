@@ -33,6 +33,8 @@ public class LogicalResourceIdMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logicalStackName").build();
     private static final MarshallingInfo<String> RESOURCEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceGroupName").build();
+    private static final MarshallingInfo<String> TERRAFORMSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terraformSourceName").build();
 
     private static final LogicalResourceIdMarshaller instance = new LogicalResourceIdMarshaller();
 
@@ -53,6 +55,7 @@ public class LogicalResourceIdMarshaller {
             protocolMarshaller.marshall(logicalResourceId.getIdentifier(), IDENTIFIER_BINDING);
             protocolMarshaller.marshall(logicalResourceId.getLogicalStackName(), LOGICALSTACKNAME_BINDING);
             protocolMarshaller.marshall(logicalResourceId.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(logicalResourceId.getTerraformSourceName(), TERRAFORMSOURCENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

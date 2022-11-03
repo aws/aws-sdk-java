@@ -21,7 +21,11 @@ import javax.annotation.Generated;
 public enum ReferenceType {
 
     URL("URL"),
-    ATTACHMENT("ATTACHMENT");
+    ATTACHMENT("ATTACHMENT"),
+    NUMBER("NUMBER"),
+    STRING("STRING"),
+    DATE("DATE"),
+    EMAIL("EMAIL");
 
     private String value;
 

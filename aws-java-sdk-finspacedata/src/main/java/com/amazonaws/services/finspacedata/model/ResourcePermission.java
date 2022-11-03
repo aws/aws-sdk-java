@@ -44,7 +44,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <code>CreateSnapshot</code>
+ * <code>CreateDataView</code>
  * </p>
  * </li>
  * <li>

@@ -70,6 +70,8 @@ public class InstanceMarshaller {
             .marshallLocationName("username").build();
     private static final MarshallingInfo<String> SSHKEYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sshKeyName").build();
+    private static final MarshallingInfo<StructuredPojo> METADATAOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadataOptions").build();
 
     private static final InstanceMarshaller instance = new InstanceMarshaller();
 
@@ -108,6 +110,7 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getState(), STATE_BINDING);
             protocolMarshaller.marshall(instance.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(instance.getSshKeyName(), SSHKEYNAME_BINDING);
+            protocolMarshaller.marshall(instance.getMetadataOptions(), METADATAOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -42,6 +42,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
      * limited to 256 characters, as specified by the <code>Length Constraint</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      */
     private java.util.Map<String, String> hyperParameters;
     /**
@@ -268,6 +275,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
      * limited to 256 characters, as specified by the <code>Length Constraint</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @return Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you
      *         start the learning process. For a list of hyperparameters for each training algorithm provided by
@@ -275,6 +289,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and
      *         value is limited to 256 characters, as specified by the <code>Length Constraint</code>.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     *         hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject
+     *         your training job request and return an exception error.
+     *         </p>
      */
 
     public java.util.Map<String, String> getHyperParameters() {
@@ -291,6 +312,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
      * limited to 256 characters, as specified by the <code>Length Constraint</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param hyperParameters
      *        Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you
@@ -299,6 +327,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and
      *        value is limited to 256 characters, as specified by the <code>Length Constraint</code>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     *        hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject
+     *        your training job request and return an exception error.
+     *        </p>
      */
 
     public void setHyperParameters(java.util.Map<String, String> hyperParameters) {
@@ -315,6 +350,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
      * limited to 256 characters, as specified by the <code>Length Constraint</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param hyperParameters
      *        Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you
@@ -323,6 +365,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and
      *        value is limited to 256 characters, as specified by the <code>Length Constraint</code>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     *        hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject
+     *        your training job request and return an exception error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

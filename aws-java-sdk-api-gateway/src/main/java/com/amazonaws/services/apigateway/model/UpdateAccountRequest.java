@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to change information about the current <a>Account</a> resource.
+ * Requests API Gateway to change information about the current Account resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,20 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -47,12 +49,13 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -66,7 +69,8 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -75,8 +79,8 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,12 +96,13 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

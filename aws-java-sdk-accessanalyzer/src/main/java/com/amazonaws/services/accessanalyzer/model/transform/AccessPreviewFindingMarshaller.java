@@ -29,36 +29,36 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AccessPreviewFindingMarshaller {
 
-    private static final MarshallingInfo<List> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("action").build();
-    private static final MarshallingInfo<String> CHANGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("changeType").build();
-    private static final MarshallingInfo<Map> CONDITION_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("condition").build();
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("error").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> EXISTINGFINDINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("existingFindingId").build();
     private static final MarshallingInfo<String> EXISTINGFINDINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("existingFindingStatus").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("id").build();
-    private static final MarshallingInfo<Boolean> ISPUBLIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isPublic").build();
     private static final MarshallingInfo<Map> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("principal").build();
+    private static final MarshallingInfo<List> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("action").build();
+    private static final MarshallingInfo<Map> CONDITION_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("condition").build();
     private static final MarshallingInfo<String> RESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resource").build();
-    private static final MarshallingInfo<String> RESOURCEOWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
+    private static final MarshallingInfo<Boolean> ISPUBLIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isPublic").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
-    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("sources").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> CHANGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("changeType").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> RESOURCEOWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
+    private static final MarshallingInfo<String> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("error").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
 
     private static final AccessPreviewFindingMarshaller instance = new AccessPreviewFindingMarshaller();
 
@@ -76,21 +76,21 @@ public class AccessPreviewFindingMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(accessPreviewFinding.getAction(), ACTION_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getChangeType(), CHANGETYPE_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getCondition(), CONDITION_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getError(), ERROR_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getId(), ID_BINDING);
             protocolMarshaller.marshall(accessPreviewFinding.getExistingFindingId(), EXISTINGFINDINGID_BINDING);
             protocolMarshaller.marshall(accessPreviewFinding.getExistingFindingStatus(), EXISTINGFINDINGSTATUS_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getId(), ID_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getIsPublic(), ISPUBLIC_BINDING);
             protocolMarshaller.marshall(accessPreviewFinding.getPrincipal(), PRINCIPAL_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getCondition(), CONDITION_BINDING);
             protocolMarshaller.marshall(accessPreviewFinding.getResource(), RESOURCE_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getIsPublic(), ISPUBLIC_BINDING);
             protocolMarshaller.marshall(accessPreviewFinding.getResourceType(), RESOURCETYPE_BINDING);
-            protocolMarshaller.marshall(accessPreviewFinding.getSources(), SOURCES_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getChangeType(), CHANGETYPE_BINDING);
             protocolMarshaller.marshall(accessPreviewFinding.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getError(), ERROR_BINDING);
+            protocolMarshaller.marshall(accessPreviewFinding.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

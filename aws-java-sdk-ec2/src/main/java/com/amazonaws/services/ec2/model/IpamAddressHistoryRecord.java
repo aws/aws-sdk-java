@@ -18,8 +18,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The historical record of a CIDR within an IPAM scope. For more information, see <a
- * href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP addresses</a> in the <i>Amazon VPC IPAM
- * User Guide</i>.
+ * href="https://docs.aws.amazon.com/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP addresses</a>
+ * in the <i>Amazon VPC IPAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamAddressHistoryRecord" target="_top">AWS API
@@ -67,8 +67,8 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
     /**
      * <p>
      * The compliance status of a resource. For more information on compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      */
     private String resourceComplianceStatus;
@@ -76,8 +76,8 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
      * <p>
      * The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with
      * another CIDR in the scope. For more information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      */
     private String resourceOverlapStatus;
@@ -364,14 +364,14 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
     /**
      * <p>
      * The compliance status of a resource. For more information on compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param resourceComplianceStatus
      *        The compliance status of a resource. For more information on compliance statuses, see <a
-     *        href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     *        resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @see IpamComplianceStatus
      */
 
@@ -382,13 +382,13 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
     /**
      * <p>
      * The compliance status of a resource. For more information on compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @return The compliance status of a resource. For more information on compliance statuses, see <a
-     *         href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *         <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage
+     *         by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @see IpamComplianceStatus
      */
 
@@ -399,14 +399,14 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
     /**
      * <p>
      * The compliance status of a resource. For more information on compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param resourceComplianceStatus
      *        The compliance status of a resource. For more information on compliance statuses, see <a
-     *        href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     *        resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpamComplianceStatus
      */
@@ -419,14 +419,14 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
     /**
      * <p>
      * The compliance status of a resource. For more information on compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param resourceComplianceStatus
      *        The compliance status of a resource. For more information on compliance statuses, see <a
-     *        href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     *        resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpamComplianceStatus
      */
@@ -440,15 +440,15 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
      * <p>
      * The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with
      * another CIDR in the scope. For more information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param resourceOverlapStatus
      *        The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps
      *        with another CIDR in the scope. For more information on overlap statuses, see <a
-     *        href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     *        resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @see IpamOverlapStatus
      */
 
@@ -460,14 +460,14 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
      * <p>
      * The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with
      * another CIDR in the scope. For more information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @return The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps
      *         with another CIDR in the scope. For more information on overlap statuses, see <a
-     *         href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *         <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage
+     *         by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @see IpamOverlapStatus
      */
 
@@ -479,15 +479,15 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
      * <p>
      * The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with
      * another CIDR in the scope. For more information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param resourceOverlapStatus
      *        The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps
      *        with another CIDR in the scope. For more information on overlap statuses, see <a
-     *        href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     *        resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpamOverlapStatus
      */
@@ -501,15 +501,15 @@ public class IpamAddressHistoryRecord implements Serializable, Cloneable {
      * <p>
      * The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with
      * another CIDR in the scope. For more information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC
-     * IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param resourceOverlapStatus
      *        The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps
      *        with another CIDR in the scope. For more information on overlap statuses, see <a
-     *        href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
+     *        resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpamOverlapStatus
      */

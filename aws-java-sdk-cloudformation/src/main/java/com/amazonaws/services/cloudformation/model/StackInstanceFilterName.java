@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StackInstanceFilterName {
 
-    DETAILED_STATUS("DETAILED_STATUS");
+    DETAILED_STATUS("DETAILED_STATUS"),
+    LAST_OPERATION_ID("LAST_OPERATION_ID");
 
     private String value;
 

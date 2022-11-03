@@ -94,6 +94,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateOriginAccessControlResult createOriginAccessControl(CreateOriginAccessControlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateOriginRequestPolicyResult createOriginRequestPolicy(CreateOriginRequestPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +165,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public DeleteMonitoringSubscriptionResult deleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOriginAccessControlResult deleteOriginAccessControl(DeleteOriginAccessControlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,6 +275,16 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public GetMonitoringSubscriptionResult getMonitoringSubscription(GetMonitoringSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOriginAccessControlResult getOriginAccessControl(GetOriginAccessControlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOriginAccessControlConfigResult getOriginAccessControlConfig(GetOriginAccessControlConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -389,6 +409,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public ListOriginAccessControlsResult listOriginAccessControls(ListOriginAccessControlsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOriginRequestPoliciesResult listOriginRequestPolicies(ListOriginRequestPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -470,6 +495,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public UpdateKeyGroupResult updateKeyGroup(UpdateKeyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOriginAccessControlResult updateOriginAccessControl(UpdateOriginAccessControlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

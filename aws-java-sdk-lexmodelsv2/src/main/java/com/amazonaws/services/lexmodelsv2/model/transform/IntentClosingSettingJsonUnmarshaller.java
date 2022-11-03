@@ -56,6 +56,14 @@ public class IntentClosingSettingJsonUnmarshaller implements Unmarshaller<Intent
                     context.nextToken();
                     intentClosingSetting.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("nextStep", targetDepth)) {
+                    context.nextToken();
+                    intentClosingSetting.setNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("conditional", targetDepth)) {
+                    context.nextToken();
+                    intentClosingSetting.setConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

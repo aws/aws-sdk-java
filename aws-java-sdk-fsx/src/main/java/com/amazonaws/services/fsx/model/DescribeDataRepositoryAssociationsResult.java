@@ -26,7 +26,7 @@ public class DescribeDataRepositoryAssociationsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An array of one ore more data repository association descriptions.
+     * An array of one or more data repository association descriptions.
      * </p>
      */
     private java.util.List<DataRepositoryAssociation> associations;
@@ -35,10 +35,10 @@ public class DescribeDataRepositoryAssociationsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An array of one ore more data repository association descriptions.
+     * An array of one or more data repository association descriptions.
      * </p>
      * 
-     * @return An array of one ore more data repository association descriptions.
+     * @return An array of one or more data repository association descriptions.
      */
 
     public java.util.List<DataRepositoryAssociation> getAssociations() {
@@ -47,11 +47,11 @@ public class DescribeDataRepositoryAssociationsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An array of one ore more data repository association descriptions.
+     * An array of one or more data repository association descriptions.
      * </p>
      * 
      * @param associations
-     *        An array of one ore more data repository association descriptions.
+     *        An array of one or more data repository association descriptions.
      */
 
     public void setAssociations(java.util.Collection<DataRepositoryAssociation> associations) {
@@ -65,7 +65,7 @@ public class DescribeDataRepositoryAssociationsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An array of one ore more data repository association descriptions.
+     * An array of one or more data repository association descriptions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeDataRepositoryAssociationsResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param associations
-     *        An array of one ore more data repository association descriptions.
+     *        An array of one or more data repository association descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeDataRepositoryAssociationsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An array of one ore more data repository association descriptions.
+     * An array of one or more data repository association descriptions.
      * </p>
      * 
      * @param associations
-     *        An array of one ore more data repository association descriptions.
+     *        An array of one or more data repository association descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

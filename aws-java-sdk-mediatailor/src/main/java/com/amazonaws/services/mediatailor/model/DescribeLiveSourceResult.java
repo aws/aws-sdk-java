@@ -55,13 +55,16 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
     private String liveSourceName;
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -298,11 +301,11 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The name of the source location associated with the VOD source.
+     *        The name of the source location associated with the live source.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -311,10 +314,10 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      * 
-     * @return The name of the source location associated with the VOD source.
+     * @return The name of the source location associated with the live source.
      */
 
     public String getSourceLocationName() {
@@ -323,11 +326,11 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The name of the source location associated with the VOD source.
+     *        The name of the source location associated with the live source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,10 +341,16 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the live source.
+     * @return The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -350,11 +359,17 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the live source.
+     *        The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -363,11 +378,17 @@ public class DescribeLiveSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the live source.
+     *        The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

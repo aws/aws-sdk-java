@@ -479,9 +479,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * organization.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator account can delete an organization Config rule. When calling
-     * this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-     * permissions are added.
+     * Only a management account and a delegated administrator account can delete an organization Config rule. When
+     * calling this API with a delegated administrator, you must ensure Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
@@ -504,9 +504,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * organization.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator account can delete an organization Config rule. When calling
-     * this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-     * permissions are added.
+     * Only a management account and a delegated administrator account can delete an organization Config rule. When
+     * calling this API with a delegated administrator, you must ensure Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
@@ -534,7 +534,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * member accounts in that organization.
      * </p>
      * <p>
-     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * Only a management account or a delegated administrator account can delete an organization conformance pack. When
      * calling this API with a delegated administrator, you must ensure Organizations
      * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
@@ -559,7 +559,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * member accounts in that organization.
      * </p>
      * <p>
-     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * Only a management account or a delegated administrator account can delete an organization conformance pack. When
      * calling this API with a delegated administrator, you must ensure Organizations
      * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
@@ -1852,9 +1852,24 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
-     * applicable if you specify organization Config rule names. It is only applicable, when you request all the
-     * organization Config rules.
+     * When you specify the limit and the next token, you receive a paginated response.
+     * </p>
+     * <p>
+     * Limit and next token are not applicable if you specify organization Config rule names. It is only applicable,
+     * when you request all the organization Config rules.
+     * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
      * </p>
      * </note>
      * 
@@ -1874,9 +1889,24 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
-     * applicable if you specify organization Config rule names. It is only applicable, when you request all the
-     * organization Config rules.
+     * When you specify the limit and the next token, you receive a paginated response.
+     * </p>
+     * <p>
+     * Limit and next token are not applicable if you specify organization Config rule names. It is only applicable,
+     * when you request all the organization Config rules.
+     * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
      * </p>
      * </note>
      * 
@@ -1966,6 +1996,19 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
      * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
+     * </p>
      * </note>
      * 
      * @param describeOrganizationConformancePacksRequest
@@ -1989,6 +2032,19 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
+     * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
      * </p>
      * </note>
      * 
@@ -3171,6 +3227,59 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of
+     * compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource
+     * combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of
+     * your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your
+     * conformance packs.
+     * </p>
+     * <note>
+     * <p>
+     * Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.
+     * </p>
+     * </note>
+     * 
+     * @param listConformancePackComplianceScoresRequest
+     * @return A Java Future containing the result of the ListConformancePackComplianceScores operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.ListConformancePackComplianceScores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConformancePackComplianceScoresResult> listConformancePackComplianceScoresAsync(
+            ListConformancePackComplianceScoresRequest listConformancePackComplianceScoresRequest);
+
+    /**
+     * <p>
+     * Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of
+     * compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource
+     * combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of
+     * your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your
+     * conformance packs.
+     * </p>
+     * <note>
+     * <p>
+     * Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.
+     * </p>
+     * </note>
+     * 
+     * @param listConformancePackComplianceScoresRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConformancePackComplianceScores operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.ListConformancePackComplianceScores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConformancePackComplianceScoresResult> listConformancePackComplianceScoresAsync(
+            ListConformancePackComplianceScoresRequest listConformancePackComplianceScoresRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResult> asyncHandler);
+
+    /**
+     * <p>
      * Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource
      * identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of
      * resources that Config has discovered, including those that Config is not currently recording. You can narrow the
@@ -3325,25 +3434,30 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Adds or updates an Config rule for evaluating whether your Amazon Web Services resources comply with your desired
-     * configurations.
+     * Adds or updates an Config rule to evaluate if your Amazon Web Services resources comply with your desired
+     * configurations. For information on how many Config rules you can have per account, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * You can use this action for Config custom rules and Config managed rules. A Config custom rule is a rule that you
-     * develop and maintain. An Config managed rule is a customizable, predefined rule that Config provides.
+     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
+     * <code>PutConfigRule</code> to create both Config custom rules and Config managed rules.
      * </p>
      * <p>
-     * If you are adding a new Config custom rule, you must first create the Lambda function that the rule invokes to
-     * evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to Config, you must
-     * specify the Amazon Resource Name (ARN) that Lambda assigns to the function. Specify the ARN for the
-     * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the
-     * <code>ConfigRule</code> object.
+     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
+     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
+     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
+     * need to create an Lambda function that the rule invokes to evaluate your resources. When you use
+     * <code>PutConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
+     * that Lambda assigns to the function. You specify the ARN in the <code>SourceIdentifier</code> key. This key is
+     * part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object.
      * </p>
      * <p>
-     * If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code>
-     * key. To reference Config managed rule identifiers, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
-     * Config managed rules</a>.
+     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
+     * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
+     * <code>SourceIdentifier</code> key.
      * </p>
      * <p>
      * For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do
@@ -3354,14 +3468,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>,
      * <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in
      * this request.
-     * </p>
-     * <p>
-     * The maximum number of rules that Config supports is 150.
-     * </p>
-     * <p>
-     * For information about requesting a rule limit increase, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in
-     * the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
      * For more information about developing and using Config rules, see <a
@@ -3379,25 +3485,30 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Adds or updates an Config rule for evaluating whether your Amazon Web Services resources comply with your desired
-     * configurations.
+     * Adds or updates an Config rule to evaluate if your Amazon Web Services resources comply with your desired
+     * configurations. For information on how many Config rules you can have per account, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * You can use this action for Config custom rules and Config managed rules. A Config custom rule is a rule that you
-     * develop and maintain. An Config managed rule is a customizable, predefined rule that Config provides.
+     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
+     * <code>PutConfigRule</code> to create both Config custom rules and Config managed rules.
      * </p>
      * <p>
-     * If you are adding a new Config custom rule, you must first create the Lambda function that the rule invokes to
-     * evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to Config, you must
-     * specify the Amazon Resource Name (ARN) that Lambda assigns to the function. Specify the ARN for the
-     * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the
-     * <code>ConfigRule</code> object.
+     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
+     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
+     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
+     * need to create an Lambda function that the rule invokes to evaluate your resources. When you use
+     * <code>PutConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
+     * that Lambda assigns to the function. You specify the ARN in the <code>SourceIdentifier</code> key. This key is
+     * part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object.
      * </p>
      * <p>
-     * If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code>
-     * key. To reference Config managed rule identifiers, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
-     * Config managed rules</a>.
+     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
+     * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
+     * <code>SourceIdentifier</code> key.
      * </p>
      * <p>
      * For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do
@@ -3408,14 +3519,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>,
      * <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in
      * this request.
-     * </p>
-     * <p>
-     * The maximum number of rules that Config supports is 150.
-     * </p>
-     * <p>
-     * For information about requesting a rule limit increase, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in
-     * the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
      * For more information about developing and using Config rules, see <a
@@ -3460,7 +3563,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * To register a delegated administrator, see <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
-     * >Register a Delegated Administrator</a> in the Config developer guide.
+     * >Register a Delegated Administrator</a> in the <i>Config developer guide</i>.
      * </p>
      * </note>
      * 
@@ -3497,7 +3600,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * To register a delegated administrator, see <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
-     * >Register a Delegated Administrator</a> in the Config developer guide.
+     * >Register a Delegated Administrator</a> in the <i>Config developer guide</i>.
      * </p>
      * </note>
      * 
@@ -3577,17 +3680,18 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
-     * deployed in an account and a region and across Amazon Web Services Organization.
+     * deployed in an account and a region and across an organization. For information on how many conformance packs you
+     * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+     * <b>Service Limits</b> </a> in the Config Developer Guide.
      * </p>
      * <p>
-     * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
-     * linked role is created only when the role does not exist in your account.
+     * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
+     * service-linked role is created only when the role does not exist in your account.
      * </p>
      * <note>
      * <p>
-     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
-     * If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the
-     * <code>TemplateBody</code> parameter.
+     * You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or
+     * <code>TemplateSSMDocumentDetails</code>.
      * </p>
      * </note>
      * 
@@ -3602,17 +3706,18 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
-     * deployed in an account and a region and across Amazon Web Services Organization.
+     * deployed in an account and a region and across an organization. For information on how many conformance packs you
+     * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+     * <b>Service Limits</b> </a> in the Config Developer Guide.
      * </p>
      * <p>
-     * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
-     * linked role is created only when the role does not exist in your account.
+     * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
+     * service-linked role is created only when the role does not exist in your account.
      * </p>
      * <note>
      * <p>
-     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
-     * If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the
-     * <code>TemplateBody</code> parameter.
+     * You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or
+     * <code>TemplateSSMDocumentDetails</code>.
      * </p>
      * </note>
      * 
@@ -3760,18 +3865,21 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Adds or updates organization Config rule for your entire organization evaluating whether your Amazon Web Services
-     * resources comply with your desired configurations.
+     * Adds or updates an Config rule for your entire organization to evaluate if your Amazon Web Services resources
+     * comply with your desired configurations. For information on how many organization Config rules you can have per
+     * account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service
+     * Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can create or update an organization Config rule. When
+     * Only a management account and a delegated administrator can create or update an organization Config rule. When
      * calling this API with a delegated administrator, you must ensure Organizations
-     * <code>ListDelegatedAdministrator</code> permissions are added.
+     * <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated
+     * administrators.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
-     * administrator account of your organization. The service linked role is created only when the role does not exist
+     * service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated
+     * administrator account of your organization. The service-linked role is created only when the role does not exist
      * in the caller account. Config verifies the existence of role with <code>GetRole</code> action.
      * </p>
      * <p>
@@ -3780,23 +3888,33 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
-     * You can use this action to create both Config custom rules and Config managed rules. If you are adding a new
-     * Config custom rule, you must first create Lambda function in the master account or a delegated administrator that
-     * the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can
-     * be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule
-     * to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding
-     * an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.
+     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
+     * <code>PutOrganizationConfigRule</code> to create both Config custom rules and Config managed rules.
      * </p>
      * <p>
-     * The maximum number of organization Config rules that Config supports is 150 and 3 delegated administrator per
-     * organization.
+     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
+     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
+     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
+     * need to create an Lambda function in the management account or a delegated administrator that the rule invokes to
+     * evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the
+     * Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you
+     * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
+     * </p>
+     * <p>
+     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
+     * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
+     * <code>RuleIdentifier</code> key.
      * </p>
      * <note>
      * <p>
      * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
      * </p>
      * <p>
-     * Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
+     * Make sure to specify one of either <code>OrganizationCustomPolicyRuleMetadata</code> for Custom Policy rules,
+     * <code>OrganizationCustomRuleMetadata</code> for Custom Lambda rules, or
+     * <code>OrganizationManagedRuleMetadata</code> for managed rules.
      * </p>
      * </note>
      * 
@@ -3811,18 +3929,21 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Adds or updates organization Config rule for your entire organization evaluating whether your Amazon Web Services
-     * resources comply with your desired configurations.
+     * Adds or updates an Config rule for your entire organization to evaluate if your Amazon Web Services resources
+     * comply with your desired configurations. For information on how many organization Config rules you can have per
+     * account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service
+     * Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can create or update an organization Config rule. When
+     * Only a management account and a delegated administrator can create or update an organization Config rule. When
      * calling this API with a delegated administrator, you must ensure Organizations
-     * <code>ListDelegatedAdministrator</code> permissions are added.
+     * <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated
+     * administrators.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
-     * administrator account of your organization. The service linked role is created only when the role does not exist
+     * service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated
+     * administrator account of your organization. The service-linked role is created only when the role does not exist
      * in the caller account. Config verifies the existence of role with <code>GetRole</code> action.
      * </p>
      * <p>
@@ -3831,23 +3952,33 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
-     * You can use this action to create both Config custom rules and Config managed rules. If you are adding a new
-     * Config custom rule, you must first create Lambda function in the master account or a delegated administrator that
-     * the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can
-     * be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule
-     * to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding
-     * an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.
+     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
+     * <code>PutOrganizationConfigRule</code> to create both Config custom rules and Config managed rules.
      * </p>
      * <p>
-     * The maximum number of organization Config rules that Config supports is 150 and 3 delegated administrator per
-     * organization.
+     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
+     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
+     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
+     * need to create an Lambda function in the management account or a delegated administrator that the rule invokes to
+     * evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the
+     * Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you
+     * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
+     * </p>
+     * <p>
+     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
+     * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
+     * <code>RuleIdentifier</code> key.
      * </p>
      * <note>
      * <p>
      * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
      * </p>
      * <p>
-     * Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
+     * Make sure to specify one of either <code>OrganizationCustomPolicyRuleMetadata</code> for Custom Policy rules,
+     * <code>OrganizationCustomRuleMetadata</code> for Custom Lambda rules, or
+     * <code>OrganizationManagedRuleMetadata</code> for managed rules.
      * </p>
      * </note>
      * 
@@ -3867,18 +3998,22 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+     * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
+     * many organization conformance packs and how many Config rules you can have per account, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+     * the Config Developer Guide.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
-     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
+     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An
+     * organization can have up to 3 delegated administrators.
      * </p>
      * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
-     * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
-     * organization. The service linked role is created only when the role does not exist in the caller account. To use
-     * this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
+     * <code>EnableAWSServiceAccess</code> action and creates a service-linked role
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of
+     * your organization. The service-linked role is created only when the role does not exist in the caller account. To
+     * use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
      * Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
@@ -3893,10 +4028,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance
      * pack is created or updated. You cannot update a conformance pack while it is in this state.
-     * </p>
-     * <p>
-     * You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per
-     * organization.
      * </p>
      * </note>
      * 
@@ -3912,18 +4043,22 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+     * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
+     * many organization conformance packs and how many Config rules you can have per account, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+     * the Config Developer Guide.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
-     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
+     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An
+     * organization can have up to 3 delegated administrators.
      * </p>
      * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
-     * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
-     * organization. The service linked role is created only when the role does not exist in the caller account. To use
-     * this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
+     * <code>EnableAWSServiceAccess</code> action and creates a service-linked role
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of
+     * your organization. The service-linked role is created only when the role does not exist in the caller account. To
+     * use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
      * Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
@@ -3938,10 +4073,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance
      * pack is created or updated. You cannot update a conformance pack while it is in this state.
-     * </p>
-     * <p>
-     * You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per
-     * organization.
      * </p>
      * </note>
      * 
@@ -3976,6 +4107,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * This API does not support adding remediation configurations for service-linked Config Rules such as Organization
      * Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.
      * </p>
+     * </note> <note>
+     * <p>
+     * For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a
+     * value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either
+     * as long as it maps to a valid parameter.
+     * </p>
+     * <p>
+     * However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is
+     * <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to
+     * remediate your resources.
+     * </p>
      * </note>
      * 
      * @param putRemediationConfigurationsRequest
@@ -4003,6 +4145,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * This API does not support adding remediation configurations for service-linked Config Rules such as Organization
      * Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.
+     * </p>
+     * </note> <note>
+     * <p>
+     * For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a
+     * value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either
+     * as long as it maps to a valid parameter.
+     * </p>
+     * <p>
+     * However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is
+     * <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to
+     * remediate your resources.
      * </p>
      * </note>
      * 
@@ -4296,7 +4449,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @param selectResourceConfigRequest
@@ -4315,7 +4468,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @param selectResourceConfigRequest

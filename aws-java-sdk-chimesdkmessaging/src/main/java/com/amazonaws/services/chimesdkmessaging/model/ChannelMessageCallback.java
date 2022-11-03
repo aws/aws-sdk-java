@@ -59,6 +59,12 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Map<String, MessageAttributeValue> messageAttributes;
+    /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -295,6 +301,46 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     * 
+     * @return The ID of the SubChannel.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelMessageCallback withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -315,7 +361,9 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
         if (getPushNotification() != null)
             sb.append("PushNotification: ").append(getPushNotification()).append(",");
         if (getMessageAttributes() != null)
-            sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***");
+            sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +398,10 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
             return false;
         if (other.getMessageAttributes() != null && other.getMessageAttributes().equals(this.getMessageAttributes()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +415,7 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getPushNotification() == null) ? 0 : getPushNotification().hashCode());
         hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

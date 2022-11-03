@@ -48,11 +48,11 @@ public class ProductCodeJsonUnmarshaller implements Unmarshaller<ProductCode, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("code", targetDepth)) {
+                if (context.testExpression("productCodeId", targetDepth)) {
                     context.nextToken();
                     productCode.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("productType", targetDepth)) {
+                if (context.testExpression("productCodeType", targetDepth)) {
                     context.nextToken();
                     productCode.setProductType(context.getUnmarshaller(String.class).unmarshall(context));
                 }

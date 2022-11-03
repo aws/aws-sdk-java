@@ -85,6 +85,12 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
     private String name;
     /**
      * <p>
+     * The application instance's state.
+     * </p>
+     */
+    private java.util.List<ReportedRuntimeContextState> runtimeContextStates;
+    /**
+     * <p>
      * The application instance's runtime role ARN.
      * </p>
      */
@@ -529,6 +535,76 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * The application instance's state.
+     * </p>
+     * 
+     * @return The application instance's state.
+     */
+
+    public java.util.List<ReportedRuntimeContextState> getRuntimeContextStates() {
+        return runtimeContextStates;
+    }
+
+    /**
+     * <p>
+     * The application instance's state.
+     * </p>
+     * 
+     * @param runtimeContextStates
+     *        The application instance's state.
+     */
+
+    public void setRuntimeContextStates(java.util.Collection<ReportedRuntimeContextState> runtimeContextStates) {
+        if (runtimeContextStates == null) {
+            this.runtimeContextStates = null;
+            return;
+        }
+
+        this.runtimeContextStates = new java.util.ArrayList<ReportedRuntimeContextState>(runtimeContextStates);
+    }
+
+    /**
+     * <p>
+     * The application instance's state.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuntimeContextStates(java.util.Collection)} or {@link #withRuntimeContextStates(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param runtimeContextStates
+     *        The application instance's state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceResult withRuntimeContextStates(ReportedRuntimeContextState... runtimeContextStates) {
+        if (this.runtimeContextStates == null) {
+            setRuntimeContextStates(new java.util.ArrayList<ReportedRuntimeContextState>(runtimeContextStates.length));
+        }
+        for (ReportedRuntimeContextState ele : runtimeContextStates) {
+            this.runtimeContextStates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's state.
+     * </p>
+     * 
+     * @param runtimeContextStates
+     *        The application instance's state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceResult withRuntimeContextStates(java.util.Collection<ReportedRuntimeContextState> runtimeContextStates) {
+        setRuntimeContextStates(runtimeContextStates);
+        return this;
+    }
+
+    /**
+     * <p>
      * The application instance's runtime role ARN.
      * </p>
      * 
@@ -766,6 +842,8 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRuntimeContextStates() != null)
+            sb.append("RuntimeContextStates: ").append(getRuntimeContextStates()).append(",");
         if (getRuntimeRoleArn() != null)
             sb.append("RuntimeRoleArn: ").append(getRuntimeRoleArn()).append(",");
         if (getStatus() != null)
@@ -830,6 +908,10 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRuntimeContextStates() == null ^ this.getRuntimeContextStates() == null)
+            return false;
+        if (other.getRuntimeContextStates() != null && other.getRuntimeContextStates().equals(this.getRuntimeContextStates()) == false)
+            return false;
         if (other.getRuntimeRoleArn() == null ^ this.getRuntimeRoleArn() == null)
             return false;
         if (other.getRuntimeRoleArn() != null && other.getRuntimeRoleArn().equals(this.getRuntimeRoleArn()) == false)
@@ -864,6 +946,7 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeContextStates() == null) ? 0 : getRuntimeContextStates().hashCode());
         hashCode = prime * hashCode + ((getRuntimeRoleArn() == null) ? 0 : getRuntimeRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusDescription() == null) ? 0 : getStatusDescription().hashCode());

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.dlm.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeBootVolume").build();
     private static final MarshallingInfo<Boolean> NOREBOOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NoReboot").build();
+    private static final MarshallingInfo<List> EXCLUDEDATAVOLUMETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeDataVolumeTags").build();
 
     private static final ParametersMarshaller instance = new ParametersMarshaller();
 
@@ -50,6 +53,7 @@ public class ParametersMarshaller {
         try {
             protocolMarshaller.marshall(parameters.getExcludeBootVolume(), EXCLUDEBOOTVOLUME_BINDING);
             protocolMarshaller.marshall(parameters.getNoReboot(), NOREBOOT_BINDING);
+            protocolMarshaller.marshall(parameters.getExcludeDataVolumeTags(), EXCLUDEDATAVOLUMETAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

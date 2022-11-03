@@ -19,6 +19,13 @@ import javax.annotation.Generated;
  * <p>
  * Describes a security group and Amazon Web Services account ID pair.
  * </p>
+ * <note>
+ * <p>
+ * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in
+ * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserIdGroupPair" target="_top">AWS API
  *      Documentation</a>

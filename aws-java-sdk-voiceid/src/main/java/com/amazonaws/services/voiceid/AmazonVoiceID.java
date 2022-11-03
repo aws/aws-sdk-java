@@ -78,7 +78,7 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified domain from the Amazon Connect Voice ID system.
+     * Deletes the specified domain from Voice ID.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -107,7 +107,7 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified fraudster from the Amazon Connect Voice ID system.
+     * Deletes the specified fraudster from Voice ID.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -117,6 +117,9 @@ public interface AmazonVoiceID {
      *         details.
      * @throws ValidationException
      *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
      * @throws InternalServerException
      *         The request failed due to an unknown error on the server side.
      * @throws ThrottlingException
@@ -133,7 +136,7 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified speaker from the Amazon Connect Voice ID system.
+     * Deletes the specified speaker from Voice ID.
      * </p>
      * 
      * @param deleteSpeakerRequest
@@ -302,6 +305,9 @@ public interface AmazonVoiceID {
      *         details.
      * @throws ValidationException
      *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
      * @throws InternalServerException
      *         The request failed due to an unknown error on the server side.
      * @throws ThrottlingException
@@ -447,15 +453,18 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
-     * Opts out a speaker from Voice ID system. A speaker can be opted out regardless of whether or not they already
-     * exist in the system. If they don't yet exist, a new speaker is created in an opted out state. If they already
-     * exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication
-     * requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in the
-     * system.
+     * Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in
+     * Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their
+     * existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are
+     * rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.
      * </p>
      * 
      * @param optOutSpeakerRequest
      * @return Result of the OptOutSpeaker operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded the service quota. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas"
+     *         >Voice ID Service Quotas</a> and try your request again.
      * @throws ResourceNotFoundException
      *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
      *         details.
@@ -546,7 +555,7 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
-     * Tags an Amazon Connect Voice ID resource with the provided list of tags.
+     * Tags a Voice ID resource with the provided list of tags.
      * </p>
      * 
      * @param tagResourceRequest

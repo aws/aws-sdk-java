@@ -48,13 +48,13 @@ public class SubstringJsonUnmarshaller implements Unmarshaller<Substring, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("length", targetDepth)) {
-                    context.nextToken();
-                    substring.setLength(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("start", targetDepth)) {
                     context.nextToken();
                     substring.setStart(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("length", targetDepth)) {
+                    context.nextToken();
+                    substring.setLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

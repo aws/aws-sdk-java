@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.213-SNAPSHOT</version>
+    <version>1.12.335-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,84 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-connectcases</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-migrationhuborchestrator</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iotfleetwise</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-controltower</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-supportapp</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-private5g</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-backupstorage</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-licensemanagerusersubscriptions</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iamrolesanywhere</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-redshiftserverless</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-connectcampaign</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-mainframemodernization</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-emrserverless</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-chimesdkmediapipelines</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1959,6 +2037,58 @@
                           </taglets>
                           <groups>
                               <group>
+                                  <title>Amazon Connect Cases</title>
+                                  <packages>com.amazonaws.services.connectcases*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Migration Hub Orchestrator</title>
+                                  <packages>com.amazonaws.services.migrationhuborchestrator*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS IoT FleetWise</title>
+                                  <packages>com.amazonaws.services.iotfleetwise*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Control Tower</title>
+                                  <packages>com.amazonaws.services.controltower*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Support App</title>
+                                  <packages>com.amazonaws.services.supportapp*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Private 5G</title>
+                                  <packages>com.amazonaws.services.private5g*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Backup Storage</title>
+                                  <packages>com.amazonaws.services.backupstorage*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS License Manager User Subscriptions</title>
+                                  <packages>com.amazonaws.services.licensemanagerusersubscriptions*</packages>
+                              </group>
+                              <group>
+                                  <title>IAM Roles Anywhere</title>
+                                  <packages>com.amazonaws.services.iamrolesanywhere*</packages>
+                              </group>
+                              <group>
+                                  <title>Redshift Serverless</title>
+                                  <packages>com.amazonaws.services.redshiftserverless*</packages>
+                              </group>
+                              <group>
+                                  <title>AmazonConnectCampaign</title>
+                                  <packages>com.amazonaws.services.connectcampaign*</packages>
+                              </group>
+                              <group>
+                                  <title>AWSMainframeModernization</title>
+                                  <packages>com.amazonaws.services.mainframemodernization*</packages>
+                              </group>
+                              <group>
+                                  <title>EMR Serverless</title>
+                                  <packages>com.amazonaws.services.emrserverless*</packages>
+                              </group>
+                              <group>
                                   <title>Amazon Chime SDK Media Pipelines</title>
                                   <packages>com.amazonaws.services.chimesdkmediapipelines*</packages>
                               </group>
@@ -3208,11 +3338,11 @@
                           ]]>
                       </header>
                       <footer>
-                          &lt;script src="https://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript">&lt;/script>
                           &lt;script>
-                          jQuery(function ($) {
-                          $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE-->');
-                          });
+                          var header = document.querySelector('div.header');
+                          var firstHeaderElement = header.childNodes[0];
+                          var regionDisclaimerElement = document.createComment('REGION_DISCLAIMER_DO_NOT_REMOVE');
+                          header.insertBefore(regionDisclaimerElement, firstHeaderElement);
                           &lt;/script>
 
                           &lt;meta name="guide-name" content="API Reference"> <!-- Documentation Guide Name for s.prop65 -->
@@ -3288,38 +3418,6 @@
                                   <groupId>org.aspectj</groupId>
                                   <artifactId>aspectjrt</artifactId>
                                   <version>${aspectj.version}</version>
-                                  <type>jar</type>
-                                  <overWrite>true</overWrite>
-                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-                              </artifactItem>
-                              <artifactItem>
-                                  <groupId>org.springframework</groupId>
-                                  <artifactId>spring-beans</artifactId>
-                                  <version>${spring.version}</version>
-                                  <type>jar</type>
-                                  <overWrite>true</overWrite>
-                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-                              </artifactItem>
-                              <artifactItem>
-                                  <groupId>org.springframework</groupId>
-                                  <artifactId>spring-core</artifactId>
-                                  <version>${spring.version}</version>
-                                  <type>jar</type>
-                                  <overWrite>true</overWrite>
-                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-                              </artifactItem>
-                              <artifactItem>
-                                  <groupId>org.springframework</groupId>
-                                  <artifactId>spring-context</artifactId>
-                                  <version>${spring.version}</version>
-                                  <type>jar</type>
-                                  <overWrite>true</overWrite>
-                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-                              </artifactItem>
-                              <artifactItem>
-                                  <groupId>org.springframework</groupId>
-                                  <artifactId>spring-test</artifactId>
-                                  <version>${spring.version}</version>
                                   <type>jar</type>
                                   <overWrite>true</overWrite>
                                   <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>

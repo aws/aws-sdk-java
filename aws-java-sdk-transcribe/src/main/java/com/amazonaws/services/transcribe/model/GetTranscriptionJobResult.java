@@ -25,18 +25,21 @@ public class GetTranscriptionJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains the results of the transcription job.
+     * Provides detailed information about the specified transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      */
     private TranscriptionJob transcriptionJob;
 
     /**
      * <p>
-     * An object that contains the results of the transcription job.
+     * Provides detailed information about the specified transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param transcriptionJob
-     *        An object that contains the results of the transcription job.
+     *        Provides detailed information about the specified transcription job, including job status and, if
+     *        applicable, failure reason.
      */
 
     public void setTranscriptionJob(TranscriptionJob transcriptionJob) {
@@ -45,10 +48,12 @@ public class GetTranscriptionJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains the results of the transcription job.
+     * Provides detailed information about the specified transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
-     * @return An object that contains the results of the transcription job.
+     * @return Provides detailed information about the specified transcription job, including job status and, if
+     *         applicable, failure reason.
      */
 
     public TranscriptionJob getTranscriptionJob() {
@@ -57,11 +62,13 @@ public class GetTranscriptionJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains the results of the transcription job.
+     * Provides detailed information about the specified transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param transcriptionJob
-     *        An object that contains the results of the transcription job.
+     *        Provides detailed information about the specified transcription job, including job status and, if
+     *        applicable, failure reason.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

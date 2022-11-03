@@ -97,6 +97,27 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
      * </p>
      */
     private String remoteIpv6NetworkCidr;
+    /**
+     * <p>
+     * The type of IPv4 address assigned to the outside interface of the customer gateway device.
+     * </p>
+     * <p>
+     * Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     * </p>
+     * <p>
+     * Default: <code>PublicIpv4</code>
+     * </p>
+     */
+    private String outsideIpAddressType;
+    /**
+     * <p>
+     * The transit gateway attachment ID to use for the VPN tunnel.
+     * </p>
+     * <p>
+     * Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     * </p>
+     */
+    private String transportTransitGatewayAttachmentId;
 
     /**
      * <p>
@@ -631,6 +652,134 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The type of IPv4 address assigned to the outside interface of the customer gateway device.
+     * </p>
+     * <p>
+     * Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     * </p>
+     * <p>
+     * Default: <code>PublicIpv4</code>
+     * </p>
+     * 
+     * @param outsideIpAddressType
+     *        The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
+     *        <p>
+     *        Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>PublicIpv4</code>
+     */
+
+    public void setOutsideIpAddressType(String outsideIpAddressType) {
+        this.outsideIpAddressType = outsideIpAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IPv4 address assigned to the outside interface of the customer gateway device.
+     * </p>
+     * <p>
+     * Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     * </p>
+     * <p>
+     * Default: <code>PublicIpv4</code>
+     * </p>
+     * 
+     * @return The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
+     *         <p>
+     *         Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>PublicIpv4</code>
+     */
+
+    public String getOutsideIpAddressType() {
+        return this.outsideIpAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IPv4 address assigned to the outside interface of the customer gateway device.
+     * </p>
+     * <p>
+     * Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     * </p>
+     * <p>
+     * Default: <code>PublicIpv4</code>
+     * </p>
+     * 
+     * @param outsideIpAddressType
+     *        The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
+     *        <p>
+     *        Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>PublicIpv4</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withOutsideIpAddressType(String outsideIpAddressType) {
+        setOutsideIpAddressType(outsideIpAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The transit gateway attachment ID to use for the VPN tunnel.
+     * </p>
+     * <p>
+     * Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     * </p>
+     * 
+     * @param transportTransitGatewayAttachmentId
+     *        The transit gateway attachment ID to use for the VPN tunnel.</p>
+     *        <p>
+     *        Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     */
+
+    public void setTransportTransitGatewayAttachmentId(String transportTransitGatewayAttachmentId) {
+        this.transportTransitGatewayAttachmentId = transportTransitGatewayAttachmentId;
+    }
+
+    /**
+     * <p>
+     * The transit gateway attachment ID to use for the VPN tunnel.
+     * </p>
+     * <p>
+     * Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     * </p>
+     * 
+     * @return The transit gateway attachment ID to use for the VPN tunnel.</p>
+     *         <p>
+     *         Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     */
+
+    public String getTransportTransitGatewayAttachmentId() {
+        return this.transportTransitGatewayAttachmentId;
+    }
+
+    /**
+     * <p>
+     * The transit gateway attachment ID to use for the VPN tunnel.
+     * </p>
+     * <p>
+     * Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     * </p>
+     * 
+     * @param transportTransitGatewayAttachmentId
+     *        The transit gateway attachment ID to use for the VPN tunnel.</p>
+     *        <p>
+     *        Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withTransportTransitGatewayAttachmentId(String transportTransitGatewayAttachmentId) {
+        setTransportTransitGatewayAttachmentId(transportTransitGatewayAttachmentId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -657,7 +806,11 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
         if (getLocalIpv6NetworkCidr() != null)
             sb.append("LocalIpv6NetworkCidr: ").append(getLocalIpv6NetworkCidr()).append(",");
         if (getRemoteIpv6NetworkCidr() != null)
-            sb.append("RemoteIpv6NetworkCidr: ").append(getRemoteIpv6NetworkCidr());
+            sb.append("RemoteIpv6NetworkCidr: ").append(getRemoteIpv6NetworkCidr()).append(",");
+        if (getOutsideIpAddressType() != null)
+            sb.append("OutsideIpAddressType: ").append(getOutsideIpAddressType()).append(",");
+        if (getTransportTransitGatewayAttachmentId() != null)
+            sb.append("TransportTransitGatewayAttachmentId: ").append(getTransportTransitGatewayAttachmentId());
         sb.append("}");
         return sb.toString();
     }
@@ -704,6 +857,15 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
             return false;
         if (other.getRemoteIpv6NetworkCidr() != null && other.getRemoteIpv6NetworkCidr().equals(this.getRemoteIpv6NetworkCidr()) == false)
             return false;
+        if (other.getOutsideIpAddressType() == null ^ this.getOutsideIpAddressType() == null)
+            return false;
+        if (other.getOutsideIpAddressType() != null && other.getOutsideIpAddressType().equals(this.getOutsideIpAddressType()) == false)
+            return false;
+        if (other.getTransportTransitGatewayAttachmentId() == null ^ this.getTransportTransitGatewayAttachmentId() == null)
+            return false;
+        if (other.getTransportTransitGatewayAttachmentId() != null
+                && other.getTransportTransitGatewayAttachmentId().equals(this.getTransportTransitGatewayAttachmentId()) == false)
+            return false;
         return true;
     }
 
@@ -720,6 +882,8 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getRemoteIpv4NetworkCidr() == null) ? 0 : getRemoteIpv4NetworkCidr().hashCode());
         hashCode = prime * hashCode + ((getLocalIpv6NetworkCidr() == null) ? 0 : getLocalIpv6NetworkCidr().hashCode());
         hashCode = prime * hashCode + ((getRemoteIpv6NetworkCidr() == null) ? 0 : getRemoteIpv6NetworkCidr().hashCode());
+        hashCode = prime * hashCode + ((getOutsideIpAddressType() == null) ? 0 : getOutsideIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getTransportTransitGatewayAttachmentId() == null) ? 0 : getTransportTransitGatewayAttachmentId().hashCode());
         return hashCode;
     }
 

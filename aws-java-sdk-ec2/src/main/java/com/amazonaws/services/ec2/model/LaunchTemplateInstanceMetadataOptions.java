@@ -18,8 +18,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The metadata options for the instance. For more information, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
- * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+ * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptions"

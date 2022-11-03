@@ -30,7 +30,7 @@ public class EventContextDataType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The user's IP address.
+     * The source IP address of your user's device.
      * </p>
      */
     private String ipAddress;
@@ -61,11 +61,11 @@ public class EventContextDataType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The user's IP address.
+     * The source IP address of your user's device.
      * </p>
      * 
      * @param ipAddress
-     *        The user's IP address.
+     *        The source IP address of your user's device.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -74,10 +74,10 @@ public class EventContextDataType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The user's IP address.
+     * The source IP address of your user's device.
      * </p>
      * 
-     * @return The user's IP address.
+     * @return The source IP address of your user's device.
      */
 
     public String getIpAddress() {
@@ -86,11 +86,11 @@ public class EventContextDataType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The user's IP address.
+     * The source IP address of your user's device.
      * </p>
      * 
      * @param ipAddress
-     *        The user's IP address.
+     *        The source IP address of your user's device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

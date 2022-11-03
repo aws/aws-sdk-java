@@ -29,10 +29,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     * The ARN that identifies the service. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      */
     private String serviceArn;
@@ -232,8 +231,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String schedulingStrategy;
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      */
     private DeploymentController deploymentController;
@@ -319,17 +317,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     * The ARN that identifies the service. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param serviceArn
-     *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     *        the Region of the service, the Amazon Web Services account ID of the service owner, the
-     *        <code>service</code> namespace, and then the service name. For example,
-     *        <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     *        The ARN that identifies the service. For more information about the ARN format, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *        >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      */
 
     public void setServiceArn(String serviceArn) {
@@ -338,16 +334,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     * The ARN that identifies the service. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
-     * @return The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     *         the Region of the service, the Amazon Web Services account ID of the service owner, the
-     *         <code>service</code> namespace, and then the service name. For example,
-     *         <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     * @return The ARN that identifies the service. For more information about the ARN format, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *         >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      */
 
     public String getServiceArn() {
@@ -356,17 +350,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     * The ARN that identifies the service. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param serviceArn
-     *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     *        the Region of the service, the Amazon Web Services account ID of the service owner, the
-     *        <code>service</code> namespace, and then the service name. For example,
-     *        <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+     *        The ARN that identifies the service. For more information about the ARN format, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *        >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2003,13 +1995,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *        omitted if the service uses the <code>ECS</code> deployment controller type.
+     *        The deployment controller type the service is using.
      */
 
     public void setDeploymentController(DeploymentController deploymentController) {
@@ -2018,12 +2008,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      * 
-     * @return The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *         omitted if the service uses the <code>ECS</code> deployment controller type.
+     * @return The deployment controller type the service is using.
      */
 
     public DeploymentController getDeploymentController() {
@@ -2032,13 +2020,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *        omitted if the service uses the <code>ECS</code> deployment controller type.
+     *        The deployment controller type the service is using.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

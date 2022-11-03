@@ -60,7 +60,7 @@ public class CreateLaunchRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which
      * variation the user session is served. This randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the
-     * <code>randomizationsSalt</code>.
+     * <code>randomizationSalt</code>.
      * </p>
      */
     private String randomizationSalt;
@@ -355,14 +355,14 @@ public class CreateLaunchRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which
      * variation the user session is served. This randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the
-     * <code>randomizationsSalt</code>.
+     * <code>randomizationSalt</code>.
      * </p>
      * 
      * @param randomizationSalt
      *        When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine
      *        which variation the user session is served. This randomization ID is a combination of the entity ID and
      *        <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name
-     *        as the <code>randomizationsSalt</code>.
+     *        as the <code>randomizationSalt</code>.
      */
 
     public void setRandomizationSalt(String randomizationSalt) {
@@ -374,13 +374,13 @@ public class CreateLaunchRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which
      * variation the user session is served. This randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the
-     * <code>randomizationsSalt</code>.
+     * <code>randomizationSalt</code>.
      * </p>
      * 
      * @return When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine
      *         which variation the user session is served. This randomization ID is a combination of the entity ID and
      *         <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch
-     *         name as the <code>randomizationsSalt</code>.
+     *         name as the <code>randomizationSalt</code>.
      */
 
     public String getRandomizationSalt() {
@@ -392,14 +392,14 @@ public class CreateLaunchRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which
      * variation the user session is served. This randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the
-     * <code>randomizationsSalt</code>.
+     * <code>randomizationSalt</code>.
      * </p>
      * 
      * @param randomizationSalt
      *        When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine
      *        which variation the user session is served. This randomization ID is a combination of the entity ID and
      *        <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name
-     *        as the <code>randomizationsSalt</code>.
+     *        as the <code>randomizationSalt</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

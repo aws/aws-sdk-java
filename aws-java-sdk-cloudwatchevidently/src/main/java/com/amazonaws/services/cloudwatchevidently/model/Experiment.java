@@ -112,6 +112,12 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
     private ExperimentSchedule schedule;
     /**
      * <p>
+     * The audience segment being used for the experiment, if a segment is being used.
+     * </p>
+     */
+    private String segment;
+    /**
+     * <p>
      * The current state of the experiment.
      * </p>
      */
@@ -713,6 +719,46 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The audience segment being used for the experiment, if a segment is being used.
+     * </p>
+     * 
+     * @param segment
+     *        The audience segment being used for the experiment, if a segment is being used.
+     */
+
+    public void setSegment(String segment) {
+        this.segment = segment;
+    }
+
+    /**
+     * <p>
+     * The audience segment being used for the experiment, if a segment is being used.
+     * </p>
+     * 
+     * @return The audience segment being used for the experiment, if a segment is being used.
+     */
+
+    public String getSegment() {
+        return this.segment;
+    }
+
+    /**
+     * <p>
+     * The audience segment being used for the experiment, if a segment is being used.
+     * </p>
+     * 
+     * @param segment
+     *        The audience segment being used for the experiment, if a segment is being used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Experiment withSegment(String segment) {
+        setSegment(segment);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current state of the experiment.
      * </p>
      * 
@@ -1049,6 +1095,8 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
             sb.append("SamplingRate: ").append(getSamplingRate()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getSegment() != null)
+            sb.append("Segment: ").append(getSegment()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
@@ -1121,6 +1169,10 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
             return false;
+        if (other.getSegment() == null ^ this.getSegment() == null)
+            return false;
+        if (other.getSegment() != null && other.getSegment().equals(this.getSegment()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -1161,6 +1213,7 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRandomizationSalt() == null) ? 0 : getRandomizationSalt().hashCode());
         hashCode = prime * hashCode + ((getSamplingRate() == null) ? 0 : getSamplingRate().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getSegment() == null) ? 0 : getSegment().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

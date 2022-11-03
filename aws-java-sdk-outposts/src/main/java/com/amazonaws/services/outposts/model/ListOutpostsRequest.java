@@ -30,31 +30,19 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Integer maxResults;
     /**
      * <p>
-     * A filter for the lifecycle status of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the lifecycle status.
      * </p>
      */
     private java.util.List<String> lifeCycleStatusFilter;
     /**
      * <p>
-     * A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * </p>
      */
     private java.util.List<String> availabilityZoneFilter;
     /**
      * <p>
-     * A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * </p>
      */
     private java.util.List<String> availabilityZoneIdFilter;
@@ -113,17 +101,10 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the lifecycle status of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the lifecycle status.
      * </p>
      * 
-     * @return A filter for the lifecycle status of the Outpost. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by the lifecycle status.
      */
 
     public java.util.List<String> getLifeCycleStatusFilter() {
@@ -132,18 +113,11 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the lifecycle status of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the lifecycle status.
      * </p>
      * 
      * @param lifeCycleStatusFilter
-     *        A filter for the lifecycle status of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by the lifecycle status.
      */
 
     public void setLifeCycleStatusFilter(java.util.Collection<String> lifeCycleStatusFilter) {
@@ -157,11 +131,7 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the lifecycle status of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the lifecycle status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -170,10 +140,7 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param lifeCycleStatusFilter
-     *        A filter for the lifecycle status of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by the lifecycle status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,18 +156,11 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the lifecycle status of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the lifecycle status.
      * </p>
      * 
      * @param lifeCycleStatusFilter
-     *        A filter for the lifecycle status of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by the lifecycle status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,17 +171,10 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * </p>
      * 
-     * @return A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      */
 
     public java.util.List<String> getAvailabilityZoneFilter() {
@@ -230,18 +183,11 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * </p>
      * 
      * @param availabilityZoneFilter
-     *        A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      */
 
     public void setAvailabilityZoneFilter(java.util.Collection<String> availabilityZoneFilter) {
@@ -255,11 +201,7 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -268,10 +210,7 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param availabilityZoneFilter
-     *        A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,18 +226,11 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * </p>
      * 
      * @param availabilityZoneFilter
-     *        A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,17 +241,10 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * </p>
      * 
-     * @return A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by AZ ID (for example, <code>use1-az1</code>).
      */
 
     public java.util.List<String> getAvailabilityZoneIdFilter() {
@@ -328,18 +253,11 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * </p>
      * 
      * @param availabilityZoneIdFilter
-     *        A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by AZ ID (for example, <code>use1-az1</code>).
      */
 
     public void setAvailabilityZoneIdFilter(java.util.Collection<String> availabilityZoneIdFilter) {
@@ -353,11 +271,7 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -366,10 +280,7 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param availabilityZoneIdFilter
-     *        A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,18 +296,11 @@ public class ListOutpostsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * </p>
      * 
      * @param availabilityZoneIdFilter
-     *        A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by AZ ID (for example, <code>use1-az1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

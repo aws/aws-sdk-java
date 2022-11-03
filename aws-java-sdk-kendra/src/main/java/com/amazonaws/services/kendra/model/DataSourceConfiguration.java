@@ -108,6 +108,30 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private QuipConfiguration quipConfiguration;
+    /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     */
+    private JiraConfiguration jiraConfiguration;
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     */
+    private GitHubConfiguration gitHubConfiguration;
+    /**
+     * <p>
+     * Provides the configuration information to connect to Alfresco as your data source.
+     * </p>
+     */
+    private AlfrescoConfiguration alfrescoConfiguration;
+    /**
+     * <p>
+     * Provides a template for the configuration information to connect to your data source.
+     * </p>
+     */
+    private TemplateConfiguration templateConfiguration;
 
     /**
      * <p>
@@ -656,6 +680,166 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Provides the configuration information to connect to Jira as your data source.
+     */
+
+    public void setJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     * 
+     * @return Provides the configuration information to connect to Jira as your data source.
+     */
+
+    public JiraConfiguration getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Provides the configuration information to connect to Jira as your data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     * 
+     * @param gitHubConfiguration
+     *        Provides the configuration information to connect to GitHub as your data source.
+     */
+
+    public void setGitHubConfiguration(GitHubConfiguration gitHubConfiguration) {
+        this.gitHubConfiguration = gitHubConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     * 
+     * @return Provides the configuration information to connect to GitHub as your data source.
+     */
+
+    public GitHubConfiguration getGitHubConfiguration() {
+        return this.gitHubConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     * 
+     * @param gitHubConfiguration
+     *        Provides the configuration information to connect to GitHub as your data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withGitHubConfiguration(GitHubConfiguration gitHubConfiguration) {
+        setGitHubConfiguration(gitHubConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Alfresco as your data source.
+     * </p>
+     * 
+     * @param alfrescoConfiguration
+     *        Provides the configuration information to connect to Alfresco as your data source.
+     */
+
+    public void setAlfrescoConfiguration(AlfrescoConfiguration alfrescoConfiguration) {
+        this.alfrescoConfiguration = alfrescoConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Alfresco as your data source.
+     * </p>
+     * 
+     * @return Provides the configuration information to connect to Alfresco as your data source.
+     */
+
+    public AlfrescoConfiguration getAlfrescoConfiguration() {
+        return this.alfrescoConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Alfresco as your data source.
+     * </p>
+     * 
+     * @param alfrescoConfiguration
+     *        Provides the configuration information to connect to Alfresco as your data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withAlfrescoConfiguration(AlfrescoConfiguration alfrescoConfiguration) {
+        setAlfrescoConfiguration(alfrescoConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides a template for the configuration information to connect to your data source.
+     * </p>
+     * 
+     * @param templateConfiguration
+     *        Provides a template for the configuration information to connect to your data source.
+     */
+
+    public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        this.templateConfiguration = templateConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides a template for the configuration information to connect to your data source.
+     * </p>
+     * 
+     * @return Provides a template for the configuration information to connect to your data source.
+     */
+
+    public TemplateConfiguration getTemplateConfiguration() {
+        return this.templateConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides a template for the configuration information to connect to your data source.
+     * </p>
+     * 
+     * @param templateConfiguration
+     *        Provides a template for the configuration information to connect to your data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        setTemplateConfiguration(templateConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -694,7 +878,15 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getBoxConfiguration() != null)
             sb.append("BoxConfiguration: ").append(getBoxConfiguration()).append(",");
         if (getQuipConfiguration() != null)
-            sb.append("QuipConfiguration: ").append(getQuipConfiguration());
+            sb.append("QuipConfiguration: ").append(getQuipConfiguration()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration()).append(",");
+        if (getGitHubConfiguration() != null)
+            sb.append("GitHubConfiguration: ").append(getGitHubConfiguration()).append(",");
+        if (getAlfrescoConfiguration() != null)
+            sb.append("AlfrescoConfiguration: ").append(getAlfrescoConfiguration()).append(",");
+        if (getTemplateConfiguration() != null)
+            sb.append("TemplateConfiguration: ").append(getTemplateConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -765,6 +957,22 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getQuipConfiguration() != null && other.getQuipConfiguration().equals(this.getQuipConfiguration()) == false)
             return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
+        if (other.getGitHubConfiguration() == null ^ this.getGitHubConfiguration() == null)
+            return false;
+        if (other.getGitHubConfiguration() != null && other.getGitHubConfiguration().equals(this.getGitHubConfiguration()) == false)
+            return false;
+        if (other.getAlfrescoConfiguration() == null ^ this.getAlfrescoConfiguration() == null)
+            return false;
+        if (other.getAlfrescoConfiguration() != null && other.getAlfrescoConfiguration().equals(this.getAlfrescoConfiguration()) == false)
+            return false;
+        if (other.getTemplateConfiguration() == null ^ this.getTemplateConfiguration() == null)
+            return false;
+        if (other.getTemplateConfiguration() != null && other.getTemplateConfiguration().equals(this.getTemplateConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -787,6 +995,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getSlackConfiguration() == null) ? 0 : getSlackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBoxConfiguration() == null) ? 0 : getBoxConfiguration().hashCode());
         hashCode = prime * hashCode + ((getQuipConfiguration() == null) ? 0 : getQuipConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGitHubConfiguration() == null) ? 0 : getGitHubConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAlfrescoConfiguration() == null) ? 0 : getAlfrescoConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTemplateConfiguration() == null) ? 0 : getTemplateConfiguration().hashCode());
         return hashCode;
     }
 

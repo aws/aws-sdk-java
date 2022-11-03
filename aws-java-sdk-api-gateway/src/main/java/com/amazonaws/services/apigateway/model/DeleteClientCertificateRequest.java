@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to delete the <a>ClientCertificate</a> resource.
+ * A request to delete the ClientCertificate resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class DeleteClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * The identifier of the ClientCertificate resource to be deleted.
      * </p>
      */
     private String clientCertificateId;
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * The identifier of the ClientCertificate resource to be deleted.
      * </p>
      * 
      * @param clientCertificateId
-     *        [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     *        The identifier of the ClientCertificate resource to be deleted.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -47,10 +47,10 @@ public class DeleteClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * The identifier of the ClientCertificate resource to be deleted.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * @return The identifier of the ClientCertificate resource to be deleted.
      */
 
     public String getClientCertificateId() {
@@ -59,11 +59,11 @@ public class DeleteClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * The identifier of the ClientCertificate resource to be deleted.
      * </p>
      * 
      * @param clientCertificateId
-     *        [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     *        The identifier of the ClientCertificate resource to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

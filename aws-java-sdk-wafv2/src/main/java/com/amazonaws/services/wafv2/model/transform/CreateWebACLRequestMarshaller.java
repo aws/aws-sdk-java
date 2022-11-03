@@ -47,6 +47,10 @@ public class CreateWebACLRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
     private static final MarshallingInfo<StructuredPojo> CAPTCHACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptchaConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CHALLENGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChallengeConfig").build();
+    private static final MarshallingInfo<List> TOKENDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TokenDomains").build();
 
     private static final CreateWebACLRequestMarshaller instance = new CreateWebACLRequestMarshaller();
 
@@ -73,6 +77,8 @@ public class CreateWebACLRequestMarshaller {
             protocolMarshaller.marshall(createWebACLRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createWebACLRequest.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
             protocolMarshaller.marshall(createWebACLRequest.getCaptchaConfig(), CAPTCHACONFIG_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getChallengeConfig(), CHALLENGECONFIG_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getTokenDomains(), TOKENDOMAINS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -41,6 +41,12 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<ChannelMessageSummary> channelMessages;
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -193,6 +199,46 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the response.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * 
+     * @return The ID of the SubChannel in the response.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChannelMessagesResult withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -209,7 +255,9 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
         if (getNextToken() != null)
             sb.append("NextToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getChannelMessages() != null)
-            sb.append("ChannelMessages: ").append(getChannelMessages());
+            sb.append("ChannelMessages: ").append(getChannelMessages()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +284,10 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getChannelMessages() != null && other.getChannelMessages().equals(this.getChannelMessages()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +299,7 @@ public class ListChannelMessagesResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getChannelMessages() == null) ? 0 : getChannelMessages().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

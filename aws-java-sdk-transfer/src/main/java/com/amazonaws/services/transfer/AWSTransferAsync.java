@@ -26,14 +26,14 @@ import com.amazonaws.services.transfer.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Web Services Transfer Family is a fully managed service that enables the transfer of files over the File
- * Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP)
- * directly into and out of Amazon Simple Storage Service (Amazon S3). Amazon Web Services helps you seamlessly migrate
- * your file transfer workflows to Amazon Web Services Transfer Family by integrating with existing authentication
- * systems, and providing DNS routing with Amazon Route 53 so nothing changes for your customers and partners, or their
- * applications. With your data in Amazon S3, you can use it with Amazon Web Services services for processing,
- * analytics, machine learning, and archiving. Getting started with Amazon Web Services Transfer Family is easy since
- * there is no infrastructure to buy and set up.
+ * Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol (FTP),
+ * File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of
+ * Amazon Simple Storage Service (Amazon S3) or Amazon EFS. Additionally, you can use Applicability Statement 2 (AS2) to
+ * transfer files into and out of Amazon S3. Amazon Web Services helps you seamlessly migrate your file transfer
+ * workflows to Transfer Family by integrating with existing authentication systems, and providing DNS routing with
+ * Amazon Route 53 so nothing changes for your customers and partners, or their applications. With your data in Amazon
+ * S3, you can use it with Amazon Web Services for processing, analytics, machine learning, and archiving. Getting
+ * started with Transfer Family is easy since there is no infrastructure to buy and set up.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -42,10 +42,9 @@ public interface AWSTransferAsync extends AWSTransfer {
     /**
      * <p>
      * Used by administrators to choose which groups in the directory should have access to upload and download files
-     * over the enabled protocols using Amazon Web Services Transfer Family. For example, a Microsoft Active Directory
-     * might contain 50,000 users, but only a small fraction might need the ability to transfer files to the server. An
-     * administrator can use <code>CreateAccess</code> to limit the access to the correct set of users who need this
-     * ability.
+     * over the enabled protocols using Transfer Family. For example, a Microsoft Active Directory might contain 50,000
+     * users, but only a small fraction might need the ability to transfer files to the server. An administrator can use
+     * <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.
      * </p>
      * 
      * @param createAccessRequest
@@ -59,10 +58,9 @@ public interface AWSTransferAsync extends AWSTransfer {
     /**
      * <p>
      * Used by administrators to choose which groups in the directory should have access to upload and download files
-     * over the enabled protocols using Amazon Web Services Transfer Family. For example, a Microsoft Active Directory
-     * might contain 50,000 users, but only a small fraction might need the ability to transfer files to the server. An
-     * administrator can use <code>CreateAccess</code> to limit the access to the correct set of users who need this
-     * ability.
+     * over the enabled protocols using Transfer Family. For example, a Microsoft Active Directory might contain 50,000
+     * users, but only a small fraction might need the ability to transfer files to the server. An administrator can use
+     * <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.
      * </p>
      * 
      * @param createAccessRequest
@@ -77,6 +75,121 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<CreateAccessResult> createAccessAsync(CreateAccessRequest createAccessRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAccessRequest, CreateAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership, between an Transfer
+     * Family server and an AS2 process. The agreement defines the file and message transfer relationship between the
+     * server and the AS2 process. To define an agreement, Transfer Family combines a server, local profile, partner
+     * profile, certificate, and other attributes.
+     * </p>
+     * <p>
+     * The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process is identified with the
+     * <code>LocalProfileId</code>.
+     * </p>
+     * 
+     * @param createAgreementRequest
+     * @return A Java Future containing the result of the CreateAgreement operation returned by the service.
+     * @sample AWSTransferAsync.CreateAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAgreementResult> createAgreementAsync(CreateAgreementRequest createAgreementRequest);
+
+    /**
+     * <p>
+     * Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership, between an Transfer
+     * Family server and an AS2 process. The agreement defines the file and message transfer relationship between the
+     * server and the AS2 process. To define an agreement, Transfer Family combines a server, local profile, partner
+     * profile, certificate, and other attributes.
+     * </p>
+     * <p>
+     * The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process is identified with the
+     * <code>LocalProfileId</code>.
+     * </p>
+     * 
+     * @param createAgreementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAgreement operation returned by the service.
+     * @sample AWSTransferAsyncHandler.CreateAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAgreementResult> createAgreementAsync(CreateAgreementRequest createAgreementRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAgreementRequest, CreateAgreementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
+     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
+     * see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
+     * >Create AS2 connectors</a>.
+     * </p>
+     * 
+     * @param createConnectorRequest
+     * @return A Java Future containing the result of the CreateConnector operation returned by the service.
+     * @sample AWSTransferAsync.CreateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectorResult> createConnectorAsync(CreateConnectorRequest createConnectorRequest);
+
+    /**
+     * <p>
+     * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
+     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
+     * see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
+     * >Create AS2 connectors</a>.
+     * </p>
+     * 
+     * @param createConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConnector operation returned by the service.
+     * @sample AWSTransferAsyncHandler.CreateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectorResult> createConnectorAsync(CreateConnectorRequest createConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectorRequest, CreateConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the local or partner profile to use for AS2 transfers.
+     * </p>
+     * 
+     * @param createProfileRequest
+     * @return A Java Future containing the result of the CreateProfile operation returned by the service.
+     * @sample AWSTransferAsync.CreateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest createProfileRequest);
+
+    /**
+     * <p>
+     * Creates the local or partner profile to use for AS2 transfers.
+     * </p>
+     * 
+     * @param createProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProfile operation returned by the service.
+     * @sample AWSTransferAsyncHandler.CreateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest createProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProfileRequest, CreateProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -118,9 +231,9 @@ public interface AWSTransferAsync extends AWSTransfer {
      * Creates a user and associates them with an existing file transfer protocol-enabled server. You can only create
      * and associate users with servers that have the <code>IdentityProviderType</code> set to
      * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you can specify the user name, set
-     * the home directory, store the user's public key, and assign the user's Amazon Web Services Identity and Access
-     * Management (IAM) role. You can also optionally add a session policy, and assign metadata with tags that can be
-     * used to group and search for users.
+     * the home directory, store the user's public key, and assign the user's Identity and Access Management (IAM) role.
+     * You can also optionally add a session policy, and assign metadata with tags that can be used to group and search
+     * for users.
      * </p>
      * 
      * @param createUserRequest
@@ -136,9 +249,9 @@ public interface AWSTransferAsync extends AWSTransfer {
      * Creates a user and associates them with an existing file transfer protocol-enabled server. You can only create
      * and associate users with servers that have the <code>IdentityProviderType</code> set to
      * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you can specify the user name, set
-     * the home directory, store the user's public key, and assign the user's Amazon Web Services Identity and Access
-     * Management (IAM) role. You can also optionally add a session policy, and assign metadata with tags that can be
-     * used to group and search for users.
+     * the home directory, store the user's public key, and assign the user's Identity and Access Management (IAM) role.
+     * You can also optionally add a session policy, and assign metadata with tags that can be used to group and search
+     * for users.
      * </p>
      * 
      * @param createUserRequest
@@ -221,6 +334,161 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest deleteAccessRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccessRequest, DeleteAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the agreement that's specified in the provided <code>AgreementId</code>.
+     * </p>
+     * 
+     * @param deleteAgreementRequest
+     * @return A Java Future containing the result of the DeleteAgreement operation returned by the service.
+     * @sample AWSTransferAsync.DeleteAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAgreementResult> deleteAgreementAsync(DeleteAgreementRequest deleteAgreementRequest);
+
+    /**
+     * <p>
+     * Delete the agreement that's specified in the provided <code>AgreementId</code>.
+     * </p>
+     * 
+     * @param deleteAgreementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAgreement operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DeleteAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAgreementResult> deleteAgreementAsync(DeleteAgreementRequest deleteAgreementRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAgreementRequest, DeleteAgreementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the certificate that's specified in the <code>CertificateId</code> parameter.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return A Java Future containing the result of the DeleteCertificate operation returned by the service.
+     * @sample AWSTransferAsync.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes the certificate that's specified in the <code>CertificateId</code> parameter.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificate operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+     * </p>
+     * 
+     * @param deleteConnectorRequest
+     * @return A Java Future containing the result of the DeleteConnector operation returned by the service.
+     * @sample AWSTransferAsync.DeleteConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectorResult> deleteConnectorAsync(DeleteConnectorRequest deleteConnectorRequest);
+
+    /**
+     * <p>
+     * Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+     * </p>
+     * 
+     * @param deleteConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConnector operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DeleteConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectorResult> deleteConnectorAsync(DeleteConnectorRequest deleteConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectorRequest, DeleteConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.
+     * </p>
+     * 
+     * @param deleteHostKeyRequest
+     * @return A Java Future containing the result of the DeleteHostKey operation returned by the service.
+     * @sample AWSTransferAsync.DeleteHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHostKeyResult> deleteHostKeyAsync(DeleteHostKeyRequest deleteHostKeyRequest);
+
+    /**
+     * <p>
+     * Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.
+     * </p>
+     * 
+     * @param deleteHostKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHostKey operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DeleteHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHostKeyResult> deleteHostKeyAsync(DeleteHostKeyRequest deleteHostKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHostKeyRequest, DeleteHostKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the profile that's specified in the <code>ProfileId</code> parameter.
+     * </p>
+     * 
+     * @param deleteProfileRequest
+     * @return A Java Future containing the result of the DeleteProfile operation returned by the service.
+     * @sample AWSTransferAsync.DeleteProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest deleteProfileRequest);
+
+    /**
+     * <p>
+     * Deletes the profile that's specified in the <code>ProfileId</code> parameter.
+     * </p>
+     * 
+     * @param deleteProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProfile operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DeleteProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest deleteProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProfileRequest, DeleteProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -371,7 +639,7 @@ public interface AWSTransferAsync extends AWSTransfer {
     /**
      * <p>
      * Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its
-     * <code>ServerId</code> property and its <code>ExternalID</code>.
+     * <code>ServerId</code> property and its <code>ExternalId</code>.
      * </p>
      * <p>
      * The response from this call returns the properties of the access that is associated with the
@@ -389,7 +657,7 @@ public interface AWSTransferAsync extends AWSTransfer {
     /**
      * <p>
      * Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its
-     * <code>ServerId</code> property and its <code>ExternalID</code>.
+     * <code>ServerId</code> property and its <code>ExternalId</code>.
      * </p>
      * <p>
      * The response from this call returns the properties of the access that is associated with the
@@ -408,6 +676,99 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(DescribeAccessRequest describeAccessRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccessRequest, DescribeAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the agreement that's identified by the <code>AgreementId</code>.
+     * </p>
+     * 
+     * @param describeAgreementRequest
+     * @return A Java Future containing the result of the DescribeAgreement operation returned by the service.
+     * @sample AWSTransferAsync.DescribeAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAgreementResult> describeAgreementAsync(DescribeAgreementRequest describeAgreementRequest);
+
+    /**
+     * <p>
+     * Describes the agreement that's identified by the <code>AgreementId</code>.
+     * </p>
+     * 
+     * @param describeAgreementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAgreement operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAgreementResult> describeAgreementAsync(DescribeAgreementRequest describeAgreementRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAgreementRequest, DescribeAgreementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the certificate that's identified by the <code>CertificateId</code>.
+     * </p>
+     * 
+     * @param describeCertificateRequest
+     * @return A Java Future containing the result of the DescribeCertificate operation returned by the service.
+     * @sample AWSTransferAsync.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest describeCertificateRequest);
+
+    /**
+     * <p>
+     * Describes the certificate that's identified by the <code>CertificateId</code>.
+     * </p>
+     * 
+     * @param describeCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCertificate operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest describeCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the connector that's identified by the <code>ConnectorId.</code>
+     * </p>
+     * 
+     * @param describeConnectorRequest
+     * @return A Java Future containing the result of the DescribeConnector operation returned by the service.
+     * @sample AWSTransferAsync.DescribeConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConnectorResult> describeConnectorAsync(DescribeConnectorRequest describeConnectorRequest);
+
+    /**
+     * <p>
+     * Describes the connector that's identified by the <code>ConnectorId.</code>
+     * </p>
+     * 
+     * @param describeConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConnector operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConnectorResult> describeConnectorAsync(DescribeConnectorRequest describeConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectorRequest, DescribeConnectorResult> asyncHandler);
 
     /**
      * <p>
@@ -439,6 +800,68 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<DescribeExecutionResult> describeExecutionAsync(DescribeExecutionRequest describeExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeExecutionRequest, DescribeExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the details of the host key that's specified by the <code>HostKeyId</code> and <code>ServerId</code>.
+     * </p>
+     * 
+     * @param describeHostKeyRequest
+     * @return A Java Future containing the result of the DescribeHostKey operation returned by the service.
+     * @sample AWSTransferAsync.DescribeHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHostKeyResult> describeHostKeyAsync(DescribeHostKeyRequest describeHostKeyRequest);
+
+    /**
+     * <p>
+     * Returns the details of the host key that's specified by the <code>HostKeyId</code> and <code>ServerId</code>.
+     * </p>
+     * 
+     * @param describeHostKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHostKey operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHostKeyResult> describeHostKeyAsync(DescribeHostKeyRequest describeHostKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostKeyRequest, DescribeHostKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the details of the profile that's specified by the <code>ProfileId</code>.
+     * </p>
+     * 
+     * @param describeProfileRequest
+     * @return A Java Future containing the result of the DescribeProfile operation returned by the service.
+     * @sample AWSTransferAsync.DescribeProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProfileResult> describeProfileAsync(DescribeProfileRequest describeProfileRequest);
+
+    /**
+     * <p>
+     * Returns the details of the profile that's specified by the <code>ProfileId</code>.
+     * </p>
+     * 
+     * @param describeProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProfile operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProfileResult> describeProfileAsync(DescribeProfileRequest describeProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProfileRequest, DescribeProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -592,6 +1015,70 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
+     * Imports the signing and encryption certificates that you need to create local (AS2) profiles and partner
+     * profiles.
+     * </p>
+     * 
+     * @param importCertificateRequest
+     * @return A Java Future containing the result of the ImportCertificate operation returned by the service.
+     * @sample AWSTransferAsync.ImportCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest importCertificateRequest);
+
+    /**
+     * <p>
+     * Imports the signing and encryption certificates that you need to create local (AS2) profiles and partner
+     * profiles.
+     * </p>
+     * 
+     * @param importCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportCertificate operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ImportCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest importCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
+     * </p>
+     * 
+     * @param importHostKeyRequest
+     * @return A Java Future containing the result of the ImportHostKey operation returned by the service.
+     * @sample AWSTransferAsync.ImportHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportHostKeyResult> importHostKeyAsync(ImportHostKeyRequest importHostKeyRequest);
+
+    /**
+     * <p>
+     * Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
+     * </p>
+     * 
+     * @param importHostKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportHostKey operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ImportHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportHostKeyResult> importHostKeyAsync(ImportHostKeyRequest importHostKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportHostKeyRequest, ImportHostKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to
      * the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.
      * </p>
@@ -664,6 +1151,111 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
+     * Returns a list of the agreements for the server that's identified by the <code>ServerId</code> that you supply.
+     * If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter.
+     * If you ran the command previously and received a value for <code>NextToken</code>, you can supply that value to
+     * continue listing agreements from where you left off.
+     * </p>
+     * 
+     * @param listAgreementsRequest
+     * @return A Java Future containing the result of the ListAgreements operation returned by the service.
+     * @sample AWSTransferAsync.ListAgreements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAgreementsResult> listAgreementsAsync(ListAgreementsRequest listAgreementsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the agreements for the server that's identified by the <code>ServerId</code> that you supply.
+     * If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter.
+     * If you ran the command previously and received a value for <code>NextToken</code>, you can supply that value to
+     * continue listing agreements from where you left off.
+     * </p>
+     * 
+     * @param listAgreementsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAgreements operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListAgreements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAgreementsResult> listAgreementsAsync(ListAgreementsRequest listAgreementsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAgreementsRequest, ListAgreementsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the current certificates that have been imported into Transfer Family. If you want to limit the
+     * results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command
+     * previously and received a value for the <code>NextToken</code> parameter, you can supply that value to continue
+     * listing certificates from where you left off.
+     * </p>
+     * 
+     * @param listCertificatesRequest
+     * @return A Java Future containing the result of the ListCertificates operation returned by the service.
+     * @sample AWSTransferAsync.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest listCertificatesRequest);
+
+    /**
+     * <p>
+     * Returns a list of the current certificates that have been imported into Transfer Family. If you want to limit the
+     * results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command
+     * previously and received a value for the <code>NextToken</code> parameter, you can supply that value to continue
+     * listing certificates from where you left off.
+     * </p>
+     * 
+     * @param listCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCertificates operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest listCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the connectors for the specified Region.
+     * </p>
+     * 
+     * @param listConnectorsRequest
+     * @return A Java Future containing the result of the ListConnectors operation returned by the service.
+     * @sample AWSTransferAsync.ListConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectorsResult> listConnectorsAsync(ListConnectorsRequest listConnectorsRequest);
+
+    /**
+     * <p>
+     * Lists the connectors for the specified Region.
+     * </p>
+     * 
+     * @param listConnectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConnectors operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectorsResult> listConnectorsAsync(ListConnectorsRequest listConnectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConnectorsRequest, ListConnectorsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all executions for the specified workflow.
      * </p>
      * 
@@ -692,6 +1284,72 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<ListExecutionsResult> listExecutionsAsync(ListExecutionsRequest listExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListExecutionsRequest, ListExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.
+     * </p>
+     * 
+     * @param listHostKeysRequest
+     * @return A Java Future containing the result of the ListHostKeys operation returned by the service.
+     * @sample AWSTransferAsync.ListHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostKeysResult> listHostKeysAsync(ListHostKeysRequest listHostKeysRequest);
+
+    /**
+     * <p>
+     * Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.
+     * </p>
+     * 
+     * @param listHostKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHostKeys operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostKeysResult> listHostKeysAsync(ListHostKeysRequest listHostKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHostKeysRequest, ListHostKeysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the profiles for your system. If you want to limit the results to a certain number, supply a
+     * value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for
+     * <code>NextToken</code>, you can supply that value to continue listing profiles from where you left off.
+     * </p>
+     * 
+     * @param listProfilesRequest
+     * @return A Java Future containing the result of the ListProfiles operation returned by the service.
+     * @sample AWSTransferAsync.ListProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfilesResult> listProfilesAsync(ListProfilesRequest listProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a list of the profiles for your system. If you want to limit the results to a certain number, supply a
+     * value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for
+     * <code>NextToken</code>, you can supply that value to continue listing profiles from where you left off.
+     * </p>
+     * 
+     * @param listProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProfiles operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfilesResult> listProfilesAsync(ListProfilesRequest listProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProfilesRequest, ListProfilesResult> asyncHandler);
 
     /**
      * <p>
@@ -895,6 +1553,39 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
+     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
+     * paths for where to send the files.
+     * </p>
+     * 
+     * @param startFileTransferRequest
+     * @return A Java Future containing the result of the StartFileTransfer operation returned by the service.
+     * @sample AWSTransferAsync.StartFileTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartFileTransferResult> startFileTransferAsync(StartFileTransferRequest startFileTransferRequest);
+
+    /**
+     * <p>
+     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
+     * paths for where to send the files.
+     * </p>
+     * 
+     * @param startFileTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartFileTransfer operation returned by the service.
+     * @sample AWSTransferAsyncHandler.StartFileTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartFileTransferResult> startFileTransferAsync(StartFileTransferRequest startFileTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<StartFileTransferRequest, StartFileTransferResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes the state of a file transfer protocol-enabled server from <code>OFFLINE</code> to <code>ONLINE</code>. It
      * has no impact on a server that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
      * process file transfer jobs.
@@ -950,7 +1641,7 @@ public interface AWSTransferAsync extends AWSTransfer {
      * </p>
      * <note>
      * <p>
-     * Stopping the server will not reduce or impact your file transfer protocol endpoint billing; you must delete the
+     * Stopping the server does not reduce or impact your file transfer protocol endpoint billing; you must delete the
      * server to stop being billed.
      * </p>
      * </note>
@@ -978,7 +1669,7 @@ public interface AWSTransferAsync extends AWSTransfer {
      * </p>
      * <note>
      * <p>
-     * Stopping the server will not reduce or impact your file transfer protocol endpoint billing; you must delete the
+     * Stopping the server does not reduce or impact your file transfer protocol endpoint billing; you must delete the
      * server to stop being billed.
      * </p>
      * </note>
@@ -1220,6 +1911,171 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest updateAccessRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAccessRequest, UpdateAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code> and the
+     * <code>ServerId</code> for the agreement that you want to update, along with the new values for the parameters to
+     * update.
+     * </p>
+     * 
+     * @param updateAgreementRequest
+     * @return A Java Future containing the result of the UpdateAgreement operation returned by the service.
+     * @sample AWSTransferAsync.UpdateAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAgreementResult> updateAgreementAsync(UpdateAgreementRequest updateAgreementRequest);
+
+    /**
+     * <p>
+     * Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code> and the
+     * <code>ServerId</code> for the agreement that you want to update, along with the new values for the parameters to
+     * update.
+     * </p>
+     * 
+     * @param updateAgreementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAgreement operation returned by the service.
+     * @sample AWSTransferAsyncHandler.UpdateAgreement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAgreementResult> updateAgreementAsync(UpdateAgreementRequest updateAgreementRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAgreementRequest, UpdateAgreementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the active and inactive dates for a certificate.
+     * </p>
+     * 
+     * @param updateCertificateRequest
+     * @return A Java Future containing the result of the UpdateCertificate operation returned by the service.
+     * @sample AWSTransferAsync.UpdateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest updateCertificateRequest);
+
+    /**
+     * <p>
+     * Updates the active and inactive dates for a certificate.
+     * </p>
+     * 
+     * @param updateCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCertificate operation returned by the service.
+     * @sample AWSTransferAsyncHandler.UpdateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest updateCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code> for the connector
+     * that you want to update, along with the new values for the parameters to update.
+     * </p>
+     * 
+     * @param updateConnectorRequest
+     * @return A Java Future containing the result of the UpdateConnector operation returned by the service.
+     * @sample AWSTransferAsync.UpdateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectorResult> updateConnectorAsync(UpdateConnectorRequest updateConnectorRequest);
+
+    /**
+     * <p>
+     * Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code> for the connector
+     * that you want to update, along with the new values for the parameters to update.
+     * </p>
+     * 
+     * @param updateConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConnector operation returned by the service.
+     * @sample AWSTransferAsyncHandler.UpdateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectorResult> updateConnectorAsync(UpdateConnectorRequest updateConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectorRequest, UpdateConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code>
+     * parameters.
+     * </p>
+     * 
+     * @param updateHostKeyRequest
+     * @return A Java Future containing the result of the UpdateHostKey operation returned by the service.
+     * @sample AWSTransferAsync.UpdateHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHostKeyResult> updateHostKeyAsync(UpdateHostKeyRequest updateHostKeyRequest);
+
+    /**
+     * <p>
+     * Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code>
+     * parameters.
+     * </p>
+     * 
+     * @param updateHostKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateHostKey operation returned by the service.
+     * @sample AWSTransferAsyncHandler.UpdateHostKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHostKeyResult> updateHostKeyAsync(UpdateHostKeyRequest updateHostKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateHostKeyRequest, UpdateHostKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates some of the parameters for an existing profile. Provide the <code>ProfileId</code> for the profile that
+     * you want to update, along with the new values for the parameters to update.
+     * </p>
+     * 
+     * @param updateProfileRequest
+     * @return A Java Future containing the result of the UpdateProfile operation returned by the service.
+     * @sample AWSTransferAsync.UpdateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest updateProfileRequest);
+
+    /**
+     * <p>
+     * Updates some of the parameters for an existing profile. Provide the <code>ProfileId</code> for the profile that
+     * you want to update, along with the new values for the parameters to update.
+     * </p>
+     * 
+     * @param updateProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProfile operation returned by the service.
+     * @sample AWSTransferAsyncHandler.UpdateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest updateProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProfileRequest, UpdateProfileResult> asyncHandler);
 
     /**
      * <p>

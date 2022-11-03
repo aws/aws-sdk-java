@@ -28,16 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ArrayValueMarshaller {
 
-    private static final MarshallingInfo<List> ARRAYVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("arrayValues").build();
     private static final MarshallingInfo<List> BOOLEANVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("booleanValues").build();
-    private static final MarshallingInfo<List> DOUBLEVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("doubleValues").build();
     private static final MarshallingInfo<List> LONGVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("longValues").build();
+    private static final MarshallingInfo<List> DOUBLEVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("doubleValues").build();
     private static final MarshallingInfo<List> STRINGVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("stringValues").build();
+    private static final MarshallingInfo<List> ARRAYVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arrayValues").build();
 
     private static final ArrayValueMarshaller instance = new ArrayValueMarshaller();
 
@@ -55,11 +55,11 @@ public class ArrayValueMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(arrayValue.getArrayValues(), ARRAYVALUES_BINDING);
             protocolMarshaller.marshall(arrayValue.getBooleanValues(), BOOLEANVALUES_BINDING);
-            protocolMarshaller.marshall(arrayValue.getDoubleValues(), DOUBLEVALUES_BINDING);
             protocolMarshaller.marshall(arrayValue.getLongValues(), LONGVALUES_BINDING);
+            protocolMarshaller.marshall(arrayValue.getDoubleValues(), DOUBLEVALUES_BINDING);
             protocolMarshaller.marshall(arrayValue.getStringValues(), STRINGVALUES_BINDING);
+            protocolMarshaller.marshall(arrayValue.getArrayValues(), ARRAYVALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

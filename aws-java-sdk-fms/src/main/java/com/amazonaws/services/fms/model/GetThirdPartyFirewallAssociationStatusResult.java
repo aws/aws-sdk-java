@@ -63,13 +63,13 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
     private String thirdPartyFirewallStatus;
     /**
      * <p>
-     * The status for subscribing to the third-party firewall vendor in the AWS Marketplace.
+     * The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party
-     * firewall service in the AWS Marketplace.
+     * firewall service in the Amazon Web Services Marketplace.
      * </p>
      * </li>
      * <li>
@@ -401,13 +401,13 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
 
     /**
      * <p>
-     * The status for subscribing to the third-party firewall vendor in the AWS Marketplace.
+     * The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party
-     * firewall service in the AWS Marketplace.
+     * firewall service in the Amazon Web Services Marketplace.
      * </p>
      * </li>
      * <li>
@@ -425,12 +425,12 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
      * </ul>
      * 
      * @param marketplaceOnboardingStatus
-     *        The status for subscribing to the third-party firewall vendor in the AWS Marketplace.</p>
+     *        The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the
-     *        third-party firewall service in the AWS Marketplace.
+     *        third-party firewall service in the Amazon Web Services Marketplace.
      *        </p>
      *        </li>
      *        <li>
@@ -455,13 +455,13 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
 
     /**
      * <p>
-     * The status for subscribing to the third-party firewall vendor in the AWS Marketplace.
+     * The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party
-     * firewall service in the AWS Marketplace.
+     * firewall service in the Amazon Web Services Marketplace.
      * </p>
      * </li>
      * <li>
@@ -478,12 +478,12 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
      * </li>
      * </ul>
      * 
-     * @return The status for subscribing to the third-party firewall vendor in the AWS Marketplace.</p>
+     * @return The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
      *         <ul>
      *         <li>
      *         <p>
      *         <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the
-     *         third-party firewall service in the AWS Marketplace.
+     *         third-party firewall service in the Amazon Web Services Marketplace.
      *         </p>
      *         </li>
      *         <li>
@@ -508,13 +508,13 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
 
     /**
      * <p>
-     * The status for subscribing to the third-party firewall vendor in the AWS Marketplace.
+     * The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party
-     * firewall service in the AWS Marketplace.
+     * firewall service in the Amazon Web Services Marketplace.
      * </p>
      * </li>
      * <li>
@@ -532,12 +532,12 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
      * </ul>
      * 
      * @param marketplaceOnboardingStatus
-     *        The status for subscribing to the third-party firewall vendor in the AWS Marketplace.</p>
+     *        The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the
-     *        third-party firewall service in the AWS Marketplace.
+     *        third-party firewall service in the Amazon Web Services Marketplace.
      *        </p>
      *        </li>
      *        <li>
@@ -564,13 +564,13 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
 
     /**
      * <p>
-     * The status for subscribing to the third-party firewall vendor in the AWS Marketplace.
+     * The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party
-     * firewall service in the AWS Marketplace.
+     * firewall service in the Amazon Web Services Marketplace.
      * </p>
      * </li>
      * <li>
@@ -588,12 +588,12 @@ public class GetThirdPartyFirewallAssociationStatusResult extends com.amazonaws.
      * </ul>
      * 
      * @param marketplaceOnboardingStatus
-     *        The status for subscribing to the third-party firewall vendor in the AWS Marketplace.</p>
+     *        The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the
-     *        third-party firewall service in the AWS Marketplace.
+     *        third-party firewall service in the Amazon Web Services Marketplace.
      *        </p>
      *        </li>
      *        <li>

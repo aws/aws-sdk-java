@@ -27,19 +27,19 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
     private String templateArn;
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The version of the fleet provisioning template.
+     * The version of the provisioning template.
      * </p>
      */
     private Integer versionId;
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      */
     private Boolean isDefaultVersion;
@@ -86,11 +86,11 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      */
 
     public void setTemplateName(String templateName) {
@@ -99,10 +99,10 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
-     * @return The name of the fleet provisioning template.
+     * @return The name of the provisioning template.
      */
 
     public String getTemplateName() {
@@ -111,11 +111,11 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The version of the fleet provisioning template.
+     * The version of the provisioning template.
      * </p>
      * 
      * @param versionId
-     *        The version of the fleet provisioning template.
+     *        The version of the provisioning template.
      */
 
     public void setVersionId(Integer versionId) {
@@ -139,10 +139,10 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The version of the fleet provisioning template.
+     * The version of the provisioning template.
      * </p>
      * 
-     * @return The version of the fleet provisioning template.
+     * @return The version of the provisioning template.
      */
 
     public Integer getVersionId() {
@@ -151,11 +151,11 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The version of the fleet provisioning template.
+     * The version of the provisioning template.
      * </p>
      * 
      * @param versionId
-     *        The version of the fleet provisioning template.
+     *        The version of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +166,11 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
      * @param isDefaultVersion
-     *        True if the fleet provisioning template version is the default version, otherwise false.
+     *        True if the provisioning template version is the default version, otherwise false.
      */
 
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
@@ -179,10 +179,10 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
-     * @return True if the fleet provisioning template version is the default version, otherwise false.
+     * @return True if the provisioning template version is the default version, otherwise false.
      */
 
     public Boolean getIsDefaultVersion() {
@@ -191,11 +191,11 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
      * @param isDefaultVersion
-     *        True if the fleet provisioning template version is the default version, otherwise false.
+     *        True if the provisioning template version is the default version, otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,10 +206,10 @@ public class CreateProvisioningTemplateVersionResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
-     * @return True if the fleet provisioning template version is the default version, otherwise false.
+     * @return True if the provisioning template version is the default version, otherwise false.
      */
 
     public Boolean isDefaultVersion() {

@@ -35,6 +35,9 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The public key portion of an SSH key pair.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      */
     private String sshPublicKeyBody;
     /**
@@ -88,9 +91,14 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The public key portion of an SSH key pair.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      * 
      * @param sshPublicKeyBody
-     *        The public key portion of an SSH key pair.
+     *        The public key portion of an SSH key pair.</p>
+     *        <p>
+     *        Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      */
 
     public void setSshPublicKeyBody(String sshPublicKeyBody) {
@@ -101,8 +109,13 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The public key portion of an SSH key pair.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      * 
-     * @return The public key portion of an SSH key pair.
+     * @return The public key portion of an SSH key pair.</p>
+     *         <p>
+     *         Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      */
 
     public String getSshPublicKeyBody() {
@@ -113,9 +126,14 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The public key portion of an SSH key pair.
      * </p>
+     * <p>
+     * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+     * </p>
      * 
      * @param sshPublicKeyBody
-     *        The public key portion of an SSH key pair.
+     *        The public key portion of an SSH key pair.</p>
+     *        <p>
+     *        Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

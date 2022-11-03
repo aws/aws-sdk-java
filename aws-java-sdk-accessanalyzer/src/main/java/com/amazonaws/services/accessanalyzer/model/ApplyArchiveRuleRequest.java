@@ -36,16 +36,16 @@ public class ApplyArchiveRuleRequest extends com.amazonaws.AmazonWebServiceReque
     private String analyzerArn;
     /**
      * <p>
-     * A client token.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * The name of the rule to apply.
      * </p>
      */
     private String ruleName;
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -84,46 +84,6 @@ public class ApplyArchiveRuleRequest extends com.amazonaws.AmazonWebServiceReque
 
     public ApplyArchiveRuleRequest withAnalyzerArn(String analyzerArn) {
         setAnalyzerArn(analyzerArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @return A client token.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ApplyArchiveRuleRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -168,6 +128,46 @@ public class ApplyArchiveRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        A client token.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @return A client token.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        A client token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplyArchiveRuleRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,10 +181,10 @@ public class ApplyArchiveRuleRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getAnalyzerArn() != null)
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getRuleName() != null)
-            sb.append("RuleName: ").append(getRuleName());
+            sb.append("RuleName: ").append(getRuleName()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -203,13 +203,13 @@ public class ApplyArchiveRuleRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAnalyzerArn() != null && other.getAnalyzerArn().equals(this.getAnalyzerArn()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
         if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -220,8 +220,8 @@ public class ApplyArchiveRuleRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

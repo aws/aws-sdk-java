@@ -32,6 +32,8 @@ public class ImportResourcesToDraftAppVersionRequestMarshaller {
             .marshallLocationName("appArn").build();
     private static final MarshallingInfo<List> SOURCEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sourceArns").build();
+    private static final MarshallingInfo<List> TERRAFORMSOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terraformSources").build();
 
     private static final ImportResourcesToDraftAppVersionRequestMarshaller instance = new ImportResourcesToDraftAppVersionRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class ImportResourcesToDraftAppVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(importResourcesToDraftAppVersionRequest.getAppArn(), APPARN_BINDING);
             protocolMarshaller.marshall(importResourcesToDraftAppVersionRequest.getSourceArns(), SOURCEARNS_BINDING);
+            protocolMarshaller.marshall(importResourcesToDraftAppVersionRequest.getTerraformSources(), TERRAFORMSOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

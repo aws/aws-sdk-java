@@ -140,6 +140,12 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your automation.
+     * </p>
+     */
+    private AlarmConfiguration alarmConfiguration;
 
     /**
      * <p>
@@ -1112,6 +1118,46 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your automation.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        The CloudWatch alarm you want to apply to your automation.
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your automation.
+     * </p>
+     * 
+     * @return The CloudWatch alarm you want to apply to your automation.
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your automation.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        The CloudWatch alarm you want to apply to your automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAutomationExecutionRequest withAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1146,7 +1192,9 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
         if (getTargetLocations() != null)
             sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: ").append(getAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1209,6 +1257,10 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null && other.getAlarmConfiguration().equals(this.getAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1229,6 +1281,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());
         return hashCode;
     }
 

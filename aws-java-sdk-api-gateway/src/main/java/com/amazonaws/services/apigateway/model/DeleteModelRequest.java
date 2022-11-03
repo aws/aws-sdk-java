@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to delete an existing model in an existing <a>RestApi</a> resource.
+ * Request to delete an existing model in an existing RestApi resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the model to delete.
+     * The name of the model to delete.
      * </p>
      */
     private String modelName;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the model to delete.
+     * The name of the model to delete.
      * </p>
      * 
      * @param modelName
-     *        [Required] The name of the model to delete.
+     *        The name of the model to delete.
      */
 
     public void setModelName(String modelName) {
@@ -93,10 +93,10 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the model to delete.
+     * The name of the model to delete.
      * </p>
      * 
-     * @return [Required] The name of the model to delete.
+     * @return The name of the model to delete.
      */
 
     public String getModelName() {
@@ -105,11 +105,11 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the model to delete.
+     * The name of the model to delete.
      * </p>
      * 
      * @param modelName
-     *        [Required] The name of the model to delete.
+     *        The name of the model to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

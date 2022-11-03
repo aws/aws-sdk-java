@@ -31,7 +31,7 @@ public class AssociatedTranscript implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see
-     * <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.
      * </p>
      */
     private String transcript;
@@ -39,12 +39,12 @@ public class AssociatedTranscript implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see
-     * <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.
      * </p>
      * 
      * @param transcript
      *        The content of the transcript that meets the search filter criteria. For the JSON format of the
-     *        transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     *        transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      *        transcript format</a>.
      */
 
@@ -55,11 +55,11 @@ public class AssociatedTranscript implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see
-     * <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.
      * </p>
      * 
      * @return The content of the transcript that meets the search filter criteria. For the JSON format of the
-     *         transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     *         transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      *         transcript format</a>.
      */
 
@@ -70,12 +70,12 @@ public class AssociatedTranscript implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see
-     * <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.
      * </p>
      * 
      * @param transcript
      *        The content of the transcript that meets the search filter criteria. For the JSON format of the
-     *        transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     *        transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      *        transcript format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

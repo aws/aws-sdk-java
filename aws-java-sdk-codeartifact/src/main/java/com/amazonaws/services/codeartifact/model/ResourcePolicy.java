@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS CodeArtifact resource policy that contains a resource ARN, document details, and a revision.
+ * An CodeArtifact resource policy that contains a resource ARN, document details, and a revision.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ResourcePolicy" target="_top">AWS API

@@ -32,7 +32,7 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     * publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      */
     private String findingPublishingFrequency;
@@ -102,12 +102,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     * publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     *        publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -118,11 +118,11 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     * publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @return The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     *         publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *         publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -133,12 +133,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     * publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     *        publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -151,12 +151,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     * publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
-     *        publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */

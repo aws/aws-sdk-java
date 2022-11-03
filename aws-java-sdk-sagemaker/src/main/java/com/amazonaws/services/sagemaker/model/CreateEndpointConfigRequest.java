@@ -114,6 +114,12 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private AsyncInferenceConfig asyncInferenceConfig;
+    /**
+     * <p>
+     * A member of <code>CreateEndpointConfig</code> that enables explainers.
+     * </p>
+     */
+    private ExplainerConfig explainerConfig;
 
     /**
      * <p>
@@ -756,6 +762,46 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * A member of <code>CreateEndpointConfig</code> that enables explainers.
+     * </p>
+     * 
+     * @param explainerConfig
+     *        A member of <code>CreateEndpointConfig</code> that enables explainers.
+     */
+
+    public void setExplainerConfig(ExplainerConfig explainerConfig) {
+        this.explainerConfig = explainerConfig;
+    }
+
+    /**
+     * <p>
+     * A member of <code>CreateEndpointConfig</code> that enables explainers.
+     * </p>
+     * 
+     * @return A member of <code>CreateEndpointConfig</code> that enables explainers.
+     */
+
+    public ExplainerConfig getExplainerConfig() {
+        return this.explainerConfig;
+    }
+
+    /**
+     * <p>
+     * A member of <code>CreateEndpointConfig</code> that enables explainers.
+     * </p>
+     * 
+     * @param explainerConfig
+     *        A member of <code>CreateEndpointConfig</code> that enables explainers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withExplainerConfig(ExplainerConfig explainerConfig) {
+        setExplainerConfig(explainerConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -778,7 +824,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getAsyncInferenceConfig() != null)
-            sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig());
+            sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
+        if (getExplainerConfig() != null)
+            sb.append("ExplainerConfig: ").append(getExplainerConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -817,6 +865,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getAsyncInferenceConfig() != null && other.getAsyncInferenceConfig().equals(this.getAsyncInferenceConfig()) == false)
             return false;
+        if (other.getExplainerConfig() == null ^ this.getExplainerConfig() == null)
+            return false;
+        if (other.getExplainerConfig() != null && other.getExplainerConfig().equals(this.getExplainerConfig()) == false)
+            return false;
         return true;
     }
 
@@ -831,6 +883,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
+        hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
         return hashCode;
     }
 

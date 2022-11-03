@@ -65,6 +65,8 @@ public class ClusterInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("zookeeperConnectString").build();
     private static final MarshallingInfo<String> ZOOKEEPERCONNECTSTRINGTLS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("zookeeperConnectStringTls").build();
+    private static final MarshallingInfo<String> STORAGEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageMode").build();
 
     private static final ClusterInfoMarshaller instance = new ClusterInfoMarshaller();
 
@@ -100,6 +102,7 @@ public class ClusterInfoMarshaller {
             protocolMarshaller.marshall(clusterInfo.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(clusterInfo.getZookeeperConnectString(), ZOOKEEPERCONNECTSTRING_BINDING);
             protocolMarshaller.marshall(clusterInfo.getZookeeperConnectStringTls(), ZOOKEEPERCONNECTSTRINGTLS_BINDING);
+            protocolMarshaller.marshall(clusterInfo.getStorageMode(), STORAGEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

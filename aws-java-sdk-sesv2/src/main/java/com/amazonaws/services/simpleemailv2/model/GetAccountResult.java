@@ -104,6 +104,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private AccountDetails details;
+    /**
+     * <p>
+     * The VDM attributes that apply to your Amazon SES account.
+     * </p>
+     */
+    private VdmAttributes vdmAttributes;
 
     /**
      * <p>
@@ -653,6 +659,46 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The VDM attributes that apply to your Amazon SES account.
+     * </p>
+     * 
+     * @param vdmAttributes
+     *        The VDM attributes that apply to your Amazon SES account.
+     */
+
+    public void setVdmAttributes(VdmAttributes vdmAttributes) {
+        this.vdmAttributes = vdmAttributes;
+    }
+
+    /**
+     * <p>
+     * The VDM attributes that apply to your Amazon SES account.
+     * </p>
+     * 
+     * @return The VDM attributes that apply to your Amazon SES account.
+     */
+
+    public VdmAttributes getVdmAttributes() {
+        return this.vdmAttributes;
+    }
+
+    /**
+     * <p>
+     * The VDM attributes that apply to your Amazon SES account.
+     * </p>
+     * 
+     * @param vdmAttributes
+     *        The VDM attributes that apply to your Amazon SES account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccountResult withVdmAttributes(VdmAttributes vdmAttributes) {
+        setVdmAttributes(vdmAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -677,7 +723,9 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getSuppressionAttributes() != null)
             sb.append("SuppressionAttributes: ").append(getSuppressionAttributes()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getVdmAttributes() != null)
+            sb.append("VdmAttributes: ").append(getVdmAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -720,6 +768,10 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
+        if (other.getVdmAttributes() == null ^ this.getVdmAttributes() == null)
+            return false;
+        if (other.getVdmAttributes() != null && other.getVdmAttributes().equals(this.getVdmAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -735,6 +787,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getSendingEnabled() == null) ? 0 : getSendingEnabled().hashCode());
         hashCode = prime * hashCode + ((getSuppressionAttributes() == null) ? 0 : getSuppressionAttributes().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getVdmAttributes() == null) ? 0 : getVdmAttributes().hashCode());
         return hashCode;
     }
 

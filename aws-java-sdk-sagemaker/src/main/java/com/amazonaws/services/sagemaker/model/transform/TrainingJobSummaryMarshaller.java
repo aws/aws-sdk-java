@@ -39,6 +39,8 @@ public class TrainingJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TRAININGJOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobStatus").build();
+    private static final MarshallingInfo<StructuredPojo> WARMPOOLSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmPoolStatus").build();
 
     private static final TrainingJobSummaryMarshaller instance = new TrainingJobSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class TrainingJobSummaryMarshaller {
             protocolMarshaller.marshall(trainingJobSummary.getTrainingEndTime(), TRAININGENDTIME_BINDING);
             protocolMarshaller.marshall(trainingJobSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(trainingJobSummary.getTrainingJobStatus(), TRAININGJOBSTATUS_BINDING);
+            protocolMarshaller.marshall(trainingJobSummary.getWarmPoolStatus(), WARMPOOLSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

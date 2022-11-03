@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+ * The object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertyOverride" target="_top">AWS API
@@ -39,7 +39,7 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
     private String targetNodes;
     /**
      * <p>
-     * The overrides that should be sent to a node range.
+     * The overrides that are sent to a node range.
      * </p>
      */
     private ContainerOverrides containerOverrides;
@@ -104,11 +104,11 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The overrides that should be sent to a node range.
+     * The overrides that are sent to a node range.
      * </p>
      * 
      * @param containerOverrides
-     *        The overrides that should be sent to a node range.
+     *        The overrides that are sent to a node range.
      */
 
     public void setContainerOverrides(ContainerOverrides containerOverrides) {
@@ -117,10 +117,10 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The overrides that should be sent to a node range.
+     * The overrides that are sent to a node range.
      * </p>
      * 
-     * @return The overrides that should be sent to a node range.
+     * @return The overrides that are sent to a node range.
      */
 
     public ContainerOverrides getContainerOverrides() {
@@ -129,11 +129,11 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The overrides that should be sent to a node range.
+     * The overrides that are sent to a node range.
      * </p>
      * 
      * @param containerOverrides
-     *        The overrides that should be sent to a node range.
+     *        The overrides that are sent to a node range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

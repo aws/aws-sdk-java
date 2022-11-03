@@ -309,6 +309,22 @@ public class CreateResponseHeadersPolicyRequestMarshaller implements
                 }
 
                 {
+                    ResponseHeadersPolicyServerTimingHeadersConfig serverTimingHeadersConfig = responseHeadersPolicyConfig.getServerTimingHeadersConfig();
+                    if (serverTimingHeadersConfig != null) {
+                        xmlWriter.startElement("ServerTimingHeadersConfig");
+
+                        if (serverTimingHeadersConfig.getEnabled() != null) {
+                            xmlWriter.startElement("Enabled").value(serverTimingHeadersConfig.getEnabled()).endElement();
+                        }
+
+                        if (serverTimingHeadersConfig.getSamplingRate() != null) {
+                            xmlWriter.startElement("SamplingRate").value(serverTimingHeadersConfig.getSamplingRate()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+
+                {
                     ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig = responseHeadersPolicyConfig.getCustomHeadersConfig();
                     if (customHeadersConfig != null) {
                         xmlWriter.startElement("CustomHeadersConfig");
@@ -340,22 +356,6 @@ public class CreateResponseHeadersPolicyRequestMarshaller implements
                                 xmlWriter.endElement();
                             }
                             xmlWriter.endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-
-                {
-                    ResponseHeadersPolicyServerTimingHeadersConfig serverTimingHeadersConfig = responseHeadersPolicyConfig.getServerTimingHeadersConfig();
-                    if (serverTimingHeadersConfig != null) {
-                        xmlWriter.startElement("ServerTimingHeadersConfig");
-
-                        if (serverTimingHeadersConfig.getEnabled() != null) {
-                            xmlWriter.startElement("Enabled").value(serverTimingHeadersConfig.getEnabled()).endElement();
-                        }
-
-                        if (serverTimingHeadersConfig.getSamplingRate() != null) {
-                            xmlWriter.startElement("SamplingRate").value(serverTimingHeadersConfig.getSamplingRate()).endElement();
                         }
                         xmlWriter.endElement();
                     }

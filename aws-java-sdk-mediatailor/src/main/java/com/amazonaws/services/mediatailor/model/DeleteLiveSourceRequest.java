@@ -27,24 +27,24 @@ public class DeleteLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      */
     private String liveSourceName;
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this Live Source.
      * </p>
      */
     private String sourceLocationName;
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      * 
      * @param liveSourceName
-     *        The identifier for the live source you are working on.
+     *        The name of the live source.
      */
 
     public void setLiveSourceName(String liveSourceName) {
@@ -53,10 +53,10 @@ public class DeleteLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      * 
-     * @return The identifier for the live source you are working on.
+     * @return The name of the live source.
      */
 
     public String getLiveSourceName() {
@@ -65,11 +65,11 @@ public class DeleteLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      * 
      * @param liveSourceName
-     *        The identifier for the live source you are working on.
+     *        The name of the live source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this Live Source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location associated with this Live Source.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -93,10 +93,10 @@ public class DeleteLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this Live Source.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location associated with this Live Source.
      */
 
     public String getSourceLocationName() {
@@ -105,11 +105,11 @@ public class DeleteLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this Live Source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location associated with this Live Source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,9 +36,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * [VPC only] Use <code>-1</code> to specify all protocols.
      * </p>
      * <p>
-     * When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port
-     * range you specify.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
+     * regardless of any port range you specify.
      * </p>
      * <p>
      * For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -63,7 +63,8 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * </p>
      * <p>
-     * A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must
+     * specify all codes.
      * </p>
      */
     private Integer toPort;
@@ -101,9 +102,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * [VPC only] Use <code>-1</code> to specify all protocols.
      * </p>
      * <p>
-     * When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port
-     * range you specify.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
+     * regardless of any port range you specify.
      * </p>
      * <p>
      * For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -120,9 +121,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      *        [VPC only] Use <code>-1</code> to specify all protocols.
      *        </p>
      *        <p>
-     *        When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     *        <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any
-     *        port range you specify.
+     *        When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     *        <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
+     *        regardless of any port range you specify.
      *        </p>
      *        <p>
      *        For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -144,9 +145,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * [VPC only] Use <code>-1</code> to specify all protocols.
      * </p>
      * <p>
-     * When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port
-     * range you specify.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
+     * regardless of any port range you specify.
      * </p>
      * <p>
      * For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -162,9 +163,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      *         [VPC only] Use <code>-1</code> to specify all protocols.
      *         </p>
      *         <p>
-     *         When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of
-     *         any port range you specify.
+     *         When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     *         <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all
+     *         ports, regardless of any port range you specify.
      *         </p>
      *         <p>
      *         For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -186,9 +187,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * [VPC only] Use <code>-1</code> to specify all protocols.
      * </p>
      * <p>
-     * When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port
-     * range you specify.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
+     * regardless of any port range you specify.
      * </p>
      * <p>
      * For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -205,9 +206,9 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      *        [VPC only] Use <code>-1</code> to specify all protocols.
      *        </p>
      *        <p>
-     *        When authorizing security group rules, specifying -1 or a protocol number other than <code>tcp</code>,
-     *        <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any
-     *        port range you specify.
+     *        When authorizing security group rules, specifying <code>-1</code> or a protocol number other than
+     *        <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
+     *        regardless of any port range you specify.
      *        </p>
      *        <p>
      *        For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.
@@ -286,14 +287,15 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * </p>
      * <p>
-     * A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must
+     * specify all codes.
      * </p>
      * 
      * @param toPort
      *        The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
      *        <p>
-     *        A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     *        codes.
+     *        A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must
+     *        specify all codes.
      */
 
     public void setToPort(Integer toPort) {
@@ -305,13 +307,14 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * </p>
      * <p>
-     * A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must
+     * specify all codes.
      * </p>
      * 
      * @return The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
      *         <p>
-     *         A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     *         codes.
+     *         A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you
+     *         must specify all codes.
      */
 
     public Integer getToPort() {
@@ -323,14 +326,15 @@ public class AwsEc2SecurityGroupIpPermission implements Serializable, Cloneable,
      * The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * </p>
      * <p>
-     * A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must
+     * specify all codes.
      * </p>
      * 
      * @param toPort
      *        The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
      *        <p>
-     *        A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     *        codes.
+     *        A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must
+     *        specify all codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

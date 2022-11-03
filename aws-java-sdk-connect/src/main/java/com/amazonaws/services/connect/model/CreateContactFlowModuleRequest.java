@@ -33,31 +33,35 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
     private String instanceId;
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
@@ -104,11 +108,11 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      */
 
     public void setName(String name) {
@@ -117,10 +121,10 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
-     * @return The name of the contact flow module.
+     * @return The name of the flow module.
      */
 
     public String getName() {
@@ -129,11 +133,11 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +148,11 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow module.
+     *        The description of the flow module.
      */
 
     public void setDescription(String description) {
@@ -157,10 +161,10 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
-     * @return The description of the contact flow module.
+     * @return The description of the flow module.
      */
 
     public String getDescription() {
@@ -169,11 +173,11 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow module.
+     *        The description of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +188,11 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow module.
+     *        The content of the flow module.
      */
 
     public void setContent(String content) {
@@ -197,10 +201,10 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
-     * @return The content of the contact flow module.
+     * @return The content of the flow module.
      */
 
     public String getContent() {
@@ -209,11 +213,11 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow module.
+     *        The content of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,10 +228,12 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return The tags used to organize, track, or control access for this resource.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -236,11 +242,13 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -249,11 +257,13 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +302,17 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -305,10 +321,16 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -317,11 +339,17 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

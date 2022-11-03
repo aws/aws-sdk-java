@@ -78,6 +78,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public DescribePackageResult describePackage(DescribePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePackageVersionResult describePackageVersion(DescribePackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -169,6 +174,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public PutDomainPermissionsPolicyResult putDomainPermissionsPolicy(PutDomainPermissionsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPackageOriginConfigurationResult putPackageOriginConfiguration(PutPackageOriginConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -27,10 +27,10 @@ import com.amazonaws.services.workmail.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and
- * mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or
- * other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory
- * and control both the keys that encrypt your data and the location in which your data is stored.
+ * WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile
+ * email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or other
+ * native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory and
+ * control both the keys that encrypt your data and the location in which your data is stored.
  * </p>
  * <p>
  * The WorkMail API is designed for the following scenarios:
@@ -142,6 +142,29 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token
+     * you can use to make impersonated calls.
+     * </p>
+     * 
+     * @param assumeImpersonationRoleRequest
+     * @return Result of the AssumeImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AmazonWorkMail.AssumeImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssumeImpersonationRoleResult assumeImpersonationRole(AssumeImpersonationRoleRequest assumeImpersonationRoleRequest);
+
+    /**
+     * <p>
      * Cancels a mailbox export job.
      * </p>
      * <note>
@@ -169,7 +192,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
+     * Adds an alias to the set of a given member (user or group) of WorkMail.
      * </p>
      * 
      * @param createAliasRequest
@@ -203,7 +226,31 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param createAvailabilityConfigurationRequest
+     * @return Result of the CreateAvailabilityConfiguration operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws NameAvailabilityException
+     *         The user, group, or resource name isn't unique in WorkMail.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.CreateAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAvailabilityConfigurationResult createAvailabilityConfiguration(CreateAvailabilityConfigurationRequest createAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a group that can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createGroupRequest
@@ -215,14 +262,14 @@ public interface AmazonWorkMail {
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws ReservedNameException
-     *         This user, group, or resource name is not allowed in Amazon WorkMail.
+     *         This user, group, or resource name is not allowed in WorkMail.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.CreateGroup
@@ -233,7 +280,39 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * Creates an impersonation role for the given WorkMail organization.
+     * </p>
+     * <p>
+     * <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if
+     * the original request completes successfully, any subsequent retries also complete successfully without performing
+     * any further actions.
+     * </p>
+     * 
+     * @param createImpersonationRoleRequest
+     * @return Result of the CreateImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.CreateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateImpersonationRoleResult createImpersonationRole(CreateImpersonationRoleRequest createImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Creates a new mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param createMobileDeviceAccessRuleRequest
@@ -255,24 +334,23 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
-     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
-     * alias must match the directory alias. If you choose not to associate an existing directory with your
-     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service
+     * directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias
+     * must match the directory alias. If you choose not to associate an existing directory with your organization, then
+     * we create a new WorkMail directory for you. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * You can associate multiple email domains with an organization, then choose your default email domain from the
      * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
      * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
      * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
-     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * default domain</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
-     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
-     * master key for you.
+     * Optionally, you can use a customer managed key from AWS Key Management Service (AWS KMS) to encrypt email for
+     * your organization. If you don't associate an AWS KMS key, WorkMail creates a default, AWS managed key for you.
      * </p>
      * 
      * @param createOrganizationRequest
@@ -286,7 +364,7 @@ public interface AmazonWorkMail {
      * @throws LimitExceededException
      *         The request exceeds the limit of the resource.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @sample AmazonWorkMail.CreateOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
      *      API Documentation</a>
@@ -295,7 +373,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail resource.
+     * Creates a new WorkMail resource.
      * </p>
      * 
      * @param createResourceRequest
@@ -307,14 +385,14 @@ public interface AmazonWorkMail {
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws ReservedNameException
-     *         This user, group, or resource name is not allowed in Amazon WorkMail.
+     *         This user, group, or resource name is not allowed in WorkMail.
      * @sample AmazonWorkMail.CreateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource" target="_top">AWS API
      *      Documentation</a>
@@ -323,7 +401,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createUserRequest
@@ -338,14 +416,14 @@ public interface AmazonWorkMail {
      *         The supplied password doesn't match the minimum security constraints, such as length or use of special
      *         characters.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws ReservedNameException
-     *         This user, group, or resource name is not allowed in Amazon WorkMail.
+     *         This user, group, or resource name is not allowed in WorkMail.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.CreateUser
@@ -405,6 +483,24 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param deleteAvailabilityConfigurationRequest
+     * @return Result of the DeleteAvailabilityConfiguration operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAvailabilityConfigurationResult deleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest deleteAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
      * Deletes the email monitoring configuration for a specified organization.
      * </p>
      * 
@@ -426,7 +522,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a group from Amazon WorkMail.
+     * Deletes a group from WorkMail.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -452,6 +548,26 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
+
+    /**
+     * <p>
+     * Deletes an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param deleteImpersonationRoleRequest
+     * @return Result of the DeleteImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteImpersonationRoleResult deleteImpersonationRole(DeleteImpersonationRoleRequest deleteImpersonationRoleRequest);
 
     /**
      * <p>
@@ -508,7 +624,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * Deletes a mobile device access rule for the specified WorkMail organization.
      * </p>
      * <note>
      * <p>
@@ -534,10 +650,10 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
-     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail as part of the
+     * organization. You can choose whether to delete the associated directory. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -600,8 +716,8 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
-     * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
+     * Deletes a user from WorkMail and all subsequent systems. Before you can delete a user, the user state must be
+     * <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
      * <p>
      * Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are
@@ -634,7 +750,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and
+     * Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and
      * schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The
      * functionality in the console is <i>Disable</i>.
      * </p>
@@ -661,9 +777,9 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing
-     * WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address
-     * used by WorkMail entities before you remove the domain.
+     * Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail
+     * use. SES keeps the domain because other applications may use it. You must first remove any email address used by
+     * WorkMail entities before you remove the domain.
      * </p>
      * 
      * @param deregisterMailDomainRequest
@@ -679,8 +795,8 @@ public interface AmazonWorkMail {
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws InvalidCustomSesConfigurationException
-     *         You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the
-     *         invalid setting. For examples of invalid settings, refer to <a
+     *         You SES configuration has customizations that WorkMail cannot save. The error message lists the invalid
+     *         setting. For examples of invalid settings, refer to <a
      *         href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html"
      *         >CreateReceiptRule</a>.
      * @sample AmazonWorkMail.DeregisterMailDomain
@@ -894,13 +1010,16 @@ public interface AmazonWorkMail {
     /**
      * <p>
      * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
-     * protocol action, or user ID.
+     * protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role
+     * ID. Impersonation role ID can only be used with Action EWS.
      * </p>
      * 
      * @param getAccessControlEffectRequest
      * @return Result of the GetAccessControlEffect operation returned by the service.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws OrganizationNotFoundException
@@ -935,6 +1054,55 @@ public interface AmazonWorkMail {
      *      target="_top">AWS API Documentation</a>
      */
     GetDefaultRetentionPolicyResult getDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest getDefaultRetentionPolicyRequest);
+
+    /**
+     * <p>
+     * Gets the impersonation role details for the given WorkMail organization.
+     * </p>
+     * 
+     * @param getImpersonationRoleRequest
+     * @return Result of the GetImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AmazonWorkMail.GetImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetImpersonationRoleResult getImpersonationRole(GetImpersonationRoleRequest getImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Tests whether the given impersonation role can impersonate a target user.
+     * </p>
+     * 
+     * @param getImpersonationRoleEffectRequest
+     * @return Result of the GetImpersonationRoleEffect operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @sample AmazonWorkMail.GetImpersonationRoleEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetImpersonationRoleEffectResult getImpersonationRoleEffect(GetImpersonationRoleEffectRequest getImpersonationRoleEffectRequest);
 
     /**
      * <p>
@@ -982,8 +1150,8 @@ public interface AmazonWorkMail {
     /**
      * <p>
      * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
-     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
-     * organization for a particular user's attributes.
+     * this method to test the effects of the current set of mobile device access rules for the WorkMail organization
+     * for a particular user's attributes.
      * </p>
      * 
      * @param getMobileDeviceAccessEffectRequest
@@ -1070,6 +1238,24 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listAvailabilityConfigurationsRequest
+     * @return Result of the ListAvailabilityConfigurations operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.ListAvailabilityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAvailabilityConfigurationsResult listAvailabilityConfigurations(ListAvailabilityConfigurationsRequest listAvailabilityConfigurationsRequest);
+
+    /**
+     * <p>
      * Returns an overview of the members of a group. Users and groups can be members of a group.
      * </p>
      * 
@@ -1117,7 +1303,27 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the mail domains in a given Amazon WorkMail organization.
+     * Lists all the impersonation roles for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listImpersonationRolesRequest
+     * @return Result of the ListImpersonationRoles operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.ListImpersonationRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListImpersonationRolesResult listImpersonationRoles(ListImpersonationRolesRequest listImpersonationRolesRequest);
+
+    /**
+     * <p>
+     * Lists the mail domains in a given WorkMail organization.
      * </p>
      * 
      * @param listMailDomainsRequest
@@ -1201,7 +1407,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * Lists the mobile device access rules for the specified WorkMail organization.
      * </p>
      * 
      * @param listMobileDeviceAccessRulesRequest
@@ -1282,7 +1488,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * Lists the tags applied to an WorkMail organization resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1318,8 +1524,8 @@ public interface AmazonWorkMail {
     /**
      * <p>
      * Adds a new access control rule for the specified organization. The rule allows or denies access to the
-     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
-     * same name as an existing rule replaces the older rule.
+     * organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a
+     * new rule with the same name as an existing rule replaces the older rule.
      * </p>
      * 
      * @param putAccessControlRuleRequest
@@ -1330,6 +1536,8 @@ public interface AmazonWorkMail {
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
@@ -1455,9 +1663,9 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES
-     * for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use
-     * the specified domain for sending your users' emails.
+     * Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for
+     * this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the
+     * specified domain for sending your users' emails.
      * </p>
      * 
      * @param registerMailDomainRequest
@@ -1482,7 +1690,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
+     * Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
      * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
@@ -1565,7 +1773,7 @@ public interface AmazonWorkMail {
      * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
      * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
-     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param startMailboxExportJobRequest
@@ -1589,7 +1797,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * Applies the specified tags to the specified WorkMailorganization resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1609,7 +1817,39 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided
+     * credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked
+     * and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done
+     * without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.
+     * </p>
+     * <note>
+     * <p>
+     * The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>)
+     * or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration
+     * stored under the <code>DomainName</code> will be tested.
+     * </p>
+     * </note>
+     * 
+     * @param testAvailabilityConfigurationRequest
+     * @return Result of the TestAvailabilityConfiguration operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @sample AmazonWorkMail.TestAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    TestAvailabilityConfigurationResult testAvailabilityConfiguration(TestAvailabilityConfigurationRequest testAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified WorkMail organization resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1621,6 +1861,28 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param updateAvailabilityConfigurationRequest
+     * @return Result of the UpdateAvailabilityConfiguration operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @sample AmazonWorkMail.UpdateAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAvailabilityConfigurationResult updateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest updateAvailabilityConfigurationRequest);
 
     /**
      * <p>
@@ -1649,6 +1911,35 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Updates an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param updateImpersonationRoleRequest
+     * @return Result of the UpdateImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.UpdateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateImpersonationRoleResult updateImpersonationRole(UpdateImpersonationRoleRequest updateImpersonationRoleRequest);
+
+    /**
+     * <p>
      * Updates a user's current mailbox quota for a specified organization and user.
      * </p>
      * 
@@ -1674,7 +1965,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * Updates a mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param updateMobileDeviceAccessRuleRequest
@@ -1763,7 +2054,7 @@ public interface AmazonWorkMail {
      * @throws MailDomainStateException
      *         After a domain has been added to the organization, it must be verified. The domain is not yet verified.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException

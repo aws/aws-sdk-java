@@ -407,8 +407,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -421,8 +421,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -514,6 +514,57 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import
+     * job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * information about how to configure storage settings, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
+     * >PutStorageConfiguration</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createBulkImportJobRequest
+     * @return A Java Future containing the result of the CreateBulkImportJob operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.CreateBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest createBulkImportJobRequest);
+
+    /**
+     * <p>
+     * Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import
+     * job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * information about how to configure storage settings, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
+     * >PutStorageConfiguration</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createBulkImportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBulkImportJob operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.CreateBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest createBulkImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBulkImportJobRequest, CreateBulkImportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a dashboard in an IoT SiteWise Monitor project.
      * </p>
      * 
@@ -582,8 +633,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -604,8 +655,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -1153,6 +1204,41 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<DescribeAssetPropertyResult> describeAssetPropertyAsync(DescribeAssetPropertyRequest describeAssetPropertyRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetPropertyRequest, DescribeAssetPropertyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about a bulk import job request. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk
+     * import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * 
+     * @param describeBulkImportJobRequest
+     * @return A Java Future containing the result of the DescribeBulkImportJob operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.DescribeBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBulkImportJobResult> describeBulkImportJobAsync(DescribeBulkImportJobRequest describeBulkImportJobRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a bulk import job request. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk
+     * import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * 
+     * @param describeBulkImportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBulkImportJob operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DescribeBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBulkImportJobResult> describeBulkImportJobAsync(DescribeBulkImportJobRequest describeBulkImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBulkImportJobRequest, DescribeBulkImportJobResult> asyncHandler);
 
     /**
      * <p>
@@ -1889,8 +1975,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1903,8 +1989,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1919,6 +2005,39 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest listAccessPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @return A Java Future containing the result of the ListAssetModelProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetModelProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetModelPropertiesRequest, ListAssetModelPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -1950,6 +2069,39 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest listAssetModelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @return A Java Future containing the result of the ListAssetProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest listAssetPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest listAssetPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetPropertiesRequest, ListAssetPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -2115,6 +2267,41 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListAssociatedAssetsResult> listAssociatedAssetsAsync(ListAssociatedAssetsRequest listAssociatedAssetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssociatedAssetsRequest, ListAssociatedAssetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of bulk import job requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs
+     * (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param listBulkImportJobsRequest
+     * @return A Java Future containing the result of the ListBulkImportJobs operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListBulkImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest listBulkImportJobsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of bulk import job requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs
+     * (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param listBulkImportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBulkImportJobs operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListBulkImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest listBulkImportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBulkImportJobsRequest, ListBulkImportJobsResult> asyncHandler);
 
     /**
      * <p>

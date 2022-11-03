@@ -13,7 +13,7 @@
 package com.amazonaws.services.datasync.model.transform;
 
 import java.math.*;
-
+import java.nio.ByteBuffer;
 import javax.annotation.Generated;
 
 import com.amazonaws.services.datasync.model.*;
@@ -77,6 +77,10 @@ public class DescribeLocationObjectStorageResultJsonUnmarshaller implements Unma
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeLocationObjectStorageResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ServerCertificate", targetDepth)) {
+                    context.nextToken();
+                    describeLocationObjectStorageResult.setServerCertificate(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

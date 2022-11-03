@@ -74,6 +74,40 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request) {
+
+        return associateUserToPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(
+            final AssociateUserToPermissionGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateUserToPermissionGroupRequest, AssociateUserToPermissionGroupResult> asyncHandler) {
+        final AssociateUserToPermissionGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateUserToPermissionGroupResult>() {
+            @Override
+            public AssociateUserToPermissionGroupResult call() throws Exception {
+                AssociateUserToPermissionGroupResult result = null;
+
+                try {
+                    result = executeAssociateUserToPermissionGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateChangesetResult> createChangesetAsync(CreateChangesetRequest request) {
 
         return createChangesetAsync(request, null);
@@ -338,6 +372,41 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
+            DisassociateUserFromPermissionGroupRequest request) {
+
+        return disassociateUserFromPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
+            final DisassociateUserFromPermissionGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateUserFromPermissionGroupRequest, DisassociateUserFromPermissionGroupResult> asyncHandler) {
+        final DisassociateUserFromPermissionGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateUserFromPermissionGroupResult>() {
+            @Override
+            public DisassociateUserFromPermissionGroupResult call() throws Exception {
+                DisassociateUserFromPermissionGroupResult result = null;
+
+                try {
+                    result = executeDisassociateUserFromPermissionGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest request) {
 
         return enableUserAsync(request, null);
@@ -454,6 +523,74 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
 
                 try {
                     result = executeGetDataset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
+            GetExternalDataViewAccessDetailsRequest request) {
+
+        return getExternalDataViewAccessDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
+            final GetExternalDataViewAccessDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExternalDataViewAccessDetailsRequest, GetExternalDataViewAccessDetailsResult> asyncHandler) {
+        final GetExternalDataViewAccessDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExternalDataViewAccessDetailsResult>() {
+            @Override
+            public GetExternalDataViewAccessDetailsResult call() throws Exception {
+                GetExternalDataViewAccessDetailsResult result = null;
+
+                try {
+                    result = executeGetExternalDataViewAccessDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(GetPermissionGroupRequest request) {
+
+        return getPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(final GetPermissionGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPermissionGroupRequest, GetPermissionGroupResult> asyncHandler) {
+        final GetPermissionGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPermissionGroupResult>() {
+            @Override
+            public GetPermissionGroupResult call() throws Exception {
+                GetPermissionGroupResult result = null;
+
+                try {
+                    result = executeGetPermissionGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -703,6 +840,39 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request) {
+
+        return listPermissionGroupsByUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(final ListPermissionGroupsByUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPermissionGroupsByUserRequest, ListPermissionGroupsByUserResult> asyncHandler) {
+        final ListPermissionGroupsByUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPermissionGroupsByUserResult>() {
+            @Override
+            public ListPermissionGroupsByUserResult call() throws Exception {
+                ListPermissionGroupsByUserResult result = null;
+
+                try {
+                    result = executeListPermissionGroupsByUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request) {
 
         return listUsersAsync(request, null);
@@ -720,6 +890,39 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
 
                 try {
                     result = executeListUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request) {
+
+        return listUsersByPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(final ListUsersByPermissionGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListUsersByPermissionGroupRequest, ListUsersByPermissionGroupResult> asyncHandler) {
+        final ListUsersByPermissionGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListUsersByPermissionGroupResult>() {
+            @Override
+            public ListUsersByPermissionGroupResult call() throws Exception {
+                ListUsersByPermissionGroupResult result = null;
+
+                try {
+                    result = executeListUsersByPermissionGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

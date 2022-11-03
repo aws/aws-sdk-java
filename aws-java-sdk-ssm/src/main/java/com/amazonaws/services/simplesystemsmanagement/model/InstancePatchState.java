@@ -200,26 +200,25 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private String rebootOption;
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in
-     * the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or
-     * were installed but awaiting a required managed node reboot. The status of these managed nodes is
+     * The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch
+     * baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required managed node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer criticalNonCompliantCount;
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't
-     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer securityNonCompliantCount;
     /**
      * <p>
-     * The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or
-     * <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
-     * <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code>
+     * but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer otherNonCompliantCount;
@@ -1493,17 +1492,17 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in
-     * the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or
-     * were installed but awaiting a required managed node reboot. The status of these managed nodes is
+     * The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch
+     * baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required managed node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param criticalNonCompliantCount
-     *        The number of managed nodes where patches that are specified as <code>Critical</code> for compliance
-     *        reporting in the patch baseline aren't installed. These patches might be missing, have failed
-     *        installation, were rejected, or were installed but awaiting a required managed node reboot. The status of
-     *        these managed nodes is <code>NON_COMPLIANT</code>.
+     *        The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the
+     *        patch baseline aren't installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required managed node reboot. The status of these managed nodes is
+     *        <code>NON_COMPLIANT</code>.
      */
 
     public void setCriticalNonCompliantCount(Integer criticalNonCompliantCount) {
@@ -1512,16 +1511,16 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in
-     * the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or
-     * were installed but awaiting a required managed node reboot. The status of these managed nodes is
+     * The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch
+     * baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required managed node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of managed nodes where patches that are specified as <code>Critical</code> for compliance
-     *         reporting in the patch baseline aren't installed. These patches might be missing, have failed
-     *         installation, were rejected, or were installed but awaiting a required managed node reboot. The status of
-     *         these managed nodes is <code>NON_COMPLIANT</code>.
+     * @return The number of patches per node that are specified as <code>Critical</code> for compliance reporting in
+     *         the patch baseline aren't installed. These patches might be missing, have failed installation, were
+     *         rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+     *         nodes is <code>NON_COMPLIANT</code>.
      */
 
     public Integer getCriticalNonCompliantCount() {
@@ -1530,17 +1529,17 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in
-     * the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or
-     * were installed but awaiting a required managed node reboot. The status of these managed nodes is
+     * The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch
+     * baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required managed node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param criticalNonCompliantCount
-     *        The number of managed nodes where patches that are specified as <code>Critical</code> for compliance
-     *        reporting in the patch baseline aren't installed. These patches might be missing, have failed
-     *        installation, were rejected, or were installed but awaiting a required managed node reboot. The status of
-     *        these managed nodes is <code>NON_COMPLIANT</code>.
+     *        The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the
+     *        patch baseline aren't installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required managed node reboot. The status of these managed nodes is
+     *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1551,16 +1550,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't
-     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param securityNonCompliantCount
-     *        The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory
-     *        aren't installed. These patches might be missing, have failed installation, were rejected, or were
-     *        installed but awaiting a required managed node reboot. The status of these managed nodes is
-     *        <code>NON_COMPLIANT</code>.
+     *        The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      */
 
     public void setSecurityNonCompliantCount(Integer securityNonCompliantCount) {
@@ -1569,15 +1567,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't
-     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory
-     *         aren't installed. These patches might be missing, have failed installation, were rejected, or were
-     *         installed but awaiting a required managed node reboot. The status of these managed nodes is
-     *         <code>NON_COMPLIANT</code>.
+     * @return The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't
+     *         installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *         awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      */
 
     public Integer getSecurityNonCompliantCount() {
@@ -1586,16 +1583,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't
-     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param securityNonCompliantCount
-     *        The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory
-     *        aren't installed. These patches might be missing, have failed installation, were rejected, or were
-     *        installed but awaiting a required managed node reboot. The status of these managed nodes is
-     *        <code>NON_COMPLIANT</code>.
+     *        The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1606,15 +1602,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or
-     * <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
-     * <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code>
+     * but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param otherNonCompliantCount
-     *        The number of managed nodes with patches installed that are specified as other than <code>Critical</code>
-     *        or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes
-     *        is <code>NON_COMPLIANT</code>.
+     *        The number of patches per node that are specified as other than <code>Critical</code> or
+     *        <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
+     *        <code>NON_COMPLIANT</code>.
      */
 
     public void setOtherNonCompliantCount(Integer otherNonCompliantCount) {
@@ -1623,14 +1618,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or
-     * <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
-     * <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code>
+     * but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of managed nodes with patches installed that are specified as other than <code>Critical</code>
-     *         or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes
-     *         is <code>NON_COMPLIANT</code>.
+     * @return The number of patches per node that are specified as other than <code>Critical</code> or
+     *         <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
+     *         <code>NON_COMPLIANT</code>.
      */
 
     public Integer getOtherNonCompliantCount() {
@@ -1639,15 +1633,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or
-     * <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
-     * <code>NON_COMPLIANT</code>.
+     * The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code>
+     * but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param otherNonCompliantCount
-     *        The number of managed nodes with patches installed that are specified as other than <code>Critical</code>
-     *        or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes
-     *        is <code>NON_COMPLIANT</code>.
+     *        The number of patches per node that are specified as other than <code>Critical</code> or
+     *        <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is
+     *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

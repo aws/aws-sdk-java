@@ -159,6 +159,17 @@ public class CapacityReservationStaxUnmarshaller implements Unmarshaller<Capacit
                     capacityReservation.setPlacementGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("capacityAllocationSet", targetDepth)) {
+                    capacityReservation.withCapacityAllocations(new ArrayList<CapacityAllocation>());
+                    continue;
+                }
+
+                if (context.testExpression("capacityAllocationSet/item", targetDepth)) {
+                    capacityReservation.withCapacityAllocations(CapacityAllocationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return capacityReservation;

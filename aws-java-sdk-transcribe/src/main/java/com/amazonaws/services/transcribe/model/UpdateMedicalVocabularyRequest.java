@@ -27,53 +27,35 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
-     * name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the
-     * only valid language code in Amazon Transcribe Medical.
+     * The language code that represents the language of the entries in the custom vocabulary you want to update. US
+     * English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:
+     * The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p>
-     * <p>
-     * For more information about Amazon S3 object names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
-     * <i>Amazon S3 Developer Guide</i>.
-     * </p>
-     * <p>
-     * For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      */
     private String vocabularyFileUri;
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
-     * name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
-     *        the same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     *        The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -82,12 +64,10 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
-     * name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      * </p>
      * 
-     * @return The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
-     *         the same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     * @return The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      */
 
     public String getVocabularyName() {
@@ -96,13 +76,11 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
-     * name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
-     *        the same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.
+     *        The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +91,13 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the
-     * only valid language code in Amazon Transcribe Medical.
+     * The language code that represents the language of the entries in the custom vocabulary you want to update. US
+     * English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is
-     *        the only valid language code in Amazon Transcribe Medical.
+     *        The language code that represents the language of the entries in the custom vocabulary you want to update.
+     *        US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -129,12 +107,12 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the
-     * only valid language code in Amazon Transcribe Medical.
+     * The language code that represents the language of the entries in the custom vocabulary you want to update. US
+     * English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is
-     *         the only valid language code in Amazon Transcribe Medical.
+     * @return The language code that represents the language of the entries in the custom vocabulary you want to
+     *         update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -144,13 +122,13 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the
-     * only valid language code in Amazon Transcribe Medical.
+     * The language code that represents the language of the entries in the custom vocabulary you want to update. US
+     * English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is
-     *        the only valid language code in Amazon Transcribe Medical.
+     *        The language code that represents the language of the entries in the custom vocabulary you want to update.
+     *        US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -162,13 +140,13 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the
-     * only valid language code in Amazon Transcribe Medical.
+     * The language code that represents the language of the entries in the custom vocabulary you want to update. US
+     * English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is
-     *        the only valid language code in Amazon Transcribe Medical.
+     *        The language code that represents the language of the entries in the custom vocabulary you want to update.
+     *        US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -180,50 +158,18 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:
+     * The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p>
-     * <p>
-     * For more information about Amazon S3 object names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
-     * <i>Amazon S3 Developer Guide</i>.
-     * </p>
-     * <p>
-     * For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      * 
      * @param vocabularyFileUri
-     *        The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the
-     *        same Amazon Web Services Region as the resource that you are calling. The following is the format for a
-     *        URI:</p>
+     *        The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be
+     *        located in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     *        </p>
-     *        <p>
-     *        For more information about Amazon S3 object names, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in
-     *        the <i>Amazon S3 Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom
-     *        Vocabularies</a>.
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      */
 
     public void setVocabularyFileUri(String vocabularyFileUri) {
@@ -232,49 +178,17 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:
+     * The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p>
-     * <p>
-     * For more information about Amazon S3 object names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
-     * <i>Amazon S3 Developer Guide</i>.
-     * </p>
-     * <p>
-     * For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      * 
-     * @return The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the
-     *         same Amazon Web Services Region as the resource that you are calling. The following is the format for a
-     *         URI:</p>
+     * @return The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be
+     *         located in the same Amazon Web Services Region as the resource you're calling.</p>
      *         <p>
-     *         <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     *         </p>
-     *         <p>
-     *         For example:
-     *         </p>
-     *         <p>
-     *         <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     *         </p>
-     *         <p>
-     *         For more information about Amazon S3 object names, see <a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in
-     *         the <i>Amazon S3 Developer Guide</i>.
-     *         </p>
-     *         <p>
-     *         For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom
-     *         Vocabularies</a>.
+     *         Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      */
 
     public String getVocabularyFileUri() {
@@ -283,50 +197,18 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:
+     * The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     * </p>
-     * <p>
-     * For more information about Amazon S3 object names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
-     * <i>Amazon S3 Developer Guide</i>.
-     * </p>
-     * <p>
-     * For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      * 
      * @param vocabularyFileUri
-     *        The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the
-     *        same Amazon Web Services Region as the resource that you are calling. The following is the format for a
-     *        URI:</p>
+     *        The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be
+     *        located in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
-     *        </p>
-     *        <p>
-     *        For more information about Amazon S3 object names, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in
-     *        the <i>Amazon S3 Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom
-     *        Vocabularies</a>.
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -114,7 +114,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     private String userData;
     /**
      * <p>
-     * The tags.
+     * The tags that are applied to the resources that are created during instance launch.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateTagSpecification> tagSpecifications;
@@ -218,6 +218,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private LaunchTemplateInstanceMaintenanceOptions maintenanceOptions;
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     */
+    private Boolean disableApiStop;
 
     /**
      * <p>
@@ -925,10 +933,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * The tags that are applied to the resources that are created during instance launch.
      * </p>
      * 
-     * @return The tags.
+     * @return The tags that are applied to the resources that are created during instance launch.
      */
 
     public java.util.List<LaunchTemplateTagSpecification> getTagSpecifications() {
@@ -940,11 +948,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * The tags that are applied to the resources that are created during instance launch.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags.
+     *        The tags that are applied to the resources that are created during instance launch.
      */
 
     public void setTagSpecifications(java.util.Collection<LaunchTemplateTagSpecification> tagSpecifications) {
@@ -958,7 +966,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * The tags that are applied to the resources that are created during instance launch.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -967,7 +975,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags.
+     *        The tags that are applied to the resources that are created during instance launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -983,11 +991,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * The tags that are applied to the resources that are created during instance launch.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags.
+     *        The tags that are applied to the resources that are created during instance launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1823,6 +1831,74 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * 
+     * @param disableApiStop
+     *        Indicates whether the instance is enabled for stop protection. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *        Protection</a>.
+     */
+
+    public void setDisableApiStop(Boolean disableApiStop) {
+        this.disableApiStop = disableApiStop;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * 
+     * @return Indicates whether the instance is enabled for stop protection. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *         Protection</a>.
+     */
+
+    public Boolean getDisableApiStop() {
+        return this.disableApiStop;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * 
+     * @param disableApiStop
+     *        Indicates whether the instance is enabled for stop protection. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *        Protection</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withDisableApiStop(Boolean disableApiStop) {
+        setDisableApiStop(disableApiStop);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for stop protection. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.
+     * </p>
+     * 
+     * @return Indicates whether the instance is enabled for stop protection. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     *         Protection</a>.
+     */
+
+    public Boolean isDisableApiStop() {
+        return this.disableApiStop;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1893,7 +1969,9 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (getPrivateDnsNameOptions() != null)
             sb.append("PrivateDnsNameOptions: ").append(getPrivateDnsNameOptions()).append(",");
         if (getMaintenanceOptions() != null)
-            sb.append("MaintenanceOptions: ").append(getMaintenanceOptions());
+            sb.append("MaintenanceOptions: ").append(getMaintenanceOptions()).append(",");
+        if (getDisableApiStop() != null)
+            sb.append("DisableApiStop: ").append(getDisableApiStop());
         sb.append("}");
         return sb.toString();
     }
@@ -2030,6 +2108,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getMaintenanceOptions() != null && other.getMaintenanceOptions().equals(this.getMaintenanceOptions()) == false)
             return false;
+        if (other.getDisableApiStop() == null ^ this.getDisableApiStop() == null)
+            return false;
+        if (other.getDisableApiStop() != null && other.getDisableApiStop().equals(this.getDisableApiStop()) == false)
+            return false;
         return true;
     }
 
@@ -2068,6 +2150,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceRequirements() == null) ? 0 : getInstanceRequirements().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsNameOptions() == null) ? 0 : getPrivateDnsNameOptions().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceOptions() == null) ? 0 : getMaintenanceOptions().hashCode());
+        hashCode = prime * hashCode + ((getDisableApiStop() == null) ? 0 : getDisableApiStop().hashCode());
         return hashCode;
     }
 

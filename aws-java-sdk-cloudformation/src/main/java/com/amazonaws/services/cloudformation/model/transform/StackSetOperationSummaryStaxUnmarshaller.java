@@ -67,6 +67,21 @@ public class StackSetOperationSummaryStaxUnmarshaller implements Unmarshaller<St
                     stackSetOperationSummary.setEndTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StatusReason", targetDepth)) {
+                    stackSetOperationSummary.setStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StatusDetails", targetDepth)) {
+                    stackSetOperationSummary.setStatusDetails(StackSetOperationStatusDetailsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OperationPreferences", targetDepth)) {
+                    stackSetOperationSummary.setOperationPreferences(StackSetOperationPreferencesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSetOperationSummary;

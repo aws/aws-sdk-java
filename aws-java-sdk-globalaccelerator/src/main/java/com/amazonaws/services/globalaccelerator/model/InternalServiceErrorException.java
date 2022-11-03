@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There was an internal error for AWS Global Accelerator.
+ * There was an internal error for Global Accelerator.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

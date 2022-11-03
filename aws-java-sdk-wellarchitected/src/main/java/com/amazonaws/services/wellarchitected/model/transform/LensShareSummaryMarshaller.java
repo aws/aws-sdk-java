@@ -33,6 +33,8 @@ public class LensShareSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharedWith").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
 
     private static final LensShareSummaryMarshaller instance = new LensShareSummaryMarshaller();
 
@@ -53,6 +55,7 @@ public class LensShareSummaryMarshaller {
             protocolMarshaller.marshall(lensShareSummary.getShareId(), SHAREID_BINDING);
             protocolMarshaller.marshall(lensShareSummary.getSharedWith(), SHAREDWITH_BINDING);
             protocolMarshaller.marshall(lensShareSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(lensShareSummary.getStatusMessage(), STATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -64,6 +64,16 @@ public class ExpenseFieldJsonUnmarshaller implements Unmarshaller<ExpenseField, 
                     context.nextToken();
                     expenseField.setPageNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Currency", targetDepth)) {
+                    context.nextToken();
+                    expenseField.setCurrency(ExpenseCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("GroupProperties", targetDepth)) {
+                    context.nextToken();
+                    expenseField.setGroupProperties(new ListUnmarshaller<ExpenseGroupProperty>(ExpenseGroupPropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

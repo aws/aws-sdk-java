@@ -2369,6 +2369,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
+     * interval, timeout, or success codes.
+     * </p>
      * 
      * @param modifyTargetGroupRequest
      * @return Result of the ModifyTargetGroup operation returned by the service.
@@ -2694,8 +2698,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer or Network Load
-     * Balancer.
+     * Sets the type of IP addresses used by the subnets of the specified load balancer.
      * </p>
      * 
      * @param setIpAddressTypeRequest

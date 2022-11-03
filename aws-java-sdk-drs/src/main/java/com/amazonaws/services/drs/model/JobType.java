@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum JobType {
 
     LAUNCH("LAUNCH"),
-    TERMINATE("TERMINATE");
+    TERMINATE("TERMINATE"),
+    CREATE_CONVERTED_SNAPSHOT("CREATE_CONVERTED_SNAPSHOT");
 
     private String value;
 

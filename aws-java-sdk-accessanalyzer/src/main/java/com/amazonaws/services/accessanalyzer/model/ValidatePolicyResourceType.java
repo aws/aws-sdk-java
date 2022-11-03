@@ -23,7 +23,8 @@ public enum ValidatePolicyResourceType {
     AWSS3Bucket("AWS::S3::Bucket"),
     AWSS3AccessPoint("AWS::S3::AccessPoint"),
     AWSS3MultiRegionAccessPoint("AWS::S3::MultiRegionAccessPoint"),
-    AWSS3ObjectLambdaAccessPoint("AWS::S3ObjectLambda::AccessPoint");
+    AWSS3ObjectLambdaAccessPoint("AWS::S3ObjectLambda::AccessPoint"),
+    AWSIAMAssumeRolePolicyDocument("AWS::IAM::AssumeRolePolicyDocument");
 
     private String value;
 

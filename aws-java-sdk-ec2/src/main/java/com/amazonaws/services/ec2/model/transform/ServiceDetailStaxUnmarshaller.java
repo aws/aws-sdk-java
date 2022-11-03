@@ -139,6 +139,17 @@ public class ServiceDetailStaxUnmarshaller implements Unmarshaller<ServiceDetail
                     serviceDetail.setPrivateDnsNameVerificationState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("supportedIpAddressTypeSet", targetDepth)) {
+                    serviceDetail.withSupportedIpAddressTypes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("supportedIpAddressTypeSet/item", targetDepth)) {
+                    serviceDetail.withSupportedIpAddressTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return serviceDetail;

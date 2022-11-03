@@ -137,8 +137,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a
- * certificate revocation list (CRL)</a> in the <i>Certificate Manager Private Certificate Authority (PCA) User
- * Guide</i>
+ * certificate revocation list (CRL)</a> in the <i>Private Certificate Authority (PCA) User Guide</i>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CrlConfiguration" target="_top">AWS API

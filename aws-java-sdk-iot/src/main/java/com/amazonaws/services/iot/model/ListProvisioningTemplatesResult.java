@@ -20,7 +20,7 @@ public class ListProvisioningTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of fleet provisioning templates
+     * A list of provisioning templates
      * </p>
      */
     private java.util.List<ProvisioningTemplateSummary> templates;
@@ -33,10 +33,10 @@ public class ListProvisioningTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of fleet provisioning templates
+     * A list of provisioning templates
      * </p>
      * 
-     * @return A list of fleet provisioning templates
+     * @return A list of provisioning templates
      */
 
     public java.util.List<ProvisioningTemplateSummary> getTemplates() {
@@ -45,11 +45,11 @@ public class ListProvisioningTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of fleet provisioning templates
+     * A list of provisioning templates
      * </p>
      * 
      * @param templates
-     *        A list of fleet provisioning templates
+     *        A list of provisioning templates
      */
 
     public void setTemplates(java.util.Collection<ProvisioningTemplateSummary> templates) {
@@ -63,7 +63,7 @@ public class ListProvisioningTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of fleet provisioning templates
+     * A list of provisioning templates
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +72,7 @@ public class ListProvisioningTemplatesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param templates
-     *        A list of fleet provisioning templates
+     *        A list of provisioning templates
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class ListProvisioningTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of fleet provisioning templates
+     * A list of provisioning templates
      * </p>
      * 
      * @param templates
-     *        A list of fleet provisioning templates
+     *        A list of provisioning templates
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

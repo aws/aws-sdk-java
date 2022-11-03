@@ -88,6 +88,14 @@ public class SampledHTTPRequestJsonUnmarshaller implements Unmarshaller<SampledH
                     context.nextToken();
                     sampledHTTPRequest.setCaptchaResponse(CaptchaResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ChallengeResponse", targetDepth)) {
+                    context.nextToken();
+                    sampledHTTPRequest.setChallengeResponse(ChallengeResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OverriddenAction", targetDepth)) {
+                    context.nextToken();
+                    sampledHTTPRequest.setOverriddenAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.wellarchitected.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +41,8 @@ public class LensMarshaller {
             .marshallLocationName("Owner").build();
     private static final MarshallingInfo<String> SHAREINVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareInvitationId").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final LensMarshaller instance = new LensMarshaller();
 
@@ -62,6 +66,7 @@ public class LensMarshaller {
             protocolMarshaller.marshall(lens.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(lens.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(lens.getShareInvitationId(), SHAREINVITATIONID_BINDING);
+            protocolMarshaller.marshall(lens.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

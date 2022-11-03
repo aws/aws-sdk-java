@@ -62,6 +62,11 @@ public class SlotJsonUnmarshaller implements Unmarshaller<Slot, JsonUnmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("subSlots", targetDepth)) {
+                    context.nextToken();
+                    slot.setSubSlots(new MapUnmarshaller<String, Slot>(context.getUnmarshaller(String.class), SlotJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

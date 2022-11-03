@@ -31,6 +31,8 @@ public class SNSConfigurationMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> SNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsTopicArn").build();
+    private static final MarshallingInfo<String> SNSFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SnsFormat").build();
 
     private static final SNSConfigurationMarshaller instance = new SNSConfigurationMarshaller();
 
@@ -50,6 +52,7 @@ public class SNSConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(sNSConfiguration.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(sNSConfiguration.getSnsTopicArn(), SNSTOPICARN_BINDING);
+            protocolMarshaller.marshall(sNSConfiguration.getSnsFormat(), SNSFORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used
+ * This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used
  * as a response element in the following actions:
  * </p>
  * <ul>

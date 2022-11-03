@@ -27,18 +27,18 @@ public class GetServiceTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the service template that you want to get detail data for.
+     * The name of the service template that you want to get detailed data for.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the service template that you want to get detail data for.
+     * The name of the service template that you want to get detailed data for.
      * </p>
      * 
      * @param name
-     *        The name of the service template that you want to get detail data for.
+     *        The name of the service template that you want to get detailed data for.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class GetServiceTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the service template that you want to get detail data for.
+     * The name of the service template that you want to get detailed data for.
      * </p>
      * 
-     * @return The name of the service template that you want to get detail data for.
+     * @return The name of the service template that you want to get detailed data for.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class GetServiceTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the service template that you want to get detail data for.
+     * The name of the service template that you want to get detailed data for.
      * </p>
      * 
      * @param name
-     *        The name of the service template that you want to get detail data for.
+     *        The name of the service template that you want to get detailed data for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

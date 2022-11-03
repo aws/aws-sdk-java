@@ -49,7 +49,7 @@ public class AwsEc2VpcDetails implements Serializable, Cloneable, StructuredPojo
     private String dhcpOptionsId;
     /**
      * <p>
-     * The current state of the VPC.
+     * The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      */
     private String state;
@@ -242,11 +242,11 @@ public class AwsEc2VpcDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current state of the VPC.
+     * The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      * 
      * @param state
-     *        The current state of the VPC.
+     *        The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      */
 
     public void setState(String state) {
@@ -255,10 +255,10 @@ public class AwsEc2VpcDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current state of the VPC.
+     * The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      * 
-     * @return The current state of the VPC.
+     * @return The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      */
 
     public String getState() {
@@ -267,11 +267,11 @@ public class AwsEc2VpcDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current state of the VPC.
+     * The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      * 
      * @param state
-     *        The current state of the VPC.
+     *        The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

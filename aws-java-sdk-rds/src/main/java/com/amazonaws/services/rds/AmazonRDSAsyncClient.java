@@ -3706,6 +3706,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyActivityStreamResult> modifyActivityStreamAsync(ModifyActivityStreamRequest request) {
+
+        return modifyActivityStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyActivityStreamResult> modifyActivityStreamAsync(final ModifyActivityStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyActivityStreamRequest, ModifyActivityStreamResult> asyncHandler) {
+        final ModifyActivityStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyActivityStreamResult>() {
+            @Override
+            public ModifyActivityStreamResult call() throws Exception {
+                ModifyActivityStreamResult result = null;
+
+                try {
+                    result = executeModifyActivityStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Certificate> modifyCertificatesAsync(ModifyCertificatesRequest request) {
 
         return modifyCertificatesAsync(request, null);
@@ -5249,6 +5282,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeStopDBInstanceAutomatedBackupsReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstance> switchoverReadReplicaAsync(SwitchoverReadReplicaRequest request) {
+
+        return switchoverReadReplicaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstance> switchoverReadReplicaAsync(final SwitchoverReadReplicaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SwitchoverReadReplicaRequest, DBInstance> asyncHandler) {
+        final SwitchoverReadReplicaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DBInstance>() {
+            @Override
+            public DBInstance call() throws Exception {
+                DBInstance result = null;
+
+                try {
+                    result = executeSwitchoverReadReplica(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

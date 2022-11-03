@@ -499,12 +499,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is
-     * unsupported.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
@@ -713,6 +707,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </important>
      */
     private String trafficPolicyInstanceId;
+
+    private CidrRoutingConfig cidrRoutingConfig;
 
     /**
      * Default constructor for ResourceRecordSet object. Callers should use the setter or fluent setter (with...)
@@ -4768,12 +4764,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is
-     * unsupported.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
@@ -4792,12 +4782,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
      *        distribution.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted
-     *        zone is unsupported.
      *        </p>
      *        </li>
      *        <li>
@@ -4830,12 +4814,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is
-     * unsupported.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
@@ -4853,12 +4831,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <p>
      *         You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
      *         distribution.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted
-     *         zone is unsupported.
      *         </p>
      *         </li>
      *         <li>
@@ -4891,12 +4863,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is
-     * unsupported.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
@@ -4915,12 +4881,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
      *        distribution.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted
-     *        zone is unsupported.
      *        </p>
      *        </li>
      *        <li>
@@ -6148,6 +6108,32 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     }
 
     /**
+     * @param cidrRoutingConfig
+     */
+
+    public void setCidrRoutingConfig(CidrRoutingConfig cidrRoutingConfig) {
+        this.cidrRoutingConfig = cidrRoutingConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public CidrRoutingConfig getCidrRoutingConfig() {
+        return this.cidrRoutingConfig;
+    }
+
+    /**
+     * @param cidrRoutingConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceRecordSet withCidrRoutingConfig(CidrRoutingConfig cidrRoutingConfig) {
+        setCidrRoutingConfig(cidrRoutingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6184,7 +6170,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         if (getHealthCheckId() != null)
             sb.append("HealthCheckId: ").append(getHealthCheckId()).append(",");
         if (getTrafficPolicyInstanceId() != null)
-            sb.append("TrafficPolicyInstanceId: ").append(getTrafficPolicyInstanceId());
+            sb.append("TrafficPolicyInstanceId: ").append(getTrafficPolicyInstanceId()).append(",");
+        if (getCidrRoutingConfig() != null)
+            sb.append("CidrRoutingConfig: ").append(getCidrRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -6251,6 +6239,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             return false;
         if (other.getTrafficPolicyInstanceId() != null && other.getTrafficPolicyInstanceId().equals(this.getTrafficPolicyInstanceId()) == false)
             return false;
+        if (other.getCidrRoutingConfig() == null ^ this.getCidrRoutingConfig() == null)
+            return false;
+        if (other.getCidrRoutingConfig() != null && other.getCidrRoutingConfig().equals(this.getCidrRoutingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -6272,6 +6264,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAliasTarget() == null) ? 0 : getAliasTarget().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode());
         hashCode = prime * hashCode + ((getTrafficPolicyInstanceId() == null) ? 0 : getTrafficPolicyInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getCidrRoutingConfig() == null) ? 0 : getCidrRoutingConfig().hashCode());
         return hashCode;
     }
 

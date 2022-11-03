@@ -31,6 +31,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * For information about the format of the response body, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
+     * <p>
+     * If the explainer is activated, the body includes the explanations provided by the model. For more information,
+     * see the <b>Response section</b> under <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     * >Invoke the Endpoint</a> in the Developer Guide.
+     * </p>
      */
     private java.nio.ByteBuffer body;
     /**
@@ -76,6 +82,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
+     * If the explainer is activated, the body includes the explanations provided by the model. For more information,
+     * see the <b>Response section</b> under <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     * >Invoke the Endpoint</a> in the Developer Guide.
+     * </p>
+     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -87,11 +99,17 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param body
-     *        Includes the inference provided by the model.</p>
+     *        Includes the inference provided by the model. </p>
      *        <p>
      *        For information about the format of the response body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *        Formats-Inference</a>.
+     *        </p>
+     *        <p>
+     *        If the explainer is activated, the body includes the explanations provided by the model. For more
+     *        information, see the <b>Response section</b> under <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     *        >Invoke the Endpoint</a> in the Developer Guide.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -107,6 +125,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
+     * If the explainer is activated, the body includes the explanations provided by the model. For more information,
+     * see the <b>Response section</b> under <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     * >Invoke the Endpoint</a> in the Developer Guide.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
      * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
@@ -114,11 +138,17 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * {@code position}.
      * </p>
      * 
-     * @return Includes the inference provided by the model.</p>
+     * @return Includes the inference provided by the model. </p>
      *         <p>
      *         For information about the format of the response body, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *         Formats-Inference</a>.
+     *         </p>
+     *         <p>
+     *         If the explainer is activated, the body includes the explanations provided by the model. For more
+     *         information, see the <b>Response section</b> under <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     *         >Invoke the Endpoint</a> in the Developer Guide.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -134,6 +164,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
+     * If the explainer is activated, the body includes the explanations provided by the model. For more information,
+     * see the <b>Response section</b> under <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     * >Invoke the Endpoint</a> in the Developer Guide.
+     * </p>
+     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -145,11 +181,17 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param body
-     *        Includes the inference provided by the model.</p>
+     *        Includes the inference provided by the model. </p>
      *        <p>
      *        For information about the format of the response body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *        Formats-Inference</a>.
+     *        </p>
+     *        <p>
+     *        If the explainer is activated, the body includes the explanations provided by the model. For more
+     *        information, see the <b>Response section</b> under <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response"
+     *        >Invoke the Endpoint</a> in the Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

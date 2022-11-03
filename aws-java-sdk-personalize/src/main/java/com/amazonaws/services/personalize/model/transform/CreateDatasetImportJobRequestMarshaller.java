@@ -38,6 +38,8 @@ public class CreateDatasetImportJobRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> IMPORTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("importMode").build();
 
     private static final CreateDatasetImportJobRequestMarshaller instance = new CreateDatasetImportJobRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateDatasetImportJobRequestMarshaller {
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getImportMode(), IMPORTMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

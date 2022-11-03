@@ -55,8 +55,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A load balancer object representing the load balancers to use with your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
-     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
+     * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application
@@ -358,8 +358,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
+     * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private Boolean enableECSManagedTags;
@@ -553,8 +553,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A load balancer object representing the load balancers to use with your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
-     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
+     * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application
@@ -600,7 +600,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return A load balancer object representing the load balancers to use with your service. For more information,
      *         see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     *         Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *         load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
      *         If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an
      *         Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
@@ -655,8 +655,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A load balancer object representing the load balancers to use with your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
-     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
+     * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application
@@ -702,7 +702,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param loadBalancers
      *        A load balancer object representing the load balancers to use with your service. For more information, see
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an
      *        Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
@@ -759,8 +759,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A load balancer object representing the load balancers to use with your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
-     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
+     * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application
@@ -811,7 +811,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param loadBalancers
      *        A load balancer object representing the load balancers to use with your service. For more information, see
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an
      *        Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
@@ -870,8 +870,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A load balancer object representing the load balancers to use with your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
-     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
+     * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application
@@ -917,7 +917,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param loadBalancers
      *        A load balancer object representing the load balancers to use with your service. For more information, see
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an
      *        Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
@@ -2979,15 +2979,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
+     * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
-     *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon
+     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
@@ -2997,14 +2997,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
+     * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
-     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your
+     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean getEnableECSManagedTags() {
@@ -3014,15 +3014,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
+     * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
-     *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon
+     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3034,14 +3034,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
+     * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
-     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your
+     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean isEnableECSManagedTags() {

@@ -63,6 +63,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
     }
 
     @Override
+    public GetConnectionResult getConnection(GetConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetOrderResult getOrder(GetOrderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +119,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartConnectionResult startConnection(StartConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

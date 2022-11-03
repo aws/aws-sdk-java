@@ -51,6 +51,10 @@ public class PlaceMarshaller {
             .marshallLocationName("SubRegion").build();
     private static final MarshallingInfo<StructuredPojo> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeZone").build();
+    private static final MarshallingInfo<String> UNITNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnitNumber").build();
+    private static final MarshallingInfo<String> UNITTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UnitType").build();
 
     private static final PlaceMarshaller instance = new PlaceMarshaller();
 
@@ -80,6 +84,8 @@ public class PlaceMarshaller {
             protocolMarshaller.marshall(place.getStreet(), STREET_BINDING);
             protocolMarshaller.marshall(place.getSubRegion(), SUBREGION_BINDING);
             protocolMarshaller.marshall(place.getTimeZone(), TIMEZONE_BINDING);
+            protocolMarshaller.marshall(place.getUnitNumber(), UNITNUMBER_BINDING);
+            protocolMarshaller.marshall(place.getUnitType(), UNITTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

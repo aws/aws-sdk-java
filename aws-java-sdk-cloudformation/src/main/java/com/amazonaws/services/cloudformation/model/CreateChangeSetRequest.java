@@ -109,8 +109,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -190,7 +190,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * For more information on macros, see <a
+     * For more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
@@ -661,8 +661,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -742,7 +742,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * For more information on macros, see <a
+     * For more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
@@ -784,7 +784,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         </ul>
      *         <p>
-     *         If your stack template contains these resources, we recommend that you review all permissions associated
+     *         If your stack template contains these resources, we suggest that you review all permissions associated
      *         with them and edit their permissions if necessary.
      *         </p>
      *         <ul>
@@ -869,7 +869,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         </note>
      *         <p>
-     *         For more information on macros, see <a
+     *         For more information about macros, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *         CloudFormation macros to perform custom processing on templates</a>.
      *         </p>
@@ -922,8 +922,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1003,7 +1003,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * For more information on macros, see <a
+     * For more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
@@ -1046,7 +1046,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1131,7 +1131,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on macros, see <a
+     *        For more information about macros, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
@@ -1186,8 +1186,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1267,7 +1267,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * For more information on macros, see <a
+     * For more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
@@ -1315,7 +1315,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1400,7 +1400,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on macros, see <a
+     *        For more information about macros, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
@@ -1457,8 +1457,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1538,7 +1538,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * For more information on macros, see <a
+     * For more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
@@ -1581,7 +1581,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1666,7 +1666,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on macros, see <a
+     *        For more information about macros, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
@@ -1718,8 +1718,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1799,7 +1799,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * For more information on macros, see <a
+     * For more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
@@ -1842,7 +1842,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1927,7 +1927,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on macros, see <a
+     *        For more information about macros, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>

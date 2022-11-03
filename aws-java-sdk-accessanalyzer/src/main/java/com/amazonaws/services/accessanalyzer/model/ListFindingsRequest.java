@@ -44,10 +44,10 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Map<String, Criterion> filter;
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The sort order for the findings returned.
      * </p>
      */
-    private Integer maxResults;
+    private SortCriteria sort;
     /**
      * <p>
      * A token used for pagination of results returned.
@@ -56,10 +56,10 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * The sort order for the findings returned.
+     * The maximum number of results to return in the response.
      * </p>
      */
-    private SortCriteria sort;
+    private Integer maxResults;
 
     /**
      * <p>
@@ -183,41 +183,41 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The sort order for the findings returned.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in the response.
+     * @param sort
+     *        The sort order for the findings returned.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setSort(SortCriteria sort) {
+        this.sort = sort;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The sort order for the findings returned.
      * </p>
      * 
-     * @return The maximum number of results to return in the response.
+     * @return The sort order for the findings returned.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public SortCriteria getSort() {
+        return this.sort;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The sort order for the findings returned.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in the response.
+     * @param sort
+     *        The sort order for the findings returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListFindingsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
+    public ListFindingsRequest withSort(SortCriteria sort) {
+        setSort(sort);
         return this;
     }
 
@@ -263,41 +263,41 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The sort order for the findings returned.
+     * The maximum number of results to return in the response.
      * </p>
      * 
-     * @param sort
-     *        The sort order for the findings returned.
+     * @param maxResults
+     *        The maximum number of results to return in the response.
      */
 
-    public void setSort(SortCriteria sort) {
-        this.sort = sort;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The sort order for the findings returned.
+     * The maximum number of results to return in the response.
      * </p>
      * 
-     * @return The sort order for the findings returned.
+     * @return The maximum number of results to return in the response.
      */
 
-    public SortCriteria getSort() {
-        return this.sort;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The sort order for the findings returned.
+     * The maximum number of results to return in the response.
      * </p>
      * 
-     * @param sort
-     *        The sort order for the findings returned.
+     * @param maxResults
+     *        The maximum number of results to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListFindingsRequest withSort(SortCriteria sort) {
-        setSort(sort);
+    public ListFindingsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -317,12 +317,12 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getSort() != null)
+            sb.append("Sort: ").append(getSort()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getSort() != null)
-            sb.append("Sort: ").append(getSort());
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -345,17 +345,17 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getSort() == null ^ this.getSort() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getSort() != null && other.getSort().equals(this.getSort()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getSort() == null ^ this.getSort() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getSort() != null && other.getSort().equals(this.getSort()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -367,9 +367,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSort() == null) ? 0 : getSort().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

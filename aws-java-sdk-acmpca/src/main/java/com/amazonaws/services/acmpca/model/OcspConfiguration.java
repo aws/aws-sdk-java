@@ -50,7 +50,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      */
     private String ocspCustomCname;
@@ -123,7 +123,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      * 
      * @param ocspCustomCname
@@ -136,8 +136,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online
-     *        Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA)
-     *        User Guide</i>.
+     *        Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      */
 
     public void setOcspCustomCname(String ocspCustomCname) {
@@ -156,7 +155,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      * 
      * @return By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the
@@ -168,8 +167,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online
-     *         Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA)
-     *         User Guide</i>.
+     *         Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      */
 
     public String getOcspCustomCname() {
@@ -188,7 +186,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      * 
      * @param ocspCustomCname
@@ -201,8 +199,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online
-     *        Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA)
-     *        User Guide</i>.
+     *        Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate Authority (PCA) User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

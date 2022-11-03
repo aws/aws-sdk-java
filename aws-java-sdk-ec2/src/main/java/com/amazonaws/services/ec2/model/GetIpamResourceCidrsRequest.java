@@ -69,7 +69,11 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
      * </p>
      */
     private String resourceType;
-
+    /**
+     * <p>
+     * The resource tag.
+     * </p>
+     */
     private RequestIpamResourceTag resourceTag;
     /**
      * <p>
@@ -419,7 +423,12 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * The resource tag.
+     * </p>
+     * 
      * @param resourceTag
+     *        The resource tag.
      */
 
     public void setResourceTag(RequestIpamResourceTag resourceTag) {
@@ -427,7 +436,11 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * @return
+     * <p>
+     * The resource tag.
+     * </p>
+     * 
+     * @return The resource tag.
      */
 
     public RequestIpamResourceTag getResourceTag() {
@@ -435,7 +448,12 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * The resource tag.
+     * </p>
+     * 
      * @param resourceTag
+     *        The resource tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

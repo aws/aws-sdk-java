@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Settings for content redaction within a transcription job.
+ * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
+ * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
+ * <code>RedactionOutput</code>, and <code>RedactionType</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction" target="_top">AWS API
@@ -30,37 +32,42 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
      * </p>
      */
     private String redactionType;
     /**
      * <p>
-     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
+     * Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     * When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
-     * transcripts.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted
+     * transcript (as two separate files).
      * </p>
      */
     private String redactionOutput;
     /**
      * <p>
-     * The types of personally identifiable information (PII) you want to redact in your transcript.
+     * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
+     * include as many types as you'd like, or you can select <code>ALL</code>.
      * </p>
      */
     private java.util.List<String> piiEntityTypes;
 
     /**
      * <p>
-     * Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
      * </p>
      * 
      * @param redactionType
-     *        Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     *        Specify the category of information you want to redact; <code>PII</code> (personally identifiable
+     *        information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII
+     *        you want to redact.
      * @see RedactionType
      */
 
@@ -70,10 +77,13 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
      * </p>
      * 
-     * @return Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     * @return Specify the category of information you want to redact; <code>PII</code> (personally identifiable
+     *         information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of
+     *         PII you want to redact.
      * @see RedactionType
      */
 
@@ -83,11 +93,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
      * </p>
      * 
      * @param redactionType
-     *        Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     *        Specify the category of information you want to redact; <code>PII</code> (personally identifiable
+     *        information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII
+     *        you want to redact.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionType
      */
@@ -99,11 +112,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
      * </p>
      * 
      * @param redactionType
-     *        Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.
+     *        Specify the category of information you want to redact; <code>PII</code> (personally identifiable
+     *        information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII
+     *        you want to redact.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionType
      */
@@ -115,24 +131,25 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
+     * Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     * When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
-     * transcripts.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted
+     * transcript (as two separate files).
      * </p>
      * 
      * @param redactionOutput
-     *        The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
+     *        Specify if you want only a redacted transcript, or if you want a redacted and an unredacted
+     *        transcript.</p>
      *        <p>
-     *        When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     *        When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      *        </p>
      *        <p>
-     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
-     *        unredacted transcripts.
+     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an
+     *        unredacted transcript (as two separate files).
      * @see RedactionOutput
      */
 
@@ -142,23 +159,24 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
+     * Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     * When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
-     * transcripts.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted
+     * transcript (as two separate files).
      * </p>
      * 
-     * @return The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
+     * @return Specify if you want only a redacted transcript, or if you want a redacted and an unredacted
+     *         transcript.</p>
      *         <p>
-     *         When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     *         When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      *         </p>
      *         <p>
-     *         When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
-     *         unredacted transcripts.
+     *         When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an
+     *         unredacted transcript (as two separate files).
      * @see RedactionOutput
      */
 
@@ -168,24 +186,25 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
+     * Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     * When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
-     * transcripts.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted
+     * transcript (as two separate files).
      * </p>
      * 
      * @param redactionOutput
-     *        The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
+     *        Specify if you want only a redacted transcript, or if you want a redacted and an unredacted
+     *        transcript.</p>
      *        <p>
-     *        When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     *        When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      *        </p>
      *        <p>
-     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
-     *        unredacted transcripts.
+     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an
+     *        unredacted transcript (as two separate files).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionOutput
      */
@@ -197,24 +216,25 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
+     * Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     * When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
-     * transcripts.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted
+     * transcript (as two separate files).
      * </p>
      * 
      * @param redactionOutput
-     *        The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
+     *        Specify if you want only a redacted transcript, or if you want a redacted and an unredacted
+     *        transcript.</p>
      *        <p>
-     *        When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
+     *        When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.
      *        </p>
      *        <p>
-     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
-     *        unredacted transcripts.
+     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an
+     *        unredacted transcript (as two separate files).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionOutput
      */
@@ -226,10 +246,12 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The types of personally identifiable information (PII) you want to redact in your transcript.
+     * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
+     * include as many types as you'd like, or you can select <code>ALL</code>.
      * </p>
      * 
-     * @return The types of personally identifiable information (PII) you want to redact in your transcript.
+     * @return Specify which types of personally identifiable information (PII) you want to redact in your transcript.
+     *         You can include as many types as you'd like, or you can select <code>ALL</code>.
      * @see PiiEntityType
      */
 
@@ -239,11 +261,13 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The types of personally identifiable information (PII) you want to redact in your transcript.
+     * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
+     * include as many types as you'd like, or you can select <code>ALL</code>.
      * </p>
      * 
      * @param piiEntityTypes
-     *        The types of personally identifiable information (PII) you want to redact in your transcript.
+     *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
      * @see PiiEntityType
      */
 
@@ -258,7 +282,8 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The types of personally identifiable information (PII) you want to redact in your transcript.
+     * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
+     * include as many types as you'd like, or you can select <code>ALL</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -267,7 +292,8 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param piiEntityTypes
-     *        The types of personally identifiable information (PII) you want to redact in your transcript.
+     *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PiiEntityType
      */
@@ -284,11 +310,13 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The types of personally identifiable information (PII) you want to redact in your transcript.
+     * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
+     * include as many types as you'd like, or you can select <code>ALL</code>.
      * </p>
      * 
      * @param piiEntityTypes
-     *        The types of personally identifiable information (PII) you want to redact in your transcript.
+     *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PiiEntityType
      */
@@ -300,11 +328,13 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The types of personally identifiable information (PII) you want to redact in your transcript.
+     * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
+     * include as many types as you'd like, or you can select <code>ALL</code>.
      * </p>
      * 
      * @param piiEntityTypes
-     *        The types of personally identifiable information (PII) you want to redact in your transcript.
+     *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PiiEntityType
      */

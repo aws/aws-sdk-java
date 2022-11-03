@@ -119,6 +119,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public GetDataProtectionPolicyResult getDataProtectionPolicy(GetDataProtectionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -260,6 +265,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public PublishBatchResult publishBatch(PublishBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDataProtectionPolicyResult putDataProtectionPolicy(PutDataProtectionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

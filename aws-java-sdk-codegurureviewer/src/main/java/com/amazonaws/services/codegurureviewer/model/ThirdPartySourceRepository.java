@@ -39,8 +39,8 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      */
     private String connectionArn;
@@ -48,7 +48,7 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * <p>
      * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
      * the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services
-     * account ID.
+     * account ID
      * </p>
      */
     private String owner;
@@ -98,16 +98,16 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     *        <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
+     *        >Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -119,15 +119,15 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      *         <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     *         <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
+     *         >Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      */
 
     public String getConnectionArn() {
@@ -139,16 +139,16 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     *        <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
+     *        >Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +161,13 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * <p>
      * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
      * the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services
-     * account ID.
+     * account ID
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the
      *        username for the account that owns the repository. For an S3 repository, this can be the username or
-     *        Amazon Web Services account ID.
+     *        Amazon Web Services account ID
      */
 
     public void setOwner(String owner) {
@@ -178,12 +178,12 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * <p>
      * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
      * the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services
-     * account ID.
+     * account ID
      * </p>
      * 
      * @return The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the
      *         username for the account that owns the repository. For an S3 repository, this can be the username or
-     *         Amazon Web Services account ID.
+     *         Amazon Web Services account ID
      */
 
     public String getOwner() {
@@ -194,13 +194,13 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * <p>
      * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
      * the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services
-     * account ID.
+     * account ID
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the
      *        username for the account that owns the repository. For an S3 repository, this can be the username or
-     *        Amazon Web Services account ID.
+     *        Amazon Web Services account ID
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

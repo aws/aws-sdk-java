@@ -27,7 +27,7 @@ public class CreateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be created.
+     * The WorkMail organization under which the rule will be created.
      * </p>
      */
     private String organizationId;
@@ -106,11 +106,11 @@ public class CreateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be created.
+     * The WorkMail organization under which the rule will be created.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which the rule will be created.
+     *        The WorkMail organization under which the rule will be created.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -119,10 +119,10 @@ public class CreateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be created.
+     * The WorkMail organization under which the rule will be created.
      * </p>
      * 
-     * @return The Amazon WorkMail organization under which the rule will be created.
+     * @return The WorkMail organization under which the rule will be created.
      */
 
     public String getOrganizationId() {
@@ -131,11 +131,11 @@ public class CreateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be created.
+     * The WorkMail organization under which the rule will be created.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which the rule will be created.
+     *        The WorkMail organization under which the rule will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

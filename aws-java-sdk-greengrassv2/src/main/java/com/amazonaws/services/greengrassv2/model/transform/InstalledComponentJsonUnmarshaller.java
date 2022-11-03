@@ -68,6 +68,24 @@ public class InstalledComponentJsonUnmarshaller implements Unmarshaller<Installe
                     context.nextToken();
                     installedComponent.setIsRoot(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("lastStatusChangeTimestamp", targetDepth)) {
+                    context.nextToken();
+                    installedComponent.setLastStatusChangeTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastReportedTimestamp", targetDepth)) {
+                    context.nextToken();
+                    installedComponent.setLastReportedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastInstallationSource", targetDepth)) {
+                    context.nextToken();
+                    installedComponent.setLastInstallationSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lifecycleStatusCodes", targetDepth)) {
+                    context.nextToken();
+                    installedComponent.setLifecycleStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

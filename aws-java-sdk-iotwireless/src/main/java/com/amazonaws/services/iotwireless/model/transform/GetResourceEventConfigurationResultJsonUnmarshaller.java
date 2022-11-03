@@ -66,6 +66,11 @@ public class GetResourceEventConfigurationResultJsonUnmarshaller implements Unma
                     getResourceEventConfigurationResult.setConnectionStatus(ConnectionStatusEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("MessageDeliveryStatus", targetDepth)) {
+                    context.nextToken();
+                    getResourceEventConfigurationResult.setMessageDeliveryStatus(MessageDeliveryStatusEventConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -118,8 +118,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /** The length, in seconds, of each fragment. Only used with EBP markers. */
     private Double fragmentTime;
     /**
-     * Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     * input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this
+     * KLV metadata: Set KLV metadata insertion to None or leave blank.
      */
     private String klvMetadata;
     /**
@@ -212,7 +213,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private String segmentationStyle;
     /** Specify the length, in seconds, of each segment. Required unless markers is set to _none_. */
     private Double segmentationTime;
-    /** Specify the packet identifier (PID) for timed metadata in this output. Default is 502. */
+    /** Packet Identifier (PID) of the ID3 metadata stream in the transport stream. */
     private Integer timedMetadataPid;
     /**
      * Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and
@@ -1199,12 +1200,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     * input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this
+     * KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
      * @param klvMetadata
-     *        Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from
-     *        the input in this output.
+     *        To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *        MediaConvert reads KLV metadata present in your input and passes it through to the output transport
+     *        stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * @see M2tsKlvMetadata
      */
 
@@ -1213,11 +1216,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     * input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this
+     * KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
-     * @return Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from
-     *         the input in this output.
+     * @return To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *         MediaConvert reads KLV metadata present in your input and passes it through to the output transport
+     *         stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * @see M2tsKlvMetadata
      */
 
@@ -1226,12 +1231,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     * input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this
+     * KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
      * @param klvMetadata
-     *        Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from
-     *        the input in this output.
+     *        To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *        MediaConvert reads KLV metadata present in your input and passes it through to the output transport
+     *        stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsKlvMetadata
      */
@@ -1242,12 +1249,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     * input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this
+     * KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
      * @param klvMetadata
-     *        Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from
-     *        the input in this output.
+     *        To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *        MediaConvert reads KLV metadata present in your input and passes it through to the output transport
+     *        stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsKlvMetadata
      */
@@ -2189,10 +2198,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      * 
      * @param timedMetadataPid
-     *        Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+     *        Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
 
     public void setTimedMetadataPid(Integer timedMetadataPid) {
@@ -2200,9 +2209,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      * 
-     * @return Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+     * @return Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
 
     public Integer getTimedMetadataPid() {
@@ -2210,10 +2219,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      * 
      * @param timedMetadataPid
-     *        Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+     *        Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

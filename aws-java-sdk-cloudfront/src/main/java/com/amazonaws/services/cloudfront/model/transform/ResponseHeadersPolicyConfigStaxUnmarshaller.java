@@ -64,15 +64,15 @@ public class ResponseHeadersPolicyConfigStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
-                if (context.testExpression("CustomHeadersConfig", targetDepth)) {
-                    responseHeadersPolicyConfig.setCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfigStaxUnmarshaller.getInstance().unmarshall(
-                            context));
-                    continue;
-                }
-
                 if (context.testExpression("ServerTimingHeadersConfig", targetDepth)) {
                     responseHeadersPolicyConfig.setServerTimingHeadersConfig(ResponseHeadersPolicyServerTimingHeadersConfigStaxUnmarshaller.getInstance()
                             .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomHeadersConfig", targetDepth)) {
+                    responseHeadersPolicyConfig.setCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfigStaxUnmarshaller.getInstance().unmarshall(
+                            context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

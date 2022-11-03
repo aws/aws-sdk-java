@@ -50,6 +50,12 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private OidcConfig oidcConfig;
+    /**
+     * <p>
+     * Use this parameter to update your VPC configuration for a workforce.
+     * </p>
+     */
+    private WorkforceVpcConfigRequest workforceVpcConfig;
 
     /**
      * <p>
@@ -211,6 +217,46 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Use this parameter to update your VPC configuration for a workforce.
+     * </p>
+     * 
+     * @param workforceVpcConfig
+     *        Use this parameter to update your VPC configuration for a workforce.
+     */
+
+    public void setWorkforceVpcConfig(WorkforceVpcConfigRequest workforceVpcConfig) {
+        this.workforceVpcConfig = workforceVpcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your VPC configuration for a workforce.
+     * </p>
+     * 
+     * @return Use this parameter to update your VPC configuration for a workforce.
+     */
+
+    public WorkforceVpcConfigRequest getWorkforceVpcConfig() {
+        return this.workforceVpcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your VPC configuration for a workforce.
+     * </p>
+     * 
+     * @param workforceVpcConfig
+     *        Use this parameter to update your VPC configuration for a workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkforceRequest withWorkforceVpcConfig(WorkforceVpcConfigRequest workforceVpcConfig) {
+        setWorkforceVpcConfig(workforceVpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -227,7 +273,9 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
         if (getSourceIpConfig() != null)
             sb.append("SourceIpConfig: ").append(getSourceIpConfig()).append(",");
         if (getOidcConfig() != null)
-            sb.append("OidcConfig: ").append(getOidcConfig());
+            sb.append("OidcConfig: ").append(getOidcConfig()).append(",");
+        if (getWorkforceVpcConfig() != null)
+            sb.append("WorkforceVpcConfig: ").append(getWorkforceVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -254,6 +302,10 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getOidcConfig() != null && other.getOidcConfig().equals(this.getOidcConfig()) == false)
             return false;
+        if (other.getWorkforceVpcConfig() == null ^ this.getWorkforceVpcConfig() == null)
+            return false;
+        if (other.getWorkforceVpcConfig() != null && other.getWorkforceVpcConfig().equals(this.getWorkforceVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -265,6 +317,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getWorkforceName() == null) ? 0 : getWorkforceName().hashCode());
         hashCode = prime * hashCode + ((getSourceIpConfig() == null) ? 0 : getSourceIpConfig().hashCode());
         hashCode = prime * hashCode + ((getOidcConfig() == null) ? 0 : getOidcConfig().hashCode());
+        hashCode = prime * hashCode + ((getWorkforceVpcConfig() == null) ? 0 : getWorkforceVpcConfig().hashCode());
         return hashCode;
     }
 

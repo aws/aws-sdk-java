@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Edition {
 
     STANDARD("STANDARD"),
-    ENTERPRISE("ENTERPRISE");
+    ENTERPRISE("ENTERPRISE"),
+    ENTERPRISE_AND_Q("ENTERPRISE_AND_Q");
 
     private String value;
 

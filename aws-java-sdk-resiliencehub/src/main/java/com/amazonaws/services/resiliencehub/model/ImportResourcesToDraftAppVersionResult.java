@@ -26,9 +26,9 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
@@ -51,20 +51,26 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * A list of terraform file s3 URLs you need to import.
+     * </p>
+     */
+    private java.util.List<TerraformSource> terraformSources;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param appArn
      *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *        Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setAppArn(String appArn) {
@@ -73,16 +79,16 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *         Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getAppArn() {
@@ -91,17 +97,17 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param appArn
      *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *        Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,6 +286,76 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A list of terraform file s3 URLs you need to import.
+     * </p>
+     * 
+     * @return A list of terraform file s3 URLs you need to import.
+     */
+
+    public java.util.List<TerraformSource> getTerraformSources() {
+        return terraformSources;
+    }
+
+    /**
+     * <p>
+     * A list of terraform file s3 URLs you need to import.
+     * </p>
+     * 
+     * @param terraformSources
+     *        A list of terraform file s3 URLs you need to import.
+     */
+
+    public void setTerraformSources(java.util.Collection<TerraformSource> terraformSources) {
+        if (terraformSources == null) {
+            this.terraformSources = null;
+            return;
+        }
+
+        this.terraformSources = new java.util.ArrayList<TerraformSource>(terraformSources);
+    }
+
+    /**
+     * <p>
+     * A list of terraform file s3 URLs you need to import.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTerraformSources(java.util.Collection)} or {@link #withTerraformSources(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param terraformSources
+     *        A list of terraform file s3 URLs you need to import.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportResourcesToDraftAppVersionResult withTerraformSources(TerraformSource... terraformSources) {
+        if (this.terraformSources == null) {
+            setTerraformSources(new java.util.ArrayList<TerraformSource>(terraformSources.length));
+        }
+        for (TerraformSource ele : terraformSources) {
+            this.terraformSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of terraform file s3 URLs you need to import.
+     * </p>
+     * 
+     * @param terraformSources
+     *        A list of terraform file s3 URLs you need to import.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportResourcesToDraftAppVersionResult withTerraformSources(java.util.Collection<TerraformSource> terraformSources) {
+        setTerraformSources(terraformSources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -298,7 +374,9 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
         if (getSourceArns() != null)
             sb.append("SourceArns: ").append(getSourceArns()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getTerraformSources() != null)
+            sb.append("TerraformSources: ").append(getTerraformSources());
         sb.append("}");
         return sb.toString();
     }
@@ -329,6 +407,10 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getTerraformSources() == null ^ this.getTerraformSources() == null)
+            return false;
+        if (other.getTerraformSources() != null && other.getTerraformSources().equals(this.getTerraformSources()) == false)
+            return false;
         return true;
     }
 
@@ -341,6 +423,7 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getAppVersion() == null) ? 0 : getAppVersion().hashCode());
         hashCode = prime * hashCode + ((getSourceArns() == null) ? 0 : getSourceArns().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTerraformSources() == null) ? 0 : getTerraformSources().hashCode());
         return hashCode;
     }
 

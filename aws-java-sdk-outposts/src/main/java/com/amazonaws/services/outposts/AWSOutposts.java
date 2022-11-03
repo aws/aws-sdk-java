@@ -47,7 +47,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Cancels an order for an Outpost.
+     * Cancels the specified order for an Outpost.
      * </p>
      * 
      * @param cancelOrderRequest
@@ -98,7 +98,7 @@ public interface AWSOutposts {
      * Creates an Outpost.
      * </p>
      * <p>
-     * You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+     * You can specify either an Availability one or an AZ ID.
      * </p>
      * 
      * @param createOutpostRequest
@@ -146,7 +146,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Deletes the Outpost.
+     * Deletes the specified Outpost.
      * </p>
      * 
      * @param deleteOutpostRequest
@@ -169,7 +169,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Deletes the site.
+     * Deletes the specified site.
      * </p>
      * 
      * @param deleteSiteRequest
@@ -192,7 +192,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Gets information about a catalog item.
+     * Gets information about the specified catalog item.
      * </p>
      * 
      * @param getCatalogItemRequest
@@ -210,8 +210,43 @@ public interface AWSOutposts {
     GetCatalogItemResult getCatalogItem(GetCatalogItemRequest getCatalogItemRequest);
 
     /**
+     * <note>
      * <p>
-     * Gets an order.
+     * Amazon Web Services uses this action to install Outpost servers.
+     * </p>
+     * </note>
+     * <p>
+     * Gets information about the specified connection.
+     * </p>
+     * <p>
+     * Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to
+     * secure it. For more information, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services
+     * managed policies for Amazon Web Services Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web
+     * Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param getConnectionRequest
+     * @return Result of the GetConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.GetConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetConnectionResult getConnection(GetConnectionRequest getConnectionRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified order.
      * </p>
      * 
      * @param getOrderRequest
@@ -293,7 +328,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Gets the site address.
+     * Gets the site address of the specified site.
      * </p>
      * 
      * @param getSiteAddressRequest
@@ -314,9 +349,12 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon Web Services Outposts, you
-     * can filter your request by host ID to return a list of hardware assets that allocate resources for Dedicated
-     * Hosts.
+     * Lists the hardware assets for the specified Outpost.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listAssetsRequest
@@ -337,12 +375,12 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Lists the items in the catalog. Add filters to your request to return a more specific list of results. Use
-     * filters to match an item class, storage option, or EC2 family.
+     * Lists the items in the catalog.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listCatalogItemsRequest
@@ -361,8 +399,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a
-     * more specific list of results.
+     * Lists the Outpost orders for your Amazon Web Services account.
      * </p>
      * 
      * @param listOrdersRequest
@@ -383,13 +420,12 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific
-     * list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>),
-     * and AZ ID (<code>use1-az1</code>).
+     * Lists the Outposts for your Amazon Web Services account.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listOutpostsRequest
@@ -408,13 +444,12 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to
-     * return a more specific list of results. Use filters to match site city, country code, or state/region of the
-     * operating address.
+     * Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listSitesRequest
@@ -449,6 +484,41 @@ public interface AWSOutposts {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <note>
+     * <p>
+     * Amazon Web Services uses this action to install Outpost servers.
+     * </p>
+     * </note>
+     * <p>
+     * Starts the connection required for Outpost server installation.
+     * </p>
+     * <p>
+     * Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to
+     * secure it. For more information, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services
+     * managed policies for Amazon Web Services Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web
+     * Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param startConnectionRequest
+     * @return Result of the StartConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.StartConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartConnectionResult startConnection(StartConnectionRequest startConnectionRequest);
 
     /**
      * <p>
@@ -513,7 +583,7 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Updates the site.
+     * Updates the specified site.
      * </p>
      * 
      * @param updateSiteRequest
@@ -536,10 +606,10 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * Updates the site address.
+     * Updates the address of the specified site.
      * </p>
      * <p>
-     * To update a site address with an order <code>IN_PROGRESS</code>, you must wait for the order to complete or
+     * You can't update a site address if there is an order in progress. You must wait for the order to complete or
      * cancel the order.
      * </p>
      * <p>

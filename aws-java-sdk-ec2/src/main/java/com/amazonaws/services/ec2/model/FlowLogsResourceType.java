@@ -22,7 +22,9 @@ public enum FlowLogsResourceType {
 
     VPC("VPC"),
     Subnet("Subnet"),
-    NetworkInterface("NetworkInterface");
+    NetworkInterface("NetworkInterface"),
+    TransitGateway("TransitGateway"),
+    TransitGatewayAttachment("TransitGatewayAttachment");
 
     private String value;
 

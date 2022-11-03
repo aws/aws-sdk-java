@@ -41,6 +41,8 @@ public class FunctionConfigurationMarshaller {
             .marshallLocationName("Pinned").build();
     private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Timeout").build();
+    private static final MarshallingInfo<String> FUNCTIONRUNTIMEOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionRuntimeOverride").build();
 
     private static final FunctionConfigurationMarshaller instance = new FunctionConfigurationMarshaller();
 
@@ -65,6 +67,7 @@ public class FunctionConfigurationMarshaller {
             protocolMarshaller.marshall(functionConfiguration.getMemorySize(), MEMORYSIZE_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getPinned(), PINNED_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getFunctionRuntimeOverride(), FUNCTIONRUNTIMEOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

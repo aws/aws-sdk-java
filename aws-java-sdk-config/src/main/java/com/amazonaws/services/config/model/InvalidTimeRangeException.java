@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified time range is not valid. The earlier time is not chronologically before the later time.
+ * The specified time range is invalid. The earlier time is not chronologically before the later time.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

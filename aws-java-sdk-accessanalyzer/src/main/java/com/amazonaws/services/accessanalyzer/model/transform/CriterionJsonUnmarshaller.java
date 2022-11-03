@@ -48,27 +48,27 @@ public class CriterionJsonUnmarshaller implements Unmarshaller<Criterion, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("contains", targetDepth)) {
-                    context.nextToken();
-                    criterion.setContains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("eq", targetDepth)) {
                     context.nextToken();
                     criterion.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("exists", targetDepth)) {
-                    context.nextToken();
-                    criterion.setExists(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("neq", targetDepth)) {
                     context.nextToken();
                     criterion.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("contains", targetDepth)) {
+                    context.nextToken();
+                    criterion.setContains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("exists", targetDepth)) {
+                    context.nextToken();
+                    criterion.setExists(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

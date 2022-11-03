@@ -25,18 +25,18 @@ public class ActivateTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     * The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     * The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     *        The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      */
 
     public void setArn(String arn) {
@@ -45,10 +45,10 @@ public class ActivateTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     * The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     * @return The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      */
 
     public String getArn() {
@@ -57,11 +57,11 @@ public class ActivateTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     * The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Number (ARN) of the activated extension, in this account and region.
+     *        The Amazon Resource Name (ARN) of the activated extension, in this account and region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

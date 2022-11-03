@@ -76,6 +76,10 @@ public class GetAccountResultJsonUnmarshaller implements Unmarshaller<GetAccount
                     context.nextToken();
                     getAccountResult.setDetails(AccountDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VdmAttributes", targetDepth)) {
+                    context.nextToken();
+                    getAccountResult.setVdmAttributes(VdmAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

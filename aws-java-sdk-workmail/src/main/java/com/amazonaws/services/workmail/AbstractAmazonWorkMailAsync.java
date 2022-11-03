@@ -54,6 +54,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AssumeImpersonationRoleResult> assumeImpersonationRoleAsync(AssumeImpersonationRoleRequest request) {
+
+        return assumeImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssumeImpersonationRoleResult> assumeImpersonationRoleAsync(AssumeImpersonationRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssumeImpersonationRoleRequest, AssumeImpersonationRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest request) {
 
         return cancelMailboxExportJobAsync(request, null);
@@ -80,6 +93,21 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAvailabilityConfigurationResult> createAvailabilityConfigurationAsync(
+            CreateAvailabilityConfigurationRequest request) {
+
+        return createAvailabilityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAvailabilityConfigurationResult> createAvailabilityConfigurationAsync(
+            CreateAvailabilityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAvailabilityConfigurationRequest, CreateAvailabilityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request) {
 
         return createGroupAsync(request, null);
@@ -88,6 +116,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImpersonationRoleResult> createImpersonationRoleAsync(CreateImpersonationRoleRequest request) {
+
+        return createImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImpersonationRoleResult> createImpersonationRoleAsync(CreateImpersonationRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateImpersonationRoleRequest, CreateImpersonationRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -171,6 +212,21 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAvailabilityConfigurationResult> deleteAvailabilityConfigurationAsync(
+            DeleteAvailabilityConfigurationRequest request) {
+
+        return deleteAvailabilityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAvailabilityConfigurationResult> deleteAvailabilityConfigurationAsync(
+            DeleteAvailabilityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAvailabilityConfigurationRequest, DeleteAvailabilityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEmailMonitoringConfigurationResult> deleteEmailMonitoringConfigurationAsync(
             DeleteEmailMonitoringConfigurationRequest request) {
 
@@ -194,6 +250,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImpersonationRoleResult> deleteImpersonationRoleAsync(DeleteImpersonationRoleRequest request) {
+
+        return deleteImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImpersonationRoleResult> deleteImpersonationRoleAsync(DeleteImpersonationRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImpersonationRoleRequest, DeleteImpersonationRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -465,6 +534,32 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetImpersonationRoleResult> getImpersonationRoleAsync(GetImpersonationRoleRequest request) {
+
+        return getImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImpersonationRoleResult> getImpersonationRoleAsync(GetImpersonationRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetImpersonationRoleRequest, GetImpersonationRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImpersonationRoleEffectResult> getImpersonationRoleEffectAsync(GetImpersonationRoleEffectRequest request) {
+
+        return getImpersonationRoleEffectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImpersonationRoleEffectResult> getImpersonationRoleEffectAsync(GetImpersonationRoleEffectRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetImpersonationRoleEffectRequest, GetImpersonationRoleEffectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMailDomainResult> getMailDomainAsync(GetMailDomainRequest request) {
 
         return getMailDomainAsync(request, null);
@@ -543,6 +638,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAvailabilityConfigurationsResult> listAvailabilityConfigurationsAsync(ListAvailabilityConfigurationsRequest request) {
+
+        return listAvailabilityConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAvailabilityConfigurationsResult> listAvailabilityConfigurationsAsync(ListAvailabilityConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAvailabilityConfigurationsRequest, ListAvailabilityConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGroupMembersResult> listGroupMembersAsync(ListGroupMembersRequest request) {
 
         return listGroupMembersAsync(request, null);
@@ -564,6 +672,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImpersonationRolesResult> listImpersonationRolesAsync(ListImpersonationRolesRequest request) {
+
+        return listImpersonationRolesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImpersonationRolesResult> listImpersonationRolesAsync(ListImpersonationRolesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImpersonationRolesRequest, ListImpersonationRolesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -846,6 +967,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<TestAvailabilityConfigurationResult> testAvailabilityConfigurationAsync(TestAvailabilityConfigurationRequest request) {
+
+        return testAvailabilityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestAvailabilityConfigurationResult> testAvailabilityConfigurationAsync(TestAvailabilityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestAvailabilityConfigurationRequest, TestAvailabilityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
 
         return untagResourceAsync(request, null);
@@ -859,6 +993,21 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAvailabilityConfigurationResult> updateAvailabilityConfigurationAsync(
+            UpdateAvailabilityConfigurationRequest request) {
+
+        return updateAvailabilityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAvailabilityConfigurationResult> updateAvailabilityConfigurationAsync(
+            UpdateAvailabilityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAvailabilityConfigurationRequest, UpdateAvailabilityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDefaultMailDomainResult> updateDefaultMailDomainAsync(UpdateDefaultMailDomainRequest request) {
 
         return updateDefaultMailDomainAsync(request, null);
@@ -867,6 +1016,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<UpdateDefaultMailDomainResult> updateDefaultMailDomainAsync(UpdateDefaultMailDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDefaultMailDomainRequest, UpdateDefaultMailDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest request) {
+
+        return updateImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateImpersonationRoleRequest, UpdateImpersonationRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

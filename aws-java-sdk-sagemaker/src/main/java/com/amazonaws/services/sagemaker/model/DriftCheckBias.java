@@ -34,9 +34,17 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FileSource configFile;
-
+    /**
+     * <p>
+     * The pre-training constraints.
+     * </p>
+     */
     private MetricsSource preTrainingConstraints;
-
+    /**
+     * <p>
+     * The post-training constraints.
+     * </p>
+     */
     private MetricsSource postTrainingConstraints;
 
     /**
@@ -80,7 +88,12 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The pre-training constraints.
+     * </p>
+     * 
      * @param preTrainingConstraints
+     *        The pre-training constraints.
      */
 
     public void setPreTrainingConstraints(MetricsSource preTrainingConstraints) {
@@ -88,7 +101,11 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The pre-training constraints.
+     * </p>
+     * 
+     * @return The pre-training constraints.
      */
 
     public MetricsSource getPreTrainingConstraints() {
@@ -96,7 +113,12 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The pre-training constraints.
+     * </p>
+     * 
      * @param preTrainingConstraints
+     *        The pre-training constraints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +128,12 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The post-training constraints.
+     * </p>
+     * 
      * @param postTrainingConstraints
+     *        The post-training constraints.
      */
 
     public void setPostTrainingConstraints(MetricsSource postTrainingConstraints) {
@@ -114,7 +141,11 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The post-training constraints.
+     * </p>
+     * 
+     * @return The post-training constraints.
      */
 
     public MetricsSource getPostTrainingConstraints() {
@@ -122,7 +153,12 @@ public class DriftCheckBias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The post-training constraints.
+     * </p>
+     * 
      * @param postTrainingConstraints
+     *        The post-training constraints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

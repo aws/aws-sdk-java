@@ -43,6 +43,8 @@ public class CreateExperimentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("randomizationSalt").build();
     private static final MarshallingInfo<Long> SAMPLINGRATE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("samplingRate").build();
+    private static final MarshallingInfo<String> SEGMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("segment").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> TREATMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class CreateExperimentRequestMarshaller {
             protocolMarshaller.marshall(createExperimentRequest.getProject(), PROJECT_BINDING);
             protocolMarshaller.marshall(createExperimentRequest.getRandomizationSalt(), RANDOMIZATIONSALT_BINDING);
             protocolMarshaller.marshall(createExperimentRequest.getSamplingRate(), SAMPLINGRATE_BINDING);
+            protocolMarshaller.marshall(createExperimentRequest.getSegment(), SEGMENT_BINDING);
             protocolMarshaller.marshall(createExperimentRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createExperimentRequest.getTreatments(), TREATMENTS_BINDING);
         } catch (Exception e) {

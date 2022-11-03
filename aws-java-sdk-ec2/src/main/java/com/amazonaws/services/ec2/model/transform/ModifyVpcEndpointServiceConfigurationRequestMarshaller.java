@@ -119,6 +119,36 @@ public class ModifyVpcEndpointServiceConfigurationRequestMarshaller implements
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointServiceConfigurationRequest
+                .getAddSupportedIpAddressTypes();
+        if (!modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesList.isEmpty()
+                || !modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesList.isAutoConstruct()) {
+            int addSupportedIpAddressTypesListIndex = 1;
+
+            for (String modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesListValue : modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesList) {
+                if (modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesListValue != null) {
+                    request.addParameter("AddSupportedIpAddressType." + addSupportedIpAddressTypesListIndex,
+                            StringUtils.fromString(modifyVpcEndpointServiceConfigurationRequestAddSupportedIpAddressTypesListValue));
+                }
+                addSupportedIpAddressTypesListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointServiceConfigurationRequest
+                .getRemoveSupportedIpAddressTypes();
+        if (!modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesList.isEmpty()
+                || !modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesList.isAutoConstruct()) {
+            int removeSupportedIpAddressTypesListIndex = 1;
+
+            for (String modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesListValue : modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesList) {
+                if (modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesListValue != null) {
+                    request.addParameter("RemoveSupportedIpAddressType." + removeSupportedIpAddressTypesListIndex,
+                            StringUtils.fromString(modifyVpcEndpointServiceConfigurationRequestRemoveSupportedIpAddressTypesListValue));
+                }
+                removeSupportedIpAddressTypesListIndex++;
+            }
+        }
+
         return request;
     }
 

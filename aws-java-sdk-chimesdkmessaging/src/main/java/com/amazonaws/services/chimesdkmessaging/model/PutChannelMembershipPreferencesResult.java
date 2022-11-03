@@ -30,7 +30,11 @@ public class PutChannelMembershipPreferencesResult extends com.amazonaws.AmazonW
      * </p>
      */
     private String channelArn;
-
+    /**
+     * <p>
+     * The details of a user.
+     * </p>
+     */
     private Identity member;
     /**
      * <p>
@@ -80,7 +84,12 @@ public class PutChannelMembershipPreferencesResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The details of a user.
+     * </p>
+     * 
      * @param member
+     *        The details of a user.
      */
 
     public void setMember(Identity member) {
@@ -88,7 +97,11 @@ public class PutChannelMembershipPreferencesResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The details of a user.
+     * </p>
+     * 
+     * @return The details of a user.
      */
 
     public Identity getMember() {
@@ -96,7 +109,12 @@ public class PutChannelMembershipPreferencesResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The details of a user.
+     * </p>
+     * 
      * @param member
+     *        The details of a user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

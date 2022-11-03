@@ -89,6 +89,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -107,6 +112,14 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RecommenderUpdateSummary latestRecommenderUpdate;
+    /**
+     * <p>
+     * Provides evaluation metrics that help you determine the performance of a recommender. For more information, see
+     * <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a
+     * recommender</a>.
+     * </p>
+     */
+    private java.util.Map<String, Double> modelMetrics;
 
     /**
      * <p>
@@ -409,6 +422,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -423,6 +441,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
      *        </p>
      *        </li>
      *        <li>
@@ -451,6 +474,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -464,6 +492,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
      *         </p>
      *         </li>
      *         <li>
@@ -492,6 +525,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -506,6 +544,11 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
      *        </p>
      *        </li>
      *        <li>
@@ -602,6 +645,87 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides evaluation metrics that help you determine the performance of a recommender. For more information, see
+     * <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a
+     * recommender</a>.
+     * </p>
+     * 
+     * @return Provides evaluation metrics that help you determine the performance of a recommender. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a
+     *         recommender</a>.
+     */
+
+    public java.util.Map<String, Double> getModelMetrics() {
+        return modelMetrics;
+    }
+
+    /**
+     * <p>
+     * Provides evaluation metrics that help you determine the performance of a recommender. For more information, see
+     * <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a
+     * recommender</a>.
+     * </p>
+     * 
+     * @param modelMetrics
+     *        Provides evaluation metrics that help you determine the performance of a recommender. For more
+     *        information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     *        Evaluating a recommender</a>.
+     */
+
+    public void setModelMetrics(java.util.Map<String, Double> modelMetrics) {
+        this.modelMetrics = modelMetrics;
+    }
+
+    /**
+     * <p>
+     * Provides evaluation metrics that help you determine the performance of a recommender. For more information, see
+     * <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a
+     * recommender</a>.
+     * </p>
+     * 
+     * @param modelMetrics
+     *        Provides evaluation metrics that help you determine the performance of a recommender. For more
+     *        information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     *        Evaluating a recommender</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Recommender withModelMetrics(java.util.Map<String, Double> modelMetrics) {
+        setModelMetrics(modelMetrics);
+        return this;
+    }
+
+    /**
+     * Add a single ModelMetrics entry
+     *
+     * @see Recommender#withModelMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Recommender addModelMetricsEntry(String key, Double value) {
+        if (null == this.modelMetrics) {
+            this.modelMetrics = new java.util.HashMap<String, Double>();
+        }
+        if (this.modelMetrics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.modelMetrics.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ModelMetrics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Recommender clearModelMetricsEntries() {
+        this.modelMetrics = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -632,7 +756,9 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getLatestRecommenderUpdate() != null)
-            sb.append("LatestRecommenderUpdate: ").append(getLatestRecommenderUpdate());
+            sb.append("LatestRecommenderUpdate: ").append(getLatestRecommenderUpdate()).append(",");
+        if (getModelMetrics() != null)
+            sb.append("ModelMetrics: ").append(getModelMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -687,6 +813,10 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLatestRecommenderUpdate() != null && other.getLatestRecommenderUpdate().equals(this.getLatestRecommenderUpdate()) == false)
             return false;
+        if (other.getModelMetrics() == null ^ this.getModelMetrics() == null)
+            return false;
+        if (other.getModelMetrics() != null && other.getModelMetrics().equals(this.getModelMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -705,6 +835,7 @@ public class Recommender implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getLatestRecommenderUpdate() == null) ? 0 : getLatestRecommenderUpdate().hashCode());
+        hashCode = prime * hashCode + ((getModelMetrics() == null) ? 0 : getModelMetrics().hashCode());
         return hashCode;
     }
 

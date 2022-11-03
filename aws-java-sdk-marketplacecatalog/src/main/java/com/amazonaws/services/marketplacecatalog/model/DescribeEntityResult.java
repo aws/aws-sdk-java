@@ -37,7 +37,7 @@ public class DescribeEntityResult extends com.amazonaws.AmazonWebServiceResult<c
     private String entityIdentifier;
     /**
      * <p>
-     * The ARN associated to the unique identifier for the change set referenced in this request.
+     * The ARN associated to the unique identifier for the entity referenced in this request.
      * </p>
      */
     private String entityArn;
@@ -136,11 +136,11 @@ public class DescribeEntityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN associated to the unique identifier for the change set referenced in this request.
+     * The ARN associated to the unique identifier for the entity referenced in this request.
      * </p>
      * 
      * @param entityArn
-     *        The ARN associated to the unique identifier for the change set referenced in this request.
+     *        The ARN associated to the unique identifier for the entity referenced in this request.
      */
 
     public void setEntityArn(String entityArn) {
@@ -149,10 +149,10 @@ public class DescribeEntityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN associated to the unique identifier for the change set referenced in this request.
+     * The ARN associated to the unique identifier for the entity referenced in this request.
      * </p>
      * 
-     * @return The ARN associated to the unique identifier for the change set referenced in this request.
+     * @return The ARN associated to the unique identifier for the entity referenced in this request.
      */
 
     public String getEntityArn() {
@@ -161,11 +161,11 @@ public class DescribeEntityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN associated to the unique identifier for the change set referenced in this request.
+     * The ARN associated to the unique identifier for the entity referenced in this request.
      * </p>
      * 
      * @param entityArn
-     *        The ARN associated to the unique identifier for the change set referenced in this request.
+     *        The ARN associated to the unique identifier for the entity referenced in this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

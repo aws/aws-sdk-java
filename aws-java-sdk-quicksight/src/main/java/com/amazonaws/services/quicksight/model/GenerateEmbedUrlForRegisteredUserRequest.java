@@ -45,11 +45,24 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
     private String userArn;
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire
-     * Amazon QuickSight console.
+     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      * </p>
      */
     private RegisteredUserEmbeddingExperienceConfiguration experienceConfiguration;
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     * <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * </p>
+     */
+    private java.util.List<String> allowedDomains;
 
     /**
      * <p>
@@ -173,13 +186,13 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire
-     * Amazon QuickSight console.
+     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      * </p>
      * 
      * @param experienceConfiguration
-     *        The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the
-     *        entire Amazon QuickSight console.
+     *        The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     *        QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      */
 
     public void setExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration experienceConfiguration) {
@@ -188,12 +201,12 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire
-     * Amazon QuickSight console.
+     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      * </p>
      * 
-     * @return The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the
-     *         entire Amazon QuickSight console.
+     * @return The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards,
+     *         Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      */
 
     public RegisteredUserEmbeddingExperienceConfiguration getExperienceConfiguration() {
@@ -202,18 +215,140 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire
-     * Amazon QuickSight console.
+     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      * </p>
      * 
      * @param experienceConfiguration
-     *        The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the
-     *        entire Amazon QuickSight console.
+     *        The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     *        QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateEmbedUrlForRegisteredUserRequest withExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration experienceConfiguration) {
         setExperienceConfiguration(experienceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     * <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * </p>
+     * 
+     * @return The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *         This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *         the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter.
+     *         You can list up to three domains or subdomains in each API call.</p>
+     *         <p>
+     *         To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     *         <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     */
+
+    public java.util.List<String> getAllowedDomains() {
+        return allowedDomains;
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     * <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * </p>
+     * 
+     * @param allowedDomains
+     *        The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *        This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *        the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You
+     *        can list up to three domains or subdomains in each API call.</p>
+     *        <p>
+     *        To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     *        <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     */
+
+    public void setAllowedDomains(java.util.Collection<String> allowedDomains) {
+        if (allowedDomains == null) {
+            this.allowedDomains = null;
+            return;
+        }
+
+        this.allowedDomains = new java.util.ArrayList<String>(allowedDomains);
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     * <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedDomains(java.util.Collection)} or {@link #withAllowedDomains(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param allowedDomains
+     *        The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *        This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *        the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You
+     *        can list up to three domains or subdomains in each API call.</p>
+     *        <p>
+     *        To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     *        <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateEmbedUrlForRegisteredUserRequest withAllowedDomains(String... allowedDomains) {
+        if (this.allowedDomains == null) {
+            setAllowedDomains(new java.util.ArrayList<String>(allowedDomains.length));
+        }
+        for (String ele : allowedDomains) {
+            this.allowedDomains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     * <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * </p>
+     * 
+     * @param allowedDomains
+     *        The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *        This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *        the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You
+     *        can list up to three domains or subdomains in each API call.</p>
+     *        <p>
+     *        To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example,
+     *        <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateEmbedUrlForRegisteredUserRequest withAllowedDomains(java.util.Collection<String> allowedDomains) {
+        setAllowedDomains(allowedDomains);
         return this;
     }
 
@@ -236,7 +371,9 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
         if (getUserArn() != null)
             sb.append("UserArn: ").append(getUserArn()).append(",");
         if (getExperienceConfiguration() != null)
-            sb.append("ExperienceConfiguration: ").append(getExperienceConfiguration());
+            sb.append("ExperienceConfiguration: ").append(getExperienceConfiguration()).append(",");
+        if (getAllowedDomains() != null)
+            sb.append("AllowedDomains: ").append(getAllowedDomains());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +404,10 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
             return false;
         if (other.getExperienceConfiguration() != null && other.getExperienceConfiguration().equals(this.getExperienceConfiguration()) == false)
             return false;
+        if (other.getAllowedDomains() == null ^ this.getAllowedDomains() == null)
+            return false;
+        if (other.getAllowedDomains() != null && other.getAllowedDomains().equals(this.getAllowedDomains()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +420,7 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getSessionLifetimeInMinutes() == null) ? 0 : getSessionLifetimeInMinutes().hashCode());
         hashCode = prime * hashCode + ((getUserArn() == null) ? 0 : getUserArn().hashCode());
         hashCode = prime * hashCode + ((getExperienceConfiguration() == null) ? 0 : getExperienceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAllowedDomains() == null) ? 0 : getAllowedDomains().hashCode());
         return hashCode;
     }
 

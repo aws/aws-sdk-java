@@ -41,6 +41,45 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAgreementResult> createAgreementAsync(CreateAgreementRequest request) {
+
+        return createAgreementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAgreementResult> createAgreementAsync(CreateAgreementRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAgreementRequest, CreateAgreementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectorResult> createConnectorAsync(CreateConnectorRequest request) {
+
+        return createConnectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectorResult> createConnectorAsync(CreateConnectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectorRequest, CreateConnectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest request) {
+
+        return createProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateProfileRequest, CreateProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServerResult> createServerAsync(CreateServerRequest request) {
 
         return createServerAsync(request, null);
@@ -88,6 +127,71 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAccessRequest, DeleteAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAgreementResult> deleteAgreementAsync(DeleteAgreementRequest request) {
+
+        return deleteAgreementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAgreementResult> deleteAgreementAsync(DeleteAgreementRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAgreementRequest, DeleteAgreementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request) {
+
+        return deleteCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectorResult> deleteConnectorAsync(DeleteConnectorRequest request) {
+
+        return deleteConnectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectorResult> deleteConnectorAsync(DeleteConnectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectorRequest, DeleteConnectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostKeyResult> deleteHostKeyAsync(DeleteHostKeyRequest request) {
+
+        return deleteHostKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostKeyResult> deleteHostKeyAsync(DeleteHostKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteHostKeyRequest, DeleteHostKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest request) {
+
+        return deleteProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteProfileRequest, DeleteProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +262,45 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAgreementResult> describeAgreementAsync(DescribeAgreementRequest request) {
+
+        return describeAgreementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAgreementResult> describeAgreementAsync(DescribeAgreementRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAgreementRequest, DescribeAgreementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request) {
+
+        return describeCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectorResult> describeConnectorAsync(DescribeConnectorRequest request) {
+
+        return describeConnectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectorResult> describeConnectorAsync(DescribeConnectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectorRequest, DescribeConnectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeExecutionResult> describeExecutionAsync(DescribeExecutionRequest request) {
 
         return describeExecutionAsync(request, null);
@@ -166,6 +309,32 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<DescribeExecutionResult> describeExecutionAsync(DescribeExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeExecutionRequest, DescribeExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostKeyResult> describeHostKeyAsync(DescribeHostKeyRequest request) {
+
+        return describeHostKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostKeyResult> describeHostKeyAsync(DescribeHostKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostKeyRequest, DescribeHostKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProfileResult> describeProfileAsync(DescribeProfileRequest request) {
+
+        return describeProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProfileResult> describeProfileAsync(DescribeProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeProfileRequest, DescribeProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,6 +392,32 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest request) {
+
+        return importCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportHostKeyResult> importHostKeyAsync(ImportHostKeyRequest request) {
+
+        return importHostKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportHostKeyResult> importHostKeyAsync(ImportHostKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportHostKeyRequest, ImportHostKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportSshPublicKeyResult> importSshPublicKeyAsync(ImportSshPublicKeyRequest request) {
 
         return importSshPublicKeyAsync(request, null);
@@ -249,6 +444,45 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListAgreementsResult> listAgreementsAsync(ListAgreementsRequest request) {
+
+        return listAgreementsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAgreementsResult> listAgreementsAsync(ListAgreementsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAgreementsRequest, ListAgreementsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request) {
+
+        return listCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectorsResult> listConnectorsAsync(ListConnectorsRequest request) {
+
+        return listConnectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectorsResult> listConnectorsAsync(ListConnectorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConnectorsRequest, ListConnectorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExecutionsResult> listExecutionsAsync(ListExecutionsRequest request) {
 
         return listExecutionsAsync(request, null);
@@ -257,6 +491,32 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<ListExecutionsResult> listExecutionsAsync(ListExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListExecutionsRequest, ListExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostKeysResult> listHostKeysAsync(ListHostKeysRequest request) {
+
+        return listHostKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostKeysResult> listHostKeysAsync(ListHostKeysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListHostKeysRequest, ListHostKeysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProfilesResult> listProfilesAsync(ListProfilesRequest request) {
+
+        return listProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProfilesResult> listProfilesAsync(ListProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProfilesRequest, ListProfilesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -340,6 +600,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<StartFileTransferResult> startFileTransferAsync(StartFileTransferRequest request) {
+
+        return startFileTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFileTransferResult> startFileTransferAsync(StartFileTransferRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartFileTransferRequest, StartFileTransferResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartServerResult> startServerAsync(StartServerRequest request) {
 
         return startServerAsync(request, null);
@@ -413,6 +686,71 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAccessRequest, UpdateAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAgreementResult> updateAgreementAsync(UpdateAgreementRequest request) {
+
+        return updateAgreementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAgreementResult> updateAgreementAsync(UpdateAgreementRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAgreementRequest, UpdateAgreementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest request) {
+
+        return updateCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectorResult> updateConnectorAsync(UpdateConnectorRequest request) {
+
+        return updateConnectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectorResult> updateConnectorAsync(UpdateConnectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectorRequest, UpdateConnectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostKeyResult> updateHostKeyAsync(UpdateHostKeyRequest request) {
+
+        return updateHostKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostKeyResult> updateHostKeyAsync(UpdateHostKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateHostKeyRequest, UpdateHostKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest request) {
+
+        return updateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProfileRequest, UpdateProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

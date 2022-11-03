@@ -33,6 +33,8 @@ public class ProjectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activeExperimentCount").build();
     private static final MarshallingInfo<Long> ACTIVELAUNCHCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activeLaunchCount").build();
+    private static final MarshallingInfo<StructuredPojo> APPCONFIGRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appConfigResource").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -74,6 +76,7 @@ public class ProjectMarshaller {
         try {
             protocolMarshaller.marshall(project.getActiveExperimentCount(), ACTIVEEXPERIMENTCOUNT_BINDING);
             protocolMarshaller.marshall(project.getActiveLaunchCount(), ACTIVELAUNCHCOUNT_BINDING);
+            protocolMarshaller.marshall(project.getAppConfigResource(), APPCONFIGRESOURCE_BINDING);
             protocolMarshaller.marshall(project.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(project.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(project.getDataDelivery(), DATADELIVERY_BINDING);

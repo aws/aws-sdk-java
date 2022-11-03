@@ -422,6 +422,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String secretsManagerOracleAsmSecretId;
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     */
+    private Boolean trimSpaceInChar;
 
     /**
      * <p>
@@ -3279,6 +3286,66 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param trimSpaceInChar
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *        during migration. The default value is <code>true</code>.
+     */
+
+    public void setTrimSpaceInChar(Boolean trimSpaceInChar) {
+        this.trimSpaceInChar = trimSpaceInChar;
+    }
+
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *         during migration. The default value is <code>true</code>.
+     */
+
+    public Boolean getTrimSpaceInChar() {
+        return this.trimSpaceInChar;
+    }
+
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param trimSpaceInChar
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *        during migration. The default value is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withTrimSpaceInChar(Boolean trimSpaceInChar) {
+        setTrimSpaceInChar(trimSpaceInChar);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *         during migration. The default value is <code>true</code>.
+     */
+
+    public Boolean isTrimSpaceInChar() {
+        return this.trimSpaceInChar;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3369,7 +3436,9 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSecretsManagerOracleAsmAccessRoleArn() != null)
             sb.append("SecretsManagerOracleAsmAccessRoleArn: ").append(getSecretsManagerOracleAsmAccessRoleArn()).append(",");
         if (getSecretsManagerOracleAsmSecretId() != null)
-            sb.append("SecretsManagerOracleAsmSecretId: ").append(getSecretsManagerOracleAsmSecretId());
+            sb.append("SecretsManagerOracleAsmSecretId: ").append(getSecretsManagerOracleAsmSecretId()).append(",");
+        if (getTrimSpaceInChar() != null)
+            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar());
         sb.append("}");
         return sb.toString();
     }
@@ -3547,6 +3616,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getSecretsManagerOracleAsmSecretId() != null
                 && other.getSecretsManagerOracleAsmSecretId().equals(this.getSecretsManagerOracleAsmSecretId()) == false)
             return false;
+        if (other.getTrimSpaceInChar() == null ^ this.getTrimSpaceInChar() == null)
+            return false;
+        if (other.getTrimSpaceInChar() != null && other.getTrimSpaceInChar().equals(this.getTrimSpaceInChar()) == false)
+            return false;
         return true;
     }
 
@@ -3595,6 +3668,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerOracleAsmAccessRoleArn() == null) ? 0 : getSecretsManagerOracleAsmAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerOracleAsmSecretId() == null) ? 0 : getSecretsManagerOracleAsmSecretId().hashCode());
+        hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
         return hashCode;
     }
 

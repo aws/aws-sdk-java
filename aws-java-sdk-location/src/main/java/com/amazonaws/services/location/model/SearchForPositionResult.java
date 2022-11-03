@@ -46,6 +46,19 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      * </p>
      */
     private Place place;
+    /**
+     * <p>
+     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later.
+     * </p>
+     * <note>
+     * <p>
+     * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
+     * indexes that use HERE as a data provider.
+     * </p>
+     * </note>
+     */
+    private String placeId;
 
     /**
      * <p>
@@ -158,6 +171,82 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later.
+     * </p>
+     * <note>
+     * <p>
+     * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
+     * indexes that use HERE as a data provider.
+     * </p>
+     * </note>
+     * 
+     * @param placeId
+     *        The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the
+     *        place again later.</p> <note>
+     *        <p>
+     *        For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by
+     *        place indexes that use HERE as a data provider.
+     *        </p>
+     */
+
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later.
+     * </p>
+     * <note>
+     * <p>
+     * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
+     * indexes that use HERE as a data provider.
+     * </p>
+     * </note>
+     * 
+     * @return The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the
+     *         place again later.</p> <note>
+     *         <p>
+     *         For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by
+     *         place indexes that use HERE as a data provider.
+     *         </p>
+     */
+
+    public String getPlaceId() {
+        return this.placeId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later.
+     * </p>
+     * <note>
+     * <p>
+     * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
+     * indexes that use HERE as a data provider.
+     * </p>
+     * </note>
+     * 
+     * @param placeId
+     *        The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the
+     *        place again later.</p> <note>
+     *        <p>
+     *        For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by
+     *        place indexes that use HERE as a data provider.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchForPositionResult withPlaceId(String placeId) {
+        setPlaceId(placeId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -172,7 +261,9 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
         if (getDistance() != null)
             sb.append("Distance: ").append(getDistance()).append(",");
         if (getPlace() != null)
-            sb.append("Place: ").append(getPlace());
+            sb.append("Place: ").append(getPlace()).append(",");
+        if (getPlaceId() != null)
+            sb.append("PlaceId: ").append(getPlaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +286,10 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
             return false;
         if (other.getPlace() != null && other.getPlace().equals(this.getPlace()) == false)
             return false;
+        if (other.getPlaceId() == null ^ this.getPlaceId() == null)
+            return false;
+        if (other.getPlaceId() != null && other.getPlaceId().equals(this.getPlaceId()) == false)
+            return false;
         return true;
     }
 
@@ -205,6 +300,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getDistance() == null) ? 0 : getDistance().hashCode());
         hashCode = prime * hashCode + ((getPlace() == null) ? 0 : getPlace().hashCode());
+        hashCode = prime * hashCode + ((getPlaceId() == null) ? 0 : getPlaceId().hashCode());
         return hashCode;
     }
 

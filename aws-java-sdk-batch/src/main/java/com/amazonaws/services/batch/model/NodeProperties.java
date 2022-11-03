@@ -19,8 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the node properties of a multi-node parallel job.
+ * An object that represents the node properties of a multi-node parallel job.
  * </p>
+ * <note>
+ * <p>
+ * Node properties can't be specified for Amazon EKS based job definitions.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeProperties" target="_top">AWS API
  *      Documentation</a>
@@ -30,7 +35,7 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      */
     private Integer numNodes;
@@ -43,18 +48,18 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
     private Integer mainNode;
     /**
      * <p>
-     * A list of node ranges and their properties associated with a multi-node parallel job.
+     * A list of node ranges and their properties that are associated with a multi-node parallel job.
      * </p>
      */
     private java.util.List<NodeRangeProperty> nodeRangeProperties;
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      * 
      * @param numNodes
-     *        The number of nodes associated with a multi-node parallel job.
+     *        The number of nodes that are associated with a multi-node parallel job.
      */
 
     public void setNumNodes(Integer numNodes) {
@@ -63,10 +68,10 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      * 
-     * @return The number of nodes associated with a multi-node parallel job.
+     * @return The number of nodes that are associated with a multi-node parallel job.
      */
 
     public Integer getNumNodes() {
@@ -75,11 +80,11 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      * 
      * @param numNodes
-     *        The number of nodes associated with a multi-node parallel job.
+     *        The number of nodes that are associated with a multi-node parallel job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +141,10 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of node ranges and their properties associated with a multi-node parallel job.
+     * A list of node ranges and their properties that are associated with a multi-node parallel job.
      * </p>
      * 
-     * @return A list of node ranges and their properties associated with a multi-node parallel job.
+     * @return A list of node ranges and their properties that are associated with a multi-node parallel job.
      */
 
     public java.util.List<NodeRangeProperty> getNodeRangeProperties() {
@@ -148,11 +153,11 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of node ranges and their properties associated with a multi-node parallel job.
+     * A list of node ranges and their properties that are associated with a multi-node parallel job.
      * </p>
      * 
      * @param nodeRangeProperties
-     *        A list of node ranges and their properties associated with a multi-node parallel job.
+     *        A list of node ranges and their properties that are associated with a multi-node parallel job.
      */
 
     public void setNodeRangeProperties(java.util.Collection<NodeRangeProperty> nodeRangeProperties) {
@@ -166,7 +171,7 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of node ranges and their properties associated with a multi-node parallel job.
+     * A list of node ranges and their properties that are associated with a multi-node parallel job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,7 +180,7 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodeRangeProperties
-     *        A list of node ranges and their properties associated with a multi-node parallel job.
+     *        A list of node ranges and their properties that are associated with a multi-node parallel job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +196,11 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of node ranges and their properties associated with a multi-node parallel job.
+     * A list of node ranges and their properties that are associated with a multi-node parallel job.
      * </p>
      * 
      * @param nodeRangeProperties
-     *        A list of node ranges and their properties associated with a multi-node parallel job.
+     *        A list of node ranges and their properties that are associated with a multi-node parallel job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

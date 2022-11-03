@@ -80,6 +80,10 @@ public class DescribeExplainabilityExportResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     describeExplainabilityExportResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("Format", targetDepth)) {
+                    context.nextToken();
+                    describeExplainabilityExportResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

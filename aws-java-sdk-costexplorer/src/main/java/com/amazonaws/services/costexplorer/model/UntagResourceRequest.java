@@ -35,7 +35,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that
-     * does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
+     * doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
      * remaining are reserved for Amazon Web Services use.
      * </p>
      */
@@ -93,12 +93,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that
-     * does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
+     * doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
      * remaining are reserved for Amazon Web Services use.
      * </p>
      * 
      * @return A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag
-     *         key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag
+     *         key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag
      *         maximum is 50. The remaining are reserved for Amazon Web Services use.
      */
 
@@ -109,13 +109,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that
-     * does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
+     * doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
      * remaining are reserved for Amazon Web Services use.
      * </p>
      * 
      * @param resourceTagKeys
      *        A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag
-     *        key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag
+     *        key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag
      *        maximum is 50. The remaining are reserved for Amazon Web Services use.
      */
 
@@ -131,7 +131,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that
-     * does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
+     * doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
      * remaining are reserved for Amazon Web Services use.
      * </p>
      * <p>
@@ -142,7 +142,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param resourceTagKeys
      *        A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag
-     *        key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag
+     *        key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag
      *        maximum is 50. The remaining are reserved for Amazon Web Services use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -160,13 +160,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that
-     * does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
+     * doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The
      * remaining are reserved for Amazon Web Services use.
      * </p>
      * 
      * @param resourceTagKeys
      *        A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag
-     *        key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag
+     *        key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag
      *        maximum is 50. The remaining are reserved for Amazon Web Services use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

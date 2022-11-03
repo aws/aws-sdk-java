@@ -27,36 +27,37 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] Represents an update integration request's resource identifier.
+     * Represents an update integration request's resource identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * [Required] Represents an update integration request's HTTP method.
+     * Represents an update integration request's HTTP method.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -65,10 +66,10 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -77,11 +78,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +93,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] Represents an update integration request's resource identifier.
+     * Represents an update integration request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        [Required] Represents an update integration request's resource identifier.
+     *        Represents an update integration request's resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -105,10 +106,10 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] Represents an update integration request's resource identifier.
+     * Represents an update integration request's resource identifier.
      * </p>
      * 
-     * @return [Required] Represents an update integration request's resource identifier.
+     * @return Represents an update integration request's resource identifier.
      */
 
     public String getResourceId() {
@@ -117,11 +118,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] Represents an update integration request's resource identifier.
+     * Represents an update integration request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        [Required] Represents an update integration request's resource identifier.
+     *        Represents an update integration request's resource identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +133,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] Represents an update integration request's HTTP method.
+     * Represents an update integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] Represents an update integration request's HTTP method.
+     *        Represents an update integration request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -145,10 +146,10 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] Represents an update integration request's HTTP method.
+     * Represents an update integration request's HTTP method.
      * </p>
      * 
-     * @return [Required] Represents an update integration request's HTTP method.
+     * @return Represents an update integration request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -157,11 +158,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [Required] Represents an update integration request's HTTP method.
+     * Represents an update integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] Represents an update integration request's HTTP method.
+     *        Represents an update integration request's HTTP method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +173,12 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -185,12 +187,13 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -204,7 +207,8 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -213,8 +217,8 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,12 +234,13 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

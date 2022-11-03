@@ -406,8 +406,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     private String framework;
     /**
      * <p>
-     * Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     * frameworks.
+     * Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and
+     * TensorFlow Lite frameworks.
      * </p>
      * <p>
      * For information about framework versions supported for cloud targets and edge devices, see <a
@@ -2711,8 +2711,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     * frameworks.
+     * Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and
+     * TensorFlow Lite frameworks.
      * </p>
      * <p>
      * For information about framework versions supported for cloud targets and edge devices, see <a
@@ -2723,8 +2723,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param frameworkVersion
-     *        Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     *        frameworks.</p>
+     *        Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch,
+     *        TensorFlow and TensorFlow Lite frameworks.</p>
      *        <p>
      *        For information about framework versions supported for cloud targets and edge devices, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance
@@ -2739,8 +2739,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     * frameworks.
+     * Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and
+     * TensorFlow Lite frameworks.
      * </p>
      * <p>
      * For information about framework versions supported for cloud targets and edge devices, see <a
@@ -2750,8 +2750,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * Frameworks</a>.
      * </p>
      * 
-     * @return Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     *         frameworks.</p>
+     * @return Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch,
+     *         TensorFlow and TensorFlow Lite frameworks.</p>
      *         <p>
      *         For information about framework versions supported for cloud targets and edge devices, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance
@@ -2766,8 +2766,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     * frameworks.
+     * Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and
+     * TensorFlow Lite frameworks.
      * </p>
      * <p>
      * For information about framework versions supported for cloud targets and edge devices, see <a
@@ -2778,8 +2778,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param frameworkVersion
-     *        Specifies the framework version to use. This API field is only supported for the PyTorch and TensorFlow
-     *        frameworks.</p>
+     *        Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch,
+     *        TensorFlow and TensorFlow Lite frameworks.</p>
      *        <p>
      *        For information about framework versions supported for cloud targets and edge devices, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.outposts.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,10 @@ public class LineItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Quantity").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<StructuredPojo> SHIPMENTINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShipmentInformation").build();
+    private static final MarshallingInfo<List> ASSETINFORMATIONLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssetInformationList").build();
 
     private static final LineItemMarshaller instance = new LineItemMarshaller();
 
@@ -56,6 +61,8 @@ public class LineItemMarshaller {
             protocolMarshaller.marshall(lineItem.getLineItemId(), LINEITEMID_BINDING);
             protocolMarshaller.marshall(lineItem.getQuantity(), QUANTITY_BINDING);
             protocolMarshaller.marshall(lineItem.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(lineItem.getShipmentInformation(), SHIPMENTINFORMATION_BINDING);
+            protocolMarshaller.marshall(lineItem.getAssetInformationList(), ASSETINFORMATIONLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

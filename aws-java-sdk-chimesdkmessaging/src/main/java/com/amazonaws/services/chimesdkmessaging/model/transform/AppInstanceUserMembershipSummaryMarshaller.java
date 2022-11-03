@@ -31,6 +31,8 @@ public class AppInstanceUserMembershipSummaryMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<java.util.Date> READMARKERTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadMarkerTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SUBCHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubChannelId").build();
 
     private static final AppInstanceUserMembershipSummaryMarshaller instance = new AppInstanceUserMembershipSummaryMarshaller();
 
@@ -50,6 +52,7 @@ public class AppInstanceUserMembershipSummaryMarshaller {
         try {
             protocolMarshaller.marshall(appInstanceUserMembershipSummary.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(appInstanceUserMembershipSummary.getReadMarkerTimestamp(), READMARKERTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(appInstanceUserMembershipSummary.getSubChannelId(), SUBCHANNELID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

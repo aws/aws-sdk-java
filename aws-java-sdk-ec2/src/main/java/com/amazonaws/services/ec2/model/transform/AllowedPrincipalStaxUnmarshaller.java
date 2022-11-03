@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -50,6 +52,26 @@ public class AllowedPrincipalStaxUnmarshaller implements Unmarshaller<AllowedPri
 
                 if (context.testExpression("principal", targetDepth)) {
                     allowedPrincipal.setPrincipal(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("servicePermissionId", targetDepth)) {
+                    allowedPrincipal.setServicePermissionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    allowedPrincipal.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    allowedPrincipal.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("serviceId", targetDepth)) {
+                    allowedPrincipal.setServiceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -28,9 +28,14 @@ import com.amazonaws.services.rdsdata.model.*;
  * <p>
  * <fullname>Amazon RDS Data Service</fullname>
  * <p>
- * Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run these
+ * Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless v1 DB cluster. To run these
  * statements, you work with the Data Service API.
  * </p>
+ * <note>
+ * <p>
+ * The Data Service API isn't supported on Amazon Aurora Serverless v2 DB clusters.
+ * </p>
+ * </note>
  * <p>
  * For more information about the Data Service API, see <a
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the
@@ -50,12 +55,22 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * sets. Bulk operations can provide a significant performance improvement over individual insert and update
      * operations.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter,
      * changes that result from the call are committed automatically.
      * </p>
-     * </important>
+     * <p>
+     * There isn't a fixed upper limit on the number of parameter sets. However, the maximum size of the HTTP request
+     * submitted through the Data API is 4 MiB. If the request exceeds this limit, the Data API returns an error and
+     * doesn't process the request. This 4-MiB limit includes the size of the HTTP headers and the JSON notation in the
+     * request. Thus, the number of parameter sets that you can include depends on a combination of factors, such as the
+     * size of the SQL statement and the size of each parameter set.
+     * </p>
+     * <p>
+     * The response size limit is 1 MiB. If the call returns more than 1 MiB of response data, the call is terminated.
+     * </p>
+     * </note>
      * 
      * @param batchExecuteStatementRequest
      *        The request parameters represent the input of a SQL statement over an array of data.
@@ -75,12 +90,22 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * sets. Bulk operations can provide a significant performance improvement over individual insert and update
      * operations.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter,
      * changes that result from the call are committed automatically.
      * </p>
-     * </important>
+     * <p>
+     * There isn't a fixed upper limit on the number of parameter sets. However, the maximum size of the HTTP request
+     * submitted through the Data API is 4 MiB. If the request exceeds this limit, the Data API returns an error and
+     * doesn't process the request. This 4-MiB limit includes the size of the HTTP headers and the JSON notation in the
+     * request. Thus, the number of parameter sets that you can include depends on a combination of factors, such as the
+     * size of the SQL statement and the size of each parameter set.
+     * </p>
+     * <p>
+     * The response size limit is 1 MiB. If the call returns more than 1 MiB of response data, the call is terminated.
+     * </p>
+     * </note>
      * 
      * @param batchExecuteStatementRequest
      *        The request parameters represent the input of a SQL statement over an array of data.
@@ -100,10 +125,20 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * <p>
      * Starts a SQL transaction.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt; &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt; call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt; </code>
-     * </pre>
+     * <note>
+     * <p>
+     * A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after
+     * 24 hours.
+     * </p>
+     * <p>
+     * A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before
+     * it's committed, it's rolled back automatically.
+     * </p>
+     * <p>
+     * DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a
+     * separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.
+     * </p>
+     * </note>
      * 
      * @param beginTransactionRequest
      *        The request parameters represent the input of a request to start a SQL transaction.
@@ -118,10 +153,20 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * <p>
      * Starts a SQL transaction.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt; &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt; call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt; </code>
-     * </pre>
+     * <note>
+     * <p>
+     * A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after
+     * 24 hours.
+     * </p>
+     * <p>
+     * A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before
+     * it's committed, it's rolled back automatically.
+     * </p>
+     * <p>
+     * DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a
+     * separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.
+     * </p>
+     * </note>
      * 
      * @param beginTransactionRequest
      *        The request parameters represent the input of a request to start a SQL transaction.
@@ -174,12 +219,12 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * <p>
      * Runs one or more SQL statements.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
      * operation.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param executeSqlRequest
      *        The request parameters represent the input of a request to run one or more SQL statements.
@@ -195,12 +240,12 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * <p>
      * Runs one or more SQL statements.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
      * operation.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param executeSqlRequest
      *        The request parameters represent the input of a request to run one or more SQL statements.
@@ -221,15 +266,15 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * <p>
      * Runs a SQL statement against a database.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter,
      * changes that result from the call are committed automatically.
      * </p>
-     * </important>
      * <p>
      * If the binary response data from the database is more than 1 MB, the call is terminated.
      * </p>
+     * </note>
      * 
      * @param executeStatementRequest
      *        The request parameters represent the input of a request to run a SQL statement against a database.
@@ -244,15 +289,15 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * <p>
      * Runs a SQL statement against a database.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter,
      * changes that result from the call are committed automatically.
      * </p>
-     * </important>
      * <p>
      * If the binary response data from the database is more than 1 MB, the call is terminated.
      * </p>
+     * </note>
      * 
      * @param executeStatementRequest
      *        The request parameters represent the input of a request to run a SQL statement against a database.

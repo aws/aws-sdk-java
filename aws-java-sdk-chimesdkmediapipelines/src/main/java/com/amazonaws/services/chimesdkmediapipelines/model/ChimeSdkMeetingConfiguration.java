@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration object of the Amazon Chime SDK meeting for a specified media capture pipeline.
- * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
+ * The configuration object of the Amazon Chime SDK meeting for a specified media pipeline. <code>SourceType</code> must
+ * be <code>ChimeSdkMeeting</code>.
  * </p>
  * 
  * @see <a
@@ -32,7 +32,7 @@ public class ChimeSdkMeetingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The source configuration for a specified media capture pipline.
+     * The source configuration for a specified media pipline.
      * </p>
      */
     private SourceConfiguration sourceConfiguration;
@@ -45,11 +45,11 @@ public class ChimeSdkMeetingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The source configuration for a specified media capture pipline.
+     * The source configuration for a specified media pipline.
      * </p>
      * 
      * @param sourceConfiguration
-     *        The source configuration for a specified media capture pipline.
+     *        The source configuration for a specified media pipline.
      */
 
     public void setSourceConfiguration(SourceConfiguration sourceConfiguration) {
@@ -58,10 +58,10 @@ public class ChimeSdkMeetingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The source configuration for a specified media capture pipline.
+     * The source configuration for a specified media pipline.
      * </p>
      * 
-     * @return The source configuration for a specified media capture pipline.
+     * @return The source configuration for a specified media pipline.
      */
 
     public SourceConfiguration getSourceConfiguration() {
@@ -70,11 +70,11 @@ public class ChimeSdkMeetingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The source configuration for a specified media capture pipline.
+     * The source configuration for a specified media pipline.
      * </p>
      * 
      * @param sourceConfiguration
-     *        The source configuration for a specified media capture pipline.
+     *        The source configuration for a specified media pipline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

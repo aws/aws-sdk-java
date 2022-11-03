@@ -147,6 +147,12 @@ public class CancelExportTaskResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String warningMessage;
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     */
+    private String sourceType;
 
     /**
      * <p>
@@ -996,6 +1002,65 @@ public class CancelExportTaskResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of source for the export.
+     * @see ExportSourceType
+     */
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @return The type of source for the export.
+     * @see ExportSourceType
+     */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of source for the export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportSourceType
+     */
+
+    public CancelExportTaskResult withSourceType(String sourceType) {
+        setSourceType(sourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of source for the export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportSourceType
+     */
+
+    public CancelExportTaskResult withSourceType(ExportSourceType sourceType) {
+        this.sourceType = sourceType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1036,7 +1101,9 @@ public class CancelExportTaskResult extends com.amazonaws.AmazonWebServiceResult
         if (getFailureCause() != null)
             sb.append("FailureCause: ").append(getFailureCause()).append(",");
         if (getWarningMessage() != null)
-            sb.append("WarningMessage: ").append(getWarningMessage());
+            sb.append("WarningMessage: ").append(getWarningMessage()).append(",");
+        if (getSourceType() != null)
+            sb.append("SourceType: ").append(getSourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -1111,6 +1178,10 @@ public class CancelExportTaskResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getWarningMessage() != null && other.getWarningMessage().equals(this.getWarningMessage()) == false)
             return false;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
         return true;
     }
 
@@ -1134,6 +1205,7 @@ public class CancelExportTaskResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getTotalExtractedDataInGB() == null) ? 0 : getTotalExtractedDataInGB().hashCode());
         hashCode = prime * hashCode + ((getFailureCause() == null) ? 0 : getFailureCause().hashCode());
         hashCode = prime * hashCode + ((getWarningMessage() == null) ? 0 : getWarningMessage().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
         return hashCode;
     }
 

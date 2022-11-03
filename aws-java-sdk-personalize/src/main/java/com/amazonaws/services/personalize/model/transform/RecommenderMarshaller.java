@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.personalize.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -47,6 +49,8 @@ public class RecommenderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
     private static final MarshallingInfo<StructuredPojo> LATESTRECOMMENDERUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latestRecommenderUpdate").build();
+    private static final MarshallingInfo<Map> MODELMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("modelMetrics").build();
 
     private static final RecommenderMarshaller instance = new RecommenderMarshaller();
 
@@ -74,6 +78,7 @@ public class RecommenderMarshaller {
             protocolMarshaller.marshall(recommender.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(recommender.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(recommender.getLatestRecommenderUpdate(), LATESTRECOMMENDERUPDATE_BINDING);
+            protocolMarshaller.marshall(recommender.getModelMetrics(), MODELMETRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

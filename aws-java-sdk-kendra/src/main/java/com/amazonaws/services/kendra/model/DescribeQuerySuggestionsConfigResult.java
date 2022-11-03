@@ -26,7 +26,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
+     * Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
      * </p>
      * <p>
      * By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your
@@ -38,7 +38,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
     private String mode;
     /**
      * <p>
-     * Shows whether the status of query suggestions settings is currently Active or Updating.
+     * Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.
      * </p>
      * <p>
      * Active means the current settings apply and Updating means your changed settings are in the process of applying.
@@ -47,40 +47,40 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
     private String status;
     /**
      * <p>
-     * Shows how recent your queries are in your query log time window (in days).
+     * How recent your queries are in your query log time window (in days).
      * </p>
      */
     private Integer queryLogLookBackWindowInDays;
     /**
      * <p>
-     * Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query
-     * suggestions.
+     * <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the
+     * query suggestions.
      * </p>
      */
     private Boolean includeQueriesWithoutUserInformation;
     /**
      * <p>
-     * Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest
-     * to your users.
+     * The minimum number of unique users who must search a query in order for the query to be eligible to suggest to
+     * your users.
      * </p>
      */
     private Integer minimumNumberOfQueryingUsers;
     /**
      * <p>
-     * Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to
-     * your users.
+     * The minimum number of times a query must be searched in order for the query to be eligible to suggest to your
+     * users.
      * </p>
      */
     private Integer minimumQueryCount;
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last updated.
+     * The date-time query suggestions for an index was last updated.
      * </p>
      */
     private java.util.Date lastSuggestionsBuildTime;
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last cleared.
+     * The date-time query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -91,7 +91,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
     private java.util.Date lastClearTime;
     /**
      * <p>
-     * Shows the current total count of query suggestions for an index.
+     * The current total count of query suggestions for an index.
      * </p>
      * <p>
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
@@ -102,7 +102,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
+     * Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
      * </p>
      * <p>
      * By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your
@@ -112,8 +112,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param mode
-     *        Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
-     *        mode.</p>
+     *        Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
      *        <p>
      *        By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions
      *        for your users. You can change the mode using the <a
@@ -128,7 +127,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
+     * Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
      * </p>
      * <p>
      * By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your
@@ -137,8 +136,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * >UpdateQuerySuggestionsConfig</a> API.
      * </p>
      * 
-     * @return Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
-     *         mode.</p>
+     * @return Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
      *         <p>
      *         By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions
      *         for your users. You can change the mode using the <a
@@ -153,7 +151,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
+     * Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
      * </p>
      * <p>
      * By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your
@@ -163,8 +161,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param mode
-     *        Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
-     *        mode.</p>
+     *        Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
      *        <p>
      *        By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions
      *        for your users. You can change the mode using the <a
@@ -181,7 +178,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
+     * Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.
      * </p>
      * <p>
      * By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your
@@ -191,8 +188,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param mode
-     *        Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
-     *        mode.</p>
+     *        Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
      *        <p>
      *        By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions
      *        for your users. You can change the mode using the <a
@@ -209,14 +205,15 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether the status of query suggestions settings is currently Active or Updating.
+     * Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.
      * </p>
      * <p>
      * Active means the current settings apply and Updating means your changed settings are in the process of applying.
      * </p>
      * 
      * @param status
-     *        Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+     *        Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>
+     *        .</p>
      *        <p>
      *        Active means the current settings apply and Updating means your changed settings are in the process of
      *        applying.
@@ -229,13 +226,14 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether the status of query suggestions settings is currently Active or Updating.
+     * Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.
      * </p>
      * <p>
      * Active means the current settings apply and Updating means your changed settings are in the process of applying.
      * </p>
      * 
-     * @return Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+     * @return Whether the status of query suggestions settings is currently <code>ACTIVE</code> or
+     *         <code>UPDATING</code>.</p>
      *         <p>
      *         Active means the current settings apply and Updating means your changed settings are in the process of
      *         applying.
@@ -248,14 +246,15 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether the status of query suggestions settings is currently Active or Updating.
+     * Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.
      * </p>
      * <p>
      * Active means the current settings apply and Updating means your changed settings are in the process of applying.
      * </p>
      * 
      * @param status
-     *        Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+     *        Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>
+     *        .</p>
      *        <p>
      *        Active means the current settings apply and Updating means your changed settings are in the process of
      *        applying.
@@ -270,14 +269,15 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether the status of query suggestions settings is currently Active or Updating.
+     * Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.
      * </p>
      * <p>
      * Active means the current settings apply and Updating means your changed settings are in the process of applying.
      * </p>
      * 
      * @param status
-     *        Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+     *        Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>
+     *        .</p>
      *        <p>
      *        Active means the current settings apply and Updating means your changed settings are in the process of
      *        applying.
@@ -292,11 +292,11 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows how recent your queries are in your query log time window (in days).
+     * How recent your queries are in your query log time window (in days).
      * </p>
      * 
      * @param queryLogLookBackWindowInDays
-     *        Shows how recent your queries are in your query log time window (in days).
+     *        How recent your queries are in your query log time window (in days).
      */
 
     public void setQueryLogLookBackWindowInDays(Integer queryLogLookBackWindowInDays) {
@@ -305,10 +305,10 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows how recent your queries are in your query log time window (in days).
+     * How recent your queries are in your query log time window (in days).
      * </p>
      * 
-     * @return Shows how recent your queries are in your query log time window (in days).
+     * @return How recent your queries are in your query log time window (in days).
      */
 
     public Integer getQueryLogLookBackWindowInDays() {
@@ -317,11 +317,11 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows how recent your queries are in your query log time window (in days).
+     * How recent your queries are in your query log time window (in days).
      * </p>
      * 
      * @param queryLogLookBackWindowInDays
-     *        Shows how recent your queries are in your query log time window (in days).
+     *        How recent your queries are in your query log time window (in days).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,13 +332,13 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query
-     * suggestions.
+     * <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the
+     * query suggestions.
      * </p>
      * 
      * @param includeQueriesWithoutUserInformation
-     *        Shows whether Amazon Kendra uses all queries or only uses queries that include user information to
-     *        generate query suggestions.
+     *        <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate
+     *        the query suggestions.
      */
 
     public void setIncludeQueriesWithoutUserInformation(Boolean includeQueriesWithoutUserInformation) {
@@ -347,12 +347,12 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query
-     * suggestions.
+     * <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the
+     * query suggestions.
      * </p>
      * 
-     * @return Shows whether Amazon Kendra uses all queries or only uses queries that include user information to
-     *         generate query suggestions.
+     * @return <code>TRUE</code> to use all queries, otherwise use only queries that include user information to
+     *         generate the query suggestions.
      */
 
     public Boolean getIncludeQueriesWithoutUserInformation() {
@@ -361,13 +361,13 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query
-     * suggestions.
+     * <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the
+     * query suggestions.
      * </p>
      * 
      * @param includeQueriesWithoutUserInformation
-     *        Shows whether Amazon Kendra uses all queries or only uses queries that include user information to
-     *        generate query suggestions.
+     *        <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate
+     *        the query suggestions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,12 +378,12 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query
-     * suggestions.
+     * <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the
+     * query suggestions.
      * </p>
      * 
-     * @return Shows whether Amazon Kendra uses all queries or only uses queries that include user information to
-     *         generate query suggestions.
+     * @return <code>TRUE</code> to use all queries, otherwise use only queries that include user information to
+     *         generate the query suggestions.
      */
 
     public Boolean isIncludeQueriesWithoutUserInformation() {
@@ -392,12 +392,12 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest
-     * to your users.
+     * The minimum number of unique users who must search a query in order for the query to be eligible to suggest to
+     * your users.
      * </p>
      * 
      * @param minimumNumberOfQueryingUsers
-     *        Shows the minimum number of unique users who must search a query in order for the query to be eligible to
+     *        The minimum number of unique users who must search a query in order for the query to be eligible to
      *        suggest to your users.
      */
 
@@ -407,11 +407,11 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest
-     * to your users.
+     * The minimum number of unique users who must search a query in order for the query to be eligible to suggest to
+     * your users.
      * </p>
      * 
-     * @return Shows the minimum number of unique users who must search a query in order for the query to be eligible to
+     * @return The minimum number of unique users who must search a query in order for the query to be eligible to
      *         suggest to your users.
      */
 
@@ -421,12 +421,12 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest
-     * to your users.
+     * The minimum number of unique users who must search a query in order for the query to be eligible to suggest to
+     * your users.
      * </p>
      * 
      * @param minimumNumberOfQueryingUsers
-     *        Shows the minimum number of unique users who must search a query in order for the query to be eligible to
+     *        The minimum number of unique users who must search a query in order for the query to be eligible to
      *        suggest to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -438,13 +438,13 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to
-     * your users.
+     * The minimum number of times a query must be searched in order for the query to be eligible to suggest to your
+     * users.
      * </p>
      * 
      * @param minimumQueryCount
-     *        Shows the minimum number of times a query must be searched in order for the query to be eligible to
-     *        suggest to your users.
+     *        The minimum number of times a query must be searched in order for the query to be eligible to suggest to
+     *        your users.
      */
 
     public void setMinimumQueryCount(Integer minimumQueryCount) {
@@ -453,12 +453,12 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to
-     * your users.
+     * The minimum number of times a query must be searched in order for the query to be eligible to suggest to your
+     * users.
      * </p>
      * 
-     * @return Shows the minimum number of times a query must be searched in order for the query to be eligible to
-     *         suggest to your users.
+     * @return The minimum number of times a query must be searched in order for the query to be eligible to suggest to
+     *         your users.
      */
 
     public Integer getMinimumQueryCount() {
@@ -467,13 +467,13 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to
-     * your users.
+     * The minimum number of times a query must be searched in order for the query to be eligible to suggest to your
+     * users.
      * </p>
      * 
      * @param minimumQueryCount
-     *        Shows the minimum number of times a query must be searched in order for the query to be eligible to
-     *        suggest to your users.
+     *        The minimum number of times a query must be searched in order for the query to be eligible to suggest to
+     *        your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,11 +484,11 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last updated.
+     * The date-time query suggestions for an index was last updated.
      * </p>
      * 
      * @param lastSuggestionsBuildTime
-     *        Shows the date-time query suggestions for an index was last updated.
+     *        The date-time query suggestions for an index was last updated.
      */
 
     public void setLastSuggestionsBuildTime(java.util.Date lastSuggestionsBuildTime) {
@@ -497,10 +497,10 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last updated.
+     * The date-time query suggestions for an index was last updated.
      * </p>
      * 
-     * @return Shows the date-time query suggestions for an index was last updated.
+     * @return The date-time query suggestions for an index was last updated.
      */
 
     public java.util.Date getLastSuggestionsBuildTime() {
@@ -509,11 +509,11 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last updated.
+     * The date-time query suggestions for an index was last updated.
      * </p>
      * 
      * @param lastSuggestionsBuildTime
-     *        Shows the date-time query suggestions for an index was last updated.
+     *        The date-time query suggestions for an index was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,7 +524,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last cleared.
+     * The date-time query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -533,7 +533,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param lastClearTime
-     *        Shows the date-time query suggestions for an index was last cleared.</p>
+     *        The date-time query suggestions for an index was last cleared.</p>
      *        <p>
      *        After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query
      *        log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the
@@ -546,7 +546,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last cleared.
+     * The date-time query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -554,7 +554,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * cleared suggestions.
      * </p>
      * 
-     * @return Shows the date-time query suggestions for an index was last cleared.</p>
+     * @return The date-time query suggestions for an index was last cleared.</p>
      *         <p>
      *         After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query
      *         log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the
@@ -567,7 +567,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the date-time query suggestions for an index was last cleared.
+     * The date-time query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -576,7 +576,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param lastClearTime
-     *        Shows the date-time query suggestions for an index was last cleared.</p>
+     *        The date-time query suggestions for an index was last cleared.</p>
      *        <p>
      *        After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query
      *        log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the
@@ -591,7 +591,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the current total count of query suggestions for an index.
+     * The current total count of query suggestions for an index.
      * </p>
      * <p>
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
@@ -599,7 +599,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param totalSuggestionsCount
-     *        Shows the current total count of query suggestions for an index.</p>
+     *        The current total count of query suggestions for an index.</p>
      *        <p>
      *        This count can change when you update your query suggestions settings, if you filter out certain queries
      *        from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to
@@ -612,14 +612,14 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the current total count of query suggestions for an index.
+     * The current total count of query suggestions for an index.
      * </p>
      * <p>
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
      * suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.
      * </p>
      * 
-     * @return Shows the current total count of query suggestions for an index.</p>
+     * @return The current total count of query suggestions for an index.</p>
      *         <p>
      *         This count can change when you update your query suggestions settings, if you filter out certain queries
      *         from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to
@@ -632,7 +632,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Shows the current total count of query suggestions for an index.
+     * The current total count of query suggestions for an index.
      * </p>
      * <p>
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
@@ -640,7 +640,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param totalSuggestionsCount
-     *        Shows the current total count of query suggestions for an index.</p>
+     *        The current total count of query suggestions for an index.</p>
      *        <p>
      *        This count can change when you update your query suggestions settings, if you filter out certain queries
      *        from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to

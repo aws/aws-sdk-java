@@ -48,7 +48,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
     private String destinationType;
     /**
      * <p>
-     * Data view export file format.
+     * Dataview export file format.
      * </p>
      * <ul>
      * <li>
@@ -188,7 +188,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Data view export file format.
+     * Dataview export file format.
      * </p>
      * <ul>
      * <li>
@@ -204,7 +204,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
      * </ul>
      * 
      * @param s3DestinationExportFileFormat
-     *        Data view export file format.</p>
+     *        Dataview export file format.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -225,7 +225,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Data view export file format.
+     * Dataview export file format.
      * </p>
      * <ul>
      * <li>
@@ -240,7 +240,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
      * </li>
      * </ul>
      * 
-     * @return Data view export file format.</p>
+     * @return Dataview export file format.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -261,7 +261,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Data view export file format.
+     * Dataview export file format.
      * </p>
      * <ul>
      * <li>
@@ -277,7 +277,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
      * </ul>
      * 
      * @param s3DestinationExportFileFormat
-     *        Data view export file format.</p>
+     *        Dataview export file format.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -300,7 +300,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Data view export file format.
+     * Dataview export file format.
      * </p>
      * <ul>
      * <li>
@@ -316,7 +316,7 @@ public class DataViewDestinationTypeParams implements Serializable, Cloneable, S
      * </ul>
      * 
      * @param s3DestinationExportFileFormat
-     *        Data view export file format.</p>
+     *        Dataview export file format.</p>
      *        <ul>
      *        <li>
      *        <p>

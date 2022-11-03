@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * When creating or updating a cost category, you can define the <code>CostCategoryRule</code> rule type as
- * <code>INHERITED_VALUE</code>. This rule type adds the flexibility of defining a rule that dynamically inherits the
- * cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For
- * example, if you want to dynamically group costs that are based on the value of a specific tag key, first choose an
- * inherited value rule type, then choose the tag dimension and specify the tag key to use.
+ * When you create or update a cost category, you can define the <code>CostCategoryRule</code> rule type as
+ * <code>INHERITED_VALUE</code>. This rule type adds the flexibility to define a rule that dynamically inherits the cost
+ * category value from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For
+ * example, suppose that you want to dynamically group costs that are based on the value of a specific tag key. First,
+ * choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryInheritedValueDimension"
@@ -38,7 +38,7 @@ public class CostCategoryInheritedValueDimension implements Serializable, Clonea
      * </p>
      * <p>
      * If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify
-     * <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     * <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * </p>
      */
     private String dimensionName;
@@ -55,14 +55,14 @@ public class CostCategoryInheritedValueDimension implements Serializable, Clonea
      * </p>
      * <p>
      * If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify
-     * <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     * <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * </p>
      * 
      * @param dimensionName
      *        The name of the dimension that's used to group costs.</p>
      *        <p>
      *        If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you
-     *        specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     *        specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * @see CostCategoryInheritedValueDimensionName
      */
 
@@ -76,13 +76,13 @@ public class CostCategoryInheritedValueDimension implements Serializable, Clonea
      * </p>
      * <p>
      * If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify
-     * <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     * <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * </p>
      * 
      * @return The name of the dimension that's used to group costs.</p>
      *         <p>
      *         If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you
-     *         specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     *         specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * @see CostCategoryInheritedValueDimensionName
      */
 
@@ -96,14 +96,14 @@ public class CostCategoryInheritedValueDimension implements Serializable, Clonea
      * </p>
      * <p>
      * If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify
-     * <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     * <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * </p>
      * 
      * @param dimensionName
      *        The name of the dimension that's used to group costs.</p>
      *        <p>
      *        If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you
-     *        specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     *        specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CostCategoryInheritedValueDimensionName
      */
@@ -119,14 +119,14 @@ public class CostCategoryInheritedValueDimension implements Serializable, Clonea
      * </p>
      * <p>
      * If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify
-     * <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     * <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * </p>
      * 
      * @param dimensionName
      *        The name of the dimension that's used to group costs.</p>
      *        <p>
      *        If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you
-     *        specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.
+     *        specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CostCategoryInheritedValueDimensionName
      */

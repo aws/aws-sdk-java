@@ -26,18 +26,18 @@ public class DeleteEnvironmentAccountConnectionResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the environment account connection being deleted.
      * </p>
      */
     private EnvironmentAccountConnection environmentAccountConnection;
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the environment account connection being deleted.
      * </p>
      * 
      * @param environmentAccountConnection
-     *        The environment account connection detail data that's returned by Proton.
+     *        The detailed data of the environment account connection being deleted.
      */
 
     public void setEnvironmentAccountConnection(EnvironmentAccountConnection environmentAccountConnection) {
@@ -46,10 +46,10 @@ public class DeleteEnvironmentAccountConnectionResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the environment account connection being deleted.
      * </p>
      * 
-     * @return The environment account connection detail data that's returned by Proton.
+     * @return The detailed data of the environment account connection being deleted.
      */
 
     public EnvironmentAccountConnection getEnvironmentAccountConnection() {
@@ -58,11 +58,11 @@ public class DeleteEnvironmentAccountConnectionResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the environment account connection being deleted.
      * </p>
      * 
      * @param environmentAccountConnection
-     *        The environment account connection detail data that's returned by Proton.
+     *        The detailed data of the environment account connection being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

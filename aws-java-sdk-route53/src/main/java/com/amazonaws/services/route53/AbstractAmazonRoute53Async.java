@@ -54,6 +54,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCidrCollectionResult> changeCidrCollectionAsync(ChangeCidrCollectionRequest request) {
+
+        return changeCidrCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCidrCollectionResult> changeCidrCollectionAsync(ChangeCidrCollectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ChangeCidrCollectionRequest, ChangeCidrCollectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeResourceRecordSetsResult> changeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request) {
 
         return changeResourceRecordSetsAsync(request, null);
@@ -75,6 +88,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     @Override
     public java.util.concurrent.Future<ChangeTagsForResourceResult> changeTagsForResourceAsync(ChangeTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangeTagsForResourceRequest, ChangeTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCidrCollectionResult> createCidrCollectionAsync(CreateCidrCollectionRequest request) {
+
+        return createCidrCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCidrCollectionResult> createCidrCollectionAsync(CreateCidrCollectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCidrCollectionRequest, CreateCidrCollectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -207,6 +233,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     @Override
     public java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeactivateKeySigningKeyRequest, DeactivateKeySigningKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCidrCollectionResult> deleteCidrCollectionAsync(DeleteCidrCollectionRequest request) {
+
+        return deleteCidrCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCidrCollectionResult> deleteCidrCollectionAsync(DeleteCidrCollectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCidrCollectionRequest, DeleteCidrCollectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -706,6 +745,45 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler) {
 
         return getTrafficPolicyInstanceCountAsync(new GetTrafficPolicyInstanceCountRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrBlocksResult> listCidrBlocksAsync(ListCidrBlocksRequest request) {
+
+        return listCidrBlocksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrBlocksResult> listCidrBlocksAsync(ListCidrBlocksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCidrBlocksRequest, ListCidrBlocksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrCollectionsResult> listCidrCollectionsAsync(ListCidrCollectionsRequest request) {
+
+        return listCidrCollectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrCollectionsResult> listCidrCollectionsAsync(ListCidrCollectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCidrCollectionsRequest, ListCidrCollectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrLocationsResult> listCidrLocationsAsync(ListCidrLocationsRequest request) {
+
+        return listCidrLocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrLocationsResult> listCidrLocationsAsync(ListCidrLocationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCidrLocationsRequest, ListCidrLocationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

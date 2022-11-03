@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListAnalyzersRequestMarshaller {
 
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("type").build();
 
@@ -50,8 +50,8 @@ public class ListAnalyzersRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listAnalyzersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAnalyzersRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAnalyzersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAnalyzersRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

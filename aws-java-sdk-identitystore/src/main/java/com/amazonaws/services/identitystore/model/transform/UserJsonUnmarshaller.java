@@ -56,6 +56,70 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                     context.nextToken();
                     user.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalIds", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalIds(new ListUnmarshaller<ExternalId>(ExternalIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    user.setName(NameJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    user.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NickName", targetDepth)) {
+                    context.nextToken();
+                    user.setNickName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProfileUrl", targetDepth)) {
+                    context.nextToken();
+                    user.setProfileUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Emails", targetDepth)) {
+                    context.nextToken();
+                    user.setEmails(new ListUnmarshaller<Email>(EmailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Addresses", targetDepth)) {
+                    context.nextToken();
+                    user.setAddresses(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PhoneNumbers", targetDepth)) {
+                    context.nextToken();
+                    user.setPhoneNumbers(new ListUnmarshaller<PhoneNumber>(PhoneNumberJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("UserType", targetDepth)) {
+                    context.nextToken();
+                    user.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Title", targetDepth)) {
+                    context.nextToken();
+                    user.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredLanguage", targetDepth)) {
+                    context.nextToken();
+                    user.setPreferredLanguage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Locale", targetDepth)) {
+                    context.nextToken();
+                    user.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Timezone", targetDepth)) {
+                    context.nextToken();
+                    user.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IdentityStoreId", targetDepth)) {
+                    context.nextToken();
+                    user.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

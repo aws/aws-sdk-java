@@ -38,6 +38,8 @@ public class RemoveDraftAppVersionResourceMappingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceGroupNames").build();
     private static final MarshallingInfo<List> RESOURCENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceNames").build();
+    private static final MarshallingInfo<List> TERRAFORMSOURCENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terraformSourceNames").build();
 
     private static final RemoveDraftAppVersionResourceMappingsRequestMarshaller instance = new RemoveDraftAppVersionResourceMappingsRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class RemoveDraftAppVersionResourceMappingsRequestMarshaller {
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getLogicalStackNames(), LOGICALSTACKNAMES_BINDING);
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getResourceGroupNames(), RESOURCEGROUPNAMES_BINDING);
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getResourceNames(), RESOURCENAMES_BINDING);
+            protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getTerraformSourceNames(), TERRAFORMSOURCENAMES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

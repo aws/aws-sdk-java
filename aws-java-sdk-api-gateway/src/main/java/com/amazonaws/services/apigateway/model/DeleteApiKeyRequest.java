@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to delete the <a>ApiKey</a> resource.
+ * A request to delete the ApiKey resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class DeleteApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     * The identifier of the ApiKey resource to be deleted.
      * </p>
      */
     private String apiKey;
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     * The identifier of the ApiKey resource to be deleted.
      * </p>
      * 
      * @param apiKey
-     *        [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     *        The identifier of the ApiKey resource to be deleted.
      */
 
     public void setApiKey(String apiKey) {
@@ -47,10 +47,10 @@ public class DeleteApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     * The identifier of the ApiKey resource to be deleted.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     * @return The identifier of the ApiKey resource to be deleted.
      */
 
     public String getApiKey() {
@@ -59,11 +59,11 @@ public class DeleteApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     * The identifier of the ApiKey resource to be deleted.
      * </p>
      * 
      * @param apiKey
-     *        [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+     *        The identifier of the ApiKey resource to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,17 +25,26 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return A comma-separated list of tag key:value pairs.
+     * @return The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +53,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        A comma-separated list of tag key:value pairs.
+     *        The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +72,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        A comma-separated list of tag key:value pairs.
+     *        The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

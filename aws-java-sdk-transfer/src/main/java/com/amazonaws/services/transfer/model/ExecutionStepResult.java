@@ -35,22 +35,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: copy the file to another location
+     * <i>COPY</i>: Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: custom step with a lambda target
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: delete the file
+     * <i>DELETE</i>: Delete the file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: add a tag to the file
+     * <i>TAG</i>: Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -65,7 +65,7 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
     private String outputs;
     /**
      * <p>
-     * Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     * Specifies the details for an error, if it occurred during execution of the specified workflow step.
      * </p>
      */
     private ExecutionError error;
@@ -77,22 +77,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: copy the file to another location
+     * <i>COPY</i>: Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: custom step with a lambda target
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: delete the file
+     * <i>DELETE</i>: Delete the file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: add a tag to the file
+     * <i>TAG</i>: Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -102,22 +102,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>COPY</i>: copy the file to another location
+     *        <i>COPY</i>: Copy the file to another location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CUSTOM</i>: custom step with a lambda target
+     *        <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>DELETE</i>: delete the file
+     *        <i>DELETE</i>: Delete the file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TAG</i>: add a tag to the file
+     *        <i>TAG</i>: Add a tag to the file.
      *        </p>
      *        </li>
      * @see WorkflowStepType
@@ -134,22 +134,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: copy the file to another location
+     * <i>COPY</i>: Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: custom step with a lambda target
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: delete the file
+     * <i>DELETE</i>: Delete the file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: add a tag to the file
+     * <i>TAG</i>: Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -158,22 +158,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>COPY</i>: copy the file to another location
+     *         <i>COPY</i>: Copy the file to another location.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>CUSTOM</i>: custom step with a lambda target
+     *         <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>DELETE</i>: delete the file
+     *         <i>DELETE</i>: Delete the file.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>TAG</i>: add a tag to the file
+     *         <i>TAG</i>: Add a tag to the file.
      *         </p>
      *         </li>
      * @see WorkflowStepType
@@ -190,22 +190,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: copy the file to another location
+     * <i>COPY</i>: Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: custom step with a lambda target
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: delete the file
+     * <i>DELETE</i>: Delete the file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: add a tag to the file
+     * <i>TAG</i>: Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -215,22 +215,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>COPY</i>: copy the file to another location
+     *        <i>COPY</i>: Copy the file to another location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CUSTOM</i>: custom step with a lambda target
+     *        <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>DELETE</i>: delete the file
+     *        <i>DELETE</i>: Delete the file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TAG</i>: add a tag to the file
+     *        <i>TAG</i>: Add a tag to the file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -249,22 +249,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: copy the file to another location
+     * <i>COPY</i>: Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: custom step with a lambda target
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: delete the file
+     * <i>DELETE</i>: Delete the file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: add a tag to the file
+     * <i>TAG</i>: Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -274,22 +274,22 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>COPY</i>: copy the file to another location
+     *        <i>COPY</i>: Copy the file to another location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CUSTOM</i>: custom step with a lambda target
+     *        <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>DELETE</i>: delete the file
+     *        <i>DELETE</i>: Delete the file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TAG</i>: add a tag to the file
+     *        <i>TAG</i>: Add a tag to the file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -349,11 +349,11 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     * Specifies the details for an error, if it occurred during execution of the specified workflow step.
      * </p>
      * 
      * @param error
-     *        Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     *        Specifies the details for an error, if it occurred during execution of the specified workflow step.
      */
 
     public void setError(ExecutionError error) {
@@ -362,10 +362,10 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     * Specifies the details for an error, if it occurred during execution of the specified workflow step.
      * </p>
      * 
-     * @return Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     * @return Specifies the details for an error, if it occurred during execution of the specified workflow step.
      */
 
     public ExecutionError getError() {
@@ -374,11 +374,11 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     * Specifies the details for an error, if it occurred during execution of the specified workflow step.
      * </p>
      * 
      * @param error
-     *        Specifies the details for an error, if it occurred during execution of the specified workfow step.
+     *        Specifies the details for an error, if it occurred during execution of the specified workflow step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

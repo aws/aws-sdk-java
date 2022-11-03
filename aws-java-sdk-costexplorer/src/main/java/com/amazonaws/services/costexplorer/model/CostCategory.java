@@ -37,13 +37,13 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
     private String costCategoryArn;
     /**
      * <p>
-     * The effective state data of your Cost Category.
+     * The effective start date of your Cost Category.
      * </p>
      */
     private String effectiveStart;
     /**
      * <p>
-     * The effective end data of your Cost Category.
+     * The effective end date of your Cost Category.
      * </p>
      */
     private String effectiveEnd;
@@ -115,11 +115,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The effective state data of your Cost Category.
+     * The effective start date of your Cost Category.
      * </p>
      * 
      * @param effectiveStart
-     *        The effective state data of your Cost Category.
+     *        The effective start date of your Cost Category.
      */
 
     public void setEffectiveStart(String effectiveStart) {
@@ -128,10 +128,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The effective state data of your Cost Category.
+     * The effective start date of your Cost Category.
      * </p>
      * 
-     * @return The effective state data of your Cost Category.
+     * @return The effective start date of your Cost Category.
      */
 
     public String getEffectiveStart() {
@@ -140,11 +140,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The effective state data of your Cost Category.
+     * The effective start date of your Cost Category.
      * </p>
      * 
      * @param effectiveStart
-     *        The effective state data of your Cost Category.
+     *        The effective start date of your Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The effective end data of your Cost Category.
+     * The effective end date of your Cost Category.
      * </p>
      * 
      * @param effectiveEnd
-     *        The effective end data of your Cost Category.
+     *        The effective end date of your Cost Category.
      */
 
     public void setEffectiveEnd(String effectiveEnd) {
@@ -168,10 +168,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The effective end data of your Cost Category.
+     * The effective end date of your Cost Category.
      * </p>
      * 
-     * @return The effective end data of your Cost Category.
+     * @return The effective end date of your Cost Category.
      */
 
     public String getEffectiveEnd() {
@@ -180,11 +180,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The effective end data of your Cost Category.
+     * The effective end date of your Cost Category.
      * </p>
      * 
      * @param effectiveEnd
-     *        The effective end data of your Cost Category.
+     *        The effective end date of your Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

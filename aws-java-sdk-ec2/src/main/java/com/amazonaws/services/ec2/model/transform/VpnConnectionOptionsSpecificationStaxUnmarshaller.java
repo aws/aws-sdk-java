@@ -89,6 +89,16 @@ public class VpnConnectionOptionsSpecificationStaxUnmarshaller implements Unmars
                     vpnConnectionOptionsSpecification.setRemoteIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("OutsideIpAddressType", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setOutsideIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TransportTransitGatewayAttachmentId", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setTransportTransitGatewayAttachmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnConnectionOptionsSpecification;

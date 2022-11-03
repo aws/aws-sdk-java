@@ -97,6 +97,18 @@ public class ComputeEnvironmentDetailJsonUnmarshaller implements Unmarshaller<Co
                     context.nextToken();
                     computeEnvironmentDetail.setUpdatePolicy(UpdatePolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("eksConfiguration", targetDepth)) {
+                    context.nextToken();
+                    computeEnvironmentDetail.setEksConfiguration(EksConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("containerOrchestrationType", targetDepth)) {
+                    context.nextToken();
+                    computeEnvironmentDetail.setContainerOrchestrationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("uuid", targetDepth)) {
+                    context.nextToken();
+                    computeEnvironmentDetail.setUuid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

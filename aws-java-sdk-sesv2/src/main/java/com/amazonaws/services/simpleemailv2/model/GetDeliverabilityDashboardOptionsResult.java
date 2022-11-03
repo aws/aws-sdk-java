@@ -36,9 +36,9 @@ public class GetDeliverabilityDashboardOptionsResult extends com.amazonaws.Amazo
     private Boolean dashboardEnabled;
     /**
      * <p>
-     * The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to
-     * expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the month.
+     * The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     * subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an
+     * active subscription that isn’t due to expire at the end of the month.
      * </p>
      */
     private java.util.Date subscriptionExpiryDate;
@@ -127,15 +127,15 @@ public class GetDeliverabilityDashboardOptionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to
-     * expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the month.
+     * The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     * subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an
+     * active subscription that isn’t due to expire at the end of the month.
      * </p>
      * 
      * @param subscriptionExpiryDate
-     *        The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled
-     *        to expire, if your subscription is scheduled to expire at the end of the current calendar month. This
-     *        value is null if you have an active subscription that isn’t due to expire at the end of the month.
+     *        The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     *        subscription is scheduled to expire at the end of the current calendar month. This value is null if you
+     *        have an active subscription that isn’t due to expire at the end of the month.
      */
 
     public void setSubscriptionExpiryDate(java.util.Date subscriptionExpiryDate) {
@@ -144,15 +144,14 @@ public class GetDeliverabilityDashboardOptionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to
-     * expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the month.
+     * The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     * subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an
+     * active subscription that isn’t due to expire at the end of the month.
      * </p>
      * 
-     * @return The date, in Unix time format, when your current subscription to the Deliverability dashboard is
-     *         scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar
-     *         month. This value is null if you have an active subscription that isn’t due to expire at the end of the
-     *         month.
+     * @return The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     *         subscription is scheduled to expire at the end of the current calendar month. This value is null if you
+     *         have an active subscription that isn’t due to expire at the end of the month.
      */
 
     public java.util.Date getSubscriptionExpiryDate() {
@@ -161,15 +160,15 @@ public class GetDeliverabilityDashboardOptionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to
-     * expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the month.
+     * The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     * subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an
+     * active subscription that isn’t due to expire at the end of the month.
      * </p>
      * 
      * @param subscriptionExpiryDate
-     *        The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled
-     *        to expire, if your subscription is scheduled to expire at the end of the current calendar month. This
-     *        value is null if you have an active subscription that isn’t due to expire at the end of the month.
+     *        The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your
+     *        subscription is scheduled to expire at the end of the current calendar month. This value is null if you
+     *        have an active subscription that isn’t due to expire at the end of the month.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

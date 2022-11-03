@@ -61,6 +61,10 @@ public class FirewallStatusJsonUnmarshaller implements Unmarshaller<FirewallStat
                     firewallStatus.setSyncStates(new MapUnmarshaller<String, SyncState>(context.getUnmarshaller(String.class), SyncStateJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CapacityUsageSummary", targetDepth)) {
+                    context.nextToken();
+                    firewallStatus.setCapacityUsageSummary(CapacityUsageSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

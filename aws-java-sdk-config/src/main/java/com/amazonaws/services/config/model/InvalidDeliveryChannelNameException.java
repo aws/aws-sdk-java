@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified delivery channel name is not valid.
+ * The specified delivery channel name is invalid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

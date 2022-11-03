@@ -29,7 +29,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      */
     private String clientRequestToken;
@@ -42,7 +42,7 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The unique identifier of the member that is creating the proposal. This identifier is especially useful for
-     * identifying the member making the proposal when multiple members exist in a single AWS account.
+     * identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
      * </p>
      */
     private String memberId;
@@ -84,14 +84,14 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
      *        idempotent operation completes no more than one time. This identifier is required only if you make a
-     *        service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *        AWS CLI.
+     *        service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *        Services SDK or the CLI.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -102,13 +102,13 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      * 
      * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
      *         idempotent operation completes no more than one time. This identifier is required only if you make a
-     *         service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *         AWS CLI.
+     *         service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *         Services SDK or the CLI.
      */
 
     public String getClientRequestToken() {
@@ -119,14 +119,14 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
      *        idempotent operation completes no more than one time. This identifier is required only if you make a
-     *        service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *        AWS CLI.
+     *        service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *        Services SDK or the CLI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,12 +178,13 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The unique identifier of the member that is creating the proposal. This identifier is especially useful for
-     * identifying the member making the proposal when multiple members exist in a single AWS account.
+     * identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
      * </p>
      * 
      * @param memberId
      *        The unique identifier of the member that is creating the proposal. This identifier is especially useful
-     *        for identifying the member making the proposal when multiple members exist in a single AWS account.
+     *        for identifying the member making the proposal when multiple members exist in a single Amazon Web Services
+     *        account.
      */
 
     public void setMemberId(String memberId) {
@@ -193,11 +194,12 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The unique identifier of the member that is creating the proposal. This identifier is especially useful for
-     * identifying the member making the proposal when multiple members exist in a single AWS account.
+     * identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
      * </p>
      * 
      * @return The unique identifier of the member that is creating the proposal. This identifier is especially useful
-     *         for identifying the member making the proposal when multiple members exist in a single AWS account.
+     *         for identifying the member making the proposal when multiple members exist in a single Amazon Web
+     *         Services account.
      */
 
     public String getMemberId() {
@@ -207,12 +209,13 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The unique identifier of the member that is creating the proposal. This identifier is especially useful for
-     * identifying the member making the proposal when multiple members exist in a single AWS account.
+     * identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
      * </p>
      * 
      * @param memberId
      *        The unique identifier of the member that is creating the proposal. This identifier is especially useful
-     *        for identifying the member making the proposal when multiple members exist in a single AWS account.
+     *        for identifying the member making the proposal when multiple members exist in a single Amazon Web Services
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

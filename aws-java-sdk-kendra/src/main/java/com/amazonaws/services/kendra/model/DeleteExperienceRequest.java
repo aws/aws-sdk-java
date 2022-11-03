@@ -33,7 +33,7 @@ public class DeleteExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     private String id;
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to delete.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      */
     private String indexId;
@@ -80,11 +80,11 @@ public class DeleteExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to delete.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for your Amazon Kendra experience you want to delete.
+     *        The identifier of the index for your Amazon Kendra experience.
      */
 
     public void setIndexId(String indexId) {
@@ -93,10 +93,10 @@ public class DeleteExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to delete.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
-     * @return The identifier of the index for your Amazon Kendra experience you want to delete.
+     * @return The identifier of the index for your Amazon Kendra experience.
      */
 
     public String getIndexId() {
@@ -105,11 +105,11 @@ public class DeleteExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to delete.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for your Amazon Kendra experience you want to delete.
+     *        The identifier of the index for your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -120,6 +120,43 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
+     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
+     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * requests.
+     * </p>
+     * 
+     * @param createWorkspaceApiKeyRequest
+     * @return A Java Future containing the result of the CreateWorkspaceApiKey operation returned by the service.
+     * @sample AmazonManagedGrafanaAsync.CreateWorkspaceApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceApiKeyResult> createWorkspaceApiKeyAsync(CreateWorkspaceApiKeyRequest createWorkspaceApiKeyRequest);
+
+    /**
+     * <p>
+     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
+     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * requests.
+     * </p>
+     * 
+     * @param createWorkspaceApiKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkspaceApiKey operation returned by the service.
+     * @sample AmazonManagedGrafanaAsyncHandler.CreateWorkspaceApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceApiKeyResult> createWorkspaceApiKeyAsync(CreateWorkspaceApiKeyRequest createWorkspaceApiKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceApiKeyRequest, CreateWorkspaceApiKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an Amazon Managed Grafana workspace.
      * </p>
      * 
@@ -148,6 +185,37 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      */
     java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest deleteWorkspaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceRequest, DeleteWorkspaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an API key for a workspace.
+     * </p>
+     * 
+     * @param deleteWorkspaceApiKeyRequest
+     * @return A Java Future containing the result of the DeleteWorkspaceApiKey operation returned by the service.
+     * @sample AmazonManagedGrafanaAsync.DeleteWorkspaceApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceApiKeyResult> deleteWorkspaceApiKeyAsync(DeleteWorkspaceApiKeyRequest deleteWorkspaceApiKeyRequest);
+
+    /**
+     * <p>
+     * Deletes an API key for a workspace.
+     * </p>
+     * 
+     * @param deleteWorkspaceApiKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkspaceApiKey operation returned by the service.
+     * @sample AmazonManagedGrafanaAsyncHandler.DeleteWorkspaceApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceApiKeyResult> deleteWorkspaceApiKeyAsync(DeleteWorkspaceApiKeyRequest deleteWorkspaceApiKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceApiKeyRequest, DeleteWorkspaceApiKeyResult> asyncHandler);
 
     /**
      * <p>

@@ -36,6 +36,8 @@ public class CreatePredictorBacktestExportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Destination").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Format").build();
 
     private static final CreatePredictorBacktestExportJobRequestMarshaller instance = new CreatePredictorBacktestExportJobRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreatePredictorBacktestExportJobRequestMarshaller {
             protocolMarshaller.marshall(createPredictorBacktestExportJobRequest.getPredictorArn(), PREDICTORARN_BINDING);
             protocolMarshaller.marshall(createPredictorBacktestExportJobRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(createPredictorBacktestExportJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createPredictorBacktestExportJobRequest.getFormat(), FORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

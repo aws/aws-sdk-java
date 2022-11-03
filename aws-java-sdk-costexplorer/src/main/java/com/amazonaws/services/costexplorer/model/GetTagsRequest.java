@@ -49,7 +49,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private Expression filter;
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The key represents cost and usage metrics. The following values are supported:
@@ -92,21 +92,21 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.
      * </p>
      */
     private java.util.List<SortDefinition> sortBy;
     /**
      * <p>
-     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
-     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that are returned
+     * for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default
      * value for this parameter.
      * </p>
      * <p>
-     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      * </p>
      */
     private Integer maxResults;
@@ -284,7 +284,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The key represents cost and usage metrics. The following values are supported:
@@ -327,13 +327,13 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.
      * </p>
      * 
-     * @return The value by which you want to sort the data.</p>
+     * @return The value that you want to sort the data by.</p>
      *         <p>
      *         The key represents cost and usage metrics. The following values are supported:
      *         </p>
@@ -375,10 +375,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </li>
      *         </ul>
      *         <p>
-     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *         The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      *         </p>
      *         <p>
-     *         When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *         When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't
      *         supported.
      */
 
@@ -388,7 +388,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The key represents cost and usage metrics. The following values are supported:
@@ -431,14 +431,14 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The key represents cost and usage metrics. The following values are supported:
      *        </p>
@@ -480,10 +480,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      *        </p>
      *        <p>
-     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't
      *        supported.
      */
 
@@ -498,7 +498,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The key represents cost and usage metrics. The following values are supported:
@@ -541,10 +541,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -553,7 +553,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The key represents cost and usage metrics. The following values are supported:
      *        </p>
@@ -595,10 +595,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      *        </p>
      *        <p>
-     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't
      *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -615,7 +615,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The key represents cost and usage metrics. The following values are supported:
@@ -658,14 +658,14 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The key represents cost and usage metrics. The following values are supported:
      *        </p>
@@ -707,10 +707,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      *        </p>
      *        <p>
-     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't
      *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -722,20 +722,20 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
-     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that are returned
+     * for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default
      * value for this parameter.
      * </p>
      * <p>
-     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      * </p>
      * 
      * @param maxResults
-     *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
-     *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
-     *        results as the default value for this parameter.</p>
+     *        This field is only used when SortBy is provided in the request. The maximum number of objects that are
+     *        returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as
+     *        the default value for this parameter.</p>
      *        <p>
-     *        For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     *        For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -744,19 +744,19 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
-     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that are returned
+     * for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default
      * value for this parameter.
      * </p>
      * <p>
-     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      * </p>
      * 
-     * @return This field is only used when SortBy is provided in the request. The maximum number of objects that to be
-     *         returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
-     *         results as the default value for this parameter.</p>
+     * @return This field is only used when SortBy is provided in the request. The maximum number of objects that are
+     *         returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as
+     *         the default value for this parameter.</p>
      *         <p>
-     *         For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     *         For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      */
 
     public Integer getMaxResults() {
@@ -765,20 +765,20 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
-     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that are returned
+     * for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default
      * value for this parameter.
      * </p>
      * <p>
-     * For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      * </p>
      * 
      * @param maxResults
-     *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
-     *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
-     *        results as the default value for this parameter.</p>
+     *        This field is only used when SortBy is provided in the request. The maximum number of objects that are
+     *        returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as
+     *        the default value for this parameter.</p>
      *        <p>
-     *        For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+     *        For <code>GetTags</code>, MaxResults has an upper quota of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

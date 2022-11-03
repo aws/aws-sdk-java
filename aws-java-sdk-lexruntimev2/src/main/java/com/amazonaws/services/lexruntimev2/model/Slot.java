@@ -49,6 +49,12 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Slot> values;
+    /**
+     * <p>
+     * The constituent sub slots of a composite slot.
+     * </p>
+     */
+    private java.util.Map<String, Slot> subSlots;
 
     /**
      * <p>
@@ -244,6 +250,74 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The constituent sub slots of a composite slot.
+     * </p>
+     * 
+     * @return The constituent sub slots of a composite slot.
+     */
+
+    public java.util.Map<String, Slot> getSubSlots() {
+        return subSlots;
+    }
+
+    /**
+     * <p>
+     * The constituent sub slots of a composite slot.
+     * </p>
+     * 
+     * @param subSlots
+     *        The constituent sub slots of a composite slot.
+     */
+
+    public void setSubSlots(java.util.Map<String, Slot> subSlots) {
+        this.subSlots = subSlots;
+    }
+
+    /**
+     * <p>
+     * The constituent sub slots of a composite slot.
+     * </p>
+     * 
+     * @param subSlots
+     *        The constituent sub slots of a composite slot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Slot withSubSlots(java.util.Map<String, Slot> subSlots) {
+        setSubSlots(subSlots);
+        return this;
+    }
+
+    /**
+     * Add a single SubSlots entry
+     *
+     * @see Slot#withSubSlots
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Slot addSubSlotsEntry(String key, Slot value) {
+        if (null == this.subSlots) {
+            this.subSlots = new java.util.HashMap<String, Slot>();
+        }
+        if (this.subSlots.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.subSlots.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into SubSlots.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Slot clearSubSlotsEntries() {
+        this.subSlots = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -260,7 +334,9 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
         if (getShape() != null)
             sb.append("Shape: ").append(getShape()).append(",");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getSubSlots() != null)
+            sb.append("SubSlots: ").append(getSubSlots());
         sb.append("}");
         return sb.toString();
     }
@@ -287,6 +363,10 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
+        if (other.getSubSlots() == null ^ this.getSubSlots() == null)
+            return false;
+        if (other.getSubSlots() != null && other.getSubSlots().equals(this.getSubSlots()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +378,7 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getShape() == null) ? 0 : getShape().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getSubSlots() == null) ? 0 : getSubSlots().hashCode());
         return hashCode;
     }
 

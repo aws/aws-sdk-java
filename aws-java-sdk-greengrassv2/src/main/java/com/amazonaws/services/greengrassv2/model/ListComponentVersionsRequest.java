@@ -27,8 +27,8 @@ public class ListComponentVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     * component.
      * </p>
      */
     private String arn;
@@ -47,13 +47,13 @@ public class ListComponentVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     * component.
      * </p>
      * 
      * @param arn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        component version.
+     *        component.
      */
 
     public void setArn(String arn) {
@@ -62,12 +62,12 @@ public class ListComponentVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     * component.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         component version.
+     *         component.
      */
 
     public String getArn() {
@@ -76,13 +76,13 @@ public class ListComponentVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     * component.
      * </p>
      * 
      * @param arn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        component version.
+     *        component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

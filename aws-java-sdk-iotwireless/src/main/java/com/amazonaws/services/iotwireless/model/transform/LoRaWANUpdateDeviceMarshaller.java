@@ -35,6 +35,8 @@ public class LoRaWANUpdateDeviceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AbpV1_1").build();
     private static final MarshallingInfo<StructuredPojo> ABPV1_0_X_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AbpV1_0_x").build();
+    private static final MarshallingInfo<StructuredPojo> FPORTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FPorts").build();
 
     private static final LoRaWANUpdateDeviceMarshaller instance = new LoRaWANUpdateDeviceMarshaller();
 
@@ -56,6 +58,7 @@ public class LoRaWANUpdateDeviceMarshaller {
             protocolMarshaller.marshall(loRaWANUpdateDevice.getServiceProfileId(), SERVICEPROFILEID_BINDING);
             protocolMarshaller.marshall(loRaWANUpdateDevice.getAbpV1_1(), ABPV1_1_BINDING);
             protocolMarshaller.marshall(loRaWANUpdateDevice.getAbpV1_0_x(), ABPV1_0_X_BINDING);
+            protocolMarshaller.marshall(loRaWANUpdateDevice.getFPorts(), FPORTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

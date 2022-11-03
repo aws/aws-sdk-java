@@ -31,7 +31,7 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instance types to fulfill On-Demand capacity.
+     * How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
      * </p>
      */
     private String onDemandAllocationStrategy;
@@ -50,8 +50,25 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
     private Integer onDemandPercentageAboveBaseCapacity;
     /**
      * <p>
-     * How to allocate instances across Spot Instance pools.
+     * How to allocate instances across Spot Instance pools. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lowest-price</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String spotAllocationStrategy;
     /**
@@ -69,11 +86,11 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instance types to fulfill On-Demand capacity.
+     * How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
      * </p>
      * 
      * @param onDemandAllocationStrategy
-     *        How to allocate instance types to fulfill On-Demand capacity.
+     *        How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
      */
 
     public void setOnDemandAllocationStrategy(String onDemandAllocationStrategy) {
@@ -82,10 +99,11 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instance types to fulfill On-Demand capacity.
+     * How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
      * </p>
      * 
-     * @return How to allocate instance types to fulfill On-Demand capacity.
+     * @return How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>
+     *         .
      */
 
     public String getOnDemandAllocationStrategy() {
@@ -94,11 +112,11 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instance types to fulfill On-Demand capacity.
+     * How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
      * </p>
      * 
      * @param onDemandAllocationStrategy
-     *        How to allocate instance types to fulfill On-Demand capacity.
+     *        How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +214,44 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instances across Spot Instance pools.
+     * How to allocate instances across Spot Instance pools. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lowest-price</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param spotAllocationStrategy
-     *        How to allocate instances across Spot Instance pools.
+     *        How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>lowest-price</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-optimized</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-optimized-prioritized</code>
+     *        </p>
+     *        </li>
      */
 
     public void setSpotAllocationStrategy(String spotAllocationStrategy) {
@@ -209,10 +260,43 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instances across Spot Instance pools.
+     * How to allocate instances across Spot Instance pools. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lowest-price</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return How to allocate instances across Spot Instance pools.
+     * @return How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>lowest-price</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>capacity-optimized</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>capacity-optimized-prioritized</code>
+     *         </p>
+     *         </li>
      */
 
     public String getSpotAllocationStrategy() {
@@ -221,11 +305,44 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
 
     /**
      * <p>
-     * How to allocate instances across Spot Instance pools.
+     * How to allocate instances across Spot Instance pools. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lowest-price</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param spotAllocationStrategy
-     *        How to allocate instances across Spot Instance pools.
+     *        How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>lowest-price</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-optimized</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-optimized-prioritized</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

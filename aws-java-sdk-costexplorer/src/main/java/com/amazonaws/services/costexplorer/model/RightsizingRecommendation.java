@@ -60,7 +60,7 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
     private TerminateRecommendationDetail terminateRecommendationDetail;
     /**
      * <p>
-     * The list of possible reasons why the recommendation is generated such as under or over utilization of specific
+     * The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific
      * metrics (for example, CPU, Memory, Network).
      * </p>
      */
@@ -287,11 +287,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The list of possible reasons why the recommendation is generated such as under or over utilization of specific
+     * The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific
      * metrics (for example, CPU, Memory, Network).
      * </p>
      * 
-     * @return The list of possible reasons why the recommendation is generated such as under or over utilization of
+     * @return The list of possible reasons why the recommendation is generated, such as under- or over-utilization of
      *         specific metrics (for example, CPU, Memory, Network).
      * @see FindingReasonCode
      */
@@ -302,12 +302,12 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The list of possible reasons why the recommendation is generated such as under or over utilization of specific
+     * The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific
      * metrics (for example, CPU, Memory, Network).
      * </p>
      * 
      * @param findingReasonCodes
-     *        The list of possible reasons why the recommendation is generated such as under or over utilization of
+     *        The list of possible reasons why the recommendation is generated, such as under- or over-utilization of
      *        specific metrics (for example, CPU, Memory, Network).
      * @see FindingReasonCode
      */
@@ -323,7 +323,7 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The list of possible reasons why the recommendation is generated such as under or over utilization of specific
+     * The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific
      * metrics (for example, CPU, Memory, Network).
      * </p>
      * <p>
@@ -333,7 +333,7 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param findingReasonCodes
-     *        The list of possible reasons why the recommendation is generated such as under or over utilization of
+     *        The list of possible reasons why the recommendation is generated, such as under- or over-utilization of
      *        specific metrics (for example, CPU, Memory, Network).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingReasonCode
@@ -351,12 +351,12 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The list of possible reasons why the recommendation is generated such as under or over utilization of specific
+     * The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific
      * metrics (for example, CPU, Memory, Network).
      * </p>
      * 
      * @param findingReasonCodes
-     *        The list of possible reasons why the recommendation is generated such as under or over utilization of
+     *        The list of possible reasons why the recommendation is generated, such as under- or over-utilization of
      *        specific metrics (for example, CPU, Memory, Network).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingReasonCode
@@ -369,12 +369,12 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The list of possible reasons why the recommendation is generated such as under or over utilization of specific
+     * The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific
      * metrics (for example, CPU, Memory, Network).
      * </p>
      * 
      * @param findingReasonCodes
-     *        The list of possible reasons why the recommendation is generated such as under or over utilization of
+     *        The list of possible reasons why the recommendation is generated, such as under- or over-utilization of
      *        specific metrics (for example, CPU, Memory, Network).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingReasonCode

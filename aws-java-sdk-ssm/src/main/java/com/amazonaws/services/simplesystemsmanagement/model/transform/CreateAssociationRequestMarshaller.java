@@ -63,6 +63,12 @@ public class CreateAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
     private static final MarshallingInfo<Integer> SCHEDULEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleOffset").build();
+    private static final MarshallingInfo<List> TARGETMAPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TargetMaps").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlarmConfiguration").build();
 
     private static final CreateAssociationRequestMarshaller instance = new CreateAssociationRequestMarshaller();
 
@@ -97,6 +103,9 @@ public class CreateAssociationRequestMarshaller {
             protocolMarshaller.marshall(createAssociationRequest.getCalendarNames(), CALENDARNAMES_BINDING);
             protocolMarshaller.marshall(createAssociationRequest.getTargetLocations(), TARGETLOCATIONS_BINDING);
             protocolMarshaller.marshall(createAssociationRequest.getScheduleOffset(), SCHEDULEOFFSET_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getTargetMaps(), TARGETMAPS_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -36,7 +36,7 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
     private String recommendationId;
     /**
      * <p>
-     * The timestamp showing when the recommendations were generated.
+     * The timestamp that shows when the recommendations were generated.
      * </p>
      */
     private String generationTimestamp;
@@ -89,11 +89,11 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
     /**
      * <p>
-     * The timestamp showing when the recommendations were generated.
+     * The timestamp that shows when the recommendations were generated.
      * </p>
      * 
      * @param generationTimestamp
-     *        The timestamp showing when the recommendations were generated.
+     *        The timestamp that shows when the recommendations were generated.
      */
 
     public void setGenerationTimestamp(String generationTimestamp) {
@@ -102,10 +102,10 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
     /**
      * <p>
-     * The timestamp showing when the recommendations were generated.
+     * The timestamp that shows when the recommendations were generated.
      * </p>
      * 
-     * @return The timestamp showing when the recommendations were generated.
+     * @return The timestamp that shows when the recommendations were generated.
      */
 
     public String getGenerationTimestamp() {
@@ -114,11 +114,11 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
     /**
      * <p>
-     * The timestamp showing when the recommendations were generated.
+     * The timestamp that shows when the recommendations were generated.
      * </p>
      * 
      * @param generationTimestamp
-     *        The timestamp showing when the recommendations were generated.
+     *        The timestamp that shows when the recommendations were generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

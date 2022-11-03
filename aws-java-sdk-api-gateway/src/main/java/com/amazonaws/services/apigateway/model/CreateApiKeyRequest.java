@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to create an <a>ApiKey</a> resource.
+ * Request to create an ApiKey resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,19 +27,19 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the <a>ApiKey</a>.
+     * The name of the ApiKey.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the <a>ApiKey</a>.
+     * The description of the ApiKey.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether the ApiKey can be used by callers.
      * </p>
      */
     private Boolean enabled;
@@ -78,11 +78,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the <a>ApiKey</a>.
+     * The name of the ApiKey.
      * </p>
      * 
      * @param name
-     *        The name of the <a>ApiKey</a>.
+     *        The name of the ApiKey.
      */
 
     public void setName(String name) {
@@ -91,10 +91,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the <a>ApiKey</a>.
+     * The name of the ApiKey.
      * </p>
      * 
-     * @return The name of the <a>ApiKey</a>.
+     * @return The name of the ApiKey.
      */
 
     public String getName() {
@@ -103,11 +103,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the <a>ApiKey</a>.
+     * The name of the ApiKey.
      * </p>
      * 
      * @param name
-     *        The name of the <a>ApiKey</a>.
+     *        The name of the ApiKey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +118,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the <a>ApiKey</a>.
+     * The description of the ApiKey.
      * </p>
      * 
      * @param description
-     *        The description of the <a>ApiKey</a>.
+     *        The description of the ApiKey.
      */
 
     public void setDescription(String description) {
@@ -131,10 +131,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the <a>ApiKey</a>.
+     * The description of the ApiKey.
      * </p>
      * 
-     * @return The description of the <a>ApiKey</a>.
+     * @return The description of the ApiKey.
      */
 
     public String getDescription() {
@@ -143,11 +143,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the <a>ApiKey</a>.
+     * The description of the ApiKey.
      * </p>
      * 
      * @param description
-     *        The description of the <a>ApiKey</a>.
+     *        The description of the ApiKey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,11 +158,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether the ApiKey can be used by callers.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether the <a>ApiKey</a> can be used by callers.
+     *        Specifies whether the ApiKey can be used by callers.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -171,10 +171,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether the ApiKey can be used by callers.
      * </p>
      * 
-     * @return Specifies whether the <a>ApiKey</a> can be used by callers.
+     * @return Specifies whether the ApiKey can be used by callers.
      */
 
     public Boolean getEnabled() {
@@ -183,11 +183,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether the ApiKey can be used by callers.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether the <a>ApiKey</a> can be used by callers.
+     *        Specifies whether the ApiKey can be used by callers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,10 +198,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether the ApiKey can be used by callers.
      * </p>
      * 
-     * @return Specifies whether the <a>ApiKey</a> can be used by callers.
+     * @return Specifies whether the ApiKey can be used by callers.
      */
 
     public Boolean isEnabled() {

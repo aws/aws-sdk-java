@@ -56,6 +56,27 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you
+     * haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is
+     * not replaced.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     * Personalize replaces any record with the same ID with the new one.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String importMode;
 
     /**
      * <p>
@@ -296,6 +317,185 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you
+     * haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is
+     * not replaced.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     * Personalize replaces any record with the same ID with the new one.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importMode
+     *        Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>.
+     *        If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>
+     *        .</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported
+     *        individually is not replaced.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     *        Personalize replaces any record with the same ID with the new one.
+     *        </p>
+     *        </li>
+     * @see ImportMode
+     */
+
+    public void setImportMode(String importMode) {
+        this.importMode = importMode;
+    }
+
+    /**
+     * <p>
+     * Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you
+     * haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is
+     * not replaced.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     * Personalize replaces any record with the same ID with the new one.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>.
+     *         If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>
+     *         .</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported
+     *         individually is not replaced.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     *         Personalize replaces any record with the same ID with the new one.
+     *         </p>
+     *         </li>
+     * @see ImportMode
+     */
+
+    public String getImportMode() {
+        return this.importMode;
+    }
+
+    /**
+     * <p>
+     * Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you
+     * haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is
+     * not replaced.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     * Personalize replaces any record with the same ID with the new one.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importMode
+     *        Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>.
+     *        If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>
+     *        .</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported
+     *        individually is not replaced.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     *        Personalize replaces any record with the same ID with the new one.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public CreateDatasetImportJobRequest withImportMode(String importMode) {
+        setImportMode(importMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you
+     * haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is
+     * not replaced.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     * Personalize replaces any record with the same ID with the new one.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importMode
+     *        Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>.
+     *        If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>
+     *        .</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported
+     *        individually is not replaced.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon
+     *        Personalize replaces any record with the same ID with the new one.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public CreateDatasetImportJobRequest withImportMode(ImportMode importMode) {
+        this.importMode = importMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,7 +516,9 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getImportMode() != null)
+            sb.append("ImportMode: ").append(getImportMode());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +553,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getImportMode() == null ^ this.getImportMode() == null)
+            return false;
+        if (other.getImportMode() != null && other.getImportMode().equals(this.getImportMode()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +570,7 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         return hashCode;
     }
 

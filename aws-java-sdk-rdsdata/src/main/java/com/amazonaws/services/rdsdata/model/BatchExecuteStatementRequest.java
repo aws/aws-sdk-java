@@ -30,10 +30,45 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
+     * The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the
+     * credentials in the secret.
+     * </p>
+     * <p>
+     * For information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database
+     * secret</a>.
+     * </p>
+     */
+    private String secretArn;
+    /**
+     * <p>
+     * The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     * </p>
+     */
+    private String sql;
+    /**
+     * <p>
      * The name of the database.
      * </p>
      */
     private String database;
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
+     */
+    private String schema;
     /**
      * <p>
      * The parameter set for the batch operation.
@@ -63,30 +98,6 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
     private java.util.List<java.util.List<SqlParameter>> parameterSets;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     * </p>
-     */
-    private String resourceArn;
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     */
-    private String schema;
-    /**
-     * <p>
-     * The name or ARN of the secret that enables access to the DB cluster.
-     * </p>
-     */
-    private String secretArn;
-    /**
-     * <p>
-     * The SQL statement to run.
-     * </p>
-     */
-    private String sql;
-    /**
-     * <p>
      * The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify
      * the transaction ID of the transaction that you want to include the SQL statement in.
      * </p>
@@ -95,6 +106,159 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String transactionId;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchExecuteStatementRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the
+     * credentials in the secret.
+     * </p>
+     * <p>
+     * For information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database
+     * secret</a>.
+     * </p>
+     * 
+     * @param secretArn
+     *        The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for
+     *        the credentials in the secret.</p>
+     *        <p>
+     *        For information about creating the secret, see <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a
+     *        database secret</a>.
+     */
+
+    public void setSecretArn(String secretArn) {
+        this.secretArn = secretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the
+     * credentials in the secret.
+     * </p>
+     * <p>
+     * For information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database
+     * secret</a>.
+     * </p>
+     * 
+     * @return The ARN of the secret that enables access to the DB cluster. Enter the database user name and password
+     *         for the credentials in the secret.</p>
+     *         <p>
+     *         For information about creating the secret, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a
+     *         database secret</a>.
+     */
+
+    public String getSecretArn() {
+        return this.secretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the
+     * credentials in the secret.
+     * </p>
+     * <p>
+     * For information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database
+     * secret</a>.
+     * </p>
+     * 
+     * @param secretArn
+     *        The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for
+     *        the credentials in the secret.</p>
+     *        <p>
+     *        For information about creating the secret, see <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a
+     *        database secret</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchExecuteStatementRequest withSecretArn(String secretArn) {
+        setSecretArn(secretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     * </p>
+     * 
+     * @param sql
+     *        The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     */
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+
+    /**
+     * <p>
+     * The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     * </p>
+     * 
+     * @return The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     */
+
+    public String getSql() {
+        return this.sql;
+    }
+
+    /**
+     * <p>
+     * The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     * </p>
+     * 
+     * @param sql
+     *        The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchExecuteStatementRequest withSql(String sql) {
+        setSql(sql);
+        return this;
+    }
 
     /**
      * <p>
@@ -133,6 +297,70 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
 
     public BatchExecuteStatementRequest withDatabase(String database) {
         setDatabase(database);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
+     * 
+     * @param schema
+     *        The name of the database schema.</p> <note>
+     *        <p>
+     *        Currently, the <code>schema</code> parameter isn't supported.
+     *        </p>
+     */
+
+    public void setSchema(String schema) {
+        this.schema = schema;
+    }
+
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
+     * 
+     * @return The name of the database schema.</p> <note>
+     *         <p>
+     *         Currently, the <code>schema</code> parameter isn't supported.
+     *         </p>
+     */
+
+    public String getSchema() {
+        return this.schema;
+    }
+
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
+     * 
+     * @param schema
+     *        The name of the database schema.</p> <note>
+     *        <p>
+     *        Currently, the <code>schema</code> parameter isn't supported.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchExecuteStatementRequest withSchema(String schema) {
+        setSchema(schema);
         return this;
     }
 
@@ -376,166 +604,6 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     * </p>
-     * 
-     * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     */
-
-    public void setResourceArn(String resourceArn) {
-        this.resourceArn = resourceArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     */
-
-    public String getResourceArn() {
-        return this.resourceArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     * </p>
-     * 
-     * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchExecuteStatementRequest withResourceArn(String resourceArn) {
-        setResourceArn(resourceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     * 
-     * @param schema
-     *        The name of the database schema.
-     */
-
-    public void setSchema(String schema) {
-        this.schema = schema;
-    }
-
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     * 
-     * @return The name of the database schema.
-     */
-
-    public String getSchema() {
-        return this.schema;
-    }
-
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     * 
-     * @param schema
-     *        The name of the database schema.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchExecuteStatementRequest withSchema(String schema) {
-        setSchema(schema);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name or ARN of the secret that enables access to the DB cluster.
-     * </p>
-     * 
-     * @param secretArn
-     *        The name or ARN of the secret that enables access to the DB cluster.
-     */
-
-    public void setSecretArn(String secretArn) {
-        this.secretArn = secretArn;
-    }
-
-    /**
-     * <p>
-     * The name or ARN of the secret that enables access to the DB cluster.
-     * </p>
-     * 
-     * @return The name or ARN of the secret that enables access to the DB cluster.
-     */
-
-    public String getSecretArn() {
-        return this.secretArn;
-    }
-
-    /**
-     * <p>
-     * The name or ARN of the secret that enables access to the DB cluster.
-     * </p>
-     * 
-     * @param secretArn
-     *        The name or ARN of the secret that enables access to the DB cluster.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchExecuteStatementRequest withSecretArn(String secretArn) {
-        setSecretArn(secretArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The SQL statement to run.
-     * </p>
-     * 
-     * @param sql
-     *        The SQL statement to run.
-     */
-
-    public void setSql(String sql) {
-        this.sql = sql;
-    }
-
-    /**
-     * <p>
-     * The SQL statement to run.
-     * </p>
-     * 
-     * @return The SQL statement to run.
-     */
-
-    public String getSql() {
-        return this.sql;
-    }
-
-    /**
-     * <p>
-     * The SQL statement to run.
-     * </p>
-     * 
-     * @param sql
-     *        The SQL statement to run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchExecuteStatementRequest withSql(String sql) {
-        setSql(sql);
-        return this;
-    }
-
-    /**
-     * <p>
      * The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify
      * the transaction ID of the transaction that you want to include the SQL statement in.
      * </p>
@@ -607,18 +675,18 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDatabase() != null)
-            sb.append("Database: ").append(getDatabase()).append(",");
-        if (getParameterSets() != null)
-            sb.append("ParameterSets: ").append(getParameterSets()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
-        if (getSchema() != null)
-            sb.append("Schema: ").append(getSchema()).append(",");
         if (getSecretArn() != null)
             sb.append("SecretArn: ").append(getSecretArn()).append(",");
         if (getSql() != null)
             sb.append("Sql: ").append(getSql()).append(",");
+        if (getDatabase() != null)
+            sb.append("Database: ").append(getDatabase()).append(",");
+        if (getSchema() != null)
+            sb.append("Schema: ").append(getSchema()).append(",");
+        if (getParameterSets() != null)
+            sb.append("ParameterSets: ").append(getParameterSets()).append(",");
         if (getTransactionId() != null)
             sb.append("TransactionId: ").append(getTransactionId());
         sb.append("}");
@@ -635,21 +703,9 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof BatchExecuteStatementRequest == false)
             return false;
         BatchExecuteStatementRequest other = (BatchExecuteStatementRequest) obj;
-        if (other.getDatabase() == null ^ this.getDatabase() == null)
-            return false;
-        if (other.getDatabase() != null && other.getDatabase().equals(this.getDatabase()) == false)
-            return false;
-        if (other.getParameterSets() == null ^ this.getParameterSets() == null)
-            return false;
-        if (other.getParameterSets() != null && other.getParameterSets().equals(this.getParameterSets()) == false)
-            return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
-            return false;
-        if (other.getSchema() == null ^ this.getSchema() == null)
-            return false;
-        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
             return false;
         if (other.getSecretArn() == null ^ this.getSecretArn() == null)
             return false;
@@ -658,6 +714,18 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
         if (other.getSql() == null ^ this.getSql() == null)
             return false;
         if (other.getSql() != null && other.getSql().equals(this.getSql()) == false)
+            return false;
+        if (other.getDatabase() == null ^ this.getDatabase() == null)
+            return false;
+        if (other.getDatabase() != null && other.getDatabase().equals(this.getDatabase()) == false)
+            return false;
+        if (other.getSchema() == null ^ this.getSchema() == null)
+            return false;
+        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
+            return false;
+        if (other.getParameterSets() == null ^ this.getParameterSets() == null)
+            return false;
+        if (other.getParameterSets() != null && other.getParameterSets().equals(this.getParameterSets()) == false)
             return false;
         if (other.getTransactionId() == null ^ this.getTransactionId() == null)
             return false;
@@ -671,12 +739,12 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
-        hashCode = prime * hashCode + ((getParameterSets() == null) ? 0 : getParameterSets().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
-        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getSql() == null) ? 0 : getSql().hashCode());
+        hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
+        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
+        hashCode = prime * hashCode + ((getParameterSets() == null) ? 0 : getParameterSets().hashCode());
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
         return hashCode;
     }

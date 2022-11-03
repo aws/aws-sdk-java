@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.guardduty.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +45,8 @@ public class AwsApiCallActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
     private static final MarshallingInfo<StructuredPojo> REMOTEACCOUNTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteAccountDetails").build();
+    private static final MarshallingInfo<Map> AFFECTEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("affectedResources").build();
 
     private static final AwsApiCallActionMarshaller instance = new AwsApiCallActionMarshaller();
 
@@ -68,6 +72,7 @@ public class AwsApiCallActionMarshaller {
             protocolMarshaller.marshall(awsApiCallAction.getRemoteIpDetails(), REMOTEIPDETAILS_BINDING);
             protocolMarshaller.marshall(awsApiCallAction.getServiceName(), SERVICENAME_BINDING);
             protocolMarshaller.marshall(awsApiCallAction.getRemoteAccountDetails(), REMOTEACCOUNTDETAILS_BINDING);
+            protocolMarshaller.marshall(awsApiCallAction.getAffectedResources(), AFFECTEDRESOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

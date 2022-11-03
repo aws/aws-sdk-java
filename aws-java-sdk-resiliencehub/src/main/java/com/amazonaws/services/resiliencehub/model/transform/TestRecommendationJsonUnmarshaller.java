@@ -52,6 +52,12 @@ public class TestRecommendationJsonUnmarshaller implements Unmarshaller<TestReco
                     context.nextToken();
                     testRecommendation.setAppComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dependsOnAlarms", targetDepth)) {
+                    context.nextToken();
+                    testRecommendation.setDependsOnAlarms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     testRecommendation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

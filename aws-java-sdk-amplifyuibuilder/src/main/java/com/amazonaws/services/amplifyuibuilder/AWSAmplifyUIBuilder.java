@@ -78,6 +78,28 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Creates a new form for an Amplify app.
+     * </p>
+     * 
+     * @param createFormRequest
+     * @return Result of the CreateForm operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of
+     *         service resources or operations for your Amazon Web Services account.
+     * @throws ResourceConflictException
+     *         The resource specified in the request conflicts with an existing resource.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @sample AWSAmplifyUIBuilder.CreateForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateFormResult createForm(CreateFormRequest createFormRequest);
+
+    /**
+     * <p>
      * Creates a theme to apply to the components in an Amplify app.
      * </p>
      * 
@@ -116,6 +138,25 @@ public interface AWSAmplifyUIBuilder {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteComponentResult deleteComponent(DeleteComponentRequest deleteComponentRequest);
+
+    /**
+     * <p>
+     * Deletes a form from an Amplify app.
+     * </p>
+     * 
+     * @param deleteFormRequest
+     * @return Result of the DeleteForm operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.DeleteForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteFormResult deleteForm(DeleteFormRequest deleteFormRequest);
 
     /**
      * <p>
@@ -170,6 +211,23 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Exports form configurations to code that is ready to integrate into an Amplify app.
+     * </p>
+     * 
+     * @param exportFormsRequest
+     * @return Result of the ExportForms operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @sample AWSAmplifyUIBuilder.ExportForms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ExportFormsResult exportForms(ExportFormsRequest exportFormsRequest);
+
+    /**
+     * <p>
      * Exports theme configurations to code that is ready to integrate into an Amplify app.
      * </p>
      * 
@@ -203,6 +261,42 @@ public interface AWSAmplifyUIBuilder {
      *      API Documentation</a>
      */
     GetComponentResult getComponent(GetComponentRequest getComponentRequest);
+
+    /**
+     * <p>
+     * Returns an existing form for an Amplify app.
+     * </p>
+     * 
+     * @param getFormRequest
+     * @return Result of the GetForm operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.GetForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetFormResult getForm(GetFormRequest getFormRequest);
+
+    /**
+     * <p>
+     * Returns existing metadata for an Amplify app.
+     * </p>
+     * 
+     * @param getMetadataRequest
+     * @return Result of the GetMetadata operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @sample AWSAmplifyUIBuilder.GetMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetMetadataResult getMetadata(GetMetadataRequest getMetadataRequest);
 
     /**
      * <p>
@@ -242,6 +336,23 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Retrieves a list of forms for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listFormsRequest
+     * @return Result of the ListForms operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @sample AWSAmplifyUIBuilder.ListForms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFormsResult listForms(ListFormsRequest listFormsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of themes for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -256,6 +367,23 @@ public interface AWSAmplifyUIBuilder {
      *      API Documentation</a>
      */
     ListThemesResult listThemes(ListThemesRequest listThemesRequest);
+
+    /**
+     * <p>
+     * Stores the metadata information about a feature on a form or view.
+     * </p>
+     * 
+     * @param putMetadataFlagRequest
+     * @return Result of the PutMetadataFlag operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @sample AWSAmplifyUIBuilder.PutMetadataFlag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutMetadataFlagResult putMetadataFlag(PutMetadataFlagRequest putMetadataFlagRequest);
 
     /**
      * <p>
@@ -290,6 +418,25 @@ public interface AWSAmplifyUIBuilder {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateComponentResult updateComponent(UpdateComponentRequest updateComponentRequest);
+
+    /**
+     * <p>
+     * Updates an existing form.
+     * </p>
+     * 
+     * @param updateFormRequest
+     * @return Result of the UpdateForm operation returned by the service.
+     * @throws ResourceConflictException
+     *         The resource specified in the request conflicts with an existing resource.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @sample AWSAmplifyUIBuilder.UpdateForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateFormResult updateForm(UpdateFormRequest updateFormRequest);
 
     /**
      * <p>

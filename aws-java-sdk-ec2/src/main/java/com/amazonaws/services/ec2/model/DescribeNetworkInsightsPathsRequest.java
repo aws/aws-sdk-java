@@ -39,27 +39,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Destination - The ID of the resource.
+     * destination - The ID of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DestinationPort - The destination port.
+     * destination-port - The destination port.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Name - The path name.
+     * protocol - The protocol.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Protocol - The protocol.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Source - The ID of the resource.
+     * source - The ID of the resource.
      * </p>
      * </li>
      * </ul>
@@ -159,27 +154,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Destination - The ID of the resource.
+     * destination - The ID of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DestinationPort - The destination port.
+     * destination-port - The destination port.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Name - The path name.
+     * protocol - The protocol.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Protocol - The protocol.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Source - The ID of the resource.
+     * source - The ID of the resource.
      * </p>
      * </li>
      * </ul>
@@ -188,27 +178,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         Destination - The ID of the resource.
+     *         destination - The ID of the resource.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DestinationPort - The destination port.
+     *         destination-port - The destination port.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Name - The path name.
+     *         protocol - The protocol.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Protocol - The protocol.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Source - The ID of the resource.
+     *         source - The ID of the resource.
      *         </p>
      *         </li>
      */
@@ -227,27 +212,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Destination - The ID of the resource.
+     * destination - The ID of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DestinationPort - The destination port.
+     * destination-port - The destination port.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Name - The path name.
+     * protocol - The protocol.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Protocol - The protocol.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Source - The ID of the resource.
+     * source - The ID of the resource.
      * </p>
      * </li>
      * </ul>
@@ -257,27 +237,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        Destination - The ID of the resource.
+     *        destination - The ID of the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DestinationPort - The destination port.
+     *        destination-port - The destination port.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Name - The path name.
+     *        protocol - The protocol.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Protocol - The protocol.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Source - The ID of the resource.
+     *        source - The ID of the resource.
      *        </p>
      *        </li>
      */
@@ -298,27 +273,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Destination - The ID of the resource.
+     * destination - The ID of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DestinationPort - The destination port.
+     * destination-port - The destination port.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Name - The path name.
+     * protocol - The protocol.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Protocol - The protocol.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Source - The ID of the resource.
+     * source - The ID of the resource.
      * </p>
      * </li>
      * </ul>
@@ -333,27 +303,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        Destination - The ID of the resource.
+     *        destination - The ID of the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DestinationPort - The destination port.
+     *        destination-port - The destination port.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Name - The path name.
+     *        protocol - The protocol.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Protocol - The protocol.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Source - The ID of the resource.
+     *        source - The ID of the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -376,27 +341,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Destination - The ID of the resource.
+     * destination - The ID of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DestinationPort - The destination port.
+     * destination-port - The destination port.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Name - The path name.
+     * protocol - The protocol.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Protocol - The protocol.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Source - The ID of the resource.
+     * source - The ID of the resource.
      * </p>
      * </li>
      * </ul>
@@ -406,27 +366,22 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        Destination - The ID of the resource.
+     *        destination - The ID of the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DestinationPort - The destination port.
+     *        destination-port - The destination port.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Name - The path name.
+     *        protocol - The protocol.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Protocol - The protocol.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Source - The ID of the resource.
+     *        source - The ID of the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

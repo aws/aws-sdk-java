@@ -41,6 +41,12 @@ public class AssociateCustomDomainResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private CustomDomain customDomain;
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     */
+    private java.util.List<VpcDNSTarget> vpcDNSTargets;
 
     /**
      * <p>
@@ -163,6 +169,76 @@ public class AssociateCustomDomainResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * 
+     * @return DNS Target records for the custom domains of this Amazon VPC.
+     */
+
+    public java.util.List<VpcDNSTarget> getVpcDNSTargets() {
+        return vpcDNSTargets;
+    }
+
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * 
+     * @param vpcDNSTargets
+     *        DNS Target records for the custom domains of this Amazon VPC.
+     */
+
+    public void setVpcDNSTargets(java.util.Collection<VpcDNSTarget> vpcDNSTargets) {
+        if (vpcDNSTargets == null) {
+            this.vpcDNSTargets = null;
+            return;
+        }
+
+        this.vpcDNSTargets = new java.util.ArrayList<VpcDNSTarget>(vpcDNSTargets);
+    }
+
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcDNSTargets(java.util.Collection)} or {@link #withVpcDNSTargets(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param vpcDNSTargets
+     *        DNS Target records for the custom domains of this Amazon VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateCustomDomainResult withVpcDNSTargets(VpcDNSTarget... vpcDNSTargets) {
+        if (this.vpcDNSTargets == null) {
+            setVpcDNSTargets(new java.util.ArrayList<VpcDNSTarget>(vpcDNSTargets.length));
+        }
+        for (VpcDNSTarget ele : vpcDNSTargets) {
+            this.vpcDNSTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * 
+     * @param vpcDNSTargets
+     *        DNS Target records for the custom domains of this Amazon VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateCustomDomainResult withVpcDNSTargets(java.util.Collection<VpcDNSTarget> vpcDNSTargets) {
+        setVpcDNSTargets(vpcDNSTargets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,7 +255,9 @@ public class AssociateCustomDomainResult extends com.amazonaws.AmazonWebServiceR
         if (getServiceArn() != null)
             sb.append("ServiceArn: ").append(getServiceArn()).append(",");
         if (getCustomDomain() != null)
-            sb.append("CustomDomain: ").append(getCustomDomain());
+            sb.append("CustomDomain: ").append(getCustomDomain()).append(",");
+        if (getVpcDNSTargets() != null)
+            sb.append("VpcDNSTargets: ").append(getVpcDNSTargets());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +284,10 @@ public class AssociateCustomDomainResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getCustomDomain() != null && other.getCustomDomain().equals(this.getCustomDomain()) == false)
             return false;
+        if (other.getVpcDNSTargets() == null ^ this.getVpcDNSTargets() == null)
+            return false;
+        if (other.getVpcDNSTargets() != null && other.getVpcDNSTargets().equals(this.getVpcDNSTargets()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +299,7 @@ public class AssociateCustomDomainResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDNSTarget() == null) ? 0 : getDNSTarget().hashCode());
         hashCode = prime * hashCode + ((getServiceArn() == null) ? 0 : getServiceArn().hashCode());
         hashCode = prime * hashCode + ((getCustomDomain() == null) ? 0 : getCustomDomain().hashCode());
+        hashCode = prime * hashCode + ((getVpcDNSTargets() == null) ? 0 : getVpcDNSTargets().hashCode());
         return hashCode;
     }
 

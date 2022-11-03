@@ -64,6 +64,13 @@ public class StartModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Lookout for Vision doesn't auto-scale the model.
+     * </p>
+     */
+    private Integer maxInferenceUnits;
 
     /**
      * <p>
@@ -313,6 +320,52 @@ public class StartModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Lookout for Vision doesn't auto-scale the model.
+     * </p>
+     * 
+     * @param maxInferenceUnits
+     *        The maximum number of inference units to use for auto-scaling the model. If you don't specify a value,
+     *        Amazon Lookout for Vision doesn't auto-scale the model.
+     */
+
+    public void setMaxInferenceUnits(Integer maxInferenceUnits) {
+        this.maxInferenceUnits = maxInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Lookout for Vision doesn't auto-scale the model.
+     * </p>
+     * 
+     * @return The maximum number of inference units to use for auto-scaling the model. If you don't specify a value,
+     *         Amazon Lookout for Vision doesn't auto-scale the model.
+     */
+
+    public Integer getMaxInferenceUnits() {
+        return this.maxInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon
+     * Lookout for Vision doesn't auto-scale the model.
+     * </p>
+     * 
+     * @param maxInferenceUnits
+     *        The maximum number of inference units to use for auto-scaling the model. If you don't specify a value,
+     *        Amazon Lookout for Vision doesn't auto-scale the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartModelRequest withMaxInferenceUnits(Integer maxInferenceUnits) {
+        setMaxInferenceUnits(maxInferenceUnits);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -331,7 +384,9 @@ public class StartModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getMinInferenceUnits() != null)
             sb.append("MinInferenceUnits: ").append(getMinInferenceUnits()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getMaxInferenceUnits() != null)
+            sb.append("MaxInferenceUnits: ").append(getMaxInferenceUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -362,6 +417,10 @@ public class StartModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getMaxInferenceUnits() == null ^ this.getMaxInferenceUnits() == null)
+            return false;
+        if (other.getMaxInferenceUnits() != null && other.getMaxInferenceUnits().equals(this.getMaxInferenceUnits()) == false)
+            return false;
         return true;
     }
 
@@ -374,6 +433,7 @@ public class StartModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getModelVersion() == null) ? 0 : getModelVersion().hashCode());
         hashCode = prime * hashCode + ((getMinInferenceUnits() == null) ? 0 : getMinInferenceUnits().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxInferenceUnits() == null) ? 0 : getMaxInferenceUnits().hashCode());
         return hashCode;
     }
 

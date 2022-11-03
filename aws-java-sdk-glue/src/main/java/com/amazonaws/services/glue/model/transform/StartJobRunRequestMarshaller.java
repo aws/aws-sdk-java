@@ -49,6 +49,8 @@ public class StartJobRunRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkerType").build();
     private static final MarshallingInfo<Integer> NUMBEROFWORKERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfWorkers").build();
+    private static final MarshallingInfo<String> EXECUTIONCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionClass").build();
 
     private static final StartJobRunRequestMarshaller instance = new StartJobRunRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class StartJobRunRequestMarshaller {
             protocolMarshaller.marshall(startJobRunRequest.getNotificationProperty(), NOTIFICATIONPROPERTY_BINDING);
             protocolMarshaller.marshall(startJobRunRequest.getWorkerType(), WORKERTYPE_BINDING);
             protocolMarshaller.marshall(startJobRunRequest.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
+            protocolMarshaller.marshall(startJobRunRequest.getExecutionClass(), EXECUTIONCLASS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,9 +30,9 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
@@ -45,10 +45,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
     private String appVersion;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String assessmentArn;
@@ -109,17 +109,17 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param appArn
      *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *        Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setAppArn(String appArn) {
@@ -128,16 +128,16 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *         Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getAppArn() {
@@ -146,17 +146,17 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param appArn
      *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *        Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,17 +207,18 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param assessmentArn
      *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setAssessmentArn(String assessmentArn) {
@@ -226,16 +227,17 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
-     *         :dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
+     *         information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getAssessmentArn() {
@@ -244,17 +246,18 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param assessmentArn
      *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

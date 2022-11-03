@@ -86,7 +86,13 @@ public enum VoiceId {
     Aria("Aria"),
     Ayanda("Ayanda"),
     Arlet("Arlet"),
-    Hannah("Hannah");
+    Hannah("Hannah"),
+    Arthur("Arthur"),
+    Daniel("Daniel"),
+    Liam("Liam"),
+    Pedro("Pedro"),
+    Kajal("Kajal"),
+    Hiujin("Hiujin");
 
     private String value;
 

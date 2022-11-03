@@ -73,6 +73,10 @@ public class AutomationExecutionMetadataMarshaller {
             .marshallLocationName("Target").build();
     private static final MarshallingInfo<String> AUTOMATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationType").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlarmConfiguration").build();
+    private static final MarshallingInfo<List> TRIGGEREDALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredAlarms").build();
     private static final MarshallingInfo<String> AUTOMATIONSUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationSubtype").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -124,6 +128,8 @@ public class AutomationExecutionMetadataMarshaller {
             protocolMarshaller.marshall(automationExecutionMetadata.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getTarget(), TARGET_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getAutomationType(), AUTOMATIONTYPE_BINDING);
+            protocolMarshaller.marshall(automationExecutionMetadata.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(automationExecutionMetadata.getTriggeredAlarms(), TRIGGEREDALARMS_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getAutomationSubtype(), AUTOMATIONSUBTYPE_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getScheduledTime(), SCHEDULEDTIME_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getRunbooks(), RUNBOOKS_BINDING);

@@ -38,6 +38,8 @@ public class CreateWorkforceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> WORKFORCEVPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceVpcConfig").build();
 
     private static final CreateWorkforceRequestMarshaller instance = new CreateWorkforceRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateWorkforceRequestMarshaller {
             protocolMarshaller.marshall(createWorkforceRequest.getSourceIpConfig(), SOURCEIPCONFIG_BINDING);
             protocolMarshaller.marshall(createWorkforceRequest.getWorkforceName(), WORKFORCENAME_BINDING);
             protocolMarshaller.marshall(createWorkforceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWorkforceRequest.getWorkforceVpcConfig(), WORKFORCEVPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

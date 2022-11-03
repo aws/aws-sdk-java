@@ -116,6 +116,11 @@ public class HyperParameterTrainingJobDefinitionJsonUnmarshaller implements Unma
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("HyperParameterTuningResourceConfig", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

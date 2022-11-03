@@ -40,12 +40,8 @@
  * <i>update</i> and <i>delete</i> API operations and the service instance <i>list</i> and <i>update</i> API operations.
  * </p>
  * <p>
- * To learn more about Proton administration, see the <a
- * href="https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html">Proton Administrator Guide</a>.
- * </p>
- * <p>
- * To learn more about deploying serverless and containerized applications on Proton, see the <a
- * href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton User Guide</a>.
+ * To learn more about Proton, see the <a href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton
+ * User Guide</a>.
  * </p>
  * <p>
  * <b>Ensuring Idempotency</b>

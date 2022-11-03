@@ -28,18 +28,18 @@ public class Ipv6PrefixSpecificationResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * One or more IPv6 delegated prefixes assigned to the network interface.
+     * The IPv6 delegated prefixes assigned to the network interface.
      * </p>
      */
     private String ipv6Prefix;
 
     /**
      * <p>
-     * One or more IPv6 delegated prefixes assigned to the network interface.
+     * The IPv6 delegated prefixes assigned to the network interface.
      * </p>
      * 
      * @param ipv6Prefix
-     *        One or more IPv6 delegated prefixes assigned to the network interface.
+     *        The IPv6 delegated prefixes assigned to the network interface.
      */
 
     public void setIpv6Prefix(String ipv6Prefix) {
@@ -48,10 +48,10 @@ public class Ipv6PrefixSpecificationResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * One or more IPv6 delegated prefixes assigned to the network interface.
+     * The IPv6 delegated prefixes assigned to the network interface.
      * </p>
      * 
-     * @return One or more IPv6 delegated prefixes assigned to the network interface.
+     * @return The IPv6 delegated prefixes assigned to the network interface.
      */
 
     public String getIpv6Prefix() {
@@ -60,11 +60,11 @@ public class Ipv6PrefixSpecificationResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * One or more IPv6 delegated prefixes assigned to the network interface.
+     * The IPv6 delegated prefixes assigned to the network interface.
      * </p>
      * 
      * @param ipv6Prefix
-     *        One or more IPv6 delegated prefixes assigned to the network interface.
+     *        The IPv6 delegated prefixes assigned to the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

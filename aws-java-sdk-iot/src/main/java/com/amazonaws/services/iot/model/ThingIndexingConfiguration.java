@@ -128,6 +128,14 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.List<Field> customFields;
+    /**
+     * <p>
+     * Provides additional filters for specific data sources. Named shadow is the only data source that currently
+     * supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.
+     * </p>
+     */
+    private IndexingFilter filter;
 
     /**
      * <p>
@@ -1018,6 +1026,61 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Provides additional filters for specific data sources. Named shadow is the only data source that currently
+     * supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.
+     * </p>
+     * 
+     * @param filter
+     *        Provides additional filters for specific data sources. Named shadow is the only data source that currently
+     *        supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     *        <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in
+     *        <code>filter</code>.
+     */
+
+    public void setFilter(IndexingFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * Provides additional filters for specific data sources. Named shadow is the only data source that currently
+     * supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.
+     * </p>
+     * 
+     * @return Provides additional filters for specific data sources. Named shadow is the only data source that
+     *         currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     *         <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in
+     *         <code>filter</code>.
+     */
+
+    public IndexingFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * Provides additional filters for specific data sources. Named shadow is the only data source that currently
+     * supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.
+     * </p>
+     * 
+     * @param filter
+     *        Provides additional filters for specific data sources. Named shadow is the only data source that currently
+     *        supports and requires a filter. To add named shadows to your fleet indexing configuration, set
+     *        <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in
+     *        <code>filter</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThingIndexingConfiguration withFilter(IndexingFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1040,7 +1103,9 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
         if (getManagedFields() != null)
             sb.append("ManagedFields: ").append(getManagedFields()).append(",");
         if (getCustomFields() != null)
-            sb.append("CustomFields: ").append(getCustomFields());
+            sb.append("CustomFields: ").append(getCustomFields()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -1080,6 +1145,10 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getCustomFields() != null && other.getCustomFields().equals(this.getCustomFields()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         return true;
     }
 
@@ -1094,6 +1163,7 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getNamedShadowIndexingMode() == null) ? 0 : getNamedShadowIndexingMode().hashCode());
         hashCode = prime * hashCode + ((getManagedFields() == null) ? 0 : getManagedFields().hashCode());
         hashCode = prime * hashCode + ((getCustomFields() == null) ? 0 : getCustomFields().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

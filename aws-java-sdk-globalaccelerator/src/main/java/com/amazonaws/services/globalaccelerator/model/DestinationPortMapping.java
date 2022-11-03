@@ -54,7 +54,7 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
     private String endpointId;
     /**
      * <p>
-     * The AWS Region for the endpoint group.
+     * The Amazon Web Services Region for the endpoint group.
      * </p>
      */
     private String endpointGroupRegion;
@@ -66,7 +66,7 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
     private SocketAddress destinationSocketAddress;
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      */
     private String ipAddressType;
@@ -270,11 +270,11 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Region for the endpoint group.
+     * The Amazon Web Services Region for the endpoint group.
      * </p>
      * 
      * @param endpointGroupRegion
-     *        The AWS Region for the endpoint group.
+     *        The Amazon Web Services Region for the endpoint group.
      */
 
     public void setEndpointGroupRegion(String endpointGroupRegion) {
@@ -283,10 +283,10 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Region for the endpoint group.
+     * The Amazon Web Services Region for the endpoint group.
      * </p>
      * 
-     * @return The AWS Region for the endpoint group.
+     * @return The Amazon Web Services Region for the endpoint group.
      */
 
     public String getEndpointGroupRegion() {
@@ -295,11 +295,11 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Region for the endpoint group.
+     * The Amazon Web Services Region for the endpoint group.
      * </p>
      * 
      * @param endpointGroupRegion
-     *        The AWS Region for the endpoint group.
+     *        The Amazon Web Services Region for the endpoint group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,11 +350,12 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
      * @param ipAddressType
-     *        The IP address type, which must be IPv4.
+     *        The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *        IPV4.
      * @see IpAddressType
      */
 
@@ -364,10 +365,11 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
-     * @return The IP address type, which must be IPv4.
+     * @return The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *         IPV4.
      * @see IpAddressType
      */
 
@@ -377,11 +379,12 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
      * @param ipAddressType
-     *        The IP address type, which must be IPv4.
+     *        The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *        IPV4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -393,11 +396,12 @@ public class DestinationPortMapping implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
      * @param ipAddressType
-     *        The IP address type, which must be IPv4.
+     *        The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *        IPV4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

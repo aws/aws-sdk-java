@@ -56,6 +56,12 @@ public class TransitGatewayPropagation implements Serializable, Cloneable {
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     */
+    private String transitGatewayRouteTableAnnouncementId;
 
     /**
      * <p>
@@ -296,6 +302,46 @@ public class TransitGatewayPropagation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @param transitGatewayRouteTableAnnouncementId
+     *        The ID of the transit gateway route table announcement.
+     */
+
+    public void setTransitGatewayRouteTableAnnouncementId(String transitGatewayRouteTableAnnouncementId) {
+        this.transitGatewayRouteTableAnnouncementId = transitGatewayRouteTableAnnouncementId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @return The ID of the transit gateway route table announcement.
+     */
+
+    public String getTransitGatewayRouteTableAnnouncementId() {
+        return this.transitGatewayRouteTableAnnouncementId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @param transitGatewayRouteTableAnnouncementId
+     *        The ID of the transit gateway route table announcement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayPropagation withTransitGatewayRouteTableAnnouncementId(String transitGatewayRouteTableAnnouncementId) {
+        setTransitGatewayRouteTableAnnouncementId(transitGatewayRouteTableAnnouncementId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,7 +362,9 @@ public class TransitGatewayPropagation implements Serializable, Cloneable {
         if (getTransitGatewayRouteTableId() != null)
             sb.append("TransitGatewayRouteTableId: ").append(getTransitGatewayRouteTableId()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getTransitGatewayRouteTableAnnouncementId() != null)
+            sb.append("TransitGatewayRouteTableAnnouncementId: ").append(getTransitGatewayRouteTableAnnouncementId());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +399,11 @@ public class TransitGatewayPropagation implements Serializable, Cloneable {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTransitGatewayRouteTableAnnouncementId() == null ^ this.getTransitGatewayRouteTableAnnouncementId() == null)
+            return false;
+        if (other.getTransitGatewayRouteTableAnnouncementId() != null
+                && other.getTransitGatewayRouteTableAnnouncementId().equals(this.getTransitGatewayRouteTableAnnouncementId()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +417,7 @@ public class TransitGatewayPropagation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayRouteTableId() == null) ? 0 : getTransitGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayRouteTableAnnouncementId() == null) ? 0 : getTransitGatewayRouteTableAnnouncementId().hashCode());
         return hashCode;
     }
 

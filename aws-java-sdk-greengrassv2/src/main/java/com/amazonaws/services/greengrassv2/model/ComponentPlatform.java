@@ -41,7 +41,7 @@ public class ComponentPlatform implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and
-     * <code>platform</code> by default. You can specify additional platform attributes for a core device when you
+     * <code>architecture</code> by default. You can specify additional platform attributes for a core device when you
      * deploy the Greengrass nucleus component. For more information, see the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
      * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
@@ -113,15 +113,15 @@ public class ComponentPlatform implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and
-     * <code>platform</code> by default. You can specify additional platform attributes for a core device when you
+     * <code>architecture</code> by default. You can specify additional platform attributes for a core device when you
      * deploy the Greengrass nucleus component. For more information, see the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
      * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
      * </p>
      * 
      * @return A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code>
-     *         and <code>platform</code> by default. You can specify additional platform attributes for a core device
-     *         when you deploy the Greengrass nucleus component. For more information, see the <a
+     *         and <code>architecture</code> by default. You can specify additional platform attributes for a core
+     *         device when you deploy the Greengrass nucleus component. For more information, see the <a
      *         href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html"
      *         >Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
      */
@@ -133,7 +133,7 @@ public class ComponentPlatform implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and
-     * <code>platform</code> by default. You can specify additional platform attributes for a core device when you
+     * <code>architecture</code> by default. You can specify additional platform attributes for a core device when you
      * deploy the Greengrass nucleus component. For more information, see the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
      * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
@@ -141,7 +141,7 @@ public class ComponentPlatform implements Serializable, Cloneable, StructuredPoj
      * 
      * @param attributes
      *        A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code>
-     *        and <code>platform</code> by default. You can specify additional platform attributes for a core device
+     *        and <code>architecture</code> by default. You can specify additional platform attributes for a core device
      *        when you deploy the Greengrass nucleus component. For more information, see the <a
      *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html"
      *        >Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
@@ -154,7 +154,7 @@ public class ComponentPlatform implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and
-     * <code>platform</code> by default. You can specify additional platform attributes for a core device when you
+     * <code>architecture</code> by default. You can specify additional platform attributes for a core device when you
      * deploy the Greengrass nucleus component. For more information, see the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
      * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
@@ -162,7 +162,7 @@ public class ComponentPlatform implements Serializable, Cloneable, StructuredPoj
      * 
      * @param attributes
      *        A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code>
-     *        and <code>platform</code> by default. You can specify additional platform attributes for a core device
+     *        and <code>architecture</code> by default. You can specify additional platform attributes for a core device
      *        when you deploy the Greengrass nucleus component. For more information, see the <a
      *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html"
      *        >Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.

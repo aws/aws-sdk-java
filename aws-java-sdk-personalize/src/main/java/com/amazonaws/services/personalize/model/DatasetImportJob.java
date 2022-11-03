@@ -89,6 +89,12 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The import mode used by the dataset import job to import new records.
+     * </p>
+     */
+    private String importMode;
 
     /**
      * <p>
@@ -508,6 +514,65 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The import mode used by the dataset import job to import new records.
+     * </p>
+     * 
+     * @param importMode
+     *        The import mode used by the dataset import job to import new records.
+     * @see ImportMode
+     */
+
+    public void setImportMode(String importMode) {
+        this.importMode = importMode;
+    }
+
+    /**
+     * <p>
+     * The import mode used by the dataset import job to import new records.
+     * </p>
+     * 
+     * @return The import mode used by the dataset import job to import new records.
+     * @see ImportMode
+     */
+
+    public String getImportMode() {
+        return this.importMode;
+    }
+
+    /**
+     * <p>
+     * The import mode used by the dataset import job to import new records.
+     * </p>
+     * 
+     * @param importMode
+     *        The import mode used by the dataset import job to import new records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public DatasetImportJob withImportMode(String importMode) {
+        setImportMode(importMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The import mode used by the dataset import job to import new records.
+     * </p>
+     * 
+     * @param importMode
+     *        The import mode used by the dataset import job to import new records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public DatasetImportJob withImportMode(ImportMode importMode) {
+        this.importMode = importMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -536,7 +601,9 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
         if (getLastUpdatedDateTime() != null)
             sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getImportMode() != null)
+            sb.append("ImportMode: ").append(getImportMode());
         sb.append("}");
         return sb.toString();
     }
@@ -587,6 +654,10 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getImportMode() == null ^ this.getImportMode() == null)
+            return false;
+        if (other.getImportMode() != null && other.getImportMode().equals(this.getImportMode()) == false)
+            return false;
         return true;
     }
 
@@ -604,6 +675,7 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         return hashCode;
     }
 

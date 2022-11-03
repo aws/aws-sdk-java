@@ -424,6 +424,21 @@ public class AbstractAWSPanoramaAsync extends AbstractAWSPanorama implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest request) {
+
+        return signalApplicationInstanceNodeInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SignalApplicationInstanceNodeInstancesRequest, SignalApplicationInstanceNodeInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

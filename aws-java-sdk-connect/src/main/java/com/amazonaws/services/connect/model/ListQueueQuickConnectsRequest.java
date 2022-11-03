@@ -46,7 +46,7 @@ public class ListQueueQuickConnectsRequest extends com.amazonaws.AmazonWebServic
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      */
     private Integer maxResults;
@@ -179,11 +179,11 @@ public class ListQueueQuickConnectsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return per page.
+     *        The maximum number of results to return per page. The default MaxResult size is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -192,10 +192,10 @@ public class ListQueueQuickConnectsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      * 
-     * @return The maximum number of results to return per page.
+     * @return The maximum number of results to return per page. The default MaxResult size is 100.
      */
 
     public Integer getMaxResults() {
@@ -204,11 +204,11 @@ public class ListQueueQuickConnectsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return per page.
+     *        The maximum number of results to return per page. The default MaxResult size is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

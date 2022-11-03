@@ -33,6 +33,8 @@ public class S3OutputFormatConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prefixConfig").build();
     private static final MarshallingInfo<StructuredPojo> AGGREGATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aggregationConfig").build();
+    private static final MarshallingInfo<Boolean> PRESERVESOURCEDATATYPING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preserveSourceDataTyping").build();
 
     private static final S3OutputFormatConfigMarshaller instance = new S3OutputFormatConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class S3OutputFormatConfigMarshaller {
             protocolMarshaller.marshall(s3OutputFormatConfig.getFileType(), FILETYPE_BINDING);
             protocolMarshaller.marshall(s3OutputFormatConfig.getPrefixConfig(), PREFIXCONFIG_BINDING);
             protocolMarshaller.marshall(s3OutputFormatConfig.getAggregationConfig(), AGGREGATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(s3OutputFormatConfig.getPreserveSourceDataTyping(), PRESERVESOURCEDATATYPING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

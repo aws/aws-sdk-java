@@ -281,10 +281,16 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      */
     private Boolean skipAppResign;
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
 
     /**
      * <p>
@@ -2413,7 +2419,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
@@ -2421,7 +2427,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information about how Device Farm re-signs your apps, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      */
 
@@ -2436,14 +2442,14 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information about how Device Farm re-signs your apps, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
 
@@ -2458,7 +2464,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
@@ -2466,7 +2472,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information about how Device Farm re-signs your apps, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2483,19 +2489,59 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information about how Device Farm re-signs your apps, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
 
     public Boolean isSkipAppResign() {
         return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @return The VPC security groups and subnets that are attached to a project.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoteAccessSession withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
     }
 
     /**
@@ -2551,7 +2597,9 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
         if (getInteractionMode() != null)
             sb.append("InteractionMode: ").append(getInteractionMode()).append(",");
         if (getSkipAppResign() != null)
-            sb.append("SkipAppResign: ").append(getSkipAppResign());
+            sb.append("SkipAppResign: ").append(getSkipAppResign()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2650,6 +2698,10 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2679,6 +2731,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDeviceUdid() == null) ? 0 : getDeviceUdid().hashCode());
         hashCode = prime * hashCode + ((getInteractionMode() == null) ? 0 : getInteractionMode().hashCode());
         hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

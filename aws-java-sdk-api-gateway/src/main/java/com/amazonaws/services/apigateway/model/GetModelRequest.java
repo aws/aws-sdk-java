@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to list information about a model in an existing <a>RestApi</a> resource.
+ * Request to list information about a model in an existing RestApi resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     * The RestApi identifier under which the Model exists.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the model as an identifier.
+     * The name of the model as an identifier.
      * </p>
      */
     private String modelName;
@@ -47,11 +47,11 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     * The RestApi identifier under which the Model exists.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     *        The RestApi identifier under which the Model exists.
      */
 
     public void setRestApiId(String restApiId) {
@@ -60,10 +60,10 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     * The RestApi identifier under which the Model exists.
      * </p>
      * 
-     * @return [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     * @return The RestApi identifier under which the Model exists.
      */
 
     public String getRestApiId() {
@@ -72,11 +72,11 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     * The RestApi identifier under which the Model exists.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+     *        The RestApi identifier under which the Model exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The name of the model as an identifier.
+     * The name of the model as an identifier.
      * </p>
      * 
      * @param modelName
-     *        [Required] The name of the model as an identifier.
+     *        The name of the model as an identifier.
      */
 
     public void setModelName(String modelName) {
@@ -100,10 +100,10 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The name of the model as an identifier.
+     * The name of the model as an identifier.
      * </p>
      * 
-     * @return [Required] The name of the model as an identifier.
+     * @return The name of the model as an identifier.
      */
 
     public String getModelName() {
@@ -112,11 +112,11 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The name of the model as an identifier.
+     * The name of the model as an identifier.
      * </p>
      * 
      * @param modelName
-     *        [Required] The name of the model as an identifier.
+     *        The name of the model as an identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

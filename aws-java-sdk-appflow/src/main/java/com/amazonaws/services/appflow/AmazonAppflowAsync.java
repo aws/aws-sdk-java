@@ -83,7 +83,8 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
      * <p>
      * Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100
      * connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows,
-     * you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel.
+     * you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector
+     * profile that you create, you can provide the credentials and properties for only one connector.
      * </p>
      * 
      * @param createConnectorProfileRequest
@@ -98,7 +99,8 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
      * <p>
      * Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100
      * connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows,
-     * you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel.
+     * you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector
+     * profile that you create, you can provide the credentials and properties for only one connector.
      * </p>
      * 
      * @param createConnectorProfileRequest
@@ -251,7 +253,7 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
     /**
      * <p>
      * Provides details regarding the entity used with the connector, with a description of the data model for each
-     * entity.
+     * field in that entity.
      * </p>
      * 
      * @param describeConnectorEntityRequest
@@ -265,7 +267,7 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
     /**
      * <p>
      * Provides details regarding the entity used with the connector, with a description of the data model for each
-     * entity.
+     * field in that entity.
      * </p>
      * 
      * @param describeConnectorEntityRequest

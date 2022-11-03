@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to get information about the current <a>ApiKey</a> resource.
+ * A request to get information about the current ApiKey resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource.
+     * The identifier of the ApiKey resource.
      * </p>
      */
     private String apiKey;
@@ -41,11 +41,11 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource.
+     * The identifier of the ApiKey resource.
      * </p>
      * 
      * @param apiKey
-     *        [Required] The identifier of the <a>ApiKey</a> resource.
+     *        The identifier of the ApiKey resource.
      */
 
     public void setApiKey(String apiKey) {
@@ -54,10 +54,10 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource.
+     * The identifier of the ApiKey resource.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>ApiKey</a> resource.
+     * @return The identifier of the ApiKey resource.
      */
 
     public String getApiKey() {
@@ -66,11 +66,11 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The identifier of the <a>ApiKey</a> resource.
+     * The identifier of the ApiKey resource.
      * </p>
      * 
      * @param apiKey
-     *        [Required] The identifier of the <a>ApiKey</a> resource.
+     *        The identifier of the ApiKey resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).
      * </p>
@@ -103,6 +108,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).
      * </p>
@@ -139,6 +149,12 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>spread-level</code> - The spread level for the placement group (<code>host</code> |
+     *         <code>rack</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -193,6 +209,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).
      * </p>
@@ -230,6 +251,12 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>spread-level</code> - The spread level for the placement group (<code>host</code> |
+     *        <code>rack</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -286,6 +313,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).
      * </p>
@@ -328,6 +360,12 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>spread-level</code> - The spread level for the placement group (<code>host</code> |
+     *        <code>rack</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -386,6 +424,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).
      * </p>
@@ -423,6 +466,12 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>spread-level</code> - The spread level for the placement group (<code>host</code> |
+     *        <code>rack</code>).
      *        </p>
      *        </li>
      *        <li>

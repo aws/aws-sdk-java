@@ -44,6 +44,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public CopyProjectVersionResult copyProjectVersion(CopyProjectVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCollectionResult createCollection(CreateCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -85,6 +90,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProjectPolicyResult deleteProjectPolicy(DeleteProjectPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,12 +239,22 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public ListProjectPoliciesResult listProjectPolicies(ListProjectPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListStreamProcessorsResult listStreamProcessors(ListStreamProcessorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutProjectPolicyResult putProjectPolicy(PutProjectPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

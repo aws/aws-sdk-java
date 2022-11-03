@@ -30,17 +30,57 @@ public class GeneratedPolicyResult implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
+     * </p>
+     */
+    private GeneratedPolicyProperties properties;
+    /**
+     * <p>
      * The text to use as the content for the new policy. The policy is created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.
      * </p>
      */
     private java.util.List<GeneratedPolicy> generatedPolicies;
+
     /**
      * <p>
      * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
      * </p>
+     * 
+     * @param properties
+     *        A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
      */
-    private GeneratedPolicyProperties properties;
+
+    public void setProperties(GeneratedPolicyProperties properties) {
+        this.properties = properties;
+    }
+
+    /**
+     * <p>
+     * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
+     * </p>
+     * 
+     * @return A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
+     */
+
+    public GeneratedPolicyProperties getProperties() {
+        return this.properties;
+    }
+
+    /**
+     * <p>
+     * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
+     * </p>
+     * 
+     * @param properties
+     *        A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratedPolicyResult withProperties(GeneratedPolicyProperties properties) {
+        setProperties(properties);
+        return this;
+    }
 
     /**
      * <p>
@@ -121,46 +161,6 @@ public class GeneratedPolicyResult implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p>
-     * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
-     * </p>
-     * 
-     * @param properties
-     *        A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
-     */
-
-    public void setProperties(GeneratedPolicyProperties properties) {
-        this.properties = properties;
-    }
-
-    /**
-     * <p>
-     * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
-     * </p>
-     * 
-     * @return A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
-     */
-
-    public GeneratedPolicyProperties getProperties() {
-        return this.properties;
-    }
-
-    /**
-     * <p>
-     * A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
-     * </p>
-     * 
-     * @param properties
-     *        A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GeneratedPolicyResult withProperties(GeneratedPolicyProperties properties) {
-        setProperties(properties);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -172,10 +172,10 @@ public class GeneratedPolicyResult implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGeneratedPolicies() != null)
-            sb.append("GeneratedPolicies: ").append(getGeneratedPolicies()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: ").append(getProperties());
+            sb.append("Properties: ").append(getProperties()).append(",");
+        if (getGeneratedPolicies() != null)
+            sb.append("GeneratedPolicies: ").append(getGeneratedPolicies());
         sb.append("}");
         return sb.toString();
     }
@@ -190,13 +190,13 @@ public class GeneratedPolicyResult implements Serializable, Cloneable, Structure
         if (obj instanceof GeneratedPolicyResult == false)
             return false;
         GeneratedPolicyResult other = (GeneratedPolicyResult) obj;
-        if (other.getGeneratedPolicies() == null ^ this.getGeneratedPolicies() == null)
-            return false;
-        if (other.getGeneratedPolicies() != null && other.getGeneratedPolicies().equals(this.getGeneratedPolicies()) == false)
-            return false;
         if (other.getProperties() == null ^ this.getProperties() == null)
             return false;
         if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
+            return false;
+        if (other.getGeneratedPolicies() == null ^ this.getGeneratedPolicies() == null)
+            return false;
+        if (other.getGeneratedPolicies() != null && other.getGeneratedPolicies().equals(this.getGeneratedPolicies()) == false)
             return false;
         return true;
     }
@@ -206,8 +206,8 @@ public class GeneratedPolicyResult implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGeneratedPolicies() == null) ? 0 : getGeneratedPolicies().hashCode());
         hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getGeneratedPolicies() == null) ? 0 : getGeneratedPolicies().hashCode());
         return hashCode;
     }
 

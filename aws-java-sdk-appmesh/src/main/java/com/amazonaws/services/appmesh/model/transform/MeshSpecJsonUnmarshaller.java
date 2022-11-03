@@ -52,6 +52,10 @@ public class MeshSpecJsonUnmarshaller implements Unmarshaller<MeshSpec, JsonUnma
                     context.nextToken();
                     meshSpec.setEgressFilter(EgressFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("serviceDiscovery", targetDepth)) {
+                    context.nextToken();
+                    meshSpec.setServiceDiscovery(MeshServiceDiscoveryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

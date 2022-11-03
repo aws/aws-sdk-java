@@ -45,8 +45,12 @@ public class CreateDeploymentStrategyRequest extends com.amazonaws.AmazonWebServ
     private Integer deploymentDurationInMinutes;
     /**
      * <p>
-     * The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer
-     * eligible for automatic roll back.
+     * Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been
+     * deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered
+     * during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back
+     * based on CloudWatch alarms. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     * >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.
      * </p>
      */
     private Integer finalBakeTimeInMinutes;
@@ -224,13 +228,22 @@ public class CreateDeploymentStrategyRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer
-     * eligible for automatic roll back.
+     * Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been
+     * deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered
+     * during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back
+     * based on CloudWatch alarms. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     * >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * 
      * @param finalBakeTimeInMinutes
-     *        The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no
-     *        longer eligible for automatic roll back.
+     *        Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has
+     *        been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is
+     *        triggered during this time, AppConfig rolls back the deployment. You must configure permissions for
+     *        AppConfig to roll back based on CloudWatch alarms. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     *        >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User
+     *        Guide</i>.
      */
 
     public void setFinalBakeTimeInMinutes(Integer finalBakeTimeInMinutes) {
@@ -239,12 +252,21 @@ public class CreateDeploymentStrategyRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer
-     * eligible for automatic roll back.
+     * Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been
+     * deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered
+     * during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back
+     * based on CloudWatch alarms. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     * >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * 
-     * @return The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no
-     *         longer eligible for automatic roll back.
+     * @return Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has
+     *         been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is
+     *         triggered during this time, AppConfig rolls back the deployment. You must configure permissions for
+     *         AppConfig to roll back based on CloudWatch alarms. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     *         >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User
+     *         Guide</i>.
      */
 
     public Integer getFinalBakeTimeInMinutes() {
@@ -253,13 +275,22 @@ public class CreateDeploymentStrategyRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer
-     * eligible for automatic roll back.
+     * Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been
+     * deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered
+     * during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back
+     * based on CloudWatch alarms. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     * >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * 
      * @param finalBakeTimeInMinutes
-     *        The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no
-     *        longer eligible for automatic roll back.
+     *        Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has
+     *        been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is
+     *        triggered during this time, AppConfig rolls back the deployment. You must configure permissions for
+     *        AppConfig to roll back based on CloudWatch alarms. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html"
+     *        >Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

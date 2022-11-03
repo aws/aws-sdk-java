@@ -44,14 +44,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      * The state of token usage for your instance metadata requests.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * <p>
@@ -213,14 +213,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      * The state of token usage for your instance metadata requests.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * <p>
@@ -231,14 +231,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      *        The state of token usage for your instance metadata requests.</p>
      *        <p>
      *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *        role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *        version 2.0 role credentials are returned.
      *        </p>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *        requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *        the version 1.0 credentials are not available.
      *        </p>
      *        <p>
      *        Default: <code>optional</code>
@@ -254,14 +254,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      * The state of token usage for your instance metadata requests.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * <p>
@@ -271,14 +271,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      * @return The state of token usage for your instance metadata requests.</p>
      *         <p>
      *         If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *         signed token header on your request. If you retrieve the IAM role credentials without a token, the
-     *         version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed
-     *         token, the version 2.0 role credentials are returned.
+     *         session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *         role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *         version 2.0 role credentials are returned.
      *         </p>
      *         <p>
-     *         If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *         retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *         credentials; the version 1.0 credentials are not available.
+     *         If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *         requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *         the version 1.0 credentials are not available.
      *         </p>
      *         <p>
      *         Default: <code>optional</code>
@@ -294,14 +294,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      * The state of token usage for your instance metadata requests.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * <p>
@@ -312,14 +312,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      *        The state of token usage for your instance metadata requests.</p>
      *        <p>
      *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *        role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *        version 2.0 role credentials are returned.
      *        </p>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *        requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *        the version 1.0 credentials are not available.
      *        </p>
      *        <p>
      *        Default: <code>optional</code>
@@ -337,14 +337,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      * The state of token usage for your instance metadata requests.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * <p>
@@ -355,14 +355,14 @@ public class InstanceMetadataOptionsResponse implements Serializable, Cloneable 
      *        The state of token usage for your instance metadata requests.</p>
      *        <p>
      *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *        role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *        version 2.0 role credentials are returned.
      *        </p>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *        requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *        the version 1.0 credentials are not available.
      *        </p>
      *        <p>
      *        Default: <code>optional</code>

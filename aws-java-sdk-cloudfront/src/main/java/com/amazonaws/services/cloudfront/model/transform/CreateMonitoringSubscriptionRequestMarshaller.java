@@ -48,7 +48,7 @@ public class CreateMonitoringSubscriptionRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription";
+        String uriResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription/";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
                 createMonitoringSubscriptionRequest.getDistributionId());

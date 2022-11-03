@@ -33,6 +33,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      */
     private String targetSelection;
     /**
@@ -144,12 +150,23 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @see TargetSelection
      */
 
@@ -164,11 +181,22 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *         specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *         when a change is detected in a target. For example, a job will run on a thing when the thing is added to
-     *         a target group, even after the job was completed by all things originally in the group.
+     *         a target group, even after the job was completed by all things originally in the group. </p> <note>
+     *         <p>
+     *         We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *         using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *         created.
+     *         </p>
      * @see TargetSelection
      */
 
@@ -183,12 +211,23 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -205,12 +244,23 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */

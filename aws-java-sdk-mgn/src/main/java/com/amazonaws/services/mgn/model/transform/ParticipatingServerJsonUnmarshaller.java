@@ -52,6 +52,14 @@ public class ParticipatingServerJsonUnmarshaller implements Unmarshaller<Partici
                     context.nextToken();
                     participatingServer.setLaunchStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("launchedEc2InstanceID", targetDepth)) {
+                    context.nextToken();
+                    participatingServer.setLaunchedEc2InstanceID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("postLaunchActionsStatus", targetDepth)) {
+                    context.nextToken();
+                    participatingServer.setPostLaunchActionsStatus(PostLaunchActionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("sourceServerID", targetDepth)) {
                     context.nextToken();
                     participatingServer.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));

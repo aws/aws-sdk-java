@@ -30,7 +30,7 @@ public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The access token returned by the server response to get the user attribute verification code.
+     * A non-expired access token for the user whose attribute verification code you want to generate.
      * </p>
      */
     private String accessToken;
@@ -87,11 +87,11 @@ public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The access token returned by the server response to get the user attribute verification code.
+     * A non-expired access token for the user whose attribute verification code you want to generate.
      * </p>
      * 
      * @param accessToken
-     *        The access token returned by the server response to get the user attribute verification code.
+     *        A non-expired access token for the user whose attribute verification code you want to generate.
      */
 
     public void setAccessToken(String accessToken) {
@@ -100,10 +100,10 @@ public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The access token returned by the server response to get the user attribute verification code.
+     * A non-expired access token for the user whose attribute verification code you want to generate.
      * </p>
      * 
-     * @return The access token returned by the server response to get the user attribute verification code.
+     * @return A non-expired access token for the user whose attribute verification code you want to generate.
      */
 
     public String getAccessToken() {
@@ -112,11 +112,11 @@ public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The access token returned by the server response to get the user attribute verification code.
+     * A non-expired access token for the user whose attribute verification code you want to generate.
      * </p>
      * 
      * @param accessToken
-     *        The access token returned by the server response to get the user attribute verification code.
+     *        A non-expired access token for the user whose attribute verification code you want to generate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class ListCostCategoryDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A reference to a Cost Category containing enough information to identify the Cost Category.
+     * A reference to a Cost Category that contains enough information to identify the Cost Category.
      * </p>
      */
     private java.util.List<CostCategoryReference> costCategoryReferences;
@@ -39,10 +39,10 @@ public class ListCostCategoryDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A reference to a Cost Category containing enough information to identify the Cost Category.
+     * A reference to a Cost Category that contains enough information to identify the Cost Category.
      * </p>
      * 
-     * @return A reference to a Cost Category containing enough information to identify the Cost Category.
+     * @return A reference to a Cost Category that contains enough information to identify the Cost Category.
      */
 
     public java.util.List<CostCategoryReference> getCostCategoryReferences() {
@@ -51,11 +51,11 @@ public class ListCostCategoryDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A reference to a Cost Category containing enough information to identify the Cost Category.
+     * A reference to a Cost Category that contains enough information to identify the Cost Category.
      * </p>
      * 
      * @param costCategoryReferences
-     *        A reference to a Cost Category containing enough information to identify the Cost Category.
+     *        A reference to a Cost Category that contains enough information to identify the Cost Category.
      */
 
     public void setCostCategoryReferences(java.util.Collection<CostCategoryReference> costCategoryReferences) {
@@ -69,7 +69,7 @@ public class ListCostCategoryDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A reference to a Cost Category containing enough information to identify the Cost Category.
+     * A reference to a Cost Category that contains enough information to identify the Cost Category.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListCostCategoryDefinitionsResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param costCategoryReferences
-     *        A reference to a Cost Category containing enough information to identify the Cost Category.
+     *        A reference to a Cost Category that contains enough information to identify the Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListCostCategoryDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A reference to a Cost Category containing enough information to identify the Cost Category.
+     * A reference to a Cost Category that contains enough information to identify the Cost Category.
      * </p>
      * 
      * @param costCategoryReferences
-     *        A reference to a Cost Category containing enough information to identify the Cost Category.
+     *        A reference to a Cost Category that contains enough information to identify the Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -92,7 +92,8 @@ public class IpamPool implements Serializable, Cloneable {
     /**
      * <p>
      * The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      */
     private Integer poolDepth;
@@ -629,12 +630,14 @@ public class IpamPool implements Serializable, Cloneable {
     /**
      * <p>
      * The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param poolDepth
      *        The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     *        href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setPoolDepth(Integer poolDepth) {
@@ -644,11 +647,13 @@ public class IpamPool implements Serializable, Cloneable {
     /**
      * <p>
      * The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     *         href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
+     *         VPC IPAM User Guide</i>.
      */
 
     public Integer getPoolDepth() {
@@ -658,12 +663,14 @@ public class IpamPool implements Serializable, Cloneable {
     /**
      * <p>
      * The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param poolDepth
      *        The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a
-     *        href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

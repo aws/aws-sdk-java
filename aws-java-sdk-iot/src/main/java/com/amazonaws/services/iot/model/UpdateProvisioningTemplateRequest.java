@@ -22,19 +22,19 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * True to enable the fleet provisioning template, otherwise false.
+     * True to enable the provisioning template, otherwise false.
      * </p>
      */
     private Boolean enabled;
@@ -53,7 +53,10 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
     private String provisioningRoleArn;
     /**
      * <p>
-     * Updates the pre-provisioning hook template.
+     * Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      */
     private ProvisioningHook preProvisioningHook;
@@ -66,11 +69,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      */
 
     public void setTemplateName(String templateName) {
@@ -79,10 +82,10 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
-     * @return The name of the fleet provisioning template.
+     * @return The name of the provisioning template.
      */
 
     public String getTemplateName() {
@@ -91,11 +94,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +109,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      * 
      * @param description
-     *        The description of the fleet provisioning template.
+     *        The description of the provisioning template.
      */
 
     public void setDescription(String description) {
@@ -119,10 +122,10 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      * 
-     * @return The description of the fleet provisioning template.
+     * @return The description of the provisioning template.
      */
 
     public String getDescription() {
@@ -131,11 +134,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      * 
      * @param description
-     *        The description of the fleet provisioning template.
+     *        The description of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +149,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * True to enable the fleet provisioning template, otherwise false.
+     * True to enable the provisioning template, otherwise false.
      * </p>
      * 
      * @param enabled
-     *        True to enable the fleet provisioning template, otherwise false.
+     *        True to enable the provisioning template, otherwise false.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -159,10 +162,10 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * True to enable the fleet provisioning template, otherwise false.
+     * True to enable the provisioning template, otherwise false.
      * </p>
      * 
-     * @return True to enable the fleet provisioning template, otherwise false.
+     * @return True to enable the provisioning template, otherwise false.
      */
 
     public Boolean getEnabled() {
@@ -171,11 +174,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * True to enable the fleet provisioning template, otherwise false.
+     * True to enable the provisioning template, otherwise false.
      * </p>
      * 
      * @param enabled
-     *        True to enable the fleet provisioning template, otherwise false.
+     *        True to enable the provisioning template, otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,10 +189,10 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * True to enable the fleet provisioning template, otherwise false.
+     * True to enable the provisioning template, otherwise false.
      * </p>
      * 
-     * @return True to enable the fleet provisioning template, otherwise false.
+     * @return True to enable the provisioning template, otherwise false.
      */
 
     public Boolean isEnabled() {
@@ -284,11 +287,17 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Updates the pre-provisioning hook template.
+     * Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      * 
      * @param preProvisioningHook
-     *        Updates the pre-provisioning hook template.
+     *        Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>
+     *        . For more information about provisioning template types, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     *        >type</a>.
      */
 
     public void setPreProvisioningHook(ProvisioningHook preProvisioningHook) {
@@ -297,10 +306,16 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Updates the pre-provisioning hook template.
+     * Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      * 
-     * @return Updates the pre-provisioning hook template.
+     * @return Updates the pre-provisioning hook template. Only supports template of type
+     *         <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     *         >type</a>.
      */
 
     public ProvisioningHook getPreProvisioningHook() {
@@ -309,11 +324,17 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Updates the pre-provisioning hook template.
+     * Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      * 
      * @param preProvisioningHook
-     *        Updates the pre-provisioning hook template.
+     *        Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>
+     *        . For more information about provisioning template types, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     *        >type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -71,6 +71,13 @@ public class PutResourceConfigRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Tags associated with the resource.
      * </p>
+     * <note>
+     * <p>
+     * This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources.
+     * Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom
+     * resources.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> tags;
 
@@ -338,8 +345,20 @@ public class PutResourceConfigRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Tags associated with the resource.
      * </p>
+     * <note>
+     * <p>
+     * This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources.
+     * Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom
+     * resources.
+     * </p>
+     * </note>
      * 
-     * @return Tags associated with the resource.
+     * @return Tags associated with the resource.</p> <note>
+     *         <p>
+     *         This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     *         resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items
+     *         of your custom resources.
+     *         </p>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -350,9 +369,21 @@ public class PutResourceConfigRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Tags associated with the resource.
      * </p>
+     * <note>
+     * <p>
+     * This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources.
+     * Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom
+     * resources.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        Tags associated with the resource.
+     *        Tags associated with the resource.</p> <note>
+     *        <p>
+     *        This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     *        resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of
+     *        your custom resources.
+     *        </p>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -363,9 +394,21 @@ public class PutResourceConfigRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Tags associated with the resource.
      * </p>
+     * <note>
+     * <p>
+     * This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources.
+     * Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom
+     * resources.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        Tags associated with the resource.
+     *        Tags associated with the resource.</p> <note>
+     *        <p>
+     *        This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     *        resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of
+     *        your custom resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

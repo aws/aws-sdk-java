@@ -35,11 +35,17 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
+     * <p>
+     * If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     * doesn’t immediately update the value of that attribute. After your user receives and responds to a verification
+     * message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive
+     * messages with the original attribute value until they verify the new value.
+     * </p>
      */
     private java.util.List<AttributeType> userAttributes;
     /**
      * <p>
-     * The access token for the request to update user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      * </p>
      */
     private String accessToken;
@@ -95,10 +101,22 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
+     * <p>
+     * If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     * doesn’t immediately update the value of that attribute. After your user receives and responds to a verification
+     * message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive
+     * messages with the original attribute value until they verify the new value.
+     * </p>
      * 
      * @return An array of name-value pairs representing user attributes.</p>
      *         <p>
      *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *         </p>
+     *         <p>
+     *         If you have set an attribute to require verification before Amazon Cognito updates its value, this
+     *         request doesn’t immediately update the value of that attribute. After your user receives and responds to
+     *         a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can
+     *         sign in and receive messages with the original attribute value until they verify the new value.
      */
 
     public java.util.List<AttributeType> getUserAttributes() {
@@ -112,11 +130,23 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
+     * <p>
+     * If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     * doesn’t immediately update the value of that attribute. After your user receives and responds to a verification
+     * message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive
+     * messages with the original attribute value until they verify the new value.
+     * </p>
      * 
      * @param userAttributes
      *        An array of name-value pairs representing user attributes.</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *        </p>
+     *        <p>
+     *        If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     *        doesn’t immediately update the value of that attribute. After your user receives and responds to a
+     *        verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can
+     *        sign in and receive messages with the original attribute value until they verify the new value.
      */
 
     public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
@@ -136,6 +166,12 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * <p>
+     * If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     * doesn’t immediately update the value of that attribute. After your user receives and responds to a verification
+     * message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive
+     * messages with the original attribute value until they verify the new value.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
      * to override the existing values.
@@ -145,6 +181,12 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      *        An array of name-value pairs representing user attributes.</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *        </p>
+     *        <p>
+     *        If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     *        doesn’t immediately update the value of that attribute. After your user receives and responds to a
+     *        verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can
+     *        sign in and receive messages with the original attribute value until they verify the new value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +207,23 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
+     * <p>
+     * If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     * doesn’t immediately update the value of that attribute. After your user receives and responds to a verification
+     * message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive
+     * messages with the original attribute value until they verify the new value.
+     * </p>
      * 
      * @param userAttributes
      *        An array of name-value pairs representing user attributes.</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *        </p>
+     *        <p>
+     *        If you have set an attribute to require verification before Amazon Cognito updates its value, this request
+     *        doesn’t immediately update the value of that attribute. After your user receives and responds to a
+     *        verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can
+     *        sign in and receive messages with the original attribute value until they verify the new value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +234,11 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token for the request to update user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the request to update user attributes.
+     *        A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      */
 
     public void setAccessToken(String accessToken) {
@@ -193,10 +247,10 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token for the request to update user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      * </p>
      * 
-     * @return The access token for the request to update user attributes.
+     * @return A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      */
 
     public String getAccessToken() {
@@ -205,11 +259,11 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token for the request to update user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the request to update user attributes.
+     *        A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

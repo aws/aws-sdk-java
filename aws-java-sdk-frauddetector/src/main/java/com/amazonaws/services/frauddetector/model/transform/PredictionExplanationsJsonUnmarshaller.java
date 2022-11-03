@@ -55,6 +55,13 @@ public class PredictionExplanationsJsonUnmarshaller implements Unmarshaller<Pred
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("aggregatedVariablesImpactExplanations", targetDepth)) {
+                    context.nextToken();
+                    predictionExplanations.setAggregatedVariablesImpactExplanations(new ListUnmarshaller<AggregatedVariablesImpactExplanation>(
+                            AggregatedVariablesImpactExplanationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

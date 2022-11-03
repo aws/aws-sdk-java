@@ -60,6 +60,10 @@ public class ArtifactsConfigurationJsonUnmarshaller implements Unmarshaller<Arti
                     context.nextToken();
                     artifactsConfiguration.setContent(ContentArtifactsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CompositedVideo", targetDepth)) {
+                    context.nextToken();
+                    artifactsConfiguration.setCompositedVideo(CompositedVideoArtifactsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

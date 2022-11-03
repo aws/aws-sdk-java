@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GeneratedPolicyPropertiesMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> CLOUDTRAILPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudTrailProperties").build();
     private static final MarshallingInfo<Boolean> ISCOMPLETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isComplete").build();
     private static final MarshallingInfo<String> PRINCIPALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("principalArn").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDTRAILPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudTrailProperties").build();
 
     private static final GeneratedPolicyPropertiesMarshaller instance = new GeneratedPolicyPropertiesMarshaller();
 
@@ -50,9 +50,9 @@ public class GeneratedPolicyPropertiesMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(generatedPolicyProperties.getCloudTrailProperties(), CLOUDTRAILPROPERTIES_BINDING);
             protocolMarshaller.marshall(generatedPolicyProperties.getIsComplete(), ISCOMPLETE_BINDING);
             protocolMarshaller.marshall(generatedPolicyProperties.getPrincipalArn(), PRINCIPALARN_BINDING);
+            protocolMarshaller.marshall(generatedPolicyProperties.getCloudTrailProperties(), CLOUDTRAILPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

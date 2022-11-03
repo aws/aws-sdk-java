@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a queue for a quick connect. The contact flow must be of type Transfer to Queue.
+ * Contains information about a queue for a quick connect. The flow must be of type Transfer to Queue.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueQuickConnectConfig" target="_top">AWS
@@ -36,7 +36,7 @@ public class QueueQuickConnectConfig implements Serializable, Cloneable, Structu
     private String queueId;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
@@ -83,11 +83,11 @@ public class QueueQuickConnectConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -96,10 +96,10 @@ public class QueueQuickConnectConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -108,11 +108,11 @@ public class QueueQuickConnectConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

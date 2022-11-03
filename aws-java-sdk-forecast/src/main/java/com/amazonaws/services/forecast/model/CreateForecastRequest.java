@@ -42,7 +42,11 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
      * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
      * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * and Negative Binomial).
+     * </p>
+     * <p>
+     * The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles,
+     * the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      */
     private java.util.List<String> forecastTypes;
@@ -99,6 +103,33 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+     * object.
+     * </p>
+     * <p>
+     * The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DataSource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Format</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Schema</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private TimeSeriesSelector timeSeriesSelector;
 
     /**
      * <p>
@@ -185,14 +216,20 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
      * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
      * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * and Negative Binomial).
+     * </p>
+     * <p>
+     * The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles,
+     * the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @return The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
      *         quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only)
      *         and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
-     *         symmetric (for example, Beta and Negative Binomial). The default value is
-     *         <code>["0.1", "0.5", "0.9"]</code>.
+     *         symmetric (for example, Beta and Negative Binomial). </p>
+     *         <p>
+     *         The default quantiles are the quantiles you specified during predictor creation. If you didn't specify
+     *         quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
      */
 
     public java.util.List<String> getForecastTypes() {
@@ -204,15 +241,21 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
      * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
      * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * and Negative Binomial).
+     * </p>
+     * <p>
+     * The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles,
+     * the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @param forecastTypes
      *        The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
      *        quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
      *        <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
-     *        symmetric (for example, Beta and Negative Binomial). The default value is
-     *        <code>["0.1", "0.5", "0.9"]</code>.
+     *        symmetric (for example, Beta and Negative Binomial). </p>
+     *        <p>
+     *        The default quantiles are the quantiles you specified during predictor creation. If you didn't specify
+     *        quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
      */
 
     public void setForecastTypes(java.util.Collection<String> forecastTypes) {
@@ -229,7 +272,11 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
      * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
      * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * and Negative Binomial).
+     * </p>
+     * <p>
+     * The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles,
+     * the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,8 +288,10 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
      *        quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
      *        <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
-     *        symmetric (for example, Beta and Negative Binomial). The default value is
-     *        <code>["0.1", "0.5", "0.9"]</code>.
+     *        symmetric (for example, Beta and Negative Binomial). </p>
+     *        <p>
+     *        The default quantiles are the quantiles you specified during predictor creation. If you didn't specify
+     *        quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,15 +310,21 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
      * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
      * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * and Negative Binomial).
+     * </p>
+     * <p>
+     * The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles,
+     * the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @param forecastTypes
      *        The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
      *        quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
      *        <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
-     *        symmetric (for example, Beta and Negative Binomial). The default value is
-     *        <code>["0.1", "0.5", "0.9"]</code>.
+     *        symmetric (for example, Beta and Negative Binomial). </p>
+     *        <p>
+     *        The default quantiles are the quantiles you specified during predictor creation. If you didn't specify
+     *        quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -721,6 +776,169 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+     * object.
+     * </p>
+     * <p>
+     * The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DataSource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Format</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Schema</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param timeSeriesSelector
+     *        Defines the set of time series that are used to create the forecasts in a
+     *        <code>TimeSeriesIdentifiers</code> object.</p>
+     *        <p>
+     *        The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DataSource</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Format</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Schema</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setTimeSeriesSelector(TimeSeriesSelector timeSeriesSelector) {
+        this.timeSeriesSelector = timeSeriesSelector;
+    }
+
+    /**
+     * <p>
+     * Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+     * object.
+     * </p>
+     * <p>
+     * The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DataSource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Format</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Schema</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Defines the set of time series that are used to create the forecasts in a
+     *         <code>TimeSeriesIdentifiers</code> object.</p>
+     *         <p>
+     *         The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DataSource</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Format</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Schema</code>
+     *         </p>
+     *         </li>
+     */
+
+    public TimeSeriesSelector getTimeSeriesSelector() {
+        return this.timeSeriesSelector;
+    }
+
+    /**
+     * <p>
+     * Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+     * object.
+     * </p>
+     * <p>
+     * The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DataSource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Format</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Schema</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param timeSeriesSelector
+     *        Defines the set of time series that are used to create the forecasts in a
+     *        <code>TimeSeriesIdentifiers</code> object.</p>
+     *        <p>
+     *        The <code>TimeSeriesIdentifiers</code> object needs the following information:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DataSource</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Format</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Schema</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateForecastRequest withTimeSeriesSelector(TimeSeriesSelector timeSeriesSelector) {
+        setTimeSeriesSelector(timeSeriesSelector);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -739,7 +957,9 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getForecastTypes() != null)
             sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTimeSeriesSelector() != null)
+            sb.append("TimeSeriesSelector: ").append(getTimeSeriesSelector());
         sb.append("}");
         return sb.toString();
     }
@@ -770,6 +990,10 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTimeSeriesSelector() == null ^ this.getTimeSeriesSelector() == null)
+            return false;
+        if (other.getTimeSeriesSelector() != null && other.getTimeSeriesSelector().equals(this.getTimeSeriesSelector()) == false)
+            return false;
         return true;
     }
 
@@ -782,6 +1006,7 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getPredictorArn() == null) ? 0 : getPredictorArn().hashCode());
         hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTimeSeriesSelector() == null) ? 0 : getTimeSeriesSelector().hashCode());
         return hashCode;
     }
 

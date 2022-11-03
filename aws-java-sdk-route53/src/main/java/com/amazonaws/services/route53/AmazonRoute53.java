@@ -211,17 +211,9 @@ public interface AmazonRoute53 {
      *         </p>
      *         </li>
      * @throws LimitsExceededException
-     *         This operation can't be completed either because the current account has reached the limit on reusable
-     *         delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that
-     *         you can associate with a private hosted zone. To get the current limit on the number of reusable
-     *         delegation sets, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html"
-     *         >GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a
-     *         private hosted zone, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
-     *         >GetHostedZoneLimit</a>. To request a higher limit, <a
-     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
-     *         Center.
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
      * @throws PriorRequestNotCompleteException
      *         If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent
      *         requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>).
@@ -232,6 +224,65 @@ public interface AmazonRoute53 {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest);
+
+    /**
+     * <p>
+     * Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping
+     * blocks to one or multiple locations.
+     * </p>
+     * <p>
+     * A change request can update multiple locations in a collection at a time, which is helpful if you want to move
+     * one or more CIDR blocks from one location to another in one transaction, without downtime.
+     * </p>
+     * <p>
+     * <b>Limits</b>
+     * </p>
+     * <p>
+     * The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API
+     * calls.
+     * </p>
+     * <p>
+     * <b> PUT and DELETE_IF_EXISTS</b>
+     * </p>
+     * <p>
+     * Use <code>ChangeCidrCollection</code> to perform the following actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUT</code>: Create a CIDR block within the specified collection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeCidrCollectionRequest
+     * @return Result of the ChangeCidrCollection operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws CidrCollectionVersionMismatchException
+     *         The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+     *         operation.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws CidrBlockInUseException
+     *         This CIDR block is already in use.
+     * @throws LimitsExceededException
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.ChangeCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ChangeCidrCollectionResult changeCidrCollection(ChangeCidrCollectionRequest changeCidrCollectionRequest);
 
     /**
      * <p>
@@ -396,6 +447,30 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Creates a CIDR collection in the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param createCidrCollectionRequest
+     * @return Result of the CreateCidrCollection operation returned by the service.
+     * @throws LimitsExceededException
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws CidrCollectionAlreadyExistsException
+     *         A CIDR collection with this name and a different caller reference already exists in this account.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.CreateCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateCidrCollectionResult createCidrCollection(CreateCidrCollectionRequest createCidrCollectionRequest);
+
+    /**
+     * <p>
      * Creates a new health check.
      * </p>
      * <p>
@@ -506,7 +581,7 @@ public interface AmazonRoute53 {
      * </important>
      * <p>
      * For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * <p>
      * Note the following:
@@ -521,8 +596,8 @@ public interface AmazonRoute53 {
      * <p>
      * For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone.
      * For more information about SOA and NS records, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route
-     * 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that
+     * Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * If you want to use the same name servers for multiple public hosted zones, you can optionally associate a
@@ -531,17 +606,17 @@ public interface AmazonRoute53 {
      * </li>
      * <li>
      * <p>
-     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
+     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
      * registrar to make Route 53 the DNS service for the domain. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an
-     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is
      * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on
-     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
+     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
      * <p>
@@ -1017,17 +1092,9 @@ public interface AmazonRoute53 {
      * @throws DelegationSetAlreadyCreatedException
      *         A delegation set with the same owner and caller reference combination has already been created.
      * @throws LimitsExceededException
-     *         This operation can't be completed either because the current account has reached the limit on reusable
-     *         delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that
-     *         you can associate with a private hosted zone. To get the current limit on the number of reusable
-     *         delegation sets, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html"
-     *         >GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a
-     *         private hosted zone, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
-     *         >GetHostedZoneLimit</a>. To request a higher limit, <a
-     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
-     *         Center.
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
@@ -1241,6 +1308,29 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can
+     * be deleted.
+     * </p>
+     * 
+     * @param deleteCidrCollectionRequest
+     * @return Result of the DeleteCidrCollection operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws CidrCollectionInUseException
+     *         This CIDR collection is in use, and isn't empty.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.DeleteCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteCidrCollectionResult deleteCidrCollection(DeleteCidrCollectionRequest deleteCidrCollectionRequest);
+
+    /**
+     * <p>
      * Deletes a health check.
      * </p>
      * <important>
@@ -1282,7 +1372,7 @@ public interface AmazonRoute53 {
      * <p>
      * If the hosted zone was created by another service, such as Cloud Map, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service"
-     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
+     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
      * Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones
      * that were created by another service.)
      * </p>
@@ -1303,9 +1393,9 @@ public interface AmazonRoute53 {
      * <p>
      * If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a
      * free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration.
-     * If the domain is registered with Route 53, see <a
+     * If the domain is registered with Route 53, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html"
-     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
+     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
      * new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to
      * update name servers for the domain registration. For more information, perform an internet search on
      * "free DNS service."
@@ -1313,7 +1403,7 @@ public interface AmazonRoute53 {
      * <p>
      * You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the
      * hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If
-     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
+     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
      * a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">
      * ChangeResourceRecordSets</a>.
@@ -2185,6 +2275,58 @@ public interface AmazonRoute53 {
      * @see #getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest)
      */
     GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount();
+
+    /**
+     * <p>
+     * Returns a paginated list of location objects and their CIDR blocks.
+     * </p>
+     * 
+     * @param listCidrBlocksRequest
+     * @return Result of the ListCidrBlocks operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws NoSuchCidrLocationException
+     *         The CIDR collection location doesn't match any locations in your account.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.ListCidrBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListCidrBlocksResult listCidrBlocks(ListCidrBlocksRequest listCidrBlocksRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).
+     * </p>
+     * 
+     * @param listCidrCollectionsRequest
+     * @return Result of the ListCidrCollections operation returned by the service.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.ListCidrCollections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListCidrCollectionsResult listCidrCollections(ListCidrCollectionsRequest listCidrCollectionsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR
+     * blocks).
+     * </p>
+     * 
+     * @param listCidrLocationsRequest
+     * @return Result of the ListCidrLocations operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.ListCidrLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListCidrLocationsResult listCidrLocations(ListCidrLocationsRequest listCidrLocationsRequest);
 
     /**
      * <p>

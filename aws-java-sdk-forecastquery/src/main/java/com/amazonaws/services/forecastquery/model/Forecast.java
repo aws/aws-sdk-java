@@ -52,6 +52,12 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter
+     * of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a>
+     * operation to change the values. The values will vary depending on how this is set, with a minimum of
+     * <code>1</code> and a maximum of <code>5.</code>
+     * </p>
      */
     private java.util.Map<String, java.util.List<DataPoint>> predictions;
 
@@ -79,6 +85,12 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter
+     * of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a>
+     * operation to change the values. The values will vary depending on how this is set, with a minimum of
+     * <code>1</code> and a maximum of <code>5.</code>
+     * </p>
      * 
      * @return The forecast.</p>
      *         <p>
@@ -100,6 +112,13 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      *         p90
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code>
+     *         parameter of the <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a>
+     *         operation to change the values. The values will vary depending on how this is set, with a minimum of
+     *         <code>1</code> and a maximum of <code>5.</code>
      */
 
     public java.util.Map<String, java.util.List<DataPoint>> getPredictions() {
@@ -130,6 +149,12 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter
+     * of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a>
+     * operation to change the values. The values will vary depending on how this is set, with a minimum of
+     * <code>1</code> and a maximum of <code>5.</code>
+     * </p>
      * 
      * @param predictions
      *        The forecast.</p>
@@ -152,6 +177,13 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      *        p90
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code>
+     *        parameter of the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation
+     *        to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code>
+     *        and a maximum of <code>5.</code>
      */
 
     public void setPredictions(java.util.Map<String, java.util.List<DataPoint>> predictions) {
@@ -182,6 +214,12 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter
+     * of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a>
+     * operation to change the values. The values will vary depending on how this is set, with a minimum of
+     * <code>1</code> and a maximum of <code>5.</code>
+     * </p>
      * 
      * @param predictions
      *        The forecast.</p>
@@ -204,6 +242,13 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      *        p90
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code>
+     *        parameter of the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation
+     *        to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code>
+     *        and a maximum of <code>5.</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

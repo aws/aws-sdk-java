@@ -41,6 +41,8 @@ public class DomainMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerSideEncryptionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTIONUPDATEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerSideEncryptionUpdateDetails").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedAt").timestampFormat("unixTimestamp").build();
 
@@ -67,6 +69,7 @@ public class DomainMarshaller {
             protocolMarshaller.marshall(domain.getDomainStatus(), DOMAINSTATUS_BINDING);
             protocolMarshaller.marshall(domain.getName(), NAME_BINDING);
             protocolMarshaller.marshall(domain.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(domain.getServerSideEncryptionUpdateDetails(), SERVERSIDEENCRYPTIONUPDATEDETAILS_BINDING);
             protocolMarshaller.marshall(domain.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

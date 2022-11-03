@@ -49,12 +49,22 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public ChangeCidrCollectionResult changeCidrCollection(ChangeCidrCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCidrCollectionResult createCidrCollection(CreateCidrCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,6 +115,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     public DeactivateKeySigningKeyResult deactivateKeySigningKey(DeactivateKeySigningKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCidrCollectionResult deleteCidrCollection(DeleteCidrCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -276,6 +291,21 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     @Override
     public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount() {
         return getTrafficPolicyInstanceCount(new GetTrafficPolicyInstanceCountRequest());
+    }
+
+    @Override
+    public ListCidrBlocksResult listCidrBlocks(ListCidrBlocksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCidrCollectionsResult listCidrCollections(ListCidrCollectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCidrLocationsResult listCidrLocations(ListCidrLocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

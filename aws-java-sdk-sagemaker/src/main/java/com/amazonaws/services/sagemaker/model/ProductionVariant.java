@@ -82,6 +82,29 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private ProductionVariantServerlessConfig serverlessConfig;
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * </p>
+     */
+    private Integer volumeSizeInGB;
+    /**
+     * <p>
+     * The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the
+     * individual inference instance associated with this production variant.
+     * </p>
+     */
+    private Integer modelDataDownloadTimeoutInSeconds;
+    /**
+     * <p>
+     * The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more
+     * information about health check, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     * >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     * </p>
+     */
+    private Integer containerStartupHealthCheckTimeoutInSeconds;
 
     /**
      * <p>
@@ -483,6 +506,156 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     *        production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     */
+
+    public void setVolumeSizeInGB(Integer volumeSizeInGB) {
+        this.volumeSizeInGB = volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * </p>
+     * 
+     * @return The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     *         production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     */
+
+    public Integer getVolumeSizeInGB() {
+        return this.volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume attached to individual inference instance associated with the
+     *        production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withVolumeSizeInGB(Integer volumeSizeInGB) {
+        setVolumeSizeInGB(volumeSizeInGB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the
+     * individual inference instance associated with this production variant.
+     * </p>
+     * 
+     * @param modelDataDownloadTimeoutInSeconds
+     *        The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to
+     *        the individual inference instance associated with this production variant.
+     */
+
+    public void setModelDataDownloadTimeoutInSeconds(Integer modelDataDownloadTimeoutInSeconds) {
+        this.modelDataDownloadTimeoutInSeconds = modelDataDownloadTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the
+     * individual inference instance associated with this production variant.
+     * </p>
+     * 
+     * @return The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to
+     *         the individual inference instance associated with this production variant.
+     */
+
+    public Integer getModelDataDownloadTimeoutInSeconds() {
+        return this.modelDataDownloadTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the
+     * individual inference instance associated with this production variant.
+     * </p>
+     * 
+     * @param modelDataDownloadTimeoutInSeconds
+     *        The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to
+     *        the individual inference instance associated with this production variant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withModelDataDownloadTimeoutInSeconds(Integer modelDataDownloadTimeoutInSeconds) {
+        setModelDataDownloadTimeoutInSeconds(modelDataDownloadTimeoutInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more
+     * information about health check, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     * >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     * </p>
+     * 
+     * @param containerStartupHealthCheckTimeoutInSeconds
+     *        The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For
+     *        more information about health check, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     *        >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     */
+
+    public void setContainerStartupHealthCheckTimeoutInSeconds(Integer containerStartupHealthCheckTimeoutInSeconds) {
+        this.containerStartupHealthCheckTimeoutInSeconds = containerStartupHealthCheckTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more
+     * information about health check, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     * >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     * </p>
+     * 
+     * @return The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting.
+     *         For more information about health check, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     *         >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     */
+
+    public Integer getContainerStartupHealthCheckTimeoutInSeconds() {
+        return this.containerStartupHealthCheckTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more
+     * information about health check, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     * >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     * </p>
+     * 
+     * @param containerStartupHealthCheckTimeoutInSeconds
+     *        The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For
+     *        more information about health check, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests"
+     *        >How Your Container Should Respond to Health Check (Ping) Requests</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withContainerStartupHealthCheckTimeoutInSeconds(Integer containerStartupHealthCheckTimeoutInSeconds) {
+        setContainerStartupHealthCheckTimeoutInSeconds(containerStartupHealthCheckTimeoutInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -509,7 +682,13 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (getCoreDumpConfig() != null)
             sb.append("CoreDumpConfig: ").append(getCoreDumpConfig()).append(",");
         if (getServerlessConfig() != null)
-            sb.append("ServerlessConfig: ").append(getServerlessConfig());
+            sb.append("ServerlessConfig: ").append(getServerlessConfig()).append(",");
+        if (getVolumeSizeInGB() != null)
+            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB()).append(",");
+        if (getModelDataDownloadTimeoutInSeconds() != null)
+            sb.append("ModelDataDownloadTimeoutInSeconds: ").append(getModelDataDownloadTimeoutInSeconds()).append(",");
+        if (getContainerStartupHealthCheckTimeoutInSeconds() != null)
+            sb.append("ContainerStartupHealthCheckTimeoutInSeconds: ").append(getContainerStartupHealthCheckTimeoutInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -556,6 +735,20 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getServerlessConfig() != null && other.getServerlessConfig().equals(this.getServerlessConfig()) == false)
             return false;
+        if (other.getVolumeSizeInGB() == null ^ this.getVolumeSizeInGB() == null)
+            return false;
+        if (other.getVolumeSizeInGB() != null && other.getVolumeSizeInGB().equals(this.getVolumeSizeInGB()) == false)
+            return false;
+        if (other.getModelDataDownloadTimeoutInSeconds() == null ^ this.getModelDataDownloadTimeoutInSeconds() == null)
+            return false;
+        if (other.getModelDataDownloadTimeoutInSeconds() != null
+                && other.getModelDataDownloadTimeoutInSeconds().equals(this.getModelDataDownloadTimeoutInSeconds()) == false)
+            return false;
+        if (other.getContainerStartupHealthCheckTimeoutInSeconds() == null ^ this.getContainerStartupHealthCheckTimeoutInSeconds() == null)
+            return false;
+        if (other.getContainerStartupHealthCheckTimeoutInSeconds() != null
+                && other.getContainerStartupHealthCheckTimeoutInSeconds().equals(this.getContainerStartupHealthCheckTimeoutInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -572,6 +765,10 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getAcceleratorType() == null) ? 0 : getAcceleratorType().hashCode());
         hashCode = prime * hashCode + ((getCoreDumpConfig() == null) ? 0 : getCoreDumpConfig().hashCode());
         hashCode = prime * hashCode + ((getServerlessConfig() == null) ? 0 : getServerlessConfig().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
+        hashCode = prime * hashCode + ((getModelDataDownloadTimeoutInSeconds() == null) ? 0 : getModelDataDownloadTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode
+                + ((getContainerStartupHealthCheckTimeoutInSeconds() == null) ? 0 : getContainerStartupHealthCheckTimeoutInSeconds().hashCode());
         return hashCode;
     }
 

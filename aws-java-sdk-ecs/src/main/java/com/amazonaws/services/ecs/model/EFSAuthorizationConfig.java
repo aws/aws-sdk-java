@@ -34,7 +34,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
      * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access Points</a>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      */
@@ -45,7 +45,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String iam;
@@ -56,7 +56,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
      * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access Points</a>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
@@ -65,8 +65,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *        in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will
      *        enforce the path set on the EFS access point. If an access point is used, transit encryption must be
      *        enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access
-     *        Points</a> in the <i>Amazon Elastic File System User Guide</i>.
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access
+     *        points</a> in the <i>Amazon Elastic File System User Guide</i>.
      */
 
     public void setAccessPointId(String accessPointId) {
@@ -79,7 +79,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
      * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access Points</a>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
@@ -87,8 +87,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *         specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code>
      *         which will enforce the path set on the EFS access point. If an access point is used, transit encryption
      *         must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access
-     *         Points</a> in the <i>Amazon Elastic File System User Guide</i>.
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access
+     *         points</a> in the <i>Amazon Elastic File System User Guide</i>.
      */
 
     public String getAccessPointId() {
@@ -101,7 +101,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
      * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access Points</a>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
@@ -110,8 +110,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *        in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will
      *        enforce the path set on the EFS access point. If an access point is used, transit encryption must be
      *        enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access
-     *        Points</a> in the <i>Amazon Elastic File System User Guide</i>.
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access
+     *        points</a> in the <i>Amazon Elastic File System User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +126,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param iam
@@ -135,7 +135,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *        <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
      *        <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
-     *        >Using Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see EFSAuthorizationConfigIAM
      */
 
@@ -149,7 +149,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the
@@ -157,7 +157,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *         <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
      *         <code>DISABLED</code> is used. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
-     *         >Using Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see EFSAuthorizationConfigIAM
      */
 
@@ -171,7 +171,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param iam
@@ -180,7 +180,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *        <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
      *        <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
-     *        >Using Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EFSAuthorizationConfigIAM
      */
@@ -196,7 +196,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param iam
@@ -205,7 +205,7 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      *        <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
      *        <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
-     *        >Using Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EFSAuthorizationConfigIAM
      */

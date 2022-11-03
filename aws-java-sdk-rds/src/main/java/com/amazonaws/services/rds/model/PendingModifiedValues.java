@@ -139,6 +139,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date resumeFullAutomationModeTime;
+    /**
+     * <p>
+     * The storage throughput of the DB instance.
+     * </p>
+     */
+    private Integer storageThroughput;
 
     /**
      * <p>
@@ -975,6 +981,46 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The storage throughput of the DB instance.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        The storage throughput of the DB instance.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * The storage throughput of the DB instance.
+     * </p>
+     * 
+     * @return The storage throughput of the DB instance.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * The storage throughput of the DB instance.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        The storage throughput of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1021,7 +1067,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getAutomationMode() != null)
             sb.append("AutomationMode: ").append(getAutomationMode()).append(",");
         if (getResumeFullAutomationModeTime() != null)
-            sb.append("ResumeFullAutomationModeTime: ").append(getResumeFullAutomationModeTime());
+            sb.append("ResumeFullAutomationModeTime: ").append(getResumeFullAutomationModeTime()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1109,6 +1157,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getResumeFullAutomationModeTime() != null && other.getResumeFullAutomationModeTime().equals(this.getResumeFullAutomationModeTime()) == false)
             return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1135,6 +1187,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getAutomationMode() == null) ? 0 : getAutomationMode().hashCode());
         hashCode = prime * hashCode + ((getResumeFullAutomationModeTime() == null) ? 0 : getResumeFullAutomationModeTime().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         return hashCode;
     }
 

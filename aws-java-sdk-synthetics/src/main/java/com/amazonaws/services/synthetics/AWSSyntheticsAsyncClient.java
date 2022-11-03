@@ -87,6 +87,39 @@ public class AWSSyntheticsAsyncClient extends AWSSyntheticsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateResourceResult> associateResourceAsync(AssociateResourceRequest request) {
+
+        return associateResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateResourceResult> associateResourceAsync(final AssociateResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateResourceRequest, AssociateResourceResult> asyncHandler) {
+        final AssociateResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateResourceResult>() {
+            @Override
+            public AssociateResourceResult call() throws Exception {
+                AssociateResourceResult result = null;
+
+                try {
+                    result = executeAssociateResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCanaryResult> createCanaryAsync(CreateCanaryRequest request) {
 
         return createCanaryAsync(request, null);
@@ -120,6 +153,39 @@ public class AWSSyntheticsAsyncClient extends AWSSyntheticsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request) {
+
+        return createGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(final CreateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
+        final CreateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGroupResult>() {
+            @Override
+            public CreateGroupResult call() throws Exception {
+                CreateGroupResult result = null;
+
+                try {
+                    result = executeCreateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCanaryResult> deleteCanaryAsync(DeleteCanaryRequest request) {
 
         return deleteCanaryAsync(request, null);
@@ -137,6 +203,39 @@ public class AWSSyntheticsAsyncClient extends AWSSyntheticsClient implements AWS
 
                 try {
                     result = executeDeleteCanary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request) {
+
+        return deleteGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(final DeleteGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
+        final DeleteGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGroupResult>() {
+            @Override
+            public DeleteGroupResult call() throws Exception {
+                DeleteGroupResult result = null;
+
+                try {
+                    result = executeDeleteGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -252,6 +351,39 @@ public class AWSSyntheticsAsyncClient extends AWSSyntheticsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateResourceResult> disassociateResourceAsync(DisassociateResourceRequest request) {
+
+        return disassociateResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateResourceResult> disassociateResourceAsync(final DisassociateResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateResourceRequest, DisassociateResourceResult> asyncHandler) {
+        final DisassociateResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateResourceResult>() {
+            @Override
+            public DisassociateResourceResult call() throws Exception {
+                DisassociateResourceResult result = null;
+
+                try {
+                    result = executeDisassociateResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCanaryResult> getCanaryAsync(GetCanaryRequest request) {
 
         return getCanaryAsync(request, null);
@@ -302,6 +434,138 @@ public class AWSSyntheticsAsyncClient extends AWSSyntheticsClient implements AWS
 
                 try {
                     result = executeGetCanaryRuns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest request) {
+
+        return getGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGroupResult> getGroupAsync(final GetGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler) {
+        final GetGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGroupResult>() {
+            @Override
+            public GetGroupResult call() throws Exception {
+                GetGroupResult result = null;
+
+                try {
+                    result = executeGetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedGroupsResult> listAssociatedGroupsAsync(ListAssociatedGroupsRequest request) {
+
+        return listAssociatedGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedGroupsResult> listAssociatedGroupsAsync(final ListAssociatedGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssociatedGroupsRequest, ListAssociatedGroupsResult> asyncHandler) {
+        final ListAssociatedGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssociatedGroupsResult>() {
+            @Override
+            public ListAssociatedGroupsResult call() throws Exception {
+                ListAssociatedGroupsResult result = null;
+
+                try {
+                    result = executeListAssociatedGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupResourcesResult> listGroupResourcesAsync(ListGroupResourcesRequest request) {
+
+        return listGroupResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupResourcesResult> listGroupResourcesAsync(final ListGroupResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGroupResourcesRequest, ListGroupResourcesResult> asyncHandler) {
+        final ListGroupResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGroupResourcesResult>() {
+            @Override
+            public ListGroupResourcesResult call() throws Exception {
+                ListGroupResourcesResult result = null;
+
+                try {
+                    result = executeListGroupResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request) {
+
+        return listGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(final ListGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
+        final ListGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGroupsResult>() {
+            @Override
+            public ListGroupsResult call() throws Exception {
+                ListGroupsResult result = null;
+
+                try {
+                    result = executeListGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

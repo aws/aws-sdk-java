@@ -32,7 +32,9 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones.
+     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
+     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
+     * CostCategoryRule</a>.
      * </p>
      */
     private String key;
@@ -55,12 +57,17 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones.
+     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
+     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
+     * CostCategoryRule</a>.
      * </p>
      * 
      * @param key
      *        The names of the metadata types that you can use to filter and group your results. For example,
-     *        <code>AZ</code> returns a list of Availability Zones.
+     *        <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
+     *        <code>SERVICE_CODE</code> can only be used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *        >CostCategoryRule</a>.
      * @see Dimension
      */
 
@@ -71,11 +78,16 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones.
+     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
+     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
+     * CostCategoryRule</a>.
      * </p>
      * 
      * @return The names of the metadata types that you can use to filter and group your results. For example,
-     *         <code>AZ</code> returns a list of Availability Zones.
+     *         <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
+     *         <code>SERVICE_CODE</code> can only be used in <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *         >CostCategoryRule</a>.
      * @see Dimension
      */
 
@@ -86,12 +98,17 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones.
+     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
+     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
+     * CostCategoryRule</a>.
      * </p>
      * 
      * @param key
      *        The names of the metadata types that you can use to filter and group your results. For example,
-     *        <code>AZ</code> returns a list of Availability Zones.
+     *        <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
+     *        <code>SERVICE_CODE</code> can only be used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *        >CostCategoryRule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */
@@ -104,12 +121,17 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones.
+     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
+     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
+     * CostCategoryRule</a>.
      * </p>
      * 
      * @param key
      *        The names of the metadata types that you can use to filter and group your results. For example,
-     *        <code>AZ</code> returns a list of Availability Zones.
+     *        <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
+     *        <code>SERVICE_CODE</code> can only be used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *        >CostCategoryRule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */

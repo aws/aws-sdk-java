@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobType {
 
-    OTA("OTA");
+    OTA("OTA"),
+    REBOOT("REBOOT");
 
     private String value;
 

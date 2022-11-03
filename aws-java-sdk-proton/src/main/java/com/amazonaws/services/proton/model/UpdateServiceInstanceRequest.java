@@ -27,10 +27,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The deployment type.
-     * </p>
-     * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * The deployment type. It defines the mode for updating a service instance, as follows:
      * </p>
      * <dl>
      * <dt/>
@@ -49,8 +46,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     * <code>deployment-type</code>.
+     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.
      * </p>
      * </dd>
      * <dt/>
@@ -111,10 +107,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The deployment type.
-     * </p>
-     * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * The deployment type. It defines the mode for updating a service instance, as follows:
      * </p>
      * <dl>
      * <dt/>
@@ -133,8 +126,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     * <code>deployment-type</code>.
+     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.
      * </p>
      * </dd>
      * <dt/>
@@ -162,11 +154,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </dl>
      * 
      * @param deploymentType
-     *        The deployment type.</p>
-     *        <p>
-     *        There are four modes for updating a service instance. The <code>deploymentType</code> field defines the
-     *        mode.
-     *        </p>
+     *        The deployment type. It defines the mode for updating a service instance, as follows:</p>
      *        <dl>
      *        <dt/>
      *        <dd>
@@ -185,7 +173,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        In this mode, the service instance is deployed and updated with the new spec that you provide. Only
      *        requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     *        <code>deployment-type</code>.
+     *        deployment type.
      *        </p>
      *        </dd>
      *        <dt/>
@@ -219,10 +207,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The deployment type.
-     * </p>
-     * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * The deployment type. It defines the mode for updating a service instance, as follows:
      * </p>
      * <dl>
      * <dt/>
@@ -241,8 +226,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     * <code>deployment-type</code>.
+     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.
      * </p>
      * </dd>
      * <dt/>
@@ -269,11 +253,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </dd>
      * </dl>
      * 
-     * @return The deployment type.</p>
-     *         <p>
-     *         There are four modes for updating a service instance. The <code>deploymentType</code> field defines the
-     *         mode.
-     *         </p>
+     * @return The deployment type. It defines the mode for updating a service instance, as follows:</p>
      *         <dl>
      *         <dt/>
      *         <dd>
@@ -292,7 +272,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      *         <p>
      *         In this mode, the service instance is deployed and updated with the new spec that you provide. Only
      *         requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use
-     *         this <code>deployment-type</code>.
+     *         this deployment type.
      *         </p>
      *         </dd>
      *         <dt/>
@@ -326,10 +306,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The deployment type.
-     * </p>
-     * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * The deployment type. It defines the mode for updating a service instance, as follows:
      * </p>
      * <dl>
      * <dt/>
@@ -348,8 +325,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     * <code>deployment-type</code>.
+     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.
      * </p>
      * </dd>
      * <dt/>
@@ -377,11 +353,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </dl>
      * 
      * @param deploymentType
-     *        The deployment type.</p>
-     *        <p>
-     *        There are four modes for updating a service instance. The <code>deploymentType</code> field defines the
-     *        mode.
-     *        </p>
+     *        The deployment type. It defines the mode for updating a service instance, as follows:</p>
      *        <dl>
      *        <dt/>
      *        <dd>
@@ -400,7 +372,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        In this mode, the service instance is deployed and updated with the new spec that you provide. Only
      *        requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     *        <code>deployment-type</code>.
+     *        deployment type.
      *        </p>
      *        </dd>
      *        <dt/>
@@ -436,10 +408,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The deployment type.
-     * </p>
-     * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * The deployment type. It defines the mode for updating a service instance, as follows:
      * </p>
      * <dl>
      * <dt/>
@@ -458,8 +427,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     * <code>deployment-type</code>.
+     * parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.
      * </p>
      * </dd>
      * <dt/>
@@ -487,11 +455,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </dl>
      * 
      * @param deploymentType
-     *        The deployment type.</p>
-     *        <p>
-     *        There are four modes for updating a service instance. The <code>deploymentType</code> field defines the
-     *        mode.
-     *        </p>
+     *        The deployment type. It defines the mode for updating a service instance, as follows:</p>
      *        <dl>
      *        <dt/>
      *        <dd>
@@ -510,7 +474,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        In this mode, the service instance is deployed and updated with the new spec that you provide. Only
      *        requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this
-     *        <code>deployment-type</code>.
+     *        deployment type.
      *        </p>
      *        </dd>
      *        <dt/>

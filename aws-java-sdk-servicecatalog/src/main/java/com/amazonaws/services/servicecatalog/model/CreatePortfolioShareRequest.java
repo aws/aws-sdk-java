@@ -56,16 +56,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     private String portfolioId;
     /**
      * <p>
-     * The AWS account ID. For example, <code>123456789012</code>.
+     * The Amazon Web Services account ID. For example, <code>123456789012</code>.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
-     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
-     * monitor the status of the <code>PortfolioShare</code> creation process.
+     * The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates
+     * <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the
+     * <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the
+     * administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      */
     private OrganizationNode organizationNode;
@@ -258,11 +258,11 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID. For example, <code>123456789012</code>.
+     * The Amazon Web Services account ID. For example, <code>123456789012</code>.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID. For example, <code>123456789012</code>.
+     *        The Amazon Web Services account ID. For example, <code>123456789012</code>.
      */
 
     public void setAccountId(String accountId) {
@@ -271,10 +271,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID. For example, <code>123456789012</code>.
+     * The Amazon Web Services account ID. For example, <code>123456789012</code>.
      * </p>
      * 
-     * @return The AWS account ID. For example, <code>123456789012</code>.
+     * @return The Amazon Web Services account ID. For example, <code>123456789012</code>.
      */
 
     public String getAccountId() {
@@ -283,11 +283,11 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID. For example, <code>123456789012</code>.
+     * The Amazon Web Services account ID. For example, <code>123456789012</code>.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID. For example, <code>123456789012</code>.
+     *        The Amazon Web Services account ID. For example, <code>123456789012</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,16 +298,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
-     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
-     * monitor the status of the <code>PortfolioShare</code> creation process.
+     * The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates
+     * <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the
+     * <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the
+     * administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @param organizationNode
-     *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *        <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
-     *        (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *        The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it
+     *        creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the
+     *        <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the
      *        administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      */
 
@@ -317,16 +317,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
-     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
-     * monitor the status of the <code>PortfolioShare</code> creation process.
+     * The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates
+     * <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the
+     * <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the
+     * administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
-     * @return The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *         <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
-     *         (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
-     *         administrator to monitor the status of the <code>PortfolioShare</code> creation process.
+     * @return The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it
+     *         creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to
+     *         the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables
+     *         the administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      */
 
     public OrganizationNode getOrganizationNode() {
@@ -335,16 +335,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
-     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
-     * monitor the status of the <code>PortfolioShare</code> creation process.
+     * The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates
+     * <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the
+     * <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the
+     * administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @param organizationNode
-     *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *        <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
-     *        (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *        The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it
+     *        creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the
+     *        <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the
      *        administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobLogEventDataMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CONVERSIONPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversionProperties").build();
     private static final MarshallingInfo<String> CONVERSIONSERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversionServerID").build();
     private static final MarshallingInfo<String> RAWERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class JobLogEventDataMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jobLogEventData.getConversionProperties(), CONVERSIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getConversionServerID(), CONVERSIONSERVERID_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getRawError(), RAWERROR_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getSourceServerID(), SOURCESERVERID_BINDING);

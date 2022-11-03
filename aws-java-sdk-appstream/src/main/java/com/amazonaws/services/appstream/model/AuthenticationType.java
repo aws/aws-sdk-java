@@ -22,7 +22,8 @@ public enum AuthenticationType {
 
     API("API"),
     SAML("SAML"),
-    USERPOOL("USERPOOL");
+    USERPOOL("USERPOOL"),
+    AWS_AD("AWS_AD");
 
     private String value;
 

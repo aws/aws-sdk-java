@@ -168,6 +168,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private OpenSearchAction openSearch;
+    /**
+     * <p>
+     * The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location
+     * tracker resource.
+     * </p>
+     */
+    private LocationAction location;
 
     /**
      * <p>
@@ -1117,6 +1124,52 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location
+     * tracker resource.
+     * </p>
+     * 
+     * @param location
+     *        The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon
+     *        Location tracker resource.
+     */
+
+    public void setLocation(LocationAction location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location
+     * tracker resource.
+     * </p>
+     * 
+     * @return The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon
+     *         Location tracker resource.
+     */
+
+    public LocationAction getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location
+     * tracker resource.
+     * </p>
+     * 
+     * @param location
+     *        The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon
+     *        Location tracker resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withLocation(LocationAction location) {
+        setLocation(location);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1171,7 +1224,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getKafka() != null)
             sb.append("Kafka: ").append(getKafka()).append(",");
         if (getOpenSearch() != null)
-            sb.append("OpenSearch: ").append(getOpenSearch());
+            sb.append("OpenSearch: ").append(getOpenSearch()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -1274,6 +1329,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOpenSearch() != null && other.getOpenSearch().equals(this.getOpenSearch()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -1304,6 +1363,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHttp() == null) ? 0 : getHttp().hashCode());
         hashCode = prime * hashCode + ((getKafka() == null) ? 0 : getKafka().hashCode());
         hashCode = prime * hashCode + ((getOpenSearch() == null) ? 0 : getOpenSearch().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

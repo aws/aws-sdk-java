@@ -55,6 +55,18 @@ public class DescribeQueryResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     * </p>
+     */
+    private String deliveryS3Uri;
+    /**
+     * <p>
+     * The delivery status.
+     * </p>
+     */
+    private String deliveryStatus;
 
     /**
      * <p>
@@ -294,6 +306,105 @@ public class DescribeQueryResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     * </p>
+     * 
+     * @param deliveryS3Uri
+     *        The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     */
+
+    public void setDeliveryS3Uri(String deliveryS3Uri) {
+        this.deliveryS3Uri = deliveryS3Uri;
+    }
+
+    /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     * </p>
+     * 
+     * @return The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     */
+
+    public String getDeliveryS3Uri() {
+        return this.deliveryS3Uri;
+    }
+
+    /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     * </p>
+     * 
+     * @param deliveryS3Uri
+     *        The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeQueryResult withDeliveryS3Uri(String deliveryS3Uri) {
+        setDeliveryS3Uri(deliveryS3Uri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery status.
+     * </p>
+     * 
+     * @param deliveryStatus
+     *        The delivery status.
+     * @see DeliveryStatus
+     */
+
+    public void setDeliveryStatus(String deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
+    }
+
+    /**
+     * <p>
+     * The delivery status.
+     * </p>
+     * 
+     * @return The delivery status.
+     * @see DeliveryStatus
+     */
+
+    public String getDeliveryStatus() {
+        return this.deliveryStatus;
+    }
+
+    /**
+     * <p>
+     * The delivery status.
+     * </p>
+     * 
+     * @param deliveryStatus
+     *        The delivery status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStatus
+     */
+
+    public DescribeQueryResult withDeliveryStatus(String deliveryStatus) {
+        setDeliveryStatus(deliveryStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery status.
+     * </p>
+     * 
+     * @param deliveryStatus
+     *        The delivery status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStatus
+     */
+
+    public DescribeQueryResult withDeliveryStatus(DeliveryStatus deliveryStatus) {
+        this.deliveryStatus = deliveryStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -314,7 +425,11 @@ public class DescribeQueryResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getQueryStatistics() != null)
             sb.append("QueryStatistics: ").append(getQueryStatistics()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getDeliveryS3Uri() != null)
+            sb.append("DeliveryS3Uri: ").append(getDeliveryS3Uri()).append(",");
+        if (getDeliveryStatus() != null)
+            sb.append("DeliveryStatus: ").append(getDeliveryStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +464,14 @@ public class DescribeQueryResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getDeliveryS3Uri() == null ^ this.getDeliveryS3Uri() == null)
+            return false;
+        if (other.getDeliveryS3Uri() != null && other.getDeliveryS3Uri().equals(this.getDeliveryS3Uri()) == false)
+            return false;
+        if (other.getDeliveryStatus() == null ^ this.getDeliveryStatus() == null)
+            return false;
+        if (other.getDeliveryStatus() != null && other.getDeliveryStatus().equals(this.getDeliveryStatus()) == false)
+            return false;
         return true;
     }
 
@@ -362,6 +485,8 @@ public class DescribeQueryResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getQueryStatus() == null) ? 0 : getQueryStatus().hashCode());
         hashCode = prime * hashCode + ((getQueryStatistics() == null) ? 0 : getQueryStatistics().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryS3Uri() == null) ? 0 : getDeliveryS3Uri().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryStatus() == null) ? 0 : getDeliveryStatus().hashCode());
         return hashCode;
     }
 

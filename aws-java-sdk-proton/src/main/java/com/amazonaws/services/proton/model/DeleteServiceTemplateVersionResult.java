@@ -25,18 +25,18 @@ public class DeleteServiceTemplateVersionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the service template version being deleted.
      * </p>
      */
     private ServiceTemplateVersion serviceTemplateVersion;
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the service template version being deleted.
      * </p>
      * 
      * @param serviceTemplateVersion
-     *        The service template version detail data that's returned by Proton.
+     *        The detailed data of the service template version being deleted.
      */
 
     public void setServiceTemplateVersion(ServiceTemplateVersion serviceTemplateVersion) {
@@ -45,10 +45,10 @@ public class DeleteServiceTemplateVersionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the service template version being deleted.
      * </p>
      * 
-     * @return The service template version detail data that's returned by Proton.
+     * @return The detailed data of the service template version being deleted.
      */
 
     public ServiceTemplateVersion getServiceTemplateVersion() {
@@ -57,11 +57,11 @@ public class DeleteServiceTemplateVersionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the service template version being deleted.
      * </p>
      * 
      * @param serviceTemplateVersion
-     *        The service template version detail data that's returned by Proton.
+     *        The detailed data of the service template version being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

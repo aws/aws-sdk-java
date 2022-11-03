@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit (100,000) of active custom resource types in your account. Delete unused resources using
- * <code>DeleteResourceConfig</code>.
+ * You have reached the limit of active custom resource types in your account. There is a limit of 100,000. Delete
+ * unused resources using <a
+ * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a>
+ * <code/>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

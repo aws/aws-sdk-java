@@ -32,7 +32,7 @@ public class ListServiceInstancesResult extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * An array of service instances with summaries of detail data.
+     * An array of service instances with summary data.
      * </p>
      */
     private java.util.List<ServiceInstanceSummary> serviceInstances;
@@ -85,10 +85,10 @@ public class ListServiceInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of service instances with summaries of detail data.
+     * An array of service instances with summary data.
      * </p>
      * 
-     * @return An array of service instances with summaries of detail data.
+     * @return An array of service instances with summary data.
      */
 
     public java.util.List<ServiceInstanceSummary> getServiceInstances() {
@@ -97,11 +97,11 @@ public class ListServiceInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of service instances with summaries of detail data.
+     * An array of service instances with summary data.
      * </p>
      * 
      * @param serviceInstances
-     *        An array of service instances with summaries of detail data.
+     *        An array of service instances with summary data.
      */
 
     public void setServiceInstances(java.util.Collection<ServiceInstanceSummary> serviceInstances) {
@@ -115,7 +115,7 @@ public class ListServiceInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of service instances with summaries of detail data.
+     * An array of service instances with summary data.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class ListServiceInstancesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param serviceInstances
-     *        An array of service instances with summaries of detail data.
+     *        An array of service instances with summary data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListServiceInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of service instances with summaries of detail data.
+     * An array of service instances with summary data.
      * </p>
      * 
      * @param serviceInstances
-     *        An array of service instances with summaries of detail data.
+     *        An array of service instances with summary data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

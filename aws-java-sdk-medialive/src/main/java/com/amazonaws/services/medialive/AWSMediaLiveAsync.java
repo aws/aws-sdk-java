@@ -1292,6 +1292,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
 
     /**
+     * Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of
+     * sending the command. When the reboot is complete, the device’s connection status will change to connected.
+     * 
+     * @param rebootInputDeviceRequest
+     *        A request to reboot an AWS Elemental device.
+     * @return A Java Future containing the result of the RebootInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.RebootInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootInputDeviceResult> rebootInputDeviceAsync(RebootInputDeviceRequest rebootInputDeviceRequest);
+
+    /**
+     * Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of
+     * sending the command. When the reboot is complete, the device’s connection status will change to connected.
+     * 
+     * @param rebootInputDeviceRequest
+     *        A request to reboot an AWS Elemental device.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RebootInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.RebootInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootInputDeviceResult> rebootInputDeviceAsync(RebootInputDeviceRequest rebootInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<RebootInputDeviceRequest, RebootInputDeviceResult> asyncHandler);
+
+    /**
      * Reject the transfer of the specified input device to your AWS account.
      * 
      * @param rejectInputDeviceTransferRequest
@@ -1350,6 +1381,49 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest startChannelRequest,
             com.amazonaws.handlers.AsyncHandler<StartChannelRequest, StartChannelResult> asyncHandler);
+
+    /**
+     * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
+     * to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming
+     * when the software is fully installed. Devices automatically install updates while they are powered on and their
+     * MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop
+     * MediaLive channels that use the device. The device must remain powered on and connected to the internet for the
+     * duration of the maintenance.
+     * 
+     * @param startInputDeviceMaintenanceWindowRequest
+     *        Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
+     * @return A Java Future containing the result of the StartInputDeviceMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.StartInputDeviceMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
+            StartInputDeviceMaintenanceWindowRequest startInputDeviceMaintenanceWindowRequest);
+
+    /**
+     * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
+     * to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming
+     * when the software is fully installed. Devices automatically install updates while they are powered on and their
+     * MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop
+     * MediaLive channels that use the device. The device must remain powered on and connected to the internet for the
+     * duration of the maintenance.
+     * 
+     * @param startInputDeviceMaintenanceWindowRequest
+     *        Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartInputDeviceMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.StartInputDeviceMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
+            StartInputDeviceMaintenanceWindowRequest startInputDeviceMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<StartInputDeviceMaintenanceWindowRequest, StartInputDeviceMaintenanceWindowResult> asyncHandler);
 
     /**
      * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each

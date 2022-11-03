@@ -156,6 +156,14 @@ public class UserPoolClientTypeJsonUnmarshaller implements Unmarshaller<UserPool
                     context.nextToken();
                     userPoolClientType.setEnableTokenRevocation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EnablePropagateAdditionalUserContextData", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setEnablePropagateAdditionalUserContextData(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("AuthSessionValidity", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setAuthSessionValidity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

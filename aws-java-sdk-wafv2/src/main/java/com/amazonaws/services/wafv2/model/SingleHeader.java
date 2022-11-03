@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You can filter and inspect all headers with the <code>FieldToMatch</code> setting <code>Headers</code>.
  * </p>
  * <p>
- * This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
+ * This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification.
  * </p>
  * <p>
  * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>

@@ -64,6 +64,11 @@ public class ManagedRuleGroupConfigJsonUnmarshaller implements Unmarshaller<Mana
                     context.nextToken();
                     managedRuleGroupConfig.setPasswordField(PasswordFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AWSManagedRulesBotControlRuleSet", targetDepth)) {
+                    context.nextToken();
+                    managedRuleGroupConfig.setAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSetJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

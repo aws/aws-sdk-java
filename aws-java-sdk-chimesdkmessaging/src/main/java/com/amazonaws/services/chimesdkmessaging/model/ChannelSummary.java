@@ -60,7 +60,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     private String metadata;
     /**
      * <p>
-     * The time at which the last message in a channel was sent.
+     * The time at which the last persistent message in a channel was sent.
      * </p>
      */
     private java.util.Date lastMessageTimestamp;
@@ -305,11 +305,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the last message in a channel was sent.
+     * The time at which the last persistent message in a channel was sent.
      * </p>
      * 
      * @param lastMessageTimestamp
-     *        The time at which the last message in a channel was sent.
+     *        The time at which the last persistent message in a channel was sent.
      */
 
     public void setLastMessageTimestamp(java.util.Date lastMessageTimestamp) {
@@ -318,10 +318,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the last message in a channel was sent.
+     * The time at which the last persistent message in a channel was sent.
      * </p>
      * 
-     * @return The time at which the last message in a channel was sent.
+     * @return The time at which the last persistent message in a channel was sent.
      */
 
     public java.util.Date getLastMessageTimestamp() {
@@ -330,11 +330,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the last message in a channel was sent.
+     * The time at which the last persistent message in a channel was sent.
      * </p>
      * 
      * @param lastMessageTimestamp
-     *        The time at which the last message in a channel was sent.
+     *        The time at which the last persistent message in a channel was sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -54,6 +54,10 @@ public class DataRepositoryTaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Status").build();
     private static final MarshallingInfo<StructuredPojo> REPORT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Report").build();
+    private static final MarshallingInfo<Long> CAPACITYTORELEASE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityToRelease").build();
+    private static final MarshallingInfo<String> FILECACHEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileCacheId").build();
 
     private static final DataRepositoryTaskMarshaller instance = new DataRepositoryTaskMarshaller();
 
@@ -84,6 +88,8 @@ public class DataRepositoryTaskMarshaller {
             protocolMarshaller.marshall(dataRepositoryTask.getFailureDetails(), FAILUREDETAILS_BINDING);
             protocolMarshaller.marshall(dataRepositoryTask.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(dataRepositoryTask.getReport(), REPORT_BINDING);
+            protocolMarshaller.marshall(dataRepositoryTask.getCapacityToRelease(), CAPACITYTORELEASE_BINDING);
+            protocolMarshaller.marshall(dataRepositoryTask.getFileCacheId(), FILECACHEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

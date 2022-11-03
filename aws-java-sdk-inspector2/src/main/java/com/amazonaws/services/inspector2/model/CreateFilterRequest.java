@@ -52,6 +52,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
+     * The reason for creating the filter.
+     * </p>
+     */
+    private String reason;
+    /**
+     * <p>
      * A list of tags for the filter.
      * </p>
      */
@@ -244,6 +250,46 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The reason for creating the filter.
+     * </p>
+     * 
+     * @param reason
+     *        The reason for creating the filter.
+     */
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason for creating the filter.
+     * </p>
+     * 
+     * @return The reason for creating the filter.
+     */
+
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason for creating the filter.
+     * </p>
+     * 
+     * @param reason
+     *        The reason for creating the filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFilterRequest withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of tags for the filter.
      * </p>
      * 
@@ -330,6 +376,8 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("FilterCriteria: ").append(getFilterCriteria()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getReason() != null)
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -362,6 +410,10 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -378,6 +430,7 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFilterCriteria() == null) ? 0 : getFilterCriteria().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -42,6 +42,10 @@ public class UpdateCsvClassifierRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableValueTrimming").build();
     private static final MarshallingInfo<Boolean> ALLOWSINGLECOLUMN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowSingleColumn").build();
+    private static final MarshallingInfo<Boolean> CUSTOMDATATYPECONFIGURED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDatatypeConfigured").build();
+    private static final MarshallingInfo<List> CUSTOMDATATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDatatypes").build();
 
     private static final UpdateCsvClassifierRequestMarshaller instance = new UpdateCsvClassifierRequestMarshaller();
 
@@ -66,6 +70,8 @@ public class UpdateCsvClassifierRequestMarshaller {
             protocolMarshaller.marshall(updateCsvClassifierRequest.getHeader(), HEADER_BINDING);
             protocolMarshaller.marshall(updateCsvClassifierRequest.getDisableValueTrimming(), DISABLEVALUETRIMMING_BINDING);
             protocolMarshaller.marshall(updateCsvClassifierRequest.getAllowSingleColumn(), ALLOWSINGLECOLUMN_BINDING);
+            protocolMarshaller.marshall(updateCsvClassifierRequest.getCustomDatatypeConfigured(), CUSTOMDATATYPECONFIGURED_BINDING);
+            protocolMarshaller.marshall(updateCsvClassifierRequest.getCustomDatatypes(), CUSTOMDATATYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

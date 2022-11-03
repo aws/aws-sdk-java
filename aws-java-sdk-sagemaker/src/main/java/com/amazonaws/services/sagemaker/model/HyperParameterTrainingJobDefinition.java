@@ -90,6 +90,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
+     * <note>
+     * <p>
+     * If you want to use hyperparameter optimization with instance type flexibility, use
+     * <code>HyperParameterTuningResourceConfig</code> instead.
+     * </p>
+     * </note>
      */
     private ResourceConfig resourceConfig;
     /**
@@ -132,6 +138,16 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      */
     private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     */
+    private HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig;
 
     /**
      * <p>
@@ -574,6 +590,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
+     * <note>
+     * <p>
+     * If you want to use hyperparameter optimization with instance type flexibility, use
+     * <code>HyperParameterTuningResourceConfig</code> instead.
+     * </p>
+     * </note>
      * 
      * @param resourceConfig
      *        The resources, including the compute instances and storage volumes, to use for the training jobs that the
@@ -583,6 +605,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        volumes for scratch space. If you want SageMaker to use the storage volume to store the training data,
      *        choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
      *        distributed training algorithms, specify an instance count greater than 1.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to use hyperparameter optimization with instance type flexibility, use
+     *        <code>HyperParameterTuningResourceConfig</code> instead.
+     *        </p>
      */
 
     public void setResourceConfig(ResourceConfig resourceConfig) {
@@ -600,6 +628,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
+     * <note>
+     * <p>
+     * If you want to use hyperparameter optimization with instance type flexibility, use
+     * <code>HyperParameterTuningResourceConfig</code> instead.
+     * </p>
+     * </note>
      * 
      * @return The resources, including the compute instances and storage volumes, to use for the training jobs that the
      *         tuning job launches.</p>
@@ -608,6 +642,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *         volumes for scratch space. If you want SageMaker to use the storage volume to store the training data,
      *         choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
      *         distributed training algorithms, specify an instance count greater than 1.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you want to use hyperparameter optimization with instance type flexibility, use
+     *         <code>HyperParameterTuningResourceConfig</code> instead.
+     *         </p>
      */
 
     public ResourceConfig getResourceConfig() {
@@ -625,6 +665,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
+     * <note>
+     * <p>
+     * If you want to use hyperparameter optimization with instance type flexibility, use
+     * <code>HyperParameterTuningResourceConfig</code> instead.
+     * </p>
+     * </note>
      * 
      * @param resourceConfig
      *        The resources, including the compute instances and storage volumes, to use for the training jobs that the
@@ -634,6 +680,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        volumes for scratch space. If you want SageMaker to use the storage volume to store the training data,
      *        choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
      *        distributed training algorithms, specify an instance count greater than 1.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to use hyperparameter optimization with instance type flexibility, use
+     *        <code>HyperParameterTuningResourceConfig</code> instead.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -969,6 +1021,70 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     * 
+     * @param hyperParameterTuningResourceConfig
+     *        The configuration for the hyperparameter tuning resources, including the compute instances and storage
+     *        volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
+     *        artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     *        <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     *        (optional).
+     */
+
+    public void setHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig) {
+        this.hyperParameterTuningResourceConfig = hyperParameterTuningResourceConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     * 
+     * @return The configuration for the hyperparameter tuning resources, including the compute instances and storage
+     *         volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
+     *         artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     *         <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     *         (optional).
+     */
+
+    public HyperParameterTuningResourceConfig getHyperParameterTuningResourceConfig() {
+        return this.hyperParameterTuningResourceConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     * 
+     * @param hyperParameterTuningResourceConfig
+     *        The configuration for the hyperparameter tuning resources, including the compute instances and storage
+     *        volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
+     *        artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     *        <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     *        (optional).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobDefinition withHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig) {
+        setHyperParameterTuningResourceConfig(hyperParameterTuningResourceConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1011,7 +1127,9 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         if (getCheckpointConfig() != null)
             sb.append("CheckpointConfig: ").append(getCheckpointConfig()).append(",");
         if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy());
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getHyperParameterTuningResourceConfig() != null)
+            sb.append("HyperParameterTuningResourceConfig: ").append(getHyperParameterTuningResourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1091,6 +1209,11 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
+        if (other.getHyperParameterTuningResourceConfig() == null ^ this.getHyperParameterTuningResourceConfig() == null)
+            return false;
+        if (other.getHyperParameterTuningResourceConfig() != null
+                && other.getHyperParameterTuningResourceConfig().equals(this.getHyperParameterTuningResourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1115,6 +1238,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         hashCode = prime * hashCode + ((getEnableManagedSpotTraining() == null) ? 0 : getEnableManagedSpotTraining().hashCode());
         hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getHyperParameterTuningResourceConfig() == null) ? 0 : getHyperParameterTuningResourceConfig().hashCode());
         return hashCode;
     }
 

@@ -43,7 +43,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * <note>
      * <p>
      * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     * action.
+     * operation.
      * </p>
      * </note>
      */
@@ -125,7 +125,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * <note>
      * <p>
      * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     * action.
+     * operation.
      * </p>
      * </note>
      * 
@@ -138,7 +138,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      *        <note>
      *        <p>
      *        To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     *        action.
+     *        operation.
      *        </p>
      */
 
@@ -157,7 +157,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * <note>
      * <p>
      * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     * action.
+     * operation.
      * </p>
      * </note>
      * 
@@ -169,7 +169,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      *         <note>
      *         <p>
      *         To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a>
-     *         API action.
+     *         API operation.
      *         </p>
      */
 
@@ -188,7 +188,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * <note>
      * <p>
      * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     * action.
+     * operation.
      * </p>
      * </note>
      * 
@@ -201,7 +201,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      *        <note>
      *        <p>
      *        To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     *        action.
+     *        operation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

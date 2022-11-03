@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AvailSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esam").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35SPLICEINSERT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35SpliceInsert").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35TIMESIGNALAPOS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class AvailSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(availSettings.getEsam(), ESAM_BINDING);
             protocolMarshaller.marshall(availSettings.getScte35SpliceInsert(), SCTE35SPLICEINSERT_BINDING);
             protocolMarshaller.marshall(availSettings.getScte35TimeSignalApos(), SCTE35TIMESIGNALAPOS_BINDING);
         } catch (Exception e) {

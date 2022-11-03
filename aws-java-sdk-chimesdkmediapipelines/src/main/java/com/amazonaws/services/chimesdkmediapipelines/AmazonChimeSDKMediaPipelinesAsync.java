@@ -27,10 +27,10 @@ import com.amazonaws.services.chimesdkmediapipelines.model.*;
  * <p>
  * <p>
  * The Amazon Chime SDK media pipeline APIs in this section allow software developers to create Amazon Chime SDK media
- * pipelines and capture audio, video, events, and data messages from Amazon Chime SDK meetings. For more information
- * about media pipleines, see <a
- * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html"
- * >Amzon Chime SDK media pipelines</a>.
+ * pipelines that capture, concatenate, or stream your Amazon Chime SDK meetings. For more information about media
+ * pipleines, see <a
+ * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
+ * Chime SDK media pipelines</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -38,7 +38,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Creates a media capture pipeline.
+     * Creates a media pipeline.
      * </p>
      * 
      * @param createMediaCapturePipelineRequest
@@ -53,7 +53,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Creates a media capture pipeline.
+     * Creates a media pipeline.
      * </p>
      * 
      * @param createMediaCapturePipelineRequest
@@ -73,7 +73,81 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Deletes the media capture pipeline.
+     * Creates a media concatenation pipeline.
+     * </p>
+     * 
+     * @param createMediaConcatenationPipelineRequest
+     * @return A Java Future containing the result of the CreateMediaConcatenationPipeline operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMediaPipelinesAsync.CreateMediaConcatenationPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMediaConcatenationPipelineResult> createMediaConcatenationPipelineAsync(
+            CreateMediaConcatenationPipelineRequest createMediaConcatenationPipelineRequest);
+
+    /**
+     * <p>
+     * Creates a media concatenation pipeline.
+     * </p>
+     * 
+     * @param createMediaConcatenationPipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMediaConcatenationPipeline operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMediaPipelinesAsyncHandler.CreateMediaConcatenationPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMediaConcatenationPipelineResult> createMediaConcatenationPipelineAsync(
+            CreateMediaConcatenationPipelineRequest createMediaConcatenationPipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMediaConcatenationPipelineRequest, CreateMediaConcatenationPipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a streaming media pipeline in an Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param createMediaLiveConnectorPipelineRequest
+     * @return A Java Future containing the result of the CreateMediaLiveConnectorPipeline operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMediaPipelinesAsync.CreateMediaLiveConnectorPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMediaLiveConnectorPipelineResult> createMediaLiveConnectorPipelineAsync(
+            CreateMediaLiveConnectorPipelineRequest createMediaLiveConnectorPipelineRequest);
+
+    /**
+     * <p>
+     * Creates a streaming media pipeline in an Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param createMediaLiveConnectorPipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMediaLiveConnectorPipeline operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMediaPipelinesAsyncHandler.CreateMediaLiveConnectorPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMediaLiveConnectorPipelineResult> createMediaLiveConnectorPipelineAsync(
+            CreateMediaLiveConnectorPipelineRequest createMediaLiveConnectorPipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMediaLiveConnectorPipelineRequest, CreateMediaLiveConnectorPipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the media pipeline.
      * </p>
      * 
      * @param deleteMediaCapturePipelineRequest
@@ -88,7 +162,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Deletes the media capture pipeline.
+     * Deletes the media pipeline.
      * </p>
      * 
      * @param deleteMediaCapturePipelineRequest
@@ -108,7 +182,38 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Gets an existing media capture pipeline.
+     * Deletes the media pipeline.
+     * </p>
+     * 
+     * @param deleteMediaPipelineRequest
+     * @return A Java Future containing the result of the DeleteMediaPipeline operation returned by the service.
+     * @sample AmazonChimeSDKMediaPipelinesAsync.DeleteMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMediaPipelineResult> deleteMediaPipelineAsync(DeleteMediaPipelineRequest deleteMediaPipelineRequest);
+
+    /**
+     * <p>
+     * Deletes the media pipeline.
+     * </p>
+     * 
+     * @param deleteMediaPipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMediaPipeline operation returned by the service.
+     * @sample AmazonChimeSDKMediaPipelinesAsyncHandler.DeleteMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMediaPipelineResult> deleteMediaPipelineAsync(DeleteMediaPipelineRequest deleteMediaPipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMediaPipelineRequest, DeleteMediaPipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an existing media pipeline.
      * </p>
      * 
      * @param getMediaCapturePipelineRequest
@@ -122,7 +227,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Gets an existing media capture pipeline.
+     * Gets an existing media pipeline.
      * </p>
      * 
      * @param getMediaCapturePipelineRequest
@@ -141,7 +246,38 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Returns a list of media capture pipelines.
+     * Gets an existing media pipeline.
+     * </p>
+     * 
+     * @param getMediaPipelineRequest
+     * @return A Java Future containing the result of the GetMediaPipeline operation returned by the service.
+     * @sample AmazonChimeSDKMediaPipelinesAsync.GetMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMediaPipelineResult> getMediaPipelineAsync(GetMediaPipelineRequest getMediaPipelineRequest);
+
+    /**
+     * <p>
+     * Gets an existing media pipeline.
+     * </p>
+     * 
+     * @param getMediaPipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMediaPipeline operation returned by the service.
+     * @sample AmazonChimeSDKMediaPipelinesAsyncHandler.GetMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMediaPipelineResult> getMediaPipelineAsync(GetMediaPipelineRequest getMediaPipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMediaPipelineRequest, GetMediaPipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of media pipelines.
      * </p>
      * 
      * @param listMediaCapturePipelinesRequest
@@ -156,7 +292,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Returns a list of media capture pipelines.
+     * Returns a list of media pipelines.
      * </p>
      * 
      * @param listMediaCapturePipelinesRequest
@@ -176,7 +312,38 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon Chime SDK media capture pipeline.
+     * Returns a list of media pipelines.
+     * </p>
+     * 
+     * @param listMediaPipelinesRequest
+     * @return A Java Future containing the result of the ListMediaPipelines operation returned by the service.
+     * @sample AmazonChimeSDKMediaPipelinesAsync.ListMediaPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMediaPipelinesResult> listMediaPipelinesAsync(ListMediaPipelinesRequest listMediaPipelinesRequest);
+
+    /**
+     * <p>
+     * Returns a list of media pipelines.
+     * </p>
+     * 
+     * @param listMediaPipelinesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMediaPipelines operation returned by the service.
+     * @sample AmazonChimeSDKMediaPipelinesAsyncHandler.ListMediaPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMediaPipelinesResult> listMediaPipelinesAsync(ListMediaPipelinesRequest listMediaPipelinesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMediaPipelinesRequest, ListMediaPipelinesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags available for a media pipeline.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -189,7 +356,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon Chime SDK media capture pipeline.
+     * Lists the tags available for a media pipeline.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -207,7 +374,8 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon Chime SDK media capture pipeline.
+     * The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint region, resource ID, and
+     * pipeline ID.
      * </p>
      * 
      * @param tagResourceRequest
@@ -220,7 +388,8 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon Chime SDK media capture pipeline.
+     * The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint region, resource ID, and
+     * pipeline ID.
      * </p>
      * 
      * @param tagResourceRequest
@@ -238,7 +407,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Removes the specified tags from the specified Amazon Chime SDK media capture pipeline.
+     * Removes any tags from a media pipeline.
      * </p>
      * 
      * @param untagResourceRequest
@@ -251,7 +420,7 @@ public interface AmazonChimeSDKMediaPipelinesAsync extends AmazonChimeSDKMediaPi
 
     /**
      * <p>
-     * Removes the specified tags from the specified Amazon Chime SDK media capture pipeline.
+     * Removes any tags from a media pipeline.
      * </p>
      * 
      * @param untagResourceRequest

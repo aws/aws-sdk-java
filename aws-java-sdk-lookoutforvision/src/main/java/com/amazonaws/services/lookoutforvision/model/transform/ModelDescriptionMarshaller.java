@@ -51,6 +51,10 @@ public class ModelDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationEndTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<Integer> MININFERENCEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinInferenceUnits").build();
+    private static final MarshallingInfo<Integer> MAXINFERENCEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxInferenceUnits").build();
 
     private static final ModelDescriptionMarshaller instance = new ModelDescriptionMarshaller();
 
@@ -80,6 +84,8 @@ public class ModelDescriptionMarshaller {
             protocolMarshaller.marshall(modelDescription.getEvaluationResult(), EVALUATIONRESULT_BINDING);
             protocolMarshaller.marshall(modelDescription.getEvaluationEndTimestamp(), EVALUATIONENDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(modelDescription.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(modelDescription.getMinInferenceUnits(), MININFERENCEUNITS_BINDING);
+            protocolMarshaller.marshall(modelDescription.getMaxInferenceUnits(), MAXINFERENCEUNITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

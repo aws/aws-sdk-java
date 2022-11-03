@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum LogDestinationType {
 
     CloudWatchLogs("cloud-watch-logs"),
-    S3("s3");
+    S3("s3"),
+    KinesisDataFirehose("kinesis-data-firehose");
 
     private String value;
 

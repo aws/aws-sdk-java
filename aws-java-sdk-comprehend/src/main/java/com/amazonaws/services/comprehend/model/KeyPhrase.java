@@ -42,18 +42,13 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
     private String text;
     /**
      * <p>
-     * A character offset in the input text that shows where the key phrase begins (the first character is at position
-     * 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract
-     * character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single
-     * code point.
+     * The zero-based offset from the beginning of the source text to the first character in the key phrase.
      * </p>
      */
     private Integer beginOffset;
     /**
      * <p>
-     * A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8
-     * code point in the string. A <code>code point</code> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     * The zero-based offset from the beginning of the source text to the last character in the key phrase.
      * </p>
      */
     private Integer endOffset;
@@ -140,17 +135,11 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character offset in the input text that shows where the key phrase begins (the first character is at position
-     * 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract
-     * character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single
-     * code point.
+     * The zero-based offset from the beginning of the source text to the first character in the key phrase.
      * </p>
      * 
      * @param beginOffset
-     *        A character offset in the input text that shows where the key phrase begins (the first character is at
-     *        position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i>
-     *        is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8
-     *        character maps to a single code point.
+     *        The zero-based offset from the beginning of the source text to the first character in the key phrase.
      */
 
     public void setBeginOffset(Integer beginOffset) {
@@ -159,16 +148,10 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character offset in the input text that shows where the key phrase begins (the first character is at position
-     * 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract
-     * character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single
-     * code point.
+     * The zero-based offset from the beginning of the source text to the first character in the key phrase.
      * </p>
      * 
-     * @return A character offset in the input text that shows where the key phrase begins (the first character is at
-     *         position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i>
-     *         is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8
-     *         character maps to a single code point.
+     * @return The zero-based offset from the beginning of the source text to the first character in the key phrase.
      */
 
     public Integer getBeginOffset() {
@@ -177,17 +160,11 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character offset in the input text that shows where the key phrase begins (the first character is at position
-     * 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract
-     * character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single
-     * code point.
+     * The zero-based offset from the beginning of the source text to the first character in the key phrase.
      * </p>
      * 
      * @param beginOffset
-     *        A character offset in the input text that shows where the key phrase begins (the first character is at
-     *        position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i>
-     *        is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8
-     *        character maps to a single code point.
+     *        The zero-based offset from the beginning of the source text to the first character in the key phrase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,15 +175,11 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8
-     * code point in the string. A <code>code point</code> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     * The zero-based offset from the beginning of the source text to the last character in the key phrase.
      * </p>
      * 
      * @param endOffset
-     *        A character offset in the input text where the key phrase ends. The offset returns the position of each
-     *        UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular
-     *        graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     *        The zero-based offset from the beginning of the source text to the last character in the key phrase.
      */
 
     public void setEndOffset(Integer endOffset) {
@@ -215,14 +188,10 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8
-     * code point in the string. A <code>code point</code> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     * The zero-based offset from the beginning of the source text to the last character in the key phrase.
      * </p>
      * 
-     * @return A character offset in the input text where the key phrase ends. The offset returns the position of each
-     *         UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular
-     *         graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     * @return The zero-based offset from the beginning of the source text to the last character in the key phrase.
      */
 
     public Integer getEndOffset() {
@@ -231,15 +200,11 @@ public class KeyPhrase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8
-     * code point in the string. A <code>code point</code> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     * The zero-based offset from the beginning of the source text to the last character in the key phrase.
      * </p>
      * 
      * @param endOffset
-     *        A character offset in the input text where the key phrase ends. The offset returns the position of each
-     *        UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular
-     *        graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.
+     *        The zero-based offset from the beginning of the source text to the last character in the key phrase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

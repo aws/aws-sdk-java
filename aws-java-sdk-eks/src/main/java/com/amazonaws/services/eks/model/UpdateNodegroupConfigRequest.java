@@ -45,7 +45,9 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     private UpdateLabelsPayload labels;
     /**
      * <p>
-     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      */
     private UpdateTaintsPayload taints;
@@ -190,11 +192,15 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * 
      * @param taints
-     *        The Kubernetes taints to be applied to the nodes in the node group after the update.
+     *        The Kubernetes taints to be applied to the nodes in the node group after the update. For more information,
+     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     *        taints on managed node groups</a>.
      */
 
     public void setTaints(UpdateTaintsPayload taints) {
@@ -203,10 +209,15 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * 
-     * @return The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * @return The Kubernetes taints to be applied to the nodes in the node group after the update. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints
+     *         on managed node groups</a>.
      */
 
     public UpdateTaintsPayload getTaints() {
@@ -215,11 +226,15 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * 
      * @param taints
-     *        The Kubernetes taints to be applied to the nodes in the node group after the update.
+     *        The Kubernetes taints to be applied to the nodes in the node group after the update. For more information,
+     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     *        taints on managed node groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

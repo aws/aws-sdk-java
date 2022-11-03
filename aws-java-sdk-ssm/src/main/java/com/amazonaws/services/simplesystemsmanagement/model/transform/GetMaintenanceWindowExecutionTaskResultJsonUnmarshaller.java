@@ -106,6 +106,17 @@ public class GetMaintenanceWindowExecutionTaskResultJsonUnmarshaller implements 
                     context.nextToken();
                     getMaintenanceWindowExecutionTaskResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getMaintenanceWindowExecutionTaskResult.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    context.nextToken();
+                    getMaintenanceWindowExecutionTaskResult.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(
+                            AlarmStateInformationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

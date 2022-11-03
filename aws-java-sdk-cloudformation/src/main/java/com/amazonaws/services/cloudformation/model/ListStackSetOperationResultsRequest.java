@@ -39,7 +39,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
     private String operationId;
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response object's <code>NextToken</code>
+     * If the previous request didn't return all the remaining results, the response object's <code>NextToken</code>
      * parameter value is set to a token. To retrieve the next set of results, call
      * <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      * <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -83,6 +83,12 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
      * </ul>
      */
     private String callAs;
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<OperationResultFilter> filters;
 
     /**
      * <p>
@@ -166,7 +172,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response object's <code>NextToken</code>
+     * If the previous request didn't return all the remaining results, the response object's <code>NextToken</code>
      * parameter value is set to a token. To retrieve the next set of results, call
      * <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      * <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -174,7 +180,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param nextToken
-     *        If the previous request didn't return all of the remaining results, the response object's
+     *        If the previous request didn't return all the remaining results, the response object's
      *        <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call
      *        <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      *        <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -187,14 +193,14 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response object's <code>NextToken</code>
+     * If the previous request didn't return all the remaining results, the response object's <code>NextToken</code>
      * parameter value is set to a token. To retrieve the next set of results, call
      * <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      * <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
-     * @return If the previous request didn't return all of the remaining results, the response object's
+     * @return If the previous request didn't return all the remaining results, the response object's
      *         <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call
      *         <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      *         <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -207,7 +213,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response object's <code>NextToken</code>
+     * If the previous request didn't return all the remaining results, the response object's <code>NextToken</code>
      * parameter value is set to a token. To retrieve the next set of results, call
      * <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      * <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -215,7 +221,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param nextToken
-     *        If the previous request didn't return all of the remaining results, the response object's
+     *        If the previous request didn't return all the remaining results, the response object's
      *        <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call
      *        <code>ListStackSetOperationResults</code> again and assign that token to the request object's
      *        <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -516,6 +522,79 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * 
+     * @return The filter to apply to operation results.
+     */
+
+    public java.util.List<OperationResultFilter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<OperationResultFilter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * 
+     * @param filters
+     *        The filter to apply to operation results.
+     */
+
+    public void setFilters(java.util.Collection<OperationResultFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<OperationResultFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        The filter to apply to operation results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStackSetOperationResultsRequest withFilters(OperationResultFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<OperationResultFilter>(filters.length));
+        }
+        for (OperationResultFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * 
+     * @param filters
+     *        The filter to apply to operation results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStackSetOperationResultsRequest withFilters(java.util.Collection<OperationResultFilter> filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -536,7 +615,9 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getCallAs() != null)
-            sb.append("CallAs: ").append(getCallAs());
+            sb.append("CallAs: ").append(getCallAs()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -571,6 +652,10 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getCallAs() != null && other.getCallAs().equals(this.getCallAs()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +669,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

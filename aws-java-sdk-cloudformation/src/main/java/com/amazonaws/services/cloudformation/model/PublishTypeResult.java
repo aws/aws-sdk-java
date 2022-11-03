@@ -25,18 +25,18 @@ public class PublishTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     * The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      * </p>
      */
     private String publicTypeArn;
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     * The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      * </p>
      * 
      * @param publicTypeArn
-     *        The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     *        The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      */
 
     public void setPublicTypeArn(String publicTypeArn) {
@@ -45,10 +45,10 @@ public class PublishTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     * The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     * @return The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      */
 
     public String getPublicTypeArn() {
@@ -57,11 +57,11 @@ public class PublishTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     * The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      * </p>
      * 
      * @param publicTypeArn
-     *        The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+     *        The Amazon Resource Name (ARN) assigned to the public extension upon publication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

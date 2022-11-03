@@ -77,6 +77,12 @@ public class ManagedRuleGroupStatementJsonUnmarshaller implements Unmarshaller<M
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("RuleActionOverrides", targetDepth)) {
+                    context.nextToken();
+                    managedRuleGroupStatement.setRuleActionOverrides(new ListUnmarshaller<RuleActionOverride>(RuleActionOverrideJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

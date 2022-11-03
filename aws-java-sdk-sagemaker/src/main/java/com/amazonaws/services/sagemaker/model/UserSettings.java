@@ -94,6 +94,12 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RSessionAppSettings rSessionAppSettings;
+    /**
+     * <p>
+     * The Canvas app settings.
+     * </p>
+     */
+    private CanvasAppSettings canvasAppSettings;
 
     /**
      * <p>
@@ -531,6 +537,46 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Canvas app settings.
+     * </p>
+     * 
+     * @param canvasAppSettings
+     *        The Canvas app settings.
+     */
+
+    public void setCanvasAppSettings(CanvasAppSettings canvasAppSettings) {
+        this.canvasAppSettings = canvasAppSettings;
+    }
+
+    /**
+     * <p>
+     * The Canvas app settings.
+     * </p>
+     * 
+     * @return The Canvas app settings.
+     */
+
+    public CanvasAppSettings getCanvasAppSettings() {
+        return this.canvasAppSettings;
+    }
+
+    /**
+     * <p>
+     * The Canvas app settings.
+     * </p>
+     * 
+     * @param canvasAppSettings
+     *        The Canvas app settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCanvasAppSettings(CanvasAppSettings canvasAppSettings) {
+        setCanvasAppSettings(canvasAppSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -557,7 +603,9 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         if (getRStudioServerProAppSettings() != null)
             sb.append("RStudioServerProAppSettings: ").append(getRStudioServerProAppSettings()).append(",");
         if (getRSessionAppSettings() != null)
-            sb.append("RSessionAppSettings: ").append(getRSessionAppSettings());
+            sb.append("RSessionAppSettings: ").append(getRSessionAppSettings()).append(",");
+        if (getCanvasAppSettings() != null)
+            sb.append("CanvasAppSettings: ").append(getCanvasAppSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -604,6 +652,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRSessionAppSettings() != null && other.getRSessionAppSettings().equals(this.getRSessionAppSettings()) == false)
             return false;
+        if (other.getCanvasAppSettings() == null ^ this.getCanvasAppSettings() == null)
+            return false;
+        if (other.getCanvasAppSettings() != null && other.getCanvasAppSettings().equals(this.getCanvasAppSettings()) == false)
+            return false;
         return true;
     }
 
@@ -620,6 +672,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTensorBoardAppSettings() == null) ? 0 : getTensorBoardAppSettings().hashCode());
         hashCode = prime * hashCode + ((getRStudioServerProAppSettings() == null) ? 0 : getRStudioServerProAppSettings().hashCode());
         hashCode = prime * hashCode + ((getRSessionAppSettings() == null) ? 0 : getRSessionAppSettings().hashCode());
+        hashCode = prime * hashCode + ((getCanvasAppSettings() == null) ? 0 : getCanvasAppSettings().hashCode());
         return hashCode;
     }
 

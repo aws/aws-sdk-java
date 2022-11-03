@@ -33,6 +33,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public BatchGetPreparedStatementResult batchGetPreparedStatement(BatchGetPreparedStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetQueryExecutionResult batchGetQueryExecution(BatchGetQueryExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public GetQueryResultsResult getQueryResults(GetQueryResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetQueryRuntimeStatisticsResult getQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

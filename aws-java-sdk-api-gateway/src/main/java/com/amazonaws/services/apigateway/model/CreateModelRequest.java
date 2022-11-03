@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to add a new <a>Model</a> to an existing <a>RestApi</a> resource.
+ * Request to add a new Model to an existing RestApi resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     * The RestApi identifier under which the Model will be created.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the model. Must be alphanumeric.
+     * The name of the model. Must be alphanumeric.
      * </p>
      */
     private String name;
@@ -45,25 +45,24 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The schema for the model. For <code>application/json</code> models, this should be <a
-     * href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a> model.
+     * The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.
      * </p>
      */
     private String schema;
     /**
      * <p>
-     * [Required] The content-type for the model.
+     * The content-type for the model.
      * </p>
      */
     private String contentType;
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     * The RestApi identifier under which the Model will be created.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     *        The RestApi identifier under which the Model will be created.
      */
 
     public void setRestApiId(String restApiId) {
@@ -72,10 +71,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     * The RestApi identifier under which the Model will be created.
      * </p>
      * 
-     * @return [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     * @return The RestApi identifier under which the Model will be created.
      */
 
     public String getRestApiId() {
@@ -84,11 +83,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     * The RestApi identifier under which the Model will be created.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+     *        The RestApi identifier under which the Model will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +98,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the model. Must be alphanumeric.
+     * The name of the model. Must be alphanumeric.
      * </p>
      * 
      * @param name
-     *        [Required] The name of the model. Must be alphanumeric.
+     *        The name of the model. Must be alphanumeric.
      */
 
     public void setName(String name) {
@@ -112,10 +111,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the model. Must be alphanumeric.
+     * The name of the model. Must be alphanumeric.
      * </p>
      * 
-     * @return [Required] The name of the model. Must be alphanumeric.
+     * @return The name of the model. Must be alphanumeric.
      */
 
     public String getName() {
@@ -124,11 +123,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the model. Must be alphanumeric.
+     * The name of the model. Must be alphanumeric.
      * </p>
      * 
      * @param name
-     *        [Required] The name of the model. Must be alphanumeric.
+     *        The name of the model. Must be alphanumeric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,13 +178,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The schema for the model. For <code>application/json</code> models, this should be <a
-     * href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a> model.
+     * The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.
      * </p>
      * 
      * @param schema
-     *        The schema for the model. For <code>application/json</code> models, this should be <a
-     *        href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a> model.
+     *        The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4
+     *        model.
      */
 
     public void setSchema(String schema) {
@@ -194,12 +192,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The schema for the model. For <code>application/json</code> models, this should be <a
-     * href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a> model.
+     * The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.
      * </p>
      * 
-     * @return The schema for the model. For <code>application/json</code> models, this should be <a
-     *         href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a>
+     * @return The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4
      *         model.
      */
 
@@ -209,13 +205,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The schema for the model. For <code>application/json</code> models, this should be <a
-     * href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a> model.
+     * The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.
      * </p>
      * 
      * @param schema
-     *        The schema for the model. For <code>application/json</code> models, this should be <a
-     *        href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON schema draft 4</a> model.
+     *        The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4
+     *        model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +221,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The content-type for the model.
+     * The content-type for the model.
      * </p>
      * 
      * @param contentType
-     *        [Required] The content-type for the model.
+     *        The content-type for the model.
      */
 
     public void setContentType(String contentType) {
@@ -239,10 +234,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The content-type for the model.
+     * The content-type for the model.
      * </p>
      * 
-     * @return [Required] The content-type for the model.
+     * @return The content-type for the model.
      */
 
     public String getContentType() {
@@ -251,11 +246,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The content-type for the model.
+     * The content-type for the model.
      * </p>
      * 
      * @param contentType
-     *        [Required] The content-type for the model.
+     *        The content-type for the model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

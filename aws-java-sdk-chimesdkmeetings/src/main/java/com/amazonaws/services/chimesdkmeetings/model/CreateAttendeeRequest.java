@@ -38,6 +38,49 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String externalUserId;
+    /**
+     * <p>
+     * The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an
+     * attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels
+     * by default.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private AttendeeCapabilities capabilities;
 
     /**
      * <p>
@@ -126,6 +169,262 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an
+     * attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels
+     * by default.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param capabilities
+     *        The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant
+     *        an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media
+     *        channels by default.</p> <note>
+     *        <p>
+     *        You use the capabilities with a set of values that control what the capabilities can do, such as
+     *        <code>SendReceive</code> data. For more information about those values, see .
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When using capabilities, be aware of these corner cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless
+     *        you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you
+     *        don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request
+     *        status code. However, you can set your <code>video</code> capability to receive and you set your
+     *        <code>content</code> capability to not receive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     *        <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio
+     *        will flow from the attendee to the other meeting participants.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     *        <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on
+     *        their video or content streams, remote attendess can receive those streams, but only after media
+     *        renegotiation between the client and the Amazon Chime back-end server.
+     *        </p>
+     *        </li>
+     */
+
+    public void setCapabilities(AttendeeCapabilities capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    /**
+     * <p>
+     * The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an
+     * attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels
+     * by default.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant
+     *         an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media
+     *         channels by default.</p> <note>
+     *         <p>
+     *         You use the capabilities with a set of values that control what the capabilities can do, such as
+     *         <code>SendReceive</code> data. For more information about those values, see .
+     *         </p>
+     *         </note>
+     *         <p>
+     *         When using capabilities, be aware of these corner cases:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+     *         unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>.
+     *         If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad
+     *         Request status code. However, you can set your <code>video</code> capability to receive and you set your
+     *         <code>content</code> capability to not receive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     *         <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio
+     *         will flow from the attendee to the other meeting participants.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     *         <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on
+     *         their video or content streams, remote attendess can receive those streams, but only after media
+     *         renegotiation between the client and the Amazon Chime back-end server.
+     *         </p>
+     *         </li>
+     */
+
+    public AttendeeCapabilities getCapabilities() {
+        return this.capabilities;
+    }
+
+    /**
+     * <p>
+     * The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an
+     * attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels
+     * by default.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param capabilities
+     *        The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant
+     *        an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media
+     *        channels by default.</p> <note>
+     *        <p>
+     *        You use the capabilities with a set of values that control what the capabilities can do, such as
+     *        <code>SendReceive</code> data. For more information about those values, see .
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When using capabilities, be aware of these corner cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless
+     *        you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you
+     *        don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request
+     *        status code. However, you can set your <code>video</code> capability to receive and you set your
+     *        <code>content</code> capability to not receive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     *        <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio
+     *        will flow from the attendee to the other meeting participants.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     *        <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on
+     *        their video or content streams, remote attendess can receive those streams, but only after media
+     *        renegotiation between the client and the Amazon Chime back-end server.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAttendeeRequest withCapabilities(AttendeeCapabilities capabilities) {
+        setCapabilities(capabilities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +439,9 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMeetingId() != null)
             sb.append("MeetingId: ").append(getMeetingId()).append(",");
         if (getExternalUserId() != null)
-            sb.append("ExternalUserId: ").append("***Sensitive Data Redacted***");
+            sb.append("ExternalUserId: ").append("***Sensitive Data Redacted***").append(",");
+        if (getCapabilities() != null)
+            sb.append("Capabilities: ").append(getCapabilities());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +464,10 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getExternalUserId() != null && other.getExternalUserId().equals(this.getExternalUserId()) == false)
             return false;
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+            return false;
+        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +478,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getMeetingId() == null) ? 0 : getMeetingId().hashCode());
         hashCode = prime * hashCode + ((getExternalUserId() == null) ? 0 : getExternalUserId().hashCode());
+        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         return hashCode;
     }
 

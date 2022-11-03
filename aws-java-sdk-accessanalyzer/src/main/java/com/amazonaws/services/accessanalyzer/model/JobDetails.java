@@ -30,6 +30,26 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * </p>
+     */
+    private String jobId;
+    /**
+     * <p>
+     * The status of the job request.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * A timestamp of when the job was started.
+     * </p>
+     */
+    private java.util.Date startedOn;
+    /**
+     * <p>
      * A timestamp of when the job was completed.
      * </p>
      */
@@ -40,26 +60,157 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobError jobError;
+
     /**
      * <p>
      * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
      * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
      * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
      * </p>
+     * 
+     * @param jobId
+     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
+     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
      */
-    private String jobId;
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     /**
      * <p>
-     * A timestamp of when the job was started.
+     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
      * </p>
+     * 
+     * @return The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     *         <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
+     *         used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
      */
-    private java.util.Date startedOn;
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * </p>
+     * 
+     * @param jobId
+     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
+     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetails withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
     /**
      * <p>
      * The status of the job request.
      * </p>
+     * 
+     * @param status
+     *        The status of the job request.
+     * @see JobStatus
      */
-    private String status;
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the job request.
+     * </p>
+     * 
+     * @return The status of the job request.
+     * @see JobStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the job request.
+     * </p>
+     * 
+     * @param status
+     *        The status of the job request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobStatus
+     */
+
+    public JobDetails withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the job request.
+     * </p>
+     * 
+     * @param status
+     *        The status of the job request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobStatus
+     */
+
+    public JobDetails withStatus(JobStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the job was started.
+     * </p>
+     * 
+     * @param startedOn
+     *        A timestamp of when the job was started.
+     */
+
+    public void setStartedOn(java.util.Date startedOn) {
+        this.startedOn = startedOn;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the job was started.
+     * </p>
+     * 
+     * @return A timestamp of when the job was started.
+     */
+
+    public java.util.Date getStartedOn() {
+        return this.startedOn;
+    }
+
+    /**
+     * <p>
+     * A timestamp of when the job was started.
+     * </p>
+     * 
+     * @param startedOn
+     *        A timestamp of when the job was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetails withStartedOn(java.util.Date startedOn) {
+        setStartedOn(startedOn);
+        return this;
+    }
 
     /**
      * <p>
@@ -142,157 +293,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * </p>
-     * 
-     * @param jobId
-     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
-     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     */
-
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
-    }
-
-    /**
-     * <p>
-     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * </p>
-     * 
-     * @return The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     *         <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
-     *         used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     */
-
-    public String getJobId() {
-        return this.jobId;
-    }
-
-    /**
-     * <p>
-     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * </p>
-     * 
-     * @param jobId
-     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
-     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public JobDetails withJobId(String jobId) {
-        setJobId(jobId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the job was started.
-     * </p>
-     * 
-     * @param startedOn
-     *        A timestamp of when the job was started.
-     */
-
-    public void setStartedOn(java.util.Date startedOn) {
-        this.startedOn = startedOn;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the job was started.
-     * </p>
-     * 
-     * @return A timestamp of when the job was started.
-     */
-
-    public java.util.Date getStartedOn() {
-        return this.startedOn;
-    }
-
-    /**
-     * <p>
-     * A timestamp of when the job was started.
-     * </p>
-     * 
-     * @param startedOn
-     *        A timestamp of when the job was started.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public JobDetails withStartedOn(java.util.Date startedOn) {
-        setStartedOn(startedOn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of the job request.
-     * </p>
-     * 
-     * @param status
-     *        The status of the job request.
-     * @see JobStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status of the job request.
-     * </p>
-     * 
-     * @return The status of the job request.
-     * @see JobStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status of the job request.
-     * </p>
-     * 
-     * @param status
-     *        The status of the job request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see JobStatus
-     */
-
-    public JobDetails withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of the job request.
-     * </p>
-     * 
-     * @param status
-     *        The status of the job request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see JobStatus
-     */
-
-    public JobDetails withStatus(JobStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,16 +304,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getStartedOn() != null)
+            sb.append("StartedOn: ").append(getStartedOn()).append(",");
         if (getCompletedOn() != null)
             sb.append("CompletedOn: ").append(getCompletedOn()).append(",");
         if (getJobError() != null)
-            sb.append("JobError: ").append(getJobError()).append(",");
-        if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId()).append(",");
-        if (getStartedOn() != null)
-            sb.append("StartedOn: ").append(getStartedOn()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("JobError: ").append(getJobError());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +328,18 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof JobDetails == false)
             return false;
         JobDetails other = (JobDetails) obj;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStartedOn() == null ^ this.getStartedOn() == null)
+            return false;
+        if (other.getStartedOn() != null && other.getStartedOn().equals(this.getStartedOn()) == false)
+            return false;
         if (other.getCompletedOn() == null ^ this.getCompletedOn() == null)
             return false;
         if (other.getCompletedOn() != null && other.getCompletedOn().equals(this.getCompletedOn()) == false)
@@ -335,18 +347,6 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
         if (other.getJobError() == null ^ this.getJobError() == null)
             return false;
         if (other.getJobError() != null && other.getJobError().equals(this.getJobError()) == false)
-            return false;
-        if (other.getJobId() == null ^ this.getJobId() == null)
-            return false;
-        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
-            return false;
-        if (other.getStartedOn() == null ^ this.getStartedOn() == null)
-            return false;
-        if (other.getStartedOn() != null && other.getStartedOn().equals(this.getStartedOn()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -356,11 +356,11 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
         hashCode = prime * hashCode + ((getCompletedOn() == null) ? 0 : getCompletedOn().hashCode());
         hashCode = prime * hashCode + ((getJobError() == null) ? 0 : getJobError().hashCode());
-        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

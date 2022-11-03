@@ -44,8 +44,12 @@ public class CreateStudioComponentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initializationScripts").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> RUNTIMEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeRoleArn").build();
     private static final MarshallingInfo<List> SCRIPTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scriptParameters").build();
+    private static final MarshallingInfo<String> SECUREINITIALIZATIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secureInitializationRoleArn").build();
     private static final MarshallingInfo<String> STUDIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("studioId").build();
     private static final MarshallingInfo<String> SUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,7 +81,9 @@ public class CreateStudioComponentRequestMarshaller {
             protocolMarshaller.marshall(createStudioComponentRequest.getEc2SecurityGroupIds(), EC2SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(createStudioComponentRequest.getInitializationScripts(), INITIALIZATIONSCRIPTS_BINDING);
             protocolMarshaller.marshall(createStudioComponentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createStudioComponentRequest.getRuntimeRoleArn(), RUNTIMEROLEARN_BINDING);
             protocolMarshaller.marshall(createStudioComponentRequest.getScriptParameters(), SCRIPTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(createStudioComponentRequest.getSecureInitializationRoleArn(), SECUREINITIALIZATIONROLEARN_BINDING);
             protocolMarshaller.marshall(createStudioComponentRequest.getStudioId(), STUDIOID_BINDING);
             protocolMarshaller.marshall(createStudioComponentRequest.getSubtype(), SUBTYPE_BINDING);
             protocolMarshaller.marshall(createStudioComponentRequest.getTags(), TAGS_BINDING);

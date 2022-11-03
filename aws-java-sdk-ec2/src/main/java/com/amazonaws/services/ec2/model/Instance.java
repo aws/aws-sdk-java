@@ -370,6 +370,14 @@ public class Instance implements Serializable, Cloneable {
     private String ipv6Address;
     /**
      * <p>
+     * If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     */
+    private String tpmSupport;
+    /**
+     * <p>
      * Provides information on the recovery and maintenance options of your instance.
      * </p>
      */
@@ -3237,6 +3245,58 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tpmSupport
+     *        If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
+     */
+
+    public void setTpmSupport(String tpmSupport) {
+        this.tpmSupport = tpmSupport;
+    }
+
+    /**
+     * <p>
+     * If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the
+     *         <i>Amazon EC2 User Guide</i>.
+     */
+
+    public String getTpmSupport() {
+        return this.tpmSupport;
+    }
+
+    /**
+     * <p>
+     * If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tpmSupport
+     *        If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withTpmSupport(String tpmSupport) {
+        setTpmSupport(tpmSupport);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information on the recovery and maintenance options of your instance.
      * </p>
      * 
@@ -3395,6 +3455,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("PrivateDnsNameOptions: ").append(getPrivateDnsNameOptions()).append(",");
         if (getIpv6Address() != null)
             sb.append("Ipv6Address: ").append(getIpv6Address()).append(",");
+        if (getTpmSupport() != null)
+            sb.append("TpmSupport: ").append(getTpmSupport()).append(",");
         if (getMaintenanceOptions() != null)
             sb.append("MaintenanceOptions: ").append(getMaintenanceOptions());
         sb.append("}");
@@ -3629,6 +3691,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getIpv6Address() != null && other.getIpv6Address().equals(this.getIpv6Address()) == false)
             return false;
+        if (other.getTpmSupport() == null ^ this.getTpmSupport() == null)
+            return false;
+        if (other.getTpmSupport() != null && other.getTpmSupport().equals(this.getTpmSupport()) == false)
+            return false;
         if (other.getMaintenanceOptions() == null ^ this.getMaintenanceOptions() == null)
             return false;
         if (other.getMaintenanceOptions() != null && other.getMaintenanceOptions().equals(this.getMaintenanceOptions()) == false)
@@ -3695,6 +3761,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUsageOperationUpdateTime() == null) ? 0 : getUsageOperationUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsNameOptions() == null) ? 0 : getPrivateDnsNameOptions().hashCode());
         hashCode = prime * hashCode + ((getIpv6Address() == null) ? 0 : getIpv6Address().hashCode());
+        hashCode = prime * hashCode + ((getTpmSupport() == null) ? 0 : getTpmSupport().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceOptions() == null) ? 0 : getMaintenanceOptions().hashCode());
         return hashCode;
     }

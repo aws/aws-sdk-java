@@ -1491,6 +1491,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<RebootInputDeviceResult> rebootInputDeviceAsync(RebootInputDeviceRequest request) {
+
+        return rebootInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootInputDeviceResult> rebootInputDeviceAsync(final RebootInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RebootInputDeviceRequest, RebootInputDeviceResult> asyncHandler) {
+        final RebootInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RebootInputDeviceResult>() {
+            @Override
+            public RebootInputDeviceResult call() throws Exception {
+                RebootInputDeviceResult result = null;
+
+                try {
+                    result = executeRebootInputDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(RejectInputDeviceTransferRequest request) {
 
         return rejectInputDeviceTransferAsync(request, null);
@@ -1541,6 +1574,41 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeStartChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
+            StartInputDeviceMaintenanceWindowRequest request) {
+
+        return startInputDeviceMaintenanceWindowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
+            final StartInputDeviceMaintenanceWindowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartInputDeviceMaintenanceWindowRequest, StartInputDeviceMaintenanceWindowResult> asyncHandler) {
+        final StartInputDeviceMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartInputDeviceMaintenanceWindowResult>() {
+            @Override
+            public StartInputDeviceMaintenanceWindowResult call() throws Exception {
+                StartInputDeviceMaintenanceWindowResult result = null;
+
+                try {
+                    result = executeStartInputDeviceMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

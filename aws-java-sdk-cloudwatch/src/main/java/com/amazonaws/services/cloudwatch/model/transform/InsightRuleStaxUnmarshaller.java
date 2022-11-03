@@ -62,6 +62,11 @@ public class InsightRuleStaxUnmarshaller implements Unmarshaller<InsightRule, St
                     insightRule.setDefinition(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ManagedRule", targetDepth)) {
+                    insightRule.setManagedRule(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return insightRule;

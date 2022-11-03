@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For more information and the input format, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File
- * Server Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * Server volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/FSxWindowsFileServerVolumeConfiguration"

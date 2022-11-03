@@ -31,26 +31,48 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      */
     private UrlReference url;
     /**
      * <p>
-     * Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
-     * Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.
      * </p>
      */
     private AttachmentReference attachment;
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.
+     * </p>
+     */
+    private StringReference string;
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.
+     * </p>
+     */
+    private NumberReference number;
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     * </p>
+     */
+    private DateReference date;
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     * </p>
+     */
+    private EmailReference email;
 
     /**
      * <p>
-     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      * 
      * @param url
-     *        Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise,
-     *        null.
+     *        Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      */
 
     public void setUrl(UrlReference url) {
@@ -59,11 +81,10 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      * 
-     * @return Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise,
-     *         null.
+     * @return Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      */
 
     public UrlReference getUrl() {
@@ -72,12 +93,11 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      * 
      * @param url
-     *        Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise,
-     *        null.
+     *        Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +108,12 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
-     * Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.
      * </p>
      * 
      * @param attachment
-     *        Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
-     *        Otherwise, null.
+     *        Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise,
+     *        null.
      */
 
     public void setAttachment(AttachmentReference attachment) {
@@ -103,11 +122,10 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
-     * Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.
      * </p>
      * 
-     * @return Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
+     * @return Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>.
      *         Otherwise, null.
      */
 
@@ -117,18 +135,179 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
-     * Otherwise, null.
+     * Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.
      * </p>
      * 
      * @param attachment
-     *        Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
-     *        Otherwise, null.
+     *        Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise,
+     *        null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReferenceSummary withAttachment(AttachmentReference attachment) {
         setAttachment(attachment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param string
+     *        Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.
+     */
+
+    public void setString(StringReference string) {
+        this.string = string;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.
+     * </p>
+     * 
+     * @return Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise,
+     *         null.
+     */
+
+    public StringReference getString() {
+        return this.string;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param string
+     *        Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceSummary withString(StringReference string) {
+        setString(string);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param number
+     *        Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.
+     */
+
+    public void setNumber(NumberReference number) {
+        this.number = number;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.
+     * </p>
+     * 
+     * @return Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise,
+     *         null.
+     */
+
+    public NumberReference getNumber() {
+        return this.number;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param number
+     *        Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceSummary withNumber(NumberReference number) {
+        setNumber(number);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param date
+     *        Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     */
+
+    public void setDate(DateReference date) {
+        this.date = date;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     * </p>
+     * 
+     * @return Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     */
+
+    public DateReference getDate() {
+        return this.date;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param date
+     *        Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceSummary withDate(DateReference date) {
+        setDate(date);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param email
+     *        Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     */
+
+    public void setEmail(EmailReference email) {
+        this.email = email;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     * </p>
+     * 
+     * @return Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     */
+
+    public EmailReference getEmail() {
+        return this.email;
+    }
+
+    /**
+     * <p>
+     * Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     * </p>
+     * 
+     * @param email
+     *        Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceSummary withEmail(EmailReference email) {
+        setEmail(email);
         return this;
     }
 
@@ -147,7 +326,15 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getAttachment() != null)
-            sb.append("Attachment: ").append(getAttachment());
+            sb.append("Attachment: ").append(getAttachment()).append(",");
+        if (getString() != null)
+            sb.append("String: ").append(getString()).append(",");
+        if (getNumber() != null)
+            sb.append("Number: ").append(getNumber()).append(",");
+        if (getDate() != null)
+            sb.append("Date: ").append(getDate()).append(",");
+        if (getEmail() != null)
+            sb.append("Email: ").append(getEmail());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +357,22 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false)
             return false;
+        if (other.getString() == null ^ this.getString() == null)
+            return false;
+        if (other.getString() != null && other.getString().equals(this.getString()) == false)
+            return false;
+        if (other.getNumber() == null ^ this.getNumber() == null)
+            return false;
+        if (other.getNumber() != null && other.getNumber().equals(this.getNumber()) == false)
+            return false;
+        if (other.getDate() == null ^ this.getDate() == null)
+            return false;
+        if (other.getDate() != null && other.getDate().equals(this.getDate()) == false)
+            return false;
+        if (other.getEmail() == null ^ this.getEmail() == null)
+            return false;
+        if (other.getEmail() != null && other.getEmail().equals(this.getEmail()) == false)
+            return false;
         return true;
     }
 
@@ -180,6 +383,10 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
+        hashCode = prime * hashCode + ((getString() == null) ? 0 : getString().hashCode());
+        hashCode = prime * hashCode + ((getNumber() == null) ? 0 : getNumber().hashCode());
+        hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode());
+        hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
         return hashCode;
     }
 

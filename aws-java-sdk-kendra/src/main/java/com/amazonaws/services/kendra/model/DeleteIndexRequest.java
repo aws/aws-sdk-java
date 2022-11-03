@@ -27,18 +27,18 @@ public class DeleteIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to delete.
+     * The identifier of the index you want to delete.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The identifier of the index to delete.
+     * The identifier of the index you want to delete.
      * </p>
      * 
      * @param id
-     *        The identifier of the index to delete.
+     *        The identifier of the index you want to delete.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class DeleteIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to delete.
+     * The identifier of the index you want to delete.
      * </p>
      * 
-     * @return The identifier of the index to delete.
+     * @return The identifier of the index you want to delete.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class DeleteIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to delete.
+     * The identifier of the index you want to delete.
      * </p>
      * 
      * @param id
-     *        The identifier of the index to delete.
+     *        The identifier of the index you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

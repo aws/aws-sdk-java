@@ -56,6 +56,10 @@ public class SearchForPositionResultJsonUnmarshaller implements Unmarshaller<Sea
                     context.nextToken();
                     searchForPositionResult.setPlace(PlaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PlaceId", targetDepth)) {
+                    context.nextToken();
+                    searchForPositionResult.setPlaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

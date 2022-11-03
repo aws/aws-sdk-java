@@ -78,13 +78,13 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsEc2SecurityGroupDetails awsEc2SecurityGroup;
     /**
      * <p>
-     * Details for an EC2 volume.
+     * Details for an Amazon EC2 volume.
      * </p>
      */
     private AwsEc2VolumeDetails awsEc2Volume;
     /**
      * <p>
-     * Details for an EC2 VPC.
+     * Details for an Amazon EC2 VPC.
      * </p>
      */
     private AwsEc2VpcDetails awsEc2Vpc;
@@ -277,7 +277,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsSqsQueueDetails awsSqsQueue;
     /**
      * <p>
-     * Details for an WAF WebACL.
+     * Details for an WAF web ACL.
      * </p>
      */
     private AwsWafWebAclDetails awsWafWebAcl;
@@ -301,10 +301,16 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsRdsDbClusterDetails awsRdsDbCluster;
     /**
      * <p>
-     * Details about an ECS cluster.
+     * Details about an Amazon ECS cluster.
      * </p>
      */
     private AwsEcsClusterDetails awsEcsCluster;
+    /**
+     * <p>
+     * Provides information about a Docker container that's part of a task.
+     * </p>
+     */
+    private AwsEcsContainerDetails awsEcsContainer;
     /**
      * <p>
      * Details about a task definition. A task definition describes the container and volume definitions of an Amazon
@@ -360,7 +366,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsAutoScalingLaunchConfigurationDetails awsAutoScalingLaunchConfiguration;
     /**
      * <p>
-     * Details about an EC2 VPN connection.
+     * Details about an Amazon EC2 VPN connection.
      * </p>
      */
     private AwsEc2VpnConnectionDetails awsEc2VpnConnection;
@@ -436,6 +442,102 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsRdsDbSecurityGroupDetails awsRdsDbSecurityGroup;
+    /**
+     * <p>
+     * Details about an Amazon Kinesis data stream.
+     * </p>
+     */
+    private AwsKinesisStreamDetails awsKinesisStream;
+    /**
+     * <p>
+     * Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises
+     * networks.
+     * </p>
+     */
+    private AwsEc2TransitGatewayDetails awsEc2TransitGateway;
+    /**
+     * <p>
+     * Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system
+     * that applies an operating system user and group, and a file system path, to any file system request made through
+     * the access point.
+     * </p>
+     */
+    private AwsEfsAccessPointDetails awsEfsAccessPoint;
+    /**
+     * <p>
+     * Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can
+     * manage as a single unit.
+     * </p>
+     */
+    private AwsCloudFormationStackDetails awsCloudFormationStack;
+    /**
+     * <p>
+     * Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web
+     * Services resources and applications across multiple Regions.
+     * </p>
+     */
+    private AwsCloudWatchAlarmDetails awsCloudWatchAlarm;
+    /**
+     * <p>
+     * Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between
+     * two VPCs that enables you to route traffic between them privately.
+     * </p>
+     */
+    private AwsEc2VpcPeeringConnectionDetails awsEc2VpcPeeringConnection;
+    /**
+     * <p>
+     * Details about an WAF rule group for Regional resources.
+     * </p>
+     */
+    private AwsWafRegionalRuleGroupDetails awsWafRegionalRuleGroup;
+    /**
+     * <p>
+     * Details about an WAF rule for Regional resources.
+     * </p>
+     */
+    private AwsWafRegionalRuleDetails awsWafRegionalRule;
+    /**
+     * <p>
+     * Details about an WAF web access control list (web ACL) for Regional resources.
+     * </p>
+     */
+    private AwsWafRegionalWebAclDetails awsWafRegionalWebAcl;
+    /**
+     * <p>
+     * Details about an WAF rule for global resources.
+     * </p>
+     */
+    private AwsWafRuleDetails awsWafRule;
+    /**
+     * <p>
+     * Details about an WAF rule group for global resources.
+     * </p>
+     */
+    private AwsWafRuleGroupDetails awsWafRuleGroup;
+    /**
+     * <p>
+     * Details about a task in a cluster.
+     * </p>
+     */
+    private AwsEcsTaskDetails awsEcsTask;
+    /**
+     * <p>
+     * Provides details about an Backup backup vault.
+     * </p>
+     */
+    private AwsBackupBackupVaultDetails awsBackupBackupVault;
+    /**
+     * <p>
+     * Provides details about an Backup backup plan.
+     * </p>
+     */
+    private AwsBackupBackupPlanDetails awsBackupBackupPlan;
+    /**
+     * <p>
+     * Provides details about an Backup backup, or recovery point.
+     * </p>
+     */
+    private AwsBackupRecoveryPointDetails awsBackupRecoveryPoint;
 
     /**
      * <p>
@@ -679,11 +781,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an EC2 volume.
+     * Details for an Amazon EC2 volume.
      * </p>
      * 
      * @param awsEc2Volume
-     *        Details for an EC2 volume.
+     *        Details for an Amazon EC2 volume.
      */
 
     public void setAwsEc2Volume(AwsEc2VolumeDetails awsEc2Volume) {
@@ -692,10 +794,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an EC2 volume.
+     * Details for an Amazon EC2 volume.
      * </p>
      * 
-     * @return Details for an EC2 volume.
+     * @return Details for an Amazon EC2 volume.
      */
 
     public AwsEc2VolumeDetails getAwsEc2Volume() {
@@ -704,11 +806,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an EC2 volume.
+     * Details for an Amazon EC2 volume.
      * </p>
      * 
      * @param awsEc2Volume
-     *        Details for an EC2 volume.
+     *        Details for an Amazon EC2 volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,11 +821,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an EC2 VPC.
+     * Details for an Amazon EC2 VPC.
      * </p>
      * 
      * @param awsEc2Vpc
-     *        Details for an EC2 VPC.
+     *        Details for an Amazon EC2 VPC.
      */
 
     public void setAwsEc2Vpc(AwsEc2VpcDetails awsEc2Vpc) {
@@ -732,10 +834,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an EC2 VPC.
+     * Details for an Amazon EC2 VPC.
      * </p>
      * 
-     * @return Details for an EC2 VPC.
+     * @return Details for an Amazon EC2 VPC.
      */
 
     public AwsEc2VpcDetails getAwsEc2Vpc() {
@@ -744,11 +846,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an EC2 VPC.
+     * Details for an Amazon EC2 VPC.
      * </p>
      * 
      * @param awsEc2Vpc
-     *        Details for an EC2 VPC.
+     *        Details for an Amazon EC2 VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2005,11 +2107,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an WAF WebACL.
+     * Details for an WAF web ACL.
      * </p>
      * 
      * @param awsWafWebAcl
-     *        Details for an WAF WebACL.
+     *        Details for an WAF web ACL.
      */
 
     public void setAwsWafWebAcl(AwsWafWebAclDetails awsWafWebAcl) {
@@ -2018,10 +2120,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an WAF WebACL.
+     * Details for an WAF web ACL.
      * </p>
      * 
-     * @return Details for an WAF WebACL.
+     * @return Details for an WAF web ACL.
      */
 
     public AwsWafWebAclDetails getAwsWafWebAcl() {
@@ -2030,11 +2132,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an WAF WebACL.
+     * Details for an WAF web ACL.
      * </p>
      * 
      * @param awsWafWebAcl
-     *        Details for an WAF WebACL.
+     *        Details for an WAF web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2165,11 +2267,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an ECS cluster.
+     * Details about an Amazon ECS cluster.
      * </p>
      * 
      * @param awsEcsCluster
-     *        Details about an ECS cluster.
+     *        Details about an Amazon ECS cluster.
      */
 
     public void setAwsEcsCluster(AwsEcsClusterDetails awsEcsCluster) {
@@ -2178,10 +2280,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an ECS cluster.
+     * Details about an Amazon ECS cluster.
      * </p>
      * 
-     * @return Details about an ECS cluster.
+     * @return Details about an Amazon ECS cluster.
      */
 
     public AwsEcsClusterDetails getAwsEcsCluster() {
@@ -2190,16 +2292,56 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an ECS cluster.
+     * Details about an Amazon ECS cluster.
      * </p>
      * 
      * @param awsEcsCluster
-     *        Details about an ECS cluster.
+     *        Details about an Amazon ECS cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceDetails withAwsEcsCluster(AwsEcsClusterDetails awsEcsCluster) {
         setAwsEcsCluster(awsEcsCluster);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about a Docker container that's part of a task.
+     * </p>
+     * 
+     * @param awsEcsContainer
+     *        Provides information about a Docker container that's part of a task.
+     */
+
+    public void setAwsEcsContainer(AwsEcsContainerDetails awsEcsContainer) {
+        this.awsEcsContainer = awsEcsContainer;
+    }
+
+    /**
+     * <p>
+     * Provides information about a Docker container that's part of a task.
+     * </p>
+     * 
+     * @return Provides information about a Docker container that's part of a task.
+     */
+
+    public AwsEcsContainerDetails getAwsEcsContainer() {
+        return this.awsEcsContainer;
+    }
+
+    /**
+     * <p>
+     * Provides information about a Docker container that's part of a task.
+     * </p>
+     * 
+     * @param awsEcsContainer
+     *        Provides information about a Docker container that's part of a task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEcsContainer(AwsEcsContainerDetails awsEcsContainer) {
+        setAwsEcsContainer(awsEcsContainer);
         return this;
     }
 
@@ -2572,11 +2714,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an EC2 VPN connection.
+     * Details about an Amazon EC2 VPN connection.
      * </p>
      * 
      * @param awsEc2VpnConnection
-     *        Details about an EC2 VPN connection.
+     *        Details about an Amazon EC2 VPN connection.
      */
 
     public void setAwsEc2VpnConnection(AwsEc2VpnConnectionDetails awsEc2VpnConnection) {
@@ -2585,10 +2727,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an EC2 VPN connection.
+     * Details about an Amazon EC2 VPN connection.
      * </p>
      * 
-     * @return Details about an EC2 VPN connection.
+     * @return Details about an Amazon EC2 VPN connection.
      */
 
     public AwsEc2VpnConnectionDetails getAwsEc2VpnConnection() {
@@ -2597,11 +2739,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an EC2 VPN connection.
+     * Details about an Amazon EC2 VPN connection.
      * </p>
      * 
      * @param awsEc2VpnConnection
-     *        Details about an EC2 VPN connection.
+     *        Details about an Amazon EC2 VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3091,6 +3233,642 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Details about an Amazon Kinesis data stream.
+     * </p>
+     * 
+     * @param awsKinesisStream
+     *        Details about an Amazon Kinesis data stream.
+     */
+
+    public void setAwsKinesisStream(AwsKinesisStreamDetails awsKinesisStream) {
+        this.awsKinesisStream = awsKinesisStream;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon Kinesis data stream.
+     * </p>
+     * 
+     * @return Details about an Amazon Kinesis data stream.
+     */
+
+    public AwsKinesisStreamDetails getAwsKinesisStream() {
+        return this.awsKinesisStream;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon Kinesis data stream.
+     * </p>
+     * 
+     * @param awsKinesisStream
+     *        Details about an Amazon Kinesis data stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsKinesisStream(AwsKinesisStreamDetails awsKinesisStream) {
+        setAwsKinesisStream(awsKinesisStream);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises
+     * networks.
+     * </p>
+     * 
+     * @param awsEc2TransitGateway
+     *        Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and
+     *        on-premises networks.
+     */
+
+    public void setAwsEc2TransitGateway(AwsEc2TransitGatewayDetails awsEc2TransitGateway) {
+        this.awsEc2TransitGateway = awsEc2TransitGateway;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises
+     * networks.
+     * </p>
+     * 
+     * @return Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and
+     *         on-premises networks.
+     */
+
+    public AwsEc2TransitGatewayDetails getAwsEc2TransitGateway() {
+        return this.awsEc2TransitGateway;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises
+     * networks.
+     * </p>
+     * 
+     * @param awsEc2TransitGateway
+     *        Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and
+     *        on-premises networks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2TransitGateway(AwsEc2TransitGatewayDetails awsEc2TransitGateway) {
+        setAwsEc2TransitGateway(awsEc2TransitGateway);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system
+     * that applies an operating system user and group, and a file system path, to any file system request made through
+     * the access point.
+     * </p>
+     * 
+     * @param awsEfsAccessPoint
+     *        Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file
+     *        system that applies an operating system user and group, and a file system path, to any file system request
+     *        made through the access point.
+     */
+
+    public void setAwsEfsAccessPoint(AwsEfsAccessPointDetails awsEfsAccessPoint) {
+        this.awsEfsAccessPoint = awsEfsAccessPoint;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system
+     * that applies an operating system user and group, and a file system path, to any file system request made through
+     * the access point.
+     * </p>
+     * 
+     * @return Details about an Amazon EFS access point. An access point is an application-specific view into an EFS
+     *         file system that applies an operating system user and group, and a file system path, to any file system
+     *         request made through the access point.
+     */
+
+    public AwsEfsAccessPointDetails getAwsEfsAccessPoint() {
+        return this.awsEfsAccessPoint;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system
+     * that applies an operating system user and group, and a file system path, to any file system request made through
+     * the access point.
+     * </p>
+     * 
+     * @param awsEfsAccessPoint
+     *        Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file
+     *        system that applies an operating system user and group, and a file system path, to any file system request
+     *        made through the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEfsAccessPoint(AwsEfsAccessPointDetails awsEfsAccessPoint) {
+        setAwsEfsAccessPoint(awsEfsAccessPoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can
+     * manage as a single unit.
+     * </p>
+     * 
+     * @param awsCloudFormationStack
+     *        Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you
+     *        can manage as a single unit.
+     */
+
+    public void setAwsCloudFormationStack(AwsCloudFormationStackDetails awsCloudFormationStack) {
+        this.awsCloudFormationStack = awsCloudFormationStack;
+    }
+
+    /**
+     * <p>
+     * Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can
+     * manage as a single unit.
+     * </p>
+     * 
+     * @return Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you
+     *         can manage as a single unit.
+     */
+
+    public AwsCloudFormationStackDetails getAwsCloudFormationStack() {
+        return this.awsCloudFormationStack;
+    }
+
+    /**
+     * <p>
+     * Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can
+     * manage as a single unit.
+     * </p>
+     * 
+     * @param awsCloudFormationStack
+     *        Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you
+     *        can manage as a single unit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsCloudFormationStack(AwsCloudFormationStackDetails awsCloudFormationStack) {
+        setAwsCloudFormationStack(awsCloudFormationStack);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web
+     * Services resources and applications across multiple Regions.
+     * </p>
+     * 
+     * @param awsCloudWatchAlarm
+     *        Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your
+     *        Amazon Web Services resources and applications across multiple Regions.
+     */
+
+    public void setAwsCloudWatchAlarm(AwsCloudWatchAlarmDetails awsCloudWatchAlarm) {
+        this.awsCloudWatchAlarm = awsCloudWatchAlarm;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web
+     * Services resources and applications across multiple Regions.
+     * </p>
+     * 
+     * @return Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your
+     *         Amazon Web Services resources and applications across multiple Regions.
+     */
+
+    public AwsCloudWatchAlarmDetails getAwsCloudWatchAlarm() {
+        return this.awsCloudWatchAlarm;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web
+     * Services resources and applications across multiple Regions.
+     * </p>
+     * 
+     * @param awsCloudWatchAlarm
+     *        Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your
+     *        Amazon Web Services resources and applications across multiple Regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsCloudWatchAlarm(AwsCloudWatchAlarmDetails awsCloudWatchAlarm) {
+        setAwsCloudWatchAlarm(awsCloudWatchAlarm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between
+     * two VPCs that enables you to route traffic between them privately.
+     * </p>
+     * 
+     * @param awsEc2VpcPeeringConnection
+     *        Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection
+     *        between two VPCs that enables you to route traffic between them privately.
+     */
+
+    public void setAwsEc2VpcPeeringConnection(AwsEc2VpcPeeringConnectionDetails awsEc2VpcPeeringConnection) {
+        this.awsEc2VpcPeeringConnection = awsEc2VpcPeeringConnection;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between
+     * two VPCs that enables you to route traffic between them privately.
+     * </p>
+     * 
+     * @return Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection
+     *         between two VPCs that enables you to route traffic between them privately.
+     */
+
+    public AwsEc2VpcPeeringConnectionDetails getAwsEc2VpcPeeringConnection() {
+        return this.awsEc2VpcPeeringConnection;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between
+     * two VPCs that enables you to route traffic between them privately.
+     * </p>
+     * 
+     * @param awsEc2VpcPeeringConnection
+     *        Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection
+     *        between two VPCs that enables you to route traffic between them privately.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2VpcPeeringConnection(AwsEc2VpcPeeringConnectionDetails awsEc2VpcPeeringConnection) {
+        setAwsEc2VpcPeeringConnection(awsEc2VpcPeeringConnection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule group for Regional resources.
+     * </p>
+     * 
+     * @param awsWafRegionalRuleGroup
+     *        Details about an WAF rule group for Regional resources.
+     */
+
+    public void setAwsWafRegionalRuleGroup(AwsWafRegionalRuleGroupDetails awsWafRegionalRuleGroup) {
+        this.awsWafRegionalRuleGroup = awsWafRegionalRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule group for Regional resources.
+     * </p>
+     * 
+     * @return Details about an WAF rule group for Regional resources.
+     */
+
+    public AwsWafRegionalRuleGroupDetails getAwsWafRegionalRuleGroup() {
+        return this.awsWafRegionalRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule group for Regional resources.
+     * </p>
+     * 
+     * @param awsWafRegionalRuleGroup
+     *        Details about an WAF rule group for Regional resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafRegionalRuleGroup(AwsWafRegionalRuleGroupDetails awsWafRegionalRuleGroup) {
+        setAwsWafRegionalRuleGroup(awsWafRegionalRuleGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule for Regional resources.
+     * </p>
+     * 
+     * @param awsWafRegionalRule
+     *        Details about an WAF rule for Regional resources.
+     */
+
+    public void setAwsWafRegionalRule(AwsWafRegionalRuleDetails awsWafRegionalRule) {
+        this.awsWafRegionalRule = awsWafRegionalRule;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule for Regional resources.
+     * </p>
+     * 
+     * @return Details about an WAF rule for Regional resources.
+     */
+
+    public AwsWafRegionalRuleDetails getAwsWafRegionalRule() {
+        return this.awsWafRegionalRule;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule for Regional resources.
+     * </p>
+     * 
+     * @param awsWafRegionalRule
+     *        Details about an WAF rule for Regional resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafRegionalRule(AwsWafRegionalRuleDetails awsWafRegionalRule) {
+        setAwsWafRegionalRule(awsWafRegionalRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF web access control list (web ACL) for Regional resources.
+     * </p>
+     * 
+     * @param awsWafRegionalWebAcl
+     *        Details about an WAF web access control list (web ACL) for Regional resources.
+     */
+
+    public void setAwsWafRegionalWebAcl(AwsWafRegionalWebAclDetails awsWafRegionalWebAcl) {
+        this.awsWafRegionalWebAcl = awsWafRegionalWebAcl;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF web access control list (web ACL) for Regional resources.
+     * </p>
+     * 
+     * @return Details about an WAF web access control list (web ACL) for Regional resources.
+     */
+
+    public AwsWafRegionalWebAclDetails getAwsWafRegionalWebAcl() {
+        return this.awsWafRegionalWebAcl;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF web access control list (web ACL) for Regional resources.
+     * </p>
+     * 
+     * @param awsWafRegionalWebAcl
+     *        Details about an WAF web access control list (web ACL) for Regional resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafRegionalWebAcl(AwsWafRegionalWebAclDetails awsWafRegionalWebAcl) {
+        setAwsWafRegionalWebAcl(awsWafRegionalWebAcl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule for global resources.
+     * </p>
+     * 
+     * @param awsWafRule
+     *        Details about an WAF rule for global resources.
+     */
+
+    public void setAwsWafRule(AwsWafRuleDetails awsWafRule) {
+        this.awsWafRule = awsWafRule;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule for global resources.
+     * </p>
+     * 
+     * @return Details about an WAF rule for global resources.
+     */
+
+    public AwsWafRuleDetails getAwsWafRule() {
+        return this.awsWafRule;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule for global resources.
+     * </p>
+     * 
+     * @param awsWafRule
+     *        Details about an WAF rule for global resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafRule(AwsWafRuleDetails awsWafRule) {
+        setAwsWafRule(awsWafRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule group for global resources.
+     * </p>
+     * 
+     * @param awsWafRuleGroup
+     *        Details about an WAF rule group for global resources.
+     */
+
+    public void setAwsWafRuleGroup(AwsWafRuleGroupDetails awsWafRuleGroup) {
+        this.awsWafRuleGroup = awsWafRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule group for global resources.
+     * </p>
+     * 
+     * @return Details about an WAF rule group for global resources.
+     */
+
+    public AwsWafRuleGroupDetails getAwsWafRuleGroup() {
+        return this.awsWafRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Details about an WAF rule group for global resources.
+     * </p>
+     * 
+     * @param awsWafRuleGroup
+     *        Details about an WAF rule group for global resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafRuleGroup(AwsWafRuleGroupDetails awsWafRuleGroup) {
+        setAwsWafRuleGroup(awsWafRuleGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a task in a cluster.
+     * </p>
+     * 
+     * @param awsEcsTask
+     *        Details about a task in a cluster.
+     */
+
+    public void setAwsEcsTask(AwsEcsTaskDetails awsEcsTask) {
+        this.awsEcsTask = awsEcsTask;
+    }
+
+    /**
+     * <p>
+     * Details about a task in a cluster.
+     * </p>
+     * 
+     * @return Details about a task in a cluster.
+     */
+
+    public AwsEcsTaskDetails getAwsEcsTask() {
+        return this.awsEcsTask;
+    }
+
+    /**
+     * <p>
+     * Details about a task in a cluster.
+     * </p>
+     * 
+     * @param awsEcsTask
+     *        Details about a task in a cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEcsTask(AwsEcsTaskDetails awsEcsTask) {
+        setAwsEcsTask(awsEcsTask);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup vault.
+     * </p>
+     * 
+     * @param awsBackupBackupVault
+     *        Provides details about an Backup backup vault.
+     */
+
+    public void setAwsBackupBackupVault(AwsBackupBackupVaultDetails awsBackupBackupVault) {
+        this.awsBackupBackupVault = awsBackupBackupVault;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup vault.
+     * </p>
+     * 
+     * @return Provides details about an Backup backup vault.
+     */
+
+    public AwsBackupBackupVaultDetails getAwsBackupBackupVault() {
+        return this.awsBackupBackupVault;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup vault.
+     * </p>
+     * 
+     * @param awsBackupBackupVault
+     *        Provides details about an Backup backup vault.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsBackupBackupVault(AwsBackupBackupVaultDetails awsBackupBackupVault) {
+        setAwsBackupBackupVault(awsBackupBackupVault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup plan.
+     * </p>
+     * 
+     * @param awsBackupBackupPlan
+     *        Provides details about an Backup backup plan.
+     */
+
+    public void setAwsBackupBackupPlan(AwsBackupBackupPlanDetails awsBackupBackupPlan) {
+        this.awsBackupBackupPlan = awsBackupBackupPlan;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup plan.
+     * </p>
+     * 
+     * @return Provides details about an Backup backup plan.
+     */
+
+    public AwsBackupBackupPlanDetails getAwsBackupBackupPlan() {
+        return this.awsBackupBackupPlan;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup plan.
+     * </p>
+     * 
+     * @param awsBackupBackupPlan
+     *        Provides details about an Backup backup plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsBackupBackupPlan(AwsBackupBackupPlanDetails awsBackupBackupPlan) {
+        setAwsBackupBackupPlan(awsBackupBackupPlan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup, or recovery point.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPoint
+     *        Provides details about an Backup backup, or recovery point.
+     */
+
+    public void setAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails awsBackupRecoveryPoint) {
+        this.awsBackupRecoveryPoint = awsBackupRecoveryPoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup, or recovery point.
+     * </p>
+     * 
+     * @return Provides details about an Backup backup, or recovery point.
+     */
+
+    public AwsBackupRecoveryPointDetails getAwsBackupRecoveryPoint() {
+        return this.awsBackupRecoveryPoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Backup backup, or recovery point.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPoint
+     *        Provides details about an Backup backup, or recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails awsBackupRecoveryPoint) {
+        setAwsBackupRecoveryPoint(awsBackupRecoveryPoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3190,6 +3968,8 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsRdsDbCluster: ").append(getAwsRdsDbCluster()).append(",");
         if (getAwsEcsCluster() != null)
             sb.append("AwsEcsCluster: ").append(getAwsEcsCluster()).append(",");
+        if (getAwsEcsContainer() != null)
+            sb.append("AwsEcsContainer: ").append(getAwsEcsContainer()).append(",");
         if (getAwsEcsTaskDefinition() != null)
             sb.append("AwsEcsTaskDefinition: ").append(getAwsEcsTaskDefinition()).append(",");
         if (getContainer() != null)
@@ -3227,7 +4007,37 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (getAwsNetworkFirewallRuleGroup() != null)
             sb.append("AwsNetworkFirewallRuleGroup: ").append(getAwsNetworkFirewallRuleGroup()).append(",");
         if (getAwsRdsDbSecurityGroup() != null)
-            sb.append("AwsRdsDbSecurityGroup: ").append(getAwsRdsDbSecurityGroup());
+            sb.append("AwsRdsDbSecurityGroup: ").append(getAwsRdsDbSecurityGroup()).append(",");
+        if (getAwsKinesisStream() != null)
+            sb.append("AwsKinesisStream: ").append(getAwsKinesisStream()).append(",");
+        if (getAwsEc2TransitGateway() != null)
+            sb.append("AwsEc2TransitGateway: ").append(getAwsEc2TransitGateway()).append(",");
+        if (getAwsEfsAccessPoint() != null)
+            sb.append("AwsEfsAccessPoint: ").append(getAwsEfsAccessPoint()).append(",");
+        if (getAwsCloudFormationStack() != null)
+            sb.append("AwsCloudFormationStack: ").append(getAwsCloudFormationStack()).append(",");
+        if (getAwsCloudWatchAlarm() != null)
+            sb.append("AwsCloudWatchAlarm: ").append(getAwsCloudWatchAlarm()).append(",");
+        if (getAwsEc2VpcPeeringConnection() != null)
+            sb.append("AwsEc2VpcPeeringConnection: ").append(getAwsEc2VpcPeeringConnection()).append(",");
+        if (getAwsWafRegionalRuleGroup() != null)
+            sb.append("AwsWafRegionalRuleGroup: ").append(getAwsWafRegionalRuleGroup()).append(",");
+        if (getAwsWafRegionalRule() != null)
+            sb.append("AwsWafRegionalRule: ").append(getAwsWafRegionalRule()).append(",");
+        if (getAwsWafRegionalWebAcl() != null)
+            sb.append("AwsWafRegionalWebAcl: ").append(getAwsWafRegionalWebAcl()).append(",");
+        if (getAwsWafRule() != null)
+            sb.append("AwsWafRule: ").append(getAwsWafRule()).append(",");
+        if (getAwsWafRuleGroup() != null)
+            sb.append("AwsWafRuleGroup: ").append(getAwsWafRuleGroup()).append(",");
+        if (getAwsEcsTask() != null)
+            sb.append("AwsEcsTask: ").append(getAwsEcsTask()).append(",");
+        if (getAwsBackupBackupVault() != null)
+            sb.append("AwsBackupBackupVault: ").append(getAwsBackupBackupVault()).append(",");
+        if (getAwsBackupBackupPlan() != null)
+            sb.append("AwsBackupBackupPlan: ").append(getAwsBackupBackupPlan()).append(",");
+        if (getAwsBackupRecoveryPoint() != null)
+            sb.append("AwsBackupRecoveryPoint: ").append(getAwsBackupRecoveryPoint());
         sb.append("}");
         return sb.toString();
     }
@@ -3422,6 +4232,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsEcsCluster() != null && other.getAwsEcsCluster().equals(this.getAwsEcsCluster()) == false)
             return false;
+        if (other.getAwsEcsContainer() == null ^ this.getAwsEcsContainer() == null)
+            return false;
+        if (other.getAwsEcsContainer() != null && other.getAwsEcsContainer().equals(this.getAwsEcsContainer()) == false)
+            return false;
         if (other.getAwsEcsTaskDefinition() == null ^ this.getAwsEcsTaskDefinition() == null)
             return false;
         if (other.getAwsEcsTaskDefinition() != null && other.getAwsEcsTaskDefinition().equals(this.getAwsEcsTaskDefinition()) == false)
@@ -3500,6 +4314,66 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsRdsDbSecurityGroup() != null && other.getAwsRdsDbSecurityGroup().equals(this.getAwsRdsDbSecurityGroup()) == false)
             return false;
+        if (other.getAwsKinesisStream() == null ^ this.getAwsKinesisStream() == null)
+            return false;
+        if (other.getAwsKinesisStream() != null && other.getAwsKinesisStream().equals(this.getAwsKinesisStream()) == false)
+            return false;
+        if (other.getAwsEc2TransitGateway() == null ^ this.getAwsEc2TransitGateway() == null)
+            return false;
+        if (other.getAwsEc2TransitGateway() != null && other.getAwsEc2TransitGateway().equals(this.getAwsEc2TransitGateway()) == false)
+            return false;
+        if (other.getAwsEfsAccessPoint() == null ^ this.getAwsEfsAccessPoint() == null)
+            return false;
+        if (other.getAwsEfsAccessPoint() != null && other.getAwsEfsAccessPoint().equals(this.getAwsEfsAccessPoint()) == false)
+            return false;
+        if (other.getAwsCloudFormationStack() == null ^ this.getAwsCloudFormationStack() == null)
+            return false;
+        if (other.getAwsCloudFormationStack() != null && other.getAwsCloudFormationStack().equals(this.getAwsCloudFormationStack()) == false)
+            return false;
+        if (other.getAwsCloudWatchAlarm() == null ^ this.getAwsCloudWatchAlarm() == null)
+            return false;
+        if (other.getAwsCloudWatchAlarm() != null && other.getAwsCloudWatchAlarm().equals(this.getAwsCloudWatchAlarm()) == false)
+            return false;
+        if (other.getAwsEc2VpcPeeringConnection() == null ^ this.getAwsEc2VpcPeeringConnection() == null)
+            return false;
+        if (other.getAwsEc2VpcPeeringConnection() != null && other.getAwsEc2VpcPeeringConnection().equals(this.getAwsEc2VpcPeeringConnection()) == false)
+            return false;
+        if (other.getAwsWafRegionalRuleGroup() == null ^ this.getAwsWafRegionalRuleGroup() == null)
+            return false;
+        if (other.getAwsWafRegionalRuleGroup() != null && other.getAwsWafRegionalRuleGroup().equals(this.getAwsWafRegionalRuleGroup()) == false)
+            return false;
+        if (other.getAwsWafRegionalRule() == null ^ this.getAwsWafRegionalRule() == null)
+            return false;
+        if (other.getAwsWafRegionalRule() != null && other.getAwsWafRegionalRule().equals(this.getAwsWafRegionalRule()) == false)
+            return false;
+        if (other.getAwsWafRegionalWebAcl() == null ^ this.getAwsWafRegionalWebAcl() == null)
+            return false;
+        if (other.getAwsWafRegionalWebAcl() != null && other.getAwsWafRegionalWebAcl().equals(this.getAwsWafRegionalWebAcl()) == false)
+            return false;
+        if (other.getAwsWafRule() == null ^ this.getAwsWafRule() == null)
+            return false;
+        if (other.getAwsWafRule() != null && other.getAwsWafRule().equals(this.getAwsWafRule()) == false)
+            return false;
+        if (other.getAwsWafRuleGroup() == null ^ this.getAwsWafRuleGroup() == null)
+            return false;
+        if (other.getAwsWafRuleGroup() != null && other.getAwsWafRuleGroup().equals(this.getAwsWafRuleGroup()) == false)
+            return false;
+        if (other.getAwsEcsTask() == null ^ this.getAwsEcsTask() == null)
+            return false;
+        if (other.getAwsEcsTask() != null && other.getAwsEcsTask().equals(this.getAwsEcsTask()) == false)
+            return false;
+        if (other.getAwsBackupBackupVault() == null ^ this.getAwsBackupBackupVault() == null)
+            return false;
+        if (other.getAwsBackupBackupVault() != null && other.getAwsBackupBackupVault().equals(this.getAwsBackupBackupVault()) == false)
+            return false;
+        if (other.getAwsBackupBackupPlan() == null ^ this.getAwsBackupBackupPlan() == null)
+            return false;
+        if (other.getAwsBackupBackupPlan() != null && other.getAwsBackupBackupPlan().equals(this.getAwsBackupBackupPlan()) == false)
+            return false;
+        if (other.getAwsBackupRecoveryPoint() == null ^ this.getAwsBackupRecoveryPoint() == null)
+            return false;
+        if (other.getAwsBackupRecoveryPoint() != null && other.getAwsBackupRecoveryPoint().equals(this.getAwsBackupRecoveryPoint()) == false)
+            return false;
         return true;
     }
 
@@ -3552,6 +4426,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsRdsDbClusterSnapshot() == null) ? 0 : getAwsRdsDbClusterSnapshot().hashCode());
         hashCode = prime * hashCode + ((getAwsRdsDbCluster() == null) ? 0 : getAwsRdsDbCluster().hashCode());
         hashCode = prime * hashCode + ((getAwsEcsCluster() == null) ? 0 : getAwsEcsCluster().hashCode());
+        hashCode = prime * hashCode + ((getAwsEcsContainer() == null) ? 0 : getAwsEcsContainer().hashCode());
         hashCode = prime * hashCode + ((getAwsEcsTaskDefinition() == null) ? 0 : getAwsEcsTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getOther() == null) ? 0 : getOther().hashCode());
@@ -3571,6 +4446,21 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsNetworkFirewallFirewall() == null) ? 0 : getAwsNetworkFirewallFirewall().hashCode());
         hashCode = prime * hashCode + ((getAwsNetworkFirewallRuleGroup() == null) ? 0 : getAwsNetworkFirewallRuleGroup().hashCode());
         hashCode = prime * hashCode + ((getAwsRdsDbSecurityGroup() == null) ? 0 : getAwsRdsDbSecurityGroup().hashCode());
+        hashCode = prime * hashCode + ((getAwsKinesisStream() == null) ? 0 : getAwsKinesisStream().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2TransitGateway() == null) ? 0 : getAwsEc2TransitGateway().hashCode());
+        hashCode = prime * hashCode + ((getAwsEfsAccessPoint() == null) ? 0 : getAwsEfsAccessPoint().hashCode());
+        hashCode = prime * hashCode + ((getAwsCloudFormationStack() == null) ? 0 : getAwsCloudFormationStack().hashCode());
+        hashCode = prime * hashCode + ((getAwsCloudWatchAlarm() == null) ? 0 : getAwsCloudWatchAlarm().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2VpcPeeringConnection() == null) ? 0 : getAwsEc2VpcPeeringConnection().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafRegionalRuleGroup() == null) ? 0 : getAwsWafRegionalRuleGroup().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafRegionalRule() == null) ? 0 : getAwsWafRegionalRule().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafRegionalWebAcl() == null) ? 0 : getAwsWafRegionalWebAcl().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafRule() == null) ? 0 : getAwsWafRule().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafRuleGroup() == null) ? 0 : getAwsWafRuleGroup().hashCode());
+        hashCode = prime * hashCode + ((getAwsEcsTask() == null) ? 0 : getAwsEcsTask().hashCode());
+        hashCode = prime * hashCode + ((getAwsBackupBackupVault() == null) ? 0 : getAwsBackupBackupVault().hashCode());
+        hashCode = prime * hashCode + ((getAwsBackupBackupPlan() == null) ? 0 : getAwsBackupBackupPlan().hashCode());
+        hashCode = prime * hashCode + ((getAwsBackupRecoveryPoint() == null) ? 0 : getAwsBackupRecoveryPoint().hashCode());
         return hashCode;
     }
 

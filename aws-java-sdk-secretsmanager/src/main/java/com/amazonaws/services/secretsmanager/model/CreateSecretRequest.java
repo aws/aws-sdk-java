@@ -93,7 +93,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret.
+     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An
+     * alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
      * </p>
      * <p>
      * To use a KMS key in a different account, use the key ARN or the alias ARN.
@@ -624,7 +627,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret.
+     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An
+     * alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
      * </p>
      * <p>
      * To use a KMS key in a different account, use the key ARN or the alias ARN.
@@ -642,7 +648,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param kmsKeyId
      *        The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the
-     *        secret.</p>
+     *        secret. An alias is always prefixed by <code>alias/</code>, for example
+     *        <code>alias/aws/secretsmanager</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
      *        <p>
      *        To use a KMS key in a different account, use the key ARN or the alias ARN.
      *        </p>
@@ -663,7 +671,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret.
+     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An
+     * alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
      * </p>
      * <p>
      * To use a KMS key in a different account, use the key ARN or the alias ARN.
@@ -680,7 +691,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @return The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the
-     *         secret.</p>
+     *         secret. An alias is always prefixed by <code>alias/</code>, for example
+     *         <code>alias/aws/secretsmanager</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
      *         <p>
      *         To use a KMS key in a different account, use the key ARN or the alias ARN.
      *         </p>
@@ -701,7 +714,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret.
+     * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An
+     * alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
      * </p>
      * <p>
      * To use a KMS key in a different account, use the key ARN or the alias ARN.
@@ -719,7 +735,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param kmsKeyId
      *        The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the
-     *        secret.</p>
+     *        secret. An alias is always prefixed by <code>alias/</code>, for example
+     *        <code>alias/aws/secretsmanager</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
      *        <p>
      *        To use a KMS key in a different account, use the key ARN or the alias ARN.
      *        </p>

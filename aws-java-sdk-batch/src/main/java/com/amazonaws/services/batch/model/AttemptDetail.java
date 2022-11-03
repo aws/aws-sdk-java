@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a job attempt.
+ * An object that represents a job attempt.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/AttemptDetail" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the container in this job attempt.
+     * The details for the container in this job attempt.
      * </p>
      */
     private AttemptContainerDetail container;
@@ -50,18 +50,18 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
     private Long stoppedAt;
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job attempt.
+     * A short, human-readable string to provide additional details for the current status of the job attempt.
      * </p>
      */
     private String statusReason;
 
     /**
      * <p>
-     * Details about the container in this job attempt.
+     * The details for the container in this job attempt.
      * </p>
      * 
      * @param container
-     *        Details about the container in this job attempt.
+     *        The details for the container in this job attempt.
      */
 
     public void setContainer(AttemptContainerDetail container) {
@@ -70,10 +70,10 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the container in this job attempt.
+     * The details for the container in this job attempt.
      * </p>
      * 
-     * @return Details about the container in this job attempt.
+     * @return The details for the container in this job attempt.
      */
 
     public AttemptContainerDetail getContainer() {
@@ -82,11 +82,11 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the container in this job attempt.
+     * The details for the container in this job attempt.
      * </p>
      * 
      * @param container
-     *        Details about the container in this job attempt.
+     *        The details for the container in this job attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job attempt.
+     * A short, human-readable string to provide additional details for the current status of the job attempt.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the job attempt.
+     *        A short, human-readable string to provide additional details for the current status of the job attempt.
      */
 
     public void setStatusReason(String statusReason) {
@@ -205,10 +205,10 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job attempt.
+     * A short, human-readable string to provide additional details for the current status of the job attempt.
      * </p>
      * 
-     * @return A short, human-readable string to provide additional details about the current status of the job attempt.
+     * @return A short, human-readable string to provide additional details for the current status of the job attempt.
      */
 
     public String getStatusReason() {
@@ -217,11 +217,11 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job attempt.
+     * A short, human-readable string to provide additional details for the current status of the job attempt.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the job attempt.
+     *        A short, human-readable string to provide additional details for the current status of the job attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

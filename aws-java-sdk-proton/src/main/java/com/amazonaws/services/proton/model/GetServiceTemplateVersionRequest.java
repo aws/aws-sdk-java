@@ -27,30 +27,30 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * To view service template major version detail data, include <code>major Version</code>.
+     * To get service template major version detail data, include <code>major Version</code>.
      * </p>
      */
     private String majorVersion;
     /**
      * <p>
-     * To view service template minor version detail data, include <code>minorVersion</code>.
+     * To get service template minor version detail data, include <code>minorVersion</code>.
      * </p>
      */
     private String minorVersion;
     /**
      * <p>
-     * The name of the service template.
+     * The name of the service template a version of which you want to get detailed data for.
      * </p>
      */
     private String templateName;
 
     /**
      * <p>
-     * To view service template major version detail data, include <code>major Version</code>.
+     * To get service template major version detail data, include <code>major Version</code>.
      * </p>
      * 
      * @param majorVersion
-     *        To view service template major version detail data, include <code>major Version</code>.
+     *        To get service template major version detail data, include <code>major Version</code>.
      */
 
     public void setMajorVersion(String majorVersion) {
@@ -59,10 +59,10 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * To view service template major version detail data, include <code>major Version</code>.
+     * To get service template major version detail data, include <code>major Version</code>.
      * </p>
      * 
-     * @return To view service template major version detail data, include <code>major Version</code>.
+     * @return To get service template major version detail data, include <code>major Version</code>.
      */
 
     public String getMajorVersion() {
@@ -71,11 +71,11 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * To view service template major version detail data, include <code>major Version</code>.
+     * To get service template major version detail data, include <code>major Version</code>.
      * </p>
      * 
      * @param majorVersion
-     *        To view service template major version detail data, include <code>major Version</code>.
+     *        To get service template major version detail data, include <code>major Version</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * To view service template minor version detail data, include <code>minorVersion</code>.
+     * To get service template minor version detail data, include <code>minorVersion</code>.
      * </p>
      * 
      * @param minorVersion
-     *        To view service template minor version detail data, include <code>minorVersion</code>.
+     *        To get service template minor version detail data, include <code>minorVersion</code>.
      */
 
     public void setMinorVersion(String minorVersion) {
@@ -99,10 +99,10 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * To view service template minor version detail data, include <code>minorVersion</code>.
+     * To get service template minor version detail data, include <code>minorVersion</code>.
      * </p>
      * 
-     * @return To view service template minor version detail data, include <code>minorVersion</code>.
+     * @return To get service template minor version detail data, include <code>minorVersion</code>.
      */
 
     public String getMinorVersion() {
@@ -111,11 +111,11 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * To view service template minor version detail data, include <code>minorVersion</code>.
+     * To get service template minor version detail data, include <code>minorVersion</code>.
      * </p>
      * 
      * @param minorVersion
-     *        To view service template minor version detail data, include <code>minorVersion</code>.
+     *        To get service template minor version detail data, include <code>minorVersion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the service template.
+     * The name of the service template a version of which you want to get detailed data for.
      * </p>
      * 
      * @param templateName
-     *        The name of the service template.
+     *        The name of the service template a version of which you want to get detailed data for.
      */
 
     public void setTemplateName(String templateName) {
@@ -139,10 +139,10 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the service template.
+     * The name of the service template a version of which you want to get detailed data for.
      * </p>
      * 
-     * @return The name of the service template.
+     * @return The name of the service template a version of which you want to get detailed data for.
      */
 
     public String getTemplateName() {
@@ -151,11 +151,11 @@ public class GetServiceTemplateVersionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the service template.
+     * The name of the service template a version of which you want to get detailed data for.
      * </p>
      * 
      * @param templateName
-     *        The name of the service template.
+     *        The name of the service template a version of which you want to get detailed data for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

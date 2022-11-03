@@ -43,6 +43,18 @@ public class DescribeChannelMembershipRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String chimeBearer;
+    /**
+     * <p>
+     * The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+     * object.
+     * </p>
+     * <note>
+     * <p>
+     * Only required to get a user’s SubChannel membership details.
+     * </p>
+     * </note>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -165,6 +177,76 @@ public class DescribeChannelMembershipRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+     * object.
+     * </p>
+     * <note>
+     * <p>
+     * Only required to get a user’s SubChannel membership details.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+     *        object.</p> <note>
+     *        <p>
+     *        Only required to get a user’s SubChannel membership details.
+     *        </p>
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+     * object.
+     * </p>
+     * <note>
+     * <p>
+     * Only required to get a user’s SubChannel membership details.
+     * </p>
+     * </note>
+     * 
+     * @return The ID of the SubChannel in the request. The response contains an
+     *         <code>ElasticChannelConfiguration</code> object.</p> <note>
+     *         <p>
+     *         Only required to get a user’s SubChannel membership details.
+     *         </p>
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+     * object.
+     * </p>
+     * <note>
+     * <p>
+     * Only required to get a user’s SubChannel membership details.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+     *        object.</p> <note>
+     *        <p>
+     *        Only required to get a user’s SubChannel membership details.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelMembershipRequest withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +263,9 @@ public class DescribeChannelMembershipRequest extends com.amazonaws.AmazonWebSer
         if (getMemberArn() != null)
             sb.append("MemberArn: ").append(getMemberArn()).append(",");
         if (getChimeBearer() != null)
-            sb.append("ChimeBearer: ").append(getChimeBearer());
+            sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +292,10 @@ public class DescribeChannelMembershipRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +307,7 @@ public class DescribeChannelMembershipRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getMemberArn() == null) ? 0 : getMemberArn().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

@@ -39,6 +39,18 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails
      * <p>
      * The list of tmpfs volume mount options.
      * </p>
+     * <p>
+     * Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     * <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> |
+     * <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> |
+     * <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> |
+     * <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> |
+     * <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |
+     * <code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |
+     * <code> "nr_blocks"</code> | <code>"mpol"</code>
+     * </p>
      */
     private java.util.List<String> mountOptions;
     /**
@@ -92,8 +104,31 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails
      * <p>
      * The list of tmpfs volume mount options.
      * </p>
+     * <p>
+     * Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     * <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> |
+     * <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> |
+     * <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> |
+     * <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> |
+     * <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |
+     * <code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |
+     * <code> "nr_blocks"</code> | <code>"mpol"</code>
+     * </p>
      * 
-     * @return The list of tmpfs volume mount options.
+     * @return The list of tmpfs volume mount options.</p>
+     *         <p>
+     *         Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     *         <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> |
+     *         <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     *         <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> |
+     *         <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> |
+     *         <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> |
+     *         <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> |
+     *         <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code>
+     *         | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> |
+     *         <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code>
      */
 
     public java.util.List<String> getMountOptions() {
@@ -104,9 +139,32 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails
      * <p>
      * The list of tmpfs volume mount options.
      * </p>
+     * <p>
+     * Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     * <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> |
+     * <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> |
+     * <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> |
+     * <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> |
+     * <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |
+     * <code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |
+     * <code> "nr_blocks"</code> | <code>"mpol"</code>
+     * </p>
      * 
      * @param mountOptions
-     *        The list of tmpfs volume mount options.
+     *        The list of tmpfs volume mount options.</p>
+     *        <p>
+     *        Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     *        <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> |
+     *        <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     *        <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> |
+     *        <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> |
+     *        <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> |
+     *        <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> |
+     *        <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> |
+     *        <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> |
+     *        <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code>
      */
 
     public void setMountOptions(java.util.Collection<String> mountOptions) {
@@ -123,13 +181,36 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails
      * The list of tmpfs volume mount options.
      * </p>
      * <p>
+     * Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     * <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> |
+     * <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> |
+     * <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> |
+     * <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> |
+     * <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |
+     * <code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |
+     * <code> "nr_blocks"</code> | <code>"mpol"</code>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMountOptions(java.util.Collection)} or {@link #withMountOptions(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param mountOptions
-     *        The list of tmpfs volume mount options.
+     *        The list of tmpfs volume mount options.</p>
+     *        <p>
+     *        Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     *        <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> |
+     *        <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     *        <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> |
+     *        <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> |
+     *        <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> |
+     *        <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> |
+     *        <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> |
+     *        <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> |
+     *        <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,9 +228,32 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails
      * <p>
      * The list of tmpfs volume mount options.
      * </p>
+     * <p>
+     * Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     * <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> |
+     * <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> |
+     * <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> |
+     * <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> |
+     * <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |
+     * <code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |
+     * <code> "nr_blocks"</code> | <code>"mpol"</code>
+     * </p>
      * 
      * @param mountOptions
-     *        The list of tmpfs volume mount options.
+     *        The list of tmpfs volume mount options.</p>
+     *        <p>
+     *        Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> |
+     *        <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> |
+     *        <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     *        <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> |
+     *        <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> |
+     *        <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> |
+     *        <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> |
+     *        <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> |
+     *        <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> |
+     *        <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

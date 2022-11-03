@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class CaptionDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
+     * dialog, music, and sounds.
+     */
+    private String accessibility;
+    /**
      * Specifies which input caption selector to use as a caption source when generating output captions. This field
      * should match a captionSelector name.
      */
@@ -42,6 +47,65 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
      * within an event.
      */
     private String name;
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
+     * dialog, music, and sounds.
+     * 
+     * @param accessibility
+     *        Indicates whether the caption track implements accessibility features such as written descriptions of
+     *        spoken dialog, music, and sounds.
+     * @see AccessibilityType
+     */
+
+    public void setAccessibility(String accessibility) {
+        this.accessibility = accessibility;
+    }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
+     * dialog, music, and sounds.
+     * 
+     * @return Indicates whether the caption track implements accessibility features such as written descriptions of
+     *         spoken dialog, music, and sounds.
+     * @see AccessibilityType
+     */
+
+    public String getAccessibility() {
+        return this.accessibility;
+    }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
+     * dialog, music, and sounds.
+     * 
+     * @param accessibility
+     *        Indicates whether the caption track implements accessibility features such as written descriptions of
+     *        spoken dialog, music, and sounds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessibilityType
+     */
+
+    public CaptionDescription withAccessibility(String accessibility) {
+        setAccessibility(accessibility);
+        return this;
+    }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
+     * dialog, music, and sounds.
+     * 
+     * @param accessibility
+     *        Indicates whether the caption track implements accessibility features such as written descriptions of
+     *        spoken dialog, music, and sounds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessibilityType
+     */
+
+    public CaptionDescription withAccessibility(AccessibilityType accessibility) {
+        this.accessibility = accessibility.toString();
+        return this;
+    }
 
     /**
      * Specifies which input caption selector to use as a caption source when generating output captions. This field
@@ -237,6 +301,8 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccessibility() != null)
+            sb.append("Accessibility: ").append(getAccessibility()).append(",");
         if (getCaptionSelectorName() != null)
             sb.append("CaptionSelectorName: ").append(getCaptionSelectorName()).append(",");
         if (getDestinationSettings() != null)
@@ -261,6 +327,10 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
         if (obj instanceof CaptionDescription == false)
             return false;
         CaptionDescription other = (CaptionDescription) obj;
+        if (other.getAccessibility() == null ^ this.getAccessibility() == null)
+            return false;
+        if (other.getAccessibility() != null && other.getAccessibility().equals(this.getAccessibility()) == false)
+            return false;
         if (other.getCaptionSelectorName() == null ^ this.getCaptionSelectorName() == null)
             return false;
         if (other.getCaptionSelectorName() != null && other.getCaptionSelectorName().equals(this.getCaptionSelectorName()) == false)
@@ -289,6 +359,7 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccessibility() == null) ? 0 : getAccessibility().hashCode());
         hashCode = prime * hashCode + ((getCaptionSelectorName() == null) ? 0 : getCaptionSelectorName().hashCode());
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());

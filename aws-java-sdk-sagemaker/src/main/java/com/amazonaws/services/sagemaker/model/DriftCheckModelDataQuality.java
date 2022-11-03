@@ -29,12 +29,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DriftCheckModelDataQuality implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The drift check model data quality statistics.
+     * </p>
+     */
     private MetricsSource statistics;
-
+    /**
+     * <p>
+     * The drift check model data quality constraints.
+     * </p>
+     */
     private MetricsSource constraints;
 
     /**
+     * <p>
+     * The drift check model data quality statistics.
+     * </p>
+     * 
      * @param statistics
+     *        The drift check model data quality statistics.
      */
 
     public void setStatistics(MetricsSource statistics) {
@@ -42,7 +56,11 @@ public class DriftCheckModelDataQuality implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The drift check model data quality statistics.
+     * </p>
+     * 
+     * @return The drift check model data quality statistics.
      */
 
     public MetricsSource getStatistics() {
@@ -50,7 +68,12 @@ public class DriftCheckModelDataQuality implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The drift check model data quality statistics.
+     * </p>
+     * 
      * @param statistics
+     *        The drift check model data quality statistics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +83,12 @@ public class DriftCheckModelDataQuality implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The drift check model data quality constraints.
+     * </p>
+     * 
      * @param constraints
+     *        The drift check model data quality constraints.
      */
 
     public void setConstraints(MetricsSource constraints) {
@@ -68,7 +96,11 @@ public class DriftCheckModelDataQuality implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The drift check model data quality constraints.
+     * </p>
+     * 
+     * @return The drift check model data quality constraints.
      */
 
     public MetricsSource getConstraints() {
@@ -76,7 +108,12 @@ public class DriftCheckModelDataQuality implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The drift check model data quality constraints.
+     * </p>
+     * 
      * @param constraints
+     *        The drift check model data quality constraints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

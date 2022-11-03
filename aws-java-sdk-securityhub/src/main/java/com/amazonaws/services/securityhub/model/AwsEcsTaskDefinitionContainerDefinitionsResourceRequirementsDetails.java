@@ -31,7 +31,8 @@ public class AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
 
     /**
      * <p>
-     * The type of resource to assign to a container.
+     * The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     * <code>InferenceAccelerator</code>.
      * </p>
      */
     private String type;
@@ -52,11 +53,13 @@ public class AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
 
     /**
      * <p>
-     * The type of resource to assign to a container.
+     * The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     * <code>InferenceAccelerator</code>.
      * </p>
      * 
      * @param type
-     *        The type of resource to assign to a container.
+     *        The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     *        <code>InferenceAccelerator</code>.
      */
 
     public void setType(String type) {
@@ -65,10 +68,12 @@ public class AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
 
     /**
      * <p>
-     * The type of resource to assign to a container.
+     * The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     * <code>InferenceAccelerator</code>.
      * </p>
      * 
-     * @return The type of resource to assign to a container.
+     * @return The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     *         <code>InferenceAccelerator</code>.
      */
 
     public String getType() {
@@ -77,11 +82,13 @@ public class AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
 
     /**
      * <p>
-     * The type of resource to assign to a container.
+     * The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     * <code>InferenceAccelerator</code>.
      * </p>
      * 
      * @param type
-     *        The type of resource to assign to a container.
+     *        The type of resource to assign to a container. Valid values are <code>GPU</code> or
+     *        <code>InferenceAccelerator</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

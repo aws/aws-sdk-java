@@ -1511,6 +1511,15 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
      * >Comparing the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * No permissions are required for users to perform this operation. The purpose of the
+     * <code>sts:GetSessionToken</code> operation is to authenticate the user using MFA. You cannot use policies to
+     * control authentication operations. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html"
+     * >Permissions for GetSessionToken</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * <b>Session Duration</b>
      * </p>

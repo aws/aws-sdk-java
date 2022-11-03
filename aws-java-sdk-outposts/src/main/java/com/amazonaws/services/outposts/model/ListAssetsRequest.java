@@ -33,11 +33,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String outpostIdentifier;
     /**
      * <p>
-     * A filter for the host ID of Dedicated Hosts on the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the host ID of a Dedicated Host.
      * </p>
      */
     private java.util.List<String> hostIdFilter;
@@ -45,6 +41,12 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maxResults;
 
     private String nextToken;
+    /**
+     * <p>
+     * Filters the results by state.
+     * </p>
+     */
+    private java.util.List<String> statusFilter;
 
     /**
      * <p>
@@ -88,17 +90,10 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter for the host ID of Dedicated Hosts on the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the host ID of a Dedicated Host.
      * </p>
      * 
-     * @return A filter for the host ID of Dedicated Hosts on the Outpost. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by the host ID of a Dedicated Host.
      */
 
     public java.util.List<String> getHostIdFilter() {
@@ -107,18 +102,11 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter for the host ID of Dedicated Hosts on the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the host ID of a Dedicated Host.
      * </p>
      * 
      * @param hostIdFilter
-     *        A filter for the host ID of Dedicated Hosts on the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by the host ID of a Dedicated Host.
      */
 
     public void setHostIdFilter(java.util.Collection<String> hostIdFilter) {
@@ -132,11 +120,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter for the host ID of Dedicated Hosts on the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the host ID of a Dedicated Host.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,10 +129,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param hostIdFilter
-     *        A filter for the host ID of Dedicated Hosts on the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by the host ID of a Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,18 +145,11 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter for the host ID of Dedicated Hosts on the Outpost.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by the host ID of a Dedicated Host.
      * </p>
      * 
      * @param hostIdFilter
-     *        A filter for the host ID of Dedicated Hosts on the Outpost. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by the host ID of a Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,6 +211,104 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Filters the results by state.
+     * </p>
+     * 
+     * @return Filters the results by state.
+     * @see AssetState
+     */
+
+    public java.util.List<String> getStatusFilter() {
+        return statusFilter;
+    }
+
+    /**
+     * <p>
+     * Filters the results by state.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Filters the results by state.
+     * @see AssetState
+     */
+
+    public void setStatusFilter(java.util.Collection<String> statusFilter) {
+        if (statusFilter == null) {
+            this.statusFilter = null;
+            return;
+        }
+
+        this.statusFilter = new java.util.ArrayList<String>(statusFilter);
+    }
+
+    /**
+     * <p>
+     * Filters the results by state.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatusFilter(java.util.Collection)} or {@link #withStatusFilter(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Filters the results by state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetState
+     */
+
+    public ListAssetsRequest withStatusFilter(String... statusFilter) {
+        if (this.statusFilter == null) {
+            setStatusFilter(new java.util.ArrayList<String>(statusFilter.length));
+        }
+        for (String ele : statusFilter) {
+            this.statusFilter.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results by state.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Filters the results by state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetState
+     */
+
+    public ListAssetsRequest withStatusFilter(java.util.Collection<String> statusFilter) {
+        setStatusFilter(statusFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results by state.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Filters the results by state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetState
+     */
+
+    public ListAssetsRequest withStatusFilter(AssetState... statusFilter) {
+        java.util.ArrayList<String> statusFilterCopy = new java.util.ArrayList<String>(statusFilter.length);
+        for (AssetState value : statusFilter) {
+            statusFilterCopy.add(value.toString());
+        }
+        if (getStatusFilter() == null) {
+            setStatusFilter(statusFilterCopy);
+        } else {
+            getStatusFilter().addAll(statusFilterCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +327,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getStatusFilter() != null)
+            sb.append("StatusFilter: ").append(getStatusFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +360,10 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getStatusFilter() == null ^ this.getStatusFilter() == null)
+            return false;
+        if (other.getStatusFilter() != null && other.getStatusFilter().equals(this.getStatusFilter()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +376,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getHostIdFilter() == null) ? 0 : getHostIdFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         return hashCode;
     }
 

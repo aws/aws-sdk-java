@@ -19,14 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for Lustre logging used to write the enabled logging events for your file system to Amazon
- * CloudWatch Logs.
- * </p>
- * <p>
- * When logging is enabled, Lustre logs error and warning events from data repository operations such as automatic
- * export and data repository tasks. To learn more about Lustre logging, see <a
- * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging with Amazon CloudWatch
- * Logs</a>.
+ * The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file
+ * system or Amazon File Cache resource to Amazon CloudWatch Logs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreLogConfiguration" target="_top">AWS API
@@ -61,6 +55,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
+     * </p>
      */
     private String level;
     /**
@@ -98,6 +95,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
+     * </p>
      * 
      * @param level
      *        The data repository events that are logged by Amazon FSx.</p>
@@ -122,6 +122,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      *        <code>DISABLED</code> - logging of data repository events is turned off.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
      * @see LustreAccessAuditLogLevel
      */
 
@@ -155,6 +158,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
+     * </p>
      * 
      * @return The data repository events that are logged by Amazon FSx.</p>
      *         <ul>
@@ -178,6 +184,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      *         <code>DISABLED</code> - logging of data repository events is turned off.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
      * @see LustreAccessAuditLogLevel
      */
 
@@ -211,6 +220,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
+     * </p>
      * 
      * @param level
      *        The data repository events that are logged by Amazon FSx.</p>
@@ -235,6 +247,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      *        <code>DISABLED</code> - logging of data repository events is turned off.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LustreAccessAuditLogLevel
      */
@@ -270,6 +285,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
+     * </p>
      * 
      * @param level
      *        The data repository events that are logged by Amazon FSx.</p>
@@ -294,6 +312,9 @@ public class LustreLogConfiguration implements Serializable, Cloneable, Structur
      *        <code>DISABLED</code> - logging of data repository events is turned off.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LustreAccessAuditLogLevel
      */

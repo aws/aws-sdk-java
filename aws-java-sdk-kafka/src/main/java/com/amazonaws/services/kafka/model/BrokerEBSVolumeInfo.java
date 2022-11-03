@@ -36,7 +36,11 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String kafkaBrokerNodeId;
-    /** EBS volume provisioned throughput information. */
+    /**
+     * <p>
+     * EBS volume provisioned throughput information.
+     * </p>
+     */
     private ProvisionedThroughput provisionedThroughput;
     /**
      * <p>
@@ -92,10 +96,14 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * EBS volume provisioned throughput information.
+     * </p>
      * 
      * @param provisionedThroughput
+     *        <p>
      *        EBS volume provisioned throughput information.
+     *        </p>
      */
 
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
@@ -103,9 +111,13 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * EBS volume provisioned throughput information.
+     * </p>
      * 
-     * @return EBS volume provisioned throughput information.
+     * @return <p>
+     *         EBS volume provisioned throughput information.
+     *         </p>
      */
 
     public ProvisionedThroughput getProvisionedThroughput() {
@@ -113,10 +125,14 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * EBS volume provisioned throughput information.
+     * </p>
      * 
      * @param provisionedThroughput
+     *        <p>
      *        EBS volume provisioned throughput information.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

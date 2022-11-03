@@ -30,18 +30,18 @@ public class GlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user who you want to sign out.
      * </p>
      */
     private String accessToken;
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user who you want to sign out.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user who you want to sign out.
      */
 
     public void setAccessToken(String accessToken) {
@@ -50,10 +50,10 @@ public class GlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user who you want to sign out.
      * </p>
      * 
-     * @return The access token.
+     * @return A valid access token that Amazon Cognito issued to the user who you want to sign out.
      */
 
     public String getAccessToken() {
@@ -62,11 +62,11 @@ public class GlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user who you want to sign out.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user who you want to sign out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

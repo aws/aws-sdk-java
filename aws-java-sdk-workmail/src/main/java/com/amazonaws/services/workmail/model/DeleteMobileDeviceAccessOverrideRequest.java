@@ -27,7 +27,7 @@ public class DeleteMobileDeviceAccessOverrideRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the access override will be deleted.
+     * The WorkMail organization for which the access override will be deleted.
      * </p>
      */
     private String organizationId;
@@ -64,11 +64,11 @@ public class DeleteMobileDeviceAccessOverrideRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the access override will be deleted.
+     * The WorkMail organization for which the access override will be deleted.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the access override will be deleted.
+     *        The WorkMail organization for which the access override will be deleted.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -77,10 +77,10 @@ public class DeleteMobileDeviceAccessOverrideRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the access override will be deleted.
+     * The WorkMail organization for which the access override will be deleted.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the access override will be deleted.
+     * @return The WorkMail organization for which the access override will be deleted.
      */
 
     public String getOrganizationId() {
@@ -89,11 +89,11 @@ public class DeleteMobileDeviceAccessOverrideRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the access override will be deleted.
+     * The WorkMail organization for which the access override will be deleted.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the access override will be deleted.
+     *        The WorkMail organization for which the access override will be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

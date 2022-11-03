@@ -30,7 +30,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      */
     private String applicationName;
@@ -43,24 +43,24 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * If specified, the deployment configuration name can be either one of the predefined configurations provided with
-     * AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment
-     * configuration operation.
+     * CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration
+     * operation.
      * </p>
      * <p>
      * <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration
      * isn't specified for the deployment or deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     * For more information about the predefined deployment configurations in CodeDeploy, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     * Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      */
     private String deploymentConfigName;
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
-     * tags. Cannot be used in the same call as ec2TagSet.
+     * The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
+     * specified tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
@@ -79,16 +79,16 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroups;
     /**
      * <p>
-     * A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting
-     * with AWS services.
+     * A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting
+     * with Amazon Web Services services.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
-     * CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
+     * CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
@@ -106,16 +106,16 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      */
     private String outdatedInstancesStrategy;
@@ -140,8 +140,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private LoadBalancerInfo loadBalancerInfo;
     /**
      * <p>
-     * Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
+     * Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2
+     * instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
      * </p>
      */
     private EC2TagSet ec2TagSet;
@@ -171,11 +171,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -184,10 +184,10 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * @return The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      */
 
     public String getApplicationName() {
@@ -196,11 +196,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,31 +252,31 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * If specified, the deployment configuration name can be either one of the predefined configurations provided with
-     * AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment
-     * configuration operation.
+     * CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration
+     * operation.
      * </p>
      * <p>
      * <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration
      * isn't specified for the deployment or deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     * For more information about the predefined deployment configurations in CodeDeploy, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     * Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param deploymentConfigName
      *        If specified, the deployment configuration name can be either one of the predefined configurations
-     *        provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create
+     *        provided with CodeDeploy or a custom deployment configuration that you create by calling the create
      *        deployment configuration operation.</p>
      *        <p>
      *        <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a
      *        configuration isn't specified for the deployment or deployment group.
      *        </p>
      *        <p>
-     *        For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     *        For more information about the predefined deployment configurations in CodeDeploy, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     *        Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public void setDeploymentConfigName(String deploymentConfigName) {
@@ -286,30 +286,30 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * If specified, the deployment configuration name can be either one of the predefined configurations provided with
-     * AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment
-     * configuration operation.
+     * CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration
+     * operation.
      * </p>
      * <p>
      * <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration
      * isn't specified for the deployment or deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     * For more information about the predefined deployment configurations in CodeDeploy, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     * Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @return If specified, the deployment configuration name can be either one of the predefined configurations
-     *         provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create
+     *         provided with CodeDeploy or a custom deployment configuration that you create by calling the create
      *         deployment configuration operation.</p>
      *         <p>
      *         <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a
      *         configuration isn't specified for the deployment or deployment group.
      *         </p>
      *         <p>
-     *         For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     *         For more information about the predefined deployment configurations in CodeDeploy, see <a
      *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
-     *         with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *         with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public String getDeploymentConfigName() {
@@ -319,31 +319,31 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * If specified, the deployment configuration name can be either one of the predefined configurations provided with
-     * AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment
-     * configuration operation.
+     * CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration
+     * operation.
      * </p>
      * <p>
      * <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration
      * isn't specified for the deployment or deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     * For more information about the predefined deployment configurations in CodeDeploy, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     * Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param deploymentConfigName
      *        If specified, the deployment configuration name can be either one of the predefined configurations
-     *        provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create
+     *        provided with CodeDeploy or a custom deployment configuration that you create by calling the create
      *        deployment configuration operation.</p>
      *        <p>
      *        <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a
      *        configuration isn't specified for the deployment or deployment group.
      *        </p>
      *        <p>
-     *        For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
+     *        For more information about the predefined deployment configurations in CodeDeploy, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     *        Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,12 +354,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
-     * tags. Cannot be used in the same call as ec2TagSet.
+     * The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
+     * specified tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * 
-     * @return The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
-     *         specified tags. Cannot be used in the same call as ec2TagSet.
+     * @return The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of
+     *         the specified tags. Cannot be used in the same call as ec2TagSet.
      */
 
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
@@ -371,12 +371,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
-     * tags. Cannot be used in the same call as ec2TagSet.
+     * The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
+     * specified tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *        The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
      *        specified tags. Cannot be used in the same call as ec2TagSet.
      */
 
@@ -391,8 +391,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
-     * tags. Cannot be used in the same call as ec2TagSet.
+     * The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
+     * specified tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -401,7 +401,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *        The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
      *        specified tags. Cannot be used in the same call as ec2TagSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -418,12 +418,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
-     * tags. Cannot be used in the same call as ec2TagSet.
+     * The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
+     * specified tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *        The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the
      *        specified tags. Cannot be used in the same call as ec2TagSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -589,13 +589,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting
-     * with AWS services.
+     * A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting
+     * with Amazon Web Services services.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when
-     *        interacting with AWS services.
+     *        A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when
+     *        interacting with Amazon Web Services services.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -604,12 +604,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting
-     * with AWS services.
+     * A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting
+     * with Amazon Web Services services.
      * </p>
      * 
-     * @return A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when
-     *         interacting with AWS services.
+     * @return A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when
+     *         interacting with Amazon Web Services services.
      */
 
     public String getServiceRoleArn() {
@@ -618,13 +618,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting
-     * with AWS services.
+     * A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting
+     * with Amazon Web Services services.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when
-     *        interacting with AWS services.
+     *        A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when
+     *        interacting with Amazon Web Services services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -636,13 +636,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
-     * CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
+     * CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @return Information about triggers to create when the deployment group is created. For examples, see <a
      *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger
-     *         for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *         for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
@@ -655,14 +655,14 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
-     * CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
+     * CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is created. For examples, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
-     *        an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public void setTriggerConfigurations(java.util.Collection<TriggerConfig> triggerConfigurations) {
@@ -677,8 +677,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
-     * CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
+     * CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -689,7 +689,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is created. For examples, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
-     *        an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -706,14 +706,14 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
-     * CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
+     * CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is created. For examples, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
-     *        an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,29 +804,29 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
      * @param outdatedInstancesStrategy
-     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *        application revision.</p>
+     *        Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *        deployed application revision.</p>
      *        <p>
      *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *        instances.
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *        EC2 instances.
      *        </p>
      *        <p>
      *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *        EC2 instances. This may result in instances having different revisions.
+     *        Amazon EC2 instances. This may result in instances having different revisions.
      * @see OutdatedInstancesStrategy
      */
 
@@ -836,28 +836,28 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
-     * @return Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *         application revision.</p>
+     * @return Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *         deployed application revision.</p>
      *         <p>
      *         If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *         'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *         instances.
+     *         'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *         EC2 instances.
      *         </p>
      *         <p>
      *         If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *         EC2 instances. This may result in instances having different revisions.
+     *         Amazon EC2 instances. This may result in instances having different revisions.
      * @see OutdatedInstancesStrategy
      */
 
@@ -867,29 +867,29 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
      * @param outdatedInstancesStrategy
-     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *        application revision.</p>
+     *        Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *        deployed application revision.</p>
      *        <p>
      *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *        instances.
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *        EC2 instances.
      *        </p>
      *        <p>
      *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *        EC2 instances. This may result in instances having different revisions.
+     *        Amazon EC2 instances. This may result in instances having different revisions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutdatedInstancesStrategy
      */
@@ -901,29 +901,29 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
      * @param outdatedInstancesStrategy
-     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *        application revision.</p>
+     *        Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *        deployed application revision.</p>
      *        <p>
      *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *        instances.
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *        EC2 instances.
      *        </p>
      *        <p>
      *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *        EC2 instances. This may result in instances having different revisions.
+     *        Amazon EC2 instances. This may result in instances having different revisions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutdatedInstancesStrategy
      */
@@ -1061,13 +1061,14 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
+     * Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2
+     * instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about groups of tags applied to EC2 instances. The deployment group includes only EC2
-     *        instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
+     *        Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only
+     *        Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as
+     *        <code>ec2TagFilters</code>.
      */
 
     public void setEc2TagSet(EC2TagSet ec2TagSet) {
@@ -1076,13 +1077,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
+     * Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2
+     * instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
      * </p>
      * 
-     * @return Information about groups of tags applied to EC2 instances. The deployment group includes only EC2
-     *         instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>
-     *         .
+     * @return Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only
+     *         Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as
+     *         <code>ec2TagFilters</code>.
      */
 
     public EC2TagSet getEc2TagSet() {
@@ -1091,13 +1092,14 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
+     * Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2
+     * instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about groups of tags applied to EC2 instances. The deployment group includes only EC2
-     *        instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.
+     *        Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only
+     *        Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as
+     *        <code>ec2TagFilters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

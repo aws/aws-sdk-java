@@ -33,7 +33,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
     private String autoScalingGroupName;
     /**
      * <p>
-     * Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:
+     * Identifies the metrics to enable.
+     * </p>
+     * <p>
+     * You can specify one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -76,11 +79,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The instance weighting feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>GroupInServiceCapacity</code>
@@ -106,11 +104,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The warm pools feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>WarmPoolDesiredCapacity</code>
@@ -148,13 +141,19 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all metrics are enabled.
+     * If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> metrics;
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     * The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is
+     * <code>1Minute</code>.
      * </p>
      */
     private String granularity;
@@ -201,7 +200,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:
+     * Identifies the metrics to enable.
+     * </p>
+     * <p>
+     * You can specify one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -244,11 +246,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The instance weighting feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>GroupInServiceCapacity</code>
@@ -274,11 +271,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The warm pools feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>WarmPoolDesiredCapacity</code>
@@ -316,11 +308,18 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all metrics are enabled.
+     * If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return Specifies which group-level metrics to start collecting. You can specify one or more of the following
-     *         metrics:</p>
+     * @return Identifies the metrics to enable.</p>
+     *         <p>
+     *         You can specify one or more of the following metrics:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -362,11 +361,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *         <code>GroupTotalInstances</code>
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         The instance weighting feature supports the following additional metrics:
-     *         </p>
-     *         <ul>
      *         <li>
      *         <p>
      *         <code>GroupInServiceCapacity</code>
@@ -392,11 +386,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *         <code>GroupTotalCapacity</code>
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         The warm pools feature supports the following additional metrics:
-     *         </p>
-     *         <ul>
      *         <li>
      *         <p>
      *         <code>WarmPoolDesiredCapacity</code>
@@ -434,7 +423,12 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         </ul>
      *         <p>
-     *         If you omit this parameter, all metrics are enabled.
+     *         If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *         >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public java.util.List<String> getMetrics() {
@@ -446,7 +440,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:
+     * Identifies the metrics to enable.
+     * </p>
+     * <p>
+     * You can specify one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -489,11 +486,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The instance weighting feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>GroupInServiceCapacity</code>
@@ -519,11 +511,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The warm pools feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>WarmPoolDesiredCapacity</code>
@@ -561,12 +548,19 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all metrics are enabled.
+     * If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param metrics
-     *        Specifies which group-level metrics to start collecting. You can specify one or more of the following
-     *        metrics:</p>
+     *        Identifies the metrics to enable.</p>
+     *        <p>
+     *        You can specify one or more of the following metrics:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -608,11 +602,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The instance weighting feature supports the following additional metrics:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>GroupInServiceCapacity</code>
@@ -638,11 +627,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        <code>GroupTotalCapacity</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The warm pools feature supports the following additional metrics:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>WarmPoolDesiredCapacity</code>
@@ -680,7 +664,12 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        </ul>
      *        <p>
-     *        If you omit this parameter, all metrics are enabled.
+     *        If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *        >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMetrics(java.util.Collection<String> metrics) {
@@ -694,7 +683,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:
+     * Identifies the metrics to enable.
+     * </p>
+     * <p>
+     * You can specify one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -737,11 +729,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The instance weighting feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>GroupInServiceCapacity</code>
@@ -767,11 +754,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The warm pools feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>WarmPoolDesiredCapacity</code>
@@ -809,7 +791,12 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all metrics are enabled.
+     * If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -818,8 +805,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param metrics
-     *        Specifies which group-level metrics to start collecting. You can specify one or more of the following
-     *        metrics:</p>
+     *        Identifies the metrics to enable.</p>
+     *        <p>
+     *        You can specify one or more of the following metrics:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -861,11 +850,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The instance weighting feature supports the following additional metrics:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>GroupInServiceCapacity</code>
@@ -891,11 +875,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        <code>GroupTotalCapacity</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The warm pools feature supports the following additional metrics:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>WarmPoolDesiredCapacity</code>
@@ -933,7 +912,12 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        </ul>
      *        <p>
-     *        If you omit this parameter, all metrics are enabled.
+     *        If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *        >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -949,7 +933,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:
+     * Identifies the metrics to enable.
+     * </p>
+     * <p>
+     * You can specify one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -992,11 +979,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The instance weighting feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>GroupInServiceCapacity</code>
@@ -1022,11 +1004,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The warm pools feature supports the following additional metrics:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>WarmPoolDesiredCapacity</code>
@@ -1064,12 +1041,19 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all metrics are enabled.
+     * If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param metrics
-     *        Specifies which group-level metrics to start collecting. You can specify one or more of the following
-     *        metrics:</p>
+     *        Identifies the metrics to enable.</p>
+     *        <p>
+     *        You can specify one or more of the following metrics:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1111,11 +1095,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The instance weighting feature supports the following additional metrics:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>GroupInServiceCapacity</code>
@@ -1141,11 +1120,6 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        <code>GroupTotalCapacity</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The warm pools feature supports the following additional metrics:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>WarmPoolDesiredCapacity</code>
@@ -1183,7 +1157,12 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        </ul>
      *        <p>
-     *        If you omit this parameter, all metrics are enabled.
+     *        If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *        >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1194,11 +1173,13 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     * The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is
+     * <code>1Minute</code>.
      * </p>
      * 
      * @param granularity
-     *        The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     *        The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value
+     *        is <code>1Minute</code>.
      */
 
     public void setGranularity(String granularity) {
@@ -1207,10 +1188,12 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     * The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is
+     * <code>1Minute</code>.
      * </p>
      * 
-     * @return The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     * @return The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value
+     *         is <code>1Minute</code>.
      */
 
     public String getGranularity() {
@@ -1219,11 +1202,13 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     * The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is
+     * <code>1Minute</code>.
      * </p>
      * 
      * @param granularity
-     *        The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     *        The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value
+     *        is <code>1Minute</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

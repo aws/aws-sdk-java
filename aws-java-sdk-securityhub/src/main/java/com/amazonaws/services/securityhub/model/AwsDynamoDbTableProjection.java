@@ -36,8 +36,25 @@ public class AwsDynamoDbTableProjection implements Serializable, Cloneable, Stru
     private java.util.List<String> nonKeyAttributes;
     /**
      * <p>
-     * The types of attributes that are projected into the index.
+     * The types of attributes that are projected into the index. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCLUDE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KEYS_ONLY</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String projectionType;
 
@@ -113,11 +130,44 @@ public class AwsDynamoDbTableProjection implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The types of attributes that are projected into the index.
+     * The types of attributes that are projected into the index. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCLUDE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KEYS_ONLY</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param projectionType
-     *        The types of attributes that are projected into the index.
+     *        The types of attributes that are projected into the index. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INCLUDE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KEYS_ONLY</code>
+     *        </p>
+     *        </li>
      */
 
     public void setProjectionType(String projectionType) {
@@ -126,10 +176,43 @@ public class AwsDynamoDbTableProjection implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The types of attributes that are projected into the index.
+     * The types of attributes that are projected into the index. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCLUDE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KEYS_ONLY</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The types of attributes that are projected into the index.
+     * @return The types of attributes that are projected into the index. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INCLUDE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KEYS_ONLY</code>
+     *         </p>
+     *         </li>
      */
 
     public String getProjectionType() {
@@ -138,11 +221,44 @@ public class AwsDynamoDbTableProjection implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The types of attributes that are projected into the index.
+     * The types of attributes that are projected into the index. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INCLUDE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KEYS_ONLY</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param projectionType
-     *        The types of attributes that are projected into the index.
+     *        The types of attributes that are projected into the index. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INCLUDE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KEYS_ONLY</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

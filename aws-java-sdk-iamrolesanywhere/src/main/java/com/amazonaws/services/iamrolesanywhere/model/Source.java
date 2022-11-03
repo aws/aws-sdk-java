@@ -1,0 +1,208 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iamrolesanywhere.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The trust anchor type and its related certificate data.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/Source" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Source implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The data field of the trust anchor depending on its type.
+     * </p>
+     */
+    private SourceData sourceData;
+    /**
+     * <p>
+     * The type of the trust anchor.
+     * </p>
+     */
+    private String sourceType;
+
+    /**
+     * <p>
+     * The data field of the trust anchor depending on its type.
+     * </p>
+     * 
+     * @param sourceData
+     *        The data field of the trust anchor depending on its type.
+     */
+
+    public void setSourceData(SourceData sourceData) {
+        this.sourceData = sourceData;
+    }
+
+    /**
+     * <p>
+     * The data field of the trust anchor depending on its type.
+     * </p>
+     * 
+     * @return The data field of the trust anchor depending on its type.
+     */
+
+    public SourceData getSourceData() {
+        return this.sourceData;
+    }
+
+    /**
+     * <p>
+     * The data field of the trust anchor depending on its type.
+     * </p>
+     * 
+     * @param sourceData
+     *        The data field of the trust anchor depending on its type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Source withSourceData(SourceData sourceData) {
+        setSourceData(sourceData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the trust anchor.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of the trust anchor.
+     * @see TrustAnchorType
+     */
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the trust anchor.
+     * </p>
+     * 
+     * @return The type of the trust anchor.
+     * @see TrustAnchorType
+     */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the trust anchor.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of the trust anchor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrustAnchorType
+     */
+
+    public Source withSourceType(String sourceType) {
+        setSourceType(sourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the trust anchor.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of the trust anchor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrustAnchorType
+     */
+
+    public Source withSourceType(TrustAnchorType sourceType) {
+        this.sourceType = sourceType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getSourceData() != null)
+            sb.append("SourceData: ").append(getSourceData()).append(",");
+        if (getSourceType() != null)
+            sb.append("SourceType: ").append(getSourceType());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Source == false)
+            return false;
+        Source other = (Source) obj;
+        if (other.getSourceData() == null ^ this.getSourceData() == null)
+            return false;
+        if (other.getSourceData() != null && other.getSourceData().equals(this.getSourceData()) == false)
+            return false;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getSourceData() == null) ? 0 : getSourceData().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public Source clone() {
+        try {
+            return (Source) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iamrolesanywhere.model.transform.SourceMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

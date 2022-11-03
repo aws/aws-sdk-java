@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates a playback configuration. For information about MediaTailor configurations, see <a
+ * A playback configuration. For information about MediaTailor configurations, see <a
  * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS
  * Elemental MediaTailor</a>.
  * </p>
@@ -146,7 +146,10 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private String slateAdUrl;
     /**
      * <p>
-     * The tags to assign to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -952,10 +955,16 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The tags to assign to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags to assign to the playback configuration.
+     * @return The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with
+     *         Amazon resources to help with organization, access control, and cost tracking. For more information, see
+     *         <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental
+     *         MediaTailor Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -964,11 +973,17 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The tags to assign to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the playback configuration.
+     *        The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with
+     *        Amazon resources to help with organization, access control, and cost tracking. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -977,11 +992,17 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The tags to assign to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the playback configuration.
+     *        The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with
+     *        Amazon resources to help with organization, access control, and cost tracking. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,7 +56,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request.
+     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
+     * ID.
      * </p>
      */
     private String groupName;
@@ -132,7 +133,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * 
      * @param groupName
      *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request.
+     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
+     *        security group ID.
      * @param ipPermissions
      *        The sets of IP permissions.
      */
@@ -312,12 +314,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request.
+     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
+     * ID.
      * </p>
      * 
      * @param groupName
      *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request.
+     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
+     *        security group ID.
      */
 
     public void setGroupName(String groupName) {
@@ -327,11 +331,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request.
+     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
+     * ID.
      * </p>
      * 
      * @return [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *         or the security group name in the request.
+     *         or the security group name in the request. For security groups in a nondefault VPC, you must specify the
+     *         security group ID.
      */
 
     public String getGroupName() {
@@ -341,12 +347,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request.
+     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
+     * ID.
      * </p>
      * 
      * @param groupName
      *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request.
+     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
+     *        security group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

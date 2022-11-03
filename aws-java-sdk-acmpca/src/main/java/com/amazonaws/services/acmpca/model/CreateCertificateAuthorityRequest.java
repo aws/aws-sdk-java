@@ -68,10 +68,25 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
-     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
-     * the message, "A certificate authority cannot be created in this region with the specified security standard."
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ap-northeast-3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ap-southeast-3
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+     * for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code>
+     * with the message,
+     * "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      */
     private String keyStorageSecurityStandard;
@@ -84,6 +99,17 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or
+     * short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate
+     * validity is limited to seven days.
+     * </p>
+     * <p>
+     * The default value is GENERAL_PURPOSE.
+     * </p>
+     */
+    private String usageMode;
 
     /**
      * <p>
@@ -341,10 +367,25 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
-     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
-     * the message, "A certificate authority cannot be created in this region with the specified security standard."
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ap-northeast-3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ap-southeast-3
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+     * for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code>
+     * with the message,
+     * "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @param keyStorageSecurityStandard
@@ -353,9 +394,23 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *        </p>
      *        <p>
-     *        Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a
-     *        CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     *        <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *        <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ap-northeast-3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ap-southeast-3
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the
+     *        argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      *        <code>InvalidArgsException</code> with the message,
      *        "A certificate authority cannot be created in this region with the specified security standard."
      * @see KeyStorageSecurityStandard
@@ -373,10 +428,25 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
-     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
-     * the message, "A certificate authority cannot be created in this region with the specified security standard."
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ap-northeast-3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ap-southeast-3
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+     * for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code>
+     * with the message,
+     * "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @return Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
@@ -384,9 +454,23 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *         Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *         </p>
      *         <p>
-     *         Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating
-     *         a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
-     *         for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *         <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ap-northeast-3
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ap-southeast-3
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the
+     *         argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      *         <code>InvalidArgsException</code> with the message,
      *         "A certificate authority cannot be created in this region with the specified security standard."
      * @see KeyStorageSecurityStandard
@@ -404,10 +488,25 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
-     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
-     * the message, "A certificate authority cannot be created in this region with the specified security standard."
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ap-northeast-3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ap-southeast-3
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+     * for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code>
+     * with the message,
+     * "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @param keyStorageSecurityStandard
@@ -416,9 +515,23 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *        </p>
      *        <p>
-     *        Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a
-     *        CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     *        <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *        <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ap-northeast-3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ap-southeast-3
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the
+     *        argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      *        <code>InvalidArgsException</code> with the message,
      *        "A certificate authority cannot be created in this region with the specified security standard."
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -438,10 +551,25 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
-     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
-     * the message, "A certificate authority cannot be created in this region with the specified security standard."
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ap-northeast-3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ap-southeast-3
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+     * for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code>
+     * with the message,
+     * "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @param keyStorageSecurityStandard
@@ -450,9 +578,23 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *        </p>
      *        <p>
-     *        Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a
-     *        CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-     *        <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *        <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following Regions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ap-northeast-3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ap-southeast-3
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the
+     *        argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      *        <code>InvalidArgsException</code> with the message,
      *        "A certificate authority cannot be created in this region with the specified security standard."
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -559,6 +701,101 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or
+     * short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate
+     * validity is limited to seven days.
+     * </p>
+     * <p>
+     * The default value is GENERAL_PURPOSE.
+     * </p>
+     * 
+     * @param usageMode
+     *        Specifies whether the CA issues general-purpose certificates that typically require a revocation
+     *        mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly.
+     *        Short-lived certificate validity is limited to seven days.</p>
+     *        <p>
+     *        The default value is GENERAL_PURPOSE.
+     * @see CertificateAuthorityUsageMode
+     */
+
+    public void setUsageMode(String usageMode) {
+        this.usageMode = usageMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or
+     * short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate
+     * validity is limited to seven days.
+     * </p>
+     * <p>
+     * The default value is GENERAL_PURPOSE.
+     * </p>
+     * 
+     * @return Specifies whether the CA issues general-purpose certificates that typically require a revocation
+     *         mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly.
+     *         Short-lived certificate validity is limited to seven days.</p>
+     *         <p>
+     *         The default value is GENERAL_PURPOSE.
+     * @see CertificateAuthorityUsageMode
+     */
+
+    public String getUsageMode() {
+        return this.usageMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or
+     * short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate
+     * validity is limited to seven days.
+     * </p>
+     * <p>
+     * The default value is GENERAL_PURPOSE.
+     * </p>
+     * 
+     * @param usageMode
+     *        Specifies whether the CA issues general-purpose certificates that typically require a revocation
+     *        mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly.
+     *        Short-lived certificate validity is limited to seven days.</p>
+     *        <p>
+     *        The default value is GENERAL_PURPOSE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateAuthorityUsageMode
+     */
+
+    public CreateCertificateAuthorityRequest withUsageMode(String usageMode) {
+        setUsageMode(usageMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or
+     * short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate
+     * validity is limited to seven days.
+     * </p>
+     * <p>
+     * The default value is GENERAL_PURPOSE.
+     * </p>
+     * 
+     * @param usageMode
+     *        Specifies whether the CA issues general-purpose certificates that typically require a revocation
+     *        mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly.
+     *        Short-lived certificate validity is limited to seven days.</p>
+     *        <p>
+     *        The default value is GENERAL_PURPOSE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateAuthorityUsageMode
+     */
+
+    public CreateCertificateAuthorityRequest withUsageMode(CertificateAuthorityUsageMode usageMode) {
+        this.usageMode = usageMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -581,7 +818,9 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
         if (getKeyStorageSecurityStandard() != null)
             sb.append("KeyStorageSecurityStandard: ").append(getKeyStorageSecurityStandard()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getUsageMode() != null)
+            sb.append("UsageMode: ").append(getUsageMode());
         sb.append("}");
         return sb.toString();
     }
@@ -621,6 +860,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUsageMode() == null ^ this.getUsageMode() == null)
+            return false;
+        if (other.getUsageMode() != null && other.getUsageMode().equals(this.getUsageMode()) == false)
+            return false;
         return true;
     }
 
@@ -635,6 +878,7 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getKeyStorageSecurityStandard() == null) ? 0 : getKeyStorageSecurityStandard().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUsageMode() == null) ? 0 : getUsageMode().hashCode());
         return hashCode;
     }
 

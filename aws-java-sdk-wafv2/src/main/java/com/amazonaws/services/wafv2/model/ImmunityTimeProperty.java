@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
- * <code>CAPTCHA</code> puzzle.
+ * Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code> or challenge timestamp
+ * remains valid after WAF updates it for a successful <code>CAPTCHA</code> or challenge response.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ImmunityTimeProperty" target="_top">AWS API
@@ -31,18 +31,29 @@ public class ImmunityTimeProperty implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     * The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF.
+     * The default setting is 300.
+     * </p>
+     * <p>
+     * For the Challenge action, the minimum setting is 300.
      * </p>
      */
     private Long immunityTime;
 
     /**
      * <p>
-     * The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     * The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF.
+     * The default setting is 300.
+     * </p>
+     * <p>
+     * For the Challenge action, the minimum setting is 300.
      * </p>
      * 
      * @param immunityTime
-     *        The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     *        The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by
+     *        WAF. The default setting is 300. </p>
+     *        <p>
+     *        For the Challenge action, the minimum setting is 300.
      */
 
     public void setImmunityTime(Long immunityTime) {
@@ -51,10 +62,17 @@ public class ImmunityTimeProperty implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     * The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF.
+     * The default setting is 300.
+     * </p>
+     * <p>
+     * For the Challenge action, the minimum setting is 300.
      * </p>
      * 
-     * @return The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     * @return The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by
+     *         WAF. The default setting is 300. </p>
+     *         <p>
+     *         For the Challenge action, the minimum setting is 300.
      */
 
     public Long getImmunityTime() {
@@ -63,11 +81,18 @@ public class ImmunityTimeProperty implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     * The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF.
+     * The default setting is 300.
+     * </p>
+     * <p>
+     * For the Challenge action, the minimum setting is 300.
      * </p>
      * 
      * @param immunityTime
-     *        The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.
+     *        The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by
+     *        WAF. The default setting is 300. </p>
+     *        <p>
+     *        For the Challenge action, the minimum setting is 300.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

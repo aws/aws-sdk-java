@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ssmincidents.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -51,6 +52,8 @@ public class UpdateResponsePlanRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incidentTemplateNotificationTargets").build();
     private static final MarshallingInfo<String> INCIDENTTEMPLATESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incidentTemplateSummary").build();
+    private static final MarshallingInfo<Map> INCIDENTTEMPLATETAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incidentTemplateTags").build();
     private static final MarshallingInfo<String> INCIDENTTEMPLATETITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incidentTemplateTitle").build();
 
@@ -80,6 +83,7 @@ public class UpdateResponsePlanRequestMarshaller {
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateImpact(), INCIDENTTEMPLATEIMPACT_BINDING);
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateNotificationTargets(), INCIDENTTEMPLATENOTIFICATIONTARGETS_BINDING);
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateSummary(), INCIDENTTEMPLATESUMMARY_BINDING);
+            protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateTags(), INCIDENTTEMPLATETAGS_BINDING);
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateTitle(), INCIDENTTEMPLATETITLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

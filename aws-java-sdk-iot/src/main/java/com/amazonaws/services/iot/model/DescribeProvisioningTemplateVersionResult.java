@@ -21,36 +21,36 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      */
     private Integer versionId;
     /**
      * <p>
-     * The date when the fleet provisioning template version was created.
+     * The date when the provisioning template version was created.
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template version.
+     * The JSON formatted contents of the provisioning template version.
      * </p>
      */
     private String templateBody;
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version.
+     * True if the provisioning template version is the default version.
      * </p>
      */
     private Boolean isDefaultVersion;
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      * 
      * @param versionId
-     *        The fleet provisioning template version ID.
+     *        The provisioning template version ID.
      */
 
     public void setVersionId(Integer versionId) {
@@ -59,10 +59,10 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      * 
-     * @return The fleet provisioning template version ID.
+     * @return The provisioning template version ID.
      */
 
     public Integer getVersionId() {
@@ -71,11 +71,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      * 
      * @param versionId
-     *        The fleet provisioning template version ID.
+     *        The provisioning template version ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The date when the fleet provisioning template version was created.
+     * The date when the provisioning template version was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the fleet provisioning template version was created.
+     *        The date when the provisioning template version was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -99,10 +99,10 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The date when the fleet provisioning template version was created.
+     * The date when the provisioning template version was created.
      * </p>
      * 
-     * @return The date when the fleet provisioning template version was created.
+     * @return The date when the provisioning template version was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -111,11 +111,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The date when the fleet provisioning template version was created.
+     * The date when the provisioning template version was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the fleet provisioning template version was created.
+     *        The date when the provisioning template version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template version.
+     * The JSON formatted contents of the provisioning template version.
      * </p>
      * 
      * @param templateBody
-     *        The JSON formatted contents of the fleet provisioning template version.
+     *        The JSON formatted contents of the provisioning template version.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -139,10 +139,10 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template version.
+     * The JSON formatted contents of the provisioning template version.
      * </p>
      * 
-     * @return The JSON formatted contents of the fleet provisioning template version.
+     * @return The JSON formatted contents of the provisioning template version.
      */
 
     public String getTemplateBody() {
@@ -151,11 +151,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template version.
+     * The JSON formatted contents of the provisioning template version.
      * </p>
      * 
      * @param templateBody
-     *        The JSON formatted contents of the fleet provisioning template version.
+     *        The JSON formatted contents of the provisioning template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +166,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version.
+     * True if the provisioning template version is the default version.
      * </p>
      * 
      * @param isDefaultVersion
-     *        True if the fleet provisioning template version is the default version.
+     *        True if the provisioning template version is the default version.
      */
 
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
@@ -179,10 +179,10 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version.
+     * True if the provisioning template version is the default version.
      * </p>
      * 
-     * @return True if the fleet provisioning template version is the default version.
+     * @return True if the provisioning template version is the default version.
      */
 
     public Boolean getIsDefaultVersion() {
@@ -191,11 +191,11 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version.
+     * True if the provisioning template version is the default version.
      * </p>
      * 
      * @param isDefaultVersion
-     *        True if the fleet provisioning template version is the default version.
+     *        True if the provisioning template version is the default version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,10 +206,10 @@ public class DescribeProvisioningTemplateVersionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version.
+     * True if the provisioning template version is the default version.
      * </p>
      * 
-     * @return True if the fleet provisioning template version is the default version.
+     * @return True if the provisioning template version is the default version.
      */
 
     public Boolean isDefaultVersion() {

@@ -179,6 +179,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
      * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
+     * <p>
+     * This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about
+     * creating and using this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
+     * </p>
      */
     private String serviceRoleArn;
     /**
@@ -194,6 +201,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private CloudWatchOutputConfig cloudWatchOutputConfig;
+    /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your command.
+     * </p>
+     */
+    private AlarmConfiguration alarmConfiguration;
 
     /**
      * <p>
@@ -1318,10 +1331,23 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
      * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
+     * <p>
+     * This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about
+     * creating and using this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
+     * </p>
      * 
      * @param serviceRoleArn
      *        The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple
-     *        Notification Service (Amazon SNS) notifications for Run Command commands.
+     *        Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+     *        <p>
+     *        This role must provide the <code>sns:Publish</code> permission for your notification topic. For
+     *        information about creating and using this service role, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
+     *        >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web
+     *        Services Systems Manager User Guide</i>.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -1333,9 +1359,22 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
      * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
+     * <p>
+     * This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about
+     * creating and using this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
+     * </p>
      * 
      * @return The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple
-     *         Notification Service (Amazon SNS) notifications for Run Command commands.
+     *         Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+     *         <p>
+     *         This role must provide the <code>sns:Publish</code> permission for your notification topic. For
+     *         information about creating and using this service role, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
+     *         >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web
+     *         Services Systems Manager User Guide</i>.
      */
 
     public String getServiceRoleArn() {
@@ -1347,10 +1386,23 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
      * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
+     * <p>
+     * This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about
+     * creating and using this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
+     * </p>
      * 
      * @param serviceRoleArn
      *        The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple
-     *        Notification Service (Amazon SNS) notifications for Run Command commands.
+     *        Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+     *        <p>
+     *        This role must provide the <code>sns:Publish</code> permission for your notification topic. For
+     *        information about creating and using this service role, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
+     *        >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web
+     *        Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1446,6 +1498,46 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your command.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        The CloudWatch alarm you want to apply to your command.
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your command.
+     * </p>
+     * 
+     * @return The CloudWatch alarm you want to apply to your command.
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm you want to apply to your command.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        The CloudWatch alarm you want to apply to your command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendCommandRequest withAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1490,7 +1582,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getNotificationConfig() != null)
             sb.append("NotificationConfig: ").append(getNotificationConfig()).append(",");
         if (getCloudWatchOutputConfig() != null)
-            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig());
+            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig()).append(",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: ").append(getAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1573,6 +1667,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getCloudWatchOutputConfig() != null && other.getCloudWatchOutputConfig().equals(this.getCloudWatchOutputConfig()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null && other.getAlarmConfiguration().equals(this.getAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1598,6 +1696,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchOutputConfig() == null) ? 0 : getCloudWatchOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());
         return hashCode;
     }
 

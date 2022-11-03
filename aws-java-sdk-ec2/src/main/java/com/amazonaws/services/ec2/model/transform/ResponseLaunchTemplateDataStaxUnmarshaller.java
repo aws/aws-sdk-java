@@ -239,6 +239,11 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                             .setMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("disableApiStop", targetDepth)) {
+                    responseLaunchTemplateData.setDisableApiStop(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return responseLaunchTemplateData;

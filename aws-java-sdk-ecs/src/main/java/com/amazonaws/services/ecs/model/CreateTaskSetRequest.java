@@ -68,14 +68,14 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
      * <p>
      * The launch type that new tasks in the task set uses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -487,12 +487,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @return The details of the service discovery registries to assign to this task set. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *         Discovery</a>.
+     *         discovery</a>.
      */
 
     public java.util.List<ServiceRegistry> getServiceRegistries() {
@@ -505,13 +505,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.
+     *        discovery</a>.
      */
 
     public void setServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
@@ -526,7 +526,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -537,7 +537,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.
+     *        discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,13 +554,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.
+     *        discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,7 +572,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type that new tasks in the task set uses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -581,8 +581,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param launchType
      *        The launch type that new tasks in the task set uses. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
      *        omitted.
@@ -596,7 +596,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type that new tasks in the task set uses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -604,8 +604,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The launch type that new tasks in the task set uses. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
      *         If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
      *         omitted.
@@ -619,7 +619,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type that new tasks in the task set uses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -628,8 +628,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param launchType
      *        The launch type that new tasks in the task set uses. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
      *        omitted.
@@ -645,7 +645,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type that new tasks in the task set uses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -654,8 +654,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param launchType
      *        The launch type that new tasks in the task set uses. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
      *        omitted.

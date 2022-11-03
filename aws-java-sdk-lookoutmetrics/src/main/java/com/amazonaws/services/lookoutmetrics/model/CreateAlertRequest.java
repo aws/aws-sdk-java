@@ -62,6 +62,12 @@ public class CreateAlertRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     * </p>
+     */
+    private AlertFilters alertFilters;
 
     /**
      * <p>
@@ -338,6 +344,46 @@ public class CreateAlertRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     * </p>
+     * 
+     * @param alertFilters
+     *        The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     */
+
+    public void setAlertFilters(AlertFilters alertFilters) {
+        this.alertFilters = alertFilters;
+    }
+
+    /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     * </p>
+     * 
+     * @return The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     */
+
+    public AlertFilters getAlertFilters() {
+        return this.alertFilters;
+    }
+
+    /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     * </p>
+     * 
+     * @param alertFilters
+     *        The configuration of the alert filters, containing MetricList and DimensionFilterList.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAlertRequest withAlertFilters(AlertFilters alertFilters) {
+        setAlertFilters(alertFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -360,7 +406,9 @@ public class CreateAlertRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAlertFilters() != null)
+            sb.append("AlertFilters: ").append(getAlertFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +447,10 @@ public class CreateAlertRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAlertFilters() == null ^ this.getAlertFilters() == null)
+            return false;
+        if (other.getAlertFilters() != null && other.getAlertFilters().equals(this.getAlertFilters()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +465,7 @@ public class CreateAlertRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getAnomalyDetectorArn() == null) ? 0 : getAnomalyDetectorArn().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAlertFilters() == null) ? 0 : getAlertFilters().hashCode());
         return hashCode;
     }
 

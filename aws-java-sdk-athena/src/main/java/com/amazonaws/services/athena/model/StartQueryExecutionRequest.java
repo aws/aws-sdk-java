@@ -67,6 +67,13 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String workGroup;
+    /**
+     * <p>
+     * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
+     * query in the order in which the parameters occur.
+     * </p>
+     */
+    private java.util.List<String> executionParameters;
 
     /**
      * <p>
@@ -338,6 +345,84 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
+     * query in the order in which the parameters occur.
+     * </p>
+     * 
+     * @return A list of values for the parameters in a query. The values are applied sequentially to the parameters in
+     *         the query in the order in which the parameters occur.
+     */
+
+    public java.util.List<String> getExecutionParameters() {
+        return executionParameters;
+    }
+
+    /**
+     * <p>
+     * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
+     * query in the order in which the parameters occur.
+     * </p>
+     * 
+     * @param executionParameters
+     *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
+     *        the query in the order in which the parameters occur.
+     */
+
+    public void setExecutionParameters(java.util.Collection<String> executionParameters) {
+        if (executionParameters == null) {
+            this.executionParameters = null;
+            return;
+        }
+
+        this.executionParameters = new java.util.ArrayList<String>(executionParameters);
+    }
+
+    /**
+     * <p>
+     * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
+     * query in the order in which the parameters occur.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExecutionParameters(java.util.Collection)} or {@link #withExecutionParameters(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param executionParameters
+     *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
+     *        the query in the order in which the parameters occur.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryExecutionRequest withExecutionParameters(String... executionParameters) {
+        if (this.executionParameters == null) {
+            setExecutionParameters(new java.util.ArrayList<String>(executionParameters.length));
+        }
+        for (String ele : executionParameters) {
+            this.executionParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
+     * query in the order in which the parameters occur.
+     * </p>
+     * 
+     * @param executionParameters
+     *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
+     *        the query in the order in which the parameters occur.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryExecutionRequest withExecutionParameters(java.util.Collection<String> executionParameters) {
+        setExecutionParameters(executionParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +443,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getResultConfiguration() != null)
             sb.append("ResultConfiguration: ").append(getResultConfiguration()).append(",");
         if (getWorkGroup() != null)
-            sb.append("WorkGroup: ").append(getWorkGroup());
+            sb.append("WorkGroup: ").append(getWorkGroup()).append(",");
+        if (getExecutionParameters() != null)
+            sb.append("ExecutionParameters: ").append(getExecutionParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +480,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
             return false;
+        if (other.getExecutionParameters() == null ^ this.getExecutionParameters() == null)
+            return false;
+        if (other.getExecutionParameters() != null && other.getExecutionParameters().equals(this.getExecutionParameters()) == false)
+            return false;
         return true;
     }
 
@@ -406,6 +497,7 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getQueryExecutionContext() == null) ? 0 : getQueryExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
+        hashCode = prime * hashCode + ((getExecutionParameters() == null) ? 0 : getExecutionParameters().hashCode());
         return hashCode;
     }
 

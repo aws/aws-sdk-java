@@ -92,6 +92,10 @@ public class CACertificateDescriptionJsonUnmarshaller implements Unmarshaller<CA
                     context.nextToken();
                     cACertificateDescription.setValidity(CertificateValidityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("certificateMode", targetDepth)) {
+                    context.nextToken();
+                    cACertificateDescription.setCertificateMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -88,6 +88,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepConcurrencyLevel").build();
     private static final MarshallingInfo<List> PLACEMENTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlacementGroups").build();
+    private static final MarshallingInfo<String> OSRELEASELABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OSReleaseLabel").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -135,6 +137,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getOutpostArn(), OUTPOSTARN_BINDING);
             protocolMarshaller.marshall(cluster.getStepConcurrencyLevel(), STEPCONCURRENCYLEVEL_BINDING);
             protocolMarshaller.marshall(cluster.getPlacementGroups(), PLACEMENTGROUPS_BINDING);
+            protocolMarshaller.marshall(cluster.getOSReleaseLabel(), OSRELEASELABEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

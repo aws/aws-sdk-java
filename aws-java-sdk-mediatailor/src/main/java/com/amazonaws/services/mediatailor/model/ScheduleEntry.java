@@ -74,9 +74,6 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of schedule entry.
      * </p>
-     * <p>
-     * Valid values: PROGRAM or FILLER_SLATE.
-     * </p>
      */
     private String scheduleEntryType;
     /**
@@ -406,14 +403,9 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of schedule entry.
      * </p>
-     * <p>
-     * Valid values: PROGRAM or FILLER_SLATE.
-     * </p>
      * 
      * @param scheduleEntryType
-     *        The type of schedule entry.</p>
-     *        <p>
-     *        Valid values: PROGRAM or FILLER_SLATE.
+     *        The type of schedule entry.
      * @see ScheduleEntryType
      */
 
@@ -425,13 +417,8 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of schedule entry.
      * </p>
-     * <p>
-     * Valid values: PROGRAM or FILLER_SLATE.
-     * </p>
      * 
-     * @return The type of schedule entry.</p>
-     *         <p>
-     *         Valid values: PROGRAM or FILLER_SLATE.
+     * @return The type of schedule entry.
      * @see ScheduleEntryType
      */
 
@@ -443,14 +430,9 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of schedule entry.
      * </p>
-     * <p>
-     * Valid values: PROGRAM or FILLER_SLATE.
-     * </p>
      * 
      * @param scheduleEntryType
-     *        The type of schedule entry.</p>
-     *        <p>
-     *        Valid values: PROGRAM or FILLER_SLATE.
+     *        The type of schedule entry.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduleEntryType
      */
@@ -464,14 +446,9 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of schedule entry.
      * </p>
-     * <p>
-     * Valid values: PROGRAM or FILLER_SLATE.
-     * </p>
      * 
      * @param scheduleEntryType
-     *        The type of schedule entry.</p>
-     *        <p>
-     *        Valid values: PROGRAM or FILLER_SLATE.
+     *        The type of schedule entry.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduleEntryType
      */

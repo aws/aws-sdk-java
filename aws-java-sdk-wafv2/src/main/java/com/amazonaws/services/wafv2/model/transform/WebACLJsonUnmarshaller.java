@@ -113,6 +113,16 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                     context.nextToken();
                     webACL.setCaptchaConfig(CaptchaConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ChallengeConfig", targetDepth)) {
+                    context.nextToken();
+                    webACL.setChallengeConfig(ChallengeConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TokenDomains", targetDepth)) {
+                    context.nextToken();
+                    webACL.setTokenDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

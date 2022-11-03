@@ -25,7 +25,7 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior
      * call in your next request.
      * </p>
@@ -42,14 +42,14 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
      * The Cost Category values.
      * </p>
      * <p>
-     * <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     * request.
+     * If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+     * fields aren't returned.
      * </p>
      */
     private java.util.List<String> costCategoryValues;
     /**
      * <p>
-     * The number of objects returned.
+     * The number of objects that are returned.
      * </p>
      */
     private Integer returnSize;
@@ -62,13 +62,13 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior
      * call in your next request.
      * </p>
      * 
      * @param nextPageToken
-     *        If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *        If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services
      *        returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker
      *        from the prior call in your next request.
      */
@@ -79,12 +79,12 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior
      * call in your next request.
      * </p>
      * 
-     * @return If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     * @return If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services
      *         returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker
      *         from the prior call in your next request.
      */
@@ -95,13 +95,13 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior
      * call in your next request.
      * </p>
      * 
      * @param nextPageToken
-     *        If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *        If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services
      *        returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker
      *        from the prior call in your next request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -187,14 +187,14 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
      * The Cost Category values.
      * </p>
      * <p>
-     * <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     * request.
+     * If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+     * fields aren't returned.
      * </p>
      * 
      * @return The Cost Category values.</p>
      *         <p>
-     *         <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     *         request.
+     *         If the <code>CostCategoryName</code> key isn't specified in the request, the
+     *         <code>CostCategoryValues</code> fields aren't returned.
      */
 
     public java.util.List<String> getCostCategoryValues() {
@@ -206,15 +206,15 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
      * The Cost Category values.
      * </p>
      * <p>
-     * <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     * request.
+     * If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+     * fields aren't returned.
      * </p>
      * 
      * @param costCategoryValues
      *        The Cost Category values.</p>
      *        <p>
-     *        <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     *        request.
+     *        If the <code>CostCategoryName</code> key isn't specified in the request, the
+     *        <code>CostCategoryValues</code> fields aren't returned.
      */
 
     public void setCostCategoryValues(java.util.Collection<String> costCategoryValues) {
@@ -231,8 +231,8 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
      * The Cost Category values.
      * </p>
      * <p>
-     * <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     * request.
+     * If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+     * fields aren't returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -243,8 +243,8 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
      * @param costCategoryValues
      *        The Cost Category values.</p>
      *        <p>
-     *        <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     *        request.
+     *        If the <code>CostCategoryName</code> key isn't specified in the request, the
+     *        <code>CostCategoryValues</code> fields aren't returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,15 +263,15 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
      * The Cost Category values.
      * </p>
      * <p>
-     * <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     * request.
+     * If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+     * fields aren't returned.
      * </p>
      * 
      * @param costCategoryValues
      *        The Cost Category values.</p>
      *        <p>
-     *        <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the
-     *        request.
+     *        If the <code>CostCategoryName</code> key isn't specified in the request, the
+     *        <code>CostCategoryValues</code> fields aren't returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +282,11 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of objects returned.
+     * The number of objects that are returned.
      * </p>
      * 
      * @param returnSize
-     *        The number of objects returned.
+     *        The number of objects that are returned.
      */
 
     public void setReturnSize(Integer returnSize) {
@@ -295,10 +295,10 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of objects returned.
+     * The number of objects that are returned.
      * </p>
      * 
-     * @return The number of objects returned.
+     * @return The number of objects that are returned.
      */
 
     public Integer getReturnSize() {
@@ -307,11 +307,11 @@ public class GetCostCategoriesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of objects returned.
+     * The number of objects that are returned.
      * </p>
      * 
      * @param returnSize
-     *        The number of objects returned.
+     *        The number of objects that are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

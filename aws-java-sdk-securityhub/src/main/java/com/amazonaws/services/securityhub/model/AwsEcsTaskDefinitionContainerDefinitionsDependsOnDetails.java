@@ -32,8 +32,30 @@ public class AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails implements
     /**
      * <p>
      * The dependency condition of the dependent container. Indicates the required status of the dependent container
-     * before the current container can start.
+     * before the current container can start. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HEALTHY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>START</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String condition;
     /**
@@ -46,12 +68,55 @@ public class AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails implements
     /**
      * <p>
      * The dependency condition of the dependent container. Indicates the required status of the dependent container
-     * before the current container can start.
+     * before the current container can start. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HEALTHY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>START</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param condition
      *        The dependency condition of the dependent container. Indicates the required status of the dependent
-     *        container before the current container can start.
+     *        container before the current container can start. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HEALTHY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUCCESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>START</code>
+     *        </p>
+     *        </li>
      */
 
     public void setCondition(String condition) {
@@ -61,11 +126,54 @@ public class AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails implements
     /**
      * <p>
      * The dependency condition of the dependent container. Indicates the required status of the dependent container
-     * before the current container can start.
+     * before the current container can start. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HEALTHY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>START</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The dependency condition of the dependent container. Indicates the required status of the dependent
-     *         container before the current container can start.
+     *         container before the current container can start. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COMPLETE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HEALTHY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SUCCESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>START</code>
+     *         </p>
+     *         </li>
      */
 
     public String getCondition() {
@@ -75,12 +183,55 @@ public class AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails implements
     /**
      * <p>
      * The dependency condition of the dependent container. Indicates the required status of the dependent container
-     * before the current container can start.
+     * before the current container can start. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HEALTHY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>START</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param condition
      *        The dependency condition of the dependent container. Indicates the required status of the dependent
-     *        container before the current container can start.
+     *        container before the current container can start. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HEALTHY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUCCESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>START</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

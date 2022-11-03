@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detail date for a repository that has been registered with Proton.
+ * Detailed data of a linked repository—a repository that has been registered with Proton.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Repository" target="_top">AWS API
@@ -30,13 +30,14 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account.
      * </p>
      */
     private String connectionArn;
@@ -61,11 +62,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      * 
      * @param arn
-     *        The repository Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the linked repository.
      */
 
     public void setArn(String arn) {
@@ -74,10 +75,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      * 
-     * @return The repository Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the linked repository.
      */
 
     public String getArn() {
@@ -86,11 +87,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      * 
      * @param arn
-     *        The repository Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the linked repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +102,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account.
      * </p>
      * 
      * @param connectionArn
-     *        The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     *        The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository
+     *        provider account.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -114,10 +117,12 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account.
      * </p>
      * 
-     * @return The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     * @return The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository
+     *         provider account.
      */
 
     public String getConnectionArn() {
@@ -126,11 +131,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account.
      * </p>
      * 
      * @param connectionArn
-     *        The repository Amazon Web Services CodeStar connection that connects Proton to your repository.
+     *        The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository
+     *        provider account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

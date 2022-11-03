@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kendra.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class FacetMarshaller {
 
     private static final MarshallingInfo<String> DOCUMENTATTRIBUTEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentAttributeKey").build();
+    private static final MarshallingInfo<List> FACETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Facets").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
     private static final FacetMarshaller instance = new FacetMarshaller();
 
@@ -47,6 +52,8 @@ public class FacetMarshaller {
 
         try {
             protocolMarshaller.marshall(facet.getDocumentAttributeKey(), DOCUMENTATTRIBUTEKEY_BINDING);
+            protocolMarshaller.marshall(facet.getFacets(), FACETS_BINDING);
+            protocolMarshaller.marshall(facet.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

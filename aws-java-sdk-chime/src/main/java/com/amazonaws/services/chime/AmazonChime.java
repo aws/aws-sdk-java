@@ -4601,8 +4601,8 @@ public interface AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
-     * hours, for the Amazon Kinesis data.
+     * specifies whether media streaming is enabled for sending to Kinesis. It also sets the retention period, in hours,
+     * for the Amazon Kinesis data.
      * </p>
      * 
      * @param putVoiceConnectorStreamingConfigurationRequest
@@ -5770,6 +5770,35 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateVoiceConnectorGroupResult updateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest updateVoiceConnectorGroupRequest);
+
+    /**
+     * <p>
+     * Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated
+     * addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps
+     * ensure that addresses are routed to the appropriate Public Safety Answering Point.
+     * </p>
+     * 
+     * @param validateE911AddressRequest
+     * @return Result of the ValidateE911Address operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ValidateE911Address
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ValidateE911AddressResult validateE911Address(ValidateE911AddressRequest validateE911AddressRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

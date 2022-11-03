@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the details of an Batch job queue.
+ * An object that represents the details for an Batch job queue.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobQueueDetail" target="_top">AWS API
@@ -30,7 +30,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job queue.
+     * The job queue name.
      * </p>
      */
     private String jobQueueName;
@@ -42,8 +42,8 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String jobQueueArn;
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      */
@@ -52,7 +52,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      */
     private String schedulingPolicyArn;
@@ -64,7 +64,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job queue.
+     * A short, human-readable string to provide additional details for the current status of the job queue.
      * </p>
      */
     private String statusReason;
@@ -72,10 +72,10 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      */
     private Integer priority;
@@ -88,7 +88,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrder;
     /**
      * <p>
-     * The tags applied to the job queue. For more information, see <a
+     * The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
      * <i>Batch User Guide</i>.
      * </p>
@@ -97,11 +97,11 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job queue.
+     * The job queue name.
      * </p>
      * 
      * @param jobQueueName
-     *        The name of the job queue.
+     *        The job queue name.
      */
 
     public void setJobQueueName(String jobQueueName) {
@@ -110,10 +110,10 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job queue.
+     * The job queue name.
      * </p>
      * 
-     * @return The name of the job queue.
+     * @return The job queue name.
      */
 
     public String getJobQueueName() {
@@ -122,11 +122,11 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job queue.
+     * The job queue name.
      * </p>
      * 
      * @param jobQueueName
-     *        The name of the job queue.
+     *        The job queue name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,15 +177,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
-     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue,
+     *        but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -195,14 +195,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
-     * @return Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
-     *         it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
-     *         queue, but jobs already in the queue can finish.
+     * @return Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *         can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue,
+     *         but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -212,15 +212,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
-     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue,
+     *        but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -232,15 +232,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
-     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue,
+     *        but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -250,15 +250,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
-     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue,
+     *        but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -272,13 +272,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
      *        The Amazon Resource Name (ARN) of the scheduling policy. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
-     *        example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *        example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      */
 
     public void setSchedulingPolicyArn(String schedulingPolicyArn) {
@@ -289,12 +289,12 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the scheduling policy. The format is
      *         <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
-     *         example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *         example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      */
 
     public String getSchedulingPolicyArn() {
@@ -305,13 +305,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
      *        The Amazon Resource Name (ARN) of the scheduling policy. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
-     *        example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *        example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +395,11 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job queue.
+     * A short, human-readable string to provide additional details for the current status of the job queue.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the job queue.
+     *        A short, human-readable string to provide additional details for the current status of the job queue.
      */
 
     public void setStatusReason(String statusReason) {
@@ -408,10 +408,10 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job queue.
+     * A short, human-readable string to provide additional details for the current status of the job queue.
      * </p>
      * 
-     * @return A short, human-readable string to provide additional details about the current status of the job queue.
+     * @return A short, human-readable string to provide additional details for the current status of the job queue.
      */
 
     public String getStatusReason() {
@@ -420,11 +420,11 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job queue.
+     * A short, human-readable string to provide additional details for the current status of the job queue.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the job queue.
+     *        A short, human-readable string to provide additional details for the current status of the job queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,19 +437,19 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
      *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
-     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        Priority is determined in descending order. For example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      */
 
     public void setPriority(Integer priority) {
@@ -460,18 +460,18 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      *         <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
-     *         Priority is determined in descending order, for example, a job queue with a priority value of
+     *         Priority is determined in descending order. For example, a job queue with a priority value of
      *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *         All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      */
 
     public Integer getPriority() {
@@ -482,19 +482,19 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
      *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
-     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        Priority is determined in descending order. For example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,12 +583,12 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job queue. For more information, see <a
+     * The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
      * <i>Batch User Guide</i>.
      * </p>
      * 
-     * @return The tags applied to the job queue. For more information, see <a
+     * @return The tags that are applied to the job queue. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch
      *         resources</a> in <i>Batch User Guide</i>.
      */
@@ -599,13 +599,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job queue. For more information, see <a
+     * The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
      * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags applied to the job queue. For more information, see <a
+     *        The tags that are applied to the job queue. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>
      *        in <i>Batch User Guide</i>.
      */
@@ -616,13 +616,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job queue. For more information, see <a
+     * The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
      * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags applied to the job queue. For more information, see <a
+     *        The tags that are applied to the job queue. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>
      *        in <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

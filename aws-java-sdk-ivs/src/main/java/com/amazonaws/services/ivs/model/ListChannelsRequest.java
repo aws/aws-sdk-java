@@ -39,7 +39,7 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String filterByRecordingConfigurationArn;
     /**
      * <p>
-     * Maximum number of channels to return. Default: 50.
+     * Maximum number of channels to return. Default: 100.
      * </p>
      */
     private Integer maxResults;
@@ -132,11 +132,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of channels to return. Default: 50.
+     * Maximum number of channels to return. Default: 100.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of channels to return. Default: 50.
+     *        Maximum number of channels to return. Default: 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -145,10 +145,10 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of channels to return. Default: 50.
+     * Maximum number of channels to return. Default: 100.
      * </p>
      * 
-     * @return Maximum number of channels to return. Default: 50.
+     * @return Maximum number of channels to return. Default: 100.
      */
 
     public Integer getMaxResults() {
@@ -157,11 +157,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of channels to return. Default: 50.
+     * Maximum number of channels to return. Default: 100.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of channels to return. Default: 50.
+     *        Maximum number of channels to return. Default: 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

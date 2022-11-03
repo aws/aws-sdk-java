@@ -138,6 +138,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setSshKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("metadataOptions", targetDepth)) {
+                    context.nextToken();
+                    instance.setMetadataOptions(InstanceMetadataOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

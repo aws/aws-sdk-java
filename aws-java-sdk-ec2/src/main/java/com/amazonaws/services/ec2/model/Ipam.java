@@ -19,8 +19,9 @@ import javax.annotation.Generated;
  * <p>
  * IPAM is a VPC feature that you can use to automate your IP address management workflows including assigning,
  * tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your
- * Amazon Web Services Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
- * IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+ * Amazon Web Services Organization. For more information, see <a
+ * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
+ * User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipam" target="_top">AWS API Documentation</a>
@@ -67,7 +68,8 @@ public class Ipam implements Serializable, Cloneable {
     /**
      * <p>
      * The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      */
     private Integer scopeCount;
@@ -84,8 +86,9 @@ public class Ipam implements Serializable, Cloneable {
      * as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpamOperatingRegion> operatingRegions;
@@ -348,12 +351,14 @@ public class Ipam implements Serializable, Cloneable {
     /**
      * <p>
      * The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param scopeCount
      *        The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     *        href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setScopeCount(Integer scopeCount) {
@@ -363,11 +368,13 @@ public class Ipam implements Serializable, Cloneable {
     /**
      * <p>
      * The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     *         href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
+     *         VPC IPAM User Guide</i>.
      */
 
     public Integer getScopeCount() {
@@ -377,12 +384,14 @@ public class Ipam implements Serializable, Cloneable {
     /**
      * <p>
      * The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     * href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param scopeCount
      *        The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a
-     *        href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,16 +447,18 @@ public class Ipam implements Serializable, Cloneable {
      * as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The operating Regions for an IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is
      *         allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *         Regions you select as operating Regions.</p>
      *         <p>
-     *         For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *         IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         For more information about operating Regions, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *         VPC IPAM User Guide</i>.
      */
 
     public java.util.List<IpamOperatingRegion> getOperatingRegions() {
@@ -464,8 +475,9 @@ public class Ipam implements Serializable, Cloneable {
      * as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param operatingRegions
@@ -473,8 +485,9 @@ public class Ipam implements Serializable, Cloneable {
      *        allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *        Regions you select as operating Regions.</p>
      *        <p>
-     *        For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *        IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        For more information about operating Regions, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setOperatingRegions(java.util.Collection<IpamOperatingRegion> operatingRegions) {
@@ -493,8 +506,9 @@ public class Ipam implements Serializable, Cloneable {
      * as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -507,8 +521,9 @@ public class Ipam implements Serializable, Cloneable {
      *        allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *        Regions you select as operating Regions.</p>
      *        <p>
-     *        For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *        IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        For more information about operating Regions, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,8 +544,9 @@ public class Ipam implements Serializable, Cloneable {
      * as operating Regions.
      * </p>
      * <p>
-     * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>.
+     * For more information about operating Regions, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.
      * </p>
      * 
      * @param operatingRegions
@@ -538,8 +554,9 @@ public class Ipam implements Serializable, Cloneable {
      *        allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services
      *        Regions you select as operating Regions.</p>
      *        <p>
-     *        For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an
-     *        IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        For more information about operating Regions, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

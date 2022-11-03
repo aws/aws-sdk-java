@@ -40,6 +40,8 @@ public class GenerateEmbedUrlForAnonymousUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthorizedResourceArns").build();
     private static final MarshallingInfo<StructuredPojo> EXPERIENCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperienceConfiguration").build();
+    private static final MarshallingInfo<List> ALLOWEDDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedDomains").build();
 
     private static final GenerateEmbedUrlForAnonymousUserRequestMarshaller instance = new GenerateEmbedUrlForAnonymousUserRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class GenerateEmbedUrlForAnonymousUserRequestMarshaller {
             protocolMarshaller.marshall(generateEmbedUrlForAnonymousUserRequest.getSessionTags(), SESSIONTAGS_BINDING);
             protocolMarshaller.marshall(generateEmbedUrlForAnonymousUserRequest.getAuthorizedResourceArns(), AUTHORIZEDRESOURCEARNS_BINDING);
             protocolMarshaller.marshall(generateEmbedUrlForAnonymousUserRequest.getExperienceConfiguration(), EXPERIENCECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(generateEmbedUrlForAnonymousUserRequest.getAllowedDomains(), ALLOWEDDOMAINS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

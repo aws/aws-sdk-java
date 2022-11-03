@@ -33,6 +33,8 @@ public class CreateEnvironmentAccountConnectionRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> COMPONENTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentRoleArn").build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentName").build();
     private static final MarshallingInfo<String> MANAGEMENTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,7 @@ public class CreateEnvironmentAccountConnectionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getComponentRoleArn(), COMPONENTROLEARN_BINDING);
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getManagementAccountId(), MANAGEMENTACCOUNTID_BINDING);
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getRoleArn(), ROLEARN_BINDING);

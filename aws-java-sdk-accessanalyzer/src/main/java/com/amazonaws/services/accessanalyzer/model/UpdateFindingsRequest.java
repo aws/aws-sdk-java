@@ -38,10 +38,12 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String analyzerArn;
     /**
      * <p>
-     * A client token.
+     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
+     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
+     * finding.
      * </p>
      */
-    private String clientToken;
+    private String status;
     /**
      * <p>
      * The IDs of the findings to update.
@@ -56,12 +58,10 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String resourceArn;
     /**
      * <p>
-     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
-     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
-     * finding.
+     * A client token.
      * </p>
      */
-    private String status;
+    private String clientToken;
 
     /**
      * <p>
@@ -117,41 +117,76 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A client token.
+     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
+     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
+     * finding.
      * </p>
      * 
-     * @param clientToken
-     *        A client token.
+     * @param status
+     *        The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
+     *        an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
+     *        Active finding.
+     * @see FindingStatusUpdate
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     /**
      * <p>
-     * A client token.
+     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
+     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
+     * finding.
      * </p>
      * 
-     * @return A client token.
+     * @return The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
+     *         an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
+     *         Active finding.
+     * @see FindingStatusUpdate
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getStatus() {
+        return this.status;
     }
 
     /**
      * <p>
-     * A client token.
+     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
+     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
+     * finding.
      * </p>
      * 
-     * @param clientToken
-     *        A client token.
+     * @param status
+     *        The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
+     *        an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
+     *        Active finding.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingStatusUpdate
      */
 
-    public UpdateFindingsRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public UpdateFindingsRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
+     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
+     * finding.
+     * </p>
+     * 
+     * @param status
+     *        The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
+     *        an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
+     *        Active finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingStatusUpdate
+     */
+
+    public UpdateFindingsRequest withStatus(FindingStatusUpdate status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -267,76 +302,41 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
-     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
-     * finding.
+     * A client token.
      * </p>
      * 
-     * @param status
-     *        The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
-     *        an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
-     *        Active finding.
-     * @see FindingStatusUpdate
+     * @param clientToken
+     *        A client token.
      */
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
-     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
-     * finding.
+     * A client token.
      * </p>
      * 
-     * @return The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
-     *         an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
-     *         Active finding.
-     * @see FindingStatusUpdate
+     * @return A client token.
      */
 
-    public String getStatus() {
-        return this.status;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
-     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
-     * finding.
+     * A client token.
      * </p>
      * 
-     * @param status
-     *        The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
-     *        an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
-     *        Active finding.
+     * @param clientToken
+     *        A client token.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FindingStatusUpdate
      */
 
-    public UpdateFindingsRequest withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an
-     * Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active
-     * finding.
-     * </p>
-     * 
-     * @param status
-     *        The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change
-     *        an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an
-     *        Active finding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FindingStatusUpdate
-     */
-
-    public UpdateFindingsRequest withStatus(FindingStatusUpdate status) {
-        this.status = status.toString();
+    public UpdateFindingsRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -354,14 +354,14 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getAnalyzerArn() != null)
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getIds() != null)
             sb.append("Ids: ").append(getIds()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -380,9 +380,9 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAnalyzerArn() != null && other.getAnalyzerArn().equals(this.getAnalyzerArn()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getIds() == null ^ this.getIds() == null)
             return false;
@@ -392,9 +392,9 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -405,10 +405,10 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

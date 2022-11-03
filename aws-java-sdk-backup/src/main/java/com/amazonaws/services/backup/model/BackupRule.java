@@ -79,8 +79,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
      * <p>
-     * Only resource types that support full Backup management can transition their backups to cold storage. Those
-     * resource types are listed in the "Full Backup management" section of the <a
+     * Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage"
+     * section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
@@ -384,8 +384,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
      * <p>
-     * Only resource types that support full Backup management can transition their backups to cold storage. Those
-     * resource types are listed in the "Full Backup management" section of the <a
+     * Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage"
+     * section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
@@ -399,8 +399,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *        “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      *        </p>
      *        <p>
-     *        Only resource types that support full Backup management can transition their backups to cold storage.
-     *        Those resource types are listed in the "Full Backup management" section of the <a
+     *        Resource types that are able to be transitioned to cold storage are listed in the
+     *        "Lifecycle to cold storage" section of the <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      *        Feature availability by resource</a> table. Backup ignores this expression for other resource types.
      */
@@ -420,8 +420,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
      * <p>
-     * Only resource types that support full Backup management can transition their backups to cold storage. Those
-     * resource types are listed in the "Full Backup management" section of the <a
+     * Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage"
+     * section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
@@ -434,8 +434,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *         “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      *         </p>
      *         <p>
-     *         Only resource types that support full Backup management can transition their backups to cold storage.
-     *         Those resource types are listed in the "Full Backup management" section of the <a
+     *         Resource types that are able to be transitioned to cold storage are listed in the
+     *         "Lifecycle to cold storage" section of the <a
      *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      *         Feature availability by resource</a> table. Backup ignores this expression for other resource types.
      */
@@ -455,8 +455,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
      * <p>
-     * Only resource types that support full Backup management can transition their backups to cold storage. Those
-     * resource types are listed in the "Full Backup management" section of the <a
+     * Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage"
+     * section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
@@ -470,8 +470,8 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *        “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      *        </p>
      *        <p>
-     *        Only resource types that support full Backup management can transition their backups to cold storage.
-     *        Those resource types are listed in the "Full Backup management" section of the <a
+     *        Resource types that are able to be transitioned to cold storage are listed in the
+     *        "Lifecycle to cold storage" section of the <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      *        Feature availability by resource</a> table. Backup ignores this expression for other resource types.
      * @return Returns a reference to this object so that method calls can be chained together.

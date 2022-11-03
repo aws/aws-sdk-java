@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details for a rule in an WAF WebACL.
+ * Details for a rule in an WAF web ACL.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclRule" target="_top">AWS API
@@ -42,31 +42,31 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
     private java.util.List<WafExcludedRule> excludedRules;
     /**
      * <p>
-     * Use the <code>OverrideAction</code> to test your RuleGroup.
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
      * </p>
      * <p>
-     * Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     * <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the request and
-     * is configured to block that request.
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request.
      * </p>
      * <p>
-     * However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to <code>Count</code>. The
-     * RuleGroup then overrides any block action specified by individual rules contained within the group. Instead of
-     * blocking matching requests, those requests are counted.
+     * However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     * <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules
+     * contained within the group. Instead of blocking matching requests, those requests are counted.
      * </p>
      * <p>
-     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup to a
-     * WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other update
-     * requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of <code>ActivatedRule</code>|
-     * <code>OverrideAction</code>.
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>.
+     * For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.
      * </p>
      */
     private WafOverrideAction overrideAction;
     /**
      * <p>
-     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
-     * add multiple rules to a WebACL, the values do not need to be consecutive.
+     * add multiple rules to a web ACL, the values do not need to be consecutive.
      * </p>
      */
     private Integer priority;
@@ -201,42 +201,42 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use the <code>OverrideAction</code> to test your RuleGroup.
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
      * </p>
      * <p>
-     * Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     * <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the request and
-     * is configured to block that request.
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request.
      * </p>
      * <p>
-     * However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to <code>Count</code>. The
-     * RuleGroup then overrides any block action specified by individual rules contained within the group. Instead of
-     * blocking matching requests, those requests are counted.
+     * However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     * <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules
+     * contained within the group. Instead of blocking matching requests, those requests are counted.
      * </p>
      * <p>
-     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup to a
-     * WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other update
-     * requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of <code>ActivatedRule</code>|
-     * <code>OverrideAction</code>.
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>.
+     * For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.
      * </p>
      * 
      * @param overrideAction
-     *        Use the <code>OverrideAction</code> to test your RuleGroup.</p>
+     *        Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
      *        <p>
-     *        Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     *        <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the
-     *        request and is configured to block that request.
+     *        Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+     *        <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any
+     *        individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.
      *        </p>
      *        <p>
-     *        However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to
-     *        <code>Count</code>. The RuleGroup then overrides any block action specified by individual rules contained
-     *        within the group. Instead of blocking matching requests, those requests are counted.
+     *        However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     *        <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual
+     *        rules contained within the group. Instead of blocking matching requests, those requests are counted.
      *        </p>
      *        <p>
-     *        <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup to
-     *        a WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other update
-     *        requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of <code>ActivatedRule</code>|
-     *        <code>OverrideAction</code>.
+     *        <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     *        <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code>
+     *        <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used
+     *        instead of <code>ActivatedRule</code> <code>OverrideAction</code>.
      */
 
     public void setOverrideAction(WafOverrideAction overrideAction) {
@@ -245,41 +245,42 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use the <code>OverrideAction</code> to test your RuleGroup.
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
      * </p>
      * <p>
-     * Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     * <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the request and
-     * is configured to block that request.
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request.
      * </p>
      * <p>
-     * However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to <code>Count</code>. The
-     * RuleGroup then overrides any block action specified by individual rules contained within the group. Instead of
-     * blocking matching requests, those requests are counted.
+     * However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     * <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules
+     * contained within the group. Instead of blocking matching requests, those requests are counted.
      * </p>
      * <p>
-     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup to a
-     * WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other update
-     * requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of <code>ActivatedRule</code>|
-     * <code>OverrideAction</code>.
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>.
+     * For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.
      * </p>
      * 
-     * @return Use the <code>OverrideAction</code> to test your RuleGroup.</p>
+     * @return Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
      *         <p>
-     *         Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     *         <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the
-     *         request and is configured to block that request.
+     *         Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+     *         <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any
+     *         individual rule in the <code>RuleGroup</code> matches the request and is configured to block that
+     *         request.
      *         </p>
      *         <p>
-     *         However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to
-     *         <code>Count</code>. The RuleGroup then overrides any block action specified by individual rules contained
-     *         within the group. Instead of blocking matching requests, those requests are counted.
+     *         However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     *         <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual
+     *         rules contained within the group. Instead of blocking matching requests, those requests are counted.
      *         </p>
      *         <p>
-     *         <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup
-     *         to a WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other
-     *         update requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     *         <code>ActivatedRule</code>|<code>OverrideAction</code>.
+     *         <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     *         <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code>
+     *         <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is
+     *         used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.
      */
 
     public WafOverrideAction getOverrideAction() {
@@ -288,42 +289,42 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use the <code>OverrideAction</code> to test your RuleGroup.
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
      * </p>
      * <p>
-     * Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     * <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the request and
-     * is configured to block that request.
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request.
      * </p>
      * <p>
-     * However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to <code>Count</code>. The
-     * RuleGroup then overrides any block action specified by individual rules contained within the group. Instead of
-     * blocking matching requests, those requests are counted.
+     * However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     * <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules
+     * contained within the group. Instead of blocking matching requests, those requests are counted.
      * </p>
      * <p>
-     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup to a
-     * WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other update
-     * requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of <code>ActivatedRule</code>|
-     * <code>OverrideAction</code>.
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>.
+     * For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.
      * </p>
      * 
      * @param overrideAction
-     *        Use the <code>OverrideAction</code> to test your RuleGroup.</p>
+     *        Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
      *        <p>
-     *        Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code> to
-     *        <code>None</code>, the RuleGroup blocks a request if any individual rule in the RuleGroup matches the
-     *        request and is configured to block that request.
+     *        Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+     *        <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any
+     *        individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.
      *        </p>
      *        <p>
-     *        However, if you first want to test the RuleGroup, set the <code>OverrideAction</code> to
-     *        <code>Count</code>. The RuleGroup then overrides any block action specified by individual rules contained
-     *        within the group. Instead of blocking matching requests, those requests are counted.
+     *        However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     *        <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual
+     *        rules contained within the group. Instead of blocking matching requests, those requests are counted.
      *        </p>
      *        <p>
-     *        <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a RuleGroup to
-     *        a WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>. For all other update
-     *        requests, <code>ActivatedRule</code>|<code>Action</code> is used instead of <code>ActivatedRule</code>|
-     *        <code>OverrideAction</code>.
+     *        <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a
+     *        <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code>
+     *        <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used
+     *        instead of <code>ActivatedRule</code> <code>OverrideAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,15 +335,15 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
-     * add multiple rules to a WebACL, the values do not need to be consecutive.
+     * add multiple rules to a web ACL, the values do not need to be consecutive.
      * </p>
      * 
      * @param priority
-     *        Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     *        Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      *        <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer.
-     *        If you add multiple rules to a WebACL, the values do not need to be consecutive.
+     *        If you add multiple rules to a web ACL, the values do not need to be consecutive.
      */
 
     public void setPriority(Integer priority) {
@@ -351,14 +352,14 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
-     * add multiple rules to a WebACL, the values do not need to be consecutive.
+     * add multiple rules to a web ACL, the values do not need to be consecutive.
      * </p>
      * 
-     * @return Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * @return Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      *         <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer.
-     *         If you add multiple rules to a WebACL, the values do not need to be consecutive.
+     *         If you add multiple rules to a web ACL, the values do not need to be consecutive.
      */
 
     public Integer getPriority() {
@@ -367,15 +368,15 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
-     * add multiple rules to a WebACL, the values do not need to be consecutive.
+     * add multiple rules to a web ACL, the values do not need to be consecutive.
      * </p>
      * 
      * @param priority
-     *        Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     *        Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for
      *        <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer.
-     *        If you add multiple rules to a WebACL, the values do not need to be consecutive.
+     *        If you add multiple rules to a web ACL, the values do not need to be consecutive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

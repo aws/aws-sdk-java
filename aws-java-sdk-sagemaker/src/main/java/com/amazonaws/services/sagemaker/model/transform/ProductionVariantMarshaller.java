@@ -43,6 +43,12 @@ public class ProductionVariantMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoreDumpConfig").build();
     private static final MarshallingInfo<StructuredPojo> SERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessConfig").build();
+    private static final MarshallingInfo<Integer> VOLUMESIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
+    private static final MarshallingInfo<Integer> MODELDATADOWNLOADTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataDownloadTimeoutInSeconds").build();
+    private static final MarshallingInfo<Integer> CONTAINERSTARTUPHEALTHCHECKTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerStartupHealthCheckTimeoutInSeconds").build();
 
     private static final ProductionVariantMarshaller instance = new ProductionVariantMarshaller();
 
@@ -68,6 +74,10 @@ public class ProductionVariantMarshaller {
             protocolMarshaller.marshall(productionVariant.getAcceleratorType(), ACCELERATORTYPE_BINDING);
             protocolMarshaller.marshall(productionVariant.getCoreDumpConfig(), COREDUMPCONFIG_BINDING);
             protocolMarshaller.marshall(productionVariant.getServerlessConfig(), SERVERLESSCONFIG_BINDING);
+            protocolMarshaller.marshall(productionVariant.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
+            protocolMarshaller.marshall(productionVariant.getModelDataDownloadTimeoutInSeconds(), MODELDATADOWNLOADTIMEOUTINSECONDS_BINDING);
+            protocolMarshaller
+                    .marshall(productionVariant.getContainerStartupHealthCheckTimeoutInSeconds(), CONTAINERSTARTUPHEALTHCHECKTIMEOUTINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

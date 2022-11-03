@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ConfigurationSyncState {
 
     PENDING("PENDING"),
-    IN_SYNC("IN_SYNC");
+    IN_SYNC("IN_SYNC"),
+    CAPACITY_CONSTRAINED("CAPACITY_CONSTRAINED");
 
     private String value;
 

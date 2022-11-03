@@ -76,6 +76,10 @@ public class InferenceSchedulerSummaryJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     inferenceSchedulerSummary.setDataUploadFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LatestInferenceResult", targetDepth)) {
+                    context.nextToken();
+                    inferenceSchedulerSummary.setLatestInferenceResult(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

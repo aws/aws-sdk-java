@@ -94,6 +94,10 @@ public class MutableClusterInfoJsonUnmarshaller implements Unmarshaller<MutableC
                     context.nextToken();
                     mutableClusterInfo.setConnectivityInfo(ConnectivityInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("storageMode", targetDepth)) {
+                    context.nextToken();
+                    mutableClusterInfo.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

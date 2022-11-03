@@ -25,33 +25,33 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults parameter.
-     * If there are more language models in the list than the page size, Amazon Transcribe returns the
-     * <code>NextPage</code> token. Include the token in the next request to the operation to return the next page of
-     * language models.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of objects containing information about custom language models.
+     * Provides information about the custom language models that match the criteria specified in your request.
      * </p>
      */
     private java.util.List<LanguageModel> models;
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults parameter.
-     * If there are more language models in the list than the page size, Amazon Transcribe returns the
-     * <code>NextPage</code> token. Include the token in the next request to the operation to return the next page of
-     * language models.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults
-     *        parameter. If there are more language models in the list than the page size, Amazon Transcribe returns the
-     *        <code>NextPage</code> token. Include the token in the next request to the operation to return the next
-     *        page of language models.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -60,16 +60,16 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults parameter.
-     * If there are more language models in the list than the page size, Amazon Transcribe returns the
-     * <code>NextPage</code> token. Include the token in the next request to the operation to return the next page of
-     * language models.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
-     * @return The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults
-     *         parameter. If there are more language models in the list than the page size, Amazon Transcribe returns
-     *         the <code>NextPage</code> token. Include the token in the next request to the operation to return the
-     *         next page of language models.
+     * @return If <code>NextToken</code> is present in your response, it indicates that not all results are displayed.
+     *         To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in
+     *         your results output, then run your request again including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -78,17 +78,17 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults parameter.
-     * If there are more language models in the list than the page size, Amazon Transcribe returns the
-     * <code>NextPage</code> token. Include the token in the next request to the operation to return the next page of
-     * language models.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults
-     *        parameter. If there are more language models in the list than the page size, Amazon Transcribe returns the
-     *        <code>NextPage</code> token. Include the token in the next request to the operation to return the next
-     *        page of language models.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,10 +99,10 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of objects containing information about custom language models.
+     * Provides information about the custom language models that match the criteria specified in your request.
      * </p>
      * 
-     * @return A list of objects containing information about custom language models.
+     * @return Provides information about the custom language models that match the criteria specified in your request.
      */
 
     public java.util.List<LanguageModel> getModels() {
@@ -111,11 +111,11 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of objects containing information about custom language models.
+     * Provides information about the custom language models that match the criteria specified in your request.
      * </p>
      * 
      * @param models
-     *        A list of objects containing information about custom language models.
+     *        Provides information about the custom language models that match the criteria specified in your request.
      */
 
     public void setModels(java.util.Collection<LanguageModel> models) {
@@ -129,7 +129,7 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of objects containing information about custom language models.
+     * Provides information about the custom language models that match the criteria specified in your request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +138,7 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param models
-     *        A list of objects containing information about custom language models.
+     *        Provides information about the custom language models that match the criteria specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class ListLanguageModelsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of objects containing information about custom language models.
+     * Provides information about the custom language models that match the criteria specified in your request.
      * </p>
      * 
      * @param models
-     *        A list of objects containing information about custom language models.
+     *        Provides information about the custom language models that match the criteria specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

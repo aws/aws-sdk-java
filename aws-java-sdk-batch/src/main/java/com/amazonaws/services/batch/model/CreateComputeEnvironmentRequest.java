@@ -30,8 +30,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
-     * letters, numbers, hyphens (-), and underscores (_).
+     * The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      */
     private String computeEnvironmentName;
@@ -101,8 +101,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
      * (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a
-     * path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
-     * see <a
+     * path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -131,15 +130,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The details for the Amazon EKS cluster that supports the compute environment.
+     * </p>
+     */
+    private EksConfiguration eksConfiguration;
 
     /**
      * <p>
-     * The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
-     * letters, numbers, hyphens (-), and underscores (_).
+     * The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
      *        lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
@@ -149,11 +154,11 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
-     * letters, numbers, hyphens (-), and underscores (_).
+     * The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+     * @return The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
      *         lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
@@ -163,12 +168,12 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
-     * letters, numbers, hyphens (-), and underscores (_).
+     * The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and
      *        lowercase letters, numbers, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -612,8 +617,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
      * (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a
-     * path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
-     * see <a
+     * path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -641,8 +645,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        If your specified role has a path other than <code>/</code>, then you must specify either the full role
      *        ARN (recommended) or prefix the role name with the path. For example, if a role with the name
-     *        <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role
-     *        name. For more information, see <a href=
+     *        <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For
+     *        more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      *        >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -677,8 +681,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
      * (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a
-     * path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
-     * see <a
+     * path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -705,8 +708,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *         <p>
      *         If your specified role has a path other than <code>/</code>, then you must specify either the full role
      *         ARN (recommended) or prefix the role name with the path. For example, if a role with the name
-     *         <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the
-     *         role name. For more information, see <a href=
+     *         <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For
+     *         more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      *         >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      *         </p>
@@ -741,8 +744,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
      * (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a
-     * path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
-     * see <a
+     * path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -770,8 +772,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        If your specified role has a path other than <code>/</code>, then you must specify either the full role
      *        ARN (recommended) or prefix the role name with the path. For example, if a role with the name
-     *        <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role
-     *        name. For more information, see <a href=
+     *        <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For
+     *        more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      *        >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -910,6 +912,46 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The details for the Amazon EKS cluster that supports the compute environment.
+     * </p>
+     * 
+     * @param eksConfiguration
+     *        The details for the Amazon EKS cluster that supports the compute environment.
+     */
+
+    public void setEksConfiguration(EksConfiguration eksConfiguration) {
+        this.eksConfiguration = eksConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details for the Amazon EKS cluster that supports the compute environment.
+     * </p>
+     * 
+     * @return The details for the Amazon EKS cluster that supports the compute environment.
+     */
+
+    public EksConfiguration getEksConfiguration() {
+        return this.eksConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details for the Amazon EKS cluster that supports the compute environment.
+     * </p>
+     * 
+     * @param eksConfiguration
+     *        The details for the Amazon EKS cluster that supports the compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComputeEnvironmentRequest withEksConfiguration(EksConfiguration eksConfiguration) {
+        setEksConfiguration(eksConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -934,7 +976,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         if (getServiceRole() != null)
             sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEksConfiguration() != null)
+            sb.append("EksConfiguration: ").append(getEksConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -977,6 +1021,10 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEksConfiguration() == null ^ this.getEksConfiguration() == null)
+            return false;
+        if (other.getEksConfiguration() != null && other.getEksConfiguration().equals(this.getEksConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -992,6 +1040,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getComputeResources() == null) ? 0 : getComputeResources().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEksConfiguration() == null) ? 0 : getEksConfiguration().hashCode());
         return hashCode;
     }
 

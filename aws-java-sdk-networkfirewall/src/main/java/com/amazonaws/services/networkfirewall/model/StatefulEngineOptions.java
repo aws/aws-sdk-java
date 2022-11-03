@@ -38,6 +38,31 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      * </p>
      */
     private String ruleOrder;
+    /**
+     * <p>
+     * Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections
+     * can break due to disruptions in external networks or within the firewall itself.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is
+     * the default behavior.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from
+     * traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you
+     * have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule
+     * because the service won't have the context from session initialization defining the application layer protocol as
+     * HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would
+     * still match, as would the <code>aws:drop_strict</code> default action.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String streamExceptionPolicy;
 
     /**
      * <p>
@@ -135,6 +160,217 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections
+     * can break due to disruptions in external networks or within the firewall itself.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is
+     * the default behavior.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from
+     * traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you
+     * have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule
+     * because the service won't have the context from session initialization defining the application layer protocol as
+     * HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would
+     * still match, as would the <code>aws:drop_strict</code> default action.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param streamExceptionPolicy
+     *        Configures how Network Firewall processes traffic when a network connection breaks midstream. Network
+     *        connections can break due to disruptions in external networks or within the firewall itself.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     *        This is the default behavior.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without
+     *        context from traffic before the break. This impacts the behavior of rules that depend on this context. For
+     *        example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the
+     *        traffic for this rule because the service won't have the context from session initialization defining the
+     *        application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
+     *        <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
+     *        action.
+     *        </p>
+     *        </li>
+     * @see StreamExceptionPolicy
+     */
+
+    public void setStreamExceptionPolicy(String streamExceptionPolicy) {
+        this.streamExceptionPolicy = streamExceptionPolicy;
+    }
+
+    /**
+     * <p>
+     * Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections
+     * can break due to disruptions in external networks or within the firewall itself.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is
+     * the default behavior.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from
+     * traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you
+     * have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule
+     * because the service won't have the context from session initialization defining the application layer protocol as
+     * HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would
+     * still match, as would the <code>aws:drop_strict</code> default action.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Configures how Network Firewall processes traffic when a network connection breaks midstream. Network
+     *         connections can break due to disruptions in external networks or within the firewall itself.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     *         This is the default behavior.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without
+     *         context from traffic before the break. This impacts the behavior of rules that depend on this context.
+     *         For example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match
+     *         the traffic for this rule because the service won't have the context from session initialization defining
+     *         the application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
+     *         <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
+     *         action.
+     *         </p>
+     *         </li>
+     * @see StreamExceptionPolicy
+     */
+
+    public String getStreamExceptionPolicy() {
+        return this.streamExceptionPolicy;
+    }
+
+    /**
+     * <p>
+     * Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections
+     * can break due to disruptions in external networks or within the firewall itself.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is
+     * the default behavior.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from
+     * traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you
+     * have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule
+     * because the service won't have the context from session initialization defining the application layer protocol as
+     * HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would
+     * still match, as would the <code>aws:drop_strict</code> default action.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param streamExceptionPolicy
+     *        Configures how Network Firewall processes traffic when a network connection breaks midstream. Network
+     *        connections can break due to disruptions in external networks or within the firewall itself.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     *        This is the default behavior.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without
+     *        context from traffic before the break. This impacts the behavior of rules that depend on this context. For
+     *        example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the
+     *        traffic for this rule because the service won't have the context from session initialization defining the
+     *        application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
+     *        <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
+     *        action.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StreamExceptionPolicy
+     */
+
+    public StatefulEngineOptions withStreamExceptionPolicy(String streamExceptionPolicy) {
+        setStreamExceptionPolicy(streamExceptionPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections
+     * can break due to disruptions in external networks or within the firewall itself.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is
+     * the default behavior.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without context from
+     * traffic before the break. This impacts the behavior of rules that depend on this context. For example, if you
+     * have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the traffic for this rule
+     * because the service won't have the context from session initialization defining the application layer protocol as
+     * HTTP. However, this behavior is rule dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would
+     * still match, as would the <code>aws:drop_strict</code> default action.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param streamExceptionPolicy
+     *        Configures how Network Firewall processes traffic when a network connection breaks midstream. Network
+     *        connections can break due to disruptions in external networks or within the firewall itself.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     *        This is the default behavior.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent traffic without
+     *        context from traffic before the break. This impacts the behavior of rules that depend on this context. For
+     *        example, if you have a stateful rule to <code>drop http</code> traffic, Network Firewall won't match the
+     *        traffic for this rule because the service won't have the context from session initialization defining the
+     *        application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
+     *        <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
+     *        action.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StreamExceptionPolicy
+     */
+
+    public StatefulEngineOptions withStreamExceptionPolicy(StreamExceptionPolicy streamExceptionPolicy) {
+        this.streamExceptionPolicy = streamExceptionPolicy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,7 +383,9 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleOrder() != null)
-            sb.append("RuleOrder: ").append(getRuleOrder());
+            sb.append("RuleOrder: ").append(getRuleOrder()).append(",");
+        if (getStreamExceptionPolicy() != null)
+            sb.append("StreamExceptionPolicy: ").append(getStreamExceptionPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +404,10 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
             return false;
         if (other.getRuleOrder() != null && other.getRuleOrder().equals(this.getRuleOrder()) == false)
             return false;
+        if (other.getStreamExceptionPolicy() == null ^ this.getStreamExceptionPolicy() == null)
+            return false;
+        if (other.getStreamExceptionPolicy() != null && other.getStreamExceptionPolicy().equals(this.getStreamExceptionPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +417,7 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRuleOrder() == null) ? 0 : getRuleOrder().hashCode());
+        hashCode = prime * hashCode + ((getStreamExceptionPolicy() == null) ? 0 : getStreamExceptionPolicy().hashCode());
         return hashCode;
     }
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.detective.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -55,6 +57,10 @@ public class MemberDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilizationUpdatedTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> INVITATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitationType").build();
+    private static final MarshallingInfo<Map> VOLUMEUSAGEBYDATASOURCEPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeUsageByDatasourcePackage").build();
+    private static final MarshallingInfo<Map> DATASOURCEPACKAGEINGESTSTATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatasourcePackageIngestStates").build();
 
     private static final MemberDetailMarshaller instance = new MemberDetailMarshaller();
 
@@ -86,6 +92,8 @@ public class MemberDetailMarshaller {
             protocolMarshaller.marshall(memberDetail.getPercentOfGraphUtilization(), PERCENTOFGRAPHUTILIZATION_BINDING);
             protocolMarshaller.marshall(memberDetail.getPercentOfGraphUtilizationUpdatedTime(), PERCENTOFGRAPHUTILIZATIONUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(memberDetail.getInvitationType(), INVITATIONTYPE_BINDING);
+            protocolMarshaller.marshall(memberDetail.getVolumeUsageByDatasourcePackage(), VOLUMEUSAGEBYDATASOURCEPACKAGE_BINDING);
+            protocolMarshaller.marshall(memberDetail.getDatasourcePackageIngestStates(), DATASOURCEPACKAGEINGESTSTATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

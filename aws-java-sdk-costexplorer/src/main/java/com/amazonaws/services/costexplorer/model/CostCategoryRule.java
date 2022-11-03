@@ -59,11 +59,11 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value defined by
-     * <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on
-     * the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and
-     * specify the tag key to use.
+     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically
+     * grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the
+     * tag dimension and specify the tag key to use.
      * </p>
      */
     private String type;
@@ -256,20 +256,20 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value defined by
-     * <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on
-     * the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and
-     * specify the tag key to use.
+     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically
+     * grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the
+     * tag dimension and specify the tag key to use.
      * </p>
      * 
      * @param type
      *        You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     *        <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining
-     *        a rule that dynamically inherits the cost category value from the dimension value defined by
-     *        <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs
-     *        based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag
-     *        dimension and specify the tag key to use.
+     *        <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a
+     *        rule that dynamically inherits the cost category value. This value is from the dimension value that's
+     *        defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs
+     *        to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule
+     *        type, and then choose the tag dimension and specify the tag key to use.
      * @see CostCategoryRuleType
      */
 
@@ -280,19 +280,19 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value defined by
-     * <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on
-     * the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and
-     * specify the tag key to use.
+     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically
+     * grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the
+     * tag dimension and specify the tag key to use.
      * </p>
      * 
      * @return You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     *         <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining
-     *         a rule that dynamically inherits the cost category value from the dimension value defined by
-     *         <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs
-     *         based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag
-     *         dimension and specify the tag key to use.
+     *         <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a
+     *         rule that dynamically inherits the cost category value. This value is from the dimension value that's
+     *         defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs
+     *         to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule
+     *         type, and then choose the tag dimension and specify the tag key to use.
      * @see CostCategoryRuleType
      */
 
@@ -303,20 +303,20 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value defined by
-     * <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on
-     * the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and
-     * specify the tag key to use.
+     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically
+     * grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the
+     * tag dimension and specify the tag key to use.
      * </p>
      * 
      * @param type
      *        You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     *        <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining
-     *        a rule that dynamically inherits the cost category value from the dimension value defined by
-     *        <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs
-     *        based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag
-     *        dimension and specify the tag key to use.
+     *        <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a
+     *        rule that dynamically inherits the cost category value. This value is from the dimension value that's
+     *        defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs
+     *        to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule
+     *        type, and then choose the tag dimension and specify the tag key to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CostCategoryRuleType
      */
@@ -329,20 +329,20 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value defined by
-     * <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on
-     * the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and
-     * specify the tag key to use.
+     * <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically
+     * grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the
+     * tag dimension and specify the tag key to use.
      * </p>
      * 
      * @param type
      *        You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or
-     *        <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining
-     *        a rule that dynamically inherits the cost category value from the dimension value defined by
-     *        <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs
-     *        based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag
-     *        dimension and specify the tag key to use.
+     *        <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a
+     *        rule that dynamically inherits the cost category value. This value is from the dimension value that's
+     *        defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs
+     *        to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule
+     *        type, and then choose the tag dimension and specify the tag key to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CostCategoryRuleType
      */

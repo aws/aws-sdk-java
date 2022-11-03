@@ -22,7 +22,8 @@ public enum Profile {
 
     NONE("NONE"),
     HBBTV_1_5("HBBTV_1_5"),
-    HYBRIDCAST("HYBRIDCAST");
+    HYBRIDCAST("HYBRIDCAST"),
+    DVB_DASH_2014("DVB_DASH_2014");
 
     private String value;
 

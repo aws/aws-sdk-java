@@ -55,6 +55,19 @@ import com.amazonaws.services.frauddetector.model.transform.*;
  * Amazon Fraud Detector API actions, data types, and errors. For more information about Amazon Fraud Detector features,
  * see the <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/">Amazon Fraud Detector User Guide</a>.
  * </p>
+ * <p>
+ * We provide the Query API as well as AWS software development kits (SDK) for Amazon Fraud Detector in Java and Python
+ * programming languages.
+ * </p>
+ * <p>
+ * The Amazon Fraud Detector Query API provides HTTPS requests that use the HTTP verb GET or POST and a Query parameter
+ * <code>Action</code>. AWS SDK provides libraries, sample code, tutorials, and other resources for software developers
+ * who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS.
+ * These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your
+ * requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more
+ * information about the AWS SDKs, see <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
+ * on AWS</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -881,7 +894,7 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes data that was batch imported to Amazon Fraud Detector.
+     * Deletes the specified batch import job ID record. This action does not delete the data that was batch imported.
      * </p>
      * 
      * @param deleteBatchImportJobRequest
@@ -4621,6 +4634,11 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * You can perform the following status updates:
      * </p>
      * <ol>
+     * <li>
+     * <p>
+     * Change the <code>TRAINING_IN_PROGRESS</code> status to <code>TRAINING_CANCELLED</code>.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.

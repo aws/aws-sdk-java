@@ -80,6 +80,18 @@ public class WorkforceJsonUnmarshaller implements Unmarshaller<Workforce, JsonUn
                     context.nextToken();
                     workforce.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("WorkforceVpcConfig", targetDepth)) {
+                    context.nextToken();
+                    workforce.setWorkforceVpcConfig(WorkforceVpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    workforce.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FailureReason", targetDepth)) {
+                    context.nextToken();
+                    workforce.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

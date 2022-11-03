@@ -68,6 +68,12 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date creationTime;
     /**
      * <p>
+     * A timestamp indicating when the feature group was last updated.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
+    /**
+     * <p>
      * The configuration for the <code>OnlineStore</code>.
      * </p>
      */
@@ -102,6 +108,12 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     private OfflineStoreStatus offlineStoreStatus;
     /**
      * <p>
+     * A value indicating whether the update made to the feature group was successful.
+     * </p>
+     */
+    private LastUpdateStatus lastUpdateStatus;
+    /**
+     * <p>
      * The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is
      * failure can occur because:
      * </p>
@@ -131,6 +143,12 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The size of the <code>OnlineStore</code> in bytes.
+     * </p>
+     */
+    private Long onlineStoreTotalSizeBytes;
 
     /**
      * <p>
@@ -448,6 +466,46 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * A timestamp indicating when the feature group was last updated.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        A timestamp indicating when the feature group was last updated.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating when the feature group was last updated.
+     * </p>
+     * 
+     * @return A timestamp indicating when the feature group was last updated.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating when the feature group was last updated.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        A timestamp indicating when the feature group was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFeatureGroupResult withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for the <code>OnlineStore</code>.
      * </p>
      * 
@@ -691,6 +749,46 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * A value indicating whether the update made to the feature group was successful.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        A value indicating whether the update made to the feature group was successful.
+     */
+
+    public void setLastUpdateStatus(LastUpdateStatus lastUpdateStatus) {
+        this.lastUpdateStatus = lastUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * A value indicating whether the update made to the feature group was successful.
+     * </p>
+     * 
+     * @return A value indicating whether the update made to the feature group was successful.
+     */
+
+    public LastUpdateStatus getLastUpdateStatus() {
+        return this.lastUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * A value indicating whether the update made to the feature group was successful.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        A value indicating whether the update made to the feature group was successful.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFeatureGroupResult withLastUpdateStatus(LastUpdateStatus lastUpdateStatus) {
+        setLastUpdateStatus(lastUpdateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is
      * failure can occur because:
      * </p>
@@ -885,6 +983,46 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The size of the <code>OnlineStore</code> in bytes.
+     * </p>
+     * 
+     * @param onlineStoreTotalSizeBytes
+     *        The size of the <code>OnlineStore</code> in bytes.
+     */
+
+    public void setOnlineStoreTotalSizeBytes(Long onlineStoreTotalSizeBytes) {
+        this.onlineStoreTotalSizeBytes = onlineStoreTotalSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The size of the <code>OnlineStore</code> in bytes.
+     * </p>
+     * 
+     * @return The size of the <code>OnlineStore</code> in bytes.
+     */
+
+    public Long getOnlineStoreTotalSizeBytes() {
+        return this.onlineStoreTotalSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The size of the <code>OnlineStore</code> in bytes.
+     * </p>
+     * 
+     * @param onlineStoreTotalSizeBytes
+     *        The size of the <code>OnlineStore</code> in bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFeatureGroupResult withOnlineStoreTotalSizeBytes(Long onlineStoreTotalSizeBytes) {
+        setOnlineStoreTotalSizeBytes(onlineStoreTotalSizeBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -908,6 +1046,8 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("FeatureDefinitions: ").append(getFeatureDefinitions()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getOnlineStoreConfig() != null)
             sb.append("OnlineStoreConfig: ").append(getOnlineStoreConfig()).append(",");
         if (getOfflineStoreConfig() != null)
@@ -918,12 +1058,16 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("FeatureGroupStatus: ").append(getFeatureGroupStatus()).append(",");
         if (getOfflineStoreStatus() != null)
             sb.append("OfflineStoreStatus: ").append(getOfflineStoreStatus()).append(",");
+        if (getLastUpdateStatus() != null)
+            sb.append("LastUpdateStatus: ").append(getLastUpdateStatus()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getOnlineStoreTotalSizeBytes() != null)
+            sb.append("OnlineStoreTotalSizeBytes: ").append(getOnlineStoreTotalSizeBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -962,6 +1106,10 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
         if (other.getOnlineStoreConfig() == null ^ this.getOnlineStoreConfig() == null)
             return false;
         if (other.getOnlineStoreConfig() != null && other.getOnlineStoreConfig().equals(this.getOnlineStoreConfig()) == false)
@@ -982,6 +1130,10 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getOfflineStoreStatus() != null && other.getOfflineStoreStatus().equals(this.getOfflineStoreStatus()) == false)
             return false;
+        if (other.getLastUpdateStatus() == null ^ this.getLastUpdateStatus() == null)
+            return false;
+        if (other.getLastUpdateStatus() != null && other.getLastUpdateStatus().equals(this.getLastUpdateStatus()) == false)
+            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -993,6 +1145,10 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getOnlineStoreTotalSizeBytes() == null ^ this.getOnlineStoreTotalSizeBytes() == null)
+            return false;
+        if (other.getOnlineStoreTotalSizeBytes() != null && other.getOnlineStoreTotalSizeBytes().equals(this.getOnlineStoreTotalSizeBytes()) == false)
             return false;
         return true;
     }
@@ -1008,14 +1164,17 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEventTimeFeatureName() == null) ? 0 : getEventTimeFeatureName().hashCode());
         hashCode = prime * hashCode + ((getFeatureDefinitions() == null) ? 0 : getFeatureDefinitions().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getOnlineStoreConfig() == null) ? 0 : getOnlineStoreConfig().hashCode());
         hashCode = prime * hashCode + ((getOfflineStoreConfig() == null) ? 0 : getOfflineStoreConfig().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getFeatureGroupStatus() == null) ? 0 : getFeatureGroupStatus().hashCode());
         hashCode = prime * hashCode + ((getOfflineStoreStatus() == null) ? 0 : getOfflineStoreStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdateStatus() == null) ? 0 : getLastUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOnlineStoreTotalSizeBytes() == null) ? 0 : getOnlineStoreTotalSizeBytes().hashCode());
         return hashCode;
     }
 

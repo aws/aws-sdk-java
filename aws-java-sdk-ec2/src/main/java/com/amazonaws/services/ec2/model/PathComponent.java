@@ -104,7 +104,11 @@ public class PathComponent implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AdditionalDetail> additionalDetails;
-
+    /**
+     * <p>
+     * The transit gateway.
+     * </p>
+     */
     private AnalysisComponent transitGateway;
     /**
      * <p>
@@ -112,6 +116,18 @@ public class PathComponent implements Serializable, Cloneable {
      * </p>
      */
     private TransitGatewayRouteTableRoute transitGatewayRouteTableRoute;
+    /**
+     * <p>
+     * The explanation codes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Explanation> explanations;
+    /**
+     * <p>
+     * The load balancer listener.
+     * </p>
+     */
+    private AnalysisComponent elasticLoadBalancerListener;
 
     /**
      * <p>
@@ -667,7 +683,12 @@ public class PathComponent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The transit gateway.
+     * </p>
+     * 
      * @param transitGateway
+     *        The transit gateway.
      */
 
     public void setTransitGateway(AnalysisComponent transitGateway) {
@@ -675,7 +696,11 @@ public class PathComponent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The transit gateway.
+     * </p>
+     * 
+     * @return The transit gateway.
      */
 
     public AnalysisComponent getTransitGateway() {
@@ -683,7 +708,12 @@ public class PathComponent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The transit gateway.
+     * </p>
+     * 
      * @param transitGateway
+     *        The transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -733,6 +763,119 @@ public class PathComponent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The explanation codes.
+     * </p>
+     * 
+     * @return The explanation codes.
+     */
+
+    public java.util.List<Explanation> getExplanations() {
+        if (explanations == null) {
+            explanations = new com.amazonaws.internal.SdkInternalList<Explanation>();
+        }
+        return explanations;
+    }
+
+    /**
+     * <p>
+     * The explanation codes.
+     * </p>
+     * 
+     * @param explanations
+     *        The explanation codes.
+     */
+
+    public void setExplanations(java.util.Collection<Explanation> explanations) {
+        if (explanations == null) {
+            this.explanations = null;
+            return;
+        }
+
+        this.explanations = new com.amazonaws.internal.SdkInternalList<Explanation>(explanations);
+    }
+
+    /**
+     * <p>
+     * The explanation codes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExplanations(java.util.Collection)} or {@link #withExplanations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param explanations
+     *        The explanation codes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PathComponent withExplanations(Explanation... explanations) {
+        if (this.explanations == null) {
+            setExplanations(new com.amazonaws.internal.SdkInternalList<Explanation>(explanations.length));
+        }
+        for (Explanation ele : explanations) {
+            this.explanations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The explanation codes.
+     * </p>
+     * 
+     * @param explanations
+     *        The explanation codes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PathComponent withExplanations(java.util.Collection<Explanation> explanations) {
+        setExplanations(explanations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The load balancer listener.
+     * </p>
+     * 
+     * @param elasticLoadBalancerListener
+     *        The load balancer listener.
+     */
+
+    public void setElasticLoadBalancerListener(AnalysisComponent elasticLoadBalancerListener) {
+        this.elasticLoadBalancerListener = elasticLoadBalancerListener;
+    }
+
+    /**
+     * <p>
+     * The load balancer listener.
+     * </p>
+     * 
+     * @return The load balancer listener.
+     */
+
+    public AnalysisComponent getElasticLoadBalancerListener() {
+        return this.elasticLoadBalancerListener;
+    }
+
+    /**
+     * <p>
+     * The load balancer listener.
+     * </p>
+     * 
+     * @param elasticLoadBalancerListener
+     *        The load balancer listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PathComponent withElasticLoadBalancerListener(AnalysisComponent elasticLoadBalancerListener) {
+        setElasticLoadBalancerListener(elasticLoadBalancerListener);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -773,7 +916,11 @@ public class PathComponent implements Serializable, Cloneable {
         if (getTransitGateway() != null)
             sb.append("TransitGateway: ").append(getTransitGateway()).append(",");
         if (getTransitGatewayRouteTableRoute() != null)
-            sb.append("TransitGatewayRouteTableRoute: ").append(getTransitGatewayRouteTableRoute());
+            sb.append("TransitGatewayRouteTableRoute: ").append(getTransitGatewayRouteTableRoute()).append(",");
+        if (getExplanations() != null)
+            sb.append("Explanations: ").append(getExplanations()).append(",");
+        if (getElasticLoadBalancerListener() != null)
+            sb.append("ElasticLoadBalancerListener: ").append(getElasticLoadBalancerListener());
         sb.append("}");
         return sb.toString();
     }
@@ -849,6 +996,14 @@ public class PathComponent implements Serializable, Cloneable {
         if (other.getTransitGatewayRouteTableRoute() != null
                 && other.getTransitGatewayRouteTableRoute().equals(this.getTransitGatewayRouteTableRoute()) == false)
             return false;
+        if (other.getExplanations() == null ^ this.getExplanations() == null)
+            return false;
+        if (other.getExplanations() != null && other.getExplanations().equals(this.getExplanations()) == false)
+            return false;
+        if (other.getElasticLoadBalancerListener() == null ^ this.getElasticLoadBalancerListener() == null)
+            return false;
+        if (other.getElasticLoadBalancerListener() != null && other.getElasticLoadBalancerListener().equals(this.getElasticLoadBalancerListener()) == false)
+            return false;
         return true;
     }
 
@@ -872,6 +1027,8 @@ public class PathComponent implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAdditionalDetails() == null) ? 0 : getAdditionalDetails().hashCode());
         hashCode = prime * hashCode + ((getTransitGateway() == null) ? 0 : getTransitGateway().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayRouteTableRoute() == null) ? 0 : getTransitGatewayRouteTableRoute().hashCode());
+        hashCode = prime * hashCode + ((getExplanations() == null) ? 0 : getExplanations().hashCode());
+        hashCode = prime * hashCode + ((getElasticLoadBalancerListener() == null) ? 0 : getElasticLoadBalancerListener().hashCode());
         return hashCode;
     }
 

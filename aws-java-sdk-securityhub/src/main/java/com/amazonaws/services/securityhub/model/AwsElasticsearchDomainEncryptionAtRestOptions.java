@@ -37,7 +37,7 @@ public class AwsElasticsearchDomainEncryptionAtRestOptions implements Serializab
     private Boolean enabled;
     /**
      * <p>
-     * The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      */
     private String kmsKeyId;
@@ -96,11 +96,11 @@ public class AwsElasticsearchDomainEncryptionAtRestOptions implements Serializab
 
     /**
      * <p>
-     * The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     *        The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -109,10 +109,10 @@ public class AwsElasticsearchDomainEncryptionAtRestOptions implements Serializab
 
     /**
      * <p>
-     * The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      * 
-     * @return The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     * @return The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      */
 
     public String getKmsKeyId() {
@@ -121,11 +121,11 @@ public class AwsElasticsearchDomainEncryptionAtRestOptions implements Serializab
 
     /**
      * <p>
-     * The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+     *        The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

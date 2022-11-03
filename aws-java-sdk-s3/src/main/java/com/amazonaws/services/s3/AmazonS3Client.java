@@ -6424,8 +6424,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String bucketRegion = null;
 
         try {
+            HeadBucketRequest headBucketRequest = beforeClientExecution(new HeadBucketRequest(bucketName));
             Request<HeadBucketRequest> request = createRequest(bucketName, null,
-                    new HeadBucketRequest(bucketName), HttpMethodName.HEAD);
+                                                               headBucketRequest, HttpMethodName.HEAD);
             request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "HeadBucket");
 
             HeadBucketResult result = invoke(request, new HeadBucketResultHandler(), bucketName, null, true);

@@ -29,6 +29,8 @@ public class ComputeAttributesMarshaller {
 
     private static final MarshallingInfo<String> HOSTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HostId").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("State").build();
 
     private static final ComputeAttributesMarshaller instance = new ComputeAttributesMarshaller();
 
@@ -47,6 +49,7 @@ public class ComputeAttributesMarshaller {
 
         try {
             protocolMarshaller.marshall(computeAttributes.getHostId(), HOSTID_BINDING);
+            protocolMarshaller.marshall(computeAttributes.getState(), STATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

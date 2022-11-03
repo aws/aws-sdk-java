@@ -67,7 +67,32 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String serviceAccountRoleArn;
     /**
      * <p>
-     * How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     * How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you
+     * choose:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change
+     * the value. Creation of the add-on might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS
+     * default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
+     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS
+     * add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.
      * </p>
      */
     private String resolveConflicts;
@@ -337,11 +362,63 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     * How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you
+     * choose:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change
+     * the value. Creation of the add-on might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS
+     * default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
+     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS
+     * add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.
      * </p>
      * 
      * @param resolveConflicts
-     *        How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     *        How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value
+     *        you choose:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't
+     *        change the value. Creation of the add-on might fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon
+     *        EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS
+     *        default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon
+     *        EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you
+     *        specify.
      * @see ResolveConflicts
      */
 
@@ -351,10 +428,62 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     * How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you
+     * choose:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change
+     * the value. Creation of the add-on might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS
+     * default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
+     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS
+     * add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.
      * </p>
      * 
-     * @return How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     * @return How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value
+     *         you choose:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't
+     *         change the value. Creation of the add-on might fail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon
+     *         EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS
+     *         default value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon
+     *         EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you
+     *         specify.
      * @see ResolveConflicts
      */
 
@@ -364,11 +493,63 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     * How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you
+     * choose:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change
+     * the value. Creation of the add-on might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS
+     * default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
+     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS
+     * add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.
      * </p>
      * 
      * @param resolveConflicts
-     *        How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     *        How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value
+     *        you choose:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't
+     *        change the value. Creation of the add-on might fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon
+     *        EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS
+     *        default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon
+     *        EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you
+     *        specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolveConflicts
      */
@@ -380,11 +561,63 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     * How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you
+     * choose:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change
+     * the value. Creation of the add-on might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS
+     * default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
+     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS
+     * add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.
      * </p>
      * 
      * @param resolveConflicts
-     *        How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.
+     *        How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value
+     *        you choose:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't
+     *        change the value. Creation of the add-on might fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon
+     *        EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS
+     *        default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon
+     *        EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you
+     *        specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolveConflicts
      */

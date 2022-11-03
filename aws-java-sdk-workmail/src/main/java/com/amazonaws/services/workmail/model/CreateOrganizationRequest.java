@@ -51,14 +51,14 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.List<Domain> domains;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     * The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      * </p>
      */
     private String kmsKeyArn;
     /**
      * <p>
-     * When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can
-     * only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     * When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     * <code>true</code>, you must include a AD Connector directory ID in the request.
      * </p>
      */
     private Boolean enableInteroperability;
@@ -255,11 +255,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     * The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     *        The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -268,10 +268,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     * The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     * @return The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      */
 
     public String getKmsKeyArn() {
@@ -280,11 +280,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     * The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.
+     *        The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,13 +295,13 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can
-     * only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     * When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     * <code>true</code>, you must include a AD Connector directory ID in the request.
      * </p>
      * 
      * @param enableInteroperability
-     *        When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft
-     *        Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     *        When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     *        <code>true</code>, you must include a AD Connector directory ID in the request.
      */
 
     public void setEnableInteroperability(Boolean enableInteroperability) {
@@ -310,13 +310,12 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can
-     * only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     * When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     * <code>true</code>, you must include a AD Connector directory ID in the request.
      * </p>
      * 
-     * @return When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft
-     *         Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the
-     *         request.
+     * @return When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     *         <code>true</code>, you must include a AD Connector directory ID in the request.
      */
 
     public Boolean getEnableInteroperability() {
@@ -325,13 +324,13 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can
-     * only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     * When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     * <code>true</code>, you must include a AD Connector directory ID in the request.
      * </p>
      * 
      * @param enableInteroperability
-     *        When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft
-     *        Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     *        When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     *        <code>true</code>, you must include a AD Connector directory ID in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,13 +341,12 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can
-     * only be set to <code>true</code> if an AD Connector directory ID is included in the request.
+     * When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     * <code>true</code>, you must include a AD Connector directory ID in the request.
      * </p>
      * 
-     * @return When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft
-     *         Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the
-     *         request.
+     * @return When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If
+     *         <code>true</code>, you must include a AD Connector directory ID in the request.
      */
 
     public Boolean isEnableInteroperability() {

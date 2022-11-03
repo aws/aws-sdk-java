@@ -38,7 +38,7 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
     private java.util.List<GroupDefinition> groupDefinitions;
     /**
      * <p>
-     * The time period that is covered by the results in the response.
+     * The time period that's covered by the results in the response.
      * </p>
      */
     private java.util.List<ResultByTime> resultsByTime;
@@ -172,10 +172,10 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The time period that is covered by the results in the response.
+     * The time period that's covered by the results in the response.
      * </p>
      * 
-     * @return The time period that is covered by the results in the response.
+     * @return The time period that's covered by the results in the response.
      */
 
     public java.util.List<ResultByTime> getResultsByTime() {
@@ -184,11 +184,11 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The time period that is covered by the results in the response.
+     * The time period that's covered by the results in the response.
      * </p>
      * 
      * @param resultsByTime
-     *        The time period that is covered by the results in the response.
+     *        The time period that's covered by the results in the response.
      */
 
     public void setResultsByTime(java.util.Collection<ResultByTime> resultsByTime) {
@@ -202,7 +202,7 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The time period that is covered by the results in the response.
+     * The time period that's covered by the results in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +211,7 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param resultsByTime
-     *        The time period that is covered by the results in the response.
+     *        The time period that's covered by the results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The time period that is covered by the results in the response.
+     * The time period that's covered by the results in the response.
      * </p>
      * 
      * @param resultsByTime
-     *        The time period that is covered by the results in the response.
+     *        The time period that's covered by the results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

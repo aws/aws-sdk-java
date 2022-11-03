@@ -31,10 +31,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the
-     * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     * The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      */
     private String clusterArn;
@@ -240,8 +240,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> defaultCapacityProviderStrategy;
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
-     * created is returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and
+     * associated resources are returned as cluster attachments.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
@@ -253,8 +253,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>UPDATE_IN_PROGRESS</dt>
      * <dd>
      * <p>
-     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     * provisioning or deprovisioning.
+     * The available capacity providers for the cluster are updating.
      * </p>
      * </dd>
      * <dt>UPDATE_COMPLETE</dt>
@@ -275,17 +274,17 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the
-     * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     * The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner,
-     *        the <code>cluster</code> namespace, and then the cluster name. For example,
-     *        <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     *        The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *        >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      */
 
     public void setClusterArn(String clusterArn) {
@@ -294,16 +293,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the
-     * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     * The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *         namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster
-     *         owner, the <code>cluster</code> namespace, and then the cluster name. For example,
-     *         <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     * @return The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *         >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      */
 
     public String getClusterArn() {
@@ -312,17 +311,17 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the
-     * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     * The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner,
-     *        the <code>cluster</code> namespace, and then the cluster name. For example,
-     *        <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+     *        The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *        >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1922,12 +1921,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
-     * created is returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and
+     * associated resources are returned as cluster attachments.
      * </p>
      * 
-     * @return The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *         that's created is returned as a cluster attachment.
+     * @return The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider
+     *         and associated resources are returned as cluster attachments.
      */
 
     public java.util.List<Attachment> getAttachments() {
@@ -1939,13 +1938,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
-     * created is returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and
+     * associated resources are returned as cluster attachments.
      * </p>
      * 
      * @param attachments
-     *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *        that's created is returned as a cluster attachment.
+     *        The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider
+     *        and associated resources are returned as cluster attachments.
      */
 
     public void setAttachments(java.util.Collection<Attachment> attachments) {
@@ -1959,8 +1958,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
-     * created is returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and
+     * associated resources are returned as cluster attachments.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1969,8 +1968,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attachments
-     *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *        that's created is returned as a cluster attachment.
+     *        The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider
+     *        and associated resources are returned as cluster attachments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1986,13 +1985,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
-     * created is returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and
+     * associated resources are returned as cluster attachments.
      * </p>
      * 
      * @param attachments
-     *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *        that's created is returned as a cluster attachment.
+     *        The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider
+     *        and associated resources are returned as cluster attachments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2009,8 +2008,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>UPDATE_IN_PROGRESS</dt>
      * <dd>
      * <p>
-     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     * provisioning or deprovisioning.
+     * The available capacity providers for the cluster are updating.
      * </p>
      * </dd>
      * <dt>UPDATE_COMPLETE</dt>
@@ -2034,8 +2032,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        <dt>UPDATE_IN_PROGRESS</dt>
      *        <dd>
      *        <p>
-     *        The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     *        provisioning or deprovisioning.
+     *        The available capacity providers for the cluster are updating.
      *        </p>
      *        </dd>
      *        <dt>UPDATE_COMPLETE</dt>
@@ -2064,8 +2061,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>UPDATE_IN_PROGRESS</dt>
      * <dd>
      * <p>
-     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     * provisioning or deprovisioning.
+     * The available capacity providers for the cluster are updating.
      * </p>
      * </dd>
      * <dt>UPDATE_COMPLETE</dt>
@@ -2088,8 +2084,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *         <dt>UPDATE_IN_PROGRESS</dt>
      *         <dd>
      *         <p>
-     *         The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     *         provisioning or deprovisioning.
+     *         The available capacity providers for the cluster are updating.
      *         </p>
      *         </dd>
      *         <dt>UPDATE_COMPLETE</dt>
@@ -2118,8 +2113,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>UPDATE_IN_PROGRESS</dt>
      * <dd>
      * <p>
-     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     * provisioning or deprovisioning.
+     * The available capacity providers for the cluster are updating.
      * </p>
      * </dd>
      * <dt>UPDATE_COMPLETE</dt>
@@ -2143,8 +2137,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        <dt>UPDATE_IN_PROGRESS</dt>
      *        <dd>
      *        <p>
-     *        The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
-     *        provisioning or deprovisioning.
+     *        The available capacity providers for the cluster are updating.
      *        </p>
      *        </dd>
      *        <dt>UPDATE_COMPLETE</dt>

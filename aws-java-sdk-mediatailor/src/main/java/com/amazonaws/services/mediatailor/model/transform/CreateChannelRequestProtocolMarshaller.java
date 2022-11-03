@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateChannelRequestProtocolMarshaller implements Marshaller<Request<CreateChannelRequest>, CreateChannelRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/channel/{channelName}")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/channel/{ChannelName}")
             .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

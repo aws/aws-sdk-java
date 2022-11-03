@@ -30,6 +30,8 @@ public class SalesforceMetadataMarshaller {
 
     private static final MarshallingInfo<List> OAUTHSCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("oAuthScopes").build();
+    private static final MarshallingInfo<List> DATATRANSFERAPIS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTransferApis").build();
 
     private static final SalesforceMetadataMarshaller instance = new SalesforceMetadataMarshaller();
 
@@ -48,6 +50,7 @@ public class SalesforceMetadataMarshaller {
 
         try {
             protocolMarshaller.marshall(salesforceMetadata.getOAuthScopes(), OAUTHSCOPES_BINDING);
+            protocolMarshaller.marshall(salesforceMetadata.getDataTransferApis(), DATATRANSFERAPIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

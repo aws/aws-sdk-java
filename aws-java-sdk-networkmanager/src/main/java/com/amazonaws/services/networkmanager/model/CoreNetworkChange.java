@@ -58,6 +58,13 @@ public class CoreNetworkChange implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private CoreNetworkChangeValues newValues;
+    /**
+     * <p>
+     * Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for
+     * a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     * </p>
+     */
+    private String identifierPath;
 
     /**
      * <p>
@@ -298,6 +305,55 @@ public class CoreNetworkChange implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for
+     * a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     * </p>
+     * 
+     * @param identifierPath
+     *        Uniquely identifies the path for a change within the changeset. For example, the
+     *        <code>IdentifierPath</code> for a core network segment change might be
+     *        <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     */
+
+    public void setIdentifierPath(String identifierPath) {
+        this.identifierPath = identifierPath;
+    }
+
+    /**
+     * <p>
+     * Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for
+     * a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     * </p>
+     * 
+     * @return Uniquely identifies the path for a change within the changeset. For example, the
+     *         <code>IdentifierPath</code> for a core network segment change might be
+     *         <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     */
+
+    public String getIdentifierPath() {
+        return this.identifierPath;
+    }
+
+    /**
+     * <p>
+     * Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for
+     * a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     * </p>
+     * 
+     * @param identifierPath
+     *        Uniquely identifies the path for a change within the changeset. For example, the
+     *        <code>IdentifierPath</code> for a core network segment change might be
+     *        <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoreNetworkChange withIdentifierPath(String identifierPath) {
+        setIdentifierPath(identifierPath);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -318,7 +374,9 @@ public class CoreNetworkChange implements Serializable, Cloneable, StructuredPoj
         if (getPreviousValues() != null)
             sb.append("PreviousValues: ").append(getPreviousValues()).append(",");
         if (getNewValues() != null)
-            sb.append("NewValues: ").append(getNewValues());
+            sb.append("NewValues: ").append(getNewValues()).append(",");
+        if (getIdentifierPath() != null)
+            sb.append("IdentifierPath: ").append(getIdentifierPath());
         sb.append("}");
         return sb.toString();
     }
@@ -353,6 +411,10 @@ public class CoreNetworkChange implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getNewValues() != null && other.getNewValues().equals(this.getNewValues()) == false)
             return false;
+        if (other.getIdentifierPath() == null ^ this.getIdentifierPath() == null)
+            return false;
+        if (other.getIdentifierPath() != null && other.getIdentifierPath().equals(this.getIdentifierPath()) == false)
+            return false;
         return true;
     }
 
@@ -366,6 +428,7 @@ public class CoreNetworkChange implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getIdentifier() == null) ? 0 : getIdentifier().hashCode());
         hashCode = prime * hashCode + ((getPreviousValues() == null) ? 0 : getPreviousValues().hashCode());
         hashCode = prime * hashCode + ((getNewValues() == null) ? 0 : getNewValues().hashCode());
+        hashCode = prime * hashCode + ((getIdentifierPath() == null) ? 0 : getIdentifierPath().hashCode());
         return hashCode;
     }
 

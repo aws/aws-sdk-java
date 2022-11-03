@@ -172,6 +172,13 @@ public class DBInstance implements Serializable, Cloneable {
     private String cACertificateIdentifier;
     /**
      * <p>
+     * A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default,
+     * tags are not copied.
+     * </p>
+     */
+    private Boolean copyTagsToSnapshot;
+    /**
+     * <p>
      * A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after
      * a failure of the existing primary instance.
      * </p>
@@ -1257,6 +1264,66 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default,
+     * tags are not copied.
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By
+     *        default, tags are not copied.
+     */
+
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default,
+     * tags are not copied.
+     * </p>
+     * 
+     * @return A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By
+     *         default, tags are not copied.
+     */
+
+    public Boolean getCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default,
+     * tags are not copied.
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By
+     *        default, tags are not copied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        setCopyTagsToSnapshot(copyTagsToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default,
+     * tags are not copied.
+     * </p>
+     * 
+     * @return A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By
+     *         default, tags are not copied.
+     */
+
+    public Boolean isCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
      * A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after
      * a failure of the existing primary instance.
      * </p>
@@ -1469,6 +1536,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("DbiResourceId: ").append(getDbiResourceId()).append(",");
         if (getCACertificateIdentifier() != null)
             sb.append("CACertificateIdentifier: ").append(getCACertificateIdentifier()).append(",");
+        if (getCopyTagsToSnapshot() != null)
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getPromotionTier() != null)
             sb.append("PromotionTier: ").append(getPromotionTier()).append(",");
         if (getDBInstanceArn() != null)
@@ -1581,6 +1650,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false)
             return false;
+        if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
+            return false;
+        if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
+            return false;
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null)
             return false;
         if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false)
@@ -1624,6 +1697,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());

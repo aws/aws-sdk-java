@@ -43,7 +43,7 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
     private String state;
     /**
      * <p>
-     * The identifier for the directory associated with an Amazon WorkMail organization.
+     * The identifier for the directory associated with an WorkMail organization.
      * </p>
      */
     private String directoryId;
@@ -200,11 +200,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier for the directory associated with an Amazon WorkMail organization.
+     * The identifier for the directory associated with an WorkMail organization.
      * </p>
      * 
      * @param directoryId
-     *        The identifier for the directory associated with an Amazon WorkMail organization.
+     *        The identifier for the directory associated with an WorkMail organization.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -213,10 +213,10 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier for the directory associated with an Amazon WorkMail organization.
+     * The identifier for the directory associated with an WorkMail organization.
      * </p>
      * 
-     * @return The identifier for the directory associated with an Amazon WorkMail organization.
+     * @return The identifier for the directory associated with an WorkMail organization.
      */
 
     public String getDirectoryId() {
@@ -225,11 +225,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier for the directory associated with an Amazon WorkMail organization.
+     * The identifier for the directory associated with an WorkMail organization.
      * </p>
      * 
      * @param directoryId
-     *        The identifier for the directory associated with an Amazon WorkMail organization.
+     *        The identifier for the directory associated with an WorkMail organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

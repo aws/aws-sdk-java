@@ -27,21 +27,18 @@ public class DetectDominantLanguageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      * </p>
      */
     private String text;
 
     /**
      * <p>
-     * A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000
-     *        bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      */
 
     public void setText(String text) {
@@ -50,12 +47,10 @@ public class DetectDominantLanguageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      * </p>
      * 
-     * @return A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000
-     *         bytes of UTF-8 encoded characters.
+     * @return A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      */
 
     public String getText() {
@@ -64,13 +59,11 @@ public class DetectDominantLanguageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000
-     *        bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,23 +25,23 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A short description of the tunnels in an AWS account.
+     * A short description of the tunnels in an Amazon Web Services account.
      * </p>
      */
     private java.util.List<TunnelSummary> tunnelSummaries;
     /**
      * <p>
-     * A token to used to retrieve the next set of results.
+     * The token to use to get the next set of results, or null if there are no additional results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A short description of the tunnels in an AWS account.
+     * A short description of the tunnels in an Amazon Web Services account.
      * </p>
      * 
-     * @return A short description of the tunnels in an AWS account.
+     * @return A short description of the tunnels in an Amazon Web Services account.
      */
 
     public java.util.List<TunnelSummary> getTunnelSummaries() {
@@ -50,11 +50,11 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A short description of the tunnels in an AWS account.
+     * A short description of the tunnels in an Amazon Web Services account.
      * </p>
      * 
      * @param tunnelSummaries
-     *        A short description of the tunnels in an AWS account.
+     *        A short description of the tunnels in an Amazon Web Services account.
      */
 
     public void setTunnelSummaries(java.util.Collection<TunnelSummary> tunnelSummaries) {
@@ -68,7 +68,7 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A short description of the tunnels in an AWS account.
+     * A short description of the tunnels in an Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param tunnelSummaries
-     *        A short description of the tunnels in an AWS account.
+     *        A short description of the tunnels in an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A short description of the tunnels in an AWS account.
+     * A short description of the tunnels in an Amazon Web Services account.
      * </p>
      * 
      * @param tunnelSummaries
-     *        A short description of the tunnels in an AWS account.
+     *        A short description of the tunnels in an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A token to used to retrieve the next set of results.
+     * The token to use to get the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        A token to used to retrieve the next set of results.
+     *        The token to use to get the next set of results, or null if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A token to used to retrieve the next set of results.
+     * The token to use to get the next set of results, or null if there are no additional results.
      * </p>
      * 
-     * @return A token to used to retrieve the next set of results.
+     * @return The token to use to get the next set of results, or null if there are no additional results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListTunnelsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A token to used to retrieve the next set of results.
+     * The token to use to get the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        A token to used to retrieve the next set of results.
+     *        The token to use to get the next set of results, or null if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

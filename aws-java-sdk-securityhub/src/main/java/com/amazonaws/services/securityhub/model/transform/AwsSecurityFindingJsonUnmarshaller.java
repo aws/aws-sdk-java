@@ -160,6 +160,12 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                     context.nextToken();
                     awsSecurityFinding.setProcess(ProcessDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Threats", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFinding.setThreats(new ListUnmarshaller<Threat>(ThreatJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ThreatIntelIndicators", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setThreatIntelIndicators(new ListUnmarshaller<ThreatIntelIndicator>(ThreatIntelIndicatorJsonUnmarshaller.getInstance())

@@ -43,8 +43,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private String description;
     /**
      * <p>
-     * The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the
-     * Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is
+     * encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * Secrets created using the console use an KMS key ID.
      * </p>
      */
     private String kmsKeyId;
@@ -86,8 +87,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date lastChangedDate;
     /**
      * <p>
-     * The last date that the secret value was retrieved. This value does not include the time. This field is omitted if
-     * the secret has never been retrieved.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      */
     private java.util.Date lastAccessedDate;
@@ -151,7 +152,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Map<String, java.util.List<String>> versionIdsToStages;
     /**
      * <p>
-     * The name of the service that created this secret.
+     * The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by
+     * other Amazon Web Services services</a>.
      * </p>
      */
     private String owningService;
@@ -314,13 +317,15 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the
-     * Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is
+     * encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * Secrets created using the console use an KMS key ID.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted
-     *        with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     *        The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the
+     *        secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field
+     *        is omitted. Secrets created using the console use an KMS key ID.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -329,12 +334,14 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the
-     * Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is
+     * encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * Secrets created using the console use an KMS key ID.
      * </p>
      * 
-     * @return The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted
-     *         with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * @return The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the
+     *         secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field
+     *         is omitted. Secrets created using the console use an KMS key ID.
      */
 
     public String getKmsKeyId() {
@@ -343,13 +350,15 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the
-     * Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is
+     * encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     * Secrets created using the console use an KMS key ID.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted
-     *        with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.
+     *        The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the
+     *        secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field
+     *        is omitted. Secrets created using the console use an KMS key ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,13 +619,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date that the secret value was retrieved. This value does not include the time. This field is omitted if
-     * the secret has never been retrieved.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
      * @param lastAccessedDate
-     *        The last date that the secret value was retrieved. This value does not include the time. This field is
-     *        omitted if the secret has never been retrieved.
+     *        The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *        been retrieved in the Region.
      */
 
     public void setLastAccessedDate(java.util.Date lastAccessedDate) {
@@ -625,12 +634,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date that the secret value was retrieved. This value does not include the time. This field is omitted if
-     * the secret has never been retrieved.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
-     * @return The last date that the secret value was retrieved. This value does not include the time. This field is
-     *         omitted if the secret has never been retrieved.
+     * @return The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *         been retrieved in the Region.
      */
 
     public java.util.Date getLastAccessedDate() {
@@ -639,13 +648,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date that the secret value was retrieved. This value does not include the time. This field is omitted if
-     * the secret has never been retrieved.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
      * @param lastAccessedDate
-     *        The last date that the secret value was retrieved. This value does not include the time. This field is
-     *        omitted if the secret has never been retrieved.
+     *        The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *        been retrieved in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1073,11 +1082,15 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the service that created this secret.
+     * The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by
+     * other Amazon Web Services services</a>.
      * </p>
      * 
      * @param owningService
-     *        The name of the service that created this secret.
+     *        The ID of the service that created this secret. For more information, see <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *        managed by other Amazon Web Services services</a>.
      */
 
     public void setOwningService(String owningService) {
@@ -1086,10 +1099,14 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the service that created this secret.
+     * The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by
+     * other Amazon Web Services services</a>.
      * </p>
      * 
-     * @return The name of the service that created this secret.
+     * @return The ID of the service that created this secret. For more information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      */
 
     public String getOwningService() {
@@ -1098,11 +1115,15 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the service that created this secret.
+     * The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by
+     * other Amazon Web Services services</a>.
      * </p>
      * 
      * @param owningService
-     *        The name of the service that created this secret.
+     *        The ID of the service that created this secret. For more information, see <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *        managed by other Amazon Web Services services</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

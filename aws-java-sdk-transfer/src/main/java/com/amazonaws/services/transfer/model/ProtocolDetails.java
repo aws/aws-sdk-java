@@ -30,33 +30,48 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
-     * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     * <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
      * </p>
      * <p>
-     * Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     * Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
+     * <p>
+     * <i>Special values</i>
+     * </p>
+     * <p>
+     * The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The
+     * value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server
+     * automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has
+     * a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer
+     * (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the
+     * <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you
+     * can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control
+     * connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the
+     * <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients,
+     * check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.
+     * </p>
      */
     private String passiveIp;
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -87,43 +102,105 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      */
     private String tlsSessionResumptionMode;
-
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
      * </p>
      * <p>
-     * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
      * </p>
      * <p>
-     * Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
-     * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      * </p>
      * </note>
+     */
+    private String setStatOption;
+    /**
+     * <p>
+     * Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * </p>
+     */
+    private java.util.List<String> as2Transports;
+
+    /**
+     * <p>
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
+     * </p>
+     * <p>
+     * <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
+     * </p>
+     * <p>
+     * Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
+     * </p>
+     * <note>
+     * <p>
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
+     * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
+     * </p>
+     * </note>
+     * <p>
+     * <i>Special values</i>
+     * </p>
+     * <p>
+     * The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The
+     * value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server
+     * automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has
+     * a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer
+     * (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the
+     * <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you
+     * can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control
+     * connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the
+     * <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients,
+     * check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.
+     * </p>
      * 
      * @param passiveIp
-     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the
-     *        external IP address of a firewall, router, or load balancer. For example: </p>
+     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP
+     *        address of a firewall, router, or load balancer. For example: </p>
      *        <p>
-     *        <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     *        <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
      *        </p>
      *        <p>
-     *        Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     *        Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
      *        </p>
      *        <note>
      *        <p>
-     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for
-     *        the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server
+     *        for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      *        "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     *        >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     *        >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      *        </p>
+     *        </note>
+     *        <p>
+     *        <i>Special values</i>
+     *        </p>
+     *        <p>
+     *        The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code>
+     *        parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In
+     *        this case, the server automatically responds with one of the endpoint IPs within the PASV response.
+     *        <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a
+     *        High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only
+     *        specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of
+     *        having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the
+     *        client to use the same IP address as the Control connection and utilize all AZs for their connections.
+     *        Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and
+     *        WinSCP do support it. If you are using other clients, check to see if your client supports the
+     *        <code>PassiveIp=0.0.0.0</code> response.
      */
 
     public void setPassiveIp(String passiveIp) {
@@ -132,39 +209,71 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
-     * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     * <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
      * </p>
      * <p>
-     * Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     * Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
+     * <p>
+     * <i>Special values</i>
+     * </p>
+     * <p>
+     * The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The
+     * value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server
+     * automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has
+     * a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer
+     * (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the
+     * <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you
+     * can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control
+     * connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the
+     * <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients,
+     * check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.
+     * </p>
      * 
-     * @return Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the
-     *         external IP address of a firewall, router, or load balancer. For example: </p>
+     * @return Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP
+     *         address of a firewall, router, or load balancer. For example: </p>
      *         <p>
-     *         <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     *         <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
      *         </p>
      *         <p>
-     *         Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     *         Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
      *         </p>
      *         <note>
      *         <p>
-     *         If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for
-     *         the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     *         If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family
+     *         server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see
+     *         <a href=
      *         "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     *         >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     *         >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      *         </p>
+     *         </note>
+     *         <p>
+     *         <i>Special values</i>
+     *         </p>
+     *         <p>
+     *         The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code>
+     *         parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In
+     *         this case, the server automatically responds with one of the endpoint IPs within the PASV response.
+     *         <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a
+     *         High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only
+     *         specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of
+     *         having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the
+     *         client to use the same IP address as the Control connection and utilize all AZs for their connections.
+     *         Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla
+     *         and WinSCP do support it. If you are using other clients, check to see if your client supports the
+     *         <code>PassiveIp=0.0.0.0</code> response.
      */
 
     public String getPassiveIp() {
@@ -173,40 +282,71 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
-     * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     * <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
      * </p>
      * <p>
-     * Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     * Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
+     * <p>
+     * <i>Special values</i>
+     * </p>
+     * <p>
+     * The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The
+     * value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server
+     * automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has
+     * a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer
+     * (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the
+     * <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you
+     * can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control
+     * connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the
+     * <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients,
+     * check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.
+     * </p>
      * 
      * @param passiveIp
-     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the
-     *        external IP address of a firewall, router, or load balancer. For example: </p>
+     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP
+     *        address of a firewall, router, or load balancer. For example: </p>
      *        <p>
-     *        <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
+     *        <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code>
      *        </p>
      *        <p>
-     *        Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.
+     *        Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.
      *        </p>
      *        <note>
      *        <p>
-     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for
-     *        the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server
+     *        for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      *        "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     *        >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     *        >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      *        </p>
+     *        </note>
+     *        <p>
+     *        <i>Special values</i>
+     *        </p>
+     *        <p>
+     *        The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code>
+     *        parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In
+     *        this case, the server automatically responds with one of the endpoint IPs within the PASV response.
+     *        <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a
+     *        High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only
+     *        specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of
+     *        having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the
+     *        client to use the same IP address as the Control connection and utilize all AZs for their connections.
+     *        Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and
+     *        WinSCP do support it. If you are using other clients, check to see if your client supports the
+     *        <code>PassiveIp=0.0.0.0</code> response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,12 +357,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -253,12 +393,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param tlsSessionResumptionMode
-     *        A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
+     *        A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
      *        mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
      *        session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *        negotiated sessions through a unique session ID. This property is available during
      *        <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *        value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *        value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *        default.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -295,12 +436,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -330,12 +471,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </note></li>
      * </ul>
      * 
-     * @return A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
-     *         mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
-     *         session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
+     * @return A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides
+     *         a mechanism to resume or share a negotiated secret key between the control and data connection for an
+     *         FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *         negotiated sessions through a unique session ID. This property is available during
      *         <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *         value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *         value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *         default.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -372,12 +514,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -408,12 +550,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param tlsSessionResumptionMode
-     *        A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
+     *        A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
      *        mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
      *        session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *        negotiated sessions through a unique session ID. This property is available during
      *        <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *        value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *        value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *        default.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -452,12 +595,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -488,12 +631,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param tlsSessionResumptionMode
-     *        A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
+     *        A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
      *        mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
      *        session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *        negotiated sessions through a unique session ID. This property is available during
      *        <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *        value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *        value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *        default.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -531,6 +675,319 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @param setStatOption
+     *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *        <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
+     *        <p>
+     *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *        and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *        commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *        file uploads from these clients can result in errors even when the file is otherwise successfully
+     *        uploaded.
+     *        </p>
+     *        <p>
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *        <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *        While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate
+     *        a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *        <code>SETSTAT</code> call.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *        <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     *        </p>
+     * @see SetStatOption
+     */
+
+    public void setSetStatOption(String setStatOption) {
+        this.setStatOption = setStatOption;
+    }
+
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @return Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *         <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
+     *         <p>
+     *         Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *         and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *         commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *         file uploads from these clients can result in errors even when the file is otherwise successfully
+     *         uploaded.
+     *         </p>
+     *         <p>
+     *         Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *         <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *         While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does
+     *         generate a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *         <code>SETSTAT</code> call.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *         <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     *         </p>
+     * @see SetStatOption
+     */
+
+    public String getSetStatOption() {
+        return this.setStatOption;
+    }
+
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @param setStatOption
+     *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *        <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
+     *        <p>
+     *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *        and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *        commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *        file uploads from these clients can result in errors even when the file is otherwise successfully
+     *        uploaded.
+     *        </p>
+     *        <p>
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *        <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *        While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate
+     *        a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *        <code>SETSTAT</code> call.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *        <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SetStatOption
+     */
+
+    public ProtocolDetails withSetStatOption(String setStatOption) {
+        setSetStatOption(setStatOption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @param setStatOption
+     *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *        <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
+     *        <p>
+     *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *        and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *        commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *        file uploads from these clients can result in errors even when the file is otherwise successfully
+     *        uploaded.
+     *        </p>
+     *        <p>
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *        <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *        While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate
+     *        a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *        <code>SETSTAT</code> call.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *        <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SetStatOption
+     */
+
+    public ProtocolDetails withSetStatOption(SetStatOption setStatOption) {
+        this.setStatOption = setStatOption.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * </p>
+     * 
+     * @return Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * @see As2Transport
+     */
+
+    public java.util.List<String> getAs2Transports() {
+        return as2Transports;
+    }
+
+    /**
+     * <p>
+     * Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * </p>
+     * 
+     * @param as2Transports
+     *        Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * @see As2Transport
+     */
+
+    public void setAs2Transports(java.util.Collection<String> as2Transports) {
+        if (as2Transports == null) {
+            this.as2Transports = null;
+            return;
+        }
+
+        this.as2Transports = new java.util.ArrayList<String>(as2Transports);
+    }
+
+    /**
+     * <p>
+     * Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAs2Transports(java.util.Collection)} or {@link #withAs2Transports(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param as2Transports
+     *        Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see As2Transport
+     */
+
+    public ProtocolDetails withAs2Transports(String... as2Transports) {
+        if (this.as2Transports == null) {
+            setAs2Transports(new java.util.ArrayList<String>(as2Transports.length));
+        }
+        for (String ele : as2Transports) {
+            this.as2Transports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * </p>
+     * 
+     * @param as2Transports
+     *        Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see As2Transport
+     */
+
+    public ProtocolDetails withAs2Transports(java.util.Collection<String> as2Transports) {
+        setAs2Transports(as2Transports);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * </p>
+     * 
+     * @param as2Transports
+     *        Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see As2Transport
+     */
+
+    public ProtocolDetails withAs2Transports(As2Transport... as2Transports) {
+        java.util.ArrayList<String> as2TransportsCopy = new java.util.ArrayList<String>(as2Transports.length);
+        for (As2Transport value : as2Transports) {
+            as2TransportsCopy.add(value.toString());
+        }
+        if (getAs2Transports() == null) {
+            setAs2Transports(as2TransportsCopy);
+        } else {
+            getAs2Transports().addAll(as2TransportsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -545,7 +1002,11 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
         if (getPassiveIp() != null)
             sb.append("PassiveIp: ").append(getPassiveIp()).append(",");
         if (getTlsSessionResumptionMode() != null)
-            sb.append("TlsSessionResumptionMode: ").append(getTlsSessionResumptionMode());
+            sb.append("TlsSessionResumptionMode: ").append(getTlsSessionResumptionMode()).append(",");
+        if (getSetStatOption() != null)
+            sb.append("SetStatOption: ").append(getSetStatOption()).append(",");
+        if (getAs2Transports() != null)
+            sb.append("As2Transports: ").append(getAs2Transports());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +1029,14 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTlsSessionResumptionMode() != null && other.getTlsSessionResumptionMode().equals(this.getTlsSessionResumptionMode()) == false)
             return false;
+        if (other.getSetStatOption() == null ^ this.getSetStatOption() == null)
+            return false;
+        if (other.getSetStatOption() != null && other.getSetStatOption().equals(this.getSetStatOption()) == false)
+            return false;
+        if (other.getAs2Transports() == null ^ this.getAs2Transports() == null)
+            return false;
+        if (other.getAs2Transports() != null && other.getAs2Transports().equals(this.getAs2Transports()) == false)
+            return false;
         return true;
     }
 
@@ -578,6 +1047,8 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getPassiveIp() == null) ? 0 : getPassiveIp().hashCode());
         hashCode = prime * hashCode + ((getTlsSessionResumptionMode() == null) ? 0 : getTlsSessionResumptionMode().hashCode());
+        hashCode = prime * hashCode + ((getSetStatOption() == null) ? 0 : getSetStatOption().hashCode());
+        hashCode = prime * hashCode + ((getAs2Transports() == null) ? 0 : getAs2Transports().hashCode());
         return hashCode;
     }
 

@@ -56,8 +56,8 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * <p>
      * Each item in the list represents a class of SQL operations that normally cause all later statements in a session
      * using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that
-     * class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     * <code>EXCLUDE_VARIABLE_SETS</code>.
+     * class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family
+     * databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> sessionPinningFilters;
@@ -240,14 +240,14 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * <p>
      * Each item in the list represents a class of SQL operations that normally cause all later statements in a session
      * using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that
-     * class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     * <code>EXCLUDE_VARIABLE_SETS</code>.
+     * class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family
+     * databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * </p>
      * 
      * @return Each item in the list represents a class of SQL operations that normally cause all later statements in a
      *         session using a proxy to be pinned to the same underlying database connection. Including an item in the
-     *         list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     *         <code>EXCLUDE_VARIABLE_SETS</code>.
+     *         list exempts that class of SQL operations from the pinning behavior. This setting is only supported for
+     *         MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      */
 
     public java.util.List<String> getSessionPinningFilters() {
@@ -261,15 +261,15 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * <p>
      * Each item in the list represents a class of SQL operations that normally cause all later statements in a session
      * using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that
-     * class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     * <code>EXCLUDE_VARIABLE_SETS</code>.
+     * class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family
+     * databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * </p>
      * 
      * @param sessionPinningFilters
      *        Each item in the list represents a class of SQL operations that normally cause all later statements in a
      *        session using a proxy to be pinned to the same underlying database connection. Including an item in the
-     *        list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     *        <code>EXCLUDE_VARIABLE_SETS</code>.
+     *        list exempts that class of SQL operations from the pinning behavior. This setting is only supported for
+     *        MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      */
 
     public void setSessionPinningFilters(java.util.Collection<String> sessionPinningFilters) {
@@ -285,8 +285,8 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * <p>
      * Each item in the list represents a class of SQL operations that normally cause all later statements in a session
      * using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that
-     * class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     * <code>EXCLUDE_VARIABLE_SETS</code>.
+     * class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family
+     * databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -297,8 +297,8 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * @param sessionPinningFilters
      *        Each item in the list represents a class of SQL operations that normally cause all later statements in a
      *        session using a proxy to be pinned to the same underlying database connection. Including an item in the
-     *        list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     *        <code>EXCLUDE_VARIABLE_SETS</code>.
+     *        list exempts that class of SQL operations from the pinning behavior. This setting is only supported for
+     *        MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,15 +316,15 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * <p>
      * Each item in the list represents a class of SQL operations that normally cause all later statements in a session
      * using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that
-     * class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     * <code>EXCLUDE_VARIABLE_SETS</code>.
+     * class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family
+     * databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * </p>
      * 
      * @param sessionPinningFilters
      *        Each item in the list represents a class of SQL operations that normally cause all later statements in a
      *        session using a proxy to be pinned to the same underlying database connection. Including an item in the
-     *        list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is
-     *        <code>EXCLUDE_VARIABLE_SETS</code>.
+     *        list exempts that class of SQL operations from the pinning behavior. This setting is only supported for
+     *        MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

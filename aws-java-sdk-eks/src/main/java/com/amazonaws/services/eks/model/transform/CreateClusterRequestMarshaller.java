@@ -50,6 +50,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> ENCRYPTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPOSTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outpostConfig").build();
 
     private static final CreateClusterRequestMarshaller instance = new CreateClusterRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class CreateClusterRequestMarshaller {
             protocolMarshaller.marshall(createClusterRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getOutpostConfig(), OUTPOSTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

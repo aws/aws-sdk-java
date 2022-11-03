@@ -28,21 +28,21 @@ public class SSEKMSEncryption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer
-     * managed key to use for encrypting generated manifest objects.
+     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption
+     * customer managed key to use for encrypting generated manifest objects.
      * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer
-     * managed key to use for encrypting generated manifest objects.
+     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption
+     * customer managed key to use for encrypting generated manifest objects.
      * </p>
      * 
      * @param keyId
      *        Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-     *        customer managed key to use for encrypting generated manifest objects.
+     *        encryption customer managed key to use for encrypting generated manifest objects.
      */
 
     public void setKeyId(String keyId) {
@@ -51,12 +51,12 @@ public class SSEKMSEncryption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer
-     * managed key to use for encrypting generated manifest objects.
+     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption
+     * customer managed key to use for encrypting generated manifest objects.
      * </p>
      * 
      * @return Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-     *         customer managed key to use for encrypting generated manifest objects.
+     *         encryption customer managed key to use for encrypting generated manifest objects.
      */
 
     public String getKeyId() {
@@ -65,13 +65,13 @@ public class SSEKMSEncryption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer
-     * managed key to use for encrypting generated manifest objects.
+     * Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption
+     * customer managed key to use for encrypting generated manifest objects.
      * </p>
      * 
      * @param keyId
      *        Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-     *        customer managed key to use for encrypting generated manifest objects.
+     *        encryption customer managed key to use for encrypting generated manifest objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

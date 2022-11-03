@@ -33,6 +33,8 @@ public class ReplicationConfigurationReplicatedDiskMarshaller {
             .marshallLocationName("iops").build();
     private static final MarshallingInfo<Boolean> ISBOOTDISK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isBootDisk").build();
+    private static final MarshallingInfo<String> OPTIMIZEDSTAGINGDISKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("optimizedStagingDiskType").build();
     private static final MarshallingInfo<String> STAGINGDISKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stagingDiskType").build();
     private static final MarshallingInfo<Long> THROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,7 @@ public class ReplicationConfigurationReplicatedDiskMarshaller {
             protocolMarshaller.marshall(replicationConfigurationReplicatedDisk.getDeviceName(), DEVICENAME_BINDING);
             protocolMarshaller.marshall(replicationConfigurationReplicatedDisk.getIops(), IOPS_BINDING);
             protocolMarshaller.marshall(replicationConfigurationReplicatedDisk.getIsBootDisk(), ISBOOTDISK_BINDING);
+            protocolMarshaller.marshall(replicationConfigurationReplicatedDisk.getOptimizedStagingDiskType(), OPTIMIZEDSTAGINGDISKTYPE_BINDING);
             protocolMarshaller.marshall(replicationConfigurationReplicatedDisk.getStagingDiskType(), STAGINGDISKTYPE_BINDING);
             protocolMarshaller.marshall(replicationConfigurationReplicatedDisk.getThroughput(), THROUGHPUT_BINDING);
         } catch (Exception e) {

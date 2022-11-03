@@ -78,7 +78,7 @@ public class AwsEc2SubnetDetails implements Serializable, Cloneable, StructuredP
     private String ownerId;
     /**
      * <p>
-     * The current state of the subnet.
+     * The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      */
     private String state;
@@ -465,11 +465,11 @@ public class AwsEc2SubnetDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The current state of the subnet.
+     * The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      * 
      * @param state
-     *        The current state of the subnet.
+     *        The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      */
 
     public void setState(String state) {
@@ -478,10 +478,10 @@ public class AwsEc2SubnetDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The current state of the subnet.
+     * The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      * 
-     * @return The current state of the subnet.
+     * @return The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      */
 
     public String getState() {
@@ -490,11 +490,11 @@ public class AwsEc2SubnetDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The current state of the subnet.
+     * The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      * </p>
      * 
      * @param state
-     *        The current state of the subnet.
+     *        The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

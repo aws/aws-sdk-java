@@ -45,8 +45,9 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String status;
     /**
      * <p>
-     * An optional Boolean value. If provided, the request is limited either to members that the current AWS account
-     * owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.
+     * An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web
+     * Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>).
+     * If omitted, all members are listed.
      * </p>
      */
     private Boolean isOwned;
@@ -204,14 +205,15 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional Boolean value. If provided, the request is limited either to members that the current AWS account
-     * owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.
+     * An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web
+     * Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>).
+     * If omitted, all members are listed.
      * </p>
      * 
      * @param isOwned
-     *        An optional Boolean value. If provided, the request is limited either to members that the current AWS
-     *        account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all
-     *        members are listed.
+     *        An optional Boolean value. If provided, the request is limited either to members that the current Amazon
+     *        Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (
+     *        <code>false</code>). If omitted, all members are listed.
      */
 
     public void setIsOwned(Boolean isOwned) {
@@ -220,13 +222,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional Boolean value. If provided, the request is limited either to members that the current AWS account
-     * owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.
+     * An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web
+     * Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>).
+     * If omitted, all members are listed.
      * </p>
      * 
-     * @return An optional Boolean value. If provided, the request is limited either to members that the current AWS
-     *         account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all
-     *         members are listed.
+     * @return An optional Boolean value. If provided, the request is limited either to members that the current Amazon
+     *         Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (
+     *         <code>false</code>). If omitted, all members are listed.
      */
 
     public Boolean getIsOwned() {
@@ -235,14 +238,15 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional Boolean value. If provided, the request is limited either to members that the current AWS account
-     * owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.
+     * An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web
+     * Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>).
+     * If omitted, all members are listed.
      * </p>
      * 
      * @param isOwned
-     *        An optional Boolean value. If provided, the request is limited either to members that the current AWS
-     *        account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all
-     *        members are listed.
+     *        An optional Boolean value. If provided, the request is limited either to members that the current Amazon
+     *        Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (
+     *        <code>false</code>). If omitted, all members are listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,13 +257,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional Boolean value. If provided, the request is limited either to members that the current AWS account
-     * owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.
+     * An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web
+     * Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>).
+     * If omitted, all members are listed.
      * </p>
      * 
-     * @return An optional Boolean value. If provided, the request is limited either to members that the current AWS
-     *         account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all
-     *         members are listed.
+     * @return An optional Boolean value. If provided, the request is limited either to members that the current Amazon
+     *         Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (
+     *         <code>false</code>). If omitted, all members are listed.
      */
 
     public Boolean isOwned() {

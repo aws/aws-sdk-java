@@ -76,6 +76,10 @@ public class DomainJsonUnmarshaller implements Unmarshaller<Domain, JsonUnmarsha
                     context.nextToken();
                     domain.setServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ServerSideEncryptionUpdateDetails", targetDepth)) {
+                    context.nextToken();
+                    domain.setServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
                     context.nextToken();
                     domain.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

@@ -66,6 +66,10 @@ public class BatchChannelMembershipsJsonUnmarshaller implements Unmarshaller<Bat
                     context.nextToken();
                     batchChannelMemberships.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SubChannelId", targetDepth)) {
+                    context.nextToken();
+                    batchChannelMemberships.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -28,11 +28,12 @@ import com.amazonaws.services.guardduty.model.*;
  * <p>
  * <p>
  * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
- * VPC Flow Logs, Amazon Web Services CloudTrail event logs, and DNS logs. It uses threat intelligence feeds (such as
- * lists of malicious IPs and domains) and machine learning to identify unexpected, potentially unauthorized, and
- * malicious activity within your Amazon Web Services environment. This can include issues like escalations of
- * privileges, uses of exposed credentials, or communication with malicious IPs, URLs, or domains. For example,
- * GuardDuty can detect compromised EC2 instances that serve malware or mine bitcoin.
+ * VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs,
+ * and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs and domains) and machine learning to
+ * identify unexpected, potentially unauthorized, and malicious activity within your Amazon Web Services environment.
+ * This can include issues like escalations of privileges, uses of exposed credentials, or communication with malicious
+ * IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances that serve malware or mine
+ * bitcoin.
  * </p>
  * <p>
  * GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise. Some examples of this
@@ -58,6 +59,24 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent
+     * the invitation.
+     * </p>
+     * 
+     * @param acceptAdministratorInvitationRequest
+     * @return Result of the AcceptAdministratorInvitation operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.AcceptAdministratorInvitation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptAdministratorInvitation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptAdministratorInvitationResult acceptAdministratorInvitation(AcceptAdministratorInvitationRequest acceptAdministratorInvitationRequest);
+
+    /**
+     * <p>
      * Accepts the invitation to be monitored by a GuardDuty administrator account.
      * </p>
      * 
@@ -71,6 +90,7 @@ public interface AmazonGuardDuty {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     AcceptInvitationResult acceptInvitation(AcceptInvitationRequest acceptInvitationRequest);
 
     /**
@@ -377,6 +397,24 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An
+     * administrator can view the malware scans for all the member accounts.
+     * </p>
+     * 
+     * @param describeMalwareScansRequest
+     * @return Result of the DescribeMalwareScans operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.DescribeMalwareScans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeMalwareScansResult describeMalwareScans(DescribeMalwareScansRequest describeMalwareScansRequest);
+
+    /**
+     * <p>
      * Returns information about the account selected as the delegated administrator for GuardDuty.
      * </p>
      * 
@@ -431,6 +469,24 @@ public interface AmazonGuardDuty {
      * Disassociates the current GuardDuty member account from its administrator account.
      * </p>
      * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Disassociates the current GuardDuty member account from its administrator account.
+     * </p>
+     * 
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
      * @throws BadRequestException
@@ -441,14 +497,12 @@ public interface AmazonGuardDuty {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest disassociateFromMasterAccountRequest);
 
     /**
      * <p>
-     * Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account
-     * IDs. Member accounts added through <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a> get deleted from
-     * the current GuardDuty administrator account after 30 days of disassociation.
+     * Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -479,6 +533,24 @@ public interface AmazonGuardDuty {
      *      target="_top">AWS API Documentation</a>
      */
     EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest);
+
+    /**
+     * <p>
+     * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
+     * account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return Result of the GetAdministratorAccount operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest getAdministratorAccountRequest);
 
     /**
      * <p>
@@ -585,6 +657,23 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Returns the details of the malware scan settings.
+     * </p>
+     * 
+     * @param getMalwareScanSettingsRequest
+     * @return Result of the GetMalwareScanSettings operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetMalwareScanSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMalwareScanSettingsResult getMalwareScanSettings(GetMalwareScanSettingsRequest getMalwareScanSettingsRequest);
+
+    /**
+     * <p>
      * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
      * account.
      * </p>
@@ -599,6 +688,7 @@ public interface AmazonGuardDuty {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetMasterAccountResult getMasterAccount(GetMasterAccountRequest getMasterAccountRequest);
 
     /**
@@ -638,6 +728,23 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Provides the number of days left for each data source used in the free trial period.
+     * </p>
+     * 
+     * @param getRemainingFreeTrialDaysRequest
+     * @return Result of the GetRemainingFreeTrialDays operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetRemainingFreeTrialDays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRemainingFreeTrialDaysResult getRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest getRemainingFreeTrialDaysRequest);
+
+    /**
+     * <p>
      * Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
      * </p>
      * 
@@ -656,9 +763,9 @@ public interface AmazonGuardDuty {
     /**
      * <p>
      * Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled
-     * detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ
-     * from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For
-     * more information see <a
+     * detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ
+     * from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How
      * Usage Costs are Calculated</a>.
      * </p>
@@ -1022,6 +1129,23 @@ public interface AmazonGuardDuty {
      *      Documentation</a>
      */
     UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest);
+
+    /**
+     * <p>
+     * Updates the malware scan settings.
+     * </p>
+     * 
+     * @param updateMalwareScanSettingsRequest
+     * @return Result of the UpdateMalwareScanSettings operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.UpdateMalwareScanSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMalwareScanSettingsResult updateMalwareScanSettings(UpdateMalwareScanSettingsRequest updateMalwareScanSettingsRequest);
 
     /**
      * <p>

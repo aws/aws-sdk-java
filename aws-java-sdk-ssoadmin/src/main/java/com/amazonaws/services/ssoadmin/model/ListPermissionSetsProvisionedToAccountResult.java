@@ -33,7 +33,7 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
     private String nextToken;
     /**
      * <p>
-     * Defines the level of access that an Amazon Web Services account has.
+     * Defines the level of access that an AWS account has.
      * </p>
      */
     private java.util.List<String> permissionSets;
@@ -86,10 +86,10 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an Amazon Web Services account has.
+     * Defines the level of access that an AWS account has.
      * </p>
      * 
-     * @return Defines the level of access that an Amazon Web Services account has.
+     * @return Defines the level of access that an AWS account has.
      */
 
     public java.util.List<String> getPermissionSets() {
@@ -98,11 +98,11 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an Amazon Web Services account has.
+     * Defines the level of access that an AWS account has.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access that an Amazon Web Services account has.
+     *        Defines the level of access that an AWS account has.
      */
 
     public void setPermissionSets(java.util.Collection<String> permissionSets) {
@@ -116,7 +116,7 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an Amazon Web Services account has.
+     * Defines the level of access that an AWS account has.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access that an Amazon Web Services account has.
+     *        Defines the level of access that an AWS account has.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an Amazon Web Services account has.
+     * Defines the level of access that an AWS account has.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access that an Amazon Web Services account has.
+     *        Defines the level of access that an AWS account has.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

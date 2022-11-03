@@ -65,6 +65,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.compute.large
      * </p>
      * </li>
@@ -226,6 +236,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
      * </p>
      * </li>
      * </ul>
@@ -523,6 +548,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.compute.large
      * </p>
      * </li>
@@ -686,6 +721,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.standard.medium
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param instanceType
@@ -704,6 +754,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.2xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -871,6 +931,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        stream.standard.medium
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.2xlarge
+     *        </p>
+     *        </li>
      */
 
     public void setInstanceType(String instanceType) {
@@ -895,6 +970,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
      * </p>
      * </li>
      * <li>
@@ -1062,6 +1147,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.standard.medium
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
@@ -1079,6 +1179,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         stream.standard.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.2xlarge
      *         </p>
      *         </li>
      *         <li>
@@ -1246,6 +1356,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         stream.standard.medium
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.2xlarge
+     *         </p>
+     *         </li>
      */
 
     public String getInstanceType() {
@@ -1270,6 +1395,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
      * </p>
      * </li>
      * <li>
@@ -1437,6 +1572,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.standard.medium
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.2xlarge
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param instanceType
@@ -1455,6 +1605,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.2xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -1620,6 +1780,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.standard.medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.2xlarge
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

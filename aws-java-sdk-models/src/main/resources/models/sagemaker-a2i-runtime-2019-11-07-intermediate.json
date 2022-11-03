@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -927,7 +927,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The creation time when Amazon Augmented AI created the human loop.</p>\n@param creationTime The creation time when Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
@@ -1481,7 +1481,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The creation time when Amazon Augmented AI created the human loop.</p>\n@param creationTime The creation time when Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
@@ -3001,7 +3001,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When Amazon Augmented AI created the human loop.</p>\n@param creationTime When Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
@@ -3210,7 +3210,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When Amazon Augmented AI created the human loop.</p>\n@param creationTime When Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",

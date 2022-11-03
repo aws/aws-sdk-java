@@ -28,6 +28,12 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
     }
 
     @Override
+    public AttachCustomerManagedPolicyReferenceToPermissionSetResult attachCustomerManagedPolicyReferenceToPermissionSet(
+            AttachCustomerManagedPolicyReferenceToPermissionSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachManagedPolicyToPermissionSetResult attachManagedPolicyToPermissionSet(AttachManagedPolicyToPermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -70,6 +76,11 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
     }
 
     @Override
+    public DeletePermissionsBoundaryFromPermissionSetResult deletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAccountAssignmentCreationStatusResult describeAccountAssignmentCreationStatus(DescribeAccountAssignmentCreationStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -96,12 +107,23 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
     }
 
     @Override
+    public DetachCustomerManagedPolicyReferenceFromPermissionSetResult detachCustomerManagedPolicyReferenceFromPermissionSet(
+            DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetachManagedPolicyFromPermissionSetResult detachManagedPolicyFromPermissionSet(DetachManagedPolicyFromPermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetInlinePolicyForPermissionSetResult getInlinePolicyForPermissionSet(GetInlinePolicyForPermissionSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPermissionsBoundaryForPermissionSetResult getPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,6 +144,12 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
 
     @Override
     public ListAccountsForProvisionedPermissionSetResult listAccountsForProvisionedPermissionSet(ListAccountsForProvisionedPermissionSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCustomerManagedPolicyReferencesInPermissionSetResult listCustomerManagedPolicyReferencesInPermissionSet(
+            ListCustomerManagedPolicyReferencesInPermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,6 +190,11 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
 
     @Override
     public PutInlinePolicyToPermissionSetResult putInlinePolicyToPermissionSet(PutInlinePolicyToPermissionSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPermissionsBoundaryToPermissionSetResult putPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

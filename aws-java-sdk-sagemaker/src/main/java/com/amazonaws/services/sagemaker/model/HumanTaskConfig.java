@@ -1603,7 +1603,8 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To
+     * increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      * </p>
      */
     private Integer maxConcurrentTaskCount;
@@ -11129,13 +11130,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To
+     * increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      * </p>
      * 
      * @param maxConcurrentTaskCount
      *        Defines the maximum number of data objects that can be labeled by human workers at the same time. Also
      *        referred to as batch size. Each object may have more than one worker at one time. The default value is
-     *        1000 objects.
+     *        1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      */
 
     public void setMaxConcurrentTaskCount(Integer maxConcurrentTaskCount) {
@@ -11145,12 +11147,13 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To
+     * increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      * </p>
      * 
      * @return Defines the maximum number of data objects that can be labeled by human workers at the same time. Also
      *         referred to as batch size. Each object may have more than one worker at one time. The default value is
-     *         1000 objects.
+     *         1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      */
 
     public Integer getMaxConcurrentTaskCount() {
@@ -11160,13 +11163,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To
+     * increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      * </p>
      * 
      * @param maxConcurrentTaskCount
      *        Defines the maximum number of data objects that can be labeled by human workers at the same time. Also
      *        referred to as batch size. Each object may have more than one worker at one time. The default value is
-     *        1000 objects.
+     *        1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

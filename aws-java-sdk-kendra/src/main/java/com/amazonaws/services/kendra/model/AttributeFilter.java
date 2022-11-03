@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides filtering the query results based on document attributes.
+ * Provides filtering the query results based on document attributes or metadata fields.
  * </p>
  * <p>
  * When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the
@@ -76,49 +76,49 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
     private AttributeFilter notFilter;
     /**
      * <p>
-     * Performs an equals operation on two document attributes.
+     * Performs an equals operation on two document attributes or metadata fields.
      * </p>
      */
     private DocumentAttribute equalsTo;
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      */
     private DocumentAttribute containsAll;
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      */
     private DocumentAttribute containsAny;
     /**
      * <p>
-     * Performs a greater than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute greaterThan;
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute greaterThanOrEquals;
     /**
      * <p>
-     * Performs a less than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute lessThan;
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute lessThanOrEquals;
@@ -305,11 +305,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs an equals operation on two document attributes.
+     * Performs an equals operation on two document attributes or metadata fields.
      * </p>
      * 
      * @param equalsTo
-     *        Performs an equals operation on two document attributes.
+     *        Performs an equals operation on two document attributes or metadata fields.
      */
 
     public void setEqualsTo(DocumentAttribute equalsTo) {
@@ -318,10 +318,10 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs an equals operation on two document attributes.
+     * Performs an equals operation on two document attributes or metadata fields.
      * </p>
      * 
-     * @return Performs an equals operation on two document attributes.
+     * @return Performs an equals operation on two document attributes or metadata fields.
      */
 
     public DocumentAttribute getEqualsTo() {
@@ -330,11 +330,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs an equals operation on two document attributes.
+     * Performs an equals operation on two document attributes or metadata fields.
      * </p>
      * 
      * @param equalsTo
-     *        Performs an equals operation on two document attributes.
+     *        Performs an equals operation on two document attributes or metadata fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,13 +345,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAll
-     *        Returns true when a document contains all of the specified document attributes. This filter is only
-     *        applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains all of the specified document attributes or metadata fields. This
+     *        filter is only applicable to <code>StringListValue</code> metadata.
      */
 
     public void setContainsAll(DocumentAttribute containsAll) {
@@ -360,12 +360,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      * 
-     * @return Returns true when a document contains all of the specified document attributes. This filter is only
-     *         applicable to <code>StringListValue</code> metadata.
+     * @return Returns true when a document contains all of the specified document attributes or metadata fields. This
+     *         filter is only applicable to <code>StringListValue</code> metadata.
      */
 
     public DocumentAttribute getContainsAll() {
@@ -374,13 +374,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAll
-     *        Returns true when a document contains all of the specified document attributes. This filter is only
-     *        applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains all of the specified document attributes or metadata fields. This
+     *        filter is only applicable to <code>StringListValue</code> metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,13 +391,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAny
-     *        Returns true when a document contains any of the specified document attributes. This filter is only
-     *        applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains any of the specified document attributes or metadata fields. This
+     *        filter is only applicable to <code>StringListValue</code> metadata.
      */
 
     public void setContainsAny(DocumentAttribute containsAny) {
@@ -406,12 +406,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      * 
-     * @return Returns true when a document contains any of the specified document attributes. This filter is only
-     *         applicable to <code>StringListValue</code> metadata.
+     * @return Returns true when a document contains any of the specified document attributes or metadata fields. This
+     *         filter is only applicable to <code>StringListValue</code> metadata.
      */
 
     public DocumentAttribute getContainsAny() {
@@ -420,13 +420,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
-     * <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
+     * only applicable to <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAny
-     *        Returns true when a document contains any of the specified document attributes. This filter is only
-     *        applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains any of the specified document attributes or metadata fields. This
+     *        filter is only applicable to <code>StringListValue</code> metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,13 +437,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThan
-     *        Performs a greater than operation on two document attributes. Use with a document attribute of type
-     *        <code>Date</code> or <code>Long</code>.
+     *        Performs a greater than operation on two document attributes or metadata fields. Use with a document
+     *        attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public void setGreaterThan(DocumentAttribute greaterThan) {
@@ -452,12 +452,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a greater than operation on two document attributes. Use with a document attribute of type
-     *         <code>Date</code> or <code>Long</code>.
+     * @return Performs a greater than operation on two document attributes or metadata fields. Use with a document
+     *         attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getGreaterThan() {
@@ -466,13 +466,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThan
-     *        Performs a greater than operation on two document attributes. Use with a document attribute of type
-     *        <code>Date</code> or <code>Long</code>.
+     *        Performs a greater than operation on two document attributes or metadata fields. Use with a document
+     *        attribute of type <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,13 +483,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThanOrEquals
-     *        Performs a greater or equals than operation on two document attributes. Use with a document attribute of
-     *        type <code>Date</code> or <code>Long</code>.
+     *        Performs a greater or equals than operation on two document attributes or metadata fields. Use with a
+     *        document attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public void setGreaterThanOrEquals(DocumentAttribute greaterThanOrEquals) {
@@ -498,12 +498,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a greater or equals than operation on two document attributes. Use with a document attribute of
-     *         type <code>Date</code> or <code>Long</code>.
+     * @return Performs a greater or equals than operation on two document attributes or metadata fields. Use with a
+     *         document attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getGreaterThanOrEquals() {
@@ -512,13 +512,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThanOrEquals
-     *        Performs a greater or equals than operation on two document attributes. Use with a document attribute of
-     *        type <code>Date</code> or <code>Long</code>.
+     *        Performs a greater or equals than operation on two document attributes or metadata fields. Use with a
+     *        document attribute of type <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,13 +529,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThan
-     *        Performs a less than operation on two document attributes. Use with a document attribute of type
-     *        <code>Date</code> or <code>Long</code>.
+     *        Performs a less than operation on two document attributes or metadata fields. Use with a document
+     *        attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public void setLessThan(DocumentAttribute lessThan) {
@@ -544,12 +544,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a less than operation on two document attributes. Use with a document attribute of type
-     *         <code>Date</code> or <code>Long</code>.
+     * @return Performs a less than operation on two document attributes or metadata fields. Use with a document
+     *         attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getLessThan() {
@@ -558,13 +558,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
+     * type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThan
-     *        Performs a less than operation on two document attributes. Use with a document attribute of type
-     *        <code>Date</code> or <code>Long</code>.
+     *        Performs a less than operation on two document attributes or metadata fields. Use with a document
+     *        attribute of type <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,13 +575,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThanOrEquals
-     *        Performs a less than or equals operation on two document attributes. Use with a document attribute of type
-     *        <code>Date</code> or <code>Long</code>.
+     *        Performs a less than or equals operation on two document attributes or metadata fields. Use with a
+     *        document attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public void setLessThanOrEquals(DocumentAttribute lessThanOrEquals) {
@@ -590,12 +590,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a less than or equals operation on two document attributes. Use with a document attribute of
-     *         type <code>Date</code> or <code>Long</code>.
+     * @return Performs a less than or equals operation on two document attributes or metadata fields. Use with a
+     *         document attribute of type <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getLessThanOrEquals() {
@@ -604,13 +604,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes. Use with a document attribute of type
-     * <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
+     * attribute of type <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThanOrEquals
-     *        Performs a less than or equals operation on two document attributes. Use with a document attribute of type
-     *        <code>Date</code> or <code>Long</code>.
+     *        Performs a less than or equals operation on two document attributes or metadata fields. Use with a
+     *        document attribute of type <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,8 +27,20 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.
+     * Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this
+     * field if you are updating the configured pipeline repository.
+     * </p>
+     */
+    private Boolean deletePipelineProvisioningRepository;
+    /**
+     * <p>
+     * A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
+     * </p>
+     * <p>
+     * To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     * <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      * </p>
      */
     private RepositoryBranchInput pipelineProvisioningRepository;
@@ -37,18 +49,90 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton
      * for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.
      * </p>
+     * <p>
+     * To remove a previously configured ARN, specify an empty string.
+     * </p>
      */
     private String pipelineServiceRoleArn;
 
     /**
      * <p>
-     * A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.
+     * Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this
+     * field if you are updating the configured pipeline repository.
+     * </p>
+     * 
+     * @param deletePipelineProvisioningRepository
+     *        Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set
+     *        this field if you are updating the configured pipeline repository.
+     */
+
+    public void setDeletePipelineProvisioningRepository(Boolean deletePipelineProvisioningRepository) {
+        this.deletePipelineProvisioningRepository = deletePipelineProvisioningRepository;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this
+     * field if you are updating the configured pipeline repository.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set
+     *         this field if you are updating the configured pipeline repository.
+     */
+
+    public Boolean getDeletePipelineProvisioningRepository() {
+        return this.deletePipelineProvisioningRepository;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this
+     * field if you are updating the configured pipeline repository.
+     * </p>
+     * 
+     * @param deletePipelineProvisioningRepository
+     *        Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set
+     *        this field if you are updating the configured pipeline repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAccountSettingsRequest withDeletePipelineProvisioningRepository(Boolean deletePipelineProvisioningRepository) {
+        setDeletePipelineProvisioningRepository(deletePipelineProvisioningRepository);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this
+     * field if you are updating the configured pipeline repository.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set
+     *         this field if you are updating the configured pipeline repository.
+     */
+
+    public Boolean isDeletePipelineProvisioningRepository() {
+        return this.deletePipelineProvisioningRepository;
+    }
+
+    /**
+     * <p>
+     * A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
+     * </p>
+     * <p>
+     * To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     * <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      * </p>
      * 
      * @param pipelineProvisioningRepository
-     *        A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     *        provisioning with services that include pipelines.
+     *        A linked repository for pipeline provisioning. Specify it if you have environments configured for
+     *        self-managed provisioning with services that include pipelines. A linked repository is a repository that
+     *        has been registered with Proton. For more information, see <a>CreateRepository</a>.</p>
+     *        <p>
+     *        To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     *        <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      */
 
     public void setPipelineProvisioningRepository(RepositoryBranchInput pipelineProvisioningRepository) {
@@ -57,12 +141,21 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.
+     * A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
+     * </p>
+     * <p>
+     * To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     * <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      * </p>
      * 
-     * @return A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     *         provisioning with services that include pipelines.
+     * @return A linked repository for pipeline provisioning. Specify it if you have environments configured for
+     *         self-managed provisioning with services that include pipelines. A linked repository is a repository that
+     *         has been registered with Proton. For more information, see <a>CreateRepository</a>.</p>
+     *         <p>
+     *         To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     *         <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      */
 
     public RepositoryBranchInput getPipelineProvisioningRepository() {
@@ -71,13 +164,22 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.
+     * A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
+     * </p>
+     * <p>
+     * To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     * <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      * </p>
      * 
      * @param pipelineProvisioningRepository
-     *        A repository for pipeline provisioning. Specify it if you have environments configured for self-managed
-     *        provisioning with services that include pipelines.
+     *        A linked repository for pipeline provisioning. Specify it if you have environments configured for
+     *        self-managed provisioning with services that include pipelines. A linked repository is a repository that
+     *        has been registered with Proton. For more information, see <a>CreateRepository</a>.</p>
+     *        <p>
+     *        To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to
+     *        <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +193,16 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton
      * for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.
      * </p>
+     * <p>
+     * To remove a previously configured ARN, specify an empty string.
+     * </p>
      * 
      * @param pipelineServiceRoleArn
      *        The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by
      *        Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed
-     *        provisioning.
+     *        provisioning.</p>
+     *        <p>
+     *        To remove a previously configured ARN, specify an empty string.
      */
 
     public void setPipelineServiceRoleArn(String pipelineServiceRoleArn) {
@@ -107,10 +214,15 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton
      * for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.
      * </p>
+     * <p>
+     * To remove a previously configured ARN, specify an empty string.
+     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by
      *         Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed
-     *         provisioning.
+     *         provisioning.</p>
+     *         <p>
+     *         To remove a previously configured ARN, specify an empty string.
      */
 
     public String getPipelineServiceRoleArn() {
@@ -122,11 +234,16 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton
      * for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.
      * </p>
+     * <p>
+     * To remove a previously configured ARN, specify an empty string.
+     * </p>
      * 
      * @param pipelineServiceRoleArn
      *        The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by
      *        Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed
-     *        provisioning.
+     *        provisioning.</p>
+     *        <p>
+     *        To remove a previously configured ARN, specify an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,6 +264,8 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDeletePipelineProvisioningRepository() != null)
+            sb.append("DeletePipelineProvisioningRepository: ").append(getDeletePipelineProvisioningRepository()).append(",");
         if (getPipelineProvisioningRepository() != null)
             sb.append("PipelineProvisioningRepository: ").append(getPipelineProvisioningRepository()).append(",");
         if (getPipelineServiceRoleArn() != null)
@@ -165,6 +284,11 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof UpdateAccountSettingsRequest == false)
             return false;
         UpdateAccountSettingsRequest other = (UpdateAccountSettingsRequest) obj;
+        if (other.getDeletePipelineProvisioningRepository() == null ^ this.getDeletePipelineProvisioningRepository() == null)
+            return false;
+        if (other.getDeletePipelineProvisioningRepository() != null
+                && other.getDeletePipelineProvisioningRepository().equals(this.getDeletePipelineProvisioningRepository()) == false)
+            return false;
         if (other.getPipelineProvisioningRepository() == null ^ this.getPipelineProvisioningRepository() == null)
             return false;
         if (other.getPipelineProvisioningRepository() != null
@@ -182,6 +306,7 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDeletePipelineProvisioningRepository() == null) ? 0 : getDeletePipelineProvisioningRepository().hashCode());
         hashCode = prime * hashCode + ((getPipelineProvisioningRepository() == null) ? 0 : getPipelineProvisioningRepository().hashCode());
         hashCode = prime * hashCode + ((getPipelineServiceRoleArn() == null) ? 0 : getPipelineServiceRoleArn().hashCode());
         return hashCode;

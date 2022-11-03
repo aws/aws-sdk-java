@@ -52,6 +52,10 @@ public class RuleGroupJsonUnmarshaller implements Unmarshaller<RuleGroup, JsonUn
                     context.nextToken();
                     ruleGroup.setRuleVariables(RuleVariablesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ReferenceSets", targetDepth)) {
+                    context.nextToken();
+                    ruleGroup.setReferenceSets(ReferenceSetsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RulesSource", targetDepth)) {
                     context.nextToken();
                     ruleGroup.setRulesSource(RulesSourceJsonUnmarshaller.getInstance().unmarshall(context));

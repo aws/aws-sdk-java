@@ -34,6 +34,21 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public CreateAgreementResult createAgreement(CreateAgreementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConnectorResult createConnector(CreateConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProfileResult createProfile(CreateProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateServerResult createServer(CreateServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -50,6 +65,31 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public DeleteAccessResult deleteAccess(DeleteAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAgreementResult deleteAgreement(DeleteAgreementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConnectorResult deleteConnector(DeleteConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteHostKeyResult deleteHostKey(DeleteHostKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProfileResult deleteProfile(DeleteProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,7 +119,32 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public DescribeAgreementResult describeAgreement(DescribeAgreementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCertificateResult describeCertificate(DescribeCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConnectorResult describeConnector(DescribeConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeExecutionResult describeExecution(DescribeExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeHostKeyResult describeHostKey(DescribeHostKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeProfileResult describeProfile(DescribeProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +169,16 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public ImportCertificateResult importCertificate(ImportCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportHostKeyResult importHostKey(ImportHostKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportSshPublicKeyResult importSshPublicKey(ImportSshPublicKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,7 +189,32 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public ListAgreementsResult listAgreements(ListAgreementsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCertificatesResult listCertificates(ListCertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConnectorsResult listConnectors(ListConnectorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListExecutionsResult listExecutions(ListExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHostKeysResult listHostKeys(ListHostKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProfilesResult listProfiles(ListProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +249,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public StartFileTransferResult startFileTransfer(StartFileTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartServerResult startServer(StartServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,6 +280,31 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public UpdateAccessResult updateAccess(UpdateAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAgreementResult updateAgreement(UpdateAgreementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCertificateResult updateCertificate(UpdateCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConnectorResult updateConnector(UpdateConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateHostKeyResult updateHostKey(UpdateHostKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProfileResult updateProfile(UpdateProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

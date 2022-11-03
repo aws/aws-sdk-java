@@ -48,6 +48,13 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
     private String name;
     /**
      * <p>
+     * If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be
+     * considered a single broadcast and merged together. Default: 0.
+     * </p>
+     */
+    private Integer recordingReconnectWindowSeconds;
+    /**
+     * <p>
      * Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the
      * configuration is ready for recording a channel stream.
      * </p>
@@ -55,7 +62,10 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
     private String state;
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -189,6 +199,52 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be
+     * considered a single broadcast and merged together. Default: 0.
+     * </p>
+     * 
+     * @param recordingReconnectWindowSeconds
+     *        If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be
+     *        considered a single broadcast and merged together. Default: 0.
+     */
+
+    public void setRecordingReconnectWindowSeconds(Integer recordingReconnectWindowSeconds) {
+        this.recordingReconnectWindowSeconds = recordingReconnectWindowSeconds;
+    }
+
+    /**
+     * <p>
+     * If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be
+     * considered a single broadcast and merged together. Default: 0.
+     * </p>
+     * 
+     * @return If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will
+     *         be considered a single broadcast and merged together. Default: 0.
+     */
+
+    public Integer getRecordingReconnectWindowSeconds() {
+        return this.recordingReconnectWindowSeconds;
+    }
+
+    /**
+     * <p>
+     * If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be
+     * considered a single broadcast and merged together. Default: 0.
+     * </p>
+     * 
+     * @param recordingReconnectWindowSeconds
+     *        If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be
+     *        considered a single broadcast and merged together. Default: 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecordingConfiguration withRecordingReconnectWindowSeconds(Integer recordingReconnectWindowSeconds) {
+        setRecordingReconnectWindowSeconds(recordingReconnectWindowSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the
      * configuration is ready for recording a channel stream.
      * </p>
@@ -256,10 +312,17 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
-     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a> for more information, including restrictions that apply to tags and
+     *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *         documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -268,11 +331,18 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -281,11 +351,18 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,6 +463,8 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
             sb.append("DestinationConfiguration: ").append(getDestinationConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRecordingReconnectWindowSeconds() != null)
+            sb.append("RecordingReconnectWindowSeconds: ").append(getRecordingReconnectWindowSeconds()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
@@ -418,6 +497,11 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRecordingReconnectWindowSeconds() == null ^ this.getRecordingReconnectWindowSeconds() == null)
+            return false;
+        if (other.getRecordingReconnectWindowSeconds() != null
+                && other.getRecordingReconnectWindowSeconds().equals(this.getRecordingReconnectWindowSeconds()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -441,6 +525,7 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDestinationConfiguration() == null) ? 0 : getDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRecordingReconnectWindowSeconds() == null) ? 0 : getRecordingReconnectWindowSeconds().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getThumbnailConfiguration() == null) ? 0 : getThumbnailConfiguration().hashCode());

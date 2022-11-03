@@ -22,24 +22,24 @@ public class DeleteProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template version to delete.
+     * The name of the provisioning template version to delete.
      * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The fleet provisioning template version ID to delete.
+     * The provisioning template version ID to delete.
      * </p>
      */
     private Integer versionId;
 
     /**
      * <p>
-     * The name of the fleet provisioning template version to delete.
+     * The name of the provisioning template version to delete.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template version to delete.
+     *        The name of the provisioning template version to delete.
      */
 
     public void setTemplateName(String templateName) {
@@ -48,10 +48,10 @@ public class DeleteProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template version to delete.
+     * The name of the provisioning template version to delete.
      * </p>
      * 
-     * @return The name of the fleet provisioning template version to delete.
+     * @return The name of the provisioning template version to delete.
      */
 
     public String getTemplateName() {
@@ -60,11 +60,11 @@ public class DeleteProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template version to delete.
+     * The name of the provisioning template version to delete.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template version to delete.
+     *        The name of the provisioning template version to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,11 +75,11 @@ public class DeleteProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The fleet provisioning template version ID to delete.
+     * The provisioning template version ID to delete.
      * </p>
      * 
      * @param versionId
-     *        The fleet provisioning template version ID to delete.
+     *        The provisioning template version ID to delete.
      */
 
     public void setVersionId(Integer versionId) {
@@ -88,10 +88,10 @@ public class DeleteProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The fleet provisioning template version ID to delete.
+     * The provisioning template version ID to delete.
      * </p>
      * 
-     * @return The fleet provisioning template version ID to delete.
+     * @return The provisioning template version ID to delete.
      */
 
     public Integer getVersionId() {
@@ -100,11 +100,11 @@ public class DeleteProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The fleet provisioning template version ID to delete.
+     * The provisioning template version ID to delete.
      * </p>
      * 
      * @param versionId
-     *        The fleet provisioning template version ID to delete.
+     *        The provisioning template version ID to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

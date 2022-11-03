@@ -52,6 +52,10 @@ public class CmafEncryptionJsonUnmarshaller implements Unmarshaller<CmafEncrypti
                     context.nextToken();
                     cmafEncryption.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("encryptionMethod", targetDepth)) {
+                    context.nextToken();
+                    cmafEncryption.setEncryptionMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("keyRotationIntervalSeconds", targetDepth)) {
                     context.nextToken();
                     cmafEncryption.setKeyRotationIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));

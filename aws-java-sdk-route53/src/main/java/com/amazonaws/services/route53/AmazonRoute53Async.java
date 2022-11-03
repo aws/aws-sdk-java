@@ -188,6 +188,97 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping
+     * blocks to one or multiple locations.
+     * </p>
+     * <p>
+     * A change request can update multiple locations in a collection at a time, which is helpful if you want to move
+     * one or more CIDR blocks from one location to another in one transaction, without downtime.
+     * </p>
+     * <p>
+     * <b>Limits</b>
+     * </p>
+     * <p>
+     * The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API
+     * calls.
+     * </p>
+     * <p>
+     * <b> PUT and DELETE_IF_EXISTS</b>
+     * </p>
+     * <p>
+     * Use <code>ChangeCidrCollection</code> to perform the following actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUT</code>: Create a CIDR block within the specified collection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeCidrCollectionRequest
+     * @return A Java Future containing the result of the ChangeCidrCollection operation returned by the service.
+     * @sample AmazonRoute53Async.ChangeCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ChangeCidrCollectionResult> changeCidrCollectionAsync(ChangeCidrCollectionRequest changeCidrCollectionRequest);
+
+    /**
+     * <p>
+     * Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping
+     * blocks to one or multiple locations.
+     * </p>
+     * <p>
+     * A change request can update multiple locations in a collection at a time, which is helpful if you want to move
+     * one or more CIDR blocks from one location to another in one transaction, without downtime.
+     * </p>
+     * <p>
+     * <b>Limits</b>
+     * </p>
+     * <p>
+     * The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API
+     * calls.
+     * </p>
+     * <p>
+     * <b> PUT and DELETE_IF_EXISTS</b>
+     * </p>
+     * <p>
+     * Use <code>ChangeCidrCollection</code> to perform the following actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUT</code>: Create a CIDR block within the specified collection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeCidrCollectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ChangeCidrCollection operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ChangeCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ChangeCidrCollectionResult> changeCidrCollectionAsync(ChangeCidrCollectionRequest changeCidrCollectionRequest,
+            com.amazonaws.handlers.AsyncHandler<ChangeCidrCollectionRequest, ChangeCidrCollectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified
      * domain name or subdomain name. For example, you can use <code>ChangeResourceRecordSets</code> to create a
      * resource record set that routes traffic for test.example.com to a web server that has an IP address of
@@ -466,6 +557,37 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Creates a CIDR collection in the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param createCidrCollectionRequest
+     * @return A Java Future containing the result of the CreateCidrCollection operation returned by the service.
+     * @sample AmazonRoute53Async.CreateCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCidrCollectionResult> createCidrCollectionAsync(CreateCidrCollectionRequest createCidrCollectionRequest);
+
+    /**
+     * <p>
+     * Creates a CIDR collection in the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param createCidrCollectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCidrCollection operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.CreateCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCidrCollectionResult> createCidrCollectionAsync(CreateCidrCollectionRequest createCidrCollectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCidrCollectionRequest, CreateCidrCollectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new health check.
      * </p>
      * <p>
@@ -604,7 +726,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </important>
      * <p>
      * For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * <p>
      * Note the following:
@@ -619,8 +741,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone.
      * For more information about SOA and NS records, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route
-     * 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that
+     * Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * If you want to use the same name servers for multiple public hosted zones, you can optionally associate a
@@ -629,17 +751,17 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </li>
      * <li>
      * <p>
-     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
+     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
      * registrar to make Route 53 the DNS service for the domain. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an
-     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is
      * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on
-     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
+     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
      * <p>
@@ -703,7 +825,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </important>
      * <p>
      * For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * <p>
      * Note the following:
@@ -718,8 +840,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone.
      * For more information about SOA and NS records, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route
-     * 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that
+     * Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * If you want to use the same name servers for multiple public hosted zones, you can optionally associate a
@@ -728,17 +850,17 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </li>
      * <li>
      * <p>
-     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
+     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
      * registrar to make Route 53 the DNS service for the domain. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an
-     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is
      * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on
-     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
+     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
      * <p>
@@ -1634,6 +1756,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can
+     * be deleted.
+     * </p>
+     * 
+     * @param deleteCidrCollectionRequest
+     * @return A Java Future containing the result of the DeleteCidrCollection operation returned by the service.
+     * @sample AmazonRoute53Async.DeleteCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCidrCollectionResult> deleteCidrCollectionAsync(DeleteCidrCollectionRequest deleteCidrCollectionRequest);
+
+    /**
+     * <p>
+     * Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can
+     * be deleted.
+     * </p>
+     * 
+     * @param deleteCidrCollectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCidrCollection operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DeleteCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCidrCollectionResult> deleteCidrCollectionAsync(DeleteCidrCollectionRequest deleteCidrCollectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCidrCollectionRequest, DeleteCidrCollectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a health check.
      * </p>
      * <important>
@@ -1704,7 +1859,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * If the hosted zone was created by another service, such as Cloud Map, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service"
-     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
+     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
      * Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones
      * that were created by another service.)
      * </p>
@@ -1725,9 +1880,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a
      * free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration.
-     * If the domain is registered with Route 53, see <a
+     * If the domain is registered with Route 53, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html"
-     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
+     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
      * new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to
      * update name servers for the domain registration. For more information, perform an internet search on
      * "free DNS service."
@@ -1735,7 +1890,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the
      * hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If
-     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
+     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
      * a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">
      * ChangeResourceRecordSets</a>.
@@ -1773,7 +1928,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * If the hosted zone was created by another service, such as Cloud Map, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service"
-     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
+     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
      * Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones
      * that were created by another service.)
      * </p>
@@ -1794,9 +1949,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a
      * free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration.
-     * If the domain is registered with Route 53, see <a
+     * If the domain is registered with Route 53, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html"
-     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
+     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
      * new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to
      * update name servers for the domain registration. For more information, perform an internet search on
      * "free DNS service."
@@ -1804,7 +1959,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the
      * hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If
-     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
+     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
      * a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">
      * ChangeResourceRecordSets</a>.
@@ -3308,6 +3463,101 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of location objects and their CIDR blocks.
+     * </p>
+     * 
+     * @param listCidrBlocksRequest
+     * @return A Java Future containing the result of the ListCidrBlocks operation returned by the service.
+     * @sample AmazonRoute53Async.ListCidrBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCidrBlocksResult> listCidrBlocksAsync(ListCidrBlocksRequest listCidrBlocksRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of location objects and their CIDR blocks.
+     * </p>
+     * 
+     * @param listCidrBlocksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCidrBlocks operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ListCidrBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCidrBlocksResult> listCidrBlocksAsync(ListCidrBlocksRequest listCidrBlocksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCidrBlocksRequest, ListCidrBlocksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).
+     * </p>
+     * 
+     * @param listCidrCollectionsRequest
+     * @return A Java Future containing the result of the ListCidrCollections operation returned by the service.
+     * @sample AmazonRoute53Async.ListCidrCollections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCidrCollectionsResult> listCidrCollectionsAsync(ListCidrCollectionsRequest listCidrCollectionsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).
+     * </p>
+     * 
+     * @param listCidrCollectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCidrCollections operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ListCidrCollections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCidrCollectionsResult> listCidrCollectionsAsync(ListCidrCollectionsRequest listCidrCollectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCidrCollectionsRequest, ListCidrCollectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR
+     * blocks).
+     * </p>
+     * 
+     * @param listCidrLocationsRequest
+     * @return A Java Future containing the result of the ListCidrLocations operation returned by the service.
+     * @sample AmazonRoute53Async.ListCidrLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCidrLocationsResult> listCidrLocationsAsync(ListCidrLocationsRequest listCidrLocationsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR
+     * blocks).
+     * </p>
+     * 
+     * @param listCidrLocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCidrLocations operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ListCidrLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCidrLocationsResult> listCidrLocationsAsync(ListCidrLocationsRequest listCidrLocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCidrLocationsRequest, ListCidrLocationsResult> asyncHandler);
 
     /**
      * <p>

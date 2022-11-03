@@ -32,7 +32,7 @@ public class StreamEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the event occurred.
+     * Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      */
     private java.util.Date eventTime;
@@ -51,11 +51,12 @@ public class StreamEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the event occurred.
+     * Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
      * @param eventTime
-     *        UTC ISO-8601 formatted timestamp of when the event occurred.
+     *        Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *        string</i>.
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -64,10 +65,11 @@ public class StreamEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the event occurred.
+     * Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
-     * @return UTC ISO-8601 formatted timestamp of when the event occurred.
+     * @return Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *         string</i>.
      */
 
     public java.util.Date getEventTime() {
@@ -76,11 +78,12 @@ public class StreamEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the event occurred.
+     * Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
      * @param eventTime
-     *        UTC ISO-8601 formatted timestamp of when the event occurred.
+     *        Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *        string</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

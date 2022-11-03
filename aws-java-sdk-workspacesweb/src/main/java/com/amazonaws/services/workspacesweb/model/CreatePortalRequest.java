@@ -372,9 +372,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getCustomerManagedKey() != null)
             sb.append("CustomerManagedKey: ").append(getCustomerManagedKey()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+            sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.transfer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class ProtocolDetailsMarshaller {
             .marshallLocationName("PassiveIp").build();
     private static final MarshallingInfo<String> TLSSESSIONRESUMPTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TlsSessionResumptionMode").build();
+    private static final MarshallingInfo<String> SETSTATOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SetStatOption").build();
+    private static final MarshallingInfo<List> AS2TRANSPORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("As2Transports").build();
 
     private static final ProtocolDetailsMarshaller instance = new ProtocolDetailsMarshaller();
 
@@ -50,6 +55,8 @@ public class ProtocolDetailsMarshaller {
         try {
             protocolMarshaller.marshall(protocolDetails.getPassiveIp(), PASSIVEIP_BINDING);
             protocolMarshaller.marshall(protocolDetails.getTlsSessionResumptionMode(), TLSSESSIONRESUMPTIONMODE_BINDING);
+            protocolMarshaller.marshall(protocolDetails.getSetStatOption(), SETSTATOPTION_BINDING);
+            protocolMarshaller.marshall(protocolDetails.getAs2Transports(), AS2TRANSPORTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

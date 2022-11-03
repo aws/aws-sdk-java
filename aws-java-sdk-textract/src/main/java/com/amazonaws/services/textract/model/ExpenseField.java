@@ -52,6 +52,19 @@ public class ExpenseField implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer pageNumber;
+    /**
+     * <p>
+     * Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     * </p>
+     */
+    private ExpenseCurrency currency;
+    /**
+     * <p>
+     * Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address
+     * or the recipent's address.
+     * </p>
+     */
+    private java.util.List<ExpenseGroupProperty> groupProperties;
 
     /**
      * <p>
@@ -214,6 +227,124 @@ public class ExpenseField implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     * </p>
+     * 
+     * @param currency
+     *        Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     */
+
+    public void setCurrency(ExpenseCurrency currency) {
+        this.currency = currency;
+    }
+
+    /**
+     * <p>
+     * Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     * </p>
+     * 
+     * @return Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     */
+
+    public ExpenseCurrency getCurrency() {
+        return this.currency;
+    }
+
+    /**
+     * <p>
+     * Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     * </p>
+     * 
+     * @param currency
+     *        Shows the kind of currency, both the code and confidence associated with any monatary value detected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseField withCurrency(ExpenseCurrency currency) {
+        setCurrency(currency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address
+     * or the recipent's address.
+     * </p>
+     * 
+     * @return Shows which group a response object belongs to, such as whether an address line belongs to the vendor's
+     *         address or the recipent's address.
+     */
+
+    public java.util.List<ExpenseGroupProperty> getGroupProperties() {
+        return groupProperties;
+    }
+
+    /**
+     * <p>
+     * Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address
+     * or the recipent's address.
+     * </p>
+     * 
+     * @param groupProperties
+     *        Shows which group a response object belongs to, such as whether an address line belongs to the vendor's
+     *        address or the recipent's address.
+     */
+
+    public void setGroupProperties(java.util.Collection<ExpenseGroupProperty> groupProperties) {
+        if (groupProperties == null) {
+            this.groupProperties = null;
+            return;
+        }
+
+        this.groupProperties = new java.util.ArrayList<ExpenseGroupProperty>(groupProperties);
+    }
+
+    /**
+     * <p>
+     * Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address
+     * or the recipent's address.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupProperties(java.util.Collection)} or {@link #withGroupProperties(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param groupProperties
+     *        Shows which group a response object belongs to, such as whether an address line belongs to the vendor's
+     *        address or the recipent's address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseField withGroupProperties(ExpenseGroupProperty... groupProperties) {
+        if (this.groupProperties == null) {
+            setGroupProperties(new java.util.ArrayList<ExpenseGroupProperty>(groupProperties.length));
+        }
+        for (ExpenseGroupProperty ele : groupProperties) {
+            this.groupProperties.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address
+     * or the recipent's address.
+     * </p>
+     * 
+     * @param groupProperties
+     *        Shows which group a response object belongs to, such as whether an address line belongs to the vendor's
+     *        address or the recipent's address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseField withGroupProperties(java.util.Collection<ExpenseGroupProperty> groupProperties) {
+        setGroupProperties(groupProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +363,11 @@ public class ExpenseField implements Serializable, Cloneable, StructuredPojo {
         if (getValueDetection() != null)
             sb.append("ValueDetection: ").append(getValueDetection()).append(",");
         if (getPageNumber() != null)
-            sb.append("PageNumber: ").append(getPageNumber());
+            sb.append("PageNumber: ").append(getPageNumber()).append(",");
+        if (getCurrency() != null)
+            sb.append("Currency: ").append(getCurrency()).append(",");
+        if (getGroupProperties() != null)
+            sb.append("GroupProperties: ").append(getGroupProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +398,14 @@ public class ExpenseField implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPageNumber() != null && other.getPageNumber().equals(this.getPageNumber()) == false)
             return false;
+        if (other.getCurrency() == null ^ this.getCurrency() == null)
+            return false;
+        if (other.getCurrency() != null && other.getCurrency().equals(this.getCurrency()) == false)
+            return false;
+        if (other.getGroupProperties() == null ^ this.getGroupProperties() == null)
+            return false;
+        if (other.getGroupProperties() != null && other.getGroupProperties().equals(this.getGroupProperties()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +418,8 @@ public class ExpenseField implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLabelDetection() == null) ? 0 : getLabelDetection().hashCode());
         hashCode = prime * hashCode + ((getValueDetection() == null) ? 0 : getValueDetection().hashCode());
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
+        hashCode = prime * hashCode + ((getCurrency() == null) ? 0 : getCurrency().hashCode());
+        hashCode = prime * hashCode + ((getGroupProperties() == null) ? 0 : getGroupProperties().hashCode());
         return hashCode;
     }
 

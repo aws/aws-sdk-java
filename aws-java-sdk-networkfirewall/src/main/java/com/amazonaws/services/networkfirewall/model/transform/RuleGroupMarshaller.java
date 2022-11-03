@@ -29,6 +29,8 @@ public class RuleGroupMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> RULEVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleVariables").build();
+    private static final MarshallingInfo<StructuredPojo> REFERENCESETS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReferenceSets").build();
     private static final MarshallingInfo<StructuredPojo> RULESSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RulesSource").build();
     private static final MarshallingInfo<StructuredPojo> STATEFULRULEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,7 @@ public class RuleGroupMarshaller {
 
         try {
             protocolMarshaller.marshall(ruleGroup.getRuleVariables(), RULEVARIABLES_BINDING);
+            protocolMarshaller.marshall(ruleGroup.getReferenceSets(), REFERENCESETS_BINDING);
             protocolMarshaller.marshall(ruleGroup.getRulesSource(), RULESSOURCE_BINDING);
             protocolMarshaller.marshall(ruleGroup.getStatefulRuleOptions(), STATEFULRULEOPTIONS_BINDING);
         } catch (Exception e) {

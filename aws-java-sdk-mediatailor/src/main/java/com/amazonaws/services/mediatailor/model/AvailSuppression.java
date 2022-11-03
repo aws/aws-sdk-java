@@ -32,8 +32,8 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
-     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
-     * the ad suppression Value time in the manifest lookback window.
+     * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
+     * on or behind the ad suppression Value time in the manifest lookback window.
      * </p>
      */
     private String mode;
@@ -52,14 +52,14 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
-     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
-     * the ad suppression Value time in the manifest lookback window.
+     * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
+     * on or behind the ad suppression Value time in the manifest lookback window.
      * </p>
      * 
      * @param mode
      *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
-     *        slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks
-     *        on or behind the ad suppression Value time in the manifest lookback window.
+     *        slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
      * @see Mode
      */
 
@@ -70,13 +70,13 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
-     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
-     * the ad suppression Value time in the manifest lookback window.
+     * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
+     * on or behind the ad suppression Value time in the manifest lookback window.
      * </p>
      * 
      * @return Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
-     *         slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad
-     *         breaks on or behind the ad suppression Value time in the manifest lookback window.
+     *         slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     *         fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
      * @see Mode
      */
 
@@ -87,14 +87,14 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
-     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
-     * the ad suppression Value time in the manifest lookback window.
+     * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
+     * on or behind the ad suppression Value time in the manifest lookback window.
      * </p>
      * 
      * @param mode
      *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
-     *        slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks
-     *        on or behind the ad suppression Value time in the manifest lookback window.
+     *        slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */
@@ -107,14 +107,14 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
-     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
-     * the ad suppression Value time in the manifest lookback window.
+     * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
+     * on or behind the ad suppression Value time in the manifest lookback window.
      * </p>
      * 
      * @param mode
      *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
-     *        slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks
-     *        on or behind the ad suppression Value time in the manifest lookback window.
+     *        slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */

@@ -19,11 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To
- * allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
- * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
- * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow
- * or block requests that appear to contain malicious SQL code.
+ * A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do
+ * things like modify your database or extract data from it.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SqliMatchStatement" target="_top">AWS API
@@ -34,7 +31,7 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      */
     private FieldToMatch fieldToMatch;
@@ -47,14 +44,33 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<TextTransformation> textTransformations;
+    /**
+     * <p>
+     * The sensitivity that you want WAF to use to inspect for SQL injection attacks.
+     * </p>
+     * <p>
+     * <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests
+     * frequently contain unusual strings. For information about identifying and mitigating false positives, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the
+     * <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * <code>LOW</code> is generally a better choice for resources that already have other protections against SQL
+     * injection attacks or that have a low tolerance for false positives.
+     * </p>
+     * <p>
+     * Default: <code>LOW</code>
+     * </p>
+     */
+    private String sensitivityLevel;
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -63,10 +79,10 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
-     * @return The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * @return The part of the web request that you want WAF to inspect.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -75,11 +91,11 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,6 +199,169 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The sensitivity that you want WAF to use to inspect for SQL injection attacks.
+     * </p>
+     * <p>
+     * <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests
+     * frequently contain unusual strings. For information about identifying and mitigating false positives, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the
+     * <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * <code>LOW</code> is generally a better choice for resources that already have other protections against SQL
+     * injection attacks or that have a low tolerance for false positives.
+     * </p>
+     * <p>
+     * Default: <code>LOW</code>
+     * </p>
+     * 
+     * @param sensitivityLevel
+     *        The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+     *        <p>
+     *        <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web
+     *        requests frequently contain unusual strings. For information about identifying and mitigating false
+     *        positives, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a>
+     *        in the <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        <code>LOW</code> is generally a better choice for resources that already have other protections against
+     *        SQL injection attacks or that have a low tolerance for false positives.
+     *        </p>
+     *        <p>
+     *        Default: <code>LOW</code>
+     * @see SensitivityLevel
+     */
+
+    public void setSensitivityLevel(String sensitivityLevel) {
+        this.sensitivityLevel = sensitivityLevel;
+    }
+
+    /**
+     * <p>
+     * The sensitivity that you want WAF to use to inspect for SQL injection attacks.
+     * </p>
+     * <p>
+     * <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests
+     * frequently contain unusual strings. For information about identifying and mitigating false positives, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the
+     * <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * <code>LOW</code> is generally a better choice for resources that already have other protections against SQL
+     * injection attacks or that have a low tolerance for false positives.
+     * </p>
+     * <p>
+     * Default: <code>LOW</code>
+     * </p>
+     * 
+     * @return The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+     *         <p>
+     *         <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web
+     *         requests frequently contain unusual strings. For information about identifying and mitigating false
+     *         positives, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a>
+     *         in the <i>WAF Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         <code>LOW</code> is generally a better choice for resources that already have other protections against
+     *         SQL injection attacks or that have a low tolerance for false positives.
+     *         </p>
+     *         <p>
+     *         Default: <code>LOW</code>
+     * @see SensitivityLevel
+     */
+
+    public String getSensitivityLevel() {
+        return this.sensitivityLevel;
+    }
+
+    /**
+     * <p>
+     * The sensitivity that you want WAF to use to inspect for SQL injection attacks.
+     * </p>
+     * <p>
+     * <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests
+     * frequently contain unusual strings. For information about identifying and mitigating false positives, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the
+     * <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * <code>LOW</code> is generally a better choice for resources that already have other protections against SQL
+     * injection attacks or that have a low tolerance for false positives.
+     * </p>
+     * <p>
+     * Default: <code>LOW</code>
+     * </p>
+     * 
+     * @param sensitivityLevel
+     *        The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+     *        <p>
+     *        <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web
+     *        requests frequently contain unusual strings. For information about identifying and mitigating false
+     *        positives, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a>
+     *        in the <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        <code>LOW</code> is generally a better choice for resources that already have other protections against
+     *        SQL injection attacks or that have a low tolerance for false positives.
+     *        </p>
+     *        <p>
+     *        Default: <code>LOW</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SensitivityLevel
+     */
+
+    public SqliMatchStatement withSensitivityLevel(String sensitivityLevel) {
+        setSensitivityLevel(sensitivityLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sensitivity that you want WAF to use to inspect for SQL injection attacks.
+     * </p>
+     * <p>
+     * <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests
+     * frequently contain unusual strings. For information about identifying and mitigating false positives, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the
+     * <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * <code>LOW</code> is generally a better choice for resources that already have other protections against SQL
+     * injection attacks or that have a low tolerance for false positives.
+     * </p>
+     * <p>
+     * Default: <code>LOW</code>
+     * </p>
+     * 
+     * @param sensitivityLevel
+     *        The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+     *        <p>
+     *        <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web
+     *        requests frequently contain unusual strings. For information about identifying and mitigating false
+     *        positives, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a>
+     *        in the <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        <code>LOW</code> is generally a better choice for resources that already have other protections against
+     *        SQL injection attacks or that have a low tolerance for false positives.
+     *        </p>
+     *        <p>
+     *        Default: <code>LOW</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SensitivityLevel
+     */
+
+    public SqliMatchStatement withSensitivityLevel(SensitivityLevel sensitivityLevel) {
+        this.sensitivityLevel = sensitivityLevel.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -197,7 +376,9 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
         if (getFieldToMatch() != null)
             sb.append("FieldToMatch: ").append(getFieldToMatch()).append(",");
         if (getTextTransformations() != null)
-            sb.append("TextTransformations: ").append(getTextTransformations());
+            sb.append("TextTransformations: ").append(getTextTransformations()).append(",");
+        if (getSensitivityLevel() != null)
+            sb.append("SensitivityLevel: ").append(getSensitivityLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +401,10 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getTextTransformations() != null && other.getTextTransformations().equals(this.getTextTransformations()) == false)
             return false;
+        if (other.getSensitivityLevel() == null ^ this.getSensitivityLevel() == null)
+            return false;
+        if (other.getSensitivityLevel() != null && other.getSensitivityLevel().equals(this.getSensitivityLevel()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +415,7 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getFieldToMatch() == null) ? 0 : getFieldToMatch().hashCode());
         hashCode = prime * hashCode + ((getTextTransformations() == null) ? 0 : getTextTransformations().hashCode());
+        hashCode = prime * hashCode + ((getSensitivityLevel() == null) ? 0 : getSensitivityLevel().hashCode());
         return hashCode;
     }
 

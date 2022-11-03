@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used
- * for all deployments initiated by a CloudFormation stack update.
+ * Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for
+ * all deployments initiated by a CloudFormation stack update.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CloudFormationTarget" target="_top">AWS
@@ -31,7 +31,7 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The unique ID of an AWS CloudFormation blue/green deployment.
+     * The unique ID of an CloudFormation blue/green deployment.
      * </p>
      */
     private String deploymentId;
@@ -43,43 +43,42 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
     private String targetId;
     /**
      * <p>
-     * The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     * The date and time when the target application was updated by an CloudFormation blue/green deployment.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     * The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LifecycleEvent> lifecycleEvents;
     /**
      * <p>
-     * The status of an AWS CloudFormation blue/green deployment's target application.
+     * The status of an CloudFormation blue/green deployment's target application.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The resource type for the AWS CloudFormation blue/green deployment.
+     * The resource type for the CloudFormation blue/green deployment.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment
-     * receives.
+     * The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.
      * </p>
      */
     private Double targetVersionWeight;
 
     /**
      * <p>
-     * The unique ID of an AWS CloudFormation blue/green deployment.
+     * The unique ID of an CloudFormation blue/green deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The unique ID of an AWS CloudFormation blue/green deployment.
+     *        The unique ID of an CloudFormation blue/green deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -88,10 +87,10 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The unique ID of an AWS CloudFormation blue/green deployment.
+     * The unique ID of an CloudFormation blue/green deployment.
      * </p>
      * 
-     * @return The unique ID of an AWS CloudFormation blue/green deployment.
+     * @return The unique ID of an CloudFormation blue/green deployment.
      */
 
     public String getDeploymentId() {
@@ -100,11 +99,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The unique ID of an AWS CloudFormation blue/green deployment.
+     * The unique ID of an CloudFormation blue/green deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The unique ID of an AWS CloudFormation blue/green deployment.
+     *        The unique ID of an CloudFormation blue/green deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +154,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     * The date and time when the target application was updated by an CloudFormation blue/green deployment.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     *        The date and time when the target application was updated by an CloudFormation blue/green deployment.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -168,10 +167,10 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     * The date and time when the target application was updated by an CloudFormation blue/green deployment.
      * </p>
      * 
-     * @return The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     * @return The date and time when the target application was updated by an CloudFormation blue/green deployment.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -180,11 +179,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     * The date and time when the target application was updated by an CloudFormation blue/green deployment.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The date and time when the target application was updated by an AWS CloudFormation blue/green deployment.
+     *        The date and time when the target application was updated by an CloudFormation blue/green deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,10 +194,10 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     * The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * </p>
      * 
-     * @return The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     * @return The lifecycle events of the CloudFormation blue/green deployment to this target application.
      */
 
     public java.util.List<LifecycleEvent> getLifecycleEvents() {
@@ -210,11 +209,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     * The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * </p>
      * 
      * @param lifecycleEvents
-     *        The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     *        The lifecycle events of the CloudFormation blue/green deployment to this target application.
      */
 
     public void setLifecycleEvents(java.util.Collection<LifecycleEvent> lifecycleEvents) {
@@ -228,7 +227,7 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     * The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -237,7 +236,7 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param lifecycleEvents
-     *        The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     *        The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,11 +252,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     * The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * </p>
      * 
      * @param lifecycleEvents
-     *        The lifecycle events of the AWS CloudFormation blue/green deployment to this target application.
+     *        The lifecycle events of the CloudFormation blue/green deployment to this target application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,11 +267,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of an AWS CloudFormation blue/green deployment's target application.
+     * The status of an CloudFormation blue/green deployment's target application.
      * </p>
      * 
      * @param status
-     *        The status of an AWS CloudFormation blue/green deployment's target application.
+     *        The status of an CloudFormation blue/green deployment's target application.
      * @see TargetStatus
      */
 
@@ -282,10 +281,10 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of an AWS CloudFormation blue/green deployment's target application.
+     * The status of an CloudFormation blue/green deployment's target application.
      * </p>
      * 
-     * @return The status of an AWS CloudFormation blue/green deployment's target application.
+     * @return The status of an CloudFormation blue/green deployment's target application.
      * @see TargetStatus
      */
 
@@ -295,11 +294,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of an AWS CloudFormation blue/green deployment's target application.
+     * The status of an CloudFormation blue/green deployment's target application.
      * </p>
      * 
      * @param status
-     *        The status of an AWS CloudFormation blue/green deployment's target application.
+     *        The status of an CloudFormation blue/green deployment's target application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetStatus
      */
@@ -311,11 +310,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of an AWS CloudFormation blue/green deployment's target application.
+     * The status of an CloudFormation blue/green deployment's target application.
      * </p>
      * 
      * @param status
-     *        The status of an AWS CloudFormation blue/green deployment's target application.
+     *        The status of an CloudFormation blue/green deployment's target application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetStatus
      */
@@ -327,11 +326,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The resource type for the AWS CloudFormation blue/green deployment.
+     * The resource type for the CloudFormation blue/green deployment.
      * </p>
      * 
      * @param resourceType
-     *        The resource type for the AWS CloudFormation blue/green deployment.
+     *        The resource type for the CloudFormation blue/green deployment.
      */
 
     public void setResourceType(String resourceType) {
@@ -340,10 +339,10 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The resource type for the AWS CloudFormation blue/green deployment.
+     * The resource type for the CloudFormation blue/green deployment.
      * </p>
      * 
-     * @return The resource type for the AWS CloudFormation blue/green deployment.
+     * @return The resource type for the CloudFormation blue/green deployment.
      */
 
     public String getResourceType() {
@@ -352,11 +351,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The resource type for the AWS CloudFormation blue/green deployment.
+     * The resource type for the CloudFormation blue/green deployment.
      * </p>
      * 
      * @param resourceType
-     *        The resource type for the AWS CloudFormation blue/green deployment.
+     *        The resource type for the CloudFormation blue/green deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,13 +366,12 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment
-     * receives.
+     * The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.
      * </p>
      * 
      * @param targetVersionWeight
-     *        The percentage of production traffic that the target version of an AWS CloudFormation blue/green
-     *        deployment receives.
+     *        The percentage of production traffic that the target version of an CloudFormation blue/green deployment
+     *        receives.
      */
 
     public void setTargetVersionWeight(Double targetVersionWeight) {
@@ -382,12 +380,11 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment
-     * receives.
+     * The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.
      * </p>
      * 
-     * @return The percentage of production traffic that the target version of an AWS CloudFormation blue/green
-     *         deployment receives.
+     * @return The percentage of production traffic that the target version of an CloudFormation blue/green deployment
+     *         receives.
      */
 
     public Double getTargetVersionWeight() {
@@ -396,13 +393,12 @@ public class CloudFormationTarget implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment
-     * receives.
+     * The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.
      * </p>
      * 
      * @param targetVersionWeight
-     *        The percentage of production traffic that the target version of an AWS CloudFormation blue/green
-     *        deployment receives.
+     *        The percentage of production traffic that the target version of an CloudFormation blue/green deployment
+     *        receives.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

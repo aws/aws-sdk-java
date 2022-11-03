@@ -40,9 +40,9 @@ public class CreateVirtualGatewayRequest extends com.amazonaws.AmazonWebServiceR
     private String meshName;
     /**
      * <p>
-     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
-     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the
+     * account that you specify must share the mesh with your account before you can create the resource in the service
+     * mesh. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      */
@@ -156,16 +156,16 @@ public class CreateVirtualGatewayRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
-     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the
+     * account that you specify must share the mesh with your account before you can create the resource in the service
+     * mesh. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param meshOwner
-     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that
-     *        you specify must share the mesh with your account before you can create the resource in the service mesh.
-     *        For more information about mesh sharing, see <a
+     *        The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then
+     *        the account that you specify must share the mesh with your account before you can create the resource in
+     *        the service mesh. For more information about mesh sharing, see <a
      *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      */
 
@@ -175,15 +175,15 @@ public class CreateVirtualGatewayRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
-     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the
+     * account that you specify must share the mesh with your account before you can create the resource in the service
+     * mesh. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
-     * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account
-     *         that you specify must share the mesh with your account before you can create the resource in the service
-     *         mesh. For more information about mesh sharing, see <a
+     * @return The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then
+     *         the account that you specify must share the mesh with your account before you can create the resource in
+     *         the service mesh. For more information about mesh sharing, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      */
 
@@ -193,16 +193,16 @@ public class CreateVirtualGatewayRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
-     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the
+     * account that you specify must share the mesh with your account before you can create the resource in the service
+     * mesh. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param meshOwner
-     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that
-     *        you specify must share the mesh with your account before you can create the resource in the service mesh.
-     *        For more information about mesh sharing, see <a
+     *        The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then
+     *        the account that you specify must share the mesh with your account before you can create the resource in
+     *        the service mesh. For more information about mesh sharing, see <a
      *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

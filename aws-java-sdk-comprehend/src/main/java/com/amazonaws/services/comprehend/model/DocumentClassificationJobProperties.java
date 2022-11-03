@@ -131,7 +131,7 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -800,13 +800,13 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *        for your document classification job. For more information, see <a
-     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *        href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -817,12 +817,12 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @return Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *         for your document classification job. For more information, see <a
-     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *         href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -833,13 +833,13 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *        for your document classification job. For more information, see <a
-     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *        href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

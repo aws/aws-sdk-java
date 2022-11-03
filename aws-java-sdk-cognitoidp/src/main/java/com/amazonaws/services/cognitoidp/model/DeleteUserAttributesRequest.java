@@ -39,7 +39,7 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> userAttributeNames;
     /**
      * <p>
-     * The access token used in the request to delete user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      * </p>
      */
     private String accessToken;
@@ -140,11 +140,11 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token used in the request to delete user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      * </p>
      * 
      * @param accessToken
-     *        The access token used in the request to delete user attributes.
+     *        A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      */
 
     public void setAccessToken(String accessToken) {
@@ -153,10 +153,10 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token used in the request to delete user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      * </p>
      * 
-     * @return The access token used in the request to delete user attributes.
+     * @return A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      */
 
     public String getAccessToken() {
@@ -165,11 +165,11 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token used in the request to delete user attributes.
+     * A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      * </p>
      * 
      * @param accessToken
-     *        The access token used in the request to delete user attributes.
+     *        A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

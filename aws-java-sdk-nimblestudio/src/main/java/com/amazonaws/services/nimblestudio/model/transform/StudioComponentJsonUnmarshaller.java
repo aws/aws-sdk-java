@@ -85,11 +85,19 @@ public class StudioComponentJsonUnmarshaller implements Unmarshaller<StudioCompo
                     context.nextToken();
                     studioComponent.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("runtimeRoleArn", targetDepth)) {
+                    context.nextToken();
+                    studioComponent.setRuntimeRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scriptParameters", targetDepth)) {
                     context.nextToken();
                     studioComponent.setScriptParameters(new ListUnmarshaller<ScriptParameterKeyValue>(ScriptParameterKeyValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("secureInitializationRoleArn", targetDepth)) {
+                    context.nextToken();
+                    studioComponent.setSecureInitializationRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();

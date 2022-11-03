@@ -475,6 +475,34 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Evaluates a given template and returns the response. The mapping template can be a request or response template.
+     * </p>
+     * <p>
+     * Request templates take the incoming request after a GraphQL operation is parsed and convert it into a request
+     * configuration for the selected data source operation. Response templates interpret responses from the data source
+     * and map it to the shape of the GraphQL field output type.
+     * </p>
+     * <p>
+     * Mapping templates are written in the Apache Velocity Template Language (VTL).
+     * </p>
+     * 
+     * @param evaluateMappingTemplateRequest
+     * @return Result of the EvaluateMappingTemplate operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @sample AWSAppSync.EvaluateMappingTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EvaluateMappingTemplateResult evaluateMappingTemplate(EvaluateMappingTemplateRequest evaluateMappingTemplateRequest);
+
+    /**
+     * <p>
      * Flushes an <code>ApiCache</code> object.
      * </p>
      * 

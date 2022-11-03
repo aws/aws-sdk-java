@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A requested resource does not exist. It may have been deleted or referenced inaccurately.
+ * A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,7 +25,7 @@ public class ResourceNotFoundException extends com.amazonaws.services.managedblo
 
     /**
      * <p>
-     * A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      * </p>
      */
     private String resourceName;
@@ -42,11 +42,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.managedblo
 
     /**
      * <p>
-     * A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      * </p>
      * 
      * @param resourceName
-     *        A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     *        A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceName")
@@ -56,10 +56,10 @@ public class ResourceNotFoundException extends com.amazonaws.services.managedblo
 
     /**
      * <p>
-     * A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      * </p>
      * 
-     * @return A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * @return A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceName")
@@ -69,11 +69,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.managedblo
 
     /**
      * <p>
-     * A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      * </p>
      * 
      * @param resourceName
-     *        A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     *        A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

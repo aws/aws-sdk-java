@@ -51,15 +51,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     private AttributeFilter attributeFilter;
     /**
      * <p>
-     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use
-     * this information to help narrow the search for your user.
+     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your
+     * users narrow their search.
      * </p>
      */
     private java.util.List<Facet> facets;
     /**
      * <p>
-     * An array of document attributes to include in the response. No other document attributes are included in the
-     * response. By default all document attributes are included in the response.
+     * An array of document attributes to include in the response. You can limit the response to include certain
+     * document attributes. By default all document attributes are included in the response.
      * </p>
      */
     private java.util.List<String> requestedDocumentAttributes;
@@ -295,12 +295,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use
-     * this information to help narrow the search for your user.
+     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your
+     * users narrow their search.
      * </p>
      * 
-     * @return An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can
-     *         use this information to help narrow the search for your user.
+     * @return An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This
+     *         helps your users narrow their search.
      */
 
     public java.util.List<Facet> getFacets() {
@@ -309,13 +309,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use
-     * this information to help narrow the search for your user.
+     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your
+     * users narrow their search.
      * </p>
      * 
      * @param facets
-     *        An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can
-     *        use this information to help narrow the search for your user.
+     *        An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This
+     *        helps your users narrow their search.
      */
 
     public void setFacets(java.util.Collection<Facet> facets) {
@@ -329,8 +329,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use
-     * this information to help narrow the search for your user.
+     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your
+     * users narrow their search.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -339,8 +339,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param facets
-     *        An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can
-     *        use this information to help narrow the search for your user.
+     *        An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This
+     *        helps your users narrow their search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,13 +356,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use
-     * this information to help narrow the search for your user.
+     * An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your
+     * users narrow their search.
      * </p>
      * 
      * @param facets
-     *        An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can
-     *        use this information to help narrow the search for your user.
+     *        An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This
+     *        helps your users narrow their search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,12 +373,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of document attributes to include in the response. No other document attributes are included in the
-     * response. By default all document attributes are included in the response.
+     * An array of document attributes to include in the response. You can limit the response to include certain
+     * document attributes. By default all document attributes are included in the response.
      * </p>
      * 
-     * @return An array of document attributes to include in the response. No other document attributes are included in
-     *         the response. By default all document attributes are included in the response.
+     * @return An array of document attributes to include in the response. You can limit the response to include certain
+     *         document attributes. By default all document attributes are included in the response.
      */
 
     public java.util.List<String> getRequestedDocumentAttributes() {
@@ -387,13 +387,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of document attributes to include in the response. No other document attributes are included in the
-     * response. By default all document attributes are included in the response.
+     * An array of document attributes to include in the response. You can limit the response to include certain
+     * document attributes. By default all document attributes are included in the response.
      * </p>
      * 
      * @param requestedDocumentAttributes
-     *        An array of document attributes to include in the response. No other document attributes are included in
-     *        the response. By default all document attributes are included in the response.
+     *        An array of document attributes to include in the response. You can limit the response to include certain
+     *        document attributes. By default all document attributes are included in the response.
      */
 
     public void setRequestedDocumentAttributes(java.util.Collection<String> requestedDocumentAttributes) {
@@ -407,8 +407,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of document attributes to include in the response. No other document attributes are included in the
-     * response. By default all document attributes are included in the response.
+     * An array of document attributes to include in the response. You can limit the response to include certain
+     * document attributes. By default all document attributes are included in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -417,8 +417,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param requestedDocumentAttributes
-     *        An array of document attributes to include in the response. No other document attributes are included in
-     *        the response. By default all document attributes are included in the response.
+     *        An array of document attributes to include in the response. You can limit the response to include certain
+     *        document attributes. By default all document attributes are included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,13 +434,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * An array of document attributes to include in the response. No other document attributes are included in the
-     * response. By default all document attributes are included in the response.
+     * An array of document attributes to include in the response. You can limit the response to include certain
+     * document attributes. By default all document attributes are included in the response.
      * </p>
      * 
      * @param requestedDocumentAttributes
-     *        An array of document attributes to include in the response. No other document attributes are included in
-     *        the response. By default all document attributes are included in the response.
+     *        An array of document attributes to include in the response. You can limit the response to include certain
+     *        document attributes. By default all document attributes are included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

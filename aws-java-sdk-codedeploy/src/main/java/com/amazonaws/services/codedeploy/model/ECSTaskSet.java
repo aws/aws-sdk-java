@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details
- * such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
- * An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an
- * Amazon ECS service as a task set.
+ * Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such
+ * as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An
+ * CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS
+ * service as a task set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTaskSet" target="_top">AWS API
@@ -93,8 +93,8 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
     private Double trafficWeight;
     /**
      * <p>
-     * The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a
-     * task set.
+     * The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task
+     * set.
      * </p>
      */
     private TargetGroupInfo targetGroup;
@@ -489,13 +489,13 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a
-     * task set.
+     * The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task
+     * set.
      * </p>
      * 
      * @param targetGroup
-     *        The target group associated with the task set. The target group is used by AWS CodeDeploy to manage
-     *        traffic to a task set.
+     *        The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to
+     *        a task set.
      */
 
     public void setTargetGroup(TargetGroupInfo targetGroup) {
@@ -504,12 +504,12 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a
-     * task set.
+     * The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task
+     * set.
      * </p>
      * 
-     * @return The target group associated with the task set. The target group is used by AWS CodeDeploy to manage
-     *         traffic to a task set.
+     * @return The target group associated with the task set. The target group is used by CodeDeploy to manage traffic
+     *         to a task set.
      */
 
     public TargetGroupInfo getTargetGroup() {
@@ -518,13 +518,13 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a
-     * task set.
+     * The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task
+     * set.
      * </p>
      * 
      * @param targetGroup
-     *        The target group associated with the task set. The target group is used by AWS CodeDeploy to manage
-     *        traffic to a task set.
+     *        The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to
+     *        a task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

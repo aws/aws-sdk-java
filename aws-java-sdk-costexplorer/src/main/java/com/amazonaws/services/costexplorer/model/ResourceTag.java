@@ -41,24 +41,24 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key that is associated with the tag.
+     * The key that's associated with the tag.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value that is associated with the tag.
+     * The value that's associated with the tag.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The key that is associated with the tag.
+     * The key that's associated with the tag.
      * </p>
      * 
      * @param key
-     *        The key that is associated with the tag.
+     *        The key that's associated with the tag.
      */
 
     public void setKey(String key) {
@@ -67,10 +67,10 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key that is associated with the tag.
+     * The key that's associated with the tag.
      * </p>
      * 
-     * @return The key that is associated with the tag.
+     * @return The key that's associated with the tag.
      */
 
     public String getKey() {
@@ -79,11 +79,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key that is associated with the tag.
+     * The key that's associated with the tag.
      * </p>
      * 
      * @param key
-     *        The key that is associated with the tag.
+     *        The key that's associated with the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value that is associated with the tag.
+     * The value that's associated with the tag.
      * </p>
      * 
      * @param value
-     *        The value that is associated with the tag.
+     *        The value that's associated with the tag.
      */
 
     public void setValue(String value) {
@@ -107,10 +107,10 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value that is associated with the tag.
+     * The value that's associated with the tag.
      * </p>
      * 
-     * @return The value that is associated with the tag.
+     * @return The value that's associated with the tag.
      */
 
     public String getValue() {
@@ -119,11 +119,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value that is associated with the tag.
+     * The value that's associated with the tag.
      * </p>
      * 
      * @param value
-     *        The value that is associated with the tag.
+     *        The value that's associated with the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

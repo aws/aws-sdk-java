@@ -39,7 +39,8 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * The advanced event selectors used to select events for the event data store.
+     * The advanced event selectors used to select events for the event data store. You can configure up to five
+     * advanced event selectors for each event data store.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
@@ -151,10 +152,12 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The advanced event selectors used to select events for the event data store.
+     * The advanced event selectors used to select events for the event data store. You can configure up to five
+     * advanced event selectors for each event data store.
      * </p>
      * 
-     * @return The advanced event selectors used to select events for the event data store.
+     * @return The advanced event selectors used to select events for the event data store. You can configure up to five
+     *         advanced event selectors for each event data store.
      */
 
     public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
@@ -166,11 +169,13 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The advanced event selectors used to select events for the event data store.
+     * The advanced event selectors used to select events for the event data store. You can configure up to five
+     * advanced event selectors for each event data store.
      * </p>
      * 
      * @param advancedEventSelectors
-     *        The advanced event selectors used to select events for the event data store.
+     *        The advanced event selectors used to select events for the event data store. You can configure up to five
+     *        advanced event selectors for each event data store.
      */
 
     public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
@@ -184,7 +189,8 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The advanced event selectors used to select events for the event data store.
+     * The advanced event selectors used to select events for the event data store. You can configure up to five
+     * advanced event selectors for each event data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,7 +199,8 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param advancedEventSelectors
-     *        The advanced event selectors used to select events for the event data store.
+     *        The advanced event selectors used to select events for the event data store. You can configure up to five
+     *        advanced event selectors for each event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +216,13 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The advanced event selectors used to select events for the event data store.
+     * The advanced event selectors used to select events for the event data store. You can configure up to five
+     * advanced event selectors for each event data store.
      * </p>
      * 
      * @param advancedEventSelectors
-     *        The advanced event selectors used to select events for the event data store.
+     *        The advanced event selectors used to select events for the event data store. You can configure up to five
+     *        advanced event selectors for each event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

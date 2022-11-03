@@ -43,6 +43,19 @@ public class AWSProtonWaiters {
     }
 
     /**
+     * Builds a ComponentDeployed waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetComponentRequest> componentDeployed() {
+
+        return new WaiterBuilder<GetComponentRequest, GetComponentResult>().withSdkFunction(new GetComponentFunction(client))
+                .withAcceptors(new ComponentDeployed.IsSUCCEEDEDMatcher(), new ComponentDeployed.IsFAILEDMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(999), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a ServiceInstanceDeployed waiter by using custom parameters waiterParameters and other parameters defined
      * in the waiters specification, and then polls until it determines whether the resource entered the desired state
      * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -51,6 +64,19 @@ public class AWSProtonWaiters {
 
         return new WaiterBuilder<GetServiceInstanceRequest, GetServiceInstanceResult>().withSdkFunction(new GetServiceInstanceFunction(client))
                 .withAcceptors(new ServiceInstanceDeployed.IsSUCCEEDEDMatcher(), new ServiceInstanceDeployed.IsFAILEDMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(999), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a ComponentDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetComponentRequest> componentDeleted() {
+
+        return new WaiterBuilder<GetComponentRequest, GetComponentResult>().withSdkFunction(new GetComponentFunction(client))
+                .withAcceptors(new ComponentDeleted.IsResourceNotFoundExceptionMatcher(), new ComponentDeleted.IsDELETE_FAILEDMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(999), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }

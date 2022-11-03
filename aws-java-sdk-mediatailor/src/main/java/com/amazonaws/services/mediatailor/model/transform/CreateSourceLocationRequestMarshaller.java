@@ -38,7 +38,7 @@ public class CreateSourceLocationRequestMarshaller {
     private static final MarshallingInfo<List> SEGMENTDELIVERYCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentDeliveryConfigurations").build();
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sourceLocationName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("SourceLocationName").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 

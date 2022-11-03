@@ -33,7 +33,7 @@
  * </p>
  * <note>
  * <p>
- * Working with contact flows? Check out the <a
+ * Working with flows? Check out the <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
  * </p>
  * </note>

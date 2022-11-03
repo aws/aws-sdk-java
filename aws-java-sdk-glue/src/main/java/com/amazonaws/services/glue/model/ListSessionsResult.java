@@ -25,7 +25,7 @@ public class ListSessionsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the Id of the session.
+     * Returns the ID of the session.
      * </p>
      */
     private java.util.List<String> ids;
@@ -44,10 +44,10 @@ public class ListSessionsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the Id of the session.
+     * Returns the ID of the session.
      * </p>
      * 
-     * @return Returns the Id of the session.
+     * @return Returns the ID of the session.
      */
 
     public java.util.List<String> getIds() {
@@ -56,11 +56,11 @@ public class ListSessionsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the Id of the session.
+     * Returns the ID of the session.
      * </p>
      * 
      * @param ids
-     *        Returns the Id of the session.
+     *        Returns the ID of the session.
      */
 
     public void setIds(java.util.Collection<String> ids) {
@@ -74,7 +74,7 @@ public class ListSessionsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the Id of the session.
+     * Returns the ID of the session.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class ListSessionsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param ids
-     *        Returns the Id of the session.
+     *        Returns the ID of the session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class ListSessionsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the Id of the session.
+     * Returns the ID of the session.
      * </p>
      * 
      * @param ids
-     *        Returns the Id of the session.
+     *        Returns the ID of the session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,18 +26,36 @@ import java.util.concurrent.ExecutorService;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it easy to centrally manage SSO access to
- * multiple Amazon Web Services accounts and business applications. This guide provides information on SSO operations
- * which could be used for access management of Amazon Web Services accounts. For information about Amazon Web Services
- * SSO features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon Web
- * Services Single Sign-On User Guide</a>.
+ * AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce
+ * identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the
+ * recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.
+ * </p>
+ * <note>
+ * <p>
+ * Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will
+ * continue to retain their original name for backward compatibility purposes. For more information, see <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.
+ * </p>
+ * </note>
+ * <p>
+ * This reference guide provides information on single sign-on operations which could be used for access management of
+ * AWS accounts. For information about IAM Identity Center features, see the <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
  * <p>
- * Many operations in the SSO APIs rely on identifiers for users and groups, known as principals. For more information
- * about how to work with principals and principal IDs in Amazon Web Services SSO, see the <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO
- * Identity Store API Reference</a>.
+ * Many operations in the IAM Identity Center APIs rely on identifiers for users and groups, known as principals. For
+ * more information about how to work with principals and principal IDs in IAM Identity Center, see the <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity Store API
+ * Reference</a>.
  * </p>
+ * <note>
+ * <p>
+ * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
+ * Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity
+ * Center and other AWS services. For more information about the AWS SDKs, including how to download and install them,
+ * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -81,6 +99,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachCustomerManagedPolicyReferenceToPermissionSetResult> attachCustomerManagedPolicyReferenceToPermissionSetAsync(
+            AttachCustomerManagedPolicyReferenceToPermissionSetRequest request) {
+
+        return attachCustomerManagedPolicyReferenceToPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachCustomerManagedPolicyReferenceToPermissionSetResult> attachCustomerManagedPolicyReferenceToPermissionSetAsync(
+            final AttachCustomerManagedPolicyReferenceToPermissionSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachCustomerManagedPolicyReferenceToPermissionSetRequest, AttachCustomerManagedPolicyReferenceToPermissionSetResult> asyncHandler) {
+        final AttachCustomerManagedPolicyReferenceToPermissionSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachCustomerManagedPolicyReferenceToPermissionSetResult>() {
+            @Override
+            public AttachCustomerManagedPolicyReferenceToPermissionSetResult call() throws Exception {
+                AttachCustomerManagedPolicyReferenceToPermissionSetResult result = null;
+
+                try {
+                    result = executeAttachCustomerManagedPolicyReferenceToPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -356,6 +409,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePermissionsBoundaryFromPermissionSetResult> deletePermissionsBoundaryFromPermissionSetAsync(
+            DeletePermissionsBoundaryFromPermissionSetRequest request) {
+
+        return deletePermissionsBoundaryFromPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionsBoundaryFromPermissionSetResult> deletePermissionsBoundaryFromPermissionSetAsync(
+            final DeletePermissionsBoundaryFromPermissionSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePermissionsBoundaryFromPermissionSetRequest, DeletePermissionsBoundaryFromPermissionSetResult> asyncHandler) {
+        final DeletePermissionsBoundaryFromPermissionSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePermissionsBoundaryFromPermissionSetResult>() {
+            @Override
+            public DeletePermissionsBoundaryFromPermissionSetResult call() throws Exception {
+                DeletePermissionsBoundaryFromPermissionSetResult result = null;
+
+                try {
+                    result = executeDeletePermissionsBoundaryFromPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountAssignmentCreationStatusResult> describeAccountAssignmentCreationStatusAsync(
             DescribeAccountAssignmentCreationStatusRequest request) {
 
@@ -529,6 +617,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
     }
 
     @Override
+    public java.util.concurrent.Future<DetachCustomerManagedPolicyReferenceFromPermissionSetResult> detachCustomerManagedPolicyReferenceFromPermissionSetAsync(
+            DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request) {
+
+        return detachCustomerManagedPolicyReferenceFromPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachCustomerManagedPolicyReferenceFromPermissionSetResult> detachCustomerManagedPolicyReferenceFromPermissionSetAsync(
+            final DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResult> asyncHandler) {
+        final DetachCustomerManagedPolicyReferenceFromPermissionSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetachCustomerManagedPolicyReferenceFromPermissionSetResult>() {
+            @Override
+            public DetachCustomerManagedPolicyReferenceFromPermissionSetResult call() throws Exception {
+                DetachCustomerManagedPolicyReferenceFromPermissionSetResult result = null;
+
+                try {
+                    result = executeDetachCustomerManagedPolicyReferenceFromPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachManagedPolicyFromPermissionSetResult> detachManagedPolicyFromPermissionSetAsync(
             DetachManagedPolicyFromPermissionSetRequest request) {
 
@@ -583,6 +706,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
 
                 try {
                     result = executeGetInlinePolicyForPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionsBoundaryForPermissionSetResult> getPermissionsBoundaryForPermissionSetAsync(
+            GetPermissionsBoundaryForPermissionSetRequest request) {
+
+        return getPermissionsBoundaryForPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionsBoundaryForPermissionSetResult> getPermissionsBoundaryForPermissionSetAsync(
+            final GetPermissionsBoundaryForPermissionSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPermissionsBoundaryForPermissionSetRequest, GetPermissionsBoundaryForPermissionSetResult> asyncHandler) {
+        final GetPermissionsBoundaryForPermissionSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPermissionsBoundaryForPermissionSetResult>() {
+            @Override
+            public GetPermissionsBoundaryForPermissionSetResult call() throws Exception {
+                GetPermissionsBoundaryForPermissionSetResult result = null;
+
+                try {
+                    result = executeGetPermissionsBoundaryForPermissionSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -721,6 +879,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
 
                 try {
                     result = executeListAccountsForProvisionedPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomerManagedPolicyReferencesInPermissionSetResult> listCustomerManagedPolicyReferencesInPermissionSetAsync(
+            ListCustomerManagedPolicyReferencesInPermissionSetRequest request) {
+
+        return listCustomerManagedPolicyReferencesInPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomerManagedPolicyReferencesInPermissionSetResult> listCustomerManagedPolicyReferencesInPermissionSetAsync(
+            final ListCustomerManagedPolicyReferencesInPermissionSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResult> asyncHandler) {
+        final ListCustomerManagedPolicyReferencesInPermissionSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCustomerManagedPolicyReferencesInPermissionSetResult>() {
+            @Override
+            public ListCustomerManagedPolicyReferencesInPermissionSetResult call() throws Exception {
+                ListCustomerManagedPolicyReferencesInPermissionSetResult result = null;
+
+                try {
+                    result = executeListCustomerManagedPolicyReferencesInPermissionSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -992,6 +1185,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
 
                 try {
                     result = executePutInlinePolicyToPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionsBoundaryToPermissionSetResult> putPermissionsBoundaryToPermissionSetAsync(
+            PutPermissionsBoundaryToPermissionSetRequest request) {
+
+        return putPermissionsBoundaryToPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionsBoundaryToPermissionSetResult> putPermissionsBoundaryToPermissionSetAsync(
+            final PutPermissionsBoundaryToPermissionSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPermissionsBoundaryToPermissionSetRequest, PutPermissionsBoundaryToPermissionSetResult> asyncHandler) {
+        final PutPermissionsBoundaryToPermissionSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPermissionsBoundaryToPermissionSetResult>() {
+            @Override
+            public PutPermissionsBoundaryToPermissionSetResult call() throws Exception {
+                PutPermissionsBoundaryToPermissionSetResult result = null;
+
+                try {
+                    result = executePutPermissionsBoundaryToPermissionSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -188,7 +188,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -439,7 +439,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -598,7 +598,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IDPSignout</code> <i>optional</i>
+     *         <code>IDPSignout</code> (boolean) <i>optional</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -760,7 +760,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -919,7 +919,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IDPSignout</code> <i>optional</i>
+     *        <code>IDPSignout</code> (boolean) <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1081,7 +1081,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -1240,7 +1240,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IDPSignout</code> <i>optional</i>
+     *        <code>IDPSignout</code> (boolean) <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1435,9 +1435,9 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getIdentityProviderDetails() != null)
-            sb.append("IdentityProviderDetails: ").append(getIdentityProviderDetails()).append(",");
+            sb.append("IdentityProviderDetails: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdentityProviderName() != null)
-            sb.append("IdentityProviderName: ").append(getIdentityProviderName()).append(",");
+            sb.append("IdentityProviderName: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdentityProviderType() != null)
             sb.append("IdentityProviderType: ").append(getIdentityProviderType()).append(",");
         if (getPortalArn() != null)

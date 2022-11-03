@@ -27,10 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListDevicesRequestMarshaller {
 
+    private static final MarshallingInfo<String> DEVICEAGGREGATEDSTATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("DeviceAggregatedStatusFilter").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NAMEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NameFilter").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("SortOrder").build();
 
     private static final ListDevicesRequestMarshaller instance = new ListDevicesRequestMarshaller();
 
@@ -48,8 +56,12 @@ public class ListDevicesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listDevicesRequest.getDeviceAggregatedStatusFilter(), DEVICEAGGREGATEDSTATUSFILTER_BINDING);
             protocolMarshaller.marshall(listDevicesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listDevicesRequest.getNameFilter(), NAMEFILTER_BINDING);
             protocolMarshaller.marshall(listDevicesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDevicesRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(listDevicesRequest.getSortOrder(), SORTORDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

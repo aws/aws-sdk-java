@@ -31,6 +31,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateClassificationJobRequestMarshaller {
 
+    private static final MarshallingInfo<List> ALLOWLISTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("allowListIds").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -73,6 +75,7 @@ public class CreateClassificationJobRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createClassificationJobRequest.getAllowListIds(), ALLOWLISTIDS_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getCustomDataIdentifierIds(), CUSTOMDATAIDENTIFIERIDS_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getDescription(), DESCRIPTION_BINDING);

@@ -33,7 +33,8 @@ public class ClassifyDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     private String text;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the endpoint.
+     * The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      * </p>
      */
     private String endpointArn;
@@ -80,11 +81,13 @@ public class ClassifyDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the endpoint.
+     * The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Number (ARN) of the endpoint.
+     *        The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -93,10 +96,12 @@ public class ClassifyDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the endpoint.
+     * The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the endpoint.
+     * @return The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      */
 
     public String getEndpointArn() {
@@ -105,11 +110,13 @@ public class ClassifyDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the endpoint.
+     * The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Number (ARN) of the endpoint.
+     *        The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

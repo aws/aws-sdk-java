@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ResolveConflicts {
 
     OVERWRITE("OVERWRITE"),
-    NONE("NONE");
+    NONE("NONE"),
+    PRESERVE("PRESERVE");
 
     private String value;
 

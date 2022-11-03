@@ -29,6 +29,9 @@ public class PutKMSEncryptionKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The KMS encryption key ARN.
      * </p>
+     * <p>
+     * The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
+     * </p>
      */
     private String kmsEncryptionKeyArn;
 
@@ -36,9 +39,14 @@ public class PutKMSEncryptionKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The KMS encryption key ARN.
      * </p>
+     * <p>
+     * The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
+     * </p>
      * 
      * @param kmsEncryptionKeyArn
-     *        The KMS encryption key ARN.
+     *        The KMS encryption key ARN.</p>
+     *        <p>
+     *        The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
      */
 
     public void setKmsEncryptionKeyArn(String kmsEncryptionKeyArn) {
@@ -49,8 +57,13 @@ public class PutKMSEncryptionKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The KMS encryption key ARN.
      * </p>
+     * <p>
+     * The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
+     * </p>
      * 
-     * @return The KMS encryption key ARN.
+     * @return The KMS encryption key ARN.</p>
+     *         <p>
+     *         The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
      */
 
     public String getKmsEncryptionKeyArn() {
@@ -61,9 +74,14 @@ public class PutKMSEncryptionKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The KMS encryption key ARN.
      * </p>
+     * <p>
+     * The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
+     * </p>
      * 
      * @param kmsEncryptionKeyArn
-     *        The KMS encryption key ARN.
+     *        The KMS encryption key ARN.</p>
+     *        <p>
+     *        The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

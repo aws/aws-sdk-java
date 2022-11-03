@@ -273,6 +273,41 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessControlConfigurationResult> createAccessControlConfigurationAsync(
+            CreateAccessControlConfigurationRequest request) {
+
+        return createAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessControlConfigurationResult> createAccessControlConfigurationAsync(
+            final CreateAccessControlConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessControlConfigurationRequest, CreateAccessControlConfigurationResult> asyncHandler) {
+        final CreateAccessControlConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessControlConfigurationResult>() {
+            @Override
+            public CreateAccessControlConfigurationResult call() throws Exception {
+                CreateAccessControlConfigurationResult result = null;
+
+                try {
+                    result = executeCreateAccessControlConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataSourceResult> createDataSourceAsync(CreateDataSourceRequest request) {
 
         return createDataSourceAsync(request, null);
@@ -457,6 +492,41 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeCreateThesaurus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessControlConfigurationResult> deleteAccessControlConfigurationAsync(
+            DeleteAccessControlConfigurationRequest request) {
+
+        return deleteAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessControlConfigurationResult> deleteAccessControlConfigurationAsync(
+            final DeleteAccessControlConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessControlConfigurationRequest, DeleteAccessControlConfigurationResult> asyncHandler) {
+        final DeleteAccessControlConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessControlConfigurationResult>() {
+            @Override
+            public DeleteAccessControlConfigurationResult call() throws Exception {
+                DeleteAccessControlConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteAccessControlConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -690,6 +760,41 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeDeleteThesaurus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessControlConfigurationResult> describeAccessControlConfigurationAsync(
+            DescribeAccessControlConfigurationRequest request) {
+
+        return describeAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessControlConfigurationResult> describeAccessControlConfigurationAsync(
+            final DescribeAccessControlConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccessControlConfigurationRequest, DescribeAccessControlConfigurationResult> asyncHandler) {
+        final DescribeAccessControlConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccessControlConfigurationResult>() {
+            @Override
+            public DescribeAccessControlConfigurationResult call() throws Exception {
+                DescribeAccessControlConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeAccessControlConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1093,6 +1198,41 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeGetSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessControlConfigurationsResult> listAccessControlConfigurationsAsync(
+            ListAccessControlConfigurationsRequest request) {
+
+        return listAccessControlConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessControlConfigurationsResult> listAccessControlConfigurationsAsync(
+            final ListAccessControlConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessControlConfigurationsRequest, ListAccessControlConfigurationsResult> asyncHandler) {
+        final ListAccessControlConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessControlConfigurationsResult>() {
+            @Override
+            public ListAccessControlConfigurationsResult call() throws Exception {
+                ListAccessControlConfigurationsResult result = null;
+
+                try {
+                    result = executeListAccessControlConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1689,6 +1829,41 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessControlConfigurationResult> updateAccessControlConfigurationAsync(
+            UpdateAccessControlConfigurationRequest request) {
+
+        return updateAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessControlConfigurationResult> updateAccessControlConfigurationAsync(
+            final UpdateAccessControlConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccessControlConfigurationRequest, UpdateAccessControlConfigurationResult> asyncHandler) {
+        final UpdateAccessControlConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccessControlConfigurationResult>() {
+            @Override
+            public UpdateAccessControlConfigurationResult call() throws Exception {
+                UpdateAccessControlConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateAccessControlConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

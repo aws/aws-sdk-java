@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A wrapper type for the topic's ARN.
+ * Provides information about an Amazon SNS topic to which notifications can be published.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSnsTopicDetails" target="_top">AWS API
@@ -36,13 +36,13 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
     private String kmsMasterKeyId;
     /**
      * <p>
-     * Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     * Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * </p>
      */
     private java.util.List<AwsSnsTopicSubscription> subscription;
     /**
      * <p>
-     * The name of the topic.
+     * The name of the Amazon SNS topic.
      * </p>
      */
     private String topicName;
@@ -52,6 +52,52 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String owner;
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     * endpoint.
+     * </p>
+     */
+    private String sqsSuccessFeedbackRoleArn;
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.
+     * </p>
+     */
+    private String sqsFailureFeedbackRoleArn;
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application
+     * endpoint.
+     * </p>
+     */
+    private String applicationSuccessFeedbackRoleArn;
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     */
+    private String firehoseSuccessFeedbackRoleArn;
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     */
+    private String firehoseFailureFeedbackRoleArn;
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     */
+    private String httpSuccessFeedbackRoleArn;
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     */
+    private String httpFailureFeedbackRoleArn;
 
     /**
      * <p>
@@ -95,10 +141,10 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     * Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * </p>
      * 
-     * @return Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     * @return Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      */
 
     public java.util.List<AwsSnsTopicSubscription> getSubscription() {
@@ -107,11 +153,11 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     * Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * </p>
      * 
      * @param subscription
-     *        Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     *        Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      */
 
     public void setSubscription(java.util.Collection<AwsSnsTopicSubscription> subscription) {
@@ -125,7 +171,7 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     * Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +180,7 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param subscription
-     *        Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     *        Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +196,11 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     * Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * </p>
      * 
      * @param subscription
-     *        Subscription is an embedded property that describes the subscription endpoints of an SNS topic.
+     *        Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +211,11 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the topic.
+     * The name of the Amazon SNS topic.
      * </p>
      * 
      * @param topicName
-     *        The name of the topic.
+     *        The name of the Amazon SNS topic.
      */
 
     public void setTopicName(String topicName) {
@@ -178,10 +224,10 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the topic.
+     * The name of the Amazon SNS topic.
      * </p>
      * 
-     * @return The name of the topic.
+     * @return The name of the Amazon SNS topic.
      */
 
     public String getTopicName() {
@@ -190,11 +236,11 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the topic.
+     * The name of the Amazon SNS topic.
      * </p>
      * 
      * @param topicName
-     *        The name of the topic.
+     *        The name of the Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,6 +290,316 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     * endpoint.
+     * </p>
+     * 
+     * @param sqsSuccessFeedbackRoleArn
+     *        Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     *        endpoint.
+     */
+
+    public void setSqsSuccessFeedbackRoleArn(String sqsSuccessFeedbackRoleArn) {
+        this.sqsSuccessFeedbackRoleArn = sqsSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     * endpoint.
+     * </p>
+     * 
+     * @return Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     *         endpoint.
+     */
+
+    public String getSqsSuccessFeedbackRoleArn() {
+        return this.sqsSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     * endpoint.
+     * </p>
+     * 
+     * @param sqsSuccessFeedbackRoleArn
+     *        Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withSqsSuccessFeedbackRoleArn(String sqsSuccessFeedbackRoleArn) {
+        setSqsSuccessFeedbackRoleArn(sqsSuccessFeedbackRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.
+     * </p>
+     * 
+     * @param sqsFailureFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     *        endpoint.
+     */
+
+    public void setSqsFailureFeedbackRoleArn(String sqsFailureFeedbackRoleArn) {
+        this.sqsFailureFeedbackRoleArn = sqsFailureFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.
+     * </p>
+     * 
+     * @return Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     *         endpoint.
+     */
+
+    public String getSqsFailureFeedbackRoleArn() {
+        return this.sqsFailureFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.
+     * </p>
+     * 
+     * @param sqsFailureFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withSqsFailureFeedbackRoleArn(String sqsFailureFeedbackRoleArn) {
+        setSqsFailureFeedbackRoleArn(sqsFailureFeedbackRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application
+     * endpoint.
+     * </p>
+     * 
+     * @param applicationSuccessFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform
+     *        application endpoint.
+     */
+
+    public void setApplicationSuccessFeedbackRoleArn(String applicationSuccessFeedbackRoleArn) {
+        this.applicationSuccessFeedbackRoleArn = applicationSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application
+     * endpoint.
+     * </p>
+     * 
+     * @return Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform
+     *         application endpoint.
+     */
+
+    public String getApplicationSuccessFeedbackRoleArn() {
+        return this.applicationSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application
+     * endpoint.
+     * </p>
+     * 
+     * @param applicationSuccessFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform
+     *        application endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withApplicationSuccessFeedbackRoleArn(String applicationSuccessFeedbackRoleArn) {
+        setApplicationSuccessFeedbackRoleArn(applicationSuccessFeedbackRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     * 
+     * @param firehoseSuccessFeedbackRoleArn
+     *        Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon
+     *        Kinesis Data Firehose endpoint.
+     */
+
+    public void setFirehoseSuccessFeedbackRoleArn(String firehoseSuccessFeedbackRoleArn) {
+        this.firehoseSuccessFeedbackRoleArn = firehoseSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     * 
+     * @return Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon
+     *         Kinesis Data Firehose endpoint.
+     */
+
+    public String getFirehoseSuccessFeedbackRoleArn() {
+        return this.firehoseSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     * 
+     * @param firehoseSuccessFeedbackRoleArn
+     *        Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon
+     *        Kinesis Data Firehose endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withFirehoseSuccessFeedbackRoleArn(String firehoseSuccessFeedbackRoleArn) {
+        setFirehoseSuccessFeedbackRoleArn(firehoseSuccessFeedbackRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     * 
+     * @param firehoseFailureFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     *        Data Firehose endpoint.
+     */
+
+    public void setFirehoseFailureFeedbackRoleArn(String firehoseFailureFeedbackRoleArn) {
+        this.firehoseFailureFeedbackRoleArn = firehoseFailureFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     * 
+     * @return Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     *         Data Firehose endpoint.
+     */
+
+    public String getFirehoseFailureFeedbackRoleArn() {
+        return this.firehoseFailureFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data
+     * Firehose endpoint.
+     * </p>
+     * 
+     * @param firehoseFailureFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     *        Data Firehose endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withFirehoseFailureFeedbackRoleArn(String firehoseFailureFeedbackRoleArn) {
+        setFirehoseFailureFeedbackRoleArn(firehoseFailureFeedbackRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     * 
+     * @param httpSuccessFeedbackRoleArn
+     *        Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP
+     *        endpoint.
+     */
+
+    public void setHttpSuccessFeedbackRoleArn(String httpSuccessFeedbackRoleArn) {
+        this.httpSuccessFeedbackRoleArn = httpSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     * 
+     * @return Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP
+     *         endpoint.
+     */
+
+    public String getHttpSuccessFeedbackRoleArn() {
+        return this.httpSuccessFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     * 
+     * @param httpSuccessFeedbackRoleArn
+     *        Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withHttpSuccessFeedbackRoleArn(String httpSuccessFeedbackRoleArn) {
+        setHttpSuccessFeedbackRoleArn(httpSuccessFeedbackRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     * 
+     * @param httpFailureFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     */
+
+    public void setHttpFailureFeedbackRoleArn(String httpFailureFeedbackRoleArn) {
+        this.httpFailureFeedbackRoleArn = httpFailureFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     * 
+     * @return Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     */
+
+    public String getHttpFailureFeedbackRoleArn() {
+        return this.httpFailureFeedbackRoleArn;
+    }
+
+    /**
+     * <p>
+     * Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p>
+     * 
+     * @param httpFailureFeedbackRoleArn
+     *        Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSnsTopicDetails withHttpFailureFeedbackRoleArn(String httpFailureFeedbackRoleArn) {
+        setHttpFailureFeedbackRoleArn(httpFailureFeedbackRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +618,21 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
         if (getTopicName() != null)
             sb.append("TopicName: ").append(getTopicName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: ").append(getOwner());
+            sb.append("Owner: ").append(getOwner()).append(",");
+        if (getSqsSuccessFeedbackRoleArn() != null)
+            sb.append("SqsSuccessFeedbackRoleArn: ").append(getSqsSuccessFeedbackRoleArn()).append(",");
+        if (getSqsFailureFeedbackRoleArn() != null)
+            sb.append("SqsFailureFeedbackRoleArn: ").append(getSqsFailureFeedbackRoleArn()).append(",");
+        if (getApplicationSuccessFeedbackRoleArn() != null)
+            sb.append("ApplicationSuccessFeedbackRoleArn: ").append(getApplicationSuccessFeedbackRoleArn()).append(",");
+        if (getFirehoseSuccessFeedbackRoleArn() != null)
+            sb.append("FirehoseSuccessFeedbackRoleArn: ").append(getFirehoseSuccessFeedbackRoleArn()).append(",");
+        if (getFirehoseFailureFeedbackRoleArn() != null)
+            sb.append("FirehoseFailureFeedbackRoleArn: ").append(getFirehoseFailureFeedbackRoleArn()).append(",");
+        if (getHttpSuccessFeedbackRoleArn() != null)
+            sb.append("HttpSuccessFeedbackRoleArn: ").append(getHttpSuccessFeedbackRoleArn()).append(",");
+        if (getHttpFailureFeedbackRoleArn() != null)
+            sb.append("HttpFailureFeedbackRoleArn: ").append(getHttpFailureFeedbackRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +663,37 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
             return false;
+        if (other.getSqsSuccessFeedbackRoleArn() == null ^ this.getSqsSuccessFeedbackRoleArn() == null)
+            return false;
+        if (other.getSqsSuccessFeedbackRoleArn() != null && other.getSqsSuccessFeedbackRoleArn().equals(this.getSqsSuccessFeedbackRoleArn()) == false)
+            return false;
+        if (other.getSqsFailureFeedbackRoleArn() == null ^ this.getSqsFailureFeedbackRoleArn() == null)
+            return false;
+        if (other.getSqsFailureFeedbackRoleArn() != null && other.getSqsFailureFeedbackRoleArn().equals(this.getSqsFailureFeedbackRoleArn()) == false)
+            return false;
+        if (other.getApplicationSuccessFeedbackRoleArn() == null ^ this.getApplicationSuccessFeedbackRoleArn() == null)
+            return false;
+        if (other.getApplicationSuccessFeedbackRoleArn() != null
+                && other.getApplicationSuccessFeedbackRoleArn().equals(this.getApplicationSuccessFeedbackRoleArn()) == false)
+            return false;
+        if (other.getFirehoseSuccessFeedbackRoleArn() == null ^ this.getFirehoseSuccessFeedbackRoleArn() == null)
+            return false;
+        if (other.getFirehoseSuccessFeedbackRoleArn() != null
+                && other.getFirehoseSuccessFeedbackRoleArn().equals(this.getFirehoseSuccessFeedbackRoleArn()) == false)
+            return false;
+        if (other.getFirehoseFailureFeedbackRoleArn() == null ^ this.getFirehoseFailureFeedbackRoleArn() == null)
+            return false;
+        if (other.getFirehoseFailureFeedbackRoleArn() != null
+                && other.getFirehoseFailureFeedbackRoleArn().equals(this.getFirehoseFailureFeedbackRoleArn()) == false)
+            return false;
+        if (other.getHttpSuccessFeedbackRoleArn() == null ^ this.getHttpSuccessFeedbackRoleArn() == null)
+            return false;
+        if (other.getHttpSuccessFeedbackRoleArn() != null && other.getHttpSuccessFeedbackRoleArn().equals(this.getHttpSuccessFeedbackRoleArn()) == false)
+            return false;
+        if (other.getHttpFailureFeedbackRoleArn() == null ^ this.getHttpFailureFeedbackRoleArn() == null)
+            return false;
+        if (other.getHttpFailureFeedbackRoleArn() != null && other.getHttpFailureFeedbackRoleArn().equals(this.getHttpFailureFeedbackRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +706,13 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getSubscription() == null) ? 0 : getSubscription().hashCode());
         hashCode = prime * hashCode + ((getTopicName() == null) ? 0 : getTopicName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getSqsSuccessFeedbackRoleArn() == null) ? 0 : getSqsSuccessFeedbackRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getSqsFailureFeedbackRoleArn() == null) ? 0 : getSqsFailureFeedbackRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getApplicationSuccessFeedbackRoleArn() == null) ? 0 : getApplicationSuccessFeedbackRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getFirehoseSuccessFeedbackRoleArn() == null) ? 0 : getFirehoseSuccessFeedbackRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getFirehoseFailureFeedbackRoleArn() == null) ? 0 : getFirehoseFailureFeedbackRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getHttpSuccessFeedbackRoleArn() == null) ? 0 : getHttpSuccessFeedbackRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getHttpFailureFeedbackRoleArn() == null) ? 0 : getHttpFailureFeedbackRoleArn().hashCode());
         return hashCode;
     }
 

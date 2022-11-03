@@ -28,12 +28,27 @@ public class AbstractAWSSynthetics implements AWSSynthetics {
     }
 
     @Override
+    public AssociateResourceResult associateResource(AssociateResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCanaryResult createCanary(CreateCanaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCanaryResult deleteCanary(DeleteCanaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,12 +68,37 @@ public class AbstractAWSSynthetics implements AWSSynthetics {
     }
 
     @Override
+    public DisassociateResourceResult disassociateResource(DisassociateResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCanaryResult getCanary(GetCanaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetCanaryRunsResult getCanaryRuns(GetCanaryRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssociatedGroupsResult listAssociatedGroups(ListAssociatedGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGroupResourcesResult listGroupResources(ListGroupResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGroupsResult listGroups(ListGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

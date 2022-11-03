@@ -41,6 +41,8 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
     private Integer maxResults;
 
+    private String status;
+
     /**
      * @param lensAlias
      */
@@ -174,6 +176,46 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param status
+     * @see ShareStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * @return
+     * @see ShareStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareStatus
+     */
+
+    public ListLensSharesRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareStatus
+     */
+
+    public ListLensSharesRequest withStatus(ShareStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -192,7 +234,9 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +267,10 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -235,6 +283,7 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSharedWithPrefix() == null) ? 0 : getSharedWithPrefix().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

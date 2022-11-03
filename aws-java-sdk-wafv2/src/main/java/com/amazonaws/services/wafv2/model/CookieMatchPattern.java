@@ -26,8 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>ExcludedCookies</code>.
  * </p>
  * <p>
- * Example JSON:
- * <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+ * Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CookieMatchPattern" target="_top">AWS API

@@ -52,7 +52,7 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      */
     private Integer offset;
@@ -93,6 +93,12 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A list of filters that specify which data is kept for anomaly detection.
+     * </p>
+     */
+    private java.util.List<MetricSetDimensionFilter> dimensionFilterList;
 
     /**
      * <p>
@@ -287,12 +293,12 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      * 
      * @param offset
      *        After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
-     *        only supported for S3 and Redshift datasources.
+     *        only supported for S3, Redshift, Athena and datasources.
      */
 
     public void setOffset(Integer offset) {
@@ -302,11 +308,11 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      * 
      * @return After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
-     *         only supported for S3 and Redshift datasources.
+     *         only supported for S3, Redshift, Athena and datasources.
      */
 
     public Integer getOffset() {
@@ -316,12 +322,12 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      * 
      * @param offset
      *        After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
-     *        only supported for S3 and Redshift datasources.
+     *        only supported for S3, Redshift, Athena and datasources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -654,6 +660,76 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A list of filters that specify which data is kept for anomaly detection.
+     * </p>
+     * 
+     * @return A list of filters that specify which data is kept for anomaly detection.
+     */
+
+    public java.util.List<MetricSetDimensionFilter> getDimensionFilterList() {
+        return dimensionFilterList;
+    }
+
+    /**
+     * <p>
+     * A list of filters that specify which data is kept for anomaly detection.
+     * </p>
+     * 
+     * @param dimensionFilterList
+     *        A list of filters that specify which data is kept for anomaly detection.
+     */
+
+    public void setDimensionFilterList(java.util.Collection<MetricSetDimensionFilter> dimensionFilterList) {
+        if (dimensionFilterList == null) {
+            this.dimensionFilterList = null;
+            return;
+        }
+
+        this.dimensionFilterList = new java.util.ArrayList<MetricSetDimensionFilter>(dimensionFilterList);
+    }
+
+    /**
+     * <p>
+     * A list of filters that specify which data is kept for anomaly detection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDimensionFilterList(java.util.Collection)} or {@link #withDimensionFilterList(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param dimensionFilterList
+     *        A list of filters that specify which data is kept for anomaly detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMetricSetRequest withDimensionFilterList(MetricSetDimensionFilter... dimensionFilterList) {
+        if (this.dimensionFilterList == null) {
+            setDimensionFilterList(new java.util.ArrayList<MetricSetDimensionFilter>(dimensionFilterList.length));
+        }
+        for (MetricSetDimensionFilter ele : dimensionFilterList) {
+            this.dimensionFilterList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of filters that specify which data is kept for anomaly detection.
+     * </p>
+     * 
+     * @param dimensionFilterList
+     *        A list of filters that specify which data is kept for anomaly detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMetricSetRequest withDimensionFilterList(java.util.Collection<MetricSetDimensionFilter> dimensionFilterList) {
+        setDimensionFilterList(dimensionFilterList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -686,7 +762,9 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDimensionFilterList() != null)
+            sb.append("DimensionFilterList: ").append(getDimensionFilterList());
         sb.append("}");
         return sb.toString();
     }
@@ -745,6 +823,10 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDimensionFilterList() == null ^ this.getDimensionFilterList() == null)
+            return false;
+        if (other.getDimensionFilterList() != null && other.getDimensionFilterList().equals(this.getDimensionFilterList()) == false)
+            return false;
         return true;
     }
 
@@ -764,6 +846,7 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getMetricSource() == null) ? 0 : getMetricSource().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDimensionFilterList() == null) ? 0 : getDimensionFilterList().hashCode());
         return hashCode;
     }
 

@@ -33,7 +33,7 @@ public class DisassociateIdentityProviderConfigRequest extends com.amazonaws.Ama
     private String clusterName;
     /**
      * <p>
-     * An object that represents an identity provider configuration.
+     * An object representing an identity provider configuration.
      * </p>
      */
     private IdentityProviderConfig identityProviderConfig;
@@ -86,11 +86,11 @@ public class DisassociateIdentityProviderConfigRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An object that represents an identity provider configuration.
+     * An object representing an identity provider configuration.
      * </p>
      * 
      * @param identityProviderConfig
-     *        An object that represents an identity provider configuration.
+     *        An object representing an identity provider configuration.
      */
 
     public void setIdentityProviderConfig(IdentityProviderConfig identityProviderConfig) {
@@ -99,10 +99,10 @@ public class DisassociateIdentityProviderConfigRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An object that represents an identity provider configuration.
+     * An object representing an identity provider configuration.
      * </p>
      * 
-     * @return An object that represents an identity provider configuration.
+     * @return An object representing an identity provider configuration.
      */
 
     public IdentityProviderConfig getIdentityProviderConfig() {
@@ -111,11 +111,11 @@ public class DisassociateIdentityProviderConfigRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An object that represents an identity provider configuration.
+     * An object representing an identity provider configuration.
      * </p>
      * 
      * @param identityProviderConfig
-     *        An object that represents an identity provider configuration.
+     *        An object representing an identity provider configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

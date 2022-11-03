@@ -38,8 +38,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
      */
     private String adDecisionServerUrl;
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      */
     private Integer maxDurationSeconds;
 
@@ -102,8 +104,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      * 
      * @param maxDurationSeconds
      *        The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads
@@ -115,8 +119,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      * 
      * @return The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads
      *         to exceed this duration, regardless of the total duration of ads that the ADS returns.
@@ -127,8 +133,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      * 
      * @param maxDurationSeconds
      *        The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads

@@ -47,7 +47,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
     private String playbackUrl;
     /**
      * <p>
-     * Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     * Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      */
     private java.util.Date startTime;
@@ -213,11 +213,11 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     * Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
      * @param startTime
-     *        Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     *        Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -226,10 +226,10 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     * Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
-     * @return Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     * @return Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      */
 
     public java.util.Date getStartTime() {
@@ -238,11 +238,11 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     * Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
      * @param startTime
-     *        Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+     *        Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

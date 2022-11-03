@@ -13,7 +13,7 @@
 package com.amazonaws.services.cloudwatchevidently.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +31,8 @@ public class ScheduledSplitMarshaller {
 
     private static final MarshallingInfo<Map> GROUPWEIGHTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("groupWeights").build();
+    private static final MarshallingInfo<List> SEGMENTOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentOverrides").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
 
@@ -51,6 +53,7 @@ public class ScheduledSplitMarshaller {
 
         try {
             protocolMarshaller.marshall(scheduledSplit.getGroupWeights(), GROUPWEIGHTS_BINDING);
+            protocolMarshaller.marshall(scheduledSplit.getSegmentOverrides(), SEGMENTOVERRIDES_BINDING);
             protocolMarshaller.marshall(scheduledSplit.getStartTime(), STARTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

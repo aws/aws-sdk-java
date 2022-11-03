@@ -49,6 +49,10 @@ public class SearchRecordMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureGroup").build();
     private static final MarshallingInfo<StructuredPojo> PROJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Project").build();
+    private static final MarshallingInfo<StructuredPojo> FEATUREMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> HYPERPARAMETERTUNINGJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterTuningJob").build();
 
     private static final SearchRecordMarshaller instance = new SearchRecordMarshaller();
 
@@ -77,6 +81,8 @@ public class SearchRecordMarshaller {
             protocolMarshaller.marshall(searchRecord.getPipelineExecution(), PIPELINEEXECUTION_BINDING);
             protocolMarshaller.marshall(searchRecord.getFeatureGroup(), FEATUREGROUP_BINDING);
             protocolMarshaller.marshall(searchRecord.getProject(), PROJECT_BINDING);
+            protocolMarshaller.marshall(searchRecord.getFeatureMetadata(), FEATUREMETADATA_BINDING);
+            protocolMarshaller.marshall(searchRecord.getHyperParameterTuningJob(), HYPERPARAMETERTUNINGJOB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

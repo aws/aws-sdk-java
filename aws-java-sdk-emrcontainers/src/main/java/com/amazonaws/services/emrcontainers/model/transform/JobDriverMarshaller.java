@@ -29,6 +29,8 @@ public class JobDriverMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SPARKSUBMITJOBDRIVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sparkSubmitJobDriver").build();
+    private static final MarshallingInfo<StructuredPojo> SPARKSQLJOBDRIVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sparkSqlJobDriver").build();
 
     private static final JobDriverMarshaller instance = new JobDriverMarshaller();
 
@@ -47,6 +49,7 @@ public class JobDriverMarshaller {
 
         try {
             protocolMarshaller.marshall(jobDriver.getSparkSubmitJobDriver(), SPARKSUBMITJOBDRIVER_BINDING);
+            protocolMarshaller.marshall(jobDriver.getSparkSqlJobDriver(), SPARKSQLJOBDRIVER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

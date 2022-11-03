@@ -40,7 +40,7 @@ public class CustomerGateway implements Serializable, Cloneable {
     private String customerGatewayId;
     /**
      * <p>
-     * The Internet-routable IP address of the customer gateway's outside interface.
+     * The IP address of the customer gateway device's outside interface.
      * </p>
      */
     private String ipAddress;
@@ -157,11 +157,11 @@ public class CustomerGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the customer gateway's outside interface.
+     * The IP address of the customer gateway device's outside interface.
      * </p>
      * 
      * @param ipAddress
-     *        The Internet-routable IP address of the customer gateway's outside interface.
+     *        The IP address of the customer gateway device's outside interface.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -170,10 +170,10 @@ public class CustomerGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the customer gateway's outside interface.
+     * The IP address of the customer gateway device's outside interface.
      * </p>
      * 
-     * @return The Internet-routable IP address of the customer gateway's outside interface.
+     * @return The IP address of the customer gateway device's outside interface.
      */
 
     public String getIpAddress() {
@@ -182,11 +182,11 @@ public class CustomerGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the customer gateway's outside interface.
+     * The IP address of the customer gateway device's outside interface.
      * </p>
      * 
      * @param ipAddress
-     *        The Internet-routable IP address of the customer gateway's outside interface.
+     *        The IP address of the customer gateway device's outside interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -57,7 +57,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Boolean removeSNSTopic;
-
+    /**
+     * <p>
+     * Turns auto-configuration on or off.
+     * </p>
+     */
     private Boolean autoConfigEnabled;
 
     /**
@@ -311,7 +315,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Turns auto-configuration on or off.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Turns auto-configuration on or off.
      */
 
     public void setAutoConfigEnabled(Boolean autoConfigEnabled) {
@@ -319,7 +328,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Turns auto-configuration on or off.
+     * </p>
+     * 
+     * @return Turns auto-configuration on or off.
      */
 
     public Boolean getAutoConfigEnabled() {
@@ -327,7 +340,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Turns auto-configuration on or off.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Turns auto-configuration on or off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,7 +355,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Turns auto-configuration on or off.
+     * </p>
+     * 
+     * @return Turns auto-configuration on or off.
      */
 
     public Boolean isAutoConfigEnabled() {

@@ -27,8 +27,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of domains to list per API call.
      * </p>
      */
     private Integer maxResults;
@@ -43,13 +42,11 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of domains to list per API call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-     *        further pages of results. The default is 100; the maximum allowed page size is also 100.
+     *        The maximum number of domains to list per API call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -58,12 +55,10 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of domains to list per API call.
      * </p>
      * 
-     * @return The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-     *         further pages of results. The default is 100; the maximum allowed page size is also 100.
+     * @return The maximum number of domains to list per API call.
      */
 
     public Integer getMaxResults() {
@@ -72,13 +67,11 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of domains to list per API call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-     *        further pages of results. The default is 100; the maximum allowed page size is also 100.
+     *        The maximum number of domains to list per API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

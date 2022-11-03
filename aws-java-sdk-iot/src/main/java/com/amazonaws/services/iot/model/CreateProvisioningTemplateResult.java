@@ -26,13 +26,13 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
     private String templateArn;
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The default version of the fleet provisioning template.
+     * The default version of the provisioning template.
      * </p>
      */
     private Integer defaultVersionId;
@@ -79,11 +79,11 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      */
 
     public void setTemplateName(String templateName) {
@@ -92,10 +92,10 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
-     * @return The name of the fleet provisioning template.
+     * @return The name of the provisioning template.
      */
 
     public String getTemplateName() {
@@ -104,11 +104,11 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The default version of the fleet provisioning template.
+     * The default version of the provisioning template.
      * </p>
      * 
      * @param defaultVersionId
-     *        The default version of the fleet provisioning template.
+     *        The default version of the provisioning template.
      */
 
     public void setDefaultVersionId(Integer defaultVersionId) {
@@ -132,10 +132,10 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The default version of the fleet provisioning template.
+     * The default version of the provisioning template.
      * </p>
      * 
-     * @return The default version of the fleet provisioning template.
+     * @return The default version of the provisioning template.
      */
 
     public Integer getDefaultVersionId() {
@@ -144,11 +144,11 @@ public class CreateProvisioningTemplateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The default version of the fleet provisioning template.
+     * The default version of the provisioning template.
      * </p>
      * 
      * @param defaultVersionId
-     *        The default version of the fleet provisioning template.
+     *        The default version of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

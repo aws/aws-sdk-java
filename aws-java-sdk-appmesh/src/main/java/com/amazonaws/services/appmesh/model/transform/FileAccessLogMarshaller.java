@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FileAccessLogMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("format").build();
     private static final MarshallingInfo<String> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("path").build();
 
@@ -46,6 +48,7 @@ public class FileAccessLogMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(fileAccessLog.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(fileAccessLog.getPath(), PATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

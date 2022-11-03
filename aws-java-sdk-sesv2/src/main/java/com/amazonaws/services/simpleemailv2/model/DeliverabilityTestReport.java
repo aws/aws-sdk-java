@@ -54,7 +54,7 @@ public class DeliverabilityTestReport implements Serializable, Cloneable, Struct
     private String fromEmailAddress;
     /**
      * <p>
-     * The date and time when the predictive inbox placement test was created, in Unix time format.
+     * The date and time when the predictive inbox placement test was created.
      * </p>
      */
     private java.util.Date createDate;
@@ -230,11 +230,11 @@ public class DeliverabilityTestReport implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time when the predictive inbox placement test was created, in Unix time format.
+     * The date and time when the predictive inbox placement test was created.
      * </p>
      * 
      * @param createDate
-     *        The date and time when the predictive inbox placement test was created, in Unix time format.
+     *        The date and time when the predictive inbox placement test was created.
      */
 
     public void setCreateDate(java.util.Date createDate) {
@@ -243,10 +243,10 @@ public class DeliverabilityTestReport implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time when the predictive inbox placement test was created, in Unix time format.
+     * The date and time when the predictive inbox placement test was created.
      * </p>
      * 
-     * @return The date and time when the predictive inbox placement test was created, in Unix time format.
+     * @return The date and time when the predictive inbox placement test was created.
      */
 
     public java.util.Date getCreateDate() {
@@ -255,11 +255,11 @@ public class DeliverabilityTestReport implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time when the predictive inbox placement test was created, in Unix time format.
+     * The date and time when the predictive inbox placement test was created.
      * </p>
      * 
      * @param createDate
-     *        The date and time when the predictive inbox placement test was created, in Unix time format.
+     *        The date and time when the predictive inbox placement test was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

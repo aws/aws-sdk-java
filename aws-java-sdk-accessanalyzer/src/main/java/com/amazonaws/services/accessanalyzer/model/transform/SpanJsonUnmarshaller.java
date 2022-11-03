@@ -48,13 +48,13 @@ public class SpanJsonUnmarshaller implements Unmarshaller<Span, JsonUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("end", targetDepth)) {
-                    context.nextToken();
-                    span.setEnd(PositionJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("start", targetDepth)) {
                     context.nextToken();
                     span.setStart(PositionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("end", targetDepth)) {
+                    context.nextToken();
+                    span.setEnd(PositionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

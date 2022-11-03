@@ -56,6 +56,28 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBClusterIdentifier;
     /**
      * <p>
+     * The type of restore to be performed. You can specify one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
+     * source DB cluster.
+     * </p>
+     */
+    private String restoreType;
+    /**
+     * <p>
      * The identifier of the source cluster from which to restore.
      * </p>
      * <p>
@@ -361,6 +383,139 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     public RestoreDBClusterToPointInTimeRequest withDBClusterIdentifier(String dBClusterIdentifier) {
         setDBClusterIdentifier(dBClusterIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of restore to be performed. You can specify one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
+     * source DB cluster.
+     * </p>
+     * 
+     * @param restoreType
+     *        The type of restore to be performed. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
+     *        of the source DB cluster.
+     */
+
+    public void setRestoreType(String restoreType) {
+        this.restoreType = restoreType;
+    }
+
+    /**
+     * <p>
+     * The type of restore to be performed. You can specify one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
+     * source DB cluster.
+     * </p>
+     * 
+     * @return The type of restore to be performed. You can specify one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
+     *         of the source DB cluster.
+     */
+
+    public String getRestoreType() {
+        return this.restoreType;
+    }
+
+    /**
+     * <p>
+     * The type of restore to be performed. You can specify one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
+     * source DB cluster.
+     * </p>
+     * 
+     * @param restoreType
+     *        The type of restore to be performed. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
+     *        of the source DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withRestoreType(String restoreType) {
+        setRestoreType(restoreType);
         return this;
     }
 
@@ -1443,6 +1598,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         sb.append("{");
         if (getDBClusterIdentifier() != null)
             sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
+        if (getRestoreType() != null)
+            sb.append("RestoreType: ").append(getRestoreType()).append(",");
         if (getSourceDBClusterIdentifier() != null)
             sb.append("SourceDBClusterIdentifier: ").append(getSourceDBClusterIdentifier()).append(",");
         if (getRestoreToTime() != null)
@@ -1480,6 +1637,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null)
             return false;
         if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false)
+            return false;
+        if (other.getRestoreType() == null ^ this.getRestoreType() == null)
+            return false;
+        if (other.getRestoreType() != null && other.getRestoreType().equals(this.getRestoreType()) == false)
             return false;
         if (other.getSourceDBClusterIdentifier() == null ^ this.getSourceDBClusterIdentifier() == null)
             return false;
@@ -1530,6 +1691,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getRestoreType() == null) ? 0 : getRestoreType().hashCode());
         hashCode = prime * hashCode + ((getSourceDBClusterIdentifier() == null) ? 0 : getSourceDBClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getRestoreToTime() == null) ? 0 : getRestoreToTime().hashCode());
         hashCode = prime * hashCode + ((getUseLatestRestorableTime() == null) ? 0 : getUseLatestRestorableTime().hashCode());

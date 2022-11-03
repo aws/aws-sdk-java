@@ -27,9 +27,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -42,7 +40,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String format;
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      * <code>false</code>) when error is encountered.
      * </p>
      */
@@ -50,9 +48,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -66,9 +62,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param body
-     *        The payload of the POST request to import API keys. For the payload format, see <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     *        Format</a>.
+     *        The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -77,9 +71,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -89,9 +81,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * {@code position}.
      * </p>
      * 
-     * @return The payload of the POST request to import API keys. For the payload format, see <a
-     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     *         Format</a>.
+     * @return The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -100,9 +90,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -116,9 +104,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param body
-     *        The payload of the POST request to import API keys. For the payload format, see <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     *        Format</a>.
+     *        The payload of the POST request to import API keys. For the payload format, see API Key File Format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,12 +198,12 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      * <code>false</code>) when error is encountered.
      * </p>
      * 
      * @param failOnWarnings
-     *        A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     *        A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      *        <code>false</code>) when error is encountered.
      */
 
@@ -227,11 +213,11 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      * <code>false</code>) when error is encountered.
      * </p>
      * 
-     * @return A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * @return A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      *         <code>false</code>) when error is encountered.
      */
 
@@ -241,12 +227,12 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      * <code>false</code>) when error is encountered.
      * </p>
      * 
      * @param failOnWarnings
-     *        A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     *        A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      *        <code>false</code>) when error is encountered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -258,11 +244,11 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      * <code>false</code>) when error is encountered.
      * </p>
      * 
-     * @return A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * @return A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (
      *         <code>false</code>) when error is encountered.
      */
 

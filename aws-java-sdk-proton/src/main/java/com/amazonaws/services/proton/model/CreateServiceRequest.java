@@ -47,11 +47,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-     * with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template
-     * <i>doesn't</i> include a service pipeline.
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     * >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter
+     * if your service template <i>doesn't</i> include a service pipeline.
      * </p>
      */
     private String repositoryConnectionArn;
@@ -67,9 +65,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file
      * is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i>
      * include a service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the
-     * <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      * <i>Proton User Guide</i>.
      * </p>
      */
@@ -79,9 +75,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -233,20 +228,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-     * with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template
-     * <i>doesn't</i> include a service pipeline.
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     * >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter
+     * if your service template <i>doesn't</i> include a service pipeline.
      * </p>
      * 
      * @param repositoryConnectionArn
      *        The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     *        up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     *        href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     *        up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-     *        template <i>doesn't</i> include a service pipeline.
+     *        "https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     *        >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     *        parameter if your service template <i>doesn't</i> include a service pipeline.
      */
 
     public void setRepositoryConnectionArn(String repositoryConnectionArn) {
@@ -256,19 +247,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-     * with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template
-     * <i>doesn't</i> include a service pipeline.
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     * >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter
+     * if your service template <i>doesn't</i> include a service pipeline.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the repository connection. For more information, see <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol"
-     *         >Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     *         href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection"
-     *         >Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your
-     *         service template <i>doesn't</i> include a service pipeline.
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     *         >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     *         parameter if your service template <i>doesn't</i> include a service pipeline.
      */
 
     public String getRepositoryConnectionArn() {
@@ -278,20 +265,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-     * with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template
-     * <i>doesn't</i> include a service pipeline.
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     * >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter
+     * if your service template <i>doesn't</i> include a service pipeline.
      * </p>
      * 
      * @param repositoryConnectionArn
      *        The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     *        up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     *        href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     *        up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-     *        template <i>doesn't</i> include a service pipeline.
+     *        "https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol"
+     *        >Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     *        parameter if your service template <i>doesn't</i> include a service pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,9 +334,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file
      * is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i>
      * include a service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the
-     * <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      * <i>Proton User Guide</i>.
      * </p>
      * 
@@ -361,9 +342,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec
      *        file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template
      *        <i>doesn’t</i> include a service pipeline. For more information, see <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a>
-     *        in the <i>Proton Administrator Guide</i> and <a
-     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      *        <i>Proton User Guide</i>.
      */
 
@@ -376,18 +355,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file
      * is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i>
      * include a service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the
-     * <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      * <i>Proton User Guide</i>.
      * </p>
      * 
      * @return A link to a spec file that provides inputs as defined in the service template bundle schema file. The
      *         spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template
      *         <i>doesn’t</i> include a service pipeline. For more information, see <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a>
-     *         in the <i>Proton Administrator Guide</i> and <a
-     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      *         <i>Proton User Guide</i>.
      */
 
@@ -400,9 +375,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file
      * is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i>
      * include a service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the
-     * <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      * <i>Proton User Guide</i>.
      * </p>
      * 
@@ -410,9 +383,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec
      *        file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template
      *        <i>doesn’t</i> include a service pipeline. For more information, see <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a>
-     *        in the <i>Proton Administrator Guide</i> and <a
-     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the
      *        <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -427,17 +398,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @return An optional list of metadata items that you can associate with the Proton service. A tag is a key-value
      *         pair.</p>
      *         <p>
-     *         For more information, see <i>Proton resources and tagging</i> in the <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *         or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and
+     *         tagging</a> in the <i>Proton User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -449,18 +419,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An optional list of metadata items that you can associate with the Proton service. A tag is a key-value
      *        pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -477,9 +446,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -491,9 +459,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        An optional list of metadata items that you can associate with the Proton service. A tag is a key-value
      *        pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,18 +480,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An optional list of metadata items that you can associate with the Proton service. A tag is a key-value
      *        pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

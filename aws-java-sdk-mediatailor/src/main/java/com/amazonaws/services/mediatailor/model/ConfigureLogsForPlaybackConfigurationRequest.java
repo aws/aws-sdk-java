@@ -31,13 +31,13 @@ public class ConfigureLogsForPlaybackConfigurationRequest extends com.amazonaws.
     /**
      * <p>
      * The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your
-     * playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the
-     * sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send
-     * logs for. If you want to view logs for a specific session, you can use the <a
+     * playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for
+     * 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
+     * sessions to send logs for. If you want to view logs for a specific session, you can use the <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.
      * </p>
      * <p>
-     * Valid values: 0 - 100
+     * Valid values: <code>0</code> - <code>100</code>
      * </p>
      */
     private Integer percentEnabled;
@@ -51,23 +51,23 @@ public class ConfigureLogsForPlaybackConfigurationRequest extends com.amazonaws.
     /**
      * <p>
      * The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your
-     * playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the
-     * sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send
-     * logs for. If you want to view logs for a specific session, you can use the <a
+     * playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for
+     * 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
+     * sessions to send logs for. If you want to view logs for a specific session, you can use the <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.
      * </p>
      * <p>
-     * Valid values: 0 - 100
+     * Valid values: <code>0</code> - <code>100</code>
      * </p>
      * 
      * @param percentEnabled
      *        The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if
-     *        your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for
-     *        600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
-     *        sessions to send logs for. If you want to view logs for a specific session, you can use the <a
-     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+     *        your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor
+     *        sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback
+     *        configuration sessions to send logs for. If you want to view logs for a specific session, you can use the
+     *        <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
      *        <p>
-     *        Valid values: 0 - 100
+     *        Valid values: <code>0</code> - <code>100</code>
      */
 
     public void setPercentEnabled(Integer percentEnabled) {
@@ -77,22 +77,23 @@ public class ConfigureLogsForPlaybackConfigurationRequest extends com.amazonaws.
     /**
      * <p>
      * The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your
-     * playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the
-     * sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send
-     * logs for. If you want to view logs for a specific session, you can use the <a
+     * playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for
+     * 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
+     * sessions to send logs for. If you want to view logs for a specific session, you can use the <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.
      * </p>
      * <p>
-     * Valid values: 0 - 100
+     * Valid values: <code>0</code> - <code>100</code>
      * </p>
      * 
      * @return The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if
-     *         your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for
-     *         600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
-     *         sessions to send logs for. If you want to view logs for a specific session, you can use the <a
-     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+     *         your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor
+     *         sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the
+     *         playback configuration sessions to send logs for. If you want to view logs for a specific session, you
+     *         can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log
+     *         mode</a>.</p>
      *         <p>
-     *         Valid values: 0 - 100
+     *         Valid values: <code>0</code> - <code>100</code>
      */
 
     public Integer getPercentEnabled() {
@@ -102,23 +103,23 @@ public class ConfigureLogsForPlaybackConfigurationRequest extends com.amazonaws.
     /**
      * <p>
      * The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your
-     * playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the
-     * sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send
-     * logs for. If you want to view logs for a specific session, you can use the <a
+     * playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for
+     * 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
+     * sessions to send logs for. If you want to view logs for a specific session, you can use the <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.
      * </p>
      * <p>
-     * Valid values: 0 - 100
+     * Valid values: <code>0</code> - <code>100</code>
      * </p>
      * 
      * @param percentEnabled
      *        The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if
-     *        your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for
-     *        600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration
-     *        sessions to send logs for. If you want to view logs for a specific session, you can use the <a
-     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+     *        your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor
+     *        sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback
+     *        configuration sessions to send logs for. If you want to view logs for a specific session, you can use the
+     *        <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
      *        <p>
-     *        Valid values: 0 - 100
+     *        Valid values: <code>0</code> - <code>100</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

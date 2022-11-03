@@ -101,6 +101,10 @@ public class AppAssessmentJsonUnmarshaller implements Unmarshaller<AppAssessment
                     context.nextToken();
                     appAssessment.setResiliencyScore(ResiliencyScoreJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("resourceErrorsDetails", targetDepth)) {
+                    context.nextToken();
+                    appAssessment.setResourceErrorsDetails(ResourceErrorsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     appAssessment.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

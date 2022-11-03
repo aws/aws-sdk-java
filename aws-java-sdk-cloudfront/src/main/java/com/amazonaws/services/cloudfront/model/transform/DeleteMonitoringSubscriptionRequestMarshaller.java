@@ -40,7 +40,7 @@ public class DeleteMonitoringSubscriptionRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
-        String uriResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription";
+        String uriResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription/";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
                 deleteMonitoringSubscriptionRequest.getDistributionId());

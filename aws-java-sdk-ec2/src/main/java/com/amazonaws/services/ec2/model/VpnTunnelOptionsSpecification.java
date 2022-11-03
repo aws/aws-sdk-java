@@ -265,6 +265,12 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      */
     private String startupAction;
+    /**
+     * <p>
+     * Options for logging VPN tunnel activity.
+     * </p>
+     */
+    private VpnTunnelLogOptionsSpecification logOptions;
 
     /**
      * <p>
@@ -2013,6 +2019,46 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Options for logging VPN tunnel activity.
+     * </p>
+     * 
+     * @param logOptions
+     *        Options for logging VPN tunnel activity.
+     */
+
+    public void setLogOptions(VpnTunnelLogOptionsSpecification logOptions) {
+        this.logOptions = logOptions;
+    }
+
+    /**
+     * <p>
+     * Options for logging VPN tunnel activity.
+     * </p>
+     * 
+     * @return Options for logging VPN tunnel activity.
+     */
+
+    public VpnTunnelLogOptionsSpecification getLogOptions() {
+        return this.logOptions;
+    }
+
+    /**
+     * <p>
+     * Options for logging VPN tunnel activity.
+     * </p>
+     * 
+     * @param logOptions
+     *        Options for logging VPN tunnel activity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnTunnelOptionsSpecification withLogOptions(VpnTunnelLogOptionsSpecification logOptions) {
+        setLogOptions(logOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2059,7 +2105,9 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         if (getIKEVersions() != null)
             sb.append("IKEVersions: ").append(getIKEVersions()).append(",");
         if (getStartupAction() != null)
-            sb.append("StartupAction: ").append(getStartupAction());
+            sb.append("StartupAction: ").append(getStartupAction()).append(",");
+        if (getLogOptions() != null)
+            sb.append("LogOptions: ").append(getLogOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2146,6 +2194,10 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
             return false;
         if (other.getStartupAction() != null && other.getStartupAction().equals(this.getStartupAction()) == false)
             return false;
+        if (other.getLogOptions() == null ^ this.getLogOptions() == null)
+            return false;
+        if (other.getLogOptions() != null && other.getLogOptions().equals(this.getLogOptions()) == false)
+            return false;
         return true;
     }
 
@@ -2172,6 +2224,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPhase2DHGroupNumbers() == null) ? 0 : getPhase2DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getIKEVersions() == null) ? 0 : getIKEVersions().hashCode());
         hashCode = prime * hashCode + ((getStartupAction() == null) ? 0 : getStartupAction().hashCode());
+        hashCode = prime * hashCode + ((getLogOptions() == null) ? 0 : getLogOptions().hashCode());
         return hashCode;
     }
 

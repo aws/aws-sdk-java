@@ -65,6 +65,8 @@ public class GetLaunchConfigurationResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String name;
+
+    private PostLaunchActions postLaunchActions;
     /**
      * <p>
      * Launch configuration Source Server ID.
@@ -421,6 +423,32 @@ public class GetLaunchConfigurationResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @param postLaunchActions
+     */
+
+    public void setPostLaunchActions(PostLaunchActions postLaunchActions) {
+        this.postLaunchActions = postLaunchActions;
+    }
+
+    /**
+     * @return
+     */
+
+    public PostLaunchActions getPostLaunchActions() {
+        return this.postLaunchActions;
+    }
+
+    /**
+     * @param postLaunchActions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLaunchConfigurationResult withPostLaunchActions(PostLaunchActions postLaunchActions) {
+        setPostLaunchActions(postLaunchActions);
+        return this;
+    }
+
+    /**
      * <p>
      * Launch configuration Source Server ID.
      * </p>
@@ -545,6 +573,8 @@ public class GetLaunchConfigurationResult extends com.amazonaws.AmazonWebService
             sb.append("Licensing: ").append(getLicensing()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPostLaunchActions() != null)
+            sb.append("PostLaunchActions: ").append(getPostLaunchActions()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID()).append(",");
         if (getTargetInstanceTypeRightSizingMethod() != null)
@@ -591,6 +621,10 @@ public class GetLaunchConfigurationResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPostLaunchActions() == null ^ this.getPostLaunchActions() == null)
+            return false;
+        if (other.getPostLaunchActions() != null && other.getPostLaunchActions().equals(this.getPostLaunchActions()) == false)
+            return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
         if (other.getSourceServerID() != null && other.getSourceServerID().equals(this.getSourceServerID()) == false)
@@ -615,6 +649,7 @@ public class GetLaunchConfigurationResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getLaunchDisposition() == null) ? 0 : getLaunchDisposition().hashCode());
         hashCode = prime * hashCode + ((getLicensing() == null) ? 0 : getLicensing().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPostLaunchActions() == null) ? 0 : getPostLaunchActions().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getTargetInstanceTypeRightSizingMethod() == null) ? 0 : getTargetInstanceTypeRightSizingMethod().hashCode());
         return hashCode;

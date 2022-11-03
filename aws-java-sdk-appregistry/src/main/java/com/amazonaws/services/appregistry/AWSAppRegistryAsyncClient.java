@@ -572,6 +572,41 @@ public class AWSAppRegistryAsyncClient extends AWSAppRegistryClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListAttributeGroupsForApplicationResult> listAttributeGroupsForApplicationAsync(
+            ListAttributeGroupsForApplicationRequest request) {
+
+        return listAttributeGroupsForApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttributeGroupsForApplicationResult> listAttributeGroupsForApplicationAsync(
+            final ListAttributeGroupsForApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAttributeGroupsForApplicationRequest, ListAttributeGroupsForApplicationResult> asyncHandler) {
+        final ListAttributeGroupsForApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAttributeGroupsForApplicationResult>() {
+            @Override
+            public ListAttributeGroupsForApplicationResult call() throws Exception {
+                ListAttributeGroupsForApplicationResult result = null;
+
+                try {
+                    result = executeListAttributeGroupsForApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);

@@ -176,6 +176,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * @throws InvalidRequestException
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
@@ -893,8 +895,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -1171,6 +1173,108 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import
+     * job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * information about how to configure storage settings, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
+     * >PutStorageConfiguration</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createBulkImportJobRequest
+     * @return Result of the CreateBulkImportJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.CreateBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateBulkImportJobResult createBulkImportJob(CreateBulkImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBulkImportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateBulkImportJobResult executeCreateBulkImportJob(CreateBulkImportJobRequest createBulkImportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBulkImportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBulkImportJobRequest> request = null;
+        Response<CreateBulkImportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBulkImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBulkImportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBulkImportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "data.";
+                String resolvedHostPrefix = String.format("data.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBulkImportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBulkImportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a dashboard in an IoT SiteWise Monitor project.
      * </p>
      * 
@@ -1348,8 +1452,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -2529,6 +2633,87 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAssetPropertyResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeAssetPropertyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about a bulk import job request. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk
+     * import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * 
+     * @param describeBulkImportJobRequest
+     * @return Result of the DescribeBulkImportJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeBulkImportJobResult describeBulkImportJob(DescribeBulkImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBulkImportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBulkImportJobResult executeDescribeBulkImportJob(DescribeBulkImportJobRequest describeBulkImportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBulkImportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBulkImportJobRequest> request = null;
+        Response<DescribeBulkImportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBulkImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBulkImportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBulkImportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "data.";
+                String resolvedHostPrefix = String.format("data.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBulkImportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeBulkImportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -3876,8 +4061,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -3941,6 +4126,87 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAccessPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAccessPoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @return Result of the ListAssetModelProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssetModelPropertiesResult listAssetModelProperties(ListAssetModelPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssetModelProperties(request);
+    }
+
+    @SdkInternalApi
+    final ListAssetModelPropertiesResult executeListAssetModelProperties(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssetModelPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssetModelPropertiesRequest> request = null;
+        Response<ListAssetModelPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssetModelPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssetModelPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetModelProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssetModelPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAssetModelPropertiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -4017,6 +4283,85 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAssetModelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssetModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @return Result of the ListAssetProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssetPropertiesResult listAssetProperties(ListAssetPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssetProperties(request);
+    }
+
+    @SdkInternalApi
+    final ListAssetPropertiesResult executeListAssetProperties(ListAssetPropertiesRequest listAssetPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssetPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssetPropertiesRequest> request = null;
+        Response<ListAssetPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssetPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssetPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssetPropertiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -4288,6 +4633,86 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAssociatedAssetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssociatedAssetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of bulk import job requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs
+     * (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param listBulkImportJobsRequest
+     * @return Result of the ListBulkImportJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListBulkImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListBulkImportJobsResult listBulkImportJobs(ListBulkImportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBulkImportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListBulkImportJobsResult executeListBulkImportJobs(ListBulkImportJobsRequest listBulkImportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBulkImportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBulkImportJobsRequest> request = null;
+        Response<ListBulkImportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBulkImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBulkImportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkImportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "data.";
+                String resolvedHostPrefix = String.format("data.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBulkImportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBulkImportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

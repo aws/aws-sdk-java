@@ -45,6 +45,10 @@ public class ListCopyJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("destinationVaultArn").build();
     private static final MarshallingInfo<String> BYACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("accountId").build();
+    private static final MarshallingInfo<java.util.Date> BYCOMPLETEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeBefore").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> BYCOMPLETEAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeAfter").timestampFormat("iso8601").build();
 
     private static final ListCopyJobsRequestMarshaller instance = new ListCopyJobsRequestMarshaller();
 
@@ -71,6 +75,8 @@ public class ListCopyJobsRequestMarshaller {
             protocolMarshaller.marshall(listCopyJobsRequest.getByResourceType(), BYRESOURCETYPE_BINDING);
             protocolMarshaller.marshall(listCopyJobsRequest.getByDestinationVaultArn(), BYDESTINATIONVAULTARN_BINDING);
             protocolMarshaller.marshall(listCopyJobsRequest.getByAccountId(), BYACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listCopyJobsRequest.getByCompleteBefore(), BYCOMPLETEBEFORE_BINDING);
+            protocolMarshaller.marshall(listCopyJobsRequest.getByCompleteAfter(), BYCOMPLETEAFTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

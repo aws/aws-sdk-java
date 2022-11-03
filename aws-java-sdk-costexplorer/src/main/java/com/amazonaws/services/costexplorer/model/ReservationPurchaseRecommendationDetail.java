@@ -30,7 +30,7 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The account that this RI recommendation is for.
+     * The account that this Reserved Instance (RI) recommendation is for.
      * </p>
      */
     private String accountId;
@@ -115,13 +115,13 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     private String currencyCode;
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      * </p>
      */
     private String estimatedMonthlySavingsAmount;
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      * percentage of your overall costs.
      * </p>
      */
@@ -134,8 +134,8 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     private String estimatedMonthlyOnDemandCost;
     /**
      * <p>
-     * How much Amazon Web Services estimates that you would have spent for all usage during the specified historical
-     * period if you had a reservation.
+     * How much Amazon Web Services estimates that you might spend for all usage during the specified historical period
+     * if you had a reservation.
      * </p>
      */
     private String estimatedReservationCostForLookbackPeriod;
@@ -154,11 +154,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The account that this RI recommendation is for.
+     * The account that this Reserved Instance (RI) recommendation is for.
      * </p>
      * 
      * @param accountId
-     *        The account that this RI recommendation is for.
+     *        The account that this Reserved Instance (RI) recommendation is for.
      */
 
     public void setAccountId(String accountId) {
@@ -167,10 +167,10 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The account that this RI recommendation is for.
+     * The account that this Reserved Instance (RI) recommendation is for.
      * </p>
      * 
-     * @return The account that this RI recommendation is for.
+     * @return The account that this Reserved Instance (RI) recommendation is for.
      */
 
     public String getAccountId() {
@@ -179,11 +179,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The account that this RI recommendation is for.
+     * The account that this Reserved Instance (RI) recommendation is for.
      * </p>
      * 
      * @param accountId
-     *        The account that this RI recommendation is for.
+     *        The account that this Reserved Instance (RI) recommendation is for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,11 +719,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      * </p>
      * 
      * @param estimatedMonthlySavingsAmount
-     *        How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     *        How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      */
 
     public void setEstimatedMonthlySavingsAmount(String estimatedMonthlySavingsAmount) {
@@ -732,10 +732,10 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      * </p>
      * 
-     * @return How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     * @return How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      */
 
     public String getEstimatedMonthlySavingsAmount() {
@@ -744,11 +744,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      * </p>
      * 
      * @param estimatedMonthlySavingsAmount
-     *        How much Amazon Web Services estimates that this specific recommendation could save you in a month.
+     *        How much Amazon Web Services estimates that this specific recommendation might save you in a month.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -759,12 +759,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      * percentage of your overall costs.
      * </p>
      * 
      * @param estimatedMonthlySavingsPercentage
-     *        How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     *        How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      *        percentage of your overall costs.
      */
 
@@ -774,11 +774,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      * percentage of your overall costs.
      * </p>
      * 
-     * @return How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     * @return How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      *         percentage of your overall costs.
      */
 
@@ -788,12 +788,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     * How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      * percentage of your overall costs.
      * </p>
      * 
      * @param estimatedMonthlySavingsPercentage
-     *        How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a
+     *        How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a
      *        percentage of your overall costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -845,13 +845,13 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that you would have spent for all usage during the specified historical
-     * period if you had a reservation.
+     * How much Amazon Web Services estimates that you might spend for all usage during the specified historical period
+     * if you had a reservation.
      * </p>
      * 
      * @param estimatedReservationCostForLookbackPeriod
-     *        How much Amazon Web Services estimates that you would have spent for all usage during the specified
-     *        historical period if you had a reservation.
+     *        How much Amazon Web Services estimates that you might spend for all usage during the specified historical
+     *        period if you had a reservation.
      */
 
     public void setEstimatedReservationCostForLookbackPeriod(String estimatedReservationCostForLookbackPeriod) {
@@ -860,12 +860,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that you would have spent for all usage during the specified historical
-     * period if you had a reservation.
+     * How much Amazon Web Services estimates that you might spend for all usage during the specified historical period
+     * if you had a reservation.
      * </p>
      * 
-     * @return How much Amazon Web Services estimates that you would have spent for all usage during the specified
-     *         historical period if you had a reservation.
+     * @return How much Amazon Web Services estimates that you might spend for all usage during the specified historical
+     *         period if you had a reservation.
      */
 
     public String getEstimatedReservationCostForLookbackPeriod() {
@@ -874,13 +874,13 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * How much Amazon Web Services estimates that you would have spent for all usage during the specified historical
-     * period if you had a reservation.
+     * How much Amazon Web Services estimates that you might spend for all usage during the specified historical period
+     * if you had a reservation.
      * </p>
      * 
      * @param estimatedReservationCostForLookbackPeriod
-     *        How much Amazon Web Services estimates that you would have spent for all usage during the specified
-     *        historical period if you had a reservation.
+     *        How much Amazon Web Services estimates that you might spend for all usage during the specified historical
+     *        period if you had a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

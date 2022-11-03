@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The binary blob response to <a>GetExport</a>, which contains the generated SDK.
+ * The binary blob response to GetExport, which contains the generated SDK.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -37,7 +37,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String contentDisposition;
     /**
      * <p>
-     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * The binary blob response to GetExport, which contains the export.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -127,7 +127,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * The binary blob response to GetExport, which contains the export.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -141,7 +141,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param body
-     *        The binary blob response to <a>GetExport</a>, which contains the export.
+     *        The binary blob response to GetExport, which contains the export.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -150,7 +150,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * The binary blob response to GetExport, which contains the export.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -160,7 +160,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * {@code position}.
      * </p>
      * 
-     * @return The binary blob response to <a>GetExport</a>, which contains the export.
+     * @return The binary blob response to GetExport, which contains the export.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -169,7 +169,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * The binary blob response to GetExport, which contains the export.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -183,7 +183,7 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param body
-     *        The binary blob response to <a>GetExport</a>, which contains the export.
+     *        The binary blob response to GetExport, which contains the export.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

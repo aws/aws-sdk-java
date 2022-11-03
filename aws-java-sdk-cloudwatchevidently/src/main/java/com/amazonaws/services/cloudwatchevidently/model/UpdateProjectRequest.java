@@ -27,6 +27,20 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation
+     * allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     * >EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call.
+     * allows you to
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application that will be used for
+     * client-side evaluation.
+     * </p>
+     */
+    private ProjectAppConfigResourceConfig appConfigResource;
+    /**
+     * <p>
      * An optional description of the project.
      * </p>
      */
@@ -37,6 +51,92 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String project;
+
+    /**
+     * <p>
+     * Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation
+     * allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     * >EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call.
+     * allows you to
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application that will be used for
+     * client-side evaluation.
+     * </p>
+     * 
+     * @param appConfigResource
+     *        Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side
+     *        evaluation allows your application to assign variations to user sessions locally instead of by calling the
+     *        <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">
+     *        EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API
+     *        call. allows you to</p>
+     *        <p>
+     *        This parameter is a structure that contains information about the AppConfig application that will be used
+     *        for client-side evaluation.
+     */
+
+    public void setAppConfigResource(ProjectAppConfigResourceConfig appConfigResource) {
+        this.appConfigResource = appConfigResource;
+    }
+
+    /**
+     * <p>
+     * Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation
+     * allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     * >EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call.
+     * allows you to
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application that will be used for
+     * client-side evaluation.
+     * </p>
+     * 
+     * @return Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side
+     *         evaluation allows your application to assign variations to user sessions locally instead of by calling
+     *         the <a
+     *         href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     *         >EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API
+     *         call. allows you to</p>
+     *         <p>
+     *         This parameter is a structure that contains information about the AppConfig application that will be used
+     *         for client-side evaluation.
+     */
+
+    public ProjectAppConfigResourceConfig getAppConfigResource() {
+        return this.appConfigResource;
+    }
+
+    /**
+     * <p>
+     * Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation
+     * allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     * >EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call.
+     * allows you to
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application that will be used for
+     * client-side evaluation.
+     * </p>
+     * 
+     * @param appConfigResource
+     *        Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side
+     *        evaluation allows your application to assign variations to user sessions locally instead of by calling the
+     *        <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">
+     *        EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API
+     *        call. allows you to</p>
+     *        <p>
+     *        This parameter is a structure that contains information about the AppConfig application that will be used
+     *        for client-side evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withAppConfigResource(ProjectAppConfigResourceConfig appConfigResource) {
+        setAppConfigResource(appConfigResource);
+        return this;
+    }
 
     /**
      * <p>
@@ -130,6 +230,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAppConfigResource() != null)
+            sb.append("AppConfigResource: ").append(getAppConfigResource()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getProject() != null)
@@ -148,6 +250,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof UpdateProjectRequest == false)
             return false;
         UpdateProjectRequest other = (UpdateProjectRequest) obj;
+        if (other.getAppConfigResource() == null ^ this.getAppConfigResource() == null)
+            return false;
+        if (other.getAppConfigResource() != null && other.getAppConfigResource().equals(this.getAppConfigResource()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -164,6 +270,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAppConfigResource() == null) ? 0 : getAppConfigResource().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
         return hashCode;

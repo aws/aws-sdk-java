@@ -52,7 +52,7 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      * </p>
      */
     private java.util.Map<String, Reference> references;
@@ -225,10 +225,10 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      * </p>
      * 
-     * @return A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * @return Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      */
 
     public java.util.Map<String, Reference> getReferences() {
@@ -237,11 +237,11 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      * </p>
      * 
      * @param references
-     *        A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     *        Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      */
 
     public void setReferences(java.util.Map<String, Reference> references) {
@@ -250,11 +250,11 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      * </p>
      * 
      * @param references
-     *        A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     *        Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

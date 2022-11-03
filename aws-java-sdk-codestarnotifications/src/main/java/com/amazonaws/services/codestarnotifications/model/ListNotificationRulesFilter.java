@@ -38,7 +38,7 @@ public class ListNotificationRulesFilter implements Serializable, Cloneable, Str
     /**
      * <p>
      * The value of the attribute you want to use to filter the returned notification rules. For example, if you specify
-     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.
+     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.
      * </p>
      */
     private String value;
@@ -105,13 +105,13 @@ public class ListNotificationRulesFilter implements Serializable, Cloneable, Str
     /**
      * <p>
      * The value of the attribute you want to use to filter the returned notification rules. For example, if you specify
-     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.
+     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.
      * </p>
      * 
      * @param value
      *        The value of the attribute you want to use to filter the returned notification rules. For example, if you
-     *        specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline
-     *        for the value.
+     *        specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for
+     *        the value.
      */
 
     public void setValue(String value) {
@@ -121,12 +121,12 @@ public class ListNotificationRulesFilter implements Serializable, Cloneable, Str
     /**
      * <p>
      * The value of the attribute you want to use to filter the returned notification rules. For example, if you specify
-     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.
+     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.
      * </p>
      * 
      * @return The value of the attribute you want to use to filter the returned notification rules. For example, if you
-     *         specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline
-     *         for the value.
+     *         specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for
+     *         the value.
      */
 
     public String getValue() {
@@ -136,13 +136,13 @@ public class ListNotificationRulesFilter implements Serializable, Cloneable, Str
     /**
      * <p>
      * The value of the attribute you want to use to filter the returned notification rules. For example, if you specify
-     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.
+     * filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.
      * </p>
      * 
      * @param value
      *        The value of the attribute you want to use to filter the returned notification rules. For example, if you
-     *        specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline
-     *        for the value.
+     *        specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for
+     *        the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

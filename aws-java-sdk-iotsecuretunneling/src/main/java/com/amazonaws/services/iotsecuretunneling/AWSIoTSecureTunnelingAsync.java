@@ -25,13 +25,13 @@ import com.amazonaws.services.iotsecuretunneling.model.*;
  * {@link com.amazonaws.services.iotsecuretunneling.AbstractAWSIoTSecureTunnelingAsync} instead.
  * </p>
  * <p>
- * <fullname>AWS IoT Secure Tunneling</fullname>
+ * <fullname>IoT Secure Tunneling</fullname>
  * <p>
- * AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
+ * IoT Secure Tunneling creates remote connections to devices deployed in the field.
  * </p>
  * <p>
- * For more information about how AWS IoT Secure Tunneling works, see <a
- * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS IoT Secure Tunneling</a>.
+ * For more information about how IoT Secure Tunneling works, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT Secure Tunneling</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -41,6 +41,11 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
      * <p>
      * Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close
      * the WebSocket connections between the client and proxy server so no data can be transmitted.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CloseTunnel</a> action.
      * </p>
      * 
      * @param closeTunnelRequest
@@ -55,6 +60,11 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
      * <p>
      * Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close
      * the WebSocket connections between the client and proxy server so no data can be transmitted.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CloseTunnel</a> action.
      * </p>
      * 
      * @param closeTunnelRequest
@@ -74,6 +84,11 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
      * <p>
      * Gets information about a tunnel identified by the unique tunnel id.
      * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeTunnel</a> action.
+     * </p>
      * 
      * @param describeTunnelRequest
      * @return A Java Future containing the result of the DescribeTunnel operation returned by the service.
@@ -86,6 +101,11 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
     /**
      * <p>
      * Gets information about a tunnel identified by the unique tunnel id.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeTunnel</a> action.
      * </p>
      * 
      * @param describeTunnelRequest
@@ -134,8 +154,13 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
 
     /**
      * <p>
-     * List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will
-     * be listed before older tunnels.
+     * List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order,
+     * newer tunnels will be listed before older tunnels.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListTunnels</a> action.
      * </p>
      * 
      * @param listTunnelsRequest
@@ -148,8 +173,13 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
 
     /**
      * <p>
-     * List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will
-     * be listed before older tunnels.
+     * List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order,
+     * newer tunnels will be listed before older tunnels.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListTunnels</a> action.
      * </p>
      * 
      * @param listTunnelsRequest
@@ -167,8 +197,13 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
 
     /**
      * <p>
-     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure
+     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure
      * Tunneling proxy server.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >OpenTunnel</a> action.
      * </p>
      * 
      * @param openTunnelRequest
@@ -181,8 +216,13 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
 
     /**
      * <p>
-     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure
+     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure
      * Tunneling proxy server.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >OpenTunnel</a> action.
      * </p>
      * 
      * @param openTunnelRequest
@@ -197,6 +237,63 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
      */
     java.util.concurrent.Future<OpenTunnelResult> openTunnelAsync(OpenTunnelRequest openTunnelRequest,
             com.amazonaws.handlers.AsyncHandler<OpenTunnelRequest, OpenTunnelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure
+     * tunneling to access the same tunnel.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >RotateTunnelAccessToken</a> action.
+     * </p>
+     * <note>
+     * <p>
+     * Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration is 12 hours and the
+     * tunnel has already been open for 4 hours. When you rotate the access tokens, the new tokens that are generated
+     * can only be used for the remaining 8 hours.
+     * </p>
+     * </note>
+     * 
+     * @param rotateTunnelAccessTokenRequest
+     * @return A Java Future containing the result of the RotateTunnelAccessToken operation returned by the service.
+     * @sample AWSIoTSecureTunnelingAsync.RotateTunnelAccessToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RotateTunnelAccessTokenResult> rotateTunnelAccessTokenAsync(RotateTunnelAccessTokenRequest rotateTunnelAccessTokenRequest);
+
+    /**
+     * <p>
+     * Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure
+     * tunneling to access the same tunnel.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >RotateTunnelAccessToken</a> action.
+     * </p>
+     * <note>
+     * <p>
+     * Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration is 12 hours and the
+     * tunnel has already been open for 4 hours. When you rotate the access tokens, the new tokens that are generated
+     * can only be used for the remaining 8 hours.
+     * </p>
+     * </note>
+     * 
+     * @param rotateTunnelAccessTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RotateTunnelAccessToken operation returned by the service.
+     * @sample AWSIoTSecureTunnelingAsyncHandler.RotateTunnelAccessToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RotateTunnelAccessTokenResult> rotateTunnelAccessTokenAsync(RotateTunnelAccessTokenRequest rotateTunnelAccessTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<RotateTunnelAccessTokenRequest, RotateTunnelAccessTokenResult> asyncHandler);
 
     /**
      * <p>

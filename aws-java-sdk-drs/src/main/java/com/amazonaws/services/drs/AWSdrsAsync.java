@@ -34,6 +34,39 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Create an extended source server in the target Account based on the source server in staging account.
+     * </p>
+     * 
+     * @param createExtendedSourceServerRequest
+     * @return A Java Future containing the result of the CreateExtendedSourceServer operation returned by the service.
+     * @sample AWSdrsAsync.CreateExtendedSourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(
+            CreateExtendedSourceServerRequest createExtendedSourceServerRequest);
+
+    /**
+     * <p>
+     * Create an extended source server in the target Account based on the source server in staging account.
+     * </p>
+     * 
+     * @param createExtendedSourceServerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExtendedSourceServer operation returned by the service.
+     * @sample AWSdrsAsyncHandler.CreateExtendedSourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(
+            CreateExtendedSourceServerRequest createExtendedSourceServerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExtendedSourceServerRequest, CreateExtendedSourceServerResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new ReplicationConfigurationTemplate.
      * </p>
      * 
@@ -620,6 +653,74 @@ public interface AWSdrsAsync extends AWSdrs {
      */
     java.util.concurrent.Future<InitializeServiceResult> initializeServiceAsync(InitializeServiceRequest initializeServiceRequest,
             com.amazonaws.handlers.AsyncHandler<InitializeServiceRequest, InitializeServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of source servers on a staging account that are extensible, which means that: a. The source server
+     * is not already extended into this Account. b. The source server on the Account we’re reading from is not an
+     * extension of another source server.
+     * </p>
+     * 
+     * @param listExtensibleSourceServersRequest
+     * @return A Java Future containing the result of the ListExtensibleSourceServers operation returned by the service.
+     * @sample AWSdrsAsync.ListExtensibleSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExtensibleSourceServersResult> listExtensibleSourceServersAsync(
+            ListExtensibleSourceServersRequest listExtensibleSourceServersRequest);
+
+    /**
+     * <p>
+     * Returns a list of source servers on a staging account that are extensible, which means that: a. The source server
+     * is not already extended into this Account. b. The source server on the Account we’re reading from is not an
+     * extension of another source server.
+     * </p>
+     * 
+     * @param listExtensibleSourceServersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExtensibleSourceServers operation returned by the service.
+     * @sample AWSdrsAsyncHandler.ListExtensibleSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExtensibleSourceServersResult> listExtensibleSourceServersAsync(
+            ListExtensibleSourceServersRequest listExtensibleSourceServersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExtensibleSourceServersRequest, ListExtensibleSourceServersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of staging accounts for existing extended source servers.
+     * </p>
+     * 
+     * @param listStagingAccountsRequest
+     * @return A Java Future containing the result of the ListStagingAccounts operation returned by the service.
+     * @sample AWSdrsAsync.ListStagingAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest listStagingAccountsRequest);
+
+    /**
+     * <p>
+     * Returns an array of staging accounts for existing extended source servers.
+     * </p>
+     * 
+     * @param listStagingAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStagingAccounts operation returned by the service.
+     * @sample AWSdrsAsyncHandler.ListStagingAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest listStagingAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStagingAccountsRequest, ListStagingAccountsResult> asyncHandler);
 
     /**
      * <p>

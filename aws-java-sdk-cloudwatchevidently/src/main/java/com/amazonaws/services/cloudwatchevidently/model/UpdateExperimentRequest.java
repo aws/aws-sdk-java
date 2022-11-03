@@ -69,6 +69,13 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
     private String randomizationSalt;
     /**
      * <p>
+     * Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently
+     * running.
+     * </p>
+     */
+    private Boolean removeSegment;
+    /**
+     * <p>
      * The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent.
      * The available audience is the total audience minus the audience that you have allocated to overrides or current
      * launches of this feature.
@@ -79,6 +86,14 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Long samplingRate;
+    /**
+     * <p>
+     * Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions
+     * that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is
+     * currently running.
+     * </p>
+     */
+    private String segment;
     /**
      * <p>
      * An array of structures that define the variations being tested in the experiment.
@@ -396,6 +411,66 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently
+     * running.
+     * </p>
+     * 
+     * @param removeSegment
+     *        Removes a segment from being used in an experiment. You can't use this parameter if the experiment is
+     *        currently running.
+     */
+
+    public void setRemoveSegment(Boolean removeSegment) {
+        this.removeSegment = removeSegment;
+    }
+
+    /**
+     * <p>
+     * Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently
+     * running.
+     * </p>
+     * 
+     * @return Removes a segment from being used in an experiment. You can't use this parameter if the experiment is
+     *         currently running.
+     */
+
+    public Boolean getRemoveSegment() {
+        return this.removeSegment;
+    }
+
+    /**
+     * <p>
+     * Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently
+     * running.
+     * </p>
+     * 
+     * @param removeSegment
+     *        Removes a segment from being used in an experiment. You can't use this parameter if the experiment is
+     *        currently running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateExperimentRequest withRemoveSegment(Boolean removeSegment) {
+        setRemoveSegment(removeSegment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently
+     * running.
+     * </p>
+     * 
+     * @return Removes a segment from being used in an experiment. You can't use this parameter if the experiment is
+     *         currently running.
+     */
+
+    public Boolean isRemoveSegment() {
+        return this.removeSegment;
+    }
+
+    /**
+     * <p>
      * The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent.
      * The available audience is the total audience minus the audience that you have allocated to overrides or current
      * launches of this feature.
@@ -464,6 +539,58 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
 
     public UpdateExperimentRequest withSamplingRate(Long samplingRate) {
         setSamplingRate(samplingRate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions
+     * that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is
+     * currently running.
+     * </p>
+     * 
+     * @param segment
+     *        Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user
+     *        sessions that match the segment pattern are used in the experiment. You can't use this parameter if the
+     *        experiment is currently running.
+     */
+
+    public void setSegment(String segment) {
+        this.segment = segment;
+    }
+
+    /**
+     * <p>
+     * Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions
+     * that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is
+     * currently running.
+     * </p>
+     * 
+     * @return Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user
+     *         sessions that match the segment pattern are used in the experiment. You can't use this parameter if the
+     *         experiment is currently running.
+     */
+
+    public String getSegment() {
+        return this.segment;
+    }
+
+    /**
+     * <p>
+     * Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions
+     * that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is
+     * currently running.
+     * </p>
+     * 
+     * @param segment
+     *        Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user
+     *        sessions that match the segment pattern are used in the experiment. You can't use this parameter if the
+     *        experiment is currently running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateExperimentRequest withSegment(String segment) {
+        setSegment(segment);
         return this;
     }
 
@@ -561,8 +688,12 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Project: ").append(getProject()).append(",");
         if (getRandomizationSalt() != null)
             sb.append("RandomizationSalt: ").append(getRandomizationSalt()).append(",");
+        if (getRemoveSegment() != null)
+            sb.append("RemoveSegment: ").append(getRemoveSegment()).append(",");
         if (getSamplingRate() != null)
             sb.append("SamplingRate: ").append(getSamplingRate()).append(",");
+        if (getSegment() != null)
+            sb.append("Segment: ").append(getSegment()).append(",");
         if (getTreatments() != null)
             sb.append("Treatments: ").append(getTreatments());
         sb.append("}");
@@ -603,9 +734,17 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getRandomizationSalt() != null && other.getRandomizationSalt().equals(this.getRandomizationSalt()) == false)
             return false;
+        if (other.getRemoveSegment() == null ^ this.getRemoveSegment() == null)
+            return false;
+        if (other.getRemoveSegment() != null && other.getRemoveSegment().equals(this.getRemoveSegment()) == false)
+            return false;
         if (other.getSamplingRate() == null ^ this.getSamplingRate() == null)
             return false;
         if (other.getSamplingRate() != null && other.getSamplingRate().equals(this.getSamplingRate()) == false)
+            return false;
+        if (other.getSegment() == null ^ this.getSegment() == null)
+            return false;
+        if (other.getSegment() != null && other.getSegment().equals(this.getSegment()) == false)
             return false;
         if (other.getTreatments() == null ^ this.getTreatments() == null)
             return false;
@@ -625,7 +764,9 @@ public class UpdateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getOnlineAbConfig() == null) ? 0 : getOnlineAbConfig().hashCode());
         hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
         hashCode = prime * hashCode + ((getRandomizationSalt() == null) ? 0 : getRandomizationSalt().hashCode());
+        hashCode = prime * hashCode + ((getRemoveSegment() == null) ? 0 : getRemoveSegment().hashCode());
         hashCode = prime * hashCode + ((getSamplingRate() == null) ? 0 : getSamplingRate().hashCode());
+        hashCode = prime * hashCode + ((getSegment() == null) ? 0 : getSegment().hashCode());
         hashCode = prime * hashCode + ((getTreatments() == null) ? 0 : getTreatments().hashCode());
         return hashCode;
     }

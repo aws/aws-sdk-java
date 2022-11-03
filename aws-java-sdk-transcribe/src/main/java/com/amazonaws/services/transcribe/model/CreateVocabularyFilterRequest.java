@@ -27,42 +27,57 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of your new vocabulary filter.
+     * A unique name, chosen by you, for your new custom vocabulary filter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a
+     * you try to create a new vocabulary filter with the same name as an existing vocabulary filter, you get a
      * <code>ConflictException</code> error.
      * </p>
      */
     private String vocabularyFilterName;
     /**
      * <p>
-     * The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
-     * The vocabulary filter can only be used with transcription jobs in the specified language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The words you want in your vocabulary filter. Only use characters specified in the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're
-     * transcribing.
+     * Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for creating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
      * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
      * you must choose one or the other.
      * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
      */
     private java.util.List<String> words;
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Your vocabulary filter file must be less than 50 KB in size.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
      * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
@@ -72,28 +87,32 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
     private String vocabularyFilterFileUri;
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create
-     * this new vocabulary filter.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time
+     * you create this new filter.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of your new vocabulary filter.
+     * A unique name, chosen by you, for your new custom vocabulary filter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a
+     * you try to create a new vocabulary filter with the same name as an existing vocabulary filter, you get a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of your new vocabulary filter.</p>
+     *        A unique name, chosen by you, for your new custom vocabulary filter.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
-     *        account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you
-     *        get a <code>ConflictException</code> error.
+     *        account. If you try to create a new vocabulary filter with the same name as an existing vocabulary filter,
+     *        you get a <code>ConflictException</code> error.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -102,19 +121,19 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of your new vocabulary filter.
+     * A unique name, chosen by you, for your new custom vocabulary filter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a
+     * you try to create a new vocabulary filter with the same name as an existing vocabulary filter, you get a
      * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of your new vocabulary filter.</p>
+     * @return A unique name, chosen by you, for your new custom vocabulary filter.</p>
      *         <p>
      *         This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
-     *         account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you
-     *         get a <code>ConflictException</code> error.
+     *         account. If you try to create a new vocabulary filter with the same name as an existing vocabulary
+     *         filter, you get a <code>ConflictException</code> error.
      */
 
     public String getVocabularyFilterName() {
@@ -123,20 +142,20 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of your new vocabulary filter.
+     * A unique name, chosen by you, for your new custom vocabulary filter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a
+     * you try to create a new vocabulary filter with the same name as an existing vocabulary filter, you get a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of your new vocabulary filter.</p>
+     *        A unique name, chosen by you, for your new custom vocabulary filter.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
-     *        account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you
-     *        get a <code>ConflictException</code> error.
+     *        account. If you try to create a new vocabulary filter with the same name as an existing vocabulary filter,
+     *        you get a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,13 +166,31 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
-     * The vocabulary filter can only be used with transcription jobs in the specified language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter. All words in the filter must be in the same
-     *        language. The vocabulary filter can only be used with transcription jobs in the specified language.
+     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *        filter must contain terms in only one language.</p>
+     *        <p>
+     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     *        files that contain English audio.
+     *        </p>
+     *        <p>
+     *        For a list of supported languages and their associated language codes, refer to the <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *        table.
      * @see LanguageCode
      */
 
@@ -163,12 +200,30 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
-     * The vocabulary filter can only be used with transcription jobs in the specified language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
-     * @return The language code of the words in the vocabulary filter. All words in the filter must be in the same
-     *         language. The vocabulary filter can only be used with transcription jobs in the specified language.
+     * @return The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *         filter must contain terms in only one language.</p>
+     *         <p>
+     *         A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *         if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter
+     *         to files that contain English audio.
+     *         </p>
+     *         <p>
+     *         For a list of supported languages and their associated language codes, refer to the <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *         table.
      * @see LanguageCode
      */
 
@@ -178,13 +233,31 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
-     * The vocabulary filter can only be used with transcription jobs in the specified language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter. All words in the filter must be in the same
-     *        language. The vocabulary filter can only be used with transcription jobs in the specified language.
+     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *        filter must contain terms in only one language.</p>
+     *        <p>
+     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     *        files that contain English audio.
+     *        </p>
+     *        <p>
+     *        For a list of supported languages and their associated language codes, refer to the <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -196,13 +269,31 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
-     * The vocabulary filter can only be used with transcription jobs in the specified language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter. All words in the filter must be in the same
-     *        language. The vocabulary filter can only be used with transcription jobs in the specified language.
+     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *        filter must contain terms in only one language.</p>
+     *        <p>
+     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     *        files that contain English audio.
+     *        </p>
+     *        <p>
+     *        For a list of supported languages and their associated language codes, refer to the <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -214,21 +305,35 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words you want in your vocabulary filter. Only use characters specified in the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're
-     * transcribing.
+     * Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for creating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
      * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
      * you must choose one or the other.
      * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
      * 
-     * @return The words you want in your vocabulary filter. Only use characters specified in the <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language
-     *         you're transcribing.</p>
+     * @return Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     *         comma-separated values, within your request. The other option for creating your vocabulary filter is to
+     *         save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of
+     *         your file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *         <p>
      *         Note that if you include <code>Words</code> in your request, you cannot use
      *         <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *         </p>
+     *         <p>
+     *         Each language has a character set that contains all allowed characters for that specific language. If you
+     *         use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *         Vocabularies</a> to get the character set for your language.
      */
 
     public java.util.List<String> getWords() {
@@ -237,22 +342,36 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words you want in your vocabulary filter. Only use characters specified in the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're
-     * transcribing.
+     * Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for creating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
      * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
      * you must choose one or the other.
      * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
      * 
      * @param words
-     *        The words you want in your vocabulary filter. Only use characters specified in the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language
-     *        you're transcribing.</p>
+     *        Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     *        comma-separated values, within your request. The other option for creating your vocabulary filter is to
+     *        save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your
+     *        file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *        <p>
      *        Note that if you include <code>Words</code> in your request, you cannot use
      *        <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *        </p>
+     *        <p>
+     *        Each language has a character set that contains all allowed characters for that specific language. If you
+     *        use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *        Vocabularies</a> to get the character set for your language.
      */
 
     public void setWords(java.util.Collection<String> words) {
@@ -266,13 +385,20 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words you want in your vocabulary filter. Only use characters specified in the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're
-     * transcribing.
+     * Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for creating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
      * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
      * you must choose one or the other.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -281,12 +407,19 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param words
-     *        The words you want in your vocabulary filter. Only use characters specified in the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language
-     *        you're transcribing.</p>
+     *        Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     *        comma-separated values, within your request. The other option for creating your vocabulary filter is to
+     *        save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your
+     *        file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *        <p>
      *        Note that if you include <code>Words</code> in your request, you cannot use
      *        <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *        </p>
+     *        <p>
+     *        Each language has a character set that contains all allowed characters for that specific language. If you
+     *        use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *        Vocabularies</a> to get the character set for your language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,22 +435,36 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words you want in your vocabulary filter. Only use characters specified in the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're
-     * transcribing.
+     * Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for creating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
      * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
      * you must choose one or the other.
      * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
      * 
      * @param words
-     *        The words you want in your vocabulary filter. Only use characters specified in the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language
-     *        you're transcribing.</p>
+     *        Use this parameter if you want to create your vocabulary filter by including all desired terms, as
+     *        comma-separated values, within your request. The other option for creating your vocabulary filter is to
+     *        save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your
+     *        file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *        <p>
      *        Note that if you include <code>Words</code> in your request, you cannot use
      *        <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *        </p>
+     *        <p>
+     *        Each language has a character set that contains all allowed characters for that specific language. If you
+     *        use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *        Vocabularies</a> to get the character set for your language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,12 +475,11 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Your vocabulary filter file must be less than 50 KB in size.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
      * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
@@ -341,12 +487,10 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param vocabularyFilterFileUri
-     *        The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters
-     *        from the character set defined for custom vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     *        located in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        Your vocabulary filter file must be less than 50 KB in size.
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      *        </p>
      *        <p>
      *        Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use
@@ -359,24 +503,21 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Your vocabulary filter file must be less than 50 KB in size.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
      * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
      * you must choose one or the other.
      * </p>
      * 
-     * @return The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters
-     *         from the character set defined for custom vocabularies. For a list of character sets, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *         Vocabularies</a>.</p>
+     * @return The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must
+     *         be located in the same Amazon Web Services Region as the resource you're calling.</p>
      *         <p>
-     *         Your vocabulary filter file must be less than 50 KB in size.
+     *         Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      *         </p>
      *         <p>
      *         Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use
@@ -389,12 +530,11 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Your vocabulary filter file must be less than 50 KB in size.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
      * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
@@ -402,12 +542,10 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param vocabularyFilterFileUri
-     *        The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters
-     *        from the character set defined for custom vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     *        located in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        Your vocabulary filter file must be less than 50 KB in size.
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      *        </p>
      *        <p>
      *        Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use
@@ -422,12 +560,19 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create
-     * this new vocabulary filter.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time
+     * you create this new filter.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
-     * @return Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you
-     *         create this new vocabulary filter.
+     * @return Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at
+     *         the time you create this new filter.</p>
+     *         <p>
+     *         To learn more about using tags with Amazon Transcribe, refer to <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -436,13 +581,20 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create
-     * this new vocabulary filter.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time
+     * you create this new filter.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param tags
-     *        Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you
-     *        create this new vocabulary filter.
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at
+     *        the time you create this new filter.</p>
+     *        <p>
+     *        To learn more about using tags with Amazon Transcribe, refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -456,8 +608,12 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create
-     * this new vocabulary filter.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time
+     * you create this new filter.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -466,8 +622,11 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you
-     *        create this new vocabulary filter.
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at
+     *        the time you create this new filter.</p>
+     *        <p>
+     *        To learn more about using tags with Amazon Transcribe, refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,13 +642,20 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create
-     * this new vocabulary filter.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time
+     * you create this new filter.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param tags
-     *        Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you
-     *        create this new vocabulary filter.
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at
+     *        the time you create this new filter.</p>
+     *        <p>
+     *        To learn more about using tags with Amazon Transcribe, refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

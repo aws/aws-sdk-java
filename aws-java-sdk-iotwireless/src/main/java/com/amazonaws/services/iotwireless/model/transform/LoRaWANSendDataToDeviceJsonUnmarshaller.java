@@ -52,6 +52,10 @@ public class LoRaWANSendDataToDeviceJsonUnmarshaller implements Unmarshaller<LoR
                     context.nextToken();
                     loRaWANSendDataToDevice.setFPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ParticipatingGateways", targetDepth)) {
+                    context.nextToken();
+                    loRaWANSendDataToDevice.setParticipatingGateways(ParticipatingGatewaysJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

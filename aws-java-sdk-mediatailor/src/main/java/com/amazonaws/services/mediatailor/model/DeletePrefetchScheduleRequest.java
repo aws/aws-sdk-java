@@ -27,24 +27,27 @@ public class DeletePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with
+     * an empty HTTP body.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name of the playback configuration for this prefetch schedule.
      * </p>
      */
     private String playbackConfigurationName;
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with
+     * an empty HTTP body.
      * </p>
      * 
      * @param name
-     *        The identifier for the playback configuration.
+     *        The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204
+     *        response with an empty HTTP body.
      */
 
     public void setName(String name) {
@@ -53,10 +56,12 @@ public class DeletePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with
+     * an empty HTTP body.
      * </p>
      * 
-     * @return The identifier for the playback configuration.
+     * @return The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204
+     *         response with an empty HTTP body.
      */
 
     public String getName() {
@@ -65,11 +70,13 @@ public class DeletePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with
+     * an empty HTTP body.
      * </p>
      * 
      * @param name
-     *        The identifier for the playback configuration.
+     *        The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204
+     *        response with an empty HTTP body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +87,11 @@ public class DeletePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name of the playback configuration for this prefetch schedule.
      * </p>
      * 
      * @param playbackConfigurationName
-     *        The name of the playback configuration.
+     *        The name of the playback configuration for this prefetch schedule.
      */
 
     public void setPlaybackConfigurationName(String playbackConfigurationName) {
@@ -93,10 +100,10 @@ public class DeletePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name of the playback configuration for this prefetch schedule.
      * </p>
      * 
-     * @return The name of the playback configuration.
+     * @return The name of the playback configuration for this prefetch schedule.
      */
 
     public String getPlaybackConfigurationName() {
@@ -105,11 +112,11 @@ public class DeletePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name of the playback configuration for this prefetch schedule.
      * </p>
      * 
      * @param playbackConfigurationName
-     *        The name of the playback configuration.
+     *        The name of the playback configuration for this prefetch schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

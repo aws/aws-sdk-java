@@ -22,7 +22,8 @@ public enum Protocol {
 
     SFTP("SFTP"),
     FTP("FTP"),
-    FTPS("FTPS");
+    FTPS("FTPS"),
+    AS2("AS2");
 
     private String value;
 

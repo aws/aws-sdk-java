@@ -74,6 +74,18 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeGatewayLoadBalancerArns;
+    /**
+     * <p>
+     * The IP address types to add to your service configuration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> addSupportedIpAddressTypes;
+    /**
+     * <p>
+     * The IP address types to remove from your service configuration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> removeSupportedIpAddressTypes;
 
     /**
      * <p>
@@ -552,6 +564,152 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     }
 
     /**
+     * <p>
+     * The IP address types to add to your service configuration.
+     * </p>
+     * 
+     * @return The IP address types to add to your service configuration.
+     */
+
+    public java.util.List<String> getAddSupportedIpAddressTypes() {
+        if (addSupportedIpAddressTypes == null) {
+            addSupportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return addSupportedIpAddressTypes;
+    }
+
+    /**
+     * <p>
+     * The IP address types to add to your service configuration.
+     * </p>
+     * 
+     * @param addSupportedIpAddressTypes
+     *        The IP address types to add to your service configuration.
+     */
+
+    public void setAddSupportedIpAddressTypes(java.util.Collection<String> addSupportedIpAddressTypes) {
+        if (addSupportedIpAddressTypes == null) {
+            this.addSupportedIpAddressTypes = null;
+            return;
+        }
+
+        this.addSupportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>(addSupportedIpAddressTypes);
+    }
+
+    /**
+     * <p>
+     * The IP address types to add to your service configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddSupportedIpAddressTypes(java.util.Collection)} or
+     * {@link #withAddSupportedIpAddressTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param addSupportedIpAddressTypes
+     *        The IP address types to add to your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withAddSupportedIpAddressTypes(String... addSupportedIpAddressTypes) {
+        if (this.addSupportedIpAddressTypes == null) {
+            setAddSupportedIpAddressTypes(new com.amazonaws.internal.SdkInternalList<String>(addSupportedIpAddressTypes.length));
+        }
+        for (String ele : addSupportedIpAddressTypes) {
+            this.addSupportedIpAddressTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address types to add to your service configuration.
+     * </p>
+     * 
+     * @param addSupportedIpAddressTypes
+     *        The IP address types to add to your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withAddSupportedIpAddressTypes(java.util.Collection<String> addSupportedIpAddressTypes) {
+        setAddSupportedIpAddressTypes(addSupportedIpAddressTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address types to remove from your service configuration.
+     * </p>
+     * 
+     * @return The IP address types to remove from your service configuration.
+     */
+
+    public java.util.List<String> getRemoveSupportedIpAddressTypes() {
+        if (removeSupportedIpAddressTypes == null) {
+            removeSupportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return removeSupportedIpAddressTypes;
+    }
+
+    /**
+     * <p>
+     * The IP address types to remove from your service configuration.
+     * </p>
+     * 
+     * @param removeSupportedIpAddressTypes
+     *        The IP address types to remove from your service configuration.
+     */
+
+    public void setRemoveSupportedIpAddressTypes(java.util.Collection<String> removeSupportedIpAddressTypes) {
+        if (removeSupportedIpAddressTypes == null) {
+            this.removeSupportedIpAddressTypes = null;
+            return;
+        }
+
+        this.removeSupportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>(removeSupportedIpAddressTypes);
+    }
+
+    /**
+     * <p>
+     * The IP address types to remove from your service configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRemoveSupportedIpAddressTypes(java.util.Collection)} or
+     * {@link #withRemoveSupportedIpAddressTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param removeSupportedIpAddressTypes
+     *        The IP address types to remove from your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withRemoveSupportedIpAddressTypes(String... removeSupportedIpAddressTypes) {
+        if (this.removeSupportedIpAddressTypes == null) {
+            setRemoveSupportedIpAddressTypes(new com.amazonaws.internal.SdkInternalList<String>(removeSupportedIpAddressTypes.length));
+        }
+        for (String ele : removeSupportedIpAddressTypes) {
+            this.removeSupportedIpAddressTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address types to remove from your service configuration.
+     * </p>
+     * 
+     * @param removeSupportedIpAddressTypes
+     *        The IP address types to remove from your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withRemoveSupportedIpAddressTypes(java.util.Collection<String> removeSupportedIpAddressTypes) {
+        setRemoveSupportedIpAddressTypes(removeSupportedIpAddressTypes);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -589,7 +747,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         if (getAddGatewayLoadBalancerArns() != null)
             sb.append("AddGatewayLoadBalancerArns: ").append(getAddGatewayLoadBalancerArns()).append(",");
         if (getRemoveGatewayLoadBalancerArns() != null)
-            sb.append("RemoveGatewayLoadBalancerArns: ").append(getRemoveGatewayLoadBalancerArns());
+            sb.append("RemoveGatewayLoadBalancerArns: ").append(getRemoveGatewayLoadBalancerArns()).append(",");
+        if (getAddSupportedIpAddressTypes() != null)
+            sb.append("AddSupportedIpAddressTypes: ").append(getAddSupportedIpAddressTypes()).append(",");
+        if (getRemoveSupportedIpAddressTypes() != null)
+            sb.append("RemoveSupportedIpAddressTypes: ").append(getRemoveSupportedIpAddressTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -638,6 +800,15 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         if (other.getRemoveGatewayLoadBalancerArns() != null
                 && other.getRemoveGatewayLoadBalancerArns().equals(this.getRemoveGatewayLoadBalancerArns()) == false)
             return false;
+        if (other.getAddSupportedIpAddressTypes() == null ^ this.getAddSupportedIpAddressTypes() == null)
+            return false;
+        if (other.getAddSupportedIpAddressTypes() != null && other.getAddSupportedIpAddressTypes().equals(this.getAddSupportedIpAddressTypes()) == false)
+            return false;
+        if (other.getRemoveSupportedIpAddressTypes() == null ^ this.getRemoveSupportedIpAddressTypes() == null)
+            return false;
+        if (other.getRemoveSupportedIpAddressTypes() != null
+                && other.getRemoveSupportedIpAddressTypes().equals(this.getRemoveSupportedIpAddressTypes()) == false)
+            return false;
         return true;
     }
 
@@ -654,6 +825,8 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         hashCode = prime * hashCode + ((getRemoveNetworkLoadBalancerArns() == null) ? 0 : getRemoveNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getAddGatewayLoadBalancerArns() == null) ? 0 : getAddGatewayLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getRemoveGatewayLoadBalancerArns() == null) ? 0 : getRemoveGatewayLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getAddSupportedIpAddressTypes() == null) ? 0 : getAddSupportedIpAddressTypes().hashCode());
+        hashCode = prime * hashCode + ((getRemoveSupportedIpAddressTypes() == null) ? 0 : getRemoveSupportedIpAddressTypes().hashCode());
         return hashCode;
     }
 

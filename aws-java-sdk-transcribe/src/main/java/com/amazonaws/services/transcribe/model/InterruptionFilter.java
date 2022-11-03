@@ -19,8 +19,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that enables you to configure your category to be applied to call analytics jobs where either the customer
- * or agent was interrupted.
+ * Flag the presence or absence of interruptions in your Call Analytics transcription output.
+ * </p>
+ * <p>
+ * Rules using <code>InterruptionFilter</code> are designed to match:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Instances where an agent interrupts a customer
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Instances where a customer interrupts an agent
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Either participant interrupting the other
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A lack of interruptions
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * See <a href=
+ * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
+ * >Rule criteria</a> for usage examples.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/InterruptionFilter" target="_top">AWS API
@@ -31,47 +60,48 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The duration of the interruption.
+     * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
+     * than 10000 milliseconds of interruptions.
      * </p>
      */
     private Long threshold;
     /**
      * <p>
-     * Indicates whether the caller or customer was interrupting.
+     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      */
     private String participantRole;
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when you'd want to find the interruption. For
-     * example, you could search for an interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      */
     private AbsoluteTimeRange absoluteTimeRange;
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was a interruption. For
-     * example, you can specify the first half of the call. You can also specify the period of time between halfway
-     * through to three-quarters of the way through the call. Because the length of conversation can vary between calls,
-     * you can apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      */
     private RelativeTimeRange relativeTimeRange;
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag
+     * speech that contains interruptions.
      * </p>
      */
     private Boolean negate;
 
     /**
      * <p>
-     * The duration of the interruption.
+     * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
+     * than 10000 milliseconds of interruptions.
      * </p>
      * 
      * @param threshold
-     *        The duration of the interruption.
+     *        Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains
+     *        more than 10000 milliseconds of interruptions.
      */
 
     public void setThreshold(Long threshold) {
@@ -80,10 +110,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The duration of the interruption.
+     * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
+     * than 10000 milliseconds of interruptions.
      * </p>
      * 
-     * @return The duration of the interruption.
+     * @return Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains
+     *         more than 10000 milliseconds of interruptions.
      */
 
     public Long getThreshold() {
@@ -92,11 +124,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The duration of the interruption.
+     * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
+     * than 10000 milliseconds of interruptions.
      * </p>
      * 
      * @param threshold
-     *        The duration of the interruption.
+     *        Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains
+     *        more than 10000 milliseconds of interruptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +141,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the caller or customer was interrupting.
+     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
      * @param participantRole
-     *        Indicates whether the caller or customer was interrupting.
+     *        Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *        participants.
      * @see ParticipantRole
      */
 
@@ -121,10 +156,11 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the caller or customer was interrupting.
+     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
-     * @return Indicates whether the caller or customer was interrupting.
+     * @return Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *         participants.
      * @see ParticipantRole
      */
 
@@ -134,11 +170,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the caller or customer was interrupting.
+     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
      * @param participantRole
-     *        Indicates whether the caller or customer was interrupting.
+     *        Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
      */
@@ -150,11 +187,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the caller or customer was interrupting.
+     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
      * @param participantRole
-     *        Indicates whether the caller or customer was interrupting.
+     *        Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
      */
@@ -166,16 +204,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when you'd want to find the interruption. For
-     * example, you could search for an interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        An object you can use to specify a time range (in milliseconds) for when you'd want to find the
-     *        interruption. For example, you could search for an interruption between the 30,000 millisecond mark and
-     *        the 45,000 millisecond mark. You could also specify the time period as the first 15,000 milliseconds or
-     *        the last 15,000 milliseconds.
+     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     *        interruption. See for more detail.
      */
 
     public void setAbsoluteTimeRange(AbsoluteTimeRange absoluteTimeRange) {
@@ -184,15 +219,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when you'd want to find the interruption. For
-     * example, you could search for an interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      * 
-     * @return An object you can use to specify a time range (in milliseconds) for when you'd want to find the
-     *         interruption. For example, you could search for an interruption between the 30,000 millisecond mark and
-     *         the 45,000 millisecond mark. You could also specify the time period as the first 15,000 milliseconds or
-     *         the last 15,000 milliseconds.
+     * @return Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
+     *         an interruption. See for more detail.
      */
 
     public AbsoluteTimeRange getAbsoluteTimeRange() {
@@ -201,16 +233,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when you'd want to find the interruption. For
-     * example, you could search for an interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        An object you can use to specify a time range (in milliseconds) for when you'd want to find the
-     *        interruption. For example, you could search for an interruption between the 30,000 millisecond mark and
-     *        the 45,000 millisecond mark. You could also specify the time period as the first 15,000 milliseconds or
-     *        the last 15,000 milliseconds.
+     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     *        interruption. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,17 +250,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was a interruption. For
-     * example, you can specify the first half of the call. You can also specify the period of time between halfway
-     * through to three-quarters of the way through the call. Because the length of conversation can vary between calls,
-     * you can apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        An object that allows percentages to specify the proportion of the call where there was a interruption.
-     *        For example, you can specify the first half of the call. You can also specify the period of time between
-     *        halfway through to three-quarters of the way through the call. Because the length of conversation can vary
-     *        between calls, you can apply relative time ranges across all calls.
+     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
+     *        an interruption. See for more detail.
      */
 
     public void setRelativeTimeRange(RelativeTimeRange relativeTimeRange) {
@@ -240,16 +265,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was a interruption. For
-     * example, you can specify the first half of the call. You can also specify the period of time between halfway
-     * through to three-quarters of the way through the call. Because the length of conversation can vary between calls,
-     * you can apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      * 
-     * @return An object that allows percentages to specify the proportion of the call where there was a interruption.
-     *         For example, you can specify the first half of the call. You can also specify the period of time between
-     *         halfway through to three-quarters of the way through the call. Because the length of conversation can
-     *         vary between calls, you can apply relative time ranges across all calls.
+     * @return Allows you to specify a time range (in percentage) in your media file, during which you want to search
+     *         for an interruption. See for more detail.
      */
 
     public RelativeTimeRange getRelativeTimeRange() {
@@ -258,17 +279,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was a interruption. For
-     * example, you can specify the first half of the call. You can also specify the period of time between halfway
-     * through to three-quarters of the way through the call. Because the length of conversation can vary between calls,
-     * you can apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
+     * interruption. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        An object that allows percentages to specify the proportion of the call where there was a interruption.
-     *        For example, you can specify the first half of the call. You can also specify the period of time between
-     *        halfway through to three-quarters of the way through the call. Because the length of conversation can vary
-     *        between calls, you can apply relative time ranges across all calls.
+     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
+     *        an interruption. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +296,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag
+     * speech that contains interruptions.
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     *        Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to
+     *        flag speech that contains interruptions.
      */
 
     public void setNegate(Boolean negate) {
@@ -292,10 +311,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag
+     * speech that contains interruptions.
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * @return Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to
+     *         flag speech that contains interruptions.
      */
 
     public Boolean getNegate() {
@@ -304,11 +325,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag
+     * speech that contains interruptions.
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     *        Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to
+     *        flag speech that contains interruptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,10 +342,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag
+     * speech that contains interruptions.
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to look for a time period where there was no interruption.
+     * @return Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to
+     *         flag speech that contains interruptions.
      */
 
     public Boolean isNegate() {

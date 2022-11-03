@@ -19,9 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the
- * complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the
- * <code>DatasetGroupArn</code>.
+ * Provides a summary of the dataset group properties used in the <a
+ * href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a> operation. To
+ * get the complete set of properties, call the <a
+ * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+ * operation, and provide the <code>DatasetGroupArn</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetGroupSummary" target="_top">AWS API
@@ -50,8 +52,9 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
     private java.util.Date creationTime;
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>ListDatasetGroups</code> call.
      * </p>
      */
@@ -179,15 +182,17 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>ListDatasetGroups</code> call.
      * </p>
      * 
      * @param lastModificationTime
-     *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
-     *        <code>ListDatasetGroups</code> call.
+     *        When the dataset group was created or last updated from a call to the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *        operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time
+     *        of the <code>ListDatasetGroups</code> call.
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -196,12 +201,14 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>ListDatasetGroups</code> call.
      * </p>
      * 
-     * @return When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
+     * @return When the dataset group was created or last updated from a call to the <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
      *         operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current
      *         time of the <code>ListDatasetGroups</code> call.
      */
@@ -212,15 +219,17 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>ListDatasetGroups</code> call.
      * </p>
      * 
      * @param lastModificationTime
-     *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
-     *        <code>ListDatasetGroups</code> call.
+     *        When the dataset group was created or last updated from a call to the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *        operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time
+     *        of the <code>ListDatasetGroups</code> call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

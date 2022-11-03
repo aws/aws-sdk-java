@@ -54,6 +54,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String notificationEmail;
+    /**
+     * <p>
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     * >UpdatePublicSharingSettings</a>.
+     * </p>
+     */
+    private Boolean publicSharingEnabled;
 
     /**
      * <p>
@@ -251,6 +260,82 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     * >UpdatePublicSharingSettings</a>.
+     * </p>
+     * 
+     * @param publicSharingEnabled
+     *        A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *        more information about turning on public sharing, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     *        >UpdatePublicSharingSettings</a>.
+     */
+
+    public void setPublicSharingEnabled(Boolean publicSharingEnabled) {
+        this.publicSharingEnabled = publicSharingEnabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     * >UpdatePublicSharingSettings</a>.
+     * </p>
+     * 
+     * @return A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *         more information about turning on public sharing, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     *         >UpdatePublicSharingSettings</a>.
+     */
+
+    public Boolean getPublicSharingEnabled() {
+        return this.publicSharingEnabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     * >UpdatePublicSharingSettings</a>.
+     * </p>
+     * 
+     * @param publicSharingEnabled
+     *        A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *        more information about turning on public sharing, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     *        >UpdatePublicSharingSettings</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountSettings withPublicSharingEnabled(Boolean publicSharingEnabled) {
+        setPublicSharingEnabled(publicSharingEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     * >UpdatePublicSharingSettings</a>.
+     * </p>
+     * 
+     * @return A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *         more information about turning on public sharing, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
+     *         >UpdatePublicSharingSettings</a>.
+     */
+
+    public Boolean isPublicSharingEnabled() {
+        return this.publicSharingEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -269,7 +354,9 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         if (getDefaultNamespace() != null)
             sb.append("DefaultNamespace: ").append(getDefaultNamespace()).append(",");
         if (getNotificationEmail() != null)
-            sb.append("NotificationEmail: ").append(getNotificationEmail());
+            sb.append("NotificationEmail: ").append(getNotificationEmail()).append(",");
+        if (getPublicSharingEnabled() != null)
+            sb.append("PublicSharingEnabled: ").append(getPublicSharingEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -300,6 +387,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getNotificationEmail() != null && other.getNotificationEmail().equals(this.getNotificationEmail()) == false)
             return false;
+        if (other.getPublicSharingEnabled() == null ^ this.getPublicSharingEnabled() == null)
+            return false;
+        if (other.getPublicSharingEnabled() != null && other.getPublicSharingEnabled().equals(this.getPublicSharingEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +403,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
         hashCode = prime * hashCode + ((getDefaultNamespace() == null) ? 0 : getDefaultNamespace().hashCode());
         hashCode = prime * hashCode + ((getNotificationEmail() == null) ? 0 : getNotificationEmail().hashCode());
+        hashCode = prime * hashCode + ((getPublicSharingEnabled() == null) ? 0 : getPublicSharingEnabled().hashCode());
         return hashCode;
     }
 

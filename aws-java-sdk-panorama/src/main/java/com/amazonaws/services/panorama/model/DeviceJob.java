@@ -52,6 +52,12 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String jobId;
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     */
+    private String jobType;
 
     /**
      * <p>
@@ -214,6 +220,65 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @see JobType
+     */
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @return The job's type.
+     * @see JobType
+     */
+
+    public String getJobType() {
+        return this.jobType;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public DeviceJob withJobType(String jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public DeviceJob withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +297,9 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId());
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getJobType() != null)
+            sb.append("JobType: ").append(getJobType());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +330,10 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getJobType() == null ^ this.getJobType() == null)
+            return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +346,7 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         return hashCode;
     }
 

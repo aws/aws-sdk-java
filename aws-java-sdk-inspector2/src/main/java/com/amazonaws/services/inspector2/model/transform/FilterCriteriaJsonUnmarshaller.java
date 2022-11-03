@@ -144,6 +144,12 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("fixAvailable", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setFixAvailable(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("inspectorScore", targetDepth)) {
                     context.nextToken();
                     filterCriteria.setInspectorScore(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())

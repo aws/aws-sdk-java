@@ -359,6 +359,39 @@ public class AWSGreengrassV2AsyncClient extends AWSGreengrassV2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest request) {
+
+        return deleteDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(final DeleteDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler) {
+        final DeleteDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeploymentResult>() {
+            @Override
+            public DeleteDeploymentResult call() throws Exception {
+                DeleteDeploymentResult result = null;
+
+                try {
+                    result = executeDeleteDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeComponentResult> describeComponentAsync(DescribeComponentRequest request) {
 
         return describeComponentAsync(request, null);

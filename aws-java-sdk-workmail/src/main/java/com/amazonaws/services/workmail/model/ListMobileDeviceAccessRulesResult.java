@@ -25,17 +25,17 @@ public class ListMobileDeviceAccessRulesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     * The list of mobile device access rules that exist under the specified WorkMail organization.
      * </p>
      */
     private java.util.List<MobileDeviceAccessRule> rules;
 
     /**
      * <p>
-     * The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     * The list of mobile device access rules that exist under the specified WorkMail organization.
      * </p>
      * 
-     * @return The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     * @return The list of mobile device access rules that exist under the specified WorkMail organization.
      */
 
     public java.util.List<MobileDeviceAccessRule> getRules() {
@@ -44,11 +44,11 @@ public class ListMobileDeviceAccessRulesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     * The list of mobile device access rules that exist under the specified WorkMail organization.
      * </p>
      * 
      * @param rules
-     *        The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     *        The list of mobile device access rules that exist under the specified WorkMail organization.
      */
 
     public void setRules(java.util.Collection<MobileDeviceAccessRule> rules) {
@@ -62,7 +62,7 @@ public class ListMobileDeviceAccessRulesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     * The list of mobile device access rules that exist under the specified WorkMail organization.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ListMobileDeviceAccessRulesResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param rules
-     *        The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     *        The list of mobile device access rules that exist under the specified WorkMail organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListMobileDeviceAccessRulesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     * The list of mobile device access rules that exist under the specified WorkMail organization.
      * </p>
      * 
      * @param rules
-     *        The list of mobile device access rules that exist under the specified Amazon WorkMail organization.
+     *        The list of mobile device access rules that exist under the specified WorkMail organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,6 +88,10 @@ public class DescribeExportTasksRequestMarshaller implements Marshaller<Request<
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeExportTasksRequest.getMaxRecords()));
         }
 
+        if (describeExportTasksRequest.getSourceType() != null) {
+            request.addParameter("SourceType", StringUtils.fromString(describeExportTasksRequest.getSourceType()));
+        }
+
         return request;
     }
 

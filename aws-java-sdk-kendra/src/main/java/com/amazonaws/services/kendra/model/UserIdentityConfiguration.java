@@ -30,36 +30,36 @@ public class UserIdentityConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is
      * used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context
-     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
-     * with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents
-     * into your index. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon
-     * Web Services SSO identity source</a>.
+     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with
+     * Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into
+     * your index. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM
+     * Identity Center identity source</a>.
      * </p>
      */
     private String identityAttributeName;
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is
      * used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context
-     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
-     * with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents
-     * into your index. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon
-     * Web Services SSO identity source</a>.
+     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with
+     * Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into
+     * your index. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM
+     * Identity Center identity source</a>.
      * </p>
      * 
      * @param identityAttributeName
-     *        The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
-     *        This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user
-     *        context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web
-     *        Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when
-     *        you ingest documents into your index. For more information, see <a
+     *        The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This
+     *        is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context
+     *        filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity
+     *        Center with Amazon Kendra. You must include your users and groups in your Access Control List when you
+     *        ingest documents into your index. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an
-     *        Amazon Web Services SSO identity source</a>.
+     *        IAM Identity Center identity source</a>.
      */
 
     public void setIdentityAttributeName(String identityAttributeName) {
@@ -68,22 +68,22 @@ public class UserIdentityConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is
      * used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context
-     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
-     * with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents
-     * into your index. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon
-     * Web Services SSO identity source</a>.
+     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with
+     * Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into
+     * your index. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM
+     * Identity Center identity source</a>.
      * </p>
      * 
-     * @return The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     * @return The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      *         This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user
-     *         context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon
-     *         Web Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List
+     *         context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM
+     *         Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List
      *         when you ingest documents into your index. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an
-     *         Amazon Web Services SSO identity source</a>.
+     *         IAM Identity Center identity source</a>.
      */
 
     public String getIdentityAttributeName() {
@@ -92,23 +92,23 @@ public class UserIdentityConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is
      * used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context
-     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
-     * with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents
-     * into your index. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon
-     * Web Services SSO identity source</a>.
+     * filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with
+     * Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into
+     * your index. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM
+     * Identity Center identity source</a>.
      * </p>
      * 
      * @param identityAttributeName
-     *        The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
-     *        This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user
-     *        context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web
-     *        Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when
-     *        you ingest documents into your index. For more information, see <a
+     *        The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This
+     *        is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context
+     *        filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity
+     *        Center with Amazon Kendra. You must include your users and groups in your Access Control List when you
+     *        ingest documents into your index. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an
-     *        Amazon Web Services SSO identity source</a>.
+     *        IAM Identity Center identity source</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

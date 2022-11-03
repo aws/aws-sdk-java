@@ -52,11 +52,12 @@ import com.amazonaws.services.guardduty.model.transform.*;
  * <p>
  * <p>
  * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
- * VPC Flow Logs, Amazon Web Services CloudTrail event logs, and DNS logs. It uses threat intelligence feeds (such as
- * lists of malicious IPs and domains) and machine learning to identify unexpected, potentially unauthorized, and
- * malicious activity within your Amazon Web Services environment. This can include issues like escalations of
- * privileges, uses of exposed credentials, or communication with malicious IPs, URLs, or domains. For example,
- * GuardDuty can detect compromised EC2 instances that serve malware or mine bitcoin.
+ * VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs,
+ * and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs and domains) and machine learning to
+ * identify unexpected, potentially unauthorized, and malicious activity within your Amazon Web Services environment.
+ * This can include issues like escalations of privileges, uses of exposed credentials, or communication with malicious
+ * IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances that serve malware or mine
+ * bitcoin.
  * </p>
  * <p>
  * GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise. Some examples of this
@@ -148,6 +149,68 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent
+     * the invitation.
+     * </p>
+     * 
+     * @param acceptAdministratorInvitationRequest
+     * @return Result of the AcceptAdministratorInvitation operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.AcceptAdministratorInvitation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptAdministratorInvitation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptAdministratorInvitationResult acceptAdministratorInvitation(AcceptAdministratorInvitationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptAdministratorInvitation(request);
+    }
+
+    @SdkInternalApi
+    final AcceptAdministratorInvitationResult executeAcceptAdministratorInvitation(AcceptAdministratorInvitationRequest acceptAdministratorInvitationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptAdministratorInvitationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptAdministratorInvitationRequest> request = null;
+        Response<AcceptAdministratorInvitationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptAdministratorInvitationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptAdministratorInvitationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptAdministratorInvitation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptAdministratorInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AcceptAdministratorInvitationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Accepts the invitation to be monitored by a GuardDuty administrator account.
      * </p>
      * 
@@ -162,6 +225,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public AcceptInvitationResult acceptInvitation(AcceptInvitationRequest request) {
         request = beforeClientExecution(request);
         return executeAcceptInvitation(request);
@@ -1185,6 +1249,66 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An
+     * administrator can view the malware scans for all the member accounts.
+     * </p>
+     * 
+     * @param describeMalwareScansRequest
+     * @return Result of the DescribeMalwareScans operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.DescribeMalwareScans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeMalwareScansResult describeMalwareScans(DescribeMalwareScansRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMalwareScans(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMalwareScansResult executeDescribeMalwareScans(DescribeMalwareScansRequest describeMalwareScansRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMalwareScansRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMalwareScansRequest> request = null;
+        Response<DescribeMalwareScansResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMalwareScansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMalwareScansRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMalwareScans");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMalwareScansResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeMalwareScansResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the account selected as the delegated administrator for GuardDuty.
      * </p>
      * 
@@ -1373,6 +1497,68 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * Disassociates the current GuardDuty member account from its administrator account.
      * </p>
      * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFromAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFromAdministratorAccountResult executeDisassociateFromAdministratorAccount(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFromAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFromAdministratorAccountRequest> request = null;
+        Response<DisassociateFromAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFromAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateFromAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFromAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFromAdministratorAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates the current GuardDuty member account from its administrator account.
+     * </p>
+     * 
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
      * @throws BadRequestException
@@ -1384,6 +1570,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateFromMasterAccount(request);
@@ -1431,10 +1618,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account
-     * IDs. Member accounts added through <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a> get deleted from
-     * the current GuardDuty administrator account after 30 days of disassociation.
+     * Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -1542,6 +1726,68 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<EnableOrganizationAdminAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new EnableOrganizationAdminAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
+     * account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return Result of the GetAdministratorAccount operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final GetAdministratorAccountResult executeGetAdministratorAccount(GetAdministratorAccountRequest getAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAdministratorAccountRequest> request = null;
+        Response<GetAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAdministratorAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1910,6 +2156,66 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns the details of the malware scan settings.
+     * </p>
+     * 
+     * @param getMalwareScanSettingsRequest
+     * @return Result of the GetMalwareScanSettings operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetMalwareScanSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMalwareScanSettingsResult getMalwareScanSettings(GetMalwareScanSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMalwareScanSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetMalwareScanSettingsResult executeGetMalwareScanSettings(GetMalwareScanSettingsRequest getMalwareScanSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMalwareScanSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMalwareScanSettingsRequest> request = null;
+        Response<GetMalwareScanSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMalwareScanSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMalwareScanSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMalwareScanSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMalwareScanSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetMalwareScanSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
      * account.
      * </p>
@@ -1925,6 +2231,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetMasterAccountResult getMasterAccount(GetMasterAccountRequest request) {
         request = beforeClientExecution(request);
         return executeGetMasterAccount(request);
@@ -2089,6 +2396,67 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Provides the number of days left for each data source used in the free trial period.
+     * </p>
+     * 
+     * @param getRemainingFreeTrialDaysRequest
+     * @return Result of the GetRemainingFreeTrialDays operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetRemainingFreeTrialDays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRemainingFreeTrialDaysResult getRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRemainingFreeTrialDays(request);
+    }
+
+    @SdkInternalApi
+    final GetRemainingFreeTrialDaysResult executeGetRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest getRemainingFreeTrialDaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRemainingFreeTrialDaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRemainingFreeTrialDaysRequest> request = null;
+        Response<GetRemainingFreeTrialDaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRemainingFreeTrialDaysRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getRemainingFreeTrialDaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRemainingFreeTrialDays");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRemainingFreeTrialDaysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetRemainingFreeTrialDaysResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
      * </p>
      * 
@@ -2149,9 +2517,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled
-     * detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ
-     * from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For
-     * more information see <a
+     * detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ
+     * from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How
      * Usage Costs are Calculated</a>.
      * </p>
@@ -3395,6 +3763,67 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIPSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the malware scan settings.
+     * </p>
+     * 
+     * @param updateMalwareScanSettingsRequest
+     * @return Result of the UpdateMalwareScanSettings operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.UpdateMalwareScanSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMalwareScanSettingsResult updateMalwareScanSettings(UpdateMalwareScanSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMalwareScanSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMalwareScanSettingsResult executeUpdateMalwareScanSettings(UpdateMalwareScanSettingsRequest updateMalwareScanSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMalwareScanSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMalwareScanSettingsRequest> request = null;
+        Response<UpdateMalwareScanSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMalwareScanSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMalwareScanSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMalwareScanSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMalwareScanSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMalwareScanSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

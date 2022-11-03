@@ -87,10 +87,24 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     private String name;
     /**
      * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     */
+    private String runtimeRoleArn;
+    /**
+     * <p>
      * Parameters for the studio component scripts.
      * </p>
      */
     private java.util.List<ScriptParameterKeyValue> scriptParameters;
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     */
+    private String secureInitializationRoleArn;
     /**
      * <p>
      * The current state.
@@ -528,6 +542,52 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     * 
+     * @param runtimeRoleArn
+     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
+     *        anytime while the instance is running.
+     */
+
+    public void setRuntimeRoleArn(String runtimeRoleArn) {
+        this.runtimeRoleArn = runtimeRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     * 
+     * @return An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
+     *         anytime while the instance is running.
+     */
+
+    public String getRuntimeRoleArn() {
+        return this.runtimeRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     * 
+     * @param runtimeRoleArn
+     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
+     *        anytime while the instance is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StudioComponent withRuntimeRoleArn(String runtimeRoleArn) {
+        setRuntimeRoleArn(runtimeRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Parameters for the studio component scripts.
      * </p>
      * 
@@ -593,6 +653,52 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     public StudioComponent withScriptParameters(java.util.Collection<ScriptParameterKeyValue> scriptParameters) {
         setScriptParameters(scriptParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     * 
+     * @param secureInitializationRoleArn
+     *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     *        component access to AWS resources when the system initialization script runs.
+     */
+
+    public void setSecureInitializationRoleArn(String secureInitializationRoleArn) {
+        this.secureInitializationRoleArn = secureInitializationRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     * 
+     * @return An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     *         component access to AWS resources when the system initialization script runs.
+     */
+
+    public String getSecureInitializationRoleArn() {
+        return this.secureInitializationRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     * 
+     * @param secureInitializationRoleArn
+     *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     *        component access to AWS resources when the system initialization script runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StudioComponent withSecureInitializationRoleArn(String secureInitializationRoleArn) {
+        setSecureInitializationRoleArn(secureInitializationRoleArn);
         return this;
     }
 
@@ -1088,8 +1194,12 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
             sb.append("InitializationScripts: ").append(getInitializationScripts()).append(",");
         if (getName() != null)
             sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
+        if (getRuntimeRoleArn() != null)
+            sb.append("RuntimeRoleArn: ").append(getRuntimeRoleArn()).append(",");
         if (getScriptParameters() != null)
             sb.append("ScriptParameters: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSecureInitializationRoleArn() != null)
+            sb.append("SecureInitializationRoleArn: ").append(getSecureInitializationRoleArn()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusCode() != null)
@@ -1154,9 +1264,17 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRuntimeRoleArn() == null ^ this.getRuntimeRoleArn() == null)
+            return false;
+        if (other.getRuntimeRoleArn() != null && other.getRuntimeRoleArn().equals(this.getRuntimeRoleArn()) == false)
+            return false;
         if (other.getScriptParameters() == null ^ this.getScriptParameters() == null)
             return false;
         if (other.getScriptParameters() != null && other.getScriptParameters().equals(this.getScriptParameters()) == false)
+            return false;
+        if (other.getSecureInitializationRoleArn() == null ^ this.getSecureInitializationRoleArn() == null)
+            return false;
+        if (other.getSecureInitializationRoleArn() != null && other.getSecureInitializationRoleArn().equals(this.getSecureInitializationRoleArn()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -1210,7 +1328,9 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEc2SecurityGroupIds() == null) ? 0 : getEc2SecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getInitializationScripts() == null) ? 0 : getInitializationScripts().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeRoleArn() == null) ? 0 : getRuntimeRoleArn().hashCode());
         hashCode = prime * hashCode + ((getScriptParameters() == null) ? 0 : getScriptParameters().hashCode());
+        hashCode = prime * hashCode + ((getSecureInitializationRoleArn() == null) ? 0 : getSecureInitializationRoleArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());

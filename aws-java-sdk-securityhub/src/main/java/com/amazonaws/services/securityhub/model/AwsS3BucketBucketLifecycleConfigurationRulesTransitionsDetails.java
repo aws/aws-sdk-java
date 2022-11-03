@@ -50,8 +50,35 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails impl
     private Integer days;
     /**
      * <p>
-     * The storage class to transition the object to.
+     * The storage class to transition the object to. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DEEP_ARCHIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GLACIER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTELLIGENT_TIERING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ONEZONE_IA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD_IA</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String storageClass;
 
@@ -176,11 +203,64 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails impl
 
     /**
      * <p>
-     * The storage class to transition the object to.
+     * The storage class to transition the object to. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DEEP_ARCHIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GLACIER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTELLIGENT_TIERING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ONEZONE_IA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD_IA</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param storageClass
-     *        The storage class to transition the object to.
+     *        The storage class to transition the object to. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DEEP_ARCHIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GLACIER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INTELLIGENT_TIERING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ONEZONE_IA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD_IA</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStorageClass(String storageClass) {
@@ -189,10 +269,63 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails impl
 
     /**
      * <p>
-     * The storage class to transition the object to.
+     * The storage class to transition the object to. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DEEP_ARCHIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GLACIER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTELLIGENT_TIERING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ONEZONE_IA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD_IA</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The storage class to transition the object to.
+     * @return The storage class to transition the object to. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DEEP_ARCHIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GLACIER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INTELLIGENT_TIERING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ONEZONE_IA</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>STANDARD_IA</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStorageClass() {
@@ -201,11 +334,64 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails impl
 
     /**
      * <p>
-     * The storage class to transition the object to.
+     * The storage class to transition the object to. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DEEP_ARCHIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GLACIER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTELLIGENT_TIERING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ONEZONE_IA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD_IA</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param storageClass
-     *        The storage class to transition the object to.
+     *        The storage class to transition the object to. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DEEP_ARCHIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GLACIER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INTELLIGENT_TIERING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ONEZONE_IA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD_IA</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

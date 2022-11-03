@@ -45,7 +45,7 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
         }
 
         if (createCustomerGatewayRequest.getPublicIp() != null) {
-            request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
+            request.addParameter("PublicIp", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
         }
 
         if (createCustomerGatewayRequest.getCertificateArn() != null) {
@@ -93,6 +93,10 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
 
         if (createCustomerGatewayRequest.getDeviceName() != null) {
             request.addParameter("DeviceName", StringUtils.fromString(createCustomerGatewayRequest.getDeviceName()));
+        }
+
+        if (createCustomerGatewayRequest.getIpAddress() != null) {
+            request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getIpAddress()));
         }
 
         return request;

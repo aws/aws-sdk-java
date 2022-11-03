@@ -43,8 +43,9 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     private String secretHash;
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      */
     private UserContextDataType userContextData;
@@ -56,7 +57,7 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     private String username;
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      */
     private AnalyticsMetadataType analyticsMetadata;
@@ -193,13 +194,15 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      * 
      * @param userContextData
-     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
-     *        risk of an unexpected event by Amazon Cognito advanced security.
+     *        Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon
+     *        Cognito advanced security evaluates the risk of an authentication event based on the context that your app
+     *        generates and passes to Amazon Cognito when it makes API requests.
      */
 
     public void setUserContextData(UserContextDataType userContextData) {
@@ -208,12 +211,14 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      * 
-     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
-     *         risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon
+     *         Cognito advanced security evaluates the risk of an authentication event based on the context that your
+     *         app generates and passes to Amazon Cognito when it makes API requests.
      */
 
     public UserContextDataType getUserContextData() {
@@ -222,13 +227,15 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      * 
      * @param userContextData
-     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
-     *        risk of an unexpected event by Amazon Cognito advanced security.
+     *        Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon
+     *        Cognito advanced security evaluates the risk of an authentication event based on the context that your app
+     *        generates and passes to Amazon Cognito when it makes API requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +286,12 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code>
+     *        calls.
      */
 
     public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
@@ -292,10 +300,11 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      * 
-     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * @return The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code>
+     *         calls.
      */
 
     public AnalyticsMetadataType getAnalyticsMetadata() {
@@ -304,11 +313,12 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code>
+     *        calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

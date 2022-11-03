@@ -42,9 +42,13 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Detective is also integrated with Organizations. The organization management account designates the Detective
  * administrator account for the organization. That account becomes the administrator account for the organization
- * behavior graph. The Detective administrator account can enable any organization account as a member account in the
- * organization behavior graph. The organization accounts do not receive invitations. The Detective administrator
- * account can also invite other accounts to the organization behavior graph.
+ * behavior graph. The Detective administrator account is also the delegated administrator account for Detective in
+ * Organizations.
+ * </p>
+ * <p>
+ * The Detective administrator account can enable any organization account as a member account in the organization
+ * behavior graph. The organization accounts do not receive invitations. The Detective administrator account can also
+ * invite other accounts to the organization behavior graph.
  * </p>
  * <p>
  * Every behavior graph is specific to a Region. You can only use the API to manage behavior graphs that belong to the
@@ -201,6 +205,74 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
 
                 try {
                     result = executeAcceptInvitation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetGraphMemberDatasourcesResult> batchGetGraphMemberDatasourcesAsync(BatchGetGraphMemberDatasourcesRequest request) {
+
+        return batchGetGraphMemberDatasourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetGraphMemberDatasourcesResult> batchGetGraphMemberDatasourcesAsync(
+            final BatchGetGraphMemberDatasourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetGraphMemberDatasourcesRequest, BatchGetGraphMemberDatasourcesResult> asyncHandler) {
+        final BatchGetGraphMemberDatasourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetGraphMemberDatasourcesResult>() {
+            @Override
+            public BatchGetGraphMemberDatasourcesResult call() throws Exception {
+                BatchGetGraphMemberDatasourcesResult result = null;
+
+                try {
+                    result = executeBatchGetGraphMemberDatasources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMembershipDatasourcesResult> batchGetMembershipDatasourcesAsync(BatchGetMembershipDatasourcesRequest request) {
+
+        return batchGetMembershipDatasourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMembershipDatasourcesResult> batchGetMembershipDatasourcesAsync(
+            final BatchGetMembershipDatasourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetMembershipDatasourcesRequest, BatchGetMembershipDatasourcesResult> asyncHandler) {
+        final BatchGetMembershipDatasourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetMembershipDatasourcesResult>() {
+            @Override
+            public BatchGetMembershipDatasourcesResult call() throws Exception {
+                BatchGetMembershipDatasourcesResult result = null;
+
+                try {
+                    result = executeBatchGetMembershipDatasources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -519,6 +591,39 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatasourcePackagesResult> listDatasourcePackagesAsync(ListDatasourcePackagesRequest request) {
+
+        return listDatasourcePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasourcePackagesResult> listDatasourcePackagesAsync(final ListDatasourcePackagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDatasourcePackagesRequest, ListDatasourcePackagesResult> asyncHandler) {
+        final ListDatasourcePackagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDatasourcePackagesResult>() {
+            @Override
+            public ListDatasourcePackagesResult call() throws Exception {
+                ListDatasourcePackagesResult result = null;
+
+                try {
+                    result = executeListDatasourcePackages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGraphsResult> listGraphsAsync(ListGraphsRequest request) {
 
         return listGraphsAsync(request, null);
@@ -801,6 +906,39 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request) {
+
+        return updateDatasourcePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(final UpdateDatasourcePackagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDatasourcePackagesRequest, UpdateDatasourcePackagesResult> asyncHandler) {
+        final UpdateDatasourcePackagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDatasourcePackagesResult>() {
+            @Override
+            public UpdateDatasourcePackagesResult call() throws Exception {
+                UpdateDatasourcePackagesResult result = null;
+
+                try {
+                    result = executeUpdateDatasourcePackages(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

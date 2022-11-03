@@ -34,6 +34,18 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String domain;
+    /**
+     * <p>
+     * The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     * </p>
+     */
+    private String protocol;
+    /**
+     * <p>
+     * Indicates whether the targeted port is blocked.
+     * </p>
+     */
+    private Boolean blocked;
 
     /**
      * <p>
@@ -76,6 +88,98 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     * </p>
+     * 
+     * @param protocol
+     *        The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     */
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    /**
+     * <p>
+     * The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     * </p>
+     * 
+     * @return The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     */
+
+    public String getProtocol() {
+        return this.protocol;
+    }
+
+    /**
+     * <p>
+     * The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     * </p>
+     * 
+     * @param protocol
+     *        The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DnsRequestAction withProtocol(String protocol) {
+        setProtocol(protocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the targeted port is blocked.
+     * </p>
+     * 
+     * @param blocked
+     *        Indicates whether the targeted port is blocked.
+     */
+
+    public void setBlocked(Boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the targeted port is blocked.
+     * </p>
+     * 
+     * @return Indicates whether the targeted port is blocked.
+     */
+
+    public Boolean getBlocked() {
+        return this.blocked;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the targeted port is blocked.
+     * </p>
+     * 
+     * @param blocked
+     *        Indicates whether the targeted port is blocked.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DnsRequestAction withBlocked(Boolean blocked) {
+        setBlocked(blocked);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the targeted port is blocked.
+     * </p>
+     * 
+     * @return Indicates whether the targeted port is blocked.
+     */
+
+    public Boolean isBlocked() {
+        return this.blocked;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +192,11 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: ").append(getDomain());
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getProtocol() != null)
+            sb.append("Protocol: ").append(getProtocol()).append(",");
+        if (getBlocked() != null)
+            sb.append("Blocked: ").append(getBlocked());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +215,14 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
+        if (other.getProtocol() == null ^ this.getProtocol() == null)
+            return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
+            return false;
+        if (other.getBlocked() == null ^ this.getBlocked() == null)
+            return false;
+        if (other.getBlocked() != null && other.getBlocked().equals(this.getBlocked()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +232,8 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getBlocked() == null) ? 0 : getBlocked().hashCode());
         return hashCode;
     }
 

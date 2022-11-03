@@ -27,7 +27,7 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of the byte string.
+     * The length of the random byte string. This parameter is required.
      * </p>
      */
     private Integer numberOfBytes;
@@ -42,11 +42,11 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of the byte string.
+     * The length of the random byte string. This parameter is required.
      * </p>
      * 
      * @param numberOfBytes
-     *        The length of the byte string.
+     *        The length of the random byte string. This parameter is required.
      */
 
     public void setNumberOfBytes(Integer numberOfBytes) {
@@ -55,10 +55,10 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of the byte string.
+     * The length of the random byte string. This parameter is required.
      * </p>
      * 
-     * @return The length of the byte string.
+     * @return The length of the random byte string. This parameter is required.
      */
 
     public Integer getNumberOfBytes() {
@@ -67,11 +67,11 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of the byte string.
+     * The length of the random byte string. This parameter is required.
      * </p>
      * 
      * @param numberOfBytes
-     *        The length of the byte string.
+     *        The length of the random byte string. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

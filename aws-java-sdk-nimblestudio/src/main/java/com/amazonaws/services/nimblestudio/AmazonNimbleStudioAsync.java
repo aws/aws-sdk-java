@@ -1103,7 +1103,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Lists the streaming image resources in a studio.
+     * Lists the streaming sessions in a studio.
      * </p>
      * 
      * @param listStreamingSessionsRequest
@@ -1116,7 +1116,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Lists the streaming image resources in a studio.
+     * Lists the streaming sessions in a studio.
      * </p>
      * 
      * @param listStreamingSessionsRequest
@@ -1373,18 +1373,18 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Repairs the Amazon Web Services SSO configuration for a given studio.
+     * Repairs the IAM Identity Center configuration for a given studio.
      * </p>
      * <p>
-     * If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will
+     * If the studio has a valid IAM Identity Center configuration currently associated with it, this operation will
      * fail with a validation error.
      * </p>
      * <p>
-     * If the studio does not have a valid Amazon Web Services SSO configuration currently associated with it, then a
-     * new Amazon Web Services SSO application is created for the studio and the studio is changed to the READY state.
+     * If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new
+     * IAM Identity Center application is created for the studio and the studio is changed to the READY state.
      * </p>
      * <p>
-     * After the Amazon Web Services SSO application is repaired, you must use the Amazon Nimble Studio console to add
+     * After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add
      * administrators and users to your studio.
      * </p>
      * 
@@ -1400,18 +1400,18 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Repairs the Amazon Web Services SSO configuration for a given studio.
+     * Repairs the IAM Identity Center configuration for a given studio.
      * </p>
      * <p>
-     * If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will
+     * If the studio has a valid IAM Identity Center configuration currently associated with it, this operation will
      * fail with a validation error.
      * </p>
      * <p>
-     * If the studio does not have a valid Amazon Web Services SSO configuration currently associated with it, then a
-     * new Amazon Web Services SSO application is created for the studio and the studio is changed to the READY state.
+     * If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new
+     * IAM Identity Center application is created for the studio and the studio is changed to the READY state.
      * </p>
      * <p>
-     * After the Amazon Web Services SSO application is repaired, you must use the Amazon Nimble Studio console to add
+     * After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add
      * administrators and users to your studio.
      * </p>
      * 

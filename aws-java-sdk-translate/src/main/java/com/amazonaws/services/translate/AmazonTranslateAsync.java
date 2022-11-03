@@ -26,7 +26,7 @@ import com.amazonaws.services.translate.model.*;
  * </p>
  * <p>
  * <p>
- * Provides translation between one source language and another of the same set of languages.
+ * Provides language translation for input text in the source language to the specified target language.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -228,15 +228,14 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
-     * Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology
-     * name. Importing a terminology with the same name as an existing one will merge the terminologies based on the
-     * chosen merge strategy. Currently, the only supported merge strategy is OVERWRITE, and so the imported terminology
-     * will overwrite an existing terminology of the same name.
+     * Creates or updates a custom terminology, depending on whether one already exists for the given terminology name.
+     * Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen
+     * merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the
+     * existing terminology of the same name.
      * </p>
      * <p>
-     * If you import a terminology that overwrites an existing one, the new terminology take up to 10 minutes to fully
-     * propagate and be available for use in a translation due to cache policies with the DataPlane service that
-     * performs the translations.
+     * If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully
+     * propagate. After that, translations have access to the new terminology.
      * </p>
      * 
      * @param importTerminologyRequest
@@ -249,15 +248,14 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
-     * Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology
-     * name. Importing a terminology with the same name as an existing one will merge the terminologies based on the
-     * chosen merge strategy. Currently, the only supported merge strategy is OVERWRITE, and so the imported terminology
-     * will overwrite an existing terminology of the same name.
+     * Creates or updates a custom terminology, depending on whether one already exists for the given terminology name.
+     * Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen
+     * merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the
+     * existing terminology of the same name.
      * </p>
      * <p>
-     * If you import a terminology that overwrites an existing one, the new terminology take up to 10 minutes to fully
-     * propagate and be available for use in a translation due to cache policies with the DataPlane service that
-     * performs the translations.
+     * If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully
+     * propagate. After that, translations have access to the new terminology.
      * </p>
      * 
      * @param importTerminologyRequest
@@ -272,6 +270,37 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      */
     java.util.concurrent.Future<ImportTerminologyResult> importTerminologyAsync(ImportTerminologyRequest importTerminologyRequest,
             com.amazonaws.handlers.AsyncHandler<ImportTerminologyRequest, ImportTerminologyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.
+     * </p>
+     * 
+     * @param listLanguagesRequest
+     * @return A Java Future containing the result of the ListLanguages operation returned by the service.
+     * @sample AmazonTranslateAsync.ListLanguages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLanguagesResult> listLanguagesAsync(ListLanguagesRequest listLanguagesRequest);
+
+    /**
+     * <p>
+     * Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.
+     * </p>
+     * 
+     * @param listLanguagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLanguages operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.ListLanguages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLanguagesResult> listLanguagesAsync(ListLanguagesRequest listLanguagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLanguagesRequest, ListLanguagesResult> asyncHandler);
 
     /**
      * <p>
@@ -303,6 +332,39 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      */
     java.util.concurrent.Future<ListParallelDataResult> listParallelDataAsync(ListParallelDataRequest listParallelDataRequest,
             com.amazonaws.handlers.AsyncHandler<ListParallelDataRequest, ListParallelDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all tags associated with a given Amazon Translate resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonTranslateAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all tags associated with a given Amazon Translate resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -368,8 +430,11 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
-     * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of
-     * text across multiple documents at once. For more information, see <a>async</a>.
+     * Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text
+     * across multiple documents at once. For batch translation, the input documents must share the same source
+     * language. You can specify one or more target languages. Batch translation translates each input document into
+     * each of the target languages. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>
      * </p>
      * <p>
      * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
@@ -391,8 +456,11 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
-     * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of
-     * text across multiple documents at once. For more information, see <a>async</a>.
+     * Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text
+     * across multiple documents at once. For batch translation, the input documents must share the same source
+     * language. You can specify one or more target languages. Batch translation translates each input document into
+     * each of the target languages. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>
      * </p>
      * <p>
      * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
@@ -470,8 +538,44 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
+     * Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For
+     * more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your
+     * resources</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonTranslateAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For
+     * more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your
+     * resources</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Translates input text from the source language to the target language. For a list of available languages and
-     * language codes, see <a>what-is-languages</a>.
+     * language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param translateTextRequest
@@ -485,7 +589,8 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
     /**
      * <p>
      * Translates input text from the source language to the target language. For a list of available languages and
-     * language codes, see <a>what-is-languages</a>.
+     * language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param translateTextRequest
@@ -500,6 +605,39 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      */
     java.util.concurrent.Future<TranslateTextResult> translateTextAsync(TranslateTextRequest translateTextRequest,
             com.amazonaws.handlers.AsyncHandler<TranslateTextRequest, TranslateTextResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Translate resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonTranslateAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Translate resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

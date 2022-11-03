@@ -301,6 +301,39 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVpcIngressConnectionResult> createVpcIngressConnectionAsync(CreateVpcIngressConnectionRequest request) {
+
+        return createVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcIngressConnectionResult> createVpcIngressConnectionAsync(final CreateVpcIngressConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcIngressConnectionRequest, CreateVpcIngressConnectionResult> asyncHandler) {
+        final CreateVpcIngressConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcIngressConnectionResult>() {
+            @Override
+            public CreateVpcIngressConnectionResult call() throws Exception {
+                CreateVpcIngressConnectionResult result = null;
+
+                try {
+                    result = executeCreateVpcIngressConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAutoScalingConfigurationResult> deleteAutoScalingConfigurationAsync(DeleteAutoScalingConfigurationRequest request) {
 
         return deleteAutoScalingConfigurationAsync(request, null);
@@ -453,6 +486,39 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
 
                 try {
                     result = executeDeleteVpcConnector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcIngressConnectionResult> deleteVpcIngressConnectionAsync(DeleteVpcIngressConnectionRequest request) {
+
+        return deleteVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcIngressConnectionResult> deleteVpcIngressConnectionAsync(final DeleteVpcIngressConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcIngressConnectionRequest, DeleteVpcIngressConnectionResult> asyncHandler) {
+        final DeleteVpcIngressConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVpcIngressConnectionResult>() {
+            @Override
+            public DeleteVpcIngressConnectionResult call() throws Exception {
+                DeleteVpcIngressConnectionResult result = null;
+
+                try {
+                    result = executeDeleteVpcIngressConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -622,6 +688,39 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
 
                 try {
                     result = executeDescribeVpcConnector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcIngressConnectionResult> describeVpcIngressConnectionAsync(DescribeVpcIngressConnectionRequest request) {
+
+        return describeVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcIngressConnectionResult> describeVpcIngressConnectionAsync(final DescribeVpcIngressConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVpcIngressConnectionRequest, DescribeVpcIngressConnectionResult> asyncHandler) {
+        final DescribeVpcIngressConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVpcIngressConnectionResult>() {
+            @Override
+            public DescribeVpcIngressConnectionResult call() throws Exception {
+                DescribeVpcIngressConnectionResult result = null;
+
+                try {
+                    result = executeDescribeVpcIngressConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -905,6 +1004,39 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<ListVpcIngressConnectionsResult> listVpcIngressConnectionsAsync(ListVpcIngressConnectionsRequest request) {
+
+        return listVpcIngressConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcIngressConnectionsResult> listVpcIngressConnectionsAsync(final ListVpcIngressConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcIngressConnectionsRequest, ListVpcIngressConnectionsResult> asyncHandler) {
+        final ListVpcIngressConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcIngressConnectionsResult>() {
+            @Override
+            public ListVpcIngressConnectionsResult call() throws Exception {
+                ListVpcIngressConnectionsResult result = null;
+
+                try {
+                    result = executeListVpcIngressConnections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PauseServiceResult> pauseServiceAsync(PauseServiceRequest request) {
 
         return pauseServiceAsync(request, null);
@@ -1087,6 +1219,39 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
 
                 try {
                     result = executeUpdateService(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcIngressConnectionResult> updateVpcIngressConnectionAsync(UpdateVpcIngressConnectionRequest request) {
+
+        return updateVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcIngressConnectionResult> updateVpcIngressConnectionAsync(final UpdateVpcIngressConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVpcIngressConnectionRequest, UpdateVpcIngressConnectionResult> asyncHandler) {
+        final UpdateVpcIngressConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVpcIngressConnectionResult>() {
+            @Override
+            public UpdateVpcIngressConnectionResult call() throws Exception {
+                UpdateVpcIngressConnectionResult result = null;
+
+                try {
+                    result = executeUpdateVpcIngressConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

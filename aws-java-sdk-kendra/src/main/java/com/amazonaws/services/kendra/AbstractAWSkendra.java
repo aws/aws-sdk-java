@@ -58,6 +58,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public CreateAccessControlConfigurationResult createAccessControlConfiguration(CreateAccessControlConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDataSourceResult createDataSource(CreateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public CreateThesaurusResult createThesaurus(CreateThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessControlConfigurationResult deleteAccessControlConfiguration(DeleteAccessControlConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +129,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccessControlConfigurationResult describeAccessControlConfiguration(DescribeAccessControlConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +194,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public GetSnapshotsResult getSnapshots(GetSnapshotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessControlConfigurationsResult listAccessControlConfigurations(ListAccessControlConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -269,6 +289,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccessControlConfigurationResult updateAccessControlConfiguration(UpdateAccessControlConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

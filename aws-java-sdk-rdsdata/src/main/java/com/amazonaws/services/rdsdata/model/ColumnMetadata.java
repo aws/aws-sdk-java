@@ -30,34 +30,22 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the column.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The type of the column.
      * </p>
      */
-    private Integer arrayBaseColumnType;
+    private Integer type;
     /**
      * <p>
-     * A value that indicates whether the column increments automatically.
+     * The database-specific data type of the column.
      * </p>
      */
-    private Boolean isAutoIncrement;
-    /**
-     * <p>
-     * A value that indicates whether the column is case-sensitive.
-     * </p>
-     */
-    private Boolean isCaseSensitive;
-    /**
-     * <p>
-     * A value that indicates whether the column contains currency values.
-     * </p>
-     */
-    private Boolean isCurrency;
-    /**
-     * <p>
-     * A value that indicates whether an integer column is signed.
-     * </p>
-     */
-    private Boolean isSigned;
+    private String typeName;
     /**
      * <p>
      * The label for the column.
@@ -66,10 +54,40 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     private String label;
     /**
      * <p>
-     * The name of the column.
+     * The name of the schema that owns the table that includes the column.
      * </p>
      */
-    private String name;
+    private String schemaName;
+    /**
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
+     */
+    private String tableName;
+    /**
+     * <p>
+     * A value that indicates whether the column increments automatically.
+     * </p>
+     */
+    private Boolean isAutoIncrement;
+    /**
+     * <p>
+     * A value that indicates whether an integer column is signed.
+     * </p>
+     */
+    private Boolean isSigned;
+    /**
+     * <p>
+     * A value that indicates whether the column contains currency values.
+     * </p>
+     */
+    private Boolean isCurrency;
+    /**
+     * <p>
+     * A value that indicates whether the column is case-sensitive.
+     * </p>
+     */
+    private Boolean isCaseSensitive;
     /**
      * <p>
      * A value that indicates whether the column is nullable.
@@ -90,40 +108,62 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     private Integer scale;
     /**
      * <p>
-     * The name of the schema that owns the table that includes the column.
-     * </p>
-     */
-    private String schemaName;
-    /**
-     * <p>
-     * The name of the table that includes the column.
-     * </p>
-     */
-    private String tableName;
-    /**
-     * <p>
      * The type of the column.
      * </p>
      */
-    private Integer type;
+    private Integer arrayBaseColumnType;
+
     /**
      * <p>
-     * The database-specific data type of the column.
+     * The name of the column.
      * </p>
+     * 
+     * @param name
+     *        The name of the column.
      */
-    private String typeName;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the column.
+     * </p>
+     * 
+     * @return The name of the column.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the column.
+     * </p>
+     * 
+     * @param name
+     *        The name of the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnMetadata withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
      * The type of the column.
      * </p>
      * 
-     * @param arrayBaseColumnType
+     * @param type
      *        The type of the column.
      */
 
-    public void setArrayBaseColumnType(Integer arrayBaseColumnType) {
-        this.arrayBaseColumnType = arrayBaseColumnType;
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     /**
@@ -134,8 +174,8 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
      * @return The type of the column.
      */
 
-    public Integer getArrayBaseColumnType() {
-        return this.arrayBaseColumnType;
+    public Integer getType() {
+        return this.type;
     }
 
     /**
@@ -143,13 +183,173 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
      * The type of the column.
      * </p>
      * 
-     * @param arrayBaseColumnType
+     * @param type
      *        The type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ColumnMetadata withArrayBaseColumnType(Integer arrayBaseColumnType) {
-        setArrayBaseColumnType(arrayBaseColumnType);
+    public ColumnMetadata withType(Integer type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
+     * 
+     * @param typeName
+     *        The database-specific data type of the column.
+     */
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    /**
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
+     * 
+     * @return The database-specific data type of the column.
+     */
+
+    public String getTypeName() {
+        return this.typeName;
+    }
+
+    /**
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
+     * 
+     * @param typeName
+     *        The database-specific data type of the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnMetadata withTypeName(String typeName) {
+        setTypeName(typeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The label for the column.
+     * </p>
+     * 
+     * @param label
+     *        The label for the column.
+     */
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * <p>
+     * The label for the column.
+     * </p>
+     * 
+     * @return The label for the column.
+     */
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
+     * <p>
+     * The label for the column.
+     * </p>
+     * 
+     * @param label
+     *        The label for the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnMetadata withLabel(String label) {
+        setLabel(label);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
+     * 
+     * @param schemaName
+     *        The name of the schema that owns the table that includes the column.
+     */
+
+    public void setSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+    }
+
+    /**
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
+     * 
+     * @return The name of the schema that owns the table that includes the column.
+     */
+
+    public String getSchemaName() {
+        return this.schemaName;
+    }
+
+    /**
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
+     * 
+     * @param schemaName
+     *        The name of the schema that owns the table that includes the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnMetadata withSchemaName(String schemaName) {
+        setSchemaName(schemaName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
+     * 
+     * @param tableName
+     *        The name of the table that includes the column.
+     */
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    /**
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
+     * 
+     * @return The name of the table that includes the column.
+     */
+
+    public String getTableName() {
+        return this.tableName;
+    }
+
+    /**
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
+     * 
+     * @param tableName
+     *        The name of the table that includes the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnMetadata withTableName(String tableName) {
+        setTableName(tableName);
         return this;
     }
 
@@ -207,54 +407,54 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that indicates whether the column is case-sensitive.
+     * A value that indicates whether an integer column is signed.
      * </p>
      * 
-     * @param isCaseSensitive
-     *        A value that indicates whether the column is case-sensitive.
+     * @param isSigned
+     *        A value that indicates whether an integer column is signed.
      */
 
-    public void setIsCaseSensitive(Boolean isCaseSensitive) {
-        this.isCaseSensitive = isCaseSensitive;
+    public void setIsSigned(Boolean isSigned) {
+        this.isSigned = isSigned;
     }
 
     /**
      * <p>
-     * A value that indicates whether the column is case-sensitive.
+     * A value that indicates whether an integer column is signed.
      * </p>
      * 
-     * @return A value that indicates whether the column is case-sensitive.
+     * @return A value that indicates whether an integer column is signed.
      */
 
-    public Boolean getIsCaseSensitive() {
-        return this.isCaseSensitive;
+    public Boolean getIsSigned() {
+        return this.isSigned;
     }
 
     /**
      * <p>
-     * A value that indicates whether the column is case-sensitive.
+     * A value that indicates whether an integer column is signed.
      * </p>
      * 
-     * @param isCaseSensitive
-     *        A value that indicates whether the column is case-sensitive.
+     * @param isSigned
+     *        A value that indicates whether an integer column is signed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ColumnMetadata withIsCaseSensitive(Boolean isCaseSensitive) {
-        setIsCaseSensitive(isCaseSensitive);
+    public ColumnMetadata withIsSigned(Boolean isSigned) {
+        setIsSigned(isSigned);
         return this;
     }
 
     /**
      * <p>
-     * A value that indicates whether the column is case-sensitive.
+     * A value that indicates whether an integer column is signed.
      * </p>
      * 
-     * @return A value that indicates whether the column is case-sensitive.
+     * @return A value that indicates whether an integer column is signed.
      */
 
-    public Boolean isCaseSensitive() {
-        return this.isCaseSensitive;
+    public Boolean isSigned() {
+        return this.isSigned;
     }
 
     /**
@@ -311,134 +511,54 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that indicates whether an integer column is signed.
+     * A value that indicates whether the column is case-sensitive.
      * </p>
      * 
-     * @param isSigned
-     *        A value that indicates whether an integer column is signed.
+     * @param isCaseSensitive
+     *        A value that indicates whether the column is case-sensitive.
      */
 
-    public void setIsSigned(Boolean isSigned) {
-        this.isSigned = isSigned;
+    public void setIsCaseSensitive(Boolean isCaseSensitive) {
+        this.isCaseSensitive = isCaseSensitive;
     }
 
     /**
      * <p>
-     * A value that indicates whether an integer column is signed.
+     * A value that indicates whether the column is case-sensitive.
      * </p>
      * 
-     * @return A value that indicates whether an integer column is signed.
+     * @return A value that indicates whether the column is case-sensitive.
      */
 
-    public Boolean getIsSigned() {
-        return this.isSigned;
+    public Boolean getIsCaseSensitive() {
+        return this.isCaseSensitive;
     }
 
     /**
      * <p>
-     * A value that indicates whether an integer column is signed.
+     * A value that indicates whether the column is case-sensitive.
      * </p>
      * 
-     * @param isSigned
-     *        A value that indicates whether an integer column is signed.
+     * @param isCaseSensitive
+     *        A value that indicates whether the column is case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ColumnMetadata withIsSigned(Boolean isSigned) {
-        setIsSigned(isSigned);
+    public ColumnMetadata withIsCaseSensitive(Boolean isCaseSensitive) {
+        setIsCaseSensitive(isCaseSensitive);
         return this;
     }
 
     /**
      * <p>
-     * A value that indicates whether an integer column is signed.
+     * A value that indicates whether the column is case-sensitive.
      * </p>
      * 
-     * @return A value that indicates whether an integer column is signed.
+     * @return A value that indicates whether the column is case-sensitive.
      */
 
-    public Boolean isSigned() {
-        return this.isSigned;
-    }
-
-    /**
-     * <p>
-     * The label for the column.
-     * </p>
-     * 
-     * @param label
-     *        The label for the column.
-     */
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    /**
-     * <p>
-     * The label for the column.
-     * </p>
-     * 
-     * @return The label for the column.
-     */
-
-    public String getLabel() {
-        return this.label;
-    }
-
-    /**
-     * <p>
-     * The label for the column.
-     * </p>
-     * 
-     * @param label
-     *        The label for the column.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ColumnMetadata withLabel(String label) {
-        setLabel(label);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the column.
-     * </p>
-     * 
-     * @param name
-     *        The name of the column.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name of the column.
-     * </p>
-     * 
-     * @return The name of the column.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the column.
-     * </p>
-     * 
-     * @param name
-     *        The name of the column.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ColumnMetadata withName(String name) {
-        setName(name);
-        return this;
+    public Boolean isCaseSensitive() {
+        return this.isCaseSensitive;
     }
 
     /**
@@ -563,95 +683,15 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema that owns the table that includes the column.
-     * </p>
-     * 
-     * @param schemaName
-     *        The name of the schema that owns the table that includes the column.
-     */
-
-    public void setSchemaName(String schemaName) {
-        this.schemaName = schemaName;
-    }
-
-    /**
-     * <p>
-     * The name of the schema that owns the table that includes the column.
-     * </p>
-     * 
-     * @return The name of the schema that owns the table that includes the column.
-     */
-
-    public String getSchemaName() {
-        return this.schemaName;
-    }
-
-    /**
-     * <p>
-     * The name of the schema that owns the table that includes the column.
-     * </p>
-     * 
-     * @param schemaName
-     *        The name of the schema that owns the table that includes the column.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ColumnMetadata withSchemaName(String schemaName) {
-        setSchemaName(schemaName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the table that includes the column.
-     * </p>
-     * 
-     * @param tableName
-     *        The name of the table that includes the column.
-     */
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
-
-    /**
-     * <p>
-     * The name of the table that includes the column.
-     * </p>
-     * 
-     * @return The name of the table that includes the column.
-     */
-
-    public String getTableName() {
-        return this.tableName;
-    }
-
-    /**
-     * <p>
-     * The name of the table that includes the column.
-     * </p>
-     * 
-     * @param tableName
-     *        The name of the table that includes the column.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ColumnMetadata withTableName(String tableName) {
-        setTableName(tableName);
-        return this;
-    }
-
-    /**
-     * <p>
      * The type of the column.
      * </p>
      * 
-     * @param type
+     * @param arrayBaseColumnType
      *        The type of the column.
      */
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setArrayBaseColumnType(Integer arrayBaseColumnType) {
+        this.arrayBaseColumnType = arrayBaseColumnType;
     }
 
     /**
@@ -662,8 +702,8 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
      * @return The type of the column.
      */
 
-    public Integer getType() {
-        return this.type;
+    public Integer getArrayBaseColumnType() {
+        return this.arrayBaseColumnType;
     }
 
     /**
@@ -671,53 +711,13 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
      * The type of the column.
      * </p>
      * 
-     * @param type
+     * @param arrayBaseColumnType
      *        The type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ColumnMetadata withType(Integer type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The database-specific data type of the column.
-     * </p>
-     * 
-     * @param typeName
-     *        The database-specific data type of the column.
-     */
-
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
-    }
-
-    /**
-     * <p>
-     * The database-specific data type of the column.
-     * </p>
-     * 
-     * @return The database-specific data type of the column.
-     */
-
-    public String getTypeName() {
-        return this.typeName;
-    }
-
-    /**
-     * <p>
-     * The database-specific data type of the column.
-     * </p>
-     * 
-     * @param typeName
-     *        The database-specific data type of the column.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ColumnMetadata withTypeName(String typeName) {
-        setTypeName(typeName);
+    public ColumnMetadata withArrayBaseColumnType(Integer arrayBaseColumnType) {
+        setArrayBaseColumnType(arrayBaseColumnType);
         return this;
     }
 
@@ -733,34 +733,34 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArrayBaseColumnType() != null)
-            sb.append("ArrayBaseColumnType: ").append(getArrayBaseColumnType()).append(",");
-        if (getIsAutoIncrement() != null)
-            sb.append("IsAutoIncrement: ").append(getIsAutoIncrement()).append(",");
-        if (getIsCaseSensitive() != null)
-            sb.append("IsCaseSensitive: ").append(getIsCaseSensitive()).append(",");
-        if (getIsCurrency() != null)
-            sb.append("IsCurrency: ").append(getIsCurrency()).append(",");
-        if (getIsSigned() != null)
-            sb.append("IsSigned: ").append(getIsSigned()).append(",");
-        if (getLabel() != null)
-            sb.append("Label: ").append(getLabel()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getTypeName() != null)
+            sb.append("TypeName: ").append(getTypeName()).append(",");
+        if (getLabel() != null)
+            sb.append("Label: ").append(getLabel()).append(",");
+        if (getSchemaName() != null)
+            sb.append("SchemaName: ").append(getSchemaName()).append(",");
+        if (getTableName() != null)
+            sb.append("TableName: ").append(getTableName()).append(",");
+        if (getIsAutoIncrement() != null)
+            sb.append("IsAutoIncrement: ").append(getIsAutoIncrement()).append(",");
+        if (getIsSigned() != null)
+            sb.append("IsSigned: ").append(getIsSigned()).append(",");
+        if (getIsCurrency() != null)
+            sb.append("IsCurrency: ").append(getIsCurrency()).append(",");
+        if (getIsCaseSensitive() != null)
+            sb.append("IsCaseSensitive: ").append(getIsCaseSensitive()).append(",");
         if (getNullable() != null)
             sb.append("Nullable: ").append(getNullable()).append(",");
         if (getPrecision() != null)
             sb.append("Precision: ").append(getPrecision()).append(",");
         if (getScale() != null)
             sb.append("Scale: ").append(getScale()).append(",");
-        if (getSchemaName() != null)
-            sb.append("SchemaName: ").append(getSchemaName()).append(",");
-        if (getTableName() != null)
-            sb.append("TableName: ").append(getTableName()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
-        if (getTypeName() != null)
-            sb.append("TypeName: ").append(getTypeName());
+        if (getArrayBaseColumnType() != null)
+            sb.append("ArrayBaseColumnType: ").append(getArrayBaseColumnType());
         sb.append("}");
         return sb.toString();
     }
@@ -775,33 +775,45 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ColumnMetadata == false)
             return false;
         ColumnMetadata other = (ColumnMetadata) obj;
-        if (other.getArrayBaseColumnType() == null ^ this.getArrayBaseColumnType() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getArrayBaseColumnType() != null && other.getArrayBaseColumnType().equals(this.getArrayBaseColumnType()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getIsAutoIncrement() == null ^ this.getIsAutoIncrement() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getIsAutoIncrement() != null && other.getIsAutoIncrement().equals(this.getIsAutoIncrement()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
-        if (other.getIsCaseSensitive() == null ^ this.getIsCaseSensitive() == null)
+        if (other.getTypeName() == null ^ this.getTypeName() == null)
             return false;
-        if (other.getIsCaseSensitive() != null && other.getIsCaseSensitive().equals(this.getIsCaseSensitive()) == false)
-            return false;
-        if (other.getIsCurrency() == null ^ this.getIsCurrency() == null)
-            return false;
-        if (other.getIsCurrency() != null && other.getIsCurrency().equals(this.getIsCurrency()) == false)
-            return false;
-        if (other.getIsSigned() == null ^ this.getIsSigned() == null)
-            return false;
-        if (other.getIsSigned() != null && other.getIsSigned().equals(this.getIsSigned()) == false)
+        if (other.getTypeName() != null && other.getTypeName().equals(this.getTypeName()) == false)
             return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
         if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getSchemaName() == null ^ this.getSchemaName() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getSchemaName() != null && other.getSchemaName().equals(this.getSchemaName()) == false)
+            return false;
+        if (other.getTableName() == null ^ this.getTableName() == null)
+            return false;
+        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false)
+            return false;
+        if (other.getIsAutoIncrement() == null ^ this.getIsAutoIncrement() == null)
+            return false;
+        if (other.getIsAutoIncrement() != null && other.getIsAutoIncrement().equals(this.getIsAutoIncrement()) == false)
+            return false;
+        if (other.getIsSigned() == null ^ this.getIsSigned() == null)
+            return false;
+        if (other.getIsSigned() != null && other.getIsSigned().equals(this.getIsSigned()) == false)
+            return false;
+        if (other.getIsCurrency() == null ^ this.getIsCurrency() == null)
+            return false;
+        if (other.getIsCurrency() != null && other.getIsCurrency().equals(this.getIsCurrency()) == false)
+            return false;
+        if (other.getIsCaseSensitive() == null ^ this.getIsCaseSensitive() == null)
+            return false;
+        if (other.getIsCaseSensitive() != null && other.getIsCaseSensitive().equals(this.getIsCaseSensitive()) == false)
             return false;
         if (other.getNullable() == null ^ this.getNullable() == null)
             return false;
@@ -815,21 +827,9 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScale() != null && other.getScale().equals(this.getScale()) == false)
             return false;
-        if (other.getSchemaName() == null ^ this.getSchemaName() == null)
+        if (other.getArrayBaseColumnType() == null ^ this.getArrayBaseColumnType() == null)
             return false;
-        if (other.getSchemaName() != null && other.getSchemaName().equals(this.getSchemaName()) == false)
-            return false;
-        if (other.getTableName() == null ^ this.getTableName() == null)
-            return false;
-        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false)
-            return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
-        if (other.getTypeName() == null ^ this.getTypeName() == null)
-            return false;
-        if (other.getTypeName() != null && other.getTypeName().equals(this.getTypeName()) == false)
+        if (other.getArrayBaseColumnType() != null && other.getArrayBaseColumnType().equals(this.getArrayBaseColumnType()) == false)
             return false;
         return true;
     }
@@ -839,20 +839,20 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArrayBaseColumnType() == null) ? 0 : getArrayBaseColumnType().hashCode());
-        hashCode = prime * hashCode + ((getIsAutoIncrement() == null) ? 0 : getIsAutoIncrement().hashCode());
-        hashCode = prime * hashCode + ((getIsCaseSensitive() == null) ? 0 : getIsCaseSensitive().hashCode());
-        hashCode = prime * hashCode + ((getIsCurrency() == null) ? 0 : getIsCurrency().hashCode());
-        hashCode = prime * hashCode + ((getIsSigned() == null) ? 0 : getIsSigned().hashCode());
-        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getSchemaName() == null) ? 0 : getSchemaName().hashCode());
+        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
+        hashCode = prime * hashCode + ((getIsAutoIncrement() == null) ? 0 : getIsAutoIncrement().hashCode());
+        hashCode = prime * hashCode + ((getIsSigned() == null) ? 0 : getIsSigned().hashCode());
+        hashCode = prime * hashCode + ((getIsCurrency() == null) ? 0 : getIsCurrency().hashCode());
+        hashCode = prime * hashCode + ((getIsCaseSensitive() == null) ? 0 : getIsCaseSensitive().hashCode());
         hashCode = prime * hashCode + ((getNullable() == null) ? 0 : getNullable().hashCode());
         hashCode = prime * hashCode + ((getPrecision() == null) ? 0 : getPrecision().hashCode());
         hashCode = prime * hashCode + ((getScale() == null) ? 0 : getScale().hashCode());
-        hashCode = prime * hashCode + ((getSchemaName() == null) ? 0 : getSchemaName().hashCode());
-        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
+        hashCode = prime * hashCode + ((getArrayBaseColumnType() == null) ? 0 : getArrayBaseColumnType().hashCode());
         return hashCode;
     }
 

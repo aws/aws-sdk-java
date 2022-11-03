@@ -36,6 +36,10 @@ public class SuiteDefinitionInformationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultDevices").build();
     private static final MarshallingInfo<Boolean> INTENDEDFORQUALIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("intendedForQualification").build();
+    private static final MarshallingInfo<Boolean> ISLONGDURATIONTEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isLongDurationTest").build();
+    private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("protocol").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
 
@@ -59,6 +63,8 @@ public class SuiteDefinitionInformationMarshaller {
             protocolMarshaller.marshall(suiteDefinitionInformation.getSuiteDefinitionName(), SUITEDEFINITIONNAME_BINDING);
             protocolMarshaller.marshall(suiteDefinitionInformation.getDefaultDevices(), DEFAULTDEVICES_BINDING);
             protocolMarshaller.marshall(suiteDefinitionInformation.getIntendedForQualification(), INTENDEDFORQUALIFICATION_BINDING);
+            protocolMarshaller.marshall(suiteDefinitionInformation.getIsLongDurationTest(), ISLONGDURATIONTEST_BINDING);
+            protocolMarshaller.marshall(suiteDefinitionInformation.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(suiteDefinitionInformation.getCreatedAt(), CREATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

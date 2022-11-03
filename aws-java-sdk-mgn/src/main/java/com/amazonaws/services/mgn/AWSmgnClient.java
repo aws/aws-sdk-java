@@ -221,6 +221,70 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
      * Creates a new ReplicationConfigurationTemplate.
      * </p>
      * 
+     * @param createLaunchConfigurationTemplateRequest
+     * @return Result of the CreateLaunchConfigurationTemplate operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
+     * @sample AWSmgn.CreateLaunchConfigurationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLaunchConfigurationTemplateResult createLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLaunchConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateLaunchConfigurationTemplateResult executeCreateLaunchConfigurationTemplate(
+            CreateLaunchConfigurationTemplateRequest createLaunchConfigurationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLaunchConfigurationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLaunchConfigurationTemplateRequest> request = null;
+        Response<CreateLaunchConfigurationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLaunchConfigurationTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLaunchConfigurationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLaunchConfigurationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLaunchConfigurationTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLaunchConfigurationTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
      * @param createReplicationConfigurationTemplateRequest
      * @return Result of the CreateReplicationConfigurationTemplate operation returned by the service.
      * @throws UninitializedAccountException
@@ -331,6 +395,70 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
+     * @param deleteLaunchConfigurationTemplateRequest
+     * @return Result of the DeleteLaunchConfigurationTemplate operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DeleteLaunchConfigurationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLaunchConfigurationTemplateResult deleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLaunchConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLaunchConfigurationTemplateResult executeDeleteLaunchConfigurationTemplate(
+            DeleteLaunchConfigurationTemplateRequest deleteLaunchConfigurationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLaunchConfigurationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLaunchConfigurationTemplateRequest> request = null;
+        Response<DeleteLaunchConfigurationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLaunchConfigurationTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLaunchConfigurationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLaunchConfigurationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLaunchConfigurationTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLaunchConfigurationTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -639,6 +767,70 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeJobsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
+     * @param describeLaunchConfigurationTemplatesRequest
+     * @return Result of the DescribeLaunchConfigurationTemplates operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.DescribeLaunchConfigurationTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeLaunchConfigurationTemplatesResult describeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLaunchConfigurationTemplates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLaunchConfigurationTemplatesResult executeDescribeLaunchConfigurationTemplates(
+            DescribeLaunchConfigurationTemplatesRequest describeLaunchConfigurationTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLaunchConfigurationTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLaunchConfigurationTemplatesRequest> request = null;
+        Response<DescribeLaunchConfigurationTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLaunchConfigurationTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeLaunchConfigurationTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLaunchConfigurationTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLaunchConfigurationTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeLaunchConfigurationTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1784,6 +1976,72 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLaunchConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateLaunchConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
+     * @param updateLaunchConfigurationTemplateRequest
+     * @return Result of the UpdateLaunchConfigurationTemplate operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
+     * @sample AWSmgn.UpdateLaunchConfigurationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLaunchConfigurationTemplateResult updateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLaunchConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLaunchConfigurationTemplateResult executeUpdateLaunchConfigurationTemplate(
+            UpdateLaunchConfigurationTemplateRequest updateLaunchConfigurationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLaunchConfigurationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLaunchConfigurationTemplateRequest> request = null;
+        Response<UpdateLaunchConfigurationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLaunchConfigurationTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLaunchConfigurationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLaunchConfigurationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLaunchConfigurationTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLaunchConfigurationTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -67,6 +67,11 @@ public class TransitGatewayPropagationStaxUnmarshaller implements Unmarshaller<T
                     transitGatewayPropagation.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("transitGatewayRouteTableAnnouncementId", targetDepth)) {
+                    transitGatewayPropagation.setTransitGatewayRouteTableAnnouncementId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return transitGatewayPropagation;

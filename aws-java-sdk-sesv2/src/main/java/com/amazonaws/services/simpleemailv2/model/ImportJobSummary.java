@@ -39,6 +39,18 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date createdTimestamp;
+    /**
+     * <p>
+     * The current number of records processed.
+     * </p>
+     */
+    private Integer processedRecordsCount;
+    /**
+     * <p>
+     * The number of records that failed processing because of invalid input or other reasons.
+     * </p>
+     */
+    private Integer failedRecordsCount;
 
     /**
      * @param jobId
@@ -173,6 +185,86 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The current number of records processed.
+     * </p>
+     * 
+     * @param processedRecordsCount
+     *        The current number of records processed.
+     */
+
+    public void setProcessedRecordsCount(Integer processedRecordsCount) {
+        this.processedRecordsCount = processedRecordsCount;
+    }
+
+    /**
+     * <p>
+     * The current number of records processed.
+     * </p>
+     * 
+     * @return The current number of records processed.
+     */
+
+    public Integer getProcessedRecordsCount() {
+        return this.processedRecordsCount;
+    }
+
+    /**
+     * <p>
+     * The current number of records processed.
+     * </p>
+     * 
+     * @param processedRecordsCount
+     *        The current number of records processed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportJobSummary withProcessedRecordsCount(Integer processedRecordsCount) {
+        setProcessedRecordsCount(processedRecordsCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of records that failed processing because of invalid input or other reasons.
+     * </p>
+     * 
+     * @param failedRecordsCount
+     *        The number of records that failed processing because of invalid input or other reasons.
+     */
+
+    public void setFailedRecordsCount(Integer failedRecordsCount) {
+        this.failedRecordsCount = failedRecordsCount;
+    }
+
+    /**
+     * <p>
+     * The number of records that failed processing because of invalid input or other reasons.
+     * </p>
+     * 
+     * @return The number of records that failed processing because of invalid input or other reasons.
+     */
+
+    public Integer getFailedRecordsCount() {
+        return this.failedRecordsCount;
+    }
+
+    /**
+     * <p>
+     * The number of records that failed processing because of invalid input or other reasons.
+     * </p>
+     * 
+     * @param failedRecordsCount
+     *        The number of records that failed processing because of invalid input or other reasons.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportJobSummary withFailedRecordsCount(Integer failedRecordsCount) {
+        setFailedRecordsCount(failedRecordsCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +283,11 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
         if (getJobStatus() != null)
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getCreatedTimestamp() != null)
-            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp());
+            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
+        if (getProcessedRecordsCount() != null)
+            sb.append("ProcessedRecordsCount: ").append(getProcessedRecordsCount()).append(",");
+        if (getFailedRecordsCount() != null)
+            sb.append("FailedRecordsCount: ").append(getFailedRecordsCount());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +318,14 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getCreatedTimestamp() != null && other.getCreatedTimestamp().equals(this.getCreatedTimestamp()) == false)
             return false;
+        if (other.getProcessedRecordsCount() == null ^ this.getProcessedRecordsCount() == null)
+            return false;
+        if (other.getProcessedRecordsCount() != null && other.getProcessedRecordsCount().equals(this.getProcessedRecordsCount()) == false)
+            return false;
+        if (other.getFailedRecordsCount() == null ^ this.getFailedRecordsCount() == null)
+            return false;
+        if (other.getFailedRecordsCount() != null && other.getFailedRecordsCount().equals(this.getFailedRecordsCount()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +338,8 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getImportDestination() == null) ? 0 : getImportDestination().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getProcessedRecordsCount() == null) ? 0 : getProcessedRecordsCount().hashCode());
+        hashCode = prime * hashCode + ((getFailedRecordsCount() == null) ? 0 : getFailedRecordsCount().hashCode());
         return hashCode;
     }
 

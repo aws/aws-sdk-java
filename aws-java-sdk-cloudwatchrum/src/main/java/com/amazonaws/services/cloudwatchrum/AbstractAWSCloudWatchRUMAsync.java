@@ -28,6 +28,49 @@ public class AbstractAWSCloudWatchRUMAsync extends AbstractAWSCloudWatchRUM impl
     }
 
     @Override
+    public java.util.concurrent.Future<BatchCreateRumMetricDefinitionsResult> batchCreateRumMetricDefinitionsAsync(
+            BatchCreateRumMetricDefinitionsRequest request) {
+
+        return batchCreateRumMetricDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateRumMetricDefinitionsResult> batchCreateRumMetricDefinitionsAsync(
+            BatchCreateRumMetricDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateRumMetricDefinitionsRequest, BatchCreateRumMetricDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteRumMetricDefinitionsResult> batchDeleteRumMetricDefinitionsAsync(
+            BatchDeleteRumMetricDefinitionsRequest request) {
+
+        return batchDeleteRumMetricDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteRumMetricDefinitionsResult> batchDeleteRumMetricDefinitionsAsync(
+            BatchDeleteRumMetricDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteRumMetricDefinitionsRequest, BatchDeleteRumMetricDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRumMetricDefinitionsResult> batchGetRumMetricDefinitionsAsync(BatchGetRumMetricDefinitionsRequest request) {
+
+        return batchGetRumMetricDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRumMetricDefinitionsResult> batchGetRumMetricDefinitionsAsync(BatchGetRumMetricDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetRumMetricDefinitionsRequest, BatchGetRumMetricDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAppMonitorResult> createAppMonitorAsync(CreateAppMonitorRequest request) {
 
         return createAppMonitorAsync(request, null);
@@ -49,6 +92,19 @@ public class AbstractAWSCloudWatchRUMAsync extends AbstractAWSCloudWatchRUM impl
     @Override
     public java.util.concurrent.Future<DeleteAppMonitorResult> deleteAppMonitorAsync(DeleteAppMonitorRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAppMonitorRequest, DeleteAppMonitorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRumMetricsDestinationResult> deleteRumMetricsDestinationAsync(DeleteRumMetricsDestinationRequest request) {
+
+        return deleteRumMetricsDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRumMetricsDestinationResult> deleteRumMetricsDestinationAsync(DeleteRumMetricsDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRumMetricsDestinationRequest, DeleteRumMetricsDestinationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +149,19 @@ public class AbstractAWSCloudWatchRUMAsync extends AbstractAWSCloudWatchRUM impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListRumMetricsDestinationsResult> listRumMetricsDestinationsAsync(ListRumMetricsDestinationsRequest request) {
+
+        return listRumMetricsDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRumMetricsDestinationsResult> listRumMetricsDestinationsAsync(ListRumMetricsDestinationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRumMetricsDestinationsRequest, ListRumMetricsDestinationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -114,6 +183,19 @@ public class AbstractAWSCloudWatchRUMAsync extends AbstractAWSCloudWatchRUM impl
     @Override
     public java.util.concurrent.Future<PutRumEventsResult> putRumEventsAsync(PutRumEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutRumEventsRequest, PutRumEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRumMetricsDestinationResult> putRumMetricsDestinationAsync(PutRumMetricsDestinationRequest request) {
+
+        return putRumMetricsDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRumMetricsDestinationResult> putRumMetricsDestinationAsync(PutRumMetricsDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRumMetricsDestinationRequest, PutRumMetricsDestinationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -153,6 +235,19 @@ public class AbstractAWSCloudWatchRUMAsync extends AbstractAWSCloudWatchRUM impl
     @Override
     public java.util.concurrent.Future<UpdateAppMonitorResult> updateAppMonitorAsync(UpdateAppMonitorRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAppMonitorRequest, UpdateAppMonitorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRumMetricDefinitionResult> updateRumMetricDefinitionAsync(UpdateRumMetricDefinitionRequest request) {
+
+        return updateRumMetricDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRumMetricDefinitionResult> updateRumMetricDefinitionAsync(UpdateRumMetricDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRumMetricDefinitionRequest, UpdateRumMetricDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

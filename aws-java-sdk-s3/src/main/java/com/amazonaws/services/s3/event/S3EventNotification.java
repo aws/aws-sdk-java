@@ -302,6 +302,114 @@ public class S3EventNotification {
         }
     }
 
+    public static class LifecycleEventDataEntity {
+
+        private final TransitionEventDataEntity transitionEventData;
+
+        @JsonCreator
+        public LifecycleEventDataEntity(
+                @JsonProperty(value = "transitionEventData") TransitionEventDataEntity transitionEventData)
+        {
+
+            this.transitionEventData = transitionEventData;
+        }
+
+        public TransitionEventDataEntity getTransitionEventData() {
+            return transitionEventData;
+        }
+    }
+
+    public static class IntelligentTieringEventDataEntity {
+
+        private final String destinationAccessTier;
+
+        @JsonCreator
+        public IntelligentTieringEventDataEntity(
+                @JsonProperty(value = "destinationAccessTier") String destinationAccessTier)
+        {
+            this.destinationAccessTier = destinationAccessTier;
+        }
+
+        @JsonProperty("destinationAccessTier")
+        public String getDestinationAccessTier() {
+            return destinationAccessTier;
+        }
+    }
+
+    public static class ReplicationEventDataEntity {
+
+        private final String replicationRuleId;
+        private final String destinationBucket;
+        private final String s3Operation;
+        private final String requestTime;
+        private final String failureReason;
+        private final String threshold;
+        private final String replicationTime;
+
+        @JsonCreator
+        public ReplicationEventDataEntity(
+                @JsonProperty(value = "replicationRuleId") String replicationRuleId,
+                @JsonProperty(value = "destinationBucket") String destinationBucket,
+                @JsonProperty(value = "s3Operation") String s3Operation,
+                @JsonProperty(value = "requestTime") String requestTime,
+                @JsonProperty(value = "failureReason") String failureReason,
+                @JsonProperty(value = "threshold") String threshold,
+                @JsonProperty(value = "replicationTime") String replicationTime)
+        {
+            this.replicationRuleId = replicationRuleId;
+            this.destinationBucket = destinationBucket;
+            this.s3Operation = s3Operation;
+            this.requestTime = requestTime;
+            this.failureReason = failureReason;
+            this.threshold = threshold;
+            this.replicationTime = replicationTime;
+        }
+
+        @JsonProperty("replicationRuleId")
+        public String getReplicationRuleId() {
+            return replicationRuleId;
+        }
+        @JsonProperty("destinationBucket")
+        public String getDestinationBucket() {
+            return destinationBucket;
+        }
+        @JsonProperty("s3Operation")
+        public String getS3Operation() {
+            return s3Operation;
+        }
+        @JsonProperty("requestTime")
+        public String getRequestTime() {
+            return requestTime;
+        }
+        @JsonProperty("failureReason")
+        public String getFailureReason() {
+            return failureReason;
+        }
+        @JsonProperty("threshold")
+        public String getThreshold() {
+            return threshold;
+        }
+        @JsonProperty("replicationTime")
+        public String getReplicationTime() {
+            return replicationTime;
+        }
+    }
+
+    public static class TransitionEventDataEntity {
+        private final String destinationStorageClass;
+
+        @JsonCreator
+        public TransitionEventDataEntity(
+                @JsonProperty("destinationStorageClass") String destinationStorageClass)
+        {
+            this.destinationStorageClass = destinationStorageClass;
+        }
+
+        public String getDestinationStorageClass() {
+            return destinationStorageClass;
+        }
+    }
+
     public static class RestoreEventDataEntity {
         private DateTime lifecycleRestorationExpiryTime;
         private final String lifecycleRestoreStorageClass;
@@ -339,6 +447,9 @@ public class S3EventNotification {
         private final S3Entity s3;
         private final UserIdentityEntity userIdentity;
         private final GlacierEventDataEntity glacierEventData;
+        private final LifecycleEventDataEntity lifecycleEventData;
+        private final IntelligentTieringEventDataEntity intelligentTieringEventData;
+        private final ReplicationEventDataEntity replicationEventDataEntity;
 
         @Deprecated
         public S3EventNotificationRecord(
@@ -361,7 +472,38 @@ public class S3EventNotification {
                  responseElements,
                  s3,
                  userIdentity,
+                 null,
+                 null,
+                 null,
                  null);
+        }
+
+        @Deprecated
+        public S3EventNotificationRecord(
+                String awsRegion,
+                String eventName,
+                String eventSource,
+                String eventTime,
+                String eventVersion,
+                RequestParametersEntity requestParameters,
+                ResponseElementsEntity responseElements,
+                S3Entity s3,
+                UserIdentityEntity userIdentity,
+                GlacierEventDataEntity glacierEventData)
+        {
+            this(awsRegion,
+                    eventName,
+                    eventSource,
+                    eventTime,
+                    eventVersion,
+                    requestParameters,
+                    responseElements,
+                    s3,
+                    userIdentity,
+                    glacierEventData,
+                    null,
+                    null,
+                    null);
         }
 
         @JsonCreator
@@ -375,7 +517,10 @@ public class S3EventNotification {
                 @JsonProperty(value = "responseElements") ResponseElementsEntity responseElements,
                 @JsonProperty(value = "s3") S3Entity s3,
                 @JsonProperty(value = "userIdentity") UserIdentityEntity userIdentity,
-                @JsonProperty(value = "glacierEventData") GlacierEventDataEntity glacierEventData)
+                @JsonProperty(value = "glacierEventData") GlacierEventDataEntity glacierEventData,
+                @JsonProperty(value = "lifecycleEventData") LifecycleEventDataEntity lifecycleEventData,
+                @JsonProperty(value = "intelligentTieringEventData") IntelligentTieringEventDataEntity intelligentTieringEventData,
+                @JsonProperty(value = "replicationEventData") ReplicationEventDataEntity replicationEventData)
         {
             this.awsRegion = awsRegion;
             this.eventName = eventName;
@@ -392,6 +537,9 @@ public class S3EventNotification {
             this.s3 = s3;
             this.userIdentity = userIdentity;
             this.glacierEventData = glacierEventData;
+            this.lifecycleEventData = lifecycleEventData;
+            this.intelligentTieringEventData = intelligentTieringEventData;
+            this.replicationEventDataEntity = replicationEventData;
         }
 
         public String getAwsRegion() {
@@ -439,5 +587,12 @@ public class S3EventNotification {
         public GlacierEventDataEntity getGlacierEventData() {
             return glacierEventData;
         }
+
+        public LifecycleEventDataEntity getLifecycleEventData() { return lifecycleEventData; }
+
+        public IntelligentTieringEventDataEntity getIntelligentTieringEventData() { return intelligentTieringEventData; }
+
+        public ReplicationEventDataEntity getReplicationEventDataEntity() { return replicationEventDataEntity; }
+
     }
 }

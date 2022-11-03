@@ -131,7 +131,7 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+            sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPortalArn() != null)
             sb.append("PortalArn: ").append(getPortalArn());
         sb.append("}");

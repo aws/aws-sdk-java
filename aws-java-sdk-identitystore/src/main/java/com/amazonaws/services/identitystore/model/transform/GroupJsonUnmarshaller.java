@@ -56,6 +56,20 @@ public class GroupJsonUnmarshaller implements Unmarshaller<Group, JsonUnmarshall
                     context.nextToken();
                     group.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalIds", targetDepth)) {
+                    context.nextToken();
+                    group.setExternalIds(new ListUnmarshaller<ExternalId>(ExternalIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    group.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IdentityStoreId", targetDepth)) {
+                    context.nextToken();
+                    group.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

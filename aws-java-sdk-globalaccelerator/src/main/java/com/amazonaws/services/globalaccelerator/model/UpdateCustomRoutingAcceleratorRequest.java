@@ -33,14 +33,14 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
     private String acceleratorArn;
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      */
     private String ipAddressType;
@@ -96,13 +96,13 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      * 
      * @param name
-     *        The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *        characters or hyphens (-), and must not begin or end with a hyphen.
+     *        The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     *        characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      */
 
     public void setName(String name) {
@@ -111,12 +111,12 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      * 
-     * @return The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *         characters or hyphens (-), and must not begin or end with a hyphen.
+     * @return The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     *         characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      */
 
     public String getName() {
@@ -125,13 +125,13 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      * 
      * @param name
-     *        The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *        characters or hyphens (-), and must not begin or end with a hyphen.
+     *        The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     *        characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,12 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
      * @param ipAddressType
-     *        The value for the address type must be IPv4.
+     *        The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *        IPV4.
      * @see IpAddressType
      */
 
@@ -156,10 +157,11 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
-     * @return The value for the address type must be IPv4.
+     * @return The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *         IPV4.
      * @see IpAddressType
      */
 
@@ -169,11 +171,12 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
      * @param ipAddressType
-     *        The value for the address type must be IPv4.
+     *        The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *        IPV4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -185,11 +188,12 @@ public class UpdateCustomRoutingAcceleratorRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The value for the address type must be IPv4.
+     * The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
      * </p>
      * 
      * @param ipAddressType
-     *        The value for the address type must be IPv4.
+     *        The IP address type that an accelerator supports. For a custom routing accelerator, the value must be
+     *        IPV4.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

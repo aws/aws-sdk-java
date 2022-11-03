@@ -34,23 +34,23 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call
- * IAM <code>GetRole</code> action or create a service linked role.
+ * IAM <code>GetRole</code> action or create a service-linked role.
  * </p>
  * </li>
  * <li>
  * <p>
  * For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not
- * have permissions:
+ * have the following permissions:
  * </p>
  * <ul>
  * <li>
  * <p>
- * To call IAM <code>GetRole</code> action or create a service linked role.
+ * You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.
  * </p>
  * </li>
  * <li>
  * <p>
- * To read Amazon S3 bucket.
+ * You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
  * </p>
  * </li>
  * </ul>

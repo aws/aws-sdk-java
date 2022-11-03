@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains the rules and additional information about a call analytics category.
+ * Provides you with the properties of the Call Analytics category you specified in your request. This includes the list
+ * of rules that define the specified category.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CategoryProperties" target="_top">AWS API
@@ -30,36 +31,47 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the call analytics category.
+     * The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon
+     * Web Services account.
      * </p>
      */
     private String categoryName;
     /**
      * <p>
-     * The rules used to create a call analytics category.
+     * The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * </p>
      */
     private java.util.List<Rule> rules;
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was created.
+     * The date and time the specified Call Analytics category was created.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was most recently updated.
+     * The date and time the specified Call Analytics category was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      * </p>
      */
     private java.util.Date lastUpdateTime;
 
     /**
      * <p>
-     * The name of the call analytics category.
+     * The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon
+     * Web Services account.
      * </p>
      * 
      * @param categoryName
-     *        The name of the call analytics category.
+     *        The name of the Call Analytics category. Category names are case sensitive and must be unique within an
+     *        Amazon Web Services account.
      */
 
     public void setCategoryName(String categoryName) {
@@ -68,10 +80,12 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the call analytics category.
+     * The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon
+     * Web Services account.
      * </p>
      * 
-     * @return The name of the call analytics category.
+     * @return The name of the Call Analytics category. Category names are case sensitive and must be unique within an
+     *         Amazon Web Services account.
      */
 
     public String getCategoryName() {
@@ -80,11 +94,13 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the call analytics category.
+     * The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon
+     * Web Services account.
      * </p>
      * 
      * @param categoryName
-     *        The name of the call analytics category.
+     *        The name of the Call Analytics category. Category names are case sensitive and must be unique within an
+     *        Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,10 +111,10 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The rules used to create a call analytics category.
+     * The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * </p>
      * 
-     * @return The rules used to create a call analytics category.
+     * @return The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      */
 
     public java.util.List<Rule> getRules() {
@@ -107,11 +123,11 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The rules used to create a call analytics category.
+     * The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * </p>
      * 
      * @param rules
-     *        The rules used to create a call analytics category.
+     *        The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -125,7 +141,7 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The rules used to create a call analytics category.
+     * The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +150,7 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param rules
-     *        The rules used to create a call analytics category.
+     *        The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +166,11 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The rules used to create a call analytics category.
+     * The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * </p>
      * 
      * @param rules
-     *        The rules used to create a call analytics category.
+     *        The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +181,18 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was created.
+     * The date and time the specified Call Analytics category was created.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param createTime
-     *        A timestamp that shows when the call analytics category was created.
+     *        The date and time the specified Call Analytics category was created.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -178,10 +201,17 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was created.
+     * The date and time the specified Call Analytics category was created.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return A timestamp that shows when the call analytics category was created.
+     * @return The date and time the specified Call Analytics category was created.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getCreateTime() {
@@ -190,11 +220,18 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was created.
+     * The date and time the specified Call Analytics category was created.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param createTime
-     *        A timestamp that shows when the call analytics category was created.
+     *        The date and time the specified Call Analytics category was created.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +242,18 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was most recently updated.
+     * The date and time the specified Call Analytics category was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      * </p>
      * 
      * @param lastUpdateTime
-     *        A timestamp that shows when the call analytics category was most recently updated.
+     *        The date and time the specified Call Analytics category was last updated.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -218,10 +262,17 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was most recently updated.
+     * The date and time the specified Call Analytics category was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      * </p>
      * 
-     * @return A timestamp that shows when the call analytics category was most recently updated.
+     * @return The date and time the specified Call Analytics category was last updated.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -230,11 +281,18 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics category was most recently updated.
+     * The date and time the specified Call Analytics category was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      * </p>
      * 
      * @param lastUpdateTime
-     *        A timestamp that shows when the call analytics category was most recently updated.
+     *        The date and time the specified Call Analytics category was last updated.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

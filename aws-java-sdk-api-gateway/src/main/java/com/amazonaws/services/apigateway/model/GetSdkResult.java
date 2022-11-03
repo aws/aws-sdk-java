@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+ * The binary blob response to GetSdk, which contains the generated SDK.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -37,7 +37,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private String contentDisposition;
     /**
      * <p>
-     * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     * The binary blob response to GetSdk, which contains the generated SDK.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -124,7 +124,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     * The binary blob response to GetSdk, which contains the generated SDK.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -138,7 +138,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param body
-     *        The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     *        The binary blob response to GetSdk, which contains the generated SDK.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -147,7 +147,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     * The binary blob response to GetSdk, which contains the generated SDK.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -157,7 +157,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * {@code position}.
      * </p>
      * 
-     * @return The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     * @return The binary blob response to GetSdk, which contains the generated SDK.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -166,7 +166,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     * The binary blob response to GetSdk, which contains the generated SDK.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -180,7 +180,7 @@ public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param body
-     *        The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+     *        The binary blob response to GetSdk, which contains the generated SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

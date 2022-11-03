@@ -60,6 +60,10 @@ public class FPortsJsonUnmarshaller implements Unmarshaller<FPorts, JsonUnmarsha
                     context.nextToken();
                     fPorts.setClockSync(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Positioning", targetDepth)) {
+                    context.nextToken();
+                    fPorts.setPositioning(PositioningJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

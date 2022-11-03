@@ -67,6 +67,17 @@ public class ListChannelMessagesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String chimeBearer;
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when listing the messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -368,6 +379,70 @@ public class ListChannelMessagesRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when listing the messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.</p> <note>
+     *        <p>
+     *        Only required when listing the messages in a SubChannel that the user belongs to.
+     *        </p>
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when listing the messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     * 
+     * @return The ID of the SubChannel in the request.</p> <note>
+     *         <p>
+     *         Only required when listing the messages in a SubChannel that the user belongs to.
+     *         </p>
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when listing the messages in a SubChannel that the user belongs to.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.</p> <note>
+     *        <p>
+     *        Only required when listing the messages in a SubChannel that the user belongs to.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChannelMessagesRequest withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +467,9 @@ public class ListChannelMessagesRequest extends com.amazonaws.AmazonWebServiceRe
         if (getNextToken() != null)
             sb.append("NextToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getChimeBearer() != null)
-            sb.append("ChimeBearer: ").append(getChimeBearer());
+            sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +512,10 @@ public class ListChannelMessagesRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -450,6 +531,7 @@ public class ListChannelMessagesRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

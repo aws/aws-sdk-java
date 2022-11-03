@@ -22,7 +22,8 @@ import javax.annotation.Generated;
  * <p>
  * Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>,
  * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally
- * include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
+ * include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>. Note
+ * that the value for a condition cannot be empty.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition"

@@ -60,6 +60,10 @@ public class StageDeploymentDetailsJsonUnmarshaller implements Unmarshaller<Stag
                     context.nextToken();
                     stageDeploymentDetails.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeploymentResult", targetDepth)) {
+                    context.nextToken();
+                    stageDeploymentDetails.setDeploymentResult(DeploymentResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DeploymentState", targetDepth)) {
                     context.nextToken();
                     stageDeploymentDetails.setDeploymentState(context.getUnmarshaller(String.class).unmarshall(context));

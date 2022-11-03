@@ -92,10 +92,10 @@ public interface AmazonAppConfig {
 
     /**
      * <p>
-     * Creates an application. An application in AppConfig is a logical unit of code that provides capabilities for your
-     * customers. For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile
-     * application installed by your users, a serverless application using Amazon API Gateway and Lambda, or any system
-     * you run on behalf of others.
+     * Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This
+     * organizational construct has a relationship with some unit of executable code. For example, you could create an
+     * application called MyMobileApp to organize and manage configuration data for a mobile application installed by
+     * your users.
      * </p>
      * 
      * @param createApplicationRequest
@@ -178,12 +178,12 @@ public interface AmazonAppConfig {
 
     /**
      * <p>
-     * Creates an environment. For each application, you define one or more environments. An environment is a logical
-     * deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code>
-     * environment. You can also define environments for application subcomponents such as the <code>Web</code>,
-     * <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon
-     * CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm
-     * is triggered, the system rolls back the configuration.
+     * Creates an environment. For each application, you define one or more environments. An environment is a deployment
+     * group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment.
+     * You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
+     * and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each
+     * environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system
+     * rolls back the configuration.
      * </p>
      * 
      * @param createEnvironmentRequest
@@ -199,6 +199,66 @@ public interface AmazonAppConfig {
      *      API Documentation</a>
      */
     CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest createEnvironmentRequest);
+
+    /**
+     * <p>
+     * Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different
+     * points during the AppConfig workflow of creating or deploying a configuration.
+     * </p>
+     * <p>
+     * You can create your own extensions or use the Amazon Web Services-authored extensions provided by AppConfig. For
+     * most use-cases, to create your own extension, you must create an Lambda function to perform any computation and
+     * processing defined in the extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionRequest
+     * @return Result of the CreateExtension operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceQuotaExceededException
+     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
+     *         store. Delete one or more versions and try again.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.CreateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateExtensionResult createExtension(CreateExtensionRequest createExtensionRequest);
+
+    /**
+     * <p>
+     * When you create an extension or configure an Amazon Web Services-authored extension, you associate the extension
+     * with an AppConfig application, environment, or configuration profile. For example, you can choose to run the
+     * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services-authored extension and receive
+     * notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application.
+     * Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An
+     * extension association is a specified relationship between an extension and an AppConfig resource, such as an
+     * application or a configuration profile. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionAssociationRequest
+     * @return Result of the CreateExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws ServiceQuotaExceededException
+     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
+     *         store. Delete one or more versions and try again.
+     * @sample AmazonAppConfig.CreateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateExtensionAssociationResult createExtensionAssociation(CreateExtensionAssociationRequest createExtensionAssociationRequest);
 
     /**
      * <p>
@@ -305,6 +365,44 @@ public interface AmazonAppConfig {
      *      API Documentation</a>
      */
     DeleteEnvironmentResult deleteEnvironment(DeleteEnvironmentRequest deleteEnvironmentRequest);
+
+    /**
+     * <p>
+     * Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension.
+     * </p>
+     * 
+     * @param deleteExtensionRequest
+     * @return Result of the DeleteExtension operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.DeleteExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteExtensionResult deleteExtension(DeleteExtensionRequest deleteExtensionRequest);
+
+    /**
+     * <p>
+     * Deletes an extension association. This action doesn't delete extensions defined in the association.
+     * </p>
+     * 
+     * @param deleteExtensionAssociationRequest
+     * @return Result of the DeleteExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.DeleteExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteExtensionAssociationResult deleteExtensionAssociation(DeleteExtensionAssociationRequest deleteExtensionAssociationRequest);
 
     /**
      * <p>
@@ -468,10 +566,10 @@ public interface AmazonAppConfig {
 
     /**
      * <p>
-     * Retrieves information about an environment. An environment is a logical deployment group of AppConfig
-     * applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code>
-     * environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch
-     * alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
+     * Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such
+     * as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each
+     * configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an
+     * environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -487,6 +585,47 @@ public interface AmazonAppConfig {
      *      Documentation</a>
      */
     GetEnvironmentResult getEnvironment(GetEnvironmentRequest getEnvironmentRequest);
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension.
+     * </p>
+     * 
+     * @param getExtensionRequest
+     * @return Result of the GetExtension operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.GetExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetExtensionResult getExtension(GetExtensionRequest getExtensionRequest);
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension association. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param getExtensionAssociationRequest
+     * @return Result of the GetExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.GetExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetExtensionAssociationResult getExtensionAssociation(GetExtensionAssociationRequest getExtensionAssociationRequest);
 
     /**
      * <p>
@@ -597,6 +736,46 @@ public interface AmazonAppConfig {
      *      Documentation</a>
      */
     ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest listEnvironmentsRequest);
+
+    /**
+     * <p>
+     * Lists all AppConfig extension associations in the account. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionAssociationsRequest
+     * @return Result of the ListExtensionAssociations operation returned by the service.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.ListExtensionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListExtensionAssociationsResult listExtensionAssociations(ListExtensionAssociationsRequest listExtensionAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists all custom and Amazon Web Services-authored AppConfig extensions in the account. For more information about
+     * extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionsRequest
+     * @return Result of the ListExtensions operation returned by the service.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.ListExtensions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExtensionsResult listExtensions(ListExtensionsRequest listExtensionsRequest);
 
     /**
      * <p>
@@ -792,6 +971,50 @@ public interface AmazonAppConfig {
      *      API Documentation</a>
      */
     UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest);
+
+    /**
+     * <p>
+     * Updates an AppConfig extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionRequest
+     * @return Result of the UpdateExtension operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.UpdateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateExtensionResult updateExtension(UpdateExtensionRequest updateExtensionRequest);
+
+    /**
+     * <p>
+     * Updates an association. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionAssociationRequest
+     * @return Result of the UpdateExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.UpdateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateExtensionAssociationResult updateExtensionAssociation(UpdateExtensionAssociationRequest updateExtensionAssociationRequest);
 
     /**
      * <p>

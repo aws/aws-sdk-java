@@ -104,7 +104,7 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      */
     private OutputDataConfig outputDataConfig;
@@ -613,12 +613,12 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      * 
      * @param outputDataConfig
      *        The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     *        include a KMS Key ID to encrypt the file.
+     *        include a KMS key ID to encrypt the file.
      */
 
     public void setOutputDataConfig(OutputDataConfig outputDataConfig) {
@@ -628,11 +628,11 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      * 
      * @return The output data config containing the S3 location where Voice ID writes the job output file; you must
-     *         also include a KMS Key ID to encrypt the file.
+     *         also include a KMS key ID to encrypt the file.
      */
 
     public OutputDataConfig getOutputDataConfig() {
@@ -642,12 +642,12 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      * 
      * @param outputDataConfig
      *        The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     *        include a KMS Key ID to encrypt the file.
+     *        include a KMS key ID to encrypt the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

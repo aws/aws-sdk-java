@@ -133,8 +133,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
-     * instances.
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon
+     * EC2 instances.
      * </p>
      * </li>
      * </ul>
@@ -155,7 +155,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -228,7 +228,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     private String additionalDeploymentStatusInfo;
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <ul>
@@ -273,6 +273,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     private String externalId;
 
     private RelatedDeployments relatedDeployments;
+
+    private AlarmConfiguration overrideAlarmConfiguration;
 
     /**
      * <p>
@@ -879,8 +881,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
-     * instances.
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon
+     * EC2 instances.
      * </p>
      * </li>
      * </ul>
@@ -906,7 +908,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
-     *        EC2 instances.
+     *        Amazon EC2 instances.
      *        </p>
      *        </li>
      * @see DeploymentCreator
@@ -938,8 +940,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
-     * instances.
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon
+     * EC2 instances.
      * </p>
      * </li>
      * </ul>
@@ -964,7 +966,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected
-     *         outdated EC2 instances.
+     *         outdated Amazon EC2 instances.
      *         </p>
      *         </li>
      * @see DeploymentCreator
@@ -996,8 +998,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
-     * instances.
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon
+     * EC2 instances.
      * </p>
      * </li>
      * </ul>
@@ -1023,7 +1025,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
-     *        EC2 instances.
+     *        Amazon EC2 instances.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1057,8 +1059,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
-     * instances.
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon
+     * EC2 instances.
      * </p>
      * </li>
      * </ul>
@@ -1084,7 +1086,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
-     *        EC2 instances.
+     *        Amazon EC2 instances.
      *        </p>
      *        </li>
      * @see DeploymentCreator
@@ -1116,8 +1118,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
-     * instances.
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon
+     * EC2 instances.
      * </p>
      * </li>
      * </ul>
@@ -1143,7 +1145,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
-     *        EC2 instances.
+     *        Amazon EC2 instances.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1170,7 +1172,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -1196,7 +1198,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        is attempted.
      *        </p>
      *        <p>
-     *        During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *        During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      *        <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      *        successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one
      *        of these scripts contains an error and does not run successfully, the deployment can fail.
@@ -1227,7 +1229,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -1252,10 +1254,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *         instance is attempted.
      *         </p>
      *         <p>
-     *         During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the
-     *         previous successful deployment. (All other scripts are run from the AppSpec file in the current
-     *         deployment.) If one of these scripts contains an error and does not run successfully, the deployment can
-     *         fail.
+     *         During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *         <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
+     *         successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If
+     *         one of these scripts contains an error and does not run successfully, the deployment can fail.
      *         </p>
      *         <p>
      *         If the cause of the failure is a script from the last successful deployment that will never run
@@ -1283,7 +1285,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -1309,7 +1311,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        is attempted.
      *        </p>
      *        <p>
-     *        During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *        During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      *        <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      *        successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one
      *        of these scripts contains an error and does not run successfully, the deployment can fail.
@@ -1342,7 +1344,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -1367,10 +1369,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *         instance is attempted.
      *         </p>
      *         <p>
-     *         During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the
-     *         previous successful deployment. (All other scripts are run from the AppSpec file in the current
-     *         deployment.) If one of these scripts contains an error and does not run successfully, the deployment can
-     *         fail.
+     *         During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *         <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
+     *         successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If
+     *         one of these scripts contains an error and does not run successfully, the deployment can fail.
      *         </p>
      *         <p>
      *         If the cause of the failure is a script from the last successful deployment that will never run
@@ -1801,7 +1803,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <ul>
@@ -1825,7 +1827,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <ul>
      *        <li>
@@ -1854,7 +1856,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <ul>
@@ -1877,7 +1879,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     * @return Information about how CodeDeploy handles files that already exist in a deployment target location but
      *         weren't part of the previous successful deployment.</p>
      *         <ul>
      *         <li>
@@ -1906,7 +1908,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <ul>
@@ -1930,7 +1932,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <ul>
      *        <li>
@@ -1961,7 +1963,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <ul>
@@ -1985,7 +1987,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <ul>
      *        <li>
@@ -2014,7 +2016,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <ul>
@@ -2038,7 +2040,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <ul>
      *        <li>
@@ -2291,6 +2293,32 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param overrideAlarmConfiguration
+     */
+
+    public void setOverrideAlarmConfiguration(AlarmConfiguration overrideAlarmConfiguration) {
+        this.overrideAlarmConfiguration = overrideAlarmConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public AlarmConfiguration getOverrideAlarmConfiguration() {
+        return this.overrideAlarmConfiguration;
+    }
+
+    /**
+     * @param overrideAlarmConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentInfo withOverrideAlarmConfiguration(AlarmConfiguration overrideAlarmConfiguration) {
+        setOverrideAlarmConfiguration(overrideAlarmConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2359,7 +2387,9 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getExternalId() != null)
             sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getRelatedDeployments() != null)
-            sb.append("RelatedDeployments: ").append(getRelatedDeployments());
+            sb.append("RelatedDeployments: ").append(getRelatedDeployments()).append(",");
+        if (getOverrideAlarmConfiguration() != null)
+            sb.append("OverrideAlarmConfiguration: ").append(getOverrideAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -2494,6 +2524,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRelatedDeployments() != null && other.getRelatedDeployments().equals(this.getRelatedDeployments()) == false)
             return false;
+        if (other.getOverrideAlarmConfiguration() == null ^ this.getOverrideAlarmConfiguration() == null)
+            return false;
+        if (other.getOverrideAlarmConfiguration() != null && other.getOverrideAlarmConfiguration().equals(this.getOverrideAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2531,6 +2565,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getRelatedDeployments() == null) ? 0 : getRelatedDeployments().hashCode());
+        hashCode = prime * hashCode + ((getOverrideAlarmConfiguration() == null) ? 0 : getOverrideAlarmConfiguration().hashCode());
         return hashCode;
     }
 

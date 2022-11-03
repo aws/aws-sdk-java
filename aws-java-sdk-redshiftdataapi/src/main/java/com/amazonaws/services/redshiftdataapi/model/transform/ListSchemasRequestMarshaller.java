@@ -43,6 +43,8 @@ public class ListSchemasRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaPattern").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SecretArn").build();
+    private static final MarshallingInfo<String> WORKGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkgroupName").build();
 
     private static final ListSchemasRequestMarshaller instance = new ListSchemasRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class ListSchemasRequestMarshaller {
             protocolMarshaller.marshall(listSchemasRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listSchemasRequest.getSchemaPattern(), SCHEMAPATTERN_BINDING);
             protocolMarshaller.marshall(listSchemasRequest.getSecretArn(), SECRETARN_BINDING);
+            protocolMarshaller.marshall(listSchemasRequest.getWorkgroupName(), WORKGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

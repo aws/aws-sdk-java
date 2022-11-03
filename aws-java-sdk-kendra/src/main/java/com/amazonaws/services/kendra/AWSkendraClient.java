@@ -159,9 +159,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Grants users or groups in your Amazon Web Services SSO identity source access to your Amazon Kendra experience.
-     * You can create an Amazon Kendra experience such as a search application. For more information on creating a
-     * search application experience, see <a
+     * Grants users or groups in your IAM Identity Center identity source access to your Amazon Kendra experience. You
+     * can create an Amazon Kendra experience such as a search application. For more information on creating a search
+     * application experience, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
      * experience with no code</a>.
      * </p>
@@ -226,9 +226,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Defines the specific permissions of users or groups in your Amazon Web Services SSO identity source with access
-     * to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For
-     * more information on creating a search application experience, see <a
+     * Defines the specific permissions of users or groups in your IAM Identity Center identity source with access to
+     * your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more
+     * information on creating a search application experience, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
      * experience with no code</a>.
      * </p>
@@ -444,6 +444,11 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch
      * log.
      * </p>
+     * <p>
+     * For an example of ingesting inline documents using Python and Java SDKs, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding files directly to an
+     * index</a>.
+     * </p>
      * 
      * @param batchPutDocumentRequest
      * @return Result of the BatchPutDocument operation returned by the service.
@@ -576,7 +581,94 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Creates a data source that you want to use with an Amazon Kendra index.
+     * Creates an access configuration for your documents. This includes user and group access information for your
+     * documents. This is useful for user context filtering, where search results are filtered based on the user or
+     * their group access to documents.
+     * </p>
+     * <p>
+     * You can use this to re-configure your existing document level access control without indexing all of your
+     * documents again. For example, your index contains top-secret company documents that only certain employees or
+     * users should access. One of these users leaves the company or switches to a team that should be blocked from
+     * accessing top-secret documents. The user still has access to top-secret documents because the user had access
+     * when your documents were previously indexed. You can create a specific access control configuration for the user
+     * with deny access. You can later update the access control configuration to allow access if the user returns to
+     * the company and re-joins the 'top-secret' team. You can re-configure access control for your documents as
+     * circumstances change.
+     * </p>
+     * <p>
+     * To apply your access control configuration to certain documents, you call the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a> API with the
+     * <code>AccessControlConfigurationId</code> included in the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a> object. If you use an S3
+     * bucket as a data source, you update the <code>.metadata.json</code> with the
+     * <code>AccessControlConfigurationId</code> and synchronize your data source. Amazon Kendra currently only supports
+     * access control configuration for S3 data sources and documents indexed using the <code>BatchPutDocument</code>
+     * API.
+     * </p>
+     * 
+     * @param createAccessControlConfigurationRequest
+     * @return Result of the CreateAccessControlConfiguration operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ThrottlingException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @sample AWSkendra.CreateAccessControlConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAccessControlConfigurationResult createAccessControlConfiguration(CreateAccessControlConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccessControlConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccessControlConfigurationResult executeCreateAccessControlConfiguration(
+            CreateAccessControlConfigurationRequest createAccessControlConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAccessControlConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAccessControlConfigurationRequest> request = null;
+        Response<CreateAccessControlConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccessControlConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAccessControlConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessControlConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAccessControlConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAccessControlConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a data source connector that you want to use with an Amazon Kendra index.
      * </p>
      * <p>
      * You specify a name, data source connector type and description for your data source. You also specify
@@ -589,6 +681,12 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * <p>
      * Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a> data
      * sources are the only supported data sources in the Amazon Web Services GovCloud (US-West) region.
+     * </p>
+     * <p>
+     * For an example of creating an index and data source using the Python SDK, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting started with Python SDK</a>. For an
+     * example of creating an index and data source using the Java SDK, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting started with Java SDK</a>.
      * </p>
      * 
      * @param createDataSourceRequest
@@ -652,7 +750,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
     /**
      * <p>
      * Creates an Amazon Kendra experience such as a search application. For more information on creating a search
-     * application experience, see <a
+     * application experience, including using the Python and Java SDKs, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
      * experience with no code</a>.
      * </p>
@@ -721,6 +819,10 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * <p>
      * Adding FAQs to an index is an asynchronous operation.
      * </p>
+     * <p>
+     * For an example of adding an FAQ to an index using Python and Java SDKs, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using your FAQ file</a>.
+     * </p>
      * 
      * @param createFaqRequest
      * @return Result of the CreateFaq operation returned by the service.
@@ -781,13 +883,19 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has
+     * Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has
      * completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The
      * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
      * Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of
      * the supported data sources.
+     * </p>
+     * <p>
+     * For an example of creating an index and data source using the Python SDK, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting started with Python SDK</a>. For an
+     * example of creating an index and data source using the Java SDK, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting started with Java SDK</a>.
      * </p>
      * 
      * @param createIndexRequest
@@ -867,6 +975,11 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud
      * (US-West) region.
      * </p>
+     * <p>
+     * For an example of creating a block list for query suggestions using the Python SDK, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query
+     * suggestions block list</a>.
+     * </p>
      * 
      * @param createQuerySuggestionsBlockListRequest
      * @return Result of the CreateQuerySuggestionsBlockList operation returned by the service.
@@ -932,6 +1045,11 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * <p>
      * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
      * </p>
+     * <p>
+     * For an example of adding a thesaurus file to an index, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/index-synonyms-adding-thesaurus-file.html">Adding custom
+     * synonyms to an index</a>.
+     * </p>
      * 
      * @param createThesaurusRequest
      * @return Result of the CreateThesaurus operation returned by the service.
@@ -992,8 +1110,74 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
-     * While the data source is being deleted, the <code>Status</code> field returned by a call to the
+     * Deletes an access control configuration that you created for your documents in an index. This includes user and
+     * group access information for your documents. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.
+     * </p>
+     * 
+     * @param deleteAccessControlConfigurationRequest
+     * @return Result of the DeleteAccessControlConfiguration operation returned by the service.
+     * @throws ValidationException
+     * @throws ThrottlingException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteAccessControlConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccessControlConfigurationResult deleteAccessControlConfiguration(DeleteAccessControlConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessControlConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessControlConfigurationResult executeDeleteAccessControlConfiguration(
+            DeleteAccessControlConfigurationRequest deleteAccessControlConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessControlConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessControlConfigurationRequest> request = null;
+        Response<DeleteAccessControlConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessControlConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAccessControlConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessControlConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccessControlConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAccessControlConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon Kendra data source connector. An exception is not thrown if the data source is already being
+     * deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the
      * <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
@@ -1455,7 +1639,72 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Gets information about an Amazon Kendra data source.
+     * Gets information about an access control configuration that you created for your documents in an index. This
+     * includes user and group access information for your documents. This is useful for user context filtering, where
+     * search results are filtered based on the user or their group access to documents.
+     * </p>
+     * 
+     * @param describeAccessControlConfigurationRequest
+     * @return Result of the DescribeAccessControlConfiguration operation returned by the service.
+     * @throws ValidationException
+     * @throws ThrottlingException
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeAccessControlConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccessControlConfigurationResult describeAccessControlConfiguration(DescribeAccessControlConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccessControlConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccessControlConfigurationResult executeDescribeAccessControlConfiguration(
+            DescribeAccessControlConfigurationRequest describeAccessControlConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccessControlConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccessControlConfigurationRequest> request = null;
+        Response<DescribeAccessControlConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccessControlConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccessControlConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccessControlConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAccessControlConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAccessControlConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about an Amazon Kendra data source connector.
      * </p>
      * 
      * @param describeDataSourceRequest
@@ -1638,7 +1887,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Describes an existing Amazon Kendra index.
+     * Gets information about an existing Amazon Kendra index.
      * </p>
      * 
      * @param describeIndexRequest
@@ -1767,7 +2016,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Describes a block list used for query suggestions for an index.
+     * Gets information about a block list used for query suggestions for an index.
      * </p>
      * <p>
      * This is used to check the current settings that are applied to a block list.
@@ -1837,7 +2086,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Describes the settings of query suggestions for an index.
+     * Gets information on the settings of query suggestions for an index.
      * </p>
      * <p>
      * This is used to check the current settings applied to query suggestions.
@@ -1906,7 +2155,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Describes an existing Amazon Kendra thesaurus.
+     * Gets information about an existing Amazon Kendra thesaurus.
      * </p>
      * 
      * @param describeThesaurusRequest
@@ -1966,7 +2215,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Prevents users or groups in your Amazon Web Services SSO identity source from accessing your Amazon Kendra
+     * Prevents users or groups in your IAM Identity Center identity source from accessing your Amazon Kendra
      * experience. You can create an Amazon Kendra experience such as a search application. For more information on
      * creating a search application experience, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
@@ -2033,9 +2282,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Removes the specific permissions of users or groups in your Amazon Web Services SSO identity source with access
-     * to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For
-     * more information on creating a search application experience, see <a
+     * Removes the specific permissions of users or groups in your IAM Identity Center identity source with access to
+     * your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more
+     * information on creating a search application experience, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
      * experience with no code</a>.
      * </p>
@@ -2226,7 +2475,72 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Gets statistics about synchronizing Amazon Kendra with a data source.
+     * Lists one or more access control configurations for an index. This includes user and group access information for
+     * your documents. This is useful for user context filtering, where search results are filtered based on the user or
+     * their group access to documents.
+     * </p>
+     * 
+     * @param listAccessControlConfigurationsRequest
+     * @return Result of the ListAccessControlConfigurations operation returned by the service.
+     * @throws ValidationException
+     * @throws ThrottlingException
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListAccessControlConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAccessControlConfigurationsResult listAccessControlConfigurations(ListAccessControlConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessControlConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessControlConfigurationsResult executeListAccessControlConfigurations(
+            ListAccessControlConfigurationsRequest listAccessControlConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessControlConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessControlConfigurationsRequest> request = null;
+        Response<ListAccessControlConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessControlConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAccessControlConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessControlConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccessControlConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAccessControlConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets statistics about synchronizing a data source connector.
      * </p>
      * 
      * @param listDataSourceSyncJobsRequest
@@ -2288,7 +2602,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Lists the data sources that you have created.
+     * Lists the data source connectors that you have created.
      * </p>
      * 
      * @param listDataSourcesRequest
@@ -2408,9 +2722,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Lists users or groups in your Amazon Web Services SSO identity source that are granted access to your Amazon
-     * Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information
-     * on creating a search application experience, see <a
+     * Lists users or groups in your IAM Identity Center identity source that are granted access to your Amazon Kendra
+     * experience. You can create an Amazon Kendra experience such as a search application. For more information on
+     * creating a search application experience, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
      * experience with no code</a>.
      * </p>
@@ -2853,7 +3167,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Lists the Amazon Kendra thesauri associated with an index.
+     * Lists the thesauri for an index.
      * </p>
      * 
      * @param listThesauriRequest
@@ -2922,8 +3236,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * can see top-secret company documents in their search results.
      * </p>
      * <p>
-     * You map users to their groups when you want to filter search results for different users based on their group’s
-     * access to documents. For more information on filtering search results for different users, see <a
+     * This is useful for user context filtering, where search results are filtered based on the user or their group
+     * access to documents. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
      * </p>
      * <p>
@@ -3088,8 +3402,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Starts a synchronization job for a data source. If a synchronization job is already in progress, Amazon Kendra
-     * returns a <code>ResourceInUseException</code> exception.
+     * Starts a synchronization job for a data source connector. If a synchronization job is already in progress, Amazon
+     * Kendra returns a <code>ResourceInUseException</code> exception.
      * </p>
      * 
      * @param startDataSourceSyncJobRequest
@@ -3398,7 +3712,91 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Updates an existing Amazon Kendra data source.
+     * Updates an access control configuration for your documents in an index. This includes user and group access
+     * information for your documents. This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.
+     * </p>
+     * <p>
+     * You can update an access control configuration you created without indexing all of your documents again. For
+     * example, your index contains top-secret company documents that only certain employees or users should access. You
+     * created an 'allow' access control configuration for one user who recently joined the 'top-secret' team, switching
+     * from a team with 'deny' access to top-secret documents. However, the user suddenly returns to their previous team
+     * and should no longer have access to top secret documents. You can update the access control configuration to
+     * re-configure access control for your documents as circumstances change.
+     * </p>
+     * <p>
+     * You call the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a> API to apply
+     * the updated access control configuration, with the <code>AccessControlConfigurationId</code> included in the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a> object. If you use an S3
+     * bucket as a data source, you synchronize your data source to apply the <code>AccessControlConfigurationId</code>
+     * in the <code>.metadata.json</code> file. Amazon Kendra currently only supports access control configuration for
+     * S3 data sources and documents indexed using the <code>BatchPutDocument</code> API.
+     * </p>
+     * 
+     * @param updateAccessControlConfigurationRequest
+     * @return Result of the UpdateAccessControlConfiguration operation returned by the service.
+     * @throws ValidationException
+     * @throws ThrottlingException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateAccessControlConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccessControlConfigurationResult updateAccessControlConfiguration(UpdateAccessControlConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccessControlConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccessControlConfigurationResult executeUpdateAccessControlConfiguration(
+            UpdateAccessControlConfigurationRequest updateAccessControlConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccessControlConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccessControlConfigurationRequest> request = null;
+        Response<UpdateAccessControlConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccessControlConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAccessControlConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccessControlConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccessControlConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAccessControlConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing Amazon Kendra data source connector.
      * </p>
      * 
      * @param updateDataSourceRequest
@@ -3745,7 +4143,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Updates a thesaurus file associated with an index.
+     * Updates a thesaurus for an index.
      * </p>
      * 
      * @param updateThesaurusRequest

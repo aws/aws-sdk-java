@@ -28,6 +28,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<AttachCustomerManagedPolicyReferenceToPermissionSetResult> attachCustomerManagedPolicyReferenceToPermissionSetAsync(
+            AttachCustomerManagedPolicyReferenceToPermissionSetRequest request) {
+
+        return attachCustomerManagedPolicyReferenceToPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachCustomerManagedPolicyReferenceToPermissionSetResult> attachCustomerManagedPolicyReferenceToPermissionSetAsync(
+            AttachCustomerManagedPolicyReferenceToPermissionSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<AttachCustomerManagedPolicyReferenceToPermissionSetRequest, AttachCustomerManagedPolicyReferenceToPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachManagedPolicyToPermissionSetResult> attachManagedPolicyToPermissionSetAsync(
             AttachManagedPolicyToPermissionSetRequest request) {
 
@@ -140,6 +155,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePermissionsBoundaryFromPermissionSetResult> deletePermissionsBoundaryFromPermissionSetAsync(
+            DeletePermissionsBoundaryFromPermissionSetRequest request) {
+
+        return deletePermissionsBoundaryFromPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionsBoundaryFromPermissionSetResult> deletePermissionsBoundaryFromPermissionSetAsync(
+            DeletePermissionsBoundaryFromPermissionSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionsBoundaryFromPermissionSetRequest, DeletePermissionsBoundaryFromPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountAssignmentCreationStatusResult> describeAccountAssignmentCreationStatusAsync(
             DescribeAccountAssignmentCreationStatusRequest request) {
 
@@ -213,6 +243,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DetachCustomerManagedPolicyReferenceFromPermissionSetResult> detachCustomerManagedPolicyReferenceFromPermissionSetAsync(
+            DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request) {
+
+        return detachCustomerManagedPolicyReferenceFromPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachCustomerManagedPolicyReferenceFromPermissionSetResult> detachCustomerManagedPolicyReferenceFromPermissionSetAsync(
+            DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachManagedPolicyFromPermissionSetResult> detachManagedPolicyFromPermissionSetAsync(
             DetachManagedPolicyFromPermissionSetRequest request) {
 
@@ -238,6 +283,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<GetInlinePolicyForPermissionSetResult> getInlinePolicyForPermissionSetAsync(
             GetInlinePolicyForPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInlinePolicyForPermissionSetRequest, GetInlinePolicyForPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionsBoundaryForPermissionSetResult> getPermissionsBoundaryForPermissionSetAsync(
+            GetPermissionsBoundaryForPermissionSetRequest request) {
+
+        return getPermissionsBoundaryForPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionsBoundaryForPermissionSetResult> getPermissionsBoundaryForPermissionSetAsync(
+            GetPermissionsBoundaryForPermissionSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionsBoundaryForPermissionSetRequest, GetPermissionsBoundaryForPermissionSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -296,6 +356,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<ListAccountsForProvisionedPermissionSetResult> listAccountsForProvisionedPermissionSetAsync(
             ListAccountsForProvisionedPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomerManagedPolicyReferencesInPermissionSetResult> listCustomerManagedPolicyReferencesInPermissionSetAsync(
+            ListCustomerManagedPolicyReferencesInPermissionSetRequest request) {
+
+        return listCustomerManagedPolicyReferencesInPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomerManagedPolicyReferencesInPermissionSetResult> listCustomerManagedPolicyReferencesInPermissionSetAsync(
+            ListCustomerManagedPolicyReferencesInPermissionSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -406,6 +481,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     @Override
     public java.util.concurrent.Future<PutInlinePolicyToPermissionSetResult> putInlinePolicyToPermissionSetAsync(PutInlinePolicyToPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<PutInlinePolicyToPermissionSetRequest, PutInlinePolicyToPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionsBoundaryToPermissionSetResult> putPermissionsBoundaryToPermissionSetAsync(
+            PutPermissionsBoundaryToPermissionSetRequest request) {
+
+        return putPermissionsBoundaryToPermissionSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionsBoundaryToPermissionSetResult> putPermissionsBoundaryToPermissionSetAsync(
+            PutPermissionsBoundaryToPermissionSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionsBoundaryToPermissionSetRequest, PutPermissionsBoundaryToPermissionSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -31,7 +31,7 @@ public class AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails imp
 
     /**
      * <p>
-     * The type of environment file.
+     * The type of environment file. The valid value is <code>s3</code>.
      * </p>
      */
     private String type;
@@ -44,11 +44,11 @@ public class AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails imp
 
     /**
      * <p>
-     * The type of environment file.
+     * The type of environment file. The valid value is <code>s3</code>.
      * </p>
      * 
      * @param type
-     *        The type of environment file.
+     *        The type of environment file. The valid value is <code>s3</code>.
      */
 
     public void setType(String type) {
@@ -57,10 +57,10 @@ public class AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails imp
 
     /**
      * <p>
-     * The type of environment file.
+     * The type of environment file. The valid value is <code>s3</code>.
      * </p>
      * 
-     * @return The type of environment file.
+     * @return The type of environment file. The valid value is <code>s3</code>.
      */
 
     public String getType() {
@@ -69,11 +69,11 @@ public class AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails imp
 
     /**
      * <p>
-     * The type of environment file.
+     * The type of environment file. The valid value is <code>s3</code>.
      * </p>
      * 
      * @param type
-     *        The type of environment file.
+     *        The type of environment file. The valid value is <code>s3</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

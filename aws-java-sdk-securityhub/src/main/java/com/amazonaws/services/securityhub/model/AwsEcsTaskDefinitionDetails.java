@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * details about a task definition. A task definition describes the container and volume definitions of an Amazon
+ * Details about a task definition. A task definition describes the container and volume definitions of an Amazon
  * Elastic Container Service task.
  * </p>
  * 
@@ -37,8 +37,35 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
     private java.util.List<AwsEcsTaskDefinitionContainerDefinitionsDetails> containerDefinitions;
     /**
      * <p>
-     * The number of CPU units used by the task.
+     * The number of CPU units used by the task.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>256 (.25 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>512 (.5 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>1024 (1 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2048 (2 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4096 (4 vCPU)</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String cpu;
     /**
@@ -62,25 +89,73 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
     private java.util.List<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> inferenceAccelerators;
     /**
      * <p>
-     * The IPC resource namespace to use for the containers in the task.
+     * The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are
+     * as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>task</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String ipcMode;
     /**
      * <p>
      * The amount (in MiB) of memory used by the task.
      * </p>
+     * <p>
+     * For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory
+     * value. For tasks that are hosted on Fargate, you must use one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     * >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines
+     * your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
+     * </p>
      */
     private String memory;
     /**
      * <p>
-     * The Docker networking mode to use for the containers in the task.
+     * The Docker networking mode to use for the containers in the task. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>awsvpc</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bridge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String networkMode;
     /**
      * <p>
-     * The process namespace to use for the containers in the task.
+     * The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     * <code>task</code>.
      * </p>
      */
     private String pidMode;
@@ -188,11 +263,64 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The number of CPU units used by the task.
+     * The number of CPU units used by the task.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>256 (.25 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>512 (.5 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>1024 (1 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2048 (2 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4096 (4 vCPU)</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cpu
-     *        The number of CPU units used by the task.
+     *        The number of CPU units used by the task.Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>256 (.25 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>512 (.5 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>1024 (1 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>2048 (2 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>4096 (4 vCPU)</code>
+     *        </p>
+     *        </li>
      */
 
     public void setCpu(String cpu) {
@@ -201,10 +329,63 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The number of CPU units used by the task.
+     * The number of CPU units used by the task.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>256 (.25 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>512 (.5 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>1024 (1 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2048 (2 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4096 (4 vCPU)</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The number of CPU units used by the task.
+     * @return The number of CPU units used by the task.Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>256 (.25 vCPU)</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>512 (.5 vCPU)</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>1024 (1 vCPU)</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>2048 (2 vCPU)</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>4096 (4 vCPU)</code>
+     *         </p>
+     *         </li>
      */
 
     public String getCpu() {
@@ -213,11 +394,64 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The number of CPU units used by the task.
+     * The number of CPU units used by the task.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>256 (.25 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>512 (.5 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>1024 (1 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2048 (2 vCPU)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4096 (4 vCPU)</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cpu
-     *        The number of CPU units used by the task.
+     *        The number of CPU units used by the task.Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>256 (.25 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>512 (.5 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>1024 (1 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>2048 (2 vCPU)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>4096 (4 vCPU)</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,11 +618,46 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The IPC resource namespace to use for the containers in the task.
+     * The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are
+     * as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>task</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param ipcMode
-     *        The IPC resource namespace to use for the containers in the task.
+     *        The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid
+     *        values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>host</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>task</code>
+     *        </p>
+     *        </li>
      */
 
     public void setIpcMode(String ipcMode) {
@@ -397,10 +666,45 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The IPC resource namespace to use for the containers in the task.
+     * The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are
+     * as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>task</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The IPC resource namespace to use for the containers in the task.
+     * @return The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid
+     *         values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>host</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>none</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>task</code>
+     *         </p>
+     *         </li>
      */
 
     public String getIpcMode() {
@@ -409,11 +713,46 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The IPC resource namespace to use for the containers in the task.
+     * The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are
+     * as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>task</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param ipcMode
-     *        The IPC resource namespace to use for the containers in the task.
+     *        The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid
+     *        values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>host</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>task</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,9 +765,22 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
      * <p>
      * The amount (in MiB) of memory used by the task.
      * </p>
+     * <p>
+     * For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory
+     * value. For tasks that are hosted on Fargate, you must use one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     * >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines
+     * your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
+     * </p>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task.
+     *        The amount (in MiB) of memory used by the task. </p>
+     *        <p>
+     *        For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level
+     *        memory value. For tasks that are hosted on Fargate, you must use one of the <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     *        >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which
+     *        determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
      */
 
     public void setMemory(String memory) {
@@ -439,8 +791,21 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
      * <p>
      * The amount (in MiB) of memory used by the task.
      * </p>
+     * <p>
+     * For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory
+     * value. For tasks that are hosted on Fargate, you must use one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     * >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines
+     * your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
+     * </p>
      * 
-     * @return The amount (in MiB) of memory used by the task.
+     * @return The amount (in MiB) of memory used by the task. </p>
+     *         <p>
+     *         For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level
+     *         memory value. For tasks that are hosted on Fargate, you must use one of the <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     *         >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which
+     *         determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
      */
 
     public String getMemory() {
@@ -451,9 +816,22 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
      * <p>
      * The amount (in MiB) of memory used by the task.
      * </p>
+     * <p>
+     * For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory
+     * value. For tasks that are hosted on Fargate, you must use one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     * >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines
+     * your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
+     * </p>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task.
+     *        The amount (in MiB) of memory used by the task. </p>
+     *        <p>
+     *        For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level
+     *        memory value. For tasks that are hosted on Fargate, you must use one of the <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size"
+     *        >specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which
+     *        determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,11 +842,54 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Docker networking mode to use for the containers in the task.
+     * The Docker networking mode to use for the containers in the task. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>awsvpc</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bridge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param networkMode
-     *        The Docker networking mode to use for the containers in the task.
+     *        The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>awsvpc</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bridge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>host</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>
+     *        </p>
+     *        </li>
      */
 
     public void setNetworkMode(String networkMode) {
@@ -477,10 +898,53 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Docker networking mode to use for the containers in the task.
+     * The Docker networking mode to use for the containers in the task. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>awsvpc</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bridge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Docker networking mode to use for the containers in the task.
+     * @return The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>awsvpc</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bridge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>host</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>none</code>
+     *         </p>
+     *         </li>
      */
 
     public String getNetworkMode() {
@@ -489,11 +953,54 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Docker networking mode to use for the containers in the task.
+     * The Docker networking mode to use for the containers in the task. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>awsvpc</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bridge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param networkMode
-     *        The Docker networking mode to use for the containers in the task.
+     *        The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>awsvpc</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bridge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>host</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,11 +1011,13 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The process namespace to use for the containers in the task.
+     * The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     * <code>task</code>.
      * </p>
      * 
      * @param pidMode
-     *        The process namespace to use for the containers in the task.
+     *        The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     *        <code>task</code>.
      */
 
     public void setPidMode(String pidMode) {
@@ -517,10 +1026,12 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The process namespace to use for the containers in the task.
+     * The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     * <code>task</code>.
      * </p>
      * 
-     * @return The process namespace to use for the containers in the task.
+     * @return The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     *         <code>task</code>.
      */
 
     public String getPidMode() {
@@ -529,11 +1040,13 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The process namespace to use for the containers in the task.
+     * The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     * <code>task</code>.
      * </p>
      * 
      * @param pidMode
-     *        The process namespace to use for the containers in the task.
+     *        The process namespace to use for the containers in the task. Valid values are <code>host</code> or
+     *        <code>task</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,6 +41,12 @@ public class OrganizationDataSourceConfigurations implements Serializable, Clone
      * </p>
      */
     private OrganizationKubernetesConfiguration kubernetes;
+    /**
+     * <p>
+     * Describes the configuration of Malware Protection for new members of the organization.
+     * </p>
+     */
+    private OrganizationMalwareProtectionConfiguration malwareProtection;
 
     /**
      * <p>
@@ -123,6 +129,46 @@ public class OrganizationDataSourceConfigurations implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Describes the configuration of Malware Protection for new members of the organization.
+     * </p>
+     * 
+     * @param malwareProtection
+     *        Describes the configuration of Malware Protection for new members of the organization.
+     */
+
+    public void setMalwareProtection(OrganizationMalwareProtectionConfiguration malwareProtection) {
+        this.malwareProtection = malwareProtection;
+    }
+
+    /**
+     * <p>
+     * Describes the configuration of Malware Protection for new members of the organization.
+     * </p>
+     * 
+     * @return Describes the configuration of Malware Protection for new members of the organization.
+     */
+
+    public OrganizationMalwareProtectionConfiguration getMalwareProtection() {
+        return this.malwareProtection;
+    }
+
+    /**
+     * <p>
+     * Describes the configuration of Malware Protection for new members of the organization.
+     * </p>
+     * 
+     * @param malwareProtection
+     *        Describes the configuration of Malware Protection for new members of the organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrganizationDataSourceConfigurations withMalwareProtection(OrganizationMalwareProtectionConfiguration malwareProtection) {
+        setMalwareProtection(malwareProtection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -137,7 +183,9 @@ public class OrganizationDataSourceConfigurations implements Serializable, Clone
         if (getS3Logs() != null)
             sb.append("S3Logs: ").append(getS3Logs()).append(",");
         if (getKubernetes() != null)
-            sb.append("Kubernetes: ").append(getKubernetes());
+            sb.append("Kubernetes: ").append(getKubernetes()).append(",");
+        if (getMalwareProtection() != null)
+            sb.append("MalwareProtection: ").append(getMalwareProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +208,10 @@ public class OrganizationDataSourceConfigurations implements Serializable, Clone
             return false;
         if (other.getKubernetes() != null && other.getKubernetes().equals(this.getKubernetes()) == false)
             return false;
+        if (other.getMalwareProtection() == null ^ this.getMalwareProtection() == null)
+            return false;
+        if (other.getMalwareProtection() != null && other.getMalwareProtection().equals(this.getMalwareProtection()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +222,7 @@ public class OrganizationDataSourceConfigurations implements Serializable, Clone
 
         hashCode = prime * hashCode + ((getS3Logs() == null) ? 0 : getS3Logs().hashCode());
         hashCode = prime * hashCode + ((getKubernetes() == null) ? 0 : getKubernetes().hashCode());
+        hashCode = prime * hashCode + ((getMalwareProtection() == null) ? 0 : getMalwareProtection().hashCode());
         return hashCode;
     }
 

@@ -17,13 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a collection of <a>Authorizer</a> resources.
+ * Represents a collection of Authorizer resources.
  * </p>
- * <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use Lambda
- * Function as Authorizer</a> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
- * Cognito User Pool as Authorizer</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

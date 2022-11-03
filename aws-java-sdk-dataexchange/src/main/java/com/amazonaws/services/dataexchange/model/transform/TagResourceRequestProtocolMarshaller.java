@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TagResourceRequestProtocolMarshaller implements Marshaller<Request<TagResourceRequest>, TagResourceRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/tags/{resource-arn}")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/tags/{ResourceArn}")
             .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSDataExchange").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

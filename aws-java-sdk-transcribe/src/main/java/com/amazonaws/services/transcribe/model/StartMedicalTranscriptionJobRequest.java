@@ -27,35 +27,40 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
-     * themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to
-     * create a medical transcription job with the same name as a previous medical transcription job, you get a
-     * <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * default name of your transcription output file. If you want to specify a different name for your transcription
+     * output, use the <code>OutputKey</code> parameter.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      */
     private String medicalTranscriptionJobName;
     /**
      * <p>
-     * The language code for the language spoken in the input media file. US English (en-US) is the valid value for
-     * medical transcription jobs. Any other value you enter for language code results in a
+     * The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is
+     * the only valid value for medical transcription jobs. Any other value you enter for language code results in a
      * <code>BadRequestException</code> error.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz, of the audio track in your input media file.
      * </p>
      * <p>
-     * If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify
-     * the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave
-     * the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.
+     * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
+     * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
+     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      */
     private Integer mediaSampleRateHertz;
     /**
      * <p>
-     * The audio format of the input media file.
+     * Specify the format of your input media file.
      * </p>
      */
     private String mediaFormat;
@@ -63,146 +68,213 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     private Media media;
     /**
      * <p>
-     * The Amazon S3 location where the transcription is stored.
+     * The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the
+     * <code>S3://</code> prefix of the specified bucket.
      * </p>
      * <p>
-     * You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription results. Your
-     * transcript appears in the S3 location you specify. When you call the <a>GetMedicalTranscriptionJob</a>, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions
-     * that allow Amazon Transcribe Medical to put files in the bucket. For more information, see <a href=
+     * If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     * parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     * </p>
+     * <p>
+     * For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     * <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in
+     * <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     * <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     * </p>
+     * <p>
+     * Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     * permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See
+     * also <a href=
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     * transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon
-     * Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that are placed in
-     * your S3 bucket.
+     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      */
     private String outputBucketName;
     /**
      * <p>
-     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and,
+     * optionally, a unique name for your output file. The default name for your transcription output is the same as the
+     * name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).
      * </p>
      * <p>
-     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
-     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * Here are some examples of how you can use <code>OutputKey</code>:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
-     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
-     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
-     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
-     * the file name, for example "folder/my-other-job-name.json".
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     * <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>
+     * .
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'my-transcript' as the <code>OutputKey</code>, your transcription output
+     * path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json' as
+     * the <code>OutputKey</code>, your transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your
+     * transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      * </p>
      */
     private String outputKey;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt the
-     * output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have
-     * permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your medical transcription output.
      * </p>
      * <p>
-     * You use either of the following to identify a KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the medical transcription job is encrypted with the default
-     * Amazon S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      */
     private String outputEncryptionKMSKeyId;
     /**
      * <p>
      * A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer
-     * of security for your data.
+     * of security for your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     * context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
+     * keys in KMS</a>.
      * </p>
      */
     private java.util.Map<String, String> kMSEncryptionContext;
     /**
      * <p>
-     * Optional settings for the medical transcription job.
+     * Specify additional optional settings in your request, including channel identification, alternative
+     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      * </p>
      */
     private MedicalTranscriptionSetting settings;
     /**
      * <p>
-     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
-     * the transcription output.
+     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
+     * in a transcription</a>.
      * </p>
      */
     private String contentIdentificationType;
     /**
      * <p>
-     * The medical specialty of any clinician speaking in the input media.
+     * Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     * <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * </p>
      */
     private String specialty;
     /**
      * <p>
-     * The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more
-     * speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker
-     * dictated speech, such as clinical notes.
+     * Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation
+     * between two people (<code>CONVERSATION</code>).
+     * </p>
+     * <p>
+     * For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos;
+     * <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office
+     * visit.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Add tags to an Amazon Transcribe Medical transcription job.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the
+     * time you start this new job.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
-     * themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to
-     * create a medical transcription job with the same name as a previous medical transcription job, you get a
-     * <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * default name of your transcription output file. If you want to specify a different name for your transcription
+     * output, use the <code>OutputKey</code> parameter.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
-     *        by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you
-     *        try to create a medical transcription job with the same name as a previous medical transcription job, you
-     *        get a <code>ConflictException</code> error.
+     *        A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     *        default name of your transcription output file. If you want to specify a different name for your
+     *        transcription output, use the <code>OutputKey</code> parameter.</p>
+     *        <p>
+     *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+     *        account. If you try to create a new job with the same name as an existing job, you get a
+     *        <code>ConflictException</code> error.
      */
 
     public void setMedicalTranscriptionJobName(String medicalTranscriptionJobName) {
@@ -211,16 +283,23 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
-     * themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to
-     * create a medical transcription job with the same name as a previous medical transcription job, you get a
-     * <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * default name of your transcription output file. If you want to specify a different name for your transcription
+     * output, use the <code>OutputKey</code> parameter.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      * 
-     * @return The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>
-     *         " by themselves as the job name. The name must also be unique within an Amazon Web Services account. If
-     *         you try to create a medical transcription job with the same name as a previous medical transcription job,
-     *         you get a <code>ConflictException</code> error.
+     * @return A unique name, chosen by you, for your medical transcription job. The name you specify is also used as
+     *         the default name of your transcription output file. If you want to specify a different name for your
+     *         transcription output, use the <code>OutputKey</code> parameter.</p>
+     *         <p>
+     *         This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+     *         account. If you try to create a new job with the same name as an existing job, you get a
+     *         <code>ConflictException</code> error.
      */
 
     public String getMedicalTranscriptionJobName() {
@@ -229,17 +308,24 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
-     * themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to
-     * create a medical transcription job with the same name as a previous medical transcription job, you get a
-     * <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * default name of your transcription output file. If you want to specify a different name for your transcription
+     * output, use the <code>OutputKey</code> parameter.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
-     *        by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you
-     *        try to create a medical transcription job with the same name as a previous medical transcription job, you
-     *        get a <code>ConflictException</code> error.
+     *        A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     *        default name of your transcription output file. If you want to specify a different name for your
+     *        transcription output, use the <code>OutputKey</code> parameter.</p>
+     *        <p>
+     *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+     *        account. If you try to create a new job with the same name as an existing job, you get a
+     *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,15 +336,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code for the language spoken in the input media file. US English (en-US) is the valid value for
-     * medical transcription jobs. Any other value you enter for language code results in a
+     * The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is
+     * the only valid value for medical transcription jobs. Any other value you enter for language code results in a
      * <code>BadRequestException</code> error.
      * </p>
      * 
      * @param languageCode
-     *        The language code for the language spoken in the input media file. US English (en-US) is the valid value
-     *        for medical transcription jobs. Any other value you enter for language code results in a
-     *        <code>BadRequestException</code> error.
+     *        The language code that represents the language spoken in the input media file. US English (
+     *        <code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for
+     *        language code results in a <code>BadRequestException</code> error.
      * @see LanguageCode
      */
 
@@ -268,14 +354,14 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code for the language spoken in the input media file. US English (en-US) is the valid value for
-     * medical transcription jobs. Any other value you enter for language code results in a
+     * The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is
+     * the only valid value for medical transcription jobs. Any other value you enter for language code results in a
      * <code>BadRequestException</code> error.
      * </p>
      * 
-     * @return The language code for the language spoken in the input media file. US English (en-US) is the valid value
-     *         for medical transcription jobs. Any other value you enter for language code results in a
-     *         <code>BadRequestException</code> error.
+     * @return The language code that represents the language spoken in the input media file. US English (
+     *         <code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for
+     *         language code results in a <code>BadRequestException</code> error.
      * @see LanguageCode
      */
 
@@ -285,15 +371,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code for the language spoken in the input media file. US English (en-US) is the valid value for
-     * medical transcription jobs. Any other value you enter for language code results in a
+     * The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is
+     * the only valid value for medical transcription jobs. Any other value you enter for language code results in a
      * <code>BadRequestException</code> error.
      * </p>
      * 
      * @param languageCode
-     *        The language code for the language spoken in the input media file. US English (en-US) is the valid value
-     *        for medical transcription jobs. Any other value you enter for language code results in a
-     *        <code>BadRequestException</code> error.
+     *        The language code that represents the language spoken in the input media file. US English (
+     *        <code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for
+     *        language code results in a <code>BadRequestException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -305,15 +391,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code for the language spoken in the input media file. US English (en-US) is the valid value for
-     * medical transcription jobs. Any other value you enter for language code results in a
+     * The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is
+     * the only valid value for medical transcription jobs. Any other value you enter for language code results in a
      * <code>BadRequestException</code> error.
      * </p>
      * 
      * @param languageCode
-     *        The language code for the language spoken in the input media file. US English (en-US) is the valid value
-     *        for medical transcription jobs. Any other value you enter for language code results in a
-     *        <code>BadRequestException</code> error.
+     *        The language code that represents the language spoken in the input media file. US English (
+     *        <code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for
+     *        language code results in a <code>BadRequestException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -325,21 +411,23 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz, of the audio track in your input media file.
      * </p>
      * <p>
-     * If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify
-     * the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave
-     * the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.
+     * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
+     * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
+     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in the input media file.</p>
+     *        The sample rate, in Hertz, of the audio track in your input media file.</p>
      *        <p>
-     *        If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you
-     *        specify the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you
-     *        should leave the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine
-     *        the sample rate.
+     *        If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you
+     *        specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a
+     *        mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases,
+     *        it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the
+     *        sample rate.
      */
 
     public void setMediaSampleRateHertz(Integer mediaSampleRateHertz) {
@@ -348,20 +436,22 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz, of the audio track in your input media file.
      * </p>
      * <p>
-     * If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify
-     * the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave
-     * the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.
+     * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
+     * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
+     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in the input media file.</p>
+     * @return The sample rate, in Hertz, of the audio track in your input media file.</p>
      *         <p>
-     *         If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you
-     *         specify the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you
-     *         should leave the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical
-     *         determine the sample rate.
+     *         If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you
+     *         specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a
+     *         mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases,
+     *         it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the
+     *         sample rate.
      */
 
     public Integer getMediaSampleRateHertz() {
@@ -370,21 +460,23 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz, of the audio track in your input media file.
      * </p>
      * <p>
-     * If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify
-     * the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave
-     * the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.
+     * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
+     * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
+     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in the input media file.</p>
+     *        The sample rate, in Hertz, of the audio track in your input media file.</p>
      *        <p>
-     *        If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you
-     *        specify the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you
-     *        should leave the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine
-     *        the sample rate.
+     *        If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you
+     *        specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a
+     *        mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases,
+     *        it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the
+     *        sample rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +487,11 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The audio format of the input media file.
+     * Specify the format of your input media file.
      * </p>
      * 
      * @param mediaFormat
-     *        The audio format of the input media file.
+     *        Specify the format of your input media file.
      * @see MediaFormat
      */
 
@@ -409,10 +501,10 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The audio format of the input media file.
+     * Specify the format of your input media file.
      * </p>
      * 
-     * @return The audio format of the input media file.
+     * @return Specify the format of your input media file.
      * @see MediaFormat
      */
 
@@ -422,11 +514,11 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The audio format of the input media file.
+     * Specify the format of your input media file.
      * </p>
      * 
      * @param mediaFormat
-     *        The audio format of the input media file.
+     *        Specify the format of your input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaFormat
      */
@@ -438,11 +530,11 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The audio format of the input media file.
+     * Specify the format of your input media file.
      * </p>
      * 
      * @param mediaFormat
-     *        The audio format of the input media file.
+     *        Specify the format of your input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaFormat
      */
@@ -480,39 +572,54 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon S3 location where the transcription is stored.
+     * The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the
+     * <code>S3://</code> prefix of the specified bucket.
      * </p>
      * <p>
-     * You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription results. Your
-     * transcript appears in the S3 location you specify. When you call the <a>GetMedicalTranscriptionJob</a>, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions
-     * that allow Amazon Transcribe Medical to put files in the bucket. For more information, see <a href=
+     * If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     * parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     * </p>
+     * <p>
+     * For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     * <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in
+     * <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     * <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     * </p>
+     * <p>
+     * Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     * permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See
+     * also <a href=
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     * transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon
-     * Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that are placed in
-     * your S3 bucket.
+     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @param outputBucketName
-     *        The Amazon S3 location where the transcription is stored.</p>
+     *        The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include
+     *        the <code>S3://</code> prefix of the specified bucket.</p>
      *        <p>
-     *        You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription
-     *        results. Your transcript appears in the S3 location you specify. When you call the
-     *        <a>GetMedicalTranscriptionJob</a>, the operation returns this location in the
-     *        <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe
-     *        Medical to put files in the bucket. For more information, see <a href=
+     *        If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     *        parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     *        </p>
+     *        <p>
+     *        For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     *        <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored
+     *        in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     *        <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     *        </p>
+     *        <p>
+     *        Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     *        permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management
+     *        Console</a>. See also <a href=
      *        "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      *        >Permissions Required for IAM User Roles</a>.
      *        </p>
      *        <p>
-     *        You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     *        transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     *        Amazon Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that
-     *        are placed in your S3 bucket.
+     *        If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon
+     *        S3 bucket and you are provided with a URI to access your transcript.
      */
 
     public void setOutputBucketName(String outputBucketName) {
@@ -521,38 +628,53 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon S3 location where the transcription is stored.
+     * The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the
+     * <code>S3://</code> prefix of the specified bucket.
      * </p>
      * <p>
-     * You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription results. Your
-     * transcript appears in the S3 location you specify. When you call the <a>GetMedicalTranscriptionJob</a>, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions
-     * that allow Amazon Transcribe Medical to put files in the bucket. For more information, see <a href=
+     * If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     * parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     * </p>
+     * <p>
+     * For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     * <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in
+     * <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     * <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     * </p>
+     * <p>
+     * Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     * permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See
+     * also <a href=
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     * transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon
-     * Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that are placed in
-     * your S3 bucket.
+     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      * 
-     * @return The Amazon S3 location where the transcription is stored.</p>
+     * @return The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include
+     *         the <code>S3://</code> prefix of the specified bucket.</p>
      *         <p>
-     *         You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription
-     *         results. Your transcript appears in the S3 location you specify. When you call the
-     *         <a>GetMedicalTranscriptionJob</a>, the operation returns this location in the
-     *         <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe
-     *         Medical to put files in the bucket. For more information, see <a href=
+     *         If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     *         parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     *         </p>
+     *         <p>
+     *         For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     *         <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored
+     *         in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     *         <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     *         </p>
+     *         <p>
+     *         Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     *         permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management
+     *         Console</a>. See also <a href=
      *         "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      *         >Permissions Required for IAM User Roles</a>.
      *         </p>
      *         <p>
-     *         You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     *         transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     *         Amazon Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that
-     *         are placed in your S3 bucket.
+     *         If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon
+     *         S3 bucket and you are provided with a URI to access your transcript.
      */
 
     public String getOutputBucketName() {
@@ -561,39 +683,54 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon S3 location where the transcription is stored.
+     * The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the
+     * <code>S3://</code> prefix of the specified bucket.
      * </p>
      * <p>
-     * You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription results. Your
-     * transcript appears in the S3 location you specify. When you call the <a>GetMedicalTranscriptionJob</a>, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions
-     * that allow Amazon Transcribe Medical to put files in the bucket. For more information, see <a href=
+     * If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     * parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     * </p>
+     * <p>
+     * For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     * <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in
+     * <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     * <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     * </p>
+     * <p>
+     * Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     * permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See
+     * also <a href=
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     * transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon
-     * Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that are placed in
-     * your S3 bucket.
+     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @param outputBucketName
-     *        The Amazon S3 location where the transcription is stored.</p>
+     *        The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include
+     *        the <code>S3://</code> prefix of the specified bucket.</p>
      *        <p>
-     *        You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription
-     *        results. Your transcript appears in the S3 location you specify. When you call the
-     *        <a>GetMedicalTranscriptionJob</a>, the operation returns this location in the
-     *        <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe
-     *        Medical to put files in the bucket. For more information, see <a href=
+     *        If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code>
+     *        parameter; <code>OutputBucketName</code> only accepts the name of a bucket.
+     *        </p>
+     *        <p>
+     *        For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set
+     *        <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored
+     *        in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to
+     *        <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.
+     *        </p>
+     *        <p>
+     *        Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3
+     *        permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management
+     *        Console</a>. See also <a href=
      *        "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      *        >Permissions Required for IAM User Roles</a>.
      *        </p>
      *        <p>
-     *        You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
-     *        transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     *        Amazon Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that
-     *        are placed in your S3 bucket.
+     *        If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon
+     *        S3 bucket and you are provided with a URI to access your transcript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -604,41 +741,90 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and,
+     * optionally, a unique name for your output file. The default name for your transcription output is the same as the
+     * name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).
      * </p>
      * <p>
-     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
-     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * Here are some examples of how you can use <code>OutputKey</code>:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
-     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
-     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
-     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
-     * the file name, for example "folder/my-other-job-name.json".
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     * <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>
+     * .
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'my-transcript' as the <code>OutputKey</code>, your transcription output
+     * path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json' as
+     * the <code>OutputKey</code>, your transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your
+     * transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      * </p>
      * 
      * @param outputKey
-     *        You can specify a location in an Amazon S3 bucket to store the output of your medical transcription
-     *        job.</p>
+     *        Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript
+     *        and, optionally, a unique name for your output file. The default name for your transcription output is the
+     *        same as the name you specified for your medical transcription job (
+     *        <code>MedicalTranscriptionJobName</code>).</p>
      *        <p>
-     *        If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job
-     *        in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        Here are some examples of how you can use <code>OutputKey</code>:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
-     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
-     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
-     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
-     *        use an output key to change both the prefix and the file name, for example
-     *        "folder/my-other-job-name.json".
+     *        If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     *        <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
-     *        parameter.
+     *        If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
+     *        'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as the
+     *        <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and
+     *        'test-files/my-transcript.json' as the <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
+     *        'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the
+     *        <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      */
 
     public void setOutputKey(String outputKey) {
@@ -647,40 +833,89 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and,
+     * optionally, a unique name for your output file. The default name for your transcription output is the same as the
+     * name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).
      * </p>
      * <p>
-     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
-     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * Here are some examples of how you can use <code>OutputKey</code>:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
-     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
-     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
-     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
-     * the file name, for example "folder/my-other-job-name.json".
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     * <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>
+     * .
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'my-transcript' as the <code>OutputKey</code>, your transcription output
+     * path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json' as
+     * the <code>OutputKey</code>, your transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your
+     * transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      * </p>
      * 
-     * @return You can specify a location in an Amazon S3 bucket to store the output of your medical transcription
-     *         job.</p>
+     * @return Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript
+     *         and, optionally, a unique name for your output file. The default name for your transcription output is
+     *         the same as the name you specified for your medical transcription job (
+     *         <code>MedicalTranscriptionJobName</code>).</p>
      *         <p>
-     *         If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job
-     *         in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *         Here are some examples of how you can use <code>OutputKey</code>:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
-     *         example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
-     *         being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
-     *         "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You
-     *         can use an output key to change both the prefix and the file name, for example
-     *         "folder/my-other-job-name.json".
+     *         If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     *         <code>OutputKey</code>, your transcription output path is
+     *         <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
-     *         parameter.
+     *         If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
+     *         'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as the
+     *         <code>OutputKey</code>, your transcription output path is
+     *         <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and
+     *         'test-files/my-transcript.json' as the <code>OutputKey</code>, your transcription output path is
+     *         <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
+     *         'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the
+     *         <code>OutputKey</code>, your transcription output path is
+     *         <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      */
 
     public String getOutputKey() {
@@ -689,41 +924,90 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and,
+     * optionally, a unique name for your output file. The default name for your transcription output is the same as the
+     * name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).
      * </p>
      * <p>
-     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
-     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * Here are some examples of how you can use <code>OutputKey</code>:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
-     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
-     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
-     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
-     * the file name, for example "folder/my-other-job-name.json".
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     * <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>
+     * .
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'my-transcript' as the <code>OutputKey</code>, your transcription output
+     * path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json' as
+     * the <code>OutputKey</code>, your transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as
+     * the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your
+     * transcription output path is
+     * <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      * </p>
      * 
      * @param outputKey
-     *        You can specify a location in an Amazon S3 bucket to store the output of your medical transcription
-     *        job.</p>
+     *        Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript
+     *        and, optionally, a unique name for your output file. The default name for your transcription output is the
+     *        same as the name you specified for your medical transcription job (
+     *        <code>MedicalTranscriptionJobName</code>).</p>
      *        <p>
-     *        If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job
-     *        in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        Here are some examples of how you can use <code>OutputKey</code>:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
-     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
-     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
-     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
-     *        use an output key to change both the prefix and the file name, for example
-     *        "folder/my-other-job-name.json".
+     *        If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the
+     *        <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
-     *        parameter.
+     *        If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
+     *        'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as the
+     *        <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and
+     *        'test-files/my-transcript.json' as the <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
+     *        'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the
+     *        <code>OutputKey</code>, your transcription output path is
+     *        <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -734,92 +1018,120 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt the
-     * output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have
-     * permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your medical transcription output.
      * </p>
      * <p>
-     * You use either of the following to identify a KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the medical transcription job is encrypted with the default
-     * Amazon S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @param outputEncryptionKMSKeyId
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt
-     *        the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation
-     *        must have permission to use the specified KMS key.</p>
+     *        The KMS key you want to use to encrypt your medical transcription output.</p>
      *        <p>
-     *        You use either of the following to identify a KMS key in the current account:
+     *        If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in
+     *        one of four ways:
      *        </p>
-     *        <ul>
+     *        <ol>
      *        <li>
      *        <p>
-     *        KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     *        Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        KMS Key Alias: "alias/ExampleAlias"
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        You can use either of the following to identify a KMS key in the current account or another account:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     *        "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     *        Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     *        Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        If you don't specify an encryption key, the output of the medical transcription job is encrypted with the
-     *        default Amazon S3 key (SSE-S3).
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web
+     *        Services account, you can specify your KMS key in one of two ways:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *        </p>
      *        <p>
-     *        If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     *        <code>OutputBucketName</code> parameter.
+     *        If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     *        <code>OutputLocation</code> parameter.
+     *        </p>
+     *        <p>
+     *        Note that the user making the request must have permission to use the specified KMS key.
      */
 
     public void setOutputEncryptionKMSKeyId(String outputEncryptionKMSKeyId) {
@@ -828,91 +1140,119 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt the
-     * output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have
-     * permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your medical transcription output.
      * </p>
      * <p>
-     * You use either of the following to identify a KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the medical transcription job is encrypted with the default
-     * Amazon S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to
-     *         encrypt the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a>
-     *         operation must have permission to use the specified KMS key.</p>
+     * @return The KMS key you want to use to encrypt your medical transcription output.</p>
      *         <p>
-     *         You use either of the following to identify a KMS key in the current account:
+     *         If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in
+     *         one of four ways:
      *         </p>
-     *         <ul>
+     *         <ol>
      *         <li>
      *         <p>
-     *         KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     *         Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         KMS Key Alias: "alias/ExampleAlias"
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         You can use either of the following to identify a KMS key in the current account or another account:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     *         "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     *         Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     *         Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     *         <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
      *         <p>
-     *         If you don't specify an encryption key, the output of the medical transcription job is encrypted with the
-     *         default Amazon S3 key (SSE-S3).
+     *         Use the ARN for the KMS key alias. For example,
+     *         <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *         </p>
+     *         </li>
+     *         </ol>
+     *         <p>
+     *         If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web
+     *         Services account, you can specify your KMS key in one of two ways:
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         Use the ARN for the KMS key ID. For example,
+     *         <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use the ARN for the KMS key alias. For example,
+     *         <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *         </p>
+     *         </li>
+     *         </ol>
+     *         <p>
+     *         If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *         </p>
      *         <p>
-     *         If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     *         <code>OutputBucketName</code> parameter.
+     *         If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     *         <code>OutputLocation</code> parameter.
+     *         </p>
+     *         <p>
+     *         Note that the user making the request must have permission to use the specified KMS key.
      */
 
     public String getOutputEncryptionKMSKeyId() {
@@ -921,92 +1261,120 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt the
-     * output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have
-     * permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your medical transcription output.
      * </p>
      * <p>
-     * You use either of the following to identify a KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the medical transcription job is encrypted with the default
-     * Amazon S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @param outputEncryptionKMSKeyId
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt
-     *        the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation
-     *        must have permission to use the specified KMS key.</p>
+     *        The KMS key you want to use to encrypt your medical transcription output.</p>
      *        <p>
-     *        You use either of the following to identify a KMS key in the current account:
+     *        If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in
+     *        one of four ways:
      *        </p>
-     *        <ul>
+     *        <ol>
      *        <li>
      *        <p>
-     *        KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     *        Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        KMS Key Alias: "alias/ExampleAlias"
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        You can use either of the following to identify a KMS key in the current account or another account:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     *        "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+     *        Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+     *        Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        If you don't specify an encryption key, the output of the medical transcription job is encrypted with the
-     *        default Amazon S3 key (SSE-S3).
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web
+     *        Services account, you can specify your KMS key in one of two ways:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *        </p>
      *        <p>
-     *        If you specify a KMS key to encrypt your output, you must also specify an output location in the
-     *        <code>OutputBucketName</code> parameter.
+     *        If you specify a KMS key to encrypt your output, you must also specify an output location using the
+     *        <code>OutputLocation</code> parameter.
+     *        </p>
+     *        <p>
+     *        Note that the user making the request must have permission to use the specified KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1018,11 +1386,18 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer
-     * of security for your data.
+     * of security for your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     * context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
+     * keys in KMS</a>.
      * </p>
      * 
      * @return A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
-     *         layer of security for your data.
+     *         layer of security for your data. For more information, see <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     *         context</a> and <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in
+     *         KMS</a>.
      */
 
     public java.util.Map<String, String> getKMSEncryptionContext() {
@@ -1032,12 +1407,19 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer
-     * of security for your data.
+     * of security for your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     * context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
+     * keys in KMS</a>.
      * </p>
      * 
      * @param kMSEncryptionContext
      *        A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
-     *        layer of security for your data.
+     *        layer of security for your data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     *        context</a> and <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in
+     *        KMS</a>.
      */
 
     public void setKMSEncryptionContext(java.util.Map<String, String> kMSEncryptionContext) {
@@ -1047,12 +1429,19 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer
-     * of security for your data.
+     * of security for your data. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     * context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
+     * keys in KMS</a>.
      * </p>
      * 
      * @param kMSEncryptionContext
      *        A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
-     *        layer of security for your data.
+     *        layer of security for your data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption
+     *        context</a> and <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in
+     *        KMS</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1091,11 +1480,13 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional settings for the medical transcription job.
+     * Specify additional optional settings in your request, including channel identification, alternative
+     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      * </p>
      * 
      * @param settings
-     *        Optional settings for the medical transcription job.
+     *        Specify additional optional settings in your request, including channel identification, alternative
+     *        transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      */
 
     public void setSettings(MedicalTranscriptionSetting settings) {
@@ -1104,10 +1495,12 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional settings for the medical transcription job.
+     * Specify additional optional settings in your request, including channel identification, alternative
+     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      * </p>
      * 
-     * @return Optional settings for the medical transcription job.
+     * @return Specify additional optional settings in your request, including channel identification, alternative
+     *         transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      */
 
     public MedicalTranscriptionSetting getSettings() {
@@ -1116,11 +1509,13 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional settings for the medical transcription job.
+     * Specify additional optional settings in your request, including channel identification, alternative
+     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      * </p>
      * 
      * @param settings
-     *        Optional settings for the medical transcription job.
+     *        Specify additional optional settings in your request, including channel identification, alternative
+     *        transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1131,15 +1526,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
-     * the transcription output.
+     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
+     * in a transcription</a>.
      * </p>
      * 
      * @param contentIdentificationType
-     *        You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     *        <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
-     *        identifies in the transcription output.
+     *        Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
+     *        information (PHI) in a transcription</a>.
      * @see MedicalContentIdentificationType
      */
 
@@ -1149,14 +1544,14 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
-     * the transcription output.
+     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
+     * in a transcription</a>.
      * </p>
      * 
-     * @return You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     *         <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
-     *         identifies in the transcription output.
+     * @return Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
+     *         information (PHI) in a transcription</a>.
      * @see MedicalContentIdentificationType
      */
 
@@ -1166,15 +1561,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
-     * the transcription output.
+     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
+     * in a transcription</a>.
      * </p>
      * 
      * @param contentIdentificationType
-     *        You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     *        <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
-     *        identifies in the transcription output.
+     *        Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
+     *        information (PHI) in a transcription</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MedicalContentIdentificationType
      */
@@ -1186,15 +1581,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
-     * the transcription output.
+     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
+     * in a transcription</a>.
      * </p>
      * 
      * @param contentIdentificationType
-     *        You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-     *        <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
-     *        identifies in the transcription output.
+     *        Labels all personal health information (PHI) identified in your transcript. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
+     *        information (PHI) in a transcription</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MedicalContentIdentificationType
      */
@@ -1206,11 +1601,13 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The medical specialty of any clinician speaking in the input media.
+     * Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     * <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * </p>
      * 
      * @param specialty
-     *        The medical specialty of any clinician speaking in the input media.
+     *        Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     *        <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * @see Specialty
      */
 
@@ -1220,10 +1617,12 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The medical specialty of any clinician speaking in the input media.
+     * Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     * <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * </p>
      * 
-     * @return The medical specialty of any clinician speaking in the input media.
+     * @return Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     *         <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * @see Specialty
      */
 
@@ -1233,11 +1632,13 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The medical specialty of any clinician speaking in the input media.
+     * Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     * <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * </p>
      * 
      * @param specialty
-     *        The medical specialty of any clinician speaking in the input media.
+     *        Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     *        <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Specialty
      */
@@ -1249,11 +1650,13 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The medical specialty of any clinician speaking in the input media.
+     * Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     * <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * </p>
      * 
      * @param specialty
-     *        The medical specialty of any clinician speaking in the input media.
+     *        Specify the predominant medical specialty represented in your media. For batch transcriptions,
+     *        <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Specialty
      */
@@ -1265,15 +1668,22 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more
-     * speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker
-     * dictated speech, such as clinical notes.
+     * Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation
+     * between two people (<code>CONVERSATION</code>).
+     * </p>
+     * <p>
+     * For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos;
+     * <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office
+     * visit.
      * </p>
      * 
      * @param type
-     *        The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
-     *        more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to
-     *        single-speaker dictated speech, such as clinical notes.
+     *        Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a
+     *        conversation between two people (<code>CONVERSATION</code>).</p>
+     *        <p>
+     *        For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice
+     *        memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the
+     *        patient's office visit.
      * @see Type
      */
 
@@ -1283,14 +1693,21 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more
-     * speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker
-     * dictated speech, such as clinical notes.
+     * Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation
+     * between two people (<code>CONVERSATION</code>).
+     * </p>
+     * <p>
+     * For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos;
+     * <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office
+     * visit.
      * </p>
      * 
-     * @return The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
-     *         more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to
-     *         single-speaker dictated speech, such as clinical notes.
+     * @return Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a
+     *         conversation between two people (<code>CONVERSATION</code>).</p>
+     *         <p>
+     *         For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice
+     *         memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the
+     *         patient's office visit.
      * @see Type
      */
 
@@ -1300,15 +1717,22 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more
-     * speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker
-     * dictated speech, such as clinical notes.
+     * Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation
+     * between two people (<code>CONVERSATION</code>).
+     * </p>
+     * <p>
+     * For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos;
+     * <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office
+     * visit.
      * </p>
      * 
      * @param type
-     *        The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
-     *        more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to
-     *        single-speaker dictated speech, such as clinical notes.
+     *        Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a
+     *        conversation between two people (<code>CONVERSATION</code>).</p>
+     *        <p>
+     *        For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice
+     *        memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the
+     *        patient's office visit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -1320,15 +1744,22 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more
-     * speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker
-     * dictated speech, such as clinical notes.
+     * Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation
+     * between two people (<code>CONVERSATION</code>).
+     * </p>
+     * <p>
+     * For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos;
+     * <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office
+     * visit.
      * </p>
      * 
      * @param type
-     *        The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
-     *        more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to
-     *        single-speaker dictated speech, such as clinical notes.
+     *        Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a
+     *        conversation between two people (<code>CONVERSATION</code>).</p>
+     *        <p>
+     *        For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice
+     *        memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the
+     *        patient's office visit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -1340,10 +1771,19 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Add tags to an Amazon Transcribe Medical transcription job.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the
+     * time you start this new job.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
-     * @return Add tags to an Amazon Transcribe Medical transcription job.
+     * @return Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at
+     *         the time you start this new job.</p>
+     *         <p>
+     *         To learn more about using tags with Amazon Transcribe, refer to <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1352,11 +1792,20 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Add tags to an Amazon Transcribe Medical transcription job.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the
+     * time you start this new job.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param tags
-     *        Add tags to an Amazon Transcribe Medical transcription job.
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at
+     *        the time you start this new job.</p>
+     *        <p>
+     *        To learn more about using tags with Amazon Transcribe, refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1370,7 +1819,12 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Add tags to an Amazon Transcribe Medical transcription job.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the
+     * time you start this new job.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1379,7 +1833,11 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param tags
-     *        Add tags to an Amazon Transcribe Medical transcription job.
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at
+     *        the time you start this new job.</p>
+     *        <p>
+     *        To learn more about using tags with Amazon Transcribe, refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1395,11 +1853,20 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Add tags to an Amazon Transcribe Medical transcription job.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the
+     * time you start this new job.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param tags
-     *        Add tags to an Amazon Transcribe Medical transcription job.
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at
+     *        the time you start this new job.</p>
+     *        <p>
+     *        To learn more about using tags with Amazon Transcribe, refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

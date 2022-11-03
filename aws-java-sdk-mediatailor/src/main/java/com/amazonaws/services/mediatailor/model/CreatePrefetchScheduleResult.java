@@ -25,52 +25,54 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the prefetch schedule.
+     * The ARN to assign to the prefetch schedule.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     * consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate
-     * which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     * The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision
+     * server. Each consumption configuration contains an end time and an optional start time that define the
+     * <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
      * </p>
      */
     private PrefetchConsumption consumption;
     /**
      * <p>
-     * The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with
-     * the specified playback configuration.
+     * The name to assign to the prefetch schedule.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The name of the playback configuration to create the prefetch schedule for.
+     * The name to assign to the playback configuration.
      * </p>
      */
     private String playbackConfigurationName;
     /**
      * <p>
-     * A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     * The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     * prefetched ads will be retrieved and subsequently consumed for each ad break.
      * </p>
      */
     private PrefetchRetrieval retrieval;
     /**
      * <p>
-     * An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same
-     * playback configuration.
+     * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      */
     private String streamId;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the prefetch schedule.
+     * The ARN to assign to the prefetch schedule.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the prefetch schedule.
+     *        The ARN to assign to the prefetch schedule.
      */
 
     public void setArn(String arn) {
@@ -79,10 +81,10 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the prefetch schedule.
+     * The ARN to assign to the prefetch schedule.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the prefetch schedule.
+     * @return The ARN to assign to the prefetch schedule.
      */
 
     public String getArn() {
@@ -91,11 +93,11 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the prefetch schedule.
+     * The ARN to assign to the prefetch schedule.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the prefetch schedule.
+     *        The ARN to assign to the prefetch schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,15 +108,16 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     * consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate
-     * which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     * The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision
+     * server. Each consumption configuration contains an end time and an optional start time that define the
+     * <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
      * </p>
      * 
      * @param consumption
-     *        Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     *        consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can
-     *        designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     *        The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision
+     *        server. Each consumption configuration contains an end time and an optional start time that define the
+     *        <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the
+     *        end time.
      */
 
     public void setConsumption(PrefetchConsumption consumption) {
@@ -123,14 +126,15 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     * consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate
-     * which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     * The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision
+     * server. Each consumption configuration contains an end time and an optional start time that define the
+     * <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
      * </p>
      * 
-     * @return Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     *         consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can
-     *         designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     * @return The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad
+     *         decision server. Each consumption configuration contains an end time and an optional start time that
+     *         define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days
+     *         after the end time.
      */
 
     public PrefetchConsumption getConsumption() {
@@ -139,15 +143,16 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     * consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate
-     * which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     * The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision
+     * server. Each consumption configuration contains an end time and an optional start time that define the
+     * <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
      * </p>
      * 
      * @param consumption
-     *        Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad
-     *        consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can
-     *        designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+     *        The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision
+     *        server. Each consumption configuration contains an end time and an optional start time that define the
+     *        <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the
+     *        end time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,13 +163,11 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with
-     * the specified playback configuration.
+     * The name to assign to the prefetch schedule.
      * </p>
      * 
      * @param name
-     *        The name of the prefetch schedule. The name must be unique among all prefetch schedules that are
-     *        associated with the specified playback configuration.
+     *        The name to assign to the prefetch schedule.
      */
 
     public void setName(String name) {
@@ -173,12 +176,10 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with
-     * the specified playback configuration.
+     * The name to assign to the prefetch schedule.
      * </p>
      * 
-     * @return The name of the prefetch schedule. The name must be unique among all prefetch schedules that are
-     *         associated with the specified playback configuration.
+     * @return The name to assign to the prefetch schedule.
      */
 
     public String getName() {
@@ -187,13 +188,11 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with
-     * the specified playback configuration.
+     * The name to assign to the prefetch schedule.
      * </p>
      * 
      * @param name
-     *        The name of the prefetch schedule. The name must be unique among all prefetch schedules that are
-     *        associated with the specified playback configuration.
+     *        The name to assign to the prefetch schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +203,11 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the playback configuration to create the prefetch schedule for.
+     * The name to assign to the playback configuration.
      * </p>
      * 
      * @param playbackConfigurationName
-     *        The name of the playback configuration to create the prefetch schedule for.
+     *        The name to assign to the playback configuration.
      */
 
     public void setPlaybackConfigurationName(String playbackConfigurationName) {
@@ -217,10 +216,10 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the playback configuration to create the prefetch schedule for.
+     * The name to assign to the playback configuration.
      * </p>
      * 
-     * @return The name of the playback configuration to create the prefetch schedule for.
+     * @return The name to assign to the playback configuration.
      */
 
     public String getPlaybackConfigurationName() {
@@ -229,11 +228,11 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the playback configuration to create the prefetch schedule for.
+     * The name to assign to the playback configuration.
      * </p>
      * 
      * @param playbackConfigurationName
-     *        The name of the playback configuration to create the prefetch schedule for.
+     *        The name to assign to the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,11 +243,13 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     * The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     * prefetched ads will be retrieved and subsequently consumed for each ad break.
      * </p>
      * 
      * @param retrieval
-     *        A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     *        The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     *        prefetched ads will be retrieved and subsequently consumed for each ad break.
      */
 
     public void setRetrieval(PrefetchRetrieval retrieval) {
@@ -257,10 +258,12 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     * The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     * prefetched ads will be retrieved and subsequently consumed for each ad break.
      * </p>
      * 
-     * @return A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     * @return The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     *         prefetched ads will be retrieved and subsequently consumed for each ad break.
      */
 
     public PrefetchRetrieval getRetrieval() {
@@ -269,11 +272,13 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     * The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     * prefetched ads will be retrieved and subsequently consumed for each ad break.
      * </p>
      * 
      * @param retrieval
-     *        A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+     *        The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of
+     *        prefetched ads will be retrieved and subsequently consumed for each ad break.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,13 +289,17 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same
-     * playback configuration.
+     * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      * 
      * @param streamId
-     *        An optional stream identifier that you can specify in order to prefetch for multiple streams that use the
-     *        same playback configuration.
+     *        An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
+     *        playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     *        schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the
+     *        prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
      */
 
     public void setStreamId(String streamId) {
@@ -299,12 +308,16 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same
-     * playback configuration.
+     * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      * 
-     * @return An optional stream identifier that you can specify in order to prefetch for multiple streams that use the
-     *         same playback configuration.
+     * @return An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the
+     *         same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the
+     *         prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns
+     *         all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
      */
 
     public String getStreamId() {
@@ -313,13 +326,17 @@ public class CreatePrefetchScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same
-     * playback configuration.
+     * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      * 
      * @param streamId
-     *        An optional stream identifier that you can specify in order to prefetch for multiple streams that use the
-     *        same playback configuration.
+     *        An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
+     *        playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     *        schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the
+     *        prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

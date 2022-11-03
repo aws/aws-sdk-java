@@ -40,6 +40,21 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLaunchConfigurationTemplateResult> createLaunchConfigurationTemplateAsync(
+            CreateLaunchConfigurationTemplateRequest request) {
+
+        return createLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLaunchConfigurationTemplateResult> createLaunchConfigurationTemplateAsync(
+            CreateLaunchConfigurationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationTemplateRequest, CreateLaunchConfigurationTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationConfigurationTemplateResult> createReplicationConfigurationTemplateAsync(
             CreateReplicationConfigurationTemplateRequest request) {
 
@@ -63,6 +78,21 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchConfigurationTemplateResult> deleteLaunchConfigurationTemplateAsync(
+            DeleteLaunchConfigurationTemplateRequest request) {
+
+        return deleteLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchConfigurationTemplateResult> deleteLaunchConfigurationTemplateAsync(
+            DeleteLaunchConfigurationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationTemplateRequest, DeleteLaunchConfigurationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -130,6 +160,21 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<DescribeJobsResult> describeJobsAsync(DescribeJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobsRequest, DescribeJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLaunchConfigurationTemplatesResult> describeLaunchConfigurationTemplatesAsync(
+            DescribeLaunchConfigurationTemplatesRequest request) {
+
+        return describeLaunchConfigurationTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLaunchConfigurationTemplatesResult> describeLaunchConfigurationTemplatesAsync(
+            DescribeLaunchConfigurationTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLaunchConfigurationTemplatesRequest, DescribeLaunchConfigurationTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -366,6 +411,21 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<UpdateLaunchConfigurationResult> updateLaunchConfigurationAsync(UpdateLaunchConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLaunchConfigurationRequest, UpdateLaunchConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLaunchConfigurationTemplateResult> updateLaunchConfigurationTemplateAsync(
+            UpdateLaunchConfigurationTemplateRequest request) {
+
+        return updateLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLaunchConfigurationTemplateResult> updateLaunchConfigurationTemplateAsync(
+            UpdateLaunchConfigurationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLaunchConfigurationTemplateRequest, UpdateLaunchConfigurationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

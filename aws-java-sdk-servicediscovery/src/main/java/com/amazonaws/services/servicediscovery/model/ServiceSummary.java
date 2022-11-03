@@ -89,7 +89,7 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     private Integer instanceCount;
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      */
     private DnsConfig dnsConfig;
@@ -571,11 +571,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        Information about the Route 53 DNS records that you want Cloud Map to create when you register an
+     *        Information about the Route 53 DNS records that you want Cloud Map to create when you register an
      *        instance.
      */
 
@@ -585,10 +585,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      * 
-     * @return Information about the Route 53 DNS records that you want Cloud Map to create when you register an
+     * @return Information about the Route 53 DNS records that you want Cloud Map to create when you register an
      *         instance.
      */
 
@@ -598,11 +598,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        Information about the Route 53 DNS records that you want Cloud Map to create when you register an
+     *        Information about the Route 53 DNS records that you want Cloud Map to create when you register an
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

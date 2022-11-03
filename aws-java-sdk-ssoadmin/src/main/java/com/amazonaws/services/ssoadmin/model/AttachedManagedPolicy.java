@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that stores the details of the IAM managed policy.
+ * A structure that stores the details of the AWS managed policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachedManagedPolicy" target="_top">AWS
@@ -30,26 +30,26 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the IAM managed policy.
+     * The name of the AWS managed policy.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ARN of the IAM managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the AWS managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The name of the IAM managed policy.
+     * The name of the AWS managed policy.
      * </p>
      * 
      * @param name
-     *        The name of the IAM managed policy.
+     *        The name of the AWS managed policy.
      */
 
     public void setName(String name) {
@@ -58,10 +58,10 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the IAM managed policy.
+     * The name of the AWS managed policy.
      * </p>
      * 
-     * @return The name of the IAM managed policy.
+     * @return The name of the AWS managed policy.
      */
 
     public String getName() {
@@ -70,11 +70,11 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the IAM managed policy.
+     * The name of the AWS managed policy.
      * </p>
      * 
      * @param name
-     *        The name of the IAM managed policy.
+     *        The name of the AWS managed policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,15 +85,15 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the IAM managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the AWS managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
-     *        The ARN of the IAM managed policy. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the AWS managed policy. For more information about ARNs, see <a
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *        Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -102,14 +102,14 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the IAM managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the AWS managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the IAM managed policy. For more information about ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The ARN of the AWS managed policy. For more information about ARNs, see <a
+     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *         Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getArn() {
@@ -118,15 +118,15 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the IAM managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the AWS managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
-     *        The ARN of the IAM managed policy. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the AWS managed policy. For more information about ARNs, see <a
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *        Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

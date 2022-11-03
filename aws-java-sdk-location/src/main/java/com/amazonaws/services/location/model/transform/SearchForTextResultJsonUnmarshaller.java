@@ -56,6 +56,10 @@ public class SearchForTextResultJsonUnmarshaller implements Unmarshaller<SearchF
                     context.nextToken();
                     searchForTextResult.setPlace(PlaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PlaceId", targetDepth)) {
+                    context.nextToken();
+                    searchForTextResult.setPlaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Relevance", targetDepth)) {
                     context.nextToken();
                     searchForTextResult.setRelevance(context.getUnmarshaller(Double.class).unmarshall(context));

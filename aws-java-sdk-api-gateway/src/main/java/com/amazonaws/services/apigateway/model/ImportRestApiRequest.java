@@ -38,8 +38,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * operations. The following shows operation-specific parameters and their supported values.
      * </p>
      * <p>
-     * To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
-     * <code>ignore=documentation</code>.
+     * To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.
      * </p>
      * <p>
      * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
@@ -53,23 +52,15 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      */
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     * The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are
+     * supported. The maximum size of the API definition file is 6MB.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -140,8 +131,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * operations. The following shows operation-specific parameters and their supported values.
      * </p>
      * <p>
-     * To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
-     * <code>ignore=documentation</code>.
+     * To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.
      * </p>
      * <p>
      * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
@@ -155,22 +145,14 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
      * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
-     * 
      * @return A key-value map of context-specific query string parameters specifying the behavior of different API
      *         importing operations. The following shows operation-specific parameters and their supported values.</p>
      *         <p>
-     *         To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
+     *         To exclude DocumentationParts from the import, set <code>parameters</code> as
      *         <code>ignore=documentation</code>.
      *         </p>
      *         <p>
@@ -185,15 +167,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         For example, the AWS CLI command to exclude documentation from the imported API is:
      *         </p>
-     * 
-     *         <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      *         <p>
      *         The AWS CLI command to set the regional endpoint on the imported API is:
-     *         </p>
-     * 
-     * <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -206,8 +181,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * operations. The following shows operation-specific parameters and their supported values.
      * </p>
      * <p>
-     * To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
-     * <code>ignore=documentation</code>.
+     * To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.
      * </p>
      * <p>
      * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
@@ -221,23 +195,15 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      * 
      * @param parameters
      *        A key-value map of context-specific query string parameters specifying the behavior of different API
      *        importing operations. The following shows operation-specific parameters and their supported values.</p>
      *        <p>
-     *        To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
+     *        To exclude DocumentationParts from the import, set <code>parameters</code> as
      *        <code>ignore=documentation</code>.
      *        </p>
      *        <p>
@@ -252,15 +218,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For example, the AWS CLI command to exclude documentation from the imported API is:
      *        </p>
-     * 
-     *        <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      *        <p>
      *        The AWS CLI command to set the regional endpoint on the imported API is:
-     *        </p>
-     * 
-     * <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -273,8 +232,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * operations. The following shows operation-specific parameters and their supported values.
      * </p>
      * <p>
-     * To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
-     * <code>ignore=documentation</code>.
+     * To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.
      * </p>
      * <p>
      * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
@@ -288,23 +246,15 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
-     * 
-     * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      * 
      * @param parameters
      *        A key-value map of context-specific query string parameters specifying the behavior of different API
      *        importing operations. The following shows operation-specific parameters and their supported values.</p>
      *        <p>
-     *        To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as
+     *        To exclude DocumentationParts from the import, set <code>parameters</code> as
      *        <code>ignore=documentation</code>.
      *        </p>
      *        <p>
@@ -319,16 +269,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For example, the AWS CLI command to exclude documentation from the imported API is:
      *        </p>
-     * 
-     *        <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
-     * </pre>
      *        <p>
      *        The AWS CLI command to set the regional endpoint on the imported API is:
-     *        </p>
-     * 
-     *        <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,8 +309,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     * The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are
+     * supported. The maximum size of the API definition file is 6MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -382,8 +324,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param body
-     *        [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     *        JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     *        The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
+     *        files are supported. The maximum size of the API definition file is 6MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -392,8 +334,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     * The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are
+     * supported. The maximum size of the API definition file is 6MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -403,8 +345,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * {@code position}.
      * </p>
      * 
-     * @return [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     *         JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     * @return The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
+     *         files are supported. The maximum size of the API definition file is 6MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -413,8 +355,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     * The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are
+     * supported. The maximum size of the API definition file is 6MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -428,8 +370,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param body
-     *        [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     *        JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
+     *        The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
+     *        files are supported. The maximum size of the API definition file is 6MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

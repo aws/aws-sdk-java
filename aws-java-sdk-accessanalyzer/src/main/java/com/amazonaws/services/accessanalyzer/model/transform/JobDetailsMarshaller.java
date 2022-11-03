@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobDetailsMarshaller {
 
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> STARTEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedOn").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> COMPLETEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedOn").timestampFormat("iso8601").build();
     private static final MarshallingInfo<StructuredPojo> JOBERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobError").build();
-    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("jobId").build();
-    private static final MarshallingInfo<java.util.Date> STARTEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedOn").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
 
     private static final JobDetailsMarshaller instance = new JobDetailsMarshaller();
 
@@ -54,11 +54,11 @@ public class JobDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jobDetails.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(jobDetails.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(jobDetails.getStartedOn(), STARTEDON_BINDING);
             protocolMarshaller.marshall(jobDetails.getCompletedOn(), COMPLETEDON_BINDING);
             protocolMarshaller.marshall(jobDetails.getJobError(), JOBERROR_BINDING);
-            protocolMarshaller.marshall(jobDetails.getJobId(), JOBID_BINDING);
-            protocolMarshaller.marshall(jobDetails.getStartedOn(), STARTEDON_BINDING);
-            protocolMarshaller.marshall(jobDetails.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -81,6 +81,13 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
     private Long samplingRate;
     /**
      * <p>
+     * Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user
+     * sessions that match the segment pattern are used in the experiment.
+     * </p>
+     */
+    private String segment;
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the experiment.
      * </p>
      * <p>
@@ -487,6 +494,52 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user
+     * sessions that match the segment pattern are used in the experiment.
+     * </p>
+     * 
+     * @param segment
+     *        Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment,
+     *        only user sessions that match the segment pattern are used in the experiment.
+     */
+
+    public void setSegment(String segment) {
+        this.segment = segment;
+    }
+
+    /**
+     * <p>
+     * Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user
+     * sessions that match the segment pattern are used in the experiment.
+     * </p>
+     * 
+     * @return Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment,
+     *         only user sessions that match the segment pattern are used in the experiment.
+     */
+
+    public String getSegment() {
+        return this.segment;
+    }
+
+    /**
+     * <p>
+     * Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user
+     * sessions that match the segment pattern are used in the experiment.
+     * </p>
+     * 
+     * @param segment
+     *        Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment,
+     *        only user sessions that match the segment pattern are used in the experiment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateExperimentRequest withSegment(String segment) {
+        setSegment(segment);
+        return this;
+    }
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the experiment.
      * </p>
      * <p>
@@ -716,6 +769,8 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("RandomizationSalt: ").append(getRandomizationSalt()).append(",");
         if (getSamplingRate() != null)
             sb.append("SamplingRate: ").append(getSamplingRate()).append(",");
+        if (getSegment() != null)
+            sb.append("Segment: ").append(getSegment()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTreatments() != null)
@@ -762,6 +817,10 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getSamplingRate() != null && other.getSamplingRate().equals(this.getSamplingRate()) == false)
             return false;
+        if (other.getSegment() == null ^ this.getSegment() == null)
+            return false;
+        if (other.getSegment() != null && other.getSegment().equals(this.getSegment()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -785,6 +844,7 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
         hashCode = prime * hashCode + ((getRandomizationSalt() == null) ? 0 : getRandomizationSalt().hashCode());
         hashCode = prime * hashCode + ((getSamplingRate() == null) ? 0 : getSamplingRate().hashCode());
+        hashCode = prime * hashCode + ((getSegment() == null) ? 0 : getSegment().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTreatments() == null) ? 0 : getTreatments().hashCode());
         return hashCode;

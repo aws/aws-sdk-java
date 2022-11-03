@@ -39,7 +39,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold
+     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold
      * tier is a customer-managed Amazon S3 bucket.
      * </p>
      * </li>
@@ -99,7 +99,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold
+     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold
      * tier is a customer-managed Amazon S3 bucket.
      * </p>
      * </li>
@@ -117,7 +117,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+     *        <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier.
      *        The cold tier is a customer-managed Amazon S3 bucket.
      *        </p>
      *        </li>
@@ -142,7 +142,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold
+     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold
      * tier is a customer-managed Amazon S3 bucket.
      * </p>
      * </li>
@@ -159,7 +159,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+     *         <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier.
      *         The cold tier is a customer-managed Amazon S3 bucket.
      *         </p>
      *         </li>
@@ -184,7 +184,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold
+     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold
      * tier is a customer-managed Amazon S3 bucket.
      * </p>
      * </li>
@@ -202,7 +202,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+     *        <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier.
      *        The cold tier is a customer-managed Amazon S3 bucket.
      *        </p>
      *        </li>
@@ -229,7 +229,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold
+     * <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold
      * tier is a customer-managed Amazon S3 bucket.
      * </p>
      * </li>
@@ -247,7 +247,7 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+     *        <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier.
      *        The cold tier is a customer-managed Amazon S3 bucket.
      *        </p>
      *        </li>

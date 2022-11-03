@@ -38,7 +38,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Cancels an order for an Outpost.
+     * Cancels the specified order for an Outpost.
      * </p>
      * 
      * @param cancelOrderRequest
@@ -51,7 +51,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Cancels an order for an Outpost.
+     * Cancels the specified order for an Outpost.
      * </p>
      * 
      * @param cancelOrderRequest
@@ -103,7 +103,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
      * Creates an Outpost.
      * </p>
      * <p>
-     * You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+     * You can specify either an Availability one or an AZ ID.
      * </p>
      * 
      * @param createOutpostRequest
@@ -119,7 +119,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
      * Creates an Outpost.
      * </p>
      * <p>
-     * You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+     * You can specify either an Availability one or an AZ ID.
      * </p>
      * 
      * @param createOutpostRequest
@@ -168,7 +168,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Deletes the Outpost.
+     * Deletes the specified Outpost.
      * </p>
      * 
      * @param deleteOutpostRequest
@@ -181,7 +181,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Deletes the Outpost.
+     * Deletes the specified Outpost.
      * </p>
      * 
      * @param deleteOutpostRequest
@@ -199,7 +199,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Deletes the site.
+     * Deletes the specified site.
      * </p>
      * 
      * @param deleteSiteRequest
@@ -212,7 +212,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Deletes the site.
+     * Deletes the specified site.
      * </p>
      * 
      * @param deleteSiteRequest
@@ -230,7 +230,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Gets information about a catalog item.
+     * Gets information about the specified catalog item.
      * </p>
      * 
      * @param getCatalogItemRequest
@@ -243,7 +243,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Gets information about a catalog item.
+     * Gets information about the specified catalog item.
      * </p>
      * 
      * @param getCatalogItemRequest
@@ -260,8 +260,67 @@ public interface AWSOutpostsAsync extends AWSOutposts {
             com.amazonaws.handlers.AsyncHandler<GetCatalogItemRequest, GetCatalogItemResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Gets an order.
+     * Amazon Web Services uses this action to install Outpost servers.
+     * </p>
+     * </note>
+     * <p>
+     * Gets information about the specified connection.
+     * </p>
+     * <p>
+     * Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to
+     * secure it. For more information, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services
+     * managed policies for Amazon Web Services Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web
+     * Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param getConnectionRequest
+     * @return A Java Future containing the result of the GetConnection operation returned by the service.
+     * @sample AWSOutpostsAsync.GetConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest getConnectionRequest);
+
+    /**
+     * <note>
+     * <p>
+     * Amazon Web Services uses this action to install Outpost servers.
+     * </p>
+     * </note>
+     * <p>
+     * Gets information about the specified connection.
+     * </p>
+     * <p>
+     * Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to
+     * secure it. For more information, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services
+     * managed policies for Amazon Web Services Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web
+     * Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param getConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnection operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.GetConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest getConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectionRequest, GetConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified order.
      * </p>
      * 
      * @param getOrderRequest
@@ -274,7 +333,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Gets an order.
+     * Gets information about the specified order.
      * </p>
      * 
      * @param getOrderRequest
@@ -385,7 +444,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Gets the site address.
+     * Gets the site address of the specified site.
      * </p>
      * 
      * @param getSiteAddressRequest
@@ -398,7 +457,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Gets the site address.
+     * Gets the site address of the specified site.
      * </p>
      * 
      * @param getSiteAddressRequest
@@ -416,9 +475,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon Web Services Outposts, you
-     * can filter your request by host ID to return a list of hardware assets that allocate resources for Dedicated
-     * Hosts.
+     * Lists the hardware assets for the specified Outpost.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listAssetsRequest
@@ -431,9 +493,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon Web Services Outposts, you
-     * can filter your request by host ID to return a list of hardware assets that allocate resources for Dedicated
-     * Hosts.
+     * Lists the hardware assets for the specified Outpost.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listAssetsRequest
@@ -451,12 +516,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the items in the catalog. Add filters to your request to return a more specific list of results. Use
-     * filters to match an item class, storage option, or EC2 family.
+     * Lists the items in the catalog.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listCatalogItemsRequest
@@ -469,12 +534,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the items in the catalog. Add filters to your request to return a more specific list of results. Use
-     * filters to match an item class, storage option, or EC2 family.
+     * Lists the items in the catalog.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listCatalogItemsRequest
@@ -492,8 +557,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a
-     * more specific list of results.
+     * Lists the Outpost orders for your Amazon Web Services account.
      * </p>
      * 
      * @param listOrdersRequest
@@ -506,8 +570,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a
-     * more specific list of results.
+     * Lists the Outpost orders for your Amazon Web Services account.
      * </p>
      * 
      * @param listOrdersRequest
@@ -525,13 +588,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific
-     * list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>),
-     * and AZ ID (<code>use1-az1</code>).
+     * Lists the Outposts for your Amazon Web Services account.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listOutpostsRequest
@@ -544,13 +606,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific
-     * list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>),
-     * and AZ ID (<code>use1-az1</code>).
+     * Lists the Outposts for your Amazon Web Services account.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listOutpostsRequest
@@ -568,13 +629,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to
-     * return a more specific list of results. Use filters to match site city, country code, or state/region of the
-     * operating address.
+     * Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listSitesRequest
@@ -587,13 +647,12 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Lists the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to
-     * return a more specific list of results. Use filters to match site city, country code, or state/region of the
-     * operating address.
+     * Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.
      * </p>
      * <p>
-     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-     * results that match all of the specified filters.
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
      * </p>
      * 
      * @param listSitesRequest
@@ -639,6 +698,65 @@ public interface AWSOutpostsAsync extends AWSOutposts {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * Amazon Web Services uses this action to install Outpost servers.
+     * </p>
+     * </note>
+     * <p>
+     * Starts the connection required for Outpost server installation.
+     * </p>
+     * <p>
+     * Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to
+     * secure it. For more information, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services
+     * managed policies for Amazon Web Services Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web
+     * Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param startConnectionRequest
+     * @return A Java Future containing the result of the StartConnection operation returned by the service.
+     * @sample AWSOutpostsAsync.StartConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartConnectionResult> startConnectionAsync(StartConnectionRequest startConnectionRequest);
+
+    /**
+     * <note>
+     * <p>
+     * Amazon Web Services uses this action to install Outpost servers.
+     * </p>
+     * </note>
+     * <p>
+     * Starts the connection required for Outpost server installation.
+     * </p>
+     * <p>
+     * Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to
+     * secure it. For more information, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services
+     * managed policies for Amazon Web Services Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web
+     * Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param startConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartConnection operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.StartConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartConnectionResult> startConnectionAsync(StartConnectionRequest startConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartConnectionRequest, StartConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -735,7 +853,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Updates the site.
+     * Updates the specified site.
      * </p>
      * 
      * @param updateSiteRequest
@@ -748,7 +866,7 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Updates the site.
+     * Updates the specified site.
      * </p>
      * 
      * @param updateSiteRequest
@@ -766,10 +884,10 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Updates the site address.
+     * Updates the address of the specified site.
      * </p>
      * <p>
-     * To update a site address with an order <code>IN_PROGRESS</code>, you must wait for the order to complete or
+     * You can't update a site address if there is an order in progress. You must wait for the order to complete or
      * cancel the order.
      * </p>
      * <p>
@@ -787,10 +905,10 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
-     * Updates the site address.
+     * Updates the address of the specified site.
      * </p>
      * <p>
-     * To update a site address with an order <code>IN_PROGRESS</code>, you must wait for the order to complete or
+     * You can't update a site address if there is an order in progress. You must wait for the order to complete or
      * cancel the order.
      * </p>
      * <p>

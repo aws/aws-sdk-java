@@ -51,6 +51,8 @@ public class CreateMetricSetRequestMarshaller {
             .marshallLocationName("Timezone").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> DIMENSIONFILTERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DimensionFilterList").build();
 
     private static final CreateMetricSetRequestMarshaller instance = new CreateMetricSetRequestMarshaller();
 
@@ -79,6 +81,7 @@ public class CreateMetricSetRequestMarshaller {
             protocolMarshaller.marshall(createMetricSetRequest.getMetricSource(), METRICSOURCE_BINDING);
             protocolMarshaller.marshall(createMetricSetRequest.getTimezone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(createMetricSetRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createMetricSetRequest.getDimensionFilterList(), DIMENSIONFILTERLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

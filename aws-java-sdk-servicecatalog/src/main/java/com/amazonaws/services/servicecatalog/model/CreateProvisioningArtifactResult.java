@@ -35,13 +35,14 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
      * </p>
      * <p>
      * <code>LoadTemplateFromURL</code>
      * </p>
      * <p>
-     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     * format.
      * </p>
      * <p>
      * <code>ImportFromPhysicalId</code>
@@ -104,13 +105,14 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
      * </p>
      * <p>
      * <code>LoadTemplateFromURL</code>
      * </p>
      * <p>
-     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     * format.
      * </p>
      * <p>
      * <code>ImportFromPhysicalId</code>
@@ -122,13 +124,15 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * @return Specify the template source with one of the following options, but not both. Keys accepted: [
      *         <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
      *         <p>
-     *         The URL of the CloudFormation template in Amazon S3, in JSON format.
+     *         The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     *         format.
      *         </p>
      *         <p>
      *         <code>LoadTemplateFromURL</code>
      *         </p>
      *         <p>
-     *         Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     *         Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in
+     *         JSON format.
      *         </p>
      *         <p>
      *         <code>ImportFromPhysicalId</code>
@@ -148,13 +152,14 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
      * </p>
      * <p>
      * <code>LoadTemplateFromURL</code>
      * </p>
      * <p>
-     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     * format.
      * </p>
      * <p>
      * <code>ImportFromPhysicalId</code>
@@ -167,13 +172,15 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      *        Specify the template source with one of the following options, but not both. Keys accepted: [
      *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
      *        <p>
-     *        The URL of the CloudFormation template in Amazon S3, in JSON format.
+     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     *        format.
      *        </p>
      *        <p>
      *        <code>LoadTemplateFromURL</code>
      *        </p>
      *        <p>
-     *        Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     *        Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     *        format.
      *        </p>
      *        <p>
      *        <code>ImportFromPhysicalId</code>
@@ -193,13 +200,14 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, in JSON format.
+     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
      * </p>
      * <p>
      * <code>LoadTemplateFromURL</code>
      * </p>
      * <p>
-     * Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     * Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     * format.
      * </p>
      * <p>
      * <code>ImportFromPhysicalId</code>
@@ -212,13 +220,15 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      *        Specify the template source with one of the following options, but not both. Keys accepted: [
      *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
      *        <p>
-     *        The URL of the CloudFormation template in Amazon S3, in JSON format.
+     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     *        format.
      *        </p>
      *        <p>
      *        <code>LoadTemplateFromURL</code>
      *        </p>
      *        <p>
-     *        Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+     *        Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
+     *        format.
      *        </p>
      *        <p>
      *        <code>ImportFromPhysicalId</code>

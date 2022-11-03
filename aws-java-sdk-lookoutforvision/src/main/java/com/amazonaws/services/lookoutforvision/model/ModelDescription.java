@@ -102,6 +102,19 @@ public class ModelDescription implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     * </p>
+     */
+    private Integer minInferenceUnits;
+    /**
+     * <p>
+     * The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     * information, see <a>StartModel</a>.
+     * </p>
+     */
+    private Integer maxInferenceUnits;
 
     /**
      * <p>
@@ -615,6 +628,92 @@ public class ModelDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     * </p>
+     * 
+     * @param minInferenceUnits
+     *        The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     */
+
+    public void setMinInferenceUnits(Integer minInferenceUnits) {
+        this.minInferenceUnits = minInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     * </p>
+     * 
+     * @return The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     */
+
+    public Integer getMinInferenceUnits() {
+        return this.minInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     * </p>
+     * 
+     * @param minInferenceUnits
+     *        The minimum number of inference units used by the model. For more information, see <a>StartModel</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelDescription withMinInferenceUnits(Integer minInferenceUnits) {
+        setMinInferenceUnits(minInferenceUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     * information, see <a>StartModel</a>.
+     * </p>
+     * 
+     * @param maxInferenceUnits
+     *        The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     *        information, see <a>StartModel</a>.
+     */
+
+    public void setMaxInferenceUnits(Integer maxInferenceUnits) {
+        this.maxInferenceUnits = maxInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     * information, see <a>StartModel</a>.
+     * </p>
+     * 
+     * @return The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     *         information, see <a>StartModel</a>.
+     */
+
+    public Integer getMaxInferenceUnits() {
+        return this.maxInferenceUnits;
+    }
+
+    /**
+     * <p>
+     * The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     * information, see <a>StartModel</a>.
+     * </p>
+     * 
+     * @param maxInferenceUnits
+     *        The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more
+     *        information, see <a>StartModel</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelDescription withMaxInferenceUnits(Integer maxInferenceUnits) {
+        setMaxInferenceUnits(maxInferenceUnits);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -649,7 +748,11 @@ public class ModelDescription implements Serializable, Cloneable, StructuredPojo
         if (getEvaluationEndTimestamp() != null)
             sb.append("EvaluationEndTimestamp: ").append(getEvaluationEndTimestamp()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getMinInferenceUnits() != null)
+            sb.append("MinInferenceUnits: ").append(getMinInferenceUnits()).append(",");
+        if (getMaxInferenceUnits() != null)
+            sb.append("MaxInferenceUnits: ").append(getMaxInferenceUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -712,6 +815,14 @@ public class ModelDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getMinInferenceUnits() == null ^ this.getMinInferenceUnits() == null)
+            return false;
+        if (other.getMinInferenceUnits() != null && other.getMinInferenceUnits().equals(this.getMinInferenceUnits()) == false)
+            return false;
+        if (other.getMaxInferenceUnits() == null ^ this.getMaxInferenceUnits() == null)
+            return false;
+        if (other.getMaxInferenceUnits() != null && other.getMaxInferenceUnits().equals(this.getMaxInferenceUnits()) == false)
+            return false;
         return true;
     }
 
@@ -732,6 +843,8 @@ public class ModelDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEvaluationResult() == null) ? 0 : getEvaluationResult().hashCode());
         hashCode = prime * hashCode + ((getEvaluationEndTimestamp() == null) ? 0 : getEvaluationEndTimestamp().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getMinInferenceUnits() == null) ? 0 : getMinInferenceUnits().hashCode());
+        hashCode = prime * hashCode + ((getMaxInferenceUnits() == null) ? 0 : getMaxInferenceUnits().hashCode());
         return hashCode;
     }
 

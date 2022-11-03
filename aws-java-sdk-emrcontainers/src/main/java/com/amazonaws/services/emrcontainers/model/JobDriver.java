@@ -34,6 +34,12 @@ public class JobDriver implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SparkSubmitJobDriver sparkSubmitJobDriver;
+    /**
+     * <p>
+     * The job driver for job type.
+     * </p>
+     */
+    private SparkSqlJobDriver sparkSqlJobDriver;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class JobDriver implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The job driver for job type.
+     * </p>
+     * 
+     * @param sparkSqlJobDriver
+     *        The job driver for job type.
+     */
+
+    public void setSparkSqlJobDriver(SparkSqlJobDriver sparkSqlJobDriver) {
+        this.sparkSqlJobDriver = sparkSqlJobDriver;
+    }
+
+    /**
+     * <p>
+     * The job driver for job type.
+     * </p>
+     * 
+     * @return The job driver for job type.
+     */
+
+    public SparkSqlJobDriver getSparkSqlJobDriver() {
+        return this.sparkSqlJobDriver;
+    }
+
+    /**
+     * <p>
+     * The job driver for job type.
+     * </p>
+     * 
+     * @param sparkSqlJobDriver
+     *        The job driver for job type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDriver withSparkSqlJobDriver(SparkSqlJobDriver sparkSqlJobDriver) {
+        setSparkSqlJobDriver(sparkSqlJobDriver);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class JobDriver implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSparkSubmitJobDriver() != null)
-            sb.append("SparkSubmitJobDriver: ").append(getSparkSubmitJobDriver());
+            sb.append("SparkSubmitJobDriver: ").append(getSparkSubmitJobDriver()).append(",");
+        if (getSparkSqlJobDriver() != null)
+            sb.append("SparkSqlJobDriver: ").append(getSparkSqlJobDriver());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class JobDriver implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSparkSubmitJobDriver() != null && other.getSparkSubmitJobDriver().equals(this.getSparkSubmitJobDriver()) == false)
             return false;
+        if (other.getSparkSqlJobDriver() == null ^ this.getSparkSqlJobDriver() == null)
+            return false;
+        if (other.getSparkSqlJobDriver() != null && other.getSparkSqlJobDriver().equals(this.getSparkSqlJobDriver()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class JobDriver implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSparkSubmitJobDriver() == null) ? 0 : getSparkSubmitJobDriver().hashCode());
+        hashCode = prime * hashCode + ((getSparkSqlJobDriver() == null) ? 0 : getSparkSqlJobDriver().hashCode());
         return hashCode;
     }
 

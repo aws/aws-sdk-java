@@ -27,7 +27,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     * An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      * <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can
      * operate on items in different tables, but the tables must reside in the same Amazon Web Services account and
      * Region, and no two of them can operate on the same item.
@@ -70,13 +70,13 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     * An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      * <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can
      * operate on items in different tables, but the tables must reside in the same Amazon Web Services account and
      * Region, and no two of them can operate on the same item.
      * </p>
      * 
-     * @return An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     * @return An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      *         <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These
      *         can operate on items in different tables, but the tables must reside in the same Amazon Web Services
      *         account and Region, and no two of them can operate on the same item.
@@ -88,14 +88,14 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     * An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      * <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can
      * operate on items in different tables, but the tables must reside in the same Amazon Web Services account and
      * Region, and no two of them can operate on the same item.
      * </p>
      * 
      * @param transactItems
-     *        An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     *        An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      *        <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These
      *        can operate on items in different tables, but the tables must reside in the same Amazon Web Services
      *        account and Region, and no two of them can operate on the same item.
@@ -112,7 +112,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     * An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      * <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can
      * operate on items in different tables, but the tables must reside in the same Amazon Web Services account and
      * Region, and no two of them can operate on the same item.
@@ -124,7 +124,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param transactItems
-     *        An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     *        An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      *        <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These
      *        can operate on items in different tables, but the tables must reside in the same Amazon Web Services
      *        account and Region, and no two of them can operate on the same item.
@@ -143,14 +143,14 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     * An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      * <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can
      * operate on items in different tables, but the tables must reside in the same Amazon Web Services account and
      * Region, and no two of them can operate on the same item.
      * </p>
      * 
      * @param transactItems
-     *        An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a
+     *        An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a
      *        <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These
      *        can operate on items in different tables, but the tables must reside in the same Amazon Web Services
      *        account and Region, and no two of them can operate on the same item.

@@ -56,6 +56,11 @@ public class IncidentTemplateJsonUnmarshaller implements Unmarshaller<IncidentTe
                     context.nextToken();
                     incidentTemplate.setImpact(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("incidentTags", targetDepth)) {
+                    context.nextToken();
+                    incidentTemplate.setIncidentTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("notificationTargets", targetDepth)) {
                     context.nextToken();
                     incidentTemplate.setNotificationTargets(new ListUnmarshaller<NotificationTargetItem>(NotificationTargetItemJsonUnmarshaller.getInstance())

@@ -438,7 +438,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
 
     /**
      * <p>
-     * Deletes an environment member from an Cloud9 development environment.
+     * Deletes an environment member from a development environment.
      * </p>
      * 
      * @param deleteEnvironmentMembershipRequest

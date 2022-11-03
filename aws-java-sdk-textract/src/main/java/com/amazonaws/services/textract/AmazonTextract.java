@@ -73,8 +73,13 @@ public interface AmazonTextract {
      * </li>
      * <li>
      * <p>
-     * Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that
-     * connect it to the query asked. This Block also contains a location and attached confidence score.
+     * Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Query Result. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the
+     * query asked. This Block also contains a confidence score.
      * </p>
      * </li>
      * </ul>
@@ -143,7 +148,7 @@ public interface AmazonTextract {
      * between text.
      * </p>
      * <p>
-     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows:
      * </p>
      * <ul>
      * <li>
@@ -244,8 +249,8 @@ public interface AmazonTextract {
     /**
      * <p>
      * Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of
-     * text. The input document must be an image in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code>
-     * returns the detected text in an array of <a>Block</a> objects.
+     * text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF.
+     * <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a> objects.
      * </p>
      * <p>
      * Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object is
@@ -340,11 +345,23 @@ public interface AmazonTextract {
      * </li>
      * <li>
      * <p>
-     * Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that
-     * connect it to the query asked. This Block also contains a location and attached confidence score
+     * Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Query Results. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the
+     * query asked. This Block also contains a confidence score.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * While processing a document with queries, look out for <code>INVALID_REQUEST_PARAMETERS</code> output. This
+     * indicates that either the per page query limit has been exceeded or that the operation is trying to query a page
+     * in the document which doesn’t exist.
+     * </p>
+     * </note>
      * <p>
      * Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in
      * tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including

@@ -47,6 +47,11 @@ public class NoncurrentVersionExpirationStaxUnmarshaller implements Unmarshaller
                     noncurrentVersionExpiration.setNoncurrentDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("NewerNoncurrentVersions", targetDepth)) {
+                    noncurrentVersionExpiration.setNewerNoncurrentVersions(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return noncurrentVersionExpiration;

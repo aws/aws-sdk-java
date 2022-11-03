@@ -34,8 +34,10 @@ public class InstanceCreditSpecificationRequest implements Serializable, Cloneab
     private String instanceId;
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * <p>
      * T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
@@ -85,16 +87,20 @@ public class InstanceCreditSpecificationRequest implements Serializable, Cloneab
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * <p>
      * T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>.</p>
+     *        The credit option for CPU usage of the instance.</p>
+     *        <p>
+     *        Valid values: <code>standard</code> | <code>unlimited</code>
+     *        </p>
      *        <p>
      *        T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
      */
@@ -105,15 +111,19 @@ public class InstanceCreditSpecificationRequest implements Serializable, Cloneab
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * <p>
      * T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
      * </p>
      * 
-     * @return The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     *         <code>unlimited</code>.</p>
+     * @return The credit option for CPU usage of the instance.</p>
+     *         <p>
+     *         Valid values: <code>standard</code> | <code>unlimited</code>
+     *         </p>
      *         <p>
      *         T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
      */
@@ -124,16 +134,20 @@ public class InstanceCreditSpecificationRequest implements Serializable, Cloneab
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * <p>
      * T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>.</p>
+     *        The credit option for CPU usage of the instance.</p>
+     *        <p>
+     *        Valid values: <code>standard</code> | <code>unlimited</code>
+     *        </p>
      *        <p>
      *        T3 instances with <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit option.
      * @return Returns a reference to this object so that method calls can be chained together.

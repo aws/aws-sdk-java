@@ -36,13 +36,13 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
     private Long durationMillis;
     /**
      * <p>
-     * The position where this program will be inserted relative to the RelativePosition.
+     * The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * </p>
      */
     private String relativePosition;
     /**
      * <p>
-     * The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     * The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.
      * </p>
      */
     private String relativeProgram;
@@ -54,25 +54,27 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
     private Long scheduledStartTimeMillis;
     /**
      * <p>
-     * Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.
+     * Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     * <code>RELATIVE</code>.
      * </p>
      * <p>
-     * ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the
-     * LINEAR PlaybackMode.
+     * <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for
+     * channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      * </p>
      * <p>
-     * Note the following considerations when using ABSOLUTE transitions:
+     * Note the following considerations when using <code>ABSOLUTE</code> transitions:
      * </p>
      * <p>
      * If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor
      * truncates the preceding program on a common segment boundary.
      * </p>
      * <p>
-     * If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     * If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear
+     * channel.
      * </p>
      * <p>
-     * RELATIVE - The program is inserted into the schedule either before or after a program that you specify via
-     * RelativePosition.
+     * <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you
+     * specify via <code>RelativePosition</code>.
      * </p>
      */
     private String type;
@@ -119,11 +121,11 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position where this program will be inserted relative to the RelativePosition.
+     * The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * </p>
      * 
      * @param relativePosition
-     *        The position where this program will be inserted relative to the RelativePosition.
+     *        The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * @see RelativePosition
      */
 
@@ -133,10 +135,10 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position where this program will be inserted relative to the RelativePosition.
+     * The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * </p>
      * 
-     * @return The position where this program will be inserted relative to the RelativePosition.
+     * @return The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * @see RelativePosition
      */
 
@@ -146,11 +148,11 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position where this program will be inserted relative to the RelativePosition.
+     * The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * </p>
      * 
      * @param relativePosition
-     *        The position where this program will be inserted relative to the RelativePosition.
+     *        The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelativePosition
      */
@@ -162,11 +164,11 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position where this program will be inserted relative to the RelativePosition.
+     * The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * </p>
      * 
      * @param relativePosition
-     *        The position where this program will be inserted relative to the RelativePosition.
+     *        The position where this program will be inserted relative to the <code>RelativePosition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelativePosition
      */
@@ -178,11 +180,12 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     * The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.
      * </p>
      * 
      * @param relativeProgram
-     *        The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     *        The name of the program that this program will be inserted next to, as defined by
+     *        <code>RelativePosition</code>.
      */
 
     public void setRelativeProgram(String relativeProgram) {
@@ -191,10 +194,11 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     * The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.
      * </p>
      * 
-     * @return The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     * @return The name of the program that this program will be inserted next to, as defined by
+     *         <code>RelativePosition</code>.
      */
 
     public String getRelativeProgram() {
@@ -203,11 +207,12 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     * The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.
      * </p>
      * 
      * @param relativeProgram
-     *        The name of the program that this program will be inserted next to, as defined by RelativePosition.
+     *        The name of the program that this program will be inserted next to, as defined by
+     *        <code>RelativePosition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,46 +263,50 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.
+     * Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     * <code>RELATIVE</code>.
      * </p>
      * <p>
-     * ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the
-     * LINEAR PlaybackMode.
+     * <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for
+     * channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      * </p>
      * <p>
-     * Note the following considerations when using ABSOLUTE transitions:
+     * Note the following considerations when using <code>ABSOLUTE</code> transitions:
      * </p>
      * <p>
      * If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor
      * truncates the preceding program on a common segment boundary.
      * </p>
      * <p>
-     * If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     * If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear
+     * channel.
      * </p>
      * <p>
-     * RELATIVE - The program is inserted into the schedule either before or after a program that you specify via
-     * RelativePosition.
+     * <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you
+     * specify via <code>RelativePosition</code>.
      * </p>
      * 
      * @param type
-     *        Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p>
+     *        Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     *        <code>RELATIVE</code>.</p>
      *        <p>
-     *        ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels
-     *        using the LINEAR PlaybackMode.
+     *        <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for
+     *        channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      *        </p>
      *        <p>
-     *        Note the following considerations when using ABSOLUTE transitions:
+     *        Note the following considerations when using <code>ABSOLUTE</code> transitions:
      *        </p>
      *        <p>
      *        If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor
      *        truncates the preceding program on a common segment boundary.
      *        </p>
      *        <p>
-     *        If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     *        If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your
+     *        linear channel.
      *        </p>
      *        <p>
-     *        RELATIVE - The program is inserted into the schedule either before or after a program that you specify via
-     *        RelativePosition.
+     *        <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that
+     *        you specify via <code>RelativePosition</code>.
      */
 
     public void setType(String type) {
@@ -306,45 +315,49 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.
+     * Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     * <code>RELATIVE</code>.
      * </p>
      * <p>
-     * ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the
-     * LINEAR PlaybackMode.
+     * <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for
+     * channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      * </p>
      * <p>
-     * Note the following considerations when using ABSOLUTE transitions:
+     * Note the following considerations when using <code>ABSOLUTE</code> transitions:
      * </p>
      * <p>
      * If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor
      * truncates the preceding program on a common segment boundary.
      * </p>
      * <p>
-     * If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     * If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear
+     * channel.
      * </p>
      * <p>
-     * RELATIVE - The program is inserted into the schedule either before or after a program that you specify via
-     * RelativePosition.
+     * <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you
+     * specify via <code>RelativePosition</code>.
      * </p>
      * 
-     * @return Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p>
+     * @return Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     *         <code>RELATIVE</code>.</p>
      *         <p>
-     *         ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels
-     *         using the LINEAR PlaybackMode.
+     *         <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used
+     *         for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      *         </p>
      *         <p>
-     *         Note the following considerations when using ABSOLUTE transitions:
+     *         Note the following considerations when using <code>ABSOLUTE</code> transitions:
      *         </p>
      *         <p>
      *         If the preceding program in the schedule has a duration that extends past the wall clock time,
      *         MediaTailor truncates the preceding program on a common segment boundary.
      *         </p>
      *         <p>
-     *         If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     *         If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your
+     *         linear channel.
      *         </p>
      *         <p>
-     *         RELATIVE - The program is inserted into the schedule either before or after a program that you specify
-     *         via RelativePosition.
+     *         <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that
+     *         you specify via <code>RelativePosition</code>.
      */
 
     public String getType() {
@@ -353,46 +366,50 @@ public class Transition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.
+     * Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     * <code>RELATIVE</code>.
      * </p>
      * <p>
-     * ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the
-     * LINEAR PlaybackMode.
+     * <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for
+     * channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      * </p>
      * <p>
-     * Note the following considerations when using ABSOLUTE transitions:
+     * Note the following considerations when using <code>ABSOLUTE</code> transitions:
      * </p>
      * <p>
      * If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor
      * truncates the preceding program on a common segment boundary.
      * </p>
      * <p>
-     * If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     * If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear
+     * channel.
      * </p>
      * <p>
-     * RELATIVE - The program is inserted into the schedule either before or after a program that you specify via
-     * RelativePosition.
+     * <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you
+     * specify via <code>RelativePosition</code>.
      * </p>
      * 
      * @param type
-     *        Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p>
+     *        Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or
+     *        <code>RELATIVE</code>.</p>
      *        <p>
-     *        ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels
-     *        using the LINEAR PlaybackMode.
+     *        <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for
+     *        channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
      *        </p>
      *        <p>
-     *        Note the following considerations when using ABSOLUTE transitions:
+     *        Note the following considerations when using <code>ABSOLUTE</code> transitions:
      *        </p>
      *        <p>
      *        If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor
      *        truncates the preceding program on a common segment boundary.
      *        </p>
      *        <p>
-     *        If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.
+     *        If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your
+     *        linear channel.
      *        </p>
      *        <p>
-     *        RELATIVE - The program is inserted into the schedule either before or after a program that you specify via
-     *        RelativePosition.
+     *        <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that
+     *        you specify via <code>RelativePosition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

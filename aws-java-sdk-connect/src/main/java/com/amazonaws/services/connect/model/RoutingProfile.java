@@ -72,10 +72,23 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
     private String defaultOutboundQueueId;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The number of associated queues in routing profile.
+     * </p>
+     */
+    private Long numberOfAssociatedQueues;
+    /**
+     * <p>
+     * The number of associated users in routing profile.
+     * </p>
+     */
+    private Long numberOfAssociatedUsers;
 
     /**
      * <p>
@@ -389,10 +402,12 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -401,11 +416,13 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -414,11 +431,13 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,6 +475,86 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of associated queues in routing profile.
+     * </p>
+     * 
+     * @param numberOfAssociatedQueues
+     *        The number of associated queues in routing profile.
+     */
+
+    public void setNumberOfAssociatedQueues(Long numberOfAssociatedQueues) {
+        this.numberOfAssociatedQueues = numberOfAssociatedQueues;
+    }
+
+    /**
+     * <p>
+     * The number of associated queues in routing profile.
+     * </p>
+     * 
+     * @return The number of associated queues in routing profile.
+     */
+
+    public Long getNumberOfAssociatedQueues() {
+        return this.numberOfAssociatedQueues;
+    }
+
+    /**
+     * <p>
+     * The number of associated queues in routing profile.
+     * </p>
+     * 
+     * @param numberOfAssociatedQueues
+     *        The number of associated queues in routing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoutingProfile withNumberOfAssociatedQueues(Long numberOfAssociatedQueues) {
+        setNumberOfAssociatedQueues(numberOfAssociatedQueues);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of associated users in routing profile.
+     * </p>
+     * 
+     * @param numberOfAssociatedUsers
+     *        The number of associated users in routing profile.
+     */
+
+    public void setNumberOfAssociatedUsers(Long numberOfAssociatedUsers) {
+        this.numberOfAssociatedUsers = numberOfAssociatedUsers;
+    }
+
+    /**
+     * <p>
+     * The number of associated users in routing profile.
+     * </p>
+     * 
+     * @return The number of associated users in routing profile.
+     */
+
+    public Long getNumberOfAssociatedUsers() {
+        return this.numberOfAssociatedUsers;
+    }
+
+    /**
+     * <p>
+     * The number of associated users in routing profile.
+     * </p>
+     * 
+     * @param numberOfAssociatedUsers
+     *        The number of associated users in routing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoutingProfile withNumberOfAssociatedUsers(Long numberOfAssociatedUsers) {
+        setNumberOfAssociatedUsers(numberOfAssociatedUsers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -482,7 +581,11 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
         if (getDefaultOutboundQueueId() != null)
             sb.append("DefaultOutboundQueueId: ").append(getDefaultOutboundQueueId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getNumberOfAssociatedQueues() != null)
+            sb.append("NumberOfAssociatedQueues: ").append(getNumberOfAssociatedQueues()).append(",");
+        if (getNumberOfAssociatedUsers() != null)
+            sb.append("NumberOfAssociatedUsers: ").append(getNumberOfAssociatedUsers());
         sb.append("}");
         return sb.toString();
     }
@@ -529,6 +632,14 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getNumberOfAssociatedQueues() == null ^ this.getNumberOfAssociatedQueues() == null)
+            return false;
+        if (other.getNumberOfAssociatedQueues() != null && other.getNumberOfAssociatedQueues().equals(this.getNumberOfAssociatedQueues()) == false)
+            return false;
+        if (other.getNumberOfAssociatedUsers() == null ^ this.getNumberOfAssociatedUsers() == null)
+            return false;
+        if (other.getNumberOfAssociatedUsers() != null && other.getNumberOfAssociatedUsers().equals(this.getNumberOfAssociatedUsers()) == false)
+            return false;
         return true;
     }
 
@@ -545,6 +656,8 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMediaConcurrencies() == null) ? 0 : getMediaConcurrencies().hashCode());
         hashCode = prime * hashCode + ((getDefaultOutboundQueueId() == null) ? 0 : getDefaultOutboundQueueId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfAssociatedQueues() == null) ? 0 : getNumberOfAssociatedQueues().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfAssociatedUsers() == null) ? 0 : getNumberOfAssociatedUsers().hashCode());
         return hashCode;
     }
 

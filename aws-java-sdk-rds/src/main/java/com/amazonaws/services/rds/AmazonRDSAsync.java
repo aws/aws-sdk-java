@@ -299,17 +299,27 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
      * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
      * </p>
-     * <note>
      * <p>
      * You can't authorize ingress from an EC2 security group in one Amazon Web Services Region to an Amazon RDS DB
      * instance in another. You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB
      * instance in another.
      * </p>
-     * </note>
      * <p>
      * For an overview of CIDR ranges, go to the <a
      * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
      * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param authorizeDBSecurityGroupIngressRequest
      * @return A Java Future containing the result of the AuthorizeDBSecurityGroupIngress operation returned by the
@@ -329,17 +339,27 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
      * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
      * </p>
-     * <note>
      * <p>
      * You can't authorize ingress from an EC2 security group in one Amazon Web Services Region to an Amazon RDS DB
      * instance in another. You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB
      * instance in another.
      * </p>
-     * </note>
      * <p>
      * For an overview of CIDR ranges, go to the <a
      * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
      * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param authorizeDBSecurityGroupIngressRequest
      * @param asyncHandler
@@ -367,7 +387,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora MySQL DB clusters.
+     * This action applies only to Aurora MySQL DB clusters.
      * </p>
      * </note>
      * 
@@ -390,7 +410,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora MySQL DB clusters.
+     * This action applies only to Aurora MySQL DB clusters.
      * </p>
      * </note>
      * 
@@ -483,7 +503,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region. In that case, the Amazon
-     * Web Services Region where you call the <code>CopyDBClusterSnapshot</code> action is the destination Amazon Web
+     * Web Services Region where you call the <code>CopyDBClusterSnapshot</code> operation is the destination Amazon Web
      * Services Region for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB cluster snapshot
      * from another Amazon Web Services Region, you must provide the following values:
      * </p>
@@ -496,57 +516,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * <li>
      * <p>
-     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
-     * <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon Web Services Region where the DB
-     * cluster snapshot is copied from. The pre-signed URL must be a valid request for the
-     * <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that
-     * contains the encrypted DB cluster snapshot to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
-     * the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web Services Region, and the
-     * action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be
-     * created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-     * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web
-     * Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
-     * Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
-     * </p>
-     * <note>
-     * <p>
-     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
-     * executed in the source Amazon Web Services Region.
-     * </p>
-     * </note></li>
-     * <li>
-     * <p>
      * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in
      * the destination Amazon Web Services Region.
      * </p>
@@ -555,7 +524,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
      * snapshot to be copied. This identifier must be in the ARN format for the source Amazon Web Services Region and is
-     * the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
+     * the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the presigned URL.
      * </p>
      * </li>
      * </ul>
@@ -598,7 +567,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region. In that case, the Amazon
-     * Web Services Region where you call the <code>CopyDBClusterSnapshot</code> action is the destination Amazon Web
+     * Web Services Region where you call the <code>CopyDBClusterSnapshot</code> operation is the destination Amazon Web
      * Services Region for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB cluster snapshot
      * from another Amazon Web Services Region, you must provide the following values:
      * </p>
@@ -611,57 +580,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * <li>
      * <p>
-     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
-     * <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon Web Services Region where the DB
-     * cluster snapshot is copied from. The pre-signed URL must be a valid request for the
-     * <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that
-     * contains the encrypted DB cluster snapshot to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
-     * the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web Services Region, and the
-     * action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be
-     * created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-     * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web
-     * Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
-     * Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
-     * </p>
-     * <note>
-     * <p>
-     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
-     * executed in the source Amazon Web Services Region.
-     * </p>
-     * </note></li>
-     * <li>
-     * <p>
      * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in
      * the destination Amazon Web Services Region.
      * </p>
@@ -670,7 +588,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
      * snapshot to be copied. This identifier must be in the ARN format for the source Amazon Web Services Region and is
-     * the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
+     * the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the presigned URL.
      * </p>
      * </li>
      * </ul>
@@ -744,7 +662,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * You can copy a snapshot from one Amazon Web Services Region to another. In that case, the Amazon Web Services
-     * Region where you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web Services Region for
+     * Region where you call the <code>CopyDBSnapshot</code> operation is the destination Amazon Web Services Region for
      * the DB snapshot copy.
      * </p>
      * <p>
@@ -770,7 +688,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * You can copy a snapshot from one Amazon Web Services Region to another. In that case, the Amazon Web Services
-     * Region where you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web Services Region for
+     * Region where you call the <code>CopyDBSnapshot</code> operation is the destination Amazon Web Services Region for
      * the DB snapshot copy.
      * </p>
      * <p>
@@ -957,9 +875,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon Aurora DB cluster as a
-     * read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL DB instance. For cross-Region replication
-     * where the DB cluster identified by <code>ReplicationSourceIdentifier</code> is encrypted, also specify the
-     * <code>PreSignedUrl</code> parameter.
+     * read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL DB instance.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
@@ -986,9 +902,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon Aurora DB cluster as a
-     * read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL DB instance. For cross-Region replication
-     * where the DB cluster identified by <code>ReplicationSourceIdentifier</code> is encrypted, also specify the
-     * <code>PreSignedUrl</code> parameter.
+     * read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL DB instance.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
@@ -1020,7 +934,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -1038,7 +952,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -1085,7 +999,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * cluster, such as the character set for the default database defined by the <code>character_set_database</code>
      * parameter. You can use the <i>Parameter Groups</i> option of the <a
      * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <code>DescribeDBClusterParameters</code>
-     * action to verify that your DB cluster parameter group has been created or modified.
+     * operation to verify that your DB cluster parameter group has been created or modified.
      * </p>
      * </important>
      * <p>
@@ -1139,7 +1053,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * cluster, such as the character set for the default database defined by the <code>character_set_database</code>
      * parameter. You can use the <i>Parameter Groups</i> option of the <a
      * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <code>DescribeDBClusterParameters</code>
-     * action to verify that your DB cluster parameter group has been created or modified.
+     * operation to verify that your DB cluster parameter group has been created or modified.
      * </p>
      * </important>
      * <p>
@@ -1223,6 +1137,20 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a new DB instance.
      * </p>
+     * <p>
+     * The new DB instance can be an RDS DB instance, or it can be a DB instance in an Aurora DB cluster. For an Aurora
+     * DB cluster, you can call this operation multiple times to add more than one DB instance to the cluster.
+     * </p>
+     * <p>
+     * For more information about creating an RDS DB instance, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html"> Creating an Amazon RDS
+     * DB instance</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about creating a DB instance in an Aurora DB cluster, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.CreateInstance.html"> Creating an
+     * Amazon Aurora DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param createDBInstanceRequest
      * @return A Java Future containing the result of the CreateDBInstance operation returned by the service.
@@ -1235,6 +1163,20 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance.
+     * </p>
+     * <p>
+     * The new DB instance can be an RDS DB instance, or it can be a DB instance in an Aurora DB cluster. For an Aurora
+     * DB cluster, you can call this operation multiple times to add more than one DB instance to the cluster.
+     * </p>
+     * <p>
+     * For more information about creating an RDS DB instance, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html"> Creating an Amazon RDS
+     * DB instance</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about creating a DB instance in an Aurora DB cluster, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.CreateInstance.html"> Creating an
+     * Amazon Aurora DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param createDBInstanceRequest
@@ -1258,8 +1200,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code> action to create a DB instance
-     * for an Aurora DB cluster.
+     * Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code> operation to create a DB
+     * instance for an Aurora DB cluster.
      * </p>
      * <p>
      * All read replica DB instances are created with backups disabled. All other DB instance attributes (including DB
@@ -1287,8 +1229,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code> action to create a DB instance
-     * for an Aurora DB cluster.
+     * Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code> operation to create a DB
+     * instance for an Aurora DB cluster.
      * </p>
      * <p>
      * All read replica DB instances are created with backups disabled. All other DB instance attributes (including DB
@@ -1458,9 +1400,19 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
-     * <note>
      * <p>
      * A DB security group controls access to EC2-Classic DB instances that are not in a VPC.
+     * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1476,9 +1428,19 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
-     * <note>
      * <p>
      * A DB security group controls access to EC2-Classic DB instances that are not in a VPC.
+     * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1563,9 +1525,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an RDS event notification subscription. This action requires a topic Amazon Resource Name (ARN) created
-     * by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in
-     * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
+     * Creates an RDS event notification subscription. This operation requires a topic Amazon Resource Name (ARN)
+     * created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a
+     * topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
      * <p>
      * You can specify the type of source (<code>SourceType</code>) that you want to be notified of and provide a list
@@ -1582,12 +1544,16 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * If you don't specify either the SourceType or the <code>SourceIds</code>, you are notified of events generated
      * from all RDS sources belonging to your customer account.
      * </p>
-     * <note>
      * <p>
-     * RDS event notification is only available for unencrypted SNS topics. If you specify an encrypted SNS topic, event
-     * notifications aren't sent for the topic.
+     * For more information about subscribing to an event for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html"> Subscribing to Amazon
+     * RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * For more information about subscribing to an event for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html"> Subscribing to
+     * Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param createEventSubscriptionRequest
      * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
@@ -1599,9 +1565,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an RDS event notification subscription. This action requires a topic Amazon Resource Name (ARN) created
-     * by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in
-     * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
+     * Creates an RDS event notification subscription. This operation requires a topic Amazon Resource Name (ARN)
+     * created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a
+     * topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
      * <p>
      * You can specify the type of source (<code>SourceType</code>) that you want to be notified of and provide a list
@@ -1618,12 +1584,16 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * If you don't specify either the SourceType or the <code>SourceIds</code>, you are notified of events generated
      * from all RDS sources belonging to your customer account.
      * </p>
-     * <note>
      * <p>
-     * RDS event notification is only available for unencrypted SNS topics. If you specify an encrypted SNS topic, event
-     * notifications aren't sent for the topic.
+     * For more information about subscribing to an event for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html"> Subscribing to Amazon
+     * RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * For more information about subscribing to an event for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html"> Subscribing to
+     * Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param createEventSubscriptionRequest
      * @param asyncHandler
@@ -1651,7 +1621,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -1676,7 +1646,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -2276,9 +2246,19 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Deletes a DB security group.
      * </p>
-     * <note>
      * <p>
      * The specified DB security group must not be associated with any DB instances.
+     * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </note>
      * 
@@ -2294,9 +2274,19 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Deletes a DB security group.
      * </p>
-     * <note>
      * <p>
      * The specified DB security group must not be associated with any DB instances.
+     * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </note>
      * 
@@ -3460,6 +3450,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified,
      * the list will contain only the descriptions of the specified DB security group.
      * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeDBSecurityGroupsRequest
      * @return A Java Future containing the result of the DescribeDBSecurityGroups operation returned by the service.
@@ -3474,6 +3476,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified,
      * the list will contain only the descriptions of the specified DB security group.
      * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeDBSecurityGroupsRequest
      * @param asyncHandler
@@ -3878,6 +3892,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * DB parameter group, DB security group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by
      * providing the name as a parameter.
      * </p>
+     * <p>
+     * For more information on working with events, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring Amazon RDS
+     * events</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring Amazon
+     * Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * <note>
      * <p>
      * By default, RDS returns events that were generated in the past hour.
@@ -3898,6 +3919,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * cluster snapshots, and RDS Proxies for the past 14 days. Events specific to a particular DB instance, DB cluster,
      * DB parameter group, DB security group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by
      * providing the name as a parameter.
+     * </p>
+     * <p>
+     * For more information on working with events, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring Amazon RDS
+     * events</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring Amazon
+     * Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4284,8 +4312,17 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Returns a list of the source Amazon Web Services Regions where the current Amazon Web Services Region can create
-     * a read replica, copy a DB snapshot from, or replicate automated backups from. This API action supports
-     * pagination.
+     * a read replica, copy a DB snapshot from, or replicate automated backups from.
+     * </p>
+     * <p>
+     * Use this operation to determine whether cross-Region features are supported between other Regions and your
+     * current Region. This operation supports pagination.
+     * </p>
+     * <p>
+     * To return information about the Regions that are enabled for your account, or all Regions, use the EC2 operation
+     * <code>DescribeRegions</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html"> DescribeRegions</a> in
+     * the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param describeSourceRegionsRequest
@@ -4299,8 +4336,17 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Returns a list of the source Amazon Web Services Regions where the current Amazon Web Services Region can create
-     * a read replica, copy a DB snapshot from, or replicate automated backups from. This API action supports
-     * pagination.
+     * a read replica, copy a DB snapshot from, or replicate automated backups from.
+     * </p>
+     * <p>
+     * Use this operation to determine whether cross-Region features are supported between other Regions and your
+     * current Region. This operation supports pagination.
+     * </p>
+     * <p>
+     * To return information about the Regions that are enabled for your account, or all Regions, use the EC2 operation
+     * <code>DescribeRegions</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html"> DescribeRegions</a> in
+     * the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param describeSourceRegionsRequest
@@ -4410,8 +4456,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * An Amazon Aurora DB cluster automatically fails over to an Aurora Replica, if one exists, when the primary DB
-     * instance fails. A Multi-AZ DB cluster automatically fails over to a readbable standby DB instance when the
-     * primary DB instance fails.
+     * instance fails. A Multi-AZ DB cluster automatically fails over to a readable standby DB instance when the primary
+     * DB instance fails.
      * </p>
      * <p>
      * To simulate a failure of a primary instance for testing, you can force a failover. Because each instance in a DB
@@ -4451,8 +4497,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * An Amazon Aurora DB cluster automatically fails over to an Aurora Replica, if one exists, when the primary DB
-     * instance fails. A Multi-AZ DB cluster automatically fails over to a readbable standby DB instance when the
-     * primary DB instance fails.
+     * instance fails. A Multi-AZ DB cluster automatically fails over to a readable standby DB instance when the primary
+     * DB instance fails.
      * </p>
      * <p>
      * To simulate a failure of a primary instance for testing, you can force a failover. Because each instance in a DB
@@ -4604,6 +4650,53 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the audit policy state of a database activity stream to either locked (default) or unlocked. A locked
+     * policy is read-only, whereas an unlocked policy is read/write. If your activity stream is started and locked, you
+     * can unlock it, customize your audit policy, and then lock your activity stream. Restarting the activity stream
+     * isn't required. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html"> Modifying a
+     * database activity stream</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * This operation is supported for RDS for Oracle only.
+     * </p>
+     * 
+     * @param modifyActivityStreamRequest
+     * @return A Java Future containing the result of the ModifyActivityStream operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyActivityStreamResult> modifyActivityStreamAsync(ModifyActivityStreamRequest modifyActivityStreamRequest);
+
+    /**
+     * <p>
+     * Changes the audit policy state of a database activity stream to either locked (default) or unlocked. A locked
+     * policy is read-only, whereas an unlocked policy is read/write. If your activity stream is started and locked, you
+     * can unlock it, customize your audit policy, and then lock your activity stream. Restarting the activity stream
+     * isn't required. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html"> Modifying a
+     * database activity stream</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * This operation is supported for RDS for Oracle only.
+     * </p>
+     * 
+     * @param modifyActivityStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyActivityStream operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyActivityStreamResult> modifyActivityStreamAsync(ModifyActivityStreamRequest modifyActivityStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyActivityStreamRequest, ModifyActivityStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -4964,8 +5057,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * especially important for parameters that are critical when creating the default database for a DB cluster, such
      * as the character set for the default database defined by the <code>character_set_database</code> parameter. You
      * can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-     * console</a> or the <code>DescribeDBClusterParameters</code> action to verify that your DB cluster parameter group
-     * has been created or modified.
+     * console</a> or the <code>DescribeDBClusterParameters</code> operation to verify that your DB cluster parameter
+     * group has been created or modified.
      * </p>
      * <p>
      * If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster, Aurora applies the update
@@ -5008,8 +5101,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * especially important for parameters that are critical when creating the default database for a DB cluster, such
      * as the character set for the default database defined by the <code>character_set_database</code> parameter. You
      * can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-     * console</a> or the <code>DescribeDBClusterParameters</code> action to verify that your DB cluster parameter group
-     * has been created or modified.
+     * console</a> or the <code>DescribeDBClusterParameters</code> operation to verify that your DB cluster parameter
+     * group has been created or modified.
      * </p>
      * <p>
      * If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster, Aurora applies the update
@@ -5068,7 +5161,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * To view which Amazon Web Services accounts have access to copy or restore a manual DB cluster snapshot, or
      * whether a manual DB cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     * action. The accounts are returned as values for the <code>restore</code> attribute.
+     * operation. The accounts are returned as values for the <code>restore</code> attribute.
      * </p>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
@@ -5106,7 +5199,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * To view which Amazon Web Services accounts have access to copy or restore a manual DB cluster snapshot, or
      * whether a manual DB cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API
-     * action. The accounts are returned as values for the <code>restore</code> attribute.
+     * operation. The accounts are returned as values for the <code>restore</code> attribute.
      * </p>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
@@ -5373,7 +5466,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * To view which Amazon Web Services accounts have access to copy or restore a manual DB snapshot, or whether a
-     * manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are
+     * manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API operation. The accounts are
      * returned as values for the <code>restore</code> attribute.
      * </p>
      * 
@@ -5408,7 +5501,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * To view which Amazon Web Services accounts have access to copy or restore a manual DB snapshot, or whether a
-     * manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are
+     * manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API operation. The accounts are
      * returned as values for the <code>restore</code> attribute.
      * </p>
      * 
@@ -5791,6 +5884,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * This command doesn't apply to RDS Custom.
      * </p>
+     * <p>
+     * If your DB instance is part of a Multi-AZ DB cluster, you can reboot the DB cluster with the
+     * <code>RebootDBCluster</code> operation.
+     * </p>
      * 
      * @param rebootDBInstanceRequest
      * @return A Java Future containing the result of the RebootDBInstance operation returned by the service.
@@ -5817,6 +5914,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * This command doesn't apply to RDS Custom.
+     * </p>
+     * <p>
+     * If your DB instance is part of a Multi-AZ DB cluster, you can reboot the DB cluster with the
+     * <code>RebootDBCluster</code> operation.
      * </p>
      * 
      * @param rebootDBInstanceRequest
@@ -6596,6 +6697,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and
      * either EC2SecurityGroupName or EC2SecurityGroupId).
      * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param revokeDBSecurityGroupIngressRequest
      * @return A Java Future containing the result of the RevokeDBSecurityGroupIngress operation returned by the
@@ -6612,6 +6725,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and
      * either EC2SecurityGroupName or EC2SecurityGroupId).
      * </p>
+     * <note>
+     * <p>
+     * EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that
+     * you migrate as soon as possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a>
+     * in the <i>Amazon EC2 User Guide</i>, the blog <a
+     * href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is
+     * Retiring – Here’s How to Prepare</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not
+     * in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param revokeDBSecurityGroupIngressRequest
      * @param asyncHandler
@@ -7018,7 +7143,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Stops automated backup replication for a DB instance.
      * </p>
      * <p>
-     * This command doesn't apply to RDS Custom.
+     * This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
      * </p>
      * <p>
      * For more information, see <a
@@ -7041,7 +7166,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Stops automated backup replication for a DB instance.
      * </p>
      * <p>
-     * This command doesn't apply to RDS Custom.
+     * This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
      * </p>
      * <p>
      * For more information, see <a
@@ -7063,5 +7188,38 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DBInstanceAutomatedBackup> stopDBInstanceAutomatedBackupsReplicationAsync(
             StopDBInstanceAutomatedBackupsReplicationRequest stopDBInstanceAutomatedBackupsReplicationRequest,
             com.amazonaws.handlers.AsyncHandler<StopDBInstanceAutomatedBackupsReplicationRequest, DBInstanceAutomatedBackup> asyncHandler);
+
+    /**
+     * <p>
+     * Switches over an Oracle standby database in an Oracle Data Guard environment, making it the new primary database.
+     * Issue this command in the Region that hosts the current standby database.
+     * </p>
+     * 
+     * @param switchoverReadReplicaRequest
+     * @return A Java Future containing the result of the SwitchoverReadReplica operation returned by the service.
+     * @sample AmazonRDSAsync.SwitchoverReadReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> switchoverReadReplicaAsync(SwitchoverReadReplicaRequest switchoverReadReplicaRequest);
+
+    /**
+     * <p>
+     * Switches over an Oracle standby database in an Oracle Data Guard environment, making it the new primary database.
+     * Issue this command in the Region that hosts the current standby database.
+     * </p>
+     * 
+     * @param switchoverReadReplicaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SwitchoverReadReplica operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.SwitchoverReadReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> switchoverReadReplicaAsync(SwitchoverReadReplicaRequest switchoverReadReplicaRequest,
+            com.amazonaws.handlers.AsyncHandler<SwitchoverReadReplicaRequest, DBInstance> asyncHandler);
 
 }

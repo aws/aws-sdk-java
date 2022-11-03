@@ -55,6 +55,10 @@ public class AwsCloudMapServiceDiscoveryJsonUnmarshaller implements Unmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ipPreference", targetDepth)) {
+                    context.nextToken();
+                    awsCloudMapServiceDiscovery.setIpPreference(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("namespaceName", targetDepth)) {
                     context.nextToken();
                     awsCloudMapServiceDiscovery.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));

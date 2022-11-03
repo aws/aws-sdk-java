@@ -39,6 +39,12 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
     private String hypervisorArn;
     /**
      * <p>
+     * The updated name for the hypervisor
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The updated password for the hypervisor.
      * </p>
      */
@@ -130,6 +136,46 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
 
     public UpdateHypervisorRequest withHypervisorArn(String hypervisorArn) {
         setHypervisorArn(hypervisorArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The updated name for the hypervisor
+     * </p>
+     * 
+     * @param name
+     *        The updated name for the hypervisor
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The updated name for the hypervisor
+     * </p>
+     * 
+     * @return The updated name for the hypervisor
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The updated name for the hypervisor
+     * </p>
+     * 
+     * @param name
+     *        The updated name for the hypervisor
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateHypervisorRequest withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -229,6 +275,8 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Host: ").append(getHost()).append(",");
         if (getHypervisorArn() != null)
             sb.append("HypervisorArn: ").append(getHypervisorArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getUsername() != null)
@@ -255,6 +303,10 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getHypervisorArn() != null && other.getHypervisorArn().equals(this.getHypervisorArn()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
@@ -273,6 +325,7 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getHost() == null) ? 0 : getHost().hashCode());
         hashCode = prime * hashCode + ((getHypervisorArn() == null) ? 0 : getHypervisorArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         return hashCode;

@@ -50,6 +50,12 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      */
     private String targetSelection;
     /**
@@ -76,6 +82,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date completedAt;
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     */
+    private Boolean isConcurrent;
 
     /**
      * <p>
@@ -204,12 +217,23 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group.</p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @see TargetSelection
      */
 
@@ -224,11 +248,22 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *         specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *         when a change is detected in a target. For example, a job will run on a thing when the thing is added to
-     *         a target group, even after the job was completed by all things originally in the group.
+     *         a target group, even after the job was completed by all things originally in the group.</p> <note>
+     *         <p>
+     *         We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *         using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *         created.
+     *         </p>
      * @see TargetSelection
      */
 
@@ -243,12 +278,23 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group.</p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -265,12 +311,23 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group.</p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -460,6 +517,66 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @param isConcurrent
+     *        Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *        canceling previously created executions, otherwise false.
+     */
+
+    public void setIsConcurrent(Boolean isConcurrent) {
+        this.isConcurrent = isConcurrent;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @return Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *         canceling previously created executions, otherwise false.
+     */
+
+    public Boolean getIsConcurrent() {
+        return this.isConcurrent;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @param isConcurrent
+     *        Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *        canceling previously created executions, otherwise false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSummary withIsConcurrent(Boolean isConcurrent) {
+        setIsConcurrent(isConcurrent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @return Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *         canceling previously created executions, otherwise false.
+     */
+
+    public Boolean isConcurrent() {
+        return this.isConcurrent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -486,7 +603,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: ").append(getCompletedAt());
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
+        if (getIsConcurrent() != null)
+            sb.append("IsConcurrent: ").append(getIsConcurrent());
         sb.append("}");
         return sb.toString();
     }
@@ -533,6 +652,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCompletedAt() != null && other.getCompletedAt().equals(this.getCompletedAt()) == false)
             return false;
+        if (other.getIsConcurrent() == null ^ this.getIsConcurrent() == null)
+            return false;
+        if (other.getIsConcurrent() != null && other.getIsConcurrent().equals(this.getIsConcurrent()) == false)
+            return false;
         return true;
     }
 
@@ -549,6 +672,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
+        hashCode = prime * hashCode + ((getIsConcurrent() == null) ? 0 : getIsConcurrent().hashCode());
         return hashCode;
     }
 

@@ -37,7 +37,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String type;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the public extension.
+     * The Amazon Resource Name (ARN) of the public extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
@@ -215,7 +215,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the public extension.
+     * The Amazon Resource Name (ARN) of the public extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
@@ -223,7 +223,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param publicTypeArn
-     *        The Amazon Resource Number (ARN) of the public extension.</p>
+     *        The Amazon Resource Name (ARN) of the public extension.</p>
      *        <p>
      *        Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
      *        <code>PublisherId</code>.
@@ -235,14 +235,14 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the public extension.
+     * The Amazon Resource Name (ARN) of the public extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
      * <code>PublisherId</code>.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the public extension.</p>
+     * @return The Amazon Resource Name (ARN) of the public extension.</p>
      *         <p>
      *         Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>,
      *         and <code>PublisherId</code>.
@@ -254,7 +254,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the public extension.
+     * The Amazon Resource Name (ARN) of the public extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
@@ -262,7 +262,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param publicTypeArn
-     *        The Amazon Resource Number (ARN) of the public extension.</p>
+     *        The Amazon Resource Name (ARN) of the public extension.</p>
      *        <p>
      *        Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
      *        <code>PublisherId</code>.

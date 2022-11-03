@@ -80,6 +80,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code>
@@ -289,6 +293,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -332,6 +340,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -685,6 +697,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code>
@@ -708,6 +724,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -739,6 +759,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code>
@@ -761,6 +785,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         There is no additional cost associated with requesting a return value aside from the small network and
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
+     *         </p>
      *         <note>
      *         <p>
      *         The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -792,6 +820,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code>
@@ -815,6 +847,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -848,6 +884,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code>
@@ -871,6 +911,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -902,6 +946,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code>
@@ -925,6 +973,10 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,

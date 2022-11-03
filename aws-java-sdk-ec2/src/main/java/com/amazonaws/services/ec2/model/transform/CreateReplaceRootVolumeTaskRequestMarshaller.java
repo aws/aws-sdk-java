@@ -88,6 +88,14 @@ public class CreateReplaceRootVolumeTaskRequestMarshaller implements
             }
         }
 
+        if (createReplaceRootVolumeTaskRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(createReplaceRootVolumeTaskRequest.getImageId()));
+        }
+
+        if (createReplaceRootVolumeTaskRequest.getDeleteReplacedRootVolume() != null) {
+            request.addParameter("DeleteReplacedRootVolume", StringUtils.fromBoolean(createReplaceRootVolumeTaskRequest.getDeleteReplacedRootVolume()));
+        }
+
         return request;
     }
 

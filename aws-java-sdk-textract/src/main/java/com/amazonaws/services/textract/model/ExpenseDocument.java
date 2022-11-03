@@ -47,6 +47,13 @@ public class ExpenseDocument implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<LineItemGroup> lineItemGroups;
+    /**
+     * <p>
+     * This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level
+     * recognition of text.
+     * </p>
+     */
+    private java.util.List<Block> blocks;
 
     /**
      * <p>
@@ -235,6 +242,84 @@ public class ExpenseDocument implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level
+     * recognition of text.
+     * </p>
+     * 
+     * @return This is a block object, the same as reported when DetectDocumentText is run on a document. It provides
+     *         word level recognition of text.
+     */
+
+    public java.util.List<Block> getBlocks() {
+        return blocks;
+    }
+
+    /**
+     * <p>
+     * This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level
+     * recognition of text.
+     * </p>
+     * 
+     * @param blocks
+     *        This is a block object, the same as reported when DetectDocumentText is run on a document. It provides
+     *        word level recognition of text.
+     */
+
+    public void setBlocks(java.util.Collection<Block> blocks) {
+        if (blocks == null) {
+            this.blocks = null;
+            return;
+        }
+
+        this.blocks = new java.util.ArrayList<Block>(blocks);
+    }
+
+    /**
+     * <p>
+     * This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level
+     * recognition of text.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlocks(java.util.Collection)} or {@link #withBlocks(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param blocks
+     *        This is a block object, the same as reported when DetectDocumentText is run on a document. It provides
+     *        word level recognition of text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseDocument withBlocks(Block... blocks) {
+        if (this.blocks == null) {
+            setBlocks(new java.util.ArrayList<Block>(blocks.length));
+        }
+        for (Block ele : blocks) {
+            this.blocks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level
+     * recognition of text.
+     * </p>
+     * 
+     * @param blocks
+     *        This is a block object, the same as reported when DetectDocumentText is run on a document. It provides
+     *        word level recognition of text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseDocument withBlocks(java.util.Collection<Block> blocks) {
+        setBlocks(blocks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +336,9 @@ public class ExpenseDocument implements Serializable, Cloneable, StructuredPojo 
         if (getSummaryFields() != null)
             sb.append("SummaryFields: ").append(getSummaryFields()).append(",");
         if (getLineItemGroups() != null)
-            sb.append("LineItemGroups: ").append(getLineItemGroups());
+            sb.append("LineItemGroups: ").append(getLineItemGroups()).append(",");
+        if (getBlocks() != null)
+            sb.append("Blocks: ").append(getBlocks());
         sb.append("}");
         return sb.toString();
     }
@@ -278,6 +365,10 @@ public class ExpenseDocument implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLineItemGroups() != null && other.getLineItemGroups().equals(this.getLineItemGroups()) == false)
             return false;
+        if (other.getBlocks() == null ^ this.getBlocks() == null)
+            return false;
+        if (other.getBlocks() != null && other.getBlocks().equals(this.getBlocks()) == false)
+            return false;
         return true;
     }
 
@@ -289,6 +380,7 @@ public class ExpenseDocument implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getExpenseIndex() == null) ? 0 : getExpenseIndex().hashCode());
         hashCode = prime * hashCode + ((getSummaryFields() == null) ? 0 : getSummaryFields().hashCode());
         hashCode = prime * hashCode + ((getLineItemGroups() == null) ? 0 : getLineItemGroups().hashCode());
+        hashCode = prime * hashCode + ((getBlocks() == null) ? 0 : getBlocks().hashCode());
         return hashCode;
     }
 

@@ -30,98 +30,28 @@ public class Criterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A "contains" operator to match for the filter used to create the rule.
-     * </p>
-     */
-    private java.util.List<String> contains;
-    /**
-     * <p>
      * An "equals" operator to match for the filter used to create the rule.
      * </p>
      */
     private java.util.List<String> eq;
     /**
      * <p>
-     * An "exists" operator to match for the filter used to create the rule.
-     * </p>
-     */
-    private Boolean exists;
-    /**
-     * <p>
      * A "not equals" operator to match for the filter used to create the rule.
      * </p>
      */
     private java.util.List<String> neq;
-
     /**
      * <p>
      * A "contains" operator to match for the filter used to create the rule.
      * </p>
-     * 
-     * @return A "contains" operator to match for the filter used to create the rule.
      */
-
-    public java.util.List<String> getContains() {
-        return contains;
-    }
-
+    private java.util.List<String> contains;
     /**
      * <p>
-     * A "contains" operator to match for the filter used to create the rule.
+     * An "exists" operator to match for the filter used to create the rule.
      * </p>
-     * 
-     * @param contains
-     *        A "contains" operator to match for the filter used to create the rule.
      */
-
-    public void setContains(java.util.Collection<String> contains) {
-        if (contains == null) {
-            this.contains = null;
-            return;
-        }
-
-        this.contains = new java.util.ArrayList<String>(contains);
-    }
-
-    /**
-     * <p>
-     * A "contains" operator to match for the filter used to create the rule.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setContains(java.util.Collection)} or {@link #withContains(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param contains
-     *        A "contains" operator to match for the filter used to create the rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Criterion withContains(String... contains) {
-        if (this.contains == null) {
-            setContains(new java.util.ArrayList<String>(contains.length));
-        }
-        for (String ele : contains) {
-            this.contains.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A "contains" operator to match for the filter used to create the rule.
-     * </p>
-     * 
-     * @param contains
-     *        A "contains" operator to match for the filter used to create the rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Criterion withContains(java.util.Collection<String> contains) {
-        setContains(contains);
-        return this;
-    }
+    private Boolean exists;
 
     /**
      * <p>
@@ -195,58 +125,6 @@ public class Criterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "exists" operator to match for the filter used to create the rule.
-     * </p>
-     * 
-     * @param exists
-     *        An "exists" operator to match for the filter used to create the rule.
-     */
-
-    public void setExists(Boolean exists) {
-        this.exists = exists;
-    }
-
-    /**
-     * <p>
-     * An "exists" operator to match for the filter used to create the rule.
-     * </p>
-     * 
-     * @return An "exists" operator to match for the filter used to create the rule.
-     */
-
-    public Boolean getExists() {
-        return this.exists;
-    }
-
-    /**
-     * <p>
-     * An "exists" operator to match for the filter used to create the rule.
-     * </p>
-     * 
-     * @param exists
-     *        An "exists" operator to match for the filter used to create the rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Criterion withExists(Boolean exists) {
-        setExists(exists);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An "exists" operator to match for the filter used to create the rule.
-     * </p>
-     * 
-     * @return An "exists" operator to match for the filter used to create the rule.
-     */
-
-    public Boolean isExists() {
-        return this.exists;
-    }
-
-    /**
-     * <p>
      * A "not equals" operator to match for the filter used to create the rule.
      * </p>
      * 
@@ -316,6 +194,128 @@ public class Criterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A "contains" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @return A "contains" operator to match for the filter used to create the rule.
+     */
+
+    public java.util.List<String> getContains() {
+        return contains;
+    }
+
+    /**
+     * <p>
+     * A "contains" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @param contains
+     *        A "contains" operator to match for the filter used to create the rule.
+     */
+
+    public void setContains(java.util.Collection<String> contains) {
+        if (contains == null) {
+            this.contains = null;
+            return;
+        }
+
+        this.contains = new java.util.ArrayList<String>(contains);
+    }
+
+    /**
+     * <p>
+     * A "contains" operator to match for the filter used to create the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContains(java.util.Collection)} or {@link #withContains(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param contains
+     *        A "contains" operator to match for the filter used to create the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Criterion withContains(String... contains) {
+        if (this.contains == null) {
+            setContains(new java.util.ArrayList<String>(contains.length));
+        }
+        for (String ele : contains) {
+            this.contains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A "contains" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @param contains
+     *        A "contains" operator to match for the filter used to create the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Criterion withContains(java.util.Collection<String> contains) {
+        setContains(contains);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An "exists" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @param exists
+     *        An "exists" operator to match for the filter used to create the rule.
+     */
+
+    public void setExists(Boolean exists) {
+        this.exists = exists;
+    }
+
+    /**
+     * <p>
+     * An "exists" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @return An "exists" operator to match for the filter used to create the rule.
+     */
+
+    public Boolean getExists() {
+        return this.exists;
+    }
+
+    /**
+     * <p>
+     * An "exists" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @param exists
+     *        An "exists" operator to match for the filter used to create the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Criterion withExists(Boolean exists) {
+        setExists(exists);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An "exists" operator to match for the filter used to create the rule.
+     * </p>
+     * 
+     * @return An "exists" operator to match for the filter used to create the rule.
+     */
+
+    public Boolean isExists() {
+        return this.exists;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,14 +327,14 @@ public class Criterion implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getContains() != null)
-            sb.append("Contains: ").append(getContains()).append(",");
         if (getEq() != null)
             sb.append("Eq: ").append(getEq()).append(",");
-        if (getExists() != null)
-            sb.append("Exists: ").append(getExists()).append(",");
         if (getNeq() != null)
-            sb.append("Neq: ").append(getNeq());
+            sb.append("Neq: ").append(getNeq()).append(",");
+        if (getContains() != null)
+            sb.append("Contains: ").append(getContains()).append(",");
+        if (getExists() != null)
+            sb.append("Exists: ").append(getExists());
         sb.append("}");
         return sb.toString();
     }
@@ -349,21 +349,21 @@ public class Criterion implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Criterion == false)
             return false;
         Criterion other = (Criterion) obj;
-        if (other.getContains() == null ^ this.getContains() == null)
-            return false;
-        if (other.getContains() != null && other.getContains().equals(this.getContains()) == false)
-            return false;
         if (other.getEq() == null ^ this.getEq() == null)
             return false;
         if (other.getEq() != null && other.getEq().equals(this.getEq()) == false)
             return false;
-        if (other.getExists() == null ^ this.getExists() == null)
-            return false;
-        if (other.getExists() != null && other.getExists().equals(this.getExists()) == false)
-            return false;
         if (other.getNeq() == null ^ this.getNeq() == null)
             return false;
         if (other.getNeq() != null && other.getNeq().equals(this.getNeq()) == false)
+            return false;
+        if (other.getContains() == null ^ this.getContains() == null)
+            return false;
+        if (other.getContains() != null && other.getContains().equals(this.getContains()) == false)
+            return false;
+        if (other.getExists() == null ^ this.getExists() == null)
+            return false;
+        if (other.getExists() != null && other.getExists().equals(this.getExists()) == false)
             return false;
         return true;
     }
@@ -373,10 +373,10 @@ public class Criterion implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getContains() == null) ? 0 : getContains().hashCode());
         hashCode = prime * hashCode + ((getEq() == null) ? 0 : getEq().hashCode());
-        hashCode = prime * hashCode + ((getExists() == null) ? 0 : getExists().hashCode());
         hashCode = prime * hashCode + ((getNeq() == null) ? 0 : getNeq().hashCode());
+        hashCode = prime * hashCode + ((getContains() == null) ? 0 : getContains().hashCode());
+        hashCode = prime * hashCode + ((getExists() == null) ? 0 : getExists().hashCode());
         return hashCode;
     }
 

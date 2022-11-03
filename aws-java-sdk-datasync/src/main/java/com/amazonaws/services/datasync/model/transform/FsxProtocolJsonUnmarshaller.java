@@ -52,6 +52,10 @@ public class FsxProtocolJsonUnmarshaller implements Unmarshaller<FsxProtocol, Js
                     context.nextToken();
                     fsxProtocol.setNFS(FsxProtocolNfsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SMB", targetDepth)) {
+                    context.nextToken();
+                    fsxProtocol.setSMB(FsxProtocolSmbJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

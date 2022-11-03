@@ -1891,6 +1891,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
     }
 
     @Override
+    public java.util.concurrent.Future<StopBotRecommendationResult> stopBotRecommendationAsync(StopBotRecommendationRequest request) {
+
+        return stopBotRecommendationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBotRecommendationResult> stopBotRecommendationAsync(final StopBotRecommendationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopBotRecommendationRequest, StopBotRecommendationResult> asyncHandler) {
+        final StopBotRecommendationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopBotRecommendationResult>() {
+            @Override
+            public StopBotRecommendationResult call() throws Exception {
+                StopBotRecommendationResult result = null;
+
+                try {
+                    result = executeStopBotRecommendation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

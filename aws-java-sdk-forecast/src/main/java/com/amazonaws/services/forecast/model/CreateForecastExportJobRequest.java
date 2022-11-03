@@ -101,6 +101,12 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET. The default value is CSV.
+     * </p>
+     */
+    private String format;
 
     /**
      * <p>
@@ -695,6 +701,46 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET. The default value is CSV.
+     * </p>
+     * 
+     * @param format
+     *        The format of the exported data, CSV or PARQUET. The default value is CSV.
+     */
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET. The default value is CSV.
+     * </p>
+     * 
+     * @return The format of the exported data, CSV or PARQUET. The default value is CSV.
+     */
+
+    public String getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET. The default value is CSV.
+     * </p>
+     * 
+     * @param format
+     *        The format of the exported data, CSV or PARQUET. The default value is CSV.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateForecastExportJobRequest withFormat(String format) {
+        setFormat(format);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -713,7 +759,9 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -744,6 +792,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
         return true;
     }
 
@@ -756,6 +808,7 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getForecastArn() == null) ? 0 : getForecastArn().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         return hashCode;
     }
 

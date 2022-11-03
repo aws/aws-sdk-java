@@ -46,7 +46,10 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     private String status;
     /**
      * <p>
-     * A list of event types associated with this notification rule.
+     * A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a
+     * href
+     * ="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      */
     private java.util.List<String> eventTypeIds;
@@ -59,7 +62,7 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      */
@@ -214,10 +217,16 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of event types associated with this notification rule.
+     * A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a
+     * href
+     * ="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * 
-     * @return A list of event types associated with this notification rule.
+     * @return A list of event types associated with this notification rule. For a complete list of event types and IDs,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *         >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      */
 
     public java.util.List<String> getEventTypeIds() {
@@ -226,11 +235,17 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of event types associated with this notification rule.
+     * A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a
+     * href
+     * ="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * 
      * @param eventTypeIds
-     *        A list of event types associated with this notification rule.
+     *        A list of event types associated with this notification rule. For a complete list of event types and IDs,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *        >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      */
 
     public void setEventTypeIds(java.util.Collection<String> eventTypeIds) {
@@ -244,7 +259,10 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of event types associated with this notification rule.
+     * A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a
+     * href
+     * ="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -253,7 +271,10 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param eventTypeIds
-     *        A list of event types associated with this notification rule.
+     *        A list of event types associated with this notification rule. For a complete list of event types and IDs,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *        >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,11 +290,17 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of event types associated with this notification rule.
+     * A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a
+     * href
+     * ="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * 
      * @param eventTypeIds
-     *        A list of event types associated with this notification rule.
+     *        A list of event types associated with this notification rule. For a complete list of event types and IDs,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *        >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,15 +382,15 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @param detailType
      *        The level of detail to include in the notifications for this resource. BASIC will include only the
-     *        contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
-     *        created.
+     *        contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental
+     *        information provided by AWS CodeStar Notifications and/or the service for the resource for which the
+     *        notification is created.
      * @see DetailType
      */
 
@@ -374,12 +401,12 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @return The level of detail to include in the notifications for this resource. BASIC will include only the
-     *         contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental
+     *         contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental
      *         information provided by AWS CodeStar Notifications and/or the service for the resource for which the
      *         notification is created.
      * @see DetailType
@@ -392,15 +419,15 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @param detailType
      *        The level of detail to include in the notifications for this resource. BASIC will include only the
-     *        contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
-     *        created.
+     *        contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental
+     *        information provided by AWS CodeStar Notifications and/or the service for the resource for which the
+     *        notification is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetailType
      */
@@ -413,15 +440,15 @@ public class UpdateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @param detailType
      *        The level of detail to include in the notifications for this resource. BASIC will include only the
-     *        contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
-     *        created.
+     *        contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental
+     *        information provided by AWS CodeStar Notifications and/or the service for the resource for which the
+     *        notification is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetailType
      */

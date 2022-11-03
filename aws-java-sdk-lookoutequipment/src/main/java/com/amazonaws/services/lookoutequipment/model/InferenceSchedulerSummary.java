@@ -79,6 +79,13 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
      * </p>
      */
     private String dataUploadFrequency;
+    /**
+     * <p>
+     * Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or
+     * Normal (no anomalous events found).
+     * </p>
+     */
+    private String latestInferenceResult;
 
     /**
      * <p>
@@ -457,6 +464,73 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or
+     * Normal (no anomalous events found).
+     * </p>
+     * 
+     * @param latestInferenceResult
+     *        Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found)
+     *        or Normal (no anomalous events found).
+     * @see LatestInferenceResult
+     */
+
+    public void setLatestInferenceResult(String latestInferenceResult) {
+        this.latestInferenceResult = latestInferenceResult;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or
+     * Normal (no anomalous events found).
+     * </p>
+     * 
+     * @return Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found)
+     *         or Normal (no anomalous events found).
+     * @see LatestInferenceResult
+     */
+
+    public String getLatestInferenceResult() {
+        return this.latestInferenceResult;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or
+     * Normal (no anomalous events found).
+     * </p>
+     * 
+     * @param latestInferenceResult
+     *        Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found)
+     *        or Normal (no anomalous events found).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LatestInferenceResult
+     */
+
+    public InferenceSchedulerSummary withLatestInferenceResult(String latestInferenceResult) {
+        setLatestInferenceResult(latestInferenceResult);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or
+     * Normal (no anomalous events found).
+     * </p>
+     * 
+     * @param latestInferenceResult
+     *        Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found)
+     *        or Normal (no anomalous events found).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LatestInferenceResult
+     */
+
+    public InferenceSchedulerSummary withLatestInferenceResult(LatestInferenceResult latestInferenceResult) {
+        this.latestInferenceResult = latestInferenceResult.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -481,7 +555,9 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
         if (getDataDelayOffsetInMinutes() != null)
             sb.append("DataDelayOffsetInMinutes: ").append(getDataDelayOffsetInMinutes()).append(",");
         if (getDataUploadFrequency() != null)
-            sb.append("DataUploadFrequency: ").append(getDataUploadFrequency());
+            sb.append("DataUploadFrequency: ").append(getDataUploadFrequency()).append(",");
+        if (getLatestInferenceResult() != null)
+            sb.append("LatestInferenceResult: ").append(getLatestInferenceResult());
         sb.append("}");
         return sb.toString();
     }
@@ -524,6 +600,10 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
             return false;
         if (other.getDataUploadFrequency() != null && other.getDataUploadFrequency().equals(this.getDataUploadFrequency()) == false)
             return false;
+        if (other.getLatestInferenceResult() == null ^ this.getLatestInferenceResult() == null)
+            return false;
+        if (other.getLatestInferenceResult() != null && other.getLatestInferenceResult().equals(this.getLatestInferenceResult()) == false)
+            return false;
         return true;
     }
 
@@ -539,6 +619,7 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDataDelayOffsetInMinutes() == null) ? 0 : getDataDelayOffsetInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDataUploadFrequency() == null) ? 0 : getDataUploadFrequency().hashCode());
+        hashCode = prime * hashCode + ((getLatestInferenceResult() == null) ? 0 : getLatestInferenceResult().hashCode());
         return hashCode;
     }
 

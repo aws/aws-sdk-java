@@ -68,6 +68,14 @@ public class DescribeQueryResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeQueryResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeliveryS3Uri", targetDepth)) {
+                    context.nextToken();
+                    describeQueryResult.setDeliveryS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeliveryStatus", targetDepth)) {
+                    context.nextToken();
+                    describeQueryResult.setDeliveryStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

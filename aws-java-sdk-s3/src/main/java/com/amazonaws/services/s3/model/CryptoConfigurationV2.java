@@ -374,7 +374,8 @@ public class CryptoConfigurationV2 implements Cloneable,Serializable {
         boolean preferBC = (cryptoMode == CryptoMode.AuthenticatedEncryption)
                 || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
 
-        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider);
+        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider)
+                || CryptoRuntime.preferDefaultSecurityProvider();
 
         if (preferBC && !haveOverride) {
             checkBountyCastle();

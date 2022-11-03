@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Inspect the body of the web request as JSON. The body immediately follows the request headers.
  * </p>
  * <p>
- * This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
+ * This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification.
  * </p>
  * <p>
  * Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection

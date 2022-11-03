@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A list of users or sub groups that belong to a group. Users and groups are useful for filtering search results to
- * different users based on their group's access to documents.
+ * A list of users or sub groups that belong to a group. This is useful for user context filtering, where search results
+ * are filtered based on the user or their group access to documents.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupMembers" target="_top">AWS API

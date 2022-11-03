@@ -74,6 +74,10 @@ public class DescribeFeatureGroupResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeFeatureGroupResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    describeFeatureGroupResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("OnlineStoreConfig", targetDepth)) {
                     context.nextToken();
                     describeFeatureGroupResult.setOnlineStoreConfig(OnlineStoreConfigJsonUnmarshaller.getInstance().unmarshall(context));
@@ -94,6 +98,10 @@ public class DescribeFeatureGroupResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeFeatureGroupResult.setOfflineStoreStatus(OfflineStoreStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    context.nextToken();
+                    describeFeatureGroupResult.setLastUpdateStatus(LastUpdateStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     describeFeatureGroupResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
@@ -105,6 +113,10 @@ public class DescribeFeatureGroupResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
                     describeFeatureGroupResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OnlineStoreTotalSizeBytes", targetDepth)) {
+                    context.nextToken();
+                    describeFeatureGroupResult.setOnlineStoreTotalSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -151,6 +151,77 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Create an extended source server in the target Account based on the source server in staging account.
+     * </p>
+     * 
+     * @param createExtendedSourceServerRequest
+     * @return Result of the CreateExtendedSourceServer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.CreateExtendedSourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateExtendedSourceServerResult createExtendedSourceServer(CreateExtendedSourceServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExtendedSourceServer(request);
+    }
+
+    @SdkInternalApi
+    final CreateExtendedSourceServerResult executeCreateExtendedSourceServer(CreateExtendedSourceServerRequest createExtendedSourceServerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExtendedSourceServerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExtendedSourceServerRequest> request = null;
+        Response<CreateExtendedSourceServerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExtendedSourceServerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createExtendedSourceServerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExtendedSourceServer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExtendedSourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateExtendedSourceServerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new ReplicationConfigurationTemplate.
      * </p>
      * 
@@ -163,7 +234,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @throws UninitializedAccountException
@@ -299,7 +370,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws UninitializedAccountException
      *         The account performing the request has not been initialized.
      * @sample AWSdrs.DeleteRecoveryInstance
@@ -626,7 +697,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws UninitializedAccountException
      *         The account performing the request has not been initialized.
      * @sample AWSdrs.DescribeRecoveryInstances
@@ -691,7 +762,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @throws UninitializedAccountException
@@ -901,7 +972,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws UninitializedAccountException
      *         The account performing the request has not been initialized.
      * @sample AWSdrs.DisconnectRecoveryInstance
@@ -1170,6 +1241,8 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      *         The request processing has failed because of an unknown error, exception or failure.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws UninitializedAccountException
      *         The account performing the request has not been initialized.
      * @sample AWSdrs.GetReplicationConfiguration
@@ -1234,7 +1307,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @sample AWSdrs.InitializeService
@@ -1287,6 +1360,140 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Returns a list of source servers on a staging account that are extensible, which means that: a. The source server
+     * is not already extended into this Account. b. The source server on the Account we’re reading from is not an
+     * extension of another source server.
+     * </p>
+     * 
+     * @param listExtensibleSourceServersRequest
+     * @return Result of the ListExtensibleSourceServers operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.ListExtensibleSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListExtensibleSourceServersResult listExtensibleSourceServers(ListExtensibleSourceServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExtensibleSourceServers(request);
+    }
+
+    @SdkInternalApi
+    final ListExtensibleSourceServersResult executeListExtensibleSourceServers(ListExtensibleSourceServersRequest listExtensibleSourceServersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExtensibleSourceServersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExtensibleSourceServersRequest> request = null;
+        Response<ListExtensibleSourceServersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExtensibleSourceServersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listExtensibleSourceServersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExtensibleSourceServers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExtensibleSourceServersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListExtensibleSourceServersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of staging accounts for existing extended source servers.
+     * </p>
+     * 
+     * @param listStagingAccountsRequest
+     * @return Result of the ListStagingAccounts operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.ListStagingAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListStagingAccountsResult listStagingAccounts(ListStagingAccountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStagingAccounts(request);
+    }
+
+    @SdkInternalApi
+    final ListStagingAccountsResult executeListStagingAccounts(ListStagingAccountsRequest listStagingAccountsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStagingAccountsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStagingAccountsRequest> request = null;
+        Response<ListStagingAccountsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStagingAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStagingAccountsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStagingAccounts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStagingAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStagingAccountsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all tags for your Elastic Disaster Recovery resources.
      * </p>
      * 
@@ -1299,7 +1506,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @sample AWSdrs.ListTagsForResource
@@ -1631,7 +1838,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @sample AWSdrs.TagResource
@@ -1764,7 +1971,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @sample AWSdrs.UntagResource
@@ -1829,7 +2036,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws UninitializedAccountException
      *         The account performing the request has not been initialized.
      * @sample AWSdrs.UpdateFailbackReplicationConfiguration
@@ -1968,7 +2175,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @throws UninitializedAccountException
@@ -2037,7 +2244,7 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
-     *         TYou do not have sufficient access to perform this action.
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the AWS service.
      * @throws UninitializedAccountException

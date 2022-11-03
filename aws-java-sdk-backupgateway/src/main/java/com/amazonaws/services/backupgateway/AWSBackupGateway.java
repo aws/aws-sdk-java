@@ -71,6 +71,8 @@ public interface AWSBackupGateway {
      *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.AssociateGatewayToServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/AssociateGatewayToServer"
      *      target="_top">AWS API Documentation</a>
@@ -89,6 +91,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because a validation error occurred.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.CreateGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/CreateGateway" target="_top">AWS
      *      API Documentation</a>
@@ -108,6 +112,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.DeleteGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DeleteGateway" target="_top">AWS
      *      API Documentation</a>
@@ -129,6 +135,8 @@ public interface AWSBackupGateway {
      *         The operation cannot proceed because you have insufficient permissions.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.DeleteHypervisor
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DeleteHypervisor"
      *      target="_top">AWS API Documentation</a>
@@ -151,11 +159,55 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.DisassociateGatewayFromServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DisassociateGatewayFromServer"
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateGatewayFromServerResult disassociateGatewayFromServer(DisassociateGatewayFromServerRequest disassociateGatewayFromServerRequest);
+
+    /**
+     * <p>
+     * By providing the ARN (Amazon Resource Name), this API returns the gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @return Result of the GetGateway operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetGatewayResult getGateway(GetGatewayRequest getGatewayRequest);
+
+    /**
+     * <p>
+     * By providing the ARN (Amazon Resource Name), this API returns the virtual machine.
+     * </p>
+     * 
+     * @param getVirtualMachineRequest
+     * @return Result of the GetVirtualMachine operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetVirtualMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVirtualMachineResult getVirtualMachine(GetVirtualMachineRequest getVirtualMachineRequest);
 
     /**
      * <p>
@@ -170,6 +222,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException
      *         The operation cannot proceed because you have insufficient permissions.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.ImportHypervisorConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ImportHypervisorConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -188,6 +242,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because a validation error occurred.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.ListGateways
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListGateways" target="_top">AWS
      *      API Documentation</a>
@@ -205,6 +261,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because a validation error occurred.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.ListHypervisors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListHypervisors" target="_top">AWS
      *      API Documentation</a>
@@ -224,6 +282,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -241,6 +301,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because a validation error occurred.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.ListVirtualMachines
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListVirtualMachines"
      *      target="_top">AWS API Documentation</a>
@@ -262,6 +324,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.PutMaintenanceStartTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutMaintenanceStartTime"
      *      target="_top">AWS API Documentation</a>
@@ -281,6 +345,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -303,6 +369,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.TestHypervisorConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/TestHypervisorConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -322,6 +390,8 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UntagResource" target="_top">AWS
      *      API Documentation</a>
@@ -344,11 +414,40 @@ public interface AWSBackupGateway {
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.UpdateGatewayInformation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewayInformation"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest);
+
+    /**
+     * <p>
+     * Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.
+     * </p>
+     * <note>
+     * <p>
+     * When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take
+     * some time for the update to complete.
+     * </p>
+     * </note>
+     * 
+     * @param updateGatewaySoftwareNowRequest
+     * @return Result of the UpdateGatewaySoftwareNow operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.UpdateGatewaySoftwareNow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest);
 
     /**
      * <p>
@@ -366,6 +465,8 @@ public interface AWSBackupGateway {
      *         The operation cannot proceed because you have insufficient permissions.
      * @throws ResourceNotFoundException
      *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
      * @sample AWSBackupGateway.UpdateHypervisor
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateHypervisor"
      *      target="_top">AWS API Documentation</a>

@@ -34,6 +34,8 @@ public class DashPackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adsOnDeliveryRestrictions").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
+    private static final MarshallingInfo<Boolean> INCLUDEIFRAMEONLYSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeIframeOnlyStream").build();
     private static final MarshallingInfo<String> MANIFESTLAYOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestLayout").build();
     private static final MarshallingInfo<Integer> MANIFESTWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -78,6 +80,7 @@ public class DashPackageMarshaller {
             protocolMarshaller.marshall(dashPackage.getAdTriggers(), ADTRIGGERS_BINDING);
             protocolMarshaller.marshall(dashPackage.getAdsOnDeliveryRestrictions(), ADSONDELIVERYRESTRICTIONS_BINDING);
             protocolMarshaller.marshall(dashPackage.getEncryption(), ENCRYPTION_BINDING);
+            protocolMarshaller.marshall(dashPackage.getIncludeIframeOnlyStream(), INCLUDEIFRAMEONLYSTREAM_BINDING);
             protocolMarshaller.marshall(dashPackage.getManifestLayout(), MANIFESTLAYOUT_BINDING);
             protocolMarshaller.marshall(dashPackage.getManifestWindowSeconds(), MANIFESTWINDOWSECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getMinBufferTimeSeconds(), MINBUFFERTIMESECONDS_BINDING);

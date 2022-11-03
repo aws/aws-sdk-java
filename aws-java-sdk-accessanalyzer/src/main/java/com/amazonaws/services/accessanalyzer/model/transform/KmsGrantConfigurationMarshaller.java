@@ -28,16 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class KmsGrantConfigurationMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> CONSTRAINTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("constraints").build();
-    private static final MarshallingInfo<String> GRANTEEPRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("granteePrincipal").build();
-    private static final MarshallingInfo<String> ISSUINGACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("issuingAccount").build();
     private static final MarshallingInfo<List> OPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("operations").build();
+    private static final MarshallingInfo<String> GRANTEEPRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("granteePrincipal").build();
     private static final MarshallingInfo<String> RETIRINGPRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retiringPrincipal").build();
+    private static final MarshallingInfo<StructuredPojo> CONSTRAINTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("constraints").build();
+    private static final MarshallingInfo<String> ISSUINGACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("issuingAccount").build();
 
     private static final KmsGrantConfigurationMarshaller instance = new KmsGrantConfigurationMarshaller();
 
@@ -55,11 +55,11 @@ public class KmsGrantConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(kmsGrantConfiguration.getConstraints(), CONSTRAINTS_BINDING);
-            protocolMarshaller.marshall(kmsGrantConfiguration.getGranteePrincipal(), GRANTEEPRINCIPAL_BINDING);
-            protocolMarshaller.marshall(kmsGrantConfiguration.getIssuingAccount(), ISSUINGACCOUNT_BINDING);
             protocolMarshaller.marshall(kmsGrantConfiguration.getOperations(), OPERATIONS_BINDING);
+            protocolMarshaller.marshall(kmsGrantConfiguration.getGranteePrincipal(), GRANTEEPRINCIPAL_BINDING);
             protocolMarshaller.marshall(kmsGrantConfiguration.getRetiringPrincipal(), RETIRINGPRINCIPAL_BINDING);
+            protocolMarshaller.marshall(kmsGrantConfiguration.getConstraints(), CONSTRAINTS_BINDING);
+            protocolMarshaller.marshall(kmsGrantConfiguration.getIssuingAccount(), ISSUINGACCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -66,6 +66,10 @@ public class CreateEventSourceMappingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedEventSource").build();
     private static final MarshallingInfo<List> FUNCTIONRESPONSETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionResponseTypes").build();
+    private static final MarshallingInfo<StructuredPojo> AMAZONMANAGEDKAFKAEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmazonManagedKafkaEventSourceConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedKafkaEventSourceConfig").build();
 
     private static final CreateEventSourceMappingRequestMarshaller instance = new CreateEventSourceMappingRequestMarshaller();
 
@@ -102,6 +106,8 @@ public class CreateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(createEventSourceMappingRequest.getSourceAccessConfigurations(), SOURCEACCESSCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getSelfManagedEventSource(), SELFMANAGEDEVENTSOURCE_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getFunctionResponseTypes(), FUNCTIONRESPONSETYPES_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getAmazonManagedKafkaEventSourceConfig(), AMAZONMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getSelfManagedKafkaEventSourceConfig(), SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

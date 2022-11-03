@@ -114,6 +114,19 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
      * </p>
      */
     private String volumeKmsKeyId;
+    /**
+     * <p>
+     * Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     * <code>ContainerConfig</code> override the corresponding fields in the model package.
+     * </p>
+     */
+    private RecommendationJobContainerConfig containerConfig;
+    /**
+     * <p>
+     * Existing customer endpoints on which to run an Inference Recommender job.
+     * </p>
+     */
+    private java.util.List<EndpointInfo> endpoints;
 
     /**
      * <p>
@@ -683,6 +696,122 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     * <code>ContainerConfig</code> override the corresponding fields in the model package.
+     * </p>
+     * 
+     * @param containerConfig
+     *        Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     *        <code>ContainerConfig</code> override the corresponding fields in the model package.
+     */
+
+    public void setContainerConfig(RecommendationJobContainerConfig containerConfig) {
+        this.containerConfig = containerConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     * <code>ContainerConfig</code> override the corresponding fields in the model package.
+     * </p>
+     * 
+     * @return Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     *         <code>ContainerConfig</code> override the corresponding fields in the model package.
+     */
+
+    public RecommendationJobContainerConfig getContainerConfig() {
+        return this.containerConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     * <code>ContainerConfig</code> override the corresponding fields in the model package.
+     * </p>
+     * 
+     * @param containerConfig
+     *        Specifies mandatory fields for running an Inference Recommender job. The fields specified in
+     *        <code>ContainerConfig</code> override the corresponding fields in the model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInputConfig withContainerConfig(RecommendationJobContainerConfig containerConfig) {
+        setContainerConfig(containerConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Existing customer endpoints on which to run an Inference Recommender job.
+     * </p>
+     * 
+     * @return Existing customer endpoints on which to run an Inference Recommender job.
+     */
+
+    public java.util.List<EndpointInfo> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
+     * <p>
+     * Existing customer endpoints on which to run an Inference Recommender job.
+     * </p>
+     * 
+     * @param endpoints
+     *        Existing customer endpoints on which to run an Inference Recommender job.
+     */
+
+    public void setEndpoints(java.util.Collection<EndpointInfo> endpoints) {
+        if (endpoints == null) {
+            this.endpoints = null;
+            return;
+        }
+
+        this.endpoints = new java.util.ArrayList<EndpointInfo>(endpoints);
+    }
+
+    /**
+     * <p>
+     * Existing customer endpoints on which to run an Inference Recommender job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEndpoints(java.util.Collection)} or {@link #withEndpoints(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param endpoints
+     *        Existing customer endpoints on which to run an Inference Recommender job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInputConfig withEndpoints(EndpointInfo... endpoints) {
+        if (this.endpoints == null) {
+            setEndpoints(new java.util.ArrayList<EndpointInfo>(endpoints.length));
+        }
+        for (EndpointInfo ele : endpoints) {
+            this.endpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Existing customer endpoints on which to run an Inference Recommender job.
+     * </p>
+     * 
+     * @param endpoints
+     *        Existing customer endpoints on which to run an Inference Recommender job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInputConfig withEndpoints(java.util.Collection<EndpointInfo> endpoints) {
+        setEndpoints(endpoints);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -705,7 +834,11 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         if (getEndpointConfigurations() != null)
             sb.append("EndpointConfigurations: ").append(getEndpointConfigurations()).append(",");
         if (getVolumeKmsKeyId() != null)
-            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId());
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
+        if (getContainerConfig() != null)
+            sb.append("ContainerConfig: ").append(getContainerConfig()).append(",");
+        if (getEndpoints() != null)
+            sb.append("Endpoints: ").append(getEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -744,6 +877,14 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
             return false;
         if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
             return false;
+        if (other.getContainerConfig() == null ^ this.getContainerConfig() == null)
+            return false;
+        if (other.getContainerConfig() != null && other.getContainerConfig().equals(this.getContainerConfig()) == false)
+            return false;
+        if (other.getEndpoints() == null ^ this.getEndpoints() == null)
+            return false;
+        if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -758,6 +899,8 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getResourceLimit() == null) ? 0 : getResourceLimit().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfigurations() == null) ? 0 : getEndpointConfigurations().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getContainerConfig() == null) ? 0 : getContainerConfig().hashCode());
+        hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         return hashCode;
     }
 

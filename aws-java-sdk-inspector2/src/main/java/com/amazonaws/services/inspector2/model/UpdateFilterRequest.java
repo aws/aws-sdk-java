@@ -55,6 +55,12 @@ public class UpdateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The reason the filter was updated.
+     * </p>
+     */
+    private String reason;
 
     /**
      * <p>
@@ -276,6 +282,46 @@ public class UpdateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The reason the filter was updated.
+     * </p>
+     * 
+     * @param reason
+     *        The reason the filter was updated.
+     */
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason the filter was updated.
+     * </p>
+     * 
+     * @return The reason the filter was updated.
+     */
+
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason the filter was updated.
+     * </p>
+     * 
+     * @param reason
+     *        The reason the filter was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFilterRequest withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -296,7 +342,9 @@ public class UpdateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getFilterCriteria() != null)
             sb.append("FilterCriteria: ").append(getFilterCriteria()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getReason() != null)
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +379,10 @@ public class UpdateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
+            return false;
         return true;
     }
 
@@ -344,6 +396,7 @@ public class UpdateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getFilterCriteria() == null) ? 0 : getFilterCriteria().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

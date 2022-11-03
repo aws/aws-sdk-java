@@ -62,6 +62,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -210,6 +215,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -224,6 +234,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
      *        </p>
      *        </li>
      *        <li>
@@ -252,6 +267,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -265,6 +285,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      *         <li>
      *         <p>
      *         CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
      *         </p>
      *         </li>
      *         <li>
@@ -293,6 +318,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -307,6 +337,11 @@ public class RecommenderUpdateSummary implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
      *        </p>
      *        </li>
      *        <li>

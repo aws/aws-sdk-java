@@ -99,6 +99,10 @@ public class DescribeEndpointResultJsonUnmarshaller implements Unmarshaller<Desc
                     context.nextToken();
                     describeEndpointResult.setPendingDeploymentSummary(PendingDeploymentSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ExplainerConfig", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointResult.setExplainerConfig(ExplainerConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

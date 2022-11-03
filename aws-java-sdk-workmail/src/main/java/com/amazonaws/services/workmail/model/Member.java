@@ -54,13 +54,13 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * The date indicating when the member was enabled for Amazon WorkMail use.
+     * The date indicating when the member was enabled for WorkMail use.
      * </p>
      */
     private java.util.Date enabledDate;
     /**
      * <p>
-     * The date indicating when the member was disabled from Amazon WorkMail use.
+     * The date indicating when the member was disabled from WorkMail use.
      * </p>
      */
     private java.util.Date disabledDate;
@@ -265,11 +265,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the member was enabled for Amazon WorkMail use.
+     * The date indicating when the member was enabled for WorkMail use.
      * </p>
      * 
      * @param enabledDate
-     *        The date indicating when the member was enabled for Amazon WorkMail use.
+     *        The date indicating when the member was enabled for WorkMail use.
      */
 
     public void setEnabledDate(java.util.Date enabledDate) {
@@ -278,10 +278,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the member was enabled for Amazon WorkMail use.
+     * The date indicating when the member was enabled for WorkMail use.
      * </p>
      * 
-     * @return The date indicating when the member was enabled for Amazon WorkMail use.
+     * @return The date indicating when the member was enabled for WorkMail use.
      */
 
     public java.util.Date getEnabledDate() {
@@ -290,11 +290,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the member was enabled for Amazon WorkMail use.
+     * The date indicating when the member was enabled for WorkMail use.
      * </p>
      * 
      * @param enabledDate
-     *        The date indicating when the member was enabled for Amazon WorkMail use.
+     *        The date indicating when the member was enabled for WorkMail use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +305,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the member was disabled from Amazon WorkMail use.
+     * The date indicating when the member was disabled from WorkMail use.
      * </p>
      * 
      * @param disabledDate
-     *        The date indicating when the member was disabled from Amazon WorkMail use.
+     *        The date indicating when the member was disabled from WorkMail use.
      */
 
     public void setDisabledDate(java.util.Date disabledDate) {
@@ -318,10 +318,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the member was disabled from Amazon WorkMail use.
+     * The date indicating when the member was disabled from WorkMail use.
      * </p>
      * 
-     * @return The date indicating when the member was disabled from Amazon WorkMail use.
+     * @return The date indicating when the member was disabled from WorkMail use.
      */
 
     public java.util.Date getDisabledDate() {
@@ -330,11 +330,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the member was disabled from Amazon WorkMail use.
+     * The date indicating when the member was disabled from WorkMail use.
      * </p>
      * 
      * @param disabledDate
-     *        The date indicating when the member was disabled from Amazon WorkMail use.
+     *        The date indicating when the member was disabled from WorkMail use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

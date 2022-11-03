@@ -82,7 +82,8 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String serviceId;
     /**
      * <p>
-     * The current state of the route.
+     * The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user
+     * inputs. <code>FAILED</code> is a route state that is system generated.
      * </p>
      */
     private String state;
@@ -95,7 +96,7 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * onfiguration for the URI path route type.
+     * Configuration for the URI path route type.
      * </p>
      */
     private UriPathRouteInput uriPathRoute;
@@ -505,11 +506,13 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The current state of the route.
+     * The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user
+     * inputs. <code>FAILED</code> is a route state that is system generated.
      * </p>
      * 
      * @param state
-     *        The current state of the route.
+     *        The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code>
+     *        as user inputs. <code>FAILED</code> is a route state that is system generated.
      * @see RouteState
      */
 
@@ -519,10 +522,12 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The current state of the route.
+     * The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user
+     * inputs. <code>FAILED</code> is a route state that is system generated.
      * </p>
      * 
-     * @return The current state of the route.
+     * @return The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code>
+     *         as user inputs. <code>FAILED</code> is a route state that is system generated.
      * @see RouteState
      */
 
@@ -532,11 +537,13 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The current state of the route.
+     * The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user
+     * inputs. <code>FAILED</code> is a route state that is system generated.
      * </p>
      * 
      * @param state
-     *        The current state of the route.
+     *        The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code>
+     *        as user inputs. <code>FAILED</code> is a route state that is system generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteState
      */
@@ -548,11 +555,13 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The current state of the route.
+     * The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user
+     * inputs. <code>FAILED</code> is a route state that is system generated.
      * </p>
      * 
      * @param state
-     *        The current state of the route.
+     *        The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code>
+     *        as user inputs. <code>FAILED</code> is a route state that is system generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteState
      */
@@ -638,11 +647,11 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * onfiguration for the URI path route type.
+     * Configuration for the URI path route type.
      * </p>
      * 
      * @param uriPathRoute
-     *        onfiguration for the URI path route type.
+     *        Configuration for the URI path route type.
      */
 
     public void setUriPathRoute(UriPathRouteInput uriPathRoute) {
@@ -651,10 +660,10 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * onfiguration for the URI path route type.
+     * Configuration for the URI path route type.
      * </p>
      * 
-     * @return onfiguration for the URI path route type.
+     * @return Configuration for the URI path route type.
      */
 
     public UriPathRouteInput getUriPathRoute() {
@@ -663,11 +672,11 @@ public class CreateRouteResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * onfiguration for the URI path route type.
+     * Configuration for the URI path route type.
      * </p>
      * 
      * @param uriPathRoute
-     *        onfiguration for the URI path route type.
+     *        Configuration for the URI path route type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

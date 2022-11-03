@@ -30,7 +30,7 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The access token for the set user settings request.
+     * A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      * </p>
      */
     private String accessToken;
@@ -43,11 +43,11 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The access token for the set user settings request.
+     * A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the set user settings request.
+     *        A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      */
 
     public void setAccessToken(String accessToken) {
@@ -56,10 +56,10 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The access token for the set user settings request.
+     * A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      * </p>
      * 
-     * @return The access token for the set user settings request.
+     * @return A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      */
 
     public String getAccessToken() {
@@ -68,11 +68,11 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The access token for the set user settings request.
+     * A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the set user settings request.
+     *        A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

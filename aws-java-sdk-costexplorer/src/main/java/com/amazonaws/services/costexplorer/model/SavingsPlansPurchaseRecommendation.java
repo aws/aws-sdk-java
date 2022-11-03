@@ -50,19 +50,20 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
     private String termInYears;
     /**
      * <p>
-     * The payment option used to generate the recommendation.
+     * The payment option that's used to generate the recommendation.
      * </p>
      */
     private String paymentOption;
     /**
      * <p>
-     * The lookback period in days, used to generate the recommendation.
+     * The lookback period in days that's used to generate the recommendation.
      * </p>
      */
     private String lookbackPeriodInDays;
     /**
      * <p>
-     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
+     * Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
+     * workloads.
      * </p>
      */
     private java.util.List<SavingsPlansPurchaseRecommendationDetail> savingsPlansPurchaseRecommendationDetails;
@@ -268,11 +269,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The payment option used to generate the recommendation.
+     * The payment option that's used to generate the recommendation.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option used to generate the recommendation.
+     *        The payment option that's used to generate the recommendation.
      * @see PaymentOption
      */
 
@@ -282,10 +283,10 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The payment option used to generate the recommendation.
+     * The payment option that's used to generate the recommendation.
      * </p>
      * 
-     * @return The payment option used to generate the recommendation.
+     * @return The payment option that's used to generate the recommendation.
      * @see PaymentOption
      */
 
@@ -295,11 +296,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The payment option used to generate the recommendation.
+     * The payment option that's used to generate the recommendation.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option used to generate the recommendation.
+     *        The payment option that's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
@@ -311,11 +312,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The payment option used to generate the recommendation.
+     * The payment option that's used to generate the recommendation.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option used to generate the recommendation.
+     *        The payment option that's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
@@ -327,11 +328,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The lookback period in days, used to generate the recommendation.
+     * The lookback period in days that's used to generate the recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The lookback period in days, used to generate the recommendation.
+     *        The lookback period in days that's used to generate the recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -341,10 +342,10 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The lookback period in days, used to generate the recommendation.
+     * The lookback period in days that's used to generate the recommendation.
      * </p>
      * 
-     * @return The lookback period in days, used to generate the recommendation.
+     * @return The lookback period in days that's used to generate the recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -354,11 +355,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The lookback period in days, used to generate the recommendation.
+     * The lookback period in days that's used to generate the recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The lookback period in days, used to generate the recommendation.
+     *        The lookback period in days that's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -370,11 +371,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The lookback period in days, used to generate the recommendation.
+     * The lookback period in days that's used to generate the recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The lookback period in days, used to generate the recommendation.
+     *        The lookback period in days that's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -386,11 +387,12 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
+     * Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
+     * workloads.
      * </p>
      * 
-     * @return Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
-     *         workloads.
+     * @return Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans
+     *         eligible workloads.
      */
 
     public java.util.List<SavingsPlansPurchaseRecommendationDetail> getSavingsPlansPurchaseRecommendationDetails() {
@@ -399,11 +401,12 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
+     * Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
+     * workloads.
      * </p>
      * 
      * @param savingsPlansPurchaseRecommendationDetails
-     *        Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
+     *        Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
      *        workloads.
      */
 
@@ -420,7 +423,8 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
+     * Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
+     * workloads.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -430,7 +434,7 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
      * </p>
      * 
      * @param savingsPlansPurchaseRecommendationDetails
-     *        Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
+     *        Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
      *        workloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -449,11 +453,12 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
+     * Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
+     * workloads.
      * </p>
      * 
      * @param savingsPlansPurchaseRecommendationDetails
-     *        Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
+     *        Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible
      *        workloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

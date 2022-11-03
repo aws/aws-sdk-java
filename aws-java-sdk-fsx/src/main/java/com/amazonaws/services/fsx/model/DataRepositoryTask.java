@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A description of the data repository task. You use data repository tasks to perform bulk transfer operations between
- * your Amazon FSx file system and a linked data repository.
+ * an Amazon FSx for Lustre file system and a linked data repository. An Amazon File Cache resource uses a task to
+ * automatically release files from the cache.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTask" target="_top">AWS API
@@ -42,34 +43,33 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - Amazon FSx has not started the task.
+     * <code>PENDING</code> - The task has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EXECUTING</code> - Amazon FSx is processing the task.
+     * <code>EXECUTING</code> - The task is in process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task
-     * failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task
-     * failures.
+     * <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to
+     * process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCEEDED</code> - FSx completed the task successfully.
+     * <code>SUCCEEDED</code> - The task has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     * <code>CANCELED</code> - The task was canceled and it did not complete.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELING</code> - FSx is in process of canceling the task.
+     * <code>CANCELING</code> - The task is in process of being canceled.
      * </p>
      * </li>
      * </ul>
@@ -91,14 +91,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked
-     * S3 bucket.
+     * <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data
+     * repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3
-     * bucket to your Lustre file system.
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -108,13 +113,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time that Amazon FSx began processing the task.
+     * The time the system began processing the task.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time that Amazon FSx completed processing the task, populated after the task is complete.
+     * The time the system completed processing the task, populated after the task is complete.
      * </p>
      */
     private java.util.Date endTime;
@@ -122,13 +127,16 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     private String resourceARN;
 
     private java.util.List<Tag> tags;
-
+    /**
+     * <p>
+     * The globally unique ID of the file system.
+     * </p>
+     */
     private String fileSystemId;
     /**
      * <p>
-     * An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to
-     * process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data
-     * repository.
+     * An array of paths that specify the data for the data repository task to process. For example, in an
+     * EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.
      * </p>
      * <p>
      * (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
@@ -150,6 +158,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     private DataRepositoryTaskStatus status;
 
     private CompletionReport report;
+    /**
+     * <p>
+     * Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     * automatically releases files from the cache.
+     * </p>
+     */
+    private Long capacityToRelease;
+    /**
+     * <p>
+     * The system-generated, unique ID of the cache.
+     * </p>
+     */
+    private String fileCacheId;
 
     /**
      * <p>
@@ -198,34 +219,33 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - Amazon FSx has not started the task.
+     * <code>PENDING</code> - The task has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EXECUTING</code> - Amazon FSx is processing the task.
+     * <code>EXECUTING</code> - The task is in process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task
-     * failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task
-     * failures.
+     * <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to
+     * process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCEEDED</code> - FSx completed the task successfully.
+     * <code>SUCCEEDED</code> - The task has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     * <code>CANCELED</code> - The task was canceled and it did not complete.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELING</code> - FSx is in process of canceling the task.
+     * <code>CANCELING</code> - The task is in process of being canceled.
      * </p>
      * </li>
      * </ul>
@@ -244,34 +264,34 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - Amazon FSx has not started the task.
+     *        <code>PENDING</code> - The task has not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EXECUTING</code> - Amazon FSx is processing the task.
+     *        <code>EXECUTING</code> - The task is in process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the
-     *        task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information
-     *        about task failures.
+     *        <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task
+     *        failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about
+     *        task failures.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUCCEEDED</code> - FSx completed the task successfully.
+     *        <code>SUCCEEDED</code> - The task has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     *        <code>CANCELED</code> - The task was canceled and it did not complete.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CANCELING</code> - FSx is in process of canceling the task.
+     *        <code>CANCELING</code> - The task is in process of being canceled.
      *        </p>
      *        </li>
      *        </ul>
@@ -297,34 +317,33 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - Amazon FSx has not started the task.
+     * <code>PENDING</code> - The task has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EXECUTING</code> - Amazon FSx is processing the task.
+     * <code>EXECUTING</code> - The task is in process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task
-     * failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task
-     * failures.
+     * <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to
+     * process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCEEDED</code> - FSx completed the task successfully.
+     * <code>SUCCEEDED</code> - The task has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     * <code>CANCELED</code> - The task was canceled and it did not complete.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELING</code> - FSx is in process of canceling the task.
+     * <code>CANCELING</code> - The task is in process of being canceled.
      * </p>
      * </li>
      * </ul>
@@ -342,34 +361,34 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PENDING</code> - Amazon FSx has not started the task.
+     *         <code>PENDING</code> - The task has not started.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EXECUTING</code> - Amazon FSx is processing the task.
+     *         <code>EXECUTING</code> - The task is in process.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the
-     *         task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information
-     *         about task failures.
+     *         <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task
+     *         failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about
+     *         task failures.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SUCCEEDED</code> - FSx completed the task successfully.
+     *         <code>SUCCEEDED</code> - The task has completed successfully.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     *         <code>CANCELED</code> - The task was canceled and it did not complete.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CANCELING</code> - FSx is in process of canceling the task.
+     *         <code>CANCELING</code> - The task is in process of being canceled.
      *         </p>
      *         </li>
      *         </ul>
@@ -395,34 +414,33 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - Amazon FSx has not started the task.
+     * <code>PENDING</code> - The task has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EXECUTING</code> - Amazon FSx is processing the task.
+     * <code>EXECUTING</code> - The task is in process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task
-     * failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task
-     * failures.
+     * <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to
+     * process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCEEDED</code> - FSx completed the task successfully.
+     * <code>SUCCEEDED</code> - The task has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     * <code>CANCELED</code> - The task was canceled and it did not complete.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELING</code> - FSx is in process of canceling the task.
+     * <code>CANCELING</code> - The task is in process of being canceled.
      * </p>
      * </li>
      * </ul>
@@ -441,34 +459,34 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - Amazon FSx has not started the task.
+     *        <code>PENDING</code> - The task has not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EXECUTING</code> - Amazon FSx is processing the task.
+     *        <code>EXECUTING</code> - The task is in process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the
-     *        task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information
-     *        about task failures.
+     *        <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task
+     *        failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about
+     *        task failures.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUCCEEDED</code> - FSx completed the task successfully.
+     *        <code>SUCCEEDED</code> - The task has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     *        <code>CANCELED</code> - The task was canceled and it did not complete.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CANCELING</code> - FSx is in process of canceling the task.
+     *        <code>CANCELING</code> - The task is in process of being canceled.
      *        </p>
      *        </li>
      *        </ul>
@@ -496,34 +514,33 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - Amazon FSx has not started the task.
+     * <code>PENDING</code> - The task has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EXECUTING</code> - Amazon FSx is processing the task.
+     * <code>EXECUTING</code> - The task is in process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task
-     * failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task
-     * failures.
+     * <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to
+     * process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCEEDED</code> - FSx completed the task successfully.
+     * <code>SUCCEEDED</code> - The task has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     * <code>CANCELED</code> - The task was canceled and it did not complete.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CANCELING</code> - FSx is in process of canceling the task.
+     * <code>CANCELING</code> - The task is in process of being canceled.
      * </p>
      * </li>
      * </ul>
@@ -542,34 +559,34 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - Amazon FSx has not started the task.
+     *        <code>PENDING</code> - The task has not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EXECUTING</code> - Amazon FSx is processing the task.
+     *        <code>EXECUTING</code> - The task is in process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the
-     *        task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information
-     *        about task failures.
+     *        <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task
+     *        failed to process. The <a>DataRepositoryTaskFailureDetails</a> property provides more information about
+     *        task failures.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUCCEEDED</code> - FSx completed the task successfully.
+     *        <code>SUCCEEDED</code> - The task has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+     *        <code>CANCELED</code> - The task was canceled and it did not complete.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CANCELING</code> - FSx is in process of canceling the task.
+     *        <code>CANCELING</code> - The task is in process of being canceled.
      *        </p>
      *        </li>
      *        </ul>
@@ -597,14 +614,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked
-     * S3 bucket.
+     * <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data
+     * repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3
-     * bucket to your Lustre file system.
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -614,14 +636,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a
-     *        linked S3 bucket.
+     *        <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked
+     *        data repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a
-     *        linked S3 bucket to your Lustre file system.
+     *        <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your
+     *        Amazon FSx for Lustre file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *        </p>
      *        </li>
      * @see DataRepositoryTaskType
@@ -638,14 +665,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked
-     * S3 bucket.
+     * <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data
+     * repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3
-     * bucket to your Lustre file system.
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -654,14 +686,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a
-     *         linked S3 bucket.
+     *         <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked
+     *         data repository.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a
-     *         linked S3 bucket to your Lustre file system.
+     *         <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to
+     *         your Amazon FSx for Lustre file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *         </p>
      *         </li>
      * @see DataRepositoryTaskType
@@ -678,14 +715,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked
-     * S3 bucket.
+     * <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data
+     * repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3
-     * bucket to your Lustre file system.
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -695,14 +737,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a
-     *        linked S3 bucket.
+     *        <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked
+     *        data repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a
-     *        linked S3 bucket to your Lustre file system.
+     *        <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your
+     *        Amazon FSx for Lustre file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -721,14 +768,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked
-     * S3 bucket.
+     * <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data
+     * repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3
-     * bucket to your Lustre file system.
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -738,14 +790,19 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a
-     *        linked S3 bucket.
+     *        <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked
+     *        data repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a
-     *        linked S3 bucket to your Lustre file system.
+     *        <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your
+     *        Amazon FSx for Lustre file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -785,11 +842,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time that Amazon FSx began processing the task.
+     * The time the system began processing the task.
      * </p>
      * 
      * @param startTime
-     *        The time that Amazon FSx began processing the task.
+     *        The time the system began processing the task.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -798,10 +855,10 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time that Amazon FSx began processing the task.
+     * The time the system began processing the task.
      * </p>
      * 
-     * @return The time that Amazon FSx began processing the task.
+     * @return The time the system began processing the task.
      */
 
     public java.util.Date getStartTime() {
@@ -810,11 +867,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time that Amazon FSx began processing the task.
+     * The time the system began processing the task.
      * </p>
      * 
      * @param startTime
-     *        The time that Amazon FSx began processing the task.
+     *        The time the system began processing the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -825,11 +882,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time that Amazon FSx completed processing the task, populated after the task is complete.
+     * The time the system completed processing the task, populated after the task is complete.
      * </p>
      * 
      * @param endTime
-     *        The time that Amazon FSx completed processing the task, populated after the task is complete.
+     *        The time the system completed processing the task, populated after the task is complete.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -838,10 +895,10 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time that Amazon FSx completed processing the task, populated after the task is complete.
+     * The time the system completed processing the task, populated after the task is complete.
      * </p>
      * 
-     * @return The time that Amazon FSx completed processing the task, populated after the task is complete.
+     * @return The time the system completed processing the task, populated after the task is complete.
      */
 
     public java.util.Date getEndTime() {
@@ -850,11 +907,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time that Amazon FSx completed processing the task, populated after the task is complete.
+     * The time the system completed processing the task, populated after the task is complete.
      * </p>
      * 
      * @param endTime
-     *        The time that Amazon FSx completed processing the task, populated after the task is complete.
+     *        The time the system completed processing the task, populated after the task is complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -942,7 +999,12 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The globally unique ID of the file system.
+     * </p>
+     * 
      * @param fileSystemId
+     *        The globally unique ID of the file system.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -950,7 +1012,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The globally unique ID of the file system.
+     * </p>
+     * 
+     * @return The globally unique ID of the file system.
      */
 
     public String getFileSystemId() {
@@ -958,7 +1024,12 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The globally unique ID of the file system.
+     * </p>
+     * 
      * @param fileSystemId
+     *        The globally unique ID of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -969,17 +1040,15 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to
-     * process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data
-     * repository.
+     * An array of paths that specify the data for the data repository task to process. For example, in an
+     * EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.
      * </p>
      * <p>
      * (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      * </p>
      * 
-     * @return An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository
-     *         task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to
-     *         the linked data repository.</p>
+     * @return An array of paths that specify the data for the data repository task to process. For example, in an
+     *         EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
      *         <p>
      *         (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      */
@@ -990,18 +1059,16 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to
-     * process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data
-     * repository.
+     * An array of paths that specify the data for the data repository task to process. For example, in an
+     * EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.
      * </p>
      * <p>
      * (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      * </p>
      * 
      * @param paths
-     *        An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository
-     *        task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to
-     *        the linked data repository.</p>
+     *        An array of paths that specify the data for the data repository task to process. For example, in an
+     *        EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
      *        <p>
      *        (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      */
@@ -1017,9 +1084,8 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to
-     * process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data
-     * repository.
+     * An array of paths that specify the data for the data repository task to process. For example, in an
+     * EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.
      * </p>
      * <p>
      * (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
@@ -1031,9 +1097,8 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param paths
-     *        An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository
-     *        task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to
-     *        the linked data repository.</p>
+     *        An array of paths that specify the data for the data repository task to process. For example, in an
+     *        EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
      *        <p>
      *        (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1051,18 +1116,16 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to
-     * process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data
-     * repository.
+     * An array of paths that specify the data for the data repository task to process. For example, in an
+     * EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.
      * </p>
      * <p>
      * (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      * </p>
      * 
      * @param paths
-     *        An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository
-     *        task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to
-     *        the linked data repository.</p>
+     *        An array of paths that specify the data for the data repository task to process. For example, in an
+     *        EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
      *        <p>
      *        (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1187,6 +1250,92 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     * automatically releases files from the cache.
+     * </p>
+     * 
+     * @param capacityToRelease
+     *        Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     *        automatically releases files from the cache.
+     */
+
+    public void setCapacityToRelease(Long capacityToRelease) {
+        this.capacityToRelease = capacityToRelease;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     * automatically releases files from the cache.
+     * </p>
+     * 
+     * @return Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     *         automatically releases files from the cache.
+     */
+
+    public Long getCapacityToRelease() {
+        return this.capacityToRelease;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     * automatically releases files from the cache.
+     * </p>
+     * 
+     * @param capacityToRelease
+     *        Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that
+     *        automatically releases files from the cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryTask withCapacityToRelease(Long capacityToRelease) {
+        setCapacityToRelease(capacityToRelease);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The system-generated, unique ID of the cache.
+     * </p>
+     * 
+     * @param fileCacheId
+     *        The system-generated, unique ID of the cache.
+     */
+
+    public void setFileCacheId(String fileCacheId) {
+        this.fileCacheId = fileCacheId;
+    }
+
+    /**
+     * <p>
+     * The system-generated, unique ID of the cache.
+     * </p>
+     * 
+     * @return The system-generated, unique ID of the cache.
+     */
+
+    public String getFileCacheId() {
+        return this.fileCacheId;
+    }
+
+    /**
+     * <p>
+     * The system-generated, unique ID of the cache.
+     * </p>
+     * 
+     * @param fileCacheId
+     *        The system-generated, unique ID of the cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryTask withFileCacheId(String fileCacheId) {
+        setFileCacheId(fileCacheId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1223,7 +1372,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getReport() != null)
-            sb.append("Report: ").append(getReport());
+            sb.append("Report: ").append(getReport()).append(",");
+        if (getCapacityToRelease() != null)
+            sb.append("CapacityToRelease: ").append(getCapacityToRelease()).append(",");
+        if (getFileCacheId() != null)
+            sb.append("FileCacheId: ").append(getFileCacheId());
         sb.append("}");
         return sb.toString();
     }
@@ -1290,6 +1443,14 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getReport() != null && other.getReport().equals(this.getReport()) == false)
             return false;
+        if (other.getCapacityToRelease() == null ^ this.getCapacityToRelease() == null)
+            return false;
+        if (other.getCapacityToRelease() != null && other.getCapacityToRelease().equals(this.getCapacityToRelease()) == false)
+            return false;
+        if (other.getFileCacheId() == null ^ this.getFileCacheId() == null)
+            return false;
+        if (other.getFileCacheId() != null && other.getFileCacheId().equals(this.getFileCacheId()) == false)
+            return false;
         return true;
     }
 
@@ -1311,6 +1472,8 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getReport() == null) ? 0 : getReport().hashCode());
+        hashCode = prime * hashCode + ((getCapacityToRelease() == null) ? 0 : getCapacityToRelease().hashCode());
+        hashCode = prime * hashCode + ((getFileCacheId() == null) ? 0 : getFileCacheId().hashCode());
         return hashCode;
     }
 

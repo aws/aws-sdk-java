@@ -51,10 +51,14 @@ import com.amazonaws.services.identitystore.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * The AWS Single Sign-On (SSO) Identity Store service provides a single place to retrieve all of your identities (users
- * and groups). For more information about AWS, see the <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.
+ * The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place
+ * to retrieve all of your identities (users and groups). For more information, see the <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
+ * 
+ * <pre>
+ * <code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information on data types and errors.&lt;/p&gt; </code>
+ * </pre>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -82,17 +86,23 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.identitystore.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.identitystore.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.identitystore.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.identitystore.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.identitystore.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.identitystore.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.identitystore.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.identitystore.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.identitystore.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.identitystore.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.identitystore.model.AWSIdentityStoreException.class));
 
     public static AWSIdentityStoreClientBuilder builder() {
@@ -143,6 +153,498 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Creates a group within the specified identity store.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return Result of the CreateGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause the number of users or groups in the identity store to exceed the maximum
+     *         allowed.
+     * @sample AWSIdentityStore.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateGroupResult executeCreateGroup(CreateGroupRequest createGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGroupRequest> request = null;
+        Response<CreateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a relationship between a member and a group. The following identifiers must be specified:
+     * <code>GroupId</code>, <code>IdentityStoreId</code>, and <code>MemberId</code>.
+     * </p>
+     * 
+     * @param createGroupMembershipRequest
+     * @return Result of the CreateGroupMembership operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause the number of users or groups in the identity store to exceed the maximum
+     *         allowed.
+     * @sample AWSIdentityStore.CreateGroupMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroupMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateGroupMembershipResult createGroupMembership(CreateGroupMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGroupMembership(request);
+    }
+
+    @SdkInternalApi
+    final CreateGroupMembershipResult executeCreateGroupMembership(CreateGroupMembershipRequest createGroupMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGroupMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGroupMembershipRequest> request = null;
+        Response<CreateGroupMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGroupMembershipResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateGroupMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new user within the specified identity store.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause the number of users or groups in the identity store to exceed the maximum
+     *         allowed.
+     * @sample AWSIdentityStore.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserRequest> request = null;
+        Response<CreateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete a group within an identity store given <code>GroupId</code>.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGroupResult executeDeleteGroup(DeleteGroupRequest deleteGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGroupRequest> request = null;
+        Response<DeleteGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete a membership within a group given <code>MembershipId</code>.
+     * </p>
+     * 
+     * @param deleteGroupMembershipRequest
+     * @return Result of the DeleteGroupMembership operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.DeleteGroupMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroupMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteGroupMembershipResult deleteGroupMembership(DeleteGroupMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGroupMembership(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGroupMembershipResult executeDeleteGroupMembership(DeleteGroupMembershipRequest deleteGroupMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGroupMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGroupMembershipRequest> request = null;
+        Response<DeleteGroupMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroupMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupMembershipResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteGroupMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a user within an identity store given <code>UserId</code>.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserRequest> request = null;
+        Response<DeleteUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.
      * </p>
      * 
@@ -150,15 +652,15 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * @return Result of the DescribeGroup operation returned by the service.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception or failure with an internal
      *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSIdentityStore.DescribeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup" target="_top">AWS
      *      API Documentation</a>
@@ -209,22 +711,90 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Retrieves the user metadata and attributes from <code>UserId</code> in an identity store.
+     * Retrieves membership metadata and attributes from <code>MembershipId</code> in an identity store.
+     * </p>
+     * 
+     * @param describeGroupMembershipRequest
+     * @return Result of the DescribeGroupMembership operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.DescribeGroupMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroupMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeGroupMembershipResult describeGroupMembership(DescribeGroupMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGroupMembership(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGroupMembershipResult executeDescribeGroupMembership(DescribeGroupMembershipRequest describeGroupMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGroupMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGroupMembershipRequest> request = null;
+        Response<DescribeGroupMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGroupMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroupMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGroupMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeGroupMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the user metadata and attributes from the <code>UserId</code> in an identity store.
      * </p>
      * 
      * @param describeUserRequest
      * @return Result of the DescribeUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception or failure with an internal
      *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSIdentityStore.DescribeUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser" target="_top">AWS API
      *      Documentation</a>
@@ -275,24 +845,424 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the attribute name and value of the group that you specified in the search. We only support
-     * <code>DisplayName</code> as a valid filter attribute path currently, and filter is required. This API returns
-     * minimum attributes, including <code>GroupId</code> and group <code>DisplayName</code> in the response.
+     * Retrieves <code>GroupId</code> in an identity store.
      * </p>
      * 
-     * @param listGroupsRequest
-     * @return Result of the ListGroups operation returned by the service.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     * @param getGroupIdRequest
+     * @return Result of the GetGroupId operation returned by the service.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception or failure with an internal
      *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.GetGroupId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupId" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetGroupIdResult getGroupId(GetGroupIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroupId(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupIdResult executeGetGroupId(GetGroupIdRequest getGroupIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupIdRequest> request = null;
+        Response<GetGroupIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGroupIdResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the <code>MembershipId</code> in an identity store.
+     * </p>
+     * 
+     * @param getGroupMembershipIdRequest
+     * @return Result of the GetGroupMembershipId operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.GetGroupMembershipId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupMembershipId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGroupMembershipIdResult getGroupMembershipId(GetGroupMembershipIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroupMembershipId(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupMembershipIdResult executeGetGroupMembershipId(GetGroupMembershipIdRequest getGroupMembershipIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupMembershipIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupMembershipIdRequest> request = null;
+        Response<GetGroupMembershipIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupMembershipIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupMembershipIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupMembershipId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGroupMembershipIdResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupMembershipIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the <code>UserId</code> in an identity store.
+     * </p>
+     * 
+     * @param getUserIdRequest
+     * @return Result of the GetUserId operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.GetUserId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetUserId" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetUserIdResult getUserId(GetUserIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUserId(request);
+    }
+
+    @SdkInternalApi
+    final GetUserIdResult executeGetUserId(GetUserIdRequest getUserIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUserIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUserIdRequest> request = null;
+        Response<GetUserIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUserIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUserIdResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUserIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks the user's membership in all requested groups and returns if the member exists in all queried groups.
+     * </p>
+     * 
+     * @param isMemberInGroupsRequest
+     * @return Result of the IsMemberInGroups operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.IsMemberInGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/IsMemberInGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public IsMemberInGroupsResult isMemberInGroups(IsMemberInGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeIsMemberInGroups(request);
+    }
+
+    @SdkInternalApi
+    final IsMemberInGroupsResult executeIsMemberInGroups(IsMemberInGroupsRequest isMemberInGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(isMemberInGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<IsMemberInGroupsRequest> request = null;
+        Response<IsMemberInGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new IsMemberInGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(isMemberInGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IsMemberInGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<IsMemberInGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new IsMemberInGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
+     * objects and returns results in paginated form.
+     * </p>
+     * 
+     * @param listGroupMembershipsRequest
+     * @return Result of the ListGroupMemberships operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.ListGroupMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMemberships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListGroupMembershipsResult listGroupMemberships(ListGroupMembershipsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroupMemberships(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupMembershipsResult executeListGroupMemberships(ListGroupMembershipsRequest listGroupMembershipsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGroupMembershipsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupMembershipsRequest> request = null;
+        Response<ListGroupMembershipsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupMembershipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupMembershipsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupMemberships");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGroupMembershipsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupMembershipsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code>
+     * objects and returns results in paginated form.
+     * </p>
+     * 
+     * @param listGroupMembershipsForMemberRequest
+     * @return Result of the ListGroupMembershipsForMember operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSIdentityStore.ListGroupMembershipsForMember
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMembershipsForMember"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListGroupMembershipsForMemberResult listGroupMembershipsForMember(ListGroupMembershipsForMemberRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroupMembershipsForMember(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupMembershipsForMemberResult executeListGroupMembershipsForMember(ListGroupMembershipsForMemberRequest listGroupMembershipsForMemberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGroupMembershipsForMemberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupMembershipsForMemberRequest> request = null;
+        Response<ListGroupMembershipsForMemberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupMembershipsForMemberRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listGroupMembershipsForMemberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupMembershipsForMember");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGroupMembershipsForMemberResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListGroupMembershipsForMemberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code> objects.
+     * Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute is deprecated. Instead, use the
+     * <code>GetGroupId</code> API action.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @return Result of the ListGroups operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSIdentityStore.ListGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups" target="_top">AWS API
      *      Documentation</a>
@@ -343,24 +1313,24 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the attribute name and value of the user that you specified in the search. We only support
-     * <code>UserName</code> as a valid filter attribute path currently, and filter is required. This API returns
-     * minimum attributes, including <code>UserId</code> and <code>UserName</code> in the response.
+     * Lists all users in the identity store. Returns a paginated list of complete <code>User</code> objects. Filtering
+     * for a <code>User</code> by the <code>UserName</code> attribute is deprecated. Instead, use the
+     * <code>GetUserId</code> API action.
      * </p>
      * 
      * @param listUsersRequest
      * @return Result of the ListUsers operation returned by the service.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception or failure with an internal
      *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSIdentityStore.ListUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers" target="_top">AWS API
      *      Documentation</a>
@@ -399,6 +1369,172 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For the specified group in the specified identity store, updates the group metadata and attributes.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause the number of users or groups in the identity store to exceed the maximum
+     *         allowed.
+     * @sample AWSIdentityStore.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGroupResult executeUpdateGroup(UpdateGroupRequest updateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGroupRequest> request = null;
+        Response<UpdateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For the specified user in the specified identity store, updates the user metadata and attributes.
+     * </p>
+     * 
+     * @param updateUserRequest
+     * @return Result of the UpdateUser operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         This request cannot be completed for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Performing the requested operation would violate an existing uniqueness claim in the identity store.
+     *         Resolve the conflict before retrying this request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The requested resource was being concurrently modified by another request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure with an internal
+     *         server.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause the number of users or groups in the identity store to exceed the maximum
+     *         allowed.
+     * @sample AWSIdentityStore.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateUserResult updateUser(UpdateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUser(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserResult executeUpdateUser(UpdateUserRequest updateUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUserRequest> request = null;
+        Response<UpdateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "identitystore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

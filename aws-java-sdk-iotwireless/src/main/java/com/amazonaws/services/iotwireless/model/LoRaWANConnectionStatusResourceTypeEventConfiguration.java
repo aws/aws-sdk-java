@@ -31,18 +31,18 @@ public class LoRaWANConnectionStatusResourceTypeEventConfiguration implements Se
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     * Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * </p>
      */
     private String wirelessGatewayEventTopic;
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     * Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessGatewayEventTopic
-     *        Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     *        Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -52,10 +52,10 @@ public class LoRaWANConnectionStatusResourceTypeEventConfiguration implements Se
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     * Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * </p>
      * 
-     * @return Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     * @return Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -65,11 +65,11 @@ public class LoRaWANConnectionStatusResourceTypeEventConfiguration implements Se
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     * Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessGatewayEventTopic
-     *        Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     *        Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */
@@ -81,11 +81,11 @@ public class LoRaWANConnectionStatusResourceTypeEventConfiguration implements Se
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     * Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessGatewayEventTopic
-     *        Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.
+     *        Denotes whether the wireless gateway connection status event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */

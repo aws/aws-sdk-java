@@ -102,6 +102,16 @@ public class StackSetOperationStaxUnmarshaller implements Unmarshaller<StackSetO
                     stackSetOperation.setStackSetDriftDetectionDetails(StackSetDriftDetectionDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StatusReason", targetDepth)) {
+                    stackSetOperation.setStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StatusDetails", targetDepth)) {
+                    stackSetOperation.setStatusDetails(StackSetOperationStatusDetailsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSetOperation;

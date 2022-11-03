@@ -58,6 +58,12 @@ public class DescribeSourceServersRequestFiltersJsonUnmarshaller implements Unma
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("stagingAccountIDs", targetDepth)) {
+                    context.nextToken();
+                    describeSourceServersRequestFilters.setStagingAccountIDs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

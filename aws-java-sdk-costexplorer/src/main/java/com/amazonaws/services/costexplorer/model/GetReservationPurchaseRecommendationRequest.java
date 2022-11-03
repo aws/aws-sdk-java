@@ -27,7 +27,7 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account ID that is associated with the recommendation.
+     * The account ID that's associated with the recommendation.
      * </p>
      */
     private String accountId;
@@ -88,11 +88,11 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account ID that is associated with the recommendation.
+     * The account ID that's associated with the recommendation.
      * </p>
      * 
      * @param accountId
-     *        The account ID that is associated with the recommendation.
+     *        The account ID that's associated with the recommendation.
      */
 
     public void setAccountId(String accountId) {
@@ -101,10 +101,10 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account ID that is associated with the recommendation.
+     * The account ID that's associated with the recommendation.
      * </p>
      * 
-     * @return The account ID that is associated with the recommendation.
+     * @return The account ID that's associated with the recommendation.
      */
 
     public String getAccountId() {
@@ -113,11 +113,11 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account ID that is associated with the recommendation.
+     * The account ID that's associated with the recommendation.
      * </p>
      * 
      * @param accountId
-     *        The account ID that is associated with the recommendation.
+     *        The account ID that's associated with the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides summary information about a call analytics job.
+ * Provides detailed information about a specific Call Analytics job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CallAnalyticsJobSummary" target="_top">AWS
@@ -30,54 +30,80 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the call analytics job.
+     * The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services
+     * account.
      * </p>
      */
     private String callAnalyticsJobName;
     /**
      * <p>
-     * A timestamp that shows when the call analytics job was created.
+     * The date and time the specified Call Analytics job request was made.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * A timestamp that shows when the job began processing.
+     * The date and time your Call Analytics job began processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * The date and time the specified Call Analytics job finished processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date completionTime;
     /**
      * <p>
-     * The language of the transcript in the source audio file.
+     * The language code used to create your Call Analytics transcription.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The status of the call analytics job.
+     * Provides the status of your Call Analytics job.
+     * </p>
+     * <p>
+     * If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     * transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
+     * your transcription job failed.
      * </p>
      */
     private String callAnalyticsJobStatus;
     /**
      * <p>
-     * If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     * If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     * about why the Call Analytics job failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      */
     private String failureReason;
 
     /**
      * <p>
-     * The name of the call analytics job.
+     * The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services
+     * account.
      * </p>
      * 
      * @param callAnalyticsJobName
-     *        The name of the call analytics job.
+     *        The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web
+     *        Services account.
      */
 
     public void setCallAnalyticsJobName(String callAnalyticsJobName) {
@@ -86,10 +112,12 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the call analytics job.
+     * The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services
+     * account.
      * </p>
      * 
-     * @return The name of the call analytics job.
+     * @return The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web
+     *         Services account.
      */
 
     public String getCallAnalyticsJobName() {
@@ -98,11 +126,13 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the call analytics job.
+     * The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services
+     * account.
      * </p>
      * 
      * @param callAnalyticsJobName
-     *        The name of the call analytics job.
+     *        The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web
+     *        Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +143,20 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics job was created.
+     * The date and time the specified Call Analytics job request was made.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param creationTime
-     *        A timestamp that shows when the call analytics job was created.
+     *        The date and time the specified Call Analytics job request was made.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at
+     *        12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -126,10 +165,19 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics job was created.
+     * The date and time the specified Call Analytics job request was made.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return A timestamp that shows when the call analytics job was created.
+     * @return The date and time the specified Call Analytics job request was made.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at
+     *         12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getCreationTime() {
@@ -138,11 +186,20 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the call analytics job was created.
+     * The date and time the specified Call Analytics job request was made.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param creationTime
-     *        A timestamp that shows when the call analytics job was created.
+     *        The date and time the specified Call Analytics job request was made.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at
+     *        12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +210,20 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the job began processing.
+     * The date and time your Call Analytics job began processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param startTime
-     *        A timestamp that shows when the job began processing.
+     *        The date and time your Call Analytics job began processing.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at
+     *        12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -166,10 +232,19 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the job began processing.
+     * The date and time your Call Analytics job began processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return A timestamp that shows when the job began processing.
+     * @return The date and time your Call Analytics job began processing.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at
+     *         12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getStartTime() {
@@ -178,11 +253,20 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the job began processing.
+     * The date and time your Call Analytics job began processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param startTime
-     *        A timestamp that shows when the job began processing.
+     *        The date and time your Call Analytics job began processing.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at
+     *        12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +277,20 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * The date and time the specified Call Analytics job finished processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param completionTime
-     *        A timestamp that shows when the job was completed.
+     *        The date and time the specified Call Analytics job finished processing.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at
+     *        12:33 PM UTC-7 on May 4, 2022.
      */
 
     public void setCompletionTime(java.util.Date completionTime) {
@@ -206,10 +299,19 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * The date and time the specified Call Analytics job finished processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return A timestamp that shows when the job was completed.
+     * @return The date and time the specified Call Analytics job finished processing.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at
+     *         12:33 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getCompletionTime() {
@@ -218,11 +320,20 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * The date and time the specified Call Analytics job finished processing.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM
+     * UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param completionTime
-     *        A timestamp that shows when the job was completed.
+     *        The date and time the specified Call Analytics job finished processing.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at
+     *        12:33 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +344,11 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The language of the transcript in the source audio file.
+     * The language code used to create your Call Analytics transcription.
      * </p>
      * 
      * @param languageCode
-     *        The language of the transcript in the source audio file.
+     *        The language code used to create your Call Analytics transcription.
      * @see LanguageCode
      */
 
@@ -247,10 +358,10 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The language of the transcript in the source audio file.
+     * The language code used to create your Call Analytics transcription.
      * </p>
      * 
-     * @return The language of the transcript in the source audio file.
+     * @return The language code used to create your Call Analytics transcription.
      * @see LanguageCode
      */
 
@@ -260,11 +371,11 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The language of the transcript in the source audio file.
+     * The language code used to create your Call Analytics transcription.
      * </p>
      * 
      * @param languageCode
-     *        The language of the transcript in the source audio file.
+     *        The language code used to create your Call Analytics transcription.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -276,11 +387,11 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The language of the transcript in the source audio file.
+     * The language code used to create your Call Analytics transcription.
      * </p>
      * 
      * @param languageCode
-     *        The language of the transcript in the source audio file.
+     *        The language code used to create your Call Analytics transcription.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -292,11 +403,22 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the call analytics job.
+     * Provides the status of your Call Analytics job.
+     * </p>
+     * <p>
+     * If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     * transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
+     * your transcription job failed.
      * </p>
      * 
      * @param callAnalyticsJobStatus
-     *        The status of the call analytics job.
+     *        Provides the status of your Call Analytics job.</p>
+     *        <p>
+     *        If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     *        specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     *        transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     *        on why your transcription job failed.
      * @see CallAnalyticsJobStatus
      */
 
@@ -306,10 +428,21 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the call analytics job.
+     * Provides the status of your Call Analytics job.
+     * </p>
+     * <p>
+     * If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     * transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
+     * your transcription job failed.
      * </p>
      * 
-     * @return The status of the call analytics job.
+     * @return Provides the status of your Call Analytics job.</p>
+     *         <p>
+     *         If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     *         specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     *         transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     *         on why your transcription job failed.
      * @see CallAnalyticsJobStatus
      */
 
@@ -319,11 +452,22 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the call analytics job.
+     * Provides the status of your Call Analytics job.
+     * </p>
+     * <p>
+     * If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     * transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
+     * your transcription job failed.
      * </p>
      * 
      * @param callAnalyticsJobStatus
-     *        The status of the call analytics job.
+     *        Provides the status of your Call Analytics job.</p>
+     *        <p>
+     *        If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     *        specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     *        transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     *        on why your transcription job failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CallAnalyticsJobStatus
      */
@@ -335,11 +479,22 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the call analytics job.
+     * Provides the status of your Call Analytics job.
+     * </p>
+     * <p>
+     * If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     * transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
+     * your transcription job failed.
      * </p>
      * 
      * @param callAnalyticsJobStatus
-     *        The status of the call analytics job.
+     *        Provides the status of your Call Analytics job.</p>
+     *        <p>
+     *        If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     *        specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested
+     *        transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     *        on why your transcription job failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CallAnalyticsJobStatus
      */
@@ -351,11 +506,15 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     * If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     * about why the Call Analytics job failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
-     *        If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     *        If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains
+     *        information about why the Call Analytics job failed. See also: <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
     public void setFailureReason(String failureReason) {
@@ -364,10 +523,14 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     * If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     * about why the Call Analytics job failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
-     * @return If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     * @return If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains
+     *         information about why the Call Analytics job failed. See also: <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
     public String getFailureReason() {
@@ -376,11 +539,15 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     * If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     * about why the Call Analytics job failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
-     *        If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.
+     *        If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains
+     *        information about why the Call Analytics job failed. See also: <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

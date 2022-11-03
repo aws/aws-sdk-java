@@ -95,6 +95,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFleetAdvisorCollectorResult> createFleetAdvisorCollectorAsync(CreateFleetAdvisorCollectorRequest request) {
+
+        return createFleetAdvisorCollectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFleetAdvisorCollectorResult> createFleetAdvisorCollectorAsync(CreateFleetAdvisorCollectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFleetAdvisorCollectorRequest, CreateFleetAdvisorCollectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationInstanceResult> createReplicationInstanceAsync(CreateReplicationInstanceRequest request) {
 
         return createReplicationInstanceAsync(request, null);
@@ -181,6 +194,32 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, DeleteEventSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorCollectorResult> deleteFleetAdvisorCollectorAsync(DeleteFleetAdvisorCollectorRequest request) {
+
+        return deleteFleetAdvisorCollectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorCollectorResult> deleteFleetAdvisorCollectorAsync(DeleteFleetAdvisorCollectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorCollectorRequest, DeleteFleetAdvisorCollectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(DeleteFleetAdvisorDatabasesRequest request) {
+
+        return deleteFleetAdvisorDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(DeleteFleetAdvisorDatabasesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorDatabasesRequest, DeleteFleetAdvisorDatabasesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -367,6 +406,75 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorCollectorsResult> describeFleetAdvisorCollectorsAsync(DescribeFleetAdvisorCollectorsRequest request) {
+
+        return describeFleetAdvisorCollectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorCollectorsResult> describeFleetAdvisorCollectorsAsync(DescribeFleetAdvisorCollectorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorCollectorsRequest, DescribeFleetAdvisorCollectorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorDatabasesResult> describeFleetAdvisorDatabasesAsync(DescribeFleetAdvisorDatabasesRequest request) {
+
+        return describeFleetAdvisorDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorDatabasesResult> describeFleetAdvisorDatabasesAsync(DescribeFleetAdvisorDatabasesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorDatabasesRequest, DescribeFleetAdvisorDatabasesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorLsaAnalysisResult> describeFleetAdvisorLsaAnalysisAsync(
+            DescribeFleetAdvisorLsaAnalysisRequest request) {
+
+        return describeFleetAdvisorLsaAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorLsaAnalysisResult> describeFleetAdvisorLsaAnalysisAsync(
+            DescribeFleetAdvisorLsaAnalysisRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorLsaAnalysisRequest, DescribeFleetAdvisorLsaAnalysisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemaObjectSummaryResult> describeFleetAdvisorSchemaObjectSummaryAsync(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest request) {
+
+        return describeFleetAdvisorSchemaObjectSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemaObjectSummaryResult> describeFleetAdvisorSchemaObjectSummaryAsync(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorSchemaObjectSummaryRequest, DescribeFleetAdvisorSchemaObjectSummaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemasResult> describeFleetAdvisorSchemasAsync(DescribeFleetAdvisorSchemasRequest request) {
+
+        return describeFleetAdvisorSchemasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemasResult> describeFleetAdvisorSchemasAsync(DescribeFleetAdvisorSchemasRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorSchemasRequest, DescribeFleetAdvisorSchemasResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -698,6 +806,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<RunFleetAdvisorLsaAnalysisResult> runFleetAdvisorLsaAnalysisAsync(RunFleetAdvisorLsaAnalysisRequest request) {
+
+        return runFleetAdvisorLsaAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RunFleetAdvisorLsaAnalysisResult> runFleetAdvisorLsaAnalysisAsync(RunFleetAdvisorLsaAnalysisRequest request,
+            com.amazonaws.handlers.AsyncHandler<RunFleetAdvisorLsaAnalysisRequest, RunFleetAdvisorLsaAnalysisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartReplicationTaskResult> startReplicationTaskAsync(StartReplicationTaskRequest request) {
 
         return startReplicationTaskAsync(request, null);
@@ -760,6 +881,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<TestConnectionResult> testConnectionAsync(TestConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSubscriptionsToEventBridgeResult> updateSubscriptionsToEventBridgeAsync(
+            UpdateSubscriptionsToEventBridgeRequest request) {
+
+        return updateSubscriptionsToEventBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSubscriptionsToEventBridgeResult> updateSubscriptionsToEventBridgeAsync(
+            UpdateSubscriptionsToEventBridgeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionsToEventBridgeRequest, UpdateSubscriptionsToEventBridgeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

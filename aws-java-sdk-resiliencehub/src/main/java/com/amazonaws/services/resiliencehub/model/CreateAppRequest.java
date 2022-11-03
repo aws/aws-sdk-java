@@ -27,6 +27,12 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * </p>
+     */
+    private String assessmentSchedule;
+    /**
+     * <p>
      * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
      * You should not reuse the same client token for other API requests.
      * </p>
@@ -47,9 +53,9 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
@@ -60,6 +66,65 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * </p>
+     * 
+     * @param assessmentSchedule
+     *        Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * @see AppAssessmentScheduleType
+     */
+
+    public void setAssessmentSchedule(String assessmentSchedule) {
+        this.assessmentSchedule = assessmentSchedule;
+    }
+
+    /**
+     * <p>
+     * Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * </p>
+     * 
+     * @return Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * @see AppAssessmentScheduleType
+     */
+
+    public String getAssessmentSchedule() {
+        return this.assessmentSchedule;
+    }
+
+    /**
+     * <p>
+     * Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * </p>
+     * 
+     * @param assessmentSchedule
+     *        Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppAssessmentScheduleType
+     */
+
+    public CreateAppRequest withAssessmentSchedule(String assessmentSchedule) {
+        setAssessmentSchedule(assessmentSchedule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * </p>
+     * 
+     * @param assessmentSchedule
+     *        Assessment execution schedule with 'Daily' or 'Disabled' values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppAssessmentScheduleType
+     */
+
+    public CreateAppRequest withAssessmentSchedule(AppAssessmentScheduleType assessmentSchedule) {
+        this.assessmentSchedule = assessmentSchedule.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -190,14 +255,14 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
-     *        <code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      *        (ARNs)</a> in the <i>AWS General Reference</i>.
@@ -210,13 +275,13 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
-     *         <code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *         <code>policy-id</code>. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      *         (ARNs)</a> in the <i>AWS General Reference</i>.
@@ -229,14 +294,14 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
-     *        <code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      *        (ARNs)</a> in the <i>AWS General Reference</i>.
@@ -334,6 +399,8 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssessmentSchedule() != null)
+            sb.append("AssessmentSchedule: ").append(getAssessmentSchedule()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
@@ -358,6 +425,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof CreateAppRequest == false)
             return false;
         CreateAppRequest other = (CreateAppRequest) obj;
+        if (other.getAssessmentSchedule() == null ^ this.getAssessmentSchedule() == null)
+            return false;
+        if (other.getAssessmentSchedule() != null && other.getAssessmentSchedule().equals(this.getAssessmentSchedule()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -386,6 +457,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssessmentSchedule() == null) ? 0 : getAssessmentSchedule().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

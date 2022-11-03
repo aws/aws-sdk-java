@@ -30,16 +30,56 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The condition and values for a criterion.
-     * </p>
-     */
-    private java.util.Map<String, Criterion> filter;
-    /**
-     * <p>
      * The name of the rule.
      * </p>
      */
     private String ruleName;
+    /**
+     * <p>
+     * The condition and values for a criterion.
+     * </p>
+     */
+    private java.util.Map<String, Criterion> filter;
+
+    /**
+     * <p>
+     * The name of the rule.
+     * </p>
+     * 
+     * @param ruleName
+     *        The name of the rule.
+     */
+
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
+    }
+
+    /**
+     * <p>
+     * The name of the rule.
+     * </p>
+     * 
+     * @return The name of the rule.
+     */
+
+    public String getRuleName() {
+        return this.ruleName;
+    }
+
+    /**
+     * <p>
+     * The name of the rule.
+     * </p>
+     * 
+     * @param ruleName
+     *        The name of the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InlineArchiveRule withRuleName(String ruleName) {
+        setRuleName(ruleName);
+        return this;
+    }
 
     /**
      * <p>
@@ -110,46 +150,6 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p>
-     * The name of the rule.
-     * </p>
-     * 
-     * @param ruleName
-     *        The name of the rule.
-     */
-
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
-    }
-
-    /**
-     * <p>
-     * The name of the rule.
-     * </p>
-     * 
-     * @return The name of the rule.
-     */
-
-    public String getRuleName() {
-        return this.ruleName;
-    }
-
-    /**
-     * <p>
-     * The name of the rule.
-     * </p>
-     * 
-     * @param ruleName
-     *        The name of the rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InlineArchiveRule withRuleName(String ruleName) {
-        setRuleName(ruleName);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,10 +161,10 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
         if (getRuleName() != null)
-            sb.append("RuleName: ").append(getRuleName());
+            sb.append("RuleName: ").append(getRuleName()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -179,13 +179,13 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof InlineArchiveRule == false)
             return false;
         InlineArchiveRule other = (InlineArchiveRule) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
-            return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
-            return false;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
         if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
+            return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -195,8 +195,8 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

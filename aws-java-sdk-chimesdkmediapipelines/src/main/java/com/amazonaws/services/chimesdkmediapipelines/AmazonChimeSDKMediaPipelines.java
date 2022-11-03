@@ -28,10 +28,10 @@ import com.amazonaws.services.chimesdkmediapipelines.model.*;
  * <p>
  * <p>
  * The Amazon Chime SDK media pipeline APIs in this section allow software developers to create Amazon Chime SDK media
- * pipelines and capture audio, video, events, and data messages from Amazon Chime SDK meetings. For more information
- * about media pipleines, see <a
- * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html"
- * >Amzon Chime SDK media pipelines</a>.
+ * pipelines that capture, concatenate, or stream your Amazon Chime SDK meetings. For more information about media
+ * pipleines, see <a
+ * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
+ * Chime SDK media pipelines</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -47,7 +47,7 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Creates a media capture pipeline.
+     * Creates a media pipeline.
      * </p>
      * 
      * @param createMediaCapturePipelineRequest
@@ -75,7 +75,63 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Deletes the media capture pipeline.
+     * Creates a media concatenation pipeline.
+     * </p>
+     * 
+     * @param createMediaConcatenationPipelineRequest
+     * @return Result of the CreateMediaConcatenationPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaConcatenationPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMediaConcatenationPipelineResult createMediaConcatenationPipeline(CreateMediaConcatenationPipelineRequest createMediaConcatenationPipelineRequest);
+
+    /**
+     * <p>
+     * Creates a streaming media pipeline in an Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param createMediaLiveConnectorPipelineRequest
+     * @return Result of the CreateMediaLiveConnectorPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaLiveConnectorPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMediaLiveConnectorPipelineResult createMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest createMediaLiveConnectorPipelineRequest);
+
+    /**
+     * <p>
+     * Deletes the media pipeline.
      * </p>
      * 
      * @param deleteMediaCapturePipelineRequest
@@ -103,7 +159,34 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Gets an existing media capture pipeline.
+     * Deletes the media pipeline.
+     * </p>
+     * 
+     * @param deleteMediaPipelineRequest
+     * @return Result of the DeleteMediaPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.DeleteMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMediaPipelineResult deleteMediaPipeline(DeleteMediaPipelineRequest deleteMediaPipelineRequest);
+
+    /**
+     * <p>
+     * Gets an existing media pipeline.
      * </p>
      * 
      * @param getMediaCapturePipelineRequest
@@ -131,7 +214,34 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Returns a list of media capture pipelines.
+     * Gets an existing media pipeline.
+     * </p>
+     * 
+     * @param getMediaPipelineRequest
+     * @return Result of the GetMediaPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.GetMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMediaPipelineResult getMediaPipeline(GetMediaPipelineRequest getMediaPipelineRequest);
+
+    /**
+     * <p>
+     * Returns a list of media pipelines.
      * </p>
      * 
      * @param listMediaCapturePipelinesRequest
@@ -159,7 +269,34 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon Chime SDK media capture pipeline.
+     * Returns a list of media pipelines.
+     * </p>
+     * 
+     * @param listMediaPipelinesRequest
+     * @return Result of the ListMediaPipelines operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.ListMediaPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMediaPipelinesResult listMediaPipelines(ListMediaPipelinesRequest listMediaPipelinesRequest);
+
+    /**
+     * <p>
+     * Lists the tags available for a media pipeline.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -186,7 +323,8 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon Chime SDK media capture pipeline.
+     * The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint region, resource ID, and
+     * pipeline ID.
      * </p>
      * 
      * @param tagResourceRequest
@@ -213,7 +351,7 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
-     * Removes the specified tags from the specified Amazon Chime SDK media capture pipeline.
+     * Removes any tags from a media pipeline.
      * </p>
      * 
      * @param untagResourceRequest

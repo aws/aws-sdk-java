@@ -27,8 +27,8 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier string for the client that is registered with AWS SSO. This value should come from the
-     * persisted result of the <a>RegisterClient</a> API operation.
+     * The unique identifier string for the client that is registered with IAM Identity Center. This value should come
+     * from the persisted result of the <a>RegisterClient</a> API operation.
      * </p>
      */
     private String clientId;
@@ -41,22 +41,22 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
     private String clientSecret;
     /**
      * <p>
-     * The URL for the AWS SSO user portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a>
-     * in the <i>AWS Single Sign-On User Guide</i>.
+     * The URL for the AWS access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
+     * portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      */
     private String startUrl;
 
     /**
      * <p>
-     * The unique identifier string for the client that is registered with AWS SSO. This value should come from the
-     * persisted result of the <a>RegisterClient</a> API operation.
+     * The unique identifier string for the client that is registered with IAM Identity Center. This value should come
+     * from the persisted result of the <a>RegisterClient</a> API operation.
      * </p>
      * 
      * @param clientId
-     *        The unique identifier string for the client that is registered with AWS SSO. This value should come from
-     *        the persisted result of the <a>RegisterClient</a> API operation.
+     *        The unique identifier string for the client that is registered with IAM Identity Center. This value should
+     *        come from the persisted result of the <a>RegisterClient</a> API operation.
      */
 
     public void setClientId(String clientId) {
@@ -65,12 +65,12 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier string for the client that is registered with AWS SSO. This value should come from the
-     * persisted result of the <a>RegisterClient</a> API operation.
+     * The unique identifier string for the client that is registered with IAM Identity Center. This value should come
+     * from the persisted result of the <a>RegisterClient</a> API operation.
      * </p>
      * 
-     * @return The unique identifier string for the client that is registered with AWS SSO. This value should come from
-     *         the persisted result of the <a>RegisterClient</a> API operation.
+     * @return The unique identifier string for the client that is registered with IAM Identity Center. This value
+     *         should come from the persisted result of the <a>RegisterClient</a> API operation.
      */
 
     public String getClientId() {
@@ -79,13 +79,13 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier string for the client that is registered with AWS SSO. This value should come from the
-     * persisted result of the <a>RegisterClient</a> API operation.
+     * The unique identifier string for the client that is registered with IAM Identity Center. This value should come
+     * from the persisted result of the <a>RegisterClient</a> API operation.
      * </p>
      * 
      * @param clientId
-     *        The unique identifier string for the client that is registered with AWS SSO. This value should come from
-     *        the persisted result of the <a>RegisterClient</a> API operation.
+     *        The unique identifier string for the client that is registered with IAM Identity Center. This value should
+     *        come from the persisted result of the <a>RegisterClient</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,15 +142,15 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The URL for the AWS SSO user portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a>
-     * in the <i>AWS Single Sign-On User Guide</i>.
+     * The URL for the AWS access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
+     * portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the AWS SSO user portal. For more information, see <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User
-     *        Portal</a> in the <i>AWS Single Sign-On User Guide</i>.
+     *        The URL for the AWS access portal. For more information, see <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS
+     *        access portal</a> in the <i>IAM Identity Center User Guide</i>.
      */
 
     public void setStartUrl(String startUrl) {
@@ -159,14 +159,14 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The URL for the AWS SSO user portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a>
-     * in the <i>AWS Single Sign-On User Guide</i>.
+     * The URL for the AWS access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
+     * portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      * 
-     * @return The URL for the AWS SSO user portal. For more information, see <a
-     *         href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User
-     *         Portal</a> in the <i>AWS Single Sign-On User Guide</i>.
+     * @return The URL for the AWS access portal. For more information, see <a
+     *         href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS
+     *         access portal</a> in the <i>IAM Identity Center User Guide</i>.
      */
 
     public String getStartUrl() {
@@ -175,15 +175,15 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The URL for the AWS SSO user portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a>
-     * in the <i>AWS Single Sign-On User Guide</i>.
+     * The URL for the AWS access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
+     * portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the AWS SSO user portal. For more information, see <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User
-     *        Portal</a> in the <i>AWS Single Sign-On User Guide</i>.
+     *        The URL for the AWS access portal. For more information, see <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS
+     *        access portal</a> in the <i>IAM Identity Center User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an enabled metric.
+ * Describes an enabled Auto Scaling group metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnabledMetric" target="_top">AWS API
@@ -132,6 +132,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      */
     private String metric;
     /**
@@ -247,6 +252,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param metric
      *        One of the following metrics:</p>
@@ -351,6 +361,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *        >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMetric(String metric) {
@@ -463,6 +478,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @return One of the following metrics:</p>
      *         <ul>
@@ -566,6 +586,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      *         <code>GroupAndWarmPoolTotalCapacity</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *         >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getMetric() {
@@ -678,6 +703,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     * >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param metric
      *        One of the following metrics:</p>
@@ -782,6 +812,11 @@ public class EnabledMetric implements Serializable, Cloneable {
      *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics"
+     *        >Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

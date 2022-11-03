@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit of the number of organization Config rules you can create.
+ * You have reached the limit of the number of organization Config rules you can create. For more information, see see
+ * <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+ * the Config Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

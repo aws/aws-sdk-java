@@ -31,9 +31,10 @@ import com.amazonaws.services.dlm.model.*;
  * lifecycle policies, which are used to automate operations on the specified resources.
  * </p>
  * <p>
- * Amazon DLM supports Amazon EBS volumes and snapshots. For information about using Amazon DLM with Amazon EBS, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating the Amazon EBS Snapshot
- * Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+ * Amazon Data Lifecycle Manager supports Amazon EBS volumes and snapshots. For information about using Amazon Data
+ * Lifecycle Manager with Amazon EBS, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html"> Amazon Data Lifecycle Manager</a>
+ * in the <i>Amazon EC2 User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -76,6 +77,11 @@ public interface AmazonDLMAsync extends AmazonDLM {
      * <p>
      * Deletes the specified lifecycle policy and halts the automated operations that the policy specified.
      * </p>
+     * <p>
+     * For more information about deleting a policy, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete lifecycle
+     * policies</a>.
+     * </p>
      * 
      * @param deleteLifecyclePolicyRequest
      * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
@@ -88,6 +94,11 @@ public interface AmazonDLMAsync extends AmazonDLM {
     /**
      * <p>
      * Deletes the specified lifecycle policy and halts the automated operations that the policy specified.
+     * </p>
+     * <p>
+     * For more information about deleting a policy, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete lifecycle
+     * policies</a>.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -268,6 +279,11 @@ public interface AmazonDLMAsync extends AmazonDLM {
      * <p>
      * Updates the specified lifecycle policy.
      * </p>
+     * <p>
+     * For more information about updating a policy, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle
+     * policies</a>.
+     * </p>
      * 
      * @param updateLifecyclePolicyRequest
      * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
@@ -280,6 +296,11 @@ public interface AmazonDLMAsync extends AmazonDLM {
     /**
      * <p>
      * Updates the specified lifecycle policy.
+     * </p>
+     * <p>
+     * For more information about updating a policy, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle
+     * policies</a>.
      * </p>
      * 
      * @param updateLifecyclePolicyRequest

@@ -54,6 +54,32 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLabelResult> createLabelAsync(CreateLabelRequest request) {
+
+        return createLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelResult> createLabelAsync(CreateLabelRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLabelRequest, CreateLabelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelGroupResult> createLabelGroupAsync(CreateLabelGroupRequest request) {
+
+        return createLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelGroupResult> createLabelGroupAsync(CreateLabelGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLabelGroupRequest, CreateLabelGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResult> createModelAsync(CreateModelRequest request) {
 
         return createModelAsync(request, null);
@@ -88,6 +114,32 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<DeleteInferenceSchedulerResult> deleteInferenceSchedulerAsync(DeleteInferenceSchedulerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInferenceSchedulerRequest, DeleteInferenceSchedulerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest request) {
+
+        return deleteLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelRequest, DeleteLabelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelGroupResult> deleteLabelGroupAsync(DeleteLabelGroupRequest request) {
+
+        return deleteLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelGroupResult> deleteLabelGroupAsync(DeleteLabelGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelGroupRequest, DeleteLabelGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +197,32 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLabelResult> describeLabelAsync(DescribeLabelRequest request) {
+
+        return describeLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLabelResult> describeLabelAsync(DescribeLabelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLabelRequest, DescribeLabelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLabelGroupResult> describeLabelGroupAsync(DescribeLabelGroupRequest request) {
+
+        return describeLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLabelGroupResult> describeLabelGroupAsync(DescribeLabelGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLabelGroupRequest, DescribeLabelGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeModelResult> describeModelAsync(DescribeModelRequest request) {
 
         return describeModelAsync(request, null);
@@ -184,6 +262,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest request) {
+
+        return listInferenceEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceEventsRequest, ListInferenceEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInferenceExecutionsResult> listInferenceExecutionsAsync(ListInferenceExecutionsRequest request) {
 
         return listInferenceExecutionsAsync(request, null);
@@ -205,6 +296,32 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<ListInferenceSchedulersResult> listInferenceSchedulersAsync(ListInferenceSchedulersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInferenceSchedulersRequest, ListInferenceSchedulersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelGroupsResult> listLabelGroupsAsync(ListLabelGroupsRequest request) {
+
+        return listLabelGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelGroupsResult> listLabelGroupsAsync(ListLabelGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLabelGroupsRequest, ListLabelGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelsResult> listLabelsAsync(ListLabelsRequest request) {
+
+        return listLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelsResult> listLabelsAsync(ListLabelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLabelsRequest, ListLabelsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -322,6 +439,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<UpdateInferenceSchedulerResult> updateInferenceSchedulerAsync(UpdateInferenceSchedulerRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInferenceSchedulerRequest, UpdateInferenceSchedulerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest request) {
+
+        return updateLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLabelGroupRequest, UpdateLabelGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

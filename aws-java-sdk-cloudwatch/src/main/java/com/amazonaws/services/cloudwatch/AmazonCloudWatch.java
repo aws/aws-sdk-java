@@ -145,7 +145,10 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
-     * Deletes the specified anomaly detection model from your account.
+     * Deletes the specified anomaly detection model from your account. For more information about how to delete an
+     * anomaly detection model, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model"
+     * >Deleting an anomaly detection model</a> in the <i>CloudWatch User Guide</i>.
      * </p>
      * 
      * @param deleteAnomalyDetectorRequest
@@ -771,6 +774,25 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
+     * Returns a list that contains the number of managed Contributor Insights rules in your account.
+     * </p>
+     * 
+     * @param listManagedInsightRulesRequest
+     * @return Result of the ListManagedInsightRules operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @throws InvalidNextTokenException
+     *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.ListManagedInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListManagedInsightRulesResult listManagedInsightRules(ListManagedInsightRulesRequest listManagedInsightRulesRequest);
+
+    /**
+     * <p>
      * Returns a list of metric streams in this account.
      * </p>
      * 
@@ -1011,6 +1033,28 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
+     * Creates a managed Contributor Insights rule for a specified Amazon Web Services resource. When you enable a
+     * managed rule, you create a Contributor Insights rule that collects data from Amazon Web Services services. You
+     * cannot edit these rules with <code>PutInsightRule</code>. The rules can be enabled, disabled, and deleted using
+     * <code>EnableInsightRules</code>, <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a
+     * previously created managed rule is currently disabled, a subsequent call to this API will re-enable it. Use
+     * <code>ListManagedInsightRules</code> to describe all available rules.
+     * </p>
+     * 
+     * @param putManagedInsightRulesRequest
+     * @return Result of the PutManagedInsightRules operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.PutManagedInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutManagedInsightRulesResult putManagedInsightRules(PutManagedInsightRulesRequest putManagedInsightRulesRequest);
+
+    /**
+     * <p>
      * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
      * detection model.
      * </p>
@@ -1104,8 +1148,8 @@ public interface AmazonCloudWatch {
      * percentile statistics on this data.
      * </p>
      * <p>
-     * Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can send a
-     * payload compressed by gzip. Each request is also limited to no more than 20 different metrics.
+     * Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests. You can send a payload
+     * compressed by gzip. Each request is also limited to no more than 1000 different metrics.
      * </p>
      * <p>
      * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
@@ -1113,7 +1157,7 @@ public interface AmazonCloudWatch {
      * values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * <p>
-     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
+     * You can use up to 30 dimensions per metric to further clarify what data the metric collects. Each dimension
      * consists of a Name and Value pair. For more information about specifying dimensions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.

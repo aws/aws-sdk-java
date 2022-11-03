@@ -30,16 +30,16 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The actions that an external principal is granted permission to use by the policy that generated the finding.
+     * The ARN of the resource that was analyzed.
      * </p>
      */
-    private java.util.List<String> actions;
+    private String resourceArn;
     /**
      * <p>
-     * The time at which the resource was analyzed.
+     * The type of the resource that was analyzed.
      * </p>
      */
-    private java.util.Date analyzedAt;
+    private String resourceType;
     /**
      * <p>
      * The time at which the finding was created.
@@ -48,10 +48,16 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
     private java.util.Date createdAt;
     /**
      * <p>
-     * An error message.
+     * The time at which the resource was analyzed.
      * </p>
      */
-    private String error;
+    private java.util.Date analyzedAt;
+    /**
+     * <p>
+     * The time at which the finding was updated.
+     * </p>
+     */
+    private java.util.Date updatedAt;
     /**
      * <p>
      * Indicates whether the policy that generated the finding grants public access to the resource.
@@ -60,22 +66,10 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
     private Boolean isPublic;
     /**
      * <p>
-     * The ARN of the resource that was analyzed.
+     * The actions that an external principal is granted permission to use by the policy that generated the finding.
      * </p>
      */
-    private String resourceArn;
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource.
-     * </p>
-     */
-    private String resourceOwnerAccount;
-    /**
-     * <p>
-     * The type of the resource that was analyzed.
-     * </p>
-     */
-    private String resourceType;
+    private java.util.List<String> actions;
     /**
      * <p>
      * Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
@@ -90,10 +84,287 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
     private String status;
     /**
      * <p>
-     * The time at which the finding was updated.
+     * The Amazon Web Services account ID that owns the resource.
      * </p>
      */
-    private java.util.Date updatedAt;
+    private String resourceOwnerAccount;
+    /**
+     * <p>
+     * An error message.
+     * </p>
+     */
+    private String error;
+
+    /**
+     * <p>
+     * The ARN of the resource that was analyzed.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the resource that was analyzed.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource that was analyzed.
+     * </p>
+     * 
+     * @return The ARN of the resource that was analyzed.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource that was analyzed.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the resource that was analyzed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that was analyzed.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that was analyzed.
+     * @see ResourceType
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that was analyzed.
+     * </p>
+     * 
+     * @return The type of the resource that was analyzed.
+     * @see ResourceType
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that was analyzed.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that was analyzed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public AnalyzedResource withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that was analyzed.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that was analyzed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public AnalyzedResource withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which the finding was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time at which the finding was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the finding was created.
+     * </p>
+     * 
+     * @return The time at which the finding was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the finding was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time at which the finding was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which the resource was analyzed.
+     * </p>
+     * 
+     * @param analyzedAt
+     *        The time at which the resource was analyzed.
+     */
+
+    public void setAnalyzedAt(java.util.Date analyzedAt) {
+        this.analyzedAt = analyzedAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the resource was analyzed.
+     * </p>
+     * 
+     * @return The time at which the resource was analyzed.
+     */
+
+    public java.util.Date getAnalyzedAt() {
+        return this.analyzedAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the resource was analyzed.
+     * </p>
+     * 
+     * @param analyzedAt
+     *        The time at which the resource was analyzed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withAnalyzedAt(java.util.Date analyzedAt) {
+        setAnalyzedAt(analyzedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which the finding was updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The time at which the finding was updated.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the finding was updated.
+     * </p>
+     * 
+     * @return The time at which the finding was updated.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the finding was updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The time at which the finding was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding grants public access to the resource.
+     * </p>
+     * 
+     * @param isPublic
+     *        Indicates whether the policy that generated the finding grants public access to the resource.
+     */
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding grants public access to the resource.
+     * </p>
+     * 
+     * @return Indicates whether the policy that generated the finding grants public access to the resource.
+     */
+
+    public Boolean getIsPublic() {
+        return this.isPublic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding grants public access to the resource.
+     * </p>
+     * 
+     * @param isPublic
+     *        Indicates whether the policy that generated the finding grants public access to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withIsPublic(Boolean isPublic) {
+        setIsPublic(isPublic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding grants public access to the resource.
+     * </p>
+     * 
+     * @return Indicates whether the policy that generated the finding grants public access to the resource.
+     */
+
+    public Boolean isPublic() {
+        return this.isPublic;
+    }
 
     /**
      * <p>
@@ -166,317 +437,6 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     public AnalyzedResource withActions(java.util.Collection<String> actions) {
         setActions(actions);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time at which the resource was analyzed.
-     * </p>
-     * 
-     * @param analyzedAt
-     *        The time at which the resource was analyzed.
-     */
-
-    public void setAnalyzedAt(java.util.Date analyzedAt) {
-        this.analyzedAt = analyzedAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the resource was analyzed.
-     * </p>
-     * 
-     * @return The time at which the resource was analyzed.
-     */
-
-    public java.util.Date getAnalyzedAt() {
-        return this.analyzedAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the resource was analyzed.
-     * </p>
-     * 
-     * @param analyzedAt
-     *        The time at which the resource was analyzed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzedResource withAnalyzedAt(java.util.Date analyzedAt) {
-        setAnalyzedAt(analyzedAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time at which the finding was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time at which the finding was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the finding was created.
-     * </p>
-     * 
-     * @return The time at which the finding was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the finding was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time at which the finding was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzedResource withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An error message.
-     * </p>
-     * 
-     * @param error
-     *        An error message.
-     */
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * An error message.
-     * </p>
-     * 
-     * @return An error message.
-     */
-
-    public String getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * An error message.
-     * </p>
-     * 
-     * @param error
-     *        An error message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzedResource withError(String error) {
-        setError(error);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding grants public access to the resource.
-     * </p>
-     * 
-     * @param isPublic
-     *        Indicates whether the policy that generated the finding grants public access to the resource.
-     */
-
-    public void setIsPublic(Boolean isPublic) {
-        this.isPublic = isPublic;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding grants public access to the resource.
-     * </p>
-     * 
-     * @return Indicates whether the policy that generated the finding grants public access to the resource.
-     */
-
-    public Boolean getIsPublic() {
-        return this.isPublic;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding grants public access to the resource.
-     * </p>
-     * 
-     * @param isPublic
-     *        Indicates whether the policy that generated the finding grants public access to the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzedResource withIsPublic(Boolean isPublic) {
-        setIsPublic(isPublic);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding grants public access to the resource.
-     * </p>
-     * 
-     * @return Indicates whether the policy that generated the finding grants public access to the resource.
-     */
-
-    public Boolean isPublic() {
-        return this.isPublic;
-    }
-
-    /**
-     * <p>
-     * The ARN of the resource that was analyzed.
-     * </p>
-     * 
-     * @param resourceArn
-     *        The ARN of the resource that was analyzed.
-     */
-
-    public void setResourceArn(String resourceArn) {
-        this.resourceArn = resourceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the resource that was analyzed.
-     * </p>
-     * 
-     * @return The ARN of the resource that was analyzed.
-     */
-
-    public String getResourceArn() {
-        return this.resourceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the resource that was analyzed.
-     * </p>
-     * 
-     * @param resourceArn
-     *        The ARN of the resource that was analyzed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzedResource withResourceArn(String resourceArn) {
-        setResourceArn(resourceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource.
-     * </p>
-     * 
-     * @param resourceOwnerAccount
-     *        The Amazon Web Services account ID that owns the resource.
-     */
-
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource.
-     * </p>
-     * 
-     * @return The Amazon Web Services account ID that owns the resource.
-     */
-
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource.
-     * </p>
-     * 
-     * @param resourceOwnerAccount
-     *        The Amazon Web Services account ID that owns the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzedResource withResourceOwnerAccount(String resourceOwnerAccount) {
-        setResourceOwnerAccount(resourceOwnerAccount);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that was analyzed.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that was analyzed.
-     * @see ResourceType
-     */
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that was analyzed.
-     * </p>
-     * 
-     * @return The type of the resource that was analyzed.
-     * @see ResourceType
-     */
-
-    public String getResourceType() {
-        return this.resourceType;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that was analyzed.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that was analyzed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public AnalyzedResource withResourceType(String resourceType) {
-        setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that was analyzed.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that was analyzed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public AnalyzedResource withResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -615,41 +575,81 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time at which the finding was updated.
+     * The Amazon Web Services account ID that owns the resource.
      * </p>
      * 
-     * @param updatedAt
-     *        The time at which the finding was updated.
+     * @param resourceOwnerAccount
+     *        The Amazon Web Services account ID that owns the resource.
      */
 
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
     }
 
     /**
      * <p>
-     * The time at which the finding was updated.
+     * The Amazon Web Services account ID that owns the resource.
      * </p>
      * 
-     * @return The time at which the finding was updated.
+     * @return The Amazon Web Services account ID that owns the resource.
      */
 
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
     }
 
     /**
      * <p>
-     * The time at which the finding was updated.
+     * The Amazon Web Services account ID that owns the resource.
      * </p>
      * 
-     * @param updatedAt
-     *        The time at which the finding was updated.
+     * @param resourceOwnerAccount
+     *        The Amazon Web Services account ID that owns the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AnalyzedResource withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
+    public AnalyzedResource withResourceOwnerAccount(String resourceOwnerAccount) {
+        setResourceOwnerAccount(resourceOwnerAccount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An error message.
+     * </p>
+     * 
+     * @param error
+     *        An error message.
+     */
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * An error message.
+     * </p>
+     * 
+     * @return An error message.
+     */
+
+    public String getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * An error message.
+     * </p>
+     * 
+     * @param error
+     *        An error message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withError(String error) {
+        setError(error);
         return this;
     }
 
@@ -665,28 +665,28 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getActions() != null)
-            sb.append("Actions: ").append(getActions()).append(",");
-        if (getAnalyzedAt() != null)
-            sb.append("AnalyzedAt: ").append(getAnalyzedAt()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
-        if (getIsPublic() != null)
-            sb.append("IsPublic: ").append(getIsPublic()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
-        if (getResourceOwnerAccount() != null)
-            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getAnalyzedAt() != null)
+            sb.append("AnalyzedAt: ").append(getAnalyzedAt()).append(",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getIsPublic() != null)
+            sb.append("IsPublic: ").append(getIsPublic()).append(",");
+        if (getActions() != null)
+            sb.append("Actions: ").append(getActions()).append(",");
         if (getSharedVia() != null)
             sb.append("SharedVia: ").append(getSharedVia()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }
@@ -701,37 +701,33 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof AnalyzedResource == false)
             return false;
         AnalyzedResource other = (AnalyzedResource) obj;
-        if (other.getActions() == null ^ this.getActions() == null)
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
-        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
-        if (other.getAnalyzedAt() == null ^ this.getAnalyzedAt() == null)
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getAnalyzedAt() != null && other.getAnalyzedAt().equals(this.getAnalyzedAt()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
-        if (other.getError() == null ^ this.getError() == null)
+        if (other.getAnalyzedAt() == null ^ this.getAnalyzedAt() == null)
             return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+        if (other.getAnalyzedAt() != null && other.getAnalyzedAt().equals(this.getAnalyzedAt()) == false)
+            return false;
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+            return false;
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         if (other.getIsPublic() == null ^ this.getIsPublic() == null)
             return false;
         if (other.getIsPublic() != null && other.getIsPublic().equals(this.getIsPublic()) == false)
             return false;
-        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+        if (other.getActions() == null ^ this.getActions() == null)
             return false;
-        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
-            return false;
-        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
-            return false;
-        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
-            return false;
-        if (other.getResourceType() == null ^ this.getResourceType() == null)
-            return false;
-        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
         if (other.getSharedVia() == null ^ this.getSharedVia() == null)
             return false;
@@ -741,9 +737,13 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
             return false;
-        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
         return true;
     }
@@ -753,17 +753,17 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
-        hashCode = prime * hashCode + ((getAnalyzedAt() == null) ? 0 : getAnalyzedAt().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
-        hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
-        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedAt() == null) ? 0 : getAnalyzedAt().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
+        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getSharedVia() == null) ? 0 : getSharedVia().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         return hashCode;
     }
 

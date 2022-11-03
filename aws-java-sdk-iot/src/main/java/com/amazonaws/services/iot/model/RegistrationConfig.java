@@ -37,6 +37,12 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     */
+    private String templateName;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the provisioning template.
+     */
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     * 
+     * @return The name of the provisioning template.
+     */
+
+    public String getTemplateName() {
+        return this.templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the provisioning template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegistrationConfig withTemplateName(String templateName) {
+        setTemplateName(templateName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
         if (getTemplateBody() != null)
             sb.append("TemplateBody: ").append(getTemplateBody()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTemplateName() != null)
+            sb.append("TemplateName: ").append(getTemplateName());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null)
+            return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         return hashCode;
     }
 

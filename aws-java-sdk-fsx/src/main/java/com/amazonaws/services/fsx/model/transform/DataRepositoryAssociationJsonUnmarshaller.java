@@ -98,6 +98,24 @@ public class DataRepositoryAssociationJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     dataRepositoryAssociation.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("FileCacheId", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryAssociation.setFileCacheId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FileCachePath", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryAssociation.setFileCachePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataRepositorySubdirectories", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryAssociation.setDataRepositorySubdirectories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("NFS", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryAssociation.setNFS(NFSDataRepositoryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

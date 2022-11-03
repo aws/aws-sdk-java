@@ -37,7 +37,8 @@ public class AwsS3BucketWebsiteConfigurationRedirectTo implements Serializable, 
     private String hostname;
     /**
      * <p>
-     * The protocol to use when redirecting requests. By default, uses the same protocol as the original request.
+     * The protocol to use when redirecting requests. By default, this field uses the same protocol as the original
+     * request. Valid values are <code>http</code> or <code>https</code>.
      * </p>
      */
     private String protocol;
@@ -84,11 +85,13 @@ public class AwsS3BucketWebsiteConfigurationRedirectTo implements Serializable, 
 
     /**
      * <p>
-     * The protocol to use when redirecting requests. By default, uses the same protocol as the original request.
+     * The protocol to use when redirecting requests. By default, this field uses the same protocol as the original
+     * request. Valid values are <code>http</code> or <code>https</code>.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use when redirecting requests. By default, uses the same protocol as the original request.
+     *        The protocol to use when redirecting requests. By default, this field uses the same protocol as the
+     *        original request. Valid values are <code>http</code> or <code>https</code>.
      */
 
     public void setProtocol(String protocol) {
@@ -97,11 +100,12 @@ public class AwsS3BucketWebsiteConfigurationRedirectTo implements Serializable, 
 
     /**
      * <p>
-     * The protocol to use when redirecting requests. By default, uses the same protocol as the original request.
+     * The protocol to use when redirecting requests. By default, this field uses the same protocol as the original
+     * request. Valid values are <code>http</code> or <code>https</code>.
      * </p>
      * 
-     * @return The protocol to use when redirecting requests. By default, uses the same protocol as the original
-     *         request.
+     * @return The protocol to use when redirecting requests. By default, this field uses the same protocol as the
+     *         original request. Valid values are <code>http</code> or <code>https</code>.
      */
 
     public String getProtocol() {
@@ -110,11 +114,13 @@ public class AwsS3BucketWebsiteConfigurationRedirectTo implements Serializable, 
 
     /**
      * <p>
-     * The protocol to use when redirecting requests. By default, uses the same protocol as the original request.
+     * The protocol to use when redirecting requests. By default, this field uses the same protocol as the original
+     * request. Valid values are <code>http</code> or <code>https</code>.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use when redirecting requests. By default, uses the same protocol as the original request.
+     *        The protocol to use when redirecting requests. By default, this field uses the same protocol as the
+     *        original request. Valid values are <code>http</code> or <code>https</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

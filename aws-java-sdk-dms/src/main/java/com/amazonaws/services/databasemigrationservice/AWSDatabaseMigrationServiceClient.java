@@ -88,6 +88,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCertificateFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.InvalidCertificateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -127,6 +130,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.InvalidSubnetExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CollectorNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.CollectorNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SNSNoAuthorizationFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.SNSNoAuthorizationExceptionUnmarshaller.getInstance()))
@@ -728,6 +734,73 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Creates a Fleet Advisor collector using the specified parameters.
+     * </p>
+     * 
+     * @param createFleetAdvisorCollectorRequest
+     * @return Result of the CreateFleetAdvisorCollector operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @sample AWSDatabaseMigrationService.CreateFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFleetAdvisorCollectorResult createFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFleetAdvisorCollector(request);
+    }
+
+    @SdkInternalApi
+    final CreateFleetAdvisorCollectorResult executeCreateFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest createFleetAdvisorCollectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFleetAdvisorCollectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFleetAdvisorCollectorRequest> request = null;
+        Response<CreateFleetAdvisorCollectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFleetAdvisorCollectorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createFleetAdvisorCollectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleetAdvisorCollector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFleetAdvisorCollectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateFleetAdvisorCollectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
@@ -1190,6 +1263,128 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEventSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteEventSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorCollectorRequest
+     * @return Result of the DeleteFleetAdvisorCollector operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws CollectorNotFoundException
+     *         The specified collector doesn't exist.
+     * @sample AWSDatabaseMigrationService.DeleteFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFleetAdvisorCollectorResult deleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleetAdvisorCollector(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetAdvisorCollectorResult executeDeleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest deleteFleetAdvisorCollectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFleetAdvisorCollectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFleetAdvisorCollectorRequest> request = null;
+        Response<DeleteFleetAdvisorCollectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFleetAdvisorCollectorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFleetAdvisorCollectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleetAdvisorCollector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFleetAdvisorCollectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFleetAdvisorCollectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector databases.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorDatabasesRequest
+     * @return Result of the DeleteFleetAdvisorDatabases operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidOperationException
+     *         The action or operation requested isn't valid.
+     * @sample AWSDatabaseMigrationService.DeleteFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFleetAdvisorDatabasesResult deleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleetAdvisorDatabases(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetAdvisorDatabasesResult executeDeleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFleetAdvisorDatabasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFleetAdvisorDatabasesRequest> request = null;
+        Response<DeleteFleetAdvisorDatabasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFleetAdvisorDatabasesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFleetAdvisorDatabasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleetAdvisorDatabases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFleetAdvisorDatabasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFleetAdvisorDatabasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2061,6 +2256,303 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the Fleet Advisor collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorCollectorsRequest
+     * @return Result of the DescribeFleetAdvisorCollectors operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorCollectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFleetAdvisorCollectorsResult describeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAdvisorCollectors(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAdvisorCollectorsResult executeDescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest describeFleetAdvisorCollectorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetAdvisorCollectorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetAdvisorCollectorsRequest> request = null;
+        Response<DescribeFleetAdvisorCollectorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetAdvisorCollectorsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAdvisorCollectorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAdvisorCollectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetAdvisorCollectorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFleetAdvisorCollectorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of Fleet Advisor databases in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorDatabasesRequest
+     * @return Result of the DescribeFleetAdvisorDatabases operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFleetAdvisorDatabasesResult describeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAdvisorDatabases(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAdvisorDatabasesResult executeDescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest describeFleetAdvisorDatabasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetAdvisorDatabasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetAdvisorDatabasesRequest> request = null;
+        Response<DescribeFleetAdvisorDatabasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetAdvisorDatabasesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAdvisorDatabasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAdvisorDatabases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetAdvisorDatabasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFleetAdvisorDatabasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorLsaAnalysisRequest
+     * @return Result of the DescribeFleetAdvisorLsaAnalysis operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFleetAdvisorLsaAnalysisResult describeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAdvisorLsaAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAdvisorLsaAnalysisResult executeDescribeFleetAdvisorLsaAnalysis(
+            DescribeFleetAdvisorLsaAnalysisRequest describeFleetAdvisorLsaAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetAdvisorLsaAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetAdvisorLsaAnalysisRequest> request = null;
+        Response<DescribeFleetAdvisorLsaAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetAdvisorLsaAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAdvisorLsaAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAdvisorLsaAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetAdvisorLsaAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFleetAdvisorLsaAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemaObjectSummaryRequest
+     * @return Result of the DescribeFleetAdvisorSchemaObjectSummary operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorSchemaObjectSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFleetAdvisorSchemaObjectSummaryResult describeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAdvisorSchemaObjectSummary(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAdvisorSchemaObjectSummaryResult executeDescribeFleetAdvisorSchemaObjectSummary(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest describeFleetAdvisorSchemaObjectSummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetAdvisorSchemaObjectSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetAdvisorSchemaObjectSummaryRequest> request = null;
+        Response<DescribeFleetAdvisorSchemaObjectSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetAdvisorSchemaObjectSummaryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAdvisorSchemaObjectSummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAdvisorSchemaObjectSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetAdvisorSchemaObjectSummaryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeFleetAdvisorSchemaObjectSummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemasRequest
+     * @return Result of the DescribeFleetAdvisorSchemas operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorSchemas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFleetAdvisorSchemasResult describeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAdvisorSchemas(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAdvisorSchemasResult executeDescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest describeFleetAdvisorSchemasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetAdvisorSchemasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetAdvisorSchemasRequest> request = null;
+        Response<DescribeFleetAdvisorSchemasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetAdvisorSchemasRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAdvisorSchemasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAdvisorSchemas");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetAdvisorSchemasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFleetAdvisorSchemasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3624,6 +4116,67 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+     * </p>
+     * 
+     * @param runFleetAdvisorLsaAnalysisRequest
+     * @return Result of the RunFleetAdvisorLsaAnalysis operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.RunFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RunFleetAdvisorLsaAnalysisResult runFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeRunFleetAdvisorLsaAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final RunFleetAdvisorLsaAnalysisResult executeRunFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest runFleetAdvisorLsaAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(runFleetAdvisorLsaAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RunFleetAdvisorLsaAnalysisRequest> request = null;
+        Response<RunFleetAdvisorLsaAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RunFleetAdvisorLsaAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(runFleetAdvisorLsaAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunFleetAdvisorLsaAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RunFleetAdvisorLsaAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RunFleetAdvisorLsaAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the replication task.
      * </p>
      * <p>
@@ -3974,6 +4527,80 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
             HttpResponseHandler<AmazonWebServiceResponse<TestConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon
+     * EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+     * versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation
+     * raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration
+     * regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier
+     * than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.
+     * </p>
+     * <p>
+     * To call this operation, make sure that you have certain permissions added to your user account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge"
+     * >Migrating event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param updateSubscriptionsToEventBridgeRequest
+     * @return Result of the UpdateSubscriptionsToEventBridge operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.UpdateSubscriptionsToEventBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSubscriptionsToEventBridgeResult updateSubscriptionsToEventBridge(UpdateSubscriptionsToEventBridgeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSubscriptionsToEventBridge(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSubscriptionsToEventBridgeResult executeUpdateSubscriptionsToEventBridge(
+            UpdateSubscriptionsToEventBridgeRequest updateSubscriptionsToEventBridgeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSubscriptionsToEventBridgeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSubscriptionsToEventBridgeRequest> request = null;
+        Response<UpdateSubscriptionsToEventBridgeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSubscriptionsToEventBridgeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSubscriptionsToEventBridgeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriptionsToEventBridge");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriptionsToEventBridgeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSubscriptionsToEventBridgeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

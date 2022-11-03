@@ -108,7 +108,7 @@ public class StackSetOperation implements Serializable, Cloneable {
     private Boolean retainStacks;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+     * The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -166,6 +166,18 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </p>
      */
     private StackSetDriftDetectionDetails stackSetDriftDetectionDetails;
+    /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     */
+    private String statusReason;
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     */
+    private StackSetOperationStatusDetails statusDetails;
 
     /**
      * <p>
@@ -923,7 +935,7 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+     * The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -933,7 +945,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
@@ -947,7 +959,7 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+     * The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -956,7 +968,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
      *         <p>
      *         Use customized administrator roles to control which users or groups can manage specific stack sets within
      *         the same administrator account. For more information, see <a
@@ -970,7 +982,7 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+     * The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -980,7 +992,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
@@ -1300,6 +1312,86 @@ public class StackSetOperation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     * 
+     * @param statusReason
+     *        The status of the operation in details.
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     * 
+     * @return The status of the operation in details.
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * The status of the operation in details.
+     * </p>
+     * 
+     * @param statusReason
+     *        The status of the operation in details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperation withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the StackSet operation.
+     */
+
+    public void setStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     * 
+     * @return Detailed information about the StackSet operation.
+     */
+
+    public StackSetOperationStatusDetails getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the StackSet operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperation withStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1334,7 +1426,11 @@ public class StackSetOperation implements Serializable, Cloneable {
         if (getDeploymentTargets() != null)
             sb.append("DeploymentTargets: ").append(getDeploymentTargets()).append(",");
         if (getStackSetDriftDetectionDetails() != null)
-            sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails());
+            sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: ").append(getStatusDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1398,6 +1494,14 @@ public class StackSetOperation implements Serializable, Cloneable {
         if (other.getStackSetDriftDetectionDetails() != null
                 && other.getStackSetDriftDetectionDetails().equals(this.getStackSetDriftDetectionDetails()) == false)
             return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1418,6 +1522,8 @@ public class StackSetOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEndTimestamp() == null) ? 0 : getEndTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDeploymentTargets() == null) ? 0 : getDeploymentTargets().hashCode());
         hashCode = prime * hashCode + ((getStackSetDriftDetectionDetails() == null) ? 0 : getStackSetDriftDetectionDetails().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
         return hashCode;
     }
 

@@ -188,6 +188,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public GetPlaceResult getPlace(GetPlaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDevicePositionsResult listDevicePositions(ListDevicePositionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

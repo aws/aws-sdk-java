@@ -54,6 +54,12 @@ public class SalesforceMetadataJsonUnmarshaller implements Unmarshaller<Salesfor
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("dataTransferApis", targetDepth)) {
+                    context.nextToken();
+                    salesforceMetadata.setDataTransferApis(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

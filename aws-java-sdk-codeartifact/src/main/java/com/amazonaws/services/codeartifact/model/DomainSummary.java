@@ -38,7 +38,8 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String owner;
@@ -50,20 +51,8 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * A string that contains the status of the domain. The valid values are:
+     * A string that contains the status of the domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String status;
     /**
@@ -121,11 +110,13 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param owner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setOwner(String owner) {
@@ -134,11 +125,12 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getOwner() {
@@ -147,11 +139,13 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param owner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,34 +196,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that contains the status of the domain. The valid values are:
+     * A string that contains the status of the domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the domain. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Active</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Deleted</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the domain.
      * @see DomainStatus
      */
 
@@ -239,33 +210,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that contains the status of the domain. The valid values are:
+     * A string that contains the status of the domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A string that contains the status of the domain. The valid values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Active</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Deleted</code>
-     *         </p>
-     *         </li>
+     * @return A string that contains the status of the domain.
      * @see DomainStatus
      */
 
@@ -275,34 +223,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that contains the status of the domain. The valid values are:
+     * A string that contains the status of the domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the domain. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Active</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Deleted</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
@@ -314,34 +239,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that contains the status of the domain. The valid values are:
+     * A string that contains the status of the domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the domain. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Active</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Deleted</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */

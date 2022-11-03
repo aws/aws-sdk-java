@@ -309,6 +309,39 @@ public class AWSOutpostsAsyncClient extends AWSOutpostsClient implements AWSOutp
     }
 
     @Override
+    public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest request) {
+
+        return getConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(final GetConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectionRequest, GetConnectionResult> asyncHandler) {
+        final GetConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectionResult>() {
+            @Override
+            public GetConnectionResult call() throws Exception {
+                GetConnectionResult result = null;
+
+                try {
+                    result = executeGetConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOrderResult> getOrderAsync(GetOrderRequest request) {
 
         return getOrderAsync(request, null);
@@ -656,6 +689,39 @@ public class AWSOutpostsAsyncClient extends AWSOutpostsClient implements AWSOutp
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConnectionResult> startConnectionAsync(StartConnectionRequest request) {
+
+        return startConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConnectionResult> startConnectionAsync(final StartConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartConnectionRequest, StartConnectionResult> asyncHandler) {
+        final StartConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartConnectionResult>() {
+            @Override
+            public StartConnectionResult call() throws Exception {
+                StartConnectionResult result = null;
+
+                try {
+                    result = executeStartConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

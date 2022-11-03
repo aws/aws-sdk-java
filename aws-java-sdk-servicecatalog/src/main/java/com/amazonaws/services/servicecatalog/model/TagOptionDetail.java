@@ -54,7 +54,7 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
     private String id;
     /**
      * <p>
-     * The AWS account Id of the owner account that created the TagOption.
+     * The Amazon Web Services account Id of the owner account that created the TagOption.
      * </p>
      */
     private String owner;
@@ -233,11 +233,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS account Id of the owner account that created the TagOption.
+     * The Amazon Web Services account Id of the owner account that created the TagOption.
      * </p>
      * 
      * @param owner
-     *        The AWS account Id of the owner account that created the TagOption.
+     *        The Amazon Web Services account Id of the owner account that created the TagOption.
      */
 
     public void setOwner(String owner) {
@@ -246,10 +246,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS account Id of the owner account that created the TagOption.
+     * The Amazon Web Services account Id of the owner account that created the TagOption.
      * </p>
      * 
-     * @return The AWS account Id of the owner account that created the TagOption.
+     * @return The Amazon Web Services account Id of the owner account that created the TagOption.
      */
 
     public String getOwner() {
@@ -258,11 +258,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS account Id of the owner account that created the TagOption.
+     * The Amazon Web Services account Id of the owner account that created the TagOption.
      * </p>
      * 
      * @param owner
-     *        The AWS account Id of the owner account that created the TagOption.
+     *        The Amazon Web Services account Id of the owner account that created the TagOption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

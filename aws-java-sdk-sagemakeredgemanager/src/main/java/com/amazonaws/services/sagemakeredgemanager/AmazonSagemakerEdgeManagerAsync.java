@@ -34,6 +34,37 @@ public interface AmazonSagemakerEdgeManagerAsync extends AmazonSagemakerEdgeMana
 
     /**
      * <p>
+     * Use to get the active deployments from a device.
+     * </p>
+     * 
+     * @param getDeploymentsRequest
+     * @return A Java Future containing the result of the GetDeployments operation returned by the service.
+     * @sample AmazonSagemakerEdgeManagerAsync.GetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(GetDeploymentsRequest getDeploymentsRequest);
+
+    /**
+     * <p>
+     * Use to get the active deployments from a device.
+     * </p>
+     * 
+     * @param getDeploymentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeployments operation returned by the service.
+     * @sample AmazonSagemakerEdgeManagerAsyncHandler.GetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(GetDeploymentsRequest getDeploymentsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentsRequest, GetDeploymentsResult> asyncHandler);
+
+    /**
+     * <p>
      * Use to check if a device is registered with SageMaker Edge Manager.
      * </p>
      * 

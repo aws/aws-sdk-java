@@ -28,8 +28,16 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand price.
+     * The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      */
     private String maxPrice;
     /**
@@ -77,11 +85,25 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand price.
+     * The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxPrice
-     *        The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand price.
+     *        The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this
+     *        parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *        pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      */
 
     public void setMaxPrice(String maxPrice) {
@@ -90,11 +112,24 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand price.
+     * The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
-     * @return The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand
-     *         price.
+     * @return The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this
+     *         parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *         pay the current Spot price.</p> <important>
+     *         <p>
+     *         If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do
+     *         not specify this parameter.
+     *         </p>
      */
 
     public String getMaxPrice() {
@@ -103,11 +138,25 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand price.
+     * The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxPrice
-     *        The maximum hourly price you're willing to pay for the Spot Instances. The default is the On-Demand price.
+     *        The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this
+     *        parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *        pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

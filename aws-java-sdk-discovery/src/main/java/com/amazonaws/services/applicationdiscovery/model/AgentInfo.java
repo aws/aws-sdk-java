@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about agents or connectors associated with the user’s AWS account. Information includes agent or
- * connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the
- * agent or connector resides, and agent version for each agent.
+ * Information about agents or connectors associated with the user’s Amazon Web Services account. Information includes
+ * agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where
+ * the agent or connector resides, and agent version for each agent.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -32,7 +32,7 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     * variables, such as scte.event_id, set the avail matching criteria.
+     * variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * </p>
      */
     private java.util.List<AvailMatchingCriteria> availMatchingCriteria;
@@ -40,14 +40,14 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
      * <p>
      * The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      * automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually
-     * delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     * delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     * prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     * The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>,
+     * the prefetched ads are available after MediaTailor retrives them from the ad decision server.
      * </p>
      */
     private java.util.Date startTime;
@@ -55,11 +55,11 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     * variables, such as scte.event_id, set the avail matching criteria.
+     * variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * </p>
      * 
      * @return If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     *         variables, such as scte.event_id, set the avail matching criteria.
+     *         variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      */
 
     public java.util.List<AvailMatchingCriteria> getAvailMatchingCriteria() {
@@ -69,12 +69,12 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     * variables, such as scte.event_id, set the avail matching criteria.
+     * variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * </p>
      * 
      * @param availMatchingCriteria
      *        If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     *        variables, such as scte.event_id, set the avail matching criteria.
+     *        variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      */
 
     public void setAvailMatchingCriteria(java.util.Collection<AvailMatchingCriteria> availMatchingCriteria) {
@@ -89,7 +89,7 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     * variables, such as scte.event_id, set the avail matching criteria.
+     * variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -99,7 +99,7 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
      * 
      * @param availMatchingCriteria
      *        If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     *        variables, such as scte.event_id, set the avail matching criteria.
+     *        variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,12 +116,12 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     * variables, such as scte.event_id, set the avail matching criteria.
+     * variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * </p>
      * 
      * @param availMatchingCriteria
      *        If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic
-     *        variables, such as scte.event_id, set the avail matching criteria.
+     *        variables, such as <code>scte.event_id</code>, set the avail matching criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +134,13 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
      * <p>
      * The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      * automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually
-     * delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     * delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      * </p>
      * 
      * @param endTime
      *        The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      *        automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to
-     *        manually delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     *        manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -151,12 +151,12 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
      * <p>
      * The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      * automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually
-     * delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     * delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      * </p>
      * 
      * @return The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      *         automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to
-     *         manually delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     *         manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      */
 
     public java.util.Date getEndTime() {
@@ -167,13 +167,13 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
      * <p>
      * The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      * automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually
-     * delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     * delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      * </p>
      * 
      * @param endTime
      *        The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor
      *        automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to
-     *        manually delete the prefetch schedule, you can call DeletePrefetchSchedule.
+     *        manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,13 +184,14 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     * prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     * The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>,
+     * the prefetched ads are available after MediaTailor retrives them from the ad decision server.
      * </p>
      * 
      * @param startTime
-     *        The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     *        prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     *        The time when prefetched ads are considered for use in an ad break. If you don't specify
+     *        <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad
+     *        decision server.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -199,12 +200,13 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     * prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     * The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>,
+     * the prefetched ads are available after MediaTailor retrives them from the ad decision server.
      * </p>
      * 
-     * @return The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     *         prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     * @return The time when prefetched ads are considered for use in an ad break. If you don't specify
+     *         <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad
+     *         decision server.
      */
 
     public java.util.Date getStartTime() {
@@ -213,13 +215,14 @@ public class PrefetchConsumption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     * prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     * The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>,
+     * the prefetched ads are available after MediaTailor retrives them from the ad decision server.
      * </p>
      * 
      * @param startTime
-     *        The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the
-     *        prefetched ads are available after MediaTailor retrives them from the ad decision server.
+     *        The time when prefetched ads are considered for use in an ad break. If you don't specify
+     *        <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad
+     *        decision server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

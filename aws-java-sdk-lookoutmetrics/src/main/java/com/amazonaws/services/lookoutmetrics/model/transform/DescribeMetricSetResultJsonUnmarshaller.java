@@ -104,6 +104,13 @@ public class DescribeMetricSetResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeMetricSetResult.setMetricSource(MetricSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DimensionFilterList", targetDepth)) {
+                    context.nextToken();
+                    describeMetricSetResult.setDimensionFilterList(new ListUnmarshaller<MetricSetDimensionFilter>(MetricSetDimensionFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

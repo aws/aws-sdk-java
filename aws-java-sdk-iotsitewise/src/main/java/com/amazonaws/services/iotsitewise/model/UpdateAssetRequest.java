@@ -33,7 +33,7 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String assetId;
     /**
      * <p>
-     * A unique, friendly name for the asset.
+     * A friendly name for the asset.
      * </p>
      */
     private String assetName;
@@ -44,6 +44,12 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     */
+    private String assetDescription;
 
     /**
      * <p>
@@ -87,11 +93,11 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique, friendly name for the asset.
+     * A friendly name for the asset.
      * </p>
      * 
      * @param assetName
-     *        A unique, friendly name for the asset.
+     *        A friendly name for the asset.
      */
 
     public void setAssetName(String assetName) {
@@ -100,10 +106,10 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique, friendly name for the asset.
+     * A friendly name for the asset.
      * </p>
      * 
-     * @return A unique, friendly name for the asset.
+     * @return A friendly name for the asset.
      */
 
     public String getAssetName() {
@@ -112,11 +118,11 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique, friendly name for the asset.
+     * A friendly name for the asset.
      * </p>
      * 
      * @param assetName
-     *        A unique, friendly name for the asset.
+     *        A friendly name for the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,6 +178,46 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @param assetDescription
+     *        A description for the asset.
+     */
+
+    public void setAssetDescription(String assetDescription) {
+        this.assetDescription = assetDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @return A description for the asset.
+     */
+
+    public String getAssetDescription() {
+        return this.assetDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @param assetDescription
+     *        A description for the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssetRequest withAssetDescription(String assetDescription) {
+        setAssetDescription(assetDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +234,9 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAssetName() != null)
             sb.append("AssetName: ").append(getAssetName()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getAssetDescription() != null)
+            sb.append("AssetDescription: ").append(getAssetDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +263,10 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getAssetDescription() == null ^ this.getAssetDescription() == null)
+            return false;
+        if (other.getAssetDescription() != null && other.getAssetDescription().equals(this.getAssetDescription()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +278,7 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getAssetId() == null) ? 0 : getAssetId().hashCode());
         hashCode = prime * hashCode + ((getAssetName() == null) ? 0 : getAssetName().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getAssetDescription() == null) ? 0 : getAssetDescription().hashCode());
         return hashCode;
     }
 

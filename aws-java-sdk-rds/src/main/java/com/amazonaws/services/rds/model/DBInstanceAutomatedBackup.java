@@ -110,7 +110,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * Provides the VPC ID associated with the DB instance
+     * Provides the VPC ID associated with the DB instance.
      * </p>
      */
     private String vpcId;
@@ -223,6 +223,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * </p>
      */
     private String backupTarget;
+    /**
+     * <p>
+     * Specifies the storage throughput for the automated backup.
+     * </p>
+     */
+    private Integer storageThroughput;
 
     /**
      * <p>
@@ -745,11 +751,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the VPC ID associated with the DB instance
+     * Provides the VPC ID associated with the DB instance.
      * </p>
      * 
      * @param vpcId
-     *        Provides the VPC ID associated with the DB instance
+     *        Provides the VPC ID associated with the DB instance.
      */
 
     public void setVpcId(String vpcId) {
@@ -758,10 +764,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the VPC ID associated with the DB instance
+     * Provides the VPC ID associated with the DB instance.
      * </p>
      * 
-     * @return Provides the VPC ID associated with the DB instance
+     * @return Provides the VPC ID associated with the DB instance.
      */
 
     public String getVpcId() {
@@ -770,11 +776,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the VPC ID associated with the DB instance
+     * Provides the VPC ID associated with the DB instance.
      * </p>
      * 
      * @param vpcId
-     *        Provides the VPC ID associated with the DB instance
+     *        Provides the VPC ID associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1572,6 +1578,46 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the storage throughput for the automated backup.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the automated backup.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the automated backup.
+     * </p>
+     * 
+     * @return Specifies the storage throughput for the automated backup.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the automated backup.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the automated backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstanceAutomatedBackup withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1636,7 +1682,9 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         if (getDBInstanceAutomatedBackupsReplications() != null)
             sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications()).append(",");
         if (getBackupTarget() != null)
-            sb.append("BackupTarget: ").append(getBackupTarget());
+            sb.append("BackupTarget: ").append(getBackupTarget()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1762,6 +1810,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
             return false;
         if (other.getBackupTarget() != null && other.getBackupTarget().equals(this.getBackupTarget()) == false)
             return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1797,6 +1849,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsArn() == null) ? 0 : getDBInstanceAutomatedBackupsArn().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
         hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         return hashCode;
     }
 

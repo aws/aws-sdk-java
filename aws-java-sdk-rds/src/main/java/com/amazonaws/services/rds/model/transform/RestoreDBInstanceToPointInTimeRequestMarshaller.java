@@ -250,6 +250,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getNetworkType()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(restoreDBInstanceToPointInTimeRequest.getStorageThroughput()));
+        }
+
         return request;
     }
 

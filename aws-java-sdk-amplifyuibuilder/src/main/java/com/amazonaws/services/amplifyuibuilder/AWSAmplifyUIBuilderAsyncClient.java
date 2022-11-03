@@ -122,6 +122,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFormResult> createFormAsync(CreateFormRequest request) {
+
+        return createFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFormResult> createFormAsync(final CreateFormRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFormRequest, CreateFormResult> asyncHandler) {
+        final CreateFormRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFormResult>() {
+            @Override
+            public CreateFormResult call() throws Exception {
+                CreateFormResult result = null;
+
+                try {
+                    result = executeCreateForm(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest request) {
 
         return createThemeAsync(request, null);
@@ -172,6 +205,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
 
                 try {
                     result = executeDeleteComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFormResult> deleteFormAsync(DeleteFormRequest request) {
+
+        return deleteFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFormResult> deleteFormAsync(final DeleteFormRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFormRequest, DeleteFormResult> asyncHandler) {
+        final DeleteFormRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFormResult>() {
+            @Override
+            public DeleteFormResult call() throws Exception {
+                DeleteFormResult result = null;
+
+                try {
+                    result = executeDeleteForm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -287,6 +353,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ExportFormsResult> exportFormsAsync(ExportFormsRequest request) {
+
+        return exportFormsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportFormsResult> exportFormsAsync(final ExportFormsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportFormsRequest, ExportFormsResult> asyncHandler) {
+        final ExportFormsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportFormsResult>() {
+            @Override
+            public ExportFormsResult call() throws Exception {
+                ExportFormsResult result = null;
+
+                try {
+                    result = executeExportForms(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportThemesResult> exportThemesAsync(ExportThemesRequest request) {
 
         return exportThemesAsync(request, null);
@@ -337,6 +436,72 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
 
                 try {
                     result = executeGetComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFormResult> getFormAsync(GetFormRequest request) {
+
+        return getFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFormResult> getFormAsync(final GetFormRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFormRequest, GetFormResult> asyncHandler) {
+        final GetFormRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFormResult>() {
+            @Override
+            public GetFormResult call() throws Exception {
+                GetFormResult result = null;
+
+                try {
+                    result = executeGetForm(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetadataResult> getMetadataAsync(GetMetadataRequest request) {
+
+        return getMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetadataResult> getMetadataAsync(final GetMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetadataRequest, GetMetadataResult> asyncHandler) {
+        final GetMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetadataResult>() {
+            @Override
+            public GetMetadataResult call() throws Exception {
+                GetMetadataResult result = null;
+
+                try {
+                    result = executeGetMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -419,6 +584,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListFormsResult> listFormsAsync(ListFormsRequest request) {
+
+        return listFormsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFormsResult> listFormsAsync(final ListFormsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFormsRequest, ListFormsResult> asyncHandler) {
+        final ListFormsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFormsResult>() {
+            @Override
+            public ListFormsResult call() throws Exception {
+                ListFormsResult result = null;
+
+                try {
+                    result = executeListForms(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest request) {
 
         return listThemesAsync(request, null);
@@ -436,6 +634,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
 
                 try {
                     result = executeListThemes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetadataFlagResult> putMetadataFlagAsync(PutMetadataFlagRequest request) {
+
+        return putMetadataFlagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetadataFlagResult> putMetadataFlagAsync(final PutMetadataFlagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutMetadataFlagRequest, PutMetadataFlagResult> asyncHandler) {
+        final PutMetadataFlagRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutMetadataFlagResult>() {
+            @Override
+            public PutMetadataFlagResult call() throws Exception {
+                PutMetadataFlagResult result = null;
+
+                try {
+                    result = executePutMetadataFlag(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -502,6 +733,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
 
                 try {
                     result = executeUpdateComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFormResult> updateFormAsync(UpdateFormRequest request) {
+
+        return updateFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFormResult> updateFormAsync(final UpdateFormRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFormRequest, UpdateFormResult> asyncHandler) {
+        final UpdateFormRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFormResult>() {
+            @Override
+            public UpdateFormResult call() throws Exception {
+                UpdateFormResult result = null;
+
+                try {
+                    result = executeUpdateForm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

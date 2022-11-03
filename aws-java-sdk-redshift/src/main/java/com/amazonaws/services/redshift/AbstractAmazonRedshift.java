@@ -554,6 +554,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public GetClusterCredentialsWithIAMResult getClusterCredentialsWithIAM(GetClusterCredentialsWithIAMRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetReservedNodeExchangeConfigurationOptionsResult getReservedNodeExchangeConfigurationOptions(
             GetReservedNodeExchangeConfigurationOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();

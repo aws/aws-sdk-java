@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateNetworkInterfaceRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreateNetworkInterface.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -43,16 +41,25 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
+     * addresses from the subnet range.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following:
+     * specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     * </p>
+     * <p>
+     * If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that setting by
+     * specifying 0 as the IPv6 address count.
      * </p>
      */
     private Integer ipv6AddressCount;
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The IPv6 addresses from the IPv6 CIDR block range of your subnet.
+     * </p>
+     * <p>
+     * You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6
+     * addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> ipv6Addresses;
@@ -67,7 +74,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     private String privateIpAddress;
     /**
      * <p>
-     * One or more private IPv4 addresses.
+     * The private IPv4 addresses.
+     * </p>
+     * <p>
+     * You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> privateIpAddresses;
@@ -78,37 +89,48 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.
      * </p>
      * <p>
-     * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private
+     * IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
     /**
      * <p>
-     * One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.
+     * The IPv4 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific
+     * private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest> ipv4Prefixes;
     /**
      * <p>
-     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes,
+     * specific private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      */
     private Integer ipv4PrefixCount;
     /**
      * <p>
-     * One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv6PrefixCount</code> option.
+     * The IPv6 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest> ipv6Prefixes;
     /**
      * <p>
-     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv6Prefixes</code> option.
+     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes,
+     * specific IPv6 addresses, or a count of IPv6 addresses.
      * </p>
      */
     private Integer ipv6PrefixCount;
@@ -259,16 +281,27 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
+     * addresses from the subnet range.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following:
+     * specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     * </p>
+     * <p>
+     * If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that setting by
+     * specifying 0 as the IPv6 address count.
      * </p>
      * 
      * @param ipv6AddressCount
      *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
-     *        subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
-     *        specify <code>0</code> to override this setting.
+     *        addresses from the subnet range.</p>
+     *        <p>
+     *        You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following:
+     *        specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     *        </p>
+     *        <p>
+     *        If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     *        setting by specifying 0 as the IPv6 address count.
      */
 
     public void setIpv6AddressCount(Integer ipv6AddressCount) {
@@ -278,15 +311,26 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
+     * addresses from the subnet range.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following:
+     * specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     * </p>
+     * <p>
+     * If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that setting by
+     * specifying 0 as the IPv6 address count.
      * </p>
      * 
      * @return The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     *         addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
-     *         subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
-     *         specify <code>0</code> to override this setting.
+     *         addresses from the subnet range.</p>
+     *         <p>
+     *         You can't specify a count of IPv6 addresses using this parameter if you've specified one of the
+     *         following: specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     *         </p>
+     *         <p>
+     *         If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     *         setting by specifying 0 as the IPv6 address count.
      */
 
     public Integer getIpv6AddressCount() {
@@ -296,16 +340,27 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
+     * addresses from the subnet range.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following:
+     * specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     * </p>
+     * <p>
+     * If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that setting by
+     * specifying 0 as the IPv6 address count.
      * </p>
      * 
      * @param ipv6AddressCount
      *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
-     *        subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
-     *        specify <code>0</code> to override this setting.
+     *        addresses from the subnet range.</p>
+     *        <p>
+     *        You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following:
+     *        specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
+     *        </p>
+     *        <p>
+     *        If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     *        setting by specifying 0 as the IPv6 address count.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,12 +371,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The IPv6 addresses from the IPv6 CIDR block range of your subnet.
+     * </p>
+     * <p>
+     * You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6
+     * addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * </p>
      * 
-     * @return One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *         option if you're specifying a number of IPv6 addresses.
+     * @return The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
+     *         <p>
+     *         You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count
+     *         of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      */
 
     public java.util.List<InstanceIpv6Address> getIpv6Addresses() {
@@ -333,13 +393,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The IPv6 addresses from the IPv6 CIDR block range of your subnet.
+     * </p>
+     * <p>
+     * You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6
+     * addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *        option if you're specifying a number of IPv6 addresses.
+     *        The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
+     *        <p>
+     *        You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of
+     *        IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      */
 
     public void setIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
@@ -353,8 +418,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The IPv6 addresses from the IPv6 CIDR block range of your subnet.
+     * </p>
+     * <p>
+     * You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6
+     * addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -363,8 +431,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *        option if you're specifying a number of IPv6 addresses.
+     *        The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
+     *        <p>
+     *        You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of
+     *        IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,13 +450,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The IPv6 addresses from the IPv6 CIDR block range of your subnet.
+     * </p>
+     * <p>
+     * You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6
+     * addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *        option if you're specifying a number of IPv6 addresses.
+     *        The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
+     *        <p>
+     *        You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of
+     *        IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,10 +530,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more private IPv4 addresses.
+     * The private IPv4 addresses.
+     * </p>
+     * <p>
+     * You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * 
-     * @return One or more private IPv4 addresses.
+     * @return The private IPv4 addresses.</p>
+     *         <p>
+     *         You can't specify private IPv4 addresses if you've specified one of the following: a count of private
+     *         IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      */
 
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
@@ -470,11 +552,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more private IPv4 addresses.
+     * The private IPv4 addresses.
+     * </p>
+     * <p>
+     * You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more private IPv4 addresses.
+     *        The private IPv4 addresses.</p>
+     *        <p>
+     *        You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     *        addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      */
 
     public void setPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
@@ -488,7 +577,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more private IPv4 addresses.
+     * The private IPv4 addresses.
+     * </p>
+     * <p>
+     * You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -497,7 +590,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more private IPv4 addresses.
+     *        The private IPv4 addresses.</p>
+     *        <p>
+     *        You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     *        addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,11 +609,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more private IPv4 addresses.
+     * The private IPv4 addresses.
+     * </p>
+     * <p>
+     * You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more private IPv4 addresses.
+     *        The private IPv4 addresses.</p>
+     *        <p>
+     *        You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4
+     *        addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,9 +636,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.
      * </p>
      * <p>
-     * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private
+     * IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
@@ -544,10 +646,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *        You can't specify this option and specify more than one private IP address using
      *        <code>privateIpAddresses</code>.</p>
      *        <p>
-     *        The number of IP addresses you can assign to a network interface varies by instance type. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     *        Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        You can't specify a count of private IPv4 addresses if you've specified one of the following: specific
+     *        private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      */
 
     public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
@@ -561,9 +661,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.
      * </p>
      * <p>
-     * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private
+     * IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * 
      * @return The number of secondary private IPv4 addresses to assign to a network interface. When you specify a
@@ -571,10 +670,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *         range. You can't specify this option and specify more than one private IP address using
      *         <code>privateIpAddresses</code>.</p>
      *         <p>
-     *         The number of IP addresses you can assign to a network interface varies by instance type. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     *         Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         You can't specify a count of private IPv4 addresses if you've specified one of the following: specific
+     *         private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      */
 
     public Integer getSecondaryPrivateIpAddressCount() {
@@ -588,9 +685,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.
      * </p>
      * <p>
-     * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private
+     * IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
@@ -599,10 +695,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *        You can't specify this option and specify more than one private IP address using
      *        <code>privateIpAddresses</code>.</p>
      *        <p>
-     *        The number of IP addresses you can assign to a network interface varies by instance type. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
-     *        Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        You can't specify a count of private IPv4 addresses if you've specified one of the following: specific
+     *        private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -613,12 +707,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.
+     * The IPv4 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific
+     * private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * 
-     * @return One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     *         <code>Ipv4PrefixCount</code> option.
+     * @return The IPv4 prefixes assigned to the network interface.</p>
+     *         <p>
+     *         You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes,
+     *         specific private IPv4 addresses, or a count of private IPv4 addresses.
      */
 
     public java.util.List<Ipv4PrefixSpecificationRequest> getIpv4Prefixes() {
@@ -630,13 +729,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.
+     * The IPv4 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific
+     * private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * 
      * @param ipv4Prefixes
-     *        One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     *        <code>Ipv4PrefixCount</code> option.
+     *        The IPv4 prefixes assigned to the network interface.</p>
+     *        <p>
+     *        You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes,
+     *        specific private IPv4 addresses, or a count of private IPv4 addresses.
      */
 
     public void setIpv4Prefixes(java.util.Collection<Ipv4PrefixSpecificationRequest> ipv4Prefixes) {
@@ -650,8 +754,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.
+     * The IPv4 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific
+     * private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -660,8 +767,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param ipv4Prefixes
-     *        One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     *        <code>Ipv4PrefixCount</code> option.
+     *        The IPv4 prefixes assigned to the network interface.</p>
+     *        <p>
+     *        You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes,
+     *        specific private IPv4 addresses, or a count of private IPv4 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -677,13 +786,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.
+     * The IPv4 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific
+     * private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * 
      * @param ipv4Prefixes
-     *        One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the
-     *        <code>Ipv4PrefixCount</code> option.
+     *        The IPv4 prefixes assigned to the network interface.</p>
+     *        <p>
+     *        You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes,
+     *        specific private IPv4 addresses, or a count of private IPv4 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,13 +808,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes,
+     * specific private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * 
      * @param ipv4PrefixCount
-     *        The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You
-     *        cannot use this option if you use the <code>Ipv4 Prefixes</code> option.
+     *        The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
+     *        <p>
+     *        You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4
+     *        prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
      */
 
     public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
@@ -709,12 +828,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes,
+     * specific private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * 
-     * @return The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You
-     *         cannot use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * @return The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
+     *         <p>
+     *         You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4
+     *         prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
      */
 
     public Integer getIpv4PrefixCount() {
@@ -723,13 +847,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes,
+     * specific private IPv4 addresses, or a count of private IPv4 addresses.
      * </p>
      * 
      * @param ipv4PrefixCount
-     *        The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You
-     *        cannot use this option if you use the <code>Ipv4 Prefixes</code> option.
+     *        The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
+     *        <p>
+     *        You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4
+     *        prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -740,12 +869,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv6PrefixCount</code> option.
+     * The IPv6 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.
      * </p>
      * 
-     * @return One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     *         <code>Ipv6PrefixCount</code> option.
+     * @return The IPv6 prefixes assigned to the network interface.</p>
+     *         <p>
+     *         You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes,
+     *         specific IPv6 addresses, or a count of IPv6 addresses.
      */
 
     public java.util.List<Ipv6PrefixSpecificationRequest> getIpv6Prefixes() {
@@ -757,13 +891,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv6PrefixCount</code> option.
+     * The IPv6 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.
      * </p>
      * 
      * @param ipv6Prefixes
-     *        One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     *        <code>Ipv6PrefixCount</code> option.
+     *        The IPv6 prefixes assigned to the network interface.</p>
+     *        <p>
+     *        You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes,
+     *        specific IPv6 addresses, or a count of IPv6 addresses.
      */
 
     public void setIpv6Prefixes(java.util.Collection<Ipv6PrefixSpecificationRequest> ipv6Prefixes) {
@@ -777,8 +916,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv6PrefixCount</code> option.
+     * The IPv6 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -787,8 +929,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param ipv6Prefixes
-     *        One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     *        <code>Ipv6PrefixCount</code> option.
+     *        The IPv6 prefixes assigned to the network interface.</p>
+     *        <p>
+     *        You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes,
+     *        specific IPv6 addresses, or a count of IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,13 +948,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     * <code>Ipv6PrefixCount</code> option.
+     * The IPv6 prefixes assigned to the network interface.
+     * </p>
+     * <p>
+     * You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.
      * </p>
      * 
      * @param ipv6Prefixes
-     *        One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the
-     *        <code>Ipv6PrefixCount</code> option.
+     *        The IPv6 prefixes assigned to the network interface.</p>
+     *        <p>
+     *        You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes,
+     *        specific IPv6 addresses, or a count of IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,13 +970,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv6Prefixes</code> option.
+     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes,
+     * specific IPv6 addresses, or a count of IPv6 addresses.
      * </p>
      * 
      * @param ipv6PrefixCount
-     *        The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You
-     *        cannot use this option if you use the <code>Ipv6Prefixes</code> option.
+     *        The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
+     *        <p>
+     *        You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6
+     *        prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
      */
 
     public void setIpv6PrefixCount(Integer ipv6PrefixCount) {
@@ -836,12 +990,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv6Prefixes</code> option.
+     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes,
+     * specific IPv6 addresses, or a count of IPv6 addresses.
      * </p>
      * 
-     * @return The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You
-     *         cannot use this option if you use the <code>Ipv6Prefixes</code> option.
+     * @return The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
+     *         <p>
+     *         You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6
+     *         prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
      */
 
     public Integer getIpv6PrefixCount() {
@@ -850,13 +1009,18 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot
-     * use this option if you use the <code>Ipv6Prefixes</code> option.
+     * The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.
+     * </p>
+     * <p>
+     * You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes,
+     * specific IPv6 addresses, or a count of IPv6 addresses.
      * </p>
      * 
      * @param ipv6PrefixCount
-     *        The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You
-     *        cannot use this option if you use the <code>Ipv6Prefixes</code> option.
+     *        The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
+     *        <p>
+     *        You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6
+     *        prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,29 @@ public class ListInstalledComponentsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The filter for the list of components. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all components installed on the core device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a
+     * deployment. When you choose this option, the list doesn't include components that the core device installs as
+     * dependencies of other components.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>ROOT</code>
+     * </p>
+     */
+    private String topologyFilter;
 
     /**
      * <p>
@@ -165,6 +188,197 @@ public class ListInstalledComponentsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The filter for the list of components. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all components installed on the core device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a
+     * deployment. When you choose this option, the list doesn't include components that the core device installs as
+     * dependencies of other components.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>ROOT</code>
+     * </p>
+     * 
+     * @param topologyFilter
+     *        The filter for the list of components. Choose from the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – The list includes all components installed on the core device.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify
+     *        in a deployment. When you choose this option, the list doesn't include components that the core device
+     *        installs as dependencies of other components.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>ROOT</code>
+     * @see InstalledComponentTopologyFilter
+     */
+
+    public void setTopologyFilter(String topologyFilter) {
+        this.topologyFilter = topologyFilter;
+    }
+
+    /**
+     * <p>
+     * The filter for the list of components. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all components installed on the core device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a
+     * deployment. When you choose this option, the list doesn't include components that the core device installs as
+     * dependencies of other components.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>ROOT</code>
+     * </p>
+     * 
+     * @return The filter for the list of components. Choose from the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALL</code> – The list includes all components installed on the core device.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify
+     *         in a deployment. When you choose this option, the list doesn't include components that the core device
+     *         installs as dependencies of other components.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>ROOT</code>
+     * @see InstalledComponentTopologyFilter
+     */
+
+    public String getTopologyFilter() {
+        return this.topologyFilter;
+    }
+
+    /**
+     * <p>
+     * The filter for the list of components. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all components installed on the core device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a
+     * deployment. When you choose this option, the list doesn't include components that the core device installs as
+     * dependencies of other components.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>ROOT</code>
+     * </p>
+     * 
+     * @param topologyFilter
+     *        The filter for the list of components. Choose from the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – The list includes all components installed on the core device.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify
+     *        in a deployment. When you choose this option, the list doesn't include components that the core device
+     *        installs as dependencies of other components.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>ROOT</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstalledComponentTopologyFilter
+     */
+
+    public ListInstalledComponentsRequest withTopologyFilter(String topologyFilter) {
+        setTopologyFilter(topologyFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter for the list of components. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all components installed on the core device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a
+     * deployment. When you choose this option, the list doesn't include components that the core device installs as
+     * dependencies of other components.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>ROOT</code>
+     * </p>
+     * 
+     * @param topologyFilter
+     *        The filter for the list of components. Choose from the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – The list includes all components installed on the core device.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify
+     *        in a deployment. When you choose this option, the list doesn't include components that the core device
+     *        installs as dependencies of other components.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>ROOT</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstalledComponentTopologyFilter
+     */
+
+    public ListInstalledComponentsRequest withTopologyFilter(InstalledComponentTopologyFilter topologyFilter) {
+        this.topologyFilter = topologyFilter.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +395,9 @@ public class ListInstalledComponentsRequest extends com.amazonaws.AmazonWebServi
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getTopologyFilter() != null)
+            sb.append("TopologyFilter: ").append(getTopologyFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +424,10 @@ public class ListInstalledComponentsRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getTopologyFilter() == null ^ this.getTopologyFilter() == null)
+            return false;
+        if (other.getTopologyFilter() != null && other.getTopologyFilter().equals(this.getTopologyFilter()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +439,7 @@ public class ListInstalledComponentsRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getCoreDeviceThingName() == null) ? 0 : getCoreDeviceThingName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getTopologyFilter() == null) ? 0 : getTopologyFilter().hashCode());
         return hashCode;
     }
 

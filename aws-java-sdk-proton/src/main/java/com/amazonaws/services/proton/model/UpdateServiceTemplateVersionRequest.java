@@ -27,7 +27,8 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment names for a service template major or minor version to update.
+     * An array of environment template objects that are compatible with this service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      */
     private java.util.List<CompatibleEnvironmentTemplateInput> compatibleEnvironmentTemplates;
@@ -57,6 +58,24 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
     private String status;
     /**
      * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <note>
+     * <p>
+     * A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances
+     * based on this template version. A change only affects later associations.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     */
+    private java.util.List<String> supportedComponentSources;
+    /**
+     * <p>
      * The name of the service template.
      * </p>
      */
@@ -64,10 +83,13 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment names for a service template major or minor version to update.
+     * An array of environment template objects that are compatible with this service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * 
-     * @return An array of compatible environment names for a service template major or minor version to update.
+     * @return An array of environment template objects that are compatible with this service template version. A
+     *         service instance based on this service template version can run in environments based on compatible
+     *         templates.
      */
 
     public java.util.List<CompatibleEnvironmentTemplateInput> getCompatibleEnvironmentTemplates() {
@@ -76,11 +98,13 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment names for a service template major or minor version to update.
+     * An array of environment template objects that are compatible with this service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * 
      * @param compatibleEnvironmentTemplates
-     *        An array of compatible environment names for a service template major or minor version to update.
+     *        An array of environment template objects that are compatible with this service template version. A service
+     *        instance based on this service template version can run in environments based on compatible templates.
      */
 
     public void setCompatibleEnvironmentTemplates(java.util.Collection<CompatibleEnvironmentTemplateInput> compatibleEnvironmentTemplates) {
@@ -94,7 +118,8 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment names for a service template major or minor version to update.
+     * An array of environment template objects that are compatible with this service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -103,7 +128,8 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param compatibleEnvironmentTemplates
-     *        An array of compatible environment names for a service template major or minor version to update.
+     *        An array of environment template objects that are compatible with this service template version. A service
+     *        instance based on this service template version can run in environments based on compatible templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +145,13 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment names for a service template major or minor version to update.
+     * An array of environment template objects that are compatible with this service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * 
      * @param compatibleEnvironmentTemplates
-     *        An array of compatible environment names for a service template major or minor version to update.
+     *        An array of environment template objects that are compatible with this service template version. A service
+     *        instance based on this service template version can run in environments based on compatible templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,6 +342,214 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <note>
+     * <p>
+     * A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances
+     * based on this template version. A change only affects later associations.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @return An array of supported component sources. Components with supported sources can be attached to service
+     *         instances based on this service template version.</p> <note>
+     *         <p>
+     *         A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to
+     *         instances based on this template version. A change only affects later associations.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton User Guide</i>.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public java.util.List<String> getSupportedComponentSources() {
+        return supportedComponentSources;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <note>
+     * <p>
+     * A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances
+     * based on this template version. A change only affects later associations.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p> <note>
+     *        <p>
+     *        A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to
+     *        instances based on this template version. A change only affects later associations.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public void setSupportedComponentSources(java.util.Collection<String> supportedComponentSources) {
+        if (supportedComponentSources == null) {
+            this.supportedComponentSources = null;
+            return;
+        }
+
+        this.supportedComponentSources = new java.util.ArrayList<String>(supportedComponentSources);
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <note>
+     * <p>
+     * A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances
+     * based on this template version. A change only affects later associations.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedComponentSources(java.util.Collection)} or
+     * {@link #withSupportedComponentSources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p> <note>
+     *        <p>
+     *        A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to
+     *        instances based on this template version. A change only affects later associations.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public UpdateServiceTemplateVersionRequest withSupportedComponentSources(String... supportedComponentSources) {
+        if (this.supportedComponentSources == null) {
+            setSupportedComponentSources(new java.util.ArrayList<String>(supportedComponentSources.length));
+        }
+        for (String ele : supportedComponentSources) {
+            this.supportedComponentSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <note>
+     * <p>
+     * A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances
+     * based on this template version. A change only affects later associations.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p> <note>
+     *        <p>
+     *        A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to
+     *        instances based on this template version. A change only affects later associations.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public UpdateServiceTemplateVersionRequest withSupportedComponentSources(java.util.Collection<String> supportedComponentSources) {
+        setSupportedComponentSources(supportedComponentSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <note>
+     * <p>
+     * A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances
+     * based on this template version. A change only affects later associations.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p> <note>
+     *        <p>
+     *        A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to
+     *        instances based on this template version. A change only affects later associations.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public UpdateServiceTemplateVersionRequest withSupportedComponentSources(ServiceTemplateSupportedComponentSourceType... supportedComponentSources) {
+        java.util.ArrayList<String> supportedComponentSourcesCopy = new java.util.ArrayList<String>(supportedComponentSources.length);
+        for (ServiceTemplateSupportedComponentSourceType value : supportedComponentSources) {
+            supportedComponentSourcesCopy.add(value.toString());
+        }
+        if (getSupportedComponentSources() == null) {
+            setSupportedComponentSources(supportedComponentSourcesCopy);
+        } else {
+            getSupportedComponentSources().addAll(supportedComponentSourcesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the service template.
      * </p>
      * 
@@ -374,6 +610,8 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
             sb.append("MinorVersion: ").append(getMinorVersion()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getSupportedComponentSources() != null)
+            sb.append("SupportedComponentSources: ").append(getSupportedComponentSources()).append(",");
         if (getTemplateName() != null)
             sb.append("TemplateName: ").append(getTemplateName());
         sb.append("}");
@@ -411,6 +649,10 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getSupportedComponentSources() == null ^ this.getSupportedComponentSources() == null)
+            return false;
+        if (other.getSupportedComponentSources() != null && other.getSupportedComponentSources().equals(this.getSupportedComponentSources()) == false)
+            return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
         if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
@@ -428,6 +670,7 @@ public class UpdateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getMajorVersion() == null) ? 0 : getMajorVersion().hashCode());
         hashCode = prime * hashCode + ((getMinorVersion() == null) ? 0 : getMinorVersion().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSupportedComponentSources() == null) ? 0 : getSupportedComponentSources().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         return hashCode;
     }

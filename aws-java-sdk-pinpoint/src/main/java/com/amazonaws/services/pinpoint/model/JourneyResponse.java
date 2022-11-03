@@ -197,6 +197,27 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private JourneyChannelSettings journeyChannelSettings;
+    /**
+     * <p>
+     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
+     * to allow (OpenHours and ClosedDays)
+     * </p>
+     */
+    private Boolean sendingSchedule;
+    /**
+     * <p>
+     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
+     * set to true.
+     * </p>
+     */
+    private OpenHours openHours;
+    /**
+     * <p>
+     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * be set to true.
+     * </p>
+     */
+    private ClosedDays closedDays;
 
     /**
      * <p>
@@ -1466,6 +1487,158 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
+     * to allow (OpenHours and ClosedDays)
+     * </p>
+     * 
+     * @param sendingSchedule
+     *        Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
+     *        in order to allow (OpenHours and ClosedDays)
+     */
+
+    public void setSendingSchedule(Boolean sendingSchedule) {
+        this.sendingSchedule = sendingSchedule;
+    }
+
+    /**
+     * <p>
+     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
+     * to allow (OpenHours and ClosedDays)
+     * </p>
+     * 
+     * @return Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
+     *         in order to allow (OpenHours and ClosedDays)
+     */
+
+    public Boolean getSendingSchedule() {
+        return this.sendingSchedule;
+    }
+
+    /**
+     * <p>
+     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
+     * to allow (OpenHours and ClosedDays)
+     * </p>
+     * 
+     * @param sendingSchedule
+     *        Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
+     *        in order to allow (OpenHours and ClosedDays)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyResponse withSendingSchedule(Boolean sendingSchedule) {
+        setSendingSchedule(sendingSchedule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
+     * to allow (OpenHours and ClosedDays)
+     * </p>
+     * 
+     * @return Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
+     *         in order to allow (OpenHours and ClosedDays)
+     */
+
+    public Boolean isSendingSchedule() {
+        return this.sendingSchedule;
+    }
+
+    /**
+     * <p>
+     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
+     * set to true.
+     * </p>
+     * 
+     * @param openHours
+     *        The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule
+     *        should be set to true.
+     */
+
+    public void setOpenHours(OpenHours openHours) {
+        this.openHours = openHours;
+    }
+
+    /**
+     * <p>
+     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
+     * set to true.
+     * </p>
+     * 
+     * @return The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule
+     *         should be set to true.
+     */
+
+    public OpenHours getOpenHours() {
+        return this.openHours;
+    }
+
+    /**
+     * <p>
+     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
+     * set to true.
+     * </p>
+     * 
+     * @param openHours
+     *        The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule
+     *        should be set to true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyResponse withOpenHours(OpenHours openHours) {
+        setOpenHours(openHours);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * be set to true.
+     * </p>
+     * 
+     * @param closedDays
+     *        The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule
+     *        should be set to true.
+     */
+
+    public void setClosedDays(ClosedDays closedDays) {
+        this.closedDays = closedDays;
+    }
+
+    /**
+     * <p>
+     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * be set to true.
+     * </p>
+     * 
+     * @return The time when journey will stop sending messages. QuietTime should be configured first and
+     *         SendingSchedule should be set to true.
+     */
+
+    public ClosedDays getClosedDays() {
+        return this.closedDays;
+    }
+
+    /**
+     * <p>
+     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * be set to true.
+     * </p>
+     * 
+     * @param closedDays
+     *        The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule
+     *        should be set to true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyResponse withClosedDays(ClosedDays closedDays) {
+        setClosedDays(closedDays);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1512,7 +1685,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         if (getRefreshOnSegmentUpdate() != null)
             sb.append("RefreshOnSegmentUpdate: ").append(getRefreshOnSegmentUpdate()).append(",");
         if (getJourneyChannelSettings() != null)
-            sb.append("JourneyChannelSettings: ").append(getJourneyChannelSettings());
+            sb.append("JourneyChannelSettings: ").append(getJourneyChannelSettings()).append(",");
+        if (getSendingSchedule() != null)
+            sb.append("SendingSchedule: ").append(getSendingSchedule()).append(",");
+        if (getOpenHours() != null)
+            sb.append("OpenHours: ").append(getOpenHours()).append(",");
+        if (getClosedDays() != null)
+            sb.append("ClosedDays: ").append(getClosedDays());
         sb.append("}");
         return sb.toString();
     }
@@ -1599,6 +1778,18 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getJourneyChannelSettings() != null && other.getJourneyChannelSettings().equals(this.getJourneyChannelSettings()) == false)
             return false;
+        if (other.getSendingSchedule() == null ^ this.getSendingSchedule() == null)
+            return false;
+        if (other.getSendingSchedule() != null && other.getSendingSchedule().equals(this.getSendingSchedule()) == false)
+            return false;
+        if (other.getOpenHours() == null ^ this.getOpenHours() == null)
+            return false;
+        if (other.getOpenHours() != null && other.getOpenHours().equals(this.getOpenHours()) == false)
+            return false;
+        if (other.getClosedDays() == null ^ this.getClosedDays() == null)
+            return false;
+        if (other.getClosedDays() != null && other.getClosedDays().equals(this.getClosedDays()) == false)
+            return false;
         return true;
     }
 
@@ -1625,6 +1816,9 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getWaitForQuietTime() == null) ? 0 : getWaitForQuietTime().hashCode());
         hashCode = prime * hashCode + ((getRefreshOnSegmentUpdate() == null) ? 0 : getRefreshOnSegmentUpdate().hashCode());
         hashCode = prime * hashCode + ((getJourneyChannelSettings() == null) ? 0 : getJourneyChannelSettings().hashCode());
+        hashCode = prime * hashCode + ((getSendingSchedule() == null) ? 0 : getSendingSchedule().hashCode());
+        hashCode = prime * hashCode + ((getOpenHours() == null) ? 0 : getOpenHours().hashCode());
+        hashCode = prime * hashCode + ((getClosedDays() == null) ? 0 : getClosedDays().hashCode());
         return hashCode;
     }
 

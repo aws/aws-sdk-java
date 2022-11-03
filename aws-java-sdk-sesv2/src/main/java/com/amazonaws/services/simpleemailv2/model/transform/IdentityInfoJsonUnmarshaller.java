@@ -60,6 +60,10 @@ public class IdentityInfoJsonUnmarshaller implements Unmarshaller<IdentityInfo, 
                     context.nextToken();
                     identityInfo.setSendingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("VerificationStatus", targetDepth)) {
+                    context.nextToken();
+                    identityInfo.setVerificationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

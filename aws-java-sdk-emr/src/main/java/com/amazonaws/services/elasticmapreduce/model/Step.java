@@ -72,6 +72,17 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private StepStatus status;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     */
+    private String executionRoleArn;
 
     /**
      * <p>
@@ -447,6 +458,74 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
+     *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+     *        <p>
+     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     *         cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
+     *         using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+     *         <p>
+     *         For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role
+     *         ARN.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
+     *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+     *        <p>
+     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Step withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -467,7 +546,9 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
         if (getActionOnFailure() != null)
             sb.append("ActionOnFailure: ").append(getActionOnFailure()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +583,10 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -515,6 +600,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getConfig() == null) ? 0 : getConfig().hashCode());
         hashCode = prime * hashCode + ((getActionOnFailure() == null) ? 0 : getActionOnFailure().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         return hashCode;
     }
 

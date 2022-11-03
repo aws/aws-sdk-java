@@ -35,6 +35,12 @@ public class FraudRiskDetails implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private KnownFraudsterRisk knownFraudsterRisk;
+    /**
+     * <p>
+     * The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     * </p>
+     */
+    private VoiceSpoofingRisk voiceSpoofingRisk;
 
     /**
      * <p>
@@ -77,6 +83,46 @@ public class FraudRiskDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     * </p>
+     * 
+     * @param voiceSpoofingRisk
+     *        The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     */
+
+    public void setVoiceSpoofingRisk(VoiceSpoofingRisk voiceSpoofingRisk) {
+        this.voiceSpoofingRisk = voiceSpoofingRisk;
+    }
+
+    /**
+     * <p>
+     * The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     * </p>
+     * 
+     * @return The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     */
+
+    public VoiceSpoofingRisk getVoiceSpoofingRisk() {
+        return this.voiceSpoofingRisk;
+    }
+
+    /**
+     * <p>
+     * The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     * </p>
+     * 
+     * @param voiceSpoofingRisk
+     *        The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FraudRiskDetails withVoiceSpoofingRisk(VoiceSpoofingRisk voiceSpoofingRisk) {
+        setVoiceSpoofingRisk(voiceSpoofingRisk);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +135,9 @@ public class FraudRiskDetails implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKnownFraudsterRisk() != null)
-            sb.append("KnownFraudsterRisk: ").append(getKnownFraudsterRisk());
+            sb.append("KnownFraudsterRisk: ").append(getKnownFraudsterRisk()).append(",");
+        if (getVoiceSpoofingRisk() != null)
+            sb.append("VoiceSpoofingRisk: ").append(getVoiceSpoofingRisk());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,10 @@ public class FraudRiskDetails implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getKnownFraudsterRisk() != null && other.getKnownFraudsterRisk().equals(this.getKnownFraudsterRisk()) == false)
             return false;
+        if (other.getVoiceSpoofingRisk() == null ^ this.getVoiceSpoofingRisk() == null)
+            return false;
+        if (other.getVoiceSpoofingRisk() != null && other.getVoiceSpoofingRisk().equals(this.getVoiceSpoofingRisk()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +169,7 @@ public class FraudRiskDetails implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKnownFraudsterRisk() == null) ? 0 : getKnownFraudsterRisk().hashCode());
+        hashCode = prime * hashCode + ((getVoiceSpoofingRisk() == null) ? 0 : getVoiceSpoofingRisk().hashCode());
         return hashCode;
     }
 

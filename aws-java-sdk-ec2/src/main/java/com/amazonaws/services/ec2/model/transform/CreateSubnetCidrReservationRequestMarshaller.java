@@ -42,6 +42,22 @@ public class CreateSubnetCidrReservationRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (createSubnetCidrReservationRequest.getSubnetId() != null) {
+            request.addParameter("SubnetId", StringUtils.fromString(createSubnetCidrReservationRequest.getSubnetId()));
+        }
+
+        if (createSubnetCidrReservationRequest.getCidr() != null) {
+            request.addParameter("Cidr", StringUtils.fromString(createSubnetCidrReservationRequest.getCidr()));
+        }
+
+        if (createSubnetCidrReservationRequest.getReservationType() != null) {
+            request.addParameter("ReservationType", StringUtils.fromString(createSubnetCidrReservationRequest.getReservationType()));
+        }
+
+        if (createSubnetCidrReservationRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createSubnetCidrReservationRequest.getDescription()));
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> createSubnetCidrReservationRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createSubnetCidrReservationRequest
                 .getTagSpecifications();
         if (!createSubnetCidrReservationRequestTagSpecificationsList.isEmpty() || !createSubnetCidrReservationRequestTagSpecificationsList.isAutoConstruct()) {
@@ -75,22 +91,6 @@ public class CreateSubnetCidrReservationRequestMarshaller implements
                 }
                 tagSpecificationsListIndex++;
             }
-        }
-
-        if (createSubnetCidrReservationRequest.getSubnetId() != null) {
-            request.addParameter("SubnetId", StringUtils.fromString(createSubnetCidrReservationRequest.getSubnetId()));
-        }
-
-        if (createSubnetCidrReservationRequest.getCidr() != null) {
-            request.addParameter("Cidr", StringUtils.fromString(createSubnetCidrReservationRequest.getCidr()));
-        }
-
-        if (createSubnetCidrReservationRequest.getReservationType() != null) {
-            request.addParameter("ReservationType", StringUtils.fromString(createSubnetCidrReservationRequest.getReservationType()));
-        }
-
-        if (createSubnetCidrReservationRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(createSubnetCidrReservationRequest.getDescription()));
         }
 
         return request;

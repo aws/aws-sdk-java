@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The data type for TokenValidityUnits that specifics the time measurements for token validity.
+ * The data type TokenValidityUnits specifies the time units you use when you set the duration of ID, access, and
+ * refresh tokens.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/TokenValidityUnitsType" target="_top">AWS
@@ -30,34 +31,40 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
-     * hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time
+     * unit is hours.
      * </p>
      */
     private String accessToken;
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is
+     * hours.
      * </p>
      */
     private String idToken;
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
-     * days.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code>
+     * time unit is days.
      * </p>
      */
     private String refreshToken;
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
-     * hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time
+     * unit is hours.
      * </p>
      * 
      * @param accessToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
-     *        to hours.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>AccessTokenValidity</code> parameter. The default
+     *        <code>AccessTokenValidity</code> time unit is hours.
      * @see TimeUnitsType
      */
 
@@ -67,12 +74,14 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
-     * hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time
+     * unit is hours.
      * </p>
      * 
-     * @return A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
-     *         to hours.
+     * @return A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *         the value that you set in the <code>AccessTokenValidity</code> parameter. The default
+     *         <code>AccessTokenValidity</code> time unit is hours.
      * @see TimeUnitsType
      */
 
@@ -82,13 +91,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
-     * hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time
+     * unit is hours.
      * </p>
      * 
      * @param accessToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
-     *        to hours.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>AccessTokenValidity</code> parameter. The default
+     *        <code>AccessTokenValidity</code> time unit is hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -100,13 +111,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
-     * hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time
+     * unit is hours.
      * </p>
      * 
      * @param accessToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
-     *        to hours.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>AccessTokenValidity</code> parameter. The default
+     *        <code>AccessTokenValidity</code> time unit is hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -118,12 +131,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is
+     * hours.
      * </p>
      * 
      * @param idToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
-     *        hours.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>IdTokenValidity</code> parameter. The default
+     *        <code>IdTokenValidity</code> time unit is hours.
      * @see TimeUnitsType
      */
 
@@ -133,11 +149,14 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is
+     * hours.
      * </p>
      * 
-     * @return A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
-     *         hours.
+     * @return A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *         the value that you set in the <code>IdTokenValidity</code> parameter. The default
+     *         <code>IdTokenValidity</code> time unit is hours.
      * @see TimeUnitsType
      */
 
@@ -147,12 +166,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is
+     * hours.
      * </p>
      * 
      * @param idToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
-     *        hours.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>IdTokenValidity</code> parameter. The default
+     *        <code>IdTokenValidity</code> time unit is hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -164,12 +186,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is
+     * hours.
      * </p>
      * 
      * @param idToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
-     *        hours.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>IdTokenValidity</code> parameter. The default
+     *        <code>IdTokenValidity</code> time unit is hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -181,13 +206,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
-     * days.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code>
+     * time unit is days.
      * </p>
      * 
      * @param refreshToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
-     *        to days.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>RefreshTokenValidity</code> parameter. The default
+     *        <code>RefreshTokenValidity</code> time unit is days.
      * @see TimeUnitsType
      */
 
@@ -197,12 +224,14 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
-     * days.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code>
+     * time unit is days.
      * </p>
      * 
-     * @return A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
-     *         to days.
+     * @return A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *         the value that you set in the <code>RefreshTokenValidity</code> parameter. The default
+     *         <code>RefreshTokenValidity</code> time unit is days.
      * @see TimeUnitsType
      */
 
@@ -212,13 +241,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
-     * days.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code>
+     * time unit is days.
      * </p>
      * 
      * @param refreshToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
-     *        to days.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>RefreshTokenValidity</code> parameter. The default
+     *        <code>RefreshTokenValidity</code> time unit is days.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -230,13 +261,15 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
-     * days.
+     * A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value
+     * that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code>
+     * time unit is days.
      * </p>
      * 
      * @param refreshToken
-     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
-     *        to days.
+     *        A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for
+     *        the value that you set in the <code>RefreshTokenValidity</code> parameter. The default
+     *        <code>RefreshTokenValidity</code> time unit is days.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */

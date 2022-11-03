@@ -745,6 +745,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     }
 
     @Override
+    public java.util.concurrent.Future<StopBotRecommendationResult> stopBotRecommendationAsync(StopBotRecommendationRequest request) {
+
+        return stopBotRecommendationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBotRecommendationResult> stopBotRecommendationAsync(StopBotRecommendationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopBotRecommendationRequest, StopBotRecommendationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

@@ -25,20 +25,20 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name you chose for your vocabulary.
+     * The name you chose for your custom vocabulary.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The language code you selected for your vocabulary.
+     * The language code you selected for your custom vocabulary.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a
-     * <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
@@ -46,23 +46,28 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The date and time you created your custom vocabulary.
      * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
+     * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains information
-     * about why the job failed.
+     * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
+     * the vocabulary request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      */
     private String failureReason;
 
     /**
      * <p>
-     * The name you chose for your vocabulary.
+     * The name you chose for your custom vocabulary.
      * </p>
      * 
      * @param vocabularyName
-     *        The name you chose for your vocabulary.
+     *        The name you chose for your custom vocabulary.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -71,10 +76,10 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name you chose for your vocabulary.
+     * The name you chose for your custom vocabulary.
      * </p>
      * 
-     * @return The name you chose for your vocabulary.
+     * @return The name you chose for your custom vocabulary.
      */
 
     public String getVocabularyName() {
@@ -83,11 +88,11 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name you chose for your vocabulary.
+     * The name you chose for your custom vocabulary.
      * </p>
      * 
      * @param vocabularyName
-     *        The name you chose for your vocabulary.
+     *        The name you chose for your custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +103,11 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code you selected for your vocabulary.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your vocabulary.
+     *        The language code you selected for your custom vocabulary.
      * @see LanguageCode
      */
 
@@ -112,10 +117,10 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code you selected for your vocabulary.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
-     * @return The language code you selected for your vocabulary.
+     * @return The language code you selected for your custom vocabulary.
      * @see LanguageCode
      */
 
@@ -125,11 +130,11 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code you selected for your vocabulary.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your vocabulary.
+     *        The language code you selected for your custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -141,11 +146,11 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code you selected for your vocabulary.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your vocabulary.
+     *        The language code you selected for your custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -157,13 +162,13 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a
-     * <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     *        a <code>StartTranscriptionJob</code> request.
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -173,12 +178,12 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a
-     * <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
-     * @return The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary
-     *         in a <code>StartTranscriptionJob</code> request.
+     * @return The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *         vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -188,13 +193,13 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a
-     * <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     *        a <code>StartTranscriptionJob</code> request.
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -206,13 +211,13 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a
-     * <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     *        a <code>StartTranscriptionJob</code> request.
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -226,9 +231,16 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The date and time you created your custom vocabulary.
      * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
+     * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time you created your custom vocabulary.
+     *        The date and time you created your custom vocabulary.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -239,8 +251,15 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The date and time you created your custom vocabulary.
      * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
+     * </p>
      * 
-     * @return The date and time you created your custom vocabulary.
+     * @return The date and time you created your custom vocabulary.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -251,9 +270,16 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The date and time you created your custom vocabulary.
      * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
+     * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time you created your custom vocabulary.
+     *        The date and time you created your custom vocabulary.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,13 +290,15 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains information
-     * about why the job failed.
+     * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
+     * the vocabulary request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
-     *        If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains
-     *        information about why the job failed.
+     *        If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     *        about why the vocabulary request failed. See also: <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
     public void setFailureReason(String failureReason) {
@@ -279,12 +307,14 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains information
-     * about why the job failed.
+     * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
+     * the vocabulary request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
-     * @return If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains
-     *         information about why the job failed.
+     * @return If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     *         about why the vocabulary request failed. See also: <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
     public String getFailureReason() {
@@ -293,13 +323,15 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains information
-     * about why the job failed.
+     * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
+     * the vocabulary request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
-     *        If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code> contains
-     *        information about why the job failed.
+     *        If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
+     *        about why the vocabulary request failed. See also: <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,20 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a custom domain name as a user-friendly host name of an API (<a>RestApi</a>).
+ * Represents a custom domain name as a user-friendly host name of an API (RestApi).
  * </p>
- * <div class="Remarks">
- * <p>
- * When you deploy an API, API Gateway creates a default host name for the API. This default API host name is of the
- * <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access the
- * API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
- * When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same
- * resource using the URL of the <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the base path
- * mapping (<a>BasePathMapping</a>) of your API under the custom domain name.
- * </p>
- * </div> <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name
- * for an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainName implements Serializable, Cloneable, StructuredPojo {
@@ -72,11 +60,8 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     private String regionalDomainName;
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a
+     * Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      * </p>
      */
     private String regionalHostedZoneId;
@@ -97,45 +82,42 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
-     * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront
+     * documentation.
      * </p>
      */
     private String distributionDomainName;
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name
+     * and AWS Regions and Endpoints for API Gateway.
      * </p>
      */
     private String distributionHostedZoneId;
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      */
     private EndpointConfiguration endpointConfiguration;
     /**
      * <p>
-     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
-     * <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is
-     * <code>AVAILABLE</code>, the domain can be updated.
+     * The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If
+     * the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is
+     * complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * </p>
      */
     private String domainNameStatus;
     /**
      * <p>
-     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * An optional text message containing detailed information about status of the DomainName migration.
      * </p>
      */
     private String domainNameStatusMessage;
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      */
@@ -384,20 +366,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a
+     * Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      * </p>
      * 
      * @param regionalHostedZoneId
-     *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set
+     *        up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      */
 
     public void setRegionalHostedZoneId(String regionalHostedZoneId) {
@@ -406,19 +381,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a
+     * Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      * </p>
      * 
-     * @return The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     *         >Set up a Regional Custom Domain Name</a> and <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *         Endpoints for API Gateway</a>.
+     * @return The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see
+     *         Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      */
 
     public String getRegionalHostedZoneId() {
@@ -427,20 +395,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a
+     * Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      * </p>
      * 
      * @param regionalHostedZoneId
-     *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set
+     *        up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -539,16 +500,15 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
-     * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront
+     * documentation.
      * </p>
      * 
      * @param distributionDomainName
      *        The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      *        edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
-     *        name to this distribution name. For more information about CloudFront distributions, see the <a
-     *        href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
-     *        documentation</a>.
+     *        name to this distribution name. For more information about CloudFront distributions, see the Amazon
+     *        CloudFront documentation.
      */
 
     public void setDistributionDomainName(String distributionDomainName) {
@@ -559,15 +519,14 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
-     * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront
+     * documentation.
      * </p>
      * 
      * @return The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      *         edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
-     *         name to this distribution name. For more information about CloudFront distributions, see the <a
-     *         href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
-     *         documentation</a>.
+     *         name to this distribution name. For more information about CloudFront distributions, see the Amazon
+     *         CloudFront documentation.
      */
 
     public String getDistributionDomainName() {
@@ -578,16 +537,15 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
-     * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront
+     * documentation.
      * </p>
      * 
      * @param distributionDomainName
      *        The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      *        edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
-     *        name to this distribution name. For more information about CloudFront distributions, see the <a
-     *        href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
-     *        documentation</a>.
+     *        name to this distribution name. For more information about CloudFront distributions, see the Amazon
+     *        CloudFront documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -599,20 +557,14 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name
+     * and AWS Regions and Endpoints for API Gateway.
      * </p>
      * 
      * @param distributionHostedZoneId
      *        The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain
+     *        Name and AWS Regions and Endpoints for API Gateway.
      */
 
     public void setDistributionHostedZoneId(String distributionHostedZoneId) {
@@ -622,19 +574,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name
+     * and AWS Regions and Endpoints for API Gateway.
      * </p>
      * 
      * @return The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     *         <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     *         >Set up a Regional Custom Domain Name</a> and <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *         Endpoints for API Gateway</a>.
+     *         <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom
+     *         Domain Name and AWS Regions and Endpoints for API Gateway.
      */
 
     public String getDistributionHostedZoneId() {
@@ -644,20 +590,14 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name
+     * and AWS Regions and Endpoints for API Gateway.
      * </p>
      * 
      * @param distributionHostedZoneId
      *        The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
-     *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain
+     *        Name and AWS Regions and Endpoints for API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -668,11 +608,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      * 
      * @param endpointConfiguration
-     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     *        The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      */
 
     public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
@@ -681,10 +621,10 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      * 
-     * @return The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * @return The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      */
 
     public EndpointConfiguration getEndpointConfiguration() {
@@ -693,11 +633,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      * 
      * @param endpointConfiguration
-     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     *        The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,17 +648,15 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
-     * <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is
-     * <code>AVAILABLE</code>, the domain can be updated.
+     * The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If
+     * the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is
+     * complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * </p>
      * 
      * @param domainNameStatus
-     *        The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>,
-     *        <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and
-     *        <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be
-     *        modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can
-     *        be updated.
+     *        The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and
+     *        <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until
+     *        the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * @see DomainNameStatus
      */
 
@@ -728,16 +666,14 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
-     * <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is
-     * <code>AVAILABLE</code>, the domain can be updated.
+     * The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If
+     * the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is
+     * complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * </p>
      * 
-     * @return The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>,
-     *         <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and
-     *         <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be
-     *         modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain
-     *         can be updated.
+     * @return The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and
+     *         <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further
+     *         until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * @see DomainNameStatus
      */
 
@@ -747,17 +683,15 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
-     * <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is
-     * <code>AVAILABLE</code>, the domain can be updated.
+     * The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If
+     * the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is
+     * complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * </p>
      * 
      * @param domainNameStatus
-     *        The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>,
-     *        <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and
-     *        <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be
-     *        modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can
-     *        be updated.
+     *        The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and
+     *        <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until
+     *        the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainNameStatus
      */
@@ -769,17 +703,15 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
-     * <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is
-     * <code>AVAILABLE</code>, the domain can be updated.
+     * The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If
+     * the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is
+     * complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * </p>
      * 
      * @param domainNameStatus
-     *        The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>,
-     *        <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and
-     *        <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be
-     *        modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can
-     *        be updated.
+     *        The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and
+     *        <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until
+     *        the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainNameStatus
      */
@@ -791,11 +723,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * An optional text message containing detailed information about status of the DomainName migration.
      * </p>
      * 
      * @param domainNameStatusMessage
-     *        An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     *        An optional text message containing detailed information about status of the DomainName migration.
      */
 
     public void setDomainNameStatusMessage(String domainNameStatusMessage) {
@@ -804,10 +736,10 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * An optional text message containing detailed information about status of the DomainName migration.
      * </p>
      * 
-     * @return An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * @return An optional text message containing detailed information about status of the DomainName migration.
      */
 
     public String getDomainNameStatusMessage() {
@@ -816,11 +748,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * An optional text message containing detailed information about status of the DomainName migration.
      * </p>
      * 
      * @param domainNameStatusMessage
-     *        An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     *        An optional text message containing detailed information about status of the DomainName migration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -831,12 +763,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
      * @param securityPolicy
-     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @see SecurityPolicy
      */
@@ -847,12 +779,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
-     * @return The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values
-     *         are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
+     *         <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @see SecurityPolicy
      */
 
@@ -862,12 +794,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
      * @param securityPolicy
-     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityPolicy
@@ -880,12 +812,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
      * @param securityPolicy
-     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityPolicy

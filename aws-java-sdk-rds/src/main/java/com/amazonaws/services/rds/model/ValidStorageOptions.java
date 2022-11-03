@@ -29,19 +29,19 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example, gp2, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Range> storageSize;
     /**
      * <p>
-     * The valid range of provisioned IOPS. For example, 1000-20000.
+     * The valid range of provisioned IOPS. For example, 1000-256,000.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Range> provisionedIops;
@@ -58,14 +58,26 @@ public class ValidStorageOptions implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsStorageAutoscaling;
+    /**
+     * <p>
+     * The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Range> provisionedStorageThroughput;
+    /**
+     * <p>
+     * The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DoubleRange> storageThroughputToIopsRatio;
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example, gp2, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
      * </p>
      * 
      * @param storageType
-     *        The valid storage types for your DB instance. For example, gp2, io1.
+     *        The valid storage types for your DB instance. For example: gp2, gp3, io1.
      */
 
     public void setStorageType(String storageType) {
@@ -74,10 +86,10 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example, gp2, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
      * </p>
      * 
-     * @return The valid storage types for your DB instance. For example, gp2, io1.
+     * @return The valid storage types for your DB instance. For example: gp2, gp3, io1.
      */
 
     public String getStorageType() {
@@ -86,11 +98,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example, gp2, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
      * </p>
      * 
      * @param storageType
-     *        The valid storage types for your DB instance. For example, gp2, io1.
+     *        The valid storage types for your DB instance. For example: gp2, gp3, io1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +113,10 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * </p>
      * 
-     * @return The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * @return The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      */
 
     public java.util.List<Range> getStorageSize() {
@@ -116,11 +128,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * </p>
      * 
      * @param storageSize
-     *        The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     *        The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      */
 
     public void setStorageSize(java.util.Collection<Range> storageSize) {
@@ -134,7 +146,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,7 +155,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param storageSize
-     *        The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     *        The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +171,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * </p>
      * 
      * @param storageSize
-     *        The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     *        The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,10 +186,10 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of provisioned IOPS. For example, 1000-20000.
+     * The valid range of provisioned IOPS. For example, 1000-256,000.
      * </p>
      * 
-     * @return The valid range of provisioned IOPS. For example, 1000-20000.
+     * @return The valid range of provisioned IOPS. For example, 1000-256,000.
      */
 
     public java.util.List<Range> getProvisionedIops() {
@@ -189,11 +201,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of provisioned IOPS. For example, 1000-20000.
+     * The valid range of provisioned IOPS. For example, 1000-256,000.
      * </p>
      * 
      * @param provisionedIops
-     *        The valid range of provisioned IOPS. For example, 1000-20000.
+     *        The valid range of provisioned IOPS. For example, 1000-256,000.
      */
 
     public void setProvisionedIops(java.util.Collection<Range> provisionedIops) {
@@ -207,7 +219,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of provisioned IOPS. For example, 1000-20000.
+     * The valid range of provisioned IOPS. For example, 1000-256,000.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -216,7 +228,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param provisionedIops
-     *        The valid range of provisioned IOPS. For example, 1000-20000.
+     *        The valid range of provisioned IOPS. For example, 1000-256,000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +244,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of provisioned IOPS. For example, 1000-20000.
+     * The valid range of provisioned IOPS. For example, 1000-256,000.
      * </p>
      * 
      * @param provisionedIops
-     *        The valid range of provisioned IOPS. For example, 1000-20000.
+     *        The valid range of provisioned IOPS. For example, 1000-256,000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,6 +395,152 @@ public class ValidStorageOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * </p>
+     * 
+     * @return The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     */
+
+    public java.util.List<Range> getProvisionedStorageThroughput() {
+        if (provisionedStorageThroughput == null) {
+            provisionedStorageThroughput = new com.amazonaws.internal.SdkInternalList<Range>();
+        }
+        return provisionedStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * </p>
+     * 
+     * @param provisionedStorageThroughput
+     *        The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     */
+
+    public void setProvisionedStorageThroughput(java.util.Collection<Range> provisionedStorageThroughput) {
+        if (provisionedStorageThroughput == null) {
+            this.provisionedStorageThroughput = null;
+            return;
+        }
+
+        this.provisionedStorageThroughput = new com.amazonaws.internal.SdkInternalList<Range>(provisionedStorageThroughput);
+    }
+
+    /**
+     * <p>
+     * The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvisionedStorageThroughput(java.util.Collection)} or
+     * {@link #withProvisionedStorageThroughput(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param provisionedStorageThroughput
+     *        The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidStorageOptions withProvisionedStorageThroughput(Range... provisionedStorageThroughput) {
+        if (this.provisionedStorageThroughput == null) {
+            setProvisionedStorageThroughput(new com.amazonaws.internal.SdkInternalList<Range>(provisionedStorageThroughput.length));
+        }
+        for (Range ele : provisionedStorageThroughput) {
+            this.provisionedStorageThroughput.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * </p>
+     * 
+     * @param provisionedStorageThroughput
+     *        The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidStorageOptions withProvisionedStorageThroughput(java.util.Collection<Range> provisionedStorageThroughput) {
+        setProvisionedStorageThroughput(provisionedStorageThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * </p>
+     * 
+     * @return The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     */
+
+    public java.util.List<DoubleRange> getStorageThroughputToIopsRatio() {
+        if (storageThroughputToIopsRatio == null) {
+            storageThroughputToIopsRatio = new com.amazonaws.internal.SdkInternalList<DoubleRange>();
+        }
+        return storageThroughputToIopsRatio;
+    }
+
+    /**
+     * <p>
+     * The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * </p>
+     * 
+     * @param storageThroughputToIopsRatio
+     *        The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     */
+
+    public void setStorageThroughputToIopsRatio(java.util.Collection<DoubleRange> storageThroughputToIopsRatio) {
+        if (storageThroughputToIopsRatio == null) {
+            this.storageThroughputToIopsRatio = null;
+            return;
+        }
+
+        this.storageThroughputToIopsRatio = new com.amazonaws.internal.SdkInternalList<DoubleRange>(storageThroughputToIopsRatio);
+    }
+
+    /**
+     * <p>
+     * The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStorageThroughputToIopsRatio(java.util.Collection)} or
+     * {@link #withStorageThroughputToIopsRatio(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param storageThroughputToIopsRatio
+     *        The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidStorageOptions withStorageThroughputToIopsRatio(DoubleRange... storageThroughputToIopsRatio) {
+        if (this.storageThroughputToIopsRatio == null) {
+            setStorageThroughputToIopsRatio(new com.amazonaws.internal.SdkInternalList<DoubleRange>(storageThroughputToIopsRatio.length));
+        }
+        for (DoubleRange ele : storageThroughputToIopsRatio) {
+            this.storageThroughputToIopsRatio.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * </p>
+     * 
+     * @param storageThroughputToIopsRatio
+     *        The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidStorageOptions withStorageThroughputToIopsRatio(java.util.Collection<DoubleRange> storageThroughputToIopsRatio) {
+        setStorageThroughputToIopsRatio(storageThroughputToIopsRatio);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -403,7 +561,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
         if (getIopsToStorageRatio() != null)
             sb.append("IopsToStorageRatio: ").append(getIopsToStorageRatio()).append(",");
         if (getSupportsStorageAutoscaling() != null)
-            sb.append("SupportsStorageAutoscaling: ").append(getSupportsStorageAutoscaling());
+            sb.append("SupportsStorageAutoscaling: ").append(getSupportsStorageAutoscaling()).append(",");
+        if (getProvisionedStorageThroughput() != null)
+            sb.append("ProvisionedStorageThroughput: ").append(getProvisionedStorageThroughput()).append(",");
+        if (getStorageThroughputToIopsRatio() != null)
+            sb.append("StorageThroughputToIopsRatio: ").append(getStorageThroughputToIopsRatio());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +600,14 @@ public class ValidStorageOptions implements Serializable, Cloneable {
             return false;
         if (other.getSupportsStorageAutoscaling() != null && other.getSupportsStorageAutoscaling().equals(this.getSupportsStorageAutoscaling()) == false)
             return false;
+        if (other.getProvisionedStorageThroughput() == null ^ this.getProvisionedStorageThroughput() == null)
+            return false;
+        if (other.getProvisionedStorageThroughput() != null && other.getProvisionedStorageThroughput().equals(this.getProvisionedStorageThroughput()) == false)
+            return false;
+        if (other.getStorageThroughputToIopsRatio() == null ^ this.getStorageThroughputToIopsRatio() == null)
+            return false;
+        if (other.getStorageThroughputToIopsRatio() != null && other.getStorageThroughputToIopsRatio().equals(this.getStorageThroughputToIopsRatio()) == false)
+            return false;
         return true;
     }
 
@@ -451,6 +621,8 @@ public class ValidStorageOptions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getProvisionedIops() == null) ? 0 : getProvisionedIops().hashCode());
         hashCode = prime * hashCode + ((getIopsToStorageRatio() == null) ? 0 : getIopsToStorageRatio().hashCode());
         hashCode = prime * hashCode + ((getSupportsStorageAutoscaling() == null) ? 0 : getSupportsStorageAutoscaling().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedStorageThroughput() == null) ? 0 : getProvisionedStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughputToIopsRatio() == null) ? 0 : getStorageThroughputToIopsRatio().hashCode());
         return hashCode;
     }
 

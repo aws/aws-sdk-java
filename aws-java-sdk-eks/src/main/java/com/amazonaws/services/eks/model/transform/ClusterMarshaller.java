@@ -63,6 +63,12 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionConfig").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTORCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorConfig").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
+    private static final MarshallingInfo<StructuredPojo> HEALTH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("health").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPOSTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outpostConfig").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -97,6 +103,9 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(cluster.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
             protocolMarshaller.marshall(cluster.getConnectorConfig(), CONNECTORCONFIG_BINDING);
+            protocolMarshaller.marshall(cluster.getId(), ID_BINDING);
+            protocolMarshaller.marshall(cluster.getHealth(), HEALTH_BINDING);
+            protocolMarshaller.marshall(cluster.getOutpostConfig(), OUTPOSTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

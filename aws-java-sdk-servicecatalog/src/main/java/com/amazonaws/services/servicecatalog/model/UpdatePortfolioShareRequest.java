@@ -56,8 +56,8 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     private String portfolioId;
     /**
      * <p>
-     * The AWS Account Id of the recipient account. This field is required when updating an external account to account
-     * type share.
+     * The Amazon Web Services account Id of the recipient account. This field is required when updating an external
+     * account to account type share.
      * </p>
      */
     private String accountId;
@@ -252,13 +252,13 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Account Id of the recipient account. This field is required when updating an external account to account
-     * type share.
+     * The Amazon Web Services account Id of the recipient account. This field is required when updating an external
+     * account to account type share.
      * </p>
      * 
      * @param accountId
-     *        The AWS Account Id of the recipient account. This field is required when updating an external account to
-     *        account type share.
+     *        The Amazon Web Services account Id of the recipient account. This field is required when updating an
+     *        external account to account type share.
      */
 
     public void setAccountId(String accountId) {
@@ -267,12 +267,12 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Account Id of the recipient account. This field is required when updating an external account to account
-     * type share.
+     * The Amazon Web Services account Id of the recipient account. This field is required when updating an external
+     * account to account type share.
      * </p>
      * 
-     * @return The AWS Account Id of the recipient account. This field is required when updating an external account to
-     *         account type share.
+     * @return The Amazon Web Services account Id of the recipient account. This field is required when updating an
+     *         external account to account type share.
      */
 
     public String getAccountId() {
@@ -281,13 +281,13 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Account Id of the recipient account. This field is required when updating an external account to account
-     * type share.
+     * The Amazon Web Services account Id of the recipient account. This field is required when updating an external
+     * account to account type share.
      * </p>
      * 
      * @param accountId
-     *        The AWS Account Id of the recipient account. This field is required when updating an external account to
-     *        account type share.
+     *        The Amazon Web Services account Id of the recipient account. This field is required when updating an
+     *        external account to account type share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -77,15 +77,25 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     * <code>USERNAME</code>.
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
+     * (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as
+     * <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable
+     * attributes that aren't required by your user pool.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required
@@ -115,14 +125,16 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     private java.util.Map<String, String> challengeResponses;
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code>
+     * calls.
      * </p>
      */
     private AnalyticsMetadataType analyticsMetadata;
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      */
     private UserContextDataType userContextData;
@@ -411,15 +423,25 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     * <code>USERNAME</code>.
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
+     * (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as
+     * <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable
+     * attributes that aren't required by your user pool.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required
@@ -466,15 +488,26 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <note>
      *         <p>
-     *         <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *         <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered
+     *         device.
      *         </p>
      *         </note></li>
      *         <li>
      *         <p>
-     *         <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     *         <code>USERNAME</code>.
+     *         <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>,
+     *         <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes
+     *         that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code>
+     *         response, add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set
+     *         values for writable attributes that aren't required by your user pool.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *         already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *         returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *         API operation to modify the value of any additional attributes.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are
@@ -528,15 +561,25 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     * <code>USERNAME</code>.
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
+     * (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as
+     * <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable
+     * attributes that aren't required by your user pool.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required
@@ -584,15 +627,25 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.
      *        </p>
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     *        <code>USERNAME</code>.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>,
+     *        <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes
+     *        that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code> response,
+     *        add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for
+     *        writable attributes that aren't required by your user pool.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *        already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *        API operation to modify the value of any additional attributes.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are
@@ -646,15 +699,25 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     * <code>USERNAME</code>.
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
+     * (if app client is configured with client secret). To set any required attributes that Amazon Cognito returned as
+     * <code>requiredAttributes</code> in the <code>InitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for writable
+     * attributes that aren't required by your user pool.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required
@@ -702,15 +765,25 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when you sign in with a remembered device.
      *        </p>
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
-     *        <code>USERNAME</code>.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, <code>USERNAME</code>,
+     *        <code>SECRET_HASH</code> (if app client is configured with client secret). To set any required attributes
+     *        that Amazon Cognito returned as <code>requiredAttributes</code> in the <code>InitiateAuth</code> response,
+     *        add a <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can also set values for
+     *        writable attributes that aren't required by your user pool.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *        already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *        API operation to modify the value of any additional attributes.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are
@@ -773,12 +846,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code>
+     * calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
-     *        calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for
+     *        <code>RespondToAuthChallenge</code> calls.
      */
 
     public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
@@ -787,11 +861,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code>
+     * calls.
      * </p>
      * 
-     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
-     *         calls.
+     * @return The Amazon Pinpoint analytics metadata that contributes to your metrics for
+     *         <code>RespondToAuthChallenge</code> calls.
      */
 
     public AnalyticsMetadataType getAnalyticsMetadata() {
@@ -800,12 +875,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code>
+     * calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
-     *        calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for
+     *        <code>RespondToAuthChallenge</code> calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -816,13 +892,15 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      * 
      * @param userContextData
-     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
-     *        risk of an unexpected event by Amazon Cognito advanced security.
+     *        Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon
+     *        Cognito advanced security evaluates the risk of an authentication event based on the context that your app
+     *        generates and passes to Amazon Cognito when it makes API requests.
      */
 
     public void setUserContextData(UserContextDataType userContextData) {
@@ -831,12 +909,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      * 
-     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
-     *         risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon
+     *         Cognito advanced security evaluates the risk of an authentication event based on the context that your
+     *         app generates and passes to Amazon Cognito when it makes API requests.
      */
 
     public UserContextDataType getUserContextData() {
@@ -845,13 +925,15 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito
+     * advanced security evaluates the risk of an authentication event based on the context that your app generates and
+     * passes to Amazon Cognito when it makes API requests.
      * </p>
      * 
      * @param userContextData
-     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
-     *        risk of an unexpected event by Amazon Cognito advanced security.
+     *        Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon
+     *        Cognito advanced security evaluates the risk of an authentication event based on the context that your app
+     *        generates and passes to Amazon Cognito when it makes API requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

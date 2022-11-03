@@ -27,7 +27,7 @@ public class DetectKeyPhrasesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      * </p>
      */
     private String text;
@@ -41,11 +41,11 @@ public class DetectKeyPhrasesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      */
 
     public void setText(String text) {
@@ -54,10 +54,10 @@ public class DetectKeyPhrasesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      * </p>
      * 
-     * @return A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * @return A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      */
 
     public String getText() {
@@ -66,11 +66,11 @@ public class DetectKeyPhrasesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

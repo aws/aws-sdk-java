@@ -15,9 +15,7 @@ package com.amazonaws.services.dataexchange.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The type of asset that is added to a data set.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AssetType {

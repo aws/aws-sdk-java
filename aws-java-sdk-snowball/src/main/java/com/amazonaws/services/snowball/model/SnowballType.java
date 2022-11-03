@@ -26,7 +26,8 @@ public enum SnowballType {
     EDGE_CG("EDGE_CG"),
     EDGE_S("EDGE_S"),
     SNC1_HDD("SNC1_HDD"),
-    SNC1_SSD("SNC1_SSD");
+    SNC1_SSD("SNC1_SSD"),
+    V3_5C("V3_5C");
 
     private String value;
 

@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * This parameter is specified when you're using an Amazon Elastic File System file system for task storage. For more
  * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS
- * Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EFSVolumeConfiguration" target="_top">AWS API
@@ -55,7 +55,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
      * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the
+     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      */
@@ -64,8 +64,8 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * <p>
      * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
      * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      */
     private Integer transitEncryptionPort;
@@ -203,7 +203,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
      * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the
+     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
@@ -211,7 +211,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      *        Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a>
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
      *        in the <i>Amazon Elastic File System User Guide</i>.
      * @see EFSTransitEncryption
      */
@@ -225,15 +225,15 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
      * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the
+     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @return Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *         Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *         parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     *         href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in
-     *         Transit</a> in the <i>Amazon Elastic File System User Guide</i>.
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in
+     *         transit</a> in the <i>Amazon Elastic File System User Guide</i>.
      * @see EFSTransitEncryption
      */
 
@@ -246,7 +246,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
      * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the
+     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
@@ -254,7 +254,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      *        Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a>
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
      *        in the <i>Amazon Elastic File System User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EFSTransitEncryption
@@ -270,7 +270,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
      * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the
+     * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
@@ -278,7 +278,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      *        Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a>
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
      *        in the <i>Amazon Elastic File System User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EFSTransitEncryption
@@ -293,15 +293,15 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * <p>
      * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
      * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryptionPort
      *        The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you
      *        do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS
      *        mount helper uses. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the
      *        <i>Amazon Elastic File System User Guide</i>.
      */
 
@@ -313,14 +313,14 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * <p>
      * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
      * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @return The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you
      *         do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS
      *         mount helper uses. For more information, see <a
-     *         href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the
      *         <i>Amazon Elastic File System User Guide</i>.
      */
 
@@ -332,15 +332,15 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * <p>
      * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
      * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryptionPort
      *        The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you
      *        do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS
      *        mount helper uses. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the
      *        <i>Amazon Elastic File System User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

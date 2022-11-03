@@ -33,8 +33,8 @@ public class UpdateAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
     private String attributeGroup;
     /**
      * <p>
-     * The new name of the attribute group. The name must be unique in the region in which you are updating the
-     * attribute group.
+     * Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating
+     * the attribute group. Please do not use this field as we have stopped supporting name updates.
      * </p>
      */
     @Deprecated
@@ -95,13 +95,13 @@ public class UpdateAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new name of the attribute group. The name must be unique in the region in which you are updating the
-     * attribute group.
+     * Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating
+     * the attribute group. Please do not use this field as we have stopped supporting name updates.
      * </p>
      * 
      * @param name
-     *        The new name of the attribute group. The name must be unique in the region in which you are updating the
-     *        attribute group.
+     *        Deprecated: The new name of the attribute group. The name must be unique in the region in which you are
+     *        updating the attribute group. Please do not use this field as we have stopped supporting name updates.
      */
     @Deprecated
     public void setName(String name) {
@@ -110,12 +110,12 @@ public class UpdateAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new name of the attribute group. The name must be unique in the region in which you are updating the
-     * attribute group.
+     * Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating
+     * the attribute group. Please do not use this field as we have stopped supporting name updates.
      * </p>
      * 
-     * @return The new name of the attribute group. The name must be unique in the region in which you are updating the
-     *         attribute group.
+     * @return Deprecated: The new name of the attribute group. The name must be unique in the region in which you are
+     *         updating the attribute group. Please do not use this field as we have stopped supporting name updates.
      */
     @Deprecated
     public String getName() {
@@ -124,13 +124,13 @@ public class UpdateAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new name of the attribute group. The name must be unique in the region in which you are updating the
-     * attribute group.
+     * Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating
+     * the attribute group. Please do not use this field as we have stopped supporting name updates.
      * </p>
      * 
      * @param name
-     *        The new name of the attribute group. The name must be unique in the region in which you are updating the
-     *        attribute group.
+     *        Deprecated: The new name of the attribute group. The name must be unique in the region in which you are
+     *        updating the attribute group. Please do not use this field as we have stopped supporting name updates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

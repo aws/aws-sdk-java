@@ -27,7 +27,7 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value that indicates whether to include inactive bundle results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
      * </p>
      */
     private Boolean includeInactive;
@@ -44,11 +44,12 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value that indicates whether to include inactive bundle results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
      * </p>
      * 
      * @param includeInactive
-     *        A Boolean value that indicates whether to include inactive bundle results in your request.
+     *        A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *        request.
      */
 
     public void setIncludeInactive(Boolean includeInactive) {
@@ -57,10 +58,11 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value that indicates whether to include inactive bundle results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
      * </p>
      * 
-     * @return A Boolean value that indicates whether to include inactive bundle results in your request.
+     * @return A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *         request.
      */
 
     public Boolean getIncludeInactive() {
@@ -69,11 +71,12 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value that indicates whether to include inactive bundle results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
      * </p>
      * 
      * @param includeInactive
-     *        A Boolean value that indicates whether to include inactive bundle results in your request.
+     *        A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +87,11 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value that indicates whether to include inactive bundle results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
      * </p>
      * 
-     * @return A Boolean value that indicates whether to include inactive bundle results in your request.
+     * @return A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *         request.
      */
 
     public Boolean isIncludeInactive() {

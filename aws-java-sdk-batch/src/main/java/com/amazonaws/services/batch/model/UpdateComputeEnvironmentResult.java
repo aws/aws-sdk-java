@@ -25,7 +25,7 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      */
@@ -39,12 +39,12 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and
      *        lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
@@ -54,11 +54,11 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     * @return The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and
      *         lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
@@ -68,12 +68,12 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and
      *        lowercase letters, numbers, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container for identity provider details.
+ * A container for IdP details.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderDescription" target="_top">AWS
@@ -30,13 +30,13 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      */
     private String providerName;
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      */
     private String providerType;
@@ -55,11 +55,11 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      */
 
     public void setProviderName(String providerName) {
@@ -68,10 +68,10 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
-     * @return The identity provider name.
+     * @return The IdP name.
      */
 
     public String getProviderName() {
@@ -80,11 +80,11 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -109,10 +109,10 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
-     * @return The identity provider type.
+     * @return The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -122,11 +122,11 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderTypeType
      */
@@ -138,11 +138,11 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -152,11 +152,11 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderTypeType
      */

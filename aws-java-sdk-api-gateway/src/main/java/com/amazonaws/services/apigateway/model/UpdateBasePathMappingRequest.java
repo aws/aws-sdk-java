@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to change information about the <a>BasePathMapping</a> resource.
+ * A request to change information about the BasePathMapping resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     * The domain name of the BasePathMapping resource to change.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * The base path of the BasePathMapping resource to change.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
@@ -42,18 +42,19 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     private String basePath;
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     * The domain name of the BasePathMapping resource to change.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     *        The domain name of the BasePathMapping resource to change.
      */
 
     public void setDomainName(String domainName) {
@@ -62,10 +63,10 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     * The domain name of the BasePathMapping resource to change.
      * </p>
      * 
-     * @return [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     * @return The domain name of the BasePathMapping resource to change.
      */
 
     public String getDomainName() {
@@ -74,11 +75,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     * The domain name of the BasePathMapping resource to change.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of the <a>BasePathMapping</a> resource to change.
+     *        The domain name of the BasePathMapping resource to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,14 +90,14 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * The base path of the BasePathMapping resource to change.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
      * @param basePath
-     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *        The base path of the BasePathMapping resource to change.</p>
      *        <p>
      *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
@@ -107,13 +108,13 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * The base path of the BasePathMapping resource to change.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
-     * @return [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     * @return The base path of the BasePathMapping resource to change.</p>
      *         <p>
      *         To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
@@ -124,14 +125,14 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * The base path of the BasePathMapping resource to change.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
      * @param basePath
-     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *        The base path of the BasePathMapping resource to change.</p>
      *        <p>
      *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -144,11 +145,12 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -157,12 +159,13 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -176,7 +179,8 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -185,8 +189,8 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,12 +206,13 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,7 +43,6 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
 
         accessKey = StringUtils.trim(accessKey);
         secretKey = StringUtils.trim(secretKey);
-        String sessionToken = StringUtils.trim(System.getenv(AWS_SESSION_TOKEN_ENV_VAR));
 
         if (StringUtils.isNullOrEmpty(accessKey) || StringUtils.isNullOrEmpty(secretKey)) {
 
@@ -53,7 +52,8 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
                     SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");
         }
 
-        return sessionToken == null ?
+        String sessionToken = StringUtils.trim(System.getenv(AWS_SESSION_TOKEN_ENV_VAR));
+        return StringUtils.isNullOrEmpty(sessionToken) ?
                 new BasicAWSCredentials(accessKey, secretKey)
                 :
                 new BasicSessionCredentials(accessKey, secretKey, sessionToken);

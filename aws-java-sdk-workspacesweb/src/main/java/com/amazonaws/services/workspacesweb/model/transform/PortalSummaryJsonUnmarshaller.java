@@ -88,6 +88,10 @@ public class PortalSummaryJsonUnmarshaller implements Unmarshaller<PortalSummary
                     context.nextToken();
                     portalSummary.setTrustStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("userAccessLoggingSettingsArn", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setUserAccessLoggingSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("userSettingsArn", targetDepth)) {
                     context.nextToken();
                     portalSummary.setUserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));

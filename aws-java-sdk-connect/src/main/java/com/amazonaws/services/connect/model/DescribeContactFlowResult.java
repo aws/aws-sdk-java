@@ -25,18 +25,18 @@ public class DescribeContactFlowResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the contact flow.
+     * Information about the flow.
      * </p>
      */
     private ContactFlow contactFlow;
 
     /**
      * <p>
-     * Information about the contact flow.
+     * Information about the flow.
      * </p>
      * 
      * @param contactFlow
-     *        Information about the contact flow.
+     *        Information about the flow.
      */
 
     public void setContactFlow(ContactFlow contactFlow) {
@@ -45,10 +45,10 @@ public class DescribeContactFlowResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the contact flow.
+     * Information about the flow.
      * </p>
      * 
-     * @return Information about the contact flow.
+     * @return Information about the flow.
      */
 
     public ContactFlow getContactFlow() {
@@ -57,11 +57,11 @@ public class DescribeContactFlowResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the contact flow.
+     * Information about the flow.
      * </p>
      * 
      * @param contactFlow
-     *        Information about the contact flow.
+     *        Information about the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

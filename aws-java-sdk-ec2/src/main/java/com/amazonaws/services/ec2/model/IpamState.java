@@ -28,7 +28,10 @@ public enum IpamState {
     ModifyFailed("modify-failed"),
     DeleteInProgress("delete-in-progress"),
     DeleteComplete("delete-complete"),
-    DeleteFailed("delete-failed");
+    DeleteFailed("delete-failed"),
+    IsolateInProgress("isolate-in-progress"),
+    IsolateComplete("isolate-complete"),
+    RestoreInProgress("restore-in-progress");
 
     private String value;
 

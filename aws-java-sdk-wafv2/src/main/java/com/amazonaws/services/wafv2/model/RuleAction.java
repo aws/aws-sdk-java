@@ -43,7 +43,8 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
     private AllowAction allow;
     /**
      * <p>
-     * Instructs WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the
+     * web ACL.
      * </p>
      */
     private CountAction count;
@@ -53,6 +54,12 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CaptchaAction captcha;
+    /**
+     * <p>
+     * Instructs WAF to run a <code>Challenge</code> check against the web request.
+     * </p>
+     */
+    private ChallengeAction challenge;
 
     /**
      * <p>
@@ -136,11 +143,13 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the
+     * web ACL.
      * </p>
      * 
      * @param count
-     *        Instructs WAF to count the web request and allow it.
+     *        Instructs WAF to count the web request and then continue evaluating the request using the remaining rules
+     *        in the web ACL.
      */
 
     public void setCount(CountAction count) {
@@ -149,10 +158,12 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the
+     * web ACL.
      * </p>
      * 
-     * @return Instructs WAF to count the web request and allow it.
+     * @return Instructs WAF to count the web request and then continue evaluating the request using the remaining rules
+     *         in the web ACL.
      */
 
     public CountAction getCount() {
@@ -161,11 +172,13 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the
+     * web ACL.
      * </p>
      * 
      * @param count
-     *        Instructs WAF to count the web request and allow it.
+     *        Instructs WAF to count the web request and then continue evaluating the request using the remaining rules
+     *        in the web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,6 +228,46 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Instructs WAF to run a <code>Challenge</code> check against the web request.
+     * </p>
+     * 
+     * @param challenge
+     *        Instructs WAF to run a <code>Challenge</code> check against the web request.
+     */
+
+    public void setChallenge(ChallengeAction challenge) {
+        this.challenge = challenge;
+    }
+
+    /**
+     * <p>
+     * Instructs WAF to run a <code>Challenge</code> check against the web request.
+     * </p>
+     * 
+     * @return Instructs WAF to run a <code>Challenge</code> check against the web request.
+     */
+
+    public ChallengeAction getChallenge() {
+        return this.challenge;
+    }
+
+    /**
+     * <p>
+     * Instructs WAF to run a <code>Challenge</code> check against the web request.
+     * </p>
+     * 
+     * @param challenge
+     *        Instructs WAF to run a <code>Challenge</code> check against the web request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleAction withChallenge(ChallengeAction challenge) {
+        setChallenge(challenge);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -233,7 +286,9 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
         if (getCount() != null)
             sb.append("Count: ").append(getCount()).append(",");
         if (getCaptcha() != null)
-            sb.append("Captcha: ").append(getCaptcha());
+            sb.append("Captcha: ").append(getCaptcha()).append(",");
+        if (getChallenge() != null)
+            sb.append("Challenge: ").append(getChallenge());
         sb.append("}");
         return sb.toString();
     }
@@ -264,6 +319,10 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCaptcha() != null && other.getCaptcha().equals(this.getCaptcha()) == false)
             return false;
+        if (other.getChallenge() == null ^ this.getChallenge() == null)
+            return false;
+        if (other.getChallenge() != null && other.getChallenge().equals(this.getChallenge()) == false)
+            return false;
         return true;
     }
 
@@ -276,6 +335,7 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAllow() == null) ? 0 : getAllow().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getCaptcha() == null) ? 0 : getCaptcha().hashCode());
+        hashCode = prime * hashCode + ((getChallenge() == null) ? 0 : getChallenge().hashCode());
         return hashCode;
     }
 

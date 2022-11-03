@@ -74,6 +74,10 @@ public class UserPoolClientTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreventUserExistenceErrors").build();
     private static final MarshallingInfo<Boolean> ENABLETOKENREVOCATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableTokenRevocation").build();
+    private static final MarshallingInfo<Boolean> ENABLEPROPAGATEADDITIONALUSERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnablePropagateAdditionalUserContextData").build();
+    private static final MarshallingInfo<Integer> AUTHSESSIONVALIDITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthSessionValidity").build();
 
     private static final UserPoolClientTypeMarshaller instance = new UserPoolClientTypeMarshaller();
 
@@ -114,6 +118,8 @@ public class UserPoolClientTypeMarshaller {
             protocolMarshaller.marshall(userPoolClientType.getAnalyticsConfiguration(), ANALYTICSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(userPoolClientType.getPreventUserExistenceErrors(), PREVENTUSEREXISTENCEERRORS_BINDING);
             protocolMarshaller.marshall(userPoolClientType.getEnableTokenRevocation(), ENABLETOKENREVOCATION_BINDING);
+            protocolMarshaller.marshall(userPoolClientType.getEnablePropagateAdditionalUserContextData(), ENABLEPROPAGATEADDITIONALUSERCONTEXTDATA_BINDING);
+            protocolMarshaller.marshall(userPoolClientType.getAuthSessionValidity(), AUTHSESSIONVALIDITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

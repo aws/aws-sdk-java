@@ -28,8 +28,8 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS
-     * account.
+     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon
+     * Web Services account.
      * </p>
      */
     private String importTaskId;
@@ -125,13 +125,13 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS
-     * account.
+     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon
+     * Web Services account.
      * </p>
      * 
      * @param importTaskId
      *        The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an
-     *        AWS account.
+     *        Amazon Web Services account.
      */
 
     public void setImportTaskId(String importTaskId) {
@@ -140,12 +140,12 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS
-     * account.
+     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon
+     * Web Services account.
      * </p>
      * 
      * @return The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an
-     *         AWS account.
+     *         Amazon Web Services account.
      */
 
     public String getImportTaskId() {
@@ -154,13 +154,13 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an AWS
-     * account.
+     * The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon
+     * Web Services account.
      * </p>
      * 
      * @param importTaskId
      *        The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an
-     *        AWS account.
+     *        Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

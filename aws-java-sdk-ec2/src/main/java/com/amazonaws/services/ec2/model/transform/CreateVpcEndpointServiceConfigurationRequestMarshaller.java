@@ -81,6 +81,21 @@ public class CreateVpcEndpointServiceConfigurationRequestMarshaller implements
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesList = (com.amazonaws.internal.SdkInternalList<String>) createVpcEndpointServiceConfigurationRequest
+                .getSupportedIpAddressTypes();
+        if (!createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesList.isEmpty()
+                || !createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesList.isAutoConstruct()) {
+            int supportedIpAddressTypesListIndex = 1;
+
+            for (String createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesListValue : createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesList) {
+                if (createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesListValue != null) {
+                    request.addParameter("SupportedIpAddressType." + supportedIpAddressTypesListIndex,
+                            StringUtils.fromString(createVpcEndpointServiceConfigurationRequestSupportedIpAddressTypesListValue));
+                }
+                supportedIpAddressTypesListIndex++;
+            }
+        }
+
         if (createVpcEndpointServiceConfigurationRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointServiceConfigurationRequest.getClientToken()));
         }

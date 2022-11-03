@@ -39,10 +39,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     private String previousContactId;
     /**
      * <p>
-     * The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
-     * console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact
-     * flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow
-     * information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:
+     * The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user
+     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
+     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
+     * the ARN, shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
@@ -53,7 +53,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -81,17 +81,32 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     private String description;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      */
     private java.util.Date scheduledTime;
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     */
+    private String taskTemplateId;
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     */
+    private String quickConnectId;
 
     /**
      * <p>
@@ -175,10 +190,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
-     * console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact
-     * flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow
-     * information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:
+     * The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user
+     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
+     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
+     * the ARN, shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
@@ -186,10 +201,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon
-     *        Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose
-     *        the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional
-     *        flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     *        The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
+     *        console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
+     *        flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The
+     *        ContactFlowId is the last part of the ARN, shown here in bold: </p>
      *        <p>
      *        arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      *        846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
@@ -201,20 +216,20 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
-     * console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact
-     * flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow
-     * information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:
+     * The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user
+     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
+     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
+     * the ARN, shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      * 846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      * 
-     * @return The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon
-     *         Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose
-     *         the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional
-     *         flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * @return The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
+     *         console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
+     *         flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The
+     *         ContactFlowId is the last part of the ARN, shown here in bold: </p>
      *         <p>
      *         arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      *         846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
@@ -226,10 +241,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
-     * console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact
-     * flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow
-     * information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:
+     * The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user
+     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
+     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
+     * the ARN, shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
@@ -237,10 +252,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon
-     *        Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose
-     *        the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional
-     *        flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     *        The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect
+     *        console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
+     *        flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The
+     *        ContactFlowId is the last part of the ARN, shown here in bold: </p>
      *        <p>
      *        arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      *        846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
@@ -255,7 +270,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -263,7 +278,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
-     *         and can be accessed in contact flows just like any other contact attributes.</p>
+     *         and can be accessed in flows just like any other contact attributes.</p>
      *         <p>
      *         There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *         only alphanumeric, dash, and underscore characters.
@@ -276,7 +291,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -285,7 +300,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param attributes
      *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and
-     *        can be accessed in contact flows just like any other contact attributes.</p>
+     *        can be accessed in flows just like any other contact attributes.</p>
      *        <p>
      *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *        only alphanumeric, dash, and underscore characters.
@@ -298,7 +313,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
-     * accessed in contact flows just like any other contact attributes.
+     * accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
@@ -307,7 +322,7 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param attributes
      *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and
-     *        can be accessed in contact flows just like any other contact attributes.</p>
+     *        can be accessed in flows just like any other contact attributes.</p>
      *        <p>
      *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *        only alphanumeric, dash, and underscore characters.
@@ -497,11 +512,17 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -510,10 +531,16 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -522,11 +549,17 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,13 +570,13 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      * 
      * @param scheduledTime
-     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The
-     *        scheduled time cannot be in the past. It must be within up to 6 days in future.
+     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled
+     *        time cannot be in the past. It must be within up to 6 days in future.
      */
 
     public void setScheduledTime(java.util.Date scheduledTime) {
@@ -552,12 +585,12 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      * 
-     * @return The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The
-     *         scheduled time cannot be in the past. It must be within up to 6 days in future.
+     * @return The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled
+     *         time cannot be in the past. It must be within up to 6 days in future.
      */
 
     public java.util.Date getScheduledTime() {
@@ -566,18 +599,98 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      * 
      * @param scheduledTime
-     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The
-     *        scheduled time cannot be in the past. It must be within up to 6 days in future.
+     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled
+     *        time cannot be in the past. It must be within up to 6 days in future.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartTaskContactRequest withScheduledTime(java.util.Date scheduledTime) {
         setScheduledTime(scheduledTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     * 
+     * @param taskTemplateId
+     *        A unique identifier for the task template.
+     */
+
+    public void setTaskTemplateId(String taskTemplateId) {
+        this.taskTemplateId = taskTemplateId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     * 
+     * @return A unique identifier for the task template.
+     */
+
+    public String getTaskTemplateId() {
+        return this.taskTemplateId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     * 
+     * @param taskTemplateId
+     *        A unique identifier for the task template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskContactRequest withTaskTemplateId(String taskTemplateId) {
+        setTaskTemplateId(taskTemplateId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     * 
+     * @param quickConnectId
+     *        The identifier for the quick connect.
+     */
+
+    public void setQuickConnectId(String quickConnectId) {
+        this.quickConnectId = quickConnectId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     * 
+     * @return The identifier for the quick connect.
+     */
+
+    public String getQuickConnectId() {
+        return this.quickConnectId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     * 
+     * @param quickConnectId
+     *        The identifier for the quick connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskContactRequest withQuickConnectId(String quickConnectId) {
+        setQuickConnectId(quickConnectId);
         return this;
     }
 
@@ -610,7 +723,11 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getScheduledTime() != null)
-            sb.append("ScheduledTime: ").append(getScheduledTime());
+            sb.append("ScheduledTime: ").append(getScheduledTime()).append(",");
+        if (getTaskTemplateId() != null)
+            sb.append("TaskTemplateId: ").append(getTaskTemplateId()).append(",");
+        if (getQuickConnectId() != null)
+            sb.append("QuickConnectId: ").append(getQuickConnectId());
         sb.append("}");
         return sb.toString();
     }
@@ -661,6 +778,14 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getScheduledTime() != null && other.getScheduledTime().equals(this.getScheduledTime()) == false)
             return false;
+        if (other.getTaskTemplateId() == null ^ this.getTaskTemplateId() == null)
+            return false;
+        if (other.getTaskTemplateId() != null && other.getTaskTemplateId().equals(this.getTaskTemplateId()) == false)
+            return false;
+        if (other.getQuickConnectId() == null ^ this.getQuickConnectId() == null)
+            return false;
+        if (other.getQuickConnectId() != null && other.getQuickConnectId().equals(this.getQuickConnectId()) == false)
+            return false;
         return true;
     }
 
@@ -678,6 +803,8 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getScheduledTime() == null) ? 0 : getScheduledTime().hashCode());
+        hashCode = prime * hashCode + ((getTaskTemplateId() == null) ? 0 : getTaskTemplateId().hashCode());
+        hashCode = prime * hashCode + ((getQuickConnectId() == null) ? 0 : getQuickConnectId().hashCode());
         return hashCode;
     }
 

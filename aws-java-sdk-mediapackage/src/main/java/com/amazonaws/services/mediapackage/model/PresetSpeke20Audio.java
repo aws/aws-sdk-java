@@ -20,7 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PresetSpeke20Audio {
 
-    PRESETAUDIO1("PRESET-AUDIO-1");
+    PRESETAUDIO1("PRESET-AUDIO-1"),
+    PRESETAUDIO2("PRESET-AUDIO-2"),
+    PRESETAUDIO3("PRESET-AUDIO-3"),
+    SHARED("SHARED"),
+    UNENCRYPTED("UNENCRYPTED");
 
     private String value;
 

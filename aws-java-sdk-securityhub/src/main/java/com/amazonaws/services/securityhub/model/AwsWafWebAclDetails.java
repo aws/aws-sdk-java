@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about an WAF WebACL.
+ * Provides information about an WAF web access control list (web ACL).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclDetails" target="_top">AWS
@@ -30,36 +30,36 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     * A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The action to perform if none of the rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the web ACL match.
      * </p>
      */
     private String defaultAction;
     /**
      * <p>
-     * An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the rule.
+     * An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.
      * </p>
      */
     private java.util.List<AwsWafWebAclRule> rules;
     /**
      * <p>
-     * A unique identifier for a WebACL.
+     * A unique identifier for a web ACL.
      * </p>
      */
     private String webAclId;
 
     /**
      * <p>
-     * A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     * A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     *        A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -68,10 +68,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     * A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.
      * </p>
      * 
-     * @return A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     * @return A friendly name or description of the web ACL. You can't change the name of a web ACL after you create
+     *         it.
      */
 
     public String getName() {
@@ -80,11 +81,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     * A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+     *        A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +96,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action to perform if none of the rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the web ACL match.
      * </p>
      * 
      * @param defaultAction
-     *        The action to perform if none of the rules contained in the WebACL match.
+     *        The action to perform if none of the rules contained in the web ACL match.
      */
 
     public void setDefaultAction(String defaultAction) {
@@ -108,10 +109,10 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action to perform if none of the rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the web ACL match.
      * </p>
      * 
-     * @return The action to perform if none of the rules contained in the WebACL match.
+     * @return The action to perform if none of the rules contained in the web ACL match.
      */
 
     public String getDefaultAction() {
@@ -120,11 +121,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action to perform if none of the rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the web ACL match.
      * </p>
      * 
      * @param defaultAction
-     *        The action to perform if none of the rules contained in the WebACL match.
+     *        The action to perform if none of the rules contained in the web ACL match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,10 +136,10 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the rule.
+     * An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.
      * </p>
      * 
-     * @return An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the
+     * @return An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the
      *         rule.
      */
 
@@ -148,11 +149,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the rule.
+     * An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.
      * </p>
      * 
      * @param rules
-     *        An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the
+     *        An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the
      *        rule.
      */
 
@@ -167,7 +168,7 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the rule.
+     * An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +177,7 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param rules
-     *        An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the
+     *        An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the
      *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -193,11 +194,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the rule.
+     * An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.
      * </p>
      * 
      * @param rules
-     *        An array that contains the action for each rule in a WebACL, the priority of the rule, and the ID of the
+     *        An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the
      *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -209,11 +210,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A unique identifier for a WebACL.
+     * A unique identifier for a web ACL.
      * </p>
      * 
      * @param webAclId
-     *        A unique identifier for a WebACL.
+     *        A unique identifier for a web ACL.
      */
 
     public void setWebAclId(String webAclId) {
@@ -222,10 +223,10 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A unique identifier for a WebACL.
+     * A unique identifier for a web ACL.
      * </p>
      * 
-     * @return A unique identifier for a WebACL.
+     * @return A unique identifier for a web ACL.
      */
 
     public String getWebAclId() {
@@ -234,11 +235,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A unique identifier for a WebACL.
+     * A unique identifier for a web ACL.
      * </p>
      * 
      * @param webAclId
-     *        A unique identifier for a WebACL.
+     *        A unique identifier for a web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

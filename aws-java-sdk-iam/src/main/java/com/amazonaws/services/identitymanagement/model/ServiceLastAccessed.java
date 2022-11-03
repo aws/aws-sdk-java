@@ -44,7 +44,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private java.util.Date lastAuthenticated;
@@ -72,7 +72,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private String lastAuthenticatedEntity;
@@ -84,7 +84,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private String lastAuthenticatedRegion;
@@ -96,7 +96,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private Integer totalAuthenticatedEntities;
@@ -108,9 +108,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a
      * href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>. This field is also null if the report was generated at the service level and not the
-     * action level. For more information, see the <code>Granularity</code> field in
-     * <a>GenerateServiceLastAccessedDetails</a>.
+     * >tracking period</a>. This field is also null if the report was generated at the service level and not the action
+     * level. For more information, see the <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TrackedActionLastAccessed> trackedActionsLastAccessed;
@@ -164,7 +163,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticated
@@ -174,7 +173,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAuthenticated(java.util.Date lastAuthenticated) {
@@ -190,7 +189,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
@@ -199,7 +198,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public java.util.Date getLastAuthenticated() {
@@ -215,7 +214,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticated
@@ -225,7 +224,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,7 +338,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticatedEntity
@@ -348,7 +347,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAuthenticatedEntity(String lastAuthenticatedEntity) {
@@ -363,7 +362,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web
@@ -371,7 +370,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public String getLastAuthenticatedEntity() {
@@ -386,7 +385,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticatedEntity
@@ -395,7 +394,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,7 +411,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticatedRegion
@@ -421,7 +420,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAuthenticatedRegion(String lastAuthenticatedRegion) {
@@ -436,7 +435,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The Region from which the authenticated entity (user or role) last attempted to access the service.
@@ -444,7 +443,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public String getLastAuthenticatedRegion() {
@@ -459,7 +458,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticatedRegion
@@ -468,7 +467,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,7 +484,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param totalAuthenticatedEntities
@@ -494,7 +493,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no principals attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setTotalAuthenticatedEntities(Integer totalAuthenticatedEntities) {
@@ -509,7 +508,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to
@@ -517,7 +516,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no principals attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public Integer getTotalAuthenticatedEntities() {
@@ -532,7 +531,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param totalAuthenticatedEntities
@@ -541,7 +540,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no principals attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,9 +557,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a
      * href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>. This field is also null if the report was generated at the service level and not the
-     * action level. For more information, see the <code>Granularity</code> field in
-     * <a>GenerateServiceLastAccessedDetails</a>.
+     * >tracking period</a>. This field is also null if the report was generated at the service level and not the action
+     * level. For more information, see the <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.
      * </p>
      * 
      * @return An object that contains details about the most recent attempt to access a tracked action within the
@@ -569,7 +567,7 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *         This field is null if there no tracked actions or if the principal did not use the tracked actions within
      *         the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>. This field is also null if the report was generated at the service level and not
+     *         >tracking period</a>. This field is also null if the report was generated at the service level and not
      *         the action level. For more information, see the <code>Granularity</code> field in
      *         <a>GenerateServiceLastAccessedDetails</a>.
      */
@@ -589,9 +587,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a
      * href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>. This field is also null if the report was generated at the service level and not the
-     * action level. For more information, see the <code>Granularity</code> field in
-     * <a>GenerateServiceLastAccessedDetails</a>.
+     * >tracking period</a>. This field is also null if the report was generated at the service level and not the action
+     * level. For more information, see the <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.
      * </p>
      * 
      * @param trackedActionsLastAccessed
@@ -601,8 +598,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        This field is null if there no tracked actions or if the principal did not use the tracked actions within
      *        the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>. This field is also null if the report was generated at the service level and not
-     *        the action level. For more information, see the <code>Granularity</code> field in
+     *        >tracking period</a>. This field is also null if the report was generated at the service level and not the
+     *        action level. For more information, see the <code>Granularity</code> field in
      *        <a>GenerateServiceLastAccessedDetails</a>.
      */
 
@@ -623,9 +620,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a
      * href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>. This field is also null if the report was generated at the service level and not the
-     * action level. For more information, see the <code>Granularity</code> field in
-     * <a>GenerateServiceLastAccessedDetails</a>.
+     * >tracking period</a>. This field is also null if the report was generated at the service level and not the action
+     * level. For more information, see the <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -640,8 +636,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        This field is null if there no tracked actions or if the principal did not use the tracked actions within
      *        the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>. This field is also null if the report was generated at the service level and not
-     *        the action level. For more information, see the <code>Granularity</code> field in
+     *        >tracking period</a>. This field is also null if the report was generated at the service level and not the
+     *        action level. For more information, see the <code>Granularity</code> field in
      *        <a>GenerateServiceLastAccessedDetails</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -664,9 +660,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a
      * href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>. This field is also null if the report was generated at the service level and not the
-     * action level. For more information, see the <code>Granularity</code> field in
-     * <a>GenerateServiceLastAccessedDetails</a>.
+     * >tracking period</a>. This field is also null if the report was generated at the service level and not the action
+     * level. For more information, see the <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.
      * </p>
      * 
      * @param trackedActionsLastAccessed
@@ -676,8 +671,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        This field is null if there no tracked actions or if the principal did not use the tracked actions within
      *        the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>. This field is also null if the report was generated at the service level and not
-     *        the action level. For more information, see the <code>Granularity</code> field in
+     *        >tracking period</a>. This field is also null if the report was generated at the service level and not the
+     *        action level. For more information, see the <code>Granularity</code> field in
      *        <a>GenerateServiceLastAccessedDetails</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

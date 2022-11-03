@@ -21,8 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents a REST API.
  * </p>
- * <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RestApi implements Serializable, Cloneable, StructuredPojo {
@@ -65,8 +63,8 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> warnings;
     /**
      * <p>
-     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
-     * UTF-8-encoded text payloads.
+     * The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text
+     * payloads.
      * </p>
      */
     private java.util.List<String> binaryMediaTypes;
@@ -81,24 +79,21 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     private Integer minimumCompressionSize;
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are:
-     * <ul>
-     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li>
-     * </ul>
+     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      */
     private String apiKeySource;
     /**
      * <p>
-     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * The endpoint configuration of this RestApi showing the endpoint types of the API.
      * </p>
      */
     private EndpointConfiguration endpointConfiguration;
     /**
      * <p>
-     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
      * configuration.
      * </p>
      */
@@ -112,8 +107,8 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
-     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
-     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
      * </p>
      */
     private Boolean disableExecuteApiEndpoint;
@@ -390,12 +385,12 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
-     * UTF-8-encoded text payloads.
+     * The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text
+     * payloads.
      * </p>
      * 
-     * @return The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
-     *         only UTF-8-encoded text payloads.
+     * @return The list of binary media types supported by the RestApi. By default, the RestApi supports only
+     *         UTF-8-encoded text payloads.
      */
 
     public java.util.List<String> getBinaryMediaTypes() {
@@ -404,13 +399,13 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
-     * UTF-8-encoded text payloads.
+     * The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text
+     * payloads.
      * </p>
      * 
      * @param binaryMediaTypes
-     *        The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
-     *        only UTF-8-encoded text payloads.
+     *        The list of binary media types supported by the RestApi. By default, the RestApi supports only
+     *        UTF-8-encoded text payloads.
      */
 
     public void setBinaryMediaTypes(java.util.Collection<String> binaryMediaTypes) {
@@ -424,8 +419,8 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
-     * UTF-8-encoded text payloads.
+     * The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text
+     * payloads.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -434,8 +429,8 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param binaryMediaTypes
-     *        The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
-     *        only UTF-8-encoded text payloads.
+     *        The list of binary media types supported by the RestApi. By default, the RestApi supports only
+     *        UTF-8-encoded text payloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,13 +446,13 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
-     * UTF-8-encoded text payloads.
+     * The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text
+     * payloads.
      * </p>
      * 
      * @param binaryMediaTypes
-     *        The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
-     *        only UTF-8-encoded text payloads.
+     *        The list of binary media types supported by the RestApi. By default, the RestApi supports only
+     *        UTF-8-encoded text payloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,21 +521,16 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are:
-     * <ul>
-     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li>
-     * </ul>
+     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metering requests according to a usage plan. Valid values are:
-     *        <ul>
-     *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     *        authorizer.</li>
-     *        </ul>
+     *        The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *        <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     *        <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *        authorizer.
      * @see ApiKeySourceType
      */
 
@@ -550,20 +540,15 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are:
-     * <ul>
-     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li>
-     * </ul>
+     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
-     * @return The source of the API key for metering requests according to a usage plan. Valid values are:
-     *         <ul>
-     *         <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     *         <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     *         authorizer.</li>
-     *         </ul>
+     * @return The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *         <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     *         <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *         authorizer.
      * @see ApiKeySourceType
      */
 
@@ -573,21 +558,16 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are:
-     * <ul>
-     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li>
-     * </ul>
+     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metering requests according to a usage plan. Valid values are:
-     *        <ul>
-     *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     *        authorizer.</li>
-     *        </ul>
+     *        The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *        <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     *        <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *        authorizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApiKeySourceType
      */
@@ -599,21 +579,16 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are:
-     * <ul>
-     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li>
-     * </ul>
+     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metering requests according to a usage plan. Valid values are:
-     *        <ul>
-     *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
-     *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
-     *        authorizer.</li>
-     *        </ul>
+     *        The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *        <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
+     *        <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *        authorizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApiKeySourceType
      */
@@ -625,11 +600,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * The endpoint configuration of this RestApi showing the endpoint types of the API.
      * </p>
      * 
      * @param endpointConfiguration
-     *        The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     *        The endpoint configuration of this RestApi showing the endpoint types of the API.
      */
 
     public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
@@ -638,10 +613,10 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * The endpoint configuration of this RestApi showing the endpoint types of the API.
      * </p>
      * 
-     * @return The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * @return The endpoint configuration of this RestApi showing the endpoint types of the API.
      */
 
     public EndpointConfiguration getEndpointConfiguration() {
@@ -650,11 +625,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * The endpoint configuration of this RestApi showing the endpoint types of the API.
      * </p>
      * 
      * @param endpointConfiguration
-     *        The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     *        The endpoint configuration of this RestApi showing the endpoint types of the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,12 +640,12 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
      * configuration.
      * </p>
      * 
      * @param policy
-     *        A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     *        A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
      *        configuration.
      */
 
@@ -680,12 +655,12 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
      * configuration.
      * </p>
      * 
-     * @return A stringified JSON policy document that applies to this RestApi regardless of the caller and
-     *         <a>Method</a> configuration.
+     * @return A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
+     *         configuration.
      */
 
     public String getPolicy() {
@@ -694,12 +669,12 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
      * configuration.
      * </p>
      * 
      * @param policy
-     *        A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     *        A stringified JSON policy document that applies to this RestApi regardless of the caller and Method
      *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -780,15 +755,15 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
-     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
-     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
      * </p>
      * 
      * @param disableExecuteApiEndpoint
      *        Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
-     *        default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
-     *        endpoint. To require that clients use a custom domain name to invoke your API, disable the default
-     *        endpoint.
+     *        default, clients can invoke your API with the default
+     *        <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a
+     *        custom domain name to invoke your API, disable the default endpoint.
      */
 
     public void setDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
@@ -798,14 +773,14 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
-     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
-     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
      * </p>
      * 
      * @return Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
-     *         default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
-     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
-     *         endpoint.
+     *         default, clients can invoke your API with the default
+     *         <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a
+     *         custom domain name to invoke your API, disable the default endpoint.
      */
 
     public Boolean getDisableExecuteApiEndpoint() {
@@ -815,15 +790,15 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
-     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
-     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
      * </p>
      * 
      * @param disableExecuteApiEndpoint
      *        Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
-     *        default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
-     *        endpoint. To require that clients use a custom domain name to invoke your API, disable the default
-     *        endpoint.
+     *        default, clients can invoke your API with the default
+     *        <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a
+     *        custom domain name to invoke your API, disable the default endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -835,14 +810,14 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
-     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
-     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
      * </p>
      * 
      * @return Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
-     *         default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
-     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
-     *         endpoint.
+     *         default, clients can invoke your API with the default
+     *         <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a
+     *         custom domain name to invoke your API, disable the default endpoint.
      */
 
     public Boolean isDisableExecuteApiEndpoint() {

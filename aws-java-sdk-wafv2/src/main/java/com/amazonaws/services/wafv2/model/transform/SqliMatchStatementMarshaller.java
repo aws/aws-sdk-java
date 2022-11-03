@@ -32,6 +32,8 @@ public class SqliMatchStatementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FieldToMatch").build();
     private static final MarshallingInfo<List> TEXTTRANSFORMATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TextTransformations").build();
+    private static final MarshallingInfo<String> SENSITIVITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SensitivityLevel").build();
 
     private static final SqliMatchStatementMarshaller instance = new SqliMatchStatementMarshaller();
 
@@ -51,6 +53,7 @@ public class SqliMatchStatementMarshaller {
         try {
             protocolMarshaller.marshall(sqliMatchStatement.getFieldToMatch(), FIELDTOMATCH_BINDING);
             protocolMarshaller.marshall(sqliMatchStatement.getTextTransformations(), TEXTTRANSFORMATIONS_BINDING);
+            protocolMarshaller.marshall(sqliMatchStatement.getSensitivityLevel(), SENSITIVITYLEVEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

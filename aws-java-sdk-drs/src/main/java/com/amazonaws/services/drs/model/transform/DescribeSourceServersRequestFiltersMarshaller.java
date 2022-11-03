@@ -32,6 +32,8 @@ public class DescribeSourceServersRequestFiltersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hardwareId").build();
     private static final MarshallingInfo<List> SOURCESERVERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerIDs").build();
+    private static final MarshallingInfo<List> STAGINGACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stagingAccountIDs").build();
 
     private static final DescribeSourceServersRequestFiltersMarshaller instance = new DescribeSourceServersRequestFiltersMarshaller();
 
@@ -51,6 +53,7 @@ public class DescribeSourceServersRequestFiltersMarshaller {
         try {
             protocolMarshaller.marshall(describeSourceServersRequestFilters.getHardwareId(), HARDWAREID_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequestFilters.getSourceServerIDs(), SOURCESERVERIDS_BINDING);
+            protocolMarshaller.marshall(describeSourceServersRequestFilters.getStagingAccountIDs(), STAGINGACCOUNTIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

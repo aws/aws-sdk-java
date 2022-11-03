@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the SNS topics associated with a notification rule.
+ * Information about the Chatbot topics or Chatbot clients associated with a notification rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Target" target="_top">AWS API
@@ -30,24 +30,59 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target type. Can be an Amazon SNS topic.
+     * The target type. Can be an Chatbot topic or Chatbot client.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chatbot topics are specified as <code>SNS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String targetType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      * </p>
      */
     private String targetAddress;
 
     /**
      * <p>
-     * The target type. Can be an Amazon SNS topic.
+     * The target type. Can be an Chatbot topic or Chatbot client.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chatbot topics are specified as <code>SNS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param targetType
-     *        The target type. Can be an Amazon SNS topic.
+     *        The target type. Can be an Chatbot topic or Chatbot client.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Chatbot topics are specified as <code>SNS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setTargetType(String targetType) {
@@ -56,10 +91,33 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target type. Can be an Amazon SNS topic.
+     * The target type. Can be an Chatbot topic or Chatbot client.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chatbot topics are specified as <code>SNS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The target type. Can be an Amazon SNS topic.
+     * @return The target type. Can be an Chatbot topic or Chatbot client.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Chatbot topics are specified as <code>SNS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getTargetType() {
@@ -68,11 +126,34 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target type. Can be an Amazon SNS topic.
+     * The target type. Can be an Chatbot topic or Chatbot client.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chatbot topics are specified as <code>SNS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param targetType
-     *        The target type. Can be an Amazon SNS topic.
+     *        The target type. Can be an Chatbot topic or Chatbot client.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Chatbot topics are specified as <code>SNS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +164,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      * </p>
      * 
      * @param targetAddress
-     *        The Amazon Resource Name (ARN) of the SNS topic.
+     *        The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      */
 
     public void setTargetAddress(String targetAddress) {
@@ -96,10 +177,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SNS topic.
+     * @return The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      */
 
     public String getTargetAddress() {
@@ -108,11 +189,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      * </p>
      * 
      * @param targetAddress
-     *        The Amazon Resource Name (ARN) of the SNS topic.
+     *        The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

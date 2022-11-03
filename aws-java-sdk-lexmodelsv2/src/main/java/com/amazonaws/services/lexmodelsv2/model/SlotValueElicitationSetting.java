@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Settings that you can use for eliciting a slot value.
+ * Specifies the elicitation setting details for constituent sub slots of a composite slot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueElicitationSetting"
@@ -57,6 +57,12 @@ public class SlotValueElicitationSetting implements Serializable, Cloneable, Str
     private java.util.List<SampleUtterance> sampleUtterances;
 
     private WaitAndContinueSpecification waitAndContinueSpecification;
+    /**
+     * <p>
+     * Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     * </p>
+     */
+    private SlotCaptureSetting slotCaptureSetting;
 
     /**
      * <p>
@@ -317,6 +323,46 @@ public class SlotValueElicitationSetting implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     * </p>
+     * 
+     * @param slotCaptureSetting
+     *        Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     */
+
+    public void setSlotCaptureSetting(SlotCaptureSetting slotCaptureSetting) {
+        this.slotCaptureSetting = slotCaptureSetting;
+    }
+
+    /**
+     * <p>
+     * Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     * </p>
+     * 
+     * @return Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     */
+
+    public SlotCaptureSetting getSlotCaptureSetting() {
+        return this.slotCaptureSetting;
+    }
+
+    /**
+     * <p>
+     * Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     * </p>
+     * 
+     * @param slotCaptureSetting
+     *        Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SlotValueElicitationSetting withSlotCaptureSetting(SlotCaptureSetting slotCaptureSetting) {
+        setSlotCaptureSetting(slotCaptureSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -337,7 +383,9 @@ public class SlotValueElicitationSetting implements Serializable, Cloneable, Str
         if (getSampleUtterances() != null)
             sb.append("SampleUtterances: ").append(getSampleUtterances()).append(",");
         if (getWaitAndContinueSpecification() != null)
-            sb.append("WaitAndContinueSpecification: ").append(getWaitAndContinueSpecification());
+            sb.append("WaitAndContinueSpecification: ").append(getWaitAndContinueSpecification()).append(",");
+        if (getSlotCaptureSetting() != null)
+            sb.append("SlotCaptureSetting: ").append(getSlotCaptureSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +420,10 @@ public class SlotValueElicitationSetting implements Serializable, Cloneable, Str
             return false;
         if (other.getWaitAndContinueSpecification() != null && other.getWaitAndContinueSpecification().equals(this.getWaitAndContinueSpecification()) == false)
             return false;
+        if (other.getSlotCaptureSetting() == null ^ this.getSlotCaptureSetting() == null)
+            return false;
+        if (other.getSlotCaptureSetting() != null && other.getSlotCaptureSetting().equals(this.getSlotCaptureSetting()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +437,7 @@ public class SlotValueElicitationSetting implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getPromptSpecification() == null) ? 0 : getPromptSpecification().hashCode());
         hashCode = prime * hashCode + ((getSampleUtterances() == null) ? 0 : getSampleUtterances().hashCode());
         hashCode = prime * hashCode + ((getWaitAndContinueSpecification() == null) ? 0 : getWaitAndContinueSpecification().hashCode());
+        hashCode = prime * hashCode + ((getSlotCaptureSetting() == null) ? 0 : getSlotCaptureSetting().hashCode());
         return hashCode;
     }
 

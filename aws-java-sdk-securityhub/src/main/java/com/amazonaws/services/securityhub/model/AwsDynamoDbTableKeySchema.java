@@ -36,7 +36,7 @@ public class AwsDynamoDbTableKeySchema implements Serializable, Cloneable, Struc
     private String attributeName;
     /**
      * <p>
-     * The type of key used for the key schema attribute.
+     * The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.
      * </p>
      */
     private String keyType;
@@ -83,11 +83,12 @@ public class AwsDynamoDbTableKeySchema implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of key used for the key schema attribute.
+     * The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.
      * </p>
      * 
      * @param keyType
-     *        The type of key used for the key schema attribute.
+     *        The type of key used for the key schema attribute. Valid values are <code>HASH</code> or
+     *        <code>RANGE</code>.
      */
 
     public void setKeyType(String keyType) {
@@ -96,10 +97,11 @@ public class AwsDynamoDbTableKeySchema implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of key used for the key schema attribute.
+     * The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.
      * </p>
      * 
-     * @return The type of key used for the key schema attribute.
+     * @return The type of key used for the key schema attribute. Valid values are <code>HASH</code> or
+     *         <code>RANGE</code>.
      */
 
     public String getKeyType() {
@@ -108,11 +110,12 @@ public class AwsDynamoDbTableKeySchema implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of key used for the key schema attribute.
+     * The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.
      * </p>
      * 
      * @param keyType
-     *        The type of key used for the key schema attribute.
+     *        The type of key used for the key schema attribute. Valid values are <code>HASH</code> or
+     *        <code>RANGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

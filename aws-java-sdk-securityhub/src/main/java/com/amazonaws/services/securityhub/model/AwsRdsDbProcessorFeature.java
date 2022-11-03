@@ -30,7 +30,7 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the processor feature.
+     * The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
      * </p>
      */
     private String name;
@@ -43,11 +43,11 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the processor feature.
+     * The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
      * </p>
      * 
      * @param name
-     *        The name of the processor feature.
+     *        The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
      */
 
     public void setName(String name) {
@@ -56,10 +56,11 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the processor feature.
+     * The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
      * </p>
      * 
-     * @return The name of the processor feature.
+     * @return The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>
+     *         .
      */
 
     public String getName() {
@@ -68,11 +69,11 @@ public class AwsRdsDbProcessorFeature implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the processor feature.
+     * The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
      * </p>
      * 
      * @param name
-     *        The name of the processor feature.
+     *        The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

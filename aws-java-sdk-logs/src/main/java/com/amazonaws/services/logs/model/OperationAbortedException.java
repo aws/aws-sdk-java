@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Multiple requests to update the same resource were in conflict.
+ * Multiple concurrent requests to update the same resource were in conflict.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

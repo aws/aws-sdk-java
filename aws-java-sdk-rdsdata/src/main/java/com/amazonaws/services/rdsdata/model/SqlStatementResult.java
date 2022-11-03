@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * 
  * <pre>
- * <code> &lt;important&gt; &lt;p&gt;This data structure is only used with the deprecated &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt; &lt;/important&gt; </code>
+ * <code> &lt;note&gt; &lt;p&gt;This data structure is only used with the deprecated &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt; &lt;/note&gt; </code>
  * </pre>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlStatementResult" target="_top">AWS API
@@ -34,56 +34,16 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of records updated by a SQL statement.
-     * </p>
-     */
-    private Long numberOfRecordsUpdated;
-    /**
-     * <p>
      * The result set of the SQL statement.
      * </p>
      */
     private ResultFrame resultFrame;
-
     /**
      * <p>
      * The number of records updated by a SQL statement.
      * </p>
-     * 
-     * @param numberOfRecordsUpdated
-     *        The number of records updated by a SQL statement.
      */
-
-    public void setNumberOfRecordsUpdated(Long numberOfRecordsUpdated) {
-        this.numberOfRecordsUpdated = numberOfRecordsUpdated;
-    }
-
-    /**
-     * <p>
-     * The number of records updated by a SQL statement.
-     * </p>
-     * 
-     * @return The number of records updated by a SQL statement.
-     */
-
-    public Long getNumberOfRecordsUpdated() {
-        return this.numberOfRecordsUpdated;
-    }
-
-    /**
-     * <p>
-     * The number of records updated by a SQL statement.
-     * </p>
-     * 
-     * @param numberOfRecordsUpdated
-     *        The number of records updated by a SQL statement.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SqlStatementResult withNumberOfRecordsUpdated(Long numberOfRecordsUpdated) {
-        setNumberOfRecordsUpdated(numberOfRecordsUpdated);
-        return this;
-    }
+    private Long numberOfRecordsUpdated;
 
     /**
      * <p>
@@ -126,6 +86,46 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
+     * 
+     * @param numberOfRecordsUpdated
+     *        The number of records updated by a SQL statement.
+     */
+
+    public void setNumberOfRecordsUpdated(Long numberOfRecordsUpdated) {
+        this.numberOfRecordsUpdated = numberOfRecordsUpdated;
+    }
+
+    /**
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
+     * 
+     * @return The number of records updated by a SQL statement.
+     */
+
+    public Long getNumberOfRecordsUpdated() {
+        return this.numberOfRecordsUpdated;
+    }
+
+    /**
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
+     * 
+     * @param numberOfRecordsUpdated
+     *        The number of records updated by a SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SqlStatementResult withNumberOfRecordsUpdated(Long numberOfRecordsUpdated) {
+        setNumberOfRecordsUpdated(numberOfRecordsUpdated);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -137,10 +137,10 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNumberOfRecordsUpdated() != null)
-            sb.append("NumberOfRecordsUpdated: ").append(getNumberOfRecordsUpdated()).append(",");
         if (getResultFrame() != null)
-            sb.append("ResultFrame: ").append(getResultFrame());
+            sb.append("ResultFrame: ").append(getResultFrame()).append(",");
+        if (getNumberOfRecordsUpdated() != null)
+            sb.append("NumberOfRecordsUpdated: ").append(getNumberOfRecordsUpdated());
         sb.append("}");
         return sb.toString();
     }
@@ -155,13 +155,13 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
         if (obj instanceof SqlStatementResult == false)
             return false;
         SqlStatementResult other = (SqlStatementResult) obj;
-        if (other.getNumberOfRecordsUpdated() == null ^ this.getNumberOfRecordsUpdated() == null)
-            return false;
-        if (other.getNumberOfRecordsUpdated() != null && other.getNumberOfRecordsUpdated().equals(this.getNumberOfRecordsUpdated()) == false)
-            return false;
         if (other.getResultFrame() == null ^ this.getResultFrame() == null)
             return false;
         if (other.getResultFrame() != null && other.getResultFrame().equals(this.getResultFrame()) == false)
+            return false;
+        if (other.getNumberOfRecordsUpdated() == null ^ this.getNumberOfRecordsUpdated() == null)
+            return false;
+        if (other.getNumberOfRecordsUpdated() != null && other.getNumberOfRecordsUpdated().equals(this.getNumberOfRecordsUpdated()) == false)
             return false;
         return true;
     }
@@ -171,8 +171,8 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNumberOfRecordsUpdated() == null) ? 0 : getNumberOfRecordsUpdated().hashCode());
         hashCode = prime * hashCode + ((getResultFrame() == null) ? 0 : getResultFrame().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfRecordsUpdated() == null) ? 0 : getNumberOfRecordsUpdated().hashCode());
         return hashCode;
     }
 

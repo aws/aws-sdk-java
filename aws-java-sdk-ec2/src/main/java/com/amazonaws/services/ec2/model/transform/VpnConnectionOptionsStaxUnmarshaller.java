@@ -75,6 +75,16 @@ public class VpnConnectionOptionsStaxUnmarshaller implements Unmarshaller<VpnCon
                     continue;
                 }
 
+                if (context.testExpression("outsideIpAddressType", targetDepth)) {
+                    vpnConnectionOptions.setOutsideIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("transportTransitGatewayAttachmentId", targetDepth)) {
+                    vpnConnectionOptions.setTransportTransitGatewayAttachmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tunnelInsideIpVersion", targetDepth)) {
                     vpnConnectionOptions.setTunnelInsideIpVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -104,7 +104,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * <li>
      * <p>
      * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
-     * days for EC2-Compute Service.
+     * days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code>
+     * in Cost Management Console preferences.
      * </p>
      * </li>
      * </ul>
@@ -305,7 +306,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * <li>
      * <p>
      * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
-     * days for EC2-Compute Service.
+     * days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code>
+     * in Cost Management Console preferences.
      * </p>
      * </li>
      * </ul>
@@ -485,7 +487,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         <li>
      *         <p>
      *         RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
-     *         last 14 days for EC2-Compute Service.
+     *         last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and
+     *         <code>Resource Level Data</code> in Cost Management Console preferences.
      *         </p>
      *         </li>
      *         </ul>
@@ -669,7 +672,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * <li>
      * <p>
      * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
-     * days for EC2-Compute Service.
+     * days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code>
+     * in Cost Management Console preferences.
      * </p>
      * </li>
      * </ul>
@@ -848,7 +852,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
-     *        last 14 days for EC2-Compute Service.
+     *        last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and
+     *        <code>Resource Level Data</code> in Cost Management Console preferences.
      *        </p>
      *        </li>
      *        </ul>
@@ -1037,7 +1042,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * <li>
      * <p>
      * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
-     * days for EC2-Compute Service.
+     * days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code>
+     * in Cost Management Console preferences.
      * </p>
      * </li>
      * </ul>
@@ -1221,7 +1227,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
-     *        last 14 days for EC2-Compute Service.
+     *        last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and
+     *        <code>Resource Level Data</code> in Cost Management Console preferences.
      *        </p>
      *        </li>
      *        </ul>
@@ -1412,7 +1419,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * <li>
      * <p>
      * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
-     * days for EC2-Compute Service.
+     * days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code>
+     * in Cost Management Console preferences.
      * </p>
      * </li>
      * </ul>
@@ -1591,7 +1599,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
-     *        last 14 days for EC2-Compute Service.
+     *        last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and
+     *        <code>Resource Level Data</code> in Cost Management Console preferences.
      *        </p>
      *        </li>
      *        </ul>

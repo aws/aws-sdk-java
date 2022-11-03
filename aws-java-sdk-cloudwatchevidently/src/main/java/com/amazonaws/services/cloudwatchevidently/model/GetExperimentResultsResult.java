@@ -25,6 +25,14 @@ public class GetExperimentResultsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * If the experiment doesn't yet have enough events to provide valid results, this field is returned with the
+     * message <code>Not enough events to generate results</code>. If there are enough events to provide valid results,
+     * this field is not returned.
+     * </p>
+     */
+    private String details;
+    /**
+     * <p>
      * An array of structures that include the reports that you requested.
      * </p>
      */
@@ -41,6 +49,58 @@ public class GetExperimentResultsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<java.util.Date> timestamps;
+
+    /**
+     * <p>
+     * If the experiment doesn't yet have enough events to provide valid results, this field is returned with the
+     * message <code>Not enough events to generate results</code>. If there are enough events to provide valid results,
+     * this field is not returned.
+     * </p>
+     * 
+     * @param details
+     *        If the experiment doesn't yet have enough events to provide valid results, this field is returned with the
+     *        message <code>Not enough events to generate results</code>. If there are enough events to provide valid
+     *        results, this field is not returned.
+     */
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    /**
+     * <p>
+     * If the experiment doesn't yet have enough events to provide valid results, this field is returned with the
+     * message <code>Not enough events to generate results</code>. If there are enough events to provide valid results,
+     * this field is not returned.
+     * </p>
+     * 
+     * @return If the experiment doesn't yet have enough events to provide valid results, this field is returned with
+     *         the message <code>Not enough events to generate results</code>. If there are enough events to provide
+     *         valid results, this field is not returned.
+     */
+
+    public String getDetails() {
+        return this.details;
+    }
+
+    /**
+     * <p>
+     * If the experiment doesn't yet have enough events to provide valid results, this field is returned with the
+     * message <code>Not enough events to generate results</code>. If there are enough events to provide valid results,
+     * this field is not returned.
+     * </p>
+     * 
+     * @param details
+     *        If the experiment doesn't yet have enough events to provide valid results, this field is returned with the
+     *        message <code>Not enough events to generate results</code>. If there are enough events to provide valid
+     *        results, this field is not returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetExperimentResultsResult withDetails(String details) {
+        setDetails(details);
+        return this;
+    }
 
     /**
      * <p>
@@ -264,6 +324,8 @@ public class GetExperimentResultsResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDetails() != null)
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getReports() != null)
             sb.append("Reports: ").append(getReports()).append(",");
         if (getResultsData() != null)
@@ -284,6 +346,10 @@ public class GetExperimentResultsResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof GetExperimentResultsResult == false)
             return false;
         GetExperimentResultsResult other = (GetExperimentResultsResult) obj;
+        if (other.getDetails() == null ^ this.getDetails() == null)
+            return false;
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
+            return false;
         if (other.getReports() == null ^ this.getReports() == null)
             return false;
         if (other.getReports() != null && other.getReports().equals(this.getReports()) == false)
@@ -304,6 +370,7 @@ public class GetExperimentResultsResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         hashCode = prime * hashCode + ((getReports() == null) ? 0 : getReports().hashCode());
         hashCode = prime * hashCode + ((getResultsData() == null) ? 0 : getResultsData().hashCode());
         hashCode = prime * hashCode + ((getTimestamps() == null) ? 0 : getTimestamps().hashCode());

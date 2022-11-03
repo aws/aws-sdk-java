@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Shape {
 
     Scalar("Scalar"),
-    List("List");
+    List("List"),
+    Composite("Composite");
 
     private String value;
 

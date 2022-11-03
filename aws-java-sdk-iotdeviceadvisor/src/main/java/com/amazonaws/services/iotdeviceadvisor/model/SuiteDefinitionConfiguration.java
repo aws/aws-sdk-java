@@ -48,6 +48,12 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
     private Boolean intendedForQualification;
     /**
      * <p>
+     * Verifies if the test suite is a long duration test.
+     * </p>
+     */
+    private Boolean isLongDurationTest;
+    /**
+     * <p>
      * Gets test suite root group.
      * </p>
      */
@@ -58,6 +64,12 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
      * </p>
      */
     private String devicePermissionRoleArn;
+    /**
+     * <p>
+     * Gets the MQTT protocol that is configured in the suite definition.
+     * </p>
+     */
+    private String protocol;
 
     /**
      * <p>
@@ -223,6 +235,58 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * Verifies if the test suite is a long duration test.
+     * </p>
+     * 
+     * @param isLongDurationTest
+     *        Verifies if the test suite is a long duration test.
+     */
+
+    public void setIsLongDurationTest(Boolean isLongDurationTest) {
+        this.isLongDurationTest = isLongDurationTest;
+    }
+
+    /**
+     * <p>
+     * Verifies if the test suite is a long duration test.
+     * </p>
+     * 
+     * @return Verifies if the test suite is a long duration test.
+     */
+
+    public Boolean getIsLongDurationTest() {
+        return this.isLongDurationTest;
+    }
+
+    /**
+     * <p>
+     * Verifies if the test suite is a long duration test.
+     * </p>
+     * 
+     * @param isLongDurationTest
+     *        Verifies if the test suite is a long duration test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SuiteDefinitionConfiguration withIsLongDurationTest(Boolean isLongDurationTest) {
+        setIsLongDurationTest(isLongDurationTest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Verifies if the test suite is a long duration test.
+     * </p>
+     * 
+     * @return Verifies if the test suite is a long duration test.
+     */
+
+    public Boolean isLongDurationTest() {
+        return this.isLongDurationTest;
+    }
+
+    /**
+     * <p>
      * Gets test suite root group.
      * </p>
      * 
@@ -302,6 +366,65 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Gets the MQTT protocol that is configured in the suite definition.
+     * </p>
+     * 
+     * @param protocol
+     *        Gets the MQTT protocol that is configured in the suite definition.
+     * @see Protocol
+     */
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    /**
+     * <p>
+     * Gets the MQTT protocol that is configured in the suite definition.
+     * </p>
+     * 
+     * @return Gets the MQTT protocol that is configured in the suite definition.
+     * @see Protocol
+     */
+
+    public String getProtocol() {
+        return this.protocol;
+    }
+
+    /**
+     * <p>
+     * Gets the MQTT protocol that is configured in the suite definition.
+     * </p>
+     * 
+     * @param protocol
+     *        Gets the MQTT protocol that is configured in the suite definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public SuiteDefinitionConfiguration withProtocol(String protocol) {
+        setProtocol(protocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Gets the MQTT protocol that is configured in the suite definition.
+     * </p>
+     * 
+     * @param protocol
+     *        Gets the MQTT protocol that is configured in the suite definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public SuiteDefinitionConfiguration withProtocol(Protocol protocol) {
+        this.protocol = protocol.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -319,10 +442,14 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
             sb.append("Devices: ").append(getDevices()).append(",");
         if (getIntendedForQualification() != null)
             sb.append("IntendedForQualification: ").append(getIntendedForQualification()).append(",");
+        if (getIsLongDurationTest() != null)
+            sb.append("IsLongDurationTest: ").append(getIsLongDurationTest()).append(",");
         if (getRootGroup() != null)
             sb.append("RootGroup: ").append(getRootGroup()).append(",");
         if (getDevicePermissionRoleArn() != null)
-            sb.append("DevicePermissionRoleArn: ").append(getDevicePermissionRoleArn());
+            sb.append("DevicePermissionRoleArn: ").append(getDevicePermissionRoleArn()).append(",");
+        if (getProtocol() != null)
+            sb.append("Protocol: ").append(getProtocol());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +476,10 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
             return false;
         if (other.getIntendedForQualification() != null && other.getIntendedForQualification().equals(this.getIntendedForQualification()) == false)
             return false;
+        if (other.getIsLongDurationTest() == null ^ this.getIsLongDurationTest() == null)
+            return false;
+        if (other.getIsLongDurationTest() != null && other.getIsLongDurationTest().equals(this.getIsLongDurationTest()) == false)
+            return false;
         if (other.getRootGroup() == null ^ this.getRootGroup() == null)
             return false;
         if (other.getRootGroup() != null && other.getRootGroup().equals(this.getRootGroup()) == false)
@@ -356,6 +487,10 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
         if (other.getDevicePermissionRoleArn() == null ^ this.getDevicePermissionRoleArn() == null)
             return false;
         if (other.getDevicePermissionRoleArn() != null && other.getDevicePermissionRoleArn().equals(this.getDevicePermissionRoleArn()) == false)
+            return false;
+        if (other.getProtocol() == null ^ this.getProtocol() == null)
+            return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         return true;
     }
@@ -368,8 +503,10 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getSuiteDefinitionName() == null) ? 0 : getSuiteDefinitionName().hashCode());
         hashCode = prime * hashCode + ((getDevices() == null) ? 0 : getDevices().hashCode());
         hashCode = prime * hashCode + ((getIntendedForQualification() == null) ? 0 : getIntendedForQualification().hashCode());
+        hashCode = prime * hashCode + ((getIsLongDurationTest() == null) ? 0 : getIsLongDurationTest().hashCode());
         hashCode = prime * hashCode + ((getRootGroup() == null) ? 0 : getRootGroup().hashCode());
         hashCode = prime * hashCode + ((getDevicePermissionRoleArn() == null) ? 0 : getDevicePermissionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         return hashCode;
     }
 

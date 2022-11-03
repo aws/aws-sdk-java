@@ -26,7 +26,7 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      * </p>
      */
     private String embedUrl;
@@ -45,11 +45,11 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      * </p>
      * 
      * @param embedUrl
-     *        The embed URL for the Amazon QuickSight dashboard or console.
+     *        The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      */
 
     public void setEmbedUrl(String embedUrl) {
@@ -58,10 +58,10 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      * </p>
      * 
-     * @return The embed URL for the Amazon QuickSight dashboard or console.
+     * @return The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      */
 
     public String getEmbedUrl() {
@@ -70,11 +70,11 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      * </p>
      * 
      * @param embedUrl
-     *        The embed URL for the Amazon QuickSight dashboard or console.
+     *        The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

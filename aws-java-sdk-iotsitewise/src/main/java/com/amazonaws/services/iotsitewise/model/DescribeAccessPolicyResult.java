@@ -41,8 +41,8 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
     private String accessPolicyArn;
     /**
      * <p>
-     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
-     * policy applies.
+     * The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy
+     * applies.
      * </p>
      */
     private Identity accessPolicyIdentity;
@@ -174,13 +174,13 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
-     * policy applies.
+     * The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy
+     * applies.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this
-     *        access policy applies.
+     *        The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access
+     *        policy applies.
      */
 
     public void setAccessPolicyIdentity(Identity accessPolicyIdentity) {
@@ -189,12 +189,12 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
-     * policy applies.
+     * The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy
+     * applies.
      * </p>
      * 
-     * @return The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this
-     *         access policy applies.
+     * @return The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access
+     *         policy applies.
      */
 
     public Identity getAccessPolicyIdentity() {
@@ -203,13 +203,13 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
-     * policy applies.
+     * The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy
+     * applies.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this
-     *        access policy applies.
+     *        The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access
+     *        policy applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

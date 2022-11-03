@@ -27,7 +27,7 @@ public class DeregisterMailDomainRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain will be deregistered.
+     * The WorkMail organization for which the domain will be deregistered.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class DeregisterMailDomainRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain will be deregistered.
+     * The WorkMail organization for which the domain will be deregistered.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the domain will be deregistered.
+     *        The WorkMail organization for which the domain will be deregistered.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class DeregisterMailDomainRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain will be deregistered.
+     * The WorkMail organization for which the domain will be deregistered.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the domain will be deregistered.
+     * @return The WorkMail organization for which the domain will be deregistered.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class DeregisterMailDomainRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain will be deregistered.
+     * The WorkMail organization for which the domain will be deregistered.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the domain will be deregistered.
+     *        The WorkMail organization for which the domain will be deregistered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

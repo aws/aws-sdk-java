@@ -38,7 +38,7 @@ public class PushNotificationPreferences implements Serializable, Cloneable, Str
     private String allowNotifications;
     /**
      * <p>
-     * The simple JSON object used to send a subset of a push notification to the requsted member.
+     * The simple JSON object used to send a subset of a push notification to the requested member.
      * </p>
      */
     private String filterRule;
@@ -120,11 +120,11 @@ public class PushNotificationPreferences implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The simple JSON object used to send a subset of a push notification to the requsted member.
+     * The simple JSON object used to send a subset of a push notification to the requested member.
      * </p>
      * 
      * @param filterRule
-     *        The simple JSON object used to send a subset of a push notification to the requsted member.
+     *        The simple JSON object used to send a subset of a push notification to the requested member.
      */
 
     public void setFilterRule(String filterRule) {
@@ -133,10 +133,10 @@ public class PushNotificationPreferences implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The simple JSON object used to send a subset of a push notification to the requsted member.
+     * The simple JSON object used to send a subset of a push notification to the requested member.
      * </p>
      * 
-     * @return The simple JSON object used to send a subset of a push notification to the requsted member.
+     * @return The simple JSON object used to send a subset of a push notification to the requested member.
      */
 
     public String getFilterRule() {
@@ -145,11 +145,11 @@ public class PushNotificationPreferences implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The simple JSON object used to send a subset of a push notification to the requsted member.
+     * The simple JSON object used to send a subset of a push notification to the requested member.
      * </p>
      * 
      * @param filterRule
-     *        The simple JSON object used to send a subset of a push notification to the requsted member.
+     *        The simple JSON object used to send a subset of a push notification to the requested member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

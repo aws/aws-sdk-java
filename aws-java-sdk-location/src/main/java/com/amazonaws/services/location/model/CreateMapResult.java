@@ -38,7 +38,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -110,7 +110,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -120,7 +120,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *        Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      *        </p>
      *        </li>
      */
@@ -136,7 +136,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -145,7 +145,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *         <ul>
      *         <li>
      *         <p>
-     *         Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *         Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      *         </p>
      *         </li>
      */
@@ -161,7 +161,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -171,7 +171,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *        Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

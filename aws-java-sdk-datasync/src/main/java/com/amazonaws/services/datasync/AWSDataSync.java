@@ -29,11 +29,13 @@ import com.amazonaws.services.datasync.model.*;
  * <fullname>DataSync</fullname>
  * <p>
  * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Simple Storage Service (Amazon S3) or Amazon Elastic File System (Amazon EFS).
+ * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
+ * providers and Amazon Web Services storage services.
  * </p>
  * <p>
- * This API interface reference for DataSync contains documentation for a programming interface that you can use to
- * manage DataSync.
+ * This API interface reference includes documentation for using DataSync programmatically. For complete information,
+ * see the <i> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync User
+ * Guide</a> </i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,14 +51,13 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Cancels execution of a task.
+     * Stops an DataSync task execution that's in progress. The transfer of some files are abruptly interrupted. File
+     * contents that're transferred to the destination might be incomplete or inconsistent with the source files.
      * </p>
      * <p>
-     * When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that
-     * are transferred to the destination might be incomplete or inconsistent with the source files. However, if you
-     * start a new task execution on the same task and you allow the task execution to complete, file content on the
-     * destination is complete and consistent. This applies to other unexpected failures that interrupt a task
-     * execution. In all of these cases, DataSync successfully complete the transfer when you start the next task
+     * However, if you start a new task execution using the same task and allow it to finish, file content on the
+     * destination will be complete and consistent. This applies to other unexpected failures that interrupt a task
+     * execution. In all of these cases, DataSync successfully completes the transfer when you start the next task
      * execution.
      * </p>
      * 
@@ -75,10 +76,11 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Activates an DataSync agent that you have deployed on your host. The activation process associates your agent
-     * with your account. In the activation process, you specify information such as the Amazon Web Services Region that
-     * you want to activate the agent in. You activate the agent in the Amazon Web Services Region where your target
-     * locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services Region.
+     * Activates an DataSync agent that you have deployed in your storage environment. The activation process associates
+     * your agent with your account. In the activation process, you specify information such as the Amazon Web Services
+     * Region that you want to activate the agent in. You activate the agent in the Amazon Web Services Region where
+     * your target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services
+     * Region.
      * </p>
      * <p>
      * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
@@ -93,7 +95,6 @@ public interface AWSDataSync {
      * Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that ensures
      * minimal interruption to your tasks.
      * </p>
-     * <p/>
      * 
      * @param createAgentRequest
      *        CreateAgentRequest
@@ -110,7 +111,9 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon EFS file system.
+     * Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer. For more information,
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating a location
+     * for Amazon EFS</a>.
      * </p>
      * 
      * @param createLocationEfsRequest
@@ -145,8 +148,37 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon FSx for OpenZFS file system.
+     * Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can access for a transfer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating a location for
+     * FSx for ONTAP</a>.
      * </p>
+     * 
+     * @param createLocationFsxOntapRequest
+     * @return Result of the CreateLocationFsxOntap operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.CreateLocationFsxOntap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLocationFsxOntapResult createLocationFsxOntap(CreateLocationFsxOntapRequest createLocationFsxOntapRequest);
+
+    /**
+     * <p>
+     * Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access for a transfer. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating a location for
+     * FSx for OpenZFS</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Request parameters related to <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code>
+     * operation.
+     * </p>
+     * </note>
      * 
      * @param createLocationFsxOpenZfsRequest
      * @return Result of the CreateLocationFsxOpenZfs operation returned by the service.
@@ -214,10 +246,9 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a self-managed object storage bucket. For more information about self-managed object
-     * storage locations, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for
-     * object storage</a>.
+     * Creates an endpoint for an object storage system that DataSync can access for a transfer. For more information,
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a
+     * location for object storage</a>.
      * </p>
      * 
      * @param createLocationObjectStorageRequest
@@ -235,7 +266,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon S3 bucket.
+     * Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.
      * </p>
      * <p>
      * For more information, see <a
@@ -276,30 +307,33 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates a task.
+     * Configures a task, which defines where and how DataSync transfers your data.
      * </p>
      * <p>
-     * A task includes a source location and a destination location, and a configuration that specifies how data is
-     * transferred. A task always transfers data from the source location to the destination location. The configuration
-     * specifies options such as task scheduling, bandwidth limits, etc. A task is the complete definition of a data
-     * transfer.
+     * A task includes a source location, a destination location, and the preferences for how and when you want to
+     * transfer your data (such as bandwidth limits, scheduling, among other options).
      * </p>
      * <p>
      * When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services
-     * Regions, one of the two locations that you specify must reside in the Region where DataSync is being used. The
-     * other location must be specified in a different Region.
+     * Regions, one of your locations must reside in the Region where you're using DataSync.
      * </p>
      * <p>
-     * You can transfer data between commercial Amazon Web Services Regions except for China, or between Amazon Web
-     * Services GovCloud (US) Regions.
+     * For more information, see the following topics:
      * </p>
-     * <important>
+     * <ul>
+     * <li>
      * <p>
-     * When you use DataSync to copy files or objects between Amazon Web Services Regions, you pay for data transfer
-     * between Regions. This is billed as data transfer OUT from your source Region to your destination Region. For more
-     * information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer pricing</a>.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working with DataSync
+     * locations</a>
      * </p>
-     * </important>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure DataSync task
+     * settings</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createTaskRequest
      *        CreateTaskRequest
@@ -392,7 +426,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata, such as the path information about an Amazon EFS location.
+     * Returns metadata about your DataSync location for an Amazon EFS file system.
      * </p>
      * 
      * @param describeLocationEfsRequest
@@ -410,7 +444,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about an Amazon FSx for Lustre location, such as information about its path.
+     * Provides details about how an DataSync location for an Amazon FSx for Lustre file system is configured.
      * </p>
      * 
      * @param describeLocationFsxLustreRequest
@@ -427,8 +461,37 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about an Amazon FSx for OpenZFS location, such as information about its path.
+     * Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP file system is configured.
      * </p>
+     * <note>
+     * <p>
+     * If your location uses SMB, the <code>DescribeLocationFsxOntap</code> operation doesn't actually return a
+     * <code>Password</code>.
+     * </p>
+     * </note>
+     * 
+     * @param describeLocationFsxOntapRequest
+     * @return Result of the DescribeLocationFsxOntap operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.DescribeLocationFsxOntap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocationFsxOntapResult describeLocationFsxOntap(DescribeLocationFsxOntapRequest describeLocationFsxOntapRequest);
+
+    /**
+     * <p>
+     * Provides details about how an DataSync location for an Amazon FSx for OpenZFS file system is configured.
+     * </p>
+     * <note>
+     * <p>
+     * Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code>
+     * operation.
+     * </p>
+     * </note>
      * 
      * @param describeLocationFsxOpenZfsRequest
      * @return Result of the DescribeLocationFsxOpenZfs operation returned by the service.
@@ -497,10 +560,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about a self-managed object storage server location. For more information about self-managed
-     * object storage locations, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for
-     * object storage</a>.
+     * Returns metadata about your DataSync location for an object storage system.
      * </p>
      * 
      * @param describeLocationObjectStorageRequest
@@ -677,7 +737,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns a list of all the tasks.
+     * Returns a list of the DataSync tasks you created.
      * </p>
      * 
      * @param listTasksRequest
@@ -813,8 +873,8 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Updates some of the parameters of a previously created location for self-managed object storage server access.
-     * For information about creating a self-managed object storage location, see <a
+     * Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For
+     * information about creating a self-managed object storage location, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for
      * object storage</a>.
      * </p>

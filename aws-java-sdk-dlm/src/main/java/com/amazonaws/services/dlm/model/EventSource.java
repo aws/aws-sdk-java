@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies an event that triggers an event-based policy.
+ * <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EventSource" target="_top">AWS API

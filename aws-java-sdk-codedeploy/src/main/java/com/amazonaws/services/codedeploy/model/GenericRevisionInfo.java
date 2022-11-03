@@ -42,19 +42,19 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<String> deploymentGroups;
     /**
      * <p>
-     * When the revision was first used by AWS CodeDeploy.
+     * When the revision was first used by CodeDeploy.
      * </p>
      */
     private java.util.Date firstUsedTime;
     /**
      * <p>
-     * When the revision was last used by AWS CodeDeploy.
+     * When the revision was last used by CodeDeploy.
      * </p>
      */
     private java.util.Date lastUsedTime;
     /**
      * <p>
-     * When the revision was registered with AWS CodeDeploy.
+     * When the revision was registered with CodeDeploy.
      * </p>
      */
     private java.util.Date registerTime;
@@ -174,11 +174,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was first used by AWS CodeDeploy.
+     * When the revision was first used by CodeDeploy.
      * </p>
      * 
      * @param firstUsedTime
-     *        When the revision was first used by AWS CodeDeploy.
+     *        When the revision was first used by CodeDeploy.
      */
 
     public void setFirstUsedTime(java.util.Date firstUsedTime) {
@@ -187,10 +187,10 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was first used by AWS CodeDeploy.
+     * When the revision was first used by CodeDeploy.
      * </p>
      * 
-     * @return When the revision was first used by AWS CodeDeploy.
+     * @return When the revision was first used by CodeDeploy.
      */
 
     public java.util.Date getFirstUsedTime() {
@@ -199,11 +199,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was first used by AWS CodeDeploy.
+     * When the revision was first used by CodeDeploy.
      * </p>
      * 
      * @param firstUsedTime
-     *        When the revision was first used by AWS CodeDeploy.
+     *        When the revision was first used by CodeDeploy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +214,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was last used by AWS CodeDeploy.
+     * When the revision was last used by CodeDeploy.
      * </p>
      * 
      * @param lastUsedTime
-     *        When the revision was last used by AWS CodeDeploy.
+     *        When the revision was last used by CodeDeploy.
      */
 
     public void setLastUsedTime(java.util.Date lastUsedTime) {
@@ -227,10 +227,10 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was last used by AWS CodeDeploy.
+     * When the revision was last used by CodeDeploy.
      * </p>
      * 
-     * @return When the revision was last used by AWS CodeDeploy.
+     * @return When the revision was last used by CodeDeploy.
      */
 
     public java.util.Date getLastUsedTime() {
@@ -239,11 +239,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was last used by AWS CodeDeploy.
+     * When the revision was last used by CodeDeploy.
      * </p>
      * 
      * @param lastUsedTime
-     *        When the revision was last used by AWS CodeDeploy.
+     *        When the revision was last used by CodeDeploy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +254,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was registered with AWS CodeDeploy.
+     * When the revision was registered with CodeDeploy.
      * </p>
      * 
      * @param registerTime
-     *        When the revision was registered with AWS CodeDeploy.
+     *        When the revision was registered with CodeDeploy.
      */
 
     public void setRegisterTime(java.util.Date registerTime) {
@@ -267,10 +267,10 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was registered with AWS CodeDeploy.
+     * When the revision was registered with CodeDeploy.
      * </p>
      * 
-     * @return When the revision was registered with AWS CodeDeploy.
+     * @return When the revision was registered with CodeDeploy.
      */
 
     public java.util.Date getRegisterTime() {
@@ -279,11 +279,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the revision was registered with AWS CodeDeploy.
+     * When the revision was registered with CodeDeploy.
      * </p>
      * 
      * @param registerTime
-     *        When the revision was registered with AWS CodeDeploy.
+     *        When the revision was registered with CodeDeploy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

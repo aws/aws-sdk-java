@@ -2563,4 +2563,17 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<ValidateE911AddressResult> validateE911AddressAsync(ValidateE911AddressRequest request) {
+
+        return validateE911AddressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateE911AddressResult> validateE911AddressAsync(ValidateE911AddressRequest request,
+            com.amazonaws.handlers.AsyncHandler<ValidateE911AddressRequest, ValidateE911AddressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

@@ -27,18 +27,18 @@ public class DescribeSourceLocationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      */
     private String sourceLocationName;
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -47,10 +47,10 @@ public class DescribeSourceLocationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location.
      */
 
     public String getSourceLocationName() {
@@ -59,11 +59,11 @@ public class DescribeSourceLocationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

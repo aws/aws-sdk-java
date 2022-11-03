@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.
+ * The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

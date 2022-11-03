@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The deployment with the IAM user or AWS account does not exist.
+ * The deployment with the IAM user or Amazon Web Services account does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

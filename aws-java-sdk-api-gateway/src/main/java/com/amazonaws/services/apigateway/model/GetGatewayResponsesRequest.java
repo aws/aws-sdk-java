@@ -19,9 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
- * definitions for gateway responses, the result will be the API Gateway-generated default <a>GatewayResponses</a>
- * collection for the supported response types.
+ * Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for
+ * gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported
+ * response types.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,13 +29,13 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support
+     * The current pagination position in the paged result set. The GatewayResponse collection does not support
      * pagination and the position does not apply here.
      * </p>
      */
@@ -43,18 +43,18 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
-     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     * GatewayResponses collection does not support pagination and the limit does not apply here.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -63,10 +63,10 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -75,11 +75,11 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,13 +90,13 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support
+     * The current pagination position in the paged result set. The GatewayResponse collection does not support
      * pagination and the position does not apply here.
      * </p>
      * 
      * @param position
-     *        The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not
-     *        support pagination and the position does not apply here.
+     *        The current pagination position in the paged result set. The GatewayResponse collection does not support
+     *        pagination and the position does not apply here.
      */
 
     public void setPosition(String position) {
@@ -105,12 +105,12 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support
+     * The current pagination position in the paged result set. The GatewayResponse collection does not support
      * pagination and the position does not apply here.
      * </p>
      * 
-     * @return The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not
-     *         support pagination and the position does not apply here.
+     * @return The current pagination position in the paged result set. The GatewayResponse collection does not support
+     *         pagination and the position does not apply here.
      */
 
     public String getPosition() {
@@ -119,13 +119,13 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support
+     * The current pagination position in the paged result set. The GatewayResponse collection does not support
      * pagination and the position does not apply here.
      * </p>
      * 
      * @param position
-     *        The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not
-     *        support pagination and the position does not apply here.
+     *        The current pagination position in the paged result set. The GatewayResponse collection does not support
+     *        pagination and the position does not apply here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,12 +137,12 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
-     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     * GatewayResponses collection does not support pagination and the limit does not apply here.
      * </p>
      * 
      * @param limit
      *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
-     *        <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     *        GatewayResponses collection does not support pagination and the limit does not apply here.
      */
 
     public void setLimit(Integer limit) {
@@ -152,11 +152,11 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
-     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     * GatewayResponses collection does not support pagination and the limit does not apply here.
      * </p>
      * 
      * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
-     *         The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     *         The GatewayResponses collection does not support pagination and the limit does not apply here.
      */
 
     public Integer getLimit() {
@@ -166,12 +166,12 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
-     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     * GatewayResponses collection does not support pagination and the limit does not apply here.
      * </p>
      * 
      * @param limit
      *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
-     *        <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
+     *        GatewayResponses collection does not support pagination and the limit does not apply here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -228,6 +228,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (restoreDBClusterFromS3Request.getNetworkType() != null) {
+            request.addParameter("NetworkType", StringUtils.fromString(restoreDBClusterFromS3Request.getNetworkType()));
+        }
+
         return request;
     }
 

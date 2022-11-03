@@ -19,17 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.
+ * Represents a unique identifier for a version of a deployed RestApi that is callable by users.
  * </p>
- * <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> that the stage points to.
+     * The identifier of the Deployment that the stage points to.
      * </p>
      */
     private String deploymentId;
@@ -73,7 +71,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private String cacheClusterStatus;
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * A map that defines the method settings for a Stage resource. Keys (designated as
      * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
      * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
@@ -81,8 +79,8 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, MethodSetting> methodSettings;
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
-     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore
+     * characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
     private java.util.Map<String, String> variables;
@@ -106,13 +104,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private CanarySettings canarySettings;
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      */
     private Boolean tracingEnabled;
     /**
      * <p>
-     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * The ARN of the WebAcl associated with the Stage.
      * </p>
      */
     private String webAclArn;
@@ -137,11 +135,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> that the stage points to.
+     * The identifier of the Deployment that the stage points to.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the <a>Deployment</a> that the stage points to.
+     *        The identifier of the Deployment that the stage points to.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -150,10 +148,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> that the stage points to.
+     * The identifier of the Deployment that the stage points to.
      * </p>
      * 
-     * @return The identifier of the <a>Deployment</a> that the stage points to.
+     * @return The identifier of the Deployment that the stage points to.
      */
 
     public String getDeploymentId() {
@@ -162,11 +160,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> that the stage points to.
+     * The identifier of the Deployment that the stage points to.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the <a>Deployment</a> that the stage points to.
+     *        The identifier of the Deployment that the stage points to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -474,12 +472,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * A map that defines the method settings for a Stage resource. Keys (designated as
      * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
      * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      * 
-     * @return A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * @return A map that defines the method settings for a Stage resource. Keys (designated as
      *         <code>/{method_setting_key</code> below) are method paths defined as
      *         <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*&#47;\*</code>
      *         for overriding all methods in the stage.
@@ -491,13 +489,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * A map that defines the method settings for a Stage resource. Keys (designated as
      * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
      * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      * 
      * @param methodSettings
-     *        A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     *        A map that defines the method settings for a Stage resource. Keys (designated as
      *        <code>/{method_setting_key</code> below) are method paths defined as
      *        <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*&#47;\*</code>
      *        for overriding all methods in the stage.
@@ -509,13 +507,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * A map that defines the method settings for a Stage resource. Keys (designated as
      * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
      * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      * 
      * @param methodSettings
-     *        A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     *        A map that defines the method settings for a Stage resource. Keys (designated as
      *        <code>/{method_setting_key</code> below) are method paths defined as
      *        <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*&#47;\*</code>
      *        for overriding all methods in the stage.
@@ -557,12 +555,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
-     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore
+     * characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
-     * @return A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric
-     *         and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * @return A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and
+     *         underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -571,13 +569,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
-     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore
+     * characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric
-     *        and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and
+     *        underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -586,13 +584,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
-     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore
+     * characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric
-     *        and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and
+     *        underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,11 +749,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
      * @param tracingEnabled
-     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     *        Specifies whether active tracing with X-ray is enabled for the Stage.
      */
 
     public void setTracingEnabled(Boolean tracingEnabled) {
@@ -764,10 +762,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
-     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * @return Specifies whether active tracing with X-ray is enabled for the Stage.
      */
 
     public Boolean getTracingEnabled() {
@@ -776,11 +774,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
      * @param tracingEnabled
-     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     *        Specifies whether active tracing with X-ray is enabled for the Stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,10 +789,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
-     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * @return Specifies whether active tracing with X-ray is enabled for the Stage.
      */
 
     public Boolean isTracingEnabled() {
@@ -803,11 +801,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * The ARN of the WebAcl associated with the Stage.
      * </p>
      * 
      * @param webAclArn
-     *        The ARN of the WebAcl associated with the <a>Stage</a>.
+     *        The ARN of the WebAcl associated with the Stage.
      */
 
     public void setWebAclArn(String webAclArn) {
@@ -816,10 +814,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * The ARN of the WebAcl associated with the Stage.
      * </p>
      * 
-     * @return The ARN of the WebAcl associated with the <a>Stage</a>.
+     * @return The ARN of the WebAcl associated with the Stage.
      */
 
     public String getWebAclArn() {
@@ -828,11 +826,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * The ARN of the WebAcl associated with the Stage.
      * </p>
      * 
      * @param webAclArn
-     *        The ARN of the WebAcl associated with the <a>Stage</a>.
+     *        The ARN of the WebAcl associated with the Stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

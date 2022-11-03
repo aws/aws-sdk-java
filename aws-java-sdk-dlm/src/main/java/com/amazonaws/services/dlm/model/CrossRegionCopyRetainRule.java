@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the retention rule for cross-Region snapshot copies.
+ * Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or
+ * cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is
+ * deleted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyRetainRule" target="_top">AWS API
@@ -30,27 +32,28 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
-     * weeks, or 36500 days.
+     * The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to
+     * 1200 months, 5200 weeks, or 36500 days.
      * </p>
      */
     private Integer interval;
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      */
     private String intervalUnit;
 
     /**
      * <p>
-     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
-     * weeks, or 36500 days.
+     * The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to
+     * 1200 months, 5200 weeks, or 36500 days.
      * </p>
      * 
      * @param interval
-     *        The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months,
-     *        5200 weeks, or 36500 days.
+     *        The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is
+     *        equivalent to 1200 months, 5200 weeks, or 36500 days.
      */
 
     public void setInterval(Integer interval) {
@@ -59,12 +62,12 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
-     * weeks, or 36500 days.
+     * The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to
+     * 1200 months, 5200 weeks, or 36500 days.
      * </p>
      * 
-     * @return The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months,
-     *         5200 weeks, or 36500 days.
+     * @return The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is
+     *         equivalent to 1200 months, 5200 weeks, or 36500 days.
      */
 
     public Integer getInterval() {
@@ -73,13 +76,13 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
-     * weeks, or 36500 days.
+     * The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to
+     * 1200 months, 5200 weeks, or 36500 days.
      * </p>
      * 
      * @param interval
-     *        The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months,
-     *        5200 weeks, or 36500 days.
+     *        The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is
+     *        equivalent to 1200 months, 5200 weeks, or 36500 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +93,13 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time for time-based retention.
+     *        The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months,
+     *        specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @see RetentionIntervalUnitValues
      */
 
@@ -104,10 +109,12 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
-     * @return The unit of time for time-based retention.
+     * @return The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months,
+     *         specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @see RetentionIntervalUnitValues
      */
 
@@ -117,11 +124,13 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time for time-based retention.
+     *        The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months,
+     *        specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionIntervalUnitValues
      */
@@ -133,11 +142,13 @@ public class CrossRegionCopyRetainRule implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time for time-based retention.
+     *        The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months,
+     *        specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionIntervalUnitValues
      */

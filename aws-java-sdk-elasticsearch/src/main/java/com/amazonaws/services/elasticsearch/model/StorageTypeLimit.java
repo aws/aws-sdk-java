@@ -38,6 +38,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      * not applicable.
      * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is
      * not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
      * </ol>
      * </p>
      */
@@ -62,6 +66,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      * not applicable.
      * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is
      * not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
      * </ol>
      * </p>
      * 
@@ -77,6 +85,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      *        it is not applicable.
      *        <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if
      *        it is not applicable.
+     *        <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can
+     *        be empty if it is not applicable.
+     *        <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can
+     *        be empty if it is not applicable.
      *        </ol>
      */
 
@@ -97,6 +109,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      * not applicable.
      * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is
      * not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
      * </ol>
      * </p>
      * 
@@ -111,6 +127,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      *         it is not applicable.
      *         <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if
      *         it is not applicable.
+     *         <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can
+     *         be empty if it is not applicable.
+     *         <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can
+     *         be empty if it is not applicable.
      *         </ol>
      */
 
@@ -131,6 +151,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      * not applicable.
      * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is
      * not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty
+     * if it is not applicable.
      * </ol>
      * </p>
      * 
@@ -146,6 +170,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      *        it is not applicable.
      *        <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if
      *        it is not applicable.
+     *        <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can
+     *        be empty if it is not applicable.
+     *        <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can
+     *        be empty if it is not applicable.
      *        </ol>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -68,7 +68,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified domain from the Amazon Connect Voice ID system.
+     * Deletes the specified domain from Voice ID.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -81,7 +81,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified domain from the Amazon Connect Voice ID system.
+     * Deletes the specified domain from Voice ID.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -99,7 +99,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified fraudster from the Amazon Connect Voice ID system.
+     * Deletes the specified fraudster from Voice ID.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -112,7 +112,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified fraudster from the Amazon Connect Voice ID system.
+     * Deletes the specified fraudster from Voice ID.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -130,7 +130,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified speaker from the Amazon Connect Voice ID system.
+     * Deletes the specified speaker from Voice ID.
      * </p>
      * 
      * @param deleteSpeakerRequest
@@ -143,7 +143,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified speaker from the Amazon Connect Voice ID system.
+     * Deletes the specified speaker from Voice ID.
      * </p>
      * 
      * @param deleteSpeakerRequest
@@ -520,11 +520,10 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Opts out a speaker from Voice ID system. A speaker can be opted out regardless of whether or not they already
-     * exist in the system. If they don't yet exist, a new speaker is created in an opted out state. If they already
-     * exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication
-     * requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in the
-     * system.
+     * Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in
+     * Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their
+     * existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are
+     * rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.
      * </p>
      * 
      * @param optOutSpeakerRequest
@@ -537,11 +536,10 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Opts out a speaker from Voice ID system. A speaker can be opted out regardless of whether or not they already
-     * exist in the system. If they don't yet exist, a new speaker is created in an opted out state. If they already
-     * exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication
-     * requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in the
-     * system.
+     * Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in
+     * Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their
+     * existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are
+     * rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.
      * </p>
      * 
      * @param optOutSpeakerRequest
@@ -627,7 +625,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Tags an Amazon Connect Voice ID resource with the provided list of tags.
+     * Tags a Voice ID resource with the provided list of tags.
      * </p>
      * 
      * @param tagResourceRequest
@@ -640,7 +638,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Tags an Amazon Connect Voice ID resource with the provided list of tags.
+     * Tags a Voice ID resource with the provided list of tags.
      * </p>
      * 
      * @param tagResourceRequest

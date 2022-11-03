@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.translate.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class ImportTerminologyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminologyData").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionKey").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ImportTerminologyRequestMarshaller instance = new ImportTerminologyRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class ImportTerminologyRequestMarshaller {
             protocolMarshaller.marshall(importTerminologyRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(importTerminologyRequest.getTerminologyData(), TERMINOLOGYDATA_BINDING);
             protocolMarshaller.marshall(importTerminologyRequest.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
+            protocolMarshaller.marshall(importTerminologyRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

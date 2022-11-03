@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A property that allows a node to repel a set of pods.
+ * A property that allows a node to repel a set of pods. For more information, see <a
+ * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed
+ * node groups</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Taint" target="_top">AWS API Documentation</a>

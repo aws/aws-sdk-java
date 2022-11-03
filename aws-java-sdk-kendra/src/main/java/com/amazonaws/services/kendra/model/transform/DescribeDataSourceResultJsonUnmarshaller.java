@@ -68,6 +68,10 @@ public class DescribeDataSourceResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeDataSourceResult.setConfiguration(DataSourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeDataSourceResult.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     describeDataSourceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

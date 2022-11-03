@@ -31,6 +31,8 @@ public class StartProjectVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProjectVersionArn").build();
     private static final MarshallingInfo<Integer> MININFERENCEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinInferenceUnits").build();
+    private static final MarshallingInfo<Integer> MAXINFERENCEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxInferenceUnits").build();
 
     private static final StartProjectVersionRequestMarshaller instance = new StartProjectVersionRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class StartProjectVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(startProjectVersionRequest.getProjectVersionArn(), PROJECTVERSIONARN_BINDING);
             protocolMarshaller.marshall(startProjectVersionRequest.getMinInferenceUnits(), MININFERENCEUNITS_BINDING);
+            protocolMarshaller.marshall(startProjectVersionRequest.getMaxInferenceUnits(), MAXINFERENCEUNITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

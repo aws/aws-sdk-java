@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Source configuration for a specified media capture pipeline.
+ * Source configuration for a specified media pipeline.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/SourceConfiguration"
@@ -30,21 +30,18 @@ public class SourceConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The selected video streams to capture for a specified media capture pipeline. The number of video streams can't
-     * exceed 25.
+     * The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      * </p>
      */
     private SelectedVideoStreams selectedVideoStreams;
 
     /**
      * <p>
-     * The selected video streams to capture for a specified media capture pipeline. The number of video streams can't
-     * exceed 25.
+     * The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      * </p>
      * 
      * @param selectedVideoStreams
-     *        The selected video streams to capture for a specified media capture pipeline. The number of video streams
-     *        can't exceed 25.
+     *        The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      */
 
     public void setSelectedVideoStreams(SelectedVideoStreams selectedVideoStreams) {
@@ -53,12 +50,10 @@ public class SourceConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The selected video streams to capture for a specified media capture pipeline. The number of video streams can't
-     * exceed 25.
+     * The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      * </p>
      * 
-     * @return The selected video streams to capture for a specified media capture pipeline. The number of video streams
-     *         can't exceed 25.
+     * @return The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      */
 
     public SelectedVideoStreams getSelectedVideoStreams() {
@@ -67,13 +62,11 @@ public class SourceConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The selected video streams to capture for a specified media capture pipeline. The number of video streams can't
-     * exceed 25.
+     * The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      * </p>
      * 
      * @param selectedVideoStreams
-     *        The selected video streams to capture for a specified media capture pipeline. The number of video streams
-     *        can't exceed 25.
+     *        The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

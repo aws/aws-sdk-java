@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class CreateDatabaseRequestMarshaller {
             .marshallLocationName("CatalogId").build();
     private static final MarshallingInfo<StructuredPojo> DATABASEINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseInput").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDatabaseRequestMarshaller instance = new CreateDatabaseRequestMarshaller();
 
@@ -50,6 +54,7 @@ public class CreateDatabaseRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDatabaseRequest.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(createDatabaseRequest.getDatabaseInput(), DATABASEINPUT_BINDING);
+            protocolMarshaller.marshall(createDatabaseRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

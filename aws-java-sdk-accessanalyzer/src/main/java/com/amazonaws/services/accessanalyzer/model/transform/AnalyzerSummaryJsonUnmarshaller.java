@@ -52,6 +52,14 @@ public class AnalyzerSummaryJsonUnmarshaller implements Unmarshaller<AnalyzerSum
                     context.nextToken();
                     analyzerSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    analyzerSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    analyzerSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     analyzerSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -64,9 +72,10 @@ public class AnalyzerSummaryJsonUnmarshaller implements Unmarshaller<AnalyzerSum
                     context.nextToken();
                     analyzerSummary.setLastResourceAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("name", targetDepth)) {
+                if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    analyzerSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    analyzerSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -75,15 +84,6 @@ public class AnalyzerSummaryJsonUnmarshaller implements Unmarshaller<AnalyzerSum
                 if (context.testExpression("statusReason", targetDepth)) {
                     context.nextToken();
                     analyzerSummary.setStatusReason(StatusReasonJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("tags", targetDepth)) {
-                    context.nextToken();
-                    analyzerSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
-                            .unmarshall(context));
-                }
-                if (context.testExpression("type", targetDepth)) {
-                    context.nextToken();
-                    analyzerSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

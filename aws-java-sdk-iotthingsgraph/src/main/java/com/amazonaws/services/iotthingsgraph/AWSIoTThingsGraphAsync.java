@@ -36,6 +36,9 @@ import com.amazonaws.services.iotthingsgraph.model.*;
  * For more information about how AWS IoT Things Graph works, see the <a
  * href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User Guide</a>.
  * </p>
+ * <p>
+ * The AWS IoT Things Graph service is discontinued.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
@@ -55,6 +58,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateEntityToThingResult> associateEntityToThingAsync(AssociateEntityToThingRequest associateEntityToThingRequest);
 
     /**
@@ -76,6 +80,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateEntityToThingResult> associateEntityToThingAsync(AssociateEntityToThingRequest associateEntityToThingRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateEntityToThingRequest, AssociateEntityToThingResult> asyncHandler);
 
@@ -93,6 +98,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateFlowTemplateResult> createFlowTemplateAsync(CreateFlowTemplateRequest createFlowTemplateRequest);
 
     /**
@@ -113,6 +119,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateFlowTemplateResult> createFlowTemplateAsync(CreateFlowTemplateRequest createFlowTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFlowTemplateRequest, CreateFlowTemplateResult> asyncHandler);
 
@@ -146,6 +153,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateSystemInstanceResult> createSystemInstanceAsync(CreateSystemInstanceRequest createSystemInstanceRequest);
 
     /**
@@ -182,6 +190,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateSystemInstanceResult> createSystemInstanceAsync(CreateSystemInstanceRequest createSystemInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSystemInstanceRequest, CreateSystemInstanceResult> asyncHandler);
 
@@ -197,6 +206,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateSystemTemplateResult> createSystemTemplateAsync(CreateSystemTemplateRequest createSystemTemplateRequest);
 
     /**
@@ -215,6 +225,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateSystemTemplateResult> createSystemTemplateAsync(CreateSystemTemplateRequest createSystemTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSystemTemplateRequest, CreateSystemTemplateResult> asyncHandler);
 
@@ -231,6 +242,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteFlowTemplateResult> deleteFlowTemplateAsync(DeleteFlowTemplateRequest deleteFlowTemplateRequest);
 
     /**
@@ -250,13 +262,14 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteFlowTemplateResult> deleteFlowTemplateAsync(DeleteFlowTemplateRequest deleteFlowTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFlowTemplateRequest, DeleteFlowTemplateResult> asyncHandler);
 
     /**
      * <p>
      * Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and
-     * flows that use entities in the namespace before performing this action.
+     * flows that use entities in the namespace before performing this action. This action takes no request parameters.
      * </p>
      * 
      * @param deleteNamespaceRequest
@@ -265,12 +278,13 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest deleteNamespaceRequest);
 
     /**
      * <p>
      * Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and
-     * flows that use entities in the namespace before performing this action.
+     * flows that use entities in the namespace before performing this action. This action takes no request parameters.
      * </p>
      * 
      * @param deleteNamespaceRequest
@@ -283,6 +297,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest deleteNamespaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResult> asyncHandler);
 
@@ -301,6 +316,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSystemInstanceResult> deleteSystemInstanceAsync(DeleteSystemInstanceRequest deleteSystemInstanceRequest);
 
     /**
@@ -322,6 +338,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSystemInstanceResult> deleteSystemInstanceAsync(DeleteSystemInstanceRequest deleteSystemInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSystemInstanceRequest, DeleteSystemInstanceResult> asyncHandler);
 
@@ -337,6 +354,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSystemTemplateResult> deleteSystemTemplateAsync(DeleteSystemTemplateRequest deleteSystemTemplateRequest);
 
     /**
@@ -355,6 +373,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSystemTemplateResult> deleteSystemTemplateAsync(DeleteSystemTemplateRequest deleteSystemTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSystemTemplateRequest, DeleteSystemTemplateResult> asyncHandler);
 
@@ -388,6 +407,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeploySystemInstanceResult> deploySystemInstanceAsync(DeploySystemInstanceRequest deploySystemInstanceRequest);
 
     /**
@@ -424,6 +444,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeploySystemInstanceResult> deploySystemInstanceAsync(DeploySystemInstanceRequest deploySystemInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<DeploySystemInstanceRequest, DeploySystemInstanceResult> asyncHandler);
 
@@ -439,6 +460,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeprecateFlowTemplateResult> deprecateFlowTemplateAsync(DeprecateFlowTemplateRequest deprecateFlowTemplateRequest);
 
     /**
@@ -457,6 +479,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeprecateFlowTemplateResult> deprecateFlowTemplateAsync(DeprecateFlowTemplateRequest deprecateFlowTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeprecateFlowTemplateRequest, DeprecateFlowTemplateResult> asyncHandler);
 
@@ -471,6 +494,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeprecateSystemTemplateResult> deprecateSystemTemplateAsync(DeprecateSystemTemplateRequest deprecateSystemTemplateRequest);
 
     /**
@@ -488,6 +512,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeprecateSystemTemplateResult> deprecateSystemTemplateAsync(DeprecateSystemTemplateRequest deprecateSystemTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeprecateSystemTemplateRequest, DeprecateSystemTemplateResult> asyncHandler);
 
@@ -502,6 +527,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest describeNamespaceRequest);
 
     /**
@@ -519,6 +545,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest describeNamespaceRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeNamespaceRequest, DescribeNamespaceResult> asyncHandler);
 
@@ -534,6 +561,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DissociateEntityFromThingResult> dissociateEntityFromThingAsync(
             DissociateEntityFromThingRequest dissociateEntityFromThingRequest);
 
@@ -553,6 +581,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DissociateEntityFromThingResult> dissociateEntityFromThingAsync(
             DissociateEntityFromThingRequest dissociateEntityFromThingRequest,
             com.amazonaws.handlers.AsyncHandler<DissociateEntityFromThingRequest, DissociateEntityFromThingResult> asyncHandler);
@@ -619,6 +648,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetEntitiesResult> getEntitiesAsync(GetEntitiesRequest getEntitiesRequest);
 
     /**
@@ -687,6 +717,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetEntitiesResult> getEntitiesAsync(GetEntitiesRequest getEntitiesRequest,
             com.amazonaws.handlers.AsyncHandler<GetEntitiesRequest, GetEntitiesResult> asyncHandler);
 
@@ -702,6 +733,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetFlowTemplateResult> getFlowTemplateAsync(GetFlowTemplateRequest getFlowTemplateRequest);
 
     /**
@@ -720,6 +752,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetFlowTemplateResult> getFlowTemplateAsync(GetFlowTemplateRequest getFlowTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<GetFlowTemplateRequest, GetFlowTemplateResult> asyncHandler);
 
@@ -736,6 +769,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetFlowTemplateRevisionsResult> getFlowTemplateRevisionsAsync(GetFlowTemplateRevisionsRequest getFlowTemplateRevisionsRequest);
 
     /**
@@ -755,6 +789,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetFlowTemplateRevisionsResult> getFlowTemplateRevisionsAsync(GetFlowTemplateRevisionsRequest getFlowTemplateRevisionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetFlowTemplateRevisionsRequest, GetFlowTemplateRevisionsResult> asyncHandler);
 
@@ -769,6 +804,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetNamespaceDeletionStatusResult> getNamespaceDeletionStatusAsync(
             GetNamespaceDeletionStatusRequest getNamespaceDeletionStatusRequest);
 
@@ -787,6 +823,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetNamespaceDeletionStatusResult> getNamespaceDeletionStatusAsync(
             GetNamespaceDeletionStatusRequest getNamespaceDeletionStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetNamespaceDeletionStatusRequest, GetNamespaceDeletionStatusResult> asyncHandler);
@@ -802,6 +839,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSystemInstanceResult> getSystemInstanceAsync(GetSystemInstanceRequest getSystemInstanceRequest);
 
     /**
@@ -819,6 +857,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSystemInstanceResult> getSystemInstanceAsync(GetSystemInstanceRequest getSystemInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetSystemInstanceRequest, GetSystemInstanceResult> asyncHandler);
 
@@ -833,6 +872,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSystemTemplateResult> getSystemTemplateAsync(GetSystemTemplateRequest getSystemTemplateRequest);
 
     /**
@@ -850,6 +890,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSystemTemplateResult> getSystemTemplateAsync(GetSystemTemplateRequest getSystemTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<GetSystemTemplateRequest, GetSystemTemplateResult> asyncHandler);
 
@@ -866,6 +907,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSystemTemplateRevisionsResult> getSystemTemplateRevisionsAsync(
             GetSystemTemplateRevisionsRequest getSystemTemplateRevisionsRequest);
 
@@ -886,6 +928,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSystemTemplateRevisionsResult> getSystemTemplateRevisionsAsync(
             GetSystemTemplateRevisionsRequest getSystemTemplateRevisionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSystemTemplateRevisionsRequest, GetSystemTemplateRevisionsResult> asyncHandler);
@@ -901,6 +944,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetUploadStatusResult> getUploadStatusAsync(GetUploadStatusRequest getUploadStatusRequest);
 
     /**
@@ -918,6 +962,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetUploadStatusResult> getUploadStatusAsync(GetUploadStatusRequest getUploadStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetUploadStatusRequest, GetUploadStatusResult> asyncHandler);
 
@@ -932,6 +977,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListFlowExecutionMessagesResult> listFlowExecutionMessagesAsync(
             ListFlowExecutionMessagesRequest listFlowExecutionMessagesRequest);
 
@@ -950,6 +996,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListFlowExecutionMessagesResult> listFlowExecutionMessagesAsync(
             ListFlowExecutionMessagesRequest listFlowExecutionMessagesRequest,
             com.amazonaws.handlers.AsyncHandler<ListFlowExecutionMessagesRequest, ListFlowExecutionMessagesResult> asyncHandler);
@@ -965,6 +1012,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
@@ -982,6 +1030,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
@@ -997,6 +1046,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchEntitiesResult> searchEntitiesAsync(SearchEntitiesRequest searchEntitiesRequest);
 
     /**
@@ -1015,6 +1065,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchEntitiesResult> searchEntitiesAsync(SearchEntitiesRequest searchEntitiesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchEntitiesRequest, SearchEntitiesResult> asyncHandler);
 
@@ -1029,6 +1080,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchFlowExecutionsResult> searchFlowExecutionsAsync(SearchFlowExecutionsRequest searchFlowExecutionsRequest);
 
     /**
@@ -1046,6 +1098,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchFlowExecutionsResult> searchFlowExecutionsAsync(SearchFlowExecutionsRequest searchFlowExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchFlowExecutionsRequest, SearchFlowExecutionsResult> asyncHandler);
 
@@ -1060,6 +1113,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchFlowTemplatesResult> searchFlowTemplatesAsync(SearchFlowTemplatesRequest searchFlowTemplatesRequest);
 
     /**
@@ -1077,6 +1131,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchFlowTemplatesResult> searchFlowTemplatesAsync(SearchFlowTemplatesRequest searchFlowTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchFlowTemplatesRequest, SearchFlowTemplatesResult> asyncHandler);
 
@@ -1091,6 +1146,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchSystemInstancesResult> searchSystemInstancesAsync(SearchSystemInstancesRequest searchSystemInstancesRequest);
 
     /**
@@ -1108,6 +1164,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchSystemInstancesResult> searchSystemInstancesAsync(SearchSystemInstancesRequest searchSystemInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchSystemInstancesRequest, SearchSystemInstancesResult> asyncHandler);
 
@@ -1123,6 +1180,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchSystemTemplatesResult> searchSystemTemplatesAsync(SearchSystemTemplatesRequest searchSystemTemplatesRequest);
 
     /**
@@ -1141,6 +1199,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchSystemTemplatesResult> searchSystemTemplatesAsync(SearchSystemTemplatesRequest searchSystemTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchSystemTemplatesRequest, SearchSystemTemplatesResult> asyncHandler);
 
@@ -1163,6 +1222,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchThingsResult> searchThingsAsync(SearchThingsRequest searchThingsRequest);
 
     /**
@@ -1188,6 +1248,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchThingsResult> searchThingsAsync(SearchThingsRequest searchThingsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchThingsRequest, SearchThingsResult> asyncHandler);
 
@@ -1202,6 +1263,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
@@ -1219,6 +1281,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
@@ -1233,6 +1296,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UndeploySystemInstanceResult> undeploySystemInstanceAsync(UndeploySystemInstanceRequest undeploySystemInstanceRequest);
 
     /**
@@ -1250,6 +1314,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UndeploySystemInstanceResult> undeploySystemInstanceAsync(UndeploySystemInstanceRequest undeploySystemInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<UndeploySystemInstanceRequest, UndeploySystemInstanceResult> asyncHandler);
 
@@ -1264,6 +1329,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
@@ -1281,6 +1347,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
@@ -1298,6 +1365,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateFlowTemplateResult> updateFlowTemplateAsync(UpdateFlowTemplateRequest updateFlowTemplateRequest);
 
     /**
@@ -1318,6 +1386,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateFlowTemplateResult> updateFlowTemplateAsync(UpdateFlowTemplateRequest updateFlowTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFlowTemplateRequest, UpdateFlowTemplateResult> asyncHandler);
 
@@ -1333,6 +1402,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateSystemTemplateResult> updateSystemTemplateAsync(UpdateSystemTemplateRequest updateSystemTemplateRequest);
 
     /**
@@ -1351,6 +1421,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateSystemTemplateResult> updateSystemTemplateAsync(UpdateSystemTemplateRequest updateSystemTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSystemTemplateRequest, UpdateSystemTemplateResult> asyncHandler);
 
@@ -1386,6 +1457,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UploadEntityDefinitionsResult> uploadEntityDefinitionsAsync(UploadEntityDefinitionsRequest uploadEntityDefinitionsRequest);
 
     /**
@@ -1424,6 +1496,7 @@ public interface AWSIoTThingsGraphAsync extends AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UploadEntityDefinitionsResult> uploadEntityDefinitionsAsync(UploadEntityDefinitionsRequest uploadEntityDefinitionsRequest,
             com.amazonaws.handlers.AsyncHandler<UploadEntityDefinitionsRequest, UploadEntityDefinitionsResult> asyncHandler);
 

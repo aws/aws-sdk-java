@@ -27,7 +27,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      */
     private String domainName;
@@ -82,7 +82,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     private String regionalCertificateArn;
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      */
     private EndpointConfiguration endpointConfiguration;
@@ -95,7 +95,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      */
@@ -112,11 +112,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      * 
      * @param domainName
-     *        [Required] The name of the <a>DomainName</a> resource.
+     *        The name of the DomainName resource.
      */
 
     public void setDomainName(String domainName) {
@@ -125,10 +125,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      * 
-     * @return [Required] The name of the <a>DomainName</a> resource.
+     * @return The name of the DomainName resource.
      */
 
     public String getDomainName() {
@@ -137,11 +137,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      * 
      * @param domainName
-     *        [Required] The name of the <a>DomainName</a> resource.
+     *        The name of the DomainName resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,11 +477,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      * 
      * @param endpointConfiguration
-     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     *        The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      */
 
     public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
@@ -490,10 +490,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      * 
-     * @return The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * @return The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      */
 
     public EndpointConfiguration getEndpointConfiguration() {
@@ -502,11 +502,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * </p>
      * 
      * @param endpointConfiguration
-     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     *        The endpoint configuration of this DomainName showing the endpoint types of the domain name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -591,12 +591,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
      * @param securityPolicy
-     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @see SecurityPolicy
      */
@@ -607,12 +607,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
-     * @return The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values
-     *         are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
+     *         <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @see SecurityPolicy
      */
 
@@ -622,12 +622,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
      * @param securityPolicy
-     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityPolicy
@@ -640,12 +640,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * </p>
      * 
      * @param securityPolicy
-     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are
      *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityPolicy

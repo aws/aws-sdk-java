@@ -161,6 +161,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String sshKeyName;
+    /**
+     * <p>
+     * The metadata options for the Amazon Lightsail instance.
+     * </p>
+     */
+    private InstanceMetadataOptions metadataOptions;
 
     /**
      * <p>
@@ -1230,6 +1236,46 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The metadata options for the Amazon Lightsail instance.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the Amazon Lightsail instance.
+     */
+
+    public void setMetadataOptions(InstanceMetadataOptions metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the Amazon Lightsail instance.
+     * </p>
+     * 
+     * @return The metadata options for the Amazon Lightsail instance.
+     */
+
+    public InstanceMetadataOptions getMetadataOptions() {
+        return this.metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the Amazon Lightsail instance.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the Amazon Lightsail instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withMetadataOptions(InstanceMetadataOptions metadataOptions) {
+        setMetadataOptions(metadataOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1282,7 +1328,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getSshKeyName() != null)
-            sb.append("SshKeyName: ").append(getSshKeyName());
+            sb.append("SshKeyName: ").append(getSshKeyName()).append(",");
+        if (getMetadataOptions() != null)
+            sb.append("MetadataOptions: ").append(getMetadataOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1381,6 +1429,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false)
             return false;
+        if (other.getMetadataOptions() == null ^ this.getMetadataOptions() == null)
+            return false;
+        if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1410,6 +1462,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode());
+        hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
         return hashCode;
     }
 

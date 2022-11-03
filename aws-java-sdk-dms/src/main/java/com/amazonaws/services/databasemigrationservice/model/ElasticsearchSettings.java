@@ -58,6 +58,14 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer errorRetryDuration;
+    /**
+     * <p>
+     * Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     * <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions
+     * 7. x and later. The default value is <code>false</code>.
+     * </p>
+     */
+    private Boolean useNewMappingType;
 
     /**
      * <p>
@@ -256,6 +264,74 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     * <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions
+     * 7. x and later. The default value is <code>false</code>.
+     * </p>
+     * 
+     * @param useNewMappingType
+     *        Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     *        <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in
+     *        versions 7. x and later. The default value is <code>false</code>.
+     */
+
+    public void setUseNewMappingType(Boolean useNewMappingType) {
+        this.useNewMappingType = useNewMappingType;
+    }
+
+    /**
+     * <p>
+     * Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     * <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions
+     * 7. x and later. The default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     *         <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in
+     *         versions 7. x and later. The default value is <code>false</code>.
+     */
+
+    public Boolean getUseNewMappingType() {
+        return this.useNewMappingType;
+    }
+
+    /**
+     * <p>
+     * Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     * <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions
+     * 7. x and later. The default value is <code>false</code>.
+     * </p>
+     * 
+     * @param useNewMappingType
+     *        Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     *        <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in
+     *        versions 7. x and later. The default value is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchSettings withUseNewMappingType(Boolean useNewMappingType) {
+        setUseNewMappingType(useNewMappingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     * <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions
+     * 7. x and later. The default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Set this option to <code>true</code> for DMS to migrate documentation using the documentation type
+     *         <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in
+     *         versions 7. x and later. The default value is <code>false</code>.
+     */
+
+    public Boolean isUseNewMappingType() {
+        return this.useNewMappingType;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -274,7 +350,9 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
         if (getFullLoadErrorPercentage() != null)
             sb.append("FullLoadErrorPercentage: ").append(getFullLoadErrorPercentage()).append(",");
         if (getErrorRetryDuration() != null)
-            sb.append("ErrorRetryDuration: ").append(getErrorRetryDuration());
+            sb.append("ErrorRetryDuration: ").append(getErrorRetryDuration()).append(",");
+        if (getUseNewMappingType() != null)
+            sb.append("UseNewMappingType: ").append(getUseNewMappingType());
         sb.append("}");
         return sb.toString();
     }
@@ -305,6 +383,10 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
             return false;
         if (other.getErrorRetryDuration() != null && other.getErrorRetryDuration().equals(this.getErrorRetryDuration()) == false)
             return false;
+        if (other.getUseNewMappingType() == null ^ this.getUseNewMappingType() == null)
+            return false;
+        if (other.getUseNewMappingType() != null && other.getUseNewMappingType().equals(this.getUseNewMappingType()) == false)
+            return false;
         return true;
     }
 
@@ -317,6 +399,7 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getEndpointUri() == null) ? 0 : getEndpointUri().hashCode());
         hashCode = prime * hashCode + ((getFullLoadErrorPercentage() == null) ? 0 : getFullLoadErrorPercentage().hashCode());
         hashCode = prime * hashCode + ((getErrorRetryDuration() == null) ? 0 : getErrorRetryDuration().hashCode());
+        hashCode = prime * hashCode + ((getUseNewMappingType() == null) ? 0 : getUseNewMappingType().hashCode());
         return hashCode;
     }
 

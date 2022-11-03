@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeVodSourceRequestMarshaller {
 
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sourceLocationName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("SourceLocationName").build();
     private static final MarshallingInfo<String> VODSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("vodSourceName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("VodSourceName").build();
 
     private static final DescribeVodSourceRequestMarshaller instance = new DescribeVodSourceRequestMarshaller();
 

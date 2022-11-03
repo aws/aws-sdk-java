@@ -53,6 +53,8 @@ public class StartAutomationExecutionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlarmConfiguration").build();
 
     private static final StartAutomationExecutionRequestMarshaller instance = new StartAutomationExecutionRequestMarshaller();
 
@@ -82,6 +84,7 @@ public class StartAutomationExecutionRequestMarshaller {
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getTargetLocations(), TARGETLOCATIONS_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

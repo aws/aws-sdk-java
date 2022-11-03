@@ -75,7 +75,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
      * <code>gp3</code>
      * </p>
      */
@@ -141,9 +141,8 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     * >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </note>
      */
@@ -416,7 +415,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
      * <code>gp3</code>
      * </p>
      * 
@@ -425,7 +424,7 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      *        <code>sc1</code> | <code>gp3</code>
      */
 
@@ -440,7 +439,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
      * <code>gp3</code>
      * </p>
      * 
@@ -448,7 +447,7 @@ public class Ebs implements Serializable, Cloneable {
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
      *         types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *         Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      *         <code>sc1</code> | <code>gp3</code>
      */
 
@@ -463,7 +462,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
      * <code>gp3</code>
      * </p>
      * 
@@ -472,7 +471,7 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      *        <code>sc1</code> | <code>gp3</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -768,9 +767,8 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     * >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </note>
      * 
@@ -792,8 +790,8 @@ public class Ebs implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     *        >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling
-     *        User Guide</i>.
+     *        >Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
+     *        Guide</i>.
      *        </p>
      */
 
@@ -821,9 +819,8 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     * >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </note>
      * 
@@ -844,7 +841,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     *         >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling
+     *         >Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling
      *         User Guide</i>.
      *         </p>
      */
@@ -873,9 +870,8 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     * >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </note>
      * 
@@ -897,8 +893,8 @@ public class Ebs implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     *        >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling
-     *        User Guide</i>.
+     *        >Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
+     *        Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -928,9 +924,8 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     * >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </note>
      * 
@@ -951,7 +946,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption"
-     *         >Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling
+     *         >Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling
      *         User Guide</i>.
      *         </p>
      */

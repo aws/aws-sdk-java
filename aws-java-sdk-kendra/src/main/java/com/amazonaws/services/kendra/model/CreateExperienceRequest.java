@@ -40,8 +40,8 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      */
@@ -152,15 +152,15 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *        stores your user and group information. For more information, see <a
+     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *        your user and group information. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      */
 
@@ -171,14 +171,14 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *         <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *         stores your user and group information. For more information, see <a
+     *         <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *         your user and group information. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      */
 
@@ -189,15 +189,15 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *        stores your user and group information. For more information, see <a
+     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *        your user and group information. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

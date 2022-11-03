@@ -28,28 +28,28 @@ public class CreateInstanceAccessControlAttributeConfigurationRequest extends co
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed.
      * </p>
      */
     private String instanceArn;
     /**
      * <p>
-     * Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an
+     * Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an
      * external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so
-     * provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML
-     * assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value
-     * from the Amazon Web Services SSO identity store.
+     * provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML
+     * assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value
+     * from the IAM Identity Center identity store.
      * </p>
      */
     private InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration;
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -58,10 +58,10 @@ public class CreateInstanceAccessControlAttributeConfigurationRequest extends co
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed.
      * </p>
      * 
-     * @return The ARN of the SSO instance under which the operation will be executed.
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed.
      */
 
     public String getInstanceArn() {
@@ -70,11 +70,11 @@ public class CreateInstanceAccessControlAttributeConfigurationRequest extends co
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,19 +85,19 @@ public class CreateInstanceAccessControlAttributeConfigurationRequest extends co
 
     /**
      * <p>
-     * Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an
+     * Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an
      * external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so
-     * provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML
-     * assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value
-     * from the Amazon Web Services SSO identity store.
+     * provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML
+     * assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value
+     * from the IAM Identity Center identity store.
      * </p>
      * 
      * @param instanceAccessControlAttributeConfiguration
-     *        Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When
-     *        using an external identity provider as an identity source, you can pass attributes through the SAML
-     *        assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO
-     *        identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace
-     *        the attribute value with the value from the Amazon Web Services SSO identity store.
+     *        Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using
+     *        an external identity provider as an identity source, you can pass attributes through the SAML assertion.
+     *        Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If
+     *        a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with
+     *        the value from the IAM Identity Center identity store.
      */
 
     public void setInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration) {
@@ -106,18 +106,18 @@ public class CreateInstanceAccessControlAttributeConfigurationRequest extends co
 
     /**
      * <p>
-     * Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an
+     * Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an
      * external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so
-     * provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML
-     * assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value
-     * from the Amazon Web Services SSO identity store.
+     * provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML
+     * assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value
+     * from the IAM Identity Center identity store.
      * </p>
      * 
-     * @return Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When
-     *         using an external identity provider as an identity source, you can pass attributes through the SAML
-     *         assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO
-     *         identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace
-     *         the attribute value with the value from the Amazon Web Services SSO identity store.
+     * @return Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using
+     *         an external identity provider as an identity source, you can pass attributes through the SAML assertion.
+     *         Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store.
+     *         If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value
+     *         with the value from the IAM Identity Center identity store.
      */
 
     public InstanceAccessControlAttributeConfiguration getInstanceAccessControlAttributeConfiguration() {
@@ -126,19 +126,19 @@ public class CreateInstanceAccessControlAttributeConfigurationRequest extends co
 
     /**
      * <p>
-     * Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an
+     * Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an
      * external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so
-     * provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML
-     * assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value
-     * from the Amazon Web Services SSO identity store.
+     * provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML
+     * assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value
+     * from the IAM Identity Center identity store.
      * </p>
      * 
      * @param instanceAccessControlAttributeConfiguration
-     *        Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When
-     *        using an external identity provider as an identity source, you can pass attributes through the SAML
-     *        assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO
-     *        identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace
-     *        the attribute value with the value from the Amazon Web Services SSO identity store.
+     *        Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using
+     *        an external identity provider as an identity source, you can pass attributes through the SAML assertion.
+     *        Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If
+     *        a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with
+     *        the value from the IAM Identity Center identity store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

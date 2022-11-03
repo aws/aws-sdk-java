@@ -1008,6 +1008,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInsightRulesResult> listManagedInsightRulesAsync(ListManagedInsightRulesRequest request) {
+
+        return listManagedInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedInsightRulesResult> listManagedInsightRulesAsync(final ListManagedInsightRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListManagedInsightRulesRequest, ListManagedInsightRulesResult> asyncHandler) {
+        final ListManagedInsightRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListManagedInsightRulesResult>() {
+            @Override
+            public ListManagedInsightRulesResult call() throws Exception {
+                ListManagedInsightRulesResult result = null;
+
+                try {
+                    result = executeListManagedInsightRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMetricStreamsResult> listMetricStreamsAsync(ListMetricStreamsRequest request) {
 
         return listMetricStreamsAsync(request, null);
@@ -1246,6 +1279,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
 
                 try {
                     result = executePutInsightRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutManagedInsightRulesResult> putManagedInsightRulesAsync(PutManagedInsightRulesRequest request) {
+
+        return putManagedInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutManagedInsightRulesResult> putManagedInsightRulesAsync(final PutManagedInsightRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutManagedInsightRulesRequest, PutManagedInsightRulesResult> asyncHandler) {
+        final PutManagedInsightRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutManagedInsightRulesResult>() {
+            @Override
+            public PutManagedInsightRulesResult call() throws Exception {
+                PutManagedInsightRulesResult result = null;
+
+                try {
+                    result = executePutManagedInsightRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

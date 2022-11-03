@@ -30,8 +30,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default.
+     * The log driver to use for the container. The valid values that are listed for this parameter are log drivers that
+     * the Amazon ECS container agent can communicate with by default.
      * </p>
      * <p>
      * The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
@@ -57,49 +57,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <dt>fluentd</dt>
      * <dd>
      * <p>
-     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>gelf</dt>
      * <dd>
      * <p>
-     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options,
      * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
-     * in the Docker documentation.
+     * in the <i>Docker documentation</i>.
      * </p>
      * </dd>
      * <dt>journald</dt>
      * <dd>
      * <p>
-     * Specifies the journald logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
-     * documentation.
+     * Specifies the journald logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>json-file</dt>
      * <dd>
      * <p>
-     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
-     * documentation.
+     * Specifies the JSON file logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>splunk</dt>
      * <dd>
      * <p>
-     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Splunk logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>syslog</dt>
      * <dd>
      * <p>
-     * Specifies the syslog logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     * documentation.
+     * Specifies the syslog logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * </dl>
@@ -114,7 +114,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
@@ -123,7 +123,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
+     * in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
@@ -139,8 +139,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default.
+     * The log driver to use for the container. The valid values that are listed for this parameter are log drivers that
+     * the Amazon ECS container agent can communicate with by default.
      * </p>
      * <p>
      * The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
@@ -166,49 +166,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <dt>fluentd</dt>
      * <dd>
      * <p>
-     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>gelf</dt>
      * <dd>
      * <p>
-     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options,
      * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
-     * in the Docker documentation.
+     * in the <i>Docker documentation</i>.
      * </p>
      * </dd>
      * <dt>journald</dt>
      * <dd>
      * <p>
-     * Specifies the journald logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
-     * documentation.
+     * Specifies the journald logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>json-file</dt>
      * <dd>
      * <p>
-     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
-     * documentation.
+     * Specifies the JSON file logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>splunk</dt>
      * <dd>
      * <p>
-     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Splunk logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>syslog</dt>
      * <dd>
      * <p>
-     * Specifies the syslog logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     * documentation.
+     * Specifies the syslog logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * </dl>
@@ -223,13 +223,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container. The valid values that are listed for this parameter are log
+     *        drivers that the Amazon ECS container agent can communicate with by default.</p>
      *        <p>
      *        The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
      *        <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
@@ -255,49 +255,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <dt>fluentd</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>gelf</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and
      *        options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
-     *        logging driver</a> in the Docker documentation.
+     *        logging driver</a> in the <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>journald</dt>
      *        <dd>
      *        <p>
-     *        Specifies the journald logging driver. For more information, including usage and options, see <a
+     *        Specifies the journald logging driver. For more information including usage and options, see <a
      *        href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
-     *        Docker documentation.
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>json-file</dt>
      *        <dd>
      *        <p>
-     *        Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *        Specifies the JSON file logging driver. For more information including usage and options, see <a
      *        href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
-     *        Docker documentation.
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>splunk</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the Splunk logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>syslog</dt>
      *        <dd>
      *        <p>
-     *        Specifies the syslog logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the syslog logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        </dl>
@@ -312,7 +312,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
@@ -323,8 +323,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default.
+     * The log driver to use for the container. The valid values that are listed for this parameter are log drivers that
+     * the Amazon ECS container agent can communicate with by default.
      * </p>
      * <p>
      * The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
@@ -350,49 +350,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <dt>fluentd</dt>
      * <dd>
      * <p>
-     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>gelf</dt>
      * <dd>
      * <p>
-     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options,
      * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
-     * in the Docker documentation.
+     * in the <i>Docker documentation</i>.
      * </p>
      * </dd>
      * <dt>journald</dt>
      * <dd>
      * <p>
-     * Specifies the journald logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
-     * documentation.
+     * Specifies the journald logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>json-file</dt>
      * <dd>
      * <p>
-     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
-     * documentation.
+     * Specifies the JSON file logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>splunk</dt>
      * <dd>
      * <p>
-     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Splunk logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>syslog</dt>
      * <dd>
      * <p>
-     * Specifies the syslog logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     * documentation.
+     * Specifies the syslog logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * </dl>
@@ -407,12 +407,12 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
-     * @return The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *         the Amazon ECS container agent can communicate with by default.</p>
+     * @return The log driver to use for the container. The valid values that are listed for this parameter are log
+     *         drivers that the Amazon ECS container agent can communicate with by default.</p>
      *         <p>
      *         The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
      *         <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
@@ -438,49 +438,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         <dt>fluentd</dt>
      *         <dd>
      *         <p>
-     *         Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     *         Specifies the Fluentd logging driver. For more information including usage and options, see <a
      *         href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the
-     *         Docker documentation.
+     *         <i>Docker documentation</i>.
      *         </p>
      *         </dd>
      *         <dt>gelf</dt>
      *         <dd>
      *         <p>
-     *         Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *         Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and
      *         options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
-     *         logging driver</a> in the Docker documentation.
+     *         logging driver</a> in the <i>Docker documentation</i>.
      *         </p>
      *         </dd>
      *         <dt>journald</dt>
      *         <dd>
      *         <p>
-     *         Specifies the journald logging driver. For more information, including usage and options, see <a
+     *         Specifies the journald logging driver. For more information including usage and options, see <a
      *         href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
-     *         Docker documentation.
+     *         <i>Docker documentation</i>.
      *         </p>
      *         </dd>
      *         <dt>json-file</dt>
      *         <dd>
      *         <p>
-     *         Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *         Specifies the JSON file logging driver. For more information including usage and options, see <a
      *         href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
-     *         Docker documentation.
+     *         <i>Docker documentation</i>.
      *         </p>
      *         </dd>
      *         <dt>splunk</dt>
      *         <dd>
      *         <p>
-     *         Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     *         href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     *         documentation.
+     *         Specifies the Splunk logging driver. For more information including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the
+     *         <i>Docker documentation</i>.
      *         </p>
      *         </dd>
      *         <dt>syslog</dt>
      *         <dd>
      *         <p>
-     *         Specifies the syslog logging driver. For more information, including usage and options, see <a
-     *         href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     *         documentation.
+     *         Specifies the syslog logging driver. For more information including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the
+     *         <i>Docker documentation</i>.
      *         </p>
      *         </dd>
      *         </dl>
@@ -495,7 +495,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         </note>
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *         check the Docker Remote API version on your container instance, log into your container instance and run
+     *         check the Docker Remote API version on your container instance, log in to your container instance and run
      *         the following command: <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
@@ -506,8 +506,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default.
+     * The log driver to use for the container. The valid values that are listed for this parameter are log drivers that
+     * the Amazon ECS container agent can communicate with by default.
      * </p>
      * <p>
      * The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
@@ -533,49 +533,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <dt>fluentd</dt>
      * <dd>
      * <p>
-     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>gelf</dt>
      * <dd>
      * <p>
-     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options,
      * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
-     * in the Docker documentation.
+     * in the <i>Docker documentation</i>.
      * </p>
      * </dd>
      * <dt>journald</dt>
      * <dd>
      * <p>
-     * Specifies the journald logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
-     * documentation.
+     * Specifies the journald logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>json-file</dt>
      * <dd>
      * <p>
-     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
-     * documentation.
+     * Specifies the JSON file logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>splunk</dt>
      * <dd>
      * <p>
-     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Splunk logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>syslog</dt>
      * <dd>
      * <p>
-     * Specifies the syslog logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     * documentation.
+     * Specifies the syslog logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * </dl>
@@ -590,13 +590,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container. The valid values that are listed for this parameter are log
+     *        drivers that the Amazon ECS container agent can communicate with by default.</p>
      *        <p>
      *        The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
      *        <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
@@ -622,49 +622,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <dt>fluentd</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>gelf</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and
      *        options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
-     *        logging driver</a> in the Docker documentation.
+     *        logging driver</a> in the <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>journald</dt>
      *        <dd>
      *        <p>
-     *        Specifies the journald logging driver. For more information, including usage and options, see <a
+     *        Specifies the journald logging driver. For more information including usage and options, see <a
      *        href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
-     *        Docker documentation.
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>json-file</dt>
      *        <dd>
      *        <p>
-     *        Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *        Specifies the JSON file logging driver. For more information including usage and options, see <a
      *        href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
-     *        Docker documentation.
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>splunk</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the Splunk logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>syslog</dt>
      *        <dd>
      *        <p>
-     *        Specifies the syslog logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the syslog logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        </dl>
@@ -679,7 +679,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDriver
@@ -692,8 +692,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default.
+     * The log driver to use for the container. The valid values that are listed for this parameter are log drivers that
+     * the Amazon ECS container agent can communicate with by default.
      * </p>
      * <p>
      * The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
@@ -719,49 +719,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <dt>fluentd</dt>
      * <dd>
      * <p>
-     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>gelf</dt>
      * <dd>
      * <p>
-     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and options,
      * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
-     * in the Docker documentation.
+     * in the <i>Docker documentation</i>.
      * </p>
      * </dd>
      * <dt>journald</dt>
      * <dd>
      * <p>
-     * Specifies the journald logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
-     * documentation.
+     * Specifies the journald logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>json-file</dt>
      * <dd>
      * <p>
-     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
-     * documentation.
+     * Specifies the JSON file logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>splunk</dt>
      * <dd>
      * <p>
-     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     * documentation.
+     * Specifies the Splunk logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * <dt>syslog</dt>
      * <dd>
      * <p>
-     * Specifies the syslog logging driver. For more information, including usage and options, see <a
-     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     * documentation.
+     * Specifies the syslog logging driver. For more information including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the <i>Docker
+     * documentation</i>.
      * </p>
      * </dd>
      * </dl>
@@ -776,13 +776,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container. The valid values that are listed for this parameter are log
+     *        drivers that the Amazon ECS container agent can communicate with by default.</p>
      *        <p>
      *        The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
      *        <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
@@ -808,49 +808,49 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <dt>fluentd</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Fluentd logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the Fluentd logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>gelf</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information including usage and
      *        options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
-     *        logging driver</a> in the Docker documentation.
+     *        logging driver</a> in the <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>journald</dt>
      *        <dd>
      *        <p>
-     *        Specifies the journald logging driver. For more information, including usage and options, see <a
+     *        Specifies the journald logging driver. For more information including usage and options, see <a
      *        href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
-     *        Docker documentation.
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>json-file</dt>
      *        <dd>
      *        <p>
-     *        Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *        Specifies the JSON file logging driver. For more information including usage and options, see <a
      *        href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
-     *        Docker documentation.
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>splunk</dt>
      *        <dd>
      *        <p>
-     *        Specifies the Splunk logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the Splunk logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        <dt>syslog</dt>
      *        <dd>
      *        <p>
-     *        Specifies the syslog logging driver. For more information, including usage and options, see <a
-     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
-     *        documentation.
+     *        Specifies the syslog logging driver. For more information including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the
+     *        <i>Docker documentation</i>.
      *        </p>
      *        </dd>
      *        </dl>
@@ -865,7 +865,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDriver
@@ -880,13 +880,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
+     * in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @return The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *         Remote API or greater on your container instance. To check the Docker Remote API version on your
-     *         container instance, log into your container instance and run the following command:
+     *         container instance, log in to your container instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -898,14 +898,14 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
+     * in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param options
      *        The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following command:
+     *        instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -917,14 +917,14 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
+     * in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param options
      *        The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following command:
+     *        instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

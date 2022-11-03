@@ -78,6 +78,9 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EC2InstanceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.EC2InstanceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EC2InstanceTypeInvalidException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ec2instanceconnect.model.transform.EC2InstanceTypeInvalidExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -181,6 +184,8 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
      * @throws EC2InstanceStateInvalidException
      *         Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated
      *         instance is not supported. If the instance is stopped, start your instance, and try to connect again.
+     * @throws EC2InstanceUnavailableException
+     *         The instance is currently unavailable. Wait a few minutes and try again.
      * @sample AWSEC2InstanceConnect.SendSSHPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey"
      *      target="_top">AWS API Documentation</a>
@@ -265,6 +270,8 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
      * @throws EC2InstanceStateInvalidException
      *         Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated
      *         instance is not supported. If the instance is stopped, start your instance, and try to connect again.
+     * @throws EC2InstanceUnavailableException
+     *         The instance is currently unavailable. Wait a few minutes and try again.
      * @sample AWSEC2InstanceConnect.SendSerialConsoleSSHPublicKey
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey"

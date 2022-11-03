@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.Map;
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -124,6 +125,20 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                 if (context.testExpression("ScheduleOffset", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetMaps", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
+                            new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+
+                            ))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -46,6 +46,12 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> netIdFilters;
 
     private java.util.List<Integer> subBands;
+    /**
+     * <p>
+     * Beaconing object information, which consists of the data rate and frequency parameters.
+     * </p>
+     */
+    private Beaconing beaconing;
 
     /**
      * <p>
@@ -284,6 +290,46 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Beaconing object information, which consists of the data rate and frequency parameters.
+     * </p>
+     * 
+     * @param beaconing
+     *        Beaconing object information, which consists of the data rate and frequency parameters.
+     */
+
+    public void setBeaconing(Beaconing beaconing) {
+        this.beaconing = beaconing;
+    }
+
+    /**
+     * <p>
+     * Beaconing object information, which consists of the data rate and frequency parameters.
+     * </p>
+     * 
+     * @return Beaconing object information, which consists of the data rate and frequency parameters.
+     */
+
+    public Beaconing getBeaconing() {
+        return this.beaconing;
+    }
+
+    /**
+     * <p>
+     * Beaconing object information, which consists of the data rate and frequency parameters.
+     * </p>
+     * 
+     * @param beaconing
+     *        Beaconing object information, which consists of the data rate and frequency parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withBeaconing(Beaconing beaconing) {
+        setBeaconing(beaconing);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,7 +350,9 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
         if (getNetIdFilters() != null)
             sb.append("NetIdFilters: ").append(getNetIdFilters()).append(",");
         if (getSubBands() != null)
-            sb.append("SubBands: ").append(getSubBands());
+            sb.append("SubBands: ").append(getSubBands()).append(",");
+        if (getBeaconing() != null)
+            sb.append("Beaconing: ").append(getBeaconing());
         sb.append("}");
         return sb.toString();
     }
@@ -339,6 +387,10 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSubBands() != null && other.getSubBands().equals(this.getSubBands()) == false)
             return false;
+        if (other.getBeaconing() == null ^ this.getBeaconing() == null)
+            return false;
+        if (other.getBeaconing() != null && other.getBeaconing().equals(this.getBeaconing()) == false)
+            return false;
         return true;
     }
 
@@ -352,6 +404,7 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJoinEuiFilters() == null) ? 0 : getJoinEuiFilters().hashCode());
         hashCode = prime * hashCode + ((getNetIdFilters() == null) ? 0 : getNetIdFilters().hashCode());
         hashCode = prime * hashCode + ((getSubBands() == null) ? 0 : getSubBands().hashCode());
+        hashCode = prime * hashCode + ((getBeaconing() == null) ? 0 : getBeaconing().hashCode());
         return hashCode;
     }
 

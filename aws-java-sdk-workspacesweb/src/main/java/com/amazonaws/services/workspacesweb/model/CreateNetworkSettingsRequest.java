@@ -413,7 +413,7 @@ public class CreateNetworkSettingsRequest extends com.amazonaws.AmazonWebService
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
+            sb.append("Tags: ").append("***Sensitive Data Redacted***").append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId());
         sb.append("}");

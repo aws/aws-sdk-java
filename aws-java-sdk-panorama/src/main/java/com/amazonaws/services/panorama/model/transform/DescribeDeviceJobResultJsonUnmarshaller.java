@@ -76,6 +76,10 @@ public class DescribeDeviceJobResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeDeviceJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JobType", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceJobResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeDeviceJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

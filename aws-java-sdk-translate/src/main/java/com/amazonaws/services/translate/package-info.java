@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Provides translation between one source language and another of the same set of languages.
+ * Provides language translation for input text in the source language to the specified target language.
  * </p>
  */
 package com.amazonaws.services.translate;

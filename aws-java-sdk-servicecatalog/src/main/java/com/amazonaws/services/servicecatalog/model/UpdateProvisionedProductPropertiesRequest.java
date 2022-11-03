@@ -66,12 +66,12 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
-     * update, terminate, and execute service actions in the provisioned product.
+     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
-     * The administrator can change the owner of a provisioned product to another IAM user within the same account. Both
-     * end user owners and administrators can see ownership history of the provisioned product using the
+     * The administrator can change the owner of a provisioned product to another IAM or STS entity within the same
+     * account. Both end user owners and administrators can see ownership history of the provisioned product using the
      * <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using
      * the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can
      * still see the product's history from when he was an owner using <code>ListRecordHistory</code>.
@@ -282,12 +282,12 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
-     * update, terminate, and execute service actions in the provisioned product.
+     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
-     * The administrator can change the owner of a provisioned product to another IAM user within the same account. Both
-     * end user owners and administrators can see ownership history of the provisioned product using the
+     * The administrator can change the owner of a provisioned product to another IAM or STS entity within the same
+     * account. Both end user owners and administrators can see ownership history of the provisioned product using the
      * <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using
      * the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can
      * still see the product's history from when he was an owner using <code>ListRecordHistory</code>.
@@ -308,13 +308,14 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *         <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      *         </p>
      *         <p>
-     *         The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to
-     *         see, update, terminate, and execute service actions in the provisioned product.
+     *         The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is
+     *         the user that has permission to see, update, terminate, and execute service actions in the provisioned
+     *         product.
      *         </p>
      *         <p>
-     *         The administrator can change the owner of a provisioned product to another IAM user within the same
-     *         account. Both end user owners and administrators can see ownership history of the provisioned product
-     *         using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the
+     *         The administrator can change the owner of a provisioned product to another IAM or STS entity within the
+     *         same account. Both end user owners and administrators can see ownership history of the provisioned
+     *         product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the
      *         provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use
      *         <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using
      *         <code>ListRecordHistory</code>.
@@ -342,12 +343,12 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
-     * update, terminate, and execute service actions in the provisioned product.
+     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
-     * The administrator can change the owner of a provisioned product to another IAM user within the same account. Both
-     * end user owners and administrators can see ownership history of the provisioned product using the
+     * The administrator can change the owner of a provisioned product to another IAM or STS entity within the same
+     * account. Both end user owners and administrators can see ownership history of the provisioned product using the
      * <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using
      * the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can
      * still see the product's history from when he was an owner using <code>ListRecordHistory</code>.
@@ -369,12 +370,13 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *        <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      *        </p>
      *        <p>
-     *        The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to
-     *        see, update, terminate, and execute service actions in the provisioned product.
+     *        The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is
+     *        the user that has permission to see, update, terminate, and execute service actions in the provisioned
+     *        product.
      *        </p>
      *        <p>
-     *        The administrator can change the owner of a provisioned product to another IAM user within the same
-     *        account. Both end user owners and administrators can see ownership history of the provisioned product
+     *        The administrator can change the owner of a provisioned product to another IAM or STS entity within the
+     *        same account. Both end user owners and administrators can see ownership history of the provisioned product
      *        using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the
      *        provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use
      *        <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using
@@ -403,12 +405,12 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
-     * update, terminate, and execute service actions in the provisioned product.
+     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
-     * The administrator can change the owner of a provisioned product to another IAM user within the same account. Both
-     * end user owners and administrators can see ownership history of the provisioned product using the
+     * The administrator can change the owner of a provisioned product to another IAM or STS entity within the same
+     * account. Both end user owners and administrators can see ownership history of the provisioned product using the
      * <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using
      * the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can
      * still see the product's history from when he was an owner using <code>ListRecordHistory</code>.
@@ -430,12 +432,13 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *        <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      *        </p>
      *        <p>
-     *        The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to
-     *        see, update, terminate, and execute service actions in the provisioned product.
+     *        The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is
+     *        the user that has permission to see, update, terminate, and execute service actions in the provisioned
+     *        product.
      *        </p>
      *        <p>
-     *        The administrator can change the owner of a provisioned product to another IAM user within the same
-     *        account. Both end user owners and administrators can see ownership history of the provisioned product
+     *        The administrator can change the owner of a provisioned product to another IAM or STS entity within the
+     *        same account. Both end user owners and administrators can see ownership history of the provisioned product
      *        using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the
      *        provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use
      *        <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using

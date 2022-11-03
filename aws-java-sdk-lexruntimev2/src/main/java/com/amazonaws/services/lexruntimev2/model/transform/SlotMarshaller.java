@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lexruntimev2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -34,6 +35,8 @@ public class SlotMarshaller {
             .marshallLocationName("shape").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("values").build();
+    private static final MarshallingInfo<Map> SUBSLOTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("subSlots").build();
 
     private static final SlotMarshaller instance = new SlotMarshaller();
 
@@ -54,6 +57,7 @@ public class SlotMarshaller {
             protocolMarshaller.marshall(slot.getValue(), VALUE_BINDING);
             protocolMarshaller.marshall(slot.getShape(), SHAPE_BINDING);
             protocolMarshaller.marshall(slot.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(slot.getSubSlots(), SUBSLOTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -49,7 +49,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String homeEfsFileSystemId;
     /**
      * <p>
-     * The SSO managed application instance ID.
+     * The IAM Identity Center managed application instance ID.
      * </p>
      */
     private String singleSignOnManagedApplicationInstanceId;
@@ -324,11 +324,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The SSO managed application instance ID.
+     * The IAM Identity Center managed application instance ID.
      * </p>
      * 
      * @param singleSignOnManagedApplicationInstanceId
-     *        The SSO managed application instance ID.
+     *        The IAM Identity Center managed application instance ID.
      */
 
     public void setSingleSignOnManagedApplicationInstanceId(String singleSignOnManagedApplicationInstanceId) {
@@ -337,10 +337,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The SSO managed application instance ID.
+     * The IAM Identity Center managed application instance ID.
      * </p>
      * 
-     * @return The SSO managed application instance ID.
+     * @return The IAM Identity Center managed application instance ID.
      */
 
     public String getSingleSignOnManagedApplicationInstanceId() {
@@ -349,11 +349,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The SSO managed application instance ID.
+     * The IAM Identity Center managed application instance ID.
      * </p>
      * 
      * @param singleSignOnManagedApplicationInstanceId
-     *        The SSO managed application instance ID.
+     *        The IAM Identity Center managed application instance ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,40 +30,8 @@ public class ItemIdentifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of related item. Incident Manager supports the following types:
+     * The type of related item.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ANALYSIS</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INCIDENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>METRIC</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PARENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ATTACHMENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OTHER</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String type;
     /**
@@ -75,74 +43,11 @@ public class ItemIdentifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of related item. Incident Manager supports the following types:
+     * The type of related item.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ANALYSIS</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INCIDENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>METRIC</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PARENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ATTACHMENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OTHER</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        The type of related item. Incident Manager supports the following types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ANALYSIS</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INCIDENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>METRIC</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>PARENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ATTACHMENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>OTHER</code>
-     *        </p>
-     *        </li>
+     *        The type of related item.
      * @see ItemType
      */
 
@@ -152,73 +57,10 @@ public class ItemIdentifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of related item. Incident Manager supports the following types:
+     * The type of related item.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ANALYSIS</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INCIDENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>METRIC</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PARENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ATTACHMENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OTHER</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The type of related item. Incident Manager supports the following types:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>ANALYSIS</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>INCIDENT</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>METRIC</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>PARENT</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ATTACHMENT</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>OTHER</code>
-     *         </p>
-     *         </li>
+     * @return The type of related item.
      * @see ItemType
      */
 
@@ -228,74 +70,11 @@ public class ItemIdentifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of related item. Incident Manager supports the following types:
+     * The type of related item.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ANALYSIS</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INCIDENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>METRIC</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PARENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ATTACHMENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OTHER</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        The type of related item. Incident Manager supports the following types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ANALYSIS</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INCIDENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>METRIC</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>PARENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ATTACHMENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>OTHER</code>
-     *        </p>
-     *        </li>
+     *        The type of related item.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ItemType
      */
@@ -307,74 +86,11 @@ public class ItemIdentifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of related item. Incident Manager supports the following types:
+     * The type of related item.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ANALYSIS</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INCIDENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>METRIC</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PARENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ATTACHMENT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OTHER</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        The type of related item. Incident Manager supports the following types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ANALYSIS</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INCIDENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>METRIC</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>PARENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ATTACHMENT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>OTHER</code>
-     *        </p>
-     *        </li>
+     *        The type of related item.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ItemType
      */

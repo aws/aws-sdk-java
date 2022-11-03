@@ -32,25 +32,8 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -71,7 +54,8 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
@@ -83,47 +67,24 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String packageValue;
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">
+     * PackageOriginConfiguration</a> object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin
+     * restrictions.
+     * </p>
+     */
+    private PackageOriginConfiguration originConfiguration;
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package.
      * @see PackageFormat
      */
 
@@ -133,43 +94,10 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package. Valid values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return The format of the package.
      * @see PackageFormat
      */
 
@@ -179,44 +107,11 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -228,44 +123,11 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -293,14 +155,15 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
      *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -314,7 +177,8 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *        a namespace.
      *        </p>
      *        </li>
      */
@@ -341,13 +205,14 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *         example: </p>
+     *         example:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -361,7 +226,8 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *         a namespace.
      *         </p>
      *         </li>
      */
@@ -388,14 +254,15 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
      *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -409,7 +276,8 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *        a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -461,6 +329,73 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">
+     * PackageOriginConfiguration</a> object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin
+     * restrictions.
+     * </p>
+     * 
+     * @param originConfiguration
+     *        A <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html"
+     *        >PackageOriginConfiguration</a> object that contains a <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a> object that contains information about the upstream and publish package
+     *        origin restrictions.
+     */
+
+    public void setOriginConfiguration(PackageOriginConfiguration originConfiguration) {
+        this.originConfiguration = originConfiguration;
+    }
+
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">
+     * PackageOriginConfiguration</a> object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin
+     * restrictions.
+     * </p>
+     * 
+     * @return A <a
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html"
+     *         >PackageOriginConfiguration</a> object that contains a <a
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *         >PackageOriginRestrictions</a> object that contains information about the upstream and publish package
+     *         origin restrictions.
+     */
+
+    public PackageOriginConfiguration getOriginConfiguration() {
+        return this.originConfiguration;
+    }
+
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">
+     * PackageOriginConfiguration</a> object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     * >PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin
+     * restrictions.
+     * </p>
+     * 
+     * @param originConfiguration
+     *        A <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html"
+     *        >PackageOriginConfiguration</a> object that contains a <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html"
+     *        >PackageOriginRestrictions</a> object that contains information about the upstream and publish package
+     *        origin restrictions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageSummary withOriginConfiguration(PackageOriginConfiguration originConfiguration) {
+        setOriginConfiguration(originConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -477,7 +412,9 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
         if (getNamespace() != null)
             sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getPackage() != null)
-            sb.append("Package: ").append(getPackage());
+            sb.append("Package: ").append(getPackage()).append(",");
+        if (getOriginConfiguration() != null)
+            sb.append("OriginConfiguration: ").append(getOriginConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -504,6 +441,10 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPackage() != null && other.getPackage().equals(this.getPackage()) == false)
             return false;
+        if (other.getOriginConfiguration() == null ^ this.getOriginConfiguration() == null)
+            return false;
+        if (other.getOriginConfiguration() != null && other.getOriginConfiguration().equals(this.getOriginConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -515,6 +456,7 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getPackage() == null) ? 0 : getPackage().hashCode());
+        hashCode = prime * hashCode + ((getOriginConfiguration() == null) ? 0 : getOriginConfiguration().hashCode());
         return hashCode;
     }
 

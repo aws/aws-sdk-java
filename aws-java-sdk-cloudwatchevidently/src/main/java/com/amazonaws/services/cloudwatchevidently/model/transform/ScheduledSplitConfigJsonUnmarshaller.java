@@ -53,6 +53,12 @@ public class ScheduledSplitConfigJsonUnmarshaller implements Unmarshaller<Schedu
                     scheduledSplitConfig.setGroupWeights(new MapUnmarshaller<String, Long>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Long.class)).unmarshall(context));
                 }
+                if (context.testExpression("segmentOverrides", targetDepth)) {
+                    context.nextToken();
+                    scheduledSplitConfig.setSegmentOverrides(new ListUnmarshaller<SegmentOverride>(SegmentOverrideJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     scheduledSplitConfig.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

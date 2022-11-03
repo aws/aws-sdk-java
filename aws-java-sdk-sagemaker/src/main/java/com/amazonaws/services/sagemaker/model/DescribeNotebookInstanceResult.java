@@ -183,6 +183,12 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String platformIdentifier;
+    /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     */
+    private InstanceMetadataServiceConfiguration instanceMetadataServiceConfiguration;
 
     /**
      * <p>
@@ -1461,6 +1467,46 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     * 
+     * @param instanceMetadataServiceConfiguration
+     *        Information on the IMDS configuration of the notebook instance
+     */
+
+    public void setInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration instanceMetadataServiceConfiguration) {
+        this.instanceMetadataServiceConfiguration = instanceMetadataServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     * 
+     * @return Information on the IMDS configuration of the notebook instance
+     */
+
+    public InstanceMetadataServiceConfiguration getInstanceMetadataServiceConfiguration() {
+        return this.instanceMetadataServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     * 
+     * @param instanceMetadataServiceConfiguration
+     *        Information on the IMDS configuration of the notebook instance
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNotebookInstanceResult withInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration instanceMetadataServiceConfiguration) {
+        setInstanceMetadataServiceConfiguration(instanceMetadataServiceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1513,7 +1559,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
         if (getRootAccess() != null)
             sb.append("RootAccess: ").append(getRootAccess()).append(",");
         if (getPlatformIdentifier() != null)
-            sb.append("PlatformIdentifier: ").append(getPlatformIdentifier());
+            sb.append("PlatformIdentifier: ").append(getPlatformIdentifier()).append(",");
+        if (getInstanceMetadataServiceConfiguration() != null)
+            sb.append("InstanceMetadataServiceConfiguration: ").append(getInstanceMetadataServiceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1613,6 +1661,11 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getPlatformIdentifier() != null && other.getPlatformIdentifier().equals(this.getPlatformIdentifier()) == false)
             return false;
+        if (other.getInstanceMetadataServiceConfiguration() == null ^ this.getInstanceMetadataServiceConfiguration() == null)
+            return false;
+        if (other.getInstanceMetadataServiceConfiguration() != null
+                && other.getInstanceMetadataServiceConfiguration().equals(this.getInstanceMetadataServiceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1642,6 +1695,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getAdditionalCodeRepositories() == null) ? 0 : getAdditionalCodeRepositories().hashCode());
         hashCode = prime * hashCode + ((getRootAccess() == null) ? 0 : getRootAccess().hashCode());
         hashCode = prime * hashCode + ((getPlatformIdentifier() == null) ? 0 : getPlatformIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMetadataServiceConfiguration() == null) ? 0 : getInstanceMetadataServiceConfiguration().hashCode());
         return hashCode;
     }
 

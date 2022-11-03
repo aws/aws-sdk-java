@@ -48,9 +48,9 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      */
     private String startUrl;
@@ -200,15 +200,15 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
-     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
-     *        SiteWise console to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity
+     *        Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise
+     *        console to get a URL that you can use to access the portal.
      */
 
     public void setStartUrl(String startUrl) {
@@ -217,14 +217,14 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
-     * @return The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
-     *         Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
-     *         SiteWise console to get a URL that you can use to access the portal.
+     * @return The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity
+     *         Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise
+     *         console to get a URL that you can use to access the portal.
      */
 
     public String getStartUrl() {
@@ -233,15 +233,15 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
-     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
-     *        SiteWise console to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity
+     *        Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise
+     *        console to get a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

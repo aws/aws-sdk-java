@@ -89,7 +89,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -105,7 +105,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -159,7 +159,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
@@ -177,7 +177,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      */
     private Integer tumblingWindowInSeconds;
@@ -526,7 +526,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -542,7 +542,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -564,7 +564,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -580,7 +580,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -608,7 +608,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -624,7 +624,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -645,7 +645,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
@@ -661,7 +661,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     *         <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
@@ -689,7 +689,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -705,7 +705,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -727,7 +727,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -743,7 +743,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -1034,12 +1034,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
      *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *        When set to infinite (-1), failed records will be retried until the record expires.
+     *        When set to infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -1049,11 +1049,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @return (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *         When set to infinite (-1), failed records will be retried until the record expires.
+     *         When set to infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -1063,12 +1063,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
      *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *        When set to infinite (-1), failed records will be retried until the record expires.
+     *        When set to infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1192,11 +1192,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
      *        seconds.
      */
 
@@ -1206,10 +1206,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      * 
-     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
      *         seconds.
      */
 
@@ -1219,11 +1219,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
      *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

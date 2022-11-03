@@ -124,6 +124,11 @@ public class ExportTaskStaxUnmarshaller implements Unmarshaller<ExportTask, Stax
                     exportTask.setWarningMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SourceType", targetDepth)) {
+                    exportTask.setSourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return exportTask;

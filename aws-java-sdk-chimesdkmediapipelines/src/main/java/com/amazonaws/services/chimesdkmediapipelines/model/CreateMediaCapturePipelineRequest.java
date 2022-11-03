@@ -51,20 +51,20 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
     private String sinkArn;
     /**
      * <p>
-     * The token assigned to the client making the pipeline request.
+     * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for
+     * each media pipeline request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      */
     private ChimeSdkMeetingConfiguration chimeSdkMeetingConfiguration;
     /**
      * <p>
-     * The list of tags.
+     * The tag key-value pairs.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -270,11 +270,13 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The token assigned to the client making the pipeline request.
+     * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for
+     * each media pipeline request.
      * </p>
      * 
      * @param clientRequestToken
-     *        The token assigned to the client making the pipeline request.
+     *        The unique identifier for the client request. The token makes the API request idempotent. Use a unique
+     *        token for each media pipeline request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -283,10 +285,12 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The token assigned to the client making the pipeline request.
+     * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for
+     * each media pipeline request.
      * </p>
      * 
-     * @return The token assigned to the client making the pipeline request.
+     * @return The unique identifier for the client request. The token makes the API request idempotent. Use a unique
+     *         token for each media pipeline request.
      */
 
     public String getClientRequestToken() {
@@ -295,11 +299,13 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The token assigned to the client making the pipeline request.
+     * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for
+     * each media pipeline request.
      * </p>
      * 
      * @param clientRequestToken
-     *        The token assigned to the client making the pipeline request.
+     *        The unique identifier for the client request. The token makes the API request idempotent. Use a unique
+     *        token for each media pipeline request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,12 +316,11 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      * 
      * @param chimeSdkMeetingConfiguration
-     *        The configuration for a specified media capture pipeline. <code>SourceType</code> must be
+     *        The configuration for a specified media pipeline. <code>SourceType</code> must be
      *        <code>ChimeSdkMeeting</code>.
      */
 
@@ -325,11 +330,10 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      * 
-     * @return The configuration for a specified media capture pipeline. <code>SourceType</code> must be
+     * @return The configuration for a specified media pipeline. <code>SourceType</code> must be
      *         <code>ChimeSdkMeeting</code>.
      */
 
@@ -339,12 +343,11 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The configuration for a specified media capture pipeline. <code>SourceType</code> must be
-     * <code>ChimeSdkMeeting</code>.
+     * The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
      * </p>
      * 
      * @param chimeSdkMeetingConfiguration
-     *        The configuration for a specified media capture pipeline. <code>SourceType</code> must be
+     *        The configuration for a specified media pipeline. <code>SourceType</code> must be
      *        <code>ChimeSdkMeeting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -356,10 +359,10 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of tags.
+     * The tag key-value pairs.
      * </p>
      * 
-     * @return The list of tags.
+     * @return The tag key-value pairs.
      */
 
     public java.util.List<Tag> getTags() {
@@ -368,11 +371,11 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of tags.
+     * The tag key-value pairs.
      * </p>
      * 
      * @param tags
-     *        The list of tags.
+     *        The tag key-value pairs.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -386,7 +389,7 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of tags.
+     * The tag key-value pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -395,7 +398,7 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param tags
-     *        The list of tags.
+     *        The tag key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -411,11 +414,11 @@ public class CreateMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of tags.
+     * The tag key-value pairs.
      * </p>
      * 
      * @param tags
-     *        The list of tags.
+     *        The tag key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

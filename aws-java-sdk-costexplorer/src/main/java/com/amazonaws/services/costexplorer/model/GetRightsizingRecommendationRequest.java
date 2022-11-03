@@ -28,10 +28,10 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
     private Expression filter;
     /**
      * <p>
-     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
-     * instances within the same instance families or across different instance families. You can also choose to view
-     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
-     * benefits, or neither.
+     * You can use Configuration to customize recommendations across two attributes. You can choose to view
+     * recommendations for instances within the same instance families or across different instance families. You can
+     * also choose to view your estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither.
      * </p>
      */
     private RightsizingRecommendationConfiguration configuration;
@@ -83,17 +83,17 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
-     * instances within the same instance families or across different instance families. You can also choose to view
-     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
-     * benefits, or neither.
+     * You can use Configuration to customize recommendations across two attributes. You can choose to view
+     * recommendations for instances within the same instance families or across different instance families. You can
+     * also choose to view your estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither.
      * </p>
      * 
      * @param configuration
-     *        Enables you to customize recommendations across two attributes. You can choose to view recommendations for
-     *        instances within the same instance families or across different instance families. You can also choose to
-     *        view your estimated savings associated with recommendations with consideration of existing Savings Plans
-     *        or RI benefits, or neither.
+     *        You can use Configuration to customize recommendations across two attributes. You can choose to view
+     *        recommendations for instances within the same instance families or across different instance families. You
+     *        can also choose to view your estimated savings that are associated with recommendations with consideration
+     *        of existing Savings Plans or RI benefits, or neither.
      */
 
     public void setConfiguration(RightsizingRecommendationConfiguration configuration) {
@@ -102,16 +102,16 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
-     * instances within the same instance families or across different instance families. You can also choose to view
-     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
-     * benefits, or neither.
+     * You can use Configuration to customize recommendations across two attributes. You can choose to view
+     * recommendations for instances within the same instance families or across different instance families. You can
+     * also choose to view your estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither.
      * </p>
      * 
-     * @return Enables you to customize recommendations across two attributes. You can choose to view recommendations
-     *         for instances within the same instance families or across different instance families. You can also
-     *         choose to view your estimated savings associated with recommendations with consideration of existing
-     *         Savings Plans or RI benefits, or neither.
+     * @return You can use Configuration to customize recommendations across two attributes. You can choose to view
+     *         recommendations for instances within the same instance families or across different instance families.
+     *         You can also choose to view your estimated savings that are associated with recommendations with
+     *         consideration of existing Savings Plans or RI benefits, or neither.
      */
 
     public RightsizingRecommendationConfiguration getConfiguration() {
@@ -120,17 +120,17 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
-     * instances within the same instance families or across different instance families. You can also choose to view
-     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
-     * benefits, or neither.
+     * You can use Configuration to customize recommendations across two attributes. You can choose to view
+     * recommendations for instances within the same instance families or across different instance families. You can
+     * also choose to view your estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither.
      * </p>
      * 
      * @param configuration
-     *        Enables you to customize recommendations across two attributes. You can choose to view recommendations for
-     *        instances within the same instance families or across different instance families. You can also choose to
-     *        view your estimated savings associated with recommendations with consideration of existing Savings Plans
-     *        or RI benefits, or neither.
+     *        You can use Configuration to customize recommendations across two attributes. You can choose to view
+     *        recommendations for instances within the same instance families or across different instance families. You
+     *        can also choose to view your estimated savings that are associated with recommendations with consideration
+     *        of existing Savings Plans or RI benefits, or neither.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

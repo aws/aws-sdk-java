@@ -22,18 +22,18 @@ public class DescribeProvisioningTemplateRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      */
     private String templateName;
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      */
 
     public void setTemplateName(String templateName) {
@@ -42,10 +42,10 @@ public class DescribeProvisioningTemplateRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
-     * @return The name of the fleet provisioning template.
+     * @return The name of the provisioning template.
      */
 
     public String getTemplateName() {
@@ -54,11 +54,11 @@ public class DescribeProvisioningTemplateRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

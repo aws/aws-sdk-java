@@ -60,6 +60,11 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("deliverCrossAccountRole", targetDepth)) {
+                    flowLog.setDeliverCrossAccountRole(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("deliverLogsStatus", targetDepth)) {
                     flowLog.setDeliverLogsStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

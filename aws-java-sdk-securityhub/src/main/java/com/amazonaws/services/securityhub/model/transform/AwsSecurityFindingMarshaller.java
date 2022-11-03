@@ -81,6 +81,8 @@ public class AwsSecurityFindingMarshaller {
             .marshallLocationName("NetworkPath").build();
     private static final MarshallingInfo<StructuredPojo> PROCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Process").build();
+    private static final MarshallingInfo<List> THREATS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Threats").build();
     private static final MarshallingInfo<List> THREATINTELINDICATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThreatIntelIndicators").build();
     private static final MarshallingInfo<List> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -152,6 +154,7 @@ public class AwsSecurityFindingMarshaller {
             protocolMarshaller.marshall(awsSecurityFinding.getNetwork(), NETWORK_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getNetworkPath(), NETWORKPATH_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getProcess(), PROCESS_BINDING);
+            protocolMarshaller.marshall(awsSecurityFinding.getThreats(), THREATS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getThreatIntelIndicators(), THREATINTELINDICATORS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getResources(), RESOURCES_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getCompliance(), COMPLIANCE_BINDING);

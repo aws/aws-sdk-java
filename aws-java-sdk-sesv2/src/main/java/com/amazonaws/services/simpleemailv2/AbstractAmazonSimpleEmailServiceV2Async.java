@@ -28,6 +28,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(BatchGetMetricDataRequest request) {
+
+        return batchGetMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(BatchGetMetricDataRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetMetricDataRequest, BatchGetMetricDataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(CreateConfigurationSetRequest request) {
 
         return createConfigurationSetAsync(request, null);
@@ -417,6 +430,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<GetDedicatedIpPoolResult> getDedicatedIpPoolAsync(GetDedicatedIpPoolRequest request) {
+
+        return getDedicatedIpPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDedicatedIpPoolResult> getDedicatedIpPoolAsync(GetDedicatedIpPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDedicatedIpPoolRequest, GetDedicatedIpPoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDedicatedIpsResult> getDedicatedIpsAsync(GetDedicatedIpsRequest request) {
 
         return getDedicatedIpsAsync(request, null);
@@ -685,6 +711,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest request) {
+
+        return listRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationsRequest, ListRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request) {
 
         return listSuppressedDestinationsAsync(request, null);
@@ -767,6 +806,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<PutAccountVdmAttributesResult> putAccountVdmAttributesAsync(PutAccountVdmAttributesRequest request) {
+
+        return putAccountVdmAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountVdmAttributesResult> putAccountVdmAttributesAsync(PutAccountVdmAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccountVdmAttributesRequest, PutAccountVdmAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutConfigurationSetDeliveryOptionsResult> putConfigurationSetDeliveryOptionsAsync(
             PutConfigurationSetDeliveryOptionsRequest request) {
 
@@ -837,6 +889,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutConfigurationSetTrackingOptionsResult> putConfigurationSetTrackingOptionsAsync(
             PutConfigurationSetTrackingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetTrackingOptionsRequest, PutConfigurationSetTrackingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetVdmOptionsResult> putConfigurationSetVdmOptionsAsync(PutConfigurationSetVdmOptionsRequest request) {
+
+        return putConfigurationSetVdmOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetVdmOptionsResult> putConfigurationSetVdmOptionsAsync(PutConfigurationSetVdmOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationSetVdmOptionsRequest, PutConfigurationSetVdmOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -32,7 +32,7 @@ public class ListServicePipelineOutputsResult extends com.amazonaws.AmazonWebSer
     private String nextToken;
     /**
      * <p>
-     * An array of outputs.
+     * An array of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      */
     private java.util.List<Output> outputs;
@@ -85,10 +85,10 @@ public class ListServicePipelineOutputsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of outputs.
+     * An array of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
-     * @return An array of outputs.
+     * @return An array of service pipeline Infrastructure as Code (IaC) outputs.
      */
 
     public java.util.List<Output> getOutputs() {
@@ -97,11 +97,11 @@ public class ListServicePipelineOutputsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of outputs.
+     * An array of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param outputs
-     *        An array of outputs.
+     *        An array of service pipeline Infrastructure as Code (IaC) outputs.
      */
 
     public void setOutputs(java.util.Collection<Output> outputs) {
@@ -115,7 +115,7 @@ public class ListServicePipelineOutputsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of outputs.
+     * An array of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class ListServicePipelineOutputsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param outputs
-     *        An array of outputs.
+     *        An array of service pipeline Infrastructure as Code (IaC) outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListServicePipelineOutputsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of outputs.
+     * An array of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param outputs
-     *        An array of outputs.
+     *        An array of service pipeline Infrastructure as Code (IaC) outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

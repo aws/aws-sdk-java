@@ -31,6 +31,25 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * A list of operations that the grant permits.
+     * </p>
+     */
+    private java.util.List<String> operations;
+    /**
+     * <p>
+     * The principal that is given permission to perform the operations that the grant permits.
+     * </p>
+     */
+    private String granteePrincipal;
+    /**
+     * <p>
+     * The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.
+     * </p>
+     */
+    private String retiringPrincipal;
+    /**
+     * <p>
      * Use this structure to propose allowing <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> in the grant only when the operation request includes the specified <a
@@ -41,180 +60,11 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
     private KmsGrantConstraints constraints;
     /**
      * <p>
-     * The principal that is given permission to perform the operations that the grant permits.
-     * </p>
-     */
-    private String granteePrincipal;
-    /**
-     * <p>
      * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
      * issued by accounts other than the owner of the key.
      * </p>
      */
     private String issuingAccount;
-    /**
-     * <p>
-     * A list of operations that the grant permits.
-     * </p>
-     */
-    private java.util.List<String> operations;
-    /**
-     * <p>
-     * The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.
-     * </p>
-     */
-    private String retiringPrincipal;
-
-    /**
-     * <p>
-     * Use this structure to propose allowing <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operations</a> in the grant only when the operation request includes the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-     * context</a>.
-     * </p>
-     * 
-     * @param constraints
-     *        Use this structure to propose allowing <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
-     *        >cryptographic operations</a> in the grant only when the operation request includes the specified <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-     *        context</a>.
-     */
-
-    public void setConstraints(KmsGrantConstraints constraints) {
-        this.constraints = constraints;
-    }
-
-    /**
-     * <p>
-     * Use this structure to propose allowing <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operations</a> in the grant only when the operation request includes the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-     * context</a>.
-     * </p>
-     * 
-     * @return Use this structure to propose allowing <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
-     *         >cryptographic operations</a> in the grant only when the operation request includes the specified <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-     *         context</a>.
-     */
-
-    public KmsGrantConstraints getConstraints() {
-        return this.constraints;
-    }
-
-    /**
-     * <p>
-     * Use this structure to propose allowing <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operations</a> in the grant only when the operation request includes the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-     * context</a>.
-     * </p>
-     * 
-     * @param constraints
-     *        Use this structure to propose allowing <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
-     *        >cryptographic operations</a> in the grant only when the operation request includes the specified <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-     *        context</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KmsGrantConfiguration withConstraints(KmsGrantConstraints constraints) {
-        setConstraints(constraints);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The principal that is given permission to perform the operations that the grant permits.
-     * </p>
-     * 
-     * @param granteePrincipal
-     *        The principal that is given permission to perform the operations that the grant permits.
-     */
-
-    public void setGranteePrincipal(String granteePrincipal) {
-        this.granteePrincipal = granteePrincipal;
-    }
-
-    /**
-     * <p>
-     * The principal that is given permission to perform the operations that the grant permits.
-     * </p>
-     * 
-     * @return The principal that is given permission to perform the operations that the grant permits.
-     */
-
-    public String getGranteePrincipal() {
-        return this.granteePrincipal;
-    }
-
-    /**
-     * <p>
-     * The principal that is given permission to perform the operations that the grant permits.
-     * </p>
-     * 
-     * @param granteePrincipal
-     *        The principal that is given permission to perform the operations that the grant permits.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KmsGrantConfiguration withGranteePrincipal(String granteePrincipal) {
-        setGranteePrincipal(granteePrincipal);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
-     * issued by accounts other than the owner of the key.
-     * </p>
-     * 
-     * @param issuingAccount
-     *        The Amazon Web Services account under which the grant was issued. The account is used to propose KMS
-     *        grants issued by accounts other than the owner of the key.
-     */
-
-    public void setIssuingAccount(String issuingAccount) {
-        this.issuingAccount = issuingAccount;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
-     * issued by accounts other than the owner of the key.
-     * </p>
-     * 
-     * @return The Amazon Web Services account under which the grant was issued. The account is used to propose KMS
-     *         grants issued by accounts other than the owner of the key.
-     */
-
-    public String getIssuingAccount() {
-        return this.issuingAccount;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
-     * issued by accounts other than the owner of the key.
-     * </p>
-     * 
-     * @param issuingAccount
-     *        The Amazon Web Services account under which the grant was issued. The account is used to propose KMS
-     *        grants issued by accounts other than the owner of the key.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KmsGrantConfiguration withIssuingAccount(String issuingAccount) {
-        setIssuingAccount(issuingAccount);
-        return this;
-    }
 
     /**
      * <p>
@@ -316,6 +166,46 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The principal that is given permission to perform the operations that the grant permits.
+     * </p>
+     * 
+     * @param granteePrincipal
+     *        The principal that is given permission to perform the operations that the grant permits.
+     */
+
+    public void setGranteePrincipal(String granteePrincipal) {
+        this.granteePrincipal = granteePrincipal;
+    }
+
+    /**
+     * <p>
+     * The principal that is given permission to perform the operations that the grant permits.
+     * </p>
+     * 
+     * @return The principal that is given permission to perform the operations that the grant permits.
+     */
+
+    public String getGranteePrincipal() {
+        return this.granteePrincipal;
+    }
+
+    /**
+     * <p>
+     * The principal that is given permission to perform the operations that the grant permits.
+     * </p>
+     * 
+     * @param granteePrincipal
+     *        The principal that is given permission to perform the operations that the grant permits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KmsGrantConfiguration withGranteePrincipal(String granteePrincipal) {
+        setGranteePrincipal(granteePrincipal);
+        return this;
+    }
+
+    /**
+     * <p>
      * The principal that is given permission to retire the grant by using <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.
      * </p>
@@ -362,6 +252,116 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Use this structure to propose allowing <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> in the grant only when the operation request includes the specified <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+     * context</a>.
+     * </p>
+     * 
+     * @param constraints
+     *        Use this structure to propose allowing <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *        >cryptographic operations</a> in the grant only when the operation request includes the specified <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+     *        context</a>.
+     */
+
+    public void setConstraints(KmsGrantConstraints constraints) {
+        this.constraints = constraints;
+    }
+
+    /**
+     * <p>
+     * Use this structure to propose allowing <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> in the grant only when the operation request includes the specified <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+     * context</a>.
+     * </p>
+     * 
+     * @return Use this structure to propose allowing <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *         >cryptographic operations</a> in the grant only when the operation request includes the specified <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+     *         context</a>.
+     */
+
+    public KmsGrantConstraints getConstraints() {
+        return this.constraints;
+    }
+
+    /**
+     * <p>
+     * Use this structure to propose allowing <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> in the grant only when the operation request includes the specified <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+     * context</a>.
+     * </p>
+     * 
+     * @param constraints
+     *        Use this structure to propose allowing <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *        >cryptographic operations</a> in the grant only when the operation request includes the specified <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+     *        context</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KmsGrantConfiguration withConstraints(KmsGrantConstraints constraints) {
+        setConstraints(constraints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
+     * issued by accounts other than the owner of the key.
+     * </p>
+     * 
+     * @param issuingAccount
+     *        The Amazon Web Services account under which the grant was issued. The account is used to propose KMS
+     *        grants issued by accounts other than the owner of the key.
+     */
+
+    public void setIssuingAccount(String issuingAccount) {
+        this.issuingAccount = issuingAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
+     * issued by accounts other than the owner of the key.
+     * </p>
+     * 
+     * @return The Amazon Web Services account under which the grant was issued. The account is used to propose KMS
+     *         grants issued by accounts other than the owner of the key.
+     */
+
+    public String getIssuingAccount() {
+        return this.issuingAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants
+     * issued by accounts other than the owner of the key.
+     * </p>
+     * 
+     * @param issuingAccount
+     *        The Amazon Web Services account under which the grant was issued. The account is used to propose KMS
+     *        grants issued by accounts other than the owner of the key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KmsGrantConfiguration withIssuingAccount(String issuingAccount) {
+        setIssuingAccount(issuingAccount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -373,16 +373,16 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getConstraints() != null)
-            sb.append("Constraints: ").append(getConstraints()).append(",");
-        if (getGranteePrincipal() != null)
-            sb.append("GranteePrincipal: ").append(getGranteePrincipal()).append(",");
-        if (getIssuingAccount() != null)
-            sb.append("IssuingAccount: ").append(getIssuingAccount()).append(",");
         if (getOperations() != null)
             sb.append("Operations: ").append(getOperations()).append(",");
+        if (getGranteePrincipal() != null)
+            sb.append("GranteePrincipal: ").append(getGranteePrincipal()).append(",");
         if (getRetiringPrincipal() != null)
-            sb.append("RetiringPrincipal: ").append(getRetiringPrincipal());
+            sb.append("RetiringPrincipal: ").append(getRetiringPrincipal()).append(",");
+        if (getConstraints() != null)
+            sb.append("Constraints: ").append(getConstraints()).append(",");
+        if (getIssuingAccount() != null)
+            sb.append("IssuingAccount: ").append(getIssuingAccount());
         sb.append("}");
         return sb.toString();
     }
@@ -397,25 +397,25 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
         if (obj instanceof KmsGrantConfiguration == false)
             return false;
         KmsGrantConfiguration other = (KmsGrantConfiguration) obj;
-        if (other.getConstraints() == null ^ this.getConstraints() == null)
+        if (other.getOperations() == null ^ this.getOperations() == null)
             return false;
-        if (other.getConstraints() != null && other.getConstraints().equals(this.getConstraints()) == false)
+        if (other.getOperations() != null && other.getOperations().equals(this.getOperations()) == false)
             return false;
         if (other.getGranteePrincipal() == null ^ this.getGranteePrincipal() == null)
             return false;
         if (other.getGranteePrincipal() != null && other.getGranteePrincipal().equals(this.getGranteePrincipal()) == false)
             return false;
-        if (other.getIssuingAccount() == null ^ this.getIssuingAccount() == null)
-            return false;
-        if (other.getIssuingAccount() != null && other.getIssuingAccount().equals(this.getIssuingAccount()) == false)
-            return false;
-        if (other.getOperations() == null ^ this.getOperations() == null)
-            return false;
-        if (other.getOperations() != null && other.getOperations().equals(this.getOperations()) == false)
-            return false;
         if (other.getRetiringPrincipal() == null ^ this.getRetiringPrincipal() == null)
             return false;
         if (other.getRetiringPrincipal() != null && other.getRetiringPrincipal().equals(this.getRetiringPrincipal()) == false)
+            return false;
+        if (other.getConstraints() == null ^ this.getConstraints() == null)
+            return false;
+        if (other.getConstraints() != null && other.getConstraints().equals(this.getConstraints()) == false)
+            return false;
+        if (other.getIssuingAccount() == null ^ this.getIssuingAccount() == null)
+            return false;
+        if (other.getIssuingAccount() != null && other.getIssuingAccount().equals(this.getIssuingAccount()) == false)
             return false;
         return true;
     }
@@ -425,11 +425,11 @@ public class KmsGrantConfiguration implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getConstraints() == null) ? 0 : getConstraints().hashCode());
-        hashCode = prime * hashCode + ((getGranteePrincipal() == null) ? 0 : getGranteePrincipal().hashCode());
-        hashCode = prime * hashCode + ((getIssuingAccount() == null) ? 0 : getIssuingAccount().hashCode());
         hashCode = prime * hashCode + ((getOperations() == null) ? 0 : getOperations().hashCode());
+        hashCode = prime * hashCode + ((getGranteePrincipal() == null) ? 0 : getGranteePrincipal().hashCode());
         hashCode = prime * hashCode + ((getRetiringPrincipal() == null) ? 0 : getRetiringPrincipal().hashCode());
+        hashCode = prime * hashCode + ((getConstraints() == null) ? 0 : getConstraints().hashCode());
+        hashCode = prime * hashCode + ((getIssuingAccount() == null) ? 0 : getIssuingAccount().hashCode());
         return hashCode;
     }
 

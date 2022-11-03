@@ -17,16 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An immutable representation of a <a>RestApi</a> resource that can be called by users using <a>Stages</a>. A
- * deployment must be associated with a <a>Stage</a> for it to be callable over the Internet.
+ * An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be
+ * associated with a Stage for it to be callable over the Internet.
  * </p>
- * <div class="remarks">To create a deployment, call <code>POST</code> on the <a>Deployments</a> resource of a
- * <a>RestApi</a>. To view, update, or delete a deployment, call <code>GET</code>, <code>PATCH</code>, or
- * <code>DELETE</code> on the specified deployment resource (
- * <code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div class="seeAlso"><a>RestApi</a>,
- * <a>Deployments</a>, <a>Stage</a>, <a
- * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
- * href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDeploymentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -51,7 +44,7 @@ public class UpdateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date createdDate;
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * A summary of the RestApi at the date and time that the deployment resource was created.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary;
@@ -178,10 +171,10 @@ public class UpdateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * A summary of the RestApi at the date and time that the deployment resource was created.
      * </p>
      * 
-     * @return A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * @return A summary of the RestApi at the date and time that the deployment resource was created.
      */
 
     public java.util.Map<String, java.util.Map<String, MethodSnapshot>> getApiSummary() {
@@ -190,11 +183,11 @@ public class UpdateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * A summary of the RestApi at the date and time that the deployment resource was created.
      * </p>
      * 
      * @param apiSummary
-     *        A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     *        A summary of the RestApi at the date and time that the deployment resource was created.
      */
 
     public void setApiSummary(java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
@@ -203,11 +196,11 @@ public class UpdateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * A summary of the RestApi at the date and time that the deployment resource was created.
      * </p>
      * 
      * @param apiSummary
-     *        A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     *        A summary of the RestApi at the date and time that the deployment resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

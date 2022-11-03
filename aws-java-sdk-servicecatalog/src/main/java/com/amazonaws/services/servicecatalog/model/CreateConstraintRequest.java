@@ -137,7 +137,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      * </p>
      * <p>
-     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     * Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -494,7 +494,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      * </p>
      * <p>
-     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     * Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -583,7 +583,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      *        </p>
      *        <p>
-     *        Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     *        Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      *        </p>
      *        </dd>
      *        <dt>TEMPLATE</dt>
@@ -677,7 +677,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      * </p>
      * <p>
-     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     * Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -765,7 +765,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      *         </p>
      *         <p>
-     *         Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     *         Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      *         </p>
      *         </dd>
      *         <dt>TEMPLATE</dt>
@@ -859,7 +859,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      * </p>
      * <p>
-     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     * Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -948,7 +948,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
      *        </p>
      *        <p>
-     *        Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
+     *        Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.
      *        </p>
      *        </dd>
      *        <dt>TEMPLATE</dt>

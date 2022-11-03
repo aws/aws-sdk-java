@@ -42,7 +42,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
     private String alias;
     /**
      * <p>
-     * List of pages associated with the query. The following is a list of rules for using this parameter.
+     * Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of
+     * rules for using this parameter.
      * </p>
      * <ul>
      * <li>
@@ -58,7 +59,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     * When using * to indicate all pages, it must be the only element in the list.
      * </p>
      * </li>
      * <li>
@@ -161,7 +162,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of pages associated with the query. The following is a list of rules for using this parameter.
+     * Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of
+     * rules for using this parameter.
      * </p>
      * <ul>
      * <li>
@@ -177,7 +179,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     * When using * to indicate all pages, it must be the only element in the list.
      * </p>
      * </li>
      * <li>
@@ -193,7 +195,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+     * @return Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a
+     *         list of rules for using this parameter.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -208,7 +211,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     *         When using * to indicate all pages, it must be the only element in the list.
      *         </p>
      *         </li>
      *         <li>
@@ -230,7 +233,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of pages associated with the query. The following is a list of rules for using this parameter.
+     * Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of
+     * rules for using this parameter.
      * </p>
      * <ul>
      * <li>
@@ -246,7 +250,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     * When using * to indicate all pages, it must be the only element in the list.
      * </p>
      * </li>
      * <li>
@@ -263,7 +267,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param pages
-     *        List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+     *        Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a
+     *        list of rules for using this parameter.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -278,7 +283,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     *        When using * to indicate all pages, it must be the only element in the list.
      *        </p>
      *        </li>
      *        <li>
@@ -305,7 +310,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of pages associated with the query. The following is a list of rules for using this parameter.
+     * Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of
+     * rules for using this parameter.
      * </p>
      * <ul>
      * <li>
@@ -321,7 +327,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     * When using * to indicate all pages, it must be the only element in the list.
      * </p>
      * </li>
      * <li>
@@ -343,7 +349,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param pages
-     *        List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+     *        Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a
+     *        list of rules for using this parameter.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -358,7 +365,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     *        When using * to indicate all pages, it must be the only element in the list.
      *        </p>
      *        </li>
      *        <li>
@@ -387,7 +394,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of pages associated with the query. The following is a list of rules for using this parameter.
+     * Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of
+     * rules for using this parameter.
      * </p>
      * <ul>
      * <li>
@@ -403,7 +411,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     * When using * to indicate all pages, it must be the only element in the list.
      * </p>
      * </li>
      * <li>
@@ -420,7 +428,8 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param pages
-     *        List of pages associated with the query. The following is a list of rules for using this parameter.</p>
+     *        Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a
+     *        list of rules for using this parameter.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -435,7 +444,7 @@ public class Query implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When using <code>*</code> to indicate all pages, it must be the only element in the string.
+     *        When using * to indicate all pages, it must be the only element in the list.
      *        </p>
      *        </li>
      *        <li>

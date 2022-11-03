@@ -15,7 +15,9 @@ package com.amazonaws.services.mediatailor.model;
 import javax.annotation.Generated;
 
 /**
- * Invalid request parameters.
+ * <p>
+ * A request contains unexpected data.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BadRequestException extends com.amazonaws.services.mediatailor.model.AWSMediaTailorException {

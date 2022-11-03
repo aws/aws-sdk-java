@@ -33,7 +33,7 @@ public class ListIdentityProvidersRequest extends com.amazonaws.AmazonWebService
     private String userPoolId;
     /**
      * <p>
-     * The maximum number of identity providers to return.
+     * The maximum number of IdPs to return.
      * </p>
      */
     private Integer maxResults;
@@ -86,11 +86,11 @@ public class ListIdentityProvidersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of identity providers to return.
+     * The maximum number of IdPs to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of identity providers to return.
+     *        The maximum number of IdPs to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -99,10 +99,10 @@ public class ListIdentityProvidersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of identity providers to return.
+     * The maximum number of IdPs to return.
      * </p>
      * 
-     * @return The maximum number of identity providers to return.
+     * @return The maximum number of IdPs to return.
      */
 
     public Integer getMaxResults() {
@@ -111,11 +111,11 @@ public class ListIdentityProvidersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of identity providers to return.
+     * The maximum number of IdPs to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of identity providers to return.
+     *        The maximum number of IdPs to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

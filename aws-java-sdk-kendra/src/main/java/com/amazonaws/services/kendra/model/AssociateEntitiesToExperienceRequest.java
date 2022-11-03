@@ -39,7 +39,7 @@ public class AssociateEntitiesToExperienceRequest extends com.amazonaws.AmazonWe
     private String indexId;
     /**
      * <p>
-     * Lists users or groups in your Amazon Web Services SSO identity source.
+     * Lists users or groups in your IAM Identity Center identity source.
      * </p>
      */
     private java.util.List<EntityConfiguration> entityList;
@@ -126,10 +126,10 @@ public class AssociateEntitiesToExperienceRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Lists users or groups in your Amazon Web Services SSO identity source.
+     * Lists users or groups in your IAM Identity Center identity source.
      * </p>
      * 
-     * @return Lists users or groups in your Amazon Web Services SSO identity source.
+     * @return Lists users or groups in your IAM Identity Center identity source.
      */
 
     public java.util.List<EntityConfiguration> getEntityList() {
@@ -138,11 +138,11 @@ public class AssociateEntitiesToExperienceRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Lists users or groups in your Amazon Web Services SSO identity source.
+     * Lists users or groups in your IAM Identity Center identity source.
      * </p>
      * 
      * @param entityList
-     *        Lists users or groups in your Amazon Web Services SSO identity source.
+     *        Lists users or groups in your IAM Identity Center identity source.
      */
 
     public void setEntityList(java.util.Collection<EntityConfiguration> entityList) {
@@ -156,7 +156,7 @@ public class AssociateEntitiesToExperienceRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Lists users or groups in your Amazon Web Services SSO identity source.
+     * Lists users or groups in your IAM Identity Center identity source.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +165,7 @@ public class AssociateEntitiesToExperienceRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param entityList
-     *        Lists users or groups in your Amazon Web Services SSO identity source.
+     *        Lists users or groups in your IAM Identity Center identity source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class AssociateEntitiesToExperienceRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Lists users or groups in your Amazon Web Services SSO identity source.
+     * Lists users or groups in your IAM Identity Center identity source.
      * </p>
      * 
      * @param entityList
-     *        Lists users or groups in your Amazon Web Services SSO identity source.
+     *        Lists users or groups in your IAM Identity Center identity source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

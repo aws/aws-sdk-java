@@ -30,12 +30,6 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Lists details about the <code>Trail</code> used to generated policy.
-     * </p>
-     */
-    private CloudTrailProperties cloudTrailProperties;
-    /**
-     * <p>
      * This value is set to <code>true</code> if the generated policy contains all possible actions for a service that
      * IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.
      * </p>
@@ -47,46 +41,12 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
      * </p>
      */
     private String principalArn;
-
     /**
      * <p>
      * Lists details about the <code>Trail</code> used to generated policy.
      * </p>
-     * 
-     * @param cloudTrailProperties
-     *        Lists details about the <code>Trail</code> used to generated policy.
      */
-
-    public void setCloudTrailProperties(CloudTrailProperties cloudTrailProperties) {
-        this.cloudTrailProperties = cloudTrailProperties;
-    }
-
-    /**
-     * <p>
-     * Lists details about the <code>Trail</code> used to generated policy.
-     * </p>
-     * 
-     * @return Lists details about the <code>Trail</code> used to generated policy.
-     */
-
-    public CloudTrailProperties getCloudTrailProperties() {
-        return this.cloudTrailProperties;
-    }
-
-    /**
-     * <p>
-     * Lists details about the <code>Trail</code> used to generated policy.
-     * </p>
-     * 
-     * @param cloudTrailProperties
-     *        Lists details about the <code>Trail</code> used to generated policy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GeneratedPolicyProperties withCloudTrailProperties(CloudTrailProperties cloudTrailProperties) {
-        setCloudTrailProperties(cloudTrailProperties);
-        return this;
-    }
+    private CloudTrailProperties cloudTrailProperties;
 
     /**
      * <p>
@@ -193,6 +153,46 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Lists details about the <code>Trail</code> used to generated policy.
+     * </p>
+     * 
+     * @param cloudTrailProperties
+     *        Lists details about the <code>Trail</code> used to generated policy.
+     */
+
+    public void setCloudTrailProperties(CloudTrailProperties cloudTrailProperties) {
+        this.cloudTrailProperties = cloudTrailProperties;
+    }
+
+    /**
+     * <p>
+     * Lists details about the <code>Trail</code> used to generated policy.
+     * </p>
+     * 
+     * @return Lists details about the <code>Trail</code> used to generated policy.
+     */
+
+    public CloudTrailProperties getCloudTrailProperties() {
+        return this.cloudTrailProperties;
+    }
+
+    /**
+     * <p>
+     * Lists details about the <code>Trail</code> used to generated policy.
+     * </p>
+     * 
+     * @param cloudTrailProperties
+     *        Lists details about the <code>Trail</code> used to generated policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratedPolicyProperties withCloudTrailProperties(CloudTrailProperties cloudTrailProperties) {
+        setCloudTrailProperties(cloudTrailProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,12 +204,12 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCloudTrailProperties() != null)
-            sb.append("CloudTrailProperties: ").append(getCloudTrailProperties()).append(",");
         if (getIsComplete() != null)
             sb.append("IsComplete: ").append(getIsComplete()).append(",");
         if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: ").append(getPrincipalArn());
+            sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
+        if (getCloudTrailProperties() != null)
+            sb.append("CloudTrailProperties: ").append(getCloudTrailProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -224,10 +224,6 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
         if (obj instanceof GeneratedPolicyProperties == false)
             return false;
         GeneratedPolicyProperties other = (GeneratedPolicyProperties) obj;
-        if (other.getCloudTrailProperties() == null ^ this.getCloudTrailProperties() == null)
-            return false;
-        if (other.getCloudTrailProperties() != null && other.getCloudTrailProperties().equals(this.getCloudTrailProperties()) == false)
-            return false;
         if (other.getIsComplete() == null ^ this.getIsComplete() == null)
             return false;
         if (other.getIsComplete() != null && other.getIsComplete().equals(this.getIsComplete()) == false)
@@ -235,6 +231,10 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
         if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
             return false;
         if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
+            return false;
+        if (other.getCloudTrailProperties() == null ^ this.getCloudTrailProperties() == null)
+            return false;
+        if (other.getCloudTrailProperties() != null && other.getCloudTrailProperties().equals(this.getCloudTrailProperties()) == false)
             return false;
         return true;
     }
@@ -244,9 +244,9 @@ public class GeneratedPolicyProperties implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCloudTrailProperties() == null) ? 0 : getCloudTrailProperties().hashCode());
         hashCode = prime * hashCode + ((getIsComplete() == null) ? 0 : getIsComplete().hashCode());
         hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
+        hashCode = prime * hashCode + ((getCloudTrailProperties() == null) ? 0 : getCloudTrailProperties().hashCode());
         return hashCode;
     }
 

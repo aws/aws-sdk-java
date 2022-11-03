@@ -83,7 +83,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.Date updatedAt;
     /**
      * <p>
-     * Configuration settings for any metadata applied to the documents in the index.
+     * Configuration information for document metadata or fields. Document metadata are fields or attributes associated
+     * with your documents. For example, the company department name associated with each document.
      * </p>
      */
     private java.util.List<DocumentMetadataConfiguration> documentMetadataConfigurations;
@@ -123,8 +124,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String userContextPolicy;
     /**
      * <p>
-     * Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon
-     * Web Services Single Sign On identity source.
+     * Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source.
      * </p>
      */
     private UserGroupResolutionConfiguration userGroupResolutionConfiguration;
@@ -557,10 +558,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Configuration settings for any metadata applied to the documents in the index.
+     * Configuration information for document metadata or fields. Document metadata are fields or attributes associated
+     * with your documents. For example, the company department name associated with each document.
      * </p>
      * 
-     * @return Configuration settings for any metadata applied to the documents in the index.
+     * @return Configuration information for document metadata or fields. Document metadata are fields or attributes
+     *         associated with your documents. For example, the company department name associated with each document.
      */
 
     public java.util.List<DocumentMetadataConfiguration> getDocumentMetadataConfigurations() {
@@ -569,11 +572,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Configuration settings for any metadata applied to the documents in the index.
+     * Configuration information for document metadata or fields. Document metadata are fields or attributes associated
+     * with your documents. For example, the company department name associated with each document.
      * </p>
      * 
      * @param documentMetadataConfigurations
-     *        Configuration settings for any metadata applied to the documents in the index.
+     *        Configuration information for document metadata or fields. Document metadata are fields or attributes
+     *        associated with your documents. For example, the company department name associated with each document.
      */
 
     public void setDocumentMetadataConfigurations(java.util.Collection<DocumentMetadataConfiguration> documentMetadataConfigurations) {
@@ -587,7 +592,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Configuration settings for any metadata applied to the documents in the index.
+     * Configuration information for document metadata or fields. Document metadata are fields or attributes associated
+     * with your documents. For example, the company department name associated with each document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -596,7 +602,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param documentMetadataConfigurations
-     *        Configuration settings for any metadata applied to the documents in the index.
+     *        Configuration information for document metadata or fields. Document metadata are fields or attributes
+     *        associated with your documents. For example, the company department name associated with each document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,11 +619,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Configuration settings for any metadata applied to the documents in the index.
+     * Configuration information for document metadata or fields. Document metadata are fields or attributes associated
+     * with your documents. For example, the company department name associated with each document.
      * </p>
      * 
      * @param documentMetadataConfigurations
-     *        Configuration settings for any metadata applied to the documents in the index.
+     *        Configuration information for document metadata or fields. Document metadata are fields or attributes
+     *        associated with your documents. For example, the company department name associated with each document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -906,13 +915,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon
-     * Web Services Single Sign On identity source.
+     * Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Shows whether you have enabled the configuration for fetching access levels of groups and users from an
-     *        Amazon Web Services Single Sign On identity source.
+     *        Whether you have enabled the configuration for fetching access levels of groups and users from an IAM
+     *        Identity Center (successor to Single Sign-On) identity source.
      */
 
     public void setUserGroupResolutionConfiguration(UserGroupResolutionConfiguration userGroupResolutionConfiguration) {
@@ -921,12 +930,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon
-     * Web Services Single Sign On identity source.
+     * Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source.
      * </p>
      * 
-     * @return Shows whether you have enabled the configuration for fetching access levels of groups and users from an
-     *         Amazon Web Services Single Sign On identity source.
+     * @return Whether you have enabled the configuration for fetching access levels of groups and users from an IAM
+     *         Identity Center (successor to Single Sign-On) identity source.
      */
 
     public UserGroupResolutionConfiguration getUserGroupResolutionConfiguration() {
@@ -935,13 +944,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon
-     * Web Services Single Sign On identity source.
+     * Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Shows whether you have enabled the configuration for fetching access levels of groups and users from an
-     *        Amazon Web Services Single Sign On identity source.
+     *        Whether you have enabled the configuration for fetching access levels of groups and users from an IAM
+     *        Identity Center (successor to Single Sign-On) identity source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

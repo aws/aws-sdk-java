@@ -35,8 +35,7 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. The only image format accepted is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      */
     private java.nio.ByteBuffer logo;
@@ -92,15 +91,17 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      */
     private java.util.Map<String, String> loginMessage;
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. The only image format accepted is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -114,8 +115,8 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
      * </p>
      * 
      * @param logo
-     *        The logo. This is the link where users can download the logo image. The only image format accepted is
-     *        <code>.png</code>.
+     *        The logo. The only image format accepted is a binary data object that is converted from a
+     *        <code>.png</code> file.
      */
 
     public void setLogo(java.nio.ByteBuffer logo) {
@@ -124,8 +125,7 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. The only image format accepted is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -135,8 +135,8 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
      * {@code position}.
      * </p>
      * 
-     * @return The logo. This is the link where users can download the logo image. The only image format accepted is
-     *         <code>.png</code>.
+     * @return The logo. The only image format accepted is a binary data object that is converted from a
+     *         <code>.png</code> file.
      */
 
     public java.nio.ByteBuffer getLogo() {
@@ -145,8 +145,7 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. The only image format accepted is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -160,8 +159,8 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
      * </p>
      * 
      * @param logo
-     *        The logo. This is the link where users can download the logo image. The only image format accepted is
-     *        <code>.png</code>.
+     *        The logo. The only image format accepted is a binary data object that is converted from a
+     *        <code>.png</code> file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +466,17 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @return The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *         localized message for that locale. The only key supported is <code>en_US</code>.
+     *         localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *         include the following:
+     *         <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *         .
      */
 
     public java.util.Map<String, String> getLoginMessage() {
@@ -481,12 +486,18 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @param loginMessage
      *        The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *        localized message for that locale. The only key supported is <code>en_US</code>.
+     *        localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *        include the following:
+     *        <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *        .
      */
 
     public void setLoginMessage(java.util.Map<String, String> loginMessage) {
@@ -496,12 +507,18 @@ public class DefaultImportClientBrandingAttributes implements Serializable, Clon
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @param loginMessage
      *        The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *        localized message for that locale. The only key supported is <code>en_US</code>.
+     *        localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *        include the following:
+     *        <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

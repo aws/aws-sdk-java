@@ -50,6 +50,42 @@ public class DeploymentTargets implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
+    /**
+     * <p>
+     * Limit deployment targets to individual accounts or include additional accounts with provided OUs.
+     * </p>
+     * <p>
+     * The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This
+     * enables user to avoid certain accounts within an OU such as suspended accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     * </p>
+     * <p>
+     * This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used to be two separate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String accountFilterType;
 
     /**
      * <p>
@@ -238,6 +274,306 @@ public class DeploymentTargets implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Limit deployment targets to individual accounts or include additional accounts with provided OUs.
+     * </p>
+     * <p>
+     * The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This
+     * enables user to avoid certain accounts within an OU such as suspended accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     * </p>
+     * <p>
+     * This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used to be two separate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param accountFilterType
+     *        Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+     *        <p>
+     *        The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     *        This enables user to avoid certain accounts within an OU such as suspended accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     *        </p>
+     *        <p>
+     *        This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update
+     *        an entire OU and individual accounts from a different OU in one request, which used to be two separate
+     *        requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     *        </p>
+     *        </li>
+     * @see AccountFilterType
+     */
+
+    public void setAccountFilterType(String accountFilterType) {
+        this.accountFilterType = accountFilterType;
+    }
+
+    /**
+     * <p>
+     * Limit deployment targets to individual accounts or include additional accounts with provided OUs.
+     * </p>
+     * <p>
+     * The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This
+     * enables user to avoid certain accounts within an OU such as suspended accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     * </p>
+     * <p>
+     * This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used to be two separate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+     *         <p>
+     *         The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code>
+     *         parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     *         This enables user to avoid certain accounts within an OU such as suspended accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     *         </p>
+     *         <p>
+     *         This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update
+     *         an entire OU and individual accounts from a different OU in one request, which used to be two separate
+     *         requests.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     *         </p>
+     *         </li>
+     * @see AccountFilterType
+     */
+
+    public String getAccountFilterType() {
+        return this.accountFilterType;
+    }
+
+    /**
+     * <p>
+     * Limit deployment targets to individual accounts or include additional accounts with provided OUs.
+     * </p>
+     * <p>
+     * The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This
+     * enables user to avoid certain accounts within an OU such as suspended accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     * </p>
+     * <p>
+     * This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used to be two separate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param accountFilterType
+     *        Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+     *        <p>
+     *        The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     *        This enables user to avoid certain accounts within an OU such as suspended accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     *        </p>
+     *        <p>
+     *        This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update
+     *        an entire OU and individual accounts from a different OU in one request, which used to be two separate
+     *        requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountFilterType
+     */
+
+    public DeploymentTargets withAccountFilterType(String accountFilterType) {
+        setAccountFilterType(accountFilterType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Limit deployment targets to individual accounts or include additional accounts with provided OUs.
+     * </p>
+     * <p>
+     * The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This
+     * enables user to avoid certain accounts within an OU such as suspended accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     * </p>
+     * <p>
+     * This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used to be two separate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param accountFilterType
+     *        Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+     *        <p>
+     *        The following is a list of possible values for the <code>AccountFilterType</code> operation.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     *        This enables user to avoid certain accounts within an OU such as suspended accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNION</code>: StackSets includes additional accounts deployment targets.
+     *        </p>
+     *        <p>
+     *        This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update
+     *        an entire OU and individual accounts from a different OU in one request, which used to be two separate
+     *        requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountFilterType
+     */
+
+    public DeploymentTargets withAccountFilterType(AccountFilterType accountFilterType) {
+        this.accountFilterType = accountFilterType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -254,7 +590,9 @@ public class DeploymentTargets implements Serializable, Cloneable {
         if (getAccountsUrl() != null)
             sb.append("AccountsUrl: ").append(getAccountsUrl()).append(",");
         if (getOrganizationalUnitIds() != null)
-            sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds());
+            sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds()).append(",");
+        if (getAccountFilterType() != null)
+            sb.append("AccountFilterType: ").append(getAccountFilterType());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +619,10 @@ public class DeploymentTargets implements Serializable, Cloneable {
             return false;
         if (other.getOrganizationalUnitIds() != null && other.getOrganizationalUnitIds().equals(this.getOrganizationalUnitIds()) == false)
             return false;
+        if (other.getAccountFilterType() == null ^ this.getAccountFilterType() == null)
+            return false;
+        if (other.getAccountFilterType() != null && other.getAccountFilterType().equals(this.getAccountFilterType()) == false)
+            return false;
         return true;
     }
 
@@ -292,6 +634,7 @@ public class DeploymentTargets implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
         hashCode = prime * hashCode + ((getAccountsUrl() == null) ? 0 : getAccountsUrl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
+        hashCode = prime * hashCode + ((getAccountFilterType() == null) ? 0 : getAccountFilterType().hashCode());
         return hashCode;
     }
 

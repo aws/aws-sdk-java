@@ -25,24 +25,24 @@ public class CreateContactFlowModuleResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      */
 
     public void setId(String id) {
@@ -51,10 +51,10 @@ public class CreateContactFlowModuleResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
-     * @return The identifier of the contact flow module.
+     * @return The identifier of the flow module.
      */
 
     public String getId() {
@@ -63,11 +63,11 @@ public class CreateContactFlowModuleResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class CreateContactFlowModuleResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow module.
+     *        The Amazon Resource Name (ARN) of the flow module.
      */
 
     public void setArn(String arn) {
@@ -91,10 +91,10 @@ public class CreateContactFlowModuleResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the contact flow module.
+     * @return The Amazon Resource Name (ARN) of the flow module.
      */
 
     public String getArn() {
@@ -103,11 +103,11 @@ public class CreateContactFlowModuleResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow module.
+     *        The Amazon Resource Name (ARN) of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

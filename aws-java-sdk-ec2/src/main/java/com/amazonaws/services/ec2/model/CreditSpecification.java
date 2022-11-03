@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the credit option for CPU usage of a T2, T3, or T3a instance.
+ * Describes the credit option for CPU usage of a T instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreditSpecification" target="_top">AWS API
@@ -28,21 +28,26 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of a T instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      */
     private String cpuCredits;
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of a T instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>.
+     *        The credit option for CPU usage of a T instance.</p>
+     *        <p>
+     *        Valid values: <code>standard</code> | <code>unlimited</code>
      */
 
     public void setCpuCredits(String cpuCredits) {
@@ -51,12 +56,15 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of a T instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * 
-     * @return The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     *         <code>unlimited</code>.
+     * @return The credit option for CPU usage of a T instance.</p>
+     *         <p>
+     *         Valid values: <code>standard</code> | <code>unlimited</code>
      */
 
     public String getCpuCredits() {
@@ -65,13 +73,16 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of a T instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>.
+     *        The credit option for CPU usage of a T instance.</p>
+     *        <p>
+     *        Valid values: <code>standard</code> | <code>unlimited</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

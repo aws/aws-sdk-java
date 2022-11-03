@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a
- * trusted certificate to access your custom domain name.
+ * The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way
+ * authentication between the client and the server. Clients must present a trusted certificate to access your API.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,7 +28,7 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     * An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      * <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      * certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain
      * name to use the new version. To update the truststore, you must have permissions to access the S3 object.
@@ -38,21 +38,21 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
     /**
      * <p>
      * The version of the S3 object that contains your truststore. To specify a version, you must have versioning
-     * enabled for the S3 bucket.
+     * enabled for the S3 bucket
      * </p>
      */
     private String truststoreVersion;
 
     /**
      * <p>
-     * An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     * An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      * <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      * certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain
      * name to use the new version. To update the truststore, you must have permissions to access the S3 object.
      * </p>
      * 
      * @param truststoreUri
-     *        An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     *        An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      *        <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      *        certificate authorities. To update the truststore, upload a new version to S3, and then update your custom
      *        domain name to use the new version. To update the truststore, you must have permissions to access the S3
@@ -65,13 +65,13 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     * An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      * <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      * certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain
      * name to use the new version. To update the truststore, you must have permissions to access the S3 object.
      * </p>
      * 
-     * @return An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     * @return An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      *         <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      *         certificate authorities. To update the truststore, upload a new version to S3, and then update your
      *         custom domain name to use the new version. To update the truststore, you must have permissions to access
@@ -84,14 +84,14 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     * An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      * <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      * certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain
      * name to use the new version. To update the truststore, you must have permissions to access the S3 object.
      * </p>
      * 
      * @param truststoreUri
-     *        An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example,
+     *        An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example
      *        <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private
      *        certificate authorities. To update the truststore, upload a new version to S3, and then update your custom
      *        domain name to use the new version. To update the truststore, you must have permissions to access the S3
@@ -107,12 +107,12 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
     /**
      * <p>
      * The version of the S3 object that contains your truststore. To specify a version, you must have versioning
-     * enabled for the S3 bucket.
+     * enabled for the S3 bucket
      * </p>
      * 
      * @param truststoreVersion
      *        The version of the S3 object that contains your truststore. To specify a version, you must have versioning
-     *        enabled for the S3 bucket.
+     *        enabled for the S3 bucket
      */
 
     public void setTruststoreVersion(String truststoreVersion) {
@@ -122,11 +122,11 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
     /**
      * <p>
      * The version of the S3 object that contains your truststore. To specify a version, you must have versioning
-     * enabled for the S3 bucket.
+     * enabled for the S3 bucket
      * </p>
      * 
      * @return The version of the S3 object that contains your truststore. To specify a version, you must have
-     *         versioning enabled for the S3 bucket.
+     *         versioning enabled for the S3 bucket
      */
 
     public String getTruststoreVersion() {
@@ -136,12 +136,12 @@ public class MutualTlsAuthenticationInput implements Serializable, Cloneable, St
     /**
      * <p>
      * The version of the S3 object that contains your truststore. To specify a version, you must have versioning
-     * enabled for the S3 bucket.
+     * enabled for the S3 bucket
      * </p>
      * 
      * @param truststoreVersion
      *        The version of the S3 object that contains your truststore. To specify a version, you must have versioning
-     *        enabled for the S3 bucket.
+     *        enabled for the S3 bucket
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

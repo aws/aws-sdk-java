@@ -41,6 +41,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFormResult> createFormAsync(CreateFormRequest request) {
+
+        return createFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFormResult> createFormAsync(CreateFormRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFormRequest, CreateFormResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest request) {
 
         return createThemeAsync(request, null);
@@ -62,6 +75,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFormResult> deleteFormAsync(DeleteFormRequest request) {
+
+        return deleteFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFormResult> deleteFormAsync(DeleteFormRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFormRequest, DeleteFormResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +132,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     }
 
     @Override
+    public java.util.concurrent.Future<ExportFormsResult> exportFormsAsync(ExportFormsRequest request) {
+
+        return exportFormsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportFormsResult> exportFormsAsync(ExportFormsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportFormsRequest, ExportFormsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportThemesResult> exportThemesAsync(ExportThemesRequest request) {
 
         return exportThemesAsync(request, null);
@@ -127,6 +166,32 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFormResult> getFormAsync(GetFormRequest request) {
+
+        return getFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFormResult> getFormAsync(GetFormRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFormRequest, GetFormResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetadataResult> getMetadataAsync(GetMetadataRequest request) {
+
+        return getMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetadataResult> getMetadataAsync(GetMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMetadataRequest, GetMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +223,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     }
 
     @Override
+    public java.util.concurrent.Future<ListFormsResult> listFormsAsync(ListFormsRequest request) {
+
+        return listFormsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFormsResult> listFormsAsync(ListFormsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFormsRequest, ListFormsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest request) {
 
         return listThemesAsync(request, null);
@@ -166,6 +244,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThemesRequest, ListThemesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetadataFlagResult> putMetadataFlagAsync(PutMetadataFlagRequest request) {
+
+        return putMetadataFlagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetadataFlagResult> putMetadataFlagAsync(PutMetadataFlagRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutMetadataFlagRequest, PutMetadataFlagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -192,6 +283,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<UpdateComponentResult> updateComponentAsync(UpdateComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateComponentRequest, UpdateComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFormResult> updateFormAsync(UpdateFormRequest request) {
+
+        return updateFormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFormResult> updateFormAsync(UpdateFormRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFormRequest, UpdateFormResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

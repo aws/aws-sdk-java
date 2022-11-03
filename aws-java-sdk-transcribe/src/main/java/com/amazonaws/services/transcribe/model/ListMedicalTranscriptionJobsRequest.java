@@ -27,45 +27,45 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
-     * date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all
-     * transcription jobs ordered by creation date.
+     * Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     * newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      */
     private String jobNameContains;
     /**
      * <p>
-     * If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>, include
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
      * The maximum number of medical transcription jobs to return in each page of results. If there are fewer results
-     * than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     * is used.
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
-     * date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all
-     * transcription jobs ordered by creation date.
+     * Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     * newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.
      * </p>
      * 
      * @param status
-     *        When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by
-     *        creation date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe
-     *        Medical returns all transcription jobs ordered by creation date.
+     *        Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with
+     *        the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are
+     *        returned.
      * @see TranscriptionJobStatus
      */
 
@@ -75,14 +75,13 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
-     * date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all
-     * transcription jobs ordered by creation date.
+     * Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     * newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.
      * </p>
      * 
-     * @return When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by
-     *         creation date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe
-     *         Medical returns all transcription jobs ordered by creation date.
+     * @return Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date,
+     *         with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are
+     *         returned.
      * @see TranscriptionJobStatus
      */
 
@@ -92,15 +91,14 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
-     * date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all
-     * transcription jobs ordered by creation date.
+     * Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     * newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.
      * </p>
      * 
      * @param status
-     *        When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by
-     *        creation date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe
-     *        Medical returns all transcription jobs ordered by creation date.
+     *        Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with
+     *        the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are
+     *        returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -112,15 +110,14 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
-     * date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all
-     * transcription jobs ordered by creation date.
+     * Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     * newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.
      * </p>
      * 
      * @param status
-     *        When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by
-     *        creation date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe
-     *        Medical returns all transcription jobs ordered by creation date.
+     *        Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with
+     *        the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are
+     *        returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -132,12 +129,12 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      * 
      * @param jobNameContains
-     *        When specified, the jobs returned in the list are limited to jobs whose name contains the specified
-     *        string.
+     *        Returns only the medical transcription jobs that contain the specified string. The search is not case
+     *        sensitive.
      */
 
     public void setJobNameContains(String jobNameContains) {
@@ -146,11 +143,11 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      * 
-     * @return When specified, the jobs returned in the list are limited to jobs whose name contains the specified
-     *         string.
+     * @return Returns only the medical transcription jobs that contain the specified string. The search is not case
+     *         sensitive.
      */
 
     public String getJobNameContains() {
@@ -159,12 +156,12 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      * 
      * @param jobNameContains
-     *        When specified, the jobs returned in the list are limited to jobs whose name contains the specified
-     *        string.
+     *        Returns only the medical transcription jobs that contain the specified string. The search is not case
+     *        sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,13 +172,17 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>, include
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>,
-     *        include <code>NextToken</code> to fetch the next set of jobs.
+     *        If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     *        <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *        results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *        copied string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -190,12 +191,16 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>, include
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
-     * @return If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>,
-     *         include <code>NextToken</code> to fetch the next set of jobs.
+     * @return If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     *         <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *         results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -204,13 +209,17 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>, include
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>,
-     *        include <code>NextToken</code> to fetch the next set of jobs.
+     *        If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed,
+     *        <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *        results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *        copied string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,14 +231,14 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The maximum number of medical transcription jobs to return in each page of results. If there are fewer results
-     * than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     * is used.
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of medical transcription jobs to return in each page of results. If there are fewer
-     *        results than the value you specify, only the actual results are returned. If you do not specify a value,
-     *        the default of 5 is used.
+     *        results than the value you specify, only the actual results are returned. If you don't specify a value, a
+     *        default of 5 is used.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -239,13 +248,13 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The maximum number of medical transcription jobs to return in each page of results. If there are fewer results
-     * than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     * is used.
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @return The maximum number of medical transcription jobs to return in each page of results. If there are fewer
-     *         results than the value you specify, only the actual results are returned. If you do not specify a value,
-     *         the default of 5 is used.
+     *         results than the value you specify, only the actual results are returned. If you don't specify a value, a
+     *         default of 5 is used.
      */
 
     public Integer getMaxResults() {
@@ -255,14 +264,14 @@ public class ListMedicalTranscriptionJobsRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The maximum number of medical transcription jobs to return in each page of results. If there are fewer results
-     * than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     * is used.
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of medical transcription jobs to return in each page of results. If there are fewer
-     *        results than the value you specify, only the actual results are returned. If you do not specify a value,
-     *        the default of 5 is used.
+     *        results than the value you specify, only the actual results are returned. If you don't specify a value, a
+     *        default of 5 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

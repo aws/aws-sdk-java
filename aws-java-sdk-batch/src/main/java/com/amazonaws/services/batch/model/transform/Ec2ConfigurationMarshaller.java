@@ -31,6 +31,8 @@ public class Ec2ConfigurationMarshaller {
             .marshallLocationName("imageType").build();
     private static final MarshallingInfo<String> IMAGEIDOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageIdOverride").build();
+    private static final MarshallingInfo<String> IMAGEKUBERNETESVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageKubernetesVersion").build();
 
     private static final Ec2ConfigurationMarshaller instance = new Ec2ConfigurationMarshaller();
 
@@ -50,6 +52,7 @@ public class Ec2ConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(ec2Configuration.getImageType(), IMAGETYPE_BINDING);
             protocolMarshaller.marshall(ec2Configuration.getImageIdOverride(), IMAGEIDOVERRIDE_BINDING);
+            protocolMarshaller.marshall(ec2Configuration.getImageKubernetesVersion(), IMAGEKUBERNETESVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

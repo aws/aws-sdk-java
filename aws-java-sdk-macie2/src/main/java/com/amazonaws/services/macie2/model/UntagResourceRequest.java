@@ -27,28 +27,25 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member
-     * account.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
      * One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the
-     * tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     * tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member
-     * account.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or
-     *        member account.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,12 +54,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member
-     * account.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or
-     *         member account.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -71,13 +66,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member
-     * account.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or
-     *        member account.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +82,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the
-     * tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     * tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * </p>
      * 
      * @return One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append
-     *         the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     *         the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      */
 
     public java.util.List<String> getTagKeys() {
@@ -103,12 +96,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the
-     * tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     * tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * </p>
      * 
      * @param tagKeys
      *        One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append
-     *        the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     *        the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -123,7 +116,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the
-     * tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     * tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,7 +126,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tagKeys
      *        One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append
-     *        the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     *        the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +143,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the
-     * tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     * tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * </p>
      * 
      * @param tagKeys
      *        One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append
-     *        the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).
+     *        the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

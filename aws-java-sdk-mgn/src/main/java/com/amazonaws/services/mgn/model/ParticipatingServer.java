@@ -39,6 +39,18 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
      * Participating server Source Server ID.
      * </p>
      */
+    private String launchedEc2InstanceID;
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     */
+    private PostLaunchActionsStatus postLaunchActionsStatus;
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     */
     private String sourceServerID;
 
     /**
@@ -105,6 +117,86 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
      * Participating server Source Server ID.
      * </p>
      * 
+     * @param launchedEc2InstanceID
+     *        Participating server Source Server ID.
+     */
+
+    public void setLaunchedEc2InstanceID(String launchedEc2InstanceID) {
+        this.launchedEc2InstanceID = launchedEc2InstanceID;
+    }
+
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     * 
+     * @return Participating server Source Server ID.
+     */
+
+    public String getLaunchedEc2InstanceID() {
+        return this.launchedEc2InstanceID;
+    }
+
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     * 
+     * @param launchedEc2InstanceID
+     *        Participating server Source Server ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParticipatingServer withLaunchedEc2InstanceID(String launchedEc2InstanceID) {
+        setLaunchedEc2InstanceID(launchedEc2InstanceID);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     * 
+     * @param postLaunchActionsStatus
+     *        Participating server Source Server ID.
+     */
+
+    public void setPostLaunchActionsStatus(PostLaunchActionsStatus postLaunchActionsStatus) {
+        this.postLaunchActionsStatus = postLaunchActionsStatus;
+    }
+
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     * 
+     * @return Participating server Source Server ID.
+     */
+
+    public PostLaunchActionsStatus getPostLaunchActionsStatus() {
+        return this.postLaunchActionsStatus;
+    }
+
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     * 
+     * @param postLaunchActionsStatus
+     *        Participating server Source Server ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParticipatingServer withPostLaunchActionsStatus(PostLaunchActionsStatus postLaunchActionsStatus) {
+        setPostLaunchActionsStatus(postLaunchActionsStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Participating server Source Server ID.
+     * </p>
+     * 
      * @param sourceServerID
      *        Participating server Source Server ID.
      */
@@ -154,6 +246,10 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getLaunchStatus() != null)
             sb.append("LaunchStatus: ").append(getLaunchStatus()).append(",");
+        if (getLaunchedEc2InstanceID() != null)
+            sb.append("LaunchedEc2InstanceID: ").append(getLaunchedEc2InstanceID()).append(",");
+        if (getPostLaunchActionsStatus() != null)
+            sb.append("PostLaunchActionsStatus: ").append(getPostLaunchActionsStatus()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID());
         sb.append("}");
@@ -174,6 +270,14 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getLaunchStatus() != null && other.getLaunchStatus().equals(this.getLaunchStatus()) == false)
             return false;
+        if (other.getLaunchedEc2InstanceID() == null ^ this.getLaunchedEc2InstanceID() == null)
+            return false;
+        if (other.getLaunchedEc2InstanceID() != null && other.getLaunchedEc2InstanceID().equals(this.getLaunchedEc2InstanceID()) == false)
+            return false;
+        if (other.getPostLaunchActionsStatus() == null ^ this.getPostLaunchActionsStatus() == null)
+            return false;
+        if (other.getPostLaunchActionsStatus() != null && other.getPostLaunchActionsStatus().equals(this.getPostLaunchActionsStatus()) == false)
+            return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
         if (other.getSourceServerID() != null && other.getSourceServerID().equals(this.getSourceServerID()) == false)
@@ -187,6 +291,8 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLaunchStatus() == null) ? 0 : getLaunchStatus().hashCode());
+        hashCode = prime * hashCode + ((getLaunchedEc2InstanceID() == null) ? 0 : getLaunchedEc2InstanceID().hashCode());
+        hashCode = prime * hashCode + ((getPostLaunchActionsStatus() == null) ? 0 : getPostLaunchActionsStatus().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         return hashCode;
     }

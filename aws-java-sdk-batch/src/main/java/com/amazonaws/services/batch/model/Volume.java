@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A data volume used in a job's container properties.
+ * A data volume that's used in a job's container properties.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Volume" target="_top">AWS API Documentation</a>
@@ -30,9 +30,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
-     * running.
+     * instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for
+     * your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it
+     * stop running.
      * </p>
      * <note>
      * <p>
@@ -43,7 +43,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private Host host;
     /**
      * <p>
-     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters,
      * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
      * container definition <code>mountPoints</code>.
      * </p>
@@ -51,7 +51,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs
      * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      */
@@ -60,9 +60,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
-     * running.
+     * instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for
+     * your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it
+     * stop running.
      * </p>
      * <note>
      * <p>
@@ -72,9 +72,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
-     *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume. However, the data isn't guaranteed to persist after the containers
-     *        associated with it stop running.</p> <note>
+     *        container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a
+     *        host path for your data volume. However, the data isn't guaranteed to persist after the containers that
+     *        are associated with it stop running.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
@@ -87,9 +87,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
-     * running.
+     * instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for
+     * your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it
+     * stop running.
      * </p>
      * <note>
      * <p>
@@ -98,9 +98,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
-     *         container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *         a host path for your data volume. However, the data isn't guaranteed to persist after the containers
-     *         associated with it stop running.</p> <note>
+     *         container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns
+     *         a host path for your data volume. However, the data isn't guaranteed to persist after the containers that
+     *         are associated with it stop running.</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
@@ -113,9 +113,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
-     * running.
+     * instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for
+     * your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it
+     * stop running.
      * </p>
      * <note>
      * <p>
@@ -125,9 +125,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
-     *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume. However, the data isn't guaranteed to persist after the containers
-     *        associated with it stop running.</p> <note>
+     *        container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a
+     *        host path for your data volume. However, the data isn't guaranteed to persist after the containers that
+     *        are associated with it stop running.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
@@ -141,15 +141,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters,
      * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
      * container definition <code>mountPoints</code>.
      * </p>
      * 
      * @param name
-     *        The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
-     *        numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code>
-     *        parameter of container definition <code>mountPoints</code>.
+     *        The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase
+     *        letters, numbers, hyphens (-), and underscores (_). This name is referenced in the
+     *        <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
      */
 
     public void setName(String name) {
@@ -158,14 +158,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters,
      * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
      * container definition <code>mountPoints</code>.
      * </p>
      * 
-     * @return The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
-     *         numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code>
-     *         parameter of container definition <code>mountPoints</code>.
+     * @return The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase
+     *         letters, numbers, hyphens (-), and underscores (_). This name is referenced in the
+     *         <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
      */
 
     public String getName() {
@@ -174,15 +174,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase letters,
      * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
      * container definition <code>mountPoints</code>.
      * </p>
      * 
      * @param name
-     *        The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
-     *        numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code>
-     *        parameter of container definition <code>mountPoints</code>.
+     *        The name of the volume. It can be up to 255 characters long. It can contain uppercase and lowercase
+     *        letters, numbers, hyphens (-), and underscores (_). This name is referenced in the
+     *        <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,12 +193,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs
      * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      * 
      * @param efsVolumeConfiguration
-     *        This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
+     *        This parameter is specified when you're using an Amazon Elastic File System file system for job storage.
      *        Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least
      *        <code>1.4.0</code>.
      */
@@ -209,11 +209,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs
      * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      * 
-     * @return This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
+     * @return This parameter is specified when you're using an Amazon Elastic File System file system for job storage.
      *         Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least
      *         <code>1.4.0</code>.
      */
@@ -224,12 +224,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * This parameter is specified when you're using an Amazon Elastic File System file system for job storage. Jobs
      * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      * 
      * @param efsVolumeConfiguration
-     *        This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
+     *        This parameter is specified when you're using an Amazon Elastic File System file system for job storage.
      *        Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least
      *        <code>1.4.0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

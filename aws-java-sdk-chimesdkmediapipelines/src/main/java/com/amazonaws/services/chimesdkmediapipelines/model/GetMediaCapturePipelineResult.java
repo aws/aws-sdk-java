@@ -25,18 +25,18 @@ public class GetMediaCapturePipelineResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The media capture pipeline object.
+     * The media pipeline object.
      * </p>
      */
     private MediaCapturePipeline mediaCapturePipeline;
 
     /**
      * <p>
-     * The media capture pipeline object.
+     * The media pipeline object.
      * </p>
      * 
      * @param mediaCapturePipeline
-     *        The media capture pipeline object.
+     *        The media pipeline object.
      */
 
     public void setMediaCapturePipeline(MediaCapturePipeline mediaCapturePipeline) {
@@ -45,10 +45,10 @@ public class GetMediaCapturePipelineResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The media capture pipeline object.
+     * The media pipeline object.
      * </p>
      * 
-     * @return The media capture pipeline object.
+     * @return The media pipeline object.
      */
 
     public MediaCapturePipeline getMediaCapturePipeline() {
@@ -57,11 +57,11 @@ public class GetMediaCapturePipelineResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The media capture pipeline object.
+     * The media pipeline object.
      * </p>
      * 
      * @param mediaCapturePipeline
-     *        The media capture pipeline object.
+     *        The media pipeline object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

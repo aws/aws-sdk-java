@@ -27,26 +27,25 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique name for the data source. A data source name can't be changed without deleting and recreating the data
-     * source.
+     * A name for the data source connector.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The identifier of the index that should be associated with this data source.
+     * The identifier of the index you want to use with the data source connector.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The type of repository that contains the data source.
+     * The type of data source repository. For example, <code>SHAREPOINT</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Configuration information that is required to access the data source repository.
+     * Configuration information to connect to your data source repository.
      * </p>
      * <p>
      * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
@@ -59,14 +58,22 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private DataSourceConfiguration configuration;
     /**
      * <p>
-     * A description for the data source.
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     */
+    private DataSourceVpcConfiguration vpcConfiguration;
+    /**
+     * <p>
+     * A description for the data source connector.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't
-     * set a schedule Amazon Kendra will not periodically update the index. You can call the
+     * Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index.
+     * If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
@@ -77,8 +84,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String schedule;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
+     * Kendra</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -91,31 +99,30 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String roleArn;
     /**
      * <p>
-     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
+     * your resources and to control access to resources.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * A token that you provide to identify the request to create a data source. Multiple calls to the
-     * <code>CreateDataSource</code> API with the same client token will create only one data source.
+     * A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     * <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The code for a language. This allows you to support a language for all documents when creating the data source.
-     * English is supported by default. For more information on supported languages, including their codes, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other
-     * than English</a>.
+     * The code for a language. This allows you to support a language for all documents when creating the data source
+     * connector. English is supported by default. For more information on supported languages, including their codes,
+     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages
+     * other than English</a>.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * Configuration information for altering document metadata and content during the document ingestion process when
-     * you create a data source.
+     * Configuration information for altering document metadata and content during the document ingestion process.
      * </p>
      * <p>
      * For more information on how to create, modify and delete document metadata, or make other content alterations
@@ -128,13 +135,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique name for the data source. A data source name can't be changed without deleting and recreating the data
-     * source.
+     * A name for the data source connector.
      * </p>
      * 
      * @param name
-     *        A unique name for the data source. A data source name can't be changed without deleting and recreating the
-     *        data source.
+     *        A name for the data source connector.
      */
 
     public void setName(String name) {
@@ -143,12 +148,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique name for the data source. A data source name can't be changed without deleting and recreating the data
-     * source.
+     * A name for the data source connector.
      * </p>
      * 
-     * @return A unique name for the data source. A data source name can't be changed without deleting and recreating
-     *         the data source.
+     * @return A name for the data source connector.
      */
 
     public String getName() {
@@ -157,13 +160,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique name for the data source. A data source name can't be changed without deleting and recreating the data
-     * source.
+     * A name for the data source connector.
      * </p>
      * 
      * @param name
-     *        A unique name for the data source. A data source name can't be changed without deleting and recreating the
-     *        data source.
+     *        A name for the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +175,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index that should be associated with this data source.
+     * The identifier of the index you want to use with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that should be associated with this data source.
+     *        The identifier of the index you want to use with the data source connector.
      */
 
     public void setIndexId(String indexId) {
@@ -187,10 +188,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index that should be associated with this data source.
+     * The identifier of the index you want to use with the data source connector.
      * </p>
      * 
-     * @return The identifier of the index that should be associated with this data source.
+     * @return The identifier of the index you want to use with the data source connector.
      */
 
     public String getIndexId() {
@@ -199,11 +200,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index that should be associated with this data source.
+     * The identifier of the index you want to use with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that should be associated with this data source.
+     *        The identifier of the index you want to use with the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +215,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of repository that contains the data source.
+     * The type of data source repository. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
      * @param type
-     *        The type of repository that contains the data source.
+     *        The type of data source repository. For example, <code>SHAREPOINT</code>.
      * @see DataSourceType
      */
 
@@ -228,10 +229,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of repository that contains the data source.
+     * The type of data source repository. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
-     * @return The type of repository that contains the data source.
+     * @return The type of data source repository. For example, <code>SHAREPOINT</code>.
      * @see DataSourceType
      */
 
@@ -241,11 +242,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of repository that contains the data source.
+     * The type of data source repository. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
      * @param type
-     *        The type of repository that contains the data source.
+     *        The type of data source repository. For example, <code>SHAREPOINT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -257,11 +258,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of repository that contains the data source.
+     * The type of data source repository. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
      * @param type
-     *        The type of repository that contains the data source.
+     *        The type of data source repository. For example, <code>SHAREPOINT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -273,7 +274,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information that is required to access the data source repository.
+     * Configuration information to connect to your data source repository.
      * </p>
      * <p>
      * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
@@ -284,7 +285,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param configuration
-     *        Configuration information that is required to access the data source repository.</p>
+     *        Configuration information to connect to your data source repository.</p>
      *        <p>
      *        You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -299,7 +300,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information that is required to access the data source repository.
+     * Configuration information to connect to your data source repository.
      * </p>
      * <p>
      * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
@@ -309,7 +310,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>Configuration</code> parameter is required for all other data sources.
      * </p>
      * 
-     * @return Configuration information that is required to access the data source repository.</p>
+     * @return Configuration information to connect to your data source repository.</p>
      *         <p>
      *         You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
      *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -324,7 +325,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information that is required to access the data source repository.
+     * Configuration information to connect to your data source repository.
      * </p>
      * <p>
      * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
@@ -335,7 +336,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param configuration
-     *        Configuration information that is required to access the data source repository.</p>
+     *        Configuration information to connect to your data source repository.</p>
      *        <p>
      *        You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -352,11 +353,63 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description for the data source.
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     *        a VPC</a>.
+     */
+
+    public void setVpcConfiguration(DataSourceVpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @return Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.
+     */
+
+    public DataSourceVpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     *        a VPC</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withVpcConfiguration(DataSourceVpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for the data source connector.
      * </p>
      * 
      * @param description
-     *        A description for the data source.
+     *        A description for the data source connector.
      */
 
     public void setDescription(String description) {
@@ -365,10 +418,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description for the data source.
+     * A description for the data source connector.
      * </p>
      * 
-     * @return A description for the data source.
+     * @return A description for the data source connector.
      */
 
     public String getDescription() {
@@ -377,11 +430,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description for the data source.
+     * A description for the data source connector.
      * </p>
      * 
      * @param description
-     *        A description for the data source.
+     *        A description for the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,8 +445,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't
-     * set a schedule Amazon Kendra will not periodically update the index. You can call the
+     * Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index.
+     * If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
@@ -402,8 +455,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param schedule
-     *        Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If
-     *        you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
+     *        Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the
+     *        index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      *        <code>StartDataSourceSyncJob</code> API to update the index.</p>
      *        <p>
      *        You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
@@ -416,8 +469,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't
-     * set a schedule Amazon Kendra will not periodically update the index. You can call the
+     * Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index.
+     * If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
@@ -425,8 +478,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      * </p>
      * 
-     * @return Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If
-     *         you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
+     * @return Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the
+     *         index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      *         <code>StartDataSourceSyncJob</code> API to update the index.</p>
      *         <p>
      *         You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
@@ -439,8 +492,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't
-     * set a schedule Amazon Kendra will not periodically update the index. You can call the
+     * Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index.
+     * If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
@@ -449,8 +502,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param schedule
-     *        Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If
-     *        you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
+     *        Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the
+     *        index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      *        <code>StartDataSourceSyncJob</code> API to update the index.</p>
      *        <p>
      *        You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
@@ -465,8 +518,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
+     * Kendra</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -477,9 +531,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information,
-     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     *        Kendra</a>.</p>
+     *        The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources.
+     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles
+     *        for Amazon Kendra</a>.</p>
      *        <p>
      *        You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -494,8 +548,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
+     * Kendra</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -505,9 +560,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>RoleArn</code> parameter is required for all other data sources.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information,
-     *         see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     *         Kendra</a>.</p>
+     * @return The Amazon Resource Name (ARN) of a role with permission to access the data source and required
+     *         resources. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
      *         <p>
      *         You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
      *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -522,8 +577,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
+     * Kendra</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -534,9 +590,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information,
-     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     *        Kendra</a>.</p>
+     *        The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources.
+     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles
+     *        for Amazon Kendra</a>.</p>
      *        <p>
      *        You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -553,12 +609,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
+     * your resources and to control access to resources.
      * </p>
      * 
-     * @return A list of key-value pairs that identify the data source. You can use the tags to identify and organize
-     *         your resources and to control access to resources.
+     * @return A list of key-value pairs that identify the data source connector. You can use the tags to identify and
+     *         organize your resources and to control access to resources.
      */
 
     public java.util.List<Tag> getTags() {
@@ -567,13 +623,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
+     * your resources and to control access to resources.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the data source. You can use the tags to identify and organize
-     *        your resources and to control access to resources.
+     *        A list of key-value pairs that identify the data source connector. You can use the tags to identify and
+     *        organize your resources and to control access to resources.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -587,8 +643,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
+     * your resources and to control access to resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -597,8 +653,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the data source. You can use the tags to identify and organize
-     *        your resources and to control access to resources.
+     *        A list of key-value pairs that identify the data source connector. You can use the tags to identify and
+     *        organize your resources and to control access to resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,13 +670,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
+     * your resources and to control access to resources.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the data source. You can use the tags to identify and organize
-     *        your resources and to control access to resources.
+     *        A list of key-value pairs that identify the data source connector. You can use the tags to identify and
+     *        organize your resources and to control access to resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -631,13 +687,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that you provide to identify the request to create a data source. Multiple calls to the
-     * <code>CreateDataSource</code> API with the same client token will create only one data source.
+     * A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     * <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      * </p>
      * 
      * @param clientToken
-     *        A token that you provide to identify the request to create a data source. Multiple calls to the
-     *        <code>CreateDataSource</code> API with the same client token will create only one data source.
+     *        A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     *        <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      */
 
     public void setClientToken(String clientToken) {
@@ -646,12 +702,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that you provide to identify the request to create a data source. Multiple calls to the
-     * <code>CreateDataSource</code> API with the same client token will create only one data source.
+     * A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     * <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      * </p>
      * 
-     * @return A token that you provide to identify the request to create a data source. Multiple calls to the
-     *         <code>CreateDataSource</code> API with the same client token will create only one data source.
+     * @return A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     *         <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      */
 
     public String getClientToken() {
@@ -660,13 +716,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that you provide to identify the request to create a data source. Multiple calls to the
-     * <code>CreateDataSource</code> API with the same client token will create only one data source.
+     * A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     * <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      * </p>
      * 
      * @param clientToken
-     *        A token that you provide to identify the request to create a data source. Multiple calls to the
-     *        <code>CreateDataSource</code> API with the same client token will create only one data source.
+     *        A token that you provide to identify the request to create a data source connector. Multiple calls to the
+     *        <code>CreateDataSource</code> API with the same client token will create only one data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -677,16 +733,16 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The code for a language. This allows you to support a language for all documents when creating the data source.
-     * English is supported by default. For more information on supported languages, including their codes, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other
-     * than English</a>.
+     * The code for a language. This allows you to support a language for all documents when creating the data source
+     * connector. English is supported by default. For more information on supported languages, including their codes,
+     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages
+     * other than English</a>.
      * </p>
      * 
      * @param languageCode
      *        The code for a language. This allows you to support a language for all documents when creating the data
-     *        source. English is supported by default. For more information on supported languages, including their
-     *        codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     *        source connector. English is supported by default. For more information on supported languages, including
+     *        their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
      *        documents in languages other than English</a>.
      */
 
@@ -696,15 +752,15 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The code for a language. This allows you to support a language for all documents when creating the data source.
-     * English is supported by default. For more information on supported languages, including their codes, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other
-     * than English</a>.
+     * The code for a language. This allows you to support a language for all documents when creating the data source
+     * connector. English is supported by default. For more information on supported languages, including their codes,
+     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages
+     * other than English</a>.
      * </p>
      * 
      * @return The code for a language. This allows you to support a language for all documents when creating the data
-     *         source. English is supported by default. For more information on supported languages, including their
-     *         codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     *         source connector. English is supported by default. For more information on supported languages, including
+     *         their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
      *         documents in languages other than English</a>.
      */
 
@@ -714,16 +770,16 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The code for a language. This allows you to support a language for all documents when creating the data source.
-     * English is supported by default. For more information on supported languages, including their codes, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other
-     * than English</a>.
+     * The code for a language. This allows you to support a language for all documents when creating the data source
+     * connector. English is supported by default. For more information on supported languages, including their codes,
+     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages
+     * other than English</a>.
      * </p>
      * 
      * @param languageCode
      *        The code for a language. This allows you to support a language for all documents when creating the data
-     *        source. English is supported by default. For more information on supported languages, including their
-     *        codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     *        source connector. English is supported by default. For more information on supported languages, including
+     *        their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
      *        documents in languages other than English</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -735,8 +791,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information for altering document metadata and content during the document ingestion process when
-     * you create a data source.
+     * Configuration information for altering document metadata and content during the document ingestion process.
      * </p>
      * <p>
      * For more information on how to create, modify and delete document metadata, or make other content alterations
@@ -746,8 +801,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param customDocumentEnrichmentConfiguration
-     *        Configuration information for altering document metadata and content during the document ingestion process
-     *        when you create a data source.</p>
+     *        Configuration information for altering document metadata and content during the document ingestion
+     *        process.</p>
      *        <p>
      *        For more information on how to create, modify and delete document metadata, or make other content
      *        alterations when you ingest documents into Amazon Kendra, see <a
@@ -761,8 +816,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information for altering document metadata and content during the document ingestion process when
-     * you create a data source.
+     * Configuration information for altering document metadata and content during the document ingestion process.
      * </p>
      * <p>
      * For more information on how to create, modify and delete document metadata, or make other content alterations
@@ -772,7 +826,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return Configuration information for altering document metadata and content during the document ingestion
-     *         process when you create a data source.</p>
+     *         process.</p>
      *         <p>
      *         For more information on how to create, modify and delete document metadata, or make other content
      *         alterations when you ingest documents into Amazon Kendra, see <a
@@ -786,8 +840,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information for altering document metadata and content during the document ingestion process when
-     * you create a data source.
+     * Configuration information for altering document metadata and content during the document ingestion process.
      * </p>
      * <p>
      * For more information on how to create, modify and delete document metadata, or make other content alterations
@@ -797,8 +850,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param customDocumentEnrichmentConfiguration
-     *        Configuration information for altering document metadata and content during the document ingestion process
-     *        when you create a data source.</p>
+     *        Configuration information for altering document metadata and content during the document ingestion
+     *        process.</p>
      *        <p>
      *        For more information on how to create, modify and delete document metadata, or make other content
      *        alterations when you ingest documents into Amazon Kendra, see <a
@@ -832,6 +885,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Type: ").append(getType()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSchedule() != null)
@@ -876,6 +931,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -917,6 +976,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

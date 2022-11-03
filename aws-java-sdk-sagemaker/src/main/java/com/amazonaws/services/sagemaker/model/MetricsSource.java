@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Details about the metrics source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MetricsSource" target="_top">AWS API
  *      Documentation</a>
@@ -26,17 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The metric source content type.
+     * </p>
+     */
     private String contentType;
-    /** <p/> */
+    /**
+     * <p>
+     * The hash key used for the metrics source.
+     * </p>
+     */
     private String contentDigest;
-    /** <p/> */
+    /**
+     * <p>
+     * The S3 URI for the metrics source.
+     * </p>
+     */
     private String s3Uri;
 
     /**
-     * <p/>
+     * <p>
+     * The metric source content type.
+     * </p>
      * 
      * @param contentType
+     *        The metric source content type.
      */
 
     public void setContentType(String contentType) {
@@ -44,9 +61,11 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The metric source content type.
+     * </p>
      * 
-     * @return
+     * @return The metric source content type.
      */
 
     public String getContentType() {
@@ -54,9 +73,12 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The metric source content type.
+     * </p>
      * 
      * @param contentType
+     *        The metric source content type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +88,12 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The hash key used for the metrics source.
+     * </p>
      * 
      * @param contentDigest
+     *        The hash key used for the metrics source.
      */
 
     public void setContentDigest(String contentDigest) {
@@ -76,9 +101,11 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The hash key used for the metrics source.
+     * </p>
      * 
-     * @return
+     * @return The hash key used for the metrics source.
      */
 
     public String getContentDigest() {
@@ -86,9 +113,12 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The hash key used for the metrics source.
+     * </p>
      * 
      * @param contentDigest
+     *        The hash key used for the metrics source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,9 +128,12 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The S3 URI for the metrics source.
+     * </p>
      * 
      * @param s3Uri
+     *        The S3 URI for the metrics source.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -108,9 +141,11 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The S3 URI for the metrics source.
+     * </p>
      * 
-     * @return
+     * @return The S3 URI for the metrics source.
      */
 
     public String getS3Uri() {
@@ -118,9 +153,12 @@ public class MetricsSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The S3 URI for the metrics source.
+     * </p>
      * 
      * @param s3Uri
+     *        The S3 URI for the metrics source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -133,6 +133,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateTaskTemplateResult createTaskTemplate(CreateTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTrafficDistributionGroupResult createTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUseCaseResult createUseCase(CreateUseCaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +194,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DeleteSecurityProfileResult deleteSecurityProfile(DeleteSecurityProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTaskTemplateResult deleteTaskTemplate(DeleteTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTrafficDistributionGroupResult deleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -273,6 +293,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DescribeTrafficDistributionGroupResult describeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeUserResult describeUser(DescribeUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -338,6 +363,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DismissUserContactResult dismissUserContact(DismissUserContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetContactAttributesResult getContactAttributes(GetContactAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -348,12 +378,27 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public GetCurrentUserDataResult getCurrentUserData(GetCurrentUserDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFederationTokenResult getFederationToken(GetFederationTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetMetricDataResult getMetricData(GetMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTaskTemplateResult getTaskTemplate(GetTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTrafficDistributionResult getTrafficDistribution(GetTrafficDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -488,6 +533,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListTaskTemplatesResult listTaskTemplates(ListTaskTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTrafficDistributionGroupsResult listTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUseCasesResult listUseCases(ListUseCasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -513,12 +568,32 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ReplicateInstanceResult replicateInstance(ReplicateInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ResumeContactRecordingResult resumeContactRecording(ResumeContactRecordingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public SearchAvailablePhoneNumbersResult searchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchQueuesResult searchQueues(SearchQueuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchRoutingProfilesResult searchRoutingProfiles(SearchRoutingProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchSecurityProfilesResult searchSecurityProfiles(SearchSecurityProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -579,6 +654,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TransferContactResult transferContact(TransferContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -709,6 +789,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTaskTemplateResult updateTaskTemplate(UpdateTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTrafficDistributionResult updateTrafficDistribution(UpdateTrafficDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -359,6 +359,19 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListCostAllocationTagsResult> listCostAllocationTagsAsync(ListCostAllocationTagsRequest request) {
+
+        return listCostAllocationTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCostAllocationTagsResult> listCostAllocationTagsAsync(ListCostAllocationTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCostAllocationTagsRequest, ListCostAllocationTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCostCategoryDefinitionsResult> listCostCategoryDefinitionsAsync(ListCostCategoryDefinitionsRequest request) {
 
         return listCostCategoryDefinitionsAsync(request, null);
@@ -445,6 +458,19 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     @Override
     public java.util.concurrent.Future<UpdateAnomalySubscriptionResult> updateAnomalySubscriptionAsync(UpdateAnomalySubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAnomalySubscriptionRequest, UpdateAnomalySubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCostAllocationTagsStatusResult> updateCostAllocationTagsStatusAsync(UpdateCostAllocationTagsStatusRequest request) {
+
+        return updateCostAllocationTagsStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCostAllocationTagsStatusResult> updateCostAllocationTagsStatusAsync(UpdateCostAllocationTagsStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCostAllocationTagsStatusRequest, UpdateCostAllocationTagsStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

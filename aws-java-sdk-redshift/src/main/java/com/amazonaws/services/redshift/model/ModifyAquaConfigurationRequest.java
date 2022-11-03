@@ -33,25 +33,9 @@ public class ModifyAquaConfigurationRequest extends com.amazonaws.AmazonWebServi
     private String clusterIdentifier;
     /**
      * <p>
-     * The new value of AQUA configuration status. Possible values include the following.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String aquaConfigurationStatus;
 
@@ -97,45 +81,13 @@ public class ModifyAquaConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The new value of AQUA configuration status. Possible values include the following.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The new value of AQUA configuration status. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @see AquaConfigurationStatus
      */
 
@@ -145,44 +97,12 @@ public class ModifyAquaConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The new value of AQUA configuration status. Possible values include the following.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The new value of AQUA configuration status. Possible values include the following.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *         type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         disabled - Don't use AQUA.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         auto - Amazon Redshift determines whether to use AQUA.
-     *         </p>
-     *         </li>
+     * @return This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *         Accelerator).
      * @see AquaConfigurationStatus
      */
 
@@ -192,45 +112,13 @@ public class ModifyAquaConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The new value of AQUA configuration status. Possible values include the following.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The new value of AQUA configuration status. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaConfigurationStatus
      */
@@ -242,45 +130,13 @@ public class ModifyAquaConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The new value of AQUA configuration status. Possible values include the following.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The new value of AQUA configuration status. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaConfigurationStatus
      */

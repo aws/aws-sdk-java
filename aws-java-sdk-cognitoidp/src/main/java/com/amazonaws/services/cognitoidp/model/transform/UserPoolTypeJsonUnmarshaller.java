@@ -60,6 +60,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setPolicies(UserPoolPolicyTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeletionProtection", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setDeletionProtection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LambdaConfig", targetDepth)) {
                     context.nextToken();
                     userPoolType.setLambdaConfig(LambdaConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));
@@ -119,6 +123,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                 if (context.testExpression("SmsAuthenticationMessage", targetDepth)) {
                     context.nextToken();
                     userPoolType.setSmsAuthenticationMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UserAttributeUpdateSettings", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setUserAttributeUpdateSettings(UserAttributeUpdateSettingsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MfaConfiguration", targetDepth)) {
                     context.nextToken();

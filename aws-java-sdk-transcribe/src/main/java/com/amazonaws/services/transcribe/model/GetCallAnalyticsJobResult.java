@@ -25,33 +25,21 @@ public class GetCallAnalyticsJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains detailed information about your call analytics job. Returned fields include:
-     * <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     * <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>, <code>StartTime</code>, and
-     * <code>Transcript</code>.
+     * Provides detailed information about the specified Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      */
     private CallAnalyticsJob callAnalyticsJob;
 
     /**
      * <p>
-     * An object that contains detailed information about your call analytics job. Returned fields include:
-     * <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     * <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>, <code>StartTime</code>, and
-     * <code>Transcript</code>.
+     * Provides detailed information about the specified Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param callAnalyticsJob
-     *        An object that contains detailed information about your call analytics job. Returned fields include:
-     *        <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     *        <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     *        <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     *        <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>,
-     *        <code>StartTime</code>, and <code>Transcript</code>.
+     *        Provides detailed information about the specified Call Analytics job, including job status and, if
+     *        applicable, failure reason.
      */
 
     public void setCallAnalyticsJob(CallAnalyticsJob callAnalyticsJob) {
@@ -60,20 +48,12 @@ public class GetCallAnalyticsJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains detailed information about your call analytics job. Returned fields include:
-     * <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     * <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>, <code>StartTime</code>, and
-     * <code>Transcript</code>.
+     * Provides detailed information about the specified Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
-     * @return An object that contains detailed information about your call analytics job. Returned fields include:
-     *         <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     *         <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     *         <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     *         <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>,
-     *         <code>StartTime</code>, and <code>Transcript</code>.
+     * @return Provides detailed information about the specified Call Analytics job, including job status and, if
+     *         applicable, failure reason.
      */
 
     public CallAnalyticsJob getCallAnalyticsJob() {
@@ -82,21 +62,13 @@ public class GetCallAnalyticsJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains detailed information about your call analytics job. Returned fields include:
-     * <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     * <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>, <code>StartTime</code>, and
-     * <code>Transcript</code>.
+     * Provides detailed information about the specified Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param callAnalyticsJob
-     *        An object that contains detailed information about your call analytics job. Returned fields include:
-     *        <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     *        <code>CompletionTime</code>, <code>CreationTime</code>, <code>DataAccessRoleArn</code>,
-     *        <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     *        <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>Settings</code>,
-     *        <code>StartTime</code>, and <code>Transcript</code>.
+     *        Provides detailed information about the specified Call Analytics job, including job status and, if
+     *        applicable, failure reason.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

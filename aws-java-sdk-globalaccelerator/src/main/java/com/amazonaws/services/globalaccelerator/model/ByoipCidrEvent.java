@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in
- * the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+ * the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ByoipCidrEvent" target="_top">AWS
@@ -32,13 +32,13 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string that contains an <code>Event</code> message describing changes that you make in the status of an IP
-     * address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     * address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      * </p>
      */
     private String message;
     /**
      * <p>
-     * A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator
+     * A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator
      * through bring your own IP address (BYOIP).
      * </p>
      */
@@ -47,12 +47,12 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string that contains an <code>Event</code> message describing changes that you make in the status of an IP
-     * address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     * address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      * </p>
      * 
      * @param message
      *        A string that contains an <code>Event</code> message describing changes that you make in the status of an
-     *        IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     *        IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      */
 
     public void setMessage(String message) {
@@ -62,11 +62,11 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string that contains an <code>Event</code> message describing changes that you make in the status of an IP
-     * address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     * address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      * </p>
      * 
      * @return A string that contains an <code>Event</code> message describing changes that you make in the status of an
-     *         IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     *         IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      */
 
     public String getMessage() {
@@ -76,12 +76,12 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string that contains an <code>Event</code> message describing changes that you make in the status of an IP
-     * address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     * address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      * </p>
      * 
      * @param message
      *        A string that contains an <code>Event</code> message describing changes that you make in the status of an
-     *        IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+     *        IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,12 +92,12 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator
+     * A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator
      * through bring your own IP address (BYOIP).
      * </p>
      * 
      * @param timestamp
-     *        A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator
+     *        A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator
      *        through bring your own IP address (BYOIP).
      */
 
@@ -107,11 +107,11 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator
+     * A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator
      * through bring your own IP address (BYOIP).
      * </p>
      * 
-     * @return A timestamp when you make a status change for an IP address range that you bring to AWS Global
+     * @return A timestamp for when you make a status change for an IP address range that you bring to Global
      *         Accelerator through bring your own IP address (BYOIP).
      */
 
@@ -121,12 +121,12 @@ public class ByoipCidrEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator
+     * A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator
      * through bring your own IP address (BYOIP).
      * </p>
      * 
      * @param timestamp
-     *        A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator
+     *        A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator
      *        through bring your own IP address (BYOIP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

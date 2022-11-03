@@ -27,34 +27,34 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ColumnMetadataMarshaller {
 
-    private static final MarshallingInfo<Integer> ARRAYBASECOLUMNTYPE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayBaseColumnType").build();
-    private static final MarshallingInfo<Boolean> ISAUTOINCREMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isAutoIncrement").build();
-    private static final MarshallingInfo<Boolean> ISCASESENSITIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isCaseSensitive").build();
-    private static final MarshallingInfo<Boolean> ISCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isCurrency").build();
-    private static final MarshallingInfo<Boolean> ISSIGNED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isSigned").build();
-    private static final MarshallingInfo<String> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("label").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> TYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("typeName").build();
+    private static final MarshallingInfo<String> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("label").build();
+    private static final MarshallingInfo<String> SCHEMANAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schemaName").build();
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tableName").build();
+    private static final MarshallingInfo<Boolean> ISAUTOINCREMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isAutoIncrement").build();
+    private static final MarshallingInfo<Boolean> ISSIGNED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isSigned").build();
+    private static final MarshallingInfo<Boolean> ISCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isCurrency").build();
+    private static final MarshallingInfo<Boolean> ISCASESENSITIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isCaseSensitive").build();
     private static final MarshallingInfo<Integer> NULLABLE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nullable").build();
     private static final MarshallingInfo<Integer> PRECISION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("precision").build();
     private static final MarshallingInfo<Integer> SCALE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("scale").build();
-    private static final MarshallingInfo<String> SCHEMANAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schemaName").build();
-    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tableName").build();
-    private static final MarshallingInfo<Integer> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
-    private static final MarshallingInfo<String> TYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("typeName").build();
+    private static final MarshallingInfo<Integer> ARRAYBASECOLUMNTYPE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayBaseColumnType").build();
 
     private static final ColumnMetadataMarshaller instance = new ColumnMetadataMarshaller();
 
@@ -72,20 +72,20 @@ public class ColumnMetadataMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(columnMetadata.getArrayBaseColumnType(), ARRAYBASECOLUMNTYPE_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getIsAutoIncrement(), ISAUTOINCREMENT_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getIsCaseSensitive(), ISCASESENSITIVE_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getIsCurrency(), ISCURRENCY_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getIsSigned(), ISSIGNED_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getLabel(), LABEL_BINDING);
             protocolMarshaller.marshall(columnMetadata.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getTypeName(), TYPENAME_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getLabel(), LABEL_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getSchemaName(), SCHEMANAME_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getIsAutoIncrement(), ISAUTOINCREMENT_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getIsSigned(), ISSIGNED_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getIsCurrency(), ISCURRENCY_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getIsCaseSensitive(), ISCASESENSITIVE_BINDING);
             protocolMarshaller.marshall(columnMetadata.getNullable(), NULLABLE_BINDING);
             protocolMarshaller.marshall(columnMetadata.getPrecision(), PRECISION_BINDING);
             protocolMarshaller.marshall(columnMetadata.getScale(), SCALE_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getSchemaName(), SCHEMANAME_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getTableName(), TABLENAME_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getType(), TYPE_BINDING);
-            protocolMarshaller.marshall(columnMetadata.getTypeName(), TYPENAME_BINDING);
+            protocolMarshaller.marshall(columnMetadata.getArrayBaseColumnType(), ARRAYBASECOLUMNTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

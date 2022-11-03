@@ -32,7 +32,7 @@ public class EfsFileLocation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the file system, assigned by Amazon EFS.
+     * The identifier of the file system, assigned by Amazon EFS.
      * </p>
      */
     private String fileSystemId;
@@ -45,11 +45,11 @@ public class EfsFileLocation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the file system, assigned by Amazon EFS.
+     * The identifier of the file system, assigned by Amazon EFS.
      * </p>
      * 
      * @param fileSystemId
-     *        The ID of the file system, assigned by Amazon EFS.
+     *        The identifier of the file system, assigned by Amazon EFS.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -58,10 +58,10 @@ public class EfsFileLocation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the file system, assigned by Amazon EFS.
+     * The identifier of the file system, assigned by Amazon EFS.
      * </p>
      * 
-     * @return The ID of the file system, assigned by Amazon EFS.
+     * @return The identifier of the file system, assigned by Amazon EFS.
      */
 
     public String getFileSystemId() {
@@ -70,11 +70,11 @@ public class EfsFileLocation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the file system, assigned by Amazon EFS.
+     * The identifier of the file system, assigned by Amazon EFS.
      * </p>
      * 
      * @param fileSystemId
-     *        The ID of the file system, assigned by Amazon EFS.
+     *        The identifier of the file system, assigned by Amazon EFS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

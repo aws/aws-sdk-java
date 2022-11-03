@@ -53,8 +53,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to private extensions you have registered in your account. For public extensions, both those
-     * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
-     * information, see <a
+     * provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
@@ -67,9 +67,9 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * Whether the specified extension version is set as the default version.
      * </p>
      * <p>
-     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
-     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon
+     * Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation
+     * returns <code>null</code>.
      * </p>
      */
     private Boolean isDefaultVersion;
@@ -80,7 +80,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * <ul>
      * <li>
@@ -119,7 +119,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      */
     private String typeTestsStatusDescription;
@@ -134,7 +134,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on extension schemas, see <a
+     * For more information about extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -216,8 +216,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Contains logging configuration information for private extensions. This applies only to private extensions you
-     * have registered in your account. For public extensions, both those provided by Amazon and published by third
-     * parties, CloudFormation returns <code>null</code>. For more information, see <a
+     * have registered in your account. For public extensions, both those provided by Amazon Web Services and published
+     * by third parties, CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      */
@@ -235,7 +235,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * private extensions you have registered in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
-     * <p/>
      * <p>
      * If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
@@ -261,7 +260,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -371,7 +370,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String latestPublicVersion;
     /**
      * <p>
-     * Whether or not the extension is activated in the account and region.
+     * Whether the extension is activated in the account and region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
@@ -566,8 +565,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to private extensions you have registered in your account. For public extensions, both those
-     * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
-     * information, see <a
+     * provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
@@ -579,8 +578,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        isn't specified.</p>
      *        <p>
      *        This applies only to private extensions you have registered in your account. For public extensions, both
-     *        those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For
-     *        more information, see <a
+     *        those provided by Amazon Web Services and published by third parties, CloudFormation returns
+     *        <code>null</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *        >RegisterType</a>.
      *        </p>
@@ -599,8 +598,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to private extensions you have registered in your account. For public extensions, both those
-     * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
-     * information, see <a
+     * provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
@@ -611,8 +610,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *         isn't specified.</p>
      *         <p>
      *         This applies only to private extensions you have registered in your account. For public extensions, both
-     *         those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For
-     *         more information, see <a
+     *         those provided by Amazon Web Services and published by third parties, CloudFormation returns
+     *         <code>null</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *         >RegisterType</a>.
      *         </p>
@@ -631,8 +630,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to private extensions you have registered in your account. For public extensions, both those
-     * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
-     * information, see <a
+     * provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
@@ -644,8 +643,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        isn't specified.</p>
      *        <p>
      *        This applies only to private extensions you have registered in your account. For public extensions, both
-     *        those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For
-     *        more information, see <a
+     *        those provided by Amazon Web Services and published by third parties, CloudFormation returns
+     *        <code>null</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *        >RegisterType</a>.
      *        </p>
@@ -664,16 +663,16 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * Whether the specified extension version is set as the default version.
      * </p>
      * <p>
-     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
-     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon
+     * Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation
+     * returns <code>null</code>.
      * </p>
      * 
      * @param isDefaultVersion
      *        Whether the specified extension version is set as the default version.</p>
      *        <p>
      *        This applies only to private extensions you have registered in your account, and extensions published by
-     *        Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *        Amazon Web Services. For public third-party extensions, whether they are activated in your account,
      *        CloudFormation returns <code>null</code>.
      */
 
@@ -686,15 +685,15 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * Whether the specified extension version is set as the default version.
      * </p>
      * <p>
-     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
-     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon
+     * Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation
+     * returns <code>null</code>.
      * </p>
      * 
      * @return Whether the specified extension version is set as the default version.</p>
      *         <p>
      *         This applies only to private extensions you have registered in your account, and extensions published by
-     *         Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *         Amazon Web Services. For public third-party extensions, whether they are activated in your account,
      *         CloudFormation returns <code>null</code>.
      */
 
@@ -707,16 +706,16 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * Whether the specified extension version is set as the default version.
      * </p>
      * <p>
-     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
-     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon
+     * Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation
+     * returns <code>null</code>.
      * </p>
      * 
      * @param isDefaultVersion
      *        Whether the specified extension version is set as the default version.</p>
      *        <p>
      *        This applies only to private extensions you have registered in your account, and extensions published by
-     *        Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *        Amazon Web Services. For public third-party extensions, whether they are activated in your account,
      *        CloudFormation returns <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -731,15 +730,15 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * Whether the specified extension version is set as the default version.
      * </p>
      * <p>
-     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
-     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon
+     * Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation
+     * returns <code>null</code>.
      * </p>
      * 
      * @return Whether the specified extension version is set as the default version.</p>
      *         <p>
      *         This applies only to private extensions you have registered in your account, and extensions published by
-     *         Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *         Amazon Web Services. For public third-party extensions, whether they are activated in your account,
      *         CloudFormation returns <code>null</code>.
      */
 
@@ -754,7 +753,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * <ul>
      * <li>
@@ -790,7 +789,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        specific extension version, you must specify <code>VersionId</code>.</p>
      *        <p>
      *        This applies only to registered private extension versions. CloudFormation doesn't return this information
-     *        for public extensions, whether or not they are activated in your account.
+     *        for public extensions, whether they are activated in your account.
      *        </p>
      *        <ul>
      *        <li>
@@ -834,7 +833,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * <ul>
      * <li>
@@ -869,7 +868,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *         specific extension version, you must specify <code>VersionId</code>.</p>
      *         <p>
      *         This applies only to registered private extension versions. CloudFormation doesn't return this
-     *         information for public extensions, whether or not they are activated in your account.
+     *         information for public extensions, whether they are activated in your account.
      *         </p>
      *         <ul>
      *         <li>
@@ -913,7 +912,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * <ul>
      * <li>
@@ -949,7 +948,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        specific extension version, you must specify <code>VersionId</code>.</p>
      *        <p>
      *        This applies only to registered private extension versions. CloudFormation doesn't return this information
-     *        for public extensions, whether or not they are activated in your account.
+     *        for public extensions, whether they are activated in your account.
      *        </p>
      *        <ul>
      *        <li>
@@ -995,7 +994,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * <ul>
      * <li>
@@ -1031,7 +1030,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        specific extension version, you must specify <code>VersionId</code>.</p>
      *        <p>
      *        This applies only to registered private extension versions. CloudFormation doesn't return this information
-     *        for public extensions, whether or not they are activated in your account.
+     *        for public extensions, whether they are activated in your account.
      *        </p>
      *        <ul>
      *        <li>
@@ -1077,7 +1076,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * 
      * @param typeTestsStatusDescription
@@ -1085,7 +1084,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        you must specify <code>VersionId</code>.</p>
      *        <p>
      *        This applies only to registered private extension versions. CloudFormation doesn't return this information
-     *        for public extensions, whether or not they are activated in your account.
+     *        for public extensions, whether they are activated in your account.
      */
 
     public void setTypeTestsStatusDescription(String typeTestsStatusDescription) {
@@ -1099,14 +1098,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * 
      * @return The description of the test status. To return the extension test status of a specific extension version,
      *         you must specify <code>VersionId</code>.</p>
      *         <p>
      *         This applies only to registered private extension versions. CloudFormation doesn't return this
-     *         information for public extensions, whether or not they are activated in your account.
+     *         information for public extensions, whether they are activated in your account.
      */
 
     public String getTypeTestsStatusDescription() {
@@ -1120,7 +1119,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * This applies only to registered private extension versions. CloudFormation doesn't return this information for
-     * public extensions, whether or not they are activated in your account.
+     * public extensions, whether they are activated in your account.
      * </p>
      * 
      * @param typeTestsStatusDescription
@@ -1128,7 +1127,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        you must specify <code>VersionId</code>.</p>
      *        <p>
      *        This applies only to registered private extension versions. CloudFormation doesn't return this information
-     *        for public extensions, whether or not they are activated in your account.
+     *        for public extensions, whether they are activated in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1182,7 +1181,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on extension schemas, see <a
+     * For more information about extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -1190,7 +1189,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * @param schema
      *        The schema that defines the extension.</p>
      *        <p>
-     *        For more information on extension schemas, see <a
+     *        For more information about extension schemas, see <a
      *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      *        Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      */
@@ -1204,14 +1203,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on extension schemas, see <a
+     * For more information about extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
      * @return The schema that defines the extension.</p>
      *         <p>
-     *         For more information on extension schemas, see <a
+     *         For more information about extension schemas, see <a
      *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      *         Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      */
@@ -1225,7 +1224,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The schema that defines the extension.
      * </p>
      * <p>
-     * For more information on extension schemas, see <a
+     * For more information about extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -1233,7 +1232,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * @param schema
      *        The schema that defines the extension.</p>
      *        <p>
-     *        For more information on extension schemas, see <a
+     *        For more information about extension schemas, see <a
      *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      *        Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1849,15 +1848,15 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Contains logging configuration information for private extensions. This applies only to private extensions you
-     * have registered in your account. For public extensions, both those provided by Amazon and published by third
-     * parties, CloudFormation returns <code>null</code>. For more information, see <a
+     * have registered in your account. For public extensions, both those provided by Amazon Web Services and published
+     * by third parties, CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * 
      * @param loggingConfig
      *        Contains logging configuration information for private extensions. This applies only to private extensions
-     *        you have registered in your account. For public extensions, both those provided by Amazon and published by
-     *        third parties, CloudFormation returns <code>null</code>. For more information, see <a
+     *        you have registered in your account. For public extensions, both those provided by Amazon Web Services and
+     *        published by third parties, CloudFormation returns <code>null</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *        >RegisterType</a>.
      */
@@ -1869,16 +1868,16 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Contains logging configuration information for private extensions. This applies only to private extensions you
-     * have registered in your account. For public extensions, both those provided by Amazon and published by third
-     * parties, CloudFormation returns <code>null</code>. For more information, see <a
+     * have registered in your account. For public extensions, both those provided by Amazon Web Services and published
+     * by third parties, CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * 
      * @return Contains logging configuration information for private extensions. This applies only to private
-     *         extensions you have registered in your account. For public extensions, both those provided by Amazon and
-     *         published by third parties, CloudFormation returns <code>null</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
-     *         >RegisterType</a>.
+     *         extensions you have registered in your account. For public extensions, both those provided by Amazon Web
+     *         Services and published by third parties, CloudFormation returns <code>null</code>. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
+     *         RegisterType</a>.
      */
 
     public LoggingConfig getLoggingConfig() {
@@ -1888,15 +1887,15 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Contains logging configuration information for private extensions. This applies only to private extensions you
-     * have registered in your account. For public extensions, both those provided by Amazon and published by third
-     * parties, CloudFormation returns <code>null</code>. For more information, see <a
+     * have registered in your account. For public extensions, both those provided by Amazon Web Services and published
+     * by third parties, CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * 
      * @param loggingConfig
      *        Contains logging configuration information for private extensions. This applies only to private extensions
-     *        you have registered in your account. For public extensions, both those provided by Amazon and published by
-     *        third parties, CloudFormation returns <code>null</code>. For more information, see <a
+     *        you have registered in your account. For public extensions, both those provided by Amazon Web Services and
+     *        published by third parties, CloudFormation returns <code>null</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *        >RegisterType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1994,7 +1993,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * private extensions you have registered in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
-     * <p/>
      * <p>
      * If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
@@ -2008,7 +2006,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        to private extensions you have registered in your account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *        >RegisterType</a>.</p>
-     *        <p/>
      *        <p>
      *        If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
@@ -2027,7 +2024,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * private extensions you have registered in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
-     * <p/>
      * <p>
      * If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
@@ -2040,7 +2036,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *         only to private extensions you have registered in your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *         >RegisterType</a>.</p>
-     *         <p/>
      *         <p>
      *         If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
@@ -2059,7 +2054,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * private extensions you have registered in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
-     * <p/>
      * <p>
      * If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
@@ -2073,7 +2067,6 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        to private extensions you have registered in your account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
      *        >RegisterType</a>.</p>
-     *        <p/>
      *        <p>
      *        If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
@@ -2104,7 +2097,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -2123,7 +2116,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      *        </p>
      *        </li>
      * @see Visibility
@@ -2149,7 +2142,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -2167,7 +2160,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     *         <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      *         </p>
      *         </li>
      * @see Visibility
@@ -2193,7 +2186,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -2212,7 +2205,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2240,7 +2233,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     * <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -2259,7 +2252,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon account.
+     *        <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2919,7 +2912,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether or not the extension is activated in the account and region.
+     * Whether the extension is activated in the account and region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
@@ -2927,7 +2920,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param isActivated
-     *        Whether or not the extension is activated in the account and region.</p>
+     *        Whether the extension is activated in the account and region.</p>
      *        <p>
      *        This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *        <code>null</code>.
@@ -2939,14 +2932,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether or not the extension is activated in the account and region.
+     * Whether the extension is activated in the account and region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      * <code>null</code>.
      * </p>
      * 
-     * @return Whether or not the extension is activated in the account and region.</p>
+     * @return Whether the extension is activated in the account and region.</p>
      *         <p>
      *         This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *         <code>null</code>.
@@ -2958,7 +2951,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether or not the extension is activated in the account and region.
+     * Whether the extension is activated in the account and region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
@@ -2966,7 +2959,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param isActivated
-     *        Whether or not the extension is activated in the account and region.</p>
+     *        Whether the extension is activated in the account and region.</p>
      *        <p>
      *        This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *        <code>null</code>.
@@ -2980,14 +2973,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether or not the extension is activated in the account and region.
+     * Whether the extension is activated in the account and region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      * <code>null</code>.
      * </p>
      * 
-     * @return Whether or not the extension is activated in the account and region.</p>
+     * @return Whether the extension is activated in the account and region.</p>
      *         <p>
      *         This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *         <code>null</code>.

@@ -23,7 +23,7 @@ import javax.annotation.Generated;
  * and the actual instance ID as the value for that dimension.
  * </p>
  * <p>
- * You can assign up to 10 dimensions to a metric.
+ * You can assign up to 30 dimensions to a metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Dimension" target="_top">AWS API

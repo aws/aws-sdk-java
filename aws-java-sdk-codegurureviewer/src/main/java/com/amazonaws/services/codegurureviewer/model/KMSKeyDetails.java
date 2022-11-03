@@ -30,7 +30,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+ * The ID of the Amazon Web Services KMS key that is associated with a repository association.
  * </p>
  * </li>
  * </ul>
@@ -43,7 +43,7 @@ public class KMSKeyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with a repository association.
      * </p>
      */
     private String kMSKeyId;
@@ -57,11 +57,11 @@ public class KMSKeyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with a repository association.
      * </p>
      * 
      * @param kMSKeyId
-     *        The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     *        The ID of the Amazon Web Services KMS key that is associated with a repository association.
      */
 
     public void setKMSKeyId(String kMSKeyId) {
@@ -70,10 +70,10 @@ public class KMSKeyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with a repository association.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     * @return The ID of the Amazon Web Services KMS key that is associated with a repository association.
      */
 
     public String getKMSKeyId() {
@@ -82,11 +82,11 @@ public class KMSKeyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with a repository association.
      * </p>
      * 
      * @param kMSKeyId
-     *        The ID of the Amazon Web Services KMS key that is associated with a respository association.
+     *        The ID of the Amazon Web Services KMS key that is associated with a repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

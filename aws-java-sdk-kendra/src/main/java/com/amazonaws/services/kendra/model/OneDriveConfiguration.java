@@ -84,8 +84,7 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     private java.util.List<DataSourceToIndexFieldMapping> fieldMappings;
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      */
     private Boolean disableLocalGroups;
@@ -554,13 +553,11 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
      * @param disableLocalGroups
-     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *        <code>False</code>).
+     *        <code>TRUE</code> to disable local groups information.
      */
 
     public void setDisableLocalGroups(Boolean disableLocalGroups) {
@@ -569,12 +566,10 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
-     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *         <code>False</code>).
+     * @return <code>TRUE</code> to disable local groups information.
      */
 
     public Boolean getDisableLocalGroups() {
@@ -583,13 +578,11 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
      * @param disableLocalGroups
-     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *        <code>False</code>).
+     *        <code>TRUE</code> to disable local groups information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,12 +593,10 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
-     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *         <code>False</code>).
+     * @return <code>TRUE</code> to disable local groups information.
      */
 
     public Boolean isDisableLocalGroups() {

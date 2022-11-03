@@ -101,6 +101,24 @@ public class ReplaceRootVolumeTask implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of the AMI used to create the replacement root volume.
+     * </p>
+     */
+    private String imageId;
+    /**
+     * <p>
+     * The ID of the snapshot used to create the replacement root volume.
+     * </p>
+     */
+    private String snapshotId;
+    /**
+     * <p>
+     * Indicates whether the original root volume is to be deleted after the root volume replacement task completes.
+     * </p>
+     */
+    private Boolean deleteReplacedRootVolume;
 
     /**
      * <p>
@@ -711,6 +729,142 @@ public class ReplaceRootVolumeTask implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AMI used to create the replacement root volume.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI used to create the replacement root volume.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI used to create the replacement root volume.
+     * </p>
+     * 
+     * @return The ID of the AMI used to create the replacement root volume.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI used to create the replacement root volume.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI used to create the replacement root volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRootVolumeTask withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot used to create the replacement root volume.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot used to create the replacement root volume.
+     */
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot used to create the replacement root volume.
+     * </p>
+     * 
+     * @return The ID of the snapshot used to create the replacement root volume.
+     */
+
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot used to create the replacement root volume.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot used to create the replacement root volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRootVolumeTask withSnapshotId(String snapshotId) {
+        setSnapshotId(snapshotId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the original root volume is to be deleted after the root volume replacement task completes.
+     * </p>
+     * 
+     * @param deleteReplacedRootVolume
+     *        Indicates whether the original root volume is to be deleted after the root volume replacement task
+     *        completes.
+     */
+
+    public void setDeleteReplacedRootVolume(Boolean deleteReplacedRootVolume) {
+        this.deleteReplacedRootVolume = deleteReplacedRootVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the original root volume is to be deleted after the root volume replacement task completes.
+     * </p>
+     * 
+     * @return Indicates whether the original root volume is to be deleted after the root volume replacement task
+     *         completes.
+     */
+
+    public Boolean getDeleteReplacedRootVolume() {
+        return this.deleteReplacedRootVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the original root volume is to be deleted after the root volume replacement task completes.
+     * </p>
+     * 
+     * @param deleteReplacedRootVolume
+     *        Indicates whether the original root volume is to be deleted after the root volume replacement task
+     *        completes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRootVolumeTask withDeleteReplacedRootVolume(Boolean deleteReplacedRootVolume) {
+        setDeleteReplacedRootVolume(deleteReplacedRootVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the original root volume is to be deleted after the root volume replacement task completes.
+     * </p>
+     * 
+     * @return Indicates whether the original root volume is to be deleted after the root volume replacement task
+     *         completes.
+     */
+
+    public Boolean isDeleteReplacedRootVolume() {
+        return this.deleteReplacedRootVolume;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -733,7 +887,13 @@ public class ReplaceRootVolumeTask implements Serializable, Cloneable {
         if (getCompleteTime() != null)
             sb.append("CompleteTime: ").append(getCompleteTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
+        if (getSnapshotId() != null)
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
+        if (getDeleteReplacedRootVolume() != null)
+            sb.append("DeleteReplacedRootVolume: ").append(getDeleteReplacedRootVolume());
         sb.append("}");
         return sb.toString();
     }
@@ -772,6 +932,18 @@ public class ReplaceRootVolumeTask implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
+            return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
+            return false;
+        if (other.getDeleteReplacedRootVolume() == null ^ this.getDeleteReplacedRootVolume() == null)
+            return false;
+        if (other.getDeleteReplacedRootVolume() != null && other.getDeleteReplacedRootVolume().equals(this.getDeleteReplacedRootVolume()) == false)
+            return false;
         return true;
     }
 
@@ -786,6 +958,9 @@ public class ReplaceRootVolumeTask implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getCompleteTime() == null) ? 0 : getCompleteTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getDeleteReplacedRootVolume() == null) ? 0 : getDeleteReplacedRootVolume().hashCode());
         return hashCode;
     }
 

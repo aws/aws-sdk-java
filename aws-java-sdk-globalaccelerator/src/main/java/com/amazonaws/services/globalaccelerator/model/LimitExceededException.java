@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Processing your request would cause you to exceed an AWS Global Accelerator limit.
+ * Processing your request would cause you to exceed an Global Accelerator limit.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

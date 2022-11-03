@@ -36,6 +36,8 @@ public class AssetModelCompositeModelMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<List> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("properties").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
 
     private static final AssetModelCompositeModelMarshaller instance = new AssetModelCompositeModelMarshaller();
 
@@ -57,6 +59,7 @@ public class AssetModelCompositeModelMarshaller {
             protocolMarshaller.marshall(assetModelCompositeModel.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(assetModelCompositeModel.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(assetModelCompositeModel.getProperties(), PROPERTIES_BINDING);
+            protocolMarshaller.marshall(assetModelCompositeModel.getId(), ID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

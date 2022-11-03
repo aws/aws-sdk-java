@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteLiveSourceRequestMarshaller {
 
     private static final MarshallingInfo<String> LIVESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("liveSourceName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("LiveSourceName").build();
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sourceLocationName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("SourceLocationName").build();
 
     private static final DeleteLiveSourceRequestMarshaller instance = new DeleteLiveSourceRequestMarshaller();
 

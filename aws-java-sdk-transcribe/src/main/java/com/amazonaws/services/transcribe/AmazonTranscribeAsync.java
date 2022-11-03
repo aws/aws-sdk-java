@@ -26,21 +26,73 @@ import com.amazonaws.services.transcribe.model.*;
  * </p>
  * <p>
  * <p>
- * Operations and objects for transcribing speech to text.
+ * Amazon Transcribe offers three main types of batch transcription: <b>Standard</b>, <b>Medical</b>, and <b>Call
+ * Analytics</b>.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>Standard transcriptions</b> are the most common option. Refer to for details.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Medical transcriptions</b> are tailored to medical professionals and incorporate medical terms. A common use case
+ * for this service is transcribing doctor-patient dialogue into after-visit notes. Refer to for details.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Call Analytics transcriptions</b> are designed for use with call center audio on two different channels; if you're
+ * looking for insight into customer service calls, use this option. Refer to for details.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a call analytics category. Amazon Transcribe applies the conditions specified by your call analytics
-     * categories to your call analytics jobs. For each analytics category, you must create between 1 and 20 rules. For
-     * example, you can create a 'greeting' category with a rule that flags calls in which your agent does not use a
-     * specified phrase (for example: "Please note this call may be recorded.") in the first 15 seconds of the call.
-     * When you start a call analytics job, Amazon Transcribe applies all your existing call analytics categories to
-     * that job.
+     * Creates a new Call Analytics category.
      * </p>
+     * <p>
+     * All categories are automatically applied to your Call Analytics jobs. Note that in order to apply your categories
+     * to your jobs, you must create them before submitting your job request, as categories cannot be applied
+     * retroactively.
+     * </p>
+     * <p>
+     * Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules
+     * can include these parameters: , , , and .
+     * </p>
+     * <p>
+     * To update an existing category, see .
+     * </p>
+     * <p>
+     * To learn more about:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+     * categories</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Using rules, see <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
+     * >Rule criteria</a> and refer to the data type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call
+     * center audio with Call Analytics</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createCallAnalyticsCategoryRequest
      * @return A Java Future containing the result of the CreateCallAnalyticsCategory operation returned by the service.
@@ -53,13 +105,45 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a call analytics category. Amazon Transcribe applies the conditions specified by your call analytics
-     * categories to your call analytics jobs. For each analytics category, you must create between 1 and 20 rules. For
-     * example, you can create a 'greeting' category with a rule that flags calls in which your agent does not use a
-     * specified phrase (for example: "Please note this call may be recorded.") in the first 15 seconds of the call.
-     * When you start a call analytics job, Amazon Transcribe applies all your existing call analytics categories to
-     * that job.
+     * Creates a new Call Analytics category.
      * </p>
+     * <p>
+     * All categories are automatically applied to your Call Analytics jobs. Note that in order to apply your categories
+     * to your jobs, you must create them before submitting your job request, as categories cannot be applied
+     * retroactively.
+     * </p>
+     * <p>
+     * Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules
+     * can include these parameters: , , , and .
+     * </p>
+     * <p>
+     * To update an existing category, see .
+     * </p>
+     * <p>
+     * To learn more about:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+     * categories</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Using rules, see <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
+     * >Rule criteria</a> and refer to the data type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call
+     * center audio with Call Analytics</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createCallAnalyticsCategoryRequest
      * @param asyncHandler
@@ -77,10 +161,37 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a new custom language model. When creating a new language model, you must specify if you want a Wideband
-     * (audio sample rates over 16,000 Hz) or Narrowband (audio sample rates under 16,000 Hz) base model. You then
-     * include the S3 URI location of your training and tuning files, the language for the model, a unique name, and any
-     * tags you want associated with your model.
+     * Creates a new custom language model.
+     * </p>
+     * <p>
+     * When creating a new language model, you must specify:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio sample rates under 16,000 Hz)
+     * base model
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The location of your training and tuning files (this must be an Amazon S3 URI)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The language of your model
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A unique name for your model
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.
      * </p>
      * 
      * @param createLanguageModelRequest
@@ -93,10 +204,37 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a new custom language model. When creating a new language model, you must specify if you want a Wideband
-     * (audio sample rates over 16,000 Hz) or Narrowband (audio sample rates under 16,000 Hz) base model. You then
-     * include the S3 URI location of your training and tuning files, the language for the model, a unique name, and any
-     * tags you want associated with your model.
+     * Creates a new custom language model.
+     * </p>
+     * <p>
+     * When creating a new language model, you must specify:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio sample rates under 16,000 Hz)
+     * base model
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The location of your training and tuning files (this must be an Amazon S3 URI)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The language of your model
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A unique name for your model
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.
      * </p>
      * 
      * @param createLanguageModelRequest
@@ -117,13 +255,19 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom medical vocabulary.
      * </p>
      * <p>
-     * When creating a new medical vocabulary, you must upload a text file that contains your new entries, phrases, and
-     * terms into an S3 bucket. Note that this differs from , where you can include a list of terms within your request
-     * using the <code>Phrases</code> flag, as <code>CreateMedicalVocabulary</code> does not support the
-     * <code>Phrases</code> flag.
+     * Prior to creating a new medical vocabulary, you must first upload a text file that contains your new entries,
+     * phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms
+     * within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
+     * the <code>Phrases</code> flag.
      * </p>
      * <p>
-     * For more information on creating a custom vocabulary text file, see <a
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
      * vocabulary</a>.
      * </p>
@@ -141,13 +285,19 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom medical vocabulary.
      * </p>
      * <p>
-     * When creating a new medical vocabulary, you must upload a text file that contains your new entries, phrases, and
-     * terms into an S3 bucket. Note that this differs from , where you can include a list of terms within your request
-     * using the <code>Phrases</code> flag, as <code>CreateMedicalVocabulary</code> does not support the
-     * <code>Phrases</code> flag.
+     * Prior to creating a new medical vocabulary, you must first upload a text file that contains your new entries,
+     * phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms
+     * within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
+     * the <code>Phrases</code> flag.
      * </p>
      * <p>
-     * For more information on creating a custom vocabulary text file, see <a
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
      * vocabulary</a>.
      * </p>
@@ -170,12 +320,18 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom vocabulary.
      * </p>
      * <p>
-     * When creating a new medical vocabulary, you can either upload a text file that contains your new entries,
-     * phrases, and terms into an S3 bucket or include a list of terms directly in your request using the
-     * <code>Phrases</code> flag.
+     * When creating a new vocabulary, you can either upload a text file that contains your new entries, phrases, and
+     * terms into an Amazon S3 bucket and include the URI in your request, or you can include a list of terms directly
+     * in your request using the <code>Phrases</code> flag.
      * </p>
      * <p>
-     * For more information on creating a custom vocabulary, see <a
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
      * vocabulary</a>.
      * </p>
@@ -193,12 +349,18 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom vocabulary.
      * </p>
      * <p>
-     * When creating a new medical vocabulary, you can either upload a text file that contains your new entries,
-     * phrases, and terms into an S3 bucket or include a list of terms directly in your request using the
-     * <code>Phrases</code> flag.
+     * When creating a new vocabulary, you can either upload a text file that contains your new entries, phrases, and
+     * terms into an Amazon S3 bucket and include the URI in your request, or you can include a list of terms directly
+     * in your request using the <code>Phrases</code> flag.
      * </p>
      * <p>
-     * For more information on creating a custom vocabulary, see <a
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
      * vocabulary</a>.
      * </p>
@@ -218,8 +380,22 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a new vocabulary filter that you can use to filter words from your transcription output. For example, you
-     * can use this operation to remove profanity from your transcript.
+     * Creates a new custom vocabulary filter.
+     * </p>
+     * <p>
+     * You can use vocabulary filters to mask, delete, or flag specific words from your transcript. Vocabulary filters
+     * are commonly used to mask profanity in transcripts.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with
+     * unwanted words</a>.
      * </p>
      * 
      * @param createVocabularyFilterRequest
@@ -232,8 +408,22 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a new vocabulary filter that you can use to filter words from your transcription output. For example, you
-     * can use this operation to remove profanity from your transcript.
+     * Creates a new custom vocabulary filter.
+     * </p>
+     * <p>
+     * You can use vocabulary filters to mask, delete, or flag specific words from your transcript. Vocabulary filters
+     * are commonly used to mask profanity in transcripts.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with
+     * unwanted words</a>.
      * </p>
      * 
      * @param createVocabularyFilterRequest
@@ -251,8 +441,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a call analytics category. To use this operation, specify the name of the category you want to delete
-     * using <code>CategoryName</code>.
+     * Deletes a Call Analytics category. To use this operation, specify the name of the category you want to delete
+     * using <code>CategoryName</code>. Category names are case sensitive.
      * </p>
      * 
      * @param deleteCallAnalyticsCategoryRequest
@@ -266,8 +456,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a call analytics category. To use this operation, specify the name of the category you want to delete
-     * using <code>CategoryName</code>.
+     * Deletes a Call Analytics category. To use this operation, specify the name of the category you want to delete
+     * using <code>CategoryName</code>. Category names are case sensitive.
      * </p>
      * 
      * @param deleteCallAnalyticsCategoryRequest
@@ -286,8 +476,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a call analytics job. To use this operation, specify the name of the job you want to delete using
-     * <code>CallAnalyticsJobName</code>.
+     * Deletes a Call Analytics job. To use this operation, specify the name of the job you want to delete using
+     * <code>CallAnalyticsJobName</code>. Job names are case sensitive.
      * </p>
      * 
      * @param deleteCallAnalyticsJobRequest
@@ -300,8 +490,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a call analytics job. To use this operation, specify the name of the job you want to delete using
-     * <code>CallAnalyticsJobName</code>.
+     * Deletes a Call Analytics job. To use this operation, specify the name of the job you want to delete using
+     * <code>CallAnalyticsJobName</code>. Job names are case sensitive.
      * </p>
      * 
      * @param deleteCallAnalyticsJobRequest
@@ -320,7 +510,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom language model. To use this operation, specify the name of the language model you want to delete
-     * using <code>ModelName</code>.
+     * using <code>ModelName</code>. Language model names are case sensitive.
      * </p>
      * 
      * @param deleteLanguageModelRequest
@@ -334,7 +524,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom language model. To use this operation, specify the name of the language model you want to delete
-     * using <code>ModelName</code>.
+     * using <code>ModelName</code>. Language model names are case sensitive.
      * </p>
      * 
      * @param deleteLanguageModelRequest
@@ -352,8 +542,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a medical transcription job, along with any related information. To use this operation, specify the name
-     * of the job you want to delete using <code>MedicalTranscriptionJobName</code>.
+     * Deletes a medical transcription job. To use this operation, specify the name of the job you want to delete using
+     * <code>MedicalTranscriptionJobName</code>. Job names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalTranscriptionJobRequest
@@ -368,8 +558,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a medical transcription job, along with any related information. To use this operation, specify the name
-     * of the job you want to delete using <code>MedicalTranscriptionJobName</code>.
+     * Deletes a medical transcription job. To use this operation, specify the name of the job you want to delete using
+     * <code>MedicalTranscriptionJobName</code>. Job names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalTranscriptionJobRequest
@@ -390,7 +580,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom medical vocabulary. To use this operation, specify the name of the vocabulary you want to delete
-     * using <code>VocabularyName</code>.
+     * using <code>VocabularyName</code>. Vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalVocabularyRequest
@@ -404,7 +594,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom medical vocabulary. To use this operation, specify the name of the vocabulary you want to delete
-     * using <code>VocabularyName</code>.
+     * using <code>VocabularyName</code>. Vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalVocabularyRequest
@@ -422,8 +612,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a transcription job, along with any related information. To use this operation, specify the name of the
-     * job you want to delete using <code>TranscriptionJobName</code>.
+     * Deletes a transcription job. To use this operation, specify the name of the job you want to delete using
+     * <code>TranscriptionJobName</code>. Job names are case sensitive.
      * </p>
      * 
      * @param deleteTranscriptionJobRequest
@@ -436,8 +626,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a transcription job, along with any related information. To use this operation, specify the name of the
-     * job you want to delete using <code>TranscriptionJobName</code>.
+     * Deletes a transcription job. To use this operation, specify the name of the job you want to delete using
+     * <code>TranscriptionJobName</code>. Job names are case sensitive.
      * </p>
      * 
      * @param deleteTranscriptionJobRequest
@@ -456,7 +646,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary you want to delete using
-     * <code>VocabularyName</code>.
+     * <code>VocabularyName</code>. Vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyRequest
@@ -470,7 +660,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary you want to delete using
-     * <code>VocabularyName</code>.
+     * <code>VocabularyName</code>. Vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyRequest
@@ -489,7 +679,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary filter you want to delete
-     * using <code>VocabularyFilterName</code>.
+     * using <code>VocabularyFilterName</code>. Vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyFilterRequest
@@ -503,7 +693,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary filter you want to delete
-     * using <code>VocabularyFilterName</code>.
+     * using <code>VocabularyFilterName</code>. Vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyFilterRequest
@@ -521,7 +711,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Provides information about a specific custom language model in your Amazon Web Services account.
+     * Provides information about the specified custom language model.
      * </p>
      * <p>
      * This operation also shows if the base language model you used to create your custom language model has been
@@ -529,8 +719,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * updated base model.
      * </p>
      * <p>
-     * If you tried to create a new custom language model and the request wasn't successful, you can use this operation
-     * to help identify the reason.
+     * If you tried to create a new custom language model and the request wasn't successful, you can use
+     * <code>DescribeLanguageModel</code> to help identify the reason for this failure.
+     * </p>
+     * <p>
+     * To get a list of your custom language models, use the operation.
      * </p>
      * 
      * @param describeLanguageModelRequest
@@ -543,7 +736,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Provides information about a specific custom language model in your Amazon Web Services account.
+     * Provides information about the specified custom language model.
      * </p>
      * <p>
      * This operation also shows if the base language model you used to create your custom language model has been
@@ -551,8 +744,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * updated base model.
      * </p>
      * <p>
-     * If you tried to create a new custom language model and the request wasn't successful, you can use this operation
-     * to help identify the reason.
+     * If you tried to create a new custom language model and the request wasn't successful, you can use
+     * <code>DescribeLanguageModel</code> to help identify the reason for this failure.
+     * </p>
+     * <p>
+     * To get a list of your custom language models, use the operation.
      * </p>
      * 
      * @param describeLanguageModelRequest
@@ -570,7 +766,10 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a call analytics category.
+     * Provides information about the specified Call Analytics category.
+     * </p>
+     * <p>
+     * To get a list of your Call Analytics categories, use the operation.
      * </p>
      * 
      * @param getCallAnalyticsCategoryRequest
@@ -583,7 +782,10 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a call analytics category.
+     * Provides information about the specified Call Analytics category.
+     * </p>
+     * <p>
+     * To get a list of your Call Analytics categories, use the operation.
      * </p>
      * 
      * @param getCallAnalyticsCategoryRequest
@@ -601,13 +803,24 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a call analytics job.
+     * Provides information about the specified Call Analytics job.
      * </p>
      * <p>
-     * To view the job's status, refer to the <code>CallAnalyticsJobStatus</code> field. If the status is
-     * <code>COMPLETED</code>, the job is finished. You can then find your transcript at the URI specified in the
-     * <code>TranscriptFileUri</code> field. If you enabled personally identifiable information (PII) redaction, the
-     * redacted transcript appears in the <code>RedactedTranscriptFileUri</code> field.
+     * To view the job's status, refer to <code>CallAnalyticsJobStatus</code>. If the status is <code>COMPLETED</code>,
+     * the job is finished. You can find your completed transcript at the URI specified in
+     * <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     * on why your transcription job failed.
+     * </p>
+     * <p>
+     * If you enabled personally identifiable information (PII) redaction, the redacted transcript appears at the
+     * location specified in <code>RedactedTranscriptFileUri</code>.
+     * </p>
+     * <p>
+     * If you chose to redact the audio in your media file, you can find your redacted media file at the location
+     * specified in <code>RedactedMediaFileUri</code>.
+     * </p>
+     * <p>
+     * To get a list of your Call Analytics jobs, use the operation.
      * </p>
      * 
      * @param getCallAnalyticsJobRequest
@@ -620,13 +833,24 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a call analytics job.
+     * Provides information about the specified Call Analytics job.
      * </p>
      * <p>
-     * To view the job's status, refer to the <code>CallAnalyticsJobStatus</code> field. If the status is
-     * <code>COMPLETED</code>, the job is finished. You can then find your transcript at the URI specified in the
-     * <code>TranscriptFileUri</code> field. If you enabled personally identifiable information (PII) redaction, the
-     * redacted transcript appears in the <code>RedactedTranscriptFileUri</code> field.
+     * To view the job's status, refer to <code>CallAnalyticsJobStatus</code>. If the status is <code>COMPLETED</code>,
+     * the job is finished. You can find your completed transcript at the URI specified in
+     * <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     * on why your transcription job failed.
+     * </p>
+     * <p>
+     * If you enabled personally identifiable information (PII) redaction, the redacted transcript appears at the
+     * location specified in <code>RedactedTranscriptFileUri</code>.
+     * </p>
+     * <p>
+     * If you chose to redact the audio in your media file, you can find your redacted media file at the location
+     * specified in <code>RedactedMediaFileUri</code>.
+     * </p>
+     * <p>
+     * To get a list of your Call Analytics jobs, use the operation.
      * </p>
      * 
      * @param getCallAnalyticsJobRequest
@@ -644,12 +868,16 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a medical transcription job.
+     * Provides information about the specified medical transcription job.
      * </p>
      * <p>
-     * To view the job's status, refer to the <code>TranscriptionJobStatus</code> field. If the status is
-     * <code>COMPLETED</code>, the job is finished. You can then find your transcript at the URI specified in the
-     * <code>TranscriptFileUri</code> field.
+     * To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
+     * field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code>
+     * provides details on why your transcription job failed.
+     * </p>
+     * <p>
+     * To get a list of your medical transcription jobs, use the operation.
      * </p>
      * 
      * @param getMedicalTranscriptionJobRequest
@@ -663,12 +891,16 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a medical transcription job.
+     * Provides information about the specified medical transcription job.
      * </p>
      * <p>
-     * To view the job's status, refer to the <code>TranscriptionJobStatus</code> field. If the status is
-     * <code>COMPLETED</code>, the job is finished. You can then find your transcript at the URI specified in the
-     * <code>TranscriptFileUri</code> field.
+     * To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
+     * field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code>
+     * provides details on why your transcription job failed.
+     * </p>
+     * <p>
+     * To get a list of your medical transcription jobs, use the operation.
      * </p>
      * 
      * @param getMedicalTranscriptionJobRequest
@@ -687,7 +919,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a medical vocabulary.
+     * Provides information about the specified custom medical vocabulary.
+     * </p>
+     * <p>
+     * To view the status of the specified medical vocabulary, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * </p>
+     * <p>
+     * To get a list of your custom medical vocabularies, use the operation.
      * </p>
      * 
      * @param getMedicalVocabularyRequest
@@ -700,7 +940,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieves information about a medical vocabulary.
+     * Provides information about the specified custom medical vocabulary.
+     * </p>
+     * <p>
+     * To view the status of the specified medical vocabulary, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * </p>
+     * <p>
+     * To get a list of your custom medical vocabularies, use the operation.
      * </p>
      * 
      * @param getMedicalVocabularyRequest
@@ -718,10 +966,20 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns information about a transcription job. To see the status of the job, check the
-     * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
-     * can find the results at the location specified in the <code>TranscriptFileUri</code> field. If you enable content
-     * redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>.
+     * Provides information about the specified transcription job.
+     * </p>
+     * <p>
+     * To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If
+     * the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified
+     * in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides
+     * details on why your transcription job failed.
+     * </p>
+     * <p>
+     * If you enabled content redaction, the redacted transcript can be found at the location specified in
+     * <code>RedactedTranscriptFileUri</code>.
+     * </p>
+     * <p>
+     * To get a list of your transcription jobs, use the operation.
      * </p>
      * 
      * @param getTranscriptionJobRequest
@@ -734,10 +992,20 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns information about a transcription job. To see the status of the job, check the
-     * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
-     * can find the results at the location specified in the <code>TranscriptFileUri</code> field. If you enable content
-     * redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>.
+     * Provides information about the specified transcription job.
+     * </p>
+     * <p>
+     * To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If
+     * the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified
+     * in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides
+     * details on why your transcription job failed.
+     * </p>
+     * <p>
+     * If you enabled content redaction, the redacted transcript can be found at the location specified in
+     * <code>RedactedTranscriptFileUri</code>.
+     * </p>
+     * <p>
+     * To get a list of your transcription jobs, use the operation.
      * </p>
      * 
      * @param getTranscriptionJobRequest
@@ -755,7 +1023,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Gets information about a vocabulary.
+     * Provides information about the specified custom vocabulary.
+     * </p>
+     * <p>
+     * To view the status of the specified vocabulary, check the <code>VocabularyState</code> field. If the status is
+     * <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * </p>
+     * <p>
+     * To get a list of your custom vocabularies, use the operation.
      * </p>
      * 
      * @param getVocabularyRequest
@@ -768,7 +1044,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Gets information about a vocabulary.
+     * Provides information about the specified custom vocabulary.
+     * </p>
+     * <p>
+     * To view the status of the specified vocabulary, check the <code>VocabularyState</code> field. If the status is
+     * <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * </p>
+     * <p>
+     * To get a list of your custom vocabularies, use the operation.
      * </p>
      * 
      * @param getVocabularyRequest
@@ -786,7 +1070,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns information about a vocabulary filter.
+     * Provides information about the specified custom vocabulary filter.
+     * </p>
+     * <p>
+     * To view the status of the specified vocabulary filter, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your vocabulary filter failed.
+     * </p>
+     * <p>
+     * To get a list of your custom vocabulary filters, use the operation.
      * </p>
      * 
      * @param getVocabularyFilterRequest
@@ -799,7 +1091,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns information about a vocabulary filter.
+     * Provides information about the specified custom vocabulary filter.
+     * </p>
+     * <p>
+     * To view the status of the specified vocabulary filter, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your vocabulary filter failed.
+     * </p>
+     * <p>
+     * To get a list of your custom vocabulary filters, use the operation.
      * </p>
      * 
      * @param getVocabularyFilterRequest
@@ -817,8 +1117,10 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Provides more information about the call analytics categories that you've created. You can use the information in
-     * this list to find a specific category. You can then use the operation to get more information about it.
+     * Provides a list of Call Analytics categories, including all rules that make up each category.
+     * </p>
+     * <p>
+     * To get detailed information about a specific Call Analytics category, use the operation.
      * </p>
      * 
      * @param listCallAnalyticsCategoriesRequest
@@ -832,8 +1134,10 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Provides more information about the call analytics categories that you've created. You can use the information in
-     * this list to find a specific category. You can then use the operation to get more information about it.
+     * Provides a list of Call Analytics categories, including all rules that make up each category.
+     * </p>
+     * <p>
+     * To get detailed information about a specific Call Analytics category, use the operation.
      * </p>
      * 
      * @param listCallAnalyticsCategoriesRequest
@@ -852,7 +1156,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * List call analytics jobs with a specified status or substring that matches their names.
+     * Provides a list of Call Analytics jobs that match the specified criteria. If no criteria are specified, all Call
+     * Analytics jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific Call Analytics job, use the operation.
      * </p>
      * 
      * @param listCallAnalyticsJobsRequest
@@ -865,7 +1173,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * List call analytics jobs with a specified status or substring that matches their names.
+     * Provides a list of Call Analytics jobs that match the specified criteria. If no criteria are specified, all Call
+     * Analytics jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific Call Analytics job, use the operation.
      * </p>
      * 
      * @param listCallAnalyticsJobsRequest
@@ -883,8 +1195,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Provides more information about the custom language models you've created. You can use the information in this
-     * list to find a specific custom language model. You can then use the operation to get more information about it.
+     * Provides a list of custom language models that match the specified criteria. If no criteria are specified, all
+     * language models are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom language model, use the operation.
      * </p>
      * 
      * @param listLanguageModelsRequest
@@ -897,8 +1212,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Provides more information about the custom language models you've created. You can use the information in this
-     * list to find a specific custom language model. You can then use the operation to get more information about it.
+     * Provides a list of custom language models that match the specified criteria. If no criteria are specified, all
+     * language models are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom language model, use the operation.
      * </p>
      * 
      * @param listLanguageModelsRequest
@@ -916,7 +1234,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Lists medical transcription jobs with a specified status or substring that matches their names.
+     * Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified,
+     * all medical transcription jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific medical transcription job, use the operation.
      * </p>
      * 
      * @param listMedicalTranscriptionJobsRequest
@@ -931,7 +1253,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Lists medical transcription jobs with a specified status or substring that matches their names.
+     * Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified,
+     * all medical transcription jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific medical transcription job, use the operation.
      * </p>
      * 
      * @param listMedicalTranscriptionJobsRequest
@@ -951,8 +1277,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. If you don't enter a value in any of the
-     * request parameters, returns the entire list of vocabularies.
+     * Provides a list of custom medical vocabularies that match the specified criteria. If no criteria are specified,
+     * all custom medical vocabularies are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom medical vocabulary, use the operation.
      * </p>
      * 
      * @param listMedicalVocabulariesRequest
@@ -965,8 +1294,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. If you don't enter a value in any of the
-     * request parameters, returns the entire list of vocabularies.
+     * Provides a list of custom medical vocabularies that match the specified criteria. If no criteria are specified,
+     * all custom medical vocabularies are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom medical vocabulary, use the operation.
      * </p>
      * 
      * @param listMedicalVocabulariesRequest
@@ -984,7 +1316,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Lists all tags associated with a given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the specified transcription job, vocabulary, model, or resource.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -997,7 +1333,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Lists all tags associated with a given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the specified transcription job, vocabulary, model, or resource.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1015,7 +1355,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Lists transcription jobs with the specified status.
+     * Provides a list of transcription jobs that match the specified criteria. If no criteria are specified, all
+     * transcription jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific transcription job, use the operation.
      * </p>
      * 
      * @param listTranscriptionJobsRequest
@@ -1028,7 +1372,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Lists transcription jobs with the specified status.
+     * Provides a list of transcription jobs that match the specified criteria. If no criteria are specified, all
+     * transcription jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific transcription job, use the operation.
      * </p>
      * 
      * @param listTranscriptionJobsRequest
@@ -1046,8 +1394,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the
-     * entire list of vocabularies.
+     * Provides a list of custom vocabularies that match the specified criteria. If no criteria are specified, all
+     * custom vocabularies are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom vocabulary, use the operation.
      * </p>
      * 
      * @param listVocabulariesRequest
@@ -1060,8 +1411,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the
-     * entire list of vocabularies.
+     * Provides a list of custom vocabularies that match the specified criteria. If no criteria are specified, all
+     * custom vocabularies are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom vocabulary, use the operation.
      * </p>
      * 
      * @param listVocabulariesRequest
@@ -1079,7 +1433,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Gets information about vocabulary filters.
+     * Provides a list of custom vocabulary filters that match the specified criteria. If no criteria are specified, all
+     * custom vocabularies are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom vocabulary filter, use the operation.
      * </p>
      * 
      * @param listVocabularyFiltersRequest
@@ -1092,7 +1450,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Gets information about vocabulary filters.
+     * Provides a list of custom vocabulary filters that match the specified criteria. If no criteria are specified, all
+     * custom vocabularies are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific custom vocabulary filter, use the operation.
      * </p>
      * 
      * @param listVocabularyFiltersRequest
@@ -1110,12 +1472,65 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts an asynchronous analytics job that not only transcribes the audio recording of a caller and agent, but
-     * also returns additional insights. These insights include how quickly or loudly the caller or agent was speaking.
-     * To retrieve additional insights with your analytics jobs, create categories. A category is a way to classify
-     * analytics jobs based on attributes, such as a customer's sentiment or a particular phrase being used during the
-     * call. For more information, see the operation.
+     * Transcribes the audio from a customer service call and applies any additional Request Parameters you choose to
+     * include in your request.
      * </p>
+     * <p>
+     * In addition to many of the standard transcription features, Call Analytics provides you with call
+     * characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your
+     * audio file. You can also apply custom categories to flag specified conditions. To learn more about these features
+     * and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
+     * call center audio with Call Analytics</a>.
+     * </p>
+     * <p>
+     * If you want to apply categories to your Call Analytics job, you must create them before submitting your job
+     * request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To
+     * learn more about Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+     * categories</a>.
+     * </p>
+     * <p>
+     * To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3
+     * bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartCallAnalyticsJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web
+     * Services Regions supported with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CallAnalyticsJobName</code>: A custom name you create for your transcription job that is unique within your
+     * Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataAccessRoleArn</code>: The Amazon Resource Name (ARN) of an IAM role that has permissions to access the
+     * Amazon S3 bucket that contains your input files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code> or <code>RedactedMediaFileUri</code>): The Amazon S3 location of
+     * your media file.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * With Call Analytics, you can redact the audio contained in your media file by including
+     * <code>RedactedMediaFileUri</code>, instead of <code>MediaFileUri</code>, to specify the location of your input
+     * audio. If you choose to redact your audio, you can find your redacted media at the location specified in the
+     * <code>RedactedMediaFileUri</code> field of your response.
+     * </p>
+     * </note>
      * 
      * @param startCallAnalyticsJobRequest
      * @return A Java Future containing the result of the StartCallAnalyticsJob operation returned by the service.
@@ -1127,12 +1542,65 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts an asynchronous analytics job that not only transcribes the audio recording of a caller and agent, but
-     * also returns additional insights. These insights include how quickly or loudly the caller or agent was speaking.
-     * To retrieve additional insights with your analytics jobs, create categories. A category is a way to classify
-     * analytics jobs based on attributes, such as a customer's sentiment or a particular phrase being used during the
-     * call. For more information, see the operation.
+     * Transcribes the audio from a customer service call and applies any additional Request Parameters you choose to
+     * include in your request.
      * </p>
+     * <p>
+     * In addition to many of the standard transcription features, Call Analytics provides you with call
+     * characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your
+     * audio file. You can also apply custom categories to flag specified conditions. To learn more about these features
+     * and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
+     * call center audio with Call Analytics</a>.
+     * </p>
+     * <p>
+     * If you want to apply categories to your Call Analytics job, you must create them before submitting your job
+     * request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To
+     * learn more about Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+     * categories</a>.
+     * </p>
+     * <p>
+     * To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3
+     * bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartCallAnalyticsJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web
+     * Services Regions supported with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CallAnalyticsJobName</code>: A custom name you create for your transcription job that is unique within your
+     * Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataAccessRoleArn</code>: The Amazon Resource Name (ARN) of an IAM role that has permissions to access the
+     * Amazon S3 bucket that contains your input files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code> or <code>RedactedMediaFileUri</code>): The Amazon S3 location of
+     * your media file.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * With Call Analytics, you can redact the audio contained in your media file by including
+     * <code>RedactedMediaFileUri</code>, instead of <code>MediaFileUri</code>, to specify the location of your input
+     * audio. If you choose to redact your audio, you can find your redacted media at the location specified in the
+     * <code>RedactedMediaFileUri</code> field of your response.
+     * </p>
+     * </note>
      * 
      * @param startCallAnalyticsJobRequest
      * @param asyncHandler
@@ -1149,8 +1617,64 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts a batch job to transcribe medical speech to text.
+     * Transcribes the audio from a medical dictation or conversation and applies any additional Request Parameters you
+     * choose to include in your request.
      * </p>
+     * <p>
+     * In addition to many of the standard transcription features, Amazon Transcribe Medical provides you with a robust
+     * medical vocabulary and, optionally, content identification, which adds flags to personal health information
+     * (PHI). To learn more about these features, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How Amazon Transcribe Medical
+     * works</a>.
+     * </p>
+     * <p>
+     * To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload your media file into an Amazon
+     * S3 bucket; you can then specify the S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartMedicalTranscriptionJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web
+     * Services Regions supported with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MedicalTranscriptionJobName</code>: A custom name you create for your transcription job that is unique
+     * within your Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LanguageCode</code>: This must be <code>en-US</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OutputBucketName</code>: The Amazon S3 bucket where you want your transcript stored. If you want your
+     * output stored in a sub-folder of this bucket, you must also include <code>OutputKey</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Specialty</code>: This must be <code>PRIMARYCARE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>: Choose whether your audio is a conversation or a dictation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startMedicalTranscriptionJobRequest
      * @return A Java Future containing the result of the StartMedicalTranscriptionJob operation returned by the
@@ -1164,8 +1688,64 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts a batch job to transcribe medical speech to text.
+     * Transcribes the audio from a medical dictation or conversation and applies any additional Request Parameters you
+     * choose to include in your request.
      * </p>
+     * <p>
+     * In addition to many of the standard transcription features, Amazon Transcribe Medical provides you with a robust
+     * medical vocabulary and, optionally, content identification, which adds flags to personal health information
+     * (PHI). To learn more about these features, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How Amazon Transcribe Medical
+     * works</a>.
+     * </p>
+     * <p>
+     * To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload your media file into an Amazon
+     * S3 bucket; you can then specify the S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartMedicalTranscriptionJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web
+     * Services Regions supported with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MedicalTranscriptionJobName</code>: A custom name you create for your transcription job that is unique
+     * within your Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LanguageCode</code>: This must be <code>en-US</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OutputBucketName</code>: The Amazon S3 bucket where you want your transcript stored. If you want your
+     * output stored in a sub-folder of this bucket, you must also include <code>OutputKey</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Specialty</code>: This must be <code>PRIMARYCARE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>: Choose whether your audio is a conversation or a dictation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startMedicalTranscriptionJobRequest
      * @param asyncHandler
@@ -1184,8 +1764,46 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts an asynchronous job to transcribe speech to text.
+     * Transcribes the audio from a media file and applies any additional Request Parameters you choose to include in
+     * your request.
      * </p>
+     * <p>
+     * To make a <code>StartTranscriptionJob</code> request, you must first upload your media file into an Amazon S3
+     * bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartTranscriptionJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web
+     * Services Regions supported with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TranscriptionJobName</code>: A custom name you create for your transcription job that is unique within your
+     * Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>: If
+     * you know the language of your media file, specify it using the <code>LanguageCode</code> parameter; you can find
+     * all valid language codes in the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
+     * If you don't know the languages spoken in your media, use either <code>IdentifyLanguage</code> or
+     * <code>IdentifyMultipleLanguages</code> and let Amazon Transcribe identify the languages for you.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startTranscriptionJobRequest
      * @return A Java Future containing the result of the StartTranscriptionJob operation returned by the service.
@@ -1197,8 +1815,46 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts an asynchronous job to transcribe speech to text.
+     * Transcribes the audio from a media file and applies any additional Request Parameters you choose to include in
+     * your request.
      * </p>
+     * <p>
+     * To make a <code>StartTranscriptionJob</code> request, you must first upload your media file into an Amazon S3
+     * bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartTranscriptionJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web
+     * Services Regions supported with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon Transcribe endpoints and quotas</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TranscriptionJobName</code>: A custom name you create for your transcription job that is unique within your
+     * Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>: If
+     * you know the language of your media file, specify it using the <code>LanguageCode</code> parameter; you can find
+     * all valid language codes in the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
+     * If you don't know the languages spoken in your media, use either <code>IdentifyLanguage</code> or
+     * <code>IdentifyMultipleLanguages</code> and let Amazon Transcribe identify the languages for you.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startTranscriptionJobRequest
      * @param asyncHandler
@@ -1215,7 +1871,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Tags an Amazon Transcribe resource with the given list of tags.
+     * Adds one or more custom tags, each in the form of a key:value pair, to the specified resource.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1228,7 +1888,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Tags an Amazon Transcribe resource with the given list of tags.
+     * Adds one or more custom tags, each in the form of a key:value pair, to the specified resource.
+     * </p>
+     * <p>
+     * To learn more about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1246,7 +1910,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Removes specified tags from a specified Amazon Transcribe resource.
+     * Removes the specified tags from the specified Amazon Transcribe resource.
+     * </p>
+     * <p>
+     * If you include <code>UntagResource</code> in your request, you must also include <code>ResourceArn</code> and
+     * <code>TagKeys</code>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1259,7 +1927,11 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Removes specified tags from a specified Amazon Transcribe resource.
+     * Removes the specified tags from the specified Amazon Transcribe resource.
+     * </p>
+     * <p>
+     * If you include <code>UntagResource</code> in your request, you must also include <code>ResourceArn</code> and
+     * <code>TagKeys</code>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1277,8 +1949,12 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code> operation
-     * overwrites all of the existing information with the values that you provide in the request.
+     * Updates the specified Call Analytics category with new rules. Note that the
+     * <code>UpdateCallAnalyticsCategory</code> operation overwrites all existing rules contained in the specified
+     * category. You cannot append additional rules onto an existing category.
+     * </p>
+     * <p>
+     * To create a new category, see .
      * </p>
      * 
      * @param updateCallAnalyticsCategoryRequest
@@ -1292,8 +1968,12 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code> operation
-     * overwrites all of the existing information with the values that you provide in the request.
+     * Updates the specified Call Analytics category with new rules. Note that the
+     * <code>UpdateCallAnalyticsCategory</code> operation overwrites all existing rules contained in the specified
+     * category. You cannot append additional rules onto an existing category.
+     * </p>
+     * <p>
+     * To create a new category, see .
      * </p>
      * 
      * @param updateCallAnalyticsCategoryRequest
@@ -1312,9 +1992,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates a vocabulary with new values that you provide in a different text file from the one you used to create
-     * the vocabulary. The <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing information
-     * with the values that you provide in the request.
+     * Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information
+     * with your new values; you cannot append new terms onto an existing vocabulary.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
@@ -1327,9 +2006,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates a vocabulary with new values that you provide in a different text file from the one you used to create
-     * the vocabulary. The <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing information
-     * with the values that you provide in the request.
+     * Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information
+     * with your new values; you cannot append new terms onto an existing vocabulary.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
@@ -1347,8 +2025,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
-     * existing information with the values that you provide in the request.
+     * Updates an existing custom vocabulary with new values. This operation overwrites all existing information with
+     * your new values; you cannot append new terms onto an existing vocabulary.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -1361,8 +2039,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
-     * existing information with the values that you provide in the request.
+     * Updates an existing custom vocabulary with new values. This operation overwrites all existing information with
+     * your new values; you cannot append new terms onto an existing vocabulary.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -1380,7 +2058,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates a vocabulary filter with a new list of filtered words.
+     * Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all
+     * previous entries; you cannot append new terms onto an existing vocabulary filter.
      * </p>
      * 
      * @param updateVocabularyFilterRequest
@@ -1393,7 +2072,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates a vocabulary filter with a new list of filtered words.
+     * Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all
+     * previous entries; you cannot append new terms onto an existing vocabulary filter.
      * </p>
      * 
      * @param updateVocabularyFilterRequest

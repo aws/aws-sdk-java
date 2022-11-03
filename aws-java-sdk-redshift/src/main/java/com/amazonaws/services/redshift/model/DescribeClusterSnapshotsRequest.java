@@ -40,6 +40,12 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     private String snapshotIdentifier;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     * </p>
+     */
+    private String snapshotArn;
+    /**
+     * <p>
      * The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.
      * </p>
      * <p>
@@ -232,6 +238,46 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
 
     public DescribeClusterSnapshotsRequest withSnapshotIdentifier(String snapshotIdentifier) {
         setSnapshotIdentifier(snapshotIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     */
+
+    public void setSnapshotArn(String snapshotArn) {
+        this.snapshotArn = snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     */
+
+    public String getSnapshotArn() {
+        return this.snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClusterSnapshotsRequest withSnapshotArn(String snapshotArn) {
+        setSnapshotArn(snapshotArn);
         return this;
     }
 
@@ -1175,6 +1221,8 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
             sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getSnapshotIdentifier() != null)
             sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
+        if (getSnapshotArn() != null)
+            sb.append("SnapshotArn: ").append(getSnapshotArn()).append(",");
         if (getSnapshotType() != null)
             sb.append("SnapshotType: ").append(getSnapshotType()).append(",");
         if (getStartTime() != null)
@@ -1216,6 +1264,10 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
         if (other.getSnapshotIdentifier() == null ^ this.getSnapshotIdentifier() == null)
             return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false)
+            return false;
+        if (other.getSnapshotArn() == null ^ this.getSnapshotArn() == null)
+            return false;
+        if (other.getSnapshotArn() != null && other.getSnapshotArn().equals(this.getSnapshotArn()) == false)
             return false;
         if (other.getSnapshotType() == null ^ this.getSnapshotType() == null)
             return false;
@@ -1267,6 +1319,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotArn() == null) ? 0 : getSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());

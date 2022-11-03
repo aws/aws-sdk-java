@@ -119,6 +119,19 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest request) {
+
+        return getConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConnectionRequest, GetConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOrderResult> getOrderAsync(GetOrderRequest request) {
 
         return getOrderAsync(request, null);
@@ -257,6 +270,19 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConnectionResult> startConnectionAsync(StartConnectionRequest request) {
+
+        return startConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConnectionResult> startConnectionAsync(StartConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartConnectionRequest, StartConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

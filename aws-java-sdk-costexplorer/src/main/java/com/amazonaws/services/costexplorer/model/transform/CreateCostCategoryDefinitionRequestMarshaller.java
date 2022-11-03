@@ -30,6 +30,8 @@ public class CreateCostCategoryDefinitionRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> EFFECTIVESTART_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EffectiveStart").build();
     private static final MarshallingInfo<String> RULEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleVersion").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class CreateCostCategoryDefinitionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createCostCategoryDefinitionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createCostCategoryDefinitionRequest.getEffectiveStart(), EFFECTIVESTART_BINDING);
             protocolMarshaller.marshall(createCostCategoryDefinitionRequest.getRuleVersion(), RULEVERSION_BINDING);
             protocolMarshaller.marshall(createCostCategoryDefinitionRequest.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(createCostCategoryDefinitionRequest.getDefaultValue(), DEFAULTVALUE_BINDING);

@@ -188,6 +188,12 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,7 +249,13 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    @Deprecated
     public TagLogGroupResult tagLogGroup(TagLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -253,7 +265,13 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    @Deprecated
     public UntagLogGroupResult untagLogGroup(UntagLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

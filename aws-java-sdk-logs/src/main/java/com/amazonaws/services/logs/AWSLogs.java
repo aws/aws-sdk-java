@@ -158,7 +158,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.AssociateKmsKey
@@ -223,7 +223,7 @@ public interface AWSLogs {
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @throws ResourceNotFoundException
@@ -293,7 +293,7 @@ public interface AWSLogs {
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.CreateLogGroup
@@ -361,7 +361,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteDestination
@@ -383,7 +383,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteLogGroup
@@ -405,7 +405,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteLogStream
@@ -426,7 +426,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteMetricFilter
@@ -496,7 +496,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteRetentionPolicy
@@ -517,7 +517,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteSubscriptionFilter
@@ -743,7 +743,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DisassociateKmsKey
@@ -900,6 +900,33 @@ public interface AWSLogs {
 
     /**
      * <p>
+     * Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support
+     * tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <important>
+     * <p>
+     * The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a> instead.
+     * </p>
+     * </important>
+     * <p>
      * Lists the tags for the specified log group.
      * </p>
      * 
@@ -913,6 +940,7 @@ public interface AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest listTagsLogGroupRequest);
 
     /**
@@ -943,7 +971,7 @@ public interface AWSLogs {
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutDestination
@@ -969,7 +997,7 @@ public interface AWSLogs {
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutDestinationPolicy
@@ -1101,7 +1129,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws ServiceUnavailableException
@@ -1179,7 +1207,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutRetentionPolicy
@@ -1238,7 +1266,7 @@ public interface AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws ServiceUnavailableException
@@ -1310,15 +1338,22 @@ public interface AWSLogs {
     StopQueryResult stopQuery(StopQueryRequest stopQueryRequest);
 
     /**
+     * <important>
+     * <p>
+     * The TagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+     * instead.
+     * </p>
+     * </important>
      * <p>
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To remove tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
-     * >UntagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a>.
      * </p>
      * <p>
      * For more information about tags, see <a href=
@@ -1343,7 +1378,47 @@ public interface AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     TagLogGroupResult tagLogGroup(TagLogGroupRequest tagLogGroupRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only
+     * CloudWatch Logs resources that can be tagged are log groups and destinations.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key
+     * that is already associated with the alarm, the new tag value that you specify replaces the previous value for
+     * that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a CloudWatch Logs resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @throws TooManyTagsException
+     *         A resource can have no more than 50 tags.
+     * @sample AWSLogs.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
      * <p>
@@ -1364,14 +1439,21 @@ public interface AWSLogs {
     TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest);
 
     /**
+     * <important>
+     * <p>
+     * The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To add tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
      * </p>
      * <p>
      * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
@@ -1386,7 +1468,27 @@ public interface AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     UntagLogGroupResult untagLogGroup(UntagLogGroupRequest untagLogGroupRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

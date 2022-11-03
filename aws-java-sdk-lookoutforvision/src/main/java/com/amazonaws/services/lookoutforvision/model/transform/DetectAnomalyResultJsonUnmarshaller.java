@@ -13,7 +13,7 @@
 package com.amazonaws.services.lookoutforvision.model.transform;
 
 import java.math.*;
-
+import java.nio.ByteBuffer;
 import javax.annotation.Generated;
 
 import com.amazonaws.services.lookoutforvision.model.*;
@@ -59,6 +59,16 @@ public class DetectAnomalyResultJsonUnmarshaller implements Unmarshaller<DetectA
                 if (context.testExpression("Confidence", targetDepth)) {
                     context.nextToken();
                     detectAnomalyResult.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (context.testExpression("Anomalies", targetDepth)) {
+                    context.nextToken();
+                    detectAnomalyResult.setAnomalies(new ListUnmarshaller<Anomaly>(AnomalyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("AnomalyMask", targetDepth)) {
+                    context.nextToken();
+                    detectAnomalyResult.setAnomalyMask(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

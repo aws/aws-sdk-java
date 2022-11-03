@@ -31,31 +31,28 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
     private String languageCode;
     /**
      * <p>
-     * The Amazon Transcribe standard language model, or base model, you used when creating your custom language model.
-     * </p>
-     * <p>
-     * If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If your
-     * audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     * The Amazon Transcribe standard language model, or base model, you specified when creating your custom language
+     * model.
      * </p>
      */
     private String baseModelName;
     /**
      * <p>
-     * The unique name you chose for your custom language model.
+     * The name of your custom language model.
      * </p>
      */
     private String modelName;
     /**
      * <p>
-     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
-     * training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
+     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training
+     * (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      * </p>
      */
     private InputDataConfig inputDataConfig;
     /**
      * <p>
-     * The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is ready to
-     * use.
+     * The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready
+     * to use.
      * </p>
      */
     private String modelStatus;
@@ -121,19 +118,13 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Transcribe standard language model, or base model, you used when creating your custom language model.
-     * </p>
-     * <p>
-     * If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If your
-     * audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     * The Amazon Transcribe standard language model, or base model, you specified when creating your custom language
+     * model.
      * </p>
      * 
      * @param baseModelName
-     *        The Amazon Transcribe standard language model, or base model, you used when creating your custom language
-     *        model.</p>
-     *        <p>
-     *        If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If
-     *        your audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     *        The Amazon Transcribe standard language model, or base model, you specified when creating your custom
+     *        language model.
      * @see BaseModelName
      */
 
@@ -143,18 +134,12 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Transcribe standard language model, or base model, you used when creating your custom language model.
-     * </p>
-     * <p>
-     * If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If your
-     * audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     * The Amazon Transcribe standard language model, or base model, you specified when creating your custom language
+     * model.
      * </p>
      * 
-     * @return The Amazon Transcribe standard language model, or base model, you used when creating your custom language
-     *         model.</p>
-     *         <p>
-     *         If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If
-     *         your audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     * @return The Amazon Transcribe standard language model, or base model, you specified when creating your custom
+     *         language model.
      * @see BaseModelName
      */
 
@@ -164,19 +149,13 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Transcribe standard language model, or base model, you used when creating your custom language model.
-     * </p>
-     * <p>
-     * If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If your
-     * audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     * The Amazon Transcribe standard language model, or base model, you specified when creating your custom language
+     * model.
      * </p>
      * 
      * @param baseModelName
-     *        The Amazon Transcribe standard language model, or base model, you used when creating your custom language
-     *        model.</p>
-     *        <p>
-     *        If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If
-     *        your audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     *        The Amazon Transcribe standard language model, or base model, you specified when creating your custom
+     *        language model.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BaseModelName
      */
@@ -188,19 +167,13 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Transcribe standard language model, or base model, you used when creating your custom language model.
-     * </p>
-     * <p>
-     * If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If your
-     * audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     * The Amazon Transcribe standard language model, or base model, you specified when creating your custom language
+     * model.
      * </p>
      * 
      * @param baseModelName
-     *        The Amazon Transcribe standard language model, or base model, you used when creating your custom language
-     *        model.</p>
-     *        <p>
-     *        If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>. If
-     *        your audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
+     *        The Amazon Transcribe standard language model, or base model, you specified when creating your custom
+     *        language model.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BaseModelName
      */
@@ -212,11 +185,11 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique name you chose for your custom language model.
+     * The name of your custom language model.
      * </p>
      * 
      * @param modelName
-     *        The unique name you chose for your custom language model.
+     *        The name of your custom language model.
      */
 
     public void setModelName(String modelName) {
@@ -225,10 +198,10 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique name you chose for your custom language model.
+     * The name of your custom language model.
      * </p>
      * 
-     * @return The unique name you chose for your custom language model.
+     * @return The name of your custom language model.
      */
 
     public String getModelName() {
@@ -237,11 +210,11 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique name you chose for your custom language model.
+     * The name of your custom language model.
      * </p>
      * 
      * @param modelName
-     *        The unique name you chose for your custom language model.
+     *        The name of your custom language model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,12 +225,12 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
-     * training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
+     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training
+     * (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      * </p>
      * 
      * @param inputDataConfig
-     *        Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
+     *        Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your
      *        training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      */
 
@@ -267,11 +240,11 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
-     * training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
+     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training
+     * (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      * </p>
      * 
-     * @return Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
+     * @return Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your
      *         training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      */
 
@@ -281,12 +254,12 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
-     * training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
+     * Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training
+     * (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      * </p>
      * 
      * @param inputDataConfig
-     *        Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations your provided for your
+     *        Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your
      *        training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -298,13 +271,13 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is ready to
-     * use.
+     * The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready
+     * to use.
      * </p>
      * 
      * @param modelStatus
-     *        The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is
-     *        ready to use.
+     *        The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model
+     *        is ready to use.
      * @see ModelStatus
      */
 
@@ -314,12 +287,12 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is ready to
-     * use.
+     * The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready
+     * to use.
      * </p>
      * 
-     * @return The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is
-     *         ready to use.
+     * @return The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model
+     *         is ready to use.
      * @see ModelStatus
      */
 
@@ -329,13 +302,13 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is ready to
-     * use.
+     * The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready
+     * to use.
      * </p>
      * 
      * @param modelStatus
-     *        The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is
-     *        ready to use.
+     *        The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model
+     *        is ready to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */
@@ -347,13 +320,13 @@ public class CreateLanguageModelResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is ready to
-     * use.
+     * The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready
+     * to use.
      * </p>
      * 
      * @param modelStatus
-     *        The status of your custom language model. When the status shows as <code>COMPLETED</code>, your model is
-     *        ready to use.
+     *        The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model
+     *        is ready to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */

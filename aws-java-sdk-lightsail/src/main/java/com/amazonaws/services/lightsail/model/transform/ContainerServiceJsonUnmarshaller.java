@@ -125,6 +125,10 @@ public class ContainerServiceJsonUnmarshaller implements Unmarshaller<ContainerS
                     context.nextToken();
                     containerService.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("privateRegistryAccess", targetDepth)) {
+                    context.nextToken();
+                    containerService.setPrivateRegistryAccess(PrivateRegistryAccessJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

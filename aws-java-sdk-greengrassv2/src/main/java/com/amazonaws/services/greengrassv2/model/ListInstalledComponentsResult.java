@@ -27,6 +27,18 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * A list that summarizes each component on the core device.
      * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
+     * </p>
+     * </note>
      */
     private java.util.List<InstalledComponent> installedComponents;
     /**
@@ -40,8 +52,30 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * A list that summarizes each component on the core device.
      * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
+     * </p>
+     * </note>
      * 
-     * @return A list that summarizes each component on the core device.
+     * @return A list that summarizes each component on the core device.</p> <note>
+     *         <p>
+     *         Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *         response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *         <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier
+     *         Greengrass nucleus versions.
+     *         </p>
      */
 
     public java.util.List<InstalledComponent> getInstalledComponents() {
@@ -52,9 +86,31 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * A list that summarizes each component on the core device.
      * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
+     * </p>
+     * </note>
      * 
      * @param installedComponents
-     *        A list that summarizes each component on the core device.
+     *        A list that summarizes each component on the core device.</p> <note>
+     *        <p>
+     *        Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *        <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     *        nucleus versions.
+     *        </p>
      */
 
     public void setInstalledComponents(java.util.Collection<InstalledComponent> installedComponents) {
@@ -70,6 +126,18 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * A list that summarizes each component on the core device.
      * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstalledComponents(java.util.Collection)} or {@link #withInstalledComponents(java.util.Collection)}
@@ -77,7 +145,17 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param installedComponents
-     *        A list that summarizes each component on the core device.
+     *        A list that summarizes each component on the core device.</p> <note>
+     *        <p>
+     *        Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *        <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     *        nucleus versions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,9 +173,31 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * A list that summarizes each component on the core device.
      * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
+     * </p>
+     * </note>
      * 
      * @param installedComponents
-     *        A list that summarizes each component on the core device.
+     *        A list that summarizes each component on the core device.</p> <note>
+     *        <p>
+     *        Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *        <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     *        nucleus versions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

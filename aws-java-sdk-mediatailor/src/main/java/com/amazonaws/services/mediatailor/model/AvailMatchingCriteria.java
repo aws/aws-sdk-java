@@ -23,17 +23,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * variables. This gives you granular control over which ad break to place the prefetched ads into.
  * </p>
  * <p>
- * As an example, let's say that you set DynamicVariable to scte.event_id and Operator to EQUALS, and your playback
- * configuration has an ADS URL of
- * https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp
- * ;duration=[session.avail_duration_secs]. And the prefetch request to the ADS contains these values
- * https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30. MediaTailor will only insert
- * the prefetched ads into the ad break if has a SCTE marker with an event id of my-awesome-event, since it must match
- * the event id that MediaTailor uses to query the ADS.
+ * As an example, let's say that you set <code>DynamicVariable</code> to <code>scte.event_id</code> and
+ * <code>Operator</code> to <code>EQUALS</code>, and your playback configuration has an ADS URL of
+ * <code>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</code>
+ * . And the prefetch request to the ADS contains these values
+ * <code>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</code>. MediaTailor will
+ * only insert the prefetched ads into the ad break if has a SCTE marker with an event id of
+ * <code>my-awesome-event</code>, since it must match the event id that MediaTailor uses to query the ADS.
  * </p>
  * <p>
- * You can specify up to five AvailMatchingCriteria. If you specify multiple AvailMatchingCriteria, MediaTailor combines
- * them to match using a logical AND. You can model logical OR combinations by creating multiple prefetch schedules.
+ * You can specify up to five <code>AvailMatchingCriteria</code>. If you specify multiple
+ * <code>AvailMatchingCriteria</code>, MediaTailor combines them to match using a logical <code>AND</code>. You can
+ * model logical <code>OR</code> combinations by creating multiple prefetch schedules.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AvailMatchingCriteria" target="_top">AWS
@@ -56,7 +57,8 @@ public class AvailMatchingCriteria implements Serializable, Cloneable, Structure
     private String dynamicVariable;
     /**
      * <p>
-     * For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     * For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used
+     * for the comparison.
      * </p>
      */
     private String operator;
@@ -139,11 +141,13 @@ public class AvailMatchingCriteria implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     * For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used
+     * for the comparison.
      * </p>
      * 
      * @param operator
-     *        For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     *        For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is
+     *        used for the comparison.
      * @see Operator
      */
 
@@ -153,10 +157,12 @@ public class AvailMatchingCriteria implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     * For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used
+     * for the comparison.
      * </p>
      * 
-     * @return For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     * @return For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that
+     *         is used for the comparison.
      * @see Operator
      */
 
@@ -166,11 +172,13 @@ public class AvailMatchingCriteria implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     * For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used
+     * for the comparison.
      * </p>
      * 
      * @param operator
-     *        For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     *        For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is
+     *        used for the comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */
@@ -182,11 +190,13 @@ public class AvailMatchingCriteria implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     * For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used
+     * for the comparison.
      * </p>
      * 
      * @param operator
-     *        For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.
+     *        For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is
+     *        used for the comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */

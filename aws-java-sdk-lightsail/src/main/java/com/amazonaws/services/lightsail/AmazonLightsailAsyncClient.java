@@ -5300,6 +5300,40 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateInstanceMetadataOptionsResult> updateInstanceMetadataOptionsAsync(UpdateInstanceMetadataOptionsRequest request) {
+
+        return updateInstanceMetadataOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceMetadataOptionsResult> updateInstanceMetadataOptionsAsync(
+            final UpdateInstanceMetadataOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInstanceMetadataOptionsRequest, UpdateInstanceMetadataOptionsResult> asyncHandler) {
+        final UpdateInstanceMetadataOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInstanceMetadataOptionsResult>() {
+            @Override
+            public UpdateInstanceMetadataOptionsResult call() throws Exception {
+                UpdateInstanceMetadataOptionsResult result = null;
+
+                try {
+                    result = executeUpdateInstanceMetadataOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLoadBalancerAttributeResult> updateLoadBalancerAttributeAsync(UpdateLoadBalancerAttributeRequest request) {
 
         return updateLoadBalancerAttributeAsync(request, null);

@@ -29,6 +29,8 @@ public class UpdateServiceIntegrationConfigMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> OPSCENTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsCenter").build();
+    private static final MarshallingInfo<StructuredPojo> LOGSANOMALYDETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogsAnomalyDetection").build();
 
     private static final UpdateServiceIntegrationConfigMarshaller instance = new UpdateServiceIntegrationConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class UpdateServiceIntegrationConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(updateServiceIntegrationConfig.getOpsCenter(), OPSCENTER_BINDING);
+            protocolMarshaller.marshall(updateServiceIntegrationConfig.getLogsAnomalyDetection(), LOGSANOMALYDETECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

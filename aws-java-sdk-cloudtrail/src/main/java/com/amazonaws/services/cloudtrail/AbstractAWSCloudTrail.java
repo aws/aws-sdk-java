@@ -83,12 +83,22 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public GetChannelResult getChannel(GetChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEventDataStoreResult getEventDataStore(GetEventDataStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetImportResult getImport(GetImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,7 +123,22 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public ListChannelsResult listChannels(ListChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEventDataStoresResult listEventDataStores(ListEventDataStoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportFailuresResult listImportFailures(ListImportFailuresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,12 +198,22 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public StartImportResult startImport(StartImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartLoggingResult startLogging(StartLoggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartQueryResult startQuery(StartQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopImportResult stopImport(StopImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

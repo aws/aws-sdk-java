@@ -31,8 +31,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is
-     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see
-     * <a>how-entities</a>.
+     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     * Developer Guide.
      * </p>
      */
     private java.util.List<Entity> entities;
@@ -45,8 +46,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is
-     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see
-     * <a>how-entities</a>.
+     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     * Developer Guide.
      * </p>
      * 
      * @return A collection of entities identified in the input text. For each entity, the response provides the entity
@@ -55,7 +57,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      *         <p>
      *         If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the
      *         model is trained to recognize. Otherwise, it detects the default entity types. For a list of default
-     *         entity types, see <a>how-entities</a>.
+     *         entity types, see <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     *         Developer Guide.
      */
 
     public java.util.List<Entity> getEntities() {
@@ -70,8 +74,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is
-     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see
-     * <a>how-entities</a>.
+     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     * Developer Guide.
      * </p>
      * 
      * @param entities
@@ -81,7 +86,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the
      *        model is trained to recognize. Otherwise, it detects the default entity types. For a list of default
-     *        entity types, see <a>how-entities</a>.
+     *        entity types, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     *        Developer Guide.
      */
 
     public void setEntities(java.util.Collection<Entity> entities) {
@@ -101,8 +108,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is
-     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see
-     * <a>how-entities</a>.
+     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     * Developer Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +125,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the
      *        model is trained to recognize. Otherwise, it detects the default entity types. For a list of default
-     *        entity types, see <a>how-entities</a>.
+     *        entity types, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,8 +149,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is
-     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see
-     * <a>how-entities</a>.
+     * trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     * Developer Guide.
      * </p>
      * 
      * @param entities
@@ -150,7 +161,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the
      *        model is trained to recognize. Otherwise, it detects the default entity types. For a list of default
-     *        entity types, see <a>how-entities</a>.
+     *        entity types, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

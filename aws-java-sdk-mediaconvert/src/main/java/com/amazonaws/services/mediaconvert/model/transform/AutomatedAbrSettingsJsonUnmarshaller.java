@@ -60,6 +60,12 @@ public class AutomatedAbrSettingsJsonUnmarshaller implements Unmarshaller<Automa
                     context.nextToken();
                     automatedAbrSettings.setMinAbrBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("rules", targetDepth)) {
+                    context.nextToken();
+                    automatedAbrSettings.setRules(new ListUnmarshaller<AutomatedAbrRule>(AutomatedAbrRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

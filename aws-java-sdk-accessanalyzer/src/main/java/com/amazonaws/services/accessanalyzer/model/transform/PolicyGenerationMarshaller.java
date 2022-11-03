@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PolicyGenerationMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> COMPLETEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedOn").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobId").build();
     private static final MarshallingInfo<String> PRINCIPALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("principalArn").build();
-    private static final MarshallingInfo<java.util.Date> STARTEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedOn").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> STARTEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedOn").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> COMPLETEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedOn").timestampFormat("iso8601").build();
 
     private static final PolicyGenerationMarshaller instance = new PolicyGenerationMarshaller();
 
@@ -54,11 +54,11 @@ public class PolicyGenerationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(policyGeneration.getCompletedOn(), COMPLETEDON_BINDING);
             protocolMarshaller.marshall(policyGeneration.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(policyGeneration.getPrincipalArn(), PRINCIPALARN_BINDING);
-            protocolMarshaller.marshall(policyGeneration.getStartedOn(), STARTEDON_BINDING);
             protocolMarshaller.marshall(policyGeneration.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(policyGeneration.getStartedOn(), STARTEDON_BINDING);
+            protocolMarshaller.marshall(policyGeneration.getCompletedOn(), COMPLETEDON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -39,6 +39,10 @@ public class WorkflowRunStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SucceededActions").build();
     private static final MarshallingInfo<Integer> RUNNINGACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RunningActions").build();
+    private static final MarshallingInfo<Integer> ERROREDACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErroredActions").build();
+    private static final MarshallingInfo<Integer> WAITINGACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WaitingActions").build();
 
     private static final WorkflowRunStatisticsMarshaller instance = new WorkflowRunStatisticsMarshaller();
 
@@ -62,6 +66,8 @@ public class WorkflowRunStatisticsMarshaller {
             protocolMarshaller.marshall(workflowRunStatistics.getStoppedActions(), STOPPEDACTIONS_BINDING);
             protocolMarshaller.marshall(workflowRunStatistics.getSucceededActions(), SUCCEEDEDACTIONS_BINDING);
             protocolMarshaller.marshall(workflowRunStatistics.getRunningActions(), RUNNINGACTIONS_BINDING);
+            protocolMarshaller.marshall(workflowRunStatistics.getErroredActions(), ERROREDACTIONS_BINDING);
+            protocolMarshaller.marshall(workflowRunStatistics.getWaitingActions(), WAITINGACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

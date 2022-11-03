@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
  * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes
  * to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer
- * guide, this is refered to as a string match statement.
+ * guide, this is called a string match statement.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ByteMatchStatement" target="_top">AWS API
@@ -79,7 +79,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     private java.nio.ByteBuffer searchString;
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      */
     private FieldToMatch fieldToMatch;
@@ -458,11 +458,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -471,10 +471,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
-     * @return The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * @return The part of the web request that you want WAF to inspect.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -483,11 +483,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -74,7 +74,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     * The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.
      * </p>
      * <note>
      * <p>
@@ -92,8 +94,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date creationTime;
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.
      * </p>
      */
@@ -335,7 +338,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     * The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.
      * </p>
      * <note>
      * <p>
@@ -369,7 +374,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     *        The <code>UPDATE</code> states apply when you call the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *        operation.
      *        </p>
      *        <note>
      *        <p>
@@ -409,7 +416,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     * The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.
      * </p>
      * <note>
      * <p>
@@ -442,7 +451,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         </ul>
      *         <p>
-     *         The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     *         The <code>UPDATE</code> states apply when you call the <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *         operation.
      *         </p>
      *         <note>
      *         <p>
@@ -482,7 +493,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     * The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.
      * </p>
      * <note>
      * <p>
@@ -516,7 +529,9 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+     *        The <code>UPDATE</code> states apply when you call the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *        operation.
      *        </p>
      *        <note>
      *        <p>
@@ -573,15 +588,17 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.
      * </p>
      * 
      * @param lastModificationTime
-     *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
-     *        <code>DescribeDatasetGroup</code> call.
+     *        When the dataset group was created or last updated from a call to the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *        operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time
+     *        of the <code>DescribeDatasetGroup</code> call.
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -590,12 +607,14 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.
      * </p>
      * 
-     * @return When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
+     * @return When the dataset group was created or last updated from a call to the <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
      *         operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current
      *         time of the <code>DescribeDatasetGroup</code> call.
      */
@@ -606,15 +625,17 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.
      * </p>
      * 
      * @param lastModificationTime
-     *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
-     *        <code>DescribeDatasetGroup</code> call.
+     *        When the dataset group was created or last updated from a call to the <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     *        operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time
+     *        of the <code>DescribeDatasetGroup</code> call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

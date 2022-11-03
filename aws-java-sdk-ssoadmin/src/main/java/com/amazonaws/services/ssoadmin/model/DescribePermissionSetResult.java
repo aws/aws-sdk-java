@@ -25,18 +25,18 @@ public class DescribePermissionSetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Describes the level of access on an Amazon Web Services account.
+     * Describes the level of access on an AWS account.
      * </p>
      */
     private PermissionSet permissionSet;
 
     /**
      * <p>
-     * Describes the level of access on an Amazon Web Services account.
+     * Describes the level of access on an AWS account.
      * </p>
      * 
      * @param permissionSet
-     *        Describes the level of access on an Amazon Web Services account.
+     *        Describes the level of access on an AWS account.
      */
 
     public void setPermissionSet(PermissionSet permissionSet) {
@@ -45,10 +45,10 @@ public class DescribePermissionSetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Describes the level of access on an Amazon Web Services account.
+     * Describes the level of access on an AWS account.
      * </p>
      * 
-     * @return Describes the level of access on an Amazon Web Services account.
+     * @return Describes the level of access on an AWS account.
      */
 
     public PermissionSet getPermissionSet() {
@@ -57,11 +57,11 @@ public class DescribePermissionSetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Describes the level of access on an Amazon Web Services account.
+     * Describes the level of access on an AWS account.
      * </p>
      * 
      * @param permissionSet
-     *        Describes the level of access on an Amazon Web Services account.
+     *        Describes the level of access on an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

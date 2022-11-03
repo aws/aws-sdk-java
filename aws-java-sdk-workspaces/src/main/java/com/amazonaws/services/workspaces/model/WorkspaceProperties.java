@@ -34,6 +34,13 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+     * WorkSpaces Core</a>.
+     * </p>
+     * </note>
      */
     private String runningMode;
     /**
@@ -72,11 +79,23 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+     * WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
-     *        Running Mode</a>.
+     *        Running Mode</a>.</p> <note>
+     *        <p>
+     *        The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     *        allow-listed to use this value. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     *        </p>
      * @see RunningMode
      */
 
@@ -90,10 +109,22 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+     * WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @return The running mode. For more information, see <a
      *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
-     *         Running Mode</a>.
+     *         Running Mode</a>.</p> <note>
+     *         <p>
+     *         The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to
+     *         be allow-listed to use this value. For more information, see <a
+     *         href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     *         </p>
      * @see RunningMode
      */
 
@@ -107,11 +138,23 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+     * WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
-     *        Running Mode</a>.
+     *        Running Mode</a>.</p> <note>
+     *        <p>
+     *        The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     *        allow-listed to use this value. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
      */
@@ -127,11 +170,23 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+     * WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
-     *        Running Mode</a>.
+     *        Running Mode</a>.</p> <note>
+     *        <p>
+     *        The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     *        allow-listed to use this value. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     *        </p>
      * @see RunningMode
      */
 
@@ -145,11 +200,23 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+     * WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
-     *        Running Mode</a>.
+     *        Running Mode</a>.</p> <note>
+     *        <p>
+     *        The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be
+     *        allow-listed to use this value. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
      */

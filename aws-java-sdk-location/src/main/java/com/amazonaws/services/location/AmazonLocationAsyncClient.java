@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+ * "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
  * </p>
  */
 @ThreadSafe
@@ -1118,6 +1118,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeGetMapTile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaceResult> getPlaceAsync(GetPlaceRequest request) {
+
+        return getPlaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaceResult> getPlaceAsync(final GetPlaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPlaceRequest, GetPlaceResult> asyncHandler) {
+        final GetPlaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPlaceResult>() {
+            @Override
+            public GetPlaceResult call() throws Exception {
+                GetPlaceResult result = null;
+
+                try {
+                    result = executeGetPlace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

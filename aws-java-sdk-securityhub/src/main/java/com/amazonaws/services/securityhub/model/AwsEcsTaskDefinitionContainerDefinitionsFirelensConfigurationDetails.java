@@ -58,7 +58,7 @@ public class AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetail
     private java.util.Map<String, String> options;
     /**
      * <p>
-     * The log router to use.
+     * The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      * </p>
      */
     private String type;
@@ -250,11 +250,11 @@ public class AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetail
 
     /**
      * <p>
-     * The log router to use.
+     * The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      * </p>
      * 
      * @param type
-     *        The log router to use.
+     *        The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      */
 
     public void setType(String type) {
@@ -263,10 +263,10 @@ public class AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetail
 
     /**
      * <p>
-     * The log router to use.
+     * The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      * </p>
      * 
-     * @return The log router to use.
+     * @return The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      */
 
     public String getType() {
@@ -275,11 +275,11 @@ public class AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetail
 
     /**
      * <p>
-     * The log router to use.
+     * The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      * </p>
      * 
      * @param type
-     *        The log router to use.
+     *        The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

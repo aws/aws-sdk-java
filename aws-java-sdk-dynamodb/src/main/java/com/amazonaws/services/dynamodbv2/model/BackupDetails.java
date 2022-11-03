@@ -42,7 +42,8 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
     private String backupName;
     /**
      * <p>
-     * Size of the backup in bytes.
+     * Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not
+     * be reflected in this value.
      * </p>
      */
     private Long backupSizeBytes;
@@ -173,11 +174,13 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size of the backup in bytes.
+     * Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not
+     * be reflected in this value.
      * </p>
      * 
      * @param backupSizeBytes
-     *        Size of the backup in bytes.
+     *        Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     *        might not be reflected in this value.
      */
 
     public void setBackupSizeBytes(Long backupSizeBytes) {
@@ -186,10 +189,12 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size of the backup in bytes.
+     * Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not
+     * be reflected in this value.
      * </p>
      * 
-     * @return Size of the backup in bytes.
+     * @return Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     *         might not be reflected in this value.
      */
 
     public Long getBackupSizeBytes() {
@@ -198,11 +203,13 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size of the backup in bytes.
+     * Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not
+     * be reflected in this value.
      * </p>
      * 
      * @param backupSizeBytes
-     *        Size of the backup in bytes.
+     *        Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     *        might not be reflected in this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

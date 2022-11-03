@@ -55,6 +55,8 @@ public class OptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransferMode").build();
     private static final MarshallingInfo<String> SECURITYDESCRIPTORCOPYFLAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityDescriptorCopyFlags").build();
+    private static final MarshallingInfo<String> OBJECTTAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectTags").build();
 
     private static final OptionsMarshaller instance = new OptionsMarshaller();
 
@@ -86,6 +88,7 @@ public class OptionsMarshaller {
             protocolMarshaller.marshall(options.getLogLevel(), LOGLEVEL_BINDING);
             protocolMarshaller.marshall(options.getTransferMode(), TRANSFERMODE_BINDING);
             protocolMarshaller.marshall(options.getSecurityDescriptorCopyFlags(), SECURITYDESCRIPTORCOPYFLAGS_BINDING);
+            protocolMarshaller.marshall(options.getObjectTags(), OBJECTTAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

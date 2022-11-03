@@ -29,14 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class S3BucketConfigurationMarshaller {
 
-    private static final MarshallingInfo<Map> ACCESSPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("accessPoints").build();
-    private static final MarshallingInfo<List> BUCKETACLGRANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketAclGrants").build();
     private static final MarshallingInfo<String> BUCKETPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketPolicy").build();
+    private static final MarshallingInfo<List> BUCKETACLGRANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketAclGrants").build();
     private static final MarshallingInfo<StructuredPojo> BUCKETPUBLICACCESSBLOCK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketPublicAccessBlock").build();
+    private static final MarshallingInfo<Map> ACCESSPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accessPoints").build();
 
     private static final S3BucketConfigurationMarshaller instance = new S3BucketConfigurationMarshaller();
 
@@ -54,10 +54,10 @@ public class S3BucketConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(s3BucketConfiguration.getAccessPoints(), ACCESSPOINTS_BINDING);
-            protocolMarshaller.marshall(s3BucketConfiguration.getBucketAclGrants(), BUCKETACLGRANTS_BINDING);
             protocolMarshaller.marshall(s3BucketConfiguration.getBucketPolicy(), BUCKETPOLICY_BINDING);
+            protocolMarshaller.marshall(s3BucketConfiguration.getBucketAclGrants(), BUCKETACLGRANTS_BINDING);
             protocolMarshaller.marshall(s3BucketConfiguration.getBucketPublicAccessBlock(), BUCKETPUBLICACCESSBLOCK_BINDING);
+            protocolMarshaller.marshall(s3BucketConfiguration.getAccessPoints(), ACCESSPOINTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

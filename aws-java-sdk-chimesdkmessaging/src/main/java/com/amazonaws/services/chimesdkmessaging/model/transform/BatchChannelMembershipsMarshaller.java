@@ -36,6 +36,8 @@ public class BatchChannelMembershipsMarshaller {
             .marshallLocationName("Members").build();
     private static final MarshallingInfo<String> CHANNELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelArn").build();
+    private static final MarshallingInfo<String> SUBCHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubChannelId").build();
 
     private static final BatchChannelMembershipsMarshaller instance = new BatchChannelMembershipsMarshaller();
 
@@ -57,6 +59,7 @@ public class BatchChannelMembershipsMarshaller {
             protocolMarshaller.marshall(batchChannelMemberships.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(batchChannelMemberships.getMembers(), MEMBERS_BINDING);
             protocolMarshaller.marshall(batchChannelMemberships.getChannelArn(), CHANNELARN_BINDING);
+            protocolMarshaller.marshall(batchChannelMemberships.getSubChannelId(), SUBCHANNELID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

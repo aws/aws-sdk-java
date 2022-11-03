@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance
- * is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist
+ * An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is
+ * a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist
  * without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with
  * only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual
  * stack and the stack status.
@@ -34,13 +34,13 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * The name of the Amazon Web Services account that the stack instance is associated with.
      * </p>
      */
     private String account;
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the Amazon Web Services Region that the stack instance is associated with.
      * </p>
      */
     private String region;
@@ -76,11 +76,11 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * The name of the Amazon Web Services account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        The name of the AWS account that the stack instance is associated with.
+     *        The name of the Amazon Web Services account that the stack instance is associated with.
      */
 
     public void setAccount(String account) {
@@ -89,10 +89,10 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * The name of the Amazon Web Services account that the stack instance is associated with.
      * </p>
      * 
-     * @return The name of the AWS account that the stack instance is associated with.
+     * @return The name of the Amazon Web Services account that the stack instance is associated with.
      */
 
     public String getAccount() {
@@ -101,11 +101,11 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * The name of the Amazon Web Services account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        The name of the AWS account that the stack instance is associated with.
+     *        The name of the Amazon Web Services account that the stack instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the Amazon Web Services Region that the stack instance is associated with.
      * </p>
      * 
      * @param region
-     *        The name of the AWS region that the stack instance is associated with.
+     *        The name of the Amazon Web Services Region that the stack instance is associated with.
      */
 
     public void setRegion(String region) {
@@ -129,10 +129,10 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the Amazon Web Services Region that the stack instance is associated with.
      * </p>
      * 
-     * @return The name of the AWS region that the stack instance is associated with.
+     * @return The name of the Amazon Web Services Region that the stack instance is associated with.
      */
 
     public String getRegion() {
@@ -141,11 +141,11 @@ public class StackInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the Amazon Web Services Region that the stack instance is associated with.
      * </p>
      * 
      * @param region
-     *        The name of the AWS region that the stack instance is associated with.
+     *        The name of the Amazon Web Services Region that the stack instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

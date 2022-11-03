@@ -27,7 +27,8 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      */
     private String targetArn;
@@ -65,11 +66,13 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
+     *        numbers are claimed to.
      */
 
     public void setTargetArn(String targetArn) {
@@ -78,10 +81,12 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * @return The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
+     *         numbers are claimed to.
      */
 
     public String getTargetArn() {
@@ -90,11 +95,13 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
+     *        numbers are claimed to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

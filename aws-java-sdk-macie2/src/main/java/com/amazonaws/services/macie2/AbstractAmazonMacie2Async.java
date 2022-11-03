@@ -54,6 +54,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAllowListResult> createAllowListAsync(CreateAllowListRequest request) {
+
+        return createAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAllowListResult> createAllowListAsync(CreateAllowListRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAllowListRequest, CreateAllowListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClassificationJobResult> createClassificationJobAsync(CreateClassificationJobRequest request) {
 
         return createClassificationJobAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     @Override
     public java.util.concurrent.Future<DeclineInvitationsResult> declineInvitationsAsync(DeclineInvitationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeclineInvitationsRequest, DeclineInvitationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAllowListResult> deleteAllowListAsync(DeleteAllowListRequest request) {
+
+        return deleteAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAllowListResult> deleteAllowListAsync(DeleteAllowListRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAllowListRequest, DeleteAllowListResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -346,6 +372,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetAllowListResult> getAllowListAsync(GetAllowListRequest request) {
+
+        return getAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAllowListResult> getAllowListAsync(GetAllowListRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAllowListRequest, GetAllowListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBucketStatisticsResult> getBucketStatisticsAsync(GetBucketStatisticsRequest request) {
 
         return getBucketStatisticsAsync(request, null);
@@ -493,6 +532,47 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetRevealConfigurationResult> getRevealConfigurationAsync(GetRevealConfigurationRequest request) {
+
+        return getRevealConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRevealConfigurationResult> getRevealConfigurationAsync(GetRevealConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRevealConfigurationRequest, GetRevealConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesResult> getSensitiveDataOccurrencesAsync(GetSensitiveDataOccurrencesRequest request) {
+
+        return getSensitiveDataOccurrencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesResult> getSensitiveDataOccurrencesAsync(GetSensitiveDataOccurrencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSensitiveDataOccurrencesRequest, GetSensitiveDataOccurrencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesAvailabilityResult> getSensitiveDataOccurrencesAvailabilityAsync(
+            GetSensitiveDataOccurrencesAvailabilityRequest request) {
+
+        return getSensitiveDataOccurrencesAvailabilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesAvailabilityResult> getSensitiveDataOccurrencesAvailabilityAsync(
+            GetSensitiveDataOccurrencesAvailabilityRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSensitiveDataOccurrencesAvailabilityRequest, GetSensitiveDataOccurrencesAvailabilityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUsageStatisticsResult> getUsageStatisticsAsync(GetUsageStatisticsRequest request) {
 
         return getUsageStatisticsAsync(request, null);
@@ -514,6 +594,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     @Override
     public java.util.concurrent.Future<GetUsageTotalsResult> getUsageTotalsAsync(GetUsageTotalsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUsageTotalsRequest, GetUsageTotalsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowListsResult> listAllowListsAsync(ListAllowListsRequest request) {
+
+        return listAllowListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowListsResult> listAllowListsAsync(ListAllowListsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAllowListsRequest, ListAllowListsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -718,6 +811,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAllowListResult> updateAllowListAsync(UpdateAllowListRequest request) {
+
+        return updateAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAllowListResult> updateAllowListAsync(UpdateAllowListRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAllowListRequest, UpdateAllowListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClassificationJobResult> updateClassificationJobAsync(UpdateClassificationJobRequest request) {
 
         return updateClassificationJobAsync(request, null);
@@ -780,6 +886,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
             UpdateOrganizationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRevealConfigurationResult> updateRevealConfigurationAsync(UpdateRevealConfigurationRequest request) {
+
+        return updateRevealConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRevealConfigurationResult> updateRevealConfigurationAsync(UpdateRevealConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRevealConfigurationRequest, UpdateRevealConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

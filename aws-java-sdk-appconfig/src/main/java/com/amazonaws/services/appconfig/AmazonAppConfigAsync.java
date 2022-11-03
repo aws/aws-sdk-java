@@ -83,10 +83,10 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
-     * Creates an application. An application in AppConfig is a logical unit of code that provides capabilities for your
-     * customers. For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile
-     * application installed by your users, a serverless application using Amazon API Gateway and Lambda, or any system
-     * you run on behalf of others.
+     * Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This
+     * organizational construct has a relationship with some unit of executable code. For example, you could create an
+     * application called MyMobileApp to organize and manage configuration data for a mobile application installed by
+     * your users.
      * </p>
      * 
      * @param createApplicationRequest
@@ -99,10 +99,10 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
-     * Creates an application. An application in AppConfig is a logical unit of code that provides capabilities for your
-     * customers. For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile
-     * application installed by your users, a serverless application using Amazon API Gateway and Lambda, or any system
-     * you run on behalf of others.
+     * Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This
+     * organizational construct has a relationship with some unit of executable code. For example, you could create an
+     * application called MyMobileApp to organize and manage configuration data for a mobile application installed by
+     * your users.
      * </p>
      * 
      * @param createApplicationRequest
@@ -244,12 +244,12 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
-     * Creates an environment. For each application, you define one or more environments. An environment is a logical
-     * deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code>
-     * environment. You can also define environments for application subcomponents such as the <code>Web</code>,
-     * <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon
-     * CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm
-     * is triggered, the system rolls back the configuration.
+     * Creates an environment. For each application, you define one or more environments. An environment is a deployment
+     * group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment.
+     * You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
+     * and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each
+     * environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system
+     * rolls back the configuration.
      * </p>
      * 
      * @param createEnvironmentRequest
@@ -262,12 +262,12 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
-     * Creates an environment. For each application, you define one or more environments. An environment is a logical
-     * deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code>
-     * environment. You can also define environments for application subcomponents such as the <code>Web</code>,
-     * <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon
-     * CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm
-     * is triggered, the system rolls back the configuration.
+     * Creates an environment. For each application, you define one or more environments. An environment is a deployment
+     * group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment.
+     * You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
+     * and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each
+     * environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system
+     * rolls back the configuration.
      * </p>
      * 
      * @param createEnvironmentRequest
@@ -282,6 +282,102 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different
+     * points during the AppConfig workflow of creating or deploying a configuration.
+     * </p>
+     * <p>
+     * You can create your own extensions or use the Amazon Web Services-authored extensions provided by AppConfig. For
+     * most use-cases, to create your own extension, you must create an Lambda function to perform any computation and
+     * processing defined in the extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionRequest
+     * @return A Java Future containing the result of the CreateExtension operation returned by the service.
+     * @sample AmazonAppConfigAsync.CreateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExtensionResult> createExtensionAsync(CreateExtensionRequest createExtensionRequest);
+
+    /**
+     * <p>
+     * Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different
+     * points during the AppConfig workflow of creating or deploying a configuration.
+     * </p>
+     * <p>
+     * You can create your own extensions or use the Amazon Web Services-authored extensions provided by AppConfig. For
+     * most use-cases, to create your own extension, you must create an Lambda function to perform any computation and
+     * processing defined in the extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExtension operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.CreateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExtensionResult> createExtensionAsync(CreateExtensionRequest createExtensionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExtensionRequest, CreateExtensionResult> asyncHandler);
+
+    /**
+     * <p>
+     * When you create an extension or configure an Amazon Web Services-authored extension, you associate the extension
+     * with an AppConfig application, environment, or configuration profile. For example, you can choose to run the
+     * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services-authored extension and receive
+     * notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application.
+     * Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An
+     * extension association is a specified relationship between an extension and an AppConfig resource, such as an
+     * application or a configuration profile. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionAssociationRequest
+     * @return A Java Future containing the result of the CreateExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsync.CreateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExtensionAssociationResult> createExtensionAssociationAsync(
+            CreateExtensionAssociationRequest createExtensionAssociationRequest);
+
+    /**
+     * <p>
+     * When you create an extension or configure an Amazon Web Services-authored extension, you associate the extension
+     * with an AppConfig application, environment, or configuration profile. For example, you can choose to run the
+     * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services-authored extension and receive
+     * notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application.
+     * Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An
+     * extension association is a specified relationship between an extension and an AppConfig resource, such as an
+     * application or a configuration profile. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.CreateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExtensionAssociationResult> createExtensionAssociationAsync(
+            CreateExtensionAssociationRequest createExtensionAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExtensionAssociationRequest, CreateExtensionAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -443,6 +539,70 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest deleteEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentRequest, DeleteEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension.
+     * </p>
+     * 
+     * @param deleteExtensionRequest
+     * @return A Java Future containing the result of the DeleteExtension operation returned by the service.
+     * @sample AmazonAppConfigAsync.DeleteExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExtensionResult> deleteExtensionAsync(DeleteExtensionRequest deleteExtensionRequest);
+
+    /**
+     * <p>
+     * Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension.
+     * </p>
+     * 
+     * @param deleteExtensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteExtension operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.DeleteExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExtensionResult> deleteExtensionAsync(DeleteExtensionRequest deleteExtensionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteExtensionRequest, DeleteExtensionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an extension association. This action doesn't delete extensions defined in the association.
+     * </p>
+     * 
+     * @param deleteExtensionAssociationRequest
+     * @return A Java Future containing the result of the DeleteExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsync.DeleteExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExtensionAssociationResult> deleteExtensionAssociationAsync(
+            DeleteExtensionAssociationRequest deleteExtensionAssociationRequest);
+
+    /**
+     * <p>
+     * Deletes an extension association. This action doesn't delete extensions defined in the association.
+     * </p>
+     * 
+     * @param deleteExtensionAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.DeleteExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExtensionAssociationResult> deleteExtensionAssociationAsync(
+            DeleteExtensionAssociationRequest deleteExtensionAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteExtensionAssociationRequest, DeleteExtensionAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -728,10 +888,10 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
-     * Retrieves information about an environment. An environment is a logical deployment group of AppConfig
-     * applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code>
-     * environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch
-     * alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
+     * Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such
+     * as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each
+     * configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an
+     * environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -744,10 +904,10 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
-     * Retrieves information about an environment. An environment is a logical deployment group of AppConfig
-     * applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code>
-     * environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch
-     * alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
+     * Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such
+     * as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each
+     * configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an
+     * environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -762,6 +922,74 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<GetEnvironmentResult> getEnvironmentAsync(GetEnvironmentRequest getEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<GetEnvironmentRequest, GetEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension.
+     * </p>
+     * 
+     * @param getExtensionRequest
+     * @return A Java Future containing the result of the GetExtension operation returned by the service.
+     * @sample AmazonAppConfigAsync.GetExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetExtensionResult> getExtensionAsync(GetExtensionRequest getExtensionRequest);
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension.
+     * </p>
+     * 
+     * @param getExtensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExtension operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.GetExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetExtensionResult> getExtensionAsync(GetExtensionRequest getExtensionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExtensionRequest, GetExtensionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension association. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param getExtensionAssociationRequest
+     * @return A Java Future containing the result of the GetExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsync.GetExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExtensionAssociationResult> getExtensionAssociationAsync(GetExtensionAssociationRequest getExtensionAssociationRequest);
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension association. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param getExtensionAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.GetExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExtensionAssociationResult> getExtensionAssociationAsync(GetExtensionAssociationRequest getExtensionAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExtensionAssociationRequest, GetExtensionAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -954,6 +1182,82 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest listEnvironmentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all AppConfig extension associations in the account. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionAssociationsRequest
+     * @return A Java Future containing the result of the ListExtensionAssociations operation returned by the service.
+     * @sample AmazonAppConfigAsync.ListExtensionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExtensionAssociationsResult> listExtensionAssociationsAsync(
+            ListExtensionAssociationsRequest listExtensionAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists all AppConfig extension associations in the account. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExtensionAssociations operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.ListExtensionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExtensionAssociationsResult> listExtensionAssociationsAsync(
+            ListExtensionAssociationsRequest listExtensionAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExtensionAssociationsRequest, ListExtensionAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all custom and Amazon Web Services-authored AppConfig extensions in the account. For more information about
+     * extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionsRequest
+     * @return A Java Future containing the result of the ListExtensions operation returned by the service.
+     * @sample AmazonAppConfigAsync.ListExtensions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExtensionsResult> listExtensionsAsync(ListExtensionsRequest listExtensionsRequest);
+
+    /**
+     * <p>
+     * Lists all custom and Amazon Web Services-authored AppConfig extensions in the account. For more information about
+     * extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExtensions operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.ListExtensions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExtensionsResult> listExtensionsAsync(ListExtensionsRequest listExtensionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExtensionsRequest, ListExtensionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1276,6 +1580,78 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an AppConfig extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionRequest
+     * @return A Java Future containing the result of the UpdateExtension operation returned by the service.
+     * @sample AmazonAppConfigAsync.UpdateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateExtensionResult> updateExtensionAsync(UpdateExtensionRequest updateExtensionRequest);
+
+    /**
+     * <p>
+     * Updates an AppConfig extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateExtension operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.UpdateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateExtensionResult> updateExtensionAsync(UpdateExtensionRequest updateExtensionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateExtensionRequest, UpdateExtensionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an association. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionAssociationRequest
+     * @return A Java Future containing the result of the UpdateExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsync.UpdateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateExtensionAssociationResult> updateExtensionAssociationAsync(
+            UpdateExtensionAssociationRequest updateExtensionAssociationRequest);
+
+    /**
+     * <p>
+     * Updates an association. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateExtensionAssociation operation returned by the service.
+     * @sample AmazonAppConfigAsyncHandler.UpdateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateExtensionAssociationResult> updateExtensionAssociationAsync(
+            UpdateExtensionAssociationRequest updateExtensionAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateExtensionAssociationRequest, UpdateExtensionAssociationResult> asyncHandler);
 
     /**
      * <p>

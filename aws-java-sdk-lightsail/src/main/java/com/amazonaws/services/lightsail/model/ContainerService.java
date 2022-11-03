@@ -226,6 +226,19 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String url;
+    /**
+     * <p>
+     * An object that describes the configuration for the container service to access private container image
+     * repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     */
+    private PrivateRegistryAccess privateRegistryAccess;
 
     /**
      * <p>
@@ -1680,6 +1693,85 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * An object that describes the configuration for the container service to access private container image
+     * repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param privateRegistryAccess
+     *        An object that describes the configuration for the container service to access private container image
+     *        repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     *        >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in
+     *        the <i>Amazon Lightsail Developer Guide</i>.
+     */
+
+    public void setPrivateRegistryAccess(PrivateRegistryAccess privateRegistryAccess) {
+        this.privateRegistryAccess = privateRegistryAccess;
+    }
+
+    /**
+     * <p>
+     * An object that describes the configuration for the container service to access private container image
+     * repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @return An object that describes the configuration for the container service to access private container image
+     *         repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     *         >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in
+     *         the <i>Amazon Lightsail Developer Guide</i>.
+     */
+
+    public PrivateRegistryAccess getPrivateRegistryAccess() {
+        return this.privateRegistryAccess;
+    }
+
+    /**
+     * <p>
+     * An object that describes the configuration for the container service to access private container image
+     * repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param privateRegistryAccess
+     *        An object that describes the configuration for the container service to access private container image
+     *        repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     *        >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in
+     *        the <i>Amazon Lightsail Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerService withPrivateRegistryAccess(PrivateRegistryAccess privateRegistryAccess) {
+        setPrivateRegistryAccess(privateRegistryAccess);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1726,7 +1818,9 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
         if (getPublicDomainNames() != null)
             sb.append("PublicDomainNames: ").append(getPublicDomainNames()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl());
+            sb.append("Url: ").append(getUrl()).append(",");
+        if (getPrivateRegistryAccess() != null)
+            sb.append("PrivateRegistryAccess: ").append(getPrivateRegistryAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -1813,6 +1907,10 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
+        if (other.getPrivateRegistryAccess() == null ^ this.getPrivateRegistryAccess() == null)
+            return false;
+        if (other.getPrivateRegistryAccess() != null && other.getPrivateRegistryAccess().equals(this.getPrivateRegistryAccess()) == false)
+            return false;
         return true;
     }
 
@@ -1839,6 +1937,7 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getPrivateDomainName() == null) ? 0 : getPrivateDomainName().hashCode());
         hashCode = prime * hashCode + ((getPublicDomainNames() == null) ? 0 : getPublicDomainNames().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getPrivateRegistryAccess() == null) ? 0 : getPrivateRegistryAccess().hashCode());
         return hashCode;
     }
 

@@ -175,6 +175,11 @@ public class ModifyVpnTunnelOptionsSpecificationStaxUnmarshaller implements Unma
                     modifyVpnTunnelOptionsSpecification.setStartupAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LogOptions", targetDepth)) {
+                    modifyVpnTunnelOptionsSpecification.setLogOptions(VpnTunnelLogOptionsSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return modifyVpnTunnelOptionsSpecification;

@@ -30,24 +30,24 @@ public class AwsEcsClusterClusterSettingsDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The name of the setting.
+     * The name of the setting. The valid value is <code>containerInsights</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the setting.
+     * The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The name of the setting.
+     * The name of the setting. The valid value is <code>containerInsights</code>.
      * </p>
      * 
      * @param name
-     *        The name of the setting.
+     *        The name of the setting. The valid value is <code>containerInsights</code>.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class AwsEcsClusterClusterSettingsDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The name of the setting.
+     * The name of the setting. The valid value is <code>containerInsights</code>.
      * </p>
      * 
-     * @return The name of the setting.
+     * @return The name of the setting. The valid value is <code>containerInsights</code>.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class AwsEcsClusterClusterSettingsDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The name of the setting.
+     * The name of the setting. The valid value is <code>containerInsights</code>.
      * </p>
      * 
      * @param name
-     *        The name of the setting.
+     *        The name of the setting. The valid value is <code>containerInsights</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class AwsEcsClusterClusterSettingsDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The value of the setting.
+     * The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      * </p>
      * 
      * @param value
-     *        The value of the setting.
+     *        The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class AwsEcsClusterClusterSettingsDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The value of the setting.
+     * The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      * </p>
      * 
-     * @return The value of the setting.
+     * @return The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class AwsEcsClusterClusterSettingsDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The value of the setting.
+     * The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      * </p>
      * 
      * @param value
-     *        The value of the setting.
+     *        The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

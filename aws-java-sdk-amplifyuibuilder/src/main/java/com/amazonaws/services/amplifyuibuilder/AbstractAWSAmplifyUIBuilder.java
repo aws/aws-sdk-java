@@ -33,12 +33,22 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
     }
 
     @Override
+    public CreateFormResult createForm(CreateFormRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateThemeResult createTheme(CreateThemeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFormResult deleteForm(DeleteFormRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,12 +68,27 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
     }
 
     @Override
+    public ExportFormsResult exportForms(ExportFormsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportThemesResult exportThemes(ExportThemesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetComponentResult getComponent(GetComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFormResult getForm(GetFormRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMetadataResult getMetadata(GetMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +103,17 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
     }
 
     @Override
+    public ListFormsResult listForms(ListFormsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListThemesResult listThemes(ListThemesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutMetadataFlagResult putMetadataFlag(PutMetadataFlagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +124,11 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
 
     @Override
     public UpdateComponentResult updateComponent(UpdateComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFormResult updateForm(UpdateFormRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

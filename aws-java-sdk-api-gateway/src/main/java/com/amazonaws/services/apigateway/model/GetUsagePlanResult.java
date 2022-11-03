@@ -20,25 +20,17 @@ import javax.annotation.Generated;
  * Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and
  * quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to
  * control costs. Consider using <a
- * href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">AWS Budgets</a> to
- * monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF</a> to
- * manage API requests.
+ * href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services
+ * Budgets</a> to monitor costs and <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.
  * </p>
- * <div class="remarks">
- * <p>
- * In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan
- * customers by adding API keys to the plan.
- * </p>
- * </div> <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
- * Usage Plans</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlan</a> resource.
+     * The identifier of a UsagePlan resource.
      * </p>
      */
     private String id;
@@ -62,7 +54,7 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.List<ApiStage> apiStages;
     /**
      * <p>
-     * Map containing method level throttling information for API stage in a usage plan.
+     * A map containing method level throttling information for API stage in a usage plan.
      * </p>
      */
     private ThrottleSettings throttle;
@@ -87,11 +79,11 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlan</a> resource.
+     * The identifier of a UsagePlan resource.
      * </p>
      * 
      * @param id
-     *        The identifier of a <a>UsagePlan</a> resource.
+     *        The identifier of a UsagePlan resource.
      */
 
     public void setId(String id) {
@@ -100,10 +92,10 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlan</a> resource.
+     * The identifier of a UsagePlan resource.
      * </p>
      * 
-     * @return The identifier of a <a>UsagePlan</a> resource.
+     * @return The identifier of a UsagePlan resource.
      */
 
     public String getId() {
@@ -112,11 +104,11 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlan</a> resource.
+     * The identifier of a UsagePlan resource.
      * </p>
      * 
      * @param id
-     *        The identifier of a <a>UsagePlan</a> resource.
+     *        The identifier of a UsagePlan resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,11 +269,11 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Map containing method level throttling information for API stage in a usage plan.
+     * A map containing method level throttling information for API stage in a usage plan.
      * </p>
      * 
      * @param throttle
-     *        Map containing method level throttling information for API stage in a usage plan.
+     *        A map containing method level throttling information for API stage in a usage plan.
      */
 
     public void setThrottle(ThrottleSettings throttle) {
@@ -290,10 +282,10 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Map containing method level throttling information for API stage in a usage plan.
+     * A map containing method level throttling information for API stage in a usage plan.
      * </p>
      * 
-     * @return Map containing method level throttling information for API stage in a usage plan.
+     * @return A map containing method level throttling information for API stage in a usage plan.
      */
 
     public ThrottleSettings getThrottle() {
@@ -302,11 +294,11 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Map containing method level throttling information for API stage in a usage plan.
+     * A map containing method level throttling information for API stage in a usage plan.
      * </p>
      * 
      * @param throttle
-     *        Map containing method level throttling information for API stage in a usage plan.
+     *        A map containing method level throttling information for API stage in a usage plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

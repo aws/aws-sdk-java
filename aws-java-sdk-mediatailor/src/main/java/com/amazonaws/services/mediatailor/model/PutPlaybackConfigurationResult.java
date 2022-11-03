@@ -27,7 +27,7 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      */
@@ -112,20 +112,19 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private Integer personalizationThresholdSeconds;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration.
+     * The Amazon Resource Name (ARN) associated with the playback configuration.
      * </p>
      */
     private String playbackConfigurationArn;
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The playback endpoint prefix associated with the playback configuration.
      * </p>
      */
     private String playbackEndpointPrefix;
     /**
      * <p>
-     * The URL that the player uses to initialize a session that uses client-side reporting.
+     * The session initialization endpoint prefix associated with the playback configuration.
      * </p>
      */
     private String sessionInitializationEndpointPrefix;
@@ -133,14 +132,17 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated
      * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      */
     private String slateAdUrl;
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -163,14 +165,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      * 
      * @param adDecisionServerUrl
      *        The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *        placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
-     *        session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
+     *        session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a
      *        static VAST URL. The maximum length is 25,000 characters.
      */
 
@@ -182,13 +184,13 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      * 
      * @return The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *         placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
-     *         session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
+     *         session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a
      *         static VAST URL. The maximum length is 25,000 characters.
      */
 
@@ -200,14 +202,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      * 
      * @param adDecisionServerUrl
      *        The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *        placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
-     *        session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
+     *        session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a
      *        static VAST URL. The maximum length is 25,000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -765,11 +767,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration.
+     * The Amazon Resource Name (ARN) associated with the playback configuration.
      * </p>
      * 
      * @param playbackConfigurationArn
-     *        The Amazon Resource Name (ARN) for the playback configuration.
+     *        The Amazon Resource Name (ARN) associated with the playback configuration.
      */
 
     public void setPlaybackConfigurationArn(String playbackConfigurationArn) {
@@ -778,10 +780,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration.
+     * The Amazon Resource Name (ARN) associated with the playback configuration.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the playback configuration.
+     * @return The Amazon Resource Name (ARN) associated with the playback configuration.
      */
 
     public String getPlaybackConfigurationArn() {
@@ -790,11 +792,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration.
+     * The Amazon Resource Name (ARN) associated with the playback configuration.
      * </p>
      * 
      * @param playbackConfigurationArn
-     *        The Amazon Resource Name (ARN) for the playback configuration.
+     *        The Amazon Resource Name (ARN) associated with the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -805,13 +807,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The playback endpoint prefix associated with the playback configuration.
      * </p>
      * 
      * @param playbackEndpointPrefix
-     *        The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     *        server-side reporting.
+     *        The playback endpoint prefix associated with the playback configuration.
      */
 
     public void setPlaybackEndpointPrefix(String playbackEndpointPrefix) {
@@ -820,12 +820,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The playback endpoint prefix associated with the playback configuration.
      * </p>
      * 
-     * @return The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     *         server-side reporting.
+     * @return The playback endpoint prefix associated with the playback configuration.
      */
 
     public String getPlaybackEndpointPrefix() {
@@ -834,13 +832,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The playback endpoint prefix associated with the playback configuration.
      * </p>
      * 
      * @param playbackEndpointPrefix
-     *        The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     *        server-side reporting.
+     *        The playback endpoint prefix associated with the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,11 +847,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL that the player uses to initialize a session that uses client-side reporting.
+     * The session initialization endpoint prefix associated with the playback configuration.
      * </p>
      * 
      * @param sessionInitializationEndpointPrefix
-     *        The URL that the player uses to initialize a session that uses client-side reporting.
+     *        The session initialization endpoint prefix associated with the playback configuration.
      */
 
     public void setSessionInitializationEndpointPrefix(String sessionInitializationEndpointPrefix) {
@@ -864,10 +860,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL that the player uses to initialize a session that uses client-side reporting.
+     * The session initialization endpoint prefix associated with the playback configuration.
      * </p>
      * 
-     * @return The URL that the player uses to initialize a session that uses client-side reporting.
+     * @return The session initialization endpoint prefix associated with the playback configuration.
      */
 
     public String getSessionInitializationEndpointPrefix() {
@@ -876,11 +872,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL that the player uses to initialize a session that uses client-side reporting.
+     * The session initialization endpoint prefix associated with the playback configuration.
      * </p>
      * 
      * @param sessionInitializationEndpointPrefix
-     *        The URL that the player uses to initialize a session that uses client-side reporting.
+     *        The session initialization endpoint prefix associated with the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -893,16 +889,16 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated
      * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @param slateAdUrl
      *        The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
      *        Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *        for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
-     *        the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
-     *        audio and video.
+     *        for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the
+     *        slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains
+     *        both audio and video.
      */
 
     public void setSlateAdUrl(String slateAdUrl) {
@@ -913,15 +909,15 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated
      * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @return The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
      *         Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *         for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it
-     *         in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
-     *         audio and video.
+     *         for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the
+     *         slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains
+     *         both audio and video.
      */
 
     public String getSlateAdUrl() {
@@ -932,16 +928,16 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated
      * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @param slateAdUrl
      *        The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
      *        Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *        for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
-     *        the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
-     *        audio and video.
+     *        for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the
+     *        slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains
+     *        both audio and video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -952,10 +948,16 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the playback configuration.
+     * @return The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with
+     *         Amazon resources to help with organization, access control, and cost tracking. For more information, see
+     *         <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental
+     *         MediaTailor Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -964,11 +966,17 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the playback configuration.
+     *        The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with
+     *        Amazon resources to help with organization, access control, and cost tracking. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -977,11 +985,17 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon
+     * resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the playback configuration.
+     *        The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with
+     *        Amazon resources to help with organization, access control, and cost tracking. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

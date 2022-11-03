@@ -35,6 +35,8 @@ public class EventNotificationItemConfigurationsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Join").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
+    private static final MarshallingInfo<StructuredPojo> MESSAGEDELIVERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageDeliveryStatus").build();
 
     private static final EventNotificationItemConfigurationsMarshaller instance = new EventNotificationItemConfigurationsMarshaller();
 
@@ -56,6 +58,7 @@ public class EventNotificationItemConfigurationsMarshaller {
             protocolMarshaller.marshall(eventNotificationItemConfigurations.getProximity(), PROXIMITY_BINDING);
             protocolMarshaller.marshall(eventNotificationItemConfigurations.getJoin(), JOIN_BINDING);
             protocolMarshaller.marshall(eventNotificationItemConfigurations.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(eventNotificationItemConfigurations.getMessageDeliveryStatus(), MESSAGEDELIVERYSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

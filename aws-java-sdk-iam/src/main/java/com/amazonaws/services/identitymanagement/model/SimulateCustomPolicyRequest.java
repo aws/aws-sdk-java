@@ -219,9 +219,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
@@ -229,26 +229,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security-group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security-group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -256,7 +240,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -264,7 +248,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -272,7 +256,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -1802,9 +1786,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
@@ -1812,26 +1796,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security-group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security-group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -1839,7 +1807,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -1847,7 +1815,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -1855,7 +1823,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -1868,9 +1836,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        following list shows each of the supported scenario values and the resources that you must define to run
      *        the simulation.</p>
      *        <p>
-     *        Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     *        Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
-     *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
+     *        includes VPC, then you must supply the network interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        platforms</a> in the <i>Amazon EC2 User Guide</i>.
@@ -1878,26 +1846,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>EC2-Classic-InstanceStore</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security-group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>EC2-Classic-EBS</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security-group, volume
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <b>EC2-VPC-InstanceStore</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface
+     *        instance, image, security group, network interface
      *        </p>
      *        </li>
      *        <li>
@@ -1905,7 +1857,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <b>EC2-VPC-InstanceStore-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet
+     *        instance, image, security group, network interface, subnet
      *        </p>
      *        </li>
      *        <li>
@@ -1913,7 +1865,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <b>EC2-VPC-EBS</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, volume
+     *        instance, image, security group, network interface, volume
      *        </p>
      *        </li>
      *        <li>
@@ -1921,7 +1873,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <b>EC2-VPC-EBS-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet, volume
+     *        instance, image, security group, network interface, subnet, volume
      *        </p>
      *        </li>
      */
@@ -1939,9 +1891,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
@@ -1949,26 +1901,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security-group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security-group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -1976,7 +1912,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -1984,7 +1920,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -1992,7 +1928,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -2004,9 +1940,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         following list shows each of the supported scenario values and the resources that you must define to run
      *         the simulation.</p>
      *         <p>
-     *         Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If
+     *         Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If
      *         your scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2
-     *         scenario includes VPC, then you must supply the network-interface resource. If it includes an IP subnet,
+     *         scenario includes VPC, then you must supply the network interface resource. If it includes an IP subnet,
      *         then you must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         platforms</a> in the <i>Amazon EC2 User Guide</i>.
@@ -2014,26 +1950,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>EC2-Classic-InstanceStore</b>
-     *         </p>
-     *         <p>
-     *         instance, image, security-group
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>EC2-Classic-EBS</b>
-     *         </p>
-     *         <p>
-     *         instance, image, security-group, volume
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <b>EC2-VPC-InstanceStore</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface
+     *         instance, image, security group, network interface
      *         </p>
      *         </li>
      *         <li>
@@ -2041,7 +1961,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         <b>EC2-VPC-InstanceStore-Subnet</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface, subnet
+     *         instance, image, security group, network interface, subnet
      *         </p>
      *         </li>
      *         <li>
@@ -2049,7 +1969,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         <b>EC2-VPC-EBS</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface, volume
+     *         instance, image, security group, network interface, volume
      *         </p>
      *         </li>
      *         <li>
@@ -2057,7 +1977,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         <b>EC2-VPC-EBS-Subnet</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface, subnet, volume
+     *         instance, image, security group, network interface, subnet, volume
      *         </p>
      *         </li>
      */
@@ -2075,9 +1995,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
@@ -2085,26 +2005,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security-group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security-group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -2112,7 +2016,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -2120,7 +2024,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -2128,7 +2032,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -2141,9 +2045,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        following list shows each of the supported scenario values and the resources that you must define to run
      *        the simulation.</p>
      *        <p>
-     *        Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     *        Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
-     *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
+     *        includes VPC, then you must supply the network interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        platforms</a> in the <i>Amazon EC2 User Guide</i>.
@@ -2151,26 +2055,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>EC2-Classic-InstanceStore</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security-group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>EC2-Classic-EBS</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security-group, volume
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <b>EC2-VPC-InstanceStore</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface
+     *        instance, image, security group, network interface
      *        </p>
      *        </li>
      *        <li>
@@ -2178,7 +2066,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <b>EC2-VPC-InstanceStore-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet
+     *        instance, image, security group, network interface, subnet
      *        </p>
      *        </li>
      *        <li>
@@ -2186,7 +2074,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <b>EC2-VPC-EBS</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, volume
+     *        instance, image, security group, network interface, volume
      *        </p>
      *        </li>
      *        <li>
@@ -2194,7 +2082,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <b>EC2-VPC-EBS-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet, volume
+     *        instance, image, security group, network interface, subnet, volume
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

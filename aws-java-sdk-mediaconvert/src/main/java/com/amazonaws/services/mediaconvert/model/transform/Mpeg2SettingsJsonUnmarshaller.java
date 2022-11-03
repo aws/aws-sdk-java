@@ -96,6 +96,10 @@ public class Mpeg2SettingsJsonUnmarshaller implements Unmarshaller<Mpeg2Settings
                     context.nextToken();
                     mpeg2Settings.setGopSizeUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hrdBufferFinalFillPercentage", targetDepth)) {
+                    context.nextToken();
+                    mpeg2Settings.setHrdBufferFinalFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("hrdBufferInitialFillPercentage", targetDepth)) {
                     context.nextToken();
                     mpeg2Settings.setHrdBufferInitialFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -108,6 +108,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DataSourceErrorInfo errorInfo;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     */
+    private String secretArn;
 
     /**
      * <p>
@@ -726,6 +732,46 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     * 
+     * @param secretArn
+     *        The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     */
+
+    public void setSecretArn(String secretArn) {
+        this.secretArn = secretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     */
+
+    public String getSecretArn() {
+        return this.secretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     * 
+     * @param secretArn
+     *        The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSource withSecretArn(String secretArn) {
+        setSecretArn(secretArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -760,7 +806,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         if (getSslProperties() != null)
             sb.append("SslProperties: ").append(getSslProperties()).append(",");
         if (getErrorInfo() != null)
-            sb.append("ErrorInfo: ").append(getErrorInfo());
+            sb.append("ErrorInfo: ").append(getErrorInfo()).append(",");
+        if (getSecretArn() != null)
+            sb.append("SecretArn: ").append(getSecretArn());
         sb.append("}");
         return sb.toString();
     }
@@ -824,6 +872,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getErrorInfo() != null && other.getErrorInfo().equals(this.getErrorInfo()) == false)
             return false;
+        if (other.getSecretArn() == null ^ this.getSecretArn() == null)
+            return false;
+        if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
+            return false;
         return true;
     }
 
@@ -844,6 +896,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVpcConnectionProperties() == null) ? 0 : getVpcConnectionProperties().hashCode());
         hashCode = prime * hashCode + ((getSslProperties() == null) ? 0 : getSslProperties().hashCode());
         hashCode = prime * hashCode + ((getErrorInfo() == null) ? 0 : getErrorInfo().hashCode());
+        hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         return hashCode;
     }
 

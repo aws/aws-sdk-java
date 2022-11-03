@@ -119,10 +119,6 @@ public enum Region {
      * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers
      * located in Frankfurt.
      * <p>
-     * The EU (Frankfurt) Region requires Amazon Web Services V4 authentication, therefore when
-     * accessing buckets inside this region, you need to explicitly configure
-     * the "eu-central-1" endpoint for the AmazonS3Client in order to enable V4
-     * signing:
      *
      * <pre>
      * AmazonS3Client s3 = new AmazonS3Client();
@@ -131,7 +127,6 @@ public enum Region {
      *
      * </p>
      *
-     * @see AmazonS3Client#setEndpoint(String)
      * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
      */
     EU_Frankfurt("eu-central-1"),
@@ -140,10 +135,6 @@ public enum Region {
      * The EU (Stockholm) Amazon S3 Region. This region uses Amazon S3 servers
      * located in Stockholm.
      * <p>
-     * The EU (Stockholm) Region requires Amazon Web Services V4 authentication, therefore when
-     * accessing buckets inside this region, you need to explicitly configure
-     * the "eu-north-1" endpoint for the AmazonS3Client in order to enable V4
-     * signing:
      *
      * <pre>
      * AmazonS3Client s3 = new AmazonS3Client();
@@ -152,7 +143,6 @@ public enum Region {
      *
      * </p>
      *
-     * @see AmazonS3Client#setEndpoint(String)
      * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
      */
     EU_North_1("eu-north-1"),
@@ -161,10 +151,6 @@ public enum Region {
      * The EU (Milan) Amazon S3 Region. This region uses Amazon S3 servers
      * located in Milan.
      * <p>
-     * The EU (Milan) Region requires Amazon Web Services V4 authentication, therefore when
-     * accessing buckets inside this region, you need to explicitly configure
-     * the "eu-south-1" endpoint for the AmazonS3Client in order to enable V4
-     * signing:
      *
      * <pre>
      * AmazonS3Client s3 = new AmazonS3Client();
@@ -173,7 +159,6 @@ public enum Region {
      *
      * </p>
      *
-     * @see AmazonS3Client#setEndpoint(String)
      * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
      */
     EU_South_1("eu-south-1"),
@@ -315,20 +300,18 @@ public enum Region {
     /**
      * The Middle East (Bahrain) Region. This region uses Amazon S3 servers
      * located in Bahrain.
-     * <p>
-     * When using buckets in this region, you must set the client endpoint to
-     * <code>s3.me-south-1.amazonaws.com</code>.
-     * </p>
      */
     ME_Bahrain("me-south-1"),
 
     /**
+     * The Middle East (UAE) Region. This region uses Amazon S3 servers
+     * located in UAE.
+     */
+    ME_UAE("me-central-1"),
+
+    /**
      * The Africa South (Cape Town) Region. This region uses Amazon S3 servers
      * located in Cape Town.
-     * <p>
-     * When using buckets in this region, you must set the client endpoint to
-     * <code>s3.af-south-1.amazonaws.com</code>.
-     * </p>
      */
     AF_CapeTown("af-south-1"),
 

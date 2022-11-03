@@ -29,6 +29,8 @@ public class TcpRouteMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("action").build();
+    private static final MarshallingInfo<StructuredPojo> MATCH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("match").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
 
@@ -49,6 +51,7 @@ public class TcpRouteMarshaller {
 
         try {
             protocolMarshaller.marshall(tcpRoute.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(tcpRoute.getMatch(), MATCH_BINDING);
             protocolMarshaller.marshall(tcpRoute.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

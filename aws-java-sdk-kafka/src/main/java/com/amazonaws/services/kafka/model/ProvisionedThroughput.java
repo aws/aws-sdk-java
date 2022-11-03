@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * 
+ <p>
  * Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ProvisionedThroughput" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +29,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProvisionedThroughput implements Serializable, Cloneable, StructuredPojo {
 
-    /** Provisioned throughput is enabled or not. */
+    /**
+     * <p>
+     * Provisioned throughput is enabled or not.
+     * </p>
+     */
     private Boolean enabled;
-    /** Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second. */
+    /**
+     * <p>
+     * Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     * </p>
+     */
     private Integer volumeThroughput;
 
     /**
+     * <p>
      * Provisioned throughput is enabled or not.
+     * </p>
      * 
      * @param enabled
+     *        <p>
      *        Provisioned throughput is enabled or not.
+     *        </p>
      */
 
     public void setEnabled(Boolean enabled) {
@@ -43,9 +58,13 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Provisioned throughput is enabled or not.
+     * </p>
      * 
-     * @return Provisioned throughput is enabled or not.
+     * @return <p>
+     *         Provisioned throughput is enabled or not.
+     *         </p>
      */
 
     public Boolean getEnabled() {
@@ -53,10 +72,14 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Provisioned throughput is enabled or not.
+     * </p>
      * 
      * @param enabled
+     *        <p>
      *        Provisioned throughput is enabled or not.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +89,13 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Provisioned throughput is enabled or not.
+     * </p>
      * 
-     * @return Provisioned throughput is enabled or not.
+     * @return <p>
+     *         Provisioned throughput is enabled or not.
+     *         </p>
      */
 
     public Boolean isEnabled() {
@@ -76,10 +103,14 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     * </p>
      * 
      * @param volumeThroughput
+     *        <p>
      *        Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     *        </p>
      */
 
     public void setVolumeThroughput(Integer volumeThroughput) {
@@ -87,9 +118,13 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     * </p>
      * 
-     * @return Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     * @return <p>
+     *         Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     *         </p>
      */
 
     public Integer getVolumeThroughput() {
@@ -97,10 +132,14 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     * </p>
      * 
      * @param volumeThroughput
+     *        <p>
      *        Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

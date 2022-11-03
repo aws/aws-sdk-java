@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.
+ * Summary information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their
+ * groups.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupOrderingIdSummary" target="_top">AWS API

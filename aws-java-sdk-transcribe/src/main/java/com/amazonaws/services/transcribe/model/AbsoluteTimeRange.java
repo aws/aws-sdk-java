@@ -19,7 +19,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A time range, set in seconds, between two points in the call.
+ * A time range, in milliseconds, between two points in your media file.
+ * </p>
+ * <p>
+ * You can use <code>StartTime</code> and <code>EndTime</code> to search a custom segment. For example, setting
+ * <code>StartTime</code> to 10000 and <code>EndTime</code> to 50000 only searches for your specified criteria in the
+ * audio contained between the 10,000 millisecond mark and the 50,000 millisecond mark of your media file. You must use
+ * <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include one, you must include both.
+ * </p>
+ * <p>
+ * You can use also <code>First</code> to search from the start of the audio until the time you specify, or
+ * <code>Last</code> to search from the time you specify until the end of the audio. For example, setting
+ * <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the
+ * media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each
+ * other.
+ * </p>
+ * <p>
+ * If you prefer to use percentage instead of milliseconds, see .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/AbsoluteTimeRange" target="_top">AWS API
@@ -30,101 +46,42 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the beginning of the time range in seconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If
+     * you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * A value that indicates the end of the time range in milliseconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If
+     * you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      * </p>
      */
     private Long endTime;
     /**
      * <p>
-     * A time range from the beginning of the call to the value that you've specified. For example, if you specify
-     * <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     * Transcribe searches for your specified criteria.
      * </p>
      */
     private Long first;
     /**
      * <p>
-     * A time range from the value that you've specified to the end of the call. For example, if you specify
-     * <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      */
     private Long last;
 
     /**
      * <p>
-     * A value that indicates the beginning of the time range in seconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If
+     * you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      * </p>
      * 
      * @param startTime
-     *        A value that indicates the beginning of the time range in seconds. To set absolute time range, you must
-     *        specify a start time and an end time. For example, if you specify the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartTime - 10000
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Endtime - 50000
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     *        The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your
+     *        audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      */
 
     public void setStartTime(Long startTime) {
@@ -133,41 +90,12 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the beginning of the time range in seconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If
+     * you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      * </p>
      * 
-     * @return A value that indicates the beginning of the time range in seconds. To set absolute time range, you must
-     *         specify a start time and an end time. For example, if you specify the following values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         StartTime - 10000
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Endtime - 50000
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * @return The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your
+     *         audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      */
 
     public Long getStartTime() {
@@ -176,42 +104,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the beginning of the time range in seconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If
+     * you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      * </p>
      * 
      * @param startTime
-     *        A value that indicates the beginning of the time range in seconds. To set absolute time range, you must
-     *        specify a start time and an end time. For example, if you specify the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartTime - 10000
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Endtime - 50000
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     *        The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your
+     *        audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,42 +121,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the end of the time range in milliseconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If
+     * you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      * </p>
      * 
      * @param endTime
-     *        A value that indicates the end of the time range in milliseconds. To set absolute time range, you must
-     *        specify a start time and an end time. For example, if you specify the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartTime - 10000
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Endtime - 50000
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     *        The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your
+     *        audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      */
 
     public void setEndTime(Long endTime) {
@@ -266,41 +136,12 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the end of the time range in milliseconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If
+     * you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      * </p>
      * 
-     * @return A value that indicates the end of the time range in milliseconds. To set absolute time range, you must
-     *         specify a start time and an end time. For example, if you specify the following values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         StartTime - 10000
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Endtime - 50000
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * @return The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your
+     *         audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      */
 
     public Long getEndTime() {
@@ -309,42 +150,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the end of the time range in milliseconds. To set absolute time range, you must specify a
-     * start time and an end time. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartTime - 10000
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Endtime - 50000
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     * The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If
+     * you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      * </p>
      * 
      * @param endTime
-     *        A value that indicates the end of the time range in milliseconds. To set absolute time range, you must
-     *        specify a start time and an end time. For example, if you specify the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartTime - 10000
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Endtime - 50000
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.
+     *        The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your
+     *        audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,13 +167,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A time range from the beginning of the call to the value that you've specified. For example, if you specify
-     * <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     * Transcribe searches for your specified criteria.
      * </p>
      * 
      * @param first
-     *        A time range from the beginning of the call to the value that you've specified. For example, if you
-     *        specify <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     *        The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     *        Transcribe searches for your specified criteria.
      */
 
     public void setFirst(Long first) {
@@ -370,12 +182,12 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A time range from the beginning of the call to the value that you've specified. For example, if you specify
-     * <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     * Transcribe searches for your specified criteria.
      * </p>
      * 
-     * @return A time range from the beginning of the call to the value that you've specified. For example, if you
-     *         specify <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     * @return The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     *         Transcribe searches for your specified criteria.
      */
 
     public Long getFirst() {
@@ -384,13 +196,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A time range from the beginning of the call to the value that you've specified. For example, if you specify
-     * <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     * Transcribe searches for your specified criteria.
      * </p>
      * 
      * @param first
-     *        A time range from the beginning of the call to the value that you've specified. For example, if you
-     *        specify <code>100000</code>, the time range is set to the first 100,000 milliseconds of the call.
+     *        The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
+     *        Transcribe searches for your specified criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,13 +213,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A time range from the value that you've specified to the end of the call. For example, if you specify
-     * <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
      * @param last
-     *        A time range from the value that you've specified to the end of the call. For example, if you specify
-     *        <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     *        The time, in milliseconds, from the value you specify until the end of your media file in which Amazon
+     *        Transcribe searches for your specified criteria.
      */
 
     public void setLast(Long last) {
@@ -416,12 +228,12 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A time range from the value that you've specified to the end of the call. For example, if you specify
-     * <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
-     * @return A time range from the value that you've specified to the end of the call. For example, if you specify
-     *         <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     * @return The time, in milliseconds, from the value you specify until the end of your media file in which Amazon
+     *         Transcribe searches for your specified criteria.
      */
 
     public Long getLast() {
@@ -430,13 +242,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A time range from the value that you've specified to the end of the call. For example, if you specify
-     * <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
      * @param last
-     *        A time range from the value that you've specified to the end of the call. For example, if you specify
-     *        <code>100000</code>, the time range is set to the last 100,000 milliseconds of the call.
+     *        The time, in milliseconds, from the value you specify until the end of your media file in which Amazon
+     *        Transcribe searches for your specified criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

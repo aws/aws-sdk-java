@@ -39,8 +39,9 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
-     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
-     * {LINK}
+     * to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing
+     * or deleting a canary</a>
      * </p>
      */
     private java.util.List<String> ignoreCoordinates;
@@ -94,13 +95,16 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
-     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
-     * {LINK}
+     * to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing
+     * or deleting a canary</a>
      * </p>
      * 
      * @return Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
-     *         coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
-     *         information, see {LINK}
+     *         coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     *         Editing or deleting a canary</a>
      */
 
     public java.util.List<String> getIgnoreCoordinates() {
@@ -110,14 +114,17 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
-     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
-     * {LINK}
+     * to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing
+     * or deleting a canary</a>
      * </p>
      * 
      * @param ignoreCoordinates
      *        Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
-     *        coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
-     *        information, see {LINK}
+     *        coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     *        Editing or deleting a canary</a>
      */
 
     public void setIgnoreCoordinates(java.util.Collection<String> ignoreCoordinates) {
@@ -132,8 +139,9 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
-     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
-     * {LINK}
+     * to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing
+     * or deleting a canary</a>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,8 +151,10 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param ignoreCoordinates
      *        Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
-     *        coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
-     *        information, see {LINK}
+     *        coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     *        Editing or deleting a canary</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,14 +171,17 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
-     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
-     * {LINK}
+     * to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing
+     * or deleting a canary</a>
      * </p>
      * 
      * @param ignoreCoordinates
      *        Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
-     *        coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
-     *        information, see {LINK}
+     *        coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     *        Editing or deleting a canary</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

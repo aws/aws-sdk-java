@@ -64,6 +64,14 @@ public class ImportJobSummaryJsonUnmarshaller implements Unmarshaller<ImportJobS
                     context.nextToken();
                     importJobSummary.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ProcessedRecordsCount", targetDepth)) {
+                    context.nextToken();
+                    importJobSummary.setProcessedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FailedRecordsCount", targetDepth)) {
+                    context.nextToken();
+                    importJobSummary.setFailedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

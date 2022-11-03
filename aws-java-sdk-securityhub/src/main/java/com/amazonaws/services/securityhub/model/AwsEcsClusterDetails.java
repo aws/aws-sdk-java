@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * provides details about an ECS cluster.
+ * Provides details about an Amazon ECS cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterDetails" target="_top">AWS
@@ -28,6 +28,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AwsEcsClusterDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the cluster.
+     * </p>
+     */
+    private String clusterArn;
+    /**
+     * <p>
+     * The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these
+     * services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code>
+     * </a> API operation.
+     * </p>
+     */
+    private Integer activeServicesCount;
     /**
      * <p>
      * The short name of one or more capacity providers to associate with the cluster.
@@ -54,6 +69,129 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.List<AwsEcsClusterDefaultCapacityProviderStrategyDetails> defaultCapacityProviderStrategy;
+    /**
+     * <p>
+     * A name that you use to identify your cluster.
+     * </p>
+     */
+    private String clusterName;
+    /**
+     * <p>
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
+     * </p>
+     */
+    private Integer registeredContainerInstancesCount;
+    /**
+     * <p>
+     * The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     * </p>
+     */
+    private Integer runningTasksCount;
+    /**
+     * <p>
+     * The status of the cluster.
+     * </p>
+     */
+    private String status;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name (ARN) that identifies the cluster.
+     */
+
+    public void setClusterArn(String clusterArn) {
+        this.clusterArn = clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies the cluster.
+     */
+
+    public String getClusterArn() {
+        return this.clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name (ARN) that identifies the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsClusterDetails withClusterArn(String clusterArn) {
+        setClusterArn(clusterArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these
+     * services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code>
+     * </a> API operation.
+     * </p>
+     * 
+     * @param activeServicesCount
+     *        The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these
+     *        services with the Amazon ECS <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     *        <code>ListServices</code> </a> API operation.
+     */
+
+    public void setActiveServicesCount(Integer activeServicesCount) {
+        this.activeServicesCount = activeServicesCount;
+    }
+
+    /**
+     * <p>
+     * The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these
+     * services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code>
+     * </a> API operation.
+     * </p>
+     * 
+     * @return The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view
+     *         these services with the Amazon ECS <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     *         <code>ListServices</code> </a> API operation.
+     */
+
+    public Integer getActiveServicesCount() {
+        return this.activeServicesCount;
+    }
+
+    /**
+     * <p>
+     * The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these
+     * services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code>
+     * </a> API operation.
+     * </p>
+     * 
+     * @param activeServicesCount
+     *        The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these
+     *        services with the Amazon ECS <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     *        <code>ListServices</code> </a> API operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsClusterDetails withActiveServicesCount(Integer activeServicesCount) {
+        setActiveServicesCount(activeServicesCount);
+        return this;
+    }
 
     /**
      * <p>
@@ -324,6 +462,172 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * A name that you use to identify your cluster.
+     * </p>
+     * 
+     * @param clusterName
+     *        A name that you use to identify your cluster.
+     */
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
+
+    /**
+     * <p>
+     * A name that you use to identify your cluster.
+     * </p>
+     * 
+     * @return A name that you use to identify your cluster.
+     */
+
+    public String getClusterName() {
+        return this.clusterName;
+    }
+
+    /**
+     * <p>
+     * A name that you use to identify your cluster.
+     * </p>
+     * 
+     * @param clusterName
+     *        A name that you use to identify your cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsClusterDetails withClusterName(String clusterName) {
+        setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
+     * </p>
+     * 
+     * @param registeredContainerInstancesCount
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
+     */
+
+    public void setRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
+        this.registeredContainerInstancesCount = registeredContainerInstancesCount;
+    }
+
+    /**
+     * <p>
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
+     * </p>
+     * 
+     * @return The number of container instances registered into the cluster. This includes container instances in both
+     *         <code>ACTIVE</code> and <code>DRAINING</code> status.
+     */
+
+    public Integer getRegisteredContainerInstancesCount() {
+        return this.registeredContainerInstancesCount;
+    }
+
+    /**
+     * <p>
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
+     * </p>
+     * 
+     * @param registeredContainerInstancesCount
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsClusterDetails withRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
+        setRegisteredContainerInstancesCount(registeredContainerInstancesCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @param runningTasksCount
+     *        The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     */
+
+    public void setRunningTasksCount(Integer runningTasksCount) {
+        this.runningTasksCount = runningTasksCount;
+    }
+
+    /**
+     * <p>
+     * The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @return The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     */
+
+    public Integer getRunningTasksCount() {
+        return this.runningTasksCount;
+    }
+
+    /**
+     * <p>
+     * The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @param runningTasksCount
+     *        The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsClusterDetails withRunningTasksCount(Integer runningTasksCount) {
+        setRunningTasksCount(runningTasksCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the cluster.
+     * </p>
+     * 
+     * @param status
+     *        The status of the cluster.
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the cluster.
+     * </p>
+     * 
+     * @return The status of the cluster.
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the cluster.
+     * </p>
+     * 
+     * @param status
+     *        The status of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsClusterDetails withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,6 +639,10 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClusterArn() != null)
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
+        if (getActiveServicesCount() != null)
+            sb.append("ActiveServicesCount: ").append(getActiveServicesCount()).append(",");
         if (getCapacityProviders() != null)
             sb.append("CapacityProviders: ").append(getCapacityProviders()).append(",");
         if (getClusterSettings() != null)
@@ -342,7 +650,15 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getDefaultCapacityProviderStrategy() != null)
-            sb.append("DefaultCapacityProviderStrategy: ").append(getDefaultCapacityProviderStrategy());
+            sb.append("DefaultCapacityProviderStrategy: ").append(getDefaultCapacityProviderStrategy()).append(",");
+        if (getClusterName() != null)
+            sb.append("ClusterName: ").append(getClusterName()).append(",");
+        if (getRegisteredContainerInstancesCount() != null)
+            sb.append("RegisteredContainerInstancesCount: ").append(getRegisteredContainerInstancesCount()).append(",");
+        if (getRunningTasksCount() != null)
+            sb.append("RunningTasksCount: ").append(getRunningTasksCount()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +673,14 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
         if (obj instanceof AwsEcsClusterDetails == false)
             return false;
         AwsEcsClusterDetails other = (AwsEcsClusterDetails) obj;
+        if (other.getClusterArn() == null ^ this.getClusterArn() == null)
+            return false;
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
+            return false;
+        if (other.getActiveServicesCount() == null ^ this.getActiveServicesCount() == null)
+            return false;
+        if (other.getActiveServicesCount() != null && other.getActiveServicesCount().equals(this.getActiveServicesCount()) == false)
+            return false;
         if (other.getCapacityProviders() == null ^ this.getCapacityProviders() == null)
             return false;
         if (other.getCapacityProviders() != null && other.getCapacityProviders().equals(this.getCapacityProviders()) == false)
@@ -374,6 +698,23 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
         if (other.getDefaultCapacityProviderStrategy() != null
                 && other.getDefaultCapacityProviderStrategy().equals(this.getDefaultCapacityProviderStrategy()) == false)
             return false;
+        if (other.getClusterName() == null ^ this.getClusterName() == null)
+            return false;
+        if (other.getClusterName() != null && other.getClusterName().equals(this.getClusterName()) == false)
+            return false;
+        if (other.getRegisteredContainerInstancesCount() == null ^ this.getRegisteredContainerInstancesCount() == null)
+            return false;
+        if (other.getRegisteredContainerInstancesCount() != null
+                && other.getRegisteredContainerInstancesCount().equals(this.getRegisteredContainerInstancesCount()) == false)
+            return false;
+        if (other.getRunningTasksCount() == null ^ this.getRunningTasksCount() == null)
+            return false;
+        if (other.getRunningTasksCount() != null && other.getRunningTasksCount().equals(this.getRunningTasksCount()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -382,10 +723,16 @@ public class AwsEcsClusterDetails implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getActiveServicesCount() == null) ? 0 : getActiveServicesCount().hashCode());
         hashCode = prime * hashCode + ((getCapacityProviders() == null) ? 0 : getCapacityProviders().hashCode());
         hashCode = prime * hashCode + ((getClusterSettings() == null) ? 0 : getClusterSettings().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDefaultCapacityProviderStrategy() == null) ? 0 : getDefaultCapacityProviderStrategy().hashCode());
+        hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredContainerInstancesCount() == null) ? 0 : getRegisteredContainerInstancesCount().hashCode());
+        hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

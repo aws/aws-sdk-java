@@ -40,7 +40,7 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
     private String domain;
     /**
      * <p>
-     * The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     * The date when you enabled the Deliverability dashboard for the domain.
      * </p>
      */
     private java.util.Date subscriptionStartDate;
@@ -99,11 +99,11 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     * The date when you enabled the Deliverability dashboard for the domain.
      * </p>
      * 
      * @param subscriptionStartDate
-     *        The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     *        The date when you enabled the Deliverability dashboard for the domain.
      */
 
     public void setSubscriptionStartDate(java.util.Date subscriptionStartDate) {
@@ -112,10 +112,10 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     * The date when you enabled the Deliverability dashboard for the domain.
      * </p>
      * 
-     * @return The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     * @return The date when you enabled the Deliverability dashboard for the domain.
      */
 
     public java.util.Date getSubscriptionStartDate() {
@@ -124,11 +124,11 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     * The date when you enabled the Deliverability dashboard for the domain.
      * </p>
      * 
      * @param subscriptionStartDate
-     *        The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.
+     *        The date when you enabled the Deliverability dashboard for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -59,7 +59,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
-     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts
      * as two distinct attributes when determining the total.
      * </p>
      */
@@ -319,14 +319,14 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
-     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts
      * as two distinct attributes when determining the total.
      * </p>
      * 
      * @return Represents the non-key attribute names which will be projected into the index.</p>
      *         <p>
      *         For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
-     *         local secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *         local secondary indexes, must not exceed 100. If you project the same attribute into two different
      *         indexes, this counts as two distinct attributes when determining the total.
      */
 
@@ -340,7 +340,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
-     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts
      * as two distinct attributes when determining the total.
      * </p>
      * 
@@ -348,8 +348,8 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        Represents the non-key attribute names which will be projected into the index.</p>
      *        <p>
      *        For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
-     *        local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes,
-     *        this counts as two distinct attributes when determining the total.
+     *        local secondary indexes, must not exceed 100. If you project the same attribute into two different
+     *        indexes, this counts as two distinct attributes when determining the total.
      */
 
     public void setNonKeyAttributes(java.util.Collection<String> nonKeyAttributes) {
@@ -367,7 +367,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
-     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts
      * as two distinct attributes when determining the total.
      * </p>
      * <p>
@@ -380,8 +380,8 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        Represents the non-key attribute names which will be projected into the index.</p>
      *        <p>
      *        For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
-     *        local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes,
-     *        this counts as two distinct attributes when determining the total.
+     *        local secondary indexes, must not exceed 100. If you project the same attribute into two different
+     *        indexes, this counts as two distinct attributes when determining the total.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,7 +401,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
-     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts
      * as two distinct attributes when determining the total.
      * </p>
      * 
@@ -409,8 +409,8 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        Represents the non-key attribute names which will be projected into the index.</p>
      *        <p>
      *        For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
-     *        local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes,
-     *        this counts as two distinct attributes when determining the total.
+     *        local secondary indexes, must not exceed 100. If you project the same attribute into two different
+     *        indexes, this counts as two distinct attributes when determining the total.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

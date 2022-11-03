@@ -48,8 +48,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      */
@@ -137,8 +137,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      * 
@@ -149,8 +149,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *        to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
-     *        and not for other programmatic purposes.
+     *        Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for
+     *        other programmatic purposes.
      *        </p>
      */
 
@@ -167,8 +167,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      * 
@@ -178,8 +178,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      *         returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *         to return.</p> <note>
      *         <p>
-     *         This token should be treated as an opaque identifier that's only used to retrieve the next items in a
-     *         list and not for other programmatic purposes.
+     *         Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not
+     *         for other programmatic purposes.
      *         </p>
      */
 
@@ -196,8 +196,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      * 
@@ -208,8 +208,8 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *        to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
-     *        and not for other programmatic purposes.
+     *        Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for
+     *        other programmatic purposes.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

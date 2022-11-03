@@ -36,18 +36,18 @@ public class CreateAccessPreviewRequest extends com.amazonaws.AmazonWebServiceRe
     private String analyzerArn;
     /**
      * <p>
-     * A client token.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * Access control configuration for your resource that is used to generate the access preview. The access preview
      * includes findings for external access allowed to the resource with the proposed access control configuration. The
      * configuration must contain exactly one element.
      * </p>
      */
     private java.util.Map<String, Configuration> configurations;
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -104,46 +104,6 @@ public class CreateAccessPreviewRequest extends com.amazonaws.AmazonWebServiceRe
 
     public CreateAccessPreviewRequest withAnalyzerArn(String analyzerArn) {
         setAnalyzerArn(analyzerArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @return A client token.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAccessPreviewRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -228,6 +188,46 @@ public class CreateAccessPreviewRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        A client token.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @return A client token.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        A client token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccessPreviewRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -241,10 +241,10 @@ public class CreateAccessPreviewRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getAnalyzerArn() != null)
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getConfigurations() != null)
-            sb.append("Configurations: ").append(getConfigurations());
+            sb.append("Configurations: ").append(getConfigurations()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -263,13 +263,13 @@ public class CreateAccessPreviewRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getAnalyzerArn() != null && other.getAnalyzerArn().equals(this.getAnalyzerArn()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getConfigurations() == null ^ this.getConfigurations() == null)
             return false;
         if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -280,8 +280,8 @@ public class CreateAccessPreviewRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

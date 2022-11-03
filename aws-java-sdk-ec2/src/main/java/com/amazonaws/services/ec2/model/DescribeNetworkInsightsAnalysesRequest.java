@@ -57,12 +57,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * PathFound - A Boolean value that indicates whether a feasible path is found.
+     * path-found - A Boolean value that indicates whether a feasible path is found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Status - The status of the analysis (running | succeeded | failed).
+     * status - The status of the analysis (running | succeeded | failed).
      * </p>
      * </li>
      * </ul>
@@ -282,12 +282,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * PathFound - A Boolean value that indicates whether a feasible path is found.
+     * path-found - A Boolean value that indicates whether a feasible path is found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Status - The status of the analysis (running | succeeded | failed).
+     * status - The status of the analysis (running | succeeded | failed).
      * </p>
      * </li>
      * </ul>
@@ -296,12 +296,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         PathFound - A Boolean value that indicates whether a feasible path is found.
+     *         path-found - A Boolean value that indicates whether a feasible path is found.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Status - The status of the analysis (running | succeeded | failed).
+     *         status - The status of the analysis (running | succeeded | failed).
      *         </p>
      *         </li>
      */
@@ -320,12 +320,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * PathFound - A Boolean value that indicates whether a feasible path is found.
+     * path-found - A Boolean value that indicates whether a feasible path is found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Status - The status of the analysis (running | succeeded | failed).
+     * status - The status of the analysis (running | succeeded | failed).
      * </p>
      * </li>
      * </ul>
@@ -335,12 +335,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        PathFound - A Boolean value that indicates whether a feasible path is found.
+     *        path-found - A Boolean value that indicates whether a feasible path is found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Status - The status of the analysis (running | succeeded | failed).
+     *        status - The status of the analysis (running | succeeded | failed).
      *        </p>
      *        </li>
      */
@@ -361,12 +361,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * PathFound - A Boolean value that indicates whether a feasible path is found.
+     * path-found - A Boolean value that indicates whether a feasible path is found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Status - The status of the analysis (running | succeeded | failed).
+     * status - The status of the analysis (running | succeeded | failed).
      * </p>
      * </li>
      * </ul>
@@ -381,12 +381,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        PathFound - A Boolean value that indicates whether a feasible path is found.
+     *        path-found - A Boolean value that indicates whether a feasible path is found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Status - The status of the analysis (running | succeeded | failed).
+     *        status - The status of the analysis (running | succeeded | failed).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,12 +409,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * PathFound - A Boolean value that indicates whether a feasible path is found.
+     * path-found - A Boolean value that indicates whether a feasible path is found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Status - The status of the analysis (running | succeeded | failed).
+     * status - The status of the analysis (running | succeeded | failed).
      * </p>
      * </li>
      * </ul>
@@ -424,12 +424,12 @@ public class DescribeNetworkInsightsAnalysesRequest extends AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        PathFound - A Boolean value that indicates whether a feasible path is found.
+     *        path-found - A Boolean value that indicates whether a feasible path is found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Status - The status of the analysis (running | succeeded | failed).
+     *        status - The status of the analysis (running | succeeded | failed).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

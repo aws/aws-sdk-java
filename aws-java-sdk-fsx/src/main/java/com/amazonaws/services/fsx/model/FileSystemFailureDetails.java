@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure providing details of any failures that occurred when creating a file system.
+ * A structure providing details of any failures that occurred.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystemFailureDetails" target="_top">AWS API
@@ -30,18 +30,18 @@ public class FileSystemFailureDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A message describing any failures that occurred during file system creation.
+     * A message describing any failures that occurred.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * A message describing any failures that occurred during file system creation.
+     * A message describing any failures that occurred.
      * </p>
      * 
      * @param message
-     *        A message describing any failures that occurred during file system creation.
+     *        A message describing any failures that occurred.
      */
 
     public void setMessage(String message) {
@@ -50,10 +50,10 @@ public class FileSystemFailureDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A message describing any failures that occurred during file system creation.
+     * A message describing any failures that occurred.
      * </p>
      * 
-     * @return A message describing any failures that occurred during file system creation.
+     * @return A message describing any failures that occurred.
      */
 
     public String getMessage() {
@@ -62,11 +62,11 @@ public class FileSystemFailureDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A message describing any failures that occurred during file system creation.
+     * A message describing any failures that occurred.
      * </p>
      * 
      * @param message
-     *        A message describing any failures that occurred during file system creation.
+     *        A message describing any failures that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

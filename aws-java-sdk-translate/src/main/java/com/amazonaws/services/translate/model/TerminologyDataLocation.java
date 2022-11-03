@@ -37,7 +37,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .
      * </p>
      * <important>
      * <p>
@@ -98,7 +98,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .
      * </p>
      * <important>
      * <p>
@@ -116,7 +116,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
      * 
      * @param location
      *        The Amazon S3 location of the most recent custom terminology input file that was successfully imported
-     *        into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *        into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p>
      *        <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -139,7 +139,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .
      * </p>
      * <important>
      * <p>
@@ -156,7 +156,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
      * </important>
      * 
      * @return The Amazon S3 location of the most recent custom terminology input file that was successfully imported
-     *         into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *         into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p>
      *         <important>
      *         <p>
      *         Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -179,7 +179,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .
      * </p>
      * <important>
      * <p>
@@ -197,7 +197,7 @@ public class TerminologyDataLocation implements Serializable, Cloneable, Structu
      * 
      * @param location
      *        The Amazon S3 location of the most recent custom terminology input file that was successfully imported
-     *        into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *        into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p>
      *        <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.

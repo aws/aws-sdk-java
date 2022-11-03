@@ -1215,6 +1215,11 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * List the tags for a resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
@@ -1228,6 +1233,11 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * List the tags for a resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
@@ -1312,6 +1322,11 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * Adds one or more tags to the specified resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
@@ -1325,6 +1340,11 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * Adds one or more tags to the specified resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * 
      * @param tagResourceRequest
      * @param asyncHandler
@@ -1343,6 +1363,11 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * Deletes specified tags from a resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * <p>
      * To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
      * </p>
@@ -1362,6 +1387,11 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * Deletes specified tags from a resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * <p>
      * To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
      * </p>
@@ -1414,6 +1444,37 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      */
     java.util.concurrent.Future<UpdateAnswerResult> updateAnswerAsync(UpdateAnswerRequest updateAnswerRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAnswerRequest, UpdateAnswerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates whether the Amazon Web Services account is opted into organization sharing features.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @return A Java Future containing the result of the UpdateGlobalSettings operation returned by the service.
+     * @sample AWSWellArchitectedAsync.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalSettingsResult> updateGlobalSettingsAsync(UpdateGlobalSettingsRequest updateGlobalSettingsRequest);
+
+    /**
+     * <p>
+     * Updates whether the Amazon Web Services account is opted into organization sharing features.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGlobalSettings operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalSettingsResult> updateGlobalSettingsAsync(UpdateGlobalSettingsRequest updateGlobalSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGlobalSettingsRequest, UpdateGlobalSettingsResult> asyncHandler);
 
     /**
      * <p>

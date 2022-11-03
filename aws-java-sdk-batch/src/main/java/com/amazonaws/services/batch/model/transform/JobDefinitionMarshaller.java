@@ -57,6 +57,10 @@ public class JobDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
     private static final MarshallingInfo<List> PLATFORMCAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformCapabilities").build();
+    private static final MarshallingInfo<StructuredPojo> EKSPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksProperties").build();
+    private static final MarshallingInfo<String> CONTAINERORCHESTRATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOrchestrationType").build();
 
     private static final JobDefinitionMarshaller instance = new JobDefinitionMarshaller();
 
@@ -88,6 +92,8 @@ public class JobDefinitionMarshaller {
             protocolMarshaller.marshall(jobDefinition.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(jobDefinition.getPropagateTags(), PROPAGATETAGS_BINDING);
             protocolMarshaller.marshall(jobDefinition.getPlatformCapabilities(), PLATFORMCAPABILITIES_BINDING);
+            protocolMarshaller.marshall(jobDefinition.getEksProperties(), EKSPROPERTIES_BINDING);
+            protocolMarshaller.marshall(jobDefinition.getContainerOrchestrationType(), CONTAINERORCHESTRATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

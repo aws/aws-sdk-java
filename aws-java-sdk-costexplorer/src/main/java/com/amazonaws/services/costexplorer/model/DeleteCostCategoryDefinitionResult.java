@@ -31,8 +31,8 @@ public class DeleteCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
     private String costCategoryArn;
     /**
      * <p>
-     * The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
-     * categorized by the deleted Cost Category.
+     * The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized
+     * by the deleted Cost Category.
      * </p>
      */
     private String effectiveEnd;
@@ -79,12 +79,12 @@ public class DeleteCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
-     * categorized by the deleted Cost Category.
+     * The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized
+     * by the deleted Cost Category.
      * </p>
      * 
      * @param effectiveEnd
-     *        The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
+     *        The effective end date of the Cost Category as a result of deleting it. No costs after this date is
      *        categorized by the deleted Cost Category.
      */
 
@@ -94,11 +94,11 @@ public class DeleteCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
-     * categorized by the deleted Cost Category.
+     * The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized
+     * by the deleted Cost Category.
      * </p>
      * 
-     * @return The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
+     * @return The effective end date of the Cost Category as a result of deleting it. No costs after this date is
      *         categorized by the deleted Cost Category.
      */
 
@@ -108,12 +108,12 @@ public class DeleteCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
-     * categorized by the deleted Cost Category.
+     * The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized
+     * by the deleted Cost Category.
      * </p>
      * 
      * @param effectiveEnd
-     *        The effective end date of the Cost Category as a result of deleting it. No costs after this date will be
+     *        The effective end date of the Cost Category as a result of deleting it. No costs after this date is
      *        categorized by the deleted Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -28,7 +28,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the
-     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
+     * name.
      * </p>
      */
     private String aliasName;
@@ -75,13 +76,14 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the
-     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
+     * name.
      * </p>
      * 
      * @param aliasName
      *        Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed
-     *        by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
-     *        name.
+     *        by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to
+     *        change the alias name.
      */
 
     public void setAliasName(String aliasName) {
@@ -91,12 +93,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the
-     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
+     * name.
      * </p>
      * 
      * @return Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code>
-     *         followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change
-     *         the alias name.
+     *         followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use
+     *         <code>UpdateAlias</code> to change the alias name.
      */
 
     public String getAliasName() {
@@ -106,13 +109,14 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the
-     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
+     * name.
      * </p>
      * 
      * @param aliasName
      *        Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed
-     *        by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
-     *        name.
+     *        by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to
+     *        change the alias name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

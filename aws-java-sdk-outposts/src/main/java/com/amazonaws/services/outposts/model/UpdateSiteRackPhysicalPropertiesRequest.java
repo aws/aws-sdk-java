@@ -33,13 +33,13 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
     private String siteId;
     /**
      * <p>
-     * Specify in kVA the power draw available at the hardware placement position for the rack.
+     * The power draw, in kVA, available at the hardware placement position for the rack.
      * </p>
      */
     private String powerDrawKva;
     /**
      * <p>
-     * Specify the power option that you can provide for hardware.
+     * The power option that you can provide for hardware.
      * </p>
      * <ul>
      * <li>
@@ -57,8 +57,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
     private String powerPhase;
     /**
      * <p>
-     * Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
-     * the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
+     * The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the
+     * correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
      * </p>
      * <ul>
      * <li>
@@ -100,13 +100,13 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
     private String powerConnector;
     /**
      * <p>
-     * Specify whether the power feed comes above or below the rack.
+     * Indicates whether the power feed comes above or below the rack.
      * </p>
      */
     private String powerFeedDrop;
     /**
      * <p>
-     * Specify the uplink speed the rack should support for the connection to the Region.
+     * The uplink speed the rack should support for the connection to the Region.
      * </p>
      */
     private String uplinkGbps;
@@ -138,15 +138,15 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
     private String uplinkCount;
     /**
      * <p>
-     * Specify the type of fiber that you will use to attach the Outpost to your network.
+     * The type of fiber that you will use to attach the Outpost to your network.
      * </p>
      */
     private String fiberOpticCableType;
     /**
      * <p>
-     * Specify the type of optical standard that you will use to attach the Outpost to your network. This field is
-     * dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on
+     * uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements
+     * for racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      * >Network</a> in the Amazon Web Services Outposts User Guide.
      * </p>
@@ -221,7 +221,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
     private String opticalStandard;
     /**
      * <p>
-     * Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     * The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * </p>
      */
     private String maximumSupportedWeightLbs;
@@ -268,11 +268,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify in kVA the power draw available at the hardware placement position for the rack.
+     * The power draw, in kVA, available at the hardware placement position for the rack.
      * </p>
      * 
      * @param powerDrawKva
-     *        Specify in kVA the power draw available at the hardware placement position for the rack.
+     *        The power draw, in kVA, available at the hardware placement position for the rack.
      * @see PowerDrawKva
      */
 
@@ -282,10 +282,10 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify in kVA the power draw available at the hardware placement position for the rack.
+     * The power draw, in kVA, available at the hardware placement position for the rack.
      * </p>
      * 
-     * @return Specify in kVA the power draw available at the hardware placement position for the rack.
+     * @return The power draw, in kVA, available at the hardware placement position for the rack.
      * @see PowerDrawKva
      */
 
@@ -295,11 +295,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify in kVA the power draw available at the hardware placement position for the rack.
+     * The power draw, in kVA, available at the hardware placement position for the rack.
      * </p>
      * 
      * @param powerDrawKva
-     *        Specify in kVA the power draw available at the hardware placement position for the rack.
+     *        The power draw, in kVA, available at the hardware placement position for the rack.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PowerDrawKva
      */
@@ -311,11 +311,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify in kVA the power draw available at the hardware placement position for the rack.
+     * The power draw, in kVA, available at the hardware placement position for the rack.
      * </p>
      * 
      * @param powerDrawKva
-     *        Specify in kVA the power draw available at the hardware placement position for the rack.
+     *        The power draw, in kVA, available at the hardware placement position for the rack.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PowerDrawKva
      */
@@ -327,7 +327,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power option that you can provide for hardware.
+     * The power option that you can provide for hardware.
      * </p>
      * <ul>
      * <li>
@@ -343,7 +343,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param powerPhase
-     *        Specify the power option that you can provide for hardware. </p>
+     *        The power option that you can provide for hardware. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -364,7 +364,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power option that you can provide for hardware.
+     * The power option that you can provide for hardware.
      * </p>
      * <ul>
      * <li>
@@ -379,7 +379,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </li>
      * </ul>
      * 
-     * @return Specify the power option that you can provide for hardware. </p>
+     * @return The power option that you can provide for hardware. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -400,7 +400,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power option that you can provide for hardware.
+     * The power option that you can provide for hardware.
      * </p>
      * <ul>
      * <li>
@@ -416,7 +416,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param powerPhase
-     *        Specify the power option that you can provide for hardware. </p>
+     *        The power option that you can provide for hardware. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -439,7 +439,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power option that you can provide for hardware.
+     * The power option that you can provide for hardware.
      * </p>
      * <ul>
      * <li>
@@ -455,7 +455,7 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param powerPhase
-     *        Specify the power option that you can provide for hardware. </p>
+     *        The power option that you can provide for hardware. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -478,8 +478,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
-     * the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
+     * The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the
+     * correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
      * </p>
      * <ul>
      * <li>
@@ -519,8 +519,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param powerConnector
-     *        Specify the power connector that Amazon Web Services should plan to provide for connections to the
-     *        hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+     *        The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
+     *        the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -565,8 +565,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
-     * the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
+     * The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the
+     * correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
      * </p>
      * <ul>
      * <li>
@@ -605,8 +605,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </li>
      * </ul>
      * 
-     * @return Specify the power connector that Amazon Web Services should plan to provide for connections to the
-     *         hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+     * @return The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
+     *         the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -651,8 +651,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
-     * the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
+     * The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the
+     * correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
      * </p>
      * <ul>
      * <li>
@@ -692,8 +692,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param powerConnector
-     *        Specify the power connector that Amazon Web Services should plan to provide for connections to the
-     *        hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+     *        The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
+     *        the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -740,8 +740,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
-     * the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
+     * The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the
+     * correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
      * </p>
      * <ul>
      * <li>
@@ -781,8 +781,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param powerConnector
-     *        Specify the power connector that Amazon Web Services should plan to provide for connections to the
-     *        hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+     *        The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note
+     *        the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -829,11 +829,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify whether the power feed comes above or below the rack.
+     * Indicates whether the power feed comes above or below the rack.
      * </p>
      * 
      * @param powerFeedDrop
-     *        Specify whether the power feed comes above or below the rack.
+     *        Indicates whether the power feed comes above or below the rack.
      * @see PowerFeedDrop
      */
 
@@ -843,10 +843,10 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify whether the power feed comes above or below the rack.
+     * Indicates whether the power feed comes above or below the rack.
      * </p>
      * 
-     * @return Specify whether the power feed comes above or below the rack.
+     * @return Indicates whether the power feed comes above or below the rack.
      * @see PowerFeedDrop
      */
 
@@ -856,11 +856,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify whether the power feed comes above or below the rack.
+     * Indicates whether the power feed comes above or below the rack.
      * </p>
      * 
      * @param powerFeedDrop
-     *        Specify whether the power feed comes above or below the rack.
+     *        Indicates whether the power feed comes above or below the rack.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PowerFeedDrop
      */
@@ -872,11 +872,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify whether the power feed comes above or below the rack.
+     * Indicates whether the power feed comes above or below the rack.
      * </p>
      * 
      * @param powerFeedDrop
-     *        Specify whether the power feed comes above or below the rack.
+     *        Indicates whether the power feed comes above or below the rack.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PowerFeedDrop
      */
@@ -888,11 +888,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the uplink speed the rack should support for the connection to the Region.
+     * The uplink speed the rack should support for the connection to the Region.
      * </p>
      * 
      * @param uplinkGbps
-     *        Specify the uplink speed the rack should support for the connection to the Region.
+     *        The uplink speed the rack should support for the connection to the Region.
      * @see UplinkGbps
      */
 
@@ -902,10 +902,10 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the uplink speed the rack should support for the connection to the Region.
+     * The uplink speed the rack should support for the connection to the Region.
      * </p>
      * 
-     * @return Specify the uplink speed the rack should support for the connection to the Region.
+     * @return The uplink speed the rack should support for the connection to the Region.
      * @see UplinkGbps
      */
 
@@ -915,11 +915,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the uplink speed the rack should support for the connection to the Region.
+     * The uplink speed the rack should support for the connection to the Region.
      * </p>
      * 
      * @param uplinkGbps
-     *        Specify the uplink speed the rack should support for the connection to the Region.
+     *        The uplink speed the rack should support for the connection to the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UplinkGbps
      */
@@ -931,11 +931,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the uplink speed the rack should support for the connection to the Region.
+     * The uplink speed the rack should support for the connection to the Region.
      * </p>
      * 
      * @param uplinkGbps
-     *        Specify the uplink speed the rack should support for the connection to the Region.
+     *        The uplink speed the rack should support for the connection to the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UplinkGbps
      */
@@ -1162,11 +1162,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of fiber that you will use to attach the Outpost to your network.
+     * The type of fiber that you will use to attach the Outpost to your network.
      * </p>
      * 
      * @param fiberOpticCableType
-     *        Specify the type of fiber that you will use to attach the Outpost to your network.
+     *        The type of fiber that you will use to attach the Outpost to your network.
      * @see FiberOpticCableType
      */
 
@@ -1176,10 +1176,10 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of fiber that you will use to attach the Outpost to your network.
+     * The type of fiber that you will use to attach the Outpost to your network.
      * </p>
      * 
-     * @return Specify the type of fiber that you will use to attach the Outpost to your network.
+     * @return The type of fiber that you will use to attach the Outpost to your network.
      * @see FiberOpticCableType
      */
 
@@ -1189,11 +1189,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of fiber that you will use to attach the Outpost to your network.
+     * The type of fiber that you will use to attach the Outpost to your network.
      * </p>
      * 
      * @param fiberOpticCableType
-     *        Specify the type of fiber that you will use to attach the Outpost to your network.
+     *        The type of fiber that you will use to attach the Outpost to your network.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FiberOpticCableType
      */
@@ -1205,11 +1205,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of fiber that you will use to attach the Outpost to your network.
+     * The type of fiber that you will use to attach the Outpost to your network.
      * </p>
      * 
      * @param fiberOpticCableType
-     *        Specify the type of fiber that you will use to attach the Outpost to your network.
+     *        The type of fiber that you will use to attach the Outpost to your network.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FiberOpticCableType
      */
@@ -1221,9 +1221,9 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of optical standard that you will use to attach the Outpost to your network. This field is
-     * dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on
+     * uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements
+     * for racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      * >Network</a> in the Amazon Web Services Outposts User Guide.
      * </p>
@@ -1296,8 +1296,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param opticalStandard
-     *        Specify the type of optical standard that you will use to attach the Outpost to your network. This field
-     *        is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
+     *        The type of optical standard that you will use to attach the Outpost to your network. This field is
+     *        dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
      *        networking requirements for racks, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      *        >Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -1376,9 +1376,9 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of optical standard that you will use to attach the Outpost to your network. This field is
-     * dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on
+     * uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements
+     * for racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      * >Network</a> in the Amazon Web Services Outposts User Guide.
      * </p>
@@ -1450,8 +1450,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </li>
      * </ul>
      * 
-     * @return Specify the type of optical standard that you will use to attach the Outpost to your network. This field
-     *         is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
+     * @return The type of optical standard that you will use to attach the Outpost to your network. This field is
+     *         dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
      *         networking requirements for racks, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      *         >Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -1530,9 +1530,9 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of optical standard that you will use to attach the Outpost to your network. This field is
-     * dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on
+     * uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements
+     * for racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      * >Network</a> in the Amazon Web Services Outposts User Guide.
      * </p>
@@ -1605,8 +1605,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param opticalStandard
-     *        Specify the type of optical standard that you will use to attach the Outpost to your network. This field
-     *        is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
+     *        The type of optical standard that you will use to attach the Outpost to your network. This field is
+     *        dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
      *        networking requirements for racks, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      *        >Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -1687,9 +1687,9 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the type of optical standard that you will use to attach the Outpost to your network. This field is
-     * dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on
+     * uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements
+     * for racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      * >Network</a> in the Amazon Web Services Outposts User Guide.
      * </p>
@@ -1762,8 +1762,8 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param opticalStandard
-     *        Specify the type of optical standard that you will use to attach the Outpost to your network. This field
-     *        is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
+     *        The type of optical standard that you will use to attach the Outpost to your network. This field is
+     *        dependent on uplink speed, fiber type, and distance to the upstream device. For more information about
      *        networking requirements for racks, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking"
      *        >Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -1844,11 +1844,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     * The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * </p>
      * 
      * @param maximumSupportedWeightLbs
-     *        Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     *        The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * @see MaximumSupportedWeightLbs
      */
 
@@ -1858,10 +1858,10 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     * The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * </p>
      * 
-     * @return Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     * @return The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * @see MaximumSupportedWeightLbs
      */
 
@@ -1871,11 +1871,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     * The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * </p>
      * 
      * @param maximumSupportedWeightLbs
-     *        Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     *        The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumSupportedWeightLbs
      */
@@ -1887,11 +1887,11 @@ public class UpdateSiteRackPhysicalPropertiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     * The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * </p>
      * 
      * @param maximumSupportedWeightLbs
-     *        Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
+     *        The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumSupportedWeightLbs
      */

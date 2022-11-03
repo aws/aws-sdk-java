@@ -27,18 +27,18 @@ public class DeleteTranscriptionJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the transcription job you want to delete. Job names are case-sensitive.
+     * The name of the transcription job you want to delete. Job names are case sensitive.
      * </p>
      */
     private String transcriptionJobName;
 
     /**
      * <p>
-     * The name of the transcription job you want to delete. Job names are case-sensitive.
+     * The name of the transcription job you want to delete. Job names are case sensitive.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the transcription job you want to delete. Job names are case-sensitive.
+     *        The name of the transcription job you want to delete. Job names are case sensitive.
      */
 
     public void setTranscriptionJobName(String transcriptionJobName) {
@@ -47,10 +47,10 @@ public class DeleteTranscriptionJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the transcription job you want to delete. Job names are case-sensitive.
+     * The name of the transcription job you want to delete. Job names are case sensitive.
      * </p>
      * 
-     * @return The name of the transcription job you want to delete. Job names are case-sensitive.
+     * @return The name of the transcription job you want to delete. Job names are case sensitive.
      */
 
     public String getTranscriptionJobName() {
@@ -59,11 +59,11 @@ public class DeleteTranscriptionJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the transcription job you want to delete. Job names are case-sensitive.
+     * The name of the transcription job you want to delete. Job names are case sensitive.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the transcription job you want to delete. Job names are case-sensitive.
+     *        The name of the transcription job you want to delete. Job names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

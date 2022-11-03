@@ -27,6 +27,13 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
+     * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
+     * </p>
+     */
+    private String principalArn;
+    /**
+     * <p>
      * The maximum number of results to return in the response.
      * </p>
      */
@@ -37,13 +44,53 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
      * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
      * </p>
+     * 
+     * @param principalArn
+     *        The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
+     *        <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
      */
-    private String principalArn;
+
+    public void setPrincipalArn(String principalArn) {
+        this.principalArn = principalArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
+     * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
+     * </p>
+     * 
+     * @return The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
+     *         <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific
+     *         principal.
+     */
+
+    public String getPrincipalArn() {
+        return this.principalArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
+     * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
+     * </p>
+     * 
+     * @param principalArn
+     *        The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
+     *        <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPolicyGenerationsRequest withPrincipalArn(String principalArn) {
+        setPrincipalArn(principalArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,53 +173,6 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
-     * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
-     * </p>
-     * 
-     * @param principalArn
-     *        The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
-     *        <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
-     */
-
-    public void setPrincipalArn(String principalArn) {
-        this.principalArn = principalArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
-     * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
-     * </p>
-     * 
-     * @return The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
-     *         <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific
-     *         principal.
-     */
-
-    public String getPrincipalArn() {
-        return this.principalArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
-     * <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
-     * </p>
-     * 
-     * @param principalArn
-     *        The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with
-     *        <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPolicyGenerationsRequest withPrincipalArn(String principalArn) {
-        setPrincipalArn(principalArn);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,12 +184,12 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPrincipalArn() != null)
+            sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: ").append(getPrincipalArn());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -204,6 +204,10 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof ListPolicyGenerationsRequest == false)
             return false;
         ListPolicyGenerationsRequest other = (ListPolicyGenerationsRequest) obj;
+        if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
+            return false;
+        if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -211,10 +215,6 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
-        if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
-            return false;
-        if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
             return false;
         return true;
     }
@@ -224,9 +224,9 @@ public class ListPolicyGenerationsRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
         return hashCode;
     }
 

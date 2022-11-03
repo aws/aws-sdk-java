@@ -72,6 +72,10 @@ public class DatasetImportJobSummaryJsonUnmarshaller implements Unmarshaller<Dat
                     context.nextToken();
                     datasetImportJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("importMode", targetDepth)) {
+                    context.nextToken();
+                    datasetImportJobSummary.setImportMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

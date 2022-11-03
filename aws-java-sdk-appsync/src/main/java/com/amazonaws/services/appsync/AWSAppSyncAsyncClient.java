@@ -668,6 +668,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<EvaluateMappingTemplateResult> evaluateMappingTemplateAsync(EvaluateMappingTemplateRequest request) {
+
+        return evaluateMappingTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EvaluateMappingTemplateResult> evaluateMappingTemplateAsync(final EvaluateMappingTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EvaluateMappingTemplateRequest, EvaluateMappingTemplateResult> asyncHandler) {
+        final EvaluateMappingTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EvaluateMappingTemplateResult>() {
+            @Override
+            public EvaluateMappingTemplateResult call() throws Exception {
+                EvaluateMappingTemplateResult result = null;
+
+                try {
+                    result = executeEvaluateMappingTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<FlushApiCacheResult> flushApiCacheAsync(FlushApiCacheRequest request) {
 
         return flushApiCacheAsync(request, null);

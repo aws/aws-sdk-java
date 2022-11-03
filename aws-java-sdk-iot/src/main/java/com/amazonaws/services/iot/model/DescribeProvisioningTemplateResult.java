@@ -20,31 +20,31 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the fleet provisioning template.
+     * The ARN of the provisioning template.
      * </p>
      */
     private String templateArn;
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The date when the fleet provisioning template was created.
+     * The date when the provisioning template was created.
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * The date when the fleet provisioning template was last modified.
+     * The date when the provisioning template was last modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
@@ -56,13 +56,13 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
     private Integer defaultVersionId;
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      */
     private String templateBody;
     /**
      * <p>
-     * True if the fleet provisioning template is enabled, otherwise false.
+     * True if the provisioning template is enabled, otherwise false.
      * </p>
      */
     private Boolean enabled;
@@ -79,14 +79,23 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private ProvisioningHook preProvisioningHook;
+    /**
+     * <p>
+     * The type you define in a provisioning template. You can create a template with only one type. You can't change
+     * the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information
+     * about provisioning template, see: <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
-     * The ARN of the fleet provisioning template.
+     * The ARN of the provisioning template.
      * </p>
      * 
      * @param templateArn
-     *        The ARN of the fleet provisioning template.
+     *        The ARN of the provisioning template.
      */
 
     public void setTemplateArn(String templateArn) {
@@ -95,10 +104,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the fleet provisioning template.
+     * The ARN of the provisioning template.
      * </p>
      * 
-     * @return The ARN of the fleet provisioning template.
+     * @return The ARN of the provisioning template.
      */
 
     public String getTemplateArn() {
@@ -107,11 +116,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the fleet provisioning template.
+     * The ARN of the provisioning template.
      * </p>
      * 
      * @param templateArn
-     *        The ARN of the fleet provisioning template.
+     *        The ARN of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +131,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      */
 
     public void setTemplateName(String templateName) {
@@ -135,10 +144,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
-     * @return The name of the fleet provisioning template.
+     * @return The name of the provisioning template.
      */
 
     public String getTemplateName() {
@@ -147,11 +156,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +171,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      * 
      * @param description
-     *        The description of the fleet provisioning template.
+     *        The description of the provisioning template.
      */
 
     public void setDescription(String description) {
@@ -175,10 +184,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      * 
-     * @return The description of the fleet provisioning template.
+     * @return The description of the provisioning template.
      */
 
     public String getDescription() {
@@ -187,11 +196,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The description of the fleet provisioning template.
+     * The description of the provisioning template.
      * </p>
      * 
      * @param description
-     *        The description of the fleet provisioning template.
+     *        The description of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +211,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date when the fleet provisioning template was created.
+     * The date when the provisioning template was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the fleet provisioning template was created.
+     *        The date when the provisioning template was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -215,10 +224,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date when the fleet provisioning template was created.
+     * The date when the provisioning template was created.
      * </p>
      * 
-     * @return The date when the fleet provisioning template was created.
+     * @return The date when the provisioning template was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -227,11 +236,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date when the fleet provisioning template was created.
+     * The date when the provisioning template was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the fleet provisioning template was created.
+     *        The date when the provisioning template was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +251,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date when the fleet provisioning template was last modified.
+     * The date when the provisioning template was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date when the fleet provisioning template was last modified.
+     *        The date when the provisioning template was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -255,10 +264,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date when the fleet provisioning template was last modified.
+     * The date when the provisioning template was last modified.
      * </p>
      * 
-     * @return The date when the fleet provisioning template was last modified.
+     * @return The date when the provisioning template was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -267,11 +276,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date when the fleet provisioning template was last modified.
+     * The date when the provisioning template was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date when the fleet provisioning template was last modified.
+     *        The date when the provisioning template was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,11 +331,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      * 
      * @param templateBody
-     *        The JSON formatted contents of the fleet provisioning template.
+     *        The JSON formatted contents of the provisioning template.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -335,10 +344,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      * 
-     * @return The JSON formatted contents of the fleet provisioning template.
+     * @return The JSON formatted contents of the provisioning template.
      */
 
     public String getTemplateBody() {
@@ -347,11 +356,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      * 
      * @param templateBody
-     *        The JSON formatted contents of the fleet provisioning template.
+     *        The JSON formatted contents of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,11 +371,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True if the fleet provisioning template is enabled, otherwise false.
+     * True if the provisioning template is enabled, otherwise false.
      * </p>
      * 
      * @param enabled
-     *        True if the fleet provisioning template is enabled, otherwise false.
+     *        True if the provisioning template is enabled, otherwise false.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -375,10 +384,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True if the fleet provisioning template is enabled, otherwise false.
+     * True if the provisioning template is enabled, otherwise false.
      * </p>
      * 
-     * @return True if the fleet provisioning template is enabled, otherwise false.
+     * @return True if the provisioning template is enabled, otherwise false.
      */
 
     public Boolean getEnabled() {
@@ -387,11 +396,11 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True if the fleet provisioning template is enabled, otherwise false.
+     * True if the provisioning template is enabled, otherwise false.
      * </p>
      * 
      * @param enabled
-     *        True if the fleet provisioning template is enabled, otherwise false.
+     *        True if the provisioning template is enabled, otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,10 +411,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True if the fleet provisioning template is enabled, otherwise false.
+     * True if the provisioning template is enabled, otherwise false.
      * </p>
      * 
-     * @return True if the fleet provisioning template is enabled, otherwise false.
+     * @return True if the provisioning template is enabled, otherwise false.
      */
 
     public Boolean isEnabled() {
@@ -499,6 +508,93 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The type you define in a provisioning template. You can create a template with only one type. You can't change
+     * the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information
+     * about provisioning template, see: <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.
+     * </p>
+     * 
+     * @param type
+     *        The type you define in a provisioning template. You can create a template with only one type. You can't
+     *        change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For
+     *        more information about provisioning template, see: <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     *        template</a>.
+     * @see TemplateType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type you define in a provisioning template. You can create a template with only one type. You can't change
+     * the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information
+     * about provisioning template, see: <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.
+     * </p>
+     * 
+     * @return The type you define in a provisioning template. You can create a template with only one type. You can't
+     *         change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For
+     *         more information about provisioning template, see: <a
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     *         template</a>.
+     * @see TemplateType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type you define in a provisioning template. You can create a template with only one type. You can't change
+     * the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information
+     * about provisioning template, see: <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.
+     * </p>
+     * 
+     * @param type
+     *        The type you define in a provisioning template. You can create a template with only one type. You can't
+     *        change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For
+     *        more information about provisioning template, see: <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     *        template</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateType
+     */
+
+    public DescribeProvisioningTemplateResult withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type you define in a provisioning template. You can create a template with only one type. You can't change
+     * the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information
+     * about provisioning template, see: <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.
+     * </p>
+     * 
+     * @param type
+     *        The type you define in a provisioning template. You can create a template with only one type. You can't
+     *        change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For
+     *        more information about provisioning template, see: <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     *        template</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateType
+     */
+
+    public DescribeProvisioningTemplateResult withType(TemplateType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -529,7 +625,9 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
         if (getProvisioningRoleArn() != null)
             sb.append("ProvisioningRoleArn: ").append(getProvisioningRoleArn()).append(",");
         if (getPreProvisioningHook() != null)
-            sb.append("PreProvisioningHook: ").append(getPreProvisioningHook());
+            sb.append("PreProvisioningHook: ").append(getPreProvisioningHook()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -584,6 +682,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getPreProvisioningHook() != null && other.getPreProvisioningHook().equals(this.getPreProvisioningHook()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -602,6 +704,7 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getProvisioningRoleArn() == null) ? 0 : getProvisioningRoleArn().hashCode());
         hashCode = prime * hashCode + ((getPreProvisioningHook() == null) ? 0 : getPreProvisioningHook().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

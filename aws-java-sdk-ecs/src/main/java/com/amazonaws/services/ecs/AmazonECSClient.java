@@ -54,9 +54,9 @@ import com.amazonaws.services.ecs.model.transform.*;
  * <fullname>Amazon Elastic Container Service</fullname>
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service. It makes it
- * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
- * infrastructure that's managed by Amazon ECS by launching your services or tasks on Fargate. For more control, you can
- * host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage.
+ * easy to run, stop, and manage Docker containers. You can host your cluster on a serverless infrastructure that's
+ * managed by Amazon ECS by launching your services or tasks on Fargate. For more control, you can host your tasks on a
+ * cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises) instances that you manage.
  * </p>
  * <p>
  * Amazon ECS makes it easy to launch and stop container-based applications with simple API calls. This makes it easy to
@@ -455,7 +455,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * your behalf. However, if the IAM user that makes the call doesn't have permissions to create the service-linked
      * role, it isn't created. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -526,14 +526,14 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Runs and maintains your desired number of tasks from a specified task definition. If the number of tasks running
      * in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified
-     * cluster. To update an existing service, see the UpdateService action.
+     * cluster. To update an existing service, see the <a>UpdateService</a> action.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
      * one or more load balancers. The load balancers distribute traffic across the tasks that are associated with the
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
-     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
+     * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * Tasks for services that don't use a load balancer are considered healthy if they're in the <code>RUNNING</code>
@@ -549,8 +549,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <code>REPLICA</code> - The replica scheduling strategy places and maintains your desired number of tasks across
      * your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task
      * placement strategies and constraints to customize task placement decisions. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
-     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service scheduler
+     * concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -560,8 +560,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * evaluates the task placement constraints for running tasks. It also stops tasks that don't meet the placement
      * constraints. When using this strategy, you don't need to specify a desired number of tasks, a task placement
      * strategy, or use Service Auto Scaling policies. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
-     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service scheduler
+     * concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -608,42 +608,15 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * When creating a service that uses the <code>EXTERNAL</code> deployment controller, you can specify only
      * parameters that aren't controlled at the task set level. The only required parameter is the service name. You
      * control your services using the <a>CreateTaskSet</a> operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it determines task placement in your cluster using the following
-     * logic:
+     * When the service scheduler launches new tasks, it determines task placement. For information about task placement
+     * and task placement strategies, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon ECS task
+     * placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Determine which of the container instances in your cluster can support the task definition of your service. For
-     * example, they have the required CPU, memory, ports, and container instance attributes.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner. This is the
-     * case even if you can choose a different placement strategy with the <code>placementStrategy</code> parameter.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Sort the valid container instances, giving priority to instances that have the fewest number of running tasks for
-     * this service in their respective Availability Zone. For example, if zone A has one running service task and zones
-     * B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Place the new service task on a valid container instance in an optimal Availability Zone based on the previous
-     * steps, favoring container instances with the fewest number of running tasks for this service.
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * </ul>
      * 
      * @param createServiceRequest
      * @return Result of the CreateService operation returned by the service.
@@ -718,8 +691,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Create a task set in the specified cluster and service. This is used when a service uses the
      * <code>EXTERNAL</code> deployment controller type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param createTaskSetRequest
@@ -1184,8 +1157,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code>
      * deployment controller type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param deleteTaskSetRequest
@@ -1849,6 +1822,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Describes a specified task or tasks.
      * </p>
+     * <p>
+     * Currently, stopped tasks appear in the returned results for at least one hour.
+     * </p>
      * 
      * @param describeTasksRequest
      * @return Result of the DescribeTasks operation returned by the service.
@@ -1985,6 +1961,11 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     /**
      * <p>
      * Runs a command remotely on a container within a task.
+     * </p>
+     * <p>
+     * If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example
+     * limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code> when there is a
+     * mismatch between the condition key value and the corresponding parameter value.
      * </p>
      * 
      * @param executeCommandRequest
@@ -4225,14 +4206,6 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     }
 
     /**
-     * <important>
-     * <p>
-     * Updating the task placement strategies and constraints on an Amazon ECS service remains in preview and is a Beta
-     * Service as defined by and subject to the Beta Service Participation Service Terms located at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
-     * Terms apply to your participation in this preview.
-     * </p>
-     * </important>
      * <p>
      * Modifies the parameters of a service.
      * </p>

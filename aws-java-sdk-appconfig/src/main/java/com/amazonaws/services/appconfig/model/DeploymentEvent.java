@@ -52,6 +52,12 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
+     * The list of extensions that were invoked as part of the deployment.
+     * </p>
+     */
+    private java.util.List<ActionInvocation> actionInvocations;
+    /**
+     * <p>
      * The date and time the event occurred.
      * </p>
      */
@@ -249,6 +255,76 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The list of extensions that were invoked as part of the deployment.
+     * </p>
+     * 
+     * @return The list of extensions that were invoked as part of the deployment.
+     */
+
+    public java.util.List<ActionInvocation> getActionInvocations() {
+        return actionInvocations;
+    }
+
+    /**
+     * <p>
+     * The list of extensions that were invoked as part of the deployment.
+     * </p>
+     * 
+     * @param actionInvocations
+     *        The list of extensions that were invoked as part of the deployment.
+     */
+
+    public void setActionInvocations(java.util.Collection<ActionInvocation> actionInvocations) {
+        if (actionInvocations == null) {
+            this.actionInvocations = null;
+            return;
+        }
+
+        this.actionInvocations = new java.util.ArrayList<ActionInvocation>(actionInvocations);
+    }
+
+    /**
+     * <p>
+     * The list of extensions that were invoked as part of the deployment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActionInvocations(java.util.Collection)} or {@link #withActionInvocations(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param actionInvocations
+     *        The list of extensions that were invoked as part of the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentEvent withActionInvocations(ActionInvocation... actionInvocations) {
+        if (this.actionInvocations == null) {
+            setActionInvocations(new java.util.ArrayList<ActionInvocation>(actionInvocations.length));
+        }
+        for (ActionInvocation ele : actionInvocations) {
+            this.actionInvocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of extensions that were invoked as part of the deployment.
+     * </p>
+     * 
+     * @param actionInvocations
+     *        The list of extensions that were invoked as part of the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentEvent withActionInvocations(java.util.Collection<ActionInvocation> actionInvocations) {
+        setActionInvocations(actionInvocations);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time the event occurred.
      * </p>
      * 
@@ -305,6 +381,8 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
             sb.append("TriggeredBy: ").append(getTriggeredBy()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getActionInvocations() != null)
+            sb.append("ActionInvocations: ").append(getActionInvocations()).append(",");
         if (getOccurredAt() != null)
             sb.append("OccurredAt: ").append(getOccurredAt());
         sb.append("}");
@@ -333,6 +411,10 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getActionInvocations() == null ^ this.getActionInvocations() == null)
+            return false;
+        if (other.getActionInvocations() != null && other.getActionInvocations().equals(this.getActionInvocations()) == false)
+            return false;
         if (other.getOccurredAt() == null ^ this.getOccurredAt() == null)
             return false;
         if (other.getOccurredAt() != null && other.getOccurredAt().equals(this.getOccurredAt()) == false)
@@ -348,6 +430,7 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getTriggeredBy() == null) ? 0 : getTriggeredBy().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getActionInvocations() == null) ? 0 : getActionInvocations().hashCode());
         hashCode = prime * hashCode + ((getOccurredAt() == null) ? 0 : getOccurredAt().hashCode());
         return hashCode;
     }

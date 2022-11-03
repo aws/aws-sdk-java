@@ -25,18 +25,18 @@ public class CreateIdentityProviderResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The newly created identity provider object.
+     * The newly created IdP object.
      * </p>
      */
     private IdentityProviderType identityProvider;
 
     /**
      * <p>
-     * The newly created identity provider object.
+     * The newly created IdP object.
      * </p>
      * 
      * @param identityProvider
-     *        The newly created identity provider object.
+     *        The newly created IdP object.
      */
 
     public void setIdentityProvider(IdentityProviderType identityProvider) {
@@ -45,10 +45,10 @@ public class CreateIdentityProviderResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The newly created identity provider object.
+     * The newly created IdP object.
      * </p>
      * 
-     * @return The newly created identity provider object.
+     * @return The newly created IdP object.
      */
 
     public IdentityProviderType getIdentityProvider() {
@@ -57,11 +57,11 @@ public class CreateIdentityProviderResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The newly created identity provider object.
+     * The newly created IdP object.
      * </p>
      * 
      * @param identityProvider
-     *        The newly created identity provider object.
+     *        The newly created IdP object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

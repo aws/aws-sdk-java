@@ -27,7 +27,7 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description about this domain.
+     * A brief description of the domain.
      * </p>
      */
     private String description;
@@ -45,20 +45,21 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
-     * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
-     * data added to domain after updating the key is encrypted using the new key.
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
+     * your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove
+     * dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The
+     * domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
 
     /**
      * <p>
-     * A brief description about this domain.
+     * A brief description of the domain.
      * </p>
      * 
      * @param description
-     *        A brief description about this domain.
+     *        A brief description of the domain.
      */
 
     public void setDescription(String description) {
@@ -67,10 +68,10 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description about this domain.
+     * A brief description of the domain.
      * </p>
      * 
-     * @return A brief description about this domain.
+     * @return A brief description of the domain.
      */
 
     public String getDescription() {
@@ -79,11 +80,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description about this domain.
+     * A brief description of the domain.
      * </p>
      * 
      * @param description
-     *        A brief description about this domain.
+     *        A brief description of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,15 +175,18 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
-     * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
-     * data added to domain after updating the key is encrypted using the new key.
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
+     * your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove
+     * dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The
+     * domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-     *        encryption of your data. Note that all the existing data in the domain are still encrypted using the
-     *        existing key, only the data added to domain after updating the key is encrypted using the new key.
+     *        The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
+     *        encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous
+     *        process to remove dependency on the old KMS key, such that the domain's data can only be accessed using
+     *        the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this
+     *        process.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -191,14 +195,17 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
-     * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
-     * data added to domain after updating the key is encrypted using the new key.
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
+     * your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove
+     * dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The
+     * domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.
      * </p>
      * 
-     * @return The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-     *         encryption of your data. Note that all the existing data in the domain are still encrypted using the
-     *         existing key, only the data added to domain after updating the key is encrypted using the new key.
+     * @return The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
+     *         encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous
+     *         process to remove dependency on the old KMS key, such that the domain's data can only be accessed using
+     *         the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for
+     *         this process.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -207,15 +214,18 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
-     * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
-     * data added to domain after updating the key is encrypted using the new key.
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
+     * your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove
+     * dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The
+     * domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-     *        encryption of your data. Note that all the existing data in the domain are still encrypted using the
-     *        existing key, only the data added to domain after updating the key is encrypted using the new key.
+     *        The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
+     *        encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous
+     *        process to remove dependency on the old KMS key, such that the domain's data can only be accessed using
+     *        the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this
+     *        process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

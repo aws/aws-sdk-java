@@ -50,6 +50,12 @@ public class GetAccessControlEffectRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String userId;
+    /**
+     * <p>
+     * The impersonation role ID.
+     * </p>
+     */
+    private String impersonationRoleId;
 
     /**
      * <p>
@@ -221,6 +227,46 @@ public class GetAccessControlEffectRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The impersonation role ID.
+     * </p>
+     * 
+     * @param impersonationRoleId
+     *        The impersonation role ID.
+     */
+
+    public void setImpersonationRoleId(String impersonationRoleId) {
+        this.impersonationRoleId = impersonationRoleId;
+    }
+
+    /**
+     * <p>
+     * The impersonation role ID.
+     * </p>
+     * 
+     * @return The impersonation role ID.
+     */
+
+    public String getImpersonationRoleId() {
+        return this.impersonationRoleId;
+    }
+
+    /**
+     * <p>
+     * The impersonation role ID.
+     * </p>
+     * 
+     * @param impersonationRoleId
+     *        The impersonation role ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessControlEffectRequest withImpersonationRoleId(String impersonationRoleId) {
+        setImpersonationRoleId(impersonationRoleId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,7 +285,9 @@ public class GetAccessControlEffectRequest extends com.amazonaws.AmazonWebServic
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("UserId: ").append(getUserId()).append(",");
+        if (getImpersonationRoleId() != null)
+            sb.append("ImpersonationRoleId: ").append(getImpersonationRoleId());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +318,10 @@ public class GetAccessControlEffectRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
+        if (other.getImpersonationRoleId() == null ^ this.getImpersonationRoleId() == null)
+            return false;
+        if (other.getImpersonationRoleId() != null && other.getImpersonationRoleId().equals(this.getImpersonationRoleId()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +334,7 @@ public class GetAccessControlEffectRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getImpersonationRoleId() == null) ? 0 : getImpersonationRoleId().hashCode());
         return hashCode;
     }
 

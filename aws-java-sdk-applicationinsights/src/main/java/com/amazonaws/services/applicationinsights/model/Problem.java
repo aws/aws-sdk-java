@@ -88,9 +88,17 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> feedback;
-
+    /**
+     * <p>
+     * The number of times that the same problem reoccurred after the first time it was resolved.
+     * </p>
+     */
     private Long recurringCount;
-
+    /**
+     * <p>
+     * The last time that the problem reoccurred after its last resolution.
+     * </p>
+     */
     private java.util.Date lastRecurrenceTime;
 
     /**
@@ -560,7 +568,12 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of times that the same problem reoccurred after the first time it was resolved.
+     * </p>
+     * 
      * @param recurringCount
+     *        The number of times that the same problem reoccurred after the first time it was resolved.
      */
 
     public void setRecurringCount(Long recurringCount) {
@@ -568,7 +581,11 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of times that the same problem reoccurred after the first time it was resolved.
+     * </p>
+     * 
+     * @return The number of times that the same problem reoccurred after the first time it was resolved.
      */
 
     public Long getRecurringCount() {
@@ -576,7 +593,12 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of times that the same problem reoccurred after the first time it was resolved.
+     * </p>
+     * 
      * @param recurringCount
+     *        The number of times that the same problem reoccurred after the first time it was resolved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,7 +608,12 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The last time that the problem reoccurred after its last resolution.
+     * </p>
+     * 
      * @param lastRecurrenceTime
+     *        The last time that the problem reoccurred after its last resolution.
      */
 
     public void setLastRecurrenceTime(java.util.Date lastRecurrenceTime) {
@@ -594,7 +621,11 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The last time that the problem reoccurred after its last resolution.
+     * </p>
+     * 
+     * @return The last time that the problem reoccurred after its last resolution.
      */
 
     public java.util.Date getLastRecurrenceTime() {
@@ -602,7 +633,12 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The last time that the problem reoccurred after its last resolution.
+     * </p>
+     * 
      * @param lastRecurrenceTime
+     *        The last time that the problem reoccurred after its last resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

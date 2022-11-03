@@ -64,11 +64,23 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
-
+    /**
+     * <p>
+     * Defines how to perform inference generation after a training job is run.
+     * </p>
+     */
     private InferenceSpecification inferenceSpecification;
-
+    /**
+     * <p>
+     * A list of algorithms that were used to create a model package.
+     * </p>
+     */
     private SourceAlgorithmSpecification sourceAlgorithmSpecification;
-
+    /**
+     * <p>
+     * Specifies batch transform jobs that SageMaker runs to validate your model package.
+     * </p>
+     */
     private ModelPackageValidationSpecification validationSpecification;
     /**
      * <p>
@@ -103,7 +115,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String modelPackageStatus;
-
+    /**
+     * <p>
+     * Specifies the validation and image scan statuses of the model package.
+     * </p>
+     */
     private ModelPackageStatusDetails modelPackageStatusDetails;
     /**
      * <p>
@@ -137,9 +153,18 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String modelApprovalStatus;
-
+    /**
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     */
     private UserContext createdBy;
-
+    /**
+     * <p>
+     * Metadata properties of the tracking entity, trial, or trial component.
+     * </p>
+     */
     private MetadataProperties metadataProperties;
     /**
      * <p>
@@ -153,7 +178,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastModifiedTime;
-
+    /**
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     */
     private UserContext lastModifiedBy;
     /**
      * <p>
@@ -450,7 +480,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Defines how to perform inference generation after a training job is run.
+     * </p>
+     * 
      * @param inferenceSpecification
+     *        Defines how to perform inference generation after a training job is run.
      */
 
     public void setInferenceSpecification(InferenceSpecification inferenceSpecification) {
@@ -458,7 +493,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Defines how to perform inference generation after a training job is run.
+     * </p>
+     * 
+     * @return Defines how to perform inference generation after a training job is run.
      */
 
     public InferenceSpecification getInferenceSpecification() {
@@ -466,7 +505,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Defines how to perform inference generation after a training job is run.
+     * </p>
+     * 
      * @param inferenceSpecification
+     *        Defines how to perform inference generation after a training job is run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,7 +520,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of algorithms that were used to create a model package.
+     * </p>
+     * 
      * @param sourceAlgorithmSpecification
+     *        A list of algorithms that were used to create a model package.
      */
 
     public void setSourceAlgorithmSpecification(SourceAlgorithmSpecification sourceAlgorithmSpecification) {
@@ -484,7 +533,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A list of algorithms that were used to create a model package.
+     * </p>
+     * 
+     * @return A list of algorithms that were used to create a model package.
      */
 
     public SourceAlgorithmSpecification getSourceAlgorithmSpecification() {
@@ -492,7 +545,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of algorithms that were used to create a model package.
+     * </p>
+     * 
      * @param sourceAlgorithmSpecification
+     *        A list of algorithms that were used to create a model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,7 +560,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies batch transform jobs that SageMaker runs to validate your model package.
+     * </p>
+     * 
      * @param validationSpecification
+     *        Specifies batch transform jobs that SageMaker runs to validate your model package.
      */
 
     public void setValidationSpecification(ModelPackageValidationSpecification validationSpecification) {
@@ -510,7 +573,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies batch transform jobs that SageMaker runs to validate your model package.
+     * </p>
+     * 
+     * @return Specifies batch transform jobs that SageMaker runs to validate your model package.
      */
 
     public ModelPackageValidationSpecification getValidationSpecification() {
@@ -518,7 +585,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies batch transform jobs that SageMaker runs to validate your model package.
+     * </p>
+     * 
      * @param validationSpecification
+     *        Specifies batch transform jobs that SageMaker runs to validate your model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -799,7 +871,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the validation and image scan statuses of the model package.
+     * </p>
+     * 
      * @param modelPackageStatusDetails
+     *        Specifies the validation and image scan statuses of the model package.
      */
 
     public void setModelPackageStatusDetails(ModelPackageStatusDetails modelPackageStatusDetails) {
@@ -807,7 +884,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the validation and image scan statuses of the model package.
+     * </p>
+     * 
+     * @return Specifies the validation and image scan statuses of the model package.
      */
 
     public ModelPackageStatusDetails getModelPackageStatusDetails() {
@@ -815,7 +896,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the validation and image scan statuses of the model package.
+     * </p>
+     * 
      * @param modelPackageStatusDetails
+     *        Specifies the validation and image scan statuses of the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1092,7 +1178,14 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     * 
      * @param createdBy
+     *        Information about the user who created or modified an experiment, trial, trial component, lineage group,
+     *        or project.
      */
 
     public void setCreatedBy(UserContext createdBy) {
@@ -1100,7 +1193,13 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     * 
+     * @return Information about the user who created or modified an experiment, trial, trial component, lineage group,
+     *         or project.
      */
 
     public UserContext getCreatedBy() {
@@ -1108,7 +1207,14 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     * 
      * @param createdBy
+     *        Information about the user who created or modified an experiment, trial, trial component, lineage group,
+     *        or project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1118,7 +1224,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Metadata properties of the tracking entity, trial, or trial component.
+     * </p>
+     * 
      * @param metadataProperties
+     *        Metadata properties of the tracking entity, trial, or trial component.
      */
 
     public void setMetadataProperties(MetadataProperties metadataProperties) {
@@ -1126,7 +1237,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Metadata properties of the tracking entity, trial, or trial component.
+     * </p>
+     * 
+     * @return Metadata properties of the tracking entity, trial, or trial component.
      */
 
     public MetadataProperties getMetadataProperties() {
@@ -1134,7 +1249,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Metadata properties of the tracking entity, trial, or trial component.
+     * </p>
+     * 
      * @param metadataProperties
+     *        Metadata properties of the tracking entity, trial, or trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1224,7 +1344,14 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     * 
      * @param lastModifiedBy
+     *        Information about the user who created or modified an experiment, trial, trial component, lineage group,
+     *        or project.
      */
 
     public void setLastModifiedBy(UserContext lastModifiedBy) {
@@ -1232,7 +1359,13 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     * 
+     * @return Information about the user who created or modified an experiment, trial, trial component, lineage group,
+     *         or project.
      */
 
     public UserContext getLastModifiedBy() {
@@ -1240,7 +1373,14 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the user who created or modified an experiment, trial, trial component, lineage group, or
+     * project.
+     * </p>
+     * 
      * @param lastModifiedBy
+     *        Information about the user who created or modified an experiment, trial, trial component, lineage group,
+     *        or project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

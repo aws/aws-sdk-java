@@ -49,7 +49,8 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails 
     private AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails tag;
     /**
      * <p>
-     * Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     * <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      * </p>
      */
     private String type;
@@ -208,11 +209,13 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails 
 
     /**
      * <p>
-     * Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     * <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      * </p>
      * 
      * @param type
-     *        Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     *        Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     *        <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      */
 
     public void setType(String type) {
@@ -221,10 +224,12 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails 
 
     /**
      * <p>
-     * Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     * <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      * </p>
      * 
-     * @return Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * @return Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     *         <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      */
 
     public String getType() {
@@ -233,11 +238,13 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails 
 
     /**
      * <p>
-     * Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     * <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      * </p>
      * 
      * @param type
-     *        Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     *        Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are
+     *        <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

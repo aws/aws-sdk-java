@@ -70,6 +70,10 @@ public class DeploymentTargetsStaxUnmarshaller implements Unmarshaller<Deploymen
                     continue;
                 }
 
+                if (context.testExpression("AccountFilterType", targetDepth)) {
+                    deploymentTargets.setAccountFilterType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return deploymentTargets;

@@ -238,7 +238,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more network interface IDs.
+     * The network interface IDs.
      * </p>
      * <p>
      * Default: Describes all your network interfaces.
@@ -1959,13 +1959,13 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more network interface IDs.
+     * The network interface IDs.
      * </p>
      * <p>
      * Default: Describes all your network interfaces.
      * </p>
      * 
-     * @return One or more network interface IDs.</p>
+     * @return The network interface IDs.</p>
      *         <p>
      *         Default: Describes all your network interfaces.
      */
@@ -1979,14 +1979,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more network interface IDs.
+     * The network interface IDs.
      * </p>
      * <p>
      * Default: Describes all your network interfaces.
      * </p>
      * 
      * @param networkInterfaceIds
-     *        One or more network interface IDs.</p>
+     *        The network interface IDs.</p>
      *        <p>
      *        Default: Describes all your network interfaces.
      */
@@ -2002,7 +2002,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more network interface IDs.
+     * The network interface IDs.
      * </p>
      * <p>
      * Default: Describes all your network interfaces.
@@ -2014,7 +2014,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param networkInterfaceIds
-     *        One or more network interface IDs.</p>
+     *        The network interface IDs.</p>
      *        <p>
      *        Default: Describes all your network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2032,14 +2032,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more network interface IDs.
+     * The network interface IDs.
      * </p>
      * <p>
      * Default: Describes all your network interfaces.
      * </p>
      * 
      * @param networkInterfaceIds
-     *        One or more network interface IDs.</p>
+     *        The network interface IDs.</p>
      *        <p>
      *        Default: Describes all your network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.

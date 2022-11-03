@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteSourceLocationRequestProtocolMarshaller implements Marshaller<Request<DeleteSourceLocationRequest>, DeleteSourceLocationRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/sourceLocation/{sourceLocationName}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/sourceLocation/{SourceLocationName}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false)
             .serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

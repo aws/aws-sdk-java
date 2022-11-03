@@ -83,7 +83,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all processes are specified.
+     * If you omit this property, all processes are specified.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scalingProcesses;
@@ -180,7 +180,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all processes are specified.
+     * If you omit this property, all processes are specified.
      * </p>
      * 
      * @return One or more of the following processes:</p>
@@ -232,7 +232,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         </ul>
      *         <p>
-     *         If you omit this parameter, all processes are specified.
+     *         If you omit this property, all processes are specified.
      */
 
     public java.util.List<String> getScalingProcesses() {
@@ -294,7 +294,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all processes are specified.
+     * If you omit this property, all processes are specified.
      * </p>
      * 
      * @param scalingProcesses
@@ -347,7 +347,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If you omit this parameter, all processes are specified.
+     *        If you omit this property, all processes are specified.
      */
 
     public void setScalingProcesses(java.util.Collection<String> scalingProcesses) {
@@ -411,7 +411,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all processes are specified.
+     * If you omit this property, all processes are specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -469,7 +469,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If you omit this parameter, all processes are specified.
+     *        If you omit this property, all processes are specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,7 +535,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * If you omit this parameter, all processes are specified.
+     * If you omit this property, all processes are specified.
      * </p>
      * 
      * @param scalingProcesses
@@ -588,7 +588,7 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        If you omit this parameter, all processes are specified.
+     *        If you omit this property, all processes are specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

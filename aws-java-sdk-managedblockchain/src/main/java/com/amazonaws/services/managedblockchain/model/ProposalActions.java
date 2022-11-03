@@ -33,8 +33,8 @@ public class ProposalActions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join
-     * the network.
+     * The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a
+     * member and join the network.
      * </p>
      */
     private java.util.List<InviteAction> invitations;
@@ -48,12 +48,12 @@ public class ProposalActions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join
-     * the network.
+     * The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a
+     * member and join the network.
      * </p>
      * 
-     * @return The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member
-     *         and join the network.
+     * @return The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to
+     *         create a member and join the network.
      */
 
     public java.util.List<InviteAction> getInvitations() {
@@ -62,13 +62,13 @@ public class ProposalActions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join
-     * the network.
+     * The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a
+     * member and join the network.
      * </p>
      * 
      * @param invitations
-     *        The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member
-     *        and join the network.
+     *        The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to
+     *        create a member and join the network.
      */
 
     public void setInvitations(java.util.Collection<InviteAction> invitations) {
@@ -82,8 +82,8 @@ public class ProposalActions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join
-     * the network.
+     * The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a
+     * member and join the network.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,8 +92,8 @@ public class ProposalActions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param invitations
-     *        The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member
-     *        and join the network.
+     *        The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to
+     *        create a member and join the network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ProposalActions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join
-     * the network.
+     * The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a
+     * member and join the network.
      * </p>
      * 
      * @param invitations
-     *        The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member
-     *        and join the network.
+     *        The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to
+     *        create a member and join the network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

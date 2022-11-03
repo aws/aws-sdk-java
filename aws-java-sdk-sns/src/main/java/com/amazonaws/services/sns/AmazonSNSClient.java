@@ -1307,6 +1307,74 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
+     * Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon
+     * SNS topic.
+     * </p>
+     * 
+     * @param getDataProtectionPolicyRequest
+     * @return Result of the GetDataProtectionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws NotFoundException
+     *         Indicates that the requested resource does not exist.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
+     * @sample AmazonSNS.GetDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetDataProtectionPolicyResult getDataProtectionPolicy(GetDataProtectionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataProtectionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetDataProtectionPolicyResult executeGetDataProtectionPolicy(GetDataProtectionPolicyRequest getDataProtectionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataProtectionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataProtectionPolicyRequest> request = null;
+        Response<GetDataProtectionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataProtectionPolicyRequestMarshaller().marshall(super.beforeMarshalling(getDataProtectionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataProtectionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetDataProtectionPolicyResult> responseHandler = new StaxResponseHandler<GetDataProtectionPolicyResult>(
+                    new GetDataProtectionPolicyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
      * (Firebase Cloud Messaging) and APNS. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
@@ -2540,6 +2608,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidSecurityException
      *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
      *         Signature Version 4.
+     * @throws ValidationException
+     *         Indicates that a parameter in the request is invalid.
      * @sample AmazonSNS.Publish
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish" target="_top">AWS API
      *      Documentation</a>
@@ -2678,6 +2748,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidSecurityException
      *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
      *         Signature Version 4.
+     * @throws ValidationException
+     *         Indicates that a parameter in the request is invalid.
      * @sample AmazonSNS.PublishBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch" target="_top">AWS API
      *      Documentation</a>
@@ -2715,6 +2787,73 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<PublishBatchResult> responseHandler = new StaxResponseHandler<PublishBatchResult>(new PublishBatchResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates an inline policy document that is stored in the specified Amazon SNS topic.
+     * </p>
+     * 
+     * @param putDataProtectionPolicyRequest
+     * @return Result of the PutDataProtectionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws NotFoundException
+     *         Indicates that the requested resource does not exist.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
+     * @sample AmazonSNS.PutDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutDataProtectionPolicyResult putDataProtectionPolicy(PutDataProtectionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDataProtectionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutDataProtectionPolicyResult executePutDataProtectionPolicy(PutDataProtectionPolicyRequest putDataProtectionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDataProtectionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDataProtectionPolicyRequest> request = null;
+        Response<PutDataProtectionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDataProtectionPolicyRequestMarshaller().marshall(super.beforeMarshalling(putDataProtectionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDataProtectionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutDataProtectionPolicyResult> responseHandler = new StaxResponseHandler<PutDataProtectionPolicyResult>(
+                    new PutDataProtectionPolicyResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

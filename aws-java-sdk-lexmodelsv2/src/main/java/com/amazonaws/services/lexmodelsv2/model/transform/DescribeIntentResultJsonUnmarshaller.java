@@ -128,6 +128,10 @@ public class DescribeIntentResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeIntentResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("initialResponseSetting", targetDepth)) {
+                    context.nextToken();
+                    describeIntentResult.setInitialResponseSetting(InitialResponseSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

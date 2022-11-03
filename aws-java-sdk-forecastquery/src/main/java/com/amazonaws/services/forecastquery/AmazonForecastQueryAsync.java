@@ -103,4 +103,35 @@ public interface AmazonForecastQueryAsync extends AmazonForecastQuery {
     java.util.concurrent.Future<QueryForecastResult> queryForecastAsync(QueryForecastRequest queryForecastRequest,
             com.amazonaws.handlers.AsyncHandler<QueryForecastRequest, QueryForecastResult> asyncHandler);
 
+    /**
+     * <p>
+     * Retrieves a what-if forecast.
+     * </p>
+     * 
+     * @param queryWhatIfForecastRequest
+     * @return A Java Future containing the result of the QueryWhatIfForecast operation returned by the service.
+     * @sample AmazonForecastQueryAsync.QueryWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<QueryWhatIfForecastResult> queryWhatIfForecastAsync(QueryWhatIfForecastRequest queryWhatIfForecastRequest);
+
+    /**
+     * <p>
+     * Retrieves a what-if forecast.
+     * </p>
+     * 
+     * @param queryWhatIfForecastRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the QueryWhatIfForecast operation returned by the service.
+     * @sample AmazonForecastQueryAsyncHandler.QueryWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<QueryWhatIfForecastResult> queryWhatIfForecastAsync(QueryWhatIfForecastRequest queryWhatIfForecastRequest,
+            com.amazonaws.handlers.AsyncHandler<QueryWhatIfForecastRequest, QueryWhatIfForecastResult> asyncHandler);
+
 }

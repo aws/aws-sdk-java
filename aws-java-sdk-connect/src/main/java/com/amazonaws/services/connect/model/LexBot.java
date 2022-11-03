@@ -36,7 +36,7 @@ public class LexBot implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The Region that the Amazon Lex bot was created in.
+     * The Amazon Web Services Region where the Amazon Lex bot was created.
      * </p>
      */
     private String lexRegion;
@@ -83,11 +83,11 @@ public class LexBot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region that the Amazon Lex bot was created in.
+     * The Amazon Web Services Region where the Amazon Lex bot was created.
      * </p>
      * 
      * @param lexRegion
-     *        The Region that the Amazon Lex bot was created in.
+     *        The Amazon Web Services Region where the Amazon Lex bot was created.
      */
 
     public void setLexRegion(String lexRegion) {
@@ -96,10 +96,10 @@ public class LexBot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region that the Amazon Lex bot was created in.
+     * The Amazon Web Services Region where the Amazon Lex bot was created.
      * </p>
      * 
-     * @return The Region that the Amazon Lex bot was created in.
+     * @return The Amazon Web Services Region where the Amazon Lex bot was created.
      */
 
     public String getLexRegion() {
@@ -108,11 +108,11 @@ public class LexBot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region that the Amazon Lex bot was created in.
+     * The Amazon Web Services Region where the Amazon Lex bot was created.
      * </p>
      * 
      * @param lexRegion
-     *        The Region that the Amazon Lex bot was created in.
+     *        The Amazon Web Services Region where the Amazon Lex bot was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,8 @@ public class SalesforceDestinationPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorHandlingConfig").build();
     private static final MarshallingInfo<String> WRITEOPERATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeOperationType").build();
+    private static final MarshallingInfo<String> DATATRANSFERAPI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTransferApi").build();
 
     private static final SalesforceDestinationPropertiesMarshaller instance = new SalesforceDestinationPropertiesMarshaller();
 
@@ -57,6 +59,7 @@ public class SalesforceDestinationPropertiesMarshaller {
             protocolMarshaller.marshall(salesforceDestinationProperties.getIdFieldNames(), IDFIELDNAMES_BINDING);
             protocolMarshaller.marshall(salesforceDestinationProperties.getErrorHandlingConfig(), ERRORHANDLINGCONFIG_BINDING);
             protocolMarshaller.marshall(salesforceDestinationProperties.getWriteOperationType(), WRITEOPERATIONTYPE_BINDING);
+            protocolMarshaller.marshall(salesforceDestinationProperties.getDataTransferApi(), DATATRANSFERAPI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

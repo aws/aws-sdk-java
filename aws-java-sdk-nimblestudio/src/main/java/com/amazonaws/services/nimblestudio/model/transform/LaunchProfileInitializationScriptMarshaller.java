@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class LaunchProfileInitializationScriptMarshaller {
 
+    private static final MarshallingInfo<String> RUNTIMEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeRoleArn").build();
     private static final MarshallingInfo<String> SCRIPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("script").build();
+    private static final MarshallingInfo<String> SECUREINITIALIZATIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secureInitializationRoleArn").build();
     private static final MarshallingInfo<String> STUDIOCOMPONENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("studioComponentId").build();
     private static final MarshallingInfo<String> STUDIOCOMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,7 +54,9 @@ public class LaunchProfileInitializationScriptMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(launchProfileInitializationScript.getRuntimeRoleArn(), RUNTIMEROLEARN_BINDING);
             protocolMarshaller.marshall(launchProfileInitializationScript.getScript(), SCRIPT_BINDING);
+            protocolMarshaller.marshall(launchProfileInitializationScript.getSecureInitializationRoleArn(), SECUREINITIALIZATIONROLEARN_BINDING);
             protocolMarshaller.marshall(launchProfileInitializationScript.getStudioComponentId(), STUDIOCOMPONENTID_BINDING);
             protocolMarshaller.marshall(launchProfileInitializationScript.getStudioComponentName(), STUDIOCOMPONENTNAME_BINDING);
         } catch (Exception e) {

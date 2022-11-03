@@ -82,6 +82,10 @@ public class GetIntegrationResultJsonUnmarshaller implements Unmarshaller<GetInt
                     context.nextToken();
                     getIntegrationResult.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IsUnstructured", targetDepth)) {
+                    context.nextToken();
+                    getIntegrationResult.setIsUnstructured(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -52,6 +52,8 @@ public class DataSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslProperties").build();
     private static final MarshallingInfo<StructuredPojo> ERRORINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorInfo").build();
+    private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SecretArn").build();
 
     private static final DataSourceMarshaller instance = new DataSourceMarshaller();
 
@@ -81,6 +83,7 @@ public class DataSourceMarshaller {
             protocolMarshaller.marshall(dataSource.getVpcConnectionProperties(), VPCCONNECTIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(dataSource.getSslProperties(), SSLPROPERTIES_BINDING);
             protocolMarshaller.marshall(dataSource.getErrorInfo(), ERRORINFO_BINDING);
+            protocolMarshaller.marshall(dataSource.getSecretArn(), SECRETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

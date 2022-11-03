@@ -48,13 +48,13 @@ public class NetworkOriginConfigurationJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("internetConfiguration", targetDepth)) {
-                    context.nextToken();
-                    networkOriginConfiguration.setInternetConfiguration(InternetConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("vpcConfiguration", targetDepth)) {
                     context.nextToken();
                     networkOriginConfiguration.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("internetConfiguration", targetDepth)) {
+                    context.nextToken();
+                    networkOriginConfiguration.setInternetConfiguration(InternetConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

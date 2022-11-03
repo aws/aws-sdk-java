@@ -60,6 +60,46 @@ public class IntentConfirmationSettingJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     intentConfirmationSetting.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("confirmationResponse", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setConfirmationResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("confirmationNextStep", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setConfirmationNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("confirmationConditional", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setConfirmationConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("declinationNextStep", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setDeclinationNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("declinationConditional", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setDeclinationConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("failureResponse", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setFailureResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("failureNextStep", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setFailureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("failureConditional", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setFailureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("codeHook", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setCodeHook(DialogCodeHookInvocationSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("elicitationCodeHook", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setElicitationCodeHook(ElicitationCodeHookInvocationSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

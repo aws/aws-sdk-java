@@ -30,18 +30,35 @@ public class ActionCondition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The action setting that a log record must contain in order to meet the condition.
+     * The action setting that a log record must contain in order to meet the condition. This is the action that WAF
+     * applied to the web request.
+     * </p>
+     * <p>
+     * For rule groups, this is either the configured rule action setting, or if you've applied a rule action override
+     * to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and
+     * also on rules that have a rule action override of Count.
      * </p>
      */
     private String action;
 
     /**
      * <p>
-     * The action setting that a log record must contain in order to meet the condition.
+     * The action setting that a log record must contain in order to meet the condition. This is the action that WAF
+     * applied to the web request.
+     * </p>
+     * <p>
+     * For rule groups, this is either the configured rule action setting, or if you've applied a rule action override
+     * to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and
+     * also on rules that have a rule action override of Count.
      * </p>
      * 
      * @param action
-     *        The action setting that a log record must contain in order to meet the condition.
+     *        The action setting that a log record must contain in order to meet the condition. This is the action that
+     *        WAF applied to the web request. </p>
+     *        <p>
+     *        For rule groups, this is either the configured rule action setting, or if you've applied a rule action
+     *        override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on
+     *        excluded rules and also on rules that have a rule action override of Count.
      * @see ActionValue
      */
 
@@ -51,10 +68,21 @@ public class ActionCondition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The action setting that a log record must contain in order to meet the condition.
+     * The action setting that a log record must contain in order to meet the condition. This is the action that WAF
+     * applied to the web request.
+     * </p>
+     * <p>
+     * For rule groups, this is either the configured rule action setting, or if you've applied a rule action override
+     * to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and
+     * also on rules that have a rule action override of Count.
      * </p>
      * 
-     * @return The action setting that a log record must contain in order to meet the condition.
+     * @return The action setting that a log record must contain in order to meet the condition. This is the action that
+     *         WAF applied to the web request. </p>
+     *         <p>
+     *         For rule groups, this is either the configured rule action setting, or if you've applied a rule action
+     *         override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on
+     *         excluded rules and also on rules that have a rule action override of Count.
      * @see ActionValue
      */
 
@@ -64,11 +92,22 @@ public class ActionCondition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The action setting that a log record must contain in order to meet the condition.
+     * The action setting that a log record must contain in order to meet the condition. This is the action that WAF
+     * applied to the web request.
+     * </p>
+     * <p>
+     * For rule groups, this is either the configured rule action setting, or if you've applied a rule action override
+     * to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and
+     * also on rules that have a rule action override of Count.
      * </p>
      * 
      * @param action
-     *        The action setting that a log record must contain in order to meet the condition.
+     *        The action setting that a log record must contain in order to meet the condition. This is the action that
+     *        WAF applied to the web request. </p>
+     *        <p>
+     *        For rule groups, this is either the configured rule action setting, or if you've applied a rule action
+     *        override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on
+     *        excluded rules and also on rules that have a rule action override of Count.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionValue
      */
@@ -80,11 +119,22 @@ public class ActionCondition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The action setting that a log record must contain in order to meet the condition.
+     * The action setting that a log record must contain in order to meet the condition. This is the action that WAF
+     * applied to the web request.
+     * </p>
+     * <p>
+     * For rule groups, this is either the configured rule action setting, or if you've applied a rule action override
+     * to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and
+     * also on rules that have a rule action override of Count.
      * </p>
      * 
      * @param action
-     *        The action setting that a log record must contain in order to meet the condition.
+     *        The action setting that a log record must contain in order to meet the condition. This is the action that
+     *        WAF applied to the web request. </p>
+     *        <p>
+     *        For rule groups, this is either the configured rule action setting, or if you've applied a rule action
+     *        override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on
+     *        excluded rules and also on rules that have a rule action override of Count.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionValue
      */

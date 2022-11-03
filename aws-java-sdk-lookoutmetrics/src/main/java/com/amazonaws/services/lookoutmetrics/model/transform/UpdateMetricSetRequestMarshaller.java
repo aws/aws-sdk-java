@@ -44,6 +44,8 @@ public class UpdateMetricSetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricSetFrequency").build();
     private static final MarshallingInfo<StructuredPojo> METRICSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricSource").build();
+    private static final MarshallingInfo<List> DIMENSIONFILTERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DimensionFilterList").build();
 
     private static final UpdateMetricSetRequestMarshaller instance = new UpdateMetricSetRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class UpdateMetricSetRequestMarshaller {
             protocolMarshaller.marshall(updateMetricSetRequest.getDimensionList(), DIMENSIONLIST_BINDING);
             protocolMarshaller.marshall(updateMetricSetRequest.getMetricSetFrequency(), METRICSETFREQUENCY_BINDING);
             protocolMarshaller.marshall(updateMetricSetRequest.getMetricSource(), METRICSOURCE_BINDING);
+            protocolMarshaller.marshall(updateMetricSetRequest.getDimensionFilterList(), DIMENSIONFILTERLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

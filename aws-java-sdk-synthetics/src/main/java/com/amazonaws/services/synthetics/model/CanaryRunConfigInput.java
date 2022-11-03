@@ -74,6 +74,11 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      * Runtime environment variables</a>.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      */
     private java.util.Map<String, String> environmentVariables;
 
@@ -315,6 +320,11 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      * Runtime environment variables</a>.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      * 
      * @return Specifies the keys and values to use for any environment variables used in the canary script. Use the
      *         following format:</p>
@@ -327,6 +337,12 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      *         your environment variables. For more information about reserved keys, see <a href=
      *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      *         Runtime environment variables</a>.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         The environment variables keys and values are not encrypted. Do not store sensitive information in this
+     *         field.
+     *         </p>
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -348,6 +364,11 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      * Runtime environment variables</a>.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      * 
      * @param environmentVariables
      *        Specifies the keys and values to use for any environment variables used in the canary script. Use the
@@ -361,6 +382,12 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      *        environment variables. For more information about reserved keys, see <a href=
      *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      *        Runtime environment variables</a>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        The environment variables keys and values are not encrypted. Do not store sensitive information in this
+     *        field.
+     *        </p>
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -382,6 +409,11 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      * Runtime environment variables</a>.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      * 
      * @param environmentVariables
      *        Specifies the keys and values to use for any environment variables used in the canary script. Use the
@@ -395,6 +427,12 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      *        environment variables. For more information about reserved keys, see <a href=
      *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
      *        Runtime environment variables</a>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        The environment variables keys and values are not encrypted. Do not store sensitive information in this
+     *        field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

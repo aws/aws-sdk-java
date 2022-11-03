@@ -86,8 +86,8 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.
      * </p>
      */
     private String roleArn;
@@ -552,14 +552,14 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.
      * </p>
      * 
      * @param roleArn
      *        Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *        stores your user and group information.
+     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *        your user and group information.
      */
 
     public void setRoleArn(String roleArn) {
@@ -569,13 +569,13 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.
      * </p>
      * 
      * @return Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *         <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *         stores your user and group information.
+     *         <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *         your user and group information.
      */
 
     public String getRoleArn() {
@@ -585,14 +585,14 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.
      * </p>
      * 
      * @param roleArn
      *        Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *        stores your user and group information.
+     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *        your user and group information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

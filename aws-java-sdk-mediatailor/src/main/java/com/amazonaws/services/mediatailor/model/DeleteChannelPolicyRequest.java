@@ -27,18 +27,18 @@ public class DeleteChannelPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this channel policy.
      * </p>
      */
     private String channelName;
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this channel policy.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel associated with this channel policy.
      */
 
     public void setChannelName(String channelName) {
@@ -47,10 +47,10 @@ public class DeleteChannelPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this channel policy.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel associated with this channel policy.
      */
 
     public String getChannelName() {
@@ -59,11 +59,11 @@ public class DeleteChannelPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this channel policy.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel associated with this channel policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

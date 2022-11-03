@@ -525,6 +525,31 @@ public interface AmazonSNS {
 
     /**
      * <p>
+     * Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon
+     * SNS topic.
+     * </p>
+     * 
+     * @param getDataProtectionPolicyRequest
+     * @return Result of the GetDataProtectionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws NotFoundException
+     *         Indicates that the requested resource does not exist.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
+     * @sample AmazonSNS.GetDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetDataProtectionPolicyResult getDataProtectionPolicy(GetDataProtectionPolicyRequest getDataProtectionPolicyRequest);
+
+    /**
+     * <p>
      * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
      * (Firebase Cloud Messaging) and APNS. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
@@ -1087,6 +1112,8 @@ public interface AmazonSNS {
      * @throws InvalidSecurityException
      *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
      *         Signature Version 4.
+     * @throws ValidationException
+     *         Indicates that a parameter in the request is invalid.
      * @sample AmazonSNS.Publish
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish" target="_top">AWS API
      *      Documentation</a>
@@ -1187,11 +1214,37 @@ public interface AmazonSNS {
      * @throws InvalidSecurityException
      *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
      *         Signature Version 4.
+     * @throws ValidationException
+     *         Indicates that a parameter in the request is invalid.
      * @sample AmazonSNS.PublishBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch" target="_top">AWS API
      *      Documentation</a>
      */
     PublishBatchResult publishBatch(PublishBatchRequest publishBatchRequest);
+
+    /**
+     * <p>
+     * Adds or updates an inline policy document that is stored in the specified Amazon SNS topic.
+     * </p>
+     * 
+     * @param putDataProtectionPolicyRequest
+     * @return Result of the PutDataProtectionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws NotFoundException
+     *         Indicates that the requested resource does not exist.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
+     * @sample AmazonSNS.PutDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutDataProtectionPolicyResult putDataProtectionPolicy(PutDataProtectionPolicyRequest putDataProtectionPolicyRequest);
 
     /**
      * <p>

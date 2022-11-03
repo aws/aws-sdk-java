@@ -37,14 +37,14 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list after a specific date. The date that you specify should be in Unix time format.
+     * the list after a specific date.
      * </p>
      */
     private java.util.Date startDate;
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list before a specific date. The date that you specify should be in Unix time format.
+     * the list before a specific date.
      * </p>
      */
     private java.util.Date endDate;
@@ -165,12 +165,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list after a specific date. The date that you specify should be in Unix time format.
+     * the list after a specific date.
      * </p>
      * 
      * @param startDate
      *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
-     *        added to the list after a specific date. The date that you specify should be in Unix time format.
+     *        added to the list after a specific date.
      */
 
     public void setStartDate(java.util.Date startDate) {
@@ -180,11 +180,11 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list after a specific date. The date that you specify should be in Unix time format.
+     * the list after a specific date.
      * </p>
      * 
      * @return Used to filter the list of suppressed email destinations so that it only includes addresses that were
-     *         added to the list after a specific date. The date that you specify should be in Unix time format.
+     *         added to the list after a specific date.
      */
 
     public java.util.Date getStartDate() {
@@ -194,12 +194,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list after a specific date. The date that you specify should be in Unix time format.
+     * the list after a specific date.
      * </p>
      * 
      * @param startDate
      *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
-     *        added to the list after a specific date. The date that you specify should be in Unix time format.
+     *        added to the list after a specific date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,12 +211,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list before a specific date. The date that you specify should be in Unix time format.
+     * the list before a specific date.
      * </p>
      * 
      * @param endDate
      *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
-     *        added to the list before a specific date. The date that you specify should be in Unix time format.
+     *        added to the list before a specific date.
      */
 
     public void setEndDate(java.util.Date endDate) {
@@ -226,11 +226,11 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list before a specific date. The date that you specify should be in Unix time format.
+     * the list before a specific date.
      * </p>
      * 
      * @return Used to filter the list of suppressed email destinations so that it only includes addresses that were
-     *         added to the list before a specific date. The date that you specify should be in Unix time format.
+     *         added to the list before a specific date.
      */
 
     public java.util.Date getEndDate() {
@@ -240,12 +240,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
-     * the list before a specific date. The date that you specify should be in Unix time format.
+     * the list before a specific date.
      * </p>
      * 
      * @param endDate
      *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
-     *        added to the list before a specific date. The date that you specify should be in Unix time format.
+     *        added to the list before a specific date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

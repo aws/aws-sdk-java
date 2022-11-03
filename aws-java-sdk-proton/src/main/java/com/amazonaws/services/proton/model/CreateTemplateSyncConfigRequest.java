@@ -27,13 +27,13 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The branch of the registered repository for your template.
+     * The repository branch for your template.
      * </p>
      */
     private String branch;
     /**
      * <p>
-     * The name of your repository (for example, <code>myrepos/myrepo</code>).
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      */
     private String repositoryName;
@@ -65,11 +65,11 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The branch of the registered repository for your template.
+     * The repository branch for your template.
      * </p>
      * 
      * @param branch
-     *        The branch of the registered repository for your template.
+     *        The repository branch for your template.
      */
 
     public void setBranch(String branch) {
@@ -78,10 +78,10 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The branch of the registered repository for your template.
+     * The repository branch for your template.
      * </p>
      * 
-     * @return The branch of the registered repository for your template.
+     * @return The repository branch for your template.
      */
 
     public String getBranch() {
@@ -90,11 +90,11 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The branch of the registered repository for your template.
+     * The repository branch for your template.
      * </p>
      * 
      * @param branch
-     *        The branch of the registered repository for your template.
+     *        The repository branch for your template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your repository (for example, <code>myrepos/myrepo</code>).
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      * 
      * @param repositoryName
-     *        The name of your repository (for example, <code>myrepos/myrepo</code>).
+     *        The repository name (for example, <code>myrepos/myrepo</code>).
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -118,10 +118,10 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your repository (for example, <code>myrepos/myrepo</code>).
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      * 
-     * @return The name of your repository (for example, <code>myrepos/myrepo</code>).
+     * @return The repository name (for example, <code>myrepos/myrepo</code>).
      */
 
     public String getRepositoryName() {
@@ -130,11 +130,11 @@ public class CreateTemplateSyncConfigRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your repository (for example, <code>myrepos/myrepo</code>).
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      * 
      * @param repositoryName
-     *        The name of your repository (for example, <code>myrepos/myrepo</code>).
+     *        The repository name (for example, <code>myrepos/myrepo</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the Network Firewall firewall policy options to configure a centralized deployment model.
+ * Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party
+ * firewall policy settings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyOption" target="_top">AWS API

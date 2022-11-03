@@ -27,6 +27,14 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * </p>
+     */
+    private String jobId;
+    /**
+     * <p>
      * The level of detail that you want to generate. You can specify whether to generate policies with placeholders for
      * resource ARNs for actions that support resource level granularity in policies.
      * </p>
@@ -46,14 +54,58 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean includeServiceLevelTemplate;
+
     /**
      * <p>
      * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
      * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
      * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
      * </p>
+     * 
+     * @param jobId
+     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
+     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
      */
-    private String jobId;
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * </p>
+     * 
+     * @return The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     *         <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
+     *         used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * </p>
+     * 
+     * @param jobId
+     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
+     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
+     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetGeneratedPolicyRequest withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
 
     /**
      * <p>
@@ -228,58 +280,6 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <p>
-     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * </p>
-     * 
-     * @param jobId
-     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
-     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     */
-
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
-    }
-
-    /**
-     * <p>
-     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * </p>
-     * 
-     * @return The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     *         <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
-     *         used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     */
-
-    public String getJobId() {
-        return this.jobId;
-    }
-
-    /**
-     * <p>
-     * The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     * <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * </p>
-     * 
-     * @param jobId
-     *        The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The
-     *        <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or
-     *        used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetGeneratedPolicyRequest withJobId(String jobId) {
-        setJobId(jobId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -291,12 +291,12 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getIncludeResourcePlaceholders() != null)
             sb.append("IncludeResourcePlaceholders: ").append(getIncludeResourcePlaceholders()).append(",");
         if (getIncludeServiceLevelTemplate() != null)
-            sb.append("IncludeServiceLevelTemplate: ").append(getIncludeServiceLevelTemplate()).append(",");
-        if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId());
+            sb.append("IncludeServiceLevelTemplate: ").append(getIncludeServiceLevelTemplate());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +311,10 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof GetGeneratedPolicyRequest == false)
             return false;
         GetGeneratedPolicyRequest other = (GetGeneratedPolicyRequest) obj;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
         if (other.getIncludeResourcePlaceholders() == null ^ this.getIncludeResourcePlaceholders() == null)
             return false;
         if (other.getIncludeResourcePlaceholders() != null && other.getIncludeResourcePlaceholders().equals(this.getIncludeResourcePlaceholders()) == false)
@@ -318,10 +322,6 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getIncludeServiceLevelTemplate() == null ^ this.getIncludeServiceLevelTemplate() == null)
             return false;
         if (other.getIncludeServiceLevelTemplate() != null && other.getIncludeServiceLevelTemplate().equals(this.getIncludeServiceLevelTemplate()) == false)
-            return false;
-        if (other.getJobId() == null ^ this.getJobId() == null)
-            return false;
-        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         return true;
     }
@@ -331,9 +331,9 @@ public class GetGeneratedPolicyRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getIncludeResourcePlaceholders() == null) ? 0 : getIncludeResourcePlaceholders().hashCode());
         hashCode = prime * hashCode + ((getIncludeServiceLevelTemplate() == null) ? 0 : getIncludeServiceLevelTemplate().hashCode());
-        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         return hashCode;
     }
 

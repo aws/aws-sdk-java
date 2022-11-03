@@ -30,31 +30,19 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer maxResults;
     /**
      * <p>
-     * A filter for the class of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by item class.
      * </p>
      */
     private java.util.List<String> itemClassFilter;
     /**
      * <p>
-     * A filter for the storage options of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by storage option.
      * </p>
      */
     private java.util.List<String> supportedStorageFilter;
     /**
      * <p>
-     * A filter for EC2 family options for items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by EC2 family (for example, M5).
      * </p>
      */
     private java.util.List<String> eC2FamilyFilter;
@@ -113,17 +101,10 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the class of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by item class.
      * </p>
      * 
-     * @return A filter for the class of items in the catalog. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by item class.
      * @see CatalogItemClass
      */
 
@@ -133,18 +114,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the class of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by item class.
      * </p>
      * 
      * @param itemClassFilter
-     *        A filter for the class of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by item class.
      * @see CatalogItemClass
      */
 
@@ -159,11 +133,7 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the class of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by item class.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,10 +142,7 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param itemClassFilter
-     *        A filter for the class of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by item class.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CatalogItemClass
      */
@@ -192,18 +159,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the class of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by item class.
      * </p>
      * 
      * @param itemClassFilter
-     *        A filter for the class of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by item class.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CatalogItemClass
      */
@@ -215,18 +175,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the class of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by item class.
      * </p>
      * 
      * @param itemClassFilter
-     *        A filter for the class of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by item class.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CatalogItemClass
      */
@@ -246,17 +199,10 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the storage options of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by storage option.
      * </p>
      * 
-     * @return A filter for the storage options of items in the catalog. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by storage option.
      * @see SupportedStorageEnum
      */
 
@@ -266,18 +212,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the storage options of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by storage option.
      * </p>
      * 
      * @param supportedStorageFilter
-     *        A filter for the storage options of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by storage option.
      * @see SupportedStorageEnum
      */
 
@@ -292,11 +231,7 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the storage options of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by storage option.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,10 +240,7 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param supportedStorageFilter
-     *        A filter for the storage options of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by storage option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedStorageEnum
      */
@@ -325,18 +257,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the storage options of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by storage option.
      * </p>
      * 
      * @param supportedStorageFilter
-     *        A filter for the storage options of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by storage option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedStorageEnum
      */
@@ -348,18 +273,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for the storage options of items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by storage option.
      * </p>
      * 
      * @param supportedStorageFilter
-     *        A filter for the storage options of items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by storage option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedStorageEnum
      */
@@ -379,17 +297,10 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for EC2 family options for items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by EC2 family (for example, M5).
      * </p>
      * 
-     * @return A filter for EC2 family options for items in the catalog. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by EC2 family (for example, M5).
      */
 
     public java.util.List<String> getEC2FamilyFilter() {
@@ -398,18 +309,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for EC2 family options for items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by EC2 family (for example, M5).
      * </p>
      * 
      * @param eC2FamilyFilter
-     *        A filter for EC2 family options for items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by EC2 family (for example, M5).
      */
 
     public void setEC2FamilyFilter(java.util.Collection<String> eC2FamilyFilter) {
@@ -423,11 +327,7 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for EC2 family options for items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by EC2 family (for example, M5).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -436,10 +336,7 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param eC2FamilyFilter
-     *        A filter for EC2 family options for items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by EC2 family (for example, M5).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,18 +352,11 @@ public class ListCatalogItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter for EC2 family options for items in the catalog.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by EC2 family (for example, M5).
      * </p>
      * 
      * @param eC2FamilyFilter
-     *        A filter for EC2 family options for items in the catalog. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by EC2 family (for example, M5).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

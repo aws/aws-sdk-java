@@ -49,9 +49,26 @@ public class AwsS3BucketNotificationConfigurationDetail implements Serializable,
     private String destination;
     /**
      * <p>
-     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or
-     * Amazon SNS topics.
+     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or
+     * Amazon SNS topics, with corresponding valid values as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LambdaConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TopicConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
 
@@ -207,13 +224,46 @@ public class AwsS3BucketNotificationConfigurationDetail implements Serializable,
 
     /**
      * <p>
-     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or
-     * Amazon SNS topics.
+     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or
+     * Amazon SNS topics, with corresponding valid values as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LambdaConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TopicConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
      *        Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS
-     *        queues or Amazon SNS topics.
+     *        queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LambdaConfiguration</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QueueConfiguration</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TopicConfiguration</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -222,12 +272,45 @@ public class AwsS3BucketNotificationConfigurationDetail implements Serializable,
 
     /**
      * <p>
-     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or
-     * Amazon SNS topics.
+     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or
+     * Amazon SNS topics, with corresponding valid values as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LambdaConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TopicConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS
-     *         queues or Amazon SNS topics.
+     *         queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>LambdaConfiguration</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>QueueConfiguration</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TopicConfiguration</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -236,13 +319,46 @@ public class AwsS3BucketNotificationConfigurationDetail implements Serializable,
 
     /**
      * <p>
-     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or
-     * Amazon SNS topics.
+     * Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or
+     * Amazon SNS topics, with corresponding valid values as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LambdaConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TopicConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
      *        Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS
-     *        queues or Amazon SNS topics.
+     *        queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LambdaConfiguration</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QueueConfiguration</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TopicConfiguration</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

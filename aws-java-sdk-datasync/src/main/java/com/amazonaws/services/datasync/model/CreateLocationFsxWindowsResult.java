@@ -25,18 +25,18 @@ public class CreateLocationFsxWindowsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     * The ARN of the FSx for Windows File Server file system location you created.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     * The ARN of the FSx for Windows File Server file system location you created.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     *        The ARN of the FSx for Windows File Server file system location you created.
      */
 
     public void setLocationArn(String locationArn) {
@@ -45,10 +45,10 @@ public class CreateLocationFsxWindowsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     * The ARN of the FSx for Windows File Server file system location you created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     * @return The ARN of the FSx for Windows File Server file system location you created.
      */
 
     public String getLocationArn() {
@@ -57,11 +57,11 @@ public class CreateLocationFsxWindowsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     * The ARN of the FSx for Windows File Server file system location you created.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.
+     *        The ARN of the FSx for Windows File Server file system location you created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

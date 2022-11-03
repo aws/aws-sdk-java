@@ -27,9 +27,10 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a>
-     * in the <i>Proton Administrator Guide</i>.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a>
+     * in the <i>Proton User Guide</i>.
      * </p>
      */
     private String connectionArn;
@@ -56,24 +57,25 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a>
-     * in the <i>Proton Administrator Guide</i>.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a>
+     * in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param connectionArn
-     *        The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see
-     *        <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for
-     *        Proton</a> in the <i>Proton Administrator Guide</i>.
+     *        The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository
+     *        provider account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for
+     *        Proton</a> in the <i>Proton User Guide</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -82,14 +84,16 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a>
-     * in the <i>Proton Administrator Guide</i>.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a>
+     * in the <i>Proton User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see
-     *         <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for
-     *         Proton</a> in the <i>Proton Administrator Guide</i>.
+     * @return The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository
+     *         provider account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for
+     *         Proton</a> in the <i>Proton User Guide</i>.
      */
 
     public String getConnectionArn() {
@@ -98,15 +102,17 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a>
-     * in the <i>Proton Administrator Guide</i>.
+     * The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a>
+     * in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param connectionArn
-     *        The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see
-     *        <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for
-     *        Proton</a> in the <i>Proton Administrator Guide</i>.
+     *        The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository
+     *        provider account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for
+     *        Proton</a> in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,17 +265,16 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @return An optional list of metadata items that you can associate with the Proton repository. A tag is a
      *         key-value pair.</p>
      *         <p>
-     *         For more information, see <i>Proton resources and tagging</i> in the <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *         or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and
+     *         tagging</a> in the <i>Proton User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -281,18 +286,17 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value
      *        pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -309,9 +313,8 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -323,9 +326,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      *        An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value
      *        pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,18 +347,17 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value
      *        pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

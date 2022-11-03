@@ -33,7 +33,7 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
     private String instanceId;
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      */
     private java.util.List<String> contactFlowTypes;
@@ -46,7 +46,7 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      */
     private Integer maxResults;
@@ -93,10 +93,10 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
-     * @return The type of contact flow.
+     * @return The type of flow.
      * @see ContactFlowType
      */
 
@@ -106,11 +106,11 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowTypes
-     *        The type of contact flow.
+     *        The type of flow.
      * @see ContactFlowType
      */
 
@@ -125,7 +125,7 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +134,7 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param contactFlowTypes
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -151,11 +151,11 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowTypes
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -167,11 +167,11 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowTypes
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -237,11 +237,11 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return per page.
+     *        The maximum number of results to return per page. The default MaxResult size is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -250,10 +250,10 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      * 
-     * @return The maximum number of results to return per page.
+     * @return The maximum number of results to return per page. The default MaxResult size is 100.
      */
 
     public Integer getMaxResults() {
@@ -262,11 +262,11 @@ public class ListContactFlowsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. The default MaxResult size is 100.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return per page.
+     *        The maximum number of results to return per page. The default MaxResult size is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

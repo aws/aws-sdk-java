@@ -322,7 +322,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source and
-     * triggers the function.
+     * invokes the function.
      * </p>
      * <p>
      * For details about how to configure different event sources, see the following topics.
@@ -363,7 +363,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * </ul>
      * <p>
-     * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
+     * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
      * </p>
      * <ul>
      * <li>
@@ -444,7 +444,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source and
-     * triggers the function.
+     * invokes the function.
      * </p>
      * <p>
      * For details about how to configure different event sources, see the following topics.
@@ -485,7 +485,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * </ul>
      * <p>
-     * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
+     * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
      * </p>
      * <ul>
      * <li>
@@ -1672,7 +1672,10 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <p>
      * This operation requires permission for the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action. For
+     * details on how to set up permissions for cross-account invocations, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke"
+     * >Granting function access to other accounts</a>.
      * </p>
      * 
      * @param invokeRequest
@@ -1724,7 +1727,10 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <p>
      * This operation requires permission for the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action. For
+     * details on how to set up permissions for cross-account invocations, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke"
+     * >Granting function access to other accounts</a>.
      * </p>
      * 
      * @param invokeRequest
@@ -1853,7 +1859,7 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
+     * Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event source mappings for a
      * single event source.
      * </p>
      * 
@@ -1867,7 +1873,7 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
+     * Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event source mappings for a
      * single event source.
      * </p>
      * 
@@ -2791,7 +2797,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * </ul>
      * <p>
-     * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
+     * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
      * </p>
      * <ul>
      * <li>
@@ -2913,7 +2919,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * </ul>
      * <p>
-     * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
+     * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
      * </p>
      * <ul>
      * <li>

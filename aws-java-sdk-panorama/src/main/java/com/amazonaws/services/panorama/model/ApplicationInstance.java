@@ -78,6 +78,12 @@ public class ApplicationInstance implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
+     * The application's state.
+     * </p>
+     */
+    private java.util.List<ReportedRuntimeContextState> runtimeContextStates;
+    /**
+     * <p>
      * The application instance's status.
      * </p>
      */
@@ -436,6 +442,76 @@ public class ApplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The application's state.
+     * </p>
+     * 
+     * @return The application's state.
+     */
+
+    public java.util.List<ReportedRuntimeContextState> getRuntimeContextStates() {
+        return runtimeContextStates;
+    }
+
+    /**
+     * <p>
+     * The application's state.
+     * </p>
+     * 
+     * @param runtimeContextStates
+     *        The application's state.
+     */
+
+    public void setRuntimeContextStates(java.util.Collection<ReportedRuntimeContextState> runtimeContextStates) {
+        if (runtimeContextStates == null) {
+            this.runtimeContextStates = null;
+            return;
+        }
+
+        this.runtimeContextStates = new java.util.ArrayList<ReportedRuntimeContextState>(runtimeContextStates);
+    }
+
+    /**
+     * <p>
+     * The application's state.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuntimeContextStates(java.util.Collection)} or {@link #withRuntimeContextStates(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param runtimeContextStates
+     *        The application's state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInstance withRuntimeContextStates(ReportedRuntimeContextState... runtimeContextStates) {
+        if (this.runtimeContextStates == null) {
+            setRuntimeContextStates(new java.util.ArrayList<ReportedRuntimeContextState>(runtimeContextStates.length));
+        }
+        for (ReportedRuntimeContextState ele : runtimeContextStates) {
+            this.runtimeContextStates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application's state.
+     * </p>
+     * 
+     * @param runtimeContextStates
+     *        The application's state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInstance withRuntimeContextStates(java.util.Collection<ReportedRuntimeContextState> runtimeContextStates) {
+        setRuntimeContextStates(runtimeContextStates);
+        return this;
+    }
+
+    /**
+     * <p>
      * The application instance's status.
      * </p>
      * 
@@ -629,6 +705,8 @@ public class ApplicationInstance implements Serializable, Cloneable, StructuredP
             sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRuntimeContextStates() != null)
+            sb.append("RuntimeContextStates: ").append(getRuntimeContextStates()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDescription() != null)
@@ -682,6 +760,10 @@ public class ApplicationInstance implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRuntimeContextStates() == null ^ this.getRuntimeContextStates() == null)
+            return false;
+        if (other.getRuntimeContextStates() != null && other.getRuntimeContextStates().equals(this.getRuntimeContextStates()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -710,6 +792,7 @@ public class ApplicationInstance implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeContextStates() == null) ? 0 : getRuntimeContextStates().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusDescription() == null) ? 0 : getStatusDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

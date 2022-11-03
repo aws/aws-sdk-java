@@ -33,13 +33,13 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
     private String clientToken;
     /**
      * <p>
-     * The Amazon WorkMail organization under which you're creating the domain.
+     * The WorkMail organization under which you're creating the domain.
      * </p>
      */
     private String organizationId;
     /**
      * <p>
-     * The name of the mail domain to create in Amazon WorkMail and SES.
+     * The name of the mail domain to create in WorkMail and SES.
      * </p>
      */
     private String domainName;
@@ -86,11 +86,11 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which you're creating the domain.
+     * The WorkMail organization under which you're creating the domain.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which you're creating the domain.
+     *        The WorkMail organization under which you're creating the domain.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -99,10 +99,10 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which you're creating the domain.
+     * The WorkMail organization under which you're creating the domain.
      * </p>
      * 
-     * @return The Amazon WorkMail organization under which you're creating the domain.
+     * @return The WorkMail organization under which you're creating the domain.
      */
 
     public String getOrganizationId() {
@@ -111,11 +111,11 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which you're creating the domain.
+     * The WorkMail organization under which you're creating the domain.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which you're creating the domain.
+     *        The WorkMail organization under which you're creating the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the mail domain to create in Amazon WorkMail and SES.
+     * The name of the mail domain to create in WorkMail and SES.
      * </p>
      * 
      * @param domainName
-     *        The name of the mail domain to create in Amazon WorkMail and SES.
+     *        The name of the mail domain to create in WorkMail and SES.
      */
 
     public void setDomainName(String domainName) {
@@ -139,10 +139,10 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the mail domain to create in Amazon WorkMail and SES.
+     * The name of the mail domain to create in WorkMail and SES.
      * </p>
      * 
-     * @return The name of the mail domain to create in Amazon WorkMail and SES.
+     * @return The name of the mail domain to create in WorkMail and SES.
      */
 
     public String getDomainName() {
@@ -151,11 +151,11 @@ public class RegisterMailDomainRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the mail domain to create in Amazon WorkMail and SES.
+     * The name of the mail domain to create in WorkMail and SES.
      * </p>
      * 
      * @param domainName
-     *        The name of the mail domain to create in Amazon WorkMail and SES.
+     *        The name of the mail domain to create in WorkMail and SES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

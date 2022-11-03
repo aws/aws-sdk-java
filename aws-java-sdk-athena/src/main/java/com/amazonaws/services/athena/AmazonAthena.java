@@ -68,6 +68,7 @@ public interface AmazonAthena {
      * </p>
      * 
      * @param batchGetNamedQueryRequest
+     *        Contains an array of named query IDs.
      * @return Result of the BatchGetNamedQuery operation returned by the service.
      * @throws InternalServerException
      *         Indicates a platform issue, which may be due to a transient condition or outage.
@@ -82,6 +83,27 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of
+     * prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared
+     * statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in
+     * <code>UnprocessedPreparedStatementNames</code>.
+     * </p>
+     * 
+     * @param batchGetPreparedStatementRequest
+     * @return Result of the BatchGetPreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.BatchGetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetPreparedStatementResult batchGetPreparedStatement(BatchGetPreparedStatementRequest batchGetPreparedStatementRequest);
+
+    /**
+     * <p>
      * Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an
      * array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To
      * get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from
@@ -89,6 +111,7 @@ public interface AmazonAthena {
      * </p>
      * 
      * @param batchGetQueryExecutionRequest
+     *        Contains an array of query execution IDs.
      * @return Result of the BatchGetQueryExecution operation returned by the service.
      * @throws InternalServerException
      *         Indicates a platform issue, which may be due to a transient condition or outage.
@@ -393,6 +416,26 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Returns query execution runtime statistics related to a single execution of a query if you have access to the
+     * workgroup in which the query ran. The query execution runtime statistics is returned only when
+     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state.
+     * </p>
+     * 
+     * @param getQueryRuntimeStatisticsRequest
+     * @return Result of the GetQueryRuntimeStatistics operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.GetQueryRuntimeStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetQueryRuntimeStatisticsResult getQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest getQueryRuntimeStatisticsRequest);
+
+    /**
+     * <p>
      * Returns table metadata for the specified catalog, database, and table.
      * </p>
      * 
@@ -518,7 +561,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Lists the prepared statements in the specfied workgroup.
+     * Lists the prepared statements in the specified workgroup.
      * </p>
      * 
      * @param listPreparedStatementsRequest

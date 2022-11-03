@@ -358,6 +358,41 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
 
     /**
      * <p>
+     * Create an App Runner VPC Ingress Connection resource. App Runner requires this resource when you want to
+     * associate your App Runner service with an Amazon VPC endpoint.
+     * </p>
+     * 
+     * @param createVpcIngressConnectionRequest
+     * @return A Java Future containing the result of the CreateVpcIngressConnection operation returned by the service.
+     * @sample AWSAppRunnerAsync.CreateVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcIngressConnectionResult> createVpcIngressConnectionAsync(
+            CreateVpcIngressConnectionRequest createVpcIngressConnectionRequest);
+
+    /**
+     * <p>
+     * Create an App Runner VPC Ingress Connection resource. App Runner requires this resource when you want to
+     * associate your App Runner service with an Amazon VPC endpoint.
+     * </p>
+     * 
+     * @param createVpcIngressConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVpcIngressConnection operation returned by the service.
+     * @sample AWSAppRunnerAsyncHandler.CreateVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcIngressConnectionResult> createVpcIngressConnectionAsync(
+            CreateVpcIngressConnectionRequest createVpcIngressConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcIngressConnectionRequest, CreateVpcIngressConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest
      * active revision. You can't delete a configuration that's used by one or more App Runner services.
      * </p>
@@ -471,6 +506,11 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      * This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and
      * the <a>ListOperations</a> call to track the operation's progress.
      * </p>
+     * <note>
+     * <p>
+     * Make sure that you don't have any active VPCIngressConnections associated with the service you want to delete.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @return A Java Future containing the result of the DeleteService operation returned by the service.
@@ -488,6 +528,11 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      * This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and
      * the <a>ListOperations</a> call to track the operation's progress.
      * </p>
+     * <note>
+     * <p>
+     * Make sure that you don't have any active VPCIngressConnections associated with the service you want to delete.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @param asyncHandler
@@ -534,6 +579,85 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      */
     java.util.concurrent.Future<DeleteVpcConnectorResult> deleteVpcConnectorAsync(DeleteVpcConnectorRequest deleteVpcConnectorRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVpcConnectorRequest, DeleteVpcConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an App Runner VPC Ingress Connection resource that's associated with an App Runner service. The VPC
+     * Ingress Connection must be in one of the following states to be deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_CREATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_UPDATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_DELETION</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteVpcIngressConnectionRequest
+     * @return A Java Future containing the result of the DeleteVpcIngressConnection operation returned by the service.
+     * @sample AWSAppRunnerAsync.DeleteVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVpcIngressConnectionResult> deleteVpcIngressConnectionAsync(
+            DeleteVpcIngressConnectionRequest deleteVpcIngressConnectionRequest);
+
+    /**
+     * <p>
+     * Delete an App Runner VPC Ingress Connection resource that's associated with an App Runner service. The VPC
+     * Ingress Connection must be in one of the following states to be deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_CREATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_UPDATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_DELETION</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteVpcIngressConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpcIngressConnection operation returned by the service.
+     * @sample AWSAppRunnerAsyncHandler.DeleteVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVpcIngressConnectionResult> deleteVpcIngressConnectionAsync(
+            DeleteVpcIngressConnectionRequest deleteVpcIngressConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcIngressConnectionRequest, DeleteVpcIngressConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -697,6 +821,41 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      */
     java.util.concurrent.Future<DescribeVpcConnectorResult> describeVpcConnectorAsync(DescribeVpcConnectorRequest describeVpcConnectorRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeVpcConnectorRequest, DescribeVpcConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Return a full description of an App Runner VPC Ingress Connection resource.
+     * </p>
+     * 
+     * @param describeVpcIngressConnectionRequest
+     * @return A Java Future containing the result of the DescribeVpcIngressConnection operation returned by the
+     *         service.
+     * @sample AWSAppRunnerAsync.DescribeVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcIngressConnectionResult> describeVpcIngressConnectionAsync(
+            DescribeVpcIngressConnectionRequest describeVpcIngressConnectionRequest);
+
+    /**
+     * <p>
+     * Return a full description of an App Runner VPC Ingress Connection resource.
+     * </p>
+     * 
+     * @param describeVpcIngressConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVpcIngressConnection operation returned by the
+     *         service.
+     * @sample AWSAppRunnerAsyncHandler.DescribeVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcIngressConnectionResult> describeVpcIngressConnectionAsync(
+            DescribeVpcIngressConnectionRequest describeVpcIngressConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcIngressConnectionRequest, DescribeVpcIngressConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -1002,6 +1161,39 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
 
     /**
      * <p>
+     * Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVpcIngressConnectionsRequest
+     * @return A Java Future containing the result of the ListVpcIngressConnections operation returned by the service.
+     * @sample AWSAppRunnerAsync.ListVpcIngressConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVpcIngressConnectionsResult> listVpcIngressConnectionsAsync(
+            ListVpcIngressConnectionsRequest listVpcIngressConnectionsRequest);
+
+    /**
+     * <p>
+     * Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVpcIngressConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVpcIngressConnections operation returned by the service.
+     * @sample AWSAppRunnerAsyncHandler.ListVpcIngressConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVpcIngressConnectionsResult> listVpcIngressConnectionsAsync(
+            ListVpcIngressConnectionsRequest listVpcIngressConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVpcIngressConnectionsRequest, ListVpcIngressConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state
      * (for example, ephemeral storage is removed).
      * </p>
@@ -1243,5 +1435,74 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      */
     java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the
+     * following states to be updated:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AVAILABLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED_CREATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED_UPDATE
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateVpcIngressConnectionRequest
+     * @return A Java Future containing the result of the UpdateVpcIngressConnection operation returned by the service.
+     * @sample AWSAppRunnerAsync.UpdateVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVpcIngressConnectionResult> updateVpcIngressConnectionAsync(
+            UpdateVpcIngressConnectionRequest updateVpcIngressConnectionRequest);
+
+    /**
+     * <p>
+     * Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the
+     * following states to be updated:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AVAILABLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED_CREATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED_UPDATE
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateVpcIngressConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVpcIngressConnection operation returned by the service.
+     * @sample AWSAppRunnerAsyncHandler.UpdateVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVpcIngressConnectionResult> updateVpcIngressConnectionAsync(
+            UpdateVpcIngressConnectionRequest updateVpcIngressConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVpcIngressConnectionRequest, UpdateVpcIngressConnectionResult> asyncHandler);
 
 }

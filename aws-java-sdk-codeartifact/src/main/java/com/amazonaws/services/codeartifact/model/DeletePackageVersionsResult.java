@@ -25,7 +25,8 @@ public class DeletePackageVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of the package versions that were successfully deleted.
+     * A list of the package versions that were successfully deleted. The status of every successful version will be
+     * <code>Deleted</code>.
      * </p>
      */
     private java.util.Map<String, SuccessfulPackageVersionInfo> successfulVersions;
@@ -71,10 +72,12 @@ public class DeletePackageVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of the package versions that were successfully deleted.
+     * A list of the package versions that were successfully deleted. The status of every successful version will be
+     * <code>Deleted</code>.
      * </p>
      * 
-     * @return A list of the package versions that were successfully deleted.
+     * @return A list of the package versions that were successfully deleted. The status of every successful version
+     *         will be <code>Deleted</code>.
      */
 
     public java.util.Map<String, SuccessfulPackageVersionInfo> getSuccessfulVersions() {
@@ -83,11 +86,13 @@ public class DeletePackageVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of the package versions that were successfully deleted.
+     * A list of the package versions that were successfully deleted. The status of every successful version will be
+     * <code>Deleted</code>.
      * </p>
      * 
      * @param successfulVersions
-     *        A list of the package versions that were successfully deleted.
+     *        A list of the package versions that were successfully deleted. The status of every successful version will
+     *        be <code>Deleted</code>.
      */
 
     public void setSuccessfulVersions(java.util.Map<String, SuccessfulPackageVersionInfo> successfulVersions) {
@@ -96,11 +101,13 @@ public class DeletePackageVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of the package versions that were successfully deleted.
+     * A list of the package versions that were successfully deleted. The status of every successful version will be
+     * <code>Deleted</code>.
      * </p>
      * 
      * @param successfulVersions
-     *        A list of the package versions that were successfully deleted.
+     *        A list of the package versions that were successfully deleted. The status of every successful version will
+     *        be <code>Deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,12 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private AsyncInferenceConfig asyncInferenceConfig;
+    /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     */
+    private ExplainerConfig explainerConfig;
 
     /**
      * <p>
@@ -384,6 +390,46 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     * 
+     * @param explainerConfig
+     *        The configuration parameters for an explainer.
+     */
+
+    public void setExplainerConfig(ExplainerConfig explainerConfig) {
+        this.explainerConfig = explainerConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     * 
+     * @return The configuration parameters for an explainer.
+     */
+
+    public ExplainerConfig getExplainerConfig() {
+        return this.explainerConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     * 
+     * @param explainerConfig
+     *        The configuration parameters for an explainer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withExplainerConfig(ExplainerConfig explainerConfig) {
+        setExplainerConfig(explainerConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -408,7 +454,9 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getAsyncInferenceConfig() != null)
-            sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig());
+            sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
+        if (getExplainerConfig() != null)
+            sb.append("ExplainerConfig: ").append(getExplainerConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +499,10 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAsyncInferenceConfig() != null && other.getAsyncInferenceConfig().equals(this.getAsyncInferenceConfig()) == false)
             return false;
+        if (other.getExplainerConfig() == null ^ this.getExplainerConfig() == null)
+            return false;
+        if (other.getExplainerConfig() != null && other.getExplainerConfig().equals(this.getExplainerConfig()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +518,7 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
+        hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
         return hashCode;
     }
 

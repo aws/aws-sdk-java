@@ -35,16 +35,16 @@ public class ListAccessPreviewsRequest extends com.amazonaws.AmazonWebServiceReq
     private String analyzerArn;
     /**
      * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * A token used for pagination of results returned.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -100,46 +100,6 @@ public class ListAccessPreviewsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return in the response.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     * 
-     * @return The maximum number of results to return in the response.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return in the response.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListAccessPreviewsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
      * A token used for pagination of results returned.
      * </p>
      * 
@@ -179,6 +139,46 @@ public class ListAccessPreviewsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in the response.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     * 
+     * @return The maximum number of results to return in the response.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAccessPreviewsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -192,10 +192,10 @@ public class ListAccessPreviewsRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getAnalyzerArn() != null)
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -214,13 +214,13 @@ public class ListAccessPreviewsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAnalyzerArn() != null && other.getAnalyzerArn().equals(this.getAnalyzerArn()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -231,8 +231,8 @@ public class ListAccessPreviewsRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

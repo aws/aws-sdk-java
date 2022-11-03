@@ -33,8 +33,7 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer limit;
     /**
      * <p>
-     * The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     * <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      */
     private Integer offset;
@@ -87,13 +86,11 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     * <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      * 
      * @param offset
-     *        The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     *        <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     *        The number of requests subtracted from the given limit in the initial time period.
      */
 
     public void setOffset(Integer offset) {
@@ -102,12 +99,10 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     * <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      * 
-     * @return The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     *         <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     * @return The number of requests subtracted from the given limit in the initial time period.
      */
 
     public Integer getOffset() {
@@ -116,13 +111,11 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     * <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      * 
      * @param offset
-     *        The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of
-     *        <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.
+     *        The number of requests subtracted from the given limit in the initial time period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

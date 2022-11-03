@@ -201,7 +201,7 @@ public class IdentityProviderSummary implements Serializable, Cloneable, Structu
         if (getIdentityProviderArn() != null)
             sb.append("IdentityProviderArn: ").append(getIdentityProviderArn()).append(",");
         if (getIdentityProviderName() != null)
-            sb.append("IdentityProviderName: ").append(getIdentityProviderName()).append(",");
+            sb.append("IdentityProviderName: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdentityProviderType() != null)
             sb.append("IdentityProviderType: ").append(getIdentityProviderType());
         sb.append("}");

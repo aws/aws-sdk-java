@@ -43,6 +43,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private Long activeLaunchCount;
     /**
      * <p>
+     * This structure defines the configuration of how your application integrates with AppConfig to run client-side
+     * evaluation.
+     * </p>
+     */
+    private ProjectAppConfigResource appConfigResource;
+    /**
+     * <p>
      * The name or ARN of the project.
      * </p>
      */
@@ -188,6 +195,52 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     public Project withActiveLaunchCount(Long activeLaunchCount) {
         setActiveLaunchCount(activeLaunchCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This structure defines the configuration of how your application integrates with AppConfig to run client-side
+     * evaluation.
+     * </p>
+     * 
+     * @param appConfigResource
+     *        This structure defines the configuration of how your application integrates with AppConfig to run
+     *        client-side evaluation.
+     */
+
+    public void setAppConfigResource(ProjectAppConfigResource appConfigResource) {
+        this.appConfigResource = appConfigResource;
+    }
+
+    /**
+     * <p>
+     * This structure defines the configuration of how your application integrates with AppConfig to run client-side
+     * evaluation.
+     * </p>
+     * 
+     * @return This structure defines the configuration of how your application integrates with AppConfig to run
+     *         client-side evaluation.
+     */
+
+    public ProjectAppConfigResource getAppConfigResource() {
+        return this.appConfigResource;
+    }
+
+    /**
+     * <p>
+     * This structure defines the configuration of how your application integrates with AppConfig to run client-side
+     * evaluation.
+     * </p>
+     * 
+     * @param appConfigResource
+     *        This structure defines the configuration of how your application integrates with AppConfig to run
+     *        client-side evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withAppConfigResource(ProjectAppConfigResource appConfigResource) {
+        setAppConfigResource(appConfigResource);
         return this;
     }
 
@@ -712,6 +765,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             sb.append("ActiveExperimentCount: ").append(getActiveExperimentCount()).append(",");
         if (getActiveLaunchCount() != null)
             sb.append("ActiveLaunchCount: ").append(getActiveLaunchCount()).append(",");
+        if (getAppConfigResource() != null)
+            sb.append("AppConfigResource: ").append(getAppConfigResource()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreatedTime() != null)
@@ -755,6 +810,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         if (other.getActiveLaunchCount() == null ^ this.getActiveLaunchCount() == null)
             return false;
         if (other.getActiveLaunchCount() != null && other.getActiveLaunchCount().equals(this.getActiveLaunchCount()) == false)
+            return false;
+        if (other.getAppConfigResource() == null ^ this.getAppConfigResource() == null)
+            return false;
+        if (other.getAppConfigResource() != null && other.getAppConfigResource().equals(this.getAppConfigResource()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
@@ -810,6 +869,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getActiveExperimentCount() == null) ? 0 : getActiveExperimentCount().hashCode());
         hashCode = prime * hashCode + ((getActiveLaunchCount() == null) ? 0 : getActiveLaunchCount().hashCode());
+        hashCode = prime * hashCode + ((getAppConfigResource() == null) ? 0 : getAppConfigResource().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getDataDelivery() == null) ? 0 : getDataDelivery().hashCode());

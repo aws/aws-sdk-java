@@ -33,6 +33,8 @@ public class IdentityInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityName").build();
     private static final MarshallingInfo<Boolean> SENDINGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SendingEnabled").build();
+    private static final MarshallingInfo<String> VERIFICATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerificationStatus").build();
 
     private static final IdentityInfoMarshaller instance = new IdentityInfoMarshaller();
 
@@ -53,6 +55,7 @@ public class IdentityInfoMarshaller {
             protocolMarshaller.marshall(identityInfo.getIdentityType(), IDENTITYTYPE_BINDING);
             protocolMarshaller.marshall(identityInfo.getIdentityName(), IDENTITYNAME_BINDING);
             protocolMarshaller.marshall(identityInfo.getSendingEnabled(), SENDINGENABLED_BINDING);
+            protocolMarshaller.marshall(identityInfo.getVerificationStatus(), VERIFICATIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

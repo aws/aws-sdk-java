@@ -25,7 +25,7 @@ public class GetSavingsPlansUtilizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     * The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * </p>
      */
     private java.util.List<SavingsPlansUtilizationByTime> savingsPlansUtilizationsByTime;
@@ -38,10 +38,10 @@ public class GetSavingsPlansUtilizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     * The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * </p>
      * 
-     * @return The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     * @return The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      */
 
     public java.util.List<SavingsPlansUtilizationByTime> getSavingsPlansUtilizationsByTime() {
@@ -50,11 +50,11 @@ public class GetSavingsPlansUtilizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     * The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * </p>
      * 
      * @param savingsPlansUtilizationsByTime
-     *        The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     *        The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      */
 
     public void setSavingsPlansUtilizationsByTime(java.util.Collection<SavingsPlansUtilizationByTime> savingsPlansUtilizationsByTime) {
@@ -68,7 +68,7 @@ public class GetSavingsPlansUtilizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     * The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetSavingsPlansUtilizationResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param savingsPlansUtilizationsByTime
-     *        The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     *        The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetSavingsPlansUtilizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     * The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * </p>
      * 
      * @param savingsPlansUtilizationsByTime
-     *        The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.
+     *        The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

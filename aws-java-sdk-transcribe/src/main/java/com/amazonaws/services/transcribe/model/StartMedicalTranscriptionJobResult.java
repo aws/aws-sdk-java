@@ -25,18 +25,21 @@ public class StartMedicalTranscriptionJobResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A batch job submitted to transcribe medical speech to text.
+     * Provides detailed information about the current medical transcription job, including job status and, if
+     * applicable, failure reason.
      * </p>
      */
     private MedicalTranscriptionJob medicalTranscriptionJob;
 
     /**
      * <p>
-     * A batch job submitted to transcribe medical speech to text.
+     * Provides detailed information about the current medical transcription job, including job status and, if
+     * applicable, failure reason.
      * </p>
      * 
      * @param medicalTranscriptionJob
-     *        A batch job submitted to transcribe medical speech to text.
+     *        Provides detailed information about the current medical transcription job, including job status and, if
+     *        applicable, failure reason.
      */
 
     public void setMedicalTranscriptionJob(MedicalTranscriptionJob medicalTranscriptionJob) {
@@ -45,10 +48,12 @@ public class StartMedicalTranscriptionJobResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A batch job submitted to transcribe medical speech to text.
+     * Provides detailed information about the current medical transcription job, including job status and, if
+     * applicable, failure reason.
      * </p>
      * 
-     * @return A batch job submitted to transcribe medical speech to text.
+     * @return Provides detailed information about the current medical transcription job, including job status and, if
+     *         applicable, failure reason.
      */
 
     public MedicalTranscriptionJob getMedicalTranscriptionJob() {
@@ -57,11 +62,13 @@ public class StartMedicalTranscriptionJobResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A batch job submitted to transcribe medical speech to text.
+     * Provides detailed information about the current medical transcription job, including job status and, if
+     * applicable, failure reason.
      * </p>
      * 
      * @param medicalTranscriptionJob
-     *        A batch job submitted to transcribe medical speech to text.
+     *        Provides detailed information about the current medical transcription job, including job status and, if
+     *        applicable, failure reason.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

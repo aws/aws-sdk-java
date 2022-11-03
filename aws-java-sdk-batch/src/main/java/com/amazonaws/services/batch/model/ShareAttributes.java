@@ -33,7 +33,7 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
      * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
+     * identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -41,7 +41,7 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     * The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      */
     private String shareIdentifier;
@@ -61,7 +61,7 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
      * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
+     * identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -69,20 +69,20 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     * The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      * 
      * @param shareIdentifier
      *        A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this
      *        entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list
-     *        of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that
+     *        of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that
      *        specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a
      *        <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
      *        <p>
      *        There can be no more than 500 fair share identifiers active in a job queue.
      *        </p>
      *        <p>
-     *        The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     *        The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      */
 
     public void setShareIdentifier(String shareIdentifier) {
@@ -93,7 +93,7 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
      * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
+     * identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -101,19 +101,19 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     * The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      * 
      * @return A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this
      *         entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list
-     *         of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that
+     *         of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that
      *         specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a
      *         <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
      *         <p>
      *         There can be no more than 500 fair share identifiers active in a job queue.
      *         </p>
      *         <p>
-     *         The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     *         The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      */
 
     public String getShareIdentifier() {
@@ -124,7 +124,7 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
      * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
+     * identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -132,20 +132,20 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     * The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      * 
      * @param shareIdentifier
      *        A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this
      *        entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list
-     *        of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that
+     *        of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that
      *        specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a
      *        <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
      *        <p>
      *        There can be no more than 500 fair share identifiers active in a job queue.
      *        </p>
      *        <p>
-     *        The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
+     *        The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

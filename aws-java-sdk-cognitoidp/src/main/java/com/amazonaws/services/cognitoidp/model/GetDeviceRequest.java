@@ -36,7 +36,7 @@ public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String deviceKey;
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      * </p>
      */
     private String accessToken;
@@ -83,11 +83,11 @@ public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      */
 
     public void setAccessToken(String accessToken) {
@@ -96,10 +96,10 @@ public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      * </p>
      * 
-     * @return The access token.
+     * @return A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      */
 
     public String getAccessToken() {
@@ -108,11 +108,11 @@ public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose device information you want to request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

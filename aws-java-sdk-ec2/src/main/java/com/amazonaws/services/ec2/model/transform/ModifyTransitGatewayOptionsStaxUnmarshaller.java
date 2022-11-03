@@ -99,6 +99,11 @@ public class ModifyTransitGatewayOptionsStaxUnmarshaller implements Unmarshaller
                     modifyTransitGatewayOptions.setPropagationDefaultRouteTableId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AmazonSideAsn", targetDepth)) {
+                    modifyTransitGatewayOptions.setAmazonSideAsn(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return modifyTransitGatewayOptions;

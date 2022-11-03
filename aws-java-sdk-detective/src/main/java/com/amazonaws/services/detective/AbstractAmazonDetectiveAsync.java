@@ -41,6 +41,32 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetGraphMemberDatasourcesResult> batchGetGraphMemberDatasourcesAsync(BatchGetGraphMemberDatasourcesRequest request) {
+
+        return batchGetGraphMemberDatasourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetGraphMemberDatasourcesResult> batchGetGraphMemberDatasourcesAsync(BatchGetGraphMemberDatasourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetGraphMemberDatasourcesRequest, BatchGetGraphMemberDatasourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMembershipDatasourcesResult> batchGetMembershipDatasourcesAsync(BatchGetMembershipDatasourcesRequest request) {
+
+        return batchGetMembershipDatasourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMembershipDatasourcesResult> batchGetMembershipDatasourcesAsync(BatchGetMembershipDatasourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetMembershipDatasourcesRequest, BatchGetMembershipDatasourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGraphResult> createGraphAsync(CreateGraphRequest request) {
 
         return createGraphAsync(request, null);
@@ -162,6 +188,19 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatasourcePackagesResult> listDatasourcePackagesAsync(ListDatasourcePackagesRequest request) {
+
+        return listDatasourcePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasourcePackagesResult> listDatasourcePackagesAsync(ListDatasourcePackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDatasourcePackagesRequest, ListDatasourcePackagesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGraphsResult> listGraphsAsync(ListGraphsRequest request) {
 
         return listGraphsAsync(request, null);
@@ -274,6 +313,19 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request) {
+
+        return updateDatasourcePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDatasourcePackagesRequest, UpdateDatasourcePackagesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

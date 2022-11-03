@@ -50,6 +50,10 @@ public class AccessControlRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateCreated").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DATEMODIFIED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateModified").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> IMPERSONATIONROLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImpersonationRoleIds").build();
+    private static final MarshallingInfo<List> NOTIMPERSONATIONROLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotImpersonationRoleIds").build();
 
     private static final AccessControlRuleMarshaller instance = new AccessControlRuleMarshaller();
 
@@ -78,6 +82,8 @@ public class AccessControlRuleMarshaller {
             protocolMarshaller.marshall(accessControlRule.getNotUserIds(), NOTUSERIDS_BINDING);
             protocolMarshaller.marshall(accessControlRule.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(accessControlRule.getDateModified(), DATEMODIFIED_BINDING);
+            protocolMarshaller.marshall(accessControlRule.getImpersonationRoleIds(), IMPERSONATIONROLEIDS_BINDING);
+            protocolMarshaller.marshall(accessControlRule.getNotImpersonationRoleIds(), NOTIMPERSONATIONROLEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

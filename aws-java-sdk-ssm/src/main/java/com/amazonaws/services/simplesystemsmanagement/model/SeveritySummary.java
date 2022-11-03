@@ -30,8 +30,8 @@ public class SeveritySummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of resources or compliance items that have a severity level of critical. Critical severity is
-     * determined by the organization that published the compliance items.
+     * The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical
+     * severity is determined by the organization that published the compliance items.
      * </p>
      */
     private Integer criticalCount;
@@ -73,13 +73,13 @@ public class SeveritySummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of resources or compliance items that have a severity level of critical. Critical severity is
-     * determined by the organization that published the compliance items.
+     * The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical
+     * severity is determined by the organization that published the compliance items.
      * </p>
      * 
      * @param criticalCount
-     *        The total number of resources or compliance items that have a severity level of critical. Critical
-     *        severity is determined by the organization that published the compliance items.
+     *        The total number of resources or compliance items that have a severity level of <code>Critical</code>.
+     *        Critical severity is determined by the organization that published the compliance items.
      */
 
     public void setCriticalCount(Integer criticalCount) {
@@ -88,12 +88,12 @@ public class SeveritySummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of resources or compliance items that have a severity level of critical. Critical severity is
-     * determined by the organization that published the compliance items.
+     * The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical
+     * severity is determined by the organization that published the compliance items.
      * </p>
      * 
-     * @return The total number of resources or compliance items that have a severity level of critical. Critical
-     *         severity is determined by the organization that published the compliance items.
+     * @return The total number of resources or compliance items that have a severity level of <code>Critical</code>.
+     *         Critical severity is determined by the organization that published the compliance items.
      */
 
     public Integer getCriticalCount() {
@@ -102,13 +102,13 @@ public class SeveritySummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of resources or compliance items that have a severity level of critical. Critical severity is
-     * determined by the organization that published the compliance items.
+     * The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical
+     * severity is determined by the organization that published the compliance items.
      * </p>
      * 
      * @param criticalCount
-     *        The total number of resources or compliance items that have a severity level of critical. Critical
-     *        severity is determined by the organization that published the compliance items.
+     *        The total number of resources or compliance items that have a severity level of <code>Critical</code>.
+     *        Critical severity is determined by the organization that published the compliance items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

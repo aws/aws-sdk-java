@@ -64,6 +64,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      * <b>Holidays</b>
      * </p>
      * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
      * To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:
      * </p>
      * <ul>
@@ -452,6 +455,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      * <b>Holidays</b>
      * </p>
      * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
      * To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:
      * </p>
      * <ul>
@@ -790,6 +796,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      * @return <b>Weather Index</b> </p>
      *         <p>
      *         To enable the Weather Index, do not specify a value for <code>Configuration</code>.
+     *         </p>
+     *         <p>
+     *         <b>Holidays</b>
      *         </p>
      *         <p>
      *         <b>Holidays</b>
@@ -1145,6 +1154,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      * <b>Holidays</b>
      * </p>
      * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
      * To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:
      * </p>
      * <ul>
@@ -1484,6 +1496,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      *        <b>Weather Index</b> </p>
      *        <p>
      *        To enable the Weather Index, do not specify a value for <code>Configuration</code>.
+     *        </p>
+     *        <p>
+     *        <b>Holidays</b>
      *        </p>
      *        <p>
      *        <b>Holidays</b>
@@ -1839,6 +1854,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      * <b>Holidays</b>
      * </p>
      * <p>
+     * <b>Holidays</b>
+     * </p>
+     * <p>
      * To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:
      * </p>
      * <ul>
@@ -2178,6 +2196,9 @@ public class AdditionalDataset implements Serializable, Cloneable, StructuredPoj
      *        <b>Weather Index</b> </p>
      *        <p>
      *        To enable the Weather Index, do not specify a value for <code>Configuration</code>.
+     *        </p>
+     *        <p>
+     *        <b>Holidays</b>
      *        </p>
      *        <p>
      *        <b>Holidays</b>

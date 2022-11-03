@@ -29,7 +29,7 @@ public class StopCanaryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of the canary that you want to stop. To find the names of your canaries, use <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     * >DescribeCanaries</a>.
+     * >ListCanaries</a>.
      * </p>
      */
     private String name;
@@ -38,13 +38,13 @@ public class StopCanaryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of the canary that you want to stop. To find the names of your canaries, use <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     * >DescribeCanaries</a>.
+     * >ListCanaries</a>.
      * </p>
      * 
      * @param name
      *        The name of the canary that you want to stop. To find the names of your canaries, use <a
      *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     *        >DescribeCanaries</a>.
+     *        >ListCanaries</a>.
      */
 
     public void setName(String name) {
@@ -55,12 +55,12 @@ public class StopCanaryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of the canary that you want to stop. To find the names of your canaries, use <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     * >DescribeCanaries</a>.
+     * >ListCanaries</a>.
      * </p>
      * 
      * @return The name of the canary that you want to stop. To find the names of your canaries, use <a
      *         href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     *         >DescribeCanaries</a>.
+     *         >ListCanaries</a>.
      */
 
     public String getName() {
@@ -71,13 +71,13 @@ public class StopCanaryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of the canary that you want to stop. To find the names of your canaries, use <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     * >DescribeCanaries</a>.
+     * >ListCanaries</a>.
      * </p>
      * 
      * @param name
      *        The name of the canary that you want to stop. To find the names of your canaries, use <a
      *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
-     *        >DescribeCanaries</a>.
+     *        >ListCanaries</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

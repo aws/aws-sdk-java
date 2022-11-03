@@ -30,10 +30,65 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
+     * findings and is not related to the finding ID in Access Analyzer.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     * </p>
+     */
+    private String existingFindingId;
+    /**
+     * <p>
+     * The existing status of the finding, provided only for existing findings.
+     * </p>
+     */
+    private String existingFindingStatus;
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     */
+    private java.util.Map<String, String> principal;
+    /**
+     * <p>
      * The action in the analyzed policy statement that an external principal has permission to perform.
      * </p>
      */
     private java.util.List<String> action;
+    /**
+     * <p>
+     * The condition in the analyzed policy statement that resulted in a finding.
+     * </p>
+     */
+    private java.util.Map<String, String> condition;
+    /**
+     * <p>
+     * The resource that an external principal has access to. This is the resource associated with the access preview.
+     * </p>
+     */
+    private String resource;
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding allows public access to the resource.
+     * </p>
+     */
+    private Boolean isPublic;
+    /**
+     * <p>
+     * The type of the resource that can be accessed in the finding.
+     * </p>
+     */
+    private String resourceType;
+    /**
+     * <p>
+     * The time at which the access preview finding was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
     /**
      * <p>
      * Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.
@@ -64,59 +119,13 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
     private String changeType;
     /**
      * <p>
-     * The condition in the analyzed policy statement that resulted in a finding.
+     * The preview status of the finding. This is what the status of the finding would be after permissions deployment.
+     * For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status
+     * <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a
+     * result of the proposed permissions change.
      * </p>
      */
-    private java.util.Map<String, String> condition;
-    /**
-     * <p>
-     * The time at which the access preview finding was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
-     * An error.
-     * </p>
-     */
-    private String error;
-    /**
-     * <p>
-     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     * </p>
-     */
-    private String existingFindingId;
-    /**
-     * <p>
-     * The existing status of the finding, provided only for existing findings.
-     * </p>
-     */
-    private String existingFindingStatus;
-    /**
-     * <p>
-     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
-     * findings and is not related to the finding ID in Access Analyzer.
-     * </p>
-     */
-    private String id;
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding allows public access to the resource.
-     * </p>
-     */
-    private Boolean isPublic;
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     */
-    private java.util.Map<String, String> principal;
-    /**
-     * <p>
-     * The resource that an external principal has access to. This is the resource associated with the access preview.
-     * </p>
-     */
-    private String resource;
+    private String status;
     /**
      * <p>
      * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
@@ -126,10 +135,10 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
     private String resourceOwnerAccount;
     /**
      * <p>
-     * The type of the resource that can be accessed in the finding.
+     * An error.
      * </p>
      */
-    private String resourceType;
+    private String error;
     /**
      * <p>
      * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
@@ -137,15 +146,219 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.List<FindingSource> sources;
+
     /**
      * <p>
-     * The preview status of the finding. This is what the status of the finding would be after permissions deployment.
-     * For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status
-     * <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a
-     * result of the proposed permissions change.
+     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
+     * findings and is not related to the finding ID in Access Analyzer.
      * </p>
+     * 
+     * @param id
+     *        The ID of the access preview finding. This ID uniquely identifies the element in the list of access
+     *        preview findings and is not related to the finding ID in Access Analyzer.
      */
-    private String status;
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
+     * findings and is not related to the finding ID in Access Analyzer.
+     * </p>
+     * 
+     * @return The ID of the access preview finding. This ID uniquely identifies the element in the list of access
+     *         preview findings and is not related to the finding ID in Access Analyzer.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
+     * findings and is not related to the finding ID in Access Analyzer.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the access preview finding. This ID uniquely identifies the element in the list of access
+     *        preview findings and is not related to the finding ID in Access Analyzer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     * </p>
+     * 
+     * @param existingFindingId
+     *        The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     */
+
+    public void setExistingFindingId(String existingFindingId) {
+        this.existingFindingId = existingFindingId;
+    }
+
+    /**
+     * <p>
+     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     * </p>
+     * 
+     * @return The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     */
+
+    public String getExistingFindingId() {
+        return this.existingFindingId;
+    }
+
+    /**
+     * <p>
+     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     * </p>
+     * 
+     * @param existingFindingId
+     *        The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withExistingFindingId(String existingFindingId) {
+        setExistingFindingId(existingFindingId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The existing status of the finding, provided only for existing findings.
+     * </p>
+     * 
+     * @param existingFindingStatus
+     *        The existing status of the finding, provided only for existing findings.
+     * @see FindingStatus
+     */
+
+    public void setExistingFindingStatus(String existingFindingStatus) {
+        this.existingFindingStatus = existingFindingStatus;
+    }
+
+    /**
+     * <p>
+     * The existing status of the finding, provided only for existing findings.
+     * </p>
+     * 
+     * @return The existing status of the finding, provided only for existing findings.
+     * @see FindingStatus
+     */
+
+    public String getExistingFindingStatus() {
+        return this.existingFindingStatus;
+    }
+
+    /**
+     * <p>
+     * The existing status of the finding, provided only for existing findings.
+     * </p>
+     * 
+     * @param existingFindingStatus
+     *        The existing status of the finding, provided only for existing findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingStatus
+     */
+
+    public AccessPreviewFinding withExistingFindingStatus(String existingFindingStatus) {
+        setExistingFindingStatus(existingFindingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The existing status of the finding, provided only for existing findings.
+     * </p>
+     * 
+     * @param existingFindingStatus
+     *        The existing status of the finding, provided only for existing findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingStatus
+     */
+
+    public AccessPreviewFinding withExistingFindingStatus(FindingStatus existingFindingStatus) {
+        this.existingFindingStatus = existingFindingStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     * 
+     * @return The external principal that has access to a resource within the zone of trust.
+     */
+
+    public java.util.Map<String, String> getPrincipal() {
+        return principal;
+    }
+
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     * 
+     * @param principal
+     *        The external principal that has access to a resource within the zone of trust.
+     */
+
+    public void setPrincipal(java.util.Map<String, String> principal) {
+        this.principal = principal;
+    }
+
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     * 
+     * @param principal
+     *        The external principal that has access to a resource within the zone of trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withPrincipal(java.util.Map<String, String> principal) {
+        setPrincipal(principal);
+        return this;
+    }
+
+    /**
+     * Add a single Principal entry
+     *
+     * @see AccessPreviewFinding#withPrincipal
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding addPrincipalEntry(String key, String value) {
+        if (null == this.principal) {
+            this.principal = new java.util.HashMap<String, String>();
+        }
+        if (this.principal.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.principal.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Principal.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding clearPrincipalEntries() {
+        this.principal = null;
+        return this;
+    }
 
     /**
      * <p>
@@ -214,6 +427,268 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
 
     public AccessPreviewFinding withAction(java.util.Collection<String> action) {
         setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The condition in the analyzed policy statement that resulted in a finding.
+     * </p>
+     * 
+     * @return The condition in the analyzed policy statement that resulted in a finding.
+     */
+
+    public java.util.Map<String, String> getCondition() {
+        return condition;
+    }
+
+    /**
+     * <p>
+     * The condition in the analyzed policy statement that resulted in a finding.
+     * </p>
+     * 
+     * @param condition
+     *        The condition in the analyzed policy statement that resulted in a finding.
+     */
+
+    public void setCondition(java.util.Map<String, String> condition) {
+        this.condition = condition;
+    }
+
+    /**
+     * <p>
+     * The condition in the analyzed policy statement that resulted in a finding.
+     * </p>
+     * 
+     * @param condition
+     *        The condition in the analyzed policy statement that resulted in a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withCondition(java.util.Map<String, String> condition) {
+        setCondition(condition);
+        return this;
+    }
+
+    /**
+     * Add a single Condition entry
+     *
+     * @see AccessPreviewFinding#withCondition
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding addConditionEntry(String key, String value) {
+        if (null == this.condition) {
+            this.condition = new java.util.HashMap<String, String>();
+        }
+        if (this.condition.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.condition.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Condition.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding clearConditionEntries() {
+        this.condition = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource that an external principal has access to. This is the resource associated with the access preview.
+     * </p>
+     * 
+     * @param resource
+     *        The resource that an external principal has access to. This is the resource associated with the access
+     *        preview.
+     */
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    /**
+     * <p>
+     * The resource that an external principal has access to. This is the resource associated with the access preview.
+     * </p>
+     * 
+     * @return The resource that an external principal has access to. This is the resource associated with the access
+     *         preview.
+     */
+
+    public String getResource() {
+        return this.resource;
+    }
+
+    /**
+     * <p>
+     * The resource that an external principal has access to. This is the resource associated with the access preview.
+     * </p>
+     * 
+     * @param resource
+     *        The resource that an external principal has access to. This is the resource associated with the access
+     *        preview.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withResource(String resource) {
+        setResource(resource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding allows public access to the resource.
+     * </p>
+     * 
+     * @param isPublic
+     *        Indicates whether the policy that generated the finding allows public access to the resource.
+     */
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding allows public access to the resource.
+     * </p>
+     * 
+     * @return Indicates whether the policy that generated the finding allows public access to the resource.
+     */
+
+    public Boolean getIsPublic() {
+        return this.isPublic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding allows public access to the resource.
+     * </p>
+     * 
+     * @param isPublic
+     *        Indicates whether the policy that generated the finding allows public access to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withIsPublic(Boolean isPublic) {
+        setIsPublic(isPublic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy that generated the finding allows public access to the resource.
+     * </p>
+     * 
+     * @return Indicates whether the policy that generated the finding allows public access to the resource.
+     */
+
+    public Boolean isPublic() {
+        return this.isPublic;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that can be accessed in the finding.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that can be accessed in the finding.
+     * @see ResourceType
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that can be accessed in the finding.
+     * </p>
+     * 
+     * @return The type of the resource that can be accessed in the finding.
+     * @see ResourceType
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that can be accessed in the finding.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that can be accessed in the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public AccessPreviewFinding withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that can be accessed in the finding.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that can be accessed in the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public AccessPreviewFinding withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which the access preview finding was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time at which the access preview finding was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the access preview finding was created.
+     * </p>
+     * 
+     * @return The time at which the access preview finding was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time at which the access preview finding was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time at which the access preview finding was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -454,645 +929,6 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The condition in the analyzed policy statement that resulted in a finding.
-     * </p>
-     * 
-     * @return The condition in the analyzed policy statement that resulted in a finding.
-     */
-
-    public java.util.Map<String, String> getCondition() {
-        return condition;
-    }
-
-    /**
-     * <p>
-     * The condition in the analyzed policy statement that resulted in a finding.
-     * </p>
-     * 
-     * @param condition
-     *        The condition in the analyzed policy statement that resulted in a finding.
-     */
-
-    public void setCondition(java.util.Map<String, String> condition) {
-        this.condition = condition;
-    }
-
-    /**
-     * <p>
-     * The condition in the analyzed policy statement that resulted in a finding.
-     * </p>
-     * 
-     * @param condition
-     *        The condition in the analyzed policy statement that resulted in a finding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withCondition(java.util.Map<String, String> condition) {
-        setCondition(condition);
-        return this;
-    }
-
-    /**
-     * Add a single Condition entry
-     *
-     * @see AccessPreviewFinding#withCondition
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding addConditionEntry(String key, String value) {
-        if (null == this.condition) {
-            this.condition = new java.util.HashMap<String, String>();
-        }
-        if (this.condition.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.condition.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Condition.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding clearConditionEntries() {
-        this.condition = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time at which the access preview finding was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time at which the access preview finding was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the access preview finding was created.
-     * </p>
-     * 
-     * @return The time at which the access preview finding was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the access preview finding was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time at which the access preview finding was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An error.
-     * </p>
-     * 
-     * @param error
-     *        An error.
-     */
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * An error.
-     * </p>
-     * 
-     * @return An error.
-     */
-
-    public String getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * An error.
-     * </p>
-     * 
-     * @param error
-     *        An error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withError(String error) {
-        setError(error);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     * </p>
-     * 
-     * @param existingFindingId
-     *        The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     */
-
-    public void setExistingFindingId(String existingFindingId) {
-        this.existingFindingId = existingFindingId;
-    }
-
-    /**
-     * <p>
-     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     * </p>
-     * 
-     * @return The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     */
-
-    public String getExistingFindingId() {
-        return this.existingFindingId;
-    }
-
-    /**
-     * <p>
-     * The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     * </p>
-     * 
-     * @param existingFindingId
-     *        The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withExistingFindingId(String existingFindingId) {
-        setExistingFindingId(existingFindingId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The existing status of the finding, provided only for existing findings.
-     * </p>
-     * 
-     * @param existingFindingStatus
-     *        The existing status of the finding, provided only for existing findings.
-     * @see FindingStatus
-     */
-
-    public void setExistingFindingStatus(String existingFindingStatus) {
-        this.existingFindingStatus = existingFindingStatus;
-    }
-
-    /**
-     * <p>
-     * The existing status of the finding, provided only for existing findings.
-     * </p>
-     * 
-     * @return The existing status of the finding, provided only for existing findings.
-     * @see FindingStatus
-     */
-
-    public String getExistingFindingStatus() {
-        return this.existingFindingStatus;
-    }
-
-    /**
-     * <p>
-     * The existing status of the finding, provided only for existing findings.
-     * </p>
-     * 
-     * @param existingFindingStatus
-     *        The existing status of the finding, provided only for existing findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FindingStatus
-     */
-
-    public AccessPreviewFinding withExistingFindingStatus(String existingFindingStatus) {
-        setExistingFindingStatus(existingFindingStatus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The existing status of the finding, provided only for existing findings.
-     * </p>
-     * 
-     * @param existingFindingStatus
-     *        The existing status of the finding, provided only for existing findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FindingStatus
-     */
-
-    public AccessPreviewFinding withExistingFindingStatus(FindingStatus existingFindingStatus) {
-        this.existingFindingStatus = existingFindingStatus.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
-     * findings and is not related to the finding ID in Access Analyzer.
-     * </p>
-     * 
-     * @param id
-     *        The ID of the access preview finding. This ID uniquely identifies the element in the list of access
-     *        preview findings and is not related to the finding ID in Access Analyzer.
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
-     * findings and is not related to the finding ID in Access Analyzer.
-     * </p>
-     * 
-     * @return The ID of the access preview finding. This ID uniquely identifies the element in the list of access
-     *         preview findings and is not related to the finding ID in Access Analyzer.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview
-     * findings and is not related to the finding ID in Access Analyzer.
-     * </p>
-     * 
-     * @param id
-     *        The ID of the access preview finding. This ID uniquely identifies the element in the list of access
-     *        preview findings and is not related to the finding ID in Access Analyzer.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding allows public access to the resource.
-     * </p>
-     * 
-     * @param isPublic
-     *        Indicates whether the policy that generated the finding allows public access to the resource.
-     */
-
-    public void setIsPublic(Boolean isPublic) {
-        this.isPublic = isPublic;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding allows public access to the resource.
-     * </p>
-     * 
-     * @return Indicates whether the policy that generated the finding allows public access to the resource.
-     */
-
-    public Boolean getIsPublic() {
-        return this.isPublic;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding allows public access to the resource.
-     * </p>
-     * 
-     * @param isPublic
-     *        Indicates whether the policy that generated the finding allows public access to the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withIsPublic(Boolean isPublic) {
-        setIsPublic(isPublic);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the policy that generated the finding allows public access to the resource.
-     * </p>
-     * 
-     * @return Indicates whether the policy that generated the finding allows public access to the resource.
-     */
-
-    public Boolean isPublic() {
-        return this.isPublic;
-    }
-
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     * 
-     * @return The external principal that has access to a resource within the zone of trust.
-     */
-
-    public java.util.Map<String, String> getPrincipal() {
-        return principal;
-    }
-
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     * 
-     * @param principal
-     *        The external principal that has access to a resource within the zone of trust.
-     */
-
-    public void setPrincipal(java.util.Map<String, String> principal) {
-        this.principal = principal;
-    }
-
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     * 
-     * @param principal
-     *        The external principal that has access to a resource within the zone of trust.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withPrincipal(java.util.Map<String, String> principal) {
-        setPrincipal(principal);
-        return this;
-    }
-
-    /**
-     * Add a single Principal entry
-     *
-     * @see AccessPreviewFinding#withPrincipal
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding addPrincipalEntry(String key, String value) {
-        if (null == this.principal) {
-            this.principal = new java.util.HashMap<String, String>();
-        }
-        if (this.principal.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.principal.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Principal.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding clearPrincipalEntries() {
-        this.principal = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The resource that an external principal has access to. This is the resource associated with the access preview.
-     * </p>
-     * 
-     * @param resource
-     *        The resource that an external principal has access to. This is the resource associated with the access
-     *        preview.
-     */
-
-    public void setResource(String resource) {
-        this.resource = resource;
-    }
-
-    /**
-     * <p>
-     * The resource that an external principal has access to. This is the resource associated with the access preview.
-     * </p>
-     * 
-     * @return The resource that an external principal has access to. This is the resource associated with the access
-     *         preview.
-     */
-
-    public String getResource() {
-        return this.resource;
-    }
-
-    /**
-     * <p>
-     * The resource that an external principal has access to. This is the resource associated with the access preview.
-     * </p>
-     * 
-     * @param resource
-     *        The resource that an external principal has access to. This is the resource associated with the access
-     *        preview.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withResource(String resource) {
-        setResource(resource);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-     * account is the account in which the resource was created.
-     * </p>
-     * 
-     * @param resourceOwnerAccount
-     *        The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
-     *        owning account is the account in which the resource was created.
-     */
-
-    public void setResourceOwnerAccount(String resourceOwnerAccount) {
-        this.resourceOwnerAccount = resourceOwnerAccount;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-     * account is the account in which the resource was created.
-     * </p>
-     * 
-     * @return The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
-     *         owning account is the account in which the resource was created.
-     */
-
-    public String getResourceOwnerAccount() {
-        return this.resourceOwnerAccount;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-     * account is the account in which the resource was created.
-     * </p>
-     * 
-     * @param resourceOwnerAccount
-     *        The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
-     *        owning account is the account in which the resource was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withResourceOwnerAccount(String resourceOwnerAccount) {
-        setResourceOwnerAccount(resourceOwnerAccount);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that can be accessed in the finding.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that can be accessed in the finding.
-     * @see ResourceType
-     */
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that can be accessed in the finding.
-     * </p>
-     * 
-     * @return The type of the resource that can be accessed in the finding.
-     * @see ResourceType
-     */
-
-    public String getResourceType() {
-        return this.resourceType;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that can be accessed in the finding.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that can be accessed in the finding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public AccessPreviewFinding withResourceType(String resourceType) {
-        setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that can be accessed in the finding.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that can be accessed in the finding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public AccessPreviewFinding withResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
-     * for Amazon S3 bucket findings.
-     * </p>
-     * 
-     * @return The sources of the finding. This indicates how the access that generated the finding is granted. It is
-     *         populated for Amazon S3 bucket findings.
-     */
-
-    public java.util.List<FindingSource> getSources() {
-        return sources;
-    }
-
-    /**
-     * <p>
-     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
-     * for Amazon S3 bucket findings.
-     * </p>
-     * 
-     * @param sources
-     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
-     *        populated for Amazon S3 bucket findings.
-     */
-
-    public void setSources(java.util.Collection<FindingSource> sources) {
-        if (sources == null) {
-            this.sources = null;
-            return;
-        }
-
-        this.sources = new java.util.ArrayList<FindingSource>(sources);
-    }
-
-    /**
-     * <p>
-     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
-     * for Amazon S3 bucket findings.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param sources
-     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
-     *        populated for Amazon S3 bucket findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withSources(FindingSource... sources) {
-        if (this.sources == null) {
-            setSources(new java.util.ArrayList<FindingSource>(sources.length));
-        }
-        for (FindingSource ele : sources) {
-            this.sources.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
-     * for Amazon S3 bucket findings.
-     * </p>
-     * 
-     * @param sources
-     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
-     *        populated for Amazon S3 bucket findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewFinding withSources(java.util.Collection<FindingSource> sources) {
-        setSources(sources);
-        return this;
-    }
-
-    /**
-     * <p>
      * The preview status of the finding. This is what the status of the finding would be after permissions deployment.
      * For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status
      * <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a
@@ -1175,6 +1011,170 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
+     *        owning account is the account in which the resource was created.
+     */
+
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
+     *         owning account is the account in which the resource was created.
+     */
+
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
+     *        owning account is the account in which the resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withResourceOwnerAccount(String resourceOwnerAccount) {
+        setResourceOwnerAccount(resourceOwnerAccount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An error.
+     * </p>
+     * 
+     * @param error
+     *        An error.
+     */
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * An error.
+     * </p>
+     * 
+     * @return An error.
+     */
+
+    public String getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * An error.
+     * </p>
+     * 
+     * @param error
+     *        An error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withError(String error) {
+        setError(error);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * 
+     * @return The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *         populated for Amazon S3 bucket findings.
+     */
+
+    public java.util.List<FindingSource> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * 
+     * @param sources
+     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *        populated for Amazon S3 bucket findings.
+     */
+
+    public void setSources(java.util.Collection<FindingSource> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<FindingSource>(sources);
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *        populated for Amazon S3 bucket findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withSources(FindingSource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<FindingSource>(sources.length));
+        }
+        for (FindingSource ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * 
+     * @param sources
+     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *        populated for Amazon S3 bucket findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewFinding withSources(java.util.Collection<FindingSource> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1186,36 +1186,36 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAction() != null)
-            sb.append("Action: ").append(getAction()).append(",");
-        if (getChangeType() != null)
-            sb.append("ChangeType: ").append(getChangeType()).append(",");
-        if (getCondition() != null)
-            sb.append("Condition: ").append(getCondition()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getExistingFindingId() != null)
             sb.append("ExistingFindingId: ").append(getExistingFindingId()).append(",");
         if (getExistingFindingStatus() != null)
             sb.append("ExistingFindingStatus: ").append(getExistingFindingStatus()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
-        if (getIsPublic() != null)
-            sb.append("IsPublic: ").append(getIsPublic()).append(",");
         if (getPrincipal() != null)
             sb.append("Principal: ").append(getPrincipal()).append(",");
+        if (getAction() != null)
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getCondition() != null)
+            sb.append("Condition: ").append(getCondition()).append(",");
         if (getResource() != null)
             sb.append("Resource: ").append(getResource()).append(",");
-        if (getResourceOwnerAccount() != null)
-            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
+        if (getIsPublic() != null)
+            sb.append("IsPublic: ").append(getIsPublic()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
-        if (getSources() != null)
-            sb.append("Sources: ").append(getSources()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getChangeType() != null)
+            sb.append("ChangeType: ").append(getChangeType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -1230,25 +1230,9 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
         if (obj instanceof AccessPreviewFinding == false)
             return false;
         AccessPreviewFinding other = (AccessPreviewFinding) obj;
-        if (other.getAction() == null ^ this.getAction() == null)
+        if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
-            return false;
-        if (other.getChangeType() == null ^ this.getChangeType() == null)
-            return false;
-        if (other.getChangeType() != null && other.getChangeType().equals(this.getChangeType()) == false)
-            return false;
-        if (other.getCondition() == null ^ this.getCondition() == null)
-            return false;
-        if (other.getCondition() != null && other.getCondition().equals(this.getCondition()) == false)
-            return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
-        if (other.getError() == null ^ this.getError() == null)
-            return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getExistingFindingId() == null ^ this.getExistingFindingId() == null)
             return false;
@@ -1258,37 +1242,53 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
             return false;
         if (other.getExistingFindingStatus() != null && other.getExistingFindingStatus().equals(this.getExistingFindingStatus()) == false)
             return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getIsPublic() == null ^ this.getIsPublic() == null)
-            return false;
-        if (other.getIsPublic() != null && other.getIsPublic().equals(this.getIsPublic()) == false)
-            return false;
         if (other.getPrincipal() == null ^ this.getPrincipal() == null)
             return false;
         if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
+            return false;
+        if (other.getAction() == null ^ this.getAction() == null)
+            return false;
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
+        if (other.getCondition() == null ^ this.getCondition() == null)
+            return false;
+        if (other.getCondition() != null && other.getCondition().equals(this.getCondition()) == false)
             return false;
         if (other.getResource() == null ^ this.getResource() == null)
             return false;
         if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
-        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
+        if (other.getIsPublic() == null ^ this.getIsPublic() == null)
             return false;
-        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+        if (other.getIsPublic() != null && other.getIsPublic().equals(this.getIsPublic()) == false)
             return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
-        if (other.getSources() == null ^ this.getSources() == null)
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getChangeType() == null ^ this.getChangeType() == null)
+            return false;
+        if (other.getChangeType() != null && other.getChangeType().equals(this.getChangeType()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
+            return false;
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         return true;
     }
@@ -1298,21 +1298,21 @@ public class AccessPreviewFinding implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
-        hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getExistingFindingId() == null) ? 0 : getExistingFindingId().hashCode());
         hashCode = prime * hashCode + ((getExistingFindingStatus() == null) ? 0 : getExistingFindingStatus().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
         hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
-        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
-        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

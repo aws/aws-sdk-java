@@ -55,7 +55,8 @@ public class ReplicationStatusType implements Serializable, Cloneable, Structure
     private String statusMessage;
     /**
      * <p>
-     * The date that you last accessed the secret in the Region.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      */
     private java.util.Date lastAccessedDate;
@@ -241,11 +242,13 @@ public class ReplicationStatusType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date that you last accessed the secret in the Region.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
      * @param lastAccessedDate
-     *        The date that you last accessed the secret in the Region.
+     *        The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *        been retrieved in the Region.
      */
 
     public void setLastAccessedDate(java.util.Date lastAccessedDate) {
@@ -254,10 +257,12 @@ public class ReplicationStatusType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date that you last accessed the secret in the Region.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
-     * @return The date that you last accessed the secret in the Region.
+     * @return The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *         been retrieved in the Region.
      */
 
     public java.util.Date getLastAccessedDate() {
@@ -266,11 +271,13 @@ public class ReplicationStatusType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date that you last accessed the secret in the Region.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
      * @param lastAccessedDate
-     *        The date that you last accessed the secret in the Region.
+     *        The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *        been retrieved in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

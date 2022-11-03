@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The authorization configuration details for Amazon FSx for Windows File Server file system. See <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html"
- * >FSxWindowsFileServerVolumeConfiguration</a> in the <i>Amazon Elastic Container Service API Reference</i>.
+ * >FSxWindowsFileServerVolumeConfiguration</a> in the <i>Amazon ECS API Reference</i>.
  * </p>
  * <p>
  * For more information and the input format, see <a
@@ -38,7 +38,7 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
     /**
      * <p>
      * The authorization credential option to use. The authorization credential options can be provided using either the
-     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.
      * </p>
      */
@@ -55,14 +55,14 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
     /**
      * <p>
      * The authorization credential option to use. The authorization credential options can be provided using either the
-     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.
      * </p>
      * 
      * @param credentialsParameter
      *        The authorization credential option to use. The authorization credential options can be provided using
      *        either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The
-     *        ARNs refer to the stored credentials.
+     *        ARN refers to the stored credentials.
      */
 
     public void setCredentialsParameter(String credentialsParameter) {
@@ -72,13 +72,13 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
     /**
      * <p>
      * The authorization credential option to use. The authorization credential options can be provided using either the
-     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.
      * </p>
      * 
      * @return The authorization credential option to use. The authorization credential options can be provided using
      *         either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The
-     *         ARNs refer to the stored credentials.
+     *         ARN refers to the stored credentials.
      */
 
     public String getCredentialsParameter() {
@@ -88,14 +88,14 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
     /**
      * <p>
      * The authorization credential option to use. The authorization credential options can be provided using either the
-     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.
      * </p>
      * 
      * @param credentialsParameter
      *        The authorization credential option to use. The authorization credential options can be provided using
      *        either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The
-     *        ARNs refer to the stored credentials.
+     *        ARN refers to the stored credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

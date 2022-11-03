@@ -40,6 +40,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private MotionGraphicsDeactivateScheduleActionSettings motionGraphicsImageDeactivateSettings;
     /** Action to pause or unpause one or both channel pipelines */
     private PauseStateScheduleActionSettings pauseStateSettings;
+    /** Action to specify scte35 input */
+    private Scte35InputScheduleActionSettings scte35InputSettings;
     /** Action to insert SCTE-35 return_to_network message */
     private Scte35ReturnToNetworkScheduleActionSettings scte35ReturnToNetworkSettings;
     /** Action to insert SCTE-35 splice_insert message */
@@ -290,6 +292,40 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Action to specify scte35 input
+     * 
+     * @param scte35InputSettings
+     *        Action to specify scte35 input
+     */
+
+    public void setScte35InputSettings(Scte35InputScheduleActionSettings scte35InputSettings) {
+        this.scte35InputSettings = scte35InputSettings;
+    }
+
+    /**
+     * Action to specify scte35 input
+     * 
+     * @return Action to specify scte35 input
+     */
+
+    public Scte35InputScheduleActionSettings getScte35InputSettings() {
+        return this.scte35InputSettings;
+    }
+
+    /**
+     * Action to specify scte35 input
+     * 
+     * @param scte35InputSettings
+     *        Action to specify scte35 input
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withScte35InputSettings(Scte35InputScheduleActionSettings scte35InputSettings) {
+        setScte35InputSettings(scte35InputSettings);
+        return this;
+    }
+
+    /**
      * Action to insert SCTE-35 return_to_network message
      * 
      * @param scte35ReturnToNetworkSettings
@@ -485,6 +521,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
             sb.append("MotionGraphicsImageDeactivateSettings: ").append(getMotionGraphicsImageDeactivateSettings()).append(",");
         if (getPauseStateSettings() != null)
             sb.append("PauseStateSettings: ").append(getPauseStateSettings()).append(",");
+        if (getScte35InputSettings() != null)
+            sb.append("Scte35InputSettings: ").append(getScte35InputSettings()).append(",");
         if (getScte35ReturnToNetworkSettings() != null)
             sb.append("Scte35ReturnToNetworkSettings: ").append(getScte35ReturnToNetworkSettings()).append(",");
         if (getScte35SpliceInsertSettings() != null)
@@ -539,6 +577,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
             return false;
         if (other.getPauseStateSettings() != null && other.getPauseStateSettings().equals(this.getPauseStateSettings()) == false)
             return false;
+        if (other.getScte35InputSettings() == null ^ this.getScte35InputSettings() == null)
+            return false;
+        if (other.getScte35InputSettings() != null && other.getScte35InputSettings().equals(this.getScte35InputSettings()) == false)
+            return false;
         if (other.getScte35ReturnToNetworkSettings() == null ^ this.getScte35ReturnToNetworkSettings() == null)
             return false;
         if (other.getScte35ReturnToNetworkSettings() != null
@@ -576,6 +618,7 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMotionGraphicsImageActivateSettings() == null) ? 0 : getMotionGraphicsImageActivateSettings().hashCode());
         hashCode = prime * hashCode + ((getMotionGraphicsImageDeactivateSettings() == null) ? 0 : getMotionGraphicsImageDeactivateSettings().hashCode());
         hashCode = prime * hashCode + ((getPauseStateSettings() == null) ? 0 : getPauseStateSettings().hashCode());
+        hashCode = prime * hashCode + ((getScte35InputSettings() == null) ? 0 : getScte35InputSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35ReturnToNetworkSettings() == null) ? 0 : getScte35ReturnToNetworkSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35SpliceInsertSettings() == null) ? 0 : getScte35SpliceInsertSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35TimeSignalSettings() == null) ? 0 : getScte35TimeSignalSettings().hashCode());

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to create a <a>Resource</a> resource.
+ * Requests API Gateway to create a Resource resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The parent resource's identifier.
+     * The parent resource's identifier.
      * </p>
      */
     private String parentId;
@@ -46,11 +46,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The parent resource's identifier.
+     * The parent resource's identifier.
      * </p>
      * 
      * @param parentId
-     *        [Required] The parent resource's identifier.
+     *        The parent resource's identifier.
      */
 
     public void setParentId(String parentId) {
@@ -99,10 +99,10 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The parent resource's identifier.
+     * The parent resource's identifier.
      * </p>
      * 
-     * @return [Required] The parent resource's identifier.
+     * @return The parent resource's identifier.
      */
 
     public String getParentId() {
@@ -111,11 +111,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The parent resource's identifier.
+     * The parent resource's identifier.
      * </p>
      * 
      * @param parentId
-     *        [Required] The parent resource's identifier.
+     *        The parent resource's identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

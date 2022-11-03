@@ -35,6 +35,8 @@ public class SpeakerMarshaller {
             .marshallLocationName("DomainId").build();
     private static final MarshallingInfo<String> GENERATEDSPEAKERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeneratedSpeakerId").build();
+    private static final MarshallingInfo<java.util.Date> LASTACCESSEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAccessedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -60,6 +62,7 @@ public class SpeakerMarshaller {
             protocolMarshaller.marshall(speaker.getCustomerSpeakerId(), CUSTOMERSPEAKERID_BINDING);
             protocolMarshaller.marshall(speaker.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(speaker.getGeneratedSpeakerId(), GENERATEDSPEAKERID_BINDING);
+            protocolMarshaller.marshall(speaker.getLastAccessedAt(), LASTACCESSEDAT_BINDING);
             protocolMarshaller.marshall(speaker.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(speaker.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {

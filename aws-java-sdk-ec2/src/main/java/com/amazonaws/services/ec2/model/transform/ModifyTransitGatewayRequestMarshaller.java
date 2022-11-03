@@ -108,6 +108,10 @@ public class ModifyTransitGatewayRequestMarshaller implements Marshaller<Request
             if (options.getPropagationDefaultRouteTableId() != null) {
                 request.addParameter("Options.PropagationDefaultRouteTableId", StringUtils.fromString(options.getPropagationDefaultRouteTableId()));
             }
+
+            if (options.getAmazonSideAsn() != null) {
+                request.addParameter("Options.AmazonSideAsn", StringUtils.fromLong(options.getAmazonSideAsn()));
+            }
         }
 
         return request;

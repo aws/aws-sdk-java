@@ -36,7 +36,7 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
     private String regexString;
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      */
     private FieldToMatch fieldToMatch;
@@ -92,11 +92,11 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -105,10 +105,10 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
-     * @return The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * @return The part of the web request that you want WAF to inspect.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -117,11 +117,11 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

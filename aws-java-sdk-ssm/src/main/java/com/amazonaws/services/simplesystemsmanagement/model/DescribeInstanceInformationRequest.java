@@ -42,7 +42,7 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      */
@@ -193,12 +193,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * 
      * @return One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based
-     *         on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     *         on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
      *         <code>InstanceInformationFilterList</code>, which is deprecated.
      */
 
@@ -212,13 +212,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * 
      * @param filters
      *        One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on
-     *        tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     *        tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
      *        <code>InstanceInformationFilterList</code>, which is deprecated.
      */
 
@@ -234,7 +234,7 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * <p>
@@ -245,7 +245,7 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
      * 
      * @param filters
      *        One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on
-     *        tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     *        tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
      *        <code>InstanceInformationFilterList</code>, which is deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -263,13 +263,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * 
      * @param filters
      *        One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on
-     *        tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
+     *        tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
      *        <code>InstanceInformationFilterList</code>, which is deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

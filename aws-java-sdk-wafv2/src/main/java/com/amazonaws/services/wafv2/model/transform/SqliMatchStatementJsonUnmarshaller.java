@@ -58,6 +58,10 @@ public class SqliMatchStatementJsonUnmarshaller implements Unmarshaller<SqliMatc
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("SensitivityLevel", targetDepth)) {
+                    context.nextToken();
+                    sqliMatchStatement.setSensitivityLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

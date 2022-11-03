@@ -55,7 +55,7 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean organizationEnabled;
     /**
      * <p>
-     * The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the
+     * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
      * equivalent of seven years.
      * </p>
      */
@@ -321,12 +321,12 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the
+     * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
      * equivalent of seven years.
      * </p>
      * 
      * @param retentionPeriod
-     *        The retention period of the event data store, in days. You can set a retention period of up to 2555 days,
+     *        The retention period of the event data store, in days. You can set a retention period of up to 2557 days,
      *        the equivalent of seven years.
      */
 
@@ -336,11 +336,11 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the
+     * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
      * equivalent of seven years.
      * </p>
      * 
-     * @return The retention period of the event data store, in days. You can set a retention period of up to 2555 days,
+     * @return The retention period of the event data store, in days. You can set a retention period of up to 2557 days,
      *         the equivalent of seven years.
      */
 
@@ -350,12 +350,12 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the
+     * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
      * equivalent of seven years.
      * </p>
      * 
      * @param retentionPeriod
-     *        The retention period of the event data store, in days. You can set a retention period of up to 2555 days,
+     *        The retention period of the event data store, in days. You can set a retention period of up to 2557 days,
      *        the equivalent of seven years.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

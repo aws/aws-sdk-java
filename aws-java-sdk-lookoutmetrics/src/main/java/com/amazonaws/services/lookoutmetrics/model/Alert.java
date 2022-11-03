@@ -88,6 +88,12 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilter.
+     * </p>
+     */
+    private AlertFilters alertFilters;
 
     /**
      * <p>
@@ -528,6 +534,46 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilter.
+     * </p>
+     * 
+     * @param alertFilters
+     *        The configuration of the alert filters, containing MetricList and DimensionFilter.
+     */
+
+    public void setAlertFilters(AlertFilters alertFilters) {
+        this.alertFilters = alertFilters;
+    }
+
+    /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilter.
+     * </p>
+     * 
+     * @return The configuration of the alert filters, containing MetricList and DimensionFilter.
+     */
+
+    public AlertFilters getAlertFilters() {
+        return this.alertFilters;
+    }
+
+    /**
+     * <p>
+     * The configuration of the alert filters, containing MetricList and DimensionFilter.
+     * </p>
+     * 
+     * @param alertFilters
+     *        The configuration of the alert filters, containing MetricList and DimensionFilter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Alert withAlertFilters(AlertFilters alertFilters) {
+        setAlertFilters(alertFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -558,7 +604,9 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
         if (getLastModificationTime() != null)
             sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getAlertFilters() != null)
+            sb.append("AlertFilters: ").append(getAlertFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -613,6 +661,10 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getAlertFilters() == null ^ this.getAlertFilters() == null)
+            return false;
+        if (other.getAlertFilters() != null && other.getAlertFilters().equals(this.getAlertFilters()) == false)
+            return false;
         return true;
     }
 
@@ -631,6 +683,7 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAlertStatus() == null) ? 0 : getAlertStatus().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getAlertFilters() == null) ? 0 : getAlertFilters().hashCode());
         return hashCode;
     }
 

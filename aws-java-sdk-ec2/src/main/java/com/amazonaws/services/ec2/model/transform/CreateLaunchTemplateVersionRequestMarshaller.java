@@ -894,6 +894,10 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                     request.addParameter("LaunchTemplateData.MaintenanceOptions.AutoRecovery", StringUtils.fromString(maintenanceOptions.getAutoRecovery()));
                 }
             }
+
+            if (launchTemplateData.getDisableApiStop() != null) {
+                request.addParameter("LaunchTemplateData.DisableApiStop", StringUtils.fromBoolean(launchTemplateData.getDisableApiStop()));
+            }
         }
 
         return request;

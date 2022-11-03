@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * The quota for the resource has already been reached.
  * </p>
  * <p>
- * For information on resource and stack limitations, see <a
+ * For information about resource and stack limitations, see <a
  * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
  * quotas</a> in the <i>CloudFormation User Guide</i>.
  * </p>

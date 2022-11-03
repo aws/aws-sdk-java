@@ -60,6 +60,10 @@ public class PackageSummaryJsonUnmarshaller implements Unmarshaller<PackageSumma
                     context.nextToken();
                     packageSummary.setPackage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("originConfiguration", targetDepth)) {
+                    context.nextToken();
+                    packageSummary.setOriginConfiguration(PackageOriginConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

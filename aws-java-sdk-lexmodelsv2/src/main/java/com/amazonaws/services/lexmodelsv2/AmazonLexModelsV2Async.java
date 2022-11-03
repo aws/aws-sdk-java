@@ -2071,6 +2071,37 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Stop an already running Bot Recommendation request.
+     * </p>
+     * 
+     * @param stopBotRecommendationRequest
+     * @return A Java Future containing the result of the StopBotRecommendation operation returned by the service.
+     * @sample AmazonLexModelsV2Async.StopBotRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopBotRecommendationResult> stopBotRecommendationAsync(StopBotRecommendationRequest stopBotRecommendationRequest);
+
+    /**
+     * <p>
+     * Stop an already running Bot Recommendation request.
+     * </p>
+     * 
+     * @param stopBotRecommendationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopBotRecommendation operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.StopBotRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopBotRecommendationResult> stopBotRecommendationAsync(StopBotRecommendationRequest stopBotRecommendationRequest,
+            com.amazonaws.handlers.AsyncHandler<StopBotRecommendationRequest, StopBotRecommendationResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced
      * with the new value.
      * </p>

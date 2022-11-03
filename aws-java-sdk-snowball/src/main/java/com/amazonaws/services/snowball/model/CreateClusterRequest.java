@@ -82,7 +82,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleARN;
     /**
      * <p>
-     * The type of Snow Family Devices to use for this cluster.
+     * The type of Snow Family devices to use for this cluster.
      * </p>
      * <note>
      * <p>
@@ -610,7 +610,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this cluster.
+     * The type of Snow Family devices to use for this cluster.
      * </p>
      * <note>
      * <p>
@@ -625,7 +625,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this cluster. </p> <note>
+     *        The type of Snow Family devices to use for this cluster. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.
@@ -646,7 +646,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this cluster.
+     * The type of Snow Family devices to use for this cluster.
      * </p>
      * <note>
      * <p>
@@ -660,7 +660,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
-     * @return The type of Snow Family Devices to use for this cluster. </p> <note>
+     * @return The type of Snow Family devices to use for this cluster. </p> <note>
      *         <p>
      *         For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *         type.
@@ -681,7 +681,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this cluster.
+     * The type of Snow Family devices to use for this cluster.
      * </p>
      * <note>
      * <p>
@@ -696,7 +696,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this cluster. </p> <note>
+     *        The type of Snow Family devices to use for this cluster. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.
@@ -719,7 +719,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this cluster.
+     * The type of Snow Family devices to use for this cluster.
      * </p>
      * <note>
      * <p>
@@ -734,7 +734,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this cluster. </p> <note>
+     *        The type of Snow Family devices to use for this cluster. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.
@@ -755,7 +755,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this cluster.
+     * The type of Snow Family devices to use for this cluster.
      * </p>
      * <note>
      * <p>
@@ -770,7 +770,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this cluster. </p> <note>
+     *        The type of Snow Family devices to use for this cluster. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.

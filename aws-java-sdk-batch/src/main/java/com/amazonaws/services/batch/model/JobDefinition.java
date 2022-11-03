@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Batch job definition.
+ * An object that represents an Batch job definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDefinition" target="_top">AWS API
@@ -54,10 +54,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate
-     * resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see
-     * <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     * parallel job definition</a> in the <i>Batch User Guide</i>.
+     * The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on
+     * Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel
+     * jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a
+     * multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      */
     private String type;
@@ -86,24 +86,28 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private RetryStrategy retryStrategy;
     /**
      * <p>
-     * An object with various properties specific to container-based jobs.
+     * An object with various properties specific to Amazon ECS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      */
     private ContainerProperties containerProperties;
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which Batch terminates your jobs if they haven't finished.
+     * The timeout time for jobs that are submitted with this job definition. After the amount of time you specify
+     * passes, Batch terminates your jobs if they aren't finished.
      * </p>
      */
     private JobTimeout timeout;
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs.
+     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * <note>
      * <p>
-     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      * <code>containerProperties</code> instead.
      * </p>
      * </note>
@@ -111,16 +115,16 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private NodeProperties nodeProperties;
     /**
      * <p>
-     * The tags applied to the job definition.
+     * The tags that are applied to the job definition.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
-     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
-     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are
+     * created. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      */
     private Boolean propagateTags;
@@ -131,6 +135,21 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> platformCapabilities;
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
+     * </p>
+     */
+    private EksProperties eksProperties;
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     */
+    private String containerOrchestrationType;
 
     /**
      * <p>
@@ -294,16 +313,16 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate
-     * resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see
-     * <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     * parallel job definition</a> in the <i>Batch User Guide</i>.
+     * The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on
+     * Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel
+     * jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a
+     * multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on
-     *        Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node
-     *        parallel jobs, see <a
+     *        The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is
+     *        run on Fargate resources, then <code>multinode</code> isn't supported. For more information about
+     *        multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
      *        parallel job definition</a> in the <i>Batch User Guide</i>.
      */
@@ -314,15 +333,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate
-     * resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see
-     * <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     * parallel job definition</a> in the <i>Batch User Guide</i>.
+     * The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on
+     * Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel
+     * jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a
+     * multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
-     * @return The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on
-     *         Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node
-     *         parallel jobs, see <a
+     * @return The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is
+     *         run on Fargate resources, then <code>multinode</code> isn't supported. For more information about
+     *         multi-node parallel jobs, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
      *         parallel job definition</a> in the <i>Batch User Guide</i>.
      */
@@ -333,16 +352,16 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate
-     * resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see
-     * <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     * parallel job definition</a> in the <i>Batch User Guide</i>.
+     * The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on
+     * Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel
+     * jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a
+     * multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on
-     *        Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node
-     *        parallel jobs, see <a
+     *        The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is
+     *        run on Fargate resources, then <code>multinode</code> isn't supported. For more information about
+     *        multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
      *        parallel job definition</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -537,11 +556,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to container-based jobs.
+     * An object with various properties specific to Amazon ECS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific to container-based jobs.
+     *        An object with various properties specific to Amazon ECS based jobs. Valid values are
+     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *        can be specified.
      */
 
     public void setContainerProperties(ContainerProperties containerProperties) {
@@ -550,10 +573,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to container-based jobs.
+     * An object with various properties specific to Amazon ECS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * 
-     * @return An object with various properties specific to container-based jobs.
+     * @return An object with various properties specific to Amazon ECS based jobs. Valid values are
+     *         <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *         can be specified.
      */
 
     public ContainerProperties getContainerProperties() {
@@ -562,11 +589,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to container-based jobs.
+     * An object with various properties specific to Amazon ECS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific to container-based jobs.
+     *        An object with various properties specific to Amazon ECS based jobs. Valid values are
+     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *        can be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,13 +608,13 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which Batch terminates your jobs if they haven't finished.
+     * The timeout time for jobs that are submitted with this job definition. After the amount of time you specify
+     * passes, Batch terminates your jobs if they aren't finished.
      * </p>
      * 
      * @param timeout
-     *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *        duration after which Batch terminates your jobs if they haven't finished.
+     *        The timeout time for jobs that are submitted with this job definition. After the amount of time you
+     *        specify passes, Batch terminates your jobs if they aren't finished.
      */
 
     public void setTimeout(JobTimeout timeout) {
@@ -592,12 +623,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which Batch terminates your jobs if they haven't finished.
+     * The timeout time for jobs that are submitted with this job definition. After the amount of time you specify
+     * passes, Batch terminates your jobs if they aren't finished.
      * </p>
      * 
-     * @return The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *         duration after which Batch terminates your jobs if they haven't finished.
+     * @return The timeout time for jobs that are submitted with this job definition. After the amount of time you
+     *         specify passes, Batch terminates your jobs if they aren't finished.
      */
 
     public JobTimeout getTimeout() {
@@ -606,13 +637,13 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which Batch terminates your jobs if they haven't finished.
+     * The timeout time for jobs that are submitted with this job definition. After the amount of time you specify
+     * passes, Batch terminates your jobs if they aren't finished.
      * </p>
      * 
      * @param timeout
-     *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *        duration after which Batch terminates your jobs if they haven't finished.
+     *        The timeout time for jobs that are submitted with this job definition. After the amount of time you
+     *        specify passes, Batch terminates your jobs if they aren't finished.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,19 +654,23 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs.
+     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * <note>
      * <p>
-     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      * <code>containerProperties</code> instead.
      * </p>
      * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties specific to multi-node parallel jobs.</p> <note>
+     *        An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *        can be specified.</p> <note>
      *        <p>
-     *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     *        If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      *        <code>containerProperties</code> instead.
      *        </p>
      */
@@ -646,18 +681,22 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs.
+     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * <note>
      * <p>
-     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      * <code>containerProperties</code> instead.
      * </p>
      * </note>
      * 
-     * @return An object with various properties specific to multi-node parallel jobs.</p> <note>
+     * @return An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     *         <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *         can be specified.</p> <note>
      *         <p>
-     *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     *         If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      *         <code>containerProperties</code> instead.
      *         </p>
      */
@@ -668,19 +707,23 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs.
+     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
      * </p>
      * <note>
      * <p>
-     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      * <code>containerProperties</code> instead.
      * </p>
      * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties specific to multi-node parallel jobs.</p> <note>
+     *        An object with various properties that are specific to multi-node parallel jobs. Valid values are
+     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *        can be specified.</p> <note>
      *        <p>
-     *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     *        If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      *        <code>containerProperties</code> instead.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -693,10 +736,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job definition.
+     * The tags that are applied to the job definition.
      * </p>
      * 
-     * @return The tags applied to the job definition.
+     * @return The tags that are applied to the job definition.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -705,11 +748,11 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job definition.
+     * The tags that are applied to the job definition.
      * </p>
      * 
      * @param tags
-     *        The tags applied to the job definition.
+     *        The tags that are applied to the job definition.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -718,11 +761,11 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags applied to the job definition.
+     * The tags that are applied to the job definition.
      * </p>
      * 
      * @param tags
-     *        The tags applied to the job definition.
+     *        The tags that are applied to the job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -762,15 +805,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
-     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
-     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are
+     * created. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
-     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when
+     *        the tasks are created. For tags with the same name, job tags are given priority over job definitions tags.
      *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
      *        <code>FAILED</code> state.
      */
@@ -782,16 +825,16 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
-     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
-     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are
+     * created. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
-     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
-     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
-     *         <code>FAILED</code> state.
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when
+     *         the tasks are created. For tags with the same name, job tags are given priority over job definitions
+     *         tags. If the total number of combined tags from the job and job definition is over 50, the job is moved
+     *         to the <code>FAILED</code> state.
      */
 
     public Boolean getPropagateTags() {
@@ -801,15 +844,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
-     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
-     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are
+     * created. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
-     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when
+     *        the tasks are created. For tags with the same name, job tags are given priority over job definitions tags.
      *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
      *        <code>FAILED</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -823,16 +866,16 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
-     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
-     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are
+     * created. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
-     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
-     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
-     *         <code>FAILED</code> state.
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when
+     *         the tasks are created. For tags with the same name, job tags are given priority over job definitions
+     *         tags. If the total number of combined tags from the job and job definition is over 50, the job is moved
+     *         to the <code>FAILED</code> state.
      */
 
     public Boolean isPropagateTags() {
@@ -948,6 +991,125 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
+     * </p>
+     * 
+     * @param eksProperties
+     *        An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *        can be specified.
+     */
+
+    public void setEksProperties(EksProperties eksProperties) {
+        this.eksProperties = eksProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
+     * </p>
+     * 
+     * @return An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     *         <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *         can be specified.
+     */
+
+    public EksProperties getEksProperties() {
+        return this.eksProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.
+     * </p>
+     * 
+     * @param eksProperties
+     *        An object with various properties that are specific to Amazon EKS based jobs. Valid values are
+     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
+     *        can be specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withEksProperties(EksProperties eksProperties) {
+        setEksProperties(eksProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @see OrchestrationType
+     */
+
+    public void setContainerOrchestrationType(String containerOrchestrationType) {
+        this.containerOrchestrationType = containerOrchestrationType;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @return The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *         <code>EKS</code>.
+     * @see OrchestrationType
+     */
+
+    public String getContainerOrchestrationType() {
+        return this.containerOrchestrationType;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OrchestrationType
+     */
+
+    public JobDefinition withContainerOrchestrationType(String containerOrchestrationType) {
+        setContainerOrchestrationType(containerOrchestrationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OrchestrationType
+     */
+
+    public JobDefinition withContainerOrchestrationType(OrchestrationType containerOrchestrationType) {
+        this.containerOrchestrationType = containerOrchestrationType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -986,7 +1148,11 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getPropagateTags() != null)
             sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
         if (getPlatformCapabilities() != null)
-            sb.append("PlatformCapabilities: ").append(getPlatformCapabilities());
+            sb.append("PlatformCapabilities: ").append(getPlatformCapabilities()).append(",");
+        if (getEksProperties() != null)
+            sb.append("EksProperties: ").append(getEksProperties()).append(",");
+        if (getContainerOrchestrationType() != null)
+            sb.append("ContainerOrchestrationType: ").append(getContainerOrchestrationType());
         sb.append("}");
         return sb.toString();
     }
@@ -1057,6 +1223,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatformCapabilities() != null && other.getPlatformCapabilities().equals(this.getPlatformCapabilities()) == false)
             return false;
+        if (other.getEksProperties() == null ^ this.getEksProperties() == null)
+            return false;
+        if (other.getEksProperties() != null && other.getEksProperties().equals(this.getEksProperties()) == false)
+            return false;
+        if (other.getContainerOrchestrationType() == null ^ this.getContainerOrchestrationType() == null)
+            return false;
+        if (other.getContainerOrchestrationType() != null && other.getContainerOrchestrationType().equals(this.getContainerOrchestrationType()) == false)
+            return false;
         return true;
     }
 
@@ -1079,6 +1253,8 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getEksProperties() == null) ? 0 : getEksProperties().hashCode());
+        hashCode = prime * hashCode + ((getContainerOrchestrationType() == null) ? 0 : getContainerOrchestrationType().hashCode());
         return hashCode;
     }
 

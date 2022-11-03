@@ -60,6 +60,8 @@ public class UpdateIntentRequestMarshaller {
             .marshallLocationName("botVersion").build();
     private static final MarshallingInfo<String> LOCALEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("localeId").build();
+    private static final MarshallingInfo<StructuredPojo> INITIALRESPONSESETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initialResponseSetting").build();
 
     private static final UpdateIntentRequestMarshaller instance = new UpdateIntentRequestMarshaller();
 
@@ -93,6 +95,7 @@ public class UpdateIntentRequestMarshaller {
             protocolMarshaller.marshall(updateIntentRequest.getBotId(), BOTID_BINDING);
             protocolMarshaller.marshall(updateIntentRequest.getBotVersion(), BOTVERSION_BINDING);
             protocolMarshaller.marshall(updateIntentRequest.getLocaleId(), LOCALEID_BINDING);
+            protocolMarshaller.marshall(updateIntentRequest.getInitialResponseSetting(), INITIALRESPONSESETTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

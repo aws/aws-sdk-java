@@ -321,7 +321,7 @@
         {"shape":"ServerException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group.</p> <p>When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status is <code>Failed</code>, and an error detail explains the reason for the failure.</p>"
+      "documentation":"<p>Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group or Amazon EKS add-on.</p> <p>When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status is <code>Failed</code>, and an error detail explains the reason for the failure.</p>"
     },
     "DisassociateIdentityProviderConfig":{
       "name":"DisassociateIdentityProviderConfig",
@@ -602,7 +602,9 @@
         "AL2_ARM_64",
         "CUSTOM",
         "BOTTLEROCKET_ARM_64",
-        "BOTTLEROCKET_x86_64"
+        "BOTTLEROCKET_x86_64",
+        "BOTTLEROCKET_ARM_64_NVIDIA",
+        "BOTTLEROCKET_x86_64_NVIDIA"
       ]
     },
     "AccessDeniedException":{
@@ -635,7 +637,7 @@
         },
         "health":{
           "shape":"AddonHealth",
-          "documentation":"<p>An object that represents the health of the add-on.</p>"
+          "documentation":"<p>An object representing the health of the add-on.</p>"
         },
         "addonArn":{
           "shape":"String",
@@ -665,7 +667,7 @@
       "members":{
         "issues":{
           "shape":"AddonIssueList",
-          "documentation":"<p>An object that represents the add-on's health issues.</p>"
+          "documentation":"<p>An object representing the health issues for an add-on.</p>"
         }
       },
       "documentation":"<p>The health of the add-on.</p>"
@@ -683,7 +685,7 @@
         },
         "addonVersions":{
           "shape":"AddonVersionInfoList",
-          "documentation":"<p>An object that represents information about available add-on versions and compatible Kubernetes versions.</p>"
+          "documentation":"<p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>"
         }
       },
       "documentation":"<p>Information about an add-on.</p>"
@@ -732,7 +734,8 @@
         "UPDATING",
         "DELETING",
         "DELETE_FAILED",
-        "DEGRADED"
+        "DEGRADED",
+        "UPDATE_FAILED"
       ]
     },
     "AddonVersionInfo":{
@@ -748,7 +751,7 @@
         },
         "compatibilities":{
           "shape":"Compatibilities",
-          "documentation":"<p>An object that represents the compatibilities of a version.</p>"
+          "documentation":"<p>An object representing the compatibilities of a version.</p>"
         }
       },
       "documentation":"<p>Information about an add-on version.</p>"
@@ -806,7 +809,7 @@
         },
         "oidc":{
           "shape":"OidcIdentityProviderConfigRequest",
-          "documentation":"<p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>"
+          "documentation":"<p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -971,9 +974,64 @@
         "connectorConfig":{
           "shape":"ConnectorConfigResponse",
           "documentation":"<p>The configuration used to connect to a cluster for registration.</p>"
+        },
+        "id":{
+          "shape":"String",
+          "documentation":"<p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>"
+        },
+        "health":{
+          "shape":"ClusterHealth",
+          "documentation":"<p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>"
+        },
+        "outpostConfig":{
+          "shape":"OutpostConfigResponse",
+          "documentation":"<p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>"
         }
       },
       "documentation":"<p>An object representing an Amazon EKS cluster.</p>"
+    },
+    "ClusterHealth":{
+      "type":"structure",
+      "members":{
+        "issues":{
+          "shape":"ClusterIssueList",
+          "documentation":"<p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>"
+        }
+      },
+      "documentation":"<p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud. </p>"
+    },
+    "ClusterIssue":{
+      "type":"structure",
+      "members":{
+        "code":{
+          "shape":"ClusterIssueCode",
+          "documentation":"<p>The error code of the issue.</p>"
+        },
+        "message":{
+          "shape":"String",
+          "documentation":"<p>A description of the issue.</p>"
+        },
+        "resourceIds":{
+          "shape":"StringList",
+          "documentation":"<p>The resource IDs that the issue relates to.</p>"
+        }
+      },
+      "documentation":"<p>An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.</p>"
+    },
+    "ClusterIssueCode":{
+      "type":"string",
+      "enum":[
+        "AccessDenied",
+        "ClusterUnreachable",
+        "ConfigurationConflict",
+        "InternalFailure",
+        "ResourceLimitExceeded",
+        "ResourceNotFound"
+      ]
+    },
+    "ClusterIssueList":{
+      "type":"list",
+      "member":{"shape":"ClusterIssue"}
     },
     "ClusterName":{
       "type":"string",
@@ -1099,7 +1157,7 @@
         },
         "resolveConflicts":{
           "shape":"ResolveConflicts",
-          "documentation":"<p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>"
+          "documentation":"<p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p> <ul> <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li> <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li> <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html\">UpdateAddon</a>.</p> </li> </ul> <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>"
         },
         "clientRequestToken":{
           "shape":"String",
@@ -1132,7 +1190,7 @@
         },
         "version":{
           "shape":"String",
-          "documentation":"<p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>"
+          "documentation":"<p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note> <p>The default version might not be the latest version available.</p> </note>"
         },
         "roleArn":{
           "shape":"String",
@@ -1162,6 +1220,10 @@
         "encryptionConfig":{
           "shape":"EncryptionConfigList",
           "documentation":"<p>The encryption configuration for the cluster.</p>"
+        },
+        "outpostConfig":{
+          "shape":"OutpostConfigRequest",
+          "documentation":"<p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html\">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>"
         }
       }
     },
@@ -1249,11 +1311,11 @@
         },
         "diskSize":{
           "shape":"BoxedInteger",
-          "documentation":"<p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "subnets":{
           "shape":"StringList",
-          "documentation":"<p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html\"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html\"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "instanceTypes":{
           "shape":"StringList",
@@ -1261,15 +1323,15 @@
         },
         "amiType":{
           "shape":"AMITypes",
-          "documentation":"<p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "remoteAccess":{
           "shape":"RemoteAccessConfig",
-          "documentation":"<p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "nodeRole":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html\">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html\"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html\">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html\"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "labels":{
           "shape":"labelsMap",
@@ -1277,7 +1339,7 @@
         },
         "taints":{
           "shape":"taintsList",
-          "documentation":"<p>The Kubernetes taints to be applied to the nodes in the node group.</p>"
+          "documentation":"<p>The Kubernetes taints to be applied to the nodes in the node group. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html\">Node taints on managed node groups</a>.</p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -1302,11 +1364,11 @@
         },
         "version":{
           "shape":"String",
-          "documentation":"<p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "releaseVersion":{
           "shape":"String",
-          "documentation":"<p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html\">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html\">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         }
       }
     },
@@ -1592,7 +1654,7 @@
         },
         "identityProviderConfig":{
           "shape":"IdentityProviderConfig",
-          "documentation":"<p>An object that represents an identity provider configuration.</p>"
+          "documentation":"<p>An object representing an identity provider configuration.</p>"
         }
       }
     },
@@ -1656,13 +1718,13 @@
         },
         "nodegroupName":{
           "shape":"String",
-          "documentation":"<p>The name of the Amazon EKS node group associated with the update.</p>",
+          "documentation":"<p>The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a node group update.</p>",
           "location":"querystring",
           "locationName":"nodegroupName"
         },
         "addonName":{
           "shape":"String",
-          "documentation":"<p>The name of the add-on. The name must match one of the names returned by <a href=\"https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html\"> <code>ListAddons</code> </a>.</p>",
+          "documentation":"<p>The name of the add-on. The name must match one of the names returned by <a href=\"https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html\"> <code>ListAddons</code> </a>. This parameter is required if the update is an add-on update.</p>",
           "location":"querystring",
           "locationName":"addonName"
         }
@@ -1692,7 +1754,7 @@
         },
         "identityProviderConfig":{
           "shape":"IdentityProviderConfig",
-          "documentation":"<p>An object that represents an identity provider configuration.</p>"
+          "documentation":"<p>An object representing an identity provider configuration.</p>"
         },
         "clientRequestToken":{
           "shape":"String",
@@ -1870,7 +1932,7 @@
       "members":{
         "type":{
           "shape":"String",
-          "documentation":"<p>The type of the identity provider configuration.</p>"
+          "documentation":"<p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>"
         },
         "name":{
           "shape":"String",
@@ -1884,7 +1946,7 @@
       "members":{
         "oidc":{
           "shape":"OidcIdentityProviderConfig",
-          "documentation":"<p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>"
+          "documentation":"<p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>"
         }
       },
       "documentation":"<p>The full description of your identity configuration.</p>"
@@ -1949,7 +2011,7 @@
       "members":{
         "code":{
           "shape":"NodegroupIssueCode",
-          "documentation":"<p>A brief description of the error.</p> <ul> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with your Kubernetes cluster API server.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch instances.</p> </li> <li> <p> <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group. You may be able to recreate an Auto Scaling group with the same settings to recover.</p> </li> <li> <p> <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out processing requests. </p> </li> <li> <p> <b>Ec2LaunchTemplateNotFound</b>: We couldn't find the Amazon EC2 launch template for your managed node group. You may be able to recreate a launch template with the same settings to recover.</p> </li> <li> <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created to recover.</p> </li> <li> <p> <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed node group. Remove any dependencies from the security group.</p> </li> <li> <p> <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate your cluster.</p> </li> <li> <p> <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the subnet. See <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip\">Modifying the public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may be able to recreate an instance profile with the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to recreate an IAM role with the same settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with your managed node group does not have enough available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.</p> </li> <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common causes of this failure are insufficient <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html\">node IAM role</a> permissions or lack of outbound internet access for the nodes. </p> </li> </ul>"
+          "documentation":"<p>A brief description of the error.</p> <ul> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with your Kubernetes cluster API server.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch instances.</p> </li> <li> <p> <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group. You may be able to recreate an Auto Scaling group with the same settings to recover.</p> </li> <li> <p> <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out processing requests. </p> </li> <li> <p> <b>Ec2LaunchTemplateNotFound</b>: We couldn't find the Amazon EC2 launch template for your managed node group. You may be able to recreate a launch template with the same settings to recover.</p> </li> <li> <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created to recover.</p> </li> <li> <p> <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed node group. Remove any dependencies from the security group.</p> </li> <li> <p> <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate your cluster.</p> </li> <li> <p> <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the subnet. See <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip\">Modifying the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may be able to recreate an instance profile with the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to recreate an IAM role with the same settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with your managed node group does not have enough available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.</p> </li> <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common causes of this failure are insufficient <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html\">node IAM role</a> permissions or lack of outbound internet access for the nodes. </p> </li> </ul>"
         },
         "message":{
           "shape":"String",
@@ -1975,7 +2037,7 @@
         },
         "ipFamily":{
           "shape":"IpFamily",
-          "documentation":"<p>Specify which IP version is used to assign Kubernetes Pod and Service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. </p> <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.0 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements and that you're familiar with the considerations listed in <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html\">Assigning IPv6 addresses to Pods and Services</a> in the Amazon EKS User Guide. If you specify <code>ipv6</code>, Kubernetes assigns Service and Pod addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block.</p>"
+          "documentation":"<p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p> <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html\">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>"
         }
       },
       "documentation":"<p>The Kubernetes network configuration for the cluster.</p>"
@@ -1985,15 +2047,15 @@
       "members":{
         "serviceIpv4Cidr":{
           "shape":"String",
-          "documentation":"<p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>"
+          "documentation":"<p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>"
         },
         "serviceIpv6Cidr":{
           "shape":"String",
-          "documentation":"<p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or later cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local address range (fc00::/7).</p>"
+          "documentation":"<p>The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.</p>"
         },
         "ipFamily":{
           "shape":"IpFamily",
-          "documentation":"<p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster. </p>"
+          "documentation":"<p>The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster. </p>"
         }
       },
       "documentation":"<p>The Kubernetes network configuration for the cluster. The response contains a value for <b>serviceIpv6Cidr</b> or <b>serviceIpv4Cidr</b>, but not both. </p>"
@@ -2003,18 +2065,18 @@
       "members":{
         "name":{
           "shape":"String",
-          "documentation":"<p>The name of the launch template.</p>"
+          "documentation":"<p>The name of the launch template.</p> <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>"
         },
         "version":{
           "shape":"String",
-          "documentation":"<p>The version of the launch template to use. If no version is specified, then the template's default version is used.</p>"
+          "documentation":"<p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p> <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p> <p>Default: The default version of the launch template.</p>"
         },
         "id":{
           "shape":"String",
-          "documentation":"<p>The ID of the launch template.</p>"
+          "documentation":"<p>The ID of the launch template.</p> <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>"
         }
       },
-      "documentation":"<p>An object representing a node group launch template specification. The launch template cannot include <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html\"> <code>SubnetId</code> </a>, <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html\"> <code>IamInstanceProfile</code> </a>, <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html\"> <code>RequestSpotInstances</code> </a>, <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html\"> <code>HibernationOptions</code> </a>, or <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html\"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html\"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p> <p>Specify either <code>name</code> or <code>id</code>, but not both.</p>"
+      "documentation":"<p>An object representing a node group launch template specification. The launch template can't include <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html\"> <code>SubnetId</code> </a>, <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html\"> <code>IamInstanceProfile</code> </a>, <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html\"> <code>RequestSpotInstances</code> </a>, <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html\"> <code>HibernationOptions</code> </a>, or <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html\"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html\"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p> <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>"
     },
     "ListAddonsRequest":{
       "type":"structure",
@@ -2411,7 +2473,7 @@
         },
         "taints":{
           "shape":"taintsList",
-          "documentation":"<p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes.</p>"
+          "documentation":"<p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html\">Node taints on managed node groups</a>.</p>"
         },
         "resources":{
           "shape":"NodegroupResources",
@@ -2608,7 +2670,7 @@
           "documentation":"<p>The status of the OIDC identity provider.</p>"
         }
       },
-      "documentation":"<p>An object that represents the configuration for an OpenID Connect (OIDC) identity provider. </p>"
+      "documentation":"<p>An object representing the configuration for an OpenID Connect (OIDC) identity provider. </p>"
     },
     "OidcIdentityProviderConfigRequest":{
       "type":"structure",
@@ -2652,6 +2714,42 @@
         }
       },
       "documentation":"<p>An object representing an OpenID Connect (OIDC) configuration. Before associating an OIDC identity provider to your cluster, review the considerations in <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html\">Authenticating users for your cluster from an OpenID Connect identity provider</a> in the <i>Amazon EKS User Guide</i>.</p>"
+    },
+    "OutpostConfigRequest":{
+      "type":"structure",
+      "required":[
+        "outpostArns",
+        "controlPlaneInstanceType"
+      ],
+      "members":{
+        "outpostArns":{
+          "shape":"StringList",
+          "documentation":"<p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>"
+        },
+        "controlPlaneInstanceType":{
+          "shape":"String",
+          "documentation":"<p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p> <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p> <ul> <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li> <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li> <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li> </ul> <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href=\"http://aws.amazon.com/outposts/rack/features/\">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>"
+        }
+      },
+      "documentation":"<p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html\">Creating a local Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>"
+    },
+    "OutpostConfigResponse":{
+      "type":"structure",
+      "required":[
+        "outpostArns",
+        "controlPlaneInstanceType"
+      ],
+      "members":{
+        "outpostArns":{
+          "shape":"StringList",
+          "documentation":"<p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>"
+        },
+        "controlPlaneInstanceType":{
+          "shape":"String",
+          "documentation":"<p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>"
+        }
+      },
+      "documentation":"<p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>"
     },
     "PercentCapacity":{
       "type":"integer",
@@ -2719,7 +2817,8 @@
       "type":"string",
       "enum":[
         "OVERWRITE",
-        "NONE"
+        "NONE",
+        "PRESERVE"
       ]
     },
     "ResourceInUseException":{
@@ -2784,7 +2883,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>",
+      "documentation":"<p>Required resources (such as service-linked roles) were created and are still propagating. Retry later.</p>",
       "error":{"httpStatusCode":428},
       "exception":true
     },
@@ -2889,7 +2988,7 @@
           "documentation":"<p>The effect of the taint.</p>"
         }
       },
-      "documentation":"<p>A property that allows a node to repel a set of pods.</p>"
+      "documentation":"<p>A property that allows a node to repel a set of pods. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html\">Node taints on managed node groups</a>.</p>"
     },
     "TaintEffect":{
       "type":"string",
@@ -3006,7 +3105,7 @@
         },
         "resolveConflicts":{
           "shape":"ResolveConflicts",
-          "documentation":"<p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>"
+          "documentation":"<p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li> </ul>"
         },
         "clientRequestToken":{
           "shape":"String",
@@ -3121,7 +3220,7 @@
         },
         "taints":{
           "shape":"UpdateTaintsPayload",
-          "documentation":"<p>The Kubernetes taints to be applied to the nodes in the node group after the update.</p>"
+          "documentation":"<p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html\">Node taints on managed node groups</a>.</p>"
         },
         "scalingConfig":{
           "shape":"NodegroupScalingConfig",
@@ -3165,11 +3264,11 @@
         },
         "version":{
           "shape":"String",
-          "documentation":"<p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "releaseVersion":{
           "shape":"String",
-          "documentation":"<p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html\">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the Amazon EKS User Guide.</p>"
+          "documentation":"<p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html\">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html\">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>"
         },
         "launchTemplate":{
           "shape":"LaunchTemplateSpecification",
@@ -3259,7 +3358,7 @@
           "documentation":"<p>Kubernetes taints to be removed.</p>"
         }
       },
-      "documentation":"<p>An object representing the details of an update to a taints payload.</p>"
+      "documentation":"<p>An object representing the details of an update to a taints payload. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html\">Node taints on managed node groups</a>.</p>"
     },
     "UpdateType":{
       "type":"string",

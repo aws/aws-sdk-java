@@ -35,6 +35,8 @@ public class AdBreakMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Slate").build();
     private static final MarshallingInfo<StructuredPojo> SPLICEINSERTMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpliceInsertMessage").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESIGNALMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeSignalMessage").build();
 
     private static final AdBreakMarshaller instance = new AdBreakMarshaller();
 
@@ -56,6 +58,7 @@ public class AdBreakMarshaller {
             protocolMarshaller.marshall(adBreak.getOffsetMillis(), OFFSETMILLIS_BINDING);
             protocolMarshaller.marshall(adBreak.getSlate(), SLATE_BINDING);
             protocolMarshaller.marshall(adBreak.getSpliceInsertMessage(), SPLICEINSERTMESSAGE_BINDING);
+            protocolMarshaller.marshall(adBreak.getTimeSignalMessage(), TIMESIGNALMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

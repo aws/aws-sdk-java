@@ -26,7 +26,10 @@ public enum ShareStatus {
     REJECTED("REJECTED"),
     PENDING("PENDING"),
     REVOKED("REVOKED"),
-    EXPIRED("EXPIRED");
+    EXPIRED("EXPIRED"),
+    ASSOCIATING("ASSOCIATING"),
+    ASSOCIATED("ASSOCIATED"),
+    FAILED("FAILED");
 
     private String value;
 

@@ -40,8 +40,7 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
     private String instanceId;
     /**
      * <p>
-     * The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact
-     * attributes.
+     * The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only
@@ -138,16 +137,15 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact
-     * attributes.
+     * The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only
      * alphanumeric, dash, and underscore characters.
      * </p>
      * 
-     * @return The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-     *         contact attributes.</p>
+     * @return The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact
+     *         attributes.</p>
      *         <p>
      *         You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include
      *         only alphanumeric, dash, and underscore characters.
@@ -159,8 +157,7 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact
-     * attributes.
+     * The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only
@@ -168,8 +165,8 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param attributes
-     *        The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-     *        contact attributes.</p>
+     *        The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact
+     *        attributes.</p>
      *        <p>
      *        You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only
      *        alphanumeric, dash, and underscore characters.
@@ -181,8 +178,7 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact
-     * attributes.
+     * The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.
      * </p>
      * <p>
      * You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only
@@ -190,8 +186,8 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param attributes
-     *        The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-     *        contact attributes.</p>
+     *        The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact
+     *        attributes.</p>
      *        <p>
      *        You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only
      *        alphanumeric, dash, and underscore characters.

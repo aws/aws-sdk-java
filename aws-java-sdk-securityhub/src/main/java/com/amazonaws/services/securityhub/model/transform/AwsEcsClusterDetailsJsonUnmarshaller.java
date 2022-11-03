@@ -48,6 +48,14 @@ public class AwsEcsClusterDetailsJsonUnmarshaller implements Unmarshaller<AwsEcs
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ClusterArn", targetDepth)) {
+                    context.nextToken();
+                    awsEcsClusterDetails.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveServicesCount", targetDepth)) {
+                    context.nextToken();
+                    awsEcsClusterDetails.setActiveServicesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("CapacityProviders", targetDepth)) {
                     context.nextToken();
                     awsEcsClusterDetails.setCapacityProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -71,6 +79,22 @@ public class AwsEcsClusterDetailsJsonUnmarshaller implements Unmarshaller<AwsEcs
                             AwsEcsClusterDefaultCapacityProviderStrategyDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("ClusterName", targetDepth)) {
+                    context.nextToken();
+                    awsEcsClusterDetails.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RegisteredContainerInstancesCount", targetDepth)) {
+                    context.nextToken();
+                    awsEcsClusterDetails.setRegisteredContainerInstancesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("RunningTasksCount", targetDepth)) {
+                    context.nextToken();
+                    awsEcsClusterDetails.setRunningTasksCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    awsEcsClusterDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

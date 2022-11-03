@@ -55,7 +55,7 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
     private BookingOptions bookingOptions;
     /**
      * <p>
-     * The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to
+     * The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
      * WorkMail), or deleted.
      * </p>
      */
@@ -294,13 +294,13 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to
+     * The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
      * WorkMail), or deleted.
      * </p>
      * 
      * @param state
-     *        The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never
-     *        registered to WorkMail), or deleted.
+     *        The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
+     *        WorkMail), or deleted.
      * @see EntityState
      */
 
@@ -310,12 +310,12 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to
+     * The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
      * WorkMail), or deleted.
      * </p>
      * 
-     * @return The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never
-     *         registered to WorkMail), or deleted.
+     * @return The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered
+     *         to WorkMail), or deleted.
      * @see EntityState
      */
 
@@ -325,13 +325,13 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to
+     * The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
      * WorkMail), or deleted.
      * </p>
      * 
      * @param state
-     *        The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never
-     *        registered to WorkMail), or deleted.
+     *        The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
+     *        WorkMail), or deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -343,13 +343,13 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to
+     * The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
      * WorkMail), or deleted.
      * </p>
      * 
      * @param state
-     *        The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never
-     *        registered to WorkMail), or deleted.
+     *        The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to
+     *        WorkMail), or deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */

@@ -32,7 +32,7 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     private String nextToken;
     /**
      * <p>
-     * An array of repositories.
+     * An array of repository links.
      * </p>
      */
     private java.util.List<RepositorySummary> repositories;
@@ -85,10 +85,10 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of repositories.
+     * An array of repository links.
      * </p>
      * 
-     * @return An array of repositories.
+     * @return An array of repository links.
      */
 
     public java.util.List<RepositorySummary> getRepositories() {
@@ -97,11 +97,11 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of repositories.
+     * An array of repository links.
      * </p>
      * 
      * @param repositories
-     *        An array of repositories.
+     *        An array of repository links.
      */
 
     public void setRepositories(java.util.Collection<RepositorySummary> repositories) {
@@ -115,7 +115,7 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of repositories.
+     * An array of repository links.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param repositories
-     *        An array of repositories.
+     *        An array of repository links.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of repositories.
+     * An array of repository links.
      * </p>
      * 
      * @param repositories
-     *        An array of repositories.
+     *        An array of repository links.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

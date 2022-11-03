@@ -30,18 +30,21 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      */
     private Integer manifestWindowSeconds;
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
      * @param manifestWindowSeconds
-     *        The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     *        The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *        <code>3600</code> seconds.
      */
 
     public void setManifestWindowSeconds(Integer manifestWindowSeconds) {
@@ -50,10 +53,12 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
-     * @return The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * @return The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *         <code>3600</code> seconds.
      */
 
     public Integer getManifestWindowSeconds() {
@@ -62,11 +67,13 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
      * @param manifestWindowSeconds
-     *        The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     *        The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *        <code>3600</code> seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

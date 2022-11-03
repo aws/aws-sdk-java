@@ -42,7 +42,7 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> architecture;
     /**
      * <p>
-     * An object that represents the compatibilities of a version.
+     * An object representing the compatibilities of a version.
      * </p>
      */
     private java.util.List<Compatibility> compatibilities;
@@ -159,10 +159,10 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that represents the compatibilities of a version.
+     * An object representing the compatibilities of a version.
      * </p>
      * 
-     * @return An object that represents the compatibilities of a version.
+     * @return An object representing the compatibilities of a version.
      */
 
     public java.util.List<Compatibility> getCompatibilities() {
@@ -171,11 +171,11 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that represents the compatibilities of a version.
+     * An object representing the compatibilities of a version.
      * </p>
      * 
      * @param compatibilities
-     *        An object that represents the compatibilities of a version.
+     *        An object representing the compatibilities of a version.
      */
 
     public void setCompatibilities(java.util.Collection<Compatibility> compatibilities) {
@@ -189,7 +189,7 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that represents the compatibilities of a version.
+     * An object representing the compatibilities of a version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -198,7 +198,7 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param compatibilities
-     *        An object that represents the compatibilities of a version.
+     *        An object representing the compatibilities of a version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +214,11 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that represents the compatibilities of a version.
+     * An object representing the compatibilities of a version.
      * </p>
      * 
      * @param compatibilities
-     *        An object that represents the compatibilities of a version.
+     *        An object representing the compatibilities of a version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

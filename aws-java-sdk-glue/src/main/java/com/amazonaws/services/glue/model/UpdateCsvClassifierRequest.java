@@ -71,6 +71,18 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
      * </p>
      */
     private Boolean allowSingleColumn;
+    /**
+     * <p>
+     * Specifies the configuration of custom datatypes.
+     * </p>
+     */
+    private Boolean customDatatypeConfigured;
+    /**
+     * <p>
+     * Specifies a list of supported custom datatypes.
+     * </p>
+     */
+    private java.util.List<String> customDatatypes;
 
     /**
      * <p>
@@ -432,6 +444,128 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the configuration of custom datatypes.
+     * </p>
+     * 
+     * @param customDatatypeConfigured
+     *        Specifies the configuration of custom datatypes.
+     */
+
+    public void setCustomDatatypeConfigured(Boolean customDatatypeConfigured) {
+        this.customDatatypeConfigured = customDatatypeConfigured;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration of custom datatypes.
+     * </p>
+     * 
+     * @return Specifies the configuration of custom datatypes.
+     */
+
+    public Boolean getCustomDatatypeConfigured() {
+        return this.customDatatypeConfigured;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration of custom datatypes.
+     * </p>
+     * 
+     * @param customDatatypeConfigured
+     *        Specifies the configuration of custom datatypes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCsvClassifierRequest withCustomDatatypeConfigured(Boolean customDatatypeConfigured) {
+        setCustomDatatypeConfigured(customDatatypeConfigured);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration of custom datatypes.
+     * </p>
+     * 
+     * @return Specifies the configuration of custom datatypes.
+     */
+
+    public Boolean isCustomDatatypeConfigured() {
+        return this.customDatatypeConfigured;
+    }
+
+    /**
+     * <p>
+     * Specifies a list of supported custom datatypes.
+     * </p>
+     * 
+     * @return Specifies a list of supported custom datatypes.
+     */
+
+    public java.util.List<String> getCustomDatatypes() {
+        return customDatatypes;
+    }
+
+    /**
+     * <p>
+     * Specifies a list of supported custom datatypes.
+     * </p>
+     * 
+     * @param customDatatypes
+     *        Specifies a list of supported custom datatypes.
+     */
+
+    public void setCustomDatatypes(java.util.Collection<String> customDatatypes) {
+        if (customDatatypes == null) {
+            this.customDatatypes = null;
+            return;
+        }
+
+        this.customDatatypes = new java.util.ArrayList<String>(customDatatypes);
+    }
+
+    /**
+     * <p>
+     * Specifies a list of supported custom datatypes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomDatatypes(java.util.Collection)} or {@link #withCustomDatatypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param customDatatypes
+     *        Specifies a list of supported custom datatypes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCsvClassifierRequest withCustomDatatypes(String... customDatatypes) {
+        if (this.customDatatypes == null) {
+            setCustomDatatypes(new java.util.ArrayList<String>(customDatatypes.length));
+        }
+        for (String ele : customDatatypes) {
+            this.customDatatypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a list of supported custom datatypes.
+     * </p>
+     * 
+     * @param customDatatypes
+     *        Specifies a list of supported custom datatypes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCsvClassifierRequest withCustomDatatypes(java.util.Collection<String> customDatatypes) {
+        setCustomDatatypes(customDatatypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -456,7 +590,11 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
         if (getDisableValueTrimming() != null)
             sb.append("DisableValueTrimming: ").append(getDisableValueTrimming()).append(",");
         if (getAllowSingleColumn() != null)
-            sb.append("AllowSingleColumn: ").append(getAllowSingleColumn());
+            sb.append("AllowSingleColumn: ").append(getAllowSingleColumn()).append(",");
+        if (getCustomDatatypeConfigured() != null)
+            sb.append("CustomDatatypeConfigured: ").append(getCustomDatatypeConfigured()).append(",");
+        if (getCustomDatatypes() != null)
+            sb.append("CustomDatatypes: ").append(getCustomDatatypes());
         sb.append("}");
         return sb.toString();
     }
@@ -499,6 +637,14 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
             return false;
         if (other.getAllowSingleColumn() != null && other.getAllowSingleColumn().equals(this.getAllowSingleColumn()) == false)
             return false;
+        if (other.getCustomDatatypeConfigured() == null ^ this.getCustomDatatypeConfigured() == null)
+            return false;
+        if (other.getCustomDatatypeConfigured() != null && other.getCustomDatatypeConfigured().equals(this.getCustomDatatypeConfigured()) == false)
+            return false;
+        if (other.getCustomDatatypes() == null ^ this.getCustomDatatypes() == null)
+            return false;
+        if (other.getCustomDatatypes() != null && other.getCustomDatatypes().equals(this.getCustomDatatypes()) == false)
+            return false;
         return true;
     }
 
@@ -514,6 +660,8 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getHeader() == null) ? 0 : getHeader().hashCode());
         hashCode = prime * hashCode + ((getDisableValueTrimming() == null) ? 0 : getDisableValueTrimming().hashCode());
         hashCode = prime * hashCode + ((getAllowSingleColumn() == null) ? 0 : getAllowSingleColumn().hashCode());
+        hashCode = prime * hashCode + ((getCustomDatatypeConfigured() == null) ? 0 : getCustomDatatypeConfigured().hashCode());
+        hashCode = prime * hashCode + ((getCustomDatatypes() == null) ? 0 : getCustomDatatypes().hashCode());
         return hashCode;
     }
 

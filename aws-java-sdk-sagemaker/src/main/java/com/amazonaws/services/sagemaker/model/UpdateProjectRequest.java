@@ -52,6 +52,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
      * for example, by purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
+     * In addition, the project must have tag update constraints set in order to include this parameter in the request.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web
+     * Services Service Catalog Tag Update Constraints</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -205,12 +209,19 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
      * for example, by purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
+     * In addition, the project must have tag update constraints set in order to include this parameter in the request.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web
+     * Services Service Catalog Tag Update Constraints</a>.
      * </p>
      * 
      * @return An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
      *         different ways, for example, by purpose, owner, or environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *         Resources</a>.
+     *         Resources</a>. In addition, the project must have tag update constraints set in order to include this
+     *         parameter in the request. For more information, see <a
+     *         href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html"
+     *         >Amazon Web Services Service Catalog Tag Update Constraints</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -222,13 +233,20 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
      * for example, by purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
+     * In addition, the project must have tag update constraints set in order to include this parameter in the request.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web
+     * Services Service Catalog Tag Update Constraints</a>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
      *        different ways, for example, by purpose, owner, or environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        Resources</a>.
+     *        Resources</a>. In addition, the project must have tag update constraints set in order to include this
+     *        parameter in the request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     *        Web Services Service Catalog Tag Update Constraints</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -245,6 +263,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
      * for example, by purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
+     * In addition, the project must have tag update constraints set in order to include this parameter in the request.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web
+     * Services Service Catalog Tag Update Constraints</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,7 +278,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
      *        different ways, for example, by purpose, owner, or environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        Resources</a>.
+     *        Resources</a>. In addition, the project must have tag update constraints set in order to include this
+     *        parameter in the request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     *        Web Services Service Catalog Tag Update Constraints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,13 +300,20 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
      * for example, by purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
+     * In addition, the project must have tag update constraints set in order to include this parameter in the request.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web
+     * Services Service Catalog Tag Update Constraints</a>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
      *        different ways, for example, by purpose, owner, or environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        Resources</a>.
+     *        Resources</a>. In addition, the project must have tag update constraints set in order to include this
+     *        parameter in the request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     *        Web Services Service Catalog Tag Update Constraints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

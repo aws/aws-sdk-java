@@ -40,6 +40,8 @@ public class PutConformancePackRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryS3KeyPrefix").build();
     private static final MarshallingInfo<List> CONFORMANCEPACKINPUTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConformancePackInputParameters").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPLATESSMDOCUMENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateSSMDocumentDetails").build();
 
     private static final PutConformancePackRequestMarshaller instance = new PutConformancePackRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class PutConformancePackRequestMarshaller {
             protocolMarshaller.marshall(putConformancePackRequest.getDeliveryS3Bucket(), DELIVERYS3BUCKET_BINDING);
             protocolMarshaller.marshall(putConformancePackRequest.getDeliveryS3KeyPrefix(), DELIVERYS3KEYPREFIX_BINDING);
             protocolMarshaller.marshall(putConformancePackRequest.getConformancePackInputParameters(), CONFORMANCEPACKINPUTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(putConformancePackRequest.getTemplateSSMDocumentDetails(), TEMPLATESSMDOCUMENTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

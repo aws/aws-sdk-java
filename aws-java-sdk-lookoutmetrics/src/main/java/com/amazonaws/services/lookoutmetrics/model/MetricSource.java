@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about source data used to generate a metric.
+ * Contains information about source data used to generate metrics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/MetricSource" target="_top">AWS API
@@ -31,28 +31,34 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
     private S3SourceConfig s3SourceConfig;
     /**
      * <p>
-     * An object containing information about the AppFlow configuration.
+     * Details about an AppFlow datasource.
      * </p>
      */
     private AppFlowConfig appFlowConfig;
     /**
      * <p>
-     * An object containing information about the Amazon CloudWatch monitoring configuration.
+     * Details about an Amazon CloudWatch monitoring datasource.
      * </p>
      */
     private CloudWatchConfig cloudWatchConfig;
     /**
      * <p>
-     * An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     * Details about an Amazon Relational Database Service (RDS) datasource.
      * </p>
      */
     private RDSSourceConfig rDSSourceConfig;
     /**
      * <p>
-     * An object containing information about the Amazon Redshift database configuration.
+     * Details about an Amazon Redshift database datasource.
      * </p>
      */
     private RedshiftSourceConfig redshiftSourceConfig;
+    /**
+     * <p>
+     * Details about an Amazon Athena datasource.
+     * </p>
+     */
+    private AthenaSourceConfig athenaSourceConfig;
 
     /**
      * @param s3SourceConfig
@@ -82,11 +88,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the AppFlow configuration.
+     * Details about an AppFlow datasource.
      * </p>
      * 
      * @param appFlowConfig
-     *        An object containing information about the AppFlow configuration.
+     *        Details about an AppFlow datasource.
      */
 
     public void setAppFlowConfig(AppFlowConfig appFlowConfig) {
@@ -95,10 +101,10 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the AppFlow configuration.
+     * Details about an AppFlow datasource.
      * </p>
      * 
-     * @return An object containing information about the AppFlow configuration.
+     * @return Details about an AppFlow datasource.
      */
 
     public AppFlowConfig getAppFlowConfig() {
@@ -107,11 +113,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the AppFlow configuration.
+     * Details about an AppFlow datasource.
      * </p>
      * 
      * @param appFlowConfig
-     *        An object containing information about the AppFlow configuration.
+     *        Details about an AppFlow datasource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +128,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon CloudWatch monitoring configuration.
+     * Details about an Amazon CloudWatch monitoring datasource.
      * </p>
      * 
      * @param cloudWatchConfig
-     *        An object containing information about the Amazon CloudWatch monitoring configuration.
+     *        Details about an Amazon CloudWatch monitoring datasource.
      */
 
     public void setCloudWatchConfig(CloudWatchConfig cloudWatchConfig) {
@@ -135,10 +141,10 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon CloudWatch monitoring configuration.
+     * Details about an Amazon CloudWatch monitoring datasource.
      * </p>
      * 
-     * @return An object containing information about the Amazon CloudWatch monitoring configuration.
+     * @return Details about an Amazon CloudWatch monitoring datasource.
      */
 
     public CloudWatchConfig getCloudWatchConfig() {
@@ -147,11 +153,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon CloudWatch monitoring configuration.
+     * Details about an Amazon CloudWatch monitoring datasource.
      * </p>
      * 
      * @param cloudWatchConfig
-     *        An object containing information about the Amazon CloudWatch monitoring configuration.
+     *        Details about an Amazon CloudWatch monitoring datasource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +168,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     * Details about an Amazon Relational Database Service (RDS) datasource.
      * </p>
      * 
      * @param rDSSourceConfig
-     *        An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     *        Details about an Amazon Relational Database Service (RDS) datasource.
      */
 
     public void setRDSSourceConfig(RDSSourceConfig rDSSourceConfig) {
@@ -175,10 +181,10 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     * Details about an Amazon Relational Database Service (RDS) datasource.
      * </p>
      * 
-     * @return An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     * @return Details about an Amazon Relational Database Service (RDS) datasource.
      */
 
     public RDSSourceConfig getRDSSourceConfig() {
@@ -187,11 +193,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     * Details about an Amazon Relational Database Service (RDS) datasource.
      * </p>
      * 
      * @param rDSSourceConfig
-     *        An object containing information about the Amazon Relational Database Service (RDS) configuration.
+     *        Details about an Amazon Relational Database Service (RDS) datasource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +208,11 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon Redshift database configuration.
+     * Details about an Amazon Redshift database datasource.
      * </p>
      * 
      * @param redshiftSourceConfig
-     *        An object containing information about the Amazon Redshift database configuration.
+     *        Details about an Amazon Redshift database datasource.
      */
 
     public void setRedshiftSourceConfig(RedshiftSourceConfig redshiftSourceConfig) {
@@ -215,10 +221,10 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon Redshift database configuration.
+     * Details about an Amazon Redshift database datasource.
      * </p>
      * 
-     * @return An object containing information about the Amazon Redshift database configuration.
+     * @return Details about an Amazon Redshift database datasource.
      */
 
     public RedshiftSourceConfig getRedshiftSourceConfig() {
@@ -227,16 +233,56 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing information about the Amazon Redshift database configuration.
+     * Details about an Amazon Redshift database datasource.
      * </p>
      * 
      * @param redshiftSourceConfig
-     *        An object containing information about the Amazon Redshift database configuration.
+     *        Details about an Amazon Redshift database datasource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MetricSource withRedshiftSourceConfig(RedshiftSourceConfig redshiftSourceConfig) {
         setRedshiftSourceConfig(redshiftSourceConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon Athena datasource.
+     * </p>
+     * 
+     * @param athenaSourceConfig
+     *        Details about an Amazon Athena datasource.
+     */
+
+    public void setAthenaSourceConfig(AthenaSourceConfig athenaSourceConfig) {
+        this.athenaSourceConfig = athenaSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon Athena datasource.
+     * </p>
+     * 
+     * @return Details about an Amazon Athena datasource.
+     */
+
+    public AthenaSourceConfig getAthenaSourceConfig() {
+        return this.athenaSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon Athena datasource.
+     * </p>
+     * 
+     * @param athenaSourceConfig
+     *        Details about an Amazon Athena datasource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricSource withAthenaSourceConfig(AthenaSourceConfig athenaSourceConfig) {
+        setAthenaSourceConfig(athenaSourceConfig);
         return this;
     }
 
@@ -261,7 +307,9 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
         if (getRDSSourceConfig() != null)
             sb.append("RDSSourceConfig: ").append(getRDSSourceConfig()).append(",");
         if (getRedshiftSourceConfig() != null)
-            sb.append("RedshiftSourceConfig: ").append(getRedshiftSourceConfig());
+            sb.append("RedshiftSourceConfig: ").append(getRedshiftSourceConfig()).append(",");
+        if (getAthenaSourceConfig() != null)
+            sb.append("AthenaSourceConfig: ").append(getAthenaSourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +344,10 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRedshiftSourceConfig() != null && other.getRedshiftSourceConfig().equals(this.getRedshiftSourceConfig()) == false)
             return false;
+        if (other.getAthenaSourceConfig() == null ^ this.getAthenaSourceConfig() == null)
+            return false;
+        if (other.getAthenaSourceConfig() != null && other.getAthenaSourceConfig().equals(this.getAthenaSourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +361,7 @@ public class MetricSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCloudWatchConfig() == null) ? 0 : getCloudWatchConfig().hashCode());
         hashCode = prime * hashCode + ((getRDSSourceConfig() == null) ? 0 : getRDSSourceConfig().hashCode());
         hashCode = prime * hashCode + ((getRedshiftSourceConfig() == null) ? 0 : getRedshiftSourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getAthenaSourceConfig() == null) ? 0 : getAthenaSourceConfig().hashCode());
         return hashCode;
     }
 

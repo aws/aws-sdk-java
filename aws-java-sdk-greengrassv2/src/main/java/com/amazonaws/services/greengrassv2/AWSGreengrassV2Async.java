@@ -286,7 +286,17 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * </li>
      * <li>
      * <p>
+     * Python 3.9 – <code>python3.9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Java 8 – <code>java8</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Java 11 – <code>java11</code>
      * </p>
      * </li>
      * <li>
@@ -297,6 +307,11 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <li>
      * <p>
      * Node.js 12 – <code>nodejs12.x</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Node.js 14 – <code>nodejs14.x</code>
      * </p>
      * </li>
      * </ul>
@@ -372,7 +387,17 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * </li>
      * <li>
      * <p>
+     * Python 3.9 – <code>python3.9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Java 8 – <code>java8</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Java 11 – <code>java11</code>
      * </p>
      * </li>
      * <li>
@@ -383,6 +408,11 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <li>
      * <p>
      * Node.js 12 – <code>nodejs12.x</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Node.js 14 – <code>nodejs14.x</code>
      * </p>
      * </li>
      * </ul>
@@ -554,6 +584,49 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
+     * Deletes a deployment. To delete an active deployment, you must first cancel it. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.
+     * </p>
+     * <p>
+     * Deleting a deployment doesn't affect core devices that run that deployment, because core devices store the
+     * deployment's configuration on the device. Additionally, core devices can roll back to a previous deployment that
+     * has been deleted.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @return A Java Future containing the result of the DeleteDeployment operation returned by the service.
+     * @sample AWSGreengrassV2Async.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest deleteDeploymentRequest);
+
+    /**
+     * <p>
+     * Deletes a deployment. To delete an active deployment, you must first cancel it. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.
+     * </p>
+     * <p>
+     * Deleting a deployment doesn't affect core devices that run that deployment, because core devices store the
+     * deployment's configuration on the device. Additionally, core devices can roll back to a previous deployment that
+     * has been deleted.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeployment operation returned by the service.
+     * @sample AWSGreengrassV2AsyncHandler.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest deleteDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves metadata for a version of a component.
      * </p>
      * 
@@ -628,8 +701,7 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Gets the recipe for a version of a component. Core devices can call this operation to identify the artifacts and
-     * requirements to install a component.
+     * Gets the recipe for a version of a component.
      * </p>
      * 
      * @param getComponentRequest
@@ -642,8 +714,7 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Gets the recipe for a version of a component. Core devices can call this operation to identify the artifacts and
-     * requirements to install a component.
+     * Gets the recipe for a version of a component.
      * </p>
      * 
      * @param getComponentRequest
@@ -661,8 +732,8 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Gets the pre-signed URL to download a public component artifact. Core devices call this operation to identify the
-     * URL that they can use to download an artifact to install.
+     * Gets the pre-signed URL to download a public or a Lambda component artifact. Core devices call this operation to
+     * identify the URL that they can use to download an artifact to install.
      * </p>
      * 
      * @param getComponentVersionArtifactRequest
@@ -676,8 +747,8 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Gets the pre-signed URL to download a public component artifact. Core devices call this operation to identify the
-     * URL that they can use to download an artifact to install.
+     * Gets the pre-signed URL to download a public or a Lambda component artifact. Core devices call this operation to
+     * identify the URL that they can use to download an artifact to install.
      * </p>
      * 
      * @param getComponentVersionArtifactRequest
@@ -747,6 +818,46 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <p>
      * Retrieves metadata for a Greengrass core device.
      * </p>
+     * <note>
+     * <p>
+     * IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT
+     * Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services
+     * Cloud, then the reported status of that device might not reflect its current status. The status timestamp
+     * indicates when the device status was last updated.
+     * </p>
+     * <p>
+     * Core devices send status updates at the following times:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When the IoT Greengrass Core software starts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the core device receives a deployment from the Amazon Web Services Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the status of any component on the core device becomes <code>BROKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * At a <a href=
+     * "https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss"
+     * >regular interval that you can configure</a>, which defaults to 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param getCoreDeviceRequest
      * @return A Java Future containing the result of the GetCoreDevice operation returned by the service.
@@ -760,6 +871,46 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <p>
      * Retrieves metadata for a Greengrass core device.
      * </p>
+     * <note>
+     * <p>
+     * IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT
+     * Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services
+     * Cloud, then the reported status of that device might not reflect its current status. The status timestamp
+     * indicates when the device status was last updated.
+     * </p>
+     * <p>
+     * Core devices send status updates at the following times:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When the IoT Greengrass Core software starts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the core device receives a deployment from the Amazon Web Services Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the status of any component on the core device becomes <code>BROKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * At a <a href=
+     * "https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss"
+     * >regular interval that you can configure</a>, which defaults to 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param getCoreDeviceRequest
      * @param asyncHandler
@@ -949,6 +1100,46 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <p>
      * Retrieves a paginated list of Greengrass core devices.
      * </p>
+     * <note>
+     * <p>
+     * IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT
+     * Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services
+     * Cloud, then the reported status of that device might not reflect its current status. The status timestamp
+     * indicates when the device status was last updated.
+     * </p>
+     * <p>
+     * Core devices send status updates at the following times:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When the IoT Greengrass Core software starts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the core device receives a deployment from the Amazon Web Services Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the status of any component on the core device becomes <code>BROKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * At a <a href=
+     * "https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss"
+     * >regular interval that you can configure</a>, which defaults to 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param listCoreDevicesRequest
      * @return A Java Future containing the result of the ListCoreDevices operation returned by the service.
@@ -962,6 +1153,46 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
      * <p>
      * Retrieves a paginated list of Greengrass core devices.
      * </p>
+     * <note>
+     * <p>
+     * IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT
+     * Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services
+     * Cloud, then the reported status of that device might not reflect its current status. The status timestamp
+     * indicates when the device status was last updated.
+     * </p>
+     * <p>
+     * Core devices send status updates at the following times:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When the IoT Greengrass Core software starts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the core device receives a deployment from the Amazon Web Services Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the status of any component on the core device becomes <code>BROKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * At a <a href=
+     * "https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss"
+     * >regular interval that you can configure</a>, which defaults to 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param listCoreDevicesRequest
      * @param asyncHandler
@@ -1040,8 +1271,50 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Retrieves a paginated list of the components that a Greengrass core device runs.
+     * Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't
+     * include components that are deployed as dependencies of other components. To include dependencies in the
+     * response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.
      * </p>
+     * <note>
+     * <p>
+     * IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT
+     * Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services
+     * Cloud, then the reported status of that device might not reflect its current status. The status timestamp
+     * indicates when the device status was last updated.
+     * </p>
+     * <p>
+     * Core devices send status updates at the following times:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When the IoT Greengrass Core software starts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the core device receives a deployment from the Amazon Web Services Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the status of any component on the core device becomes <code>BROKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * At a <a href=
+     * "https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss"
+     * >regular interval that you can configure</a>, which defaults to 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param listInstalledComponentsRequest
      * @return A Java Future containing the result of the ListInstalledComponents operation returned by the service.
@@ -1053,8 +1326,50 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Retrieves a paginated list of the components that a Greengrass core device runs.
+     * Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't
+     * include components that are deployed as dependencies of other components. To include dependencies in the
+     * response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.
      * </p>
+     * <note>
+     * <p>
+     * IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT
+     * Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services
+     * Cloud, then the reported status of that device might not reflect its current status. The status timestamp
+     * indicates when the device status was last updated.
+     * </p>
+     * <p>
+     * Core devices send status updates at the following times:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When the IoT Greengrass Core software starts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the core device receives a deployment from the Amazon Web Services Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the status of any component on the core device becomes <code>BROKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * At a <a href=
+     * "https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss"
+     * >regular interval that you can configure</a>, which defaults to 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param listInstalledComponentsRequest
      * @param asyncHandler

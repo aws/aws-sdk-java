@@ -40,6 +40,8 @@ public class PermissionGroupMarshaller {
             .marshallLocationName("createTime").build();
     private static final MarshallingInfo<Long> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedTime").build();
+    private static final MarshallingInfo<String> MEMBERSHIPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("membershipStatus").build();
 
     private static final PermissionGroupMarshaller instance = new PermissionGroupMarshaller();
 
@@ -63,6 +65,7 @@ public class PermissionGroupMarshaller {
             protocolMarshaller.marshall(permissionGroup.getApplicationPermissions(), APPLICATIONPERMISSIONS_BINDING);
             protocolMarshaller.marshall(permissionGroup.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(permissionGroup.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(permissionGroup.getMembershipStatus(), MEMBERSHIPSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

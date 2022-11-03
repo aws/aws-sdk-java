@@ -225,6 +225,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsEcsCluster(AwsEcsClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsEcsContainer", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEcsContainer(AwsEcsContainerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsEcsTaskDefinition", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsEcsTaskDefinition(AwsEcsTaskDefinitionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -303,6 +307,66 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 if (context.testExpression("AwsRdsDbSecurityGroup", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsRdsDbSecurityGroup(AwsRdsDbSecurityGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsKinesisStream", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsKinesisStream(AwsKinesisStreamDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2TransitGateway", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2TransitGateway(AwsEc2TransitGatewayDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEfsAccessPoint", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEfsAccessPoint(AwsEfsAccessPointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsCloudFormationStack", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsCloudFormationStack(AwsCloudFormationStackDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsCloudWatchAlarm", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsCloudWatchAlarm(AwsCloudWatchAlarmDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2VpcPeeringConnection", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2VpcPeeringConnection(AwsEc2VpcPeeringConnectionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafRegionalRuleGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafRegionalRuleGroup(AwsWafRegionalRuleGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafRegionalRule", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafRegionalRule(AwsWafRegionalRuleDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafRegionalWebAcl", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafRegionalWebAcl(AwsWafRegionalWebAclDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafRule", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafRule(AwsWafRuleDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafRuleGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafRuleGroup(AwsWafRuleGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEcsTask", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEcsTask(AwsEcsTaskDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsBackupBackupVault", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsBackupBackupVault(AwsBackupBackupVaultDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsBackupBackupPlan", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsBackupBackupPlan(AwsBackupBackupPlanDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsBackupRecoveryPoint", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

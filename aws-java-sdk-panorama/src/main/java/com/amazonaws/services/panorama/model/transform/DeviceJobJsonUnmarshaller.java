@@ -64,6 +64,10 @@ public class DeviceJobJsonUnmarshaller implements Unmarshaller<DeviceJob, JsonUn
                     context.nextToken();
                     deviceJob.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JobType", targetDepth)) {
+                    context.nextToken();
+                    deviceJob.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

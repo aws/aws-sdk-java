@@ -38,6 +38,10 @@ public class NetworkFirewallPolicyDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatelessCustomActions").build();
     private static final MarshallingInfo<List> STATEFULRULEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatefulRuleGroups").build();
+    private static final MarshallingInfo<List> STATEFULDEFAULTACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatefulDefaultActions").build();
+    private static final MarshallingInfo<StructuredPojo> STATEFULENGINEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatefulEngineOptions").build();
 
     private static final NetworkFirewallPolicyDescriptionMarshaller instance = new NetworkFirewallPolicyDescriptionMarshaller();
 
@@ -60,6 +64,8 @@ public class NetworkFirewallPolicyDescriptionMarshaller {
             protocolMarshaller.marshall(networkFirewallPolicyDescription.getStatelessFragmentDefaultActions(), STATELESSFRAGMENTDEFAULTACTIONS_BINDING);
             protocolMarshaller.marshall(networkFirewallPolicyDescription.getStatelessCustomActions(), STATELESSCUSTOMACTIONS_BINDING);
             protocolMarshaller.marshall(networkFirewallPolicyDescription.getStatefulRuleGroups(), STATEFULRULEGROUPS_BINDING);
+            protocolMarshaller.marshall(networkFirewallPolicyDescription.getStatefulDefaultActions(), STATEFULDEFAULTACTIONS_BINDING);
+            protocolMarshaller.marshall(networkFirewallPolicyDescription.getStatefulEngineOptions(), STATEFULENGINEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

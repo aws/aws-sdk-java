@@ -46,6 +46,8 @@ public class CreateLocationObjectStorageRequestMarshaller {
             .marshallLocationName("AgentArns").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> SERVERCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerCertificate").build();
 
     private static final CreateLocationObjectStorageRequestMarshaller instance = new CreateLocationObjectStorageRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateLocationObjectStorageRequestMarshaller {
             protocolMarshaller.marshall(createLocationObjectStorageRequest.getSecretKey(), SECRETKEY_BINDING);
             protocolMarshaller.marshall(createLocationObjectStorageRequest.getAgentArns(), AGENTARNS_BINDING);
             protocolMarshaller.marshall(createLocationObjectStorageRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createLocationObjectStorageRequest.getServerCertificate(), SERVERCERTIFICATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

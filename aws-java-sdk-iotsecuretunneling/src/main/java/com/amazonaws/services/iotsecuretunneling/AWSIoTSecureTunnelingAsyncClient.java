@@ -25,13 +25,13 @@ import java.util.concurrent.ExecutorService;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS IoT Secure Tunneling</fullname>
+ * <fullname>IoT Secure Tunneling</fullname>
  * <p>
- * AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
+ * IoT Secure Tunneling creates remote connections to devices deployed in the field.
  * </p>
  * <p>
- * For more information about how AWS IoT Secure Tunneling works, see <a
- * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS IoT Secure Tunneling</a>.
+ * For more information about how IoT Secure Tunneling works, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT Secure Tunneling</a>.
  * </p>
  */
 @ThreadSafe
@@ -230,6 +230,39 @@ public class AWSIoTSecureTunnelingAsyncClient extends AWSIoTSecureTunnelingClien
 
                 try {
                     result = executeOpenTunnel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateTunnelAccessTokenResult> rotateTunnelAccessTokenAsync(RotateTunnelAccessTokenRequest request) {
+
+        return rotateTunnelAccessTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateTunnelAccessTokenResult> rotateTunnelAccessTokenAsync(final RotateTunnelAccessTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RotateTunnelAccessTokenRequest, RotateTunnelAccessTokenResult> asyncHandler) {
+        final RotateTunnelAccessTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RotateTunnelAccessTokenResult>() {
+            @Override
+            public RotateTunnelAccessTokenResult call() throws Exception {
+                RotateTunnelAccessTokenResult result = null;
+
+                try {
+                    result = executeRotateTunnelAccessToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

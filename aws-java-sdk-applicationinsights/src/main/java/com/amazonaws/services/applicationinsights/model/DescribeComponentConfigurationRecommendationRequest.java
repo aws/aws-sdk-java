@@ -40,8 +40,7 @@ public class DescribeComponentConfigurationRecommendationRequest extends com.ama
     private String componentName;
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      */
     private String tier;
@@ -128,13 +127,11 @@ public class DescribeComponentConfigurationRecommendationRequest extends com.ama
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
      * @param tier
-     *        The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     *        <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        The tier of the application component.
      * @see Tier
      */
 
@@ -144,12 +141,10 @@ public class DescribeComponentConfigurationRecommendationRequest extends com.ama
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
-     * @return The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     *         <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * @return The tier of the application component.
      * @see Tier
      */
 
@@ -159,13 +154,11 @@ public class DescribeComponentConfigurationRecommendationRequest extends com.ama
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
      * @param tier
-     *        The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     *        <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        The tier of the application component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tier
      */
@@ -177,13 +170,11 @@ public class DescribeComponentConfigurationRecommendationRequest extends com.ama
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
      * @param tier
-     *        The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
-     *        <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        The tier of the application component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tier
      */

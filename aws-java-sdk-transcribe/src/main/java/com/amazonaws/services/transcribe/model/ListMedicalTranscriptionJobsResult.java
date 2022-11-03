@@ -25,33 +25,36 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The requested status of the medical transcription jobs returned.
+     * Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation
+     * date, with the newest job first.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on a page,
-     * Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      */
     private java.util.List<MedicalTranscriptionJobSummary> medicalTranscriptionJobSummaries;
 
     /**
      * <p>
-     * The requested status of the medical transcription jobs returned.
+     * Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation
+     * date, with the newest job first.
      * </p>
      * 
      * @param status
-     *        The requested status of the medical transcription jobs returned.
+     *        Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by
+     *        creation date, with the newest job first.
      * @see TranscriptionJobStatus
      */
 
@@ -61,10 +64,12 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The requested status of the medical transcription jobs returned.
+     * Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation
+     * date, with the newest job first.
      * </p>
      * 
-     * @return The requested status of the medical transcription jobs returned.
+     * @return Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by
+     *         creation date, with the newest job first.
      * @see TranscriptionJobStatus
      */
 
@@ -74,11 +79,13 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The requested status of the medical transcription jobs returned.
+     * Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation
+     * date, with the newest job first.
      * </p>
      * 
      * @param status
-     *        The requested status of the medical transcription jobs returned.
+     *        Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by
+     *        creation date, with the newest job first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -90,11 +97,13 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The requested status of the medical transcription jobs returned.
+     * Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation
+     * date, with the newest job first.
      * </p>
      * 
      * @param status
-     *        The requested status of the medical transcription jobs returned.
+     *        Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by
+     *        creation date, with the newest job first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -106,17 +115,17 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on a page,
-     * Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size
-     *        of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     *        a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next
-     *        request to the <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,17 +134,16 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on a page,
-     * Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
-     * @return The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum
-     *         size of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can
-     *         fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in
-     *         the next request to the <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of
-     *         jobs.
+     * @return If <code>NextToken</code> is present in your response, it indicates that not all results are displayed.
+     *         To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in
+     *         your results output, then run your request again including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -144,17 +152,17 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on a page,
-     * Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size
-     *        of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     *        a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next
-     *        request to the <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,10 +173,10 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * 
-     * @return A list of objects containing summary information for a transcription job.
+     * @return Provides a summary of information about each result.
      */
 
     public java.util.List<MedicalTranscriptionJobSummary> getMedicalTranscriptionJobSummaries() {
@@ -177,11 +185,11 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * 
      * @param medicalTranscriptionJobSummaries
-     *        A list of objects containing summary information for a transcription job.
+     *        Provides a summary of information about each result.
      */
 
     public void setMedicalTranscriptionJobSummaries(java.util.Collection<MedicalTranscriptionJobSummary> medicalTranscriptionJobSummaries) {
@@ -195,7 +203,7 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,7 +212,7 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param medicalTranscriptionJobSummaries
-     *        A list of objects containing summary information for a transcription job.
+     *        Provides a summary of information about each result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +228,11 @@ public class ListMedicalTranscriptionJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * 
      * @param medicalTranscriptionJobSummaries
-     *        A list of objects containing summary information for a transcription job.
+     *        Provides a summary of information about each result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

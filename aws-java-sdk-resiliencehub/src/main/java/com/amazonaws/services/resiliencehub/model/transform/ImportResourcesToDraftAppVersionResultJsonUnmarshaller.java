@@ -66,6 +66,13 @@ public class ImportResourcesToDraftAppVersionResultJsonUnmarshaller implements U
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("terraformSources", targetDepth)) {
+                    context.nextToken();
+                    importResourcesToDraftAppVersionResult.setTerraformSources(new ListUnmarshaller<TerraformSource>(TerraformSourceJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

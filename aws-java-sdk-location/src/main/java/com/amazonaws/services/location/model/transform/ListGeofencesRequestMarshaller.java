@@ -29,6 +29,8 @@ public class ListGeofencesRequestMarshaller {
 
     private static final MarshallingInfo<String> COLLECTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("CollectionName").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
 
@@ -49,6 +51,7 @@ public class ListGeofencesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listGeofencesRequest.getCollectionName(), COLLECTIONNAME_BINDING);
+            protocolMarshaller.marshall(listGeofencesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listGeofencesRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

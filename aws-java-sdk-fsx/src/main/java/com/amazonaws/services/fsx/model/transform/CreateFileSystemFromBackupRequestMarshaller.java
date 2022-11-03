@@ -53,6 +53,8 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemTypeVersion").build();
     private static final MarshallingInfo<StructuredPojo> OPENZFSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenZFSConfiguration").build();
+    private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageCapacity").build();
 
     private static final CreateFileSystemFromBackupRequestMarshaller instance = new CreateFileSystemFromBackupRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getFileSystemTypeVersion(), FILESYSTEMTYPEVERSION_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getOpenZFSConfiguration(), OPENZFSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createFileSystemFromBackupRequest.getStorageCapacity(), STORAGECAPACITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

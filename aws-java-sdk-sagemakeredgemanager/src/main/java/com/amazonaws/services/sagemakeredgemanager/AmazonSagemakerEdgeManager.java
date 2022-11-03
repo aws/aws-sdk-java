@@ -43,14 +43,30 @@ public interface AmazonSagemakerEdgeManager {
 
     /**
      * <p>
+     * Use to get the active deployments from a device.
+     * </p>
+     * 
+     * @param getDeploymentsRequest
+     * @return Result of the GetDeployments operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
+     * @sample AmazonSagemakerEdgeManager.GetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetDeploymentsResult getDeployments(GetDeploymentsRequest getDeploymentsRequest);
+
+    /**
+     * <p>
      * Use to check if a device is registered with SageMaker Edge Manager.
      * </p>
      * 
      * @param getDeviceRegistrationRequest
      * @return Result of the GetDeviceRegistration operation returned by the service.
      * @throws InternalServiceException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @sample AmazonSagemakerEdgeManager.GetDeviceRegistration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration"
      *      target="_top">AWS API Documentation</a>
@@ -65,8 +81,8 @@ public interface AmazonSagemakerEdgeManager {
      * @param sendHeartbeatRequest
      * @return Result of the SendHeartbeat operation returned by the service.
      * @throws InternalServiceException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @sample AmazonSagemakerEdgeManager.SendHeartbeat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat" target="_top">AWS
      *      API Documentation</a>

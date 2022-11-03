@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returns the status of the <b>CacheCluster</b>.
+ * Returns the status of the CacheCluster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

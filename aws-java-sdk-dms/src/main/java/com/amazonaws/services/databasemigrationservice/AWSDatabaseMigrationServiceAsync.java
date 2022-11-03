@@ -271,6 +271,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Creates a Fleet Advisor collector using the specified parameters.
+     * </p>
+     * 
+     * @param createFleetAdvisorCollectorRequest
+     * @return A Java Future containing the result of the CreateFleetAdvisorCollector operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.CreateFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFleetAdvisorCollectorResult> createFleetAdvisorCollectorAsync(
+            CreateFleetAdvisorCollectorRequest createFleetAdvisorCollectorRequest);
+
+    /**
+     * <p>
+     * Creates a Fleet Advisor collector using the specified parameters.
+     * </p>
+     * 
+     * @param createFleetAdvisorCollectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFleetAdvisorCollector operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.CreateFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFleetAdvisorCollectorResult> createFleetAdvisorCollectorAsync(
+            CreateFleetAdvisorCollectorRequest createFleetAdvisorCollectorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFleetAdvisorCollectorRequest, CreateFleetAdvisorCollectorResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
@@ -527,6 +560,72 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, DeleteEventSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorCollectorRequest
+     * @return A Java Future containing the result of the DeleteFleetAdvisorCollector operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DeleteFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFleetAdvisorCollectorResult> deleteFleetAdvisorCollectorAsync(
+            DeleteFleetAdvisorCollectorRequest deleteFleetAdvisorCollectorRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorCollectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFleetAdvisorCollector operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DeleteFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFleetAdvisorCollectorResult> deleteFleetAdvisorCollectorAsync(
+            DeleteFleetAdvisorCollectorRequest deleteFleetAdvisorCollectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorCollectorRequest, DeleteFleetAdvisorCollectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector databases.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorDatabasesRequest
+     * @return A Java Future containing the result of the DeleteFleetAdvisorDatabases operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DeleteFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(
+            DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector databases.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFleetAdvisorDatabases operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DeleteFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(
+            DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorDatabasesRequest, DeleteFleetAdvisorDatabasesResult> asyncHandler);
 
     /**
      * <p>
@@ -1077,6 +1176,179 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the Fleet Advisor collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorCollectorsRequest
+     * @return A Java Future containing the result of the DescribeFleetAdvisorCollectors operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeFleetAdvisorCollectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorCollectorsResult> describeFleetAdvisorCollectorsAsync(
+            DescribeFleetAdvisorCollectorsRequest describeFleetAdvisorCollectorsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the Fleet Advisor collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorCollectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFleetAdvisorCollectors operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeFleetAdvisorCollectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorCollectorsResult> describeFleetAdvisorCollectorsAsync(
+            DescribeFleetAdvisorCollectorsRequest describeFleetAdvisorCollectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorCollectorsRequest, DescribeFleetAdvisorCollectorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of Fleet Advisor databases in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorDatabasesRequest
+     * @return A Java Future containing the result of the DescribeFleetAdvisorDatabases operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorDatabasesResult> describeFleetAdvisorDatabasesAsync(
+            DescribeFleetAdvisorDatabasesRequest describeFleetAdvisorDatabasesRequest);
+
+    /**
+     * <p>
+     * Returns a list of Fleet Advisor databases in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFleetAdvisorDatabases operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorDatabasesResult> describeFleetAdvisorDatabasesAsync(
+            DescribeFleetAdvisorDatabasesRequest describeFleetAdvisorDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorDatabasesRequest, DescribeFleetAdvisorDatabasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorLsaAnalysisRequest
+     * @return A Java Future containing the result of the DescribeFleetAdvisorLsaAnalysis operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorLsaAnalysisResult> describeFleetAdvisorLsaAnalysisAsync(
+            DescribeFleetAdvisorLsaAnalysisRequest describeFleetAdvisorLsaAnalysisRequest);
+
+    /**
+     * <p>
+     * Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorLsaAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFleetAdvisorLsaAnalysis operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorLsaAnalysisResult> describeFleetAdvisorLsaAnalysisAsync(
+            DescribeFleetAdvisorLsaAnalysisRequest describeFleetAdvisorLsaAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorLsaAnalysisRequest, DescribeFleetAdvisorLsaAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemaObjectSummaryRequest
+     * @return A Java Future containing the result of the DescribeFleetAdvisorSchemaObjectSummary operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeFleetAdvisorSchemaObjectSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorSchemaObjectSummaryResult> describeFleetAdvisorSchemaObjectSummaryAsync(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest describeFleetAdvisorSchemaObjectSummaryRequest);
+
+    /**
+     * <p>
+     * Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemaObjectSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFleetAdvisorSchemaObjectSummary operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeFleetAdvisorSchemaObjectSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorSchemaObjectSummaryResult> describeFleetAdvisorSchemaObjectSummaryAsync(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest describeFleetAdvisorSchemaObjectSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorSchemaObjectSummaryRequest, DescribeFleetAdvisorSchemaObjectSummaryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemasRequest
+     * @return A Java Future containing the result of the DescribeFleetAdvisorSchemas operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeFleetAdvisorSchemas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorSchemasResult> describeFleetAdvisorSchemasAsync(
+            DescribeFleetAdvisorSchemasRequest describeFleetAdvisorSchemasRequest);
+
+    /**
+     * <p>
+     * Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFleetAdvisorSchemas operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeFleetAdvisorSchemas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFleetAdvisorSchemasResult> describeFleetAdvisorSchemasAsync(
+            DescribeFleetAdvisorSchemasRequest describeFleetAdvisorSchemasRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorSchemasRequest, DescribeFleetAdvisorSchemasResult> asyncHandler);
 
     /**
      * <p>
@@ -1992,6 +2264,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+     * </p>
+     * 
+     * @param runFleetAdvisorLsaAnalysisRequest
+     * @return A Java Future containing the result of the RunFleetAdvisorLsaAnalysis operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.RunFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RunFleetAdvisorLsaAnalysisResult> runFleetAdvisorLsaAnalysisAsync(
+            RunFleetAdvisorLsaAnalysisRequest runFleetAdvisorLsaAnalysisRequest);
+
+    /**
+     * <p>
+     * Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+     * </p>
+     * 
+     * @param runFleetAdvisorLsaAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RunFleetAdvisorLsaAnalysis operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.RunFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RunFleetAdvisorLsaAnalysisResult> runFleetAdvisorLsaAnalysisAsync(
+            RunFleetAdvisorLsaAnalysisRequest runFleetAdvisorLsaAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<RunFleetAdvisorLsaAnalysisRequest, RunFleetAdvisorLsaAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the replication task.
      * </p>
      * <p>
@@ -2220,5 +2525,64 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<TestConnectionResult> testConnectionAsync(TestConnectionRequest testConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon
+     * EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+     * versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation
+     * raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration
+     * regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier
+     * than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.
+     * </p>
+     * <p>
+     * To call this operation, make sure that you have certain permissions added to your user account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge"
+     * >Migrating event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param updateSubscriptionsToEventBridgeRequest
+     * @return A Java Future containing the result of the UpdateSubscriptionsToEventBridge operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.UpdateSubscriptionsToEventBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSubscriptionsToEventBridgeResult> updateSubscriptionsToEventBridgeAsync(
+            UpdateSubscriptionsToEventBridgeRequest updateSubscriptionsToEventBridgeRequest);
+
+    /**
+     * <p>
+     * Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon
+     * EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+     * versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation
+     * raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration
+     * regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier
+     * than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.
+     * </p>
+     * <p>
+     * To call this operation, make sure that you have certain permissions added to your user account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge"
+     * >Migrating event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param updateSubscriptionsToEventBridgeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSubscriptionsToEventBridge operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.UpdateSubscriptionsToEventBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSubscriptionsToEventBridgeResult> updateSubscriptionsToEventBridgeAsync(
+            UpdateSubscriptionsToEventBridgeRequest updateSubscriptionsToEventBridgeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionsToEventBridgeRequest, UpdateSubscriptionsToEventBridgeResult> asyncHandler);
 
 }

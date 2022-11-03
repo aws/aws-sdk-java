@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetChannelScheduleRequestProtocolMarshaller implements Marshaller<Request<GetChannelScheduleRequest>, GetChannelScheduleRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/channel/{channelName}/schedule").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/channel/{ChannelName}/schedule").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
             .serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

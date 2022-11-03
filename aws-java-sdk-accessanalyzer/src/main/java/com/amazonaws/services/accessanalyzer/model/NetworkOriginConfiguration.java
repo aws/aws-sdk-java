@@ -32,6 +32,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NetworkOriginConfiguration implements Serializable, Cloneable, StructuredPojo {
 
+    private VpcConfiguration vpcConfiguration;
     /**
      * <p>
      * The configuration for the Amazon S3 access point or multi-region access point with an <code>Internet</code>
@@ -40,7 +41,31 @@ public class NetworkOriginConfiguration implements Serializable, Cloneable, Stru
      */
     private InternetConfiguration internetConfiguration;
 
-    private VpcConfiguration vpcConfiguration;
+    /**
+     * @param vpcConfiguration
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * @param vpcConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkOriginConfiguration withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -89,32 +114,6 @@ public class NetworkOriginConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @param vpcConfiguration
-     */
-
-    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
-        this.vpcConfiguration = vpcConfiguration;
-    }
-
-    /**
-     * @return
-     */
-
-    public VpcConfiguration getVpcConfiguration() {
-        return this.vpcConfiguration;
-    }
-
-    /**
-     * @param vpcConfiguration
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NetworkOriginConfiguration withVpcConfiguration(VpcConfiguration vpcConfiguration) {
-        setVpcConfiguration(vpcConfiguration);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -126,10 +125,10 @@ public class NetworkOriginConfiguration implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInternetConfiguration() != null)
-            sb.append("InternetConfiguration: ").append(getInternetConfiguration()).append(",");
         if (getVpcConfiguration() != null)
-            sb.append("VpcConfiguration: ").append(getVpcConfiguration());
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
+        if (getInternetConfiguration() != null)
+            sb.append("InternetConfiguration: ").append(getInternetConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -144,13 +143,13 @@ public class NetworkOriginConfiguration implements Serializable, Cloneable, Stru
         if (obj instanceof NetworkOriginConfiguration == false)
             return false;
         NetworkOriginConfiguration other = (NetworkOriginConfiguration) obj;
-        if (other.getInternetConfiguration() == null ^ this.getInternetConfiguration() == null)
-            return false;
-        if (other.getInternetConfiguration() != null && other.getInternetConfiguration().equals(this.getInternetConfiguration()) == false)
-            return false;
         if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
             return false;
         if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
+        if (other.getInternetConfiguration() == null ^ this.getInternetConfiguration() == null)
+            return false;
+        if (other.getInternetConfiguration() != null && other.getInternetConfiguration().equals(this.getInternetConfiguration()) == false)
             return false;
         return true;
     }
@@ -160,8 +159,8 @@ public class NetworkOriginConfiguration implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInternetConfiguration() == null) ? 0 : getInternetConfiguration().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInternetConfiguration() == null) ? 0 : getInternetConfiguration().hashCode());
         return hashCode;
     }
 

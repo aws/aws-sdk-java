@@ -101,7 +101,7 @@ import com.amazonaws.services.codestarnotifications.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>DeleteTarget</a>, which removes a notification rule target (SNS topic) from a notification rule.
+ * <a>DeleteTarget</a>, which removes a notification rule target from a notification rule.
  * </p>
  * </li>
  * <li>
@@ -141,7 +141,9 @@ import com.amazonaws.services.codestarnotifications.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeStar Notifications, see link in the CodeStarNotifications User Guide.
+ * For information about how to use AWS CodeStar Notifications, see the <a
+ * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon Web Services Developer
+ * Tools Console User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -242,14 +244,14 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Creates a notification rule for a resource. The rule specifies the events you want notifications about and the
-     * targets (such as SNS topics) where you want to receive them.
+     * targets (such as Chatbot topics or Chatbot clients configured for Slack) where you want to receive them.
      * </p>
      * 
      * @param createNotificationRuleRequest
      * @return Result of the CreateNotificationRule operation returned by the service.
      * @throws ResourceAlreadyExistsException
-     *         A resource with the same name or ID already exists. Notification rule names must be unique in your AWS
-     *         account.
+     *         A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon
+     *         Web Services account.
      * @throws ValidationException
      *         One or more parameter values are not valid.
      * @throws LimitExceededException
@@ -556,7 +558,7 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns a list of the notification rules for an AWS account.
+     * Returns a list of the notification rules for an Amazon Web Services account.
      * </p>
      * 
      * @param listNotificationRulesRequest
@@ -676,7 +678,7 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns a list of the notification rule targets for an AWS account.
+     * Returns a list of the notification rule targets for an Amazon Web Services account.
      * </p>
      * 
      * @param listTargetsRequest
@@ -736,8 +738,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Creates an association between a notification rule and an SNS topic so that the associated target can receive
-     * notifications when the events described in the rule are triggered.
+     * Creates an association between a notification rule and an Chatbot topic or Chatbot client so that the associated
+     * target can receive notifications when the events described in the rule are triggered.
      * </p>
      * 
      * @param subscribeRequest
@@ -746,6 +748,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
      *         One or more parameter values are not valid.
      * @throws ResourceNotFoundException
      *         AWS CodeStar Notifications can't find a resource that matches the provided ARN.
+     * @throws ConfigurationException
+     *         Some or all of the configuration is incomplete, missing, or not valid.
      * @sample AWSCodeStarNotifications.Subscribe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe"
      *      target="_top">AWS API Documentation</a>
@@ -803,6 +807,9 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         AWS CodeStar Notifications can't find a resource that matches the provided ARN.
+     * @throws LimitExceededException
+     *         One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification
+     *         rules, notifications, resources, and targets. For more information, see Limits.
      * @throws ValidationException
      *         One or more parameter values are not valid.
      * @throws ConcurrentModificationException
@@ -858,7 +865,7 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Removes an association between a notification rule and an Amazon SNS topic so that subscribers to that topic stop
+     * Removes an association between a notification rule and an Chatbot topic so that subscribers to that topic stop
      * receiving notifications when the events described in the rule are triggered.
      * </p>
      * 
@@ -923,6 +930,9 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         AWS CodeStar Notifications can't find a resource that matches the provided ARN.
+     * @throws LimitExceededException
+     *         One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification
+     *         rules, notifications, resources, and targets. For more information, see Limits.
      * @throws ValidationException
      *         One or more parameter values are not valid.
      * @throws ConcurrentModificationException
@@ -993,6 +1003,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
      *         One or more parameter values are not valid.
      * @throws ResourceNotFoundException
      *         AWS CodeStar Notifications can't find a resource that matches the provided ARN.
+     * @throws ConfigurationException
+     *         Some or all of the configuration is incomplete, missing, or not valid.
      * @sample AWSCodeStarNotifications.UpdateNotificationRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule"
      *      target="_top">AWS API Documentation</a>

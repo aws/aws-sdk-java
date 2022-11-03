@@ -17,12 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A resource that can be distributed to callers for executing <a>Method</a> resources that require an API key. API keys
- * can be mapped to any <a>Stage</a> on any <a>RestApi</a>, which indicates that the callers with the API key can make
- * requests to that stage.
+ * A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be
+ * mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that
+ * stage.
  * </p>
- * <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
- * API Keys</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -77,7 +75,7 @@ public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.Date lastUpdatedDate;
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * A list of Stage resources that are associated with the ApiKey resource.
      * </p>
      */
     private java.util.List<String> stageKeys;
@@ -422,10 +420,10 @@ public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * A list of Stage resources that are associated with the ApiKey resource.
      * </p>
      * 
-     * @return A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * @return A list of Stage resources that are associated with the ApiKey resource.
      */
 
     public java.util.List<String> getStageKeys() {
@@ -434,11 +432,11 @@ public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * A list of Stage resources that are associated with the ApiKey resource.
      * </p>
      * 
      * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        A list of Stage resources that are associated with the ApiKey resource.
      */
 
     public void setStageKeys(java.util.Collection<String> stageKeys) {
@@ -452,7 +450,7 @@ public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * A list of Stage resources that are associated with the ApiKey resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -461,7 +459,7 @@ public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        A list of Stage resources that are associated with the ApiKey resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,11 +475,11 @@ public class UpdateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * A list of Stage resources that are associated with the ApiKey resource.
      * </p>
      * 
      * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        A list of Stage resources that are associated with the ApiKey resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

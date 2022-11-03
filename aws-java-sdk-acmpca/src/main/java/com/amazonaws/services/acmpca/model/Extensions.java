@@ -64,13 +64,6 @@ public class Extensions implements Serializable, Cloneable, StructuredPojo {
      * base64-encoded value, and the critical flag. For more information, see the <a
      * href="https://oidref.com/2.5.29">Global OID reference database.</a>
      * </p>
-     * <note>
-     * <p>
-     * The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must
-     * not match the OID of a predefined extension.
-     * </p>
-     * </note>
      */
     private java.util.List<CustomExtension> customExtensions;
 
@@ -389,25 +382,11 @@ public class Extensions implements Serializable, Cloneable, StructuredPojo {
      * base64-encoded value, and the critical flag. For more information, see the <a
      * href="https://oidref.com/2.5.29">Global OID reference database.</a>
      * </p>
-     * <note>
-     * <p>
-     * The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must
-     * not match the OID of a predefined extension.
-     * </p>
-     * </note>
      * 
      * @return <p>
      *         Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier
      *         (OID), a base64-encoded value, and the critical flag. For more information, see the <a
      *         href="https://oidref.com/2.5.29">Global OID reference database.</a>
-     *         </p>
-     *         <note>
-     *         <p>
-     *         The OID value of a <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html"
-     *         >CustomExtension</a> must not match the OID of a predefined extension.
-     *         </p>
      */
 
     public java.util.List<CustomExtension> getCustomExtensions() {
@@ -421,26 +400,12 @@ public class Extensions implements Serializable, Cloneable, StructuredPojo {
      * base64-encoded value, and the critical flag. For more information, see the <a
      * href="https://oidref.com/2.5.29">Global OID reference database.</a>
      * </p>
-     * <note>
-     * <p>
-     * The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must
-     * not match the OID of a predefined extension.
-     * </p>
-     * </note>
      * 
      * @param customExtensions
      *        <p>
      *        Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID),
      *        a base64-encoded value, and the critical flag. For more information, see the <a
      *        href="https://oidref.com/2.5.29">Global OID reference database.</a>
-     *        </p>
-     *        <note>
-     *        <p>
-     *        The OID value of a <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html"
-     *        >CustomExtension</a> must not match the OID of a predefined extension.
-     *        </p>
      */
 
     public void setCustomExtensions(java.util.Collection<CustomExtension> customExtensions) {
@@ -459,13 +424,6 @@ public class Extensions implements Serializable, Cloneable, StructuredPojo {
      * base64-encoded value, and the critical flag. For more information, see the <a
      * href="https://oidref.com/2.5.29">Global OID reference database.</a>
      * </p>
-     * <note>
-     * <p>
-     * The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must
-     * not match the OID of a predefined extension.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCustomExtensions(java.util.Collection)} or {@link #withCustomExtensions(java.util.Collection)} if you
@@ -477,13 +435,6 @@ public class Extensions implements Serializable, Cloneable, StructuredPojo {
      *        Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID),
      *        a base64-encoded value, and the critical flag. For more information, see the <a
      *        href="https://oidref.com/2.5.29">Global OID reference database.</a>
-     *        </p>
-     *        <note>
-     *        <p>
-     *        The OID value of a <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html"
-     *        >CustomExtension</a> must not match the OID of a predefined extension.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,26 +455,12 @@ public class Extensions implements Serializable, Cloneable, StructuredPojo {
      * base64-encoded value, and the critical flag. For more information, see the <a
      * href="https://oidref.com/2.5.29">Global OID reference database.</a>
      * </p>
-     * <note>
-     * <p>
-     * The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must
-     * not match the OID of a predefined extension.
-     * </p>
-     * </note>
      * 
      * @param customExtensions
      *        <p>
      *        Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID),
      *        a base64-encoded value, and the critical flag. For more information, see the <a
      *        href="https://oidref.com/2.5.29">Global OID reference database.</a>
-     *        </p>
-     *        <note>
-     *        <p>
-     *        The OID value of a <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html"
-     *        >CustomExtension</a> must not match the OID of a predefined extension.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

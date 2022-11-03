@@ -27,13 +27,13 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      */
     private String indexId;
@@ -59,19 +59,18 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
     private TimeRange startTimeFilter;
     /**
      * <p>
-     * When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified
-     * status.
+     * Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * </p>
      */
     private String statusFilter;
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
      * @param id
-     *        The identifier of the data source.
+     *        The identifier of the data source connector.
      */
 
     public void setId(String id) {
@@ -80,10 +79,10 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
-     * @return The identifier of the data source.
+     * @return The identifier of the data source connector.
      */
 
     public String getId() {
@@ -92,11 +91,11 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
      * @param id
-     *        The identifier of the data source.
+     *        The identifier of the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +106,11 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with the data source connector.
      */
 
     public void setIndexId(String indexId) {
@@ -120,10 +119,10 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
-     * @return The identifier of the index that contains the data source.
+     * @return The identifier of the index used with the data source connector.
      */
 
     public String getIndexId() {
@@ -132,11 +131,11 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,13 +281,11 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified
-     * status.
+     * Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * </p>
      * 
      * @param statusFilter
-     *        When specified, only returns synchronization jobs with the <code>Status</code> field equal to the
-     *        specified status.
+     *        Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * @see DataSourceSyncJobStatus
      */
 
@@ -298,12 +295,10 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified
-     * status.
+     * Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * </p>
      * 
-     * @return When specified, only returns synchronization jobs with the <code>Status</code> field equal to the
-     *         specified status.
+     * @return Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * @see DataSourceSyncJobStatus
      */
 
@@ -313,13 +308,11 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified
-     * status.
+     * Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * </p>
      * 
      * @param statusFilter
-     *        When specified, only returns synchronization jobs with the <code>Status</code> field equal to the
-     *        specified status.
+     *        Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceSyncJobStatus
      */
@@ -331,13 +324,11 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified
-     * status.
+     * Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * </p>
      * 
      * @param statusFilter
-     *        When specified, only returns synchronization jobs with the <code>Status</code> field equal to the
-     *        specified status.
+     *        Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceSyncJobStatus
      */

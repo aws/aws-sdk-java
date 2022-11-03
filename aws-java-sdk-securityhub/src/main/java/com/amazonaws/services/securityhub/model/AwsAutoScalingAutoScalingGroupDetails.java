@@ -42,7 +42,7 @@ public class AwsAutoScalingAutoScalingGroupDetails implements Serializable, Clon
     private java.util.List<String> loadBalancerNames;
     /**
      * <p>
-     * The service to use for the health checks.
+     * The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      * </p>
      */
     private String healthCheckType;
@@ -201,11 +201,11 @@ public class AwsAutoScalingAutoScalingGroupDetails implements Serializable, Clon
 
     /**
      * <p>
-     * The service to use for the health checks.
+     * The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks.
+     *        The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -214,10 +214,10 @@ public class AwsAutoScalingAutoScalingGroupDetails implements Serializable, Clon
 
     /**
      * <p>
-     * The service to use for the health checks.
+     * The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      * </p>
      * 
-     * @return The service to use for the health checks.
+     * @return The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      */
 
     public String getHealthCheckType() {
@@ -226,11 +226,11 @@ public class AwsAutoScalingAutoScalingGroupDetails implements Serializable, Clon
 
     /**
      * <p>
-     * The service to use for the health checks.
+     * The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks.
+     *        The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

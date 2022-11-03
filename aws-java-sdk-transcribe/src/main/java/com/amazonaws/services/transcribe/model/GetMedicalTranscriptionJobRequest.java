@@ -27,18 +27,18 @@ public class GetMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the medical transcription job you want information about. This value is case sensitive.
+     * The name of the medical transcription job you want information about. Job names are case sensitive.
      * </p>
      */
     private String medicalTranscriptionJobName;
 
     /**
      * <p>
-     * The name of the medical transcription job you want information about. This value is case sensitive.
+     * The name of the medical transcription job you want information about. Job names are case sensitive.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job you want information about. This value is case sensitive.
+     *        The name of the medical transcription job you want information about. Job names are case sensitive.
      */
 
     public void setMedicalTranscriptionJobName(String medicalTranscriptionJobName) {
@@ -47,10 +47,10 @@ public class GetMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the medical transcription job you want information about. This value is case sensitive.
+     * The name of the medical transcription job you want information about. Job names are case sensitive.
      * </p>
      * 
-     * @return The name of the medical transcription job you want information about. This value is case sensitive.
+     * @return The name of the medical transcription job you want information about. Job names are case sensitive.
      */
 
     public String getMedicalTranscriptionJobName() {
@@ -59,11 +59,11 @@ public class GetMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the medical transcription job you want information about. This value is case sensitive.
+     * The name of the medical transcription job you want information about. Job names are case sensitive.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job you want information about. This value is case sensitive.
+     *        The name of the medical transcription job you want information about. Job names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

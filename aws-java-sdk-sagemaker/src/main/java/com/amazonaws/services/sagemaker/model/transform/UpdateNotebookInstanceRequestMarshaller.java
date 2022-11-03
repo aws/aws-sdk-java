@@ -54,6 +54,8 @@ public class UpdateNotebookInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateAdditionalCodeRepositories").build();
     private static final MarshallingInfo<String> ROOTACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootAccess").build();
+    private static final MarshallingInfo<StructuredPojo> INSTANCEMETADATASERVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceMetadataServiceConfiguration").build();
 
     private static final UpdateNotebookInstanceRequestMarshaller instance = new UpdateNotebookInstanceRequestMarshaller();
 
@@ -85,6 +87,7 @@ public class UpdateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateAdditionalCodeRepositories(),
                     DISASSOCIATEADDITIONALCODEREPOSITORIES_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getRootAccess(), ROOTACCESS_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getInstanceMetadataServiceConfiguration(), INSTANCEMETADATASERVICECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

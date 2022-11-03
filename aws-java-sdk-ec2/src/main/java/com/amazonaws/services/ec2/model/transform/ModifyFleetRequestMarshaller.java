@@ -414,6 +414,11 @@ public class ModifyFleetRequestMarshaller implements Marshaller<Request<ModifyFl
                                 }
                             }
                         }
+
+                        if (fleetLaunchTemplateConfigRequestOverridesListValue.getImageId() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".ImageId",
+                                    StringUtils.fromString(fleetLaunchTemplateConfigRequestOverridesListValue.getImageId()));
+                        }
                         overridesListIndex++;
                     }
                 }

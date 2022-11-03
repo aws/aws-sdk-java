@@ -83,6 +83,12 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * A timestamp indicating the last time you updated the feature group.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
 
     private OnlineStoreConfig onlineStoreConfig;
 
@@ -101,6 +107,12 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
     private String featureGroupStatus;
 
     private OfflineStoreStatus offlineStoreStatus;
+    /**
+     * <p>
+     * A value that indicates whether the feature group was updated successfully.
+     * </p>
+     */
+    private LastUpdateStatus lastUpdateStatus;
     /**
      * <p>
      * The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is
@@ -514,6 +526,46 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A timestamp indicating the last time you updated the feature group.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        A timestamp indicating the last time you updated the feature group.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating the last time you updated the feature group.
+     * </p>
+     * 
+     * @return A timestamp indicating the last time you updated the feature group.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating the last time you updated the feature group.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        A timestamp indicating the last time you updated the feature group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FeatureGroup withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
      * @param onlineStoreConfig
      */
 
@@ -687,6 +739,46 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
 
     public FeatureGroup withOfflineStoreStatus(OfflineStoreStatus offlineStoreStatus) {
         setOfflineStoreStatus(offlineStoreStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the feature group was updated successfully.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        A value that indicates whether the feature group was updated successfully.
+     */
+
+    public void setLastUpdateStatus(LastUpdateStatus lastUpdateStatus) {
+        this.lastUpdateStatus = lastUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the feature group was updated successfully.
+     * </p>
+     * 
+     * @return A value that indicates whether the feature group was updated successfully.
+     */
+
+    public LastUpdateStatus getLastUpdateStatus() {
+        return this.lastUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the feature group was updated successfully.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        A value that indicates whether the feature group was updated successfully.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FeatureGroup withLastUpdateStatus(LastUpdateStatus lastUpdateStatus) {
+        setLastUpdateStatus(lastUpdateStatus);
         return this;
     }
 
@@ -876,6 +968,8 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("FeatureDefinitions: ").append(getFeatureDefinitions()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getOnlineStoreConfig() != null)
             sb.append("OnlineStoreConfig: ").append(getOnlineStoreConfig()).append(",");
         if (getOfflineStoreConfig() != null)
@@ -886,6 +980,8 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("FeatureGroupStatus: ").append(getFeatureGroupStatus()).append(",");
         if (getOfflineStoreStatus() != null)
             sb.append("OfflineStoreStatus: ").append(getOfflineStoreStatus()).append(",");
+        if (getLastUpdateStatus() != null)
+            sb.append("LastUpdateStatus: ").append(getLastUpdateStatus()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getDescription() != null)
@@ -930,6 +1026,10 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
         if (other.getOnlineStoreConfig() == null ^ this.getOnlineStoreConfig() == null)
             return false;
         if (other.getOnlineStoreConfig() != null && other.getOnlineStoreConfig().equals(this.getOnlineStoreConfig()) == false)
@@ -949,6 +1049,10 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
         if (other.getOfflineStoreStatus() == null ^ this.getOfflineStoreStatus() == null)
             return false;
         if (other.getOfflineStoreStatus() != null && other.getOfflineStoreStatus().equals(this.getOfflineStoreStatus()) == false)
+            return false;
+        if (other.getLastUpdateStatus() == null ^ this.getLastUpdateStatus() == null)
+            return false;
+        if (other.getLastUpdateStatus() != null && other.getLastUpdateStatus().equals(this.getLastUpdateStatus()) == false)
             return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
@@ -976,11 +1080,13 @@ public class FeatureGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEventTimeFeatureName() == null) ? 0 : getEventTimeFeatureName().hashCode());
         hashCode = prime * hashCode + ((getFeatureDefinitions() == null) ? 0 : getFeatureDefinitions().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getOnlineStoreConfig() == null) ? 0 : getOnlineStoreConfig().hashCode());
         hashCode = prime * hashCode + ((getOfflineStoreConfig() == null) ? 0 : getOfflineStoreConfig().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getFeatureGroupStatus() == null) ? 0 : getFeatureGroupStatus().hashCode());
         hashCode = prime * hashCode + ((getOfflineStoreStatus() == null) ? 0 : getOfflineStoreStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdateStatus() == null) ? 0 : getLastUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

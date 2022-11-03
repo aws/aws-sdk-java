@@ -38,7 +38,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
@@ -60,7 +61,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
@@ -202,7 +203,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
@@ -221,7 +223,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *         either subnets or subnet mappings.</p>
+     *         either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet
+     *         mappings instead of subnets.</p>
      *         <p>
      *         [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      *         </p>
@@ -245,7 +248,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
@@ -265,7 +269,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subnets
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *        either subnets or subnet mappings.</p>
+     *        either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings
+     *        instead of subnets.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      *        </p>
@@ -294,7 +299,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
@@ -319,7 +325,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subnets
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *        either subnets or subnet mappings.</p>
+     *        either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings
+     *        instead of subnets.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      *        </p>
@@ -350,7 +357,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
@@ -370,7 +378,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subnets
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *        either subnets or subnet mappings.</p>
+     *        either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings
+     *        instead of subnets.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      *        </p>
@@ -396,7 +405,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
@@ -420,7 +429,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *         either subnets or subnet mappings.</p>
+     *         either subnets or subnet mappings, but not both.</p>
      *         <p>
      *         [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *         specify Elastic IP addresses for your subnets.
@@ -449,7 +458,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
@@ -474,7 +483,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subnetMappings
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *        either subnets or subnet mappings.</p>
+     *        either subnets or subnet mappings, but not both.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *        specify Elastic IP addresses for your subnets.
@@ -508,7 +517,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
@@ -538,7 +547,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subnetMappings
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *        either subnets or subnet mappings.</p>
+     *        either subnets or subnet mappings, but not both.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *        specify Elastic IP addresses for your subnets.
@@ -574,7 +583,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
-     * subnets or subnet mappings.
+     * subnets or subnet mappings, but not both.
      * </p>
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
@@ -599,7 +608,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subnetMappings
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
-     *        either subnets or subnet mappings.</p>
+     *        either subnets or subnet mappings, but not both.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *        specify Elastic IP addresses for your subnets.

@@ -154,6 +154,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public ListManagedInsightRulesResult listManagedInsightRules(ListManagedInsightRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMetricStreamsResult listMetricStreams(ListMetricStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -190,6 +195,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     @Override
     public PutInsightRuleResult putInsightRule(PutInsightRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutManagedInsightRulesResult putManagedInsightRules(PutManagedInsightRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

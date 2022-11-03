@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetGeneratedPolicyRequestMarshaller {
 
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("jobId").build();
     private static final MarshallingInfo<Boolean> INCLUDERESOURCEPLACEHOLDERS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeResourcePlaceholders").build();
     private static final MarshallingInfo<Boolean> INCLUDESERVICELEVELTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeServiceLevelTemplate").build();
-    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("jobId").build();
 
     private static final GetGeneratedPolicyRequestMarshaller instance = new GetGeneratedPolicyRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class GetGeneratedPolicyRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getGeneratedPolicyRequest.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(getGeneratedPolicyRequest.getIncludeResourcePlaceholders(), INCLUDERESOURCEPLACEHOLDERS_BINDING);
             protocolMarshaller.marshall(getGeneratedPolicyRequest.getIncludeServiceLevelTemplate(), INCLUDESERVICELEVELTEMPLATE_BINDING);
-            protocolMarshaller.marshall(getGeneratedPolicyRequest.getJobId(), JOBID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

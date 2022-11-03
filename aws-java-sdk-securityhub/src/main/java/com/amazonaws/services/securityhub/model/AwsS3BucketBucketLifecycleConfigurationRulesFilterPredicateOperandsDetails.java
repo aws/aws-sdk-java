@@ -43,7 +43,8 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperands
     private AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails tag;
     /**
      * <p>
-     * The type of filter value.
+     * The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     * <code>LifecycleTagPredicate</code>.
      * </p>
      */
     private String type;
@@ -131,11 +132,13 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperands
 
     /**
      * <p>
-     * The type of filter value.
+     * The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     * <code>LifecycleTagPredicate</code>.
      * </p>
      * 
      * @param type
-     *        The type of filter value.
+     *        The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     *        <code>LifecycleTagPredicate</code>.
      */
 
     public void setType(String type) {
@@ -144,10 +147,12 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperands
 
     /**
      * <p>
-     * The type of filter value.
+     * The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     * <code>LifecycleTagPredicate</code>.
      * </p>
      * 
-     * @return The type of filter value.
+     * @return The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     *         <code>LifecycleTagPredicate</code>.
      */
 
     public String getType() {
@@ -156,11 +161,13 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperands
 
     /**
      * <p>
-     * The type of filter value.
+     * The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     * <code>LifecycleTagPredicate</code>.
      * </p>
      * 
      * @param type
-     *        The type of filter value.
+     *        The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+     *        <code>LifecycleTagPredicate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

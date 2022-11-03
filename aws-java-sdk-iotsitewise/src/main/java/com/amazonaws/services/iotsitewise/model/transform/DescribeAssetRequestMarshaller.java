@@ -29,6 +29,8 @@ public class DescribeAssetRequestMarshaller {
 
     private static final MarshallingInfo<String> ASSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("assetId").build();
+    private static final MarshallingInfo<Boolean> EXCLUDEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("excludeProperties").build();
 
     private static final DescribeAssetRequestMarshaller instance = new DescribeAssetRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeAssetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeAssetRequest.getAssetId(), ASSETID_BINDING);
+            protocolMarshaller.marshall(describeAssetRequest.getExcludeProperties(), EXCLUDEPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -49,7 +49,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that a training or compilation job can run.
+     * The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.
      * </p>
      * <p>
      * For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated.
@@ -60,6 +60,10 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      * <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
      * maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The
      * maximum value is 28 days.
+     * </p>
+     * <p>
+     * The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or
+     * archiving and uploading models after it has been stopped, is 30 days.
      * </p>
      */
     private Integer maxRuntimeInSeconds;
@@ -78,7 +82,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that a training or compilation job can run.
+     * The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.
      * </p>
      * <p>
      * For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated.
@@ -90,9 +94,14 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      * maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The
      * maximum value is 28 days.
      * </p>
+     * <p>
+     * The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or
+     * archiving and uploading models after it has been stopped, is 30 days.
+     * </p>
      * 
      * @param maxRuntimeInSeconds
-     *        The maximum length of time, in seconds, that a training or compilation job can run.</p>
+     *        The maximum length of time, in seconds, that a training or compilation job can run before it is
+     *        stopped.</p>
      *        <p>
      *        For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is
      *        generated. We recommend starting with 900 seconds and increasing as necessary based on your model.
@@ -102,6 +111,10 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      *        <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
      *        maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day.
      *        The maximum value is 28 days.
+     *        </p>
+     *        <p>
+     *        The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing
+     *        metrics or archiving and uploading models after it has been stopped, is 30 days.
      */
 
     public void setMaxRuntimeInSeconds(Integer maxRuntimeInSeconds) {
@@ -110,7 +123,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that a training or compilation job can run.
+     * The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.
      * </p>
      * <p>
      * For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated.
@@ -122,8 +135,13 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      * maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The
      * maximum value is 28 days.
      * </p>
+     * <p>
+     * The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or
+     * archiving and uploading models after it has been stopped, is 30 days.
+     * </p>
      * 
-     * @return The maximum length of time, in seconds, that a training or compilation job can run.</p>
+     * @return The maximum length of time, in seconds, that a training or compilation job can run before it is
+     *         stopped.</p>
      *         <p>
      *         For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is
      *         generated. We recommend starting with 900 seconds and increasing as necessary based on your model.
@@ -133,6 +151,10 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      *         <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies
      *         the maximum time for all of the attempts in total, not each individual attempt. The default value is 1
      *         day. The maximum value is 28 days.
+     *         </p>
+     *         <p>
+     *         The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing
+     *         metrics or archiving and uploading models after it has been stopped, is 30 days.
      */
 
     public Integer getMaxRuntimeInSeconds() {
@@ -141,7 +163,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that a training or compilation job can run.
+     * The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.
      * </p>
      * <p>
      * For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated.
@@ -153,9 +175,14 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      * maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The
      * maximum value is 28 days.
      * </p>
+     * <p>
+     * The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or
+     * archiving and uploading models after it has been stopped, is 30 days.
+     * </p>
      * 
      * @param maxRuntimeInSeconds
-     *        The maximum length of time, in seconds, that a training or compilation job can run.</p>
+     *        The maximum length of time, in seconds, that a training or compilation job can run before it is
+     *        stopped.</p>
      *        <p>
      *        For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is
      *        generated. We recommend starting with 900 seconds and increasing as necessary based on your model.
@@ -165,6 +192,10 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      *        <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
      *        maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day.
      *        The maximum value is 28 days.
+     *        </p>
+     *        <p>
+     *        The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing
+     *        metrics or archiving and uploading models after it has been stopped, is 30 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

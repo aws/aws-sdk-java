@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,10 @@ public class ResourceConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<List> INSTANCEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroups").build();
+    private static final MarshallingInfo<Integer> KEEPALIVEPERIODINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeepAlivePeriodInSeconds").build();
 
     private static final ResourceConfigMarshaller instance = new ResourceConfigMarshaller();
 
@@ -56,6 +61,8 @@ public class ResourceConfigMarshaller {
             protocolMarshaller.marshall(resourceConfig.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(resourceConfig.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
             protocolMarshaller.marshall(resourceConfig.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(resourceConfig.getInstanceGroups(), INSTANCEGROUPS_BINDING);
+            protocolMarshaller.marshall(resourceConfig.getKeepAlivePeriodInSeconds(), KEEPALIVEPERIODINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

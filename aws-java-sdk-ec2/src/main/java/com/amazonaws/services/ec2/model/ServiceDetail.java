@@ -28,7 +28,7 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service.
+     * The name of the service.
      * </p>
      */
     private String serviceName;
@@ -114,14 +114,20 @@ public class ServiceDetail implements Serializable, Cloneable {
      * </p>
      */
     private String privateDnsNameVerificationState;
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedIpAddressTypes;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service.
+     * The name of the service.
      * </p>
      * 
      * @param serviceName
-     *        The Amazon Resource Name (ARN) of the service.
+     *        The name of the service.
      */
 
     public void setServiceName(String serviceName) {
@@ -130,10 +136,10 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service.
+     * The name of the service.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service.
+     * @return The name of the service.
      */
 
     public String getServiceName() {
@@ -142,11 +148,11 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service.
+     * The name of the service.
      * </p>
      * 
      * @param serviceName
-     *        The Amazon Resource Name (ARN) of the service.
+     *        The name of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -943,6 +949,108 @@ public class ServiceDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @return The supported IP address types.
+     * @see ServiceConnectivityType
+     */
+
+    public java.util.List<String> getSupportedIpAddressTypes() {
+        if (supportedIpAddressTypes == null) {
+            supportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedIpAddressTypes;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @see ServiceConnectivityType
+     */
+
+    public void setSupportedIpAddressTypes(java.util.Collection<String> supportedIpAddressTypes) {
+        if (supportedIpAddressTypes == null) {
+            this.supportedIpAddressTypes = null;
+            return;
+        }
+
+        this.supportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedIpAddressTypes);
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedIpAddressTypes(java.util.Collection)} or
+     * {@link #withSupportedIpAddressTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceConnectivityType
+     */
+
+    public ServiceDetail withSupportedIpAddressTypes(String... supportedIpAddressTypes) {
+        if (this.supportedIpAddressTypes == null) {
+            setSupportedIpAddressTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedIpAddressTypes.length));
+        }
+        for (String ele : supportedIpAddressTypes) {
+            this.supportedIpAddressTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceConnectivityType
+     */
+
+    public ServiceDetail withSupportedIpAddressTypes(java.util.Collection<String> supportedIpAddressTypes) {
+        setSupportedIpAddressTypes(supportedIpAddressTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceConnectivityType
+     */
+
+    public ServiceDetail withSupportedIpAddressTypes(ServiceConnectivityType... supportedIpAddressTypes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedIpAddressTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                supportedIpAddressTypes.length);
+        for (ServiceConnectivityType value : supportedIpAddressTypes) {
+            supportedIpAddressTypesCopy.add(value.toString());
+        }
+        if (getSupportedIpAddressTypes() == null) {
+            setSupportedIpAddressTypes(supportedIpAddressTypesCopy);
+        } else {
+            getSupportedIpAddressTypes().addAll(supportedIpAddressTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -981,7 +1089,9 @@ public class ServiceDetail implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getPrivateDnsNameVerificationState() != null)
-            sb.append("PrivateDnsNameVerificationState: ").append(getPrivateDnsNameVerificationState());
+            sb.append("PrivateDnsNameVerificationState: ").append(getPrivateDnsNameVerificationState()).append(",");
+        if (getSupportedIpAddressTypes() != null)
+            sb.append("SupportedIpAddressTypes: ").append(getSupportedIpAddressTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -1053,6 +1163,10 @@ public class ServiceDetail implements Serializable, Cloneable {
         if (other.getPrivateDnsNameVerificationState() != null
                 && other.getPrivateDnsNameVerificationState().equals(this.getPrivateDnsNameVerificationState()) == false)
             return false;
+        if (other.getSupportedIpAddressTypes() == null ^ this.getSupportedIpAddressTypes() == null)
+            return false;
+        if (other.getSupportedIpAddressTypes() != null && other.getSupportedIpAddressTypes().equals(this.getSupportedIpAddressTypes()) == false)
+            return false;
         return true;
     }
 
@@ -1075,6 +1189,7 @@ public class ServiceDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPayerResponsibility() == null) ? 0 : getPayerResponsibility().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsNameVerificationState() == null) ? 0 : getPrivateDnsNameVerificationState().hashCode());
+        hashCode = prime * hashCode + ((getSupportedIpAddressTypes() == null) ? 0 : getSupportedIpAddressTypes().hashCode());
         return hashCode;
     }
 

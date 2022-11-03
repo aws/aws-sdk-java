@@ -80,6 +80,16 @@ public class HlsManifestJsonUnmarshaller implements Unmarshaller<HlsManifest, Js
                     context.nextToken();
                     hlsManifest.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("adTriggers", targetDepth)) {
+                    context.nextToken();
+                    hlsManifest.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
+                    context.nextToken();
+                    hlsManifest.setAdsOnDeliveryRestrictions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

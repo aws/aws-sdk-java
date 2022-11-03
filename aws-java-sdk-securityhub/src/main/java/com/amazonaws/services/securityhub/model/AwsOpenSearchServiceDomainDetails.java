@@ -115,6 +115,12 @@ public class AwsOpenSearchServiceDomainDetails implements Serializable, Cloneabl
      * </p>
      */
     private java.util.Map<String, String> domainEndpoints;
+    /**
+     * <p>
+     * Specifies options for fine-grained access control.
+     * </p>
+     */
+    private AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails advancedSecurityOptions;
 
     /**
      * <p>
@@ -721,6 +727,46 @@ public class AwsOpenSearchServiceDomainDetails implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Specifies options for fine-grained access control.
+     * </p>
+     * 
+     * @param advancedSecurityOptions
+     *        Specifies options for fine-grained access control.
+     */
+
+    public void setAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails advancedSecurityOptions) {
+        this.advancedSecurityOptions = advancedSecurityOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies options for fine-grained access control.
+     * </p>
+     * 
+     * @return Specifies options for fine-grained access control.
+     */
+
+    public AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails getAdvancedSecurityOptions() {
+        return this.advancedSecurityOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies options for fine-grained access control.
+     * </p>
+     * 
+     * @param advancedSecurityOptions
+     *        Specifies options for fine-grained access control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsOpenSearchServiceDomainDetails withAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails advancedSecurityOptions) {
+        setAdvancedSecurityOptions(advancedSecurityOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -759,7 +805,9 @@ public class AwsOpenSearchServiceDomainDetails implements Serializable, Cloneabl
         if (getLogPublishingOptions() != null)
             sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
         if (getDomainEndpoints() != null)
-            sb.append("DomainEndpoints: ").append(getDomainEndpoints());
+            sb.append("DomainEndpoints: ").append(getDomainEndpoints()).append(",");
+        if (getAdvancedSecurityOptions() != null)
+            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -830,6 +878,10 @@ public class AwsOpenSearchServiceDomainDetails implements Serializable, Cloneabl
             return false;
         if (other.getDomainEndpoints() != null && other.getDomainEndpoints().equals(this.getDomainEndpoints()) == false)
             return false;
+        if (other.getAdvancedSecurityOptions() == null ^ this.getAdvancedSecurityOptions() == null)
+            return false;
+        if (other.getAdvancedSecurityOptions() != null && other.getAdvancedSecurityOptions().equals(this.getAdvancedSecurityOptions()) == false)
+            return false;
         return true;
     }
 
@@ -852,6 +904,7 @@ public class AwsOpenSearchServiceDomainDetails implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getVpcOptions() == null) ? 0 : getVpcOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         hashCode = prime * hashCode + ((getDomainEndpoints() == null) ? 0 : getDomainEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         return hashCode;
     }
 

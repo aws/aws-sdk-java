@@ -275,6 +275,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFileCacheResult> createFileCacheAsync(CreateFileCacheRequest request) {
+
+        return createFileCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFileCacheResult> createFileCacheAsync(final CreateFileCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFileCacheRequest, CreateFileCacheResult> asyncHandler) {
+        final CreateFileCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFileCacheResult>() {
+            @Override
+            public CreateFileCacheResult call() throws Exception {
+                CreateFileCacheResult result = null;
+
+                try {
+                    result = executeCreateFileCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFileSystemResult> createFileSystemAsync(CreateFileSystemRequest request) {
 
         return createFileSystemAsync(request, null);
@@ -541,6 +574,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFileCacheResult> deleteFileCacheAsync(DeleteFileCacheRequest request) {
+
+        return deleteFileCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileCacheResult> deleteFileCacheAsync(final DeleteFileCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFileCacheRequest, DeleteFileCacheResult> asyncHandler) {
+        final DeleteFileCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFileCacheResult>() {
+            @Override
+            public DeleteFileCacheResult call() throws Exception {
+                DeleteFileCacheResult result = null;
+
+                try {
+                    result = executeDeleteFileCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(DeleteFileSystemRequest request) {
 
         return deleteFileSystemAsync(request, null);
@@ -758,6 +824,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
 
                 try {
                     result = executeDescribeDataRepositoryTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileCachesResult> describeFileCachesAsync(DescribeFileCachesRequest request) {
+
+        return describeFileCachesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileCachesResult> describeFileCachesAsync(final DescribeFileCachesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFileCachesRequest, DescribeFileCachesResult> asyncHandler) {
+        final DescribeFileCachesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFileCachesResult>() {
+            @Override
+            public DescribeFileCachesResult call() throws Exception {
+                DescribeFileCachesResult result = null;
+
+                try {
+                    result = executeDescribeFileCaches(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1158,6 +1257,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
 
                 try {
                     result = executeUpdateDataRepositoryAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileCacheResult> updateFileCacheAsync(UpdateFileCacheRequest request) {
+
+        return updateFileCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileCacheResult> updateFileCacheAsync(final UpdateFileCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFileCacheRequest, UpdateFileCacheResult> asyncHandler) {
+        final UpdateFileCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFileCacheResult>() {
+            @Override
+            public UpdateFileCacheResult call() throws Exception {
+                UpdateFileCacheResult result = null;
+
+                try {
+                    result = executeUpdateFileCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

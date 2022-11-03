@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Metadata that help you categorize IT assets.
  * </p>
+ * <important>
+ * <p>
+ * Do not store sensitive information (like personal data) in tags.
+ * </p>
+ * </important>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Tag implements Serializable, Cloneable, StructuredPojo {

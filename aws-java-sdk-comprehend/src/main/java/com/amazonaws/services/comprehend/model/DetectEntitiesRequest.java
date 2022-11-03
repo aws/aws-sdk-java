@@ -27,7 +27,7 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      */
     private String text;
@@ -52,16 +52,20 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language
      * code that you provide in your request.
      * </p>
+     * <p>
+     * For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
+     * </p>
      */
     private String endpointArn;
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The maximum string size is 100 KB.
      */
 
     public void setText(String text) {
@@ -70,10 +74,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      * 
-     * @return A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * @return A UTF-8 text string. The maximum string size is 100 KB.
      */
 
     public String getText() {
@@ -82,11 +86,11 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The maximum string size is 100 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,6 +204,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language
      * code that you provide in your request.
      * </p>
+     * <p>
+     * For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
+     * </p>
      * 
      * @param endpointArn
      *        The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide
@@ -208,6 +216,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any
      *        language code that you provide in your request.
+     *        </p>
+     *        <p>
+     *        For information about endpoints, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -224,6 +236,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language
      * code that you provide in your request.
      * </p>
+     * <p>
+     * For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
+     * </p>
      * 
      * @return The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model.
      *         Provide an endpoint if you want to detect entities by using your own custom model instead of the default
@@ -231,6 +247,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any
      *         language code that you provide in your request.
+     *         </p>
+     *         <p>
+     *         For information about endpoints, see <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      */
 
     public String getEndpointArn() {
@@ -247,6 +267,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language
      * code that you provide in your request.
      * </p>
+     * <p>
+     * For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
+     * </p>
      * 
      * @param endpointArn
      *        The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide
@@ -255,6 +279,10 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any
      *        language code that you provide in your request.
+     *        </p>
+     *        <p>
+     *        For information about endpoints, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

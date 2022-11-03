@@ -36,7 +36,7 @@ public class DeviceSecretVerifierConfigType implements Serializable, Cloneable, 
     private String passwordVerifier;
     /**
      * <p>
-     * The salt.
+     * The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      * </p>
      */
     private String salt;
@@ -83,11 +83,11 @@ public class DeviceSecretVerifierConfigType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The salt.
+     * The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      * </p>
      * 
      * @param salt
-     *        The salt.
+     *        The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      */
 
     public void setSalt(String salt) {
@@ -96,10 +96,10 @@ public class DeviceSecretVerifierConfigType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The salt.
+     * The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      * </p>
      * 
-     * @return The salt.
+     * @return The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      */
 
     public String getSalt() {
@@ -108,11 +108,11 @@ public class DeviceSecretVerifierConfigType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The salt.
+     * The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      * </p>
      * 
      * @param salt
-     *        The salt.
+     *        The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,8 +37,35 @@ public class AwsEksClusterLoggingClusterLoggingDetails implements Serializable, 
     private Boolean enabled;
     /**
      * <p>
-     * A list of logging types.
+     * A list of logging types. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>audit</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>authenticator</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>controllerManager</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scheduler</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> types;
 
@@ -96,10 +123,63 @@ public class AwsEksClusterLoggingClusterLoggingDetails implements Serializable, 
 
     /**
      * <p>
-     * A list of logging types.
+     * A list of logging types. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>audit</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>authenticator</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>controllerManager</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scheduler</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A list of logging types.
+     * @return A list of logging types. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>api</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>audit</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>authenticator</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>controllerManager</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>scheduler</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getTypes() {
@@ -108,11 +188,64 @@ public class AwsEksClusterLoggingClusterLoggingDetails implements Serializable, 
 
     /**
      * <p>
-     * A list of logging types.
+     * A list of logging types. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>audit</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>authenticator</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>controllerManager</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scheduler</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param types
-     *        A list of logging types.
+     *        A list of logging types. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>api</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>audit</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>authenticator</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>controllerManager</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scheduler</code>
+     *        </p>
+     *        </li>
      */
 
     public void setTypes(java.util.Collection<String> types) {
@@ -126,8 +259,35 @@ public class AwsEksClusterLoggingClusterLoggingDetails implements Serializable, 
 
     /**
      * <p>
-     * A list of logging types.
+     * A list of logging types. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>audit</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>authenticator</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>controllerManager</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scheduler</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTypes(java.util.Collection)} or {@link #withTypes(java.util.Collection)} if you want to override the
@@ -135,7 +295,33 @@ public class AwsEksClusterLoggingClusterLoggingDetails implements Serializable, 
      * </p>
      * 
      * @param types
-     *        A list of logging types.
+     *        A list of logging types. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>api</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>audit</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>authenticator</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>controllerManager</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scheduler</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +337,64 @@ public class AwsEksClusterLoggingClusterLoggingDetails implements Serializable, 
 
     /**
      * <p>
-     * A list of logging types.
+     * A list of logging types. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>audit</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>authenticator</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>controllerManager</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scheduler</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param types
-     *        A list of logging types.
+     *        A list of logging types. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>api</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>audit</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>authenticator</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>controllerManager</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scheduler</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,8 +29,12 @@ public class UserSettingsSummaryMarshaller {
 
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
+    private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> DOWNLOADALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("downloadAllowed").build();
+    private static final MarshallingInfo<Integer> IDLEDISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("idleDisconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> PASTEALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pasteAllowed").build();
     private static final MarshallingInfo<String> PRINTALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,7 +61,9 @@ public class UserSettingsSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(userSettingsSummary.getCopyAllowed(), COPYALLOWED_BINDING);
+            protocolMarshaller.marshall(userSettingsSummary.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);
+            protocolMarshaller.marshall(userSettingsSummary.getIdleDisconnectTimeoutInMinutes(), IDLEDISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getPasteAllowed(), PASTEALLOWED_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getPrintAllowed(), PRINTALLOWED_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getUploadAllowed(), UPLOADALLOWED_BINDING);

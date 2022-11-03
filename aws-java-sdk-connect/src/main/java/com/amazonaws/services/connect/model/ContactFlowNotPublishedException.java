@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The contact flow has not been published.
+ * The flow has not been published.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

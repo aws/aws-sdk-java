@@ -63,15 +63,15 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
     private java.util.List<String> sendingIps;
     /**
      * <p>
-     * The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value
-     * can help you determine how long it took for a campaign to deliver an email message.
+     * The first time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      */
     private java.util.Date firstSeenDateTime;
     /**
      * <p>
-     * The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can
-     * help you determine how long it took for a campaign to deliver an email message.
+     * The last time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      */
     private java.util.Date lastSeenDateTime;
@@ -360,13 +360,13 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value
-     * can help you determine how long it took for a campaign to deliver an email message.
+     * The first time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      * 
      * @param firstSeenDateTime
-     *        The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This
-     *        value can help you determine how long it took for a campaign to deliver an email message.
+     *        The first time when the email message was delivered to any recipient's inbox. This value can help you
+     *        determine how long it took for a campaign to deliver an email message.
      */
 
     public void setFirstSeenDateTime(java.util.Date firstSeenDateTime) {
@@ -375,12 +375,12 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value
-     * can help you determine how long it took for a campaign to deliver an email message.
+     * The first time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      * 
-     * @return The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This
-     *         value can help you determine how long it took for a campaign to deliver an email message.
+     * @return The first time when the email message was delivered to any recipient's inbox. This value can help you
+     *         determine how long it took for a campaign to deliver an email message.
      */
 
     public java.util.Date getFirstSeenDateTime() {
@@ -389,13 +389,13 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value
-     * can help you determine how long it took for a campaign to deliver an email message.
+     * The first time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      * 
      * @param firstSeenDateTime
-     *        The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This
-     *        value can help you determine how long it took for a campaign to deliver an email message.
+     *        The first time when the email message was delivered to any recipient's inbox. This value can help you
+     *        determine how long it took for a campaign to deliver an email message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,13 +406,13 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can
-     * help you determine how long it took for a campaign to deliver an email message.
+     * The last time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      * 
      * @param lastSeenDateTime
-     *        The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This
-     *        value can help you determine how long it took for a campaign to deliver an email message.
+     *        The last time when the email message was delivered to any recipient's inbox. This value can help you
+     *        determine how long it took for a campaign to deliver an email message.
      */
 
     public void setLastSeenDateTime(java.util.Date lastSeenDateTime) {
@@ -421,12 +421,12 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can
-     * help you determine how long it took for a campaign to deliver an email message.
+     * The last time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      * 
-     * @return The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This
-     *         value can help you determine how long it took for a campaign to deliver an email message.
+     * @return The last time when the email message was delivered to any recipient's inbox. This value can help you
+     *         determine how long it took for a campaign to deliver an email message.
      */
 
     public java.util.Date getLastSeenDateTime() {
@@ -435,13 +435,13 @@ public class DomainDeliverabilityCampaign implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can
-     * help you determine how long it took for a campaign to deliver an email message.
+     * The last time when the email message was delivered to any recipient's inbox. This value can help you determine
+     * how long it took for a campaign to deliver an email message.
      * </p>
      * 
      * @param lastSeenDateTime
-     *        The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This
-     *        value can help you determine how long it took for a campaign to deliver an email message.
+     *        The last time when the email message was delivered to any recipient's inbox. This value can help you
+     *        determine how long it took for a campaign to deliver an email message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

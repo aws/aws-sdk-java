@@ -42,13 +42,13 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
     private HlsPlaylistSettings hlsPlaylistSettings;
     /**
      * <p>
-     * The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     * The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      * </p>
      */
     private String manifestName;
     /**
      * <p>
-     * A string used to match which HttpPackageConfiguration is used for each VodSource.
+     * A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.
      * </p>
      */
     private String sourceGroup;
@@ -135,11 +135,11 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     * The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      * </p>
      * 
      * @param manifestName
-     *        The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     *        The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      */
 
     public void setManifestName(String manifestName) {
@@ -148,10 +148,10 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     * The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      * </p>
      * 
-     * @return The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     * @return The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      */
 
     public String getManifestName() {
@@ -160,11 +160,11 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     * The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      * </p>
      * 
      * @param manifestName
-     *        The name of the manifest for the channel. The name appears in the PlaybackUrl.
+     *        The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,12 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A string used to match which HttpPackageConfiguration is used for each VodSource.
+     * A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.
      * </p>
      * 
      * @param sourceGroup
-     *        A string used to match which HttpPackageConfiguration is used for each VodSource.
+     *        A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>
+     *        .
      */
 
     public void setSourceGroup(String sourceGroup) {
@@ -188,10 +189,11 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A string used to match which HttpPackageConfiguration is used for each VodSource.
+     * A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.
      * </p>
      * 
-     * @return A string used to match which HttpPackageConfiguration is used for each VodSource.
+     * @return A string used to match which <code>HttpPackageConfiguration</code> is used for each
+     *         <code>VodSource</code>.
      */
 
     public String getSourceGroup() {
@@ -200,11 +202,12 @@ public class RequestOutputItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A string used to match which HttpPackageConfiguration is used for each VodSource.
+     * A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.
      * </p>
      * 
      * @param sourceGroup
-     *        A string used to match which HttpPackageConfiguration is used for each VodSource.
+     *        A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

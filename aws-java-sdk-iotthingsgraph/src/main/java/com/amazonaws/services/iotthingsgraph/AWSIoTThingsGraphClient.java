@@ -61,6 +61,9 @@ import com.amazonaws.services.iotthingsgraph.model.transform.*;
  * For more information about how AWS IoT Things Graph works, see the <a
  * href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User Guide</a>.
  * </p>
+ * <p>
+ * The AWS IoT Things Graph service is discontinued.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -173,6 +176,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateEntityToThingResult associateEntityToThing(AssociateEntityToThingRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateEntityToThing(request);
@@ -237,6 +241,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateFlowTemplateResult createFlowTemplate(CreateFlowTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeCreateFlowTemplate(request);
@@ -316,6 +321,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateSystemInstanceResult createSystemInstance(CreateSystemInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeCreateSystemInstance(request);
@@ -376,6 +382,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateSystemTemplateResult createSystemTemplate(CreateSystemTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeCreateSystemTemplate(request);
@@ -437,6 +444,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteFlowTemplateResult deleteFlowTemplate(DeleteFlowTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteFlowTemplate(request);
@@ -483,7 +491,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and
-     * flows that use entities in the namespace before performing this action.
+     * flows that use entities in the namespace before performing this action. This action takes no request parameters.
      * </p>
      * 
      * @param deleteNamespaceRequest
@@ -495,6 +503,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteNamespace(request);
@@ -558,6 +567,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSystemInstanceResult deleteSystemInstance(DeleteSystemInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSystemInstance(request);
@@ -618,6 +628,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSystemTemplateResult deleteSystemTemplate(DeleteSystemTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSystemTemplate(request);
@@ -697,6 +708,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeploySystemInstanceResult deploySystemInstance(DeploySystemInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeDeploySystemInstance(request);
@@ -757,6 +769,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeprecateFlowTemplateResult deprecateFlowTemplate(DeprecateFlowTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeDeprecateFlowTemplate(request);
@@ -817,6 +830,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeprecateSystemTemplateResult deprecateSystemTemplate(DeprecateSystemTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeDeprecateSystemTemplate(request);
@@ -878,6 +892,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeNamespace(request);
@@ -938,6 +953,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DissociateEntityFromThingResult dissociateEntityFromThing(DissociateEntityFromThingRequest request) {
         request = beforeClientExecution(request);
         return executeDissociateEntityFromThing(request);
@@ -1050,6 +1066,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetEntitiesResult getEntities(GetEntitiesRequest request) {
         request = beforeClientExecution(request);
         return executeGetEntities(request);
@@ -1110,6 +1127,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetFlowTemplateResult getFlowTemplate(GetFlowTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeGetFlowTemplate(request);
@@ -1171,6 +1189,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetFlowTemplateRevisionsResult getFlowTemplateRevisions(GetFlowTemplateRevisionsRequest request) {
         request = beforeClientExecution(request);
         return executeGetFlowTemplateRevisions(request);
@@ -1231,6 +1250,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetNamespaceDeletionStatusResult getNamespaceDeletionStatus(GetNamespaceDeletionStatusRequest request) {
         request = beforeClientExecution(request);
         return executeGetNamespaceDeletionStatus(request);
@@ -1292,6 +1312,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSystemInstanceResult getSystemInstance(GetSystemInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeGetSystemInstance(request);
@@ -1351,6 +1372,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSystemTemplateResult getSystemTemplate(GetSystemTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeGetSystemTemplate(request);
@@ -1412,6 +1434,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSystemTemplateRevisionsResult getSystemTemplateRevisions(GetSystemTemplateRevisionsRequest request) {
         request = beforeClientExecution(request);
         return executeGetSystemTemplateRevisions(request);
@@ -1473,6 +1496,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetUploadStatusResult getUploadStatus(GetUploadStatusRequest request) {
         request = beforeClientExecution(request);
         return executeGetUploadStatus(request);
@@ -1532,6 +1556,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListFlowExecutionMessagesResult listFlowExecutionMessages(ListFlowExecutionMessagesRequest request) {
         request = beforeClientExecution(request);
         return executeListFlowExecutionMessages(request);
@@ -1593,6 +1618,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         request = beforeClientExecution(request);
         return executeListTagsForResource(request);
@@ -1652,6 +1678,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchEntitiesResult searchEntities(SearchEntitiesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchEntities(request);
@@ -1711,6 +1738,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchFlowExecutionsResult searchFlowExecutions(SearchFlowExecutionsRequest request) {
         request = beforeClientExecution(request);
         return executeSearchFlowExecutions(request);
@@ -1769,6 +1797,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchFlowTemplatesResult searchFlowTemplates(SearchFlowTemplatesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchFlowTemplates(request);
@@ -1827,6 +1856,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchSystemInstancesResult searchSystemInstances(SearchSystemInstancesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchSystemInstances(request);
@@ -1887,6 +1917,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchSystemTemplatesResult searchSystemTemplates(SearchSystemTemplatesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchSystemTemplates(request);
@@ -1955,6 +1986,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchThingsResult searchThings(SearchThingsRequest request) {
         request = beforeClientExecution(request);
         return executeSearchThings(request);
@@ -2014,6 +2046,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public TagResourceResult tagResource(TagResourceRequest request) {
         request = beforeClientExecution(request);
         return executeTagResource(request);
@@ -2074,6 +2107,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UndeploySystemInstanceResult undeploySystemInstance(UndeploySystemInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeUndeploySystemInstance(request);
@@ -2134,6 +2168,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UntagResourceResult untagResource(UntagResourceRequest request) {
         request = beforeClientExecution(request);
         return executeUntagResource(request);
@@ -2196,6 +2231,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateFlowTemplateResult updateFlowTemplate(UpdateFlowTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateFlowTemplate(request);
@@ -2256,6 +2292,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateSystemTemplateResult updateSystemTemplate(UpdateSystemTemplateRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateSystemTemplate(request);
@@ -2335,6 +2372,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UploadEntityDefinitionsResult uploadEntityDefinitions(UploadEntityDefinitionsRequest request) {
         request = beforeClientExecution(request);
         return executeUploadEntityDefinitions(request);

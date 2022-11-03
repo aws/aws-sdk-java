@@ -30,10 +30,56 @@ public class GatewayRouteTarget implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The port number of the gateway route target.
+     * </p>
+     */
+    private Integer port;
+    /**
+     * <p>
      * An object that represents a virtual service gateway route target.
      * </p>
      */
     private GatewayRouteVirtualService virtualService;
+
+    /**
+     * <p>
+     * The port number of the gateway route target.
+     * </p>
+     * 
+     * @param port
+     *        The port number of the gateway route target.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * The port number of the gateway route target.
+     * </p>
+     * 
+     * @return The port number of the gateway route target.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * The port number of the gateway route target.
+     * </p>
+     * 
+     * @param port
+     *        The port number of the gateway route target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GatewayRouteTarget withPort(Integer port) {
+        setPort(port);
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +133,8 @@ public class GatewayRouteTarget implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPort() != null)
+            sb.append("Port: ").append(getPort()).append(",");
         if (getVirtualService() != null)
             sb.append("VirtualService: ").append(getVirtualService());
         sb.append("}");
@@ -103,6 +151,10 @@ public class GatewayRouteTarget implements Serializable, Cloneable, StructuredPo
         if (obj instanceof GatewayRouteTarget == false)
             return false;
         GatewayRouteTarget other = (GatewayRouteTarget) obj;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
         if (other.getVirtualService() == null ^ this.getVirtualService() == null)
             return false;
         if (other.getVirtualService() != null && other.getVirtualService().equals(this.getVirtualService()) == false)
@@ -115,6 +167,7 @@ public class GatewayRouteTarget implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getVirtualService() == null) ? 0 : getVirtualService().hashCode());
         return hashCode;
     }

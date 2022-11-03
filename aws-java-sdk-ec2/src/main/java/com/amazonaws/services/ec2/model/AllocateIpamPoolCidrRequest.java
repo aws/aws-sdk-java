@@ -101,7 +101,8 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
     private Boolean previewNextCidr;
     /**
      * <p>
-     * Exclude a particular CIDR range from being returned by the pool.
+     * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
+     * netmask length for allocation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> disallowedCidrs;
@@ -579,10 +580,12 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Exclude a particular CIDR range from being returned by the pool.
+     * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
+     * netmask length for allocation.
      * </p>
      * 
-     * @return Exclude a particular CIDR range from being returned by the pool.
+     * @return Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if
+     *         using netmask length for allocation.
      */
 
     public java.util.List<String> getDisallowedCidrs() {
@@ -594,11 +597,13 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Exclude a particular CIDR range from being returned by the pool.
+     * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
+     * netmask length for allocation.
      * </p>
      * 
      * @param disallowedCidrs
-     *        Exclude a particular CIDR range from being returned by the pool.
+     *        Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if
+     *        using netmask length for allocation.
      */
 
     public void setDisallowedCidrs(java.util.Collection<String> disallowedCidrs) {
@@ -612,7 +617,8 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Exclude a particular CIDR range from being returned by the pool.
+     * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
+     * netmask length for allocation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -621,7 +627,8 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param disallowedCidrs
-     *        Exclude a particular CIDR range from being returned by the pool.
+     *        Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if
+     *        using netmask length for allocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -637,11 +644,13 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Exclude a particular CIDR range from being returned by the pool.
+     * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
+     * netmask length for allocation.
      * </p>
      * 
      * @param disallowedCidrs
-     *        Exclude a particular CIDR range from being returned by the pool.
+     *        Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if
+     *        using netmask length for allocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

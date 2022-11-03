@@ -179,6 +179,41 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateUserAccessLoggingSettingsResult> associateUserAccessLoggingSettingsAsync(
+            AssociateUserAccessLoggingSettingsRequest request) {
+
+        return associateUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateUserAccessLoggingSettingsResult> associateUserAccessLoggingSettingsAsync(
+            final AssociateUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateUserAccessLoggingSettingsRequest, AssociateUserAccessLoggingSettingsResult> asyncHandler) {
+        final AssociateUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateUserAccessLoggingSettingsResult>() {
+            @Override
+            public AssociateUserAccessLoggingSettingsResult call() throws Exception {
+                AssociateUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeAssociateUserAccessLoggingSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateUserSettingsResult> associateUserSettingsAsync(AssociateUserSettingsRequest request) {
 
         return associateUserSettingsAsync(request, null);
@@ -361,6 +396,41 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeCreateTrustStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserAccessLoggingSettingsResult> createUserAccessLoggingSettingsAsync(
+            CreateUserAccessLoggingSettingsRequest request) {
+
+        return createUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserAccessLoggingSettingsResult> createUserAccessLoggingSettingsAsync(
+            final CreateUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUserAccessLoggingSettingsRequest, CreateUserAccessLoggingSettingsResult> asyncHandler) {
+        final CreateUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUserAccessLoggingSettingsResult>() {
+            @Override
+            public CreateUserAccessLoggingSettingsResult call() throws Exception {
+                CreateUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeCreateUserAccessLoggingSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -575,6 +645,41 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteUserAccessLoggingSettingsResult> deleteUserAccessLoggingSettingsAsync(
+            DeleteUserAccessLoggingSettingsRequest request) {
+
+        return deleteUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserAccessLoggingSettingsResult> deleteUserAccessLoggingSettingsAsync(
+            final DeleteUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserAccessLoggingSettingsRequest, DeleteUserAccessLoggingSettingsResult> asyncHandler) {
+        final DeleteUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUserAccessLoggingSettingsResult>() {
+            @Override
+            public DeleteUserAccessLoggingSettingsResult call() throws Exception {
+                DeleteUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeDeleteUserAccessLoggingSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserSettingsResult> deleteUserSettingsAsync(DeleteUserSettingsRequest request) {
 
         return deleteUserSettingsAsync(request, null);
@@ -691,6 +796,41 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeDisassociateTrustStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateUserAccessLoggingSettingsResult> disassociateUserAccessLoggingSettingsAsync(
+            DisassociateUserAccessLoggingSettingsRequest request) {
+
+        return disassociateUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateUserAccessLoggingSettingsResult> disassociateUserAccessLoggingSettingsAsync(
+            final DisassociateUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateUserAccessLoggingSettingsRequest, DisassociateUserAccessLoggingSettingsResult> asyncHandler) {
+        final DisassociateUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateUserAccessLoggingSettingsResult>() {
+            @Override
+            public DisassociateUserAccessLoggingSettingsResult call() throws Exception {
+                DisassociateUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeDisassociateUserAccessLoggingSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -973,6 +1113,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
     }
 
     @Override
+    public java.util.concurrent.Future<GetUserAccessLoggingSettingsResult> getUserAccessLoggingSettingsAsync(GetUserAccessLoggingSettingsRequest request) {
+
+        return getUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserAccessLoggingSettingsResult> getUserAccessLoggingSettingsAsync(final GetUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUserAccessLoggingSettingsRequest, GetUserAccessLoggingSettingsResult> asyncHandler) {
+        final GetUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUserAccessLoggingSettingsResult>() {
+            @Override
+            public GetUserAccessLoggingSettingsResult call() throws Exception {
+                GetUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeGetUserAccessLoggingSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserSettingsResult> getUserSettingsAsync(GetUserSettingsRequest request) {
 
         return getUserSettingsAsync(request, null);
@@ -1237,6 +1410,40 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListUserAccessLoggingSettingsResult> listUserAccessLoggingSettingsAsync(ListUserAccessLoggingSettingsRequest request) {
+
+        return listUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserAccessLoggingSettingsResult> listUserAccessLoggingSettingsAsync(
+            final ListUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListUserAccessLoggingSettingsRequest, ListUserAccessLoggingSettingsResult> asyncHandler) {
+        final ListUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListUserAccessLoggingSettingsResult>() {
+            @Override
+            public ListUserAccessLoggingSettingsResult call() throws Exception {
+                ListUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeListUserAccessLoggingSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserSettingsResult> listUserSettingsAsync(ListUserSettingsRequest request) {
 
         return listUserSettingsAsync(request, null);
@@ -1485,6 +1692,41 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeUpdateTrustStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserAccessLoggingSettingsResult> updateUserAccessLoggingSettingsAsync(
+            UpdateUserAccessLoggingSettingsRequest request) {
+
+        return updateUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserAccessLoggingSettingsResult> updateUserAccessLoggingSettingsAsync(
+            final UpdateUserAccessLoggingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUserAccessLoggingSettingsRequest, UpdateUserAccessLoggingSettingsResult> asyncHandler) {
+        final UpdateUserAccessLoggingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateUserAccessLoggingSettingsResult>() {
+            @Override
+            public UpdateUserAccessLoggingSettingsResult call() throws Exception {
+                UpdateUserAccessLoggingSettingsResult result = null;
+
+                try {
+                    result = executeUpdateUserAccessLoggingSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

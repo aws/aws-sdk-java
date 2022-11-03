@@ -74,8 +74,8 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String estimatedOnDemandCost;
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time
+     * period and the Savings Plans you own.
      * </p>
      */
     private String estimatedOnDemandCostWithCurrentCommitment;
@@ -428,12 +428,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time
+     * period and the Savings Plans you own.
      * </p>
      * 
      * @param estimatedOnDemandCostWithCurrentCommitment
-     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *        The estimated On-Demand costs you expect with no additional commitment, based on your usage of the
      *        selected time period and the Savings Plans you own.
      */
 
@@ -443,11 +443,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time
+     * period and the Savings Plans you own.
      * </p>
      * 
-     * @return The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     * @return The estimated On-Demand costs you expect with no additional commitment, based on your usage of the
      *         selected time period and the Savings Plans you own.
      */
 
@@ -457,12 +457,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time
+     * period and the Savings Plans you own.
      * </p>
      * 
      * @param estimatedOnDemandCostWithCurrentCommitment
-     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *        The estimated On-Demand costs you expect with no additional commitment, based on your usage of the
      *        selected time period and the Savings Plans you own.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

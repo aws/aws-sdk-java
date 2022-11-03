@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the configuration information for users or groups in your Amazon Web Services SSO identity source for access
- * to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted
- * access to your Amazon Kendra experience.
+ * Provides the configuration information for users or groups in your IAM Identity Center identity source for access to
+ * your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access
+ * to your Amazon Kendra experience.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/EntityPersonaConfiguration" target="_top">AWS
@@ -32,14 +32,14 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      */
     private String entityId;
     /**
      * <p>
-     * The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity
+     * The persona that defines the specific permissions of the user or group in your IAM Identity Center identity
      * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
      * information on these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -50,12 +50,12 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     *        The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *        could be an email.
      */
 
@@ -65,11 +65,11 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
-     * @return The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     * @return The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *         could be an email.
      */
 
@@ -79,12 +79,12 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     *        The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *        could be an email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -96,7 +96,7 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity
+     * The persona that defines the specific permissions of the user or group in your IAM Identity Center identity
      * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
      * information on these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -104,7 +104,7 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param persona
-     *        The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO
+     *        The persona that defines the specific permissions of the user or group in your IAM Identity Center
      *        identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
      *        For more information on these personas, see <a href=
      *        "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -118,14 +118,14 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity
+     * The persona that defines the specific permissions of the user or group in your IAM Identity Center identity
      * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
      * information on these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
      * >Providing access to your search page</a>.
      * </p>
      * 
-     * @return The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO
+     * @return The persona that defines the specific permissions of the user or group in your IAM Identity Center
      *         identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
      *         For more information on these personas, see <a href=
      *         "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -139,7 +139,7 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity
+     * The persona that defines the specific permissions of the user or group in your IAM Identity Center identity
      * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
      * information on these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -147,7 +147,7 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param persona
-     *        The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO
+     *        The persona that defines the specific permissions of the user or group in your IAM Identity Center
      *        identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
      *        For more information on these personas, see <a href=
      *        "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -163,7 +163,7 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity
+     * The persona that defines the specific permissions of the user or group in your IAM Identity Center identity
      * source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more
      * information on these personas, see <a href=
      * "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"
@@ -171,7 +171,7 @@ public class EntityPersonaConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param persona
-     *        The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO
+     *        The persona that defines the specific permissions of the user or group in your IAM Identity Center
      *        identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>.
      *        For more information on these personas, see <a href=
      *        "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience"

@@ -648,7 +648,8 @@ public interface AmazonEKS {
 
     /**
      * <p>
-     * Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group.
+     * Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group
+     * or Amazon EKS add-on.
      * </p>
      * <p>
      * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
@@ -931,7 +932,7 @@ public interface AmazonEKS {
      * @throws ResourceInUseException
      *         The specified resource is in use.
      * @throws ResourcePropagationDelayException
-     *         Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.
+     *         Required resources (such as service-linked roles) were created and are still propagating. Retry later.
      * @sample AmazonEKS.RegisterCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster" target="_top">AWS API
      *      Documentation</a>

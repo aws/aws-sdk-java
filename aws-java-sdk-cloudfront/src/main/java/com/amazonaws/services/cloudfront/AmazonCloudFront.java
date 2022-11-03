@@ -269,6 +269,16 @@ public interface AmazonCloudFront {
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
+     * @throws IllegalOriginAccessConfigurationException
+     *         An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).
+     * @throws TooManyDistributionsAssociatedToOriginAccessControlException
+     *         The maximum number of distributions have been associated with the specified origin access control.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -385,7 +395,8 @@ public interface AmazonCloudFront {
      * @throws NoSuchResponseHeadersPolicyException
      *         The response headers policy does not exist.
      * @throws TooManyDistributionsAssociatedToResponseHeadersPolicyException
-     *         The maximum number of distributions have been associated with the specified response headers policy.</p>
+     *         The maximum number of distributions have been associated with the specified response headers policy.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
@@ -413,6 +424,8 @@ public interface AmazonCloudFront {
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
      *         The specified real-time log configuration belongs to a different Amazon Web Services account.
+     * @throws InvalidDomainNameForOriginAccessControlException
+     *         An origin access control is associated with an origin whose domain name is not supported.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -436,6 +449,8 @@ public interface AmazonCloudFront {
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -582,6 +597,8 @@ public interface AmazonCloudFront {
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
      *         The specified real-time log configuration belongs to a different Amazon Web Services account.
+     * @throws InvalidDomainNameForOriginAccessControlException
+     *         An origin access control is associated with an origin whose domain name is not supported.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -775,6 +792,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws MonitoringSubscriptionAlreadyExistsException
+     *         A monitoring subscription already exists for the specified distribution.
      * @throws UnsupportedOperationException
      *         This operation is not supported in this region.
      * @sample AmazonCloudFront.CreateMonitoringSubscription
@@ -782,6 +801,39 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     CreateMonitoringSubscriptionResult createMonitoringSubscription(CreateMonitoringSubscriptionRequest createMonitoringSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to
+     * an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.
+     * </p>
+     * <p>
+     * For an Amazon S3 origin, this makes it possible to block public access to the Amazon S3 bucket so that viewers
+     * (users) can access the content in the bucket only through CloudFront.
+     * </p>
+     * <p>
+     * For more information about using a CloudFront origin access control, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginAccessControlRequest
+     * @return Result of the CreateOriginAccessControl operation returned by the service.
+     * @throws OriginAccessControlAlreadyExistsException
+     *         An origin access control with the specified parameters already exists.
+     * @throws TooManyOriginAccessControlsException
+     *         The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.CreateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateOriginAccessControlResult createOriginAccessControl(CreateOriginAccessControlRequest createOriginAccessControlRequest);
 
     /**
      * <p>
@@ -957,6 +1009,14 @@ public interface AmazonCloudFront {
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooLongCSPInResponseHeadersPolicyException
+     *         The length of the <code>Content-Security-Policy</code> header value in the response headers policy
+     *         exceeds the maximum.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.CreateResponseHeadersPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -982,6 +1042,8 @@ public interface AmazonCloudFront {
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -1024,6 +1086,8 @@ public interface AmazonCloudFront {
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -1310,6 +1374,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws NoSuchMonitoringSubscriptionException
+     *         A monitoring subscription does not exist for the specified distribution.
      * @throws UnsupportedOperationException
      *         This operation is not supported in this region.
      * @sample AmazonCloudFront.DeleteMonitoringSubscription
@@ -1317,6 +1383,33 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteMonitoringSubscriptionResult deleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest deleteMonitoringSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes a CloudFront origin access control.
+     * </p>
+     * <p>
+     * You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin
+     * access control from all origins, then delete the origin access control.
+     * </p>
+     * 
+     * @param deleteOriginAccessControlRequest
+     * @return Result of the DeleteOriginAccessControl operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws OriginAccessControlInUseException
+     *         Cannot delete the origin access control because it's in use by one or more distributions.
+     * @sample AmazonCloudFront.DeleteOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteOriginAccessControlResult deleteOriginAccessControl(DeleteOriginAccessControlRequest deleteOriginAccessControlRequest);
 
     /**
      * <p>
@@ -1847,6 +1940,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws NoSuchMonitoringSubscriptionException
+     *         A monitoring subscription does not exist for the specified distribution.
      * @throws UnsupportedOperationException
      *         This operation is not supported in this region.
      * @sample AmazonCloudFront.GetMonitoringSubscription
@@ -1854,6 +1949,40 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     GetMonitoringSubscriptionResult getMonitoringSubscription(GetMonitoringSubscriptionRequest getMonitoringSubscriptionRequest);
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control, including its unique identifier.
+     * </p>
+     * 
+     * @param getOriginAccessControlRequest
+     * @return Result of the GetOriginAccessControl operation returned by the service.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.GetOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetOriginAccessControlResult getOriginAccessControl(GetOriginAccessControlRequest getOriginAccessControlRequest);
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control configuration.
+     * </p>
+     * 
+     * @param getOriginAccessControlConfigRequest
+     * @return Result of the GetOriginAccessControlConfig operation returned by the service.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.GetOriginAccessControlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetOriginAccessControlConfigResult getOriginAccessControlConfig(GetOriginAccessControlConfigRequest getOriginAccessControlConfigRequest);
 
     /**
      * <p>
@@ -2414,6 +2543,27 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send another request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the next request.
+     * </p>
+     * 
+     * @param listOriginAccessControlsRequest
+     * @return Result of the ListOriginAccessControls operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListOriginAccessControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOriginAccessControlsResult listOriginAccessControls(ListOriginAccessControlsRequest listOriginAccessControlsRequest);
+
+    /**
+     * <p>
      * Gets a list of origin request policies.
      * </p>
      * <p>
@@ -2903,6 +3053,8 @@ public interface AmazonCloudFront {
      *         An argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
@@ -3025,6 +3177,10 @@ public interface AmazonCloudFront {
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
      *         The specified real-time log configuration belongs to a different Amazon Web Services account.
+     * @throws IllegalOriginAccessConfigurationException
+     *         An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).
+     * @throws InvalidDomainNameForOriginAccessControlException
+     *         An origin access control is associated with an origin whose domain name is not supported.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -3188,6 +3344,33 @@ public interface AmazonCloudFront {
      *      Documentation</a>
      */
     UpdateKeyGroupResult updateKeyGroup(UpdateKeyGroupRequest updateKeyGroupRequest);
+
+    /**
+     * <p>
+     * Updates a CloudFront origin access control.
+     * </p>
+     * 
+     * @param updateOriginAccessControlRequest
+     * @return Result of the UpdateOriginAccessControl operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws IllegalUpdateException
+     *         The update contains modifications that are not allowed.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws OriginAccessControlAlreadyExistsException
+     *         An origin access control with the specified parameters already exists.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.UpdateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateOriginAccessControlResult updateOriginAccessControl(UpdateOriginAccessControlRequest updateOriginAccessControlRequest);
 
     /**
      * <p>
@@ -3380,6 +3563,14 @@ public interface AmazonCloudFront {
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooLongCSPInResponseHeadersPolicyException
+     *         The length of the <code>Content-Security-Policy</code> header value in the response headers policy
+     *         exceeds the maximum.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.UpdateResponseHeadersPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -3415,6 +3606,8 @@ public interface AmazonCloudFront {
      *         An argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException

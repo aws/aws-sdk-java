@@ -62,8 +62,8 @@ public class ImportAsProvisionedProductRequest extends com.amazonaws.AmazonWebSe
     private String provisioningArtifactId;
     /**
      * <p>
-     * The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot
-     * be updated after the product is provisioned.
+     * The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account.
+     * The name cannot be updated after the product is provisioned.
      * </p>
      */
     private String provisionedProductName;
@@ -302,13 +302,13 @@ public class ImportAsProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot
-     * be updated after the product is provisioned.
+     * The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account.
+     * The name cannot be updated after the product is provisioned.
      * </p>
      * 
      * @param provisionedProductName
-     *        The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name
-     *        cannot be updated after the product is provisioned.
+     *        The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services
+     *        account. The name cannot be updated after the product is provisioned.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -317,12 +317,12 @@ public class ImportAsProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot
-     * be updated after the product is provisioned.
+     * The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account.
+     * The name cannot be updated after the product is provisioned.
      * </p>
      * 
-     * @return The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name
-     *         cannot be updated after the product is provisioned.
+     * @return The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services
+     *         account. The name cannot be updated after the product is provisioned.
      */
 
     public String getProvisionedProductName() {
@@ -331,13 +331,13 @@ public class ImportAsProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot
-     * be updated after the product is provisioned.
+     * The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account.
+     * The name cannot be updated after the product is provisioned.
      * </p>
      * 
      * @param provisionedProductName
-     *        The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name
-     *        cannot be updated after the product is provisioned.
+     *        The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services
+     *        account. The name cannot be updated after the product is provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

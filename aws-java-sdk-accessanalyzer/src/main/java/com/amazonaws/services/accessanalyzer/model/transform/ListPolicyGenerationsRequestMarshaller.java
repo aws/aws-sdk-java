@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListPolicyGenerationsRequestMarshaller {
 
+    private static final MarshallingInfo<String> PRINCIPALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("principalArn").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
-    private static final MarshallingInfo<String> PRINCIPALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("principalArn").build();
 
     private static final ListPolicyGenerationsRequestMarshaller instance = new ListPolicyGenerationsRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class ListPolicyGenerationsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listPolicyGenerationsRequest.getPrincipalArn(), PRINCIPALARN_BINDING);
             protocolMarshaller.marshall(listPolicyGenerationsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listPolicyGenerationsRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(listPolicyGenerationsRequest.getPrincipalArn(), PRINCIPALARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -35,6 +35,45 @@ public class PostFulfillmentStatusSpecification implements Serializable, Cloneab
     private ResponseSpecification failureResponse;
 
     private ResponseSpecification timeoutResponse;
+    /**
+     * <p>
+     * Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes
+     * successfully.
+     * </p>
+     */
+    private DialogState successNextStep;
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     * </p>
+     */
+    private ConditionalSpecification successConditional;
+    /**
+     * <p>
+     * Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the
+     * <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     */
+    private DialogState failureNextStep;
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with
+     * the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     */
+    private ConditionalSpecification failureConditional;
+    /**
+     * <p>
+     * Specifies the next step that the bot runs when the fulfillment code hook times out.
+     * </p>
+     */
+    private DialogState timeoutNextStep;
+    /**
+     * <p>
+     * A list of conditional branches to evaluate if the fulfillment code hook times out.
+     * </p>
+     */
+    private ConditionalSpecification timeoutConditional;
 
     /**
      * @param successResponse
@@ -115,6 +154,264 @@ public class PostFulfillmentStatusSpecification implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes
+     * successfully.
+     * </p>
+     * 
+     * @param successNextStep
+     *        Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook
+     *        completes successfully.
+     */
+
+    public void setSuccessNextStep(DialogState successNextStep) {
+        this.successNextStep = successNextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes
+     * successfully.
+     * </p>
+     * 
+     * @return Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook
+     *         completes successfully.
+     */
+
+    public DialogState getSuccessNextStep() {
+        return this.successNextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes
+     * successfully.
+     * </p>
+     * 
+     * @param successNextStep
+     *        Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook
+     *        completes successfully.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostFulfillmentStatusSpecification withSuccessNextStep(DialogState successNextStep) {
+        setSuccessNextStep(successNextStep);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     * </p>
+     * 
+     * @param successConditional
+     *        A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     */
+
+    public void setSuccessConditional(ConditionalSpecification successConditional) {
+        this.successConditional = successConditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     * </p>
+     * 
+     * @return A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     */
+
+    public ConditionalSpecification getSuccessConditional() {
+        return this.successConditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     * </p>
+     * 
+     * @param successConditional
+     *        A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostFulfillmentStatusSpecification withSuccessConditional(ConditionalSpecification successConditional) {
+        setSuccessConditional(successConditional);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the
+     * <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     * 
+     * @param failureNextStep
+     *        Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with
+     *        the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     */
+
+    public void setFailureNextStep(DialogState failureNextStep) {
+        this.failureNextStep = failureNextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the
+     * <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     * 
+     * @return Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with
+     *         the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     */
+
+    public DialogState getFailureNextStep() {
+        return this.failureNextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the
+     * <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     * 
+     * @param failureNextStep
+     *        Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with
+     *        the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostFulfillmentStatusSpecification withFailureNextStep(DialogState failureNextStep) {
+        setFailureNextStep(failureNextStep);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with
+     * the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     * 
+     * @param failureConditional
+     *        A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns
+     *        with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     */
+
+    public void setFailureConditional(ConditionalSpecification failureConditional) {
+        this.failureConditional = failureConditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with
+     * the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     * 
+     * @return A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns
+     *         with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     */
+
+    public ConditionalSpecification getFailureConditional() {
+        return this.failureConditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with
+     * the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * </p>
+     * 
+     * @param failureConditional
+     *        A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns
+     *        with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostFulfillmentStatusSpecification withFailureConditional(ConditionalSpecification failureConditional) {
+        setFailureConditional(failureConditional);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step that the bot runs when the fulfillment code hook times out.
+     * </p>
+     * 
+     * @param timeoutNextStep
+     *        Specifies the next step that the bot runs when the fulfillment code hook times out.
+     */
+
+    public void setTimeoutNextStep(DialogState timeoutNextStep) {
+        this.timeoutNextStep = timeoutNextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step that the bot runs when the fulfillment code hook times out.
+     * </p>
+     * 
+     * @return Specifies the next step that the bot runs when the fulfillment code hook times out.
+     */
+
+    public DialogState getTimeoutNextStep() {
+        return this.timeoutNextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step that the bot runs when the fulfillment code hook times out.
+     * </p>
+     * 
+     * @param timeoutNextStep
+     *        Specifies the next step that the bot runs when the fulfillment code hook times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostFulfillmentStatusSpecification withTimeoutNextStep(DialogState timeoutNextStep) {
+        setTimeoutNextStep(timeoutNextStep);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate if the fulfillment code hook times out.
+     * </p>
+     * 
+     * @param timeoutConditional
+     *        A list of conditional branches to evaluate if the fulfillment code hook times out.
+     */
+
+    public void setTimeoutConditional(ConditionalSpecification timeoutConditional) {
+        this.timeoutConditional = timeoutConditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate if the fulfillment code hook times out.
+     * </p>
+     * 
+     * @return A list of conditional branches to evaluate if the fulfillment code hook times out.
+     */
+
+    public ConditionalSpecification getTimeoutConditional() {
+        return this.timeoutConditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches to evaluate if the fulfillment code hook times out.
+     * </p>
+     * 
+     * @param timeoutConditional
+     *        A list of conditional branches to evaluate if the fulfillment code hook times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostFulfillmentStatusSpecification withTimeoutConditional(ConditionalSpecification timeoutConditional) {
+        setTimeoutConditional(timeoutConditional);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +428,19 @@ public class PostFulfillmentStatusSpecification implements Serializable, Cloneab
         if (getFailureResponse() != null)
             sb.append("FailureResponse: ").append(getFailureResponse()).append(",");
         if (getTimeoutResponse() != null)
-            sb.append("TimeoutResponse: ").append(getTimeoutResponse());
+            sb.append("TimeoutResponse: ").append(getTimeoutResponse()).append(",");
+        if (getSuccessNextStep() != null)
+            sb.append("SuccessNextStep: ").append(getSuccessNextStep()).append(",");
+        if (getSuccessConditional() != null)
+            sb.append("SuccessConditional: ").append(getSuccessConditional()).append(",");
+        if (getFailureNextStep() != null)
+            sb.append("FailureNextStep: ").append(getFailureNextStep()).append(",");
+        if (getFailureConditional() != null)
+            sb.append("FailureConditional: ").append(getFailureConditional()).append(",");
+        if (getTimeoutNextStep() != null)
+            sb.append("TimeoutNextStep: ").append(getTimeoutNextStep()).append(",");
+        if (getTimeoutConditional() != null)
+            sb.append("TimeoutConditional: ").append(getTimeoutConditional());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +467,30 @@ public class PostFulfillmentStatusSpecification implements Serializable, Cloneab
             return false;
         if (other.getTimeoutResponse() != null && other.getTimeoutResponse().equals(this.getTimeoutResponse()) == false)
             return false;
+        if (other.getSuccessNextStep() == null ^ this.getSuccessNextStep() == null)
+            return false;
+        if (other.getSuccessNextStep() != null && other.getSuccessNextStep().equals(this.getSuccessNextStep()) == false)
+            return false;
+        if (other.getSuccessConditional() == null ^ this.getSuccessConditional() == null)
+            return false;
+        if (other.getSuccessConditional() != null && other.getSuccessConditional().equals(this.getSuccessConditional()) == false)
+            return false;
+        if (other.getFailureNextStep() == null ^ this.getFailureNextStep() == null)
+            return false;
+        if (other.getFailureNextStep() != null && other.getFailureNextStep().equals(this.getFailureNextStep()) == false)
+            return false;
+        if (other.getFailureConditional() == null ^ this.getFailureConditional() == null)
+            return false;
+        if (other.getFailureConditional() != null && other.getFailureConditional().equals(this.getFailureConditional()) == false)
+            return false;
+        if (other.getTimeoutNextStep() == null ^ this.getTimeoutNextStep() == null)
+            return false;
+        if (other.getTimeoutNextStep() != null && other.getTimeoutNextStep().equals(this.getTimeoutNextStep()) == false)
+            return false;
+        if (other.getTimeoutConditional() == null ^ this.getTimeoutConditional() == null)
+            return false;
+        if (other.getTimeoutConditional() != null && other.getTimeoutConditional().equals(this.getTimeoutConditional()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +502,12 @@ public class PostFulfillmentStatusSpecification implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getSuccessResponse() == null) ? 0 : getSuccessResponse().hashCode());
         hashCode = prime * hashCode + ((getFailureResponse() == null) ? 0 : getFailureResponse().hashCode());
         hashCode = prime * hashCode + ((getTimeoutResponse() == null) ? 0 : getTimeoutResponse().hashCode());
+        hashCode = prime * hashCode + ((getSuccessNextStep() == null) ? 0 : getSuccessNextStep().hashCode());
+        hashCode = prime * hashCode + ((getSuccessConditional() == null) ? 0 : getSuccessConditional().hashCode());
+        hashCode = prime * hashCode + ((getFailureNextStep() == null) ? 0 : getFailureNextStep().hashCode());
+        hashCode = prime * hashCode + ((getFailureConditional() == null) ? 0 : getFailureConditional().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutNextStep() == null) ? 0 : getTimeoutNextStep().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutConditional() == null) ? 0 : getTimeoutConditional().hashCode());
         return hashCode;
     }
 

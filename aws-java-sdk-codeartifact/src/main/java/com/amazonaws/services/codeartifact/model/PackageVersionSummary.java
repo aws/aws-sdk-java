@@ -46,35 +46,16 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     * PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     * repository.
+     * </p>
+     */
+    private PackageVersionOrigin origin;
 
     /**
      * <p>
@@ -160,62 +141,9 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version. It can be one of the following:
      * @see PackageVersionStatus
      */
 
@@ -227,61 +155,8 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A string that contains the status of the package version. It can be one of the following: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Published</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unfinished</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unlisted</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Archived</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Disposed</code>
-     *         </p>
-     *         </li>
+     * @return A string that contains the status of the package version. It can be one of the following:
      * @see PackageVersionStatus
      */
 
@@ -293,62 +168,9 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version. It can be one of the following:
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */
@@ -362,68 +184,67 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version. It can be one of the following:
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */
 
     public PackageVersionSummary withStatus(PackageVersionStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     * PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     * repository.
+     * </p>
+     * 
+     * @param origin
+     *        A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     *        PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     *        repository.
+     */
+
+    public void setOrigin(PackageVersionOrigin origin) {
+        this.origin = origin;
+    }
+
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     * PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     * repository.
+     * </p>
+     * 
+     * @return A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     *         PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     *         repository.
+     */
+
+    public PackageVersionOrigin getOrigin() {
+        return this.origin;
+    }
+
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     * PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     * repository.
+     * </p>
+     * 
+     * @param origin
+     *        A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">
+     *        PackageVersionOrigin</a> object that contains information about how the package version was added to the
+     *        repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageVersionSummary withOrigin(PackageVersionOrigin origin) {
+        setOrigin(origin);
         return this;
     }
 
@@ -444,7 +265,9 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
         if (getRevision() != null)
             sb.append("Revision: ").append(getRevision()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getOrigin() != null)
+            sb.append("Origin: ").append(getOrigin());
         sb.append("}");
         return sb.toString();
     }
@@ -471,6 +294,10 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getOrigin() == null ^ this.getOrigin() == null)
+            return false;
+        if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
+            return false;
         return true;
     }
 
@@ -482,6 +309,7 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         return hashCode;
     }
 

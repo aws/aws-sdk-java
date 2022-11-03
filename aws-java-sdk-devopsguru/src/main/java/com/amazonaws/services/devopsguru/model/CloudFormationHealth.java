@@ -43,6 +43,13 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
      * </p>
      */
     private InsightHealth insight;
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * CloudFormation stack.
+     * </p>
+     */
+    private Long analyzedResourceCount;
 
     /**
      * <p>
@@ -137,6 +144,52 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * CloudFormation stack.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *        Services CloudFormation stack.
+     */
+
+    public void setAnalyzedResourceCount(Long analyzedResourceCount) {
+        this.analyzedResourceCount = analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * CloudFormation stack.
+     * </p>
+     * 
+     * @return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *         Services CloudFormation stack.
+     */
+
+    public Long getAnalyzedResourceCount() {
+        return this.analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * CloudFormation stack.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *        Services CloudFormation stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudFormationHealth withAnalyzedResourceCount(Long analyzedResourceCount) {
+        setAnalyzedResourceCount(analyzedResourceCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -151,7 +204,9 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
         if (getStackName() != null)
             sb.append("StackName: ").append(getStackName()).append(",");
         if (getInsight() != null)
-            sb.append("Insight: ").append(getInsight());
+            sb.append("Insight: ").append(getInsight()).append(",");
+        if (getAnalyzedResourceCount() != null)
+            sb.append("AnalyzedResourceCount: ").append(getAnalyzedResourceCount());
         sb.append("}");
         return sb.toString();
     }
@@ -174,6 +229,10 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
             return false;
         if (other.getInsight() != null && other.getInsight().equals(this.getInsight()) == false)
             return false;
+        if (other.getAnalyzedResourceCount() == null ^ this.getAnalyzedResourceCount() == null)
+            return false;
+        if (other.getAnalyzedResourceCount() != null && other.getAnalyzedResourceCount().equals(this.getAnalyzedResourceCount()) == false)
+            return false;
         return true;
     }
 
@@ -184,6 +243,7 @@ public class CloudFormationHealth implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getInsight() == null) ? 0 : getInsight().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedResourceCount() == null) ? 0 : getAnalyzedResourceCount().hashCode());
         return hashCode;
     }
 

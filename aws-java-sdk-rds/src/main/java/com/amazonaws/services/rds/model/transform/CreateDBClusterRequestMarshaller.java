@@ -305,6 +305,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
+        if (createDBClusterRequest.getNetworkType() != null) {
+            request.addParameter("NetworkType", StringUtils.fromString(createDBClusterRequest.getNetworkType()));
+        }
+
         if (createDBClusterRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }

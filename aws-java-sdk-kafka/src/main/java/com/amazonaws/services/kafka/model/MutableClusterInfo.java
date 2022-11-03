@@ -96,6 +96,12 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private ConnectivityInfo connectivityInfo;
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     */
+    private String storageMode;
 
     /**
      * <p>
@@ -664,6 +670,73 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @param storageMode
+     *        <p>
+     *        This controls storage mode for supported storage tiers.
+     *        </p>
+     * @see StorageMode
+     */
+
+    public void setStorageMode(String storageMode) {
+        this.storageMode = storageMode;
+    }
+
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @return <p>
+     *         This controls storage mode for supported storage tiers.
+     *         </p>
+     * @see StorageMode
+     */
+
+    public String getStorageMode() {
+        return this.storageMode;
+    }
+
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @param storageMode
+     *        <p>
+     *        This controls storage mode for supported storage tiers.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageMode
+     */
+
+    public MutableClusterInfo withStorageMode(String storageMode) {
+        setStorageMode(storageMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @param storageMode
+     *        <p>
+     *        This controls storage mode for supported storage tiers.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageMode
+     */
+
+    public MutableClusterInfo withStorageMode(StorageMode storageMode) {
+        this.storageMode = storageMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -696,7 +769,9 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         if (getEncryptionInfo() != null)
             sb.append("EncryptionInfo: ").append(getEncryptionInfo()).append(",");
         if (getConnectivityInfo() != null)
-            sb.append("ConnectivityInfo: ").append(getConnectivityInfo());
+            sb.append("ConnectivityInfo: ").append(getConnectivityInfo()).append(",");
+        if (getStorageMode() != null)
+            sb.append("StorageMode: ").append(getStorageMode());
         sb.append("}");
         return sb.toString();
     }
@@ -755,6 +830,10 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getConnectivityInfo() != null && other.getConnectivityInfo().equals(this.getConnectivityInfo()) == false)
             return false;
+        if (other.getStorageMode() == null ^ this.getStorageMode() == null)
+            return false;
+        if (other.getStorageMode() != null && other.getStorageMode().equals(this.getStorageMode()) == false)
+            return false;
         return true;
     }
 
@@ -774,6 +853,7 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getClientAuthentication() == null) ? 0 : getClientAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEncryptionInfo() == null) ? 0 : getEncryptionInfo().hashCode());
         hashCode = prime * hashCode + ((getConnectivityInfo() == null) ? 0 : getConnectivityInfo().hashCode());
+        hashCode = prime * hashCode + ((getStorageMode() == null) ? 0 : getStorageMode().hashCode());
         return hashCode;
     }
 

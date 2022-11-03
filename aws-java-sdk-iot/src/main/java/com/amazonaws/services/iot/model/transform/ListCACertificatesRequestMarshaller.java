@@ -33,6 +33,8 @@ public class ListCACertificatesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
     private static final MarshallingInfo<Boolean> ASCENDINGORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isAscendingOrder").build();
+    private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("templateName").build();
 
     private static final ListCACertificatesRequestMarshaller instance = new ListCACertificatesRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListCACertificatesRequestMarshaller {
             protocolMarshaller.marshall(listCACertificatesRequest.getPageSize(), PAGESIZE_BINDING);
             protocolMarshaller.marshall(listCACertificatesRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listCACertificatesRequest.getAscendingOrder(), ASCENDINGORDER_BINDING);
+            protocolMarshaller.marshall(listCACertificatesRequest.getTemplateName(), TEMPLATENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

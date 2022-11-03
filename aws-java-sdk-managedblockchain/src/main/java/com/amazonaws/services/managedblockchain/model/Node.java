@@ -90,7 +90,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      * </p>
      * </li>
      * <li>
@@ -107,7 +107,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.
      * </p>
      * </li>
      * <li>
@@ -133,13 +133,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
-     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
-     * disabled or deleted, or the grants on the key were revoked.
+     * cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled
+     * or deleted, or the grants on the key were revoked.
      * </p>
      * <p>
-     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
-     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
-     * recreating the resource.
+     * The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the
+     * node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting
+     * and recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -168,15 +168,20 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
-     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for
+     * encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon
+     * Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -571,7 +576,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      * </p>
      * </li>
      * <li>
@@ -588,7 +593,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.
      * </p>
      * </li>
      * <li>
@@ -614,13 +619,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
-     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
-     * disabled or deleted, or the grants on the key were revoked.
+     * cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled
+     * or deleted, or the grants on the key were revoked.
      * </p>
      * <p>
-     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
-     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
-     * recreating the resource.
+     * The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the
+     * node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting
+     * and recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -630,7 +635,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *        <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      *        </p>
      *        </li>
      *        <li>
@@ -647,7 +652,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *        <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation
+     *        failed.
      *        </p>
      *        </li>
      *        <li>
@@ -673,13 +679,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because
-     *        it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key
-     *        was disabled or deleted, or the grants on the key were revoked.
+     *        it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was
+     *        disabled or deleted, or the grants on the key were revoked.
      *        </p>
      *        <p>
-     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
-     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
-     *        deleting and recreating the resource.
+     *        The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time
+     *        for the node resource to discover that the key is inaccessible. When a resource is in this state, we
+     *        recommend deleting and recreating the resource.
      *        </p>
      *        </li>
      * @see NodeStatus
@@ -696,7 +702,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      * </p>
      * </li>
      * <li>
@@ -713,7 +719,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.
      * </p>
      * </li>
      * <li>
@@ -739,13 +745,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
-     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
-     * disabled or deleted, or the grants on the key were revoked.
+     * cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled
+     * or deleted, or the grants on the key were revoked.
      * </p>
      * <p>
-     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
-     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
-     * recreating the resource.
+     * The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the
+     * node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting
+     * and recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -754,7 +760,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *         <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      *         </p>
      *         </li>
      *         <li>
@@ -771,7 +777,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *         <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation
+     *         failed.
      *         </p>
      *         </li>
      *         <li>
@@ -797,13 +804,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected
-     *         because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the
-     *         KMS key was disabled or deleted, or the grants on the key were revoked.
+     *         because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS
+     *         key was disabled or deleted, or the grants on the key were revoked.
      *         </p>
      *         <p>
-     *         The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
-     *         take some time to find that the key is inaccessible. When a resource is in this state, we recommend
-     *         deleting and recreating the resource.
+     *         The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time
+     *         for the node resource to discover that the key is inaccessible. When a resource is in this state, we
+     *         recommend deleting and recreating the resource.
      *         </p>
      *         </li>
      * @see NodeStatus
@@ -820,7 +827,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      * </p>
      * </li>
      * <li>
@@ -837,7 +844,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.
      * </p>
      * </li>
      * <li>
@@ -863,13 +870,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
-     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
-     * disabled or deleted, or the grants on the key were revoked.
+     * cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled
+     * or deleted, or the grants on the key were revoked.
      * </p>
      * <p>
-     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
-     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
-     * recreating the resource.
+     * The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the
+     * node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting
+     * and recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -879,7 +886,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *        <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      *        </p>
      *        </li>
      *        <li>
@@ -896,7 +903,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *        <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation
+     *        failed.
      *        </p>
      *        </li>
      *        <li>
@@ -922,13 +930,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because
-     *        it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key
-     *        was disabled or deleted, or the grants on the key were revoked.
+     *        it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was
+     *        disabled or deleted, or the grants on the key were revoked.
      *        </p>
      *        <p>
-     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
-     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
-     *        deleting and recreating the resource.
+     *        The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time
+     *        for the node resource to discover that the key is inaccessible. When a resource is in this state, we
+     *        recommend deleting and recreating the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -947,7 +955,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      * </p>
      * </li>
      * <li>
@@ -964,7 +972,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.
      * </p>
      * </li>
      * <li>
@@ -990,13 +998,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
-     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
-     * disabled or deleted, or the grants on the key were revoked.
+     * cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled
+     * or deleted, or the grants on the key were revoked.
      * </p>
      * <p>
-     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
-     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
-     * recreating the resource.
+     * The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the
+     * node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting
+     * and recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -1006,7 +1014,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *        <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.
      *        </p>
      *        </li>
      *        <li>
@@ -1023,7 +1031,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *        <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation
+     *        failed.
      *        </p>
      *        </li>
      *        <li>
@@ -1049,13 +1058,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because
-     *        it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key
-     *        was disabled or deleted, or the grants on the key were revoked.
+     *        it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was
+     *        disabled or deleted, or the grants on the key were revoked.
      *        </p>
      *        <p>
-     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
-     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
-     *        deleting and recreating the resource.
+     *        The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time
+     *        for the node resource to discover that the key is inaccessible. When a resource is in this state, we
+     *        recommend deleting and recreating the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1218,13 +1227,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -1235,12 +1244,12 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getArn() {
@@ -1251,13 +1260,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1268,19 +1277,29 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
-     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for
+     * encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon
+     * Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
-     *        the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>,
-     *        the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that
-     *        it belongs to.</p>
+     *        The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node
+     *        uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node
+     *        uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member
+     *        that it belongs to.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     *        >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Applies only to Hyperledger Fabric.
      */
@@ -1291,18 +1310,28 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
-     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for
+     * encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon
+     * Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
-     *         the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>,
-     *         the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that
-     *         it belongs to.</p>
+     * @return The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node
+     *         uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node
+     *         uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the
+     *         member that it belongs to.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     *         >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     *         </p>
      *         <p>
      *         Applies only to Hyperledger Fabric.
      */
@@ -1313,19 +1342,29 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
-     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for
+     * encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon
+     * Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
-     *        the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>,
-     *        the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that
-     *        it belongs to.</p>
+     *        The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node
+     *        uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node
+     *        uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member
+     *        that it belongs to.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     *        >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.

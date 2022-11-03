@@ -34,6 +34,41 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
+     * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
+     * </p>
+     * 
+     * @param associateUserToPermissionGroupRequest
+     * @return A Java Future containing the result of the AssociateUserToPermissionGroup operation returned by the
+     *         service.
+     * @sample AWSFinSpaceDataAsync.AssociateUserToPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(
+            AssociateUserToPermissionGroupRequest associateUserToPermissionGroupRequest);
+
+    /**
+     * <p>
+     * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
+     * </p>
+     * 
+     * @param associateUserToPermissionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateUserToPermissionGroup operation returned by the
+     *         service.
+     * @sample AWSFinSpaceDataAsyncHandler.AssociateUserToPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(
+            AssociateUserToPermissionGroupRequest associateUserToPermissionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateUserToPermissionGroupRequest, AssociateUserToPermissionGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Changeset in a FinSpace Dataset.
      * </p>
      * 
@@ -290,6 +325,41 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
+     * Removes a user account from a permission group.
+     * </p>
+     * 
+     * @param disassociateUserFromPermissionGroupRequest
+     * @return A Java Future containing the result of the DisassociateUserFromPermissionGroup operation returned by the
+     *         service.
+     * @sample AWSFinSpaceDataAsync.DisassociateUserFromPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
+            DisassociateUserFromPermissionGroupRequest disassociateUserFromPermissionGroupRequest);
+
+    /**
+     * <p>
+     * Removes a user account from a permission group.
+     * </p>
+     * 
+     * @param disassociateUserFromPermissionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateUserFromPermissionGroup operation returned by the
+     *         service.
+     * @sample AWSFinSpaceDataAsyncHandler.DisassociateUserFromPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
+            DisassociateUserFromPermissionGroupRequest disassociateUserFromPermissionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateUserFromPermissionGroupRequest, DisassociateUserFromPermissionGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Allows the specified user to access the FinSpace web application and API.
      * </p>
      * 
@@ -417,6 +487,98 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
      */
     java.util.concurrent.Future<GetDatasetResult> getDatasetAsync(GetDatasetRequest getDatasetRequest,
             com.amazonaws.handlers.AsyncHandler<GetDatasetRequest, GetDatasetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the credentials to access the external Dataview from an S3 location. To call this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must retrieve the programmatic credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must be a member of a FinSpace user group, where the dataset that you want to access has
+     * <code>Read Dataset Data</code> permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getExternalDataViewAccessDetailsRequest
+     * @return A Java Future containing the result of the GetExternalDataViewAccessDetails operation returned by the
+     *         service.
+     * @sample AWSFinSpaceDataAsync.GetExternalDataViewAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
+            GetExternalDataViewAccessDetailsRequest getExternalDataViewAccessDetailsRequest);
+
+    /**
+     * <p>
+     * Returns the credentials to access the external Dataview from an S3 location. To call this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must retrieve the programmatic credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must be a member of a FinSpace user group, where the dataset that you want to access has
+     * <code>Read Dataset Data</code> permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getExternalDataViewAccessDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExternalDataViewAccessDetails operation returned by the
+     *         service.
+     * @sample AWSFinSpaceDataAsyncHandler.GetExternalDataViewAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
+            GetExternalDataViewAccessDetailsRequest getExternalDataViewAccessDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExternalDataViewAccessDetailsRequest, GetExternalDataViewAccessDetailsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details of a specific permission group.
+     * </p>
+     * 
+     * @param getPermissionGroupRequest
+     * @return A Java Future containing the result of the GetPermissionGroup operation returned by the service.
+     * @sample AWSFinSpaceDataAsync.GetPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(GetPermissionGroupRequest getPermissionGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a specific permission group.
+     * </p>
+     * 
+     * @param getPermissionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPermissionGroup operation returned by the service.
+     * @sample AWSFinSpaceDataAsyncHandler.GetPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(GetPermissionGroupRequest getPermissionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionGroupRequest, GetPermissionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -651,6 +813,39 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
+     * Lists all the permission groups that are associated with a specific user account.
+     * </p>
+     * 
+     * @param listPermissionGroupsByUserRequest
+     * @return A Java Future containing the result of the ListPermissionGroupsByUser operation returned by the service.
+     * @sample AWSFinSpaceDataAsync.ListPermissionGroupsByUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(
+            ListPermissionGroupsByUserRequest listPermissionGroupsByUserRequest);
+
+    /**
+     * <p>
+     * Lists all the permission groups that are associated with a specific user account.
+     * </p>
+     * 
+     * @param listPermissionGroupsByUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPermissionGroupsByUser operation returned by the service.
+     * @sample AWSFinSpaceDataAsyncHandler.ListPermissionGroupsByUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(
+            ListPermissionGroupsByUserRequest listPermissionGroupsByUserRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionGroupsByUserRequest, ListPermissionGroupsByUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all available user accounts in FinSpace.
      * </p>
      * 
@@ -679,6 +874,39 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists details of all the users in a specific permission group.
+     * </p>
+     * 
+     * @param listUsersByPermissionGroupRequest
+     * @return A Java Future containing the result of the ListUsersByPermissionGroup operation returned by the service.
+     * @sample AWSFinSpaceDataAsync.ListUsersByPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(
+            ListUsersByPermissionGroupRequest listUsersByPermissionGroupRequest);
+
+    /**
+     * <p>
+     * Lists details of all the users in a specific permission group.
+     * </p>
+     * 
+     * @param listUsersByPermissionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUsersByPermissionGroup operation returned by the service.
+     * @sample AWSFinSpaceDataAsyncHandler.ListUsersByPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(
+            ListUsersByPermissionGroupRequest listUsersByPermissionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUsersByPermissionGroupRequest, ListUsersByPermissionGroupResult> asyncHandler);
 
     /**
      * <p>

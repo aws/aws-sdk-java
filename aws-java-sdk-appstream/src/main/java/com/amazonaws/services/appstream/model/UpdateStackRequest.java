@@ -104,6 +104,13 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<String> embedHostDomains;
+    /**
+     * <p>
+     * The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in
+     * the Windows native client.
+     * </p>
+     */
+    private StreamingExperienceSettings streamingExperienceSettings;
 
     /**
      * <p>
@@ -818,6 +825,52 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in
+     * the Windows native client.
+     * </p>
+     * 
+     * @param streamingExperienceSettings
+     *        The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only
+     *        supported in the Windows native client.
+     */
+
+    public void setStreamingExperienceSettings(StreamingExperienceSettings streamingExperienceSettings) {
+        this.streamingExperienceSettings = streamingExperienceSettings;
+    }
+
+    /**
+     * <p>
+     * The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in
+     * the Windows native client.
+     * </p>
+     * 
+     * @return The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only
+     *         supported in the Windows native client.
+     */
+
+    public StreamingExperienceSettings getStreamingExperienceSettings() {
+        return this.streamingExperienceSettings;
+    }
+
+    /**
+     * <p>
+     * The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in
+     * the Windows native client.
+     * </p>
+     * 
+     * @param streamingExperienceSettings
+     *        The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only
+     *        supported in the Windows native client.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackRequest withStreamingExperienceSettings(StreamingExperienceSettings streamingExperienceSettings) {
+        setStreamingExperienceSettings(streamingExperienceSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -852,7 +905,9 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAccessEndpoints() != null)
             sb.append("AccessEndpoints: ").append(getAccessEndpoints()).append(",");
         if (getEmbedHostDomains() != null)
-            sb.append("EmbedHostDomains: ").append(getEmbedHostDomains());
+            sb.append("EmbedHostDomains: ").append(getEmbedHostDomains()).append(",");
+        if (getStreamingExperienceSettings() != null)
+            sb.append("StreamingExperienceSettings: ").append(getStreamingExperienceSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -915,6 +970,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getEmbedHostDomains() != null && other.getEmbedHostDomains().equals(this.getEmbedHostDomains()) == false)
             return false;
+        if (other.getStreamingExperienceSettings() == null ^ this.getStreamingExperienceSettings() == null)
+            return false;
+        if (other.getStreamingExperienceSettings() != null && other.getStreamingExperienceSettings().equals(this.getStreamingExperienceSettings()) == false)
+            return false;
         return true;
     }
 
@@ -935,6 +994,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
         hashCode = prime * hashCode + ((getAccessEndpoints() == null) ? 0 : getAccessEndpoints().hashCode());
         hashCode = prime * hashCode + ((getEmbedHostDomains() == null) ? 0 : getEmbedHostDomains().hashCode());
+        hashCode = prime * hashCode + ((getStreamingExperienceSettings() == null) ? 0 : getStreamingExperienceSettings().hashCode());
         return hashCode;
     }
 

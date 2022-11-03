@@ -88,6 +88,11 @@ public class RecommenderJsonUnmarshaller implements Unmarshaller<Recommender, Js
                     context.nextToken();
                     recommender.setLatestRecommenderUpdate(RecommenderUpdateSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("modelMetrics", targetDepth)) {
+                    context.nextToken();
+                    recommender.setModelMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Double.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

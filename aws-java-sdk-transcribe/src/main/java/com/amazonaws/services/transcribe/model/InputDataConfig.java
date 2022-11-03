@@ -19,8 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The object that contains the Amazon S3 object location and access role required to train and tune your custom
- * language model.
+ * Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and
+ * permissions to access this location.
+ * </p>
+ * <p>
+ * When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code> and
+ * <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/InputDataConfig" target="_top">AWS API
@@ -31,33 +35,51 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to train your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      * </p>
      */
     private String s3Uri;
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      * </p>
      */
     private String tuningDataS3Uri;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access
-     * your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      */
     private String dataAccessRoleArn;
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to train your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      * </p>
      * 
      * @param s3Uri
-     *        The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language
-     *        model.
+     *        The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
+     *        <p>
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      */
 
     public void setS3Uri(String s3Uri) {
@@ -66,11 +88,15 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to train your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      * </p>
      * 
-     * @return The Amazon S3 prefix you specify to access the plain text files that you use to train your custom
-     *         language model.
+     * @return The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
+     *         <p>
+     *         Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      */
 
     public String getS3Uri() {
@@ -79,12 +105,16 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to train your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      * </p>
      * 
      * @param s3Uri
-     *        The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language
-     *        model.
+     *        The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
+     *        <p>
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,12 +125,16 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      * </p>
      * 
      * @param tuningDataS3Uri
-     *        The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language
-     *        model.
+     *        The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
+     *        <p>
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      */
 
     public void setTuningDataS3Uri(String tuningDataS3Uri) {
@@ -109,11 +143,15 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      * </p>
      * 
-     * @return The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language
-     *         model.
+     * @return The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
+     *         <p>
+     *         Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      */
 
     public String getTuningDataS3Uri() {
@@ -122,12 +160,16 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language model.
+     * The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.
+     * </p>
+     * <p>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      * </p>
      * 
      * @param tuningDataS3Uri
-     *        The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language
-     *        model.
+     *        The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
+     *        <p>
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,15 +180,31 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access
-     * your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to
-     *        access your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     *        <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *        specified Amazon S3 location, your request fails.</p>
+     *        <p>
+     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *        ARNs</a>.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -155,14 +213,30 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access
-     * your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to
-     *         access your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     *         <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *         specified Amazon S3 location, your request fails.</p>
+     *         <p>
+     *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *         example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *         ARNs</a>.
      */
 
     public String getDataAccessRoleArn() {
@@ -171,15 +245,31 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access
-     * your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to
-     *        access your Amazon S3 buckets containing your media files or text data. ARNs have the format
-     *        <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *        specified Amazon S3 location, your request fails.</p>
+     *        <p>
+     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *        ARNs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

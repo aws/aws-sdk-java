@@ -124,6 +124,36 @@ public class CompositeAlarmStaxUnmarshaller implements Unmarshaller<CompositeAla
                     compositeAlarm.setStateValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StateTransitionedTimestamp", targetDepth)) {
+                    compositeAlarm.setStateTransitionedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActionsSuppressedBy", targetDepth)) {
+                    compositeAlarm.setActionsSuppressedBy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActionsSuppressedReason", targetDepth)) {
+                    compositeAlarm.setActionsSuppressedReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActionsSuppressor", targetDepth)) {
+                    compositeAlarm.setActionsSuppressor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActionsSuppressorWaitPeriod", targetDepth)) {
+                    compositeAlarm.setActionsSuppressorWaitPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActionsSuppressorExtensionPeriod", targetDepth)) {
+                    compositeAlarm.setActionsSuppressorExtensionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return compositeAlarm;

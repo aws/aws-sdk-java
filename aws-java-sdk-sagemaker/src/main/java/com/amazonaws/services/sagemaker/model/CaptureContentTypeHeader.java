@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64
+ * encode when capturing the data.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureContentTypeHeader" target="_top">AWS
  *      API Documentation</a>
@@ -26,15 +29,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptureContentTypeHeader implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * </p>
+     */
     private java.util.List<String> csvContentTypes;
-    /** <p/> */
+    /**
+     * <p>
+     * The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
+     * </p>
+     */
     private java.util.List<String> jsonContentTypes;
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * </p>
      * 
-     * @return
+     * @return The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
      */
 
     public java.util.List<String> getCsvContentTypes() {
@@ -42,9 +55,12 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * </p>
      * 
      * @param csvContentTypes
+     *        The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
      */
 
     public void setCsvContentTypes(java.util.Collection<String> csvContentTypes) {
@@ -57,7 +73,9 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCsvContentTypes(java.util.Collection)} or {@link #withCsvContentTypes(java.util.Collection)} if you
@@ -65,6 +83,7 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param csvContentTypes
+     *        The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,9 +98,12 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * </p>
      * 
      * @param csvContentTypes
+     *        The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,9 +113,11 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
+     * </p>
      * 
-     * @return
+     * @return The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
      */
 
     public java.util.List<String> getJsonContentTypes() {
@@ -101,9 +125,12 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
+     * </p>
      * 
      * @param jsonContentTypes
+     *        The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
      */
 
     public void setJsonContentTypes(java.util.Collection<String> jsonContentTypes) {
@@ -116,7 +143,9 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setJsonContentTypes(java.util.Collection)} or {@link #withJsonContentTypes(java.util.Collection)} if you
@@ -124,6 +153,7 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param jsonContentTypes
+     *        The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,9 +168,12 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
+     * </p>
      * 
      * @param jsonContentTypes
+     *        The list of all content type headers that SageMaker will treat as JSON and capture accordingly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

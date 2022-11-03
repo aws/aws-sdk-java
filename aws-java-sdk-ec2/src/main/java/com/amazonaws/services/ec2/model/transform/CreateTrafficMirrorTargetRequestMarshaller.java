@@ -90,6 +90,10 @@ public class CreateTrafficMirrorTargetRequestMarshaller implements Marshaller<Re
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createTrafficMirrorTargetRequest.getClientToken()));
 
+        if (createTrafficMirrorTargetRequest.getGatewayLoadBalancerEndpointId() != null) {
+            request.addParameter("GatewayLoadBalancerEndpointId", StringUtils.fromString(createTrafficMirrorTargetRequest.getGatewayLoadBalancerEndpointId()));
+        }
+
         return request;
     }
 

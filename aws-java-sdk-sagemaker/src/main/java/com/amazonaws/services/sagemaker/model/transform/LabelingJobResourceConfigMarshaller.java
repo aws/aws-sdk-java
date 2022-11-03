@@ -29,6 +29,8 @@ public class LabelingJobResourceConfigMarshaller {
 
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final LabelingJobResourceConfigMarshaller instance = new LabelingJobResourceConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class LabelingJobResourceConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(labelingJobResourceConfig.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(labelingJobResourceConfig.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

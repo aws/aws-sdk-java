@@ -139,6 +139,21 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The body of the policy document you want to use for this topic.
+     * </p>
+     * <p>
+     * You can only add one policy per topic.
+     * </p>
+     * <p>
+     * The policy must be in JSON string format.
+     * </p>
+     * <p>
+     * Length Constraints: Maximum length of 30,720.
+     * </p>
+     */
+    private String dataProtectionPolicy;
 
     /**
      * Default constructor for CreateTopicRequest object. Callers should use the setter or fluent setter (with...)
@@ -911,6 +926,97 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The body of the policy document you want to use for this topic.
+     * </p>
+     * <p>
+     * You can only add one policy per topic.
+     * </p>
+     * <p>
+     * The policy must be in JSON string format.
+     * </p>
+     * <p>
+     * Length Constraints: Maximum length of 30,720.
+     * </p>
+     * 
+     * @param dataProtectionPolicy
+     *        The body of the policy document you want to use for this topic.</p>
+     *        <p>
+     *        You can only add one policy per topic.
+     *        </p>
+     *        <p>
+     *        The policy must be in JSON string format.
+     *        </p>
+     *        <p>
+     *        Length Constraints: Maximum length of 30,720.
+     */
+
+    public void setDataProtectionPolicy(String dataProtectionPolicy) {
+        this.dataProtectionPolicy = dataProtectionPolicy;
+    }
+
+    /**
+     * <p>
+     * The body of the policy document you want to use for this topic.
+     * </p>
+     * <p>
+     * You can only add one policy per topic.
+     * </p>
+     * <p>
+     * The policy must be in JSON string format.
+     * </p>
+     * <p>
+     * Length Constraints: Maximum length of 30,720.
+     * </p>
+     * 
+     * @return The body of the policy document you want to use for this topic.</p>
+     *         <p>
+     *         You can only add one policy per topic.
+     *         </p>
+     *         <p>
+     *         The policy must be in JSON string format.
+     *         </p>
+     *         <p>
+     *         Length Constraints: Maximum length of 30,720.
+     */
+
+    public String getDataProtectionPolicy() {
+        return this.dataProtectionPolicy;
+    }
+
+    /**
+     * <p>
+     * The body of the policy document you want to use for this topic.
+     * </p>
+     * <p>
+     * You can only add one policy per topic.
+     * </p>
+     * <p>
+     * The policy must be in JSON string format.
+     * </p>
+     * <p>
+     * Length Constraints: Maximum length of 30,720.
+     * </p>
+     * 
+     * @param dataProtectionPolicy
+     *        The body of the policy document you want to use for this topic.</p>
+     *        <p>
+     *        You can only add one policy per topic.
+     *        </p>
+     *        <p>
+     *        The policy must be in JSON string format.
+     *        </p>
+     *        <p>
+     *        Length Constraints: Maximum length of 30,720.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTopicRequest withDataProtectionPolicy(String dataProtectionPolicy) {
+        setDataProtectionPolicy(dataProtectionPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -927,7 +1033,9 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDataProtectionPolicy() != null)
+            sb.append("DataProtectionPolicy: ").append(getDataProtectionPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -954,6 +1062,10 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDataProtectionPolicy() == null ^ this.getDataProtectionPolicy() == null)
+            return false;
+        if (other.getDataProtectionPolicy() != null && other.getDataProtectionPolicy().equals(this.getDataProtectionPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -965,6 +1077,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDataProtectionPolicy() == null) ? 0 : getDataProtectionPolicy().hashCode());
         return hashCode;
     }
 

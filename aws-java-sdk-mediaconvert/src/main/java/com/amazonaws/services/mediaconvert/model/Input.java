@@ -163,10 +163,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private String timecodeStart;
     /**
-     * Use this setting if you do not have a video input or if you want to add black video frames before, or after,
-     * other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without
-     * an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot
-     * specify both.
+     * When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you
+     * do not have a video input or if you want to add black video frames before, or after, other inputs. You can
+     * specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     private InputVideoGenerator videoGenerator;
     /**
@@ -1473,16 +1473,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black video frames before, or after,
-     * other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without
-     * an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot
-     * specify both.
+     * When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you
+     * do not have a video input or if you want to add black video frames before, or after, other inputs. You can
+     * specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      * 
      * @param videoGenerator
-     *        Use this setting if you do not have a video input or if you want to add black video frames before, or
-     *        after, other inputs. When you include Video generator, MediaConvert creates a video input with black
-     *        frames and without an audio track. You can specify a value for Video generator, or you can specify an
-     *        Input file, but you cannot specify both.
+     *        When you include Video generator, MediaConvert creates a video input with black frames. Use this setting
+     *        if you do not have a video input or if you want to add black video frames before, or after, other inputs.
+     *        You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
 
     public void setVideoGenerator(InputVideoGenerator videoGenerator) {
@@ -1490,15 +1490,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black video frames before, or after,
-     * other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without
-     * an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot
-     * specify both.
+     * When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you
+     * do not have a video input or if you want to add black video frames before, or after, other inputs. You can
+     * specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      * 
-     * @return Use this setting if you do not have a video input or if you want to add black video frames before, or
-     *         after, other inputs. When you include Video generator, MediaConvert creates a video input with black
-     *         frames and without an audio track. You can specify a value for Video generator, or you can specify an
-     *         Input file, but you cannot specify both.
+     * @return When you include Video generator, MediaConvert creates a video input with black frames. Use this setting
+     *         if you do not have a video input or if you want to add black video frames before, or after, other inputs.
+     *         You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more
+     *         information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
 
     public InputVideoGenerator getVideoGenerator() {
@@ -1506,16 +1506,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black video frames before, or after,
-     * other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without
-     * an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot
-     * specify both.
+     * When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you
+     * do not have a video input or if you want to add black video frames before, or after, other inputs. You can
+     * specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      * 
      * @param videoGenerator
-     *        Use this setting if you do not have a video input or if you want to add black video frames before, or
-     *        after, other inputs. When you include Video generator, MediaConvert creates a video input with black
-     *        frames and without an audio track. You can specify a value for Video generator, or you can specify an
-     *        Input file, but you cannot specify both.
+     *        When you include Video generator, MediaConvert creates a video input with black frames. Use this setting
+     *        if you do not have a video input or if you want to add black video frames before, or after, other inputs.
+     *        You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

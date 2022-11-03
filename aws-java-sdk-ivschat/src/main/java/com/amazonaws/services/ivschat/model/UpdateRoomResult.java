@@ -50,7 +50,7 @@ public class UpdateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private Integer maximumMessageLength;
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room, from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      * </p>
      */
     private Integer maximumMessageRatePerSecond;
@@ -250,11 +250,11 @@ public class UpdateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room, from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        Maximum number of messages per second that a client can send to the room, from the request.
+     *        Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      */
 
     public void setMaximumMessageRatePerSecond(Integer maximumMessageRatePerSecond) {
@@ -263,10 +263,10 @@ public class UpdateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room, from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      * </p>
      * 
-     * @return Maximum number of messages per second that a client can send to the room, from the request.
+     * @return Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      */
 
     public Integer getMaximumMessageRatePerSecond() {
@@ -275,11 +275,11 @@ public class UpdateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room, from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        Maximum number of messages per second that a client can send to the room, from the request.
+     *        Maximum number of messages per second that can be sent to the room (by all clients), from the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

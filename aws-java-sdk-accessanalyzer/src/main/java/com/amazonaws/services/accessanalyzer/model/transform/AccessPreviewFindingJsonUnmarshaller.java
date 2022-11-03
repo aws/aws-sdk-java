@@ -48,28 +48,9 @@ public class AccessPreviewFindingJsonUnmarshaller implements Unmarshaller<Access
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("action", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    accessPreviewFinding.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("changeType", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("condition", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setCondition(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("error", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setError(context.getUnmarshaller(String.class).unmarshall(context));
+                    accessPreviewFinding.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("existingFindingId", targetDepth)) {
                     context.nextToken();
@@ -79,40 +60,59 @@ public class AccessPreviewFindingJsonUnmarshaller implements Unmarshaller<Access
                     context.nextToken();
                     accessPreviewFinding.setExistingFindingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("isPublic", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("principal", targetDepth)) {
                     context.nextToken();
                     accessPreviewFinding.setPrincipal(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("action", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("condition", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setCondition(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
                     context.nextToken();
                     accessPreviewFinding.setResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("resourceOwnerAccount", targetDepth)) {
+                if (context.testExpression("isPublic", targetDepth)) {
                     context.nextToken();
-                    accessPreviewFinding.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                    accessPreviewFinding.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     accessPreviewFinding.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("changeType", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwnerAccount", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("error", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewFinding.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
                     accessPreviewFinding.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewFinding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

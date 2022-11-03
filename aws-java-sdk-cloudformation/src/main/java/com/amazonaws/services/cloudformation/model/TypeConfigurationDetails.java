@@ -82,7 +82,7 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
     private String typeName;
     /**
      * <p>
-     * Whether or not this configuration data is the default configuration for the extension.
+     * Whether this configuration data is the default configuration for the extension.
      * </p>
      */
     private Boolean isDefaultConfiguration;
@@ -399,11 +399,11 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not this configuration data is the default configuration for the extension.
+     * Whether this configuration data is the default configuration for the extension.
      * </p>
      * 
      * @param isDefaultConfiguration
-     *        Whether or not this configuration data is the default configuration for the extension.
+     *        Whether this configuration data is the default configuration for the extension.
      */
 
     public void setIsDefaultConfiguration(Boolean isDefaultConfiguration) {
@@ -412,10 +412,10 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not this configuration data is the default configuration for the extension.
+     * Whether this configuration data is the default configuration for the extension.
      * </p>
      * 
-     * @return Whether or not this configuration data is the default configuration for the extension.
+     * @return Whether this configuration data is the default configuration for the extension.
      */
 
     public Boolean getIsDefaultConfiguration() {
@@ -424,11 +424,11 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not this configuration data is the default configuration for the extension.
+     * Whether this configuration data is the default configuration for the extension.
      * </p>
      * 
      * @param isDefaultConfiguration
-     *        Whether or not this configuration data is the default configuration for the extension.
+     *        Whether this configuration data is the default configuration for the extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,10 +439,10 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not this configuration data is the default configuration for the extension.
+     * Whether this configuration data is the default configuration for the extension.
      * </p>
      * 
-     * @return Whether or not this configuration data is the default configuration for the extension.
+     * @return Whether this configuration data is the default configuration for the extension.
      */
 
     public Boolean isDefaultConfiguration() {

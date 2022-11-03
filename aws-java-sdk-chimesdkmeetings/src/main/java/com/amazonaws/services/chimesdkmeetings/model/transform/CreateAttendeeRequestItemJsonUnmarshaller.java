@@ -52,6 +52,10 @@ public class CreateAttendeeRequestItemJsonUnmarshaller implements Unmarshaller<C
                     context.nextToken();
                     createAttendeeRequestItem.setExternalUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Capabilities", targetDepth)) {
+                    context.nextToken();
+                    createAttendeeRequestItem.setCapabilities(AttendeeCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,43 +27,43 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of a an <a>SdkType</a> configuration property.
+     * The name of a an SdkType configuration property.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> configuration property.
+     * The user-friendly name of an SdkType configuration property.
      * </p>
      */
     private String friendlyName;
     /**
      * <p>
-     * The description of an <a>SdkType</a> configuration property.
+     * The description of an SdkType configuration property.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
-     * property is required (<code>true</code>) or not (<code>false</code>).
+     * A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is
+     * required (<code>true</code>) or not (<code>false</code>).
      * </p>
      */
     private Boolean required;
     /**
      * <p>
-     * The default value of an <a>SdkType</a> configuration property.
+     * The default value of an SdkType configuration property.
      * </p>
      */
     private String defaultValue;
 
     /**
      * <p>
-     * The name of a an <a>SdkType</a> configuration property.
+     * The name of a an SdkType configuration property.
      * </p>
      * 
      * @param name
-     *        The name of a an <a>SdkType</a> configuration property.
+     *        The name of a an SdkType configuration property.
      */
 
     public void setName(String name) {
@@ -72,10 +72,10 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of a an <a>SdkType</a> configuration property.
+     * The name of a an SdkType configuration property.
      * </p>
      * 
-     * @return The name of a an <a>SdkType</a> configuration property.
+     * @return The name of a an SdkType configuration property.
      */
 
     public String getName() {
@@ -84,11 +84,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of a an <a>SdkType</a> configuration property.
+     * The name of a an SdkType configuration property.
      * </p>
      * 
      * @param name
-     *        The name of a an <a>SdkType</a> configuration property.
+     *        The name of a an SdkType configuration property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> configuration property.
+     * The user-friendly name of an SdkType configuration property.
      * </p>
      * 
      * @param friendlyName
-     *        The user-friendly name of an <a>SdkType</a> configuration property.
+     *        The user-friendly name of an SdkType configuration property.
      */
 
     public void setFriendlyName(String friendlyName) {
@@ -112,10 +112,10 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> configuration property.
+     * The user-friendly name of an SdkType configuration property.
      * </p>
      * 
-     * @return The user-friendly name of an <a>SdkType</a> configuration property.
+     * @return The user-friendly name of an SdkType configuration property.
      */
 
     public String getFriendlyName() {
@@ -124,11 +124,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> configuration property.
+     * The user-friendly name of an SdkType configuration property.
      * </p>
      * 
      * @param friendlyName
-     *        The user-friendly name of an <a>SdkType</a> configuration property.
+     *        The user-friendly name of an SdkType configuration property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The description of an <a>SdkType</a> configuration property.
+     * The description of an SdkType configuration property.
      * </p>
      * 
      * @param description
-     *        The description of an <a>SdkType</a> configuration property.
+     *        The description of an SdkType configuration property.
      */
 
     public void setDescription(String description) {
@@ -152,10 +152,10 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The description of an <a>SdkType</a> configuration property.
+     * The description of an SdkType configuration property.
      * </p>
      * 
-     * @return The description of an <a>SdkType</a> configuration property.
+     * @return The description of an SdkType configuration property.
      */
 
     public String getDescription() {
@@ -164,11 +164,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The description of an <a>SdkType</a> configuration property.
+     * The description of an SdkType configuration property.
      * </p>
      * 
      * @param description
-     *        The description of an <a>SdkType</a> configuration property.
+     *        The description of an SdkType configuration property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,12 +179,12 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
-     * property is required (<code>true</code>) or not (<code>false</code>).
+     * A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is
+     * required (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
      * @param required
-     *        A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
+     *        A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration
      *        property is required (<code>true</code>) or not (<code>false</code>).
      */
 
@@ -194,12 +194,12 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
-     * property is required (<code>true</code>) or not (<code>false</code>).
+     * A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is
+     * required (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
-     * @return A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK
-     *         configuration property is required (<code>true</code>) or not (<code>false</code>).
+     * @return A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration
+     *         property is required (<code>true</code>) or not (<code>false</code>).
      */
 
     public Boolean getRequired() {
@@ -208,12 +208,12 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
-     * property is required (<code>true</code>) or not (<code>false</code>).
+     * A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is
+     * required (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
      * @param required
-     *        A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
+     *        A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration
      *        property is required (<code>true</code>) or not (<code>false</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -225,12 +225,12 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration
-     * property is required (<code>true</code>) or not (<code>false</code>).
+     * A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is
+     * required (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
-     * @return A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK
-     *         configuration property is required (<code>true</code>) or not (<code>false</code>).
+     * @return A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration
+     *         property is required (<code>true</code>) or not (<code>false</code>).
      */
 
     public Boolean isRequired() {
@@ -239,11 +239,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default value of an <a>SdkType</a> configuration property.
+     * The default value of an SdkType configuration property.
      * </p>
      * 
      * @param defaultValue
-     *        The default value of an <a>SdkType</a> configuration property.
+     *        The default value of an SdkType configuration property.
      */
 
     public void setDefaultValue(String defaultValue) {
@@ -252,10 +252,10 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default value of an <a>SdkType</a> configuration property.
+     * The default value of an SdkType configuration property.
      * </p>
      * 
-     * @return The default value of an <a>SdkType</a> configuration property.
+     * @return The default value of an SdkType configuration property.
      */
 
     public String getDefaultValue() {
@@ -264,11 +264,11 @@ public class SdkConfigurationProperty implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default value of an <a>SdkType</a> configuration property.
+     * The default value of an SdkType configuration property.
      * </p>
      * 
      * @param defaultValue
-     *        The default value of an <a>SdkType</a> configuration property.
+     *        The default value of an SdkType configuration property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

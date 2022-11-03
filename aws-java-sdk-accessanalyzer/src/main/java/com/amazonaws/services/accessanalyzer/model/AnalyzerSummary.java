@@ -36,6 +36,18 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
+     * The name of the analyzer.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * A timestamp for the time at which the analyzer was created.
      * </p>
      */
@@ -54,10 +66,10 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date lastResourceAnalyzedAt;
     /**
      * <p>
-     * The name of the analyzer.
+     * The tags added to the analyzer.
      * </p>
      */
-    private String name;
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
@@ -77,18 +89,6 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private StatusReason statusReason;
-    /**
-     * <p>
-     * The tags added to the analyzer.
-     * </p>
-     */
-    private java.util.Map<String, String> tags;
-    /**
-     * <p>
-     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * </p>
-     */
-    private String type;
 
     /**
      * <p>
@@ -127,6 +127,105 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
 
     public AnalyzerSummary withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the analyzer.
+     * </p>
+     * 
+     * @param name
+     *        The name of the analyzer.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the analyzer.
+     * </p>
+     * 
+     * @return The name of the analyzer.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the analyzer.
+     * </p>
+     * 
+     * @param name
+     *        The name of the analyzer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzerSummary withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * </p>
+     * 
+     * @param type
+     *        The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * @see Type
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * </p>
+     * 
+     * @return The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * @see Type
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * </p>
+     * 
+     * @param type
+     *        The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Type
+     */
+
+    public AnalyzerSummary withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * </p>
+     * 
+     * @param type
+     *        The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Type
+     */
+
+    public AnalyzerSummary withType(Type type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -252,41 +351,69 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the analyzer.
+     * The tags added to the analyzer.
      * </p>
      * 
-     * @param name
-     *        The name of the analyzer.
+     * @return The tags added to the analyzer.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public java.util.Map<String, String> getTags() {
+        return tags;
     }
 
     /**
      * <p>
-     * The name of the analyzer.
+     * The tags added to the analyzer.
      * </p>
      * 
-     * @return The name of the analyzer.
+     * @param tags
+     *        The tags added to the analyzer.
      */
 
-    public String getName() {
-        return this.name;
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
     }
 
     /**
      * <p>
-     * The name of the analyzer.
+     * The tags added to the analyzer.
      * </p>
      * 
-     * @param name
-     *        The name of the analyzer.
+     * @param tags
+     *        The tags added to the analyzer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AnalyzerSummary withName(String name) {
-        setName(name);
+    public AnalyzerSummary withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see AnalyzerSummary#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzerSummary addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzerSummary clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -440,133 +567,6 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The tags added to the analyzer.
-     * </p>
-     * 
-     * @return The tags added to the analyzer.
-     */
-
-    public java.util.Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * The tags added to the analyzer.
-     * </p>
-     * 
-     * @param tags
-     *        The tags added to the analyzer.
-     */
-
-    public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * <p>
-     * The tags added to the analyzer.
-     * </p>
-     * 
-     * @param tags
-     *        The tags added to the analyzer.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzerSummary withTags(java.util.Map<String, String> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    /**
-     * Add a single Tags entry
-     *
-     * @see AnalyzerSummary#withTags
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzerSummary addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String, String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Tags.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnalyzerSummary clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * </p>
-     * 
-     * @param type
-     *        The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * @see Type
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * </p>
-     * 
-     * @return The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * @see Type
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * </p>
-     * 
-     * @param type
-     *        The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Type
-     */
-
-    public AnalyzerSummary withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * </p>
-     * 
-     * @param type
-     *        The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Type
-     */
-
-    public AnalyzerSummary withType(Type type) {
-        this.type = type.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -580,22 +580,22 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastResourceAnalyzed() != null)
             sb.append("LastResourceAnalyzed: ").append(getLastResourceAnalyzed()).append(",");
         if (getLastResourceAnalyzedAt() != null)
             sb.append("LastResourceAnalyzedAt: ").append(getLastResourceAnalyzedAt()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("StatusReason: ").append(getStatusReason());
         sb.append("}");
         return sb.toString();
     }
@@ -614,6 +614,14 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -626,9 +634,9 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastResourceAnalyzedAt() != null && other.getLastResourceAnalyzedAt().equals(this.getLastResourceAnalyzedAt()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -637,14 +645,6 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -655,14 +655,14 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLastResourceAnalyzed() == null) ? 0 : getLastResourceAnalyzed().hashCode());
         hashCode = prime * hashCode + ((getLastResourceAnalyzedAt() == null) ? 0 : getLastResourceAnalyzedAt().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

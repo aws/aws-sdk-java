@@ -54,6 +54,11 @@ public class AnonymousUserEmbeddingExperienceConfigurationJsonUnmarshaller imple
                     anonymousUserEmbeddingExperienceConfiguration.setDashboard(AnonymousUserDashboardEmbeddingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("DashboardVisual", targetDepth)) {
+                    context.nextToken();
+                    anonymousUserEmbeddingExperienceConfiguration.setDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration parameters for a channel.
+ * The configuration parameters for a channel. For information about MediaTailor channels, see <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in
+ * the <i>MediaTailor User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Channel" target="_top">AWS API
@@ -55,7 +57,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      */
     private SlateSource fillerSlate;
@@ -76,17 +79,20 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The type of playback mode for this channel.
      * </p>
      * <p>
-     * LINEAR - Programs play back-to-back only once.
+     * <code>LINEAR</code> - Programs play back-to-back only once.
      * </p>
      * <p>
-     * LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops
-     * back to the first program in the schedule.
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      */
     private String playbackMode;
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -260,13 +266,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
      *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *        channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP
-     *        PlaybackMode.
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public void setFillerSlate(SlateSource fillerSlate) {
@@ -276,12 +283,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @return The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *         channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the
-     *         LOOP PlaybackMode.
+     *         channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *         for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public SlateSource getFillerSlate() {
@@ -291,13 +299,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
      *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *        channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP
-     *        PlaybackMode.
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,21 +430,21 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The type of playback mode for this channel.
      * </p>
      * <p>
-     * LINEAR - Programs play back-to-back only once.
+     * <code>LINEAR</code> - Programs play back-to-back only once.
      * </p>
      * <p>
-     * LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops
-     * back to the first program in the schedule.
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
      *        The type of playback mode for this channel.</p>
      *        <p>
-     *        LINEAR - Programs play back-to-back only once.
+     *        <code>LINEAR</code> - Programs play back-to-back only once.
      *        </p>
      *        <p>
-     *        LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
-     *        playback loops back to the first program in the schedule.
+     *        <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule
+     *        plays, playback loops back to the first program in the schedule.
      */
 
     public void setPlaybackMode(String playbackMode) {
@@ -447,20 +456,20 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The type of playback mode for this channel.
      * </p>
      * <p>
-     * LINEAR - Programs play back-to-back only once.
+     * <code>LINEAR</code> - Programs play back-to-back only once.
      * </p>
      * <p>
-     * LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops
-     * back to the first program in the schedule.
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      * 
      * @return The type of playback mode for this channel.</p>
      *         <p>
-     *         LINEAR - Programs play back-to-back only once.
+     *         <code>LINEAR</code> - Programs play back-to-back only once.
      *         </p>
      *         <p>
-     *         LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
-     *         playback loops back to the first program in the schedule.
+     *         <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule
+     *         plays, playback loops back to the first program in the schedule.
      */
 
     public String getPlaybackMode() {
@@ -472,21 +481,21 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The type of playback mode for this channel.
      * </p>
      * <p>
-     * LINEAR - Programs play back-to-back only once.
+     * <code>LINEAR</code> - Programs play back-to-back only once.
      * </p>
      * <p>
-     * LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops
-     * back to the first program in the schedule.
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
      *        The type of playback mode for this channel.</p>
      *        <p>
-     *        LINEAR - Programs play back-to-back only once.
+     *        <code>LINEAR</code> - Programs play back-to-back only once.
      *        </p>
      *        <p>
-     *        LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
-     *        playback loops back to the first program in the schedule.
+     *        <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule
+     *        plays, playback loops back to the first program in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,10 +506,16 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags to assign to the channel.
+     * @return The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *         to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -509,11 +524,17 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -522,11 +543,17 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

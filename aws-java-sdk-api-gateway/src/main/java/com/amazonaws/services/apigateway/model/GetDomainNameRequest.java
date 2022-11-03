@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to get the name of a <a>DomainName</a> resource.
+ * Request to get the name of a DomainName resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class GetDomainNameRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      * 
      * @param domainName
-     *        [Required] The name of the <a>DomainName</a> resource.
+     *        The name of the DomainName resource.
      */
 
     public void setDomainName(String domainName) {
@@ -47,10 +47,10 @@ public class GetDomainNameRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      * 
-     * @return [Required] The name of the <a>DomainName</a> resource.
+     * @return The name of the DomainName resource.
      */
 
     public String getDomainName() {
@@ -59,11 +59,11 @@ public class GetDomainNameRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource.
+     * The name of the DomainName resource.
      * </p>
      * 
      * @param domainName
-     *        [Required] The name of the <a>DomainName</a> resource.
+     *        The name of the DomainName resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

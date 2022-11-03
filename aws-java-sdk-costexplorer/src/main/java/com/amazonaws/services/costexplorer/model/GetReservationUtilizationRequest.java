@@ -27,8 +27,8 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
+     * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
@@ -124,7 +124,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     private Expression filter;
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -217,7 +217,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      */
     private SortDefinition sortBy;
@@ -239,17 +239,18 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
+     * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date
-     *        is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-     *        <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     *        including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+     *        Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is
+     *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+     *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *        <code>2017-05-01</code>.
      */
 
     public void setTimePeriod(DateInterval timePeriod) {
@@ -258,16 +259,17 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
+     * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
-     * @return Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date
-     *         is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-     *         <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     *         including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+     * @return Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is
+     *         inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+     *         and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     *         <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *         <code>2017-05-01</code>.
      */
 
     public DateInterval getTimePeriod() {
@@ -276,17 +278,18 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
+     * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date
-     *        is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-     *        <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     *        including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+     *        Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is
+     *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+     *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *        <code>2017-05-01</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -896,7 +899,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -989,11 +992,11 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The following values are supported for <code>Key</code>:
      *        </p>
@@ -1085,7 +1088,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      */
 
     public void setSortBy(SortDefinition sortBy) {
@@ -1094,7 +1097,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -1187,10 +1190,10 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * 
-     * @return The value by which you want to sort the data.</p>
+     * @return The value that you want to sort the data by.</p>
      *         <p>
      *         The following values are supported for <code>Key</code>:
      *         </p>
@@ -1282,7 +1285,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      *         </li>
      *         </ul>
      *         <p>
-     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *         The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      */
 
     public SortDefinition getSortBy() {
@@ -1291,7 +1294,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -1384,11 +1387,11 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The following values are supported for <code>Key</code>:
      *        </p>
@@ -1480,7 +1483,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class ListMediaCapturePipelinesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The media capture pipeline objects in the list.
+     * The media pipeline objects in the list.
      * </p>
      */
     private java.util.List<MediaCapturePipelineSummary> mediaCapturePipelines;
@@ -38,10 +38,10 @@ public class ListMediaCapturePipelinesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The media capture pipeline objects in the list.
+     * The media pipeline objects in the list.
      * </p>
      * 
-     * @return The media capture pipeline objects in the list.
+     * @return The media pipeline objects in the list.
      */
 
     public java.util.List<MediaCapturePipelineSummary> getMediaCapturePipelines() {
@@ -50,11 +50,11 @@ public class ListMediaCapturePipelinesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The media capture pipeline objects in the list.
+     * The media pipeline objects in the list.
      * </p>
      * 
      * @param mediaCapturePipelines
-     *        The media capture pipeline objects in the list.
+     *        The media pipeline objects in the list.
      */
 
     public void setMediaCapturePipelines(java.util.Collection<MediaCapturePipelineSummary> mediaCapturePipelines) {
@@ -68,7 +68,7 @@ public class ListMediaCapturePipelinesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The media capture pipeline objects in the list.
+     * The media pipeline objects in the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListMediaCapturePipelinesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param mediaCapturePipelines
-     *        The media capture pipeline objects in the list.
+     *        The media pipeline objects in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListMediaCapturePipelinesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The media capture pipeline objects in the list.
+     * The media pipeline objects in the list.
      * </p>
      * 
      * @param mediaCapturePipelines
-     *        The media capture pipeline objects in the list.
+     *        The media pipeline objects in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

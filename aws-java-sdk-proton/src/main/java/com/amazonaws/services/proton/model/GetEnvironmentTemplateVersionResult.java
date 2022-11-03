@@ -26,18 +26,18 @@ public class GetEnvironmentTemplateVersionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the requested environment template version.
      * </p>
      */
     private EnvironmentTemplateVersion environmentTemplateVersion;
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the requested environment template version.
      * </p>
      * 
      * @param environmentTemplateVersion
-     *        The environment template version detail data that's returned by Proton.
+     *        The detailed data of the requested environment template version.
      */
 
     public void setEnvironmentTemplateVersion(EnvironmentTemplateVersion environmentTemplateVersion) {
@@ -46,10 +46,10 @@ public class GetEnvironmentTemplateVersionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the requested environment template version.
      * </p>
      * 
-     * @return The environment template version detail data that's returned by Proton.
+     * @return The detailed data of the requested environment template version.
      */
 
     public EnvironmentTemplateVersion getEnvironmentTemplateVersion() {
@@ -58,11 +58,11 @@ public class GetEnvironmentTemplateVersionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the requested environment template version.
      * </p>
      * 
      * @param environmentTemplateVersion
-     *        The environment template version detail data that's returned by Proton.
+     *        The detailed data of the requested environment template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

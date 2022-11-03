@@ -149,6 +149,18 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String byAccountId;
+    /**
+     * <p>
+     * Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date byCompleteAfter;
+    /**
+     * <p>
+     * Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date byCompleteBefore;
 
     /**
      * <p>
@@ -947,6 +959,92 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteAfter
+     *        Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setByCompleteAfter(java.util.Date byCompleteAfter) {
+        this.byCompleteAfter = byCompleteAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public java.util.Date getByCompleteAfter() {
+        return this.byCompleteAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteAfter
+     *        Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListBackupJobsRequest withByCompleteAfter(java.util.Date byCompleteAfter) {
+        setByCompleteAfter(byCompleteAfter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteBefore
+     *        Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setByCompleteBefore(java.util.Date byCompleteBefore) {
+        this.byCompleteBefore = byCompleteBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public java.util.Date getByCompleteBefore() {
+        return this.byCompleteBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteBefore
+     *        Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListBackupJobsRequest withByCompleteBefore(java.util.Date byCompleteBefore) {
+        setByCompleteBefore(byCompleteBefore);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -975,7 +1073,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getByResourceType() != null)
             sb.append("ByResourceType: ").append(getByResourceType()).append(",");
         if (getByAccountId() != null)
-            sb.append("ByAccountId: ").append(getByAccountId());
+            sb.append("ByAccountId: ").append(getByAccountId()).append(",");
+        if (getByCompleteAfter() != null)
+            sb.append("ByCompleteAfter: ").append(getByCompleteAfter()).append(",");
+        if (getByCompleteBefore() != null)
+            sb.append("ByCompleteBefore: ").append(getByCompleteBefore());
         sb.append("}");
         return sb.toString();
     }
@@ -1026,6 +1128,14 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
             return false;
+        if (other.getByCompleteAfter() == null ^ this.getByCompleteAfter() == null)
+            return false;
+        if (other.getByCompleteAfter() != null && other.getByCompleteAfter().equals(this.getByCompleteAfter()) == false)
+            return false;
+        if (other.getByCompleteBefore() == null ^ this.getByCompleteBefore() == null)
+            return false;
+        if (other.getByCompleteBefore() != null && other.getByCompleteBefore().equals(this.getByCompleteBefore()) == false)
+            return false;
         return true;
     }
 
@@ -1043,6 +1153,8 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getByResourceType() == null) ? 0 : getByResourceType().hashCode());
         hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
+        hashCode = prime * hashCode + ((getByCompleteAfter() == null) ? 0 : getByCompleteAfter().hashCode());
+        hashCode = prime * hashCode + ((getByCompleteBefore() == null) ? 0 : getByCompleteBefore().hashCode());
         return hashCode;
     }
 

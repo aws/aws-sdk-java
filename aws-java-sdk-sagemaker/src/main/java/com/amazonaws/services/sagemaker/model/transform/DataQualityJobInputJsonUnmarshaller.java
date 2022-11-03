@@ -52,6 +52,10 @@ public class DataQualityJobInputJsonUnmarshaller implements Unmarshaller<DataQua
                     context.nextToken();
                     dataQualityJobInput.setEndpointInput(EndpointInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BatchTransformInput", targetDepth)) {
+                    context.nextToken();
+                    dataQualityJobInput.setBatchTransformInput(BatchTransformInputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

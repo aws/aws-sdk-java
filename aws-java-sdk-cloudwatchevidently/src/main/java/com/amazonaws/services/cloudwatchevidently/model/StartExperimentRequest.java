@@ -27,7 +27,7 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The date and time to end the experiment.
+     * The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      * </p>
      */
     private java.util.Date analysisCompleteTime;
@@ -46,11 +46,11 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The date and time to end the experiment.
+     * The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      * </p>
      * 
      * @param analysisCompleteTime
-     *        The date and time to end the experiment.
+     *        The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      */
 
     public void setAnalysisCompleteTime(java.util.Date analysisCompleteTime) {
@@ -59,10 +59,10 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The date and time to end the experiment.
+     * The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      * </p>
      * 
-     * @return The date and time to end the experiment.
+     * @return The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      */
 
     public java.util.Date getAnalysisCompleteTime() {
@@ -71,11 +71,11 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The date and time to end the experiment.
+     * The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      * </p>
      * 
      * @param analysisCompleteTime
-     *        The date and time to end the experiment.
+     *        The date and time to end the experiment. This must be no more than 30 days after the experiment starts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

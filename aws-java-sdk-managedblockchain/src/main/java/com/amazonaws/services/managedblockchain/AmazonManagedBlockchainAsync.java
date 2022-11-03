@@ -35,7 +35,7 @@ import com.amazonaws.services.managedblockchain.model.*;
  * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Because of fundamental
  * differences between the frameworks, some API actions or data types may only apply in the context of one framework and
  * not the other. For example, actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
- * and <code>DeleteMember</code> do not apply to Ethereum.
+ * and <code>DeleteMember</code> don't apply to Ethereum.
  * </p>
  * <p>
  * The description for each action indicates the framework or frameworks to which it applies. Data types and properties
@@ -44,6 +44,51 @@ import com.amazonaws.services.managedblockchain.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
+
+    /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has
+     * the information required for token based access to your Ethereum nodes.
+     * </p>
+     * 
+     * @param createAccessorRequest
+     * @return A Java Future containing the result of the CreateAccessor operation returned by the service.
+     * @sample AmazonManagedBlockchainAsync.CreateAccessor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessorResult> createAccessorAsync(CreateAccessorRequest createAccessorRequest);
+
+    /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has
+     * the information required for token based access to your Ethereum nodes.
+     * </p>
+     * 
+     * @param createAccessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessor operation returned by the service.
+     * @sample AmazonManagedBlockchainAsyncHandler.CreateAccessor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessorResult> createAccessorAsync(CreateAccessorRequest createAccessorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessorRequest, CreateAccessorResult> asyncHandler);
 
     /**
      * <p>
@@ -196,13 +241,66 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
             com.amazonaws.handlers.AsyncHandler<CreateProposalRequest, CreateProposalResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the
+     * information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
+     * After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to
+     * <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new
+     * WebSocket requests or HTTP requests. However, WebSocket connections that are initiated while the accessor was in
+     * the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).
+     * </p>
+     * 
+     * @param deleteAccessorRequest
+     * @return A Java Future containing the result of the DeleteAccessor operation returned by the service.
+     * @sample AmazonManagedBlockchainAsync.DeleteAccessor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessorResult> deleteAccessorAsync(DeleteAccessorRequest deleteAccessorRequest);
+
+    /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the
+     * information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
+     * After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to
+     * <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new
+     * WebSocket requests or HTTP requests. However, WebSocket connections that are initiated while the accessor was in
+     * the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).
+     * </p>
+     * 
+     * @param deleteAccessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessor operation returned by the service.
+     * @sample AmazonManagedBlockchainAsyncHandler.DeleteAccessor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessorResult> deleteAccessorAsync(DeleteAccessorRequest deleteAccessorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessorRequest, DeleteAccessorResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes a member. Deleting a member removes the member and all associated resources from the network.
      * <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing
-     * the action is associated with the AWS account that owns the member. In all other cases, the
+     * the action is associated with the Amazon Web Services account that owns the member. In all other cases, the
      * <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If
-     * <code>MemberId</code> is the last member in a network specified by the last AWS account, the network is deleted
-     * also.
+     * <code>MemberId</code> is the last member in a network specified by the last Amazon Web Services account, the
+     * network is deleted also.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -220,10 +318,10 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
      * <p>
      * Deletes a member. Deleting a member removes the member and all associated resources from the network.
      * <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing
-     * the action is associated with the AWS account that owns the member. In all other cases, the
+     * the action is associated with the Amazon Web Services account that owns the member. In all other cases, the
      * <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If
-     * <code>MemberId</code> is the last member in a network specified by the last AWS account, the network is deleted
-     * also.
+     * <code>MemberId</code> is the last member in a network specified by the last Amazon Web Services account, the
+     * network is deleted also.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -244,7 +342,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Deletes a node that your AWS account owns. All data on the node is lost and cannot be recovered.
+     * Deletes a node that your Amazon Web Services account owns. All data on the node is lost and cannot be recovered.
      * </p>
      * <p>
      * Applies to Hyperledger Fabric and Ethereum.
@@ -260,7 +358,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Deletes a node that your AWS account owns. All data on the node is lost and cannot be recovered.
+     * Deletes a node that your Amazon Web Services account owns. All data on the node is lost and cannot be recovered.
      * </p>
      * <p>
      * Applies to Hyperledger Fabric and Ethereum.
@@ -278,6 +376,51 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
      */
     java.util.concurrent.Future<DeleteNodeResult> deleteNodeAsync(DeleteNodeRequest deleteNodeRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNodeRequest, DeleteNodeResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Returns detailed information about an accessor. An accessor object is a container that has the information
+     * required for token based access to your Ethereum nodes.
+     * </p>
+     * 
+     * @param getAccessorRequest
+     * @return A Java Future containing the result of the GetAccessor operation returned by the service.
+     * @sample AmazonManagedBlockchainAsync.GetAccessor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessorResult> getAccessorAsync(GetAccessorRequest getAccessorRequest);
+
+    /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Returns detailed information about an accessor. An accessor object is a container that has the information
+     * required for token based access to your Ethereum nodes.
+     * </p>
+     * 
+     * @param getAccessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessor operation returned by the service.
+     * @sample AmazonManagedBlockchainAsyncHandler.GetAccessor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessorResult> getAccessorAsync(GetAccessorRequest getAccessorRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessorRequest, GetAccessorResult> asyncHandler);
 
     /**
      * <p>
@@ -428,8 +571,53 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
             com.amazonaws.handlers.AsyncHandler<GetProposalRequest, GetProposalResult> asyncHandler);
 
     /**
+     * <important>
      * <p>
-     * Returns a list of all invitations for the current AWS account.
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Returns a list of the accessors and their properties. Accessor objects are containers that have the information
+     * required for token based access to your Ethereum nodes.
+     * </p>
+     * 
+     * @param listAccessorsRequest
+     * @return A Java Future containing the result of the ListAccessors operation returned by the service.
+     * @sample AmazonManagedBlockchainAsync.ListAccessors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessorsResult> listAccessorsAsync(ListAccessorsRequest listAccessorsRequest);
+
+    /**
+     * <important>
+     * <p>
+     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
+     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
+     * </p>
+     * </important>
+     * <p>
+     * Returns a list of the accessors and their properties. Accessor objects are containers that have the information
+     * required for token based access to your Ethereum nodes.
+     * </p>
+     * 
+     * @param listAccessorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessors operation returned by the service.
+     * @sample AmazonManagedBlockchainAsyncHandler.ListAccessors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessorsResult> listAccessorsAsync(ListAccessorsRequest listAccessorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessorsRequest, ListAccessorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all invitations for the current Amazon Web Services account.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -445,7 +633,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Returns a list of all invitations for the current AWS account.
+     * Returns a list of all invitations for the current Amazon Web Services account.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -503,7 +691,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Returns information about the networks in which the current AWS account participates.
+     * Returns information about the networks in which the current Amazon Web Services account participates.
      * </p>
      * <p>
      * Applies to Hyperledger Fabric and Ethereum.
@@ -519,7 +707,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Returns information about the networks in which the current AWS account participates.
+     * Returns information about the networks in which the current Amazon Web Services account participates.
      * </p>
      * <p>
      * Applies to Hyperledger Fabric and Ethereum.
@@ -698,8 +886,8 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Rejects an invitation to join a network. This action can be called by a principal in an AWS account that has
-     * received an invitation to create a member and join a network.
+     * Rejects an invitation to join a network. This action can be called by a principal in an Amazon Web Services
+     * account that has received an invitation to create a member and join a network.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -715,8 +903,8 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Rejects an invitation to join a network. This action can be called by a principal in an AWS account that has
-     * received an invitation to create a member and join a network.
+     * Rejects an invitation to join a network. This action can be called by a principal in an Amazon Web Services
+     * account that has received an invitation to create a member and join a network.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -920,7 +1108,8 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
     /**
      * <p>
      * Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by
-     * <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.
+     * <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the
+     * action.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.
@@ -937,7 +1126,8 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
     /**
      * <p>
      * Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by
-     * <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.
+     * <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the
+     * action.
      * </p>
      * <p>
      * Applies only to Hyperledger Fabric.

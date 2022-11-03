@@ -33,19 +33,22 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<HttpPackageConfiguration> httpPackageConfigurations;
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location for this VOD source.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The tags to assign to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name associated with the VOD source.&gt;
      * </p>
      */
     private String vodSourceName;
@@ -122,11 +125,11 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location for this VOD source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location for this VOD source.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -135,10 +138,10 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location for this VOD source.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location for this VOD source.
      */
 
     public String getSourceLocationName() {
@@ -147,11 +150,11 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location for this VOD source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location for this VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,10 +165,16 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to assign to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags to assign to the VOD source.
+     * @return The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -174,11 +183,17 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to assign to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the VOD source.
+     *        The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -187,11 +202,17 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to assign to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the VOD source.
+     *        The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +251,11 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name associated with the VOD source.&gt;
      * </p>
      * 
      * @param vodSourceName
-     *        The identifier for the VOD source you are working on.
+     *        The name associated with the VOD source.&gt;
      */
 
     public void setVodSourceName(String vodSourceName) {
@@ -243,10 +264,10 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name associated with the VOD source.&gt;
      * </p>
      * 
-     * @return The identifier for the VOD source you are working on.
+     * @return The name associated with the VOD source.&gt;
      */
 
     public String getVodSourceName() {
@@ -255,11 +276,11 @@ public class CreateVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name associated with the VOD source.&gt;
      * </p>
      * 
      * @param vodSourceName
-     *        The identifier for the VOD source you are working on.
+     *        The name associated with the VOD source.&gt;
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

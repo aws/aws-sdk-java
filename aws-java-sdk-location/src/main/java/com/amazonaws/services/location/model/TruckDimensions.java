@@ -41,6 +41,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      */
     private Double height;
     /**
@@ -54,6 +59,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     * </p>
+     * </note>
      */
     private Double length;
     /**
@@ -76,6 +86,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      */
     private Double width;
 
@@ -90,6 +105,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      * 
      * @param height
      *        The height of the truck.</p>
@@ -99,6 +119,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *        For example, <code>4.5</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     *        </p>
      */
 
     public void setHeight(Double height) {
@@ -116,6 +141,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      * 
      * @return The height of the truck.</p>
      *         <ul>
@@ -124,6 +154,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *         For example, <code>4.5</code>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     *         </p>
      */
 
     public Double getHeight() {
@@ -141,6 +176,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      * 
      * @param height
      *        The height of the truck.</p>
@@ -150,6 +190,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *        For example, <code>4.5</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,6 +214,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     * </p>
+     * </note>
      * 
      * @param length
      *        The length of the truck.</p>
@@ -178,6 +228,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *        For example, <code>15.5</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     *        </p>
      */
 
     public void setLength(Double length) {
@@ -195,6 +250,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     * </p>
+     * </note>
      * 
      * @return The length of the truck.</p>
      *         <ul>
@@ -203,6 +263,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *         For example, <code>15.5</code>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     *         </p>
      */
 
     public Double getLength() {
@@ -220,6 +285,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     * </p>
+     * </note>
      * 
      * @param length
      *        The length of the truck.</p>
@@ -229,6 +299,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *        For example, <code>15.5</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        For routes calculated with a HERE resource, this value must be between 0 and 300 meters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,6 +402,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      * 
      * @param width
      *        The width of the truck.</p>
@@ -336,6 +416,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *        For example, <code>4.5</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     *        </p>
      */
 
     public void setWidth(Double width) {
@@ -353,6 +438,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      * 
      * @return The width of the truck.</p>
      *         <ul>
@@ -361,6 +451,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *         For example, <code>4.5</code>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     *         </p>
      */
 
     public Double getWidth() {
@@ -378,6 +473,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     * </p>
+     * </note>
      * 
      * @param width
      *        The width of the truck.</p>
@@ -387,6 +487,11 @@ public class TruckDimensions implements Serializable, Cloneable, StructuredPojo 
      *        For example, <code>4.5</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

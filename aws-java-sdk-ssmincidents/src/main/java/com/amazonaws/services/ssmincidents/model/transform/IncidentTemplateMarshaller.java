@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ssmincidents.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -32,6 +33,8 @@ public class IncidentTemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dedupeString").build();
     private static final MarshallingInfo<Integer> IMPACT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("impact").build();
+    private static final MarshallingInfo<Map> INCIDENTTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("incidentTags").build();
     private static final MarshallingInfo<List> NOTIFICATIONTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notificationTargets").build();
     private static final MarshallingInfo<String> SUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +60,7 @@ public class IncidentTemplateMarshaller {
         try {
             protocolMarshaller.marshall(incidentTemplate.getDedupeString(), DEDUPESTRING_BINDING);
             protocolMarshaller.marshall(incidentTemplate.getImpact(), IMPACT_BINDING);
+            protocolMarshaller.marshall(incidentTemplate.getIncidentTags(), INCIDENTTAGS_BINDING);
             protocolMarshaller.marshall(incidentTemplate.getNotificationTargets(), NOTIFICATIONTARGETS_BINDING);
             protocolMarshaller.marshall(incidentTemplate.getSummary(), SUMMARY_BINDING);
             protocolMarshaller.marshall(incidentTemplate.getTitle(), TITLE_BINDING);

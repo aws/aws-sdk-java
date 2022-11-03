@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The container path, mount options, and size of the tmpfs mount.
+ * The container path, mount options, and size of the <code>tmpfs</code> mount.
  * </p>
  * <note>
  * <p>
@@ -34,19 +34,19 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is mounted.
+     * The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      * </p>
      */
     private String containerPath;
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The size (in MiB) of the <code>tmpfs</code> volume.
      * </p>
      */
     private Integer size;
     /**
      * <p>
-     * The list of tmpfs volume mount options.
+     * The list of <code>tmpfs</code> volume mount options.
      * </p>
      * <p>
      * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
@@ -64,11 +64,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is mounted.
+     * The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path in the container where the tmpfs volume is mounted.
+     *        The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      */
 
     public void setContainerPath(String containerPath) {
@@ -77,10 +77,10 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is mounted.
+     * The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      * </p>
      * 
-     * @return The absolute file path in the container where the tmpfs volume is mounted.
+     * @return The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      */
 
     public String getContainerPath() {
@@ -89,11 +89,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is mounted.
+     * The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path in the container where the tmpfs volume is mounted.
+     *        The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The size (in MiB) of the <code>tmpfs</code> volume.
      * </p>
      * 
      * @param size
-     *        The size (in MiB) of the tmpfs volume.
+     *        The size (in MiB) of the <code>tmpfs</code> volume.
      */
 
     public void setSize(Integer size) {
@@ -117,10 +117,10 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The size (in MiB) of the <code>tmpfs</code> volume.
      * </p>
      * 
-     * @return The size (in MiB) of the tmpfs volume.
+     * @return The size (in MiB) of the <code>tmpfs</code> volume.
      */
 
     public Integer getSize() {
@@ -129,11 +129,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The size (in MiB) of the <code>tmpfs</code> volume.
      * </p>
      * 
      * @param size
-     *        The size (in MiB) of the tmpfs volume.
+     *        The size (in MiB) of the <code>tmpfs</code> volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +144,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tmpfs volume mount options.
+     * The list of <code>tmpfs</code> volume mount options.
      * </p>
      * <p>
      * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
@@ -158,7 +158,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * <code>mpol</code>"
      * </p>
      * 
-     * @return The list of tmpfs volume mount options.</p>
+     * @return The list of <code>tmpfs</code> volume mount options.</p>
      *         <p>
      *         Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
      *         <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
@@ -177,7 +177,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tmpfs volume mount options.
+     * The list of <code>tmpfs</code> volume mount options.
      * </p>
      * <p>
      * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
@@ -192,7 +192,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param mountOptions
-     *        The list of tmpfs volume mount options.</p>
+     *        The list of <code>tmpfs</code> volume mount options.</p>
      *        <p>
      *        Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
      *        <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
@@ -216,7 +216,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tmpfs volume mount options.
+     * The list of <code>tmpfs</code> volume mount options.
      * </p>
      * <p>
      * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
@@ -236,7 +236,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param mountOptions
-     *        The list of tmpfs volume mount options.</p>
+     *        The list of <code>tmpfs</code> volume mount options.</p>
      *        <p>
      *        Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
      *        <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
@@ -262,7 +262,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tmpfs volume mount options.
+     * The list of <code>tmpfs</code> volume mount options.
      * </p>
      * <p>
      * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
@@ -277,7 +277,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param mountOptions
-     *        The list of tmpfs volume mount options.</p>
+     *        The list of <code>tmpfs</code> volume mount options.</p>
      *        <p>
      *        Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
      *        <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "

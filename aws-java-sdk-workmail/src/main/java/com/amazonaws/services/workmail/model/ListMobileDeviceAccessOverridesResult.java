@@ -26,7 +26,7 @@ public class ListMobileDeviceAccessOverridesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.
+     * The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * </p>
      */
     private java.util.List<MobileDeviceAccessOverride> overrides;
@@ -40,11 +40,10 @@ public class ListMobileDeviceAccessOverridesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.
+     * The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * </p>
      * 
-     * @return The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and
-     *         user.
+     * @return The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      */
 
     public java.util.List<MobileDeviceAccessOverride> getOverrides() {
@@ -53,12 +52,11 @@ public class ListMobileDeviceAccessOverridesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.
+     * The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * </p>
      * 
      * @param overrides
-     *        The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and
-     *        user.
+     *        The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      */
 
     public void setOverrides(java.util.Collection<MobileDeviceAccessOverride> overrides) {
@@ -72,7 +70,7 @@ public class ListMobileDeviceAccessOverridesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.
+     * The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,8 +79,7 @@ public class ListMobileDeviceAccessOverridesResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param overrides
-     *        The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and
-     *        user.
+     *        The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +95,11 @@ public class ListMobileDeviceAccessOverridesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.
+     * The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * </p>
      * 
      * @param overrides
-     *        The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and
-     *        user.
+     *        The list of mobile device access overrides that exist for the specified WorkMail organization and user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

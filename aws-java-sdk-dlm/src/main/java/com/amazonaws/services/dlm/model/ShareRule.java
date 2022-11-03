@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a rule for sharing snapshots across Amazon Web Services accounts.
+ * <b>[Snapshot policies only]</b> Specifies a rule for sharing snapshots across Amazon Web Services accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ShareRule" target="_top">AWS API

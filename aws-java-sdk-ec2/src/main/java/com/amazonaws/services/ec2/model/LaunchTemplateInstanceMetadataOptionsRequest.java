@@ -18,8 +18,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The metadata options for the instance. For more information, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
- * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+ * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptionsRequest"
@@ -52,7 +52,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      * instance metadata requests can travel.
      * </p>
      * <p>
-     * Default: 1
+     * Default: <code>1</code>
      * </p>
      * <p>
      * Possible values: Integers from 1 to 64
@@ -250,7 +250,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      * instance metadata requests can travel.
      * </p>
      * <p>
-     * Default: 1
+     * Default: <code>1</code>
      * </p>
      * <p>
      * Possible values: Integers from 1 to 64
@@ -260,7 +260,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      *        The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further
      *        instance metadata requests can travel.</p>
      *        <p>
-     *        Default: 1
+     *        Default: <code>1</code>
      *        </p>
      *        <p>
      *        Possible values: Integers from 1 to 64
@@ -276,7 +276,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      * instance metadata requests can travel.
      * </p>
      * <p>
-     * Default: 1
+     * Default: <code>1</code>
      * </p>
      * <p>
      * Possible values: Integers from 1 to 64
@@ -285,7 +285,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      * @return The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the
      *         further instance metadata requests can travel.</p>
      *         <p>
-     *         Default: 1
+     *         Default: <code>1</code>
      *         </p>
      *         <p>
      *         Possible values: Integers from 1 to 64
@@ -301,7 +301,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      * instance metadata requests can travel.
      * </p>
      * <p>
-     * Default: 1
+     * Default: <code>1</code>
      * </p>
      * <p>
      * Possible values: Integers from 1 to 64
@@ -311,7 +311,7 @@ public class LaunchTemplateInstanceMetadataOptionsRequest implements Serializabl
      *        The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further
      *        instance metadata requests can travel.</p>
      *        <p>
-     *        Default: 1
+     *        Default: <code>1</code>
      *        </p>
      *        <p>
      *        Possible values: Integers from 1 to 64

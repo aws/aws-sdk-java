@@ -65,6 +65,8 @@ public class ContainerServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicDomainNames").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("url").build();
+    private static final MarshallingInfo<StructuredPojo> PRIVATEREGISTRYACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privateRegistryAccess").build();
 
     private static final ContainerServiceMarshaller instance = new ContainerServiceMarshaller();
 
@@ -100,6 +102,7 @@ public class ContainerServiceMarshaller {
             protocolMarshaller.marshall(containerService.getPrivateDomainName(), PRIVATEDOMAINNAME_BINDING);
             protocolMarshaller.marshall(containerService.getPublicDomainNames(), PUBLICDOMAINNAMES_BINDING);
             protocolMarshaller.marshall(containerService.getUrl(), URL_BINDING);
+            protocolMarshaller.marshall(containerService.getPrivateRegistryAccess(), PRIVATEREGISTRYACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

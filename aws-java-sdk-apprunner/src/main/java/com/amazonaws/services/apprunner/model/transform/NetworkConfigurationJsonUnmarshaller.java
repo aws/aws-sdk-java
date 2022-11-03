@@ -52,6 +52,10 @@ public class NetworkConfigurationJsonUnmarshaller implements Unmarshaller<Networ
                     context.nextToken();
                     networkConfiguration.setEgressConfiguration(EgressConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IngressConfiguration", targetDepth)) {
+                    context.nextToken();
+                    networkConfiguration.setIngressConfiguration(IngressConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

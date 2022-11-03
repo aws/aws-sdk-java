@@ -25,7 +25,7 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the live source.
+     * The Amazon Resource Name (ARN) associated with this live source.
      * </p>
      */
     private String arn;
@@ -37,13 +37,13 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date creationTime;
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configurations for the live source on this account.
      * </p>
      */
     private java.util.List<HttpPackageConfiguration> httpPackageConfigurations;
     /**
      * <p>
-     * The timestamp that indicates when the live source was modified.
+     * The timestamp that indicates when the live source was last modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
@@ -55,24 +55,27 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
     private String liveSourceName;
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The ARN of the live source.
+     * The Amazon Resource Name (ARN) associated with this live source.
      * </p>
      * 
      * @param arn
-     *        The ARN of the live source.
+     *        The Amazon Resource Name (ARN) associated with this live source.
      */
 
     public void setArn(String arn) {
@@ -81,10 +84,10 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the live source.
+     * The Amazon Resource Name (ARN) associated with this live source.
      * </p>
      * 
-     * @return The ARN of the live source.
+     * @return The Amazon Resource Name (ARN) associated with this live source.
      */
 
     public String getArn() {
@@ -93,11 +96,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the live source.
+     * The Amazon Resource Name (ARN) associated with this live source.
      * </p>
      * 
      * @param arn
-     *        The ARN of the live source.
+     *        The Amazon Resource Name (ARN) associated with this live source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,10 +151,10 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configurations for the live source on this account.
      * </p>
      * 
-     * @return The HTTP package configurations.
+     * @return A list of HTTP package configurations for the live source on this account.
      */
 
     public java.util.List<HttpPackageConfiguration> getHttpPackageConfigurations() {
@@ -160,11 +163,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configurations for the live source on this account.
      * </p>
      * 
      * @param httpPackageConfigurations
-     *        The HTTP package configurations.
+     *        A list of HTTP package configurations for the live source on this account.
      */
 
     public void setHttpPackageConfigurations(java.util.Collection<HttpPackageConfiguration> httpPackageConfigurations) {
@@ -178,7 +181,7 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configurations for the live source on this account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,7 +190,7 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param httpPackageConfigurations
-     *        The HTTP package configurations.
+     *        A list of HTTP package configurations for the live source on this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +206,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configurations for the live source on this account.
      * </p>
      * 
      * @param httpPackageConfigurations
-     *        The HTTP package configurations.
+     *        A list of HTTP package configurations for the live source on this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +221,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The timestamp that indicates when the live source was modified.
+     * The timestamp that indicates when the live source was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The timestamp that indicates when the live source was modified.
+     *        The timestamp that indicates when the live source was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -231,10 +234,10 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The timestamp that indicates when the live source was modified.
+     * The timestamp that indicates when the live source was last modified.
      * </p>
      * 
-     * @return The timestamp that indicates when the live source was modified.
+     * @return The timestamp that indicates when the live source was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -243,11 +246,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The timestamp that indicates when the live source was modified.
+     * The timestamp that indicates when the live source was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The timestamp that indicates when the live source was modified.
+     *        The timestamp that indicates when the live source was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +301,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The name of the source location associated with the VOD source.
+     *        The name of the source location associated with the live source.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -311,10 +314,10 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      * 
-     * @return The name of the source location associated with the VOD source.
+     * @return The name of the source location associated with the live source.
      */
 
     public String getSourceLocationName() {
@@ -323,11 +326,11 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name of the source location associated with the live source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The name of the source location associated with the VOD source.
+     *        The name of the source location associated with the live source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,10 +341,16 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the live source.
+     * @return The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -350,11 +359,17 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the live source.
+     *        The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -363,11 +378,17 @@ public class UpdateLiveSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags assigned to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the live source.
+     *        The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

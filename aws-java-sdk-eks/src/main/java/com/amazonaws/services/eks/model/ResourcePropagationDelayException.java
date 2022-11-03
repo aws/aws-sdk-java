@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.
+ * Required resources (such as service-linked roles) were created and are still propagating. Retry later.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -39,6 +39,8 @@ public class ResourceMappingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceGroupName").build();
     private static final MarshallingInfo<String> RESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceName").build();
+    private static final MarshallingInfo<String> TERRAFORMSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terraformSourceName").build();
 
     private static final ResourceMappingMarshaller instance = new ResourceMappingMarshaller();
 
@@ -62,6 +64,7 @@ public class ResourceMappingMarshaller {
             protocolMarshaller.marshall(resourceMapping.getPhysicalResourceId(), PHYSICALRESOURCEID_BINDING);
             protocolMarshaller.marshall(resourceMapping.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
             protocolMarshaller.marshall(resourceMapping.getResourceName(), RESOURCENAME_BINDING);
+            protocolMarshaller.marshall(resourceMapping.getTerraformSourceName(), TERRAFORMSOURCENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -34,7 +34,8 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
     private String clientToken;
     /**
      * <p>
-     * An array of compatible environment template objects for the new version of a service template.
+     * An array of environment template objects that are compatible with the new service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      */
     private java.util.List<CompatibleEnvironmentTemplateInput> compatibleEnvironmentTemplates;
@@ -61,13 +62,24 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
     private TemplateVersionSourceInput source;
     /**
      * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     */
+    private java.util.List<String> supportedComponentSources;
+    /**
+     * <p>
      * An optional list of metadata items that you can associate with the Proton service template version. A tag is a
      * key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -126,10 +138,13 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment template objects for the new version of a service template.
+     * An array of environment template objects that are compatible with the new service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * 
-     * @return An array of compatible environment template objects for the new version of a service template.
+     * @return An array of environment template objects that are compatible with the new service template version. A
+     *         service instance based on this service template version can run in environments based on compatible
+     *         templates.
      */
 
     public java.util.List<CompatibleEnvironmentTemplateInput> getCompatibleEnvironmentTemplates() {
@@ -138,11 +153,14 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment template objects for the new version of a service template.
+     * An array of environment template objects that are compatible with the new service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * 
      * @param compatibleEnvironmentTemplates
-     *        An array of compatible environment template objects for the new version of a service template.
+     *        An array of environment template objects that are compatible with the new service template version. A
+     *        service instance based on this service template version can run in environments based on compatible
+     *        templates.
      */
 
     public void setCompatibleEnvironmentTemplates(java.util.Collection<CompatibleEnvironmentTemplateInput> compatibleEnvironmentTemplates) {
@@ -156,7 +174,8 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment template objects for the new version of a service template.
+     * An array of environment template objects that are compatible with the new service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +184,9 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param compatibleEnvironmentTemplates
-     *        An array of compatible environment template objects for the new version of a service template.
+     *        An array of environment template objects that are compatible with the new service template version. A
+     *        service instance based on this service template version can run in environments based on compatible
+     *        templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +202,14 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of compatible environment template objects for the new version of a service template.
+     * An array of environment template objects that are compatible with the new service template version. A service
+     * instance based on this service template version can run in environments based on compatible templates.
      * </p>
      * 
      * @param compatibleEnvironmentTemplates
-     *        An array of compatible environment template objects for the new version of a service template.
+     *        An array of environment template objects that are compatible with the new service template version. A
+     *        service instance based on this service template version can run in environments based on compatible
+     *        templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,21 +360,173 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @return An array of supported component sources. Components with supported sources can be attached to service
+     *         instances based on this service template version.</p>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton User Guide</i>.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public java.util.List<String> getSupportedComponentSources() {
+        return supportedComponentSources;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public void setSupportedComponentSources(java.util.Collection<String> supportedComponentSources) {
+        if (supportedComponentSources == null) {
+            this.supportedComponentSources = null;
+            return;
+        }
+
+        this.supportedComponentSources = new java.util.ArrayList<String>(supportedComponentSources);
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedComponentSources(java.util.Collection)} or
+     * {@link #withSupportedComponentSources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public CreateServiceTemplateVersionRequest withSupportedComponentSources(String... supportedComponentSources) {
+        if (this.supportedComponentSources == null) {
+            setSupportedComponentSources(new java.util.ArrayList<String>(supportedComponentSources.length));
+        }
+        for (String ele : supportedComponentSources) {
+            this.supportedComponentSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public CreateServiceTemplateVersionRequest withSupportedComponentSources(java.util.Collection<String> supportedComponentSources) {
+        setSupportedComponentSources(supportedComponentSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public CreateServiceTemplateVersionRequest withSupportedComponentSources(ServiceTemplateSupportedComponentSourceType... supportedComponentSources) {
+        java.util.ArrayList<String> supportedComponentSourcesCopy = new java.util.ArrayList<String>(supportedComponentSources.length);
+        for (ServiceTemplateSupportedComponentSourceType value : supportedComponentSources) {
+            supportedComponentSourcesCopy.add(value.toString());
+        }
+        if (getSupportedComponentSources() == null) {
+            setSupportedComponentSources(supportedComponentSourcesCopy);
+        } else {
+            getSupportedComponentSources().addAll(supportedComponentSourcesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * An optional list of metadata items that you can associate with the Proton service template version. A tag is a
      * key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @return An optional list of metadata items that you can associate with the Proton service template version. A tag
      *         is a key-value pair.</p>
      *         <p>
-     *         For more information, see <i>Proton resources and tagging</i> in the <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *         or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and
+     *         tagging</a> in the <i>Proton User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -363,18 +539,17 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
      * key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An optional list of metadata items that you can associate with the Proton service template version. A tag
      *        is a key-value pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -392,9 +567,8 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
      * key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -406,9 +580,9 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
      *        An optional list of metadata items that you can associate with the Proton service template version. A tag
      *        is a key-value pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,18 +602,17 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
      * key-value pair.
      * </p>
      * <p>
-     * For more information, see <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An optional list of metadata items that you can associate with the Proton service template version. A tag
      *        is a key-value pair.</p>
      *        <p>
-     *        For more information, see <i>Proton resources and tagging</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a>
-     *        or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,6 +683,8 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
             sb.append("MajorVersion: ").append(getMajorVersion()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getSupportedComponentSources() != null)
+            sb.append("SupportedComponentSources: ").append(getSupportedComponentSources()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTemplateName() != null)
@@ -549,6 +724,10 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getSupportedComponentSources() == null ^ this.getSupportedComponentSources() == null)
+            return false;
+        if (other.getSupportedComponentSources() != null && other.getSupportedComponentSources().equals(this.getSupportedComponentSources()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -570,6 +749,7 @@ public class CreateServiceTemplateVersionRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMajorVersion() == null) ? 0 : getMajorVersion().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getSupportedComponentSources() == null) ? 0 : getSupportedComponentSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         return hashCode;

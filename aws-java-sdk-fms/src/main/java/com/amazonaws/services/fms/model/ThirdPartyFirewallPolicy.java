@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures the policy for the third-party firewall.
+ * Configures the deployment model for the third-party firewall.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallPolicy" target="_top">AWS API
@@ -30,18 +30,18 @@ public class ThirdPartyFirewallPolicy implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the deployment model to use for the third-party firewall.
+     * Defines the deployment model to use for the third-party firewall policy.
      * </p>
      */
     private String firewallDeploymentModel;
 
     /**
      * <p>
-     * Defines the deployment model to use for the third-party firewall.
+     * Defines the deployment model to use for the third-party firewall policy.
      * </p>
      * 
      * @param firewallDeploymentModel
-     *        Defines the deployment model to use for the third-party firewall.
+     *        Defines the deployment model to use for the third-party firewall policy.
      * @see FirewallDeploymentModel
      */
 
@@ -51,10 +51,10 @@ public class ThirdPartyFirewallPolicy implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the deployment model to use for the third-party firewall.
+     * Defines the deployment model to use for the third-party firewall policy.
      * </p>
      * 
-     * @return Defines the deployment model to use for the third-party firewall.
+     * @return Defines the deployment model to use for the third-party firewall policy.
      * @see FirewallDeploymentModel
      */
 
@@ -64,11 +64,11 @@ public class ThirdPartyFirewallPolicy implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the deployment model to use for the third-party firewall.
+     * Defines the deployment model to use for the third-party firewall policy.
      * </p>
      * 
      * @param firewallDeploymentModel
-     *        Defines the deployment model to use for the third-party firewall.
+     *        Defines the deployment model to use for the third-party firewall policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FirewallDeploymentModel
      */
@@ -80,11 +80,11 @@ public class ThirdPartyFirewallPolicy implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the deployment model to use for the third-party firewall.
+     * Defines the deployment model to use for the third-party firewall policy.
      * </p>
      * 
      * @param firewallDeploymentModel
-     *        Defines the deployment model to use for the third-party firewall.
+     *        Defines the deployment model to use for the third-party firewall policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FirewallDeploymentModel
      */

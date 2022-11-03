@@ -44,6 +44,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in the
      * overrides and <code>prioritized</code> for Auto Scaling groups that don't.
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>prioritized</code>
+     * </p>
      */
     private String onDemandAllocationStrategy;
     /**
@@ -91,6 +94,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
      */
     private String spotAllocationStrategy;
     /**
@@ -109,6 +116,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its
      * default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a
      * value that you previously set, include the property but specify an empty string ("") for the value.
+     * </p>
+     * <important>
+     * <p>
+     * If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances
+     * are not launched.
+     * </p>
+     * </important>
+     * <p>
+     * Valid Range: Minimum value of 0.001
      * </p>
      */
     private String spotMaxPrice;
@@ -131,6 +147,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in the
      * overrides and <code>prioritized</code> for Auto Scaling groups that don't.
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>prioritized</code>
+     * </p>
      * 
      * @param onDemandAllocationStrategy
      *        The order of the launch template overrides to use in fulfilling On-Demand capacity. </p>
@@ -147,6 +166,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in the
      *        overrides and <code>prioritized</code> for Auto Scaling groups that don't.
+     *        </p>
+     *        <p>
+     *        Valid values: <code>lowest-price</code> | <code>prioritized</code>
      */
 
     public void setOnDemandAllocationStrategy(String onDemandAllocationStrategy) {
@@ -171,6 +193,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in the
      * overrides and <code>prioritized</code> for Auto Scaling groups that don't.
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>prioritized</code>
+     * </p>
      * 
      * @return The order of the launch template overrides to use in fulfilling On-Demand capacity. </p>
      *         <p>
@@ -186,6 +211,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in
      *         the overrides and <code>prioritized</code> for Auto Scaling groups that don't.
+     *         </p>
+     *         <p>
+     *         Valid values: <code>lowest-price</code> | <code>prioritized</code>
      */
 
     public String getOnDemandAllocationStrategy() {
@@ -210,6 +238,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in the
      * overrides and <code>prioritized</code> for Auto Scaling groups that don't.
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>prioritized</code>
+     * </p>
      * 
      * @param onDemandAllocationStrategy
      *        The order of the launch template overrides to use in fulfilling On-Demand capacity. </p>
@@ -226,6 +257,9 @@ public class InstancesDistribution implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a> in the
      *        overrides and <code>prioritized</code> for Auto Scaling groups that don't.
+     *        </p>
+     *        <p>
+     *        Valid values: <code>lowest-price</code> | <code>prioritized</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -411,6 +445,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
      * 
      * @param spotAllocationStrategy
      *        Indicates how to allocate instances across Spot Instance pools. </p>
@@ -429,6 +467,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Default: <code>lowest-price</code>
+     *        </p>
+     *        <p>
+     *        Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     *        <code>capacity-optimized-prioritized</code>
      */
 
     public void setSpotAllocationStrategy(String spotAllocationStrategy) {
@@ -454,6 +496,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
      * 
      * @return Indicates how to allocate instances across Spot Instance pools. </p>
      *         <p>
@@ -471,6 +517,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         Default: <code>lowest-price</code>
+     *         </p>
+     *         <p>
+     *         Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     *         <code>capacity-optimized-prioritized</code>
      */
 
     public String getSpotAllocationStrategy() {
@@ -496,6 +546,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
+     * <p>
+     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code>
+     * </p>
      * 
      * @param spotAllocationStrategy
      *        Indicates how to allocate instances across Spot Instance pools. </p>
@@ -514,6 +568,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Default: <code>lowest-price</code>
+     *        </p>
+     *        <p>
+     *        Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> |
+     *        <code>capacity-optimized-prioritized</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,12 +653,28 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a
      * value that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
+     * <important>
+     * <p>
+     * If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances
+     * are not launched.
+     * </p>
+     * </important>
+     * <p>
+     * Valid Range: Minimum value of 0.001
+     * </p>
      * 
      * @param spotMaxPrice
      *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at
      *        its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To
      *        remove a value that you previously set, include the property but specify an empty string ("") for the
-     *        value.
+     *        value.</p> <important>
+     *        <p>
+     *        If your maximum price is lower than the Spot price for the instance types that you selected, your Spot
+     *        Instances are not launched.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Valid Range: Minimum value of 0.001
      */
 
     public void setSpotMaxPrice(String spotMaxPrice) {
@@ -613,11 +687,27 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a
      * value that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
+     * <important>
+     * <p>
+     * If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances
+     * are not launched.
+     * </p>
+     * </important>
+     * <p>
+     * Valid Range: Minimum value of 0.001
+     * </p>
      * 
      * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at
      *         its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To
      *         remove a value that you previously set, include the property but specify an empty string ("") for the
-     *         value.
+     *         value.</p> <important>
+     *         <p>
+     *         If your maximum price is lower than the Spot price for the instance types that you selected, your Spot
+     *         Instances are not launched.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         Valid Range: Minimum value of 0.001
      */
 
     public String getSpotMaxPrice() {
@@ -630,12 +720,28 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a
      * value that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
+     * <important>
+     * <p>
+     * If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances
+     * are not launched.
+     * </p>
+     * </important>
+     * <p>
+     * Valid Range: Minimum value of 0.001
+     * </p>
      * 
      * @param spotMaxPrice
      *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at
      *        its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To
      *        remove a value that you previously set, include the property but specify an empty string ("") for the
-     *        value.
+     *        value.</p> <important>
+     *        <p>
+     *        If your maximum price is lower than the Spot price for the instance types that you selected, your Spot
+     *        Instances are not launched.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Valid Range: Minimum value of 0.001
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

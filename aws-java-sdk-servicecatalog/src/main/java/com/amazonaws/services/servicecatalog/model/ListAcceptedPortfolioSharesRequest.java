@@ -67,17 +67,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management
+     * account or delegated administrator of your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * <code>AWS_SERVICECATALOG</code> - Deprecated type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMPORTED</code> - List imported portfolios
+     * <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account
+     * sharing.
      * </p>
      * </li>
      * </ul>
@@ -310,17 +312,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management
+     * account or delegated administrator of your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * <code>AWS_SERVICECATALOG</code> - Deprecated type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMPORTED</code> - List imported portfolios
+     * <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account
+     * sharing.
      * </p>
      * </li>
      * </ul>
@@ -330,17 +334,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     *        <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the
+     *        management account or delegated administrator of your organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *        <code>AWS_SERVICECATALOG</code> - Deprecated type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMPORTED</code> - List imported portfolios
+     *        <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through
+     *        account-to-account sharing.
      *        </p>
      *        </li>
      * @see PortfolioShareType
@@ -357,17 +363,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management
+     * account or delegated administrator of your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * <code>AWS_SERVICECATALOG</code> - Deprecated type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMPORTED</code> - List imported portfolios
+     * <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account
+     * sharing.
      * </p>
      * </li>
      * </ul>
@@ -376,17 +384,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     *         <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the
+     *         management account or delegated administrator of your organization.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *         <code>AWS_SERVICECATALOG</code> - Deprecated type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IMPORTED</code> - List imported portfolios
+     *         <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through
+     *         account-to-account sharing.
      *         </p>
      *         </li>
      * @see PortfolioShareType
@@ -403,17 +413,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management
+     * account or delegated administrator of your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * <code>AWS_SERVICECATALOG</code> - Deprecated type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMPORTED</code> - List imported portfolios
+     * <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account
+     * sharing.
      * </p>
      * </li>
      * </ul>
@@ -423,17 +435,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     *        <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the
+     *        management account or delegated administrator of your organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *        <code>AWS_SERVICECATALOG</code> - Deprecated type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMPORTED</code> - List imported portfolios
+     *        <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through
+     *        account-to-account sharing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -452,17 +466,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management
+     * account or delegated administrator of your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * <code>AWS_SERVICECATALOG</code> - Deprecated type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMPORTED</code> - List imported portfolios
+     * <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account
+     * sharing.
      * </p>
      * </li>
      * </ul>
@@ -472,17 +488,19 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization
+     *        <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the
+     *        management account or delegated administrator of your organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *        <code>AWS_SERVICECATALOG</code> - Deprecated type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMPORTED</code> - List imported portfolios
+     *        <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through
+     *        account-to-account sharing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

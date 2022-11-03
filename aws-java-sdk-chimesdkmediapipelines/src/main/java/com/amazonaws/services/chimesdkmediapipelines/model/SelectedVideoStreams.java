@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The video streams to capture for a specified media capture pipeline. The total number of video streams can't exceed
- * 25.
+ * The video streams for a specified media pipeline. The total number of video streams can't exceed 25.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/SelectedVideoStreams"
@@ -31,23 +30,23 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The attendee IDs of the streams selected for a media capture pipeline.
+     * The attendee IDs of the streams selected for a media pipeline.
      * </p>
      */
     private java.util.List<String> attendeeIds;
     /**
      * <p>
-     * The external user IDs of the streams selected for a media capture pipeline.
+     * The external user IDs of the streams selected for a media pipeline.
      * </p>
      */
     private java.util.List<String> externalUserIds;
 
     /**
      * <p>
-     * The attendee IDs of the streams selected for a media capture pipeline.
+     * The attendee IDs of the streams selected for a media pipeline.
      * </p>
      * 
-     * @return The attendee IDs of the streams selected for a media capture pipeline.
+     * @return The attendee IDs of the streams selected for a media pipeline.
      */
 
     public java.util.List<String> getAttendeeIds() {
@@ -56,11 +55,11 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The attendee IDs of the streams selected for a media capture pipeline.
+     * The attendee IDs of the streams selected for a media pipeline.
      * </p>
      * 
      * @param attendeeIds
-     *        The attendee IDs of the streams selected for a media capture pipeline.
+     *        The attendee IDs of the streams selected for a media pipeline.
      */
 
     public void setAttendeeIds(java.util.Collection<String> attendeeIds) {
@@ -74,7 +73,7 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The attendee IDs of the streams selected for a media capture pipeline.
+     * The attendee IDs of the streams selected for a media pipeline.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +82,7 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param attendeeIds
-     *        The attendee IDs of the streams selected for a media capture pipeline.
+     *        The attendee IDs of the streams selected for a media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +98,11 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The attendee IDs of the streams selected for a media capture pipeline.
+     * The attendee IDs of the streams selected for a media pipeline.
      * </p>
      * 
      * @param attendeeIds
-     *        The attendee IDs of the streams selected for a media capture pipeline.
+     *        The attendee IDs of the streams selected for a media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,10 +113,10 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external user IDs of the streams selected for a media capture pipeline.
+     * The external user IDs of the streams selected for a media pipeline.
      * </p>
      * 
-     * @return The external user IDs of the streams selected for a media capture pipeline.
+     * @return The external user IDs of the streams selected for a media pipeline.
      */
 
     public java.util.List<String> getExternalUserIds() {
@@ -126,11 +125,11 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external user IDs of the streams selected for a media capture pipeline.
+     * The external user IDs of the streams selected for a media pipeline.
      * </p>
      * 
      * @param externalUserIds
-     *        The external user IDs of the streams selected for a media capture pipeline.
+     *        The external user IDs of the streams selected for a media pipeline.
      */
 
     public void setExternalUserIds(java.util.Collection<String> externalUserIds) {
@@ -144,7 +143,7 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external user IDs of the streams selected for a media capture pipeline.
+     * The external user IDs of the streams selected for a media pipeline.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,7 +152,7 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param externalUserIds
-     *        The external user IDs of the streams selected for a media capture pipeline.
+     *        The external user IDs of the streams selected for a media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +168,11 @@ public class SelectedVideoStreams implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external user IDs of the streams selected for a media capture pipeline.
+     * The external user IDs of the streams selected for a media pipeline.
      * </p>
      * 
      * @param externalUserIds
-     *        The external user IDs of the streams selected for a media capture pipeline.
+     *        The external user IDs of the streams selected for a media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

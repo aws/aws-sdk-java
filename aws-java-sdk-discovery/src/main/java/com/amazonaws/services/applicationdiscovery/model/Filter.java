@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For more information about filters, see <a
  * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying
- * Discovered Configuration Items</a> in the <i>AWS Application Discovery Service User Guide</i>.
+ * Discovered Configuration Items</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

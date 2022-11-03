@@ -112,6 +112,10 @@ public class GetMaintenanceWindowTaskResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getMaintenanceWindowTaskResult.setCutoffBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getMaintenanceWindowTaskResult.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

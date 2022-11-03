@@ -35,6 +35,8 @@ public class ElasticsearchSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadErrorPercentage").build();
     private static final MarshallingInfo<Integer> ERRORRETRYDURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorRetryDuration").build();
+    private static final MarshallingInfo<Boolean> USENEWMAPPINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseNewMappingType").build();
 
     private static final ElasticsearchSettingsMarshaller instance = new ElasticsearchSettingsMarshaller();
 
@@ -56,6 +58,7 @@ public class ElasticsearchSettingsMarshaller {
             protocolMarshaller.marshall(elasticsearchSettings.getEndpointUri(), ENDPOINTURI_BINDING);
             protocolMarshaller.marshall(elasticsearchSettings.getFullLoadErrorPercentage(), FULLLOADERRORPERCENTAGE_BINDING);
             protocolMarshaller.marshall(elasticsearchSettings.getErrorRetryDuration(), ERRORRETRYDURATION_BINDING);
+            protocolMarshaller.marshall(elasticsearchSettings.getUseNewMappingType(), USENEWMAPPINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

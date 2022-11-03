@@ -27,7 +27,7 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of a service instance that you want to get the detail data for.
+     * The name of a service instance that you want to get the detailed data for.
      * </p>
      */
     private String name;
@@ -40,11 +40,11 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of a service instance that you want to get the detail data for.
+     * The name of a service instance that you want to get the detailed data for.
      * </p>
      * 
      * @param name
-     *        The name of a service instance that you want to get the detail data for.
+     *        The name of a service instance that you want to get the detailed data for.
      */
 
     public void setName(String name) {
@@ -53,10 +53,10 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of a service instance that you want to get the detail data for.
+     * The name of a service instance that you want to get the detailed data for.
      * </p>
      * 
-     * @return The name of a service instance that you want to get the detail data for.
+     * @return The name of a service instance that you want to get the detailed data for.
      */
 
     public String getName() {
@@ -65,11 +65,11 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of a service instance that you want to get the detail data for.
+     * The name of a service instance that you want to get the detailed data for.
      * </p>
      * 
      * @param name
-     *        The name of a service instance that you want to get the detail data for.
+     *        The name of a service instance that you want to get the detailed data for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,10 @@ public class CaptionDescriptionJsonUnmarshaller implements Unmarshaller<CaptionD
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accessibility", targetDepth)) {
+                    context.nextToken();
+                    captionDescription.setAccessibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("captionSelectorName", targetDepth)) {
                     context.nextToken();
                     captionDescription.setCaptionSelectorName(context.getUnmarshaller(String.class).unmarshall(context));

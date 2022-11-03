@@ -63,7 +63,7 @@
  * <ul>
  * <li>
  * <p>
- * <a>DeleteTarget</a>, which removes a notification rule target (SNS topic) from a notification rule.
+ * <a>DeleteTarget</a>, which removes a notification rule target from a notification rule.
  * </p>
  * </li>
  * <li>
@@ -103,7 +103,9 @@
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeStar Notifications, see link in the CodeStarNotifications User Guide.
+ * For information about how to use AWS CodeStar Notifications, see the <a
+ * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon Web Services Developer
+ * Tools Console User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.codestarnotifications;

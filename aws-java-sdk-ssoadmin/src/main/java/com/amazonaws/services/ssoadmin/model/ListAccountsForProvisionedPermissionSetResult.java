@@ -26,7 +26,7 @@ public class ListAccountsForProvisionedPermissionSetResult extends com.amazonaws
 
     /**
      * <p>
-     * The list of Amazon Web Services <code>AccountIds</code>.
+     * The list of AWS <code>AccountIds</code>.
      * </p>
      */
     private java.util.List<String> accountIds;
@@ -40,10 +40,10 @@ public class ListAccountsForProvisionedPermissionSetResult extends com.amazonaws
 
     /**
      * <p>
-     * The list of Amazon Web Services <code>AccountIds</code>.
+     * The list of AWS <code>AccountIds</code>.
      * </p>
      * 
-     * @return The list of Amazon Web Services <code>AccountIds</code>.
+     * @return The list of AWS <code>AccountIds</code>.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -52,11 +52,11 @@ public class ListAccountsForProvisionedPermissionSetResult extends com.amazonaws
 
     /**
      * <p>
-     * The list of Amazon Web Services <code>AccountIds</code>.
+     * The list of AWS <code>AccountIds</code>.
      * </p>
      * 
      * @param accountIds
-     *        The list of Amazon Web Services <code>AccountIds</code>.
+     *        The list of AWS <code>AccountIds</code>.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -70,7 +70,7 @@ public class ListAccountsForProvisionedPermissionSetResult extends com.amazonaws
 
     /**
      * <p>
-     * The list of Amazon Web Services <code>AccountIds</code>.
+     * The list of AWS <code>AccountIds</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListAccountsForProvisionedPermissionSetResult extends com.amazonaws
      * </p>
      * 
      * @param accountIds
-     *        The list of Amazon Web Services <code>AccountIds</code>.
+     *        The list of AWS <code>AccountIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListAccountsForProvisionedPermissionSetResult extends com.amazonaws
 
     /**
      * <p>
-     * The list of Amazon Web Services <code>AccountIds</code>.
+     * The list of AWS <code>AccountIds</code>.
      * </p>
      * 
      * @param accountIds
-     *        The list of Amazon Web Services <code>AccountIds</code>.
+     *        The list of AWS <code>AccountIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

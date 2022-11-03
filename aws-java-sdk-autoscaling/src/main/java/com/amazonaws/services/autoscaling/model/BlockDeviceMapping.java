@@ -28,57 +28,55 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the virtual device (for example, <code>ephemeral0</code>).
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in
+     * the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     * <code>ephemeral0</code>.
      * </p>
      */
     private String virtualName;
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
-     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming
+     * on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
+     * <note>
+     * <p>
+     * To define a block device mapping, set the device name and exactly one of the following properties:
+     * <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     * </p>
+     * </note>
      */
     private String deviceName;
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when an instance is launched.
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * Information to attach an EBS volume to an instance at launch.
      * </p>
      */
     private Ebs ebs;
     /**
      * <p>
-     * Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of
-     * the AMI.
+     * Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI
+     * from being mapped to the specified device name at launch.
      * </p>
      * <p>
      * If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In
      * that case, Amazon EC2 Auto Scaling launches replacement instances.
-     * </p>
-     * <p>
-     * If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
      * </p>
      */
     private Boolean noDevice;
 
     /**
      * <p>
-     * The name of the virtual device (for example, <code>ephemeral0</code>).
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in
+     * the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     * <code>ephemeral0</code>.
      * </p>
      * 
      * @param virtualName
-     *        The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-     *        <p>
-     *        You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     *        The name of the instance store volume (virtual device) to attach to an instance at launch. The name must
+     *        be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     *        <code>ephemeral0</code>.
      */
 
     public void setVirtualName(String virtualName) {
@@ -87,15 +85,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the virtual device (for example, <code>ephemeral0</code>).
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in
+     * the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     * <code>ephemeral0</code>.
      * </p>
      * 
-     * @return The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-     *         <p>
-     *         You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * @return The name of the instance store volume (virtual device) to attach to an instance at launch. The name must
+     *         be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     *         <code>ephemeral0</code>.
      */
 
     public String getVirtualName() {
@@ -104,16 +101,15 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the virtual device (for example, <code>ephemeral0</code>).
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in
+     * the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     * <code>ephemeral0</code>.
      * </p>
      * 
      * @param virtualName
-     *        The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-     *        <p>
-     *        You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     *        The name of the instance store volume (virtual device) to attach to an instance at launch. The name must
+     *        be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example,
+     *        <code>ephemeral0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,16 +120,25 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
-     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming
+     * on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
+     * <note>
+     * <p>
+     * To define a block device mapping, set the device name and exactly one of the following properties:
+     * <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     * </p>
+     * </note>
      * 
      * @param deviceName
-     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
-     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     *        naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+     *        <p>
+     *        To define a block device mapping, set the device name and exactly one of the following properties:
+     *        <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     *        </p>
      */
 
     public void setDeviceName(String deviceName) {
@@ -142,15 +147,25 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
-     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming
+     * on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
+     * <note>
+     * <p>
+     * To define a block device mapping, set the device name and exactly one of the following properties:
+     * <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     * </p>
+     * </note>
      * 
-     * @return The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
-     *         Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux
+     *         instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+     *         <p>
+     *         To define a block device mapping, set the device name and exactly one of the following properties:
+     *         <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     *         </p>
      */
 
     public String getDeviceName() {
@@ -159,16 +174,25 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
-     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming
+     * on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
+     * <note>
+     * <p>
+     * To define a block device mapping, set the device name and exactly one of the following properties:
+     * <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     * </p>
+     * </note>
      * 
      * @param deviceName
-     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
-     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     *        naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+     *        <p>
+     *        To define a block device mapping, set the device name and exactly one of the following properties:
+     *        <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,16 +203,11 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when an instance is launched.
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * Information to attach an EBS volume to an instance at launch.
      * </p>
      * 
      * @param ebs
-     *        Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-     *        <p>
-     *        You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     *        Information to attach an EBS volume to an instance at launch.
      */
 
     public void setEbs(Ebs ebs) {
@@ -197,15 +216,10 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when an instance is launched.
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * Information to attach an EBS volume to an instance at launch.
      * </p>
      * 
-     * @return Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-     *         <p>
-     *         You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * @return Information to attach an EBS volume to an instance at launch.
      */
 
     public Ebs getEbs() {
@@ -214,16 +228,11 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when an instance is launched.
-     * </p>
-     * <p>
-     * You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     * Information to attach an EBS volume to an instance at launch.
      * </p>
      * 
      * @param ebs
-     *        Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-     *        <p>
-     *        You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+     *        Information to attach an EBS volume to an instance at launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,26 +243,20 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of
-     * the AMI.
+     * Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI
+     * from being mapped to the specified device name at launch.
      * </p>
      * <p>
      * If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In
      * that case, Amazon EC2 Auto Scaling launches replacement instances.
      * </p>
-     * <p>
-     * If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
-     * </p>
      * 
      * @param noDevice
-     *        Setting this value to <code>true</code> suppresses the specified device included in the block device
-     *        mapping of the AMI.</p>
+     *        Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of
+     *        the AMI from being mapped to the specified device name at launch.</p>
      *        <p>
      *        If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health
      *        check. In that case, Amazon EC2 Auto Scaling launches replacement instances.
-     *        </p>
-     *        <p>
-     *        If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
      */
 
     public void setNoDevice(Boolean noDevice) {
@@ -262,25 +265,19 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of
-     * the AMI.
+     * Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI
+     * from being mapped to the specified device name at launch.
      * </p>
      * <p>
      * If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In
      * that case, Amazon EC2 Auto Scaling launches replacement instances.
      * </p>
-     * <p>
-     * If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
-     * </p>
      * 
-     * @return Setting this value to <code>true</code> suppresses the specified device included in the block device
-     *         mapping of the AMI.</p>
+     * @return Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of
+     *         the AMI from being mapped to the specified device name at launch.</p>
      *         <p>
      *         If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health
      *         check. In that case, Amazon EC2 Auto Scaling launches replacement instances.
-     *         </p>
-     *         <p>
-     *         If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
      */
 
     public Boolean getNoDevice() {
@@ -289,26 +286,20 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of
-     * the AMI.
+     * Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI
+     * from being mapped to the specified device name at launch.
      * </p>
      * <p>
      * If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In
      * that case, Amazon EC2 Auto Scaling launches replacement instances.
      * </p>
-     * <p>
-     * If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
-     * </p>
      * 
      * @param noDevice
-     *        Setting this value to <code>true</code> suppresses the specified device included in the block device
-     *        mapping of the AMI.</p>
+     *        Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of
+     *        the AMI from being mapped to the specified device name at launch.</p>
      *        <p>
      *        If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health
      *        check. In that case, Amazon EC2 Auto Scaling launches replacement instances.
-     *        </p>
-     *        <p>
-     *        If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,25 +310,19 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of
-     * the AMI.
+     * Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI
+     * from being mapped to the specified device name at launch.
      * </p>
      * <p>
      * If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In
      * that case, Amazon EC2 Auto Scaling launches replacement instances.
      * </p>
-     * <p>
-     * If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
-     * </p>
      * 
-     * @return Setting this value to <code>true</code> suppresses the specified device included in the block device
-     *         mapping of the AMI.</p>
+     * @return Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of
+     *         the AMI from being mapped to the specified device name at launch.</p>
      *         <p>
      *         If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health
      *         check. In that case, Amazon EC2 Auto Scaling launches replacement instances.
-     *         </p>
-     *         <p>
-     *         If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
      */
 
     public Boolean isNoDevice() {

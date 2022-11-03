@@ -29,6 +29,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DriftCheckExplainability implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The drift check explainability constraints.
+     * </p>
+     */
     private MetricsSource constraints;
     /**
      * <p>
@@ -38,7 +43,12 @@ public class DriftCheckExplainability implements Serializable, Cloneable, Struct
     private FileSource configFile;
 
     /**
+     * <p>
+     * The drift check explainability constraints.
+     * </p>
+     * 
      * @param constraints
+     *        The drift check explainability constraints.
      */
 
     public void setConstraints(MetricsSource constraints) {
@@ -46,7 +56,11 @@ public class DriftCheckExplainability implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The drift check explainability constraints.
+     * </p>
+     * 
+     * @return The drift check explainability constraints.
      */
 
     public MetricsSource getConstraints() {
@@ -54,7 +68,12 @@ public class DriftCheckExplainability implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The drift check explainability constraints.
+     * </p>
+     * 
      * @param constraints
+     *        The drift check explainability constraints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

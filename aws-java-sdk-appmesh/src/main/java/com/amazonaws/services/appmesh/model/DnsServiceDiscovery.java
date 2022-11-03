@@ -36,6 +36,13 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
     private String hostname;
     /**
      * <p>
+     * The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     * overrides the IP preference set for the mesh on this specific node.
+     * </p>
+     */
+    private String ipPreference;
+    /**
+     * <p>
      * Specifies the DNS response type for the virtual node.
      * </p>
      */
@@ -78,6 +85,73 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
 
     public DnsServiceDiscovery withHostname(String hostname) {
         setHostname(hostname);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     * overrides the IP preference set for the mesh on this specific node.
+     * </p>
+     * 
+     * @param ipPreference
+     *        The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     *        overrides the IP preference set for the mesh on this specific node.
+     * @see IpPreference
+     */
+
+    public void setIpPreference(String ipPreference) {
+        this.ipPreference = ipPreference;
+    }
+
+    /**
+     * <p>
+     * The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     * overrides the IP preference set for the mesh on this specific node.
+     * </p>
+     * 
+     * @return The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     *         overrides the IP preference set for the mesh on this specific node.
+     * @see IpPreference
+     */
+
+    public String getIpPreference() {
+        return this.ipPreference;
+    }
+
+    /**
+     * <p>
+     * The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     * overrides the IP preference set for the mesh on this specific node.
+     * </p>
+     * 
+     * @param ipPreference
+     *        The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     *        overrides the IP preference set for the mesh on this specific node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpPreference
+     */
+
+    public DnsServiceDiscovery withIpPreference(String ipPreference) {
+        setIpPreference(ipPreference);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     * overrides the IP preference set for the mesh on this specific node.
+     * </p>
+     * 
+     * @param ipPreference
+     *        The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only
+     *        overrides the IP preference set for the mesh on this specific node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpPreference
+     */
+
+    public DnsServiceDiscovery withIpPreference(IpPreference ipPreference) {
+        this.ipPreference = ipPreference.toString();
         return this;
     }
 
@@ -154,6 +228,8 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getHostname() != null)
             sb.append("Hostname: ").append(getHostname()).append(",");
+        if (getIpPreference() != null)
+            sb.append("IpPreference: ").append(getIpPreference()).append(",");
         if (getResponseType() != null)
             sb.append("ResponseType: ").append(getResponseType());
         sb.append("}");
@@ -174,6 +250,10 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
             return false;
+        if (other.getIpPreference() == null ^ this.getIpPreference() == null)
+            return false;
+        if (other.getIpPreference() != null && other.getIpPreference().equals(this.getIpPreference()) == false)
+            return false;
         if (other.getResponseType() == null ^ this.getResponseType() == null)
             return false;
         if (other.getResponseType() != null && other.getResponseType().equals(this.getResponseType()) == false)
@@ -187,6 +267,7 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
+        hashCode = prime * hashCode + ((getIpPreference() == null) ? 0 : getIpPreference().hashCode());
         hashCode = prime * hashCode + ((getResponseType() == null) ? 0 : getResponseType().hashCode());
         return hashCode;
     }

@@ -98,6 +98,10 @@ public class UpdateSlotTypeResultJsonUnmarshaller implements Unmarshaller<Update
                     context.nextToken();
                     updateSlotTypeResult.setExternalSourceSetting(ExternalSourceSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("compositeSlotTypeSetting", targetDepth)) {
+                    context.nextToken();
+                    updateSlotTypeResult.setCompositeSlotTypeSetting(CompositeSlotTypeSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

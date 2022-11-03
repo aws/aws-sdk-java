@@ -41,12 +41,28 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
     private String aRN;
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<ExcludedRule> excludedRules;
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     */
+    private java.util.List<RuleActionOverride> ruleActionOverrides;
 
     /**
      * <p>
@@ -90,14 +106,20 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * 
-     * @return The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *         rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *         useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     * @return Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *         <p>
+     *         Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *         including <code>Count</code>.
+     *         </p>
      */
 
     public java.util.List<ExcludedRule> getExcludedRules() {
@@ -106,15 +128,21 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * 
      * @param excludedRules
-     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     *        Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *        <p>
+     *        Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *        including <code>Count</code>.
+     *        </p>
      */
 
     public void setExcludedRules(java.util.Collection<ExcludedRule> excludedRules) {
@@ -128,10 +156,14 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExcludedRules(java.util.Collection)} or {@link #withExcludedRules(java.util.Collection)} if you want
@@ -139,9 +171,11 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param excludedRules
-     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     *        Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *        <p>
+     *        Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *        including <code>Count</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,20 +191,144 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * 
      * @param excludedRules
-     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     *        Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *        <p>
+     *        Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *        including <code>Count</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RuleGroupReferenceStatement withExcludedRules(java.util.Collection<ExcludedRule> excludedRules) {
         setExcludedRules(excludedRules);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * 
+     * @return Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *         specify one override for each rule whose action you want to change. </p>
+     *         <p>
+     *         You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *         and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *         traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *         web traffic.
+     */
+
+    public java.util.List<RuleActionOverride> getRuleActionOverrides() {
+        return ruleActionOverrides;
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * 
+     * @param ruleActionOverrides
+     *        Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *        specify one override for each rule whose action you want to change. </p>
+     *        <p>
+     *        You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *        and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *        traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *        web traffic.
+     */
+
+    public void setRuleActionOverrides(java.util.Collection<RuleActionOverride> ruleActionOverrides) {
+        if (ruleActionOverrides == null) {
+            this.ruleActionOverrides = null;
+            return;
+        }
+
+        this.ruleActionOverrides = new java.util.ArrayList<RuleActionOverride>(ruleActionOverrides);
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuleActionOverrides(java.util.Collection)} or {@link #withRuleActionOverrides(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param ruleActionOverrides
+     *        Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *        specify one override for each rule whose action you want to change. </p>
+     *        <p>
+     *        You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *        and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *        traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *        web traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroupReferenceStatement withRuleActionOverrides(RuleActionOverride... ruleActionOverrides) {
+        if (this.ruleActionOverrides == null) {
+            setRuleActionOverrides(new java.util.ArrayList<RuleActionOverride>(ruleActionOverrides.length));
+        }
+        for (RuleActionOverride ele : ruleActionOverrides) {
+            this.ruleActionOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * 
+     * @param ruleActionOverrides
+     *        Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *        specify one override for each rule whose action you want to change. </p>
+     *        <p>
+     *        You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *        and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *        traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *        web traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroupReferenceStatement withRuleActionOverrides(java.util.Collection<RuleActionOverride> ruleActionOverrides) {
+        setRuleActionOverrides(ruleActionOverrides);
         return this;
     }
 
@@ -189,7 +347,9 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
         if (getARN() != null)
             sb.append("ARN: ").append(getARN()).append(",");
         if (getExcludedRules() != null)
-            sb.append("ExcludedRules: ").append(getExcludedRules());
+            sb.append("ExcludedRules: ").append(getExcludedRules()).append(",");
+        if (getRuleActionOverrides() != null)
+            sb.append("RuleActionOverrides: ").append(getRuleActionOverrides());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +372,10 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
             return false;
         if (other.getExcludedRules() != null && other.getExcludedRules().equals(this.getExcludedRules()) == false)
             return false;
+        if (other.getRuleActionOverrides() == null ^ this.getRuleActionOverrides() == null)
+            return false;
+        if (other.getRuleActionOverrides() != null && other.getRuleActionOverrides().equals(this.getRuleActionOverrides()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +386,7 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         hashCode = prime * hashCode + ((getExcludedRules() == null) ? 0 : getExcludedRules().hashCode());
+        hashCode = prime * hashCode + ((getRuleActionOverrides() == null) ? 0 : getRuleActionOverrides().hashCode());
         return hashCode;
     }
 

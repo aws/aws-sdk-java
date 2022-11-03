@@ -51,6 +51,8 @@ public class ModelVersionDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<StructuredPojo> TRAININGRESULTV2_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingResultV2").build();
 
     private static final ModelVersionDetailMarshaller instance = new ModelVersionDetailMarshaller();
 
@@ -80,6 +82,7 @@ public class ModelVersionDetailMarshaller {
             protocolMarshaller.marshall(modelVersionDetail.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(modelVersionDetail.getTrainingResultV2(), TRAININGRESULTV2_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

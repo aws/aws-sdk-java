@@ -32,8 +32,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative
-     * Name (SAN), however, can be up to 253 octets in length.
+     * In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain
+     * name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To
+     * add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets
+     * in length.
      * </p>
      */
     private String domainName;
@@ -113,8 +115,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
-     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -135,8 +137,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative
-     * Name (SAN), however, can be up to 253 octets in length.
+     * In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain
+     * name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To
+     * add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets
+     * in length.
      * </p>
      * 
      * @param domainName
@@ -145,8 +149,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      *        </p>
      *        <p>
-     *        The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject
-     *        Alternative Name (SAN), however, can be up to 253 octets in length.
+     *        In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the
+     *        domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters),
+     *        including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which
+     *        supports names up to 253 octets in length.
      */
 
     public void setDomainName(String domainName) {
@@ -160,8 +166,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative
-     * Name (SAN), however, can be up to 253 octets in length.
+     * In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain
+     * name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To
+     * add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets
+     * in length.
      * </p>
      * 
      * @return Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM
@@ -169,8 +177,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *         domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      *         </p>
      *         <p>
-     *         The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject
-     *         Alternative Name (SAN), however, can be up to 253 octets in length.
+     *         In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     *         the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters),
+     *         including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which
+     *         supports names up to 253 octets in length.
      */
 
     public String getDomainName() {
@@ -184,8 +194,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative
-     * Name (SAN), however, can be up to 253 octets in length.
+     * In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain
+     * name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To
+     * add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets
+     * in length.
      * </p>
      * 
      * @param domainName
@@ -194,8 +206,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      *        </p>
      *        <p>
-     *        The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject
-     *        Alternative Name (SAN), however, can be up to 253 octets in length.
+     *        In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the
+     *        domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters),
+     *        including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which
+     *        supports names up to 253 octets in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -798,8 +812,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
-     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -809,9 +823,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *        attempt to issue a public certificate. For more information about private CAs, see the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services
-     *        Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
-     *        form: </p>
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     *        Certificate Authority</a> user guide. The ARN must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      */
@@ -825,8 +838,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
-     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -835,9 +848,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *         certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *         attempt to issue a public certificate. For more information about private CAs, see the <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services
-     *         Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
-     *         form: </p>
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     *         Certificate Authority</a> user guide. The ARN must have the following form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      */
@@ -851,8 +863,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
-     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -862,9 +874,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *        attempt to issue a public certificate. For more information about private CAs, see the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services
-     *        Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
-     *        form: </p>
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     *        Certificate Authority</a> user guide. The ARN must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be chained together.

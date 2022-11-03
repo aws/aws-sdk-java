@@ -42,6 +42,12 @@ public class CompositeModelProperty implements Serializable, Cloneable, Structur
     private String type;
 
     private Property assetProperty;
+    /**
+     * <p>
+     * The ID of the composite model that contains the property.
+     * </p>
+     */
+    private String id;
 
     /**
      * <p>
@@ -150,6 +156,46 @@ public class CompositeModelProperty implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The ID of the composite model that contains the property.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the composite model that contains the property.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID of the composite model that contains the property.
+     * </p>
+     * 
+     * @return The ID of the composite model that contains the property.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of the composite model that contains the property.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the composite model that contains the property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CompositeModelProperty withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +212,9 @@ public class CompositeModelProperty implements Serializable, Cloneable, Structur
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getAssetProperty() != null)
-            sb.append("AssetProperty: ").append(getAssetProperty());
+            sb.append("AssetProperty: ").append(getAssetProperty()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }
@@ -193,6 +241,10 @@ public class CompositeModelProperty implements Serializable, Cloneable, Structur
             return false;
         if (other.getAssetProperty() != null && other.getAssetProperty().equals(this.getAssetProperty()) == false)
             return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
         return true;
     }
 
@@ -204,6 +256,7 @@ public class CompositeModelProperty implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAssetProperty() == null) ? 0 : getAssetProperty().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 

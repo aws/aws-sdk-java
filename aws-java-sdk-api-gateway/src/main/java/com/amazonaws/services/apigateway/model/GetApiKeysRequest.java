@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to get information about the current <a>ApiKeys</a> resource.
+ * A request to get information about the current ApiKeys resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -72,9 +72,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * login.
      * </p>
-     * </li>
+     * <p>
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned
+     * in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by
+     * your user pool and that your app client can write. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     * >RespondToAuthChallenge</a>.
+     * </p>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
@@ -165,9 +179,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * login.
      * </p>
-     * </li>
+     * <p>
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned
+     * in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by
+     * your user pool and that your app client can write. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     * >RespondToAuthChallenge</a>.
+     * </p>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
@@ -228,10 +256,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
-     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
-     *        attributes.
+     *        first login.
      *        </p>
-     *        </li>
+     *        <p>
+     *        Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that
+     *        aren't required by your user pool and that your app client can write. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     *        >RespondToAuthChallenge</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *        already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *        API operation to modify the value of any additional attributes.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
@@ -299,9 +340,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * login.
      * </p>
-     * </li>
+     * <p>
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned
+     * in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by
+     * your user pool and that your app client can write. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     * >RespondToAuthChallenge</a>.
+     * </p>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
@@ -361,10 +416,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *         <li>
      *         <p>
      *         <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
-     *         first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
-     *         attributes.
+     *         first login.
      *         </p>
-     *         </li>
+     *         <p>
+     *         Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     *         returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that
+     *         aren't required by your user pool and that your app client can write. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     *         >RespondToAuthChallenge</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *         already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *         returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *         API operation to modify the value of any additional attributes.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The
@@ -432,9 +500,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * login.
      * </p>
-     * </li>
+     * <p>
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned
+     * in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by
+     * your user pool and that your app client can write. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     * >RespondToAuthChallenge</a>.
+     * </p>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
@@ -495,10 +577,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
-     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
-     *        attributes.
+     *        first login.
      *        </p>
-     *        </li>
+     *        <p>
+     *        Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that
+     *        aren't required by your user pool and that your app client can write. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     *        >RespondToAuthChallenge</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *        already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *        API operation to modify the value of any additional attributes.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
@@ -568,9 +663,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * login.
      * </p>
-     * </li>
+     * <p>
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned
+     * in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by
+     * your user pool and that your app client can write. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     * >RespondToAuthChallenge</a>.
+     * </p>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
@@ -631,10 +740,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
-     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
-     *        attributes.
+     *        first login.
      *        </p>
-     *        </li>
+     *        <p>
+     *        Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that
+     *        aren't required by your user pool and that your app client can write. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     *        >RespondToAuthChallenge</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *        already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *        API operation to modify the value of any additional attributes.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
@@ -702,9 +824,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * login.
      * </p>
-     * </li>
+     * <p>
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned
+     * in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by
+     * your user pool and that your app client can write. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     * >RespondToAuthChallenge</a>.
+     * </p>
+     * <note>
+     * <p>
+     * In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already
+     * has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify
+     * the value of any additional attributes.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
@@ -765,10 +901,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
-     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
-     *        attributes.
+     *        first login.
      *        </p>
-     *        </li>
+     *        <p>
+     *        Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that
+     *        aren't required by your user pool and that your app client can write. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+     *        >RespondToAuthChallenge</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that
+     *        already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito
+     *        returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code>
+     *        API operation to modify the value of any additional attributes.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA

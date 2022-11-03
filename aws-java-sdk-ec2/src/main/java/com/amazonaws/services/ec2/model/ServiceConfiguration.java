@@ -84,6 +84,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> gatewayLoadBalancerArns;
     /**
      * <p>
+     * The supported IP address types.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedIpAddressTypes;
+    /**
+     * <p>
      * The DNS names for the service.
      * </p>
      */
@@ -666,6 +672,108 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @return The supported IP address types.
+     * @see ServiceConnectivityType
+     */
+
+    public java.util.List<String> getSupportedIpAddressTypes() {
+        if (supportedIpAddressTypes == null) {
+            supportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedIpAddressTypes;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @see ServiceConnectivityType
+     */
+
+    public void setSupportedIpAddressTypes(java.util.Collection<String> supportedIpAddressTypes) {
+        if (supportedIpAddressTypes == null) {
+            this.supportedIpAddressTypes = null;
+            return;
+        }
+
+        this.supportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedIpAddressTypes);
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedIpAddressTypes(java.util.Collection)} or
+     * {@link #withSupportedIpAddressTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceConnectivityType
+     */
+
+    public ServiceConfiguration withSupportedIpAddressTypes(String... supportedIpAddressTypes) {
+        if (this.supportedIpAddressTypes == null) {
+            setSupportedIpAddressTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedIpAddressTypes.length));
+        }
+        for (String ele : supportedIpAddressTypes) {
+            this.supportedIpAddressTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceConnectivityType
+     */
+
+    public ServiceConfiguration withSupportedIpAddressTypes(java.util.Collection<String> supportedIpAddressTypes) {
+        setSupportedIpAddressTypes(supportedIpAddressTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceConnectivityType
+     */
+
+    public ServiceConfiguration withSupportedIpAddressTypes(ServiceConnectivityType... supportedIpAddressTypes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedIpAddressTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                supportedIpAddressTypes.length);
+        for (ServiceConnectivityType value : supportedIpAddressTypes) {
+            supportedIpAddressTypesCopy.add(value.toString());
+        }
+        if (getSupportedIpAddressTypes() == null) {
+            setSupportedIpAddressTypes(supportedIpAddressTypesCopy);
+        } else {
+            getSupportedIpAddressTypes().addAll(supportedIpAddressTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The DNS names for the service.
      * </p>
      * 
@@ -979,6 +1087,8 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
         if (getGatewayLoadBalancerArns() != null)
             sb.append("GatewayLoadBalancerArns: ").append(getGatewayLoadBalancerArns()).append(",");
+        if (getSupportedIpAddressTypes() != null)
+            sb.append("SupportedIpAddressTypes: ").append(getSupportedIpAddressTypes()).append(",");
         if (getBaseEndpointDnsNames() != null)
             sb.append("BaseEndpointDnsNames: ").append(getBaseEndpointDnsNames()).append(",");
         if (getPrivateDnsName() != null)
@@ -1039,6 +1149,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getGatewayLoadBalancerArns() != null && other.getGatewayLoadBalancerArns().equals(this.getGatewayLoadBalancerArns()) == false)
             return false;
+        if (other.getSupportedIpAddressTypes() == null ^ this.getSupportedIpAddressTypes() == null)
+            return false;
+        if (other.getSupportedIpAddressTypes() != null && other.getSupportedIpAddressTypes().equals(this.getSupportedIpAddressTypes()) == false)
+            return false;
         if (other.getBaseEndpointDnsNames() == null ^ this.getBaseEndpointDnsNames() == null)
             return false;
         if (other.getBaseEndpointDnsNames() != null && other.getBaseEndpointDnsNames().equals(this.getBaseEndpointDnsNames()) == false)
@@ -1076,6 +1190,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getGatewayLoadBalancerArns() == null) ? 0 : getGatewayLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getSupportedIpAddressTypes() == null) ? 0 : getSupportedIpAddressTypes().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsNameConfiguration() == null) ? 0 : getPrivateDnsNameConfiguration().hashCode());

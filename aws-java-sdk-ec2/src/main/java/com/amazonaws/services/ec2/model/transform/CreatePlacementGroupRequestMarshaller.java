@@ -87,6 +87,10 @@ public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request
             }
         }
 
+        if (createPlacementGroupRequest.getSpreadLevel() != null) {
+            request.addParameter("SpreadLevel", StringUtils.fromString(createPlacementGroupRequest.getSpreadLevel()));
+        }
+
         return request;
     }
 

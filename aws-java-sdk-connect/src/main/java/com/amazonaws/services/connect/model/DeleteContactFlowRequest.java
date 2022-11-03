@@ -33,7 +33,7 @@ public class DeleteContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
     private String instanceId;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
@@ -80,11 +80,11 @@ public class DeleteContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -93,10 +93,10 @@ public class DeleteContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -105,11 +105,11 @@ public class DeleteContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

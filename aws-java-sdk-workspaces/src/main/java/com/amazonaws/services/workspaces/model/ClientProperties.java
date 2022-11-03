@@ -35,6 +35,14 @@ public class ClientProperties implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String reconnectEnabled;
+    /**
+     * <p>
+     * Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to
+     * troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces
+     * automatically and will be applied to all users in the specified directory.
+     * </p>
+     */
+    private String logUploadEnabled;
 
     /**
      * <p>
@@ -104,6 +112,81 @@ public class ClientProperties implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to
+     * troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces
+     * automatically and will be applied to all users in the specified directory.
+     * </p>
+     * 
+     * @param logUploadEnabled
+     *        Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces
+     *        to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to
+     *        WorkSpaces automatically and will be applied to all users in the specified directory.
+     * @see LogUploadEnum
+     */
+
+    public void setLogUploadEnabled(String logUploadEnabled) {
+        this.logUploadEnabled = logUploadEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to
+     * troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces
+     * automatically and will be applied to all users in the specified directory.
+     * </p>
+     * 
+     * @return Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to
+     *         WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be
+     *         sent to WorkSpaces automatically and will be applied to all users in the specified directory.
+     * @see LogUploadEnum
+     */
+
+    public String getLogUploadEnabled() {
+        return this.logUploadEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to
+     * troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces
+     * automatically and will be applied to all users in the specified directory.
+     * </p>
+     * 
+     * @param logUploadEnabled
+     *        Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces
+     *        to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to
+     *        WorkSpaces automatically and will be applied to all users in the specified directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogUploadEnum
+     */
+
+    public ClientProperties withLogUploadEnabled(String logUploadEnabled) {
+        setLogUploadEnabled(logUploadEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to
+     * troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces
+     * automatically and will be applied to all users in the specified directory.
+     * </p>
+     * 
+     * @param logUploadEnabled
+     *        Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces
+     *        to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to
+     *        WorkSpaces automatically and will be applied to all users in the specified directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogUploadEnum
+     */
+
+    public ClientProperties withLogUploadEnabled(LogUploadEnum logUploadEnabled) {
+        this.logUploadEnabled = logUploadEnabled.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -116,7 +199,9 @@ public class ClientProperties implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReconnectEnabled() != null)
-            sb.append("ReconnectEnabled: ").append(getReconnectEnabled());
+            sb.append("ReconnectEnabled: ").append(getReconnectEnabled()).append(",");
+        if (getLogUploadEnabled() != null)
+            sb.append("LogUploadEnabled: ").append(getLogUploadEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +220,10 @@ public class ClientProperties implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getReconnectEnabled() != null && other.getReconnectEnabled().equals(this.getReconnectEnabled()) == false)
             return false;
+        if (other.getLogUploadEnabled() == null ^ this.getLogUploadEnabled() == null)
+            return false;
+        if (other.getLogUploadEnabled() != null && other.getLogUploadEnabled().equals(this.getLogUploadEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +233,7 @@ public class ClientProperties implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getReconnectEnabled() == null) ? 0 : getReconnectEnabled().hashCode());
+        hashCode = prime * hashCode + ((getLogUploadEnabled() == null) ? 0 : getLogUploadEnabled().hashCode());
         return hashCode;
     }
 

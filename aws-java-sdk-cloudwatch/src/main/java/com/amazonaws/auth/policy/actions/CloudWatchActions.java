@@ -67,6 +67,8 @@ public enum CloudWatchActions implements Action {
     GetMetricWidgetImage("cloudwatch:GetMetricWidgetImage"),
     /** Action for the ListDashboards operation. */
     ListDashboards("cloudwatch:ListDashboards"),
+    /** Action for the ListManagedInsightRules operation. */
+    ListManagedInsightRules("cloudwatch:ListManagedInsightRules"),
     /** Action for the ListMetricStreams operation. */
     ListMetricStreams("cloudwatch:ListMetricStreams"),
     /** Action for the ListMetrics operation. */
@@ -81,6 +83,8 @@ public enum CloudWatchActions implements Action {
     PutDashboard("cloudwatch:PutDashboard"),
     /** Action for the PutInsightRule operation. */
     PutInsightRule("cloudwatch:PutInsightRule"),
+    /** Action for the PutManagedInsightRules operation. */
+    PutManagedInsightRules("cloudwatch:PutManagedInsightRules"),
     /** Action for the PutMetricAlarm operation. */
     PutMetricAlarm("cloudwatch:PutMetricAlarm"),
     /** Action for the PutMetricData operation. */

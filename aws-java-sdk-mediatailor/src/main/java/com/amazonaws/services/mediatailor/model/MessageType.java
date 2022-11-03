@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MessageType {
 
-    SPLICE_INSERT("SPLICE_INSERT");
+    SPLICE_INSERT("SPLICE_INSERT"),
+    TIME_SIGNAL("TIME_SIGNAL");
 
     private String value;
 

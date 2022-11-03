@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateAccountSettingsRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> DELETEPIPELINEPROVISIONINGREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deletePipelineProvisioningRepository").build();
     private static final MarshallingInfo<StructuredPojo> PIPELINEPROVISIONINGREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineProvisioningRepository").build();
     private static final MarshallingInfo<String> PIPELINESERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class UpdateAccountSettingsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateAccountSettingsRequest.getDeletePipelineProvisioningRepository(), DELETEPIPELINEPROVISIONINGREPOSITORY_BINDING);
             protocolMarshaller.marshall(updateAccountSettingsRequest.getPipelineProvisioningRepository(), PIPELINEPROVISIONINGREPOSITORY_BINDING);
             protocolMarshaller.marshall(updateAccountSettingsRequest.getPipelineServiceRoleArn(), PIPELINESERVICEROLEARN_BINDING);
         } catch (Exception e) {

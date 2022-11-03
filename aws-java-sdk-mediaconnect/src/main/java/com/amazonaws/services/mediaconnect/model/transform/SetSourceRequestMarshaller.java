@@ -54,6 +54,10 @@ public class SetSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("senderControlPort").build();
     private static final MarshallingInfo<String> SENDERIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("senderIpAddress").build();
+    private static final MarshallingInfo<String> SOURCELISTENERADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceListenerAddress").build();
+    private static final MarshallingInfo<Integer> SOURCELISTENERPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceListenerPort").build();
     private static final MarshallingInfo<String> STREAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("streamId").build();
     private static final MarshallingInfo<String> VPCINTERFACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -90,6 +94,8 @@ public class SetSourceRequestMarshaller {
             protocolMarshaller.marshall(setSourceRequest.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getSenderControlPort(), SENDERCONTROLPORT_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getSenderIpAddress(), SENDERIPADDRESS_BINDING);
+            protocolMarshaller.marshall(setSourceRequest.getSourceListenerAddress(), SOURCELISTENERADDRESS_BINDING);
+            protocolMarshaller.marshall(setSourceRequest.getSourceListenerPort(), SOURCELISTENERPORT_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getStreamId(), STREAMID_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getVpcInterfaceName(), VPCINTERFACENAME_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getWhitelistCidr(), WHITELISTCIDR_BINDING);

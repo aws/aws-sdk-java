@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a summary of a <a>Method</a> resource, given a particular date and time.
+ * Represents a summary of a Method resource, given a particular date and time.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,7 +35,7 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
     private String authorizationType;
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * Specifies whether the method requires a valid ApiKey.
      * </p>
      */
     private Boolean apiKeyRequired;
@@ -94,11 +94,11 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * Specifies whether the method requires a valid ApiKey.
      * </p>
      * 
      * @param apiKeyRequired
-     *        Specifies whether the method requires a valid <a>ApiKey</a>.
+     *        Specifies whether the method requires a valid ApiKey.
      */
 
     public void setApiKeyRequired(Boolean apiKeyRequired) {
@@ -107,10 +107,10 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * Specifies whether the method requires a valid ApiKey.
      * </p>
      * 
-     * @return Specifies whether the method requires a valid <a>ApiKey</a>.
+     * @return Specifies whether the method requires a valid ApiKey.
      */
 
     public Boolean getApiKeyRequired() {
@@ -119,11 +119,11 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * Specifies whether the method requires a valid ApiKey.
      * </p>
      * 
      * @param apiKeyRequired
-     *        Specifies whether the method requires a valid <a>ApiKey</a>.
+     *        Specifies whether the method requires a valid ApiKey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,10 +134,10 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * Specifies whether the method requires a valid ApiKey.
      * </p>
      * 
-     * @return Specifies whether the method requires a valid <a>ApiKey</a>.
+     * @return Specifies whether the method requires a valid ApiKey.
      */
 
     public Boolean isApiKeyRequired() {

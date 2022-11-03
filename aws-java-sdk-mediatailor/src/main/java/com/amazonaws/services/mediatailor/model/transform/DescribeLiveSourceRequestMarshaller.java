@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeLiveSourceRequestMarshaller {
 
     private static final MarshallingInfo<String> LIVESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("liveSourceName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("LiveSourceName").build();
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sourceLocationName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("SourceLocationName").build();
 
     private static final DescribeLiveSourceRequestMarshaller instance = new DescribeLiveSourceRequestMarshaller();
 

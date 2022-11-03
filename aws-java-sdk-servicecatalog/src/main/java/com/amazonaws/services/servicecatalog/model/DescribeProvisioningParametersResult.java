@@ -51,7 +51,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
     private java.util.List<TagOptionSummary> tagOptions;
     /**
      * <p>
-     * An object that contains information about preferences, such as regions and accounts, for the provisioning
+     * An object that contains information about preferences, such as Regions and accounts, for the provisioning
      * artifact.
      * </p>
      */
@@ -362,12 +362,12 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An object that contains information about preferences, such as regions and accounts, for the provisioning
+     * An object that contains information about preferences, such as Regions and accounts, for the provisioning
      * artifact.
      * </p>
      * 
      * @param provisioningArtifactPreferences
-     *        An object that contains information about preferences, such as regions and accounts, for the provisioning
+     *        An object that contains information about preferences, such as Regions and accounts, for the provisioning
      *        artifact.
      */
 
@@ -377,11 +377,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An object that contains information about preferences, such as regions and accounts, for the provisioning
+     * An object that contains information about preferences, such as Regions and accounts, for the provisioning
      * artifact.
      * </p>
      * 
-     * @return An object that contains information about preferences, such as regions and accounts, for the provisioning
+     * @return An object that contains information about preferences, such as Regions and accounts, for the provisioning
      *         artifact.
      */
 
@@ -391,12 +391,12 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An object that contains information about preferences, such as regions and accounts, for the provisioning
+     * An object that contains information about preferences, such as Regions and accounts, for the provisioning
      * artifact.
      * </p>
      * 
      * @param provisioningArtifactPreferences
-     *        An object that contains information about preferences, such as regions and accounts, for the provisioning
+     *        An object that contains information about preferences, such as Regions and accounts, for the provisioning
      *        artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

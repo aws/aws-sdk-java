@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * SidewalkEventNotificationConfigurations object Event configuration object for Sidewalk related event topics.
+ * <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for
+ * Sidewalk-related event topics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkEventNotificationConfigurations"
@@ -30,18 +31,18 @@ public class SidewalkEventNotificationConfigurations implements Serializable, Cl
 
     /**
      * <p>
-     * Enum to denote whether amazon id event topic is enabled or disabled.
+     * Denotes whether the Amazon ID event topic is enabled or disabled.
      * </p>
      */
     private String amazonIdEventTopic;
 
     /**
      * <p>
-     * Enum to denote whether amazon id event topic is enabled or disabled.
+     * Denotes whether the Amazon ID event topic is enabled or disabled.
      * </p>
      * 
      * @param amazonIdEventTopic
-     *        Enum to denote whether amazon id event topic is enabled or disabled.
+     *        Denotes whether the Amazon ID event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -51,10 +52,10 @@ public class SidewalkEventNotificationConfigurations implements Serializable, Cl
 
     /**
      * <p>
-     * Enum to denote whether amazon id event topic is enabled or disabled.
+     * Denotes whether the Amazon ID event topic is enabled or disabled.
      * </p>
      * 
-     * @return Enum to denote whether amazon id event topic is enabled or disabled.
+     * @return Denotes whether the Amazon ID event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -64,11 +65,11 @@ public class SidewalkEventNotificationConfigurations implements Serializable, Cl
 
     /**
      * <p>
-     * Enum to denote whether amazon id event topic is enabled or disabled.
+     * Denotes whether the Amazon ID event topic is enabled or disabled.
      * </p>
      * 
      * @param amazonIdEventTopic
-     *        Enum to denote whether amazon id event topic is enabled or disabled.
+     *        Denotes whether the Amazon ID event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */
@@ -80,11 +81,11 @@ public class SidewalkEventNotificationConfigurations implements Serializable, Cl
 
     /**
      * <p>
-     * Enum to denote whether amazon id event topic is enabled or disabled.
+     * Denotes whether the Amazon ID event topic is enabled or disabled.
      * </p>
      * 
      * @param amazonIdEventTopic
-     *        Enum to denote whether amazon id event topic is enabled or disabled.
+     *        Denotes whether the Amazon ID event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */

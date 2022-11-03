@@ -41,8 +41,11 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     private String diskImageFormat;
     /**
      * <p>
-     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list
+     * (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      */
     private String s3Bucket;
@@ -212,13 +215,19 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list
+     * (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param s3Bucket
-     *        The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and
-     *        READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     *        The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access
+     *        control list (ACL) attached that specifies the Region-specific canonical account ID for the
+     *        <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a
+     *        href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     *        >Prerequisites</a> in the VM Import/Export User Guide.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -227,12 +236,18 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list
+     * (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * 
-     * @return The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and
-     *         READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     * @return The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access
+     *         control list (ACL) attached that specifies the Region-specific canonical account ID for the
+     *         <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a
+     *         href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     *         >Prerequisites</a> in the VM Import/Export User Guide.
      */
 
     public String getS3Bucket() {
@@ -241,13 +256,19 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list
+     * (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param s3Bucket
-     *        The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and
-     *        READ_ACP permissions to the Amazon Web Services account <code>vm-import-export@amazon.com</code>.
+     *        The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access
+     *        control list (ACL) attached that specifies the Region-specific canonical account ID for the
+     *        <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a
+     *        href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites"
+     *        >Prerequisites</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

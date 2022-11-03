@@ -28,10 +28,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      */
     private String resourceArn;
@@ -61,18 +61,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *        <code>ListRepositoryAssociations</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *        >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *        >ListRepositoryAssociations</a>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -82,17 +82,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *         <code>ListRepositoryAssociations</code> </a>.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *         >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *         >ListRepositoryAssociations</a>.
      */
 
     public String getResourceArn() {
@@ -102,18 +102,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *        <code>ListRepositoryAssociations</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *        >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *        >ListRepositoryAssociations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +144,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @return An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *         two parts: </p>
+     *         two parts:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -188,7 +188,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param tags
      *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *        two parts: </p>
+     *        two parts:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -232,7 +232,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param tags
      *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *        two parts: </p>
+     *        two parts:</p>
      *        <ul>
      *        <li>
      *        <p>

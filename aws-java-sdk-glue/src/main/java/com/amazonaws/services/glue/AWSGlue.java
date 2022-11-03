@@ -401,7 +401,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Cancels the statement..
+     * Cancels the statement.
      * </p>
      * 
      * @param cancelStatementRequest
@@ -2954,6 +2954,51 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date
+     * of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned.
+     * </p>
+     * <p>
+     * You may use this API to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Retrive all the crawls of a specified crawler.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Retrieve all the crawls of a specified crawler within a limited count.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Retrieve all the crawls of a specified crawler in a specific time range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listCrawlsRequest
+     * @return Result of the ListCrawls operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.ListCrawls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawls" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListCrawlsResult listCrawls(ListCrawlsRequest listCrawlsRequest);
+
+    /**
+     * <p>
      * Lists all the custom patterns that have been created.
      * </p>
      * 
@@ -3122,7 +3167,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieve a session..
+     * Retrieve a list of sessions.
      * </p>
      * 
      * @param listSessionsRequest
@@ -3503,6 +3548,7 @@ public interface AWSGlue {
      * @throws EntityNotFoundException
      *         A specified entity does not exist
      * @throws IllegalBlueprintStateException
+     *         The blueprint is in an invalid state to perform a requested operation.
      * @sample AWSGlue.StartBlueprintRun
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun" target="_top">AWS API
      *      Documentation</a>
@@ -3950,6 +3996,7 @@ public interface AWSGlue {
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws IllegalBlueprintStateException
+     *         The blueprint is in an invalid state to perform a requested operation.
      * @sample AWSGlue.UpdateBlueprint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint" target="_top">AWS API
      *      Documentation</a>
@@ -4150,7 +4197,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Updates an existing job definition.
+     * Updates an existing job definition. The previous job definition is completely overwritten by this information.
      * </p>
      * 
      * @param updateJobRequest
@@ -4170,6 +4217,37 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     UpdateJobResult updateJob(UpdateJobRequest updateJobRequest);
+
+    /**
+     * <p>
+     * Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in
+     * the remote repository and updates the Glue internal stores with these artifacts.
+     * </p>
+     * <p>
+     * This API supports optional parameters which take in the repository information.
+     * </p>
+     * 
+     * @param updateJobFromSourceControlRequest
+     * @return Result of the UpdateJobFromSourceControl operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws ValidationException
+     *         A value could not be validated.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.UpdateJobFromSourceControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJobFromSourceControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateJobFromSourceControlResult updateJobFromSourceControl(UpdateJobFromSourceControlRequest updateJobFromSourceControlRequest);
 
     /**
      * <p>
@@ -4282,6 +4360,37 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     UpdateSchemaResult updateSchema(UpdateSchemaRequest updateSchemaRequest);
+
+    /**
+     * <p>
+     * Synchronizes a job to the source control repository. This operation takes the job artifacts from the Glue
+     * internal stores and makes a commit to the remote repository that is configured on the job.
+     * </p>
+     * <p>
+     * This API supports optional parameters which take in the repository information.
+     * </p>
+     * 
+     * @param updateSourceControlFromJobRequest
+     * @return Result of the UpdateSourceControlFromJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws ValidationException
+     *         A value could not be validated.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.UpdateSourceControlFromJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSourceControlFromJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSourceControlFromJobResult updateSourceControlFromJob(UpdateSourceControlFromJobRequest updateSourceControlFromJobRequest);
 
     /**
      * <p>

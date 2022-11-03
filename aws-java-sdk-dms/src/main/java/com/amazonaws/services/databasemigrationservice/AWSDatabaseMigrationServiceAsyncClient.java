@@ -438,6 +438,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFleetAdvisorCollectorResult> createFleetAdvisorCollectorAsync(CreateFleetAdvisorCollectorRequest request) {
+
+        return createFleetAdvisorCollectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFleetAdvisorCollectorResult> createFleetAdvisorCollectorAsync(final CreateFleetAdvisorCollectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFleetAdvisorCollectorRequest, CreateFleetAdvisorCollectorResult> asyncHandler) {
+        final CreateFleetAdvisorCollectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFleetAdvisorCollectorResult>() {
+            @Override
+            public CreateFleetAdvisorCollectorResult call() throws Exception {
+                CreateFleetAdvisorCollectorResult result = null;
+
+                try {
+                    result = executeCreateFleetAdvisorCollector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationInstanceResult> createReplicationInstanceAsync(CreateReplicationInstanceRequest request) {
 
         return createReplicationInstanceAsync(request, null);
@@ -653,6 +686,72 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeDeleteEventSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorCollectorResult> deleteFleetAdvisorCollectorAsync(DeleteFleetAdvisorCollectorRequest request) {
+
+        return deleteFleetAdvisorCollectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorCollectorResult> deleteFleetAdvisorCollectorAsync(final DeleteFleetAdvisorCollectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorCollectorRequest, DeleteFleetAdvisorCollectorResult> asyncHandler) {
+        final DeleteFleetAdvisorCollectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFleetAdvisorCollectorResult>() {
+            @Override
+            public DeleteFleetAdvisorCollectorResult call() throws Exception {
+                DeleteFleetAdvisorCollectorResult result = null;
+
+                try {
+                    result = executeDeleteFleetAdvisorCollector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(DeleteFleetAdvisorDatabasesRequest request) {
+
+        return deleteFleetAdvisorDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(final DeleteFleetAdvisorDatabasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorDatabasesRequest, DeleteFleetAdvisorDatabasesResult> asyncHandler) {
+        final DeleteFleetAdvisorDatabasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFleetAdvisorDatabasesResult>() {
+            @Override
+            public DeleteFleetAdvisorDatabasesResult call() throws Exception {
+                DeleteFleetAdvisorDatabasesResult result = null;
+
+                try {
+                    result = executeDeleteFleetAdvisorDatabases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1119,6 +1218,177 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeDescribeEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorCollectorsResult> describeFleetAdvisorCollectorsAsync(DescribeFleetAdvisorCollectorsRequest request) {
+
+        return describeFleetAdvisorCollectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorCollectorsResult> describeFleetAdvisorCollectorsAsync(
+            final DescribeFleetAdvisorCollectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorCollectorsRequest, DescribeFleetAdvisorCollectorsResult> asyncHandler) {
+        final DescribeFleetAdvisorCollectorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFleetAdvisorCollectorsResult>() {
+            @Override
+            public DescribeFleetAdvisorCollectorsResult call() throws Exception {
+                DescribeFleetAdvisorCollectorsResult result = null;
+
+                try {
+                    result = executeDescribeFleetAdvisorCollectors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorDatabasesResult> describeFleetAdvisorDatabasesAsync(DescribeFleetAdvisorDatabasesRequest request) {
+
+        return describeFleetAdvisorDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorDatabasesResult> describeFleetAdvisorDatabasesAsync(
+            final DescribeFleetAdvisorDatabasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorDatabasesRequest, DescribeFleetAdvisorDatabasesResult> asyncHandler) {
+        final DescribeFleetAdvisorDatabasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFleetAdvisorDatabasesResult>() {
+            @Override
+            public DescribeFleetAdvisorDatabasesResult call() throws Exception {
+                DescribeFleetAdvisorDatabasesResult result = null;
+
+                try {
+                    result = executeDescribeFleetAdvisorDatabases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorLsaAnalysisResult> describeFleetAdvisorLsaAnalysisAsync(
+            DescribeFleetAdvisorLsaAnalysisRequest request) {
+
+        return describeFleetAdvisorLsaAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorLsaAnalysisResult> describeFleetAdvisorLsaAnalysisAsync(
+            final DescribeFleetAdvisorLsaAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorLsaAnalysisRequest, DescribeFleetAdvisorLsaAnalysisResult> asyncHandler) {
+        final DescribeFleetAdvisorLsaAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFleetAdvisorLsaAnalysisResult>() {
+            @Override
+            public DescribeFleetAdvisorLsaAnalysisResult call() throws Exception {
+                DescribeFleetAdvisorLsaAnalysisResult result = null;
+
+                try {
+                    result = executeDescribeFleetAdvisorLsaAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemaObjectSummaryResult> describeFleetAdvisorSchemaObjectSummaryAsync(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest request) {
+
+        return describeFleetAdvisorSchemaObjectSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemaObjectSummaryResult> describeFleetAdvisorSchemaObjectSummaryAsync(
+            final DescribeFleetAdvisorSchemaObjectSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorSchemaObjectSummaryRequest, DescribeFleetAdvisorSchemaObjectSummaryResult> asyncHandler) {
+        final DescribeFleetAdvisorSchemaObjectSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFleetAdvisorSchemaObjectSummaryResult>() {
+            @Override
+            public DescribeFleetAdvisorSchemaObjectSummaryResult call() throws Exception {
+                DescribeFleetAdvisorSchemaObjectSummaryResult result = null;
+
+                try {
+                    result = executeDescribeFleetAdvisorSchemaObjectSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemasResult> describeFleetAdvisorSchemasAsync(DescribeFleetAdvisorSchemasRequest request) {
+
+        return describeFleetAdvisorSchemasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetAdvisorSchemasResult> describeFleetAdvisorSchemasAsync(final DescribeFleetAdvisorSchemasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFleetAdvisorSchemasRequest, DescribeFleetAdvisorSchemasResult> asyncHandler) {
+        final DescribeFleetAdvisorSchemasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFleetAdvisorSchemasResult>() {
+            @Override
+            public DescribeFleetAdvisorSchemasResult call() throws Exception {
+                DescribeFleetAdvisorSchemasResult result = null;
+
+                try {
+                    result = executeDescribeFleetAdvisorSchemas(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1941,6 +2211,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<RunFleetAdvisorLsaAnalysisResult> runFleetAdvisorLsaAnalysisAsync(RunFleetAdvisorLsaAnalysisRequest request) {
+
+        return runFleetAdvisorLsaAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RunFleetAdvisorLsaAnalysisResult> runFleetAdvisorLsaAnalysisAsync(final RunFleetAdvisorLsaAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RunFleetAdvisorLsaAnalysisRequest, RunFleetAdvisorLsaAnalysisResult> asyncHandler) {
+        final RunFleetAdvisorLsaAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RunFleetAdvisorLsaAnalysisResult>() {
+            @Override
+            public RunFleetAdvisorLsaAnalysisResult call() throws Exception {
+                RunFleetAdvisorLsaAnalysisResult result = null;
+
+                try {
+                    result = executeRunFleetAdvisorLsaAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartReplicationTaskResult> startReplicationTaskAsync(StartReplicationTaskRequest request) {
 
         return startReplicationTaskAsync(request, null);
@@ -2093,6 +2396,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeTestConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSubscriptionsToEventBridgeResult> updateSubscriptionsToEventBridgeAsync(
+            UpdateSubscriptionsToEventBridgeRequest request) {
+
+        return updateSubscriptionsToEventBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSubscriptionsToEventBridgeResult> updateSubscriptionsToEventBridgeAsync(
+            final UpdateSubscriptionsToEventBridgeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionsToEventBridgeRequest, UpdateSubscriptionsToEventBridgeResult> asyncHandler) {
+        final UpdateSubscriptionsToEventBridgeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSubscriptionsToEventBridgeResult>() {
+            @Override
+            public UpdateSubscriptionsToEventBridgeResult call() throws Exception {
+                UpdateSubscriptionsToEventBridgeResult result = null;
+
+                try {
+                    result = executeUpdateSubscriptionsToEventBridge(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

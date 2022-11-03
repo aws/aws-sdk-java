@@ -59,6 +59,11 @@ public class OrganizationDataSourceConfigurationsResultJsonUnmarshaller implemen
                     organizationDataSourceConfigurationsResult.setKubernetes(OrganizationKubernetesConfigurationResultJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("malwareProtection", targetDepth)) {
+                    context.nextToken();
+                    organizationDataSourceConfigurationsResult.setMalwareProtection(OrganizationMalwareProtectionConfigurationResultJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

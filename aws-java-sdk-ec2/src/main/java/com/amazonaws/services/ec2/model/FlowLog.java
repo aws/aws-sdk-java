@@ -43,10 +43,16 @@ public class FlowLog implements Serializable, Cloneable {
     private String deliverLogsErrorMessage;
     /**
      * <p>
-     * The ARN of the IAM role that posts logs to CloudWatch Logs.
+     * The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      * </p>
      */
     private String deliverLogsPermissionArn;
+    /**
+     * <p>
+     * The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     * </p>
+     */
+    private String deliverCrossAccountRole;
     /**
      * <p>
      * The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
@@ -55,7 +61,7 @@ public class FlowLog implements Serializable, Cloneable {
     private String deliverLogsStatus;
     /**
      * <p>
-     * The flow log ID.
+     * The ID of the flow log.
      * </p>
      */
     private String flowLogId;
@@ -73,7 +79,7 @@ public class FlowLog implements Serializable, Cloneable {
     private String logGroupName;
     /**
      * <p>
-     * The ID of the resource on which the flow log was created.
+     * The ID of the resource being monitored.
      * </p>
      */
     private String resourceId;
@@ -85,17 +91,13 @@ public class FlowLog implements Serializable, Cloneable {
     private String trafficType;
     /**
      * <p>
-     * The type of destination to which the flow log data is published. Flow log data can be published to CloudWatch
-     * Logs or Amazon S3.
+     * The type of destination for the flow log data.
      * </p>
      */
     private String logDestinationType;
     /**
      * <p>
-     * The destination to which the flow log data is published. Flow log data can be published to an CloudWatch Logs log
-     * group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element indicates the Amazon
-     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the flow log publishes to
-     * Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is published.
+     * The Amazon Resource Name (ARN) of the destination for the flow log data.
      * </p>
      */
     private String logDestination;
@@ -240,11 +242,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that posts logs to CloudWatch Logs.
+     * The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      * </p>
      * 
      * @param deliverLogsPermissionArn
-     *        The ARN of the IAM role that posts logs to CloudWatch Logs.
+     *        The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      */
 
     public void setDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
@@ -253,10 +255,10 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that posts logs to CloudWatch Logs.
+     * The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      * </p>
      * 
-     * @return The ARN of the IAM role that posts logs to CloudWatch Logs.
+     * @return The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      */
 
     public String getDeliverLogsPermissionArn() {
@@ -265,16 +267,56 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that posts logs to CloudWatch Logs.
+     * The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      * </p>
      * 
      * @param deliverLogsPermissionArn
-     *        The ARN of the IAM role that posts logs to CloudWatch Logs.
+     *        The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
         setDeliverLogsPermissionArn(deliverLogsPermissionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     * </p>
+     * 
+     * @param deliverCrossAccountRole
+     *        The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     */
+
+    public void setDeliverCrossAccountRole(String deliverCrossAccountRole) {
+        this.deliverCrossAccountRole = deliverCrossAccountRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     * </p>
+     * 
+     * @return The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     */
+
+    public String getDeliverCrossAccountRole() {
+        return this.deliverCrossAccountRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     * </p>
+     * 
+     * @param deliverCrossAccountRole
+     *        The ARN of the IAM role that allows the service to publish flow logs across accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FlowLog withDeliverCrossAccountRole(String deliverCrossAccountRole) {
+        setDeliverCrossAccountRole(deliverCrossAccountRole);
         return this;
     }
 
@@ -320,11 +362,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The flow log ID.
+     * The ID of the flow log.
      * </p>
      * 
      * @param flowLogId
-     *        The flow log ID.
+     *        The ID of the flow log.
      */
 
     public void setFlowLogId(String flowLogId) {
@@ -333,10 +375,10 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The flow log ID.
+     * The ID of the flow log.
      * </p>
      * 
-     * @return The flow log ID.
+     * @return The ID of the flow log.
      */
 
     public String getFlowLogId() {
@@ -345,11 +387,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The flow log ID.
+     * The ID of the flow log.
      * </p>
      * 
      * @param flowLogId
-     *        The flow log ID.
+     *        The ID of the flow log.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,11 +482,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource on which the flow log was created.
+     * The ID of the resource being monitored.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource on which the flow log was created.
+     *        The ID of the resource being monitored.
      */
 
     public void setResourceId(String resourceId) {
@@ -453,10 +495,10 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource on which the flow log was created.
+     * The ID of the resource being monitored.
      * </p>
      * 
-     * @return The ID of the resource on which the flow log was created.
+     * @return The ID of the resource being monitored.
      */
 
     public String getResourceId() {
@@ -465,11 +507,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource on which the flow log was created.
+     * The ID of the resource being monitored.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource on which the flow log was created.
+     *        The ID of the resource being monitored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,13 +595,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of destination to which the flow log data is published. Flow log data can be published to CloudWatch
-     * Logs or Amazon S3.
+     * The type of destination for the flow log data.
      * </p>
      * 
      * @param logDestinationType
-     *        The type of destination to which the flow log data is published. Flow log data can be published to
-     *        CloudWatch Logs or Amazon S3.
+     *        The type of destination for the flow log data.
      * @see LogDestinationType
      */
 
@@ -569,12 +609,10 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of destination to which the flow log data is published. Flow log data can be published to CloudWatch
-     * Logs or Amazon S3.
+     * The type of destination for the flow log data.
      * </p>
      * 
-     * @return The type of destination to which the flow log data is published. Flow log data can be published to
-     *         CloudWatch Logs or Amazon S3.
+     * @return The type of destination for the flow log data.
      * @see LogDestinationType
      */
 
@@ -584,13 +622,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of destination to which the flow log data is published. Flow log data can be published to CloudWatch
-     * Logs or Amazon S3.
+     * The type of destination for the flow log data.
      * </p>
      * 
      * @param logDestinationType
-     *        The type of destination to which the flow log data is published. Flow log data can be published to
-     *        CloudWatch Logs or Amazon S3.
+     *        The type of destination for the flow log data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDestinationType
      */
@@ -602,13 +638,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of destination to which the flow log data is published. Flow log data can be published to CloudWatch
-     * Logs or Amazon S3.
+     * The type of destination for the flow log data.
      * </p>
      * 
      * @param logDestinationType
-     *        The type of destination to which the flow log data is published. Flow log data can be published to
-     *        CloudWatch Logs or Amazon S3.
+     *        The type of destination for the flow log data.
      * @see LogDestinationType
      */
 
@@ -618,13 +652,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of destination to which the flow log data is published. Flow log data can be published to CloudWatch
-     * Logs or Amazon S3.
+     * The type of destination for the flow log data.
      * </p>
      * 
      * @param logDestinationType
-     *        The type of destination to which the flow log data is published. Flow log data can be published to
-     *        CloudWatch Logs or Amazon S3.
+     *        The type of destination for the flow log data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDestinationType
      */
@@ -636,18 +668,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination to which the flow log data is published. Flow log data can be published to an CloudWatch Logs log
-     * group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element indicates the Amazon
-     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the flow log publishes to
-     * Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is published.
+     * The Amazon Resource Name (ARN) of the destination for the flow log data.
      * </p>
      * 
      * @param logDestination
-     *        The destination to which the flow log data is published. Flow log data can be published to an CloudWatch
-     *        Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
-     *        indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published.
-     *        If the flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which
-     *        the data is published.
+     *        The Amazon Resource Name (ARN) of the destination for the flow log data.
      */
 
     public void setLogDestination(String logDestination) {
@@ -656,17 +681,10 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination to which the flow log data is published. Flow log data can be published to an CloudWatch Logs log
-     * group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element indicates the Amazon
-     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the flow log publishes to
-     * Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is published.
+     * The Amazon Resource Name (ARN) of the destination for the flow log data.
      * </p>
      * 
-     * @return The destination to which the flow log data is published. Flow log data can be published to an CloudWatch
-     *         Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
-     *         indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published.
-     *         If the flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which
-     *         the data is published.
+     * @return The Amazon Resource Name (ARN) of the destination for the flow log data.
      */
 
     public String getLogDestination() {
@@ -675,18 +693,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination to which the flow log data is published. Flow log data can be published to an CloudWatch Logs log
-     * group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element indicates the Amazon
-     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the flow log publishes to
-     * Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is published.
+     * The Amazon Resource Name (ARN) of the destination for the flow log data.
      * </p>
      * 
      * @param logDestination
-     *        The destination to which the flow log data is published. Flow log data can be published to an CloudWatch
-     *        Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
-     *        indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published.
-     *        If the flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which
-     *        the data is published.
+     *        The Amazon Resource Name (ARN) of the destination for the flow log data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -963,6 +974,8 @@ public class FlowLog implements Serializable, Cloneable {
             sb.append("DeliverLogsErrorMessage: ").append(getDeliverLogsErrorMessage()).append(",");
         if (getDeliverLogsPermissionArn() != null)
             sb.append("DeliverLogsPermissionArn: ").append(getDeliverLogsPermissionArn()).append(",");
+        if (getDeliverCrossAccountRole() != null)
+            sb.append("DeliverCrossAccountRole: ").append(getDeliverCrossAccountRole()).append(",");
         if (getDeliverLogsStatus() != null)
             sb.append("DeliverLogsStatus: ").append(getDeliverLogsStatus()).append(",");
         if (getFlowLogId() != null)
@@ -1012,6 +1025,10 @@ public class FlowLog implements Serializable, Cloneable {
         if (other.getDeliverLogsPermissionArn() == null ^ this.getDeliverLogsPermissionArn() == null)
             return false;
         if (other.getDeliverLogsPermissionArn() != null && other.getDeliverLogsPermissionArn().equals(this.getDeliverLogsPermissionArn()) == false)
+            return false;
+        if (other.getDeliverCrossAccountRole() == null ^ this.getDeliverCrossAccountRole() == null)
+            return false;
+        if (other.getDeliverCrossAccountRole() != null && other.getDeliverCrossAccountRole().equals(this.getDeliverCrossAccountRole()) == false)
             return false;
         if (other.getDeliverLogsStatus() == null ^ this.getDeliverLogsStatus() == null)
             return false;
@@ -1072,6 +1089,7 @@ public class FlowLog implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getDeliverLogsErrorMessage() == null) ? 0 : getDeliverLogsErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getDeliverLogsPermissionArn() == null) ? 0 : getDeliverLogsPermissionArn().hashCode());
+        hashCode = prime * hashCode + ((getDeliverCrossAccountRole() == null) ? 0 : getDeliverCrossAccountRole().hashCode());
         hashCode = prime * hashCode + ((getDeliverLogsStatus() == null) ? 0 : getDeliverLogsStatus().hashCode());
         hashCode = prime * hashCode + ((getFlowLogId() == null) ? 0 : getFlowLogId().hashCode());
         hashCode = prime * hashCode + ((getFlowLogStatus() == null) ? 0 : getFlowLogStatus().hashCode());

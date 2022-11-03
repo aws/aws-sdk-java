@@ -36,6 +36,12 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String pageToken;
+    /**
+     * <p>
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
+     * </p>
+     */
+    private Boolean includeInactive;
 
     /**
      * <p>
@@ -105,6 +111,62 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
+     * </p>
+     * 
+     * @param includeInactive
+     *        A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *        request.
+     */
+
+    public void setIncludeInactive(Boolean includeInactive) {
+        this.includeInactive = includeInactive;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
+     * </p>
+     * 
+     * @return A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *         request.
+     */
+
+    public Boolean getIncludeInactive() {
+        return this.includeInactive;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
+     * </p>
+     * 
+     * @param includeInactive
+     *        A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *        request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRelationalDatabaseBundlesRequest withIncludeInactive(Boolean includeInactive) {
+        setIncludeInactive(includeInactive);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.
+     * </p>
+     * 
+     * @return A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your
+     *         request.
+     */
+
+    public Boolean isIncludeInactive() {
+        return this.includeInactive;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -117,7 +179,9 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPageToken() != null)
-            sb.append("PageToken: ").append(getPageToken());
+            sb.append("PageToken: ").append(getPageToken()).append(",");
+        if (getIncludeInactive() != null)
+            sb.append("IncludeInactive: ").append(getIncludeInactive());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +200,10 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false)
             return false;
+        if (other.getIncludeInactive() == null ^ this.getIncludeInactive() == null)
+            return false;
+        if (other.getIncludeInactive() != null && other.getIncludeInactive().equals(this.getIncludeInactive()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +213,7 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
+        hashCode = prime * hashCode + ((getIncludeInactive() == null) ? 0 : getIncludeInactive().hashCode());
         return hashCode;
     }
 

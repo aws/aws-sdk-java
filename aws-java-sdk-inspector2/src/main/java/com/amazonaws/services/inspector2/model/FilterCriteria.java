@@ -126,6 +126,14 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DateFilter> firstObservedAt;
     /**
      * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     */
+    private java.util.List<StringFilter> fixAvailable;
+    /**
+     * <p>
      * The Amazon Inspector score to filter on.
      * </p>
      */
@@ -1337,6 +1345,92 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @return Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *         <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *         packages identified in the finding have fixes available through updated versions.
+     */
+
+    public java.util.List<StringFilter> getFixAvailable() {
+        return fixAvailable;
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @param fixAvailable
+     *        Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *        <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *        packages identified in the finding have fixes available through updated versions.
+     */
+
+    public void setFixAvailable(java.util.Collection<StringFilter> fixAvailable) {
+        if (fixAvailable == null) {
+            this.fixAvailable = null;
+            return;
+        }
+
+        this.fixAvailable = new java.util.ArrayList<StringFilter>(fixAvailable);
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFixAvailable(java.util.Collection)} or {@link #withFixAvailable(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param fixAvailable
+     *        Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *        <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *        packages identified in the finding have fixes available through updated versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withFixAvailable(StringFilter... fixAvailable) {
+        if (this.fixAvailable == null) {
+            setFixAvailable(new java.util.ArrayList<StringFilter>(fixAvailable.length));
+        }
+        for (StringFilter ele : fixAvailable) {
+            this.fixAvailable.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @param fixAvailable
+     *        Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *        <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *        packages identified in the finding have fixes available through updated versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withFixAvailable(java.util.Collection<StringFilter> fixAvailable) {
+        setFixAvailable(fixAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Inspector score to filter on.
      * </p>
      * 
@@ -2429,6 +2523,8 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
             sb.append("FindingType: ").append(getFindingType()).append(",");
         if (getFirstObservedAt() != null)
             sb.append("FirstObservedAt: ").append(getFirstObservedAt()).append(",");
+        if (getFixAvailable() != null)
+            sb.append("FixAvailable: ").append(getFixAvailable()).append(",");
         if (getInspectorScore() != null)
             sb.append("InspectorScore: ").append(getInspectorScore()).append(",");
         if (getLastObservedAt() != null)
@@ -2537,6 +2633,10 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFirstObservedAt() != null && other.getFirstObservedAt().equals(this.getFirstObservedAt()) == false)
             return false;
+        if (other.getFixAvailable() == null ^ this.getFixAvailable() == null)
+            return false;
+        if (other.getFixAvailable() != null && other.getFixAvailable().equals(this.getFixAvailable()) == false)
+            return false;
         if (other.getInspectorScore() == null ^ this.getInspectorScore() == null)
             return false;
         if (other.getInspectorScore() != null && other.getInspectorScore().equals(this.getInspectorScore()) == false)
@@ -2621,6 +2721,7 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFindingStatus() == null) ? 0 : getFindingStatus().hashCode());
         hashCode = prime * hashCode + ((getFindingType() == null) ? 0 : getFindingType().hashCode());
         hashCode = prime * hashCode + ((getFirstObservedAt() == null) ? 0 : getFirstObservedAt().hashCode());
+        hashCode = prime * hashCode + ((getFixAvailable() == null) ? 0 : getFixAvailable().hashCode());
         hashCode = prime * hashCode + ((getInspectorScore() == null) ? 0 : getInspectorScore().hashCode());
         hashCode = prime * hashCode + ((getLastObservedAt() == null) ? 0 : getLastObservedAt().hashCode());
         hashCode = prime * hashCode + ((getNetworkProtocol() == null) ? 0 : getNetworkProtocol().hashCode());

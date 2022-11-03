@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8 bytes across all references for
- * a contact.
+ * Well-formed data on a contact, used by agents to complete a contact request. You can have up to 4,096 UTF-8 bytes
+ * across all references for a contact.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Reference" target="_top">AWS API
@@ -38,7 +38,7 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
     private String value;
     /**
      * <p>
-     * The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      */
     private String type;
@@ -91,11 +91,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
      * @param type
-     *        The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     *        The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @see ReferenceType
      */
 
@@ -105,10 +105,10 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
-     * @return The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     * @return The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @see ReferenceType
      */
 
@@ -118,11 +118,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
      * @param type
-     *        The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     *        The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReferenceType
      */
@@ -134,11 +134,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
      * @param type
-     *        The type of the reference. Only <code>URL</code> type can be added or updated on a contact.
+     *        The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReferenceType
      */

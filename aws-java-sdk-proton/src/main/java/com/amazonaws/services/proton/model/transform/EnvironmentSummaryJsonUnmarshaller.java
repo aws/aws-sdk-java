@@ -52,6 +52,10 @@ public class EnvironmentSummaryJsonUnmarshaller implements Unmarshaller<Environm
                     context.nextToken();
                     environmentSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("componentRoleArn", targetDepth)) {
+                    context.nextToken();
+                    environmentSummary.setComponentRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     environmentSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

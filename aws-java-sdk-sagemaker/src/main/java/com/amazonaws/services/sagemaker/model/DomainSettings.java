@@ -42,6 +42,14 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RStudioServerProDomainSettings rStudioServerProDomainSettings;
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
+     * </p>
+     */
+    private String executionRoleIdentityConfig;
 
     /**
      * <p>
@@ -162,6 +170,81 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
+     * </p>
+     * 
+     * @param executionRoleIdentityConfig
+     *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public void setExecutionRoleIdentityConfig(String executionRoleIdentityConfig) {
+        this.executionRoleIdentityConfig = executionRoleIdentityConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
+     * </p>
+     * 
+     * @return The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *         >sts:SourceIdentity key</a>.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public String getExecutionRoleIdentityConfig() {
+        return this.executionRoleIdentityConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
+     * </p>
+     * 
+     * @param executionRoleIdentityConfig
+     *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public DomainSettings withExecutionRoleIdentityConfig(String executionRoleIdentityConfig) {
+        setExecutionRoleIdentityConfig(executionRoleIdentityConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
+     * </p>
+     * 
+     * @param executionRoleIdentityConfig
+     *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public DomainSettings withExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig executionRoleIdentityConfig) {
+        this.executionRoleIdentityConfig = executionRoleIdentityConfig.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,7 +259,9 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getRStudioServerProDomainSettings() != null)
-            sb.append("RStudioServerProDomainSettings: ").append(getRStudioServerProDomainSettings());
+            sb.append("RStudioServerProDomainSettings: ").append(getRStudioServerProDomainSettings()).append(",");
+        if (getExecutionRoleIdentityConfig() != null)
+            sb.append("ExecutionRoleIdentityConfig: ").append(getExecutionRoleIdentityConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -200,6 +285,10 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getRStudioServerProDomainSettings() != null
                 && other.getRStudioServerProDomainSettings().equals(this.getRStudioServerProDomainSettings()) == false)
             return false;
+        if (other.getExecutionRoleIdentityConfig() == null ^ this.getExecutionRoleIdentityConfig() == null)
+            return false;
+        if (other.getExecutionRoleIdentityConfig() != null && other.getExecutionRoleIdentityConfig().equals(this.getExecutionRoleIdentityConfig()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +299,7 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getRStudioServerProDomainSettings() == null) ? 0 : getRStudioServerProDomainSettings().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleIdentityConfig() == null) ? 0 : getExecutionRoleIdentityConfig().hashCode());
         return hashCode;
     }
 

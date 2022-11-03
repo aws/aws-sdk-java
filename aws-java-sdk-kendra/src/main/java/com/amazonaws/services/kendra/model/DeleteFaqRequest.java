@@ -27,24 +27,24 @@ public class DeleteFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the FAQ to remove.
+     * The identifier of the FAQ you want to remove.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The index to remove the FAQ from.
+     * The identifier of the index for the FAQ.
      * </p>
      */
     private String indexId;
 
     /**
      * <p>
-     * The identifier of the FAQ to remove.
+     * The identifier of the FAQ you want to remove.
      * </p>
      * 
      * @param id
-     *        The identifier of the FAQ to remove.
+     *        The identifier of the FAQ you want to remove.
      */
 
     public void setId(String id) {
@@ -53,10 +53,10 @@ public class DeleteFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the FAQ to remove.
+     * The identifier of the FAQ you want to remove.
      * </p>
      * 
-     * @return The identifier of the FAQ to remove.
+     * @return The identifier of the FAQ you want to remove.
      */
 
     public String getId() {
@@ -65,11 +65,11 @@ public class DeleteFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the FAQ to remove.
+     * The identifier of the FAQ you want to remove.
      * </p>
      * 
      * @param id
-     *        The identifier of the FAQ to remove.
+     *        The identifier of the FAQ you want to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The index to remove the FAQ from.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
      * @param indexId
-     *        The index to remove the FAQ from.
+     *        The identifier of the index for the FAQ.
      */
 
     public void setIndexId(String indexId) {
@@ -93,10 +93,10 @@ public class DeleteFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The index to remove the FAQ from.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
-     * @return The index to remove the FAQ from.
+     * @return The identifier of the index for the FAQ.
      */
 
     public String getIndexId() {
@@ -105,11 +105,11 @@ public class DeleteFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The index to remove the FAQ from.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
      * @param indexId
-     *        The index to remove the FAQ from.
+     *        The identifier of the index for the FAQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

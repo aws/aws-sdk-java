@@ -677,6 +677,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        if (runInstancesRequest.getDisableApiStop() != null) {
+            request.addParameter("DisableApiStop", StringUtils.fromBoolean(runInstancesRequest.getDisableApiStop()));
+        }
+
         return request;
     }
 

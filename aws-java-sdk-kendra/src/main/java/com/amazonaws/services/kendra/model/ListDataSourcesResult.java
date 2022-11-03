@@ -25,24 +25,24 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of summary information for one or more data sources.
+     * An array of summary information for one or more data source connector.
      * </p>
      */
     private java.util.List<DataSourceSummary> summaryItems;
     /**
      * <p>
      * If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to
-     * retrieve the next set of data sources.
+     * retrieve the next set of data source connectors.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of summary information for one or more data sources.
+     * An array of summary information for one or more data source connector.
      * </p>
      * 
-     * @return An array of summary information for one or more data sources.
+     * @return An array of summary information for one or more data source connector.
      */
 
     public java.util.List<DataSourceSummary> getSummaryItems() {
@@ -51,11 +51,11 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of summary information for one or more data sources.
+     * An array of summary information for one or more data source connector.
      * </p>
      * 
      * @param summaryItems
-     *        An array of summary information for one or more data sources.
+     *        An array of summary information for one or more data source connector.
      */
 
     public void setSummaryItems(java.util.Collection<DataSourceSummary> summaryItems) {
@@ -69,7 +69,7 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of summary information for one or more data sources.
+     * An array of summary information for one or more data source connector.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param summaryItems
-     *        An array of summary information for one or more data sources.
+     *        An array of summary information for one or more data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of summary information for one or more data sources.
+     * An array of summary information for one or more data source connector.
      * </p>
      * 
      * @param summaryItems
-     *        An array of summary information for one or more data sources.
+     *        An array of summary information for one or more data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,12 +110,12 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to
-     * retrieve the next set of data sources.
+     * retrieve the next set of data source connectors.
      * </p>
      * 
      * @param nextToken
      *        If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request
-     *        to retrieve the next set of data sources.
+     *        to retrieve the next set of data source connectors.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,11 +125,11 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to
-     * retrieve the next set of data sources.
+     * retrieve the next set of data source connectors.
      * </p>
      * 
      * @return If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request
-     *         to retrieve the next set of data sources.
+     *         to retrieve the next set of data source connectors.
      */
 
     public String getNextToken() {
@@ -139,12 +139,12 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to
-     * retrieve the next set of data sources.
+     * retrieve the next set of data source connectors.
      * </p>
      * 
      * @param nextToken
      *        If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request
-     *        to retrieve the next set of data sources.
+     *        to retrieve the next set of data source connectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

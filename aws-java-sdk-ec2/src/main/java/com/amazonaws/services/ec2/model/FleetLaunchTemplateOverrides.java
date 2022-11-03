@@ -32,15 +32,23 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      */
     private String instanceType;
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      */
     private String maxPrice;
     /**
@@ -94,11 +102,18 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      */
     private InstanceRequirements instanceRequirements;
+    /**
+     * <p>
+     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
+     * template.
+     * </p>
+     */
+    private String imageId;
 
     /**
      * <p>
@@ -106,14 +121,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
      * @see InstanceType
      */
@@ -128,13 +143,13 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @return The instance type.</p> <note>
      *         <p>
-     *         If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *         If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *         </p>
      * @see InstanceType
      */
@@ -149,14 +164,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -173,14 +188,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -193,11 +208,25 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using
+     *        this parameter because it can lead to increased interruptions. If you do not specify this parameter, you
+     *        will pay the current Spot price. </p> <important>
+     *        <p>
+     *        If you specify a maximum price, your instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      */
 
     public void setMaxPrice(String maxPrice) {
@@ -206,10 +235,24 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      * 
-     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend
+     *         using this parameter because it can lead to increased interruptions. If you do not specify this
+     *         parameter, you will pay the current Spot price. </p> <important>
+     *         <p>
+     *         If you specify a maximum price, your instances will be interrupted more frequently than if you do not
+     *         specify this parameter.
+     *         </p>
      */
 
     public String getMaxPrice() {
@@ -218,11 +261,25 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using
+     *        this parameter because it can lead to increased interruptions. If you do not specify this parameter, you
+     *        will pay the current Spot price. </p> <important>
+     *        <p>
+     *        If you specify a maximum price, your instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,7 +576,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -527,7 +584,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with those attributes.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      */
 
@@ -542,14 +599,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
      * @return The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *         instance types with those attributes.</p> <note>
      *         <p>
-     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *         </p>
      */
 
@@ -564,7 +621,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -572,13 +629,59 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with those attributes.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetLaunchTemplateOverrides withInstanceRequirements(InstanceRequirements instanceRequirements) {
         setInstanceRequirements(instanceRequirements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
+     * template.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
+     *        launch template.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
+     * template.
+     * </p>
+     * 
+     * @return The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
+     *         launch template.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
+     * template.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
+     *        launch template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetLaunchTemplateOverrides withImageId(String imageId) {
+        setImageId(imageId);
         return this;
     }
 
@@ -609,7 +712,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
         if (getPlacement() != null)
             sb.append("Placement: ").append(getPlacement()).append(",");
         if (getInstanceRequirements() != null)
-            sb.append("InstanceRequirements: ").append(getInstanceRequirements());
+            sb.append("InstanceRequirements: ").append(getInstanceRequirements()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +761,10 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
             return false;
         if (other.getInstanceRequirements() != null && other.getInstanceRequirements().equals(this.getInstanceRequirements()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
         return true;
     }
 
@@ -672,6 +781,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
         hashCode = prime * hashCode + ((getInstanceRequirements() == null) ? 0 : getInstanceRequirements().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         return hashCode;
     }
 

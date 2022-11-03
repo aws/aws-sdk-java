@@ -26,49 +26,49 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the identifier of the index for the block list.
+     * The identifier of the index for the block list.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * Shows the unique identifier of the block list.
+     * The identifier of the block list.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * Shows the name of the block list.
+     * The name of the block list.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Shows the description for the block list.
+     * The description for the block list.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     * The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Shows the error message with details when there are issues in processing the block list.
+     * The error message containing details if there are issues processing the block list.
      * </p>
      */
     private String errorMessage;
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was created.
+     * The date-time a block list for query suggestions was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was last updated.
+     * The date-time a block list for query suggestions was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -87,20 +87,19 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
     private S3Path sourceS3Path;
     /**
      * <p>
-     * Shows the current number of valid, non-empty words or phrases in the block list text file.
+     * The current number of valid, non-empty words or phrases in the block list text file.
      * </p>
      */
     private Integer itemCount;
     /**
      * <p>
-     * Shows the current size of the block list text file in S3.
+     * The current size of the block list text file in S3.
      * </p>
      */
     private Long fileSizeBytes;
     /**
      * <p>
-     * Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text
-     * file in S3.
+     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.
      * </p>
      * <p>
      * The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role
@@ -111,11 +110,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the identifier of the index for the block list.
+     * The identifier of the index for the block list.
      * </p>
      * 
      * @param indexId
-     *        Shows the identifier of the index for the block list.
+     *        The identifier of the index for the block list.
      */
 
     public void setIndexId(String indexId) {
@@ -124,10 +123,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the identifier of the index for the block list.
+     * The identifier of the index for the block list.
      * </p>
      * 
-     * @return Shows the identifier of the index for the block list.
+     * @return The identifier of the index for the block list.
      */
 
     public String getIndexId() {
@@ -136,11 +135,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the identifier of the index for the block list.
+     * The identifier of the index for the block list.
      * </p>
      * 
      * @param indexId
-     *        Shows the identifier of the index for the block list.
+     *        The identifier of the index for the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +150,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the unique identifier of the block list.
+     * The identifier of the block list.
      * </p>
      * 
      * @param id
-     *        Shows the unique identifier of the block list.
+     *        The identifier of the block list.
      */
 
     public void setId(String id) {
@@ -164,10 +163,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the unique identifier of the block list.
+     * The identifier of the block list.
      * </p>
      * 
-     * @return Shows the unique identifier of the block list.
+     * @return The identifier of the block list.
      */
 
     public String getId() {
@@ -176,11 +175,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the unique identifier of the block list.
+     * The identifier of the block list.
      * </p>
      * 
      * @param id
-     *        Shows the unique identifier of the block list.
+     *        The identifier of the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +190,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the name of the block list.
+     * The name of the block list.
      * </p>
      * 
      * @param name
-     *        Shows the name of the block list.
+     *        The name of the block list.
      */
 
     public void setName(String name) {
@@ -204,10 +203,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the name of the block list.
+     * The name of the block list.
      * </p>
      * 
-     * @return Shows the name of the block list.
+     * @return The name of the block list.
      */
 
     public String getName() {
@@ -216,11 +215,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the name of the block list.
+     * The name of the block list.
      * </p>
      * 
      * @param name
-     *        Shows the name of the block list.
+     *        The name of the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,11 +230,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the description for the block list.
+     * The description for the block list.
      * </p>
      * 
      * @param description
-     *        Shows the description for the block list.
+     *        The description for the block list.
      */
 
     public void setDescription(String description) {
@@ -244,10 +243,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the description for the block list.
+     * The description for the block list.
      * </p>
      * 
-     * @return Shows the description for the block list.
+     * @return The description for the block list.
      */
 
     public String getDescription() {
@@ -256,11 +255,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the description for the block list.
+     * The description for the block list.
      * </p>
      * 
      * @param description
-     *        Shows the description for the block list.
+     *        The description for the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,11 +270,12 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     * The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.
      * </p>
      * 
      * @param status
-     *        Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     *        The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for
+     *        use.
      * @see QuerySuggestionsBlockListStatus
      */
 
@@ -285,10 +285,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     * The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.
      * </p>
      * 
-     * @return Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     * @return The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for
+     *         use.
      * @see QuerySuggestionsBlockListStatus
      */
 
@@ -298,11 +299,12 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     * The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.
      * </p>
      * 
      * @param status
-     *        Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     *        The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for
+     *        use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuerySuggestionsBlockListStatus
      */
@@ -314,11 +316,12 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     * The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.
      * </p>
      * 
      * @param status
-     *        Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+     *        The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for
+     *        use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuerySuggestionsBlockListStatus
      */
@@ -330,11 +333,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the error message with details when there are issues in processing the block list.
+     * The error message containing details if there are issues processing the block list.
      * </p>
      * 
      * @param errorMessage
-     *        Shows the error message with details when there are issues in processing the block list.
+     *        The error message containing details if there are issues processing the block list.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -343,10 +346,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the error message with details when there are issues in processing the block list.
+     * The error message containing details if there are issues processing the block list.
      * </p>
      * 
-     * @return Shows the error message with details when there are issues in processing the block list.
+     * @return The error message containing details if there are issues processing the block list.
      */
 
     public String getErrorMessage() {
@@ -355,11 +358,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the error message with details when there are issues in processing the block list.
+     * The error message containing details if there are issues processing the block list.
      * </p>
      * 
      * @param errorMessage
-     *        Shows the error message with details when there are issues in processing the block list.
+     *        The error message containing details if there are issues processing the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,11 +373,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was created.
+     * The date-time a block list for query suggestions was created.
      * </p>
      * 
      * @param createdAt
-     *        Shows the date-time a block list for query suggestions was created.
+     *        The date-time a block list for query suggestions was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -383,10 +386,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was created.
+     * The date-time a block list for query suggestions was created.
      * </p>
      * 
-     * @return Shows the date-time a block list for query suggestions was created.
+     * @return The date-time a block list for query suggestions was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -395,11 +398,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was created.
+     * The date-time a block list for query suggestions was created.
      * </p>
      * 
      * @param createdAt
-     *        Shows the date-time a block list for query suggestions was created.
+     *        The date-time a block list for query suggestions was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,11 +413,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was last updated.
+     * The date-time a block list for query suggestions was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        Shows the date-time a block list for query suggestions was last updated.
+     *        The date-time a block list for query suggestions was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -423,10 +426,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was last updated.
+     * The date-time a block list for query suggestions was last updated.
      * </p>
      * 
-     * @return Shows the date-time a block list for query suggestions was last updated.
+     * @return The date-time a block list for query suggestions was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -435,11 +438,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the date-time a block list for query suggestions was last updated.
+     * The date-time a block list for query suggestions was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        Shows the date-time a block list for query suggestions was last updated.
+     *        The date-time a block list for query suggestions was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,11 +532,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current number of valid, non-empty words or phrases in the block list text file.
+     * The current number of valid, non-empty words or phrases in the block list text file.
      * </p>
      * 
      * @param itemCount
-     *        Shows the current number of valid, non-empty words or phrases in the block list text file.
+     *        The current number of valid, non-empty words or phrases in the block list text file.
      */
 
     public void setItemCount(Integer itemCount) {
@@ -542,10 +545,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current number of valid, non-empty words or phrases in the block list text file.
+     * The current number of valid, non-empty words or phrases in the block list text file.
      * </p>
      * 
-     * @return Shows the current number of valid, non-empty words or phrases in the block list text file.
+     * @return The current number of valid, non-empty words or phrases in the block list text file.
      */
 
     public Integer getItemCount() {
@@ -554,11 +557,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current number of valid, non-empty words or phrases in the block list text file.
+     * The current number of valid, non-empty words or phrases in the block list text file.
      * </p>
      * 
      * @param itemCount
-     *        Shows the current number of valid, non-empty words or phrases in the block list text file.
+     *        The current number of valid, non-empty words or phrases in the block list text file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -569,11 +572,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current size of the block list text file in S3.
+     * The current size of the block list text file in S3.
      * </p>
      * 
      * @param fileSizeBytes
-     *        Shows the current size of the block list text file in S3.
+     *        The current size of the block list text file in S3.
      */
 
     public void setFileSizeBytes(Long fileSizeBytes) {
@@ -582,10 +585,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current size of the block list text file in S3.
+     * The current size of the block list text file in S3.
      * </p>
      * 
-     * @return Shows the current size of the block list text file in S3.
+     * @return The current size of the block list text file in S3.
      */
 
     public Long getFileSizeBytes() {
@@ -594,11 +597,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current size of the block list text file in S3.
+     * The current size of the block list text file in S3.
      * </p>
      * 
      * @param fileSizeBytes
-     *        Shows the current size of the block list text file in S3.
+     *        The current size of the block list text file in S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -609,8 +612,7 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text
-     * file in S3.
+     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.
      * </p>
      * <p>
      * The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role
@@ -618,8 +620,8 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param roleArn
-     *        Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list
-     *        text file in S3.</p>
+     *        The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in
+     *        S3.</p>
      *        <p>
      *        The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service)
      *        assume role permissions to Amazon Kendra.
@@ -631,16 +633,15 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text
-     * file in S3.
+     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.
      * </p>
      * <p>
      * The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role
      * permissions to Amazon Kendra.
      * </p>
      * 
-     * @return Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block
-     *         list text file in S3.</p>
+     * @return The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in
+     *         S3.</p>
      *         <p>
      *         The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service)
      *         assume role permissions to Amazon Kendra.
@@ -652,8 +653,7 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text
-     * file in S3.
+     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.
      * </p>
      * <p>
      * The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role
@@ -661,8 +661,8 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param roleArn
-     *        Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list
-     *        text file in S3.</p>
+     *        The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in
+     *        S3.</p>
      *        <p>
      *        The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service)
      *        assume role permissions to Amazon Kendra.

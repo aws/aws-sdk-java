@@ -28,6 +28,19 @@ public class AbstractAmazonSagemakerEdgeManagerAsync extends AbstractAmazonSagem
     }
 
     @Override
+    public java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(GetDeploymentsRequest request) {
+
+        return getDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(GetDeploymentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentsRequest, GetDeploymentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDeviceRegistrationResult> getDeviceRegistrationAsync(GetDeviceRegistrationRequest request) {
 
         return getDeviceRegistrationAsync(request, null);

@@ -30,6 +30,12 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Properties of a conversion job
+     * </p>
+     */
+    private ConversionProperties conversionProperties;
+    /**
+     * <p>
      * The ID of a conversion server.
      * </p>
      */
@@ -52,6 +58,46 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String targetInstanceID;
+
+    /**
+     * <p>
+     * Properties of a conversion job
+     * </p>
+     * 
+     * @param conversionProperties
+     *        Properties of a conversion job
+     */
+
+    public void setConversionProperties(ConversionProperties conversionProperties) {
+        this.conversionProperties = conversionProperties;
+    }
+
+    /**
+     * <p>
+     * Properties of a conversion job
+     * </p>
+     * 
+     * @return Properties of a conversion job
+     */
+
+    public ConversionProperties getConversionProperties() {
+        return this.conversionProperties;
+    }
+
+    /**
+     * <p>
+     * Properties of a conversion job
+     * </p>
+     * 
+     * @param conversionProperties
+     *        Properties of a conversion job
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobLogEventData withConversionProperties(ConversionProperties conversionProperties) {
+        setConversionProperties(conversionProperties);
+        return this;
+    }
 
     /**
      * <p>
@@ -225,6 +271,8 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConversionProperties() != null)
+            sb.append("ConversionProperties: ").append(getConversionProperties()).append(",");
         if (getConversionServerID() != null)
             sb.append("ConversionServerID: ").append(getConversionServerID()).append(",");
         if (getRawError() != null)
@@ -247,6 +295,10 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof JobLogEventData == false)
             return false;
         JobLogEventData other = (JobLogEventData) obj;
+        if (other.getConversionProperties() == null ^ this.getConversionProperties() == null)
+            return false;
+        if (other.getConversionProperties() != null && other.getConversionProperties().equals(this.getConversionProperties()) == false)
+            return false;
         if (other.getConversionServerID() == null ^ this.getConversionServerID() == null)
             return false;
         if (other.getConversionServerID() != null && other.getConversionServerID().equals(this.getConversionServerID()) == false)
@@ -271,6 +323,7 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConversionProperties() == null) ? 0 : getConversionProperties().hashCode());
         hashCode = prime * hashCode + ((getConversionServerID() == null) ? 0 : getConversionServerID().hashCode());
         hashCode = prime * hashCode + ((getRawError() == null) ? 0 : getRawError().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());

@@ -27,24 +27,27 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region,
+     * resource ID, and pipeline ID.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region,
+     * resource ID, and pipeline ID.
      * </p>
      * 
      * @param resourceARN
-     *        The resource ARN.
+     *        The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint
+     *        region, resource ID, and pipeline ID.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +56,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region,
+     * resource ID, and pipeline ID.
      * </p>
      * 
-     * @return The resource ARN.
+     * @return The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint
+     *         region, resource ID, and pipeline ID.
      */
 
     public String getResourceARN() {
@@ -65,11 +70,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region,
+     * resource ID, and pipeline ID.
      * </p>
      * 
      * @param resourceARN
-     *        The resource ARN.
+     *        The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint
+     *        region, resource ID, and pipeline ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +87,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * 
-     * @return The tag key-value pairs.
+     * @return The tags associated with the specified media pipeline.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +99,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs.
+     *        The tags associated with the specified media pipeline.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +117,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +126,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs.
+     *        The tags associated with the specified media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs.
+     *        The tags associated with the specified media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

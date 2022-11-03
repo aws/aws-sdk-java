@@ -25,18 +25,18 @@ public class DeleteServiceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the service being deleted.
      * </p>
      */
     private Service service;
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the service being deleted.
      * </p>
      * 
      * @param service
-     *        The service detail data that's returned by Proton.
+     *        The detailed data of the service being deleted.
      */
 
     public void setService(Service service) {
@@ -45,10 +45,10 @@ public class DeleteServiceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the service being deleted.
      * </p>
      * 
-     * @return The service detail data that's returned by Proton.
+     * @return The detailed data of the service being deleted.
      */
 
     public Service getService() {
@@ -57,11 +57,11 @@ public class DeleteServiceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the service being deleted.
      * </p>
      * 
      * @param service
-     *        The service detail data that's returned by Proton.
+     *        The detailed data of the service being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

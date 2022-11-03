@@ -55,6 +55,11 @@ public class TransitGatewayRouteStaxUnmarshaller implements Unmarshaller<Transit
                     continue;
                 }
 
+                if (context.testExpression("transitGatewayRouteTableAnnouncementId", targetDepth)) {
+                    transitGatewayRoute.setTransitGatewayRouteTableAnnouncementId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("transitGatewayAttachments", targetDepth)) {
                     transitGatewayRoute.withTransitGatewayAttachments(new ArrayList<TransitGatewayRouteAttachment>());
                     continue;

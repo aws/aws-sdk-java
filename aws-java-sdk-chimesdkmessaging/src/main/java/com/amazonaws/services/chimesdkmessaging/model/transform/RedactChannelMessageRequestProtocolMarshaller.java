@@ -34,7 +34,7 @@ public class RedactChannelMessageRequestProtocolMarshaller implements Marshaller
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/channels/{channelArn}/messages/{messageId}?operation=redact").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).serviceName("AmazonChimeSDKMessaging").build();
+            .hasPayloadMembers(true).serviceName("AmazonChimeSDKMessaging").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

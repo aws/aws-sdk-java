@@ -33,7 +33,7 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<AdBreak> adBreaks;
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel for this Program.
      * </p>
      */
     private String channelName;
@@ -45,7 +45,7 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String liveSourceName;
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the Program.
      * </p>
      */
     private String programName;
@@ -140,11 +140,11 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel for this Program.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel for this Program.
      */
 
     public void setChannelName(String channelName) {
@@ -153,10 +153,10 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel for this Program.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel for this Program.
      */
 
     public String getChannelName() {
@@ -165,11 +165,11 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel for this Program.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel for this Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the Program.
      * </p>
      * 
      * @param programName
-     *        The identifier for the program you are working on.
+     *        The name of the Program.
      */
 
     public void setProgramName(String programName) {
@@ -233,10 +233,10 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the Program.
      * </p>
      * 
-     * @return The identifier for the program you are working on.
+     * @return The name of the Program.
      */
 
     public String getProgramName() {
@@ -245,11 +245,11 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the Program.
      * </p>
      * 
      * @param programName
-     *        The identifier for the program you are working on.
+     *        The name of the Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an
      * ID that does not exist, it is ignored with no error.
      * </p>
      * <p>
@@ -51,14 +51,14 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an
      * ID that does not exist, it is ignored with no error.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 items.
      * </p>
      * 
-     * @return The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     * @return The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you
      *         specify an ID that does not exist, it is ignored with no error.</p>
      *         <p>
      *         Array Members: Maximum number of 50 items.
@@ -73,7 +73,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an
      * ID that does not exist, it is ignored with no error.
      * </p>
      * <p>
@@ -81,7 +81,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param instanceIds
-     *        The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *        The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you
      *        specify an ID that does not exist, it is ignored with no error.</p>
      *        <p>
      *        Array Members: Maximum number of 50 items.
@@ -98,7 +98,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an
      * ID that does not exist, it is ignored with no error.
      * </p>
      * <p>
@@ -111,7 +111,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param instanceIds
-     *        The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *        The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you
      *        specify an ID that does not exist, it is ignored with no error.</p>
      *        <p>
      *        Array Members: Maximum number of 50 items.
@@ -130,7 +130,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an
      * ID that does not exist, it is ignored with no error.
      * </p>
      * <p>
@@ -138,7 +138,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param instanceIds
-     *        The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *        The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you
      *        specify an ID that does not exist, it is ignored with no error.</p>
      *        <p>
      *        Array Members: Maximum number of 50 items.

@@ -52,6 +52,17 @@ public class CreateChannelMembershipRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String chimeBearer;
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     * </p>
+     * </note>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -257,6 +268,70 @@ public class CreateChannelMembershipRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.</p> <note>
+     *        <p>
+     *        Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     *        </p>
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     * </p>
+     * </note>
+     * 
+     * @return The ID of the SubChannel in the request.</p> <note>
+     *         <p>
+     *         Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     *         </p>
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * <note>
+     * <p>
+     * Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     * </p>
+     * </note>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.</p> <note>
+     *        <p>
+     *        Only required when creating membership in a SubChannel for a moderator in an elastic channel.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelMembershipRequest withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,7 +350,9 @@ public class CreateChannelMembershipRequest extends com.amazonaws.AmazonWebServi
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getChimeBearer() != null)
-            sb.append("ChimeBearer: ").append(getChimeBearer());
+            sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -306,6 +383,10 @@ public class CreateChannelMembershipRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -318,6 +399,7 @@ public class CreateChannelMembershipRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMemberArn() == null) ? 0 : getMemberArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

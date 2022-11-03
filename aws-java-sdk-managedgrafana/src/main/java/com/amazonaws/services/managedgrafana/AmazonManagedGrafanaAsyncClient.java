@@ -150,6 +150,39 @@ public class AmazonManagedGrafanaAsyncClient extends AmazonManagedGrafanaClient 
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkspaceApiKeyResult> createWorkspaceApiKeyAsync(CreateWorkspaceApiKeyRequest request) {
+
+        return createWorkspaceApiKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkspaceApiKeyResult> createWorkspaceApiKeyAsync(final CreateWorkspaceApiKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWorkspaceApiKeyRequest, CreateWorkspaceApiKeyResult> asyncHandler) {
+        final CreateWorkspaceApiKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWorkspaceApiKeyResult>() {
+            @Override
+            public CreateWorkspaceApiKeyResult call() throws Exception {
+                CreateWorkspaceApiKeyResult result = null;
+
+                try {
+                    result = executeCreateWorkspaceApiKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest request) {
 
         return deleteWorkspaceAsync(request, null);
@@ -167,6 +200,39 @@ public class AmazonManagedGrafanaAsyncClient extends AmazonManagedGrafanaClient 
 
                 try {
                     result = executeDeleteWorkspace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceApiKeyResult> deleteWorkspaceApiKeyAsync(DeleteWorkspaceApiKeyRequest request) {
+
+        return deleteWorkspaceApiKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceApiKeyResult> deleteWorkspaceApiKeyAsync(final DeleteWorkspaceApiKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceApiKeyRequest, DeleteWorkspaceApiKeyResult> asyncHandler) {
+        final DeleteWorkspaceApiKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWorkspaceApiKeyResult>() {
+            @Override
+            public DeleteWorkspaceApiKeyResult call() throws Exception {
+                DeleteWorkspaceApiKeyResult result = null;
+
+                try {
+                    result = executeDeleteWorkspaceApiKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

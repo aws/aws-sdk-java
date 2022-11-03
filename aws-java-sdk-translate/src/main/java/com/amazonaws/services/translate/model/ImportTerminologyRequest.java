@@ -56,6 +56,14 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private EncryptionKey encryptionKey;
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -289,6 +297,92 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @return Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource.
+     *         Each tag key for the resource must be unique. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportTerminologyRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportTerminologyRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -309,7 +403,9 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getTerminologyData() != null)
             sb.append("TerminologyData: ").append(getTerminologyData()).append(",");
         if (getEncryptionKey() != null)
-            sb.append("EncryptionKey: ").append(getEncryptionKey());
+            sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +440,10 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -357,6 +457,7 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTerminologyData() == null) ? 0 : getTerminologyData().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

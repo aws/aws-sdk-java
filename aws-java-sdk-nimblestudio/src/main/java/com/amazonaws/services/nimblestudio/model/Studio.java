@@ -27,8 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are
- * assumed by your users when they log in to the Nimble Studio portal via Amazon Web Services SSO and your identity
- * source.
+ * assumed by your users when they log in to the Nimble Studio portal via IAM Identity Center and your identity source.
  * </p>
  * <p>
  * The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
@@ -81,8 +80,8 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     private String homeRegion;
     /**
      * <p>
-     * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
+     * Center users to log in to Nimble Studio portal.
      * </p>
      */
     private String ssoClientId;
@@ -356,13 +355,13 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
+     * Center users to log in to Nimble Studio portal.
      * </p>
      * 
      * @param ssoClientId
-     *        The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable
-     *        Amazon Web Services SSO users to log in to Nimble Studio portal.
+     *        The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM
+     *        Identity Center users to log in to Nimble Studio portal.
      */
 
     public void setSsoClientId(String ssoClientId) {
@@ -371,12 +370,12 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
+     * Center users to log in to Nimble Studio portal.
      * </p>
      * 
-     * @return The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to
-     *         enable Amazon Web Services SSO users to log in to Nimble Studio portal.
+     * @return The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM
+     *         Identity Center users to log in to Nimble Studio portal.
      */
 
     public String getSsoClientId() {
@@ -385,13 +384,13 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
+     * Center users to log in to Nimble Studio portal.
      * </p>
      * 
      * @param ssoClientId
-     *        The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable
-     *        Amazon Web Services SSO users to log in to Nimble Studio portal.
+     *        The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM
+     *        Identity Center users to log in to Nimble Studio portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

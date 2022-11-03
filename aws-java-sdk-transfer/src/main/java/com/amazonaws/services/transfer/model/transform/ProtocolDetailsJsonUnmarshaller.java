@@ -56,6 +56,16 @@ public class ProtocolDetailsJsonUnmarshaller implements Unmarshaller<ProtocolDet
                     context.nextToken();
                     protocolDetails.setTlsSessionResumptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SetStatOption", targetDepth)) {
+                    context.nextToken();
+                    protocolDetails.setSetStatOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("As2Transports", targetDepth)) {
+                    context.nextToken();
+                    protocolDetails.setAs2Transports(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

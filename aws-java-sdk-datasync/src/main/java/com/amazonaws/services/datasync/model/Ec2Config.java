@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for
- * that file system. The security group that you provide needs to be able to communicate with the security group on the
- * mount target in the subnet specified.
+ * The subnet and security groups that DataSync uses to access your Amazon EFS file system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Ec2Config" target="_top">AWS API
@@ -32,24 +30,90 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that DataSync uses to access the target EFS file system.
+     * Specifies the ARN of a subnet where DataSync creates the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for managing traffic during your transfer.
      * </p>
+     * <p>
+     * The subnet must be located:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * You don't need to specify a subnet that includes a file system mount target.
+     * </p>
+     * </note>
      */
     private String subnetArn;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     * Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's
+     * mount target.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
 
     /**
      * <p>
-     * The ARN of the subnet that DataSync uses to access the target EFS file system.
+     * Specifies the ARN of a subnet where DataSync creates the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for managing traffic during your transfer.
      * </p>
+     * <p>
+     * The subnet must be located:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * You don't need to specify a subnet that includes a file system mount target.
+     * </p>
+     * </note>
      * 
      * @param subnetArn
-     *        The ARN of the subnet that DataSync uses to access the target EFS file system.
+     *        Specifies the ARN of a subnet where DataSync creates the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> for managing traffic during your transfer.</p>
+     *        <p>
+     *        The subnet must be located:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        You don't need to specify a subnet that includes a file system mount target.
+     *        </p>
      */
 
     public void setSubnetArn(String subnetArn) {
@@ -58,10 +122,53 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that DataSync uses to access the target EFS file system.
+     * Specifies the ARN of a subnet where DataSync creates the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for managing traffic during your transfer.
      * </p>
+     * <p>
+     * The subnet must be located:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * You don't need to specify a subnet that includes a file system mount target.
+     * </p>
+     * </note>
      * 
-     * @return The ARN of the subnet that DataSync uses to access the target EFS file system.
+     * @return Specifies the ARN of a subnet where DataSync creates the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *         >network interfaces</a> for managing traffic during your transfer.</p>
+     *         <p>
+     *         The subnet must be located:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         You don't need to specify a subnet that includes a file system mount target.
+     *         </p>
      */
 
     public String getSubnetArn() {
@@ -70,11 +177,54 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that DataSync uses to access the target EFS file system.
+     * Specifies the ARN of a subnet where DataSync creates the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for managing traffic during your transfer.
      * </p>
+     * <p>
+     * The subnet must be located:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * You don't need to specify a subnet that includes a file system mount target.
+     * </p>
+     * </note>
      * 
      * @param subnetArn
-     *        The ARN of the subnet that DataSync uses to access the target EFS file system.
+     *        Specifies the ARN of a subnet where DataSync creates the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> for managing traffic during your transfer.</p>
+     *        <p>
+     *        The subnet must be located:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In the same virtual private cloud (VPC) as the Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the same Availability Zone as at least one mount target for the Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        You don't need to specify a subnet that includes a file system mount target.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,10 +235,12 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     * Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's
+     * mount target.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     * @return Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file
+     *         system's mount target.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -97,11 +249,13 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     * Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's
+     * mount target.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     *        Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file
+     *        system's mount target.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -115,7 +269,8 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     * Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's
+     * mount target.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +279,8 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     *        Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file
+     *        system's mount target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +296,13 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     * Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's
+     * mount target.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.
+     *        Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file
+     *        system's mount target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

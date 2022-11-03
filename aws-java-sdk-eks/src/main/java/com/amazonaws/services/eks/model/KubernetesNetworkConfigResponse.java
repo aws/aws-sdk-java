@@ -31,7 +31,7 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns addresses from
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
      * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
      * this was specified, then it was specified when the cluster was created and it can't be changed.
@@ -40,17 +40,17 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
     private String serviceIpv4Cidr;
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or later
-     * cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
-     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local address range
-     * (fc00::/7).
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later
+     * cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
+     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address
+     * range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.
      * </p>
      */
     private String serviceIpv6Cidr;
     /**
      * <p>
-     * The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always <code>ipv4</code>,
-     * unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of the Amazon VPC CNI add-on
+     * The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>,
+     * unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on
      * and specified <code>ipv6</code> when you created the cluster.
      * </p>
      */
@@ -58,14 +58,14 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns addresses from
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
      * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
      * this was specified, then it was specified when the cluster was created and it can't be changed.
      * </p>
      * 
      * @param serviceIpv4Cidr
-     *        The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns
+     *        The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns
      *        addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR
      *        block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
      *        172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and
@@ -78,13 +78,13 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns addresses from
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
      * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
      * this was specified, then it was specified when the cluster was created and it can't be changed.
      * </p>
      * 
-     * @return The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns
+     * @return The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns
      *         addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR
      *         block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
      *         172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and
@@ -97,14 +97,14 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns addresses from
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
      * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
      * this was specified, then it was specified when the cluster was created and it can't be changed.
      * </p>
      * 
      * @param serviceIpv4Cidr
-     *        The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes assigns
+     *        The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns
      *        addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR
      *        block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
      *        172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and
@@ -119,17 +119,18 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or later
-     * cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
-     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local address range
-     * (fc00::/7).
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later
+     * cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
+     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address
+     * range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.
      * </p>
      * 
      * @param serviceIpv6Cidr
-     *        The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or
-     *        later cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
-     *        for <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local
-     *        address range (fc00::/7).
+     *        The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or
+     *        later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
+     *        for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique
+     *        local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you
+     *        create the cluster.
      */
 
     public void setServiceIpv6Cidr(String serviceIpv6Cidr) {
@@ -138,16 +139,17 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or later
-     * cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
-     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local address range
-     * (fc00::/7).
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later
+     * cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
+     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address
+     * range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.
      * </p>
      * 
-     * @return The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or
-     *         later cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
-     *         for <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local
-     *         address range (fc00::/7).
+     * @return The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or
+     *         later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
+     *         for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique
+     *         local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you
+     *         create the cluster.
      */
 
     public String getServiceIpv6Cidr() {
@@ -156,17 +158,18 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or later
-     * cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
-     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local address range
-     * (fc00::/7).
+     * The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later
+     * cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for
+     * <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address
+     * range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.
      * </p>
      * 
      * @param serviceIpv6Cidr
-     *        The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you created a 1.21 or
-     *        later cluster with version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
-     *        for <b>ipFamily</b> when you created the cluster. Kubernetes assigns addresses from the unique local
-     *        address range (fc00::/7).
+     *        The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or
+     *        later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
+     *        for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique
+     *        local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you
+     *        create the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,14 +180,14 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always <code>ipv4</code>,
-     * unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of the Amazon VPC CNI add-on
+     * The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>,
+     * unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on
      * and specified <code>ipv6</code> when you created the cluster.
      * </p>
      * 
      * @param ipFamily
-     *        The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always
-     *        <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of
+     *        The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always
+     *        <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of
      *        the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster.
      * @see IpFamily
      */
@@ -195,13 +198,13 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always <code>ipv4</code>,
-     * unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of the Amazon VPC CNI add-on
+     * The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>,
+     * unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on
      * and specified <code>ipv6</code> when you created the cluster.
      * </p>
      * 
-     * @return The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always
-     *         <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later
+     * @return The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always
+     *         <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later
      *         of the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster.
      * @see IpFamily
      */
@@ -212,14 +215,14 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always <code>ipv4</code>,
-     * unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of the Amazon VPC CNI add-on
+     * The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>,
+     * unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on
      * and specified <code>ipv6</code> when you created the cluster.
      * </p>
      * 
      * @param ipFamily
-     *        The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always
-     *        <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of
+     *        The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always
+     *        <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of
      *        the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpFamily
@@ -232,14 +235,14 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always <code>ipv4</code>,
-     * unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of the Amazon VPC CNI add-on
+     * The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>,
+     * unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on
      * and specified <code>ipv6</code> when you created the cluster.
      * </p>
      * 
      * @param ipFamily
-     *        The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family is always
-     *        <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.0 or later of
+     *        The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always
+     *        <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of
      *        the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpFamily

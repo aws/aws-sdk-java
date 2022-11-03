@@ -215,6 +215,68 @@ public interface AWSBackupGatewayAsync extends AWSBackupGateway {
 
     /**
      * <p>
+     * By providing the ARN (Amazon Resource Name), this API returns the gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @return A Java Future containing the result of the GetGateway operation returned by the service.
+     * @sample AWSBackupGatewayAsync.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest);
+
+    /**
+     * <p>
+     * By providing the ARN (Amazon Resource Name), this API returns the gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGateway operation returned by the service.
+     * @sample AWSBackupGatewayAsyncHandler.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * By providing the ARN (Amazon Resource Name), this API returns the virtual machine.
+     * </p>
+     * 
+     * @param getVirtualMachineRequest
+     * @return A Java Future containing the result of the GetVirtualMachine operation returned by the service.
+     * @sample AWSBackupGatewayAsync.GetVirtualMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVirtualMachineResult> getVirtualMachineAsync(GetVirtualMachineRequest getVirtualMachineRequest);
+
+    /**
+     * <p>
+     * By providing the ARN (Amazon Resource Name), this API returns the virtual machine.
+     * </p>
+     * 
+     * @param getVirtualMachineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVirtualMachine operation returned by the service.
+     * @sample AWSBackupGatewayAsyncHandler.GetVirtualMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVirtualMachineResult> getVirtualMachineAsync(GetVirtualMachineRequest getVirtualMachineRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVirtualMachineRequest, GetVirtualMachineResult> asyncHandler);
+
+    /**
+     * <p>
      * Connect to a hypervisor by importing its configuration.
      * </p>
      * 
@@ -534,6 +596,49 @@ public interface AWSBackupGatewayAsync extends AWSBackupGateway {
      */
     java.util.concurrent.Future<UpdateGatewayInformationResult> updateGatewayInformationAsync(UpdateGatewayInformationRequest updateGatewayInformationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayInformationRequest, UpdateGatewayInformationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.
+     * </p>
+     * <note>
+     * <p>
+     * When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take
+     * some time for the update to complete.
+     * </p>
+     * </note>
+     * 
+     * @param updateGatewaySoftwareNowRequest
+     * @return A Java Future containing the result of the UpdateGatewaySoftwareNow operation returned by the service.
+     * @sample AWSBackupGatewayAsync.UpdateGatewaySoftwareNow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest);
+
+    /**
+     * <p>
+     * Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.
+     * </p>
+     * <note>
+     * <p>
+     * When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take
+     * some time for the update to complete.
+     * </p>
+     * </note>
+     * 
+     * @param updateGatewaySoftwareNowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGatewaySoftwareNow operation returned by the service.
+     * @sample AWSBackupGatewayAsyncHandler.UpdateGatewaySoftwareNow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResult> asyncHandler);
 
     /**
      * <p>

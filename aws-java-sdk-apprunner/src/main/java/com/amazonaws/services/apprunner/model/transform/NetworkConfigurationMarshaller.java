@@ -29,6 +29,8 @@ public class NetworkConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> EGRESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EgressConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> INGRESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IngressConfiguration").build();
 
     private static final NetworkConfigurationMarshaller instance = new NetworkConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class NetworkConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(networkConfiguration.getEgressConfiguration(), EGRESSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(networkConfiguration.getIngressConfiguration(), INGRESSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

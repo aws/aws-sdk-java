@@ -191,6 +191,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private RegionsInfo regionsInfo;
+    /**
+     * <p>
+     * The operating system (OS) version of the directory.
+     * </p>
+     */
+    private String osVersion;
 
     /**
      * <p>
@@ -1566,6 +1572,79 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The operating system (OS) version of the directory.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system (OS) version of the directory.
+     * @see OSVersion
+     */
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version of the directory.
+     * </p>
+     * 
+     * @return The operating system (OS) version of the directory.
+     * @see OSVersion
+     */
+
+    public String getOsVersion() {
+        return this.osVersion;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version of the directory.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system (OS) version of the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OSVersion
+     */
+
+    public DirectoryDescription withOsVersion(String osVersion) {
+        setOsVersion(osVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version of the directory.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system (OS) version of the directory.
+     * @see OSVersion
+     */
+
+    public void setOsVersion(OSVersion osVersion) {
+        withOsVersion(osVersion);
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version of the directory.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system (OS) version of the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OSVersion
+     */
+
+    public DirectoryDescription withOsVersion(OSVersion osVersion) {
+        this.osVersion = osVersion.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1626,7 +1705,9 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         if (getOwnerDirectoryDescription() != null)
             sb.append("OwnerDirectoryDescription: ").append(getOwnerDirectoryDescription()).append(",");
         if (getRegionsInfo() != null)
-            sb.append("RegionsInfo: ").append(getRegionsInfo());
+            sb.append("RegionsInfo: ").append(getRegionsInfo()).append(",");
+        if (getOsVersion() != null)
+            sb.append("OsVersion: ").append(getOsVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1742,6 +1823,10 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getRegionsInfo() != null && other.getRegionsInfo().equals(this.getRegionsInfo()) == false)
             return false;
+        if (other.getOsVersion() == null ^ this.getOsVersion() == null)
+            return false;
+        if (other.getOsVersion() != null && other.getOsVersion().equals(this.getOsVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1775,6 +1860,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getDesiredNumberOfDomainControllers() == null) ? 0 : getDesiredNumberOfDomainControllers().hashCode());
         hashCode = prime * hashCode + ((getOwnerDirectoryDescription() == null) ? 0 : getOwnerDirectoryDescription().hashCode());
         hashCode = prime * hashCode + ((getRegionsInfo() == null) ? 0 : getRegionsInfo().hashCode());
+        hashCode = prime * hashCode + ((getOsVersion() == null) ? 0 : getOsVersion().hashCode());
         return hashCode;
     }
 

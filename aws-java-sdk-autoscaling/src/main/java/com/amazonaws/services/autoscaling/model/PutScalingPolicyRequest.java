@@ -202,7 +202,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     * <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1213,7 +1213,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     * <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1253,7 +1253,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     *        <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     *        <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -1299,7 +1299,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     * <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1338,7 +1338,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p>
      *         If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     *         <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     *         <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -1384,7 +1384,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     * <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1424,7 +1424,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     *        <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     *        <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
      *        </p>
      *        <p>
      *        For more information, see <a

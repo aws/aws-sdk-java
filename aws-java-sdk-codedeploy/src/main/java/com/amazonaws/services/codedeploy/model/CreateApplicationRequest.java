@@ -30,7 +30,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     * The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.
      * </p>
      */
     private String applicationName;
@@ -50,11 +50,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     * The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     *        The name of the application. This name must be unique with the applicable IAM or Amazon Web Services
+     *        account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -63,10 +64,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     * The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     * @return The name of the application. This name must be unique with the applicable IAM or Amazon Web Services
+     *         account.
      */
 
     public String getApplicationName() {
@@ -75,11 +77,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     * The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application. This name must be unique with the applicable IAM user or AWS account.
+     *        The name of the application. This name must be unique with the applicable IAM or Amazon Web Services
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

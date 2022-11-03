@@ -36,11 +36,11 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
     private String organizationConformancePackName;
     /**
      * <p>
-     * Indicates deployment status of an organization conformance pack. When master account calls
+     * Indicates deployment status of an organization conformance pack. When management account calls
      * PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts.
-     * When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated
-     * in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts
-     * join or leave an organization. Conformance pack status is deleted when the master account deletes
+     * When management account calls PutOrganizationConformancePack for the second time, conformance pack status is
+     * updated in all the member accounts. Additionally, conformance pack status is updated when one or more member
+     * accounts join or leave an organization. Conformance pack status is deleted when the management account deletes
      * OrganizationConformancePack in all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
@@ -164,11 +164,11 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates deployment status of an organization conformance pack. When master account calls
+     * Indicates deployment status of an organization conformance pack. When management account calls
      * PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts.
-     * When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated
-     * in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts
-     * join or leave an organization. Conformance pack status is deleted when the master account deletes
+     * When management account calls PutOrganizationConformancePack for the second time, conformance pack status is
+     * updated in all the member accounts. Additionally, conformance pack status is updated when one or more member
+     * accounts join or leave an organization. Conformance pack status is deleted when the management account deletes
      * OrganizationConformancePack in all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
@@ -230,13 +230,13 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
      * </ul>
      * 
      * @param status
-     *        Indicates deployment status of an organization conformance pack. When master account calls
+     *        Indicates deployment status of an organization conformance pack. When management account calls
      *        PutOrganizationConformancePack for the first time, conformance pack status is created in all the member
-     *        accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack
-     *        status is updated in all the member accounts. Additionally, conformance pack status is updated when one or
-     *        more member accounts join or leave an organization. Conformance pack status is deleted when the master
-     *        account deletes OrganizationConformancePack in all the member accounts and disables service access for
-     *        <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *        accounts. When management account calls PutOrganizationConformancePack for the second time, conformance
+     *        pack status is updated in all the member accounts. Additionally, conformance pack status is updated when
+     *        one or more member accounts join or leave an organization. Conformance pack status is deleted when the
+     *        management account deletes OrganizationConformancePack in all the member accounts and disables service
+     *        access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
      *        <p>
      *        Config sets the state of the conformance pack to:
      *        </p>
@@ -301,11 +301,11 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates deployment status of an organization conformance pack. When master account calls
+     * Indicates deployment status of an organization conformance pack. When management account calls
      * PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts.
-     * When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated
-     * in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts
-     * join or leave an organization. Conformance pack status is deleted when the master account deletes
+     * When management account calls PutOrganizationConformancePack for the second time, conformance pack status is
+     * updated in all the member accounts. Additionally, conformance pack status is updated when one or more member
+     * accounts join or leave an organization. Conformance pack status is deleted when the management account deletes
      * OrganizationConformancePack in all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
@@ -366,13 +366,13 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
      * </li>
      * </ul>
      * 
-     * @return Indicates deployment status of an organization conformance pack. When master account calls
+     * @return Indicates deployment status of an organization conformance pack. When management account calls
      *         PutOrganizationConformancePack for the first time, conformance pack status is created in all the member
-     *         accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack
-     *         status is updated in all the member accounts. Additionally, conformance pack status is updated when one
-     *         or more member accounts join or leave an organization. Conformance pack status is deleted when the master
-     *         account deletes OrganizationConformancePack in all the member accounts and disables service access for
-     *         <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *         accounts. When management account calls PutOrganizationConformancePack for the second time, conformance
+     *         pack status is updated in all the member accounts. Additionally, conformance pack status is updated when
+     *         one or more member accounts join or leave an organization. Conformance pack status is deleted when the
+     *         management account deletes OrganizationConformancePack in all the member accounts and disables service
+     *         access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
      *         <p>
      *         Config sets the state of the conformance pack to:
      *         </p>
@@ -437,11 +437,11 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates deployment status of an organization conformance pack. When master account calls
+     * Indicates deployment status of an organization conformance pack. When management account calls
      * PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts.
-     * When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated
-     * in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts
-     * join or leave an organization. Conformance pack status is deleted when the master account deletes
+     * When management account calls PutOrganizationConformancePack for the second time, conformance pack status is
+     * updated in all the member accounts. Additionally, conformance pack status is updated when one or more member
+     * accounts join or leave an organization. Conformance pack status is deleted when the management account deletes
      * OrganizationConformancePack in all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
@@ -503,13 +503,13 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
      * </ul>
      * 
      * @param status
-     *        Indicates deployment status of an organization conformance pack. When master account calls
+     *        Indicates deployment status of an organization conformance pack. When management account calls
      *        PutOrganizationConformancePack for the first time, conformance pack status is created in all the member
-     *        accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack
-     *        status is updated in all the member accounts. Additionally, conformance pack status is updated when one or
-     *        more member accounts join or leave an organization. Conformance pack status is deleted when the master
-     *        account deletes OrganizationConformancePack in all the member accounts and disables service access for
-     *        <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *        accounts. When management account calls PutOrganizationConformancePack for the second time, conformance
+     *        pack status is updated in all the member accounts. Additionally, conformance pack status is updated when
+     *        one or more member accounts join or leave an organization. Conformance pack status is deleted when the
+     *        management account deletes OrganizationConformancePack in all the member accounts and disables service
+     *        access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
      *        <p>
      *        Config sets the state of the conformance pack to:
      *        </p>
@@ -576,11 +576,11 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates deployment status of an organization conformance pack. When master account calls
+     * Indicates deployment status of an organization conformance pack. When management account calls
      * PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts.
-     * When master account calls PutOrganizationConformancePack for the second time, conformance pack status is updated
-     * in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts
-     * join or leave an organization. Conformance pack status is deleted when the master account deletes
+     * When management account calls PutOrganizationConformancePack for the second time, conformance pack status is
+     * updated in all the member accounts. Additionally, conformance pack status is updated when one or more member
+     * accounts join or leave an organization. Conformance pack status is deleted when the management account deletes
      * OrganizationConformancePack in all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
@@ -642,13 +642,13 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
      * </ul>
      * 
      * @param status
-     *        Indicates deployment status of an organization conformance pack. When master account calls
+     *        Indicates deployment status of an organization conformance pack. When management account calls
      *        PutOrganizationConformancePack for the first time, conformance pack status is created in all the member
-     *        accounts. When master account calls PutOrganizationConformancePack for the second time, conformance pack
-     *        status is updated in all the member accounts. Additionally, conformance pack status is updated when one or
-     *        more member accounts join or leave an organization. Conformance pack status is deleted when the master
-     *        account deletes OrganizationConformancePack in all the member accounts and disables service access for
-     *        <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *        accounts. When management account calls PutOrganizationConformancePack for the second time, conformance
+     *        pack status is updated in all the member accounts. Additionally, conformance pack status is updated when
+     *        one or more member accounts join or leave an organization. Conformance pack status is deleted when the
+     *        management account deletes OrganizationConformancePack in all the member accounts and disables service
+     *        access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
      *        <p>
      *        Config sets the state of the conformance pack to:
      *        </p>

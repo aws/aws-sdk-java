@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule that controls access to mobile devices for an Amazon WorkMail group.
+ * A rule that controls access to mobile devices for an WorkMail group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MobileDeviceAccessRule" target="_top">AWS

@@ -253,6 +253,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementGroupConfig> placementGroups;
+    /**
+     * <p>
+     * The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     * specified, the default Amazon Linux release is shown in the response.
+     * </p>
+     */
+    private String oSReleaseLabel;
 
     /**
      * <p>
@@ -2088,6 +2095,52 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     * specified, the default Amazon Linux release is shown in the response.
+     * </p>
+     * 
+     * @param oSReleaseLabel
+     *        The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     *        specified, the default Amazon Linux release is shown in the response.
+     */
+
+    public void setOSReleaseLabel(String oSReleaseLabel) {
+        this.oSReleaseLabel = oSReleaseLabel;
+    }
+
+    /**
+     * <p>
+     * The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     * specified, the default Amazon Linux release is shown in the response.
+     * </p>
+     * 
+     * @return The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     *         specified, the default Amazon Linux release is shown in the response.
+     */
+
+    public String getOSReleaseLabel() {
+        return this.oSReleaseLabel;
+    }
+
+    /**
+     * <p>
+     * The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     * specified, the default Amazon Linux release is shown in the response.
+     * </p>
+     * 
+     * @param oSReleaseLabel
+     *        The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was
+     *        specified, the default Amazon Linux release is shown in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withOSReleaseLabel(String oSReleaseLabel) {
+        setOSReleaseLabel(oSReleaseLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2158,7 +2211,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getStepConcurrencyLevel() != null)
             sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel()).append(",");
         if (getPlacementGroups() != null)
-            sb.append("PlacementGroups: ").append(getPlacementGroups());
+            sb.append("PlacementGroups: ").append(getPlacementGroups()).append(",");
+        if (getOSReleaseLabel() != null)
+            sb.append("OSReleaseLabel: ").append(getOSReleaseLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -2293,6 +2348,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlacementGroups() != null && other.getPlacementGroups().equals(this.getPlacementGroups()) == false)
             return false;
+        if (other.getOSReleaseLabel() == null ^ this.getOSReleaseLabel() == null)
+            return false;
+        if (other.getOSReleaseLabel() != null && other.getOSReleaseLabel().equals(this.getOSReleaseLabel()) == false)
+            return false;
         return true;
     }
 
@@ -2331,6 +2390,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
         hashCode = prime * hashCode + ((getPlacementGroups() == null) ? 0 : getPlacementGroups().hashCode());
+        hashCode = prime * hashCode + ((getOSReleaseLabel() == null) ? 0 : getOSReleaseLabel().hashCode());
         return hashCode;
     }
 

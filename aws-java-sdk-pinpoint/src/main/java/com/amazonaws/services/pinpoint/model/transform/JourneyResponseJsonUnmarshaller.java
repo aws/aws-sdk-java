@@ -122,6 +122,18 @@ public class JourneyResponseJsonUnmarshaller implements Unmarshaller<JourneyResp
                     context.nextToken();
                     journeyResponse.setJourneyChannelSettings(JourneyChannelSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SendingSchedule", targetDepth)) {
+                    context.nextToken();
+                    journeyResponse.setSendingSchedule(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("OpenHours", targetDepth)) {
+                    context.nextToken();
+                    journeyResponse.setOpenHours(OpenHoursJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ClosedDays", targetDepth)) {
+                    context.nextToken();
+                    journeyResponse.setClosedDays(ClosedDaysJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

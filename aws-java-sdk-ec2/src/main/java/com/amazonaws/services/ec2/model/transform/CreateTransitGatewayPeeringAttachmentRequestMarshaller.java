@@ -59,6 +59,14 @@ public class CreateTransitGatewayPeeringAttachmentRequestMarshaller implements
             request.addParameter("PeerRegion", StringUtils.fromString(createTransitGatewayPeeringAttachmentRequest.getPeerRegion()));
         }
 
+        CreateTransitGatewayPeeringAttachmentRequestOptions options = createTransitGatewayPeeringAttachmentRequest.getOptions();
+        if (options != null) {
+
+            if (options.getDynamicRouting() != null) {
+                request.addParameter("Options.DynamicRouting", StringUtils.fromString(options.getDynamicRouting()));
+            }
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> createTransitGatewayPeeringAttachmentRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createTransitGatewayPeeringAttachmentRequest
                 .getTagSpecifications();
         if (!createTransitGatewayPeeringAttachmentRequestTagSpecificationsList.isEmpty()

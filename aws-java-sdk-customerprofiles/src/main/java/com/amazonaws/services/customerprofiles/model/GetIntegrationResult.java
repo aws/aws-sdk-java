@@ -75,6 +75,13 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String workflowId;
+    /**
+     * <p>
+     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * </p>
+     */
+    private Boolean isUnstructured;
 
     /**
      * <p>
@@ -480,6 +487,66 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * </p>
+     * 
+     * @param isUnstructured
+     *        Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     *        ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     */
+
+    public void setIsUnstructured(Boolean isUnstructured) {
+        this.isUnstructured = isUnstructured;
+    }
+
+    /**
+     * <p>
+     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * </p>
+     * 
+     * @return Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     *         ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     */
+
+    public Boolean getIsUnstructured() {
+        return this.isUnstructured;
+    }
+
+    /**
+     * <p>
+     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * </p>
+     * 
+     * @param isUnstructured
+     *        Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     *        ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIntegrationResult withIsUnstructured(Boolean isUnstructured) {
+        setIsUnstructured(isUnstructured);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * </p>
+     * 
+     * @return Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
+     *         ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     */
+
+    public Boolean isUnstructured() {
+        return this.isUnstructured;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -506,7 +573,9 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getObjectTypeNames() != null)
             sb.append("ObjectTypeNames: ").append(getObjectTypeNames()).append(",");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: ").append(getWorkflowId());
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
+        if (getIsUnstructured() != null)
+            sb.append("IsUnstructured: ").append(getIsUnstructured());
         sb.append("}");
         return sb.toString();
     }
@@ -553,6 +622,10 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
             return false;
+        if (other.getIsUnstructured() == null ^ this.getIsUnstructured() == null)
+            return false;
+        if (other.getIsUnstructured() != null && other.getIsUnstructured().equals(this.getIsUnstructured()) == false)
+            return false;
         return true;
     }
 
@@ -569,6 +642,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getObjectTypeNames() == null) ? 0 : getObjectTypeNames().hashCode());
         hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
+        hashCode = prime * hashCode + ((getIsUnstructured() == null) ? 0 : getIsUnstructured().hashCode());
         return hashCode;
     }
 

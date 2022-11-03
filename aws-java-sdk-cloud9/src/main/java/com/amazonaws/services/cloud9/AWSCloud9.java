@@ -203,7 +203,7 @@ public interface AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an environment member from an Cloud9 development environment.
+     * Deletes an environment member from a development environment.
      * </p>
      * 
      * @param deleteEnvironmentMembershipRequest

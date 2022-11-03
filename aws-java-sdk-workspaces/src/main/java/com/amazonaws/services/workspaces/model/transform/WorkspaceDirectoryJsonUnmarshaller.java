@@ -118,6 +118,10 @@ public class WorkspaceDirectoryJsonUnmarshaller implements Unmarshaller<Workspac
                     context.nextToken();
                     workspaceDirectory.setSelfservicePermissions(SelfservicePermissionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SamlProperties", targetDepth)) {
+                    context.nextToken();
+                    workspaceDirectory.setSamlProperties(SamlPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

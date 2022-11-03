@@ -321,6 +321,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<PlacementGroupConfig> placementGroupConfigs;
 
     private AutoTerminationPolicy autoTerminationPolicy;
+    /**
+     * <p>
+     * Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is
+     * not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     * </p>
+     */
+    private String oSReleaseLabel;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
@@ -2815,6 +2822,52 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is
+     * not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     * </p>
+     * 
+     * @param oSReleaseLabel
+     *        Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a
+     *        release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     */
+
+    public void setOSReleaseLabel(String oSReleaseLabel) {
+        this.oSReleaseLabel = oSReleaseLabel;
+    }
+
+    /**
+     * <p>
+     * Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is
+     * not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     * </p>
+     * 
+     * @return Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a
+     *         release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     */
+
+    public String getOSReleaseLabel() {
+        return this.oSReleaseLabel;
+    }
+
+    /**
+     * <p>
+     * Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is
+     * not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     * </p>
+     * 
+     * @param oSReleaseLabel
+     *        Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a
+     *        release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withOSReleaseLabel(String oSReleaseLabel) {
+        setOSReleaseLabel(oSReleaseLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2881,7 +2934,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getPlacementGroupConfigs() != null)
             sb.append("PlacementGroupConfigs: ").append(getPlacementGroupConfigs()).append(",");
         if (getAutoTerminationPolicy() != null)
-            sb.append("AutoTerminationPolicy: ").append(getAutoTerminationPolicy());
+            sb.append("AutoTerminationPolicy: ").append(getAutoTerminationPolicy()).append(",");
+        if (getOSReleaseLabel() != null)
+            sb.append("OSReleaseLabel: ").append(getOSReleaseLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -3008,6 +3063,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getAutoTerminationPolicy() != null && other.getAutoTerminationPolicy().equals(this.getAutoTerminationPolicy()) == false)
             return false;
+        if (other.getOSReleaseLabel() == null ^ this.getOSReleaseLabel() == null)
+            return false;
+        if (other.getOSReleaseLabel() != null && other.getOSReleaseLabel().equals(this.getOSReleaseLabel()) == false)
+            return false;
         return true;
     }
 
@@ -3044,6 +3103,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getManagedScalingPolicy() == null) ? 0 : getManagedScalingPolicy().hashCode());
         hashCode = prime * hashCode + ((getPlacementGroupConfigs() == null) ? 0 : getPlacementGroupConfigs().hashCode());
         hashCode = prime * hashCode + ((getAutoTerminationPolicy() == null) ? 0 : getAutoTerminationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getOSReleaseLabel() == null) ? 0 : getOSReleaseLabel().hashCode());
         return hashCode;
     }
 

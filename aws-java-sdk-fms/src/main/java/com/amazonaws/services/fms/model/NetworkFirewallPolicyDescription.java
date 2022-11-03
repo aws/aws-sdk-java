@@ -58,6 +58,45 @@ public class NetworkFirewallPolicyDescription implements Serializable, Cloneable
      * </p>
      */
     private java.util.List<StatefulRuleGroup> statefulRuleGroups;
+    /**
+     * <p>
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<String> statefulDefaultActions;
+    /**
+     * <p>
+     * Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use
+     * in your policy must have stateful rule options settings that are compatible with these settings.
+     * </p>
+     */
+    private StatefulEngineOptions statefulEngineOptions;
 
     /**
      * <p>
@@ -410,6 +449,326 @@ public class NetworkFirewallPolicyDescription implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The default actions to take on a packet that doesn't match any stateful rules. The stateful default
+     *         action is optional, and is only valid when using the strict rule order.</p>
+     *         <p>
+     *         Valid values of the stateful default action:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         aws:drop_strict
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         aws:drop_established
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         aws:alert_strict
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         aws:alert_established
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<String> getStatefulDefaultActions() {
+        return statefulDefaultActions;
+    }
+
+    /**
+     * <p>
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statefulDefaultActions
+     *        The default actions to take on a packet that doesn't match any stateful rules. The stateful default action
+     *        is optional, and is only valid when using the strict rule order.</p>
+     *        <p>
+     *        Valid values of the stateful default action:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        aws:drop_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:drop_established
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_established
+     *        </p>
+     *        </li>
+     */
+
+    public void setStatefulDefaultActions(java.util.Collection<String> statefulDefaultActions) {
+        if (statefulDefaultActions == null) {
+            this.statefulDefaultActions = null;
+            return;
+        }
+
+        this.statefulDefaultActions = new java.util.ArrayList<String>(statefulDefaultActions);
+    }
+
+    /**
+     * <p>
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatefulDefaultActions(java.util.Collection)} or
+     * {@link #withStatefulDefaultActions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param statefulDefaultActions
+     *        The default actions to take on a packet that doesn't match any stateful rules. The stateful default action
+     *        is optional, and is only valid when using the strict rule order.</p>
+     *        <p>
+     *        Valid values of the stateful default action:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        aws:drop_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:drop_established
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_established
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkFirewallPolicyDescription withStatefulDefaultActions(String... statefulDefaultActions) {
+        if (this.statefulDefaultActions == null) {
+            setStatefulDefaultActions(new java.util.ArrayList<String>(statefulDefaultActions.length));
+        }
+        for (String ele : statefulDefaultActions) {
+            this.statefulDefaultActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statefulDefaultActions
+     *        The default actions to take on a packet that doesn't match any stateful rules. The stateful default action
+     *        is optional, and is only valid when using the strict rule order.</p>
+     *        <p>
+     *        Valid values of the stateful default action:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        aws:drop_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:drop_established
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_established
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkFirewallPolicyDescription withStatefulDefaultActions(java.util.Collection<String> statefulDefaultActions) {
+        setStatefulDefaultActions(statefulDefaultActions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use
+     * in your policy must have stateful rule options settings that are compatible with these settings.
+     * </p>
+     * 
+     * @param statefulEngineOptions
+     *        Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that
+     *        you use in your policy must have stateful rule options settings that are compatible with these settings.
+     */
+
+    public void setStatefulEngineOptions(StatefulEngineOptions statefulEngineOptions) {
+        this.statefulEngineOptions = statefulEngineOptions;
+    }
+
+    /**
+     * <p>
+     * Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use
+     * in your policy must have stateful rule options settings that are compatible with these settings.
+     * </p>
+     * 
+     * @return Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that
+     *         you use in your policy must have stateful rule options settings that are compatible with these settings.
+     */
+
+    public StatefulEngineOptions getStatefulEngineOptions() {
+        return this.statefulEngineOptions;
+    }
+
+    /**
+     * <p>
+     * Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use
+     * in your policy must have stateful rule options settings that are compatible with these settings.
+     * </p>
+     * 
+     * @param statefulEngineOptions
+     *        Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that
+     *        you use in your policy must have stateful rule options settings that are compatible with these settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkFirewallPolicyDescription withStatefulEngineOptions(StatefulEngineOptions statefulEngineOptions) {
+        setStatefulEngineOptions(statefulEngineOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -430,7 +789,11 @@ public class NetworkFirewallPolicyDescription implements Serializable, Cloneable
         if (getStatelessCustomActions() != null)
             sb.append("StatelessCustomActions: ").append(getStatelessCustomActions()).append(",");
         if (getStatefulRuleGroups() != null)
-            sb.append("StatefulRuleGroups: ").append(getStatefulRuleGroups());
+            sb.append("StatefulRuleGroups: ").append(getStatefulRuleGroups()).append(",");
+        if (getStatefulDefaultActions() != null)
+            sb.append("StatefulDefaultActions: ").append(getStatefulDefaultActions()).append(",");
+        if (getStatefulEngineOptions() != null)
+            sb.append("StatefulEngineOptions: ").append(getStatefulEngineOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -466,6 +829,14 @@ public class NetworkFirewallPolicyDescription implements Serializable, Cloneable
             return false;
         if (other.getStatefulRuleGroups() != null && other.getStatefulRuleGroups().equals(this.getStatefulRuleGroups()) == false)
             return false;
+        if (other.getStatefulDefaultActions() == null ^ this.getStatefulDefaultActions() == null)
+            return false;
+        if (other.getStatefulDefaultActions() != null && other.getStatefulDefaultActions().equals(this.getStatefulDefaultActions()) == false)
+            return false;
+        if (other.getStatefulEngineOptions() == null ^ this.getStatefulEngineOptions() == null)
+            return false;
+        if (other.getStatefulEngineOptions() != null && other.getStatefulEngineOptions().equals(this.getStatefulEngineOptions()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +850,8 @@ public class NetworkFirewallPolicyDescription implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getStatelessFragmentDefaultActions() == null) ? 0 : getStatelessFragmentDefaultActions().hashCode());
         hashCode = prime * hashCode + ((getStatelessCustomActions() == null) ? 0 : getStatelessCustomActions().hashCode());
         hashCode = prime * hashCode + ((getStatefulRuleGroups() == null) ? 0 : getStatefulRuleGroups().hashCode());
+        hashCode = prime * hashCode + ((getStatefulDefaultActions() == null) ? 0 : getStatefulDefaultActions().hashCode());
+        hashCode = prime * hashCode + ((getStatefulEngineOptions() == null) ? 0 : getStatefulEngineOptions().hashCode());
         return hashCode;
     }
 

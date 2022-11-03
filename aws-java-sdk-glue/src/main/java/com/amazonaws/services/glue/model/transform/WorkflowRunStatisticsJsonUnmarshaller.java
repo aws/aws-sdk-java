@@ -72,6 +72,14 @@ public class WorkflowRunStatisticsJsonUnmarshaller implements Unmarshaller<Workf
                     context.nextToken();
                     workflowRunStatistics.setRunningActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ErroredActions", targetDepth)) {
+                    context.nextToken();
+                    workflowRunStatistics.setErroredActions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("WaitingActions", targetDepth)) {
+                    context.nextToken();
+                    workflowRunStatistics.setWaitingActions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

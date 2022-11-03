@@ -48,6 +48,10 @@ public class SpekeKeyProviderJsonUnmarshaller implements Unmarshaller<SpekeKeyPr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("encryptionContractConfiguration", targetDepth)) {
+                    context.nextToken();
+                    spekeKeyProvider.setEncryptionContractConfiguration(EncryptionContractConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     spekeKeyProvider.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

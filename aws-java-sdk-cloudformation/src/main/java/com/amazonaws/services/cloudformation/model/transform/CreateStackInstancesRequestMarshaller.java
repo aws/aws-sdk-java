@@ -107,6 +107,10 @@ public class CreateStackInstancesRequestMarshaller implements Marshaller<Request
                         organizationalUnitIdsListIndex++;
                     }
                 }
+
+                if (deploymentTargets.getAccountFilterType() != null) {
+                    request.addParameter("DeploymentTargets.AccountFilterType", StringUtils.fromString(deploymentTargets.getAccountFilterType()));
+                }
             }
         }
 

@@ -53,7 +53,7 @@ public class AWSCloudControlApiWaiters {
                 .withSdkFunction(new GetResourceRequestStatusFunction(client))
                 .withAcceptors(new ResourceRequestSuccess.IsSUCCESSMatcher(), new ResourceRequestSuccess.IsFAILEDMatcher(),
                         new ResourceRequestSuccess.IsCANCEL_COMPLETEMatcher())
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(720), new FixedDelayStrategy(5)))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(24), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }
 

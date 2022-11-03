@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body
- * for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that
- * have a request body greater than 8192 bytes.
+ * for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have
+ * a request body greater than 8192 bytes.
  * </p>
  * <p>
  * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -41,7 +41,7 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      */
     private FieldToMatch fieldToMatch;
@@ -69,11 +69,11 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -82,10 +82,10 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
-     * @return The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * @return The part of the web request that you want WAF to inspect.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -94,11 +94,11 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -209,6 +209,11 @@ public abstract class ContentCryptoScheme {
             return Cipher.getInstance(algorithm, provider);
         }
 
+        // Otherwise, if the user has specified a global preference for the default Provider chain, that takes precedence.
+        if (CryptoRuntime.preferDefaultSecurityProvider()) {
+            return Cipher.getInstance(algorithm);
+        }
+
         // Otherwise, if this crypto scheme prefers a particular provider (AesGcm prefers
         // the non-FIPS BouncyCastle provider), that takes precedence.
         if (preferredProvider != null) {

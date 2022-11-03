@@ -47,6 +47,8 @@ public class ListTrainingJobsRequestMarshaller {
             .marshallLocationName("SortBy").build();
     private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SortOrder").build();
+    private static final MarshallingInfo<String> WARMPOOLSTATUSEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmPoolStatusEquals").build();
 
     private static final ListTrainingJobsRequestMarshaller instance = new ListTrainingJobsRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class ListTrainingJobsRequestMarshaller {
             protocolMarshaller.marshall(listTrainingJobsRequest.getStatusEquals(), STATUSEQUALS_BINDING);
             protocolMarshaller.marshall(listTrainingJobsRequest.getSortBy(), SORTBY_BINDING);
             protocolMarshaller.marshall(listTrainingJobsRequest.getSortOrder(), SORTORDER_BINDING);
+            protocolMarshaller.marshall(listTrainingJobsRequest.getWarmPoolStatusEquals(), WARMPOOLSTATUSEQUALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

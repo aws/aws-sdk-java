@@ -35,8 +35,12 @@ public class CreateUserSettingsRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
+    private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> DOWNLOADALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("downloadAllowed").build();
+    private static final MarshallingInfo<Integer> IDLEDISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("idleDisconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> PASTEALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pasteAllowed").build();
     private static final MarshallingInfo<String> PRINTALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,7 +68,9 @@ public class CreateUserSettingsRequestMarshaller {
         try {
             protocolMarshaller.marshall(createUserSettingsRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createUserSettingsRequest.getCopyAllowed(), COPYALLOWED_BINDING);
+            protocolMarshaller.marshall(createUserSettingsRequest.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(createUserSettingsRequest.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);
+            protocolMarshaller.marshall(createUserSettingsRequest.getIdleDisconnectTimeoutInMinutes(), IDLEDISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(createUserSettingsRequest.getPasteAllowed(), PASTEALLOWED_BINDING);
             protocolMarshaller.marshall(createUserSettingsRequest.getPrintAllowed(), PRINTALLOWED_BINDING);
             protocolMarshaller.marshall(createUserSettingsRequest.getTags(), TAGS_BINDING);

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The model training validation messages.
+ * The model training data validation metrics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DataValidationMetrics"
@@ -30,7 +30,7 @@ public class DataValidationMetrics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The file-specific model training validation messages.
+     * The file-specific model training data validation messages.
      * </p>
      */
     private java.util.List<FileValidationMessage> fileLevelMessages;
@@ -43,10 +43,10 @@ public class DataValidationMetrics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The file-specific model training validation messages.
+     * The file-specific model training data validation messages.
      * </p>
      * 
-     * @return The file-specific model training validation messages.
+     * @return The file-specific model training data validation messages.
      */
 
     public java.util.List<FileValidationMessage> getFileLevelMessages() {
@@ -55,11 +55,11 @@ public class DataValidationMetrics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The file-specific model training validation messages.
+     * The file-specific model training data validation messages.
      * </p>
      * 
      * @param fileLevelMessages
-     *        The file-specific model training validation messages.
+     *        The file-specific model training data validation messages.
      */
 
     public void setFileLevelMessages(java.util.Collection<FileValidationMessage> fileLevelMessages) {
@@ -73,7 +73,7 @@ public class DataValidationMetrics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The file-specific model training validation messages.
+     * The file-specific model training data validation messages.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DataValidationMetrics implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param fileLevelMessages
-     *        The file-specific model training validation messages.
+     *        The file-specific model training data validation messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DataValidationMetrics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The file-specific model training validation messages.
+     * The file-specific model training data validation messages.
      * </p>
      * 
      * @param fileLevelMessages
-     *        The file-specific model training validation messages.
+     *        The file-specific model training data validation messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

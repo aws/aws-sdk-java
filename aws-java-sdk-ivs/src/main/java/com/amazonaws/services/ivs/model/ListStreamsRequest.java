@@ -33,7 +33,7 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private StreamFilters filterBy;
     /**
      * <p>
-     * Maximum number of streams to return. Default: 50.
+     * Maximum number of streams to return. Default: 100.
      * </p>
      */
     private Integer maxResults;
@@ -86,11 +86,11 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of streams to return. Default: 50.
+     * Maximum number of streams to return. Default: 100.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of streams to return. Default: 50.
+     *        Maximum number of streams to return. Default: 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -99,10 +99,10 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of streams to return. Default: 50.
+     * Maximum number of streams to return. Default: 100.
      * </p>
      * 
-     * @return Maximum number of streams to return. Default: 50.
+     * @return Maximum number of streams to return. Default: 100.
      */
 
     public Integer getMaxResults() {
@@ -111,11 +111,11 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of streams to return. Default: 50.
+     * Maximum number of streams to return. Default: 100.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of streams to return. Default: 50.
+     *        Maximum number of streams to return. Default: 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

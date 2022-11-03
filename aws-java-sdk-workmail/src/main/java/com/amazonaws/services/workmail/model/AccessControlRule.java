@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule that controls access to an Amazon WorkMail organization.
+ * A rule that controls access to an WorkMail organization.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AccessControlRule" target="_top">AWS API
@@ -98,6 +98,18 @@ public class AccessControlRule implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date dateModified;
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     */
+    private java.util.List<String> impersonationRoleIds;
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     */
+    private java.util.List<String> notImpersonationRoleIds;
 
     /**
      * <p>
@@ -771,6 +783,146 @@ public class AccessControlRule implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * 
+     * @return Impersonation role IDs to include in the rule.
+     */
+
+    public java.util.List<String> getImpersonationRoleIds() {
+        return impersonationRoleIds;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * 
+     * @param impersonationRoleIds
+     *        Impersonation role IDs to include in the rule.
+     */
+
+    public void setImpersonationRoleIds(java.util.Collection<String> impersonationRoleIds) {
+        if (impersonationRoleIds == null) {
+            this.impersonationRoleIds = null;
+            return;
+        }
+
+        this.impersonationRoleIds = new java.util.ArrayList<String>(impersonationRoleIds);
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImpersonationRoleIds(java.util.Collection)} or {@link #withImpersonationRoleIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param impersonationRoleIds
+     *        Impersonation role IDs to include in the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessControlRule withImpersonationRoleIds(String... impersonationRoleIds) {
+        if (this.impersonationRoleIds == null) {
+            setImpersonationRoleIds(new java.util.ArrayList<String>(impersonationRoleIds.length));
+        }
+        for (String ele : impersonationRoleIds) {
+            this.impersonationRoleIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * 
+     * @param impersonationRoleIds
+     *        Impersonation role IDs to include in the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessControlRule withImpersonationRoleIds(java.util.Collection<String> impersonationRoleIds) {
+        setImpersonationRoleIds(impersonationRoleIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * 
+     * @return Impersonation role IDs to exclude from the rule.
+     */
+
+    public java.util.List<String> getNotImpersonationRoleIds() {
+        return notImpersonationRoleIds;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * 
+     * @param notImpersonationRoleIds
+     *        Impersonation role IDs to exclude from the rule.
+     */
+
+    public void setNotImpersonationRoleIds(java.util.Collection<String> notImpersonationRoleIds) {
+        if (notImpersonationRoleIds == null) {
+            this.notImpersonationRoleIds = null;
+            return;
+        }
+
+        this.notImpersonationRoleIds = new java.util.ArrayList<String>(notImpersonationRoleIds);
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotImpersonationRoleIds(java.util.Collection)} or
+     * {@link #withNotImpersonationRoleIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param notImpersonationRoleIds
+     *        Impersonation role IDs to exclude from the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessControlRule withNotImpersonationRoleIds(String... notImpersonationRoleIds) {
+        if (this.notImpersonationRoleIds == null) {
+            setNotImpersonationRoleIds(new java.util.ArrayList<String>(notImpersonationRoleIds.length));
+        }
+        for (String ele : notImpersonationRoleIds) {
+            this.notImpersonationRoleIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * 
+     * @param notImpersonationRoleIds
+     *        Impersonation role IDs to exclude from the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessControlRule withNotImpersonationRoleIds(java.util.Collection<String> notImpersonationRoleIds) {
+        setNotImpersonationRoleIds(notImpersonationRoleIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -803,7 +955,11 @@ public class AccessControlRule implements Serializable, Cloneable, StructuredPoj
         if (getDateCreated() != null)
             sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getDateModified() != null)
-            sb.append("DateModified: ").append(getDateModified());
+            sb.append("DateModified: ").append(getDateModified()).append(",");
+        if (getImpersonationRoleIds() != null)
+            sb.append("ImpersonationRoleIds: ").append(getImpersonationRoleIds()).append(",");
+        if (getNotImpersonationRoleIds() != null)
+            sb.append("NotImpersonationRoleIds: ").append(getNotImpersonationRoleIds());
         sb.append("}");
         return sb.toString();
     }
@@ -862,6 +1018,14 @@ public class AccessControlRule implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDateModified() != null && other.getDateModified().equals(this.getDateModified()) == false)
             return false;
+        if (other.getImpersonationRoleIds() == null ^ this.getImpersonationRoleIds() == null)
+            return false;
+        if (other.getImpersonationRoleIds() != null && other.getImpersonationRoleIds().equals(this.getImpersonationRoleIds()) == false)
+            return false;
+        if (other.getNotImpersonationRoleIds() == null ^ this.getNotImpersonationRoleIds() == null)
+            return false;
+        if (other.getNotImpersonationRoleIds() != null && other.getNotImpersonationRoleIds().equals(this.getNotImpersonationRoleIds()) == false)
+            return false;
         return true;
     }
 
@@ -881,6 +1045,8 @@ public class AccessControlRule implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getNotUserIds() == null) ? 0 : getNotUserIds().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getDateModified() == null) ? 0 : getDateModified().hashCode());
+        hashCode = prime * hashCode + ((getImpersonationRoleIds() == null) ? 0 : getImpersonationRoleIds().hashCode());
+        hashCode = prime * hashCode + ((getNotImpersonationRoleIds() == null) ? 0 : getNotImpersonationRoleIds().hashCode());
         return hashCode;
     }
 

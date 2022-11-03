@@ -90,8 +90,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
-     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
-     * group reference statement settings.
+     * the rules in the rule group to only count matches, do not use this and instead use the rule action override
+     * option, with <code>Count</code> action, in your rule group reference statement settings.
      * </p>
      * </note>
      */
@@ -152,6 +152,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CaptchaConfig captchaConfig;
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the
+     * challenge configuration that's defined for the web ACL.
+     * </p>
+     */
+    private ChallengeConfig challengeConfig;
 
     /**
      * <p>
@@ -476,8 +483,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
-     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
-     * group reference statement settings.
+     * the rules in the rule group to only count matches, do not use this and instead use the rule action override
+     * option, with <code>Count</code> action, in your rule group reference statement settings.
      * </p>
      * </note>
      * 
@@ -492,8 +499,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <note>
      *        <p>
      *        This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
-     *        you want the rules in the rule group to only count matches, do not use this and instead exclude those
-     *        rules in your rule group reference statement settings.
+     *        you want the rules in the rule group to only count matches, do not use this and instead use the rule
+     *        action override option, with <code>Count</code> action, in your rule group reference statement settings.
      *        </p>
      */
 
@@ -513,8 +520,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
-     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
-     * group reference statement settings.
+     * the rules in the rule group to only count matches, do not use this and instead use the rule action override
+     * option, with <code>Count</code> action, in your rule group reference statement settings.
      * </p>
      * </note>
      * 
@@ -528,8 +535,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *         <note>
      *         <p>
      *         This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
-     *         you want the rules in the rule group to only count matches, do not use this and instead exclude those
-     *         rules in your rule group reference statement settings.
+     *         you want the rules in the rule group to only count matches, do not use this and instead use the rule
+     *         action override option, with <code>Count</code> action, in your rule group reference statement settings.
      *         </p>
      */
 
@@ -549,8 +556,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
-     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
-     * group reference statement settings.
+     * the rules in the rule group to only count matches, do not use this and instead use the rule action override
+     * option, with <code>Count</code> action, in your rule group reference statement settings.
      * </p>
      * </note>
      * 
@@ -565,8 +572,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <note>
      *        <p>
      *        This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
-     *        you want the rules in the rule group to only count matches, do not use this and instead exclude those
-     *        rules in your rule group reference statement settings.
+     *        you want the rules in the rule group to only count matches, do not use this and instead use the rule
+     *        action override option, with <code>Count</code> action, in your rule group reference statement settings.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1025,6 +1032,52 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the
+     * challenge configuration that's defined for the web ACL.
+     * </p>
+     * 
+     * @param challengeConfig
+     *        Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses
+     *        the challenge configuration that's defined for the web ACL.
+     */
+
+    public void setChallengeConfig(ChallengeConfig challengeConfig) {
+        this.challengeConfig = challengeConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the
+     * challenge configuration that's defined for the web ACL.
+     * </p>
+     * 
+     * @return Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses
+     *         the challenge configuration that's defined for the web ACL.
+     */
+
+    public ChallengeConfig getChallengeConfig() {
+        return this.challengeConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the
+     * challenge configuration that's defined for the web ACL.
+     * </p>
+     * 
+     * @param challengeConfig
+     *        Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses
+     *        the challenge configuration that's defined for the web ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withChallengeConfig(ChallengeConfig challengeConfig) {
+        setChallengeConfig(challengeConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1051,7 +1104,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         if (getVisibilityConfig() != null)
             sb.append("VisibilityConfig: ").append(getVisibilityConfig()).append(",");
         if (getCaptchaConfig() != null)
-            sb.append("CaptchaConfig: ").append(getCaptchaConfig());
+            sb.append("CaptchaConfig: ").append(getCaptchaConfig()).append(",");
+        if (getChallengeConfig() != null)
+            sb.append("ChallengeConfig: ").append(getChallengeConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1098,6 +1153,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCaptchaConfig() != null && other.getCaptchaConfig().equals(this.getCaptchaConfig()) == false)
             return false;
+        if (other.getChallengeConfig() == null ^ this.getChallengeConfig() == null)
+            return false;
+        if (other.getChallengeConfig() != null && other.getChallengeConfig().equals(this.getChallengeConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1114,6 +1173,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRuleLabels() == null) ? 0 : getRuleLabels().hashCode());
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
         hashCode = prime * hashCode + ((getCaptchaConfig() == null) ? 0 : getCaptchaConfig().hashCode());
+        hashCode = prime * hashCode + ((getChallengeConfig() == null) ? 0 : getChallengeConfig().hashCode());
         return hashCode;
     }
 

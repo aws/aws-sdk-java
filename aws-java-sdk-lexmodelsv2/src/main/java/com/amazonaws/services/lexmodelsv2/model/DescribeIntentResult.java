@@ -131,6 +131,8 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /** <p/> */
+    private InitialResponseSetting initialResponseSetting;
 
     /**
      * <p>
@@ -973,6 +975,38 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p/>
+     * 
+     * @param initialResponseSetting
+     */
+
+    public void setInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
+        this.initialResponseSetting = initialResponseSetting;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public InitialResponseSetting getInitialResponseSetting() {
+        return this.initialResponseSetting;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param initialResponseSetting
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeIntentResult withInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
+        setInitialResponseSetting(initialResponseSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1019,7 +1053,9 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getInitialResponseSetting() != null)
+            sb.append("InitialResponseSetting: ").append(getInitialResponseSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -1106,6 +1142,10 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getInitialResponseSetting() == null ^ this.getInitialResponseSetting() == null)
+            return false;
+        if (other.getInitialResponseSetting() != null && other.getInitialResponseSetting().equals(this.getInitialResponseSetting()) == false)
+            return false;
         return true;
     }
 
@@ -1132,6 +1172,7 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getInitialResponseSetting() == null) ? 0 : getInitialResponseSetting().hashCode());
         return hashCode;
     }
 

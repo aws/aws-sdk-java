@@ -79,7 +79,7 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
     private String longTermPricingStatus;
     /**
      * <p>
-     * The type of Snow Family Devices associated with this long-term pricing job.
+     * The type of Snow Family devices associated with this long-term pricing job.
      * </p>
      */
     private String snowballType;
@@ -451,11 +451,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of Snow Family Devices associated with this long-term pricing job.
+     * The type of Snow Family devices associated with this long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices associated with this long-term pricing job.
+     *        The type of Snow Family devices associated with this long-term pricing job.
      * @see SnowballType
      */
 
@@ -465,10 +465,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of Snow Family Devices associated with this long-term pricing job.
+     * The type of Snow Family devices associated with this long-term pricing job.
      * </p>
      * 
-     * @return The type of Snow Family Devices associated with this long-term pricing job.
+     * @return The type of Snow Family devices associated with this long-term pricing job.
      * @see SnowballType
      */
 
@@ -478,11 +478,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of Snow Family Devices associated with this long-term pricing job.
+     * The type of Snow Family devices associated with this long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices associated with this long-term pricing job.
+     *        The type of Snow Family devices associated with this long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -494,11 +494,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of Snow Family Devices associated with this long-term pricing job.
+     * The type of Snow Family devices associated with this long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices associated with this long-term pricing job.
+     *        The type of Snow Family devices associated with this long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */

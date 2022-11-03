@@ -44,6 +44,16 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * An optional list of key-value pairs to associate with the resource.
+     * </p>
+     * <p>
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * <p>
@@ -172,6 +182,101 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An optional list of key-value pairs to associate with the resource.
+     * </p>
+     * <p>
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * </p>
+     * 
+     * @return An optional list of key-value pairs to associate with the resource.</p>
+     *         <p>
+     *         For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An optional list of key-value pairs to associate with the resource.
+     * </p>
+     * <p>
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * </p>
+     * 
+     * @param tags
+     *        An optional list of key-value pairs to associate with the resource.</p>
+     *        <p>
+     *        For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tags);
+    }
+
+    /**
+     * <p>
+     * An optional list of key-value pairs to associate with the resource.
+     * </p>
+     * <p>
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * </p>
+     * 
+     * @param tags
+     *        An optional list of key-value pairs to associate with the resource.</p>
+     *        <p>
+     *        For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDestinationRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see PutDestinationRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDestinationRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDestinationRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +293,9 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTargetArn() != null)
             sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +322,10 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +337,7 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
         hashCode = prime * hashCode + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

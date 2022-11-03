@@ -30,56 +30,16 @@ public class Substring implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of the substring.
-     * </p>
-     */
-    private Integer length;
-    /**
-     * <p>
      * The start index of the substring, starting from 0.
      * </p>
      */
     private Integer start;
-
     /**
      * <p>
      * The length of the substring.
      * </p>
-     * 
-     * @param length
-     *        The length of the substring.
      */
-
-    public void setLength(Integer length) {
-        this.length = length;
-    }
-
-    /**
-     * <p>
-     * The length of the substring.
-     * </p>
-     * 
-     * @return The length of the substring.
-     */
-
-    public Integer getLength() {
-        return this.length;
-    }
-
-    /**
-     * <p>
-     * The length of the substring.
-     * </p>
-     * 
-     * @param length
-     *        The length of the substring.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Substring withLength(Integer length) {
-        setLength(length);
-        return this;
-    }
+    private Integer length;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class Substring implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The length of the substring.
+     * </p>
+     * 
+     * @param length
+     *        The length of the substring.
+     */
+
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+
+    /**
+     * <p>
+     * The length of the substring.
+     * </p>
+     * 
+     * @return The length of the substring.
+     */
+
+    public Integer getLength() {
+        return this.length;
+    }
+
+    /**
+     * <p>
+     * The length of the substring.
+     * </p>
+     * 
+     * @param length
+     *        The length of the substring.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Substring withLength(Integer length) {
+        setLength(length);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class Substring implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLength() != null)
-            sb.append("Length: ").append(getLength()).append(",");
         if (getStart() != null)
-            sb.append("Start: ").append(getStart());
+            sb.append("Start: ").append(getStart()).append(",");
+        if (getLength() != null)
+            sb.append("Length: ").append(getLength());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class Substring implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Substring == false)
             return false;
         Substring other = (Substring) obj;
-        if (other.getLength() == null ^ this.getLength() == null)
-            return false;
-        if (other.getLength() != null && other.getLength().equals(this.getLength()) == false)
-            return false;
         if (other.getStart() == null ^ this.getStart() == null)
             return false;
         if (other.getStart() != null && other.getStart().equals(this.getStart()) == false)
+            return false;
+        if (other.getLength() == null ^ this.getLength() == null)
+            return false;
+        if (other.getLength() != null && other.getLength().equals(this.getLength()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class Substring implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getLength() == null) ? 0 : getLength().hashCode());
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
+        hashCode = prime * hashCode + ((getLength() == null) ? 0 : getLength().hashCode());
         return hashCode;
     }
 

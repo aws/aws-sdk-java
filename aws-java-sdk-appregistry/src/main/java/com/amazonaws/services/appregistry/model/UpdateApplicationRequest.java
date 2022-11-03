@@ -33,7 +33,8 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String application;
     /**
      * <p>
-     * The new name of the application. The name must be unique in the region in which you are updating the application.
+     * Deprecated: The new name of the application. The name must be unique in the region in which you are updating the
+     * application. Please do not use this field as we have stopped supporting name updates.
      * </p>
      */
     @Deprecated
@@ -87,12 +88,13 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The new name of the application. The name must be unique in the region in which you are updating the application.
+     * Deprecated: The new name of the application. The name must be unique in the region in which you are updating the
+     * application. Please do not use this field as we have stopped supporting name updates.
      * </p>
      * 
      * @param name
-     *        The new name of the application. The name must be unique in the region in which you are updating the
-     *        application.
+     *        Deprecated: The new name of the application. The name must be unique in the region in which you are
+     *        updating the application. Please do not use this field as we have stopped supporting name updates.
      */
     @Deprecated
     public void setName(String name) {
@@ -101,11 +103,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The new name of the application. The name must be unique in the region in which you are updating the application.
+     * Deprecated: The new name of the application. The name must be unique in the region in which you are updating the
+     * application. Please do not use this field as we have stopped supporting name updates.
      * </p>
      * 
-     * @return The new name of the application. The name must be unique in the region in which you are updating the
-     *         application.
+     * @return Deprecated: The new name of the application. The name must be unique in the region in which you are
+     *         updating the application. Please do not use this field as we have stopped supporting name updates.
      */
     @Deprecated
     public String getName() {
@@ -114,12 +117,13 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The new name of the application. The name must be unique in the region in which you are updating the application.
+     * Deprecated: The new name of the application. The name must be unique in the region in which you are updating the
+     * application. Please do not use this field as we have stopped supporting name updates.
      * </p>
      * 
      * @param name
-     *        The new name of the application. The name must be unique in the region in which you are updating the
-     *        application.
+     *        Deprecated: The new name of the application. The name must be unique in the region in which you are
+     *        updating the application. Please do not use this field as we have stopped supporting name updates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

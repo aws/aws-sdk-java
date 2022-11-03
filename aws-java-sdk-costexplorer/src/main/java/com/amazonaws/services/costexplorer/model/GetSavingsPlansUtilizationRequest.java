@@ -89,7 +89,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
     private Expression filter;
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -122,7 +122,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      */
     private SortDefinition sortBy;
@@ -536,7 +536,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -569,11 +569,11 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The following values are supported for <code>Key</code>:
      *        </p>
@@ -605,7 +605,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      */
 
     public void setSortBy(SortDefinition sortBy) {
@@ -614,7 +614,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -647,10 +647,10 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * 
-     * @return The value by which you want to sort the data.</p>
+     * @return The value that you want to sort the data by.</p>
      *         <p>
      *         The following values are supported for <code>Key</code>:
      *         </p>
@@ -682,7 +682,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         </ul>
      *         <p>
-     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *         The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      */
 
     public SortDefinition getSortBy() {
@@ -691,7 +691,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you want to sort the data by.
      * </p>
      * <p>
      * The following values are supported for <code>Key</code>:
@@ -724,11 +724,11 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you want to sort the data by.</p>
      *        <p>
      *        The following values are supported for <code>Key</code>:
      *        </p>
@@ -760,7 +760,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

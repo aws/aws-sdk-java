@@ -61,7 +61,10 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Tags attached to the resource.
+     * Tags attached to the resource. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -283,10 +286,16 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tags attached to the resource.
+     * Tags attached to the resource. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
-     * @return Tags attached to the resource.
+     * @return Tags attached to the resource. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *         details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *         Chat has no constraints beyond what is documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -295,11 +304,17 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tags attached to the resource.
+     * Tags attached to the resource. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Tags attached to the resource.
+     *        Tags attached to the resource. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -308,11 +323,17 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tags attached to the resource.
+     * Tags attached to the resource. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Tags attached to the resource.
+     *        Tags attached to the resource. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

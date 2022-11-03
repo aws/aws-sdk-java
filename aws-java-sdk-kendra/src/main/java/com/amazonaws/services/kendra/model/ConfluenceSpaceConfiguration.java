@@ -30,16 +30,16 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal
-     * spaces. If personal spaces are indexed, queries without user context information may return restricted items from
-     * a personal space in their results. For more information, see <a
+     * <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal
+     * spaces are indexed, queries without user context information may return restricted items from a personal space in
+     * their results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
      * </p>
      */
     private Boolean crawlPersonalSpaces;
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index archived spaces.
+     * <code>TRUE</code> to index archived spaces.
      * </p>
      */
     private Boolean crawlArchivedSpaces;
@@ -75,16 +75,16 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal
-     * spaces. If personal spaces are indexed, queries without user context information may return restricted items from
-     * a personal space in their results. For more information, see <a
+     * <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal
+     * spaces are indexed, queries without user context information may return restricted items from a personal space in
+     * their results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
      * </p>
      * 
      * @param crawlPersonalSpaces
-     *        Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in
-     *        personal spaces. If personal spaces are indexed, queries without user context information may return
-     *        restricted items from a personal space in their results. For more information, see <a
+     *        <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If
+     *        personal spaces are indexed, queries without user context information may return restricted items from a
+     *        personal space in their results. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user
      *        context</a>.
      */
@@ -95,15 +95,15 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal
-     * spaces. If personal spaces are indexed, queries without user context information may return restricted items from
-     * a personal space in their results. For more information, see <a
+     * <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal
+     * spaces are indexed, queries without user context information may return restricted items from a personal space in
+     * their results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
      * </p>
      * 
-     * @return Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in
-     *         personal spaces. If personal spaces are indexed, queries without user context information may return
-     *         restricted items from a personal space in their results. For more information, see <a
+     * @return <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If
+     *         personal spaces are indexed, queries without user context information may return restricted items from a
+     *         personal space in their results. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user
      *         context</a>.
      */
@@ -114,16 +114,16 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal
-     * spaces. If personal spaces are indexed, queries without user context information may return restricted items from
-     * a personal space in their results. For more information, see <a
+     * <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal
+     * spaces are indexed, queries without user context information may return restricted items from a personal space in
+     * their results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
      * </p>
      * 
      * @param crawlPersonalSpaces
-     *        Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in
-     *        personal spaces. If personal spaces are indexed, queries without user context information may return
-     *        restricted items from a personal space in their results. For more information, see <a
+     *        <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If
+     *        personal spaces are indexed, queries without user context information may return restricted items from a
+     *        personal space in their results. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user
      *        context</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -136,15 +136,15 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal
-     * spaces. If personal spaces are indexed, queries without user context information may return restricted items from
-     * a personal space in their results. For more information, see <a
+     * <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal
+     * spaces are indexed, queries without user context information may return restricted items from a personal space in
+     * their results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
      * </p>
      * 
-     * @return Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in
-     *         personal spaces. If personal spaces are indexed, queries without user context information may return
-     *         restricted items from a personal space in their results. For more information, see <a
+     * @return <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If
+     *         personal spaces are indexed, queries without user context information may return restricted items from a
+     *         personal space in their results. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user
      *         context</a>.
      */
@@ -155,11 +155,11 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index archived spaces.
+     * <code>TRUE</code> to index archived spaces.
      * </p>
      * 
      * @param crawlArchivedSpaces
-     *        Specifies whether Amazon Kendra should index archived spaces.
+     *        <code>TRUE</code> to index archived spaces.
      */
 
     public void setCrawlArchivedSpaces(Boolean crawlArchivedSpaces) {
@@ -168,10 +168,10 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index archived spaces.
+     * <code>TRUE</code> to index archived spaces.
      * </p>
      * 
-     * @return Specifies whether Amazon Kendra should index archived spaces.
+     * @return <code>TRUE</code> to index archived spaces.
      */
 
     public Boolean getCrawlArchivedSpaces() {
@@ -180,11 +180,11 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index archived spaces.
+     * <code>TRUE</code> to index archived spaces.
      * </p>
      * 
      * @param crawlArchivedSpaces
-     *        Specifies whether Amazon Kendra should index archived spaces.
+     *        <code>TRUE</code> to index archived spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,10 +195,10 @@ public class ConfluenceSpaceConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether Amazon Kendra should index archived spaces.
+     * <code>TRUE</code> to index archived spaces.
      * </p>
      * 
-     * @return Specifies whether Amazon Kendra should index archived spaces.
+     * @return <code>TRUE</code> to index archived spaces.
      */
 
     public Boolean isCrawlArchivedSpaces() {

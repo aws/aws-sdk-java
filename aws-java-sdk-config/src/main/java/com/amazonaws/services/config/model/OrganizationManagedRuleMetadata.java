@@ -53,7 +53,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     private String inputParameters;
     /**
      * <p>
-     * The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is
+     * The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is
      * triggered at a periodic frequency.
      * </p>
      * <note>
@@ -231,7 +231,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is
+     * The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is
      * triggered at a periodic frequency.
      * </p>
      * <note>
@@ -242,7 +242,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
      * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule
+     *        The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule
      *        that is triggered at a periodic frequency.</p> <note>
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
@@ -257,7 +257,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is
+     * The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is
      * triggered at a periodic frequency.
      * </p>
      * <note>
@@ -267,7 +267,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
      * </p>
      * </note>
      * 
-     * @return The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule
+     * @return The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule
      *         that is triggered at a periodic frequency.</p> <note>
      *         <p>
      *         By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify
@@ -282,7 +282,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is
+     * The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is
      * triggered at a periodic frequency.
      * </p>
      * <note>
@@ -293,7 +293,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
      * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule
+     *        The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule
      *        that is triggered at a periodic frequency.</p> <note>
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
@@ -310,7 +310,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is
+     * The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is
      * triggered at a periodic frequency.
      * </p>
      * <note>
@@ -321,7 +321,7 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
      * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule
+     *        The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule
      *        that is triggered at a periodic frequency.</p> <note>
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a

@@ -25,18 +25,21 @@ public class ModifyAquaConfigurationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated AQUA configuration of the cluster.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
      */
     private AquaConfiguration aquaConfiguration;
 
     /**
      * <p>
-     * The updated AQUA configuration of the cluster.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
      * 
      * @param aquaConfiguration
-     *        The updated AQUA configuration of the cluster.
+     *        This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      */
 
     public void setAquaConfiguration(AquaConfiguration aquaConfiguration) {
@@ -45,10 +48,12 @@ public class ModifyAquaConfigurationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated AQUA configuration of the cluster.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
      * 
-     * @return The updated AQUA configuration of the cluster.
+     * @return This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *         Accelerator).
      */
 
     public AquaConfiguration getAquaConfiguration() {
@@ -57,11 +62,13 @@ public class ModifyAquaConfigurationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated AQUA configuration of the cluster.
+     * This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).
      * </p>
      * 
      * @param aquaConfiguration
-     *        The updated AQUA configuration of the cluster.
+     *        This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

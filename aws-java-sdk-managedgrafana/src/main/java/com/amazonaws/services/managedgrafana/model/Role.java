@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Role {
 
     ADMIN("ADMIN"),
-    EDITOR("EDITOR");
+    EDITOR("EDITOR"),
+    VIEWER("VIEWER");
 
     private String value;
 

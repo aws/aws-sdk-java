@@ -28,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AwsEcsClusterDetailsMarshaller {
 
+    private static final MarshallingInfo<String> CLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterArn").build();
+    private static final MarshallingInfo<Integer> ACTIVESERVICESCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveServicesCount").build();
     private static final MarshallingInfo<List> CAPACITYPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityProviders").build();
     private static final MarshallingInfo<List> CLUSTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -36,6 +40,14 @@ public class AwsEcsClusterDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<List> DEFAULTCAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCapacityProviderStrategy").build();
+    private static final MarshallingInfo<String> CLUSTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterName").build();
+    private static final MarshallingInfo<Integer> REGISTEREDCONTAINERINSTANCESCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegisteredContainerInstancesCount").build();
+    private static final MarshallingInfo<Integer> RUNNINGTASKSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RunningTasksCount").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
     private static final AwsEcsClusterDetailsMarshaller instance = new AwsEcsClusterDetailsMarshaller();
 
@@ -53,10 +65,16 @@ public class AwsEcsClusterDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(awsEcsClusterDetails.getClusterArn(), CLUSTERARN_BINDING);
+            protocolMarshaller.marshall(awsEcsClusterDetails.getActiveServicesCount(), ACTIVESERVICESCOUNT_BINDING);
             protocolMarshaller.marshall(awsEcsClusterDetails.getCapacityProviders(), CAPACITYPROVIDERS_BINDING);
             protocolMarshaller.marshall(awsEcsClusterDetails.getClusterSettings(), CLUSTERSETTINGS_BINDING);
             protocolMarshaller.marshall(awsEcsClusterDetails.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(awsEcsClusterDetails.getDefaultCapacityProviderStrategy(), DEFAULTCAPACITYPROVIDERSTRATEGY_BINDING);
+            protocolMarshaller.marshall(awsEcsClusterDetails.getClusterName(), CLUSTERNAME_BINDING);
+            protocolMarshaller.marshall(awsEcsClusterDetails.getRegisteredContainerInstancesCount(), REGISTEREDCONTAINERINSTANCESCOUNT_BINDING);
+            protocolMarshaller.marshall(awsEcsClusterDetails.getRunningTasksCount(), RUNNINGTASKSCOUNT_BINDING);
+            protocolMarshaller.marshall(awsEcsClusterDetails.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

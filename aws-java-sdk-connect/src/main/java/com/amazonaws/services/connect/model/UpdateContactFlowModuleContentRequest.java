@@ -33,13 +33,13 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
     private String instanceId;
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      */
     private String contactFlowModuleId;
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      */
     private String content;
@@ -86,11 +86,11 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param contactFlowModuleId
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      */
 
     public void setContactFlowModuleId(String contactFlowModuleId) {
@@ -99,10 +99,10 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
-     * @return The identifier of the contact flow module.
+     * @return The identifier of the flow module.
      */
 
     public String getContactFlowModuleId() {
@@ -111,11 +111,11 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param contactFlowModuleId
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow module.
+     *        The content of the flow module.
      */
 
     public void setContent(String content) {
@@ -139,10 +139,10 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
-     * @return The content of the contact flow module.
+     * @return The content of the flow module.
      */
 
     public String getContent() {
@@ -151,11 +151,11 @@ public class UpdateContactFlowModuleContentRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow module.
+     *        The content of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

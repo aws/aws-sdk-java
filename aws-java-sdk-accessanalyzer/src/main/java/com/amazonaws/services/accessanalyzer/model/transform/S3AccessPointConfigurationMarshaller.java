@@ -29,10 +29,10 @@ public class S3AccessPointConfigurationMarshaller {
 
     private static final MarshallingInfo<String> ACCESSPOINTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessPointPolicy").build();
-    private static final MarshallingInfo<StructuredPojo> NETWORKORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkOrigin").build();
     private static final MarshallingInfo<StructuredPojo> PUBLICACCESSBLOCK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicAccessBlock").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkOrigin").build();
 
     private static final S3AccessPointConfigurationMarshaller instance = new S3AccessPointConfigurationMarshaller();
 
@@ -51,8 +51,8 @@ public class S3AccessPointConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(s3AccessPointConfiguration.getAccessPointPolicy(), ACCESSPOINTPOLICY_BINDING);
-            protocolMarshaller.marshall(s3AccessPointConfiguration.getNetworkOrigin(), NETWORKORIGIN_BINDING);
             protocolMarshaller.marshall(s3AccessPointConfiguration.getPublicAccessBlock(), PUBLICACCESSBLOCK_BINDING);
+            protocolMarshaller.marshall(s3AccessPointConfiguration.getNetworkOrigin(), NETWORKORIGIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

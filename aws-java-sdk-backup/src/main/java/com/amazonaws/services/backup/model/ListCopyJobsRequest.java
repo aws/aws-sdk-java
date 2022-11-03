@@ -144,6 +144,18 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String byAccountId;
+    /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date byCompleteBefore;
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date byCompleteAfter;
 
     /**
      * <p>
@@ -912,6 +924,92 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteBefore
+     *        Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setByCompleteBefore(java.util.Date byCompleteBefore) {
+        this.byCompleteBefore = byCompleteBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public java.util.Date getByCompleteBefore() {
+        return this.byCompleteBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteBefore
+     *        Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCopyJobsRequest withByCompleteBefore(java.util.Date byCompleteBefore) {
+        setByCompleteBefore(byCompleteBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteAfter
+     *        Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setByCompleteAfter(java.util.Date byCompleteAfter) {
+        this.byCompleteAfter = byCompleteAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public java.util.Date getByCompleteAfter() {
+        return this.byCompleteAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteAfter
+     *        Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCopyJobsRequest withByCompleteAfter(java.util.Date byCompleteAfter) {
+        setByCompleteAfter(byCompleteAfter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -940,7 +1038,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getByDestinationVaultArn() != null)
             sb.append("ByDestinationVaultArn: ").append(getByDestinationVaultArn()).append(",");
         if (getByAccountId() != null)
-            sb.append("ByAccountId: ").append(getByAccountId());
+            sb.append("ByAccountId: ").append(getByAccountId()).append(",");
+        if (getByCompleteBefore() != null)
+            sb.append("ByCompleteBefore: ").append(getByCompleteBefore()).append(",");
+        if (getByCompleteAfter() != null)
+            sb.append("ByCompleteAfter: ").append(getByCompleteAfter());
         sb.append("}");
         return sb.toString();
     }
@@ -991,6 +1093,14 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
             return false;
+        if (other.getByCompleteBefore() == null ^ this.getByCompleteBefore() == null)
+            return false;
+        if (other.getByCompleteBefore() != null && other.getByCompleteBefore().equals(this.getByCompleteBefore()) == false)
+            return false;
+        if (other.getByCompleteAfter() == null ^ this.getByCompleteAfter() == null)
+            return false;
+        if (other.getByCompleteAfter() != null && other.getByCompleteAfter().equals(this.getByCompleteAfter()) == false)
+            return false;
         return true;
     }
 
@@ -1008,6 +1118,8 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getByResourceType() == null) ? 0 : getByResourceType().hashCode());
         hashCode = prime * hashCode + ((getByDestinationVaultArn() == null) ? 0 : getByDestinationVaultArn().hashCode());
         hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
+        hashCode = prime * hashCode + ((getByCompleteBefore() == null) ? 0 : getByCompleteBefore().hashCode());
+        hashCode = prime * hashCode + ((getByCompleteAfter() == null) ? 0 : getByCompleteAfter().hashCode());
         return hashCode;
     }
 

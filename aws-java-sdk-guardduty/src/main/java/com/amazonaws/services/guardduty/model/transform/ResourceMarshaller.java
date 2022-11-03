@@ -40,6 +40,12 @@ public class ResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesDetails").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<StructuredPojo> EBSVOLUMEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebsVolumeDetails").build();
+    private static final MarshallingInfo<StructuredPojo> ECSCLUSTERDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecsClusterDetails").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerDetails").build();
 
     private static final ResourceMarshaller instance = new ResourceMarshaller();
 
@@ -63,6 +69,9 @@ public class ResourceMarshaller {
             protocolMarshaller.marshall(resource.getEksClusterDetails(), EKSCLUSTERDETAILS_BINDING);
             protocolMarshaller.marshall(resource.getKubernetesDetails(), KUBERNETESDETAILS_BINDING);
             protocolMarshaller.marshall(resource.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(resource.getEbsVolumeDetails(), EBSVOLUMEDETAILS_BINDING);
+            protocolMarshaller.marshall(resource.getEcsClusterDetails(), ECSCLUSTERDETAILS_BINDING);
+            protocolMarshaller.marshall(resource.getContainerDetails(), CONTAINERDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

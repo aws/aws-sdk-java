@@ -1,0 +1,220 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.textract.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Shows the group that a certain key belongs to. This helps differentiate between names and addresses for different
+ * organizations, that can be hard to determine via JSON response.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseGroupProperty" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ExpenseGroupProperty implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Informs you on whether the expense group is a name or an address.
+     * </p>
+     */
+    private java.util.List<String> types;
+    /**
+     * <p>
+     * Provides a group Id number, which will be the same for each in the group.
+     * </p>
+     */
+    private String id;
+
+    /**
+     * <p>
+     * Informs you on whether the expense group is a name or an address.
+     * </p>
+     * 
+     * @return Informs you on whether the expense group is a name or an address.
+     */
+
+    public java.util.List<String> getTypes() {
+        return types;
+    }
+
+    /**
+     * <p>
+     * Informs you on whether the expense group is a name or an address.
+     * </p>
+     * 
+     * @param types
+     *        Informs you on whether the expense group is a name or an address.
+     */
+
+    public void setTypes(java.util.Collection<String> types) {
+        if (types == null) {
+            this.types = null;
+            return;
+        }
+
+        this.types = new java.util.ArrayList<String>(types);
+    }
+
+    /**
+     * <p>
+     * Informs you on whether the expense group is a name or an address.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTypes(java.util.Collection)} or {@link #withTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param types
+     *        Informs you on whether the expense group is a name or an address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseGroupProperty withTypes(String... types) {
+        if (this.types == null) {
+            setTypes(new java.util.ArrayList<String>(types.length));
+        }
+        for (String ele : types) {
+            this.types.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Informs you on whether the expense group is a name or an address.
+     * </p>
+     * 
+     * @param types
+     *        Informs you on whether the expense group is a name or an address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseGroupProperty withTypes(java.util.Collection<String> types) {
+        setTypes(types);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides a group Id number, which will be the same for each in the group.
+     * </p>
+     * 
+     * @param id
+     *        Provides a group Id number, which will be the same for each in the group.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * Provides a group Id number, which will be the same for each in the group.
+     * </p>
+     * 
+     * @return Provides a group Id number, which will be the same for each in the group.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * Provides a group Id number, which will be the same for each in the group.
+     * </p>
+     * 
+     * @param id
+     *        Provides a group Id number, which will be the same for each in the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExpenseGroupProperty withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getTypes() != null)
+            sb.append("Types: ").append(getTypes()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ExpenseGroupProperty == false)
+            return false;
+        ExpenseGroupProperty other = (ExpenseGroupProperty) obj;
+        if (other.getTypes() == null ^ this.getTypes() == null)
+            return false;
+        if (other.getTypes() != null && other.getTypes().equals(this.getTypes()) == false)
+            return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getTypes() == null) ? 0 : getTypes().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ExpenseGroupProperty clone() {
+        try {
+            return (ExpenseGroupProperty) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.textract.model.transform.ExpenseGroupPropertyMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

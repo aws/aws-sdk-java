@@ -101,6 +101,10 @@ public class ChannelMessageJsonUnmarshaller implements Unmarshaller<ChannelMessa
                     channelMessage.setMessageAttributes(new MapUnmarshaller<String, MessageAttributeValue>(context.getUnmarshaller(String.class),
                             MessageAttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("SubChannelId", targetDepth)) {
+                    context.nextToken();
+                    channelMessage.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -56,6 +56,10 @@ public class RedactChannelMessageResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     redactChannelMessageResult.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SubChannelId", targetDepth)) {
+                    context.nextToken();
+                    redactChannelMessageResult.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -68,6 +68,10 @@ public class MetricSourceJsonUnmarshaller implements Unmarshaller<MetricSource, 
                     context.nextToken();
                     metricSource.setRedshiftSourceConfig(RedshiftSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AthenaSourceConfig", targetDepth)) {
+                    context.nextToken();
+                    metricSource.setAthenaSourceConfig(AthenaSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -52,6 +52,14 @@ public class LoRaWANServiceProfileJsonUnmarshaller implements Unmarshaller<LoRaW
                     context.nextToken();
                     loRaWANServiceProfile.setAddGwMetadata(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DrMin", targetDepth)) {
+                    context.nextToken();
+                    loRaWANServiceProfile.setDrMin(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("DrMax", targetDepth)) {
+                    context.nextToken();
+                    loRaWANServiceProfile.setDrMax(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

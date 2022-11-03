@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
+ * Request to add a new Authorizer to an existing RestApi resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,21 +27,21 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the authorizer.
+     * The name of the authorizer.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
-     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
-     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+     * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+     * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      */
     private String type;
@@ -82,22 +82,19 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     private String authorizerCredentials;
     /**
      * <p>
-     * The identity source for which authorization is requested.
-     * <ul>
-     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
-     * request header mapping expression for the custom header holding the authorization token submitted by the client.
-     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li>
-     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
-     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
-     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
-     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
-     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
-     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
-     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * </ul>
+     * The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     * <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression
+     * for the custom header holding the authorization token submitted by the client. For example, if the token header
+     * name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the
+     * <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a
+     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
+     * <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value
+     * is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by
+     * verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is
+     * true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response
+     * without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the
+     * specified request parameters. When the authorization caching is not enabled, this property is optional.
      * </p>
      */
     private String identitySource;
@@ -122,11 +119,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -135,10 +132,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -147,11 +144,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +159,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the authorizer.
+     * The name of the authorizer.
      * </p>
      * 
      * @param name
-     *        [Required] The name of the authorizer.
+     *        The name of the authorizer.
      */
 
     public void setName(String name) {
@@ -175,10 +172,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the authorizer.
+     * The name of the authorizer.
      * </p>
      * 
-     * @return [Required] The name of the authorizer.
+     * @return The name of the authorizer.
      */
 
     public String getName() {
@@ -187,11 +184,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the authorizer.
+     * The name of the authorizer.
      * </p>
      * 
      * @param name
-     *        [Required] The name of the authorizer.
+     *        The name of the authorizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,13 +199,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
-     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
-     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+     * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+     * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
      *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
      *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @see AuthorizerType
@@ -220,12 +217,12 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
-     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
-     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+     * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+     * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
-     * @return [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * @return The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
      *         authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
      *         incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @see AuthorizerType
@@ -237,13 +234,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
-     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
-     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+     * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+     * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
      *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
      *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -257,13 +254,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
-     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
-     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+     * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+     * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
      *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
      *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @see AuthorizerType
@@ -275,13 +272,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
-     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
-     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+     * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+     * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
      *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
      *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -555,42 +552,37 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identity source for which authorization is requested.
-     * <ul>
-     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
-     * request header mapping expression for the custom header holding the authorization token submitted by the client.
-     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li>
-     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
-     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
-     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
-     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
-     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
-     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
-     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * </ul>
+     * The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     * <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression
+     * for the custom header holding the authorization token submitted by the client. For example, if the token header
+     * name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the
+     * <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a
+     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
+     * <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value
+     * is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by
+     * verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is
+     * true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response
+     * without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the
+     * specified request parameters. When the authorization caching is not enabled, this property is optional.
      * </p>
      * 
      * @param identitySource
-     *        The identity source for which authorization is requested.
-     *        <ul>
-     *        <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies
-     *        the request header mapping expression for the custom header holding the authorization token submitted by
-     *        the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is
-     *        <code>method.request.header.Auth</code>.</li>
-     *        <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
-     *        value is a comma-separated string of one or more mapping expressions of the specified request parameters.
-     *        For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
-     *        identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.
-     *        These parameters will be used to derive the authorization caching key and to perform runtime validation of
-     *        the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are
-     *        present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda
-     *        function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
-     *        value is a string of comma-separated mapping expressions of the specified request parameters. When the
-     *        authorization caching is not enabled, this property is optional.</li>
-     *        </ul>
+     *        The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     *        <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping
+     *        expression for the custom header holding the authorization token submitted by the client. For example, if
+     *        the token header name is <code>Auth</code>, the header mapping expression is
+     *        <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when
+     *        authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions
+     *        of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code>
+     *        query string parameter are defined as identity sources, this value is
+     *        <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to
+     *        derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code>
+     *        authorizer by verifying all of the identity-related request parameters are present, not null and
+     *        non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it
+     *        returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of
+     *        comma-separated mapping expressions of the specified request parameters. When the authorization caching is
+     *        not enabled, this property is optional.
      */
 
     public void setIdentitySource(String identitySource) {
@@ -599,41 +591,36 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identity source for which authorization is requested.
-     * <ul>
-     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
-     * request header mapping expression for the custom header holding the authorization token submitted by the client.
-     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li>
-     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
-     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
-     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
-     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
-     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
-     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
-     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * </ul>
+     * The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     * <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression
+     * for the custom header holding the authorization token submitted by the client. For example, if the token header
+     * name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the
+     * <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a
+     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
+     * <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value
+     * is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by
+     * verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is
+     * true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response
+     * without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the
+     * specified request parameters. When the authorization caching is not enabled, this property is optional.
      * </p>
      * 
-     * @return The identity source for which authorization is requested.
-     *         <ul>
-     *         <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and
-     *         specifies the request header mapping expression for the custom header holding the authorization token
-     *         submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping
-     *         expression is <code>method.request.header.Auth</code>.</li>
-     *         <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
-     *         value is a comma-separated string of one or more mapping expressions of the specified request parameters.
-     *         For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
-     *         identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.
-     *         These parameters will be used to derive the authorization caching key and to perform runtime validation
-     *         of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are
-     *         present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda
-     *         function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The
-     *         valid value is a string of comma-separated mapping expressions of the specified request parameters. When
-     *         the authorization caching is not enabled, this property is optional.</li>
-     *         </ul>
+     * @return The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     *         <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping
+     *         expression for the custom header holding the authorization token submitted by the client. For example, if
+     *         the token header name is <code>Auth</code>, the header mapping expression is
+     *         <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when
+     *         authorization caching is enabled. The value is a comma-separated string of one or more mapping
+     *         expressions of the specified request parameters. For example, if an <code>Auth</code> header, a
+     *         <code>Name</code> query string parameter are defined as identity sources, this value is
+     *         <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
+     *         to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code>
+     *         authorizer by verifying all of the identity-related request parameters are present, not null and
+     *         non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise,
+     *         it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string
+     *         of comma-separated mapping expressions of the specified request parameters. When the authorization
+     *         caching is not enabled, this property is optional.
      */
 
     public String getIdentitySource() {
@@ -642,42 +629,37 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identity source for which authorization is requested.
-     * <ul>
-     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
-     * request header mapping expression for the custom header holding the authorization token submitted by the client.
-     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li>
-     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
-     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
-     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
-     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
-     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
-     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
-     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * </ul>
+     * The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     * <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression
+     * for the custom header holding the authorization token submitted by the client. For example, if the token header
+     * name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the
+     * <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a
+     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
+     * <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value
+     * is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by
+     * verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is
+     * true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response
+     * without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the
+     * specified request parameters. When the authorization caching is not enabled, this property is optional.
      * </p>
      * 
      * @param identitySource
-     *        The identity source for which authorization is requested.
-     *        <ul>
-     *        <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies
-     *        the request header mapping expression for the custom header holding the authorization token submitted by
-     *        the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is
-     *        <code>method.request.header.Auth</code>.</li>
-     *        <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
-     *        value is a comma-separated string of one or more mapping expressions of the specified request parameters.
-     *        For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
-     *        identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.
-     *        These parameters will be used to derive the authorization caching key and to perform runtime validation of
-     *        the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are
-     *        present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda
-     *        function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
-     *        value is a string of comma-separated mapping expressions of the specified request parameters. When the
-     *        authorization caching is not enabled, this property is optional.</li>
-     *        </ul>
+     *        The identity source for which authorization is requested. For a <code>TOKEN</code> or
+     *        <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping
+     *        expression for the custom header holding the authorization token submitted by the client. For example, if
+     *        the token header name is <code>Auth</code>, the header mapping expression is
+     *        <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when
+     *        authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions
+     *        of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code>
+     *        query string parameter are defined as identity sources, this value is
+     *        <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to
+     *        derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code>
+     *        authorizer by verifying all of the identity-related request parameters are present, not null and
+     *        non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it
+     *        returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of
+     *        comma-separated mapping expressions of the specified request parameters. When the authorization caching is
+     *        not enabled, this property is optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,7 +68,15 @@ public enum AppInstanceType {
     MlR58xlarge("ml.r5.8xlarge"),
     MlR512xlarge("ml.r5.12xlarge"),
     MlR516xlarge("ml.r5.16xlarge"),
-    MlR524xlarge("ml.r5.24xlarge");
+    MlR524xlarge("ml.r5.24xlarge"),
+    MlG5Xlarge("ml.g5.xlarge"),
+    MlG52xlarge("ml.g5.2xlarge"),
+    MlG54xlarge("ml.g5.4xlarge"),
+    MlG58xlarge("ml.g5.8xlarge"),
+    MlG516xlarge("ml.g5.16xlarge"),
+    MlG512xlarge("ml.g5.12xlarge"),
+    MlG524xlarge("ml.g5.24xlarge"),
+    MlG548xlarge("ml.g5.48xlarge");
 
     private String value;
 

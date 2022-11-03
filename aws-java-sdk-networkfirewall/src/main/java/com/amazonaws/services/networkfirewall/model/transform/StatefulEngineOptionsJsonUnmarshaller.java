@@ -52,6 +52,10 @@ public class StatefulEngineOptionsJsonUnmarshaller implements Unmarshaller<State
                     context.nextToken();
                     statefulEngineOptions.setRuleOrder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StreamExceptionPolicy", targetDepth)) {
+                    context.nextToken();
+                    statefulEngineOptions.setStreamExceptionPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

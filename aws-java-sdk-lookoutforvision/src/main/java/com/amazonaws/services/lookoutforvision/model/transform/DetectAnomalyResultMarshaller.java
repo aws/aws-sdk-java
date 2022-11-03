@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lookoutforvision.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class DetectAnomalyResultMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsAnomalous").build();
     private static final MarshallingInfo<Float> CONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Confidence").build();
+    private static final MarshallingInfo<List> ANOMALIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Anomalies").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> ANOMALYMASK_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyMask").build();
 
     private static final DetectAnomalyResultMarshaller instance = new DetectAnomalyResultMarshaller();
 
@@ -53,6 +58,8 @@ public class DetectAnomalyResultMarshaller {
             protocolMarshaller.marshall(detectAnomalyResult.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(detectAnomalyResult.getIsAnomalous(), ISANOMALOUS_BINDING);
             protocolMarshaller.marshall(detectAnomalyResult.getConfidence(), CONFIDENCE_BINDING);
+            protocolMarshaller.marshall(detectAnomalyResult.getAnomalies(), ANOMALIES_BINDING);
+            protocolMarshaller.marshall(detectAnomalyResult.getAnomalyMask(), ANOMALYMASK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

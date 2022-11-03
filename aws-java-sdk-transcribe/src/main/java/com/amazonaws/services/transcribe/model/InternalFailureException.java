@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There was an internal error. Check the error message and try your request again.
+ * There was an internal error. Check the error message, correct the issue, and try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

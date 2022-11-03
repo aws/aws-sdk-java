@@ -25,7 +25,7 @@ public class ListIdentityProvidersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of identity provider objects.
+     * A list of IdP objects.
      * </p>
      */
     private java.util.List<ProviderDescription> providers;
@@ -38,10 +38,10 @@ public class ListIdentityProvidersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of identity provider objects.
+     * A list of IdP objects.
      * </p>
      * 
-     * @return A list of identity provider objects.
+     * @return A list of IdP objects.
      */
 
     public java.util.List<ProviderDescription> getProviders() {
@@ -50,11 +50,11 @@ public class ListIdentityProvidersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of identity provider objects.
+     * A list of IdP objects.
      * </p>
      * 
      * @param providers
-     *        A list of identity provider objects.
+     *        A list of IdP objects.
      */
 
     public void setProviders(java.util.Collection<ProviderDescription> providers) {
@@ -68,7 +68,7 @@ public class ListIdentityProvidersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of identity provider objects.
+     * A list of IdP objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListIdentityProvidersResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param providers
-     *        A list of identity provider objects.
+     *        A list of IdP objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListIdentityProvidersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of identity provider objects.
+     * A list of IdP objects.
      * </p>
      * 
      * @param providers
-     *        A list of identity provider objects.
+     *        A list of IdP objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

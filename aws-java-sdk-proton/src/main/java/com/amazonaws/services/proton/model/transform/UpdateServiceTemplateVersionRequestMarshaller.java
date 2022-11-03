@@ -38,6 +38,8 @@ public class UpdateServiceTemplateVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minorVersion").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<List> SUPPORTEDCOMPONENTSOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedComponentSources").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateName").build();
 
@@ -62,6 +64,7 @@ public class UpdateServiceTemplateVersionRequestMarshaller {
             protocolMarshaller.marshall(updateServiceTemplateVersionRequest.getMajorVersion(), MAJORVERSION_BINDING);
             protocolMarshaller.marshall(updateServiceTemplateVersionRequest.getMinorVersion(), MINORVERSION_BINDING);
             protocolMarshaller.marshall(updateServiceTemplateVersionRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(updateServiceTemplateVersionRequest.getSupportedComponentSources(), SUPPORTEDCOMPONENTSOURCES_BINDING);
             protocolMarshaller.marshall(updateServiceTemplateVersionRequest.getTemplateName(), TEMPLATENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

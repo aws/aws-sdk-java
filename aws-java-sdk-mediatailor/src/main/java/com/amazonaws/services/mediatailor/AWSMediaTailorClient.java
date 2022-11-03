@@ -139,7 +139,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Configures Amazon CloudWatch log settings for a playback configuration.
+     * Amazon CloudWatch log settings for a playback configuration.
      * </p>
      * 
      * @param configureLogsForPlaybackConfigurationRequest
@@ -199,7 +199,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates a channel.
+     * Creates a channel. For information about MediaTailor channels, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param createChannelRequest
@@ -254,7 +256,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates name for a specific live source in a source location.
+     * The live source configuration.
      * </p>
      * 
      * @param createLiveSourceRequest
@@ -309,7 +311,10 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates a new prefetch schedule for the specified playback configuration.
+     * Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to
+     * fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the
+     * <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param createPrefetchScheduleRequest
@@ -365,7 +370,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates a program.
+     * Creates a program within a channel. For information about programs, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param createProgramRequest
@@ -420,7 +427,10 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates a source location on a specific channel.
+     * Creates a source location. A source location is a container for sources. For more information about source
+     * locations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with
+     * source locations</a> in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param createSourceLocationRequest
@@ -475,7 +485,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates name for a specific VOD source in a source location.
+     * The VOD source configuration parameters.
      * </p>
      * 
      * @param createVodSourceRequest
@@ -530,7 +540,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a channel. You must stop the channel before it can be deleted.
+     * Deletes a channel. For information about MediaTailor channels, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param deleteChannelRequest
@@ -585,7 +597,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a channel's IAM policy.
+     * The channel policy to delete.
      * </p>
      * 
      * @param deleteChannelPolicyRequest
@@ -640,7 +652,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a specific live source in a specific source location.
+     * The live source to delete.
      * </p>
      * 
      * @param deleteLiveSourceRequest
@@ -695,7 +707,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes the playback configuration for the specified name.
+     * Deletes a playback configuration. For information about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS
+     * Elemental MediaTailor</a>.
      * </p>
      * 
      * @param deletePlaybackConfigurationRequest
@@ -752,8 +766,11 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule on an
-     * expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+     * Deletes a prefetch schedule for a specific playback configuration. If you call
+     * <code>DeletePrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+     * For more information about ad prefetching, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the
+     * <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param deletePrefetchScheduleRequest
@@ -809,7 +826,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a specific program on a specific channel.
+     * Deletes a program within a channel. For information about programs, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param deleteProgramRequest
@@ -864,7 +883,10 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a source location on a specific channel.
+     * Deletes a source location. A source location is a container for sources. For more information about source
+     * locations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with
+     * source locations</a> in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param deleteSourceLocationRequest
@@ -919,7 +941,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Deletes a specific VOD source in a specific source location.
+     * The video on demand (VOD) source to delete.
      * </p>
      * 
      * @param deleteVodSourceRequest
@@ -974,7 +996,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Describes the properties of a specific channel.
+     * Describes a channel. For information about MediaTailor channels, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param describeChannelRequest
@@ -1029,7 +1053,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Provides details about a specific live source in a specific source location.
+     * The live source to describe.
      * </p>
      * 
      * @param describeLiveSourceRequest
@@ -1084,7 +1108,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Retrieves the properties of the requested program.
+     * Describes a program within a channel. For information about programs, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param describeProgramRequest
@@ -1139,7 +1165,10 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Retrieves the properties of the requested source location.
+     * Describes a source location. A source location is a container for sources. For more information about source
+     * locations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with
+     * source locations</a> in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param describeSourceLocationRequest
@@ -1195,7 +1224,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Provides details about a specific VOD source in a specific source location.
+     * Provides details about a specific video on demand (VOD) source in a specific source location.
      * </p>
      * 
      * @param describeVodSourceRequest
@@ -1250,7 +1279,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Retrieves information about a channel's IAM policy.
+     * Returns the channel's IAM policy. IAM policies are used to control access to your channel.
      * </p>
      * 
      * @param getChannelPolicyRequest
@@ -1360,7 +1389,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Returns the playback configuration for the specified name.
+     * Retrieves a playback configuration. For information about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS
+     * Elemental MediaTailor</a>.
      * </p>
      * 
      * @param getPlaybackConfigurationRequest
@@ -1417,8 +1448,10 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Returns information about the prefetch schedule for a specific playback configuration. If you call
-     * GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+     * Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to
+     * fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the
+     * <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param getPrefetchScheduleRequest
@@ -1473,7 +1506,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Returns a list of alerts for the given resource.
+     * Lists the alerts that are associated with a MediaTailor channel assembly resource.
      * </p>
      * 
      * @param listAlertsRequest
@@ -1528,7 +1561,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Retrieves a list of channels that are associated with this account.
+     * Retrieves information about the channels that are associated with the current AWS account.
      * </p>
      * 
      * @param listChannelsRequest
@@ -1583,7 +1616,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * lists all the live sources in a source location.
+     * Lists the live sources contained in a source location. A source represents a piece of content.
      * </p>
      * 
      * @param listLiveSourcesRequest
@@ -1638,10 +1671,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Returns a list of the playback configurations defined in AWS Elemental MediaTailor. You can specify a maximum
-     * number of configurations to return at a time. The default maximum is 50. Results are returned in pagefuls. If
-     * MediaTailor has more configurations than the specified maximum, it provides parameters in the response that you
-     * can use to retrieve the next pageful.
+     * Retrieves existing playback configurations. For information about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with Configurations in AWS
+     * Elemental MediaTailor</a>.
      * </p>
      * 
      * @param listPlaybackConfigurationsRequest
@@ -1698,7 +1730,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates a new prefetch schedule.
+     * Lists the prefetch schedules for a playback configuration.
      * </p>
      * 
      * @param listPrefetchSchedulesRequest
@@ -1754,7 +1786,8 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Retrieves a list of source locations.
+     * Lists the source locations for a channel. A source location defines the host server URL, and contains a list of
+     * sources.
      * </p>
      * 
      * @param listSourceLocationsRequest
@@ -1809,13 +1842,16 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Returns a list of the tags assigned to the specified playback configuration resource.
+     * A list of tags that are associated with this resource. Tags are key-value pairs that you can associate with
+     * Amazon resources to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws BadRequestException
-     *         One or more parameters in this request aren't valid.
+     *         A request contains unexpected data.
      * @sample AWSMediaTailor.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -1866,7 +1902,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Lists all the VOD sources in a source location.
+     * Lists the VOD sources contained in a source location. A source represents a piece of content.
      * </p>
      * 
      * @param listVodSourcesRequest
@@ -1921,7 +1957,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Creates an IAM policy for the channel.
+     * Creates an IAM policy for the channel. IAM policies are used to control access to your channel.
      * </p>
      * 
      * @param putChannelPolicyRequest
@@ -1976,7 +2012,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Adds a new playback configuration to AWS Elemental MediaTailor.
+     * Creates a playback configuration. For information about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS
+     * Elemental MediaTailor</a>.
      * </p>
      * 
      * @param putPlaybackConfigurationRequest
@@ -2033,7 +2071,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Starts a specific channel.
+     * Starts a channel. For information about MediaTailor channels, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param startChannelRequest
@@ -2088,7 +2128,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Stops a specific channel.
+     * Stops a channel. For information about MediaTailor channels, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param stopChannelRequest
@@ -2143,13 +2185,16 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Adds tags to the specified playback configuration resource. You can specify one or more tags to add.
+     * The resource to tag. Tags are key-value pairs that you can associate with Amazon resources to help with
+     * organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
-     *         One or more parameters in this request aren't valid.
+     *         A request contains unexpected data.
      * @sample AWSMediaTailor.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -2200,13 +2245,13 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Removes tags from the specified playback configuration resource. You can specify one or more tags to remove.
+     * The resource to untag.
      * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
-     *         One or more parameters in this request aren't valid.
+     *         A request contains unexpected data.
      * @sample AWSMediaTailor.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -2257,7 +2302,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Updates an existing channel.
+     * Updates a channel. For information about MediaTailor channels, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a>
+     * in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param updateChannelRequest
@@ -2312,7 +2359,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Updates a specific live source in a specific source location.
+     * Updates a live source's configuration.
      * </p>
      * 
      * @param updateLiveSourceRequest
@@ -2367,7 +2414,10 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Updates a source location on a specific channel.
+     * Updates a source location. A source location is a container for sources. For more information about source
+     * locations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with
+     * source locations</a> in the <i>MediaTailor User Guide</i>.
      * </p>
      * 
      * @param updateSourceLocationRequest
@@ -2422,7 +2472,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Updates a specific VOD source in a specific source location.
+     * Updates a VOD source's configuration.
      * </p>
      * 
      * @param updateVodSourceRequest

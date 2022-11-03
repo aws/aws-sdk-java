@@ -35,6 +35,8 @@ public class ManagedRuleGroupConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsernameField").build();
     private static final MarshallingInfo<StructuredPojo> PASSWORDFIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PasswordField").build();
+    private static final MarshallingInfo<StructuredPojo> AWSMANAGEDRULESBOTCONTROLRULESET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSManagedRulesBotControlRuleSet").build();
 
     private static final ManagedRuleGroupConfigMarshaller instance = new ManagedRuleGroupConfigMarshaller();
 
@@ -56,6 +58,7 @@ public class ManagedRuleGroupConfigMarshaller {
             protocolMarshaller.marshall(managedRuleGroupConfig.getPayloadType(), PAYLOADTYPE_BINDING);
             protocolMarshaller.marshall(managedRuleGroupConfig.getUsernameField(), USERNAMEFIELD_BINDING);
             protocolMarshaller.marshall(managedRuleGroupConfig.getPasswordField(), PASSWORDFIELD_BINDING);
+            protocolMarshaller.marshall(managedRuleGroupConfig.getAWSManagedRulesBotControlRuleSet(), AWSMANAGEDRULESBOTCONTROLRULESET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

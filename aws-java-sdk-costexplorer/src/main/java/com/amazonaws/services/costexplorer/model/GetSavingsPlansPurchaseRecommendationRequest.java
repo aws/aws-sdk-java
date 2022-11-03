@@ -27,19 +27,19 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Savings Plans recommendation type requested.
+     * The Savings Plans recommendation type that's requested.
      * </p>
      */
     private String savingsPlansType;
     /**
      * <p>
-     * The savings plan recommendation term used to generate these recommendations.
+     * The savings plan recommendation term that's used to generate these recommendations.
      * </p>
      */
     private String termInYears;
     /**
      * <p>
-     * The payment option used to generate these recommendations.
+     * The payment option that's used to generate these recommendations.
      * </p>
      */
     private String paymentOption;
@@ -66,7 +66,7 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     private Integer pageSize;
     /**
      * <p>
-     * The lookback period used to generate the recommendation.
+     * The lookback period that's used to generate the recommendation.
      * </p>
      */
     private String lookbackPeriodInDays;
@@ -74,25 +74,25 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
      * <p>
      * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
      * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
-     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.
      * </p>
      * <p>
-     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
-     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
-     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
-     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
-     * <code>OR</code> operators are not supported.
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or
+     * <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must
+     * be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code>
+     * operators are not supported.
      * </p>
      */
     private Expression filter;
 
     /**
      * <p>
-     * The Savings Plans recommendation type requested.
+     * The Savings Plans recommendation type that's requested.
      * </p>
      * 
      * @param savingsPlansType
-     *        The Savings Plans recommendation type requested.
+     *        The Savings Plans recommendation type that's requested.
      * @see SupportedSavingsPlansType
      */
 
@@ -102,10 +102,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Savings Plans recommendation type requested.
+     * The Savings Plans recommendation type that's requested.
      * </p>
      * 
-     * @return The Savings Plans recommendation type requested.
+     * @return The Savings Plans recommendation type that's requested.
      * @see SupportedSavingsPlansType
      */
 
@@ -115,11 +115,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Savings Plans recommendation type requested.
+     * The Savings Plans recommendation type that's requested.
      * </p>
      * 
      * @param savingsPlansType
-     *        The Savings Plans recommendation type requested.
+     *        The Savings Plans recommendation type that's requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedSavingsPlansType
      */
@@ -131,11 +131,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Savings Plans recommendation type requested.
+     * The Savings Plans recommendation type that's requested.
      * </p>
      * 
      * @param savingsPlansType
-     *        The Savings Plans recommendation type requested.
+     *        The Savings Plans recommendation type that's requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedSavingsPlansType
      */
@@ -147,11 +147,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generate these recommendations.
+     * The savings plan recommendation term that's used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generate these recommendations.
+     *        The savings plan recommendation term that's used to generate these recommendations.
      * @see TermInYears
      */
 
@@ -161,10 +161,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generate these recommendations.
+     * The savings plan recommendation term that's used to generate these recommendations.
      * </p>
      * 
-     * @return The savings plan recommendation term used to generate these recommendations.
+     * @return The savings plan recommendation term that's used to generate these recommendations.
      * @see TermInYears
      */
 
@@ -174,11 +174,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generate these recommendations.
+     * The savings plan recommendation term that's used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generate these recommendations.
+     *        The savings plan recommendation term that's used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */
@@ -190,11 +190,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generate these recommendations.
+     * The savings plan recommendation term that's used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generate these recommendations.
+     *        The savings plan recommendation term that's used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */
@@ -206,11 +206,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The payment option used to generate these recommendations.
+     * The payment option that's used to generate these recommendations.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option used to generate these recommendations.
+     *        The payment option that's used to generate these recommendations.
      * @see PaymentOption
      */
 
@@ -220,10 +220,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The payment option used to generate these recommendations.
+     * The payment option that's used to generate these recommendations.
      * </p>
      * 
-     * @return The payment option used to generate these recommendations.
+     * @return The payment option that's used to generate these recommendations.
      * @see PaymentOption
      */
 
@@ -233,11 +233,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The payment option used to generate these recommendations.
+     * The payment option that's used to generate these recommendations.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option used to generate these recommendations.
+     *        The payment option that's used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
@@ -249,11 +249,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The payment option used to generate these recommendations.
+     * The payment option that's used to generate these recommendations.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option used to generate these recommendations.
+     *        The payment option that's used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
@@ -426,11 +426,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The lookback period used to generate the recommendation.
+     * The lookback period that's used to generate the recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The lookback period used to generate the recommendation.
+     *        The lookback period that's used to generate the recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -440,10 +440,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The lookback period used to generate the recommendation.
+     * The lookback period that's used to generate the recommendation.
      * </p>
      * 
-     * @return The lookback period used to generate the recommendation.
+     * @return The lookback period that's used to generate the recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -453,11 +453,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The lookback period used to generate the recommendation.
+     * The lookback period that's used to generate the recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The lookback period used to generate the recommendation.
+     *        The lookback period that's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -469,11 +469,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The lookback period used to generate the recommendation.
+     * The lookback period that's used to generate the recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The lookback period used to generate the recommendation.
+     *        The lookback period that's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -487,27 +487,27 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
      * <p>
      * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
      * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
-     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.
      * </p>
      * <p>
-     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
-     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
-     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
-     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
-     * <code>OR</code> operators are not supported.
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or
+     * <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must
+     * be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code>
+     * operators are not supported.
      * </p>
      * 
      * @param filter
      *        You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To
      *        filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     *        <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase
-     *        recommendations.</p>
+     *        <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase
+     *        recommendations for.</p>
      *        <p>
-     *        For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     *        For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      *        <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With
      *        <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can
-     *        be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans
-     *        Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.
+     *        be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     *        Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.
      */
 
     public void setFilter(Expression filter) {
@@ -518,26 +518,26 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
      * <p>
      * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
      * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
-     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.
      * </p>
      * <p>
-     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
-     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
-     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
-     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
-     * <code>OR</code> operators are not supported.
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or
+     * <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must
+     * be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code>
+     * operators are not supported.
      * </p>
      * 
      * @return You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To
      *         filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     *         <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase
-     *         recommendations.</p>
+     *         <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase
+     *         recommendations for.</p>
      *         <p>
-     *         For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     *         For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      *         <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With
      *         <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can
-     *         be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans
-     *         Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.
+     *         be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans
+     *         Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.
      */
 
     public Expression getFilter() {
@@ -548,27 +548,27 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
      * <p>
      * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
      * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
-     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.
      * </p>
      * <p>
-     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
-     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
-     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
-     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
-     * <code>OR</code> operators are not supported.
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or
+     * <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must
+     * be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code>
+     * operators are not supported.
      * </p>
      * 
      * @param filter
      *        You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To
      *        filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     *        <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase
-     *        recommendations.</p>
+     *        <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase
+     *        recommendations for.</p>
      *        <p>
-     *        For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     *        For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      *        <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With
      *        <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can
-     *        be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans
-     *        Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.
+     *        be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     *        Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

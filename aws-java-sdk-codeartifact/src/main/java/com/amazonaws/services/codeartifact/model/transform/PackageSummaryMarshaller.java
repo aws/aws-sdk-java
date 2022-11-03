@@ -33,6 +33,8 @@ public class PackageSummaryMarshaller {
             .marshallLocationName("namespace").build();
     private static final MarshallingInfo<String> PACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("package").build();
+    private static final MarshallingInfo<StructuredPojo> ORIGINCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("originConfiguration").build();
 
     private static final PackageSummaryMarshaller instance = new PackageSummaryMarshaller();
 
@@ -53,6 +55,7 @@ public class PackageSummaryMarshaller {
             protocolMarshaller.marshall(packageSummary.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(packageSummary.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(packageSummary.getPackage(), PACKAGE_BINDING);
+            protocolMarshaller.marshall(packageSummary.getOriginConfiguration(), ORIGINCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

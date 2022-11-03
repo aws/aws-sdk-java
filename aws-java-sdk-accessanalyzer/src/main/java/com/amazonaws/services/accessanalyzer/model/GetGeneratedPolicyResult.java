@@ -25,56 +25,16 @@ public class GetGeneratedPolicyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
-     * </p>
-     */
-    private GeneratedPolicyResult generatedPolicyResult;
-    /**
-     * <p>
      * A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.
      * </p>
      */
     private JobDetails jobDetails;
-
     /**
      * <p>
      * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
      * </p>
-     * 
-     * @param generatedPolicyResult
-     *        A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
      */
-
-    public void setGeneratedPolicyResult(GeneratedPolicyResult generatedPolicyResult) {
-        this.generatedPolicyResult = generatedPolicyResult;
-    }
-
-    /**
-     * <p>
-     * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
-     * </p>
-     * 
-     * @return A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
-     */
-
-    public GeneratedPolicyResult getGeneratedPolicyResult() {
-        return this.generatedPolicyResult;
-    }
-
-    /**
-     * <p>
-     * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
-     * </p>
-     * 
-     * @param generatedPolicyResult
-     *        A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetGeneratedPolicyResult withGeneratedPolicyResult(GeneratedPolicyResult generatedPolicyResult) {
-        setGeneratedPolicyResult(generatedPolicyResult);
-        return this;
-    }
+    private GeneratedPolicyResult generatedPolicyResult;
 
     /**
      * <p>
@@ -117,6 +77,46 @@ public class GetGeneratedPolicyResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
+     * </p>
+     * 
+     * @param generatedPolicyResult
+     *        A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
+     */
+
+    public void setGeneratedPolicyResult(GeneratedPolicyResult generatedPolicyResult) {
+        this.generatedPolicyResult = generatedPolicyResult;
+    }
+
+    /**
+     * <p>
+     * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
+     * </p>
+     * 
+     * @return A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
+     */
+
+    public GeneratedPolicyResult getGeneratedPolicyResult() {
+        return this.generatedPolicyResult;
+    }
+
+    /**
+     * <p>
+     * A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
+     * </p>
+     * 
+     * @param generatedPolicyResult
+     *        A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetGeneratedPolicyResult withGeneratedPolicyResult(GeneratedPolicyResult generatedPolicyResult) {
+        setGeneratedPolicyResult(generatedPolicyResult);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,10 +128,10 @@ public class GetGeneratedPolicyResult extends com.amazonaws.AmazonWebServiceResu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGeneratedPolicyResult() != null)
-            sb.append("GeneratedPolicyResult: ").append(getGeneratedPolicyResult()).append(",");
         if (getJobDetails() != null)
-            sb.append("JobDetails: ").append(getJobDetails());
+            sb.append("JobDetails: ").append(getJobDetails()).append(",");
+        if (getGeneratedPolicyResult() != null)
+            sb.append("GeneratedPolicyResult: ").append(getGeneratedPolicyResult());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +146,13 @@ public class GetGeneratedPolicyResult extends com.amazonaws.AmazonWebServiceResu
         if (obj instanceof GetGeneratedPolicyResult == false)
             return false;
         GetGeneratedPolicyResult other = (GetGeneratedPolicyResult) obj;
-        if (other.getGeneratedPolicyResult() == null ^ this.getGeneratedPolicyResult() == null)
-            return false;
-        if (other.getGeneratedPolicyResult() != null && other.getGeneratedPolicyResult().equals(this.getGeneratedPolicyResult()) == false)
-            return false;
         if (other.getJobDetails() == null ^ this.getJobDetails() == null)
             return false;
         if (other.getJobDetails() != null && other.getJobDetails().equals(this.getJobDetails()) == false)
+            return false;
+        if (other.getGeneratedPolicyResult() == null ^ this.getGeneratedPolicyResult() == null)
+            return false;
+        if (other.getGeneratedPolicyResult() != null && other.getGeneratedPolicyResult().equals(this.getGeneratedPolicyResult()) == false)
             return false;
         return true;
     }
@@ -162,8 +162,8 @@ public class GetGeneratedPolicyResult extends com.amazonaws.AmazonWebServiceResu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGeneratedPolicyResult() == null) ? 0 : getGeneratedPolicyResult().hashCode());
         hashCode = prime * hashCode + ((getJobDetails() == null) ? 0 : getJobDetails().hashCode());
+        hashCode = prime * hashCode + ((getGeneratedPolicyResult() == null) ? 0 : getGeneratedPolicyResult().hashCode());
         return hashCode;
     }
 

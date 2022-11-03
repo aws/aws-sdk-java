@@ -83,6 +83,14 @@ public class RoutingProfileJsonUnmarshaller implements Unmarshaller<RoutingProfi
                     routingProfile.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("NumberOfAssociatedQueues", targetDepth)) {
+                    context.nextToken();
+                    routingProfile.setNumberOfAssociatedQueues(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("NumberOfAssociatedUsers", targetDepth)) {
+                    context.nextToken();
+                    routingProfile.setNumberOfAssociatedUsers(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

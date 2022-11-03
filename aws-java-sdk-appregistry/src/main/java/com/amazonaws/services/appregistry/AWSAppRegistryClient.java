@@ -159,6 +159,9 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         The service is experiencing internal problems.
      * @throws ServiceQuotaExceededException
      *         The maximum number of resources per account has been reached.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
      * @sample AWSAppRegistry.AssociateAttributeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup"
      *      target="_top">AWS API Documentation</a>
@@ -226,6 +229,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws ConflictException
      *         There was a conflict when processing the request (for example, a resource with the given name already
      *         exists within the account).
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.AssociateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource"
      *      target="_top">AWS API Documentation</a>
@@ -288,6 +293,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         exists within the account).
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -601,6 +608,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         The specified resource does not exist.
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.DisassociateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource"
      *      target="_top">AWS API Documentation</a>
@@ -665,6 +674,9 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
      * @sample AWSAppRegistry.GetApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication"
      *      target="_top">AWS API Documentation</a>
@@ -789,6 +801,9 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
      * @sample AWSAppRegistry.GetAttributeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1083,6 +1098,71 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
+     * Lists the details of all attribute groups associated with a specific application. The results display in pages.
+     * </p>
+     * 
+     * @param listAttributeGroupsForApplicationRequest
+     * @return Result of the ListAttributeGroupsForApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.ListAttributeGroupsForApplication
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAttributeGroupsForApplicationResult listAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttributeGroupsForApplication(request);
+    }
+
+    @SdkInternalApi
+    final ListAttributeGroupsForApplicationResult executeListAttributeGroupsForApplication(
+            ListAttributeGroupsForApplicationRequest listAttributeGroupsForApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAttributeGroupsForApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttributeGroupsForApplicationRequest> request = null;
+        Response<ListAttributeGroupsForApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttributeGroupsForApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAttributeGroupsForApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog AppRegistry");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttributeGroupsForApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAttributeGroupsForApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAttributeGroupsForApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all of the tags on the resource.
      * </p>
      * 
@@ -1355,6 +1435,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         exists within the account).
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

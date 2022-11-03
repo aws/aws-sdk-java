@@ -52,6 +52,10 @@ public class JobDriverJsonUnmarshaller implements Unmarshaller<JobDriver, JsonUn
                     context.nextToken();
                     jobDriver.setSparkSubmitJobDriver(SparkSubmitJobDriverJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sparkSqlJobDriver", targetDepth)) {
+                    context.nextToken();
+                    jobDriver.setSparkSqlJobDriver(SparkSqlJobDriverJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -68,6 +68,10 @@ public class DataSourceConfigurationsResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     dataSourceConfigurationsResult.setKubernetes(KubernetesConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("malwareProtection", targetDepth)) {
+                    context.nextToken();
+                    dataSourceConfigurationsResult.setMalwareProtection(MalwareProtectionConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

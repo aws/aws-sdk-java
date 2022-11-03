@@ -48,6 +48,10 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("audioDurationCorrection", targetDepth)) {
+                    context.nextToken();
+                    audioSelector.setAudioDurationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("customLanguageCode", targetDepth)) {
                     context.nextToken();
                     audioSelector.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));

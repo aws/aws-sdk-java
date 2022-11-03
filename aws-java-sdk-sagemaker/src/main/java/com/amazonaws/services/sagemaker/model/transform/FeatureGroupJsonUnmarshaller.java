@@ -74,6 +74,10 @@ public class FeatureGroupJsonUnmarshaller implements Unmarshaller<FeatureGroup, 
                     context.nextToken();
                     featureGroup.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    featureGroup.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("OnlineStoreConfig", targetDepth)) {
                     context.nextToken();
                     featureGroup.setOnlineStoreConfig(OnlineStoreConfigJsonUnmarshaller.getInstance().unmarshall(context));
@@ -93,6 +97,10 @@ public class FeatureGroupJsonUnmarshaller implements Unmarshaller<FeatureGroup, 
                 if (context.testExpression("OfflineStoreStatus", targetDepth)) {
                     context.nextToken();
                     featureGroup.setOfflineStoreStatus(OfflineStoreStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    context.nextToken();
+                    featureGroup.setLastUpdateStatus(LastUpdateStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();

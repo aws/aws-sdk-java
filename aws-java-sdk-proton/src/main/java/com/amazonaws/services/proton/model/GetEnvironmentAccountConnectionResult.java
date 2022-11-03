@@ -26,18 +26,18 @@ public class GetEnvironmentAccountConnectionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the requested environment account connection.
      * </p>
      */
     private EnvironmentAccountConnection environmentAccountConnection;
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the requested environment account connection.
      * </p>
      * 
      * @param environmentAccountConnection
-     *        The environment account connection detail data that's returned by Proton.
+     *        The detailed data of the requested environment account connection.
      */
 
     public void setEnvironmentAccountConnection(EnvironmentAccountConnection environmentAccountConnection) {
@@ -46,10 +46,10 @@ public class GetEnvironmentAccountConnectionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the requested environment account connection.
      * </p>
      * 
-     * @return The environment account connection detail data that's returned by Proton.
+     * @return The detailed data of the requested environment account connection.
      */
 
     public EnvironmentAccountConnection getEnvironmentAccountConnection() {
@@ -58,11 +58,11 @@ public class GetEnvironmentAccountConnectionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The environment account connection detail data that's returned by Proton.
+     * The detailed data of the requested environment account connection.
      * </p>
      * 
      * @param environmentAccountConnection
-     *        The environment account connection detail data that's returned by Proton.
+     *        The detailed data of the requested environment account connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

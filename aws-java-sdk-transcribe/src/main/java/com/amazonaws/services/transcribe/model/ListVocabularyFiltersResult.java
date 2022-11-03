@@ -25,35 +25,33 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
-     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
-     * the request set to the value of the <code>NextToken</code> field in the response.
+     * Provides information about the custom vocabulary filters that match the criteria specified in your request.
      * </p>
      */
     private java.util.List<VocabularyFilterInfo> vocabularyFilters;
 
     /**
      * <p>
-     * The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size
-     *        of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     *        page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next
-     *        request to the <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -62,16 +60,16 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
-     * @return The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum
-     *         size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than
-     *         the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next
-     *         request to the <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     * @return If <code>NextToken</code> is present in your response, it indicates that not all results are displayed.
+     *         To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in
+     *         your results output, then run your request again including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -80,17 +78,17 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size
-     *        of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     *        page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next
-     *        request to the <code>ListVocabularyFilters</code> operation to return in the next page of jobs.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,15 +99,11 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
-     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
-     * the request set to the value of the <code>NextToken</code> field in the response.
+     * Provides information about the custom vocabulary filters that match the criteria specified in your request.
      * </p>
      * 
-     * @return The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
-     *         are more filters, call the <code>ListVocabularyFilters</code> operation again with the
-     *         <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
-     *         the response.
+     * @return Provides information about the custom vocabulary filters that match the criteria specified in your
+     *         request.
      */
 
     public java.util.List<VocabularyFilterInfo> getVocabularyFilters() {
@@ -118,16 +112,12 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
-     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
-     * the request set to the value of the <code>NextToken</code> field in the response.
+     * Provides information about the custom vocabulary filters that match the criteria specified in your request.
      * </p>
      * 
      * @param vocabularyFilters
-     *        The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
-     *        are more filters, call the <code>ListVocabularyFilters</code> operation again with the
-     *        <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
-     *        the response.
+     *        Provides information about the custom vocabulary filters that match the criteria specified in your
+     *        request.
      */
 
     public void setVocabularyFilters(java.util.Collection<VocabularyFilterInfo> vocabularyFilters) {
@@ -141,9 +131,7 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
-     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
-     * the request set to the value of the <code>NextToken</code> field in the response.
+     * Provides information about the custom vocabulary filters that match the criteria specified in your request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,10 +140,8 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param vocabularyFilters
-     *        The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
-     *        are more filters, call the <code>ListVocabularyFilters</code> operation again with the
-     *        <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
-     *        the response.
+     *        Provides information about the custom vocabulary filters that match the criteria specified in your
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,16 +157,12 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
-     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
-     * the request set to the value of the <code>NextToken</code> field in the response.
+     * Provides information about the custom vocabulary filters that match the criteria specified in your request.
      * </p>
      * 
      * @param vocabularyFilters
-     *        The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
-     *        are more filters, call the <code>ListVocabularyFilters</code> operation again with the
-     *        <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
-     *        the response.
+     *        Provides information about the custom vocabulary filters that match the criteria specified in your
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

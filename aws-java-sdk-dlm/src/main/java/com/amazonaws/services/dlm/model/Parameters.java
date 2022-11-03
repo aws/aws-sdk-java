@@ -19,8 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy
- * type and resource type.
+ * <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot and AMI policies. The set of valid
+ * parameters depends on the combination of policy type and target resource type.
+ * </p>
+ * <p>
+ * If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data
+ * volumes attached to an instance, then Amazon Data Lifecycle Manager will not create any snapshots for the affected
+ * instance, and it will emit a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information, see
+ * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor your policies using
+ * Amazon CloudWatch</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Parameters" target="_top">AWS API
@@ -31,36 +38,48 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
-     * created using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
-     * default is false.
+     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
+     * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
+     * policy.
      * </p>
      */
     private Boolean excludeBootVolume;
     /**
      * <p>
-     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
-     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instances are not rebooted).
+     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
+     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
+     * are not rebooted).
      * </p>
      */
     private Boolean noReboot;
+    /**
+     * <p>
+     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * exclude from multi-volume snapshot sets.
+     * </p>
+     * <p>
+     * If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then
+     * data volumes with the specified tags that are attached to targeted instances will be excluded from the
+     * multi-volume snapshot sets created by the policy.
+     * </p>
+     */
+    private java.util.List<Tag> excludeDataVolumeTags;
 
     /**
      * <p>
-     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
-     * created using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
-     * default is false.
+     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
+     * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
+     * policy.
      * </p>
      * 
      * @param excludeBootVolume
-     *        [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
-     *        snapshots created using <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
-     *        >CreateSnapshots</a>. The default is false.
+     *        <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     *        multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
+     *        root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
+     *        by the policy.
      */
 
     public void setExcludeBootVolume(Boolean excludeBootVolume) {
@@ -69,16 +88,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
-     * created using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
-     * default is false.
+     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
+     * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
+     * policy.
      * </p>
      * 
-     * @return [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
-     *         snapshots created using <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
-     *         >CreateSnapshots</a>. The default is false.
+     * @return <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     *         multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
+     *         root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
+     *         by the policy.
      */
 
     public Boolean getExcludeBootVolume() {
@@ -87,17 +106,17 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
-     * created using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
-     * default is false.
+     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
+     * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
+     * policy.
      * </p>
      * 
      * @param excludeBootVolume
-     *        [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
-     *        snapshots created using <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
-     *        >CreateSnapshots</a>. The default is false.
+     *        <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     *        multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
+     *        root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
+     *        by the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,16 +127,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
-     * created using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
-     * default is false.
+     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
+     * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
+     * policy.
      * </p>
      * 
-     * @return [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
-     *         snapshots created using <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
-     *         >CreateSnapshots</a>. The default is false.
+     * @return <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     *         multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
+     *         root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
+     *         by the policy.
      */
 
     public Boolean isExcludeBootVolume() {
@@ -126,17 +145,17 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
-     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instances are not rebooted).
+     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
+     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
+     * are not rebooted).
      * </p>
      * 
      * @param noReboot
-     *        Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
-     *        lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
-     *        policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *        default is <code>true</code> (instances are not rebooted).
+     *        <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     *        runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     *        <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     *        <code>true</code> (instances are not rebooted).
      */
 
     public void setNoReboot(Boolean noReboot) {
@@ -145,16 +164,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
-     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instances are not rebooted).
+     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
+     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
+     * are not rebooted).
      * </p>
      * 
-     * @return Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
-     *         lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
-     *         policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *         default is <code>true</code> (instances are not rebooted).
+     * @return <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     *         runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     *         <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     *         <code>true</code> (instances are not rebooted).
      */
 
     public Boolean getNoReboot() {
@@ -163,17 +182,17 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
-     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instances are not rebooted).
+     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
+     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
+     * are not rebooted).
      * </p>
      * 
      * @param noReboot
-     *        Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
-     *        lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
-     *        policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *        default is <code>true</code> (instances are not rebooted).
+     *        <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     *        runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     *        <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     *        <code>true</code> (instances are not rebooted).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,20 +203,134 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
-     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
-     * <code>true</code> (instances are not rebooted).
+     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
+     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
+     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
+     * are not rebooted).
      * </p>
      * 
-     * @return Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
-     *         lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
-     *         policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-     *         default is <code>true</code> (instances are not rebooted).
+     * @return <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     *         runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     *         <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     *         <code>true</code> (instances are not rebooted).
      */
 
     public Boolean isNoReboot() {
         return this.noReboot;
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * exclude from multi-volume snapshot sets.
+     * </p>
+     * <p>
+     * If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then
+     * data volumes with the specified tags that are attached to targeted instances will be excluded from the
+     * multi-volume snapshot sets created by the policy.
+     * </p>
+     * 
+     * @return <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes
+     *         to exclude from multi-volume snapshot sets.</p>
+     *         <p>
+     *         If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
+     *         then data volumes with the specified tags that are attached to targeted instances will be excluded from
+     *         the multi-volume snapshot sets created by the policy.
+     */
+
+    public java.util.List<Tag> getExcludeDataVolumeTags() {
+        return excludeDataVolumeTags;
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * exclude from multi-volume snapshot sets.
+     * </p>
+     * <p>
+     * If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then
+     * data volumes with the specified tags that are attached to targeted instances will be excluded from the
+     * multi-volume snapshot sets created by the policy.
+     * </p>
+     * 
+     * @param excludeDataVolumeTags
+     *        <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     *        exclude from multi-volume snapshot sets.</p>
+     *        <p>
+     *        If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
+     *        then data volumes with the specified tags that are attached to targeted instances will be excluded from
+     *        the multi-volume snapshot sets created by the policy.
+     */
+
+    public void setExcludeDataVolumeTags(java.util.Collection<Tag> excludeDataVolumeTags) {
+        if (excludeDataVolumeTags == null) {
+            this.excludeDataVolumeTags = null;
+            return;
+        }
+
+        this.excludeDataVolumeTags = new java.util.ArrayList<Tag>(excludeDataVolumeTags);
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * exclude from multi-volume snapshot sets.
+     * </p>
+     * <p>
+     * If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then
+     * data volumes with the specified tags that are attached to targeted instances will be excluded from the
+     * multi-volume snapshot sets created by the policy.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExcludeDataVolumeTags(java.util.Collection)} or
+     * {@link #withExcludeDataVolumeTags(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param excludeDataVolumeTags
+     *        <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     *        exclude from multi-volume snapshot sets.</p>
+     *        <p>
+     *        If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
+     *        then data volumes with the specified tags that are attached to targeted instances will be excluded from
+     *        the multi-volume snapshot sets created by the policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameters withExcludeDataVolumeTags(Tag... excludeDataVolumeTags) {
+        if (this.excludeDataVolumeTags == null) {
+            setExcludeDataVolumeTags(new java.util.ArrayList<Tag>(excludeDataVolumeTags.length));
+        }
+        for (Tag ele : excludeDataVolumeTags) {
+            this.excludeDataVolumeTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * exclude from multi-volume snapshot sets.
+     * </p>
+     * <p>
+     * If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then
+     * data volumes with the specified tags that are attached to targeted instances will be excluded from the
+     * multi-volume snapshot sets created by the policy.
+     * </p>
+     * 
+     * @param excludeDataVolumeTags
+     *        <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     *        exclude from multi-volume snapshot sets.</p>
+     *        <p>
+     *        If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
+     *        then data volumes with the specified tags that are attached to targeted instances will be excluded from
+     *        the multi-volume snapshot sets created by the policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameters withExcludeDataVolumeTags(java.util.Collection<Tag> excludeDataVolumeTags) {
+        setExcludeDataVolumeTags(excludeDataVolumeTags);
+        return this;
     }
 
     /**
@@ -215,7 +348,9 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
         if (getExcludeBootVolume() != null)
             sb.append("ExcludeBootVolume: ").append(getExcludeBootVolume()).append(",");
         if (getNoReboot() != null)
-            sb.append("NoReboot: ").append(getNoReboot());
+            sb.append("NoReboot: ").append(getNoReboot()).append(",");
+        if (getExcludeDataVolumeTags() != null)
+            sb.append("ExcludeDataVolumeTags: ").append(getExcludeDataVolumeTags());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +373,10 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNoReboot() != null && other.getNoReboot().equals(this.getNoReboot()) == false)
             return false;
+        if (other.getExcludeDataVolumeTags() == null ^ this.getExcludeDataVolumeTags() == null)
+            return false;
+        if (other.getExcludeDataVolumeTags() != null && other.getExcludeDataVolumeTags().equals(this.getExcludeDataVolumeTags()) == false)
+            return false;
         return true;
     }
 
@@ -248,6 +387,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getExcludeBootVolume() == null) ? 0 : getExcludeBootVolume().hashCode());
         hashCode = prime * hashCode + ((getNoReboot() == null) ? 0 : getNoReboot().hashCode());
+        hashCode = prime * hashCode + ((getExcludeDataVolumeTags() == null) ? 0 : getExcludeDataVolumeTags().hashCode());
         return hashCode;
     }
 

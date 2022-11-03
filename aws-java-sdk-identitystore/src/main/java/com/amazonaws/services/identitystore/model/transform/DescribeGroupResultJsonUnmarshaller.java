@@ -56,6 +56,20 @@ public class DescribeGroupResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeGroupResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalIds", targetDepth)) {
+                    context.nextToken();
+                    describeGroupResult.setExternalIds(new ListUnmarshaller<ExternalId>(ExternalIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    describeGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IdentityStoreId", targetDepth)) {
+                    context.nextToken();
+                    describeGroupResult.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

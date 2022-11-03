@@ -55,6 +55,14 @@ public class DataSourceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BoxConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> QUIPCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuipConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> JIRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JiraConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> GITHUBCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GitHubConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> ALFRESCOCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlfrescoConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPLATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateConfiguration").build();
 
     private static final DataSourceConfigurationMarshaller instance = new DataSourceConfigurationMarshaller();
 
@@ -86,6 +94,10 @@ public class DataSourceConfigurationMarshaller {
             protocolMarshaller.marshall(dataSourceConfiguration.getSlackConfiguration(), SLACKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getBoxConfiguration(), BOXCONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getQuipConfiguration(), QUIPCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getJiraConfiguration(), JIRACONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getGitHubConfiguration(), GITHUBCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getAlfrescoConfiguration(), ALFRESCOCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getTemplateConfiguration(), TEMPLATECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

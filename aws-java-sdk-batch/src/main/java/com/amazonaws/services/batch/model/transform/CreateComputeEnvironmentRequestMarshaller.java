@@ -43,6 +43,8 @@ public class CreateComputeEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRole").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> EKSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksConfiguration").build();
 
     private static final CreateComputeEnvironmentRequestMarshaller instance = new CreateComputeEnvironmentRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class CreateComputeEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(createComputeEnvironmentRequest.getComputeResources(), COMPUTERESOURCES_BINDING);
             protocolMarshaller.marshall(createComputeEnvironmentRequest.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(createComputeEnvironmentRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getEksConfiguration(), EKSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

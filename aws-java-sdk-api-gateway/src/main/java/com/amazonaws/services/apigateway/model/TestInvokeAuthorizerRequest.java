@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Make a request to simulate the execution of an <a>Authorizer</a>.
+ * Make a request to simulate the invocation of an Authorizer.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,63 +27,63 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * Specifies a test invoke authorizer request's Authorizer ID.
      * </p>
      */
     private String authorizerId;
     /**
      * <p>
-     * [Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming
-     * authorization token, or identity source, should be specified.
+     * A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization
+     * token, or identity source, should be specified.
      * </p>
      */
     private java.util.Map<String, String> headers;
     /**
      * <p>
-     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
-     * where the incoming authorization token, or identity source, may be specified.
+     * The headers as a map from string to list of values to simulate an incoming invocation request. This is where the
+     * incoming authorization token, or identity source, may be specified.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> multiValueHeaders;
     /**
      * <p>
-     * [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path
-     * parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      */
     private String pathWithQueryString;
     /**
      * <p>
-     * [Optional] The simulated request body of an incoming invocation request.
+     * The simulated request body of an incoming invocation request.
      * </p>
      */
     private String body;
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed Stage.
      * </p>
      */
     private java.util.Map<String, String> stageVariables;
     /**
      * <p>
-     * [Optional] A key-value map of additional context variables.
+     * A key-value map of additional context variables.
      * </p>
      */
     private java.util.Map<String, String> additionalContext;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -92,10 +92,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -104,11 +104,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * Specifies a test invoke authorizer request's Authorizer ID.
      * </p>
      * 
      * @param authorizerId
-     *        [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     *        Specifies a test invoke authorizer request's Authorizer ID.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -132,10 +132,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * Specifies a test invoke authorizer request's Authorizer ID.
      * </p>
      * 
-     * @return [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * @return Specifies a test invoke authorizer request's Authorizer ID.
      */
 
     public String getAuthorizerId() {
@@ -144,11 +144,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * Specifies a test invoke authorizer request's Authorizer ID.
      * </p>
      * 
      * @param authorizerId
-     *        [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     *        Specifies a test invoke authorizer request's Authorizer ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,12 +159,12 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming
-     * authorization token, or identity source, should be specified.
+     * A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization
+     * token, or identity source, should be specified.
      * </p>
      * 
-     * @return [Required] A key-value map of headers to simulate an incoming invocation request. This is where the
-     *         incoming authorization token, or identity source, should be specified.
+     * @return A key-value map of headers to simulate an incoming invocation request. This is where the incoming
+     *         authorization token, or identity source, should be specified.
      */
 
     public java.util.Map<String, String> getHeaders() {
@@ -173,13 +173,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming
-     * authorization token, or identity source, should be specified.
+     * A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization
+     * token, or identity source, should be specified.
      * </p>
      * 
      * @param headers
-     *        [Required] A key-value map of headers to simulate an incoming invocation request. This is where the
-     *        incoming authorization token, or identity source, should be specified.
+     *        A key-value map of headers to simulate an incoming invocation request. This is where the incoming
+     *        authorization token, or identity source, should be specified.
      */
 
     public void setHeaders(java.util.Map<String, String> headers) {
@@ -188,13 +188,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming
-     * authorization token, or identity source, should be specified.
+     * A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization
+     * token, or identity source, should be specified.
      * </p>
      * 
      * @param headers
-     *        [Required] A key-value map of headers to simulate an incoming invocation request. This is where the
-     *        incoming authorization token, or identity source, should be specified.
+     *        A key-value map of headers to simulate an incoming invocation request. This is where the incoming
+     *        authorization token, or identity source, should be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,12 +233,12 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
-     * where the incoming authorization token, or identity source, may be specified.
+     * The headers as a map from string to list of values to simulate an incoming invocation request. This is where the
+     * incoming authorization token, or identity source, may be specified.
      * </p>
      * 
-     * @return [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
-     *         This is where the incoming authorization token, or identity source, may be specified.
+     * @return The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     *         where the incoming authorization token, or identity source, may be specified.
      */
 
     public java.util.Map<String, java.util.List<String>> getMultiValueHeaders() {
@@ -247,13 +247,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
-     * where the incoming authorization token, or identity source, may be specified.
+     * The headers as a map from string to list of values to simulate an incoming invocation request. This is where the
+     * incoming authorization token, or identity source, may be specified.
      * </p>
      * 
      * @param multiValueHeaders
-     *        [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
-     *        This is where the incoming authorization token, or identity source, may be specified.
+     *        The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     *        where the incoming authorization token, or identity source, may be specified.
      */
 
     public void setMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
@@ -262,13 +262,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
-     * where the incoming authorization token, or identity source, may be specified.
+     * The headers as a map from string to list of values to simulate an incoming invocation request. This is where the
+     * incoming authorization token, or identity source, may be specified.
      * </p>
      * 
      * @param multiValueHeaders
-     *        [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
-     *        This is where the incoming authorization token, or identity source, may be specified.
+     *        The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     *        where the incoming authorization token, or identity source, may be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,13 +307,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path
-     * parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      * 
      * @param pathWithQueryString
-     *        [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify
-     *        path parameters and query string parameters.
+     *        The URI path, including query string, of the simulated invocation request. Use this to specify path
+     *        parameters and query string parameters.
      */
 
     public void setPathWithQueryString(String pathWithQueryString) {
@@ -322,12 +322,12 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path
-     * parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      * 
-     * @return [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify
-     *         path parameters and query string parameters.
+     * @return The URI path, including query string, of the simulated invocation request. Use this to specify path
+     *         parameters and query string parameters.
      */
 
     public String getPathWithQueryString() {
@@ -336,13 +336,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path
-     * parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      * 
      * @param pathWithQueryString
-     *        [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify
-     *        path parameters and query string parameters.
+     *        The URI path, including query string, of the simulated invocation request. Use this to specify path
+     *        parameters and query string parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,11 +353,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The simulated request body of an incoming invocation request.
+     * The simulated request body of an incoming invocation request.
      * </p>
      * 
      * @param body
-     *        [Optional] The simulated request body of an incoming invocation request.
+     *        The simulated request body of an incoming invocation request.
      */
 
     public void setBody(String body) {
@@ -366,10 +366,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The simulated request body of an incoming invocation request.
+     * The simulated request body of an incoming invocation request.
      * </p>
      * 
-     * @return [Optional] The simulated request body of an incoming invocation request.
+     * @return The simulated request body of an incoming invocation request.
      */
 
     public String getBody() {
@@ -378,11 +378,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] The simulated request body of an incoming invocation request.
+     * The simulated request body of an incoming invocation request.
      * </p>
      * 
      * @param body
-     *        [Optional] The simulated request body of an incoming invocation request.
+     *        The simulated request body of an incoming invocation request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,10 +393,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed Stage.
      * </p>
      * 
-     * @return A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     * @return A key-value map of stage variables to simulate an invocation on a deployed Stage.
      */
 
     public java.util.Map<String, String> getStageVariables() {
@@ -405,11 +405,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed Stage.
      * </p>
      * 
      * @param stageVariables
-     *        A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     *        A key-value map of stage variables to simulate an invocation on a deployed Stage.
      */
 
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
@@ -418,11 +418,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed Stage.
      * </p>
      * 
      * @param stageVariables
-     *        A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     *        A key-value map of stage variables to simulate an invocation on a deployed Stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,10 +461,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] A key-value map of additional context variables.
+     * A key-value map of additional context variables.
      * </p>
      * 
-     * @return [Optional] A key-value map of additional context variables.
+     * @return A key-value map of additional context variables.
      */
 
     public java.util.Map<String, String> getAdditionalContext() {
@@ -473,11 +473,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] A key-value map of additional context variables.
+     * A key-value map of additional context variables.
      * </p>
      * 
      * @param additionalContext
-     *        [Optional] A key-value map of additional context variables.
+     *        A key-value map of additional context variables.
      */
 
     public void setAdditionalContext(java.util.Map<String, String> additionalContext) {
@@ -486,11 +486,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Optional] A key-value map of additional context variables.
+     * A key-value map of additional context variables.
      * </p>
      * 
      * @param additionalContext
-     *        [Optional] A key-value map of additional context variables.
+     *        A key-value map of additional context variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

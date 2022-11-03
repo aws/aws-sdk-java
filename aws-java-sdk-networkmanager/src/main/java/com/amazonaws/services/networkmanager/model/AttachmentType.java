@@ -22,7 +22,8 @@ public enum AttachmentType {
 
     CONNECT("CONNECT"),
     SITE_TO_SITE_VPN("SITE_TO_SITE_VPN"),
-    VPC("VPC");
+    VPC("VPC"),
+    TRANSIT_GATEWAY_ROUTE_TABLE("TRANSIT_GATEWAY_ROUTE_TABLE");
 
     private String value;
 

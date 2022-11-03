@@ -86,6 +86,12 @@ public class CreateExplainabilityExportRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     */
+    private String format;
 
     /**
      * <p>
@@ -592,6 +598,46 @@ public class CreateExplainabilityExportRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     * 
+     * @param format
+     *        The format of the exported data, CSV or PARQUET.
+     */
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     * 
+     * @return The format of the exported data, CSV or PARQUET.
+     */
+
+    public String getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     * 
+     * @param format
+     *        The format of the exported data, CSV or PARQUET.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateExplainabilityExportRequest withFormat(String format) {
+        setFormat(format);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -610,7 +656,9 @@ public class CreateExplainabilityExportRequest extends com.amazonaws.AmazonWebSe
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -641,6 +689,10 @@ public class CreateExplainabilityExportRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
         return true;
     }
 
@@ -653,6 +705,7 @@ public class CreateExplainabilityExportRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getExplainabilityArn() == null) ? 0 : getExplainabilityArn().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         return hashCode;
     }
 

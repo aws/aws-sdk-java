@@ -94,6 +94,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String resourceName;
+    /**
+     * <p>
+     * The short name of the Terraform source.
+     * </p>
+     */
+    private String terraformSourceName;
 
     /**
      * <p>
@@ -591,6 +597,46 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The short name of the Terraform source.
+     * </p>
+     * 
+     * @param terraformSourceName
+     *        The short name of the Terraform source.
+     */
+
+    public void setTerraformSourceName(String terraformSourceName) {
+        this.terraformSourceName = terraformSourceName;
+    }
+
+    /**
+     * <p>
+     * The short name of the Terraform source.
+     * </p>
+     * 
+     * @return The short name of the Terraform source.
+     */
+
+    public String getTerraformSourceName() {
+        return this.terraformSourceName;
+    }
+
+    /**
+     * <p>
+     * The short name of the Terraform source.
+     * </p>
+     * 
+     * @param terraformSourceName
+     *        The short name of the Terraform source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceMapping withTerraformSourceName(String terraformSourceName) {
+        setTerraformSourceName(terraformSourceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -613,7 +659,9 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
         if (getResourceGroupName() != null)
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: ").append(getResourceName());
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
+        if (getTerraformSourceName() != null)
+            sb.append("TerraformSourceName: ").append(getTerraformSourceName());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +700,10 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
+        if (other.getTerraformSourceName() == null ^ this.getTerraformSourceName() == null)
+            return false;
+        if (other.getTerraformSourceName() != null && other.getTerraformSourceName().equals(this.getTerraformSourceName()) == false)
+            return false;
         return true;
     }
 
@@ -666,6 +718,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getTerraformSourceName() == null) ? 0 : getTerraformSourceName().hashCode());
         return hashCode;
     }
 

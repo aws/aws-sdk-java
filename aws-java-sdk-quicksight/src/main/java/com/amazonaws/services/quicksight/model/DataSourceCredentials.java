@@ -45,6 +45,12 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
      * </p>
      */
     private String copySourceArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     */
+    private String secretArn;
 
     /**
      * <p>
@@ -151,6 +157,46 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     * 
+     * @param secretArn
+     *        The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     */
+
+    public void setSecretArn(String secretArn) {
+        this.secretArn = secretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     */
+
+    public String getSecretArn() {
+        return this.secretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * </p>
+     * 
+     * @param secretArn
+     *        The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceCredentials withSecretArn(String secretArn) {
+        setSecretArn(secretArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,7 +211,9 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
         if (getCredentialPair() != null)
             sb.append("CredentialPair: ").append(getCredentialPair()).append(",");
         if (getCopySourceArn() != null)
-            sb.append("CopySourceArn: ").append(getCopySourceArn());
+            sb.append("CopySourceArn: ").append(getCopySourceArn()).append(",");
+        if (getSecretArn() != null)
+            sb.append("SecretArn: ").append(getSecretArn());
         sb.append("}");
         return sb.toString();
     }
@@ -188,6 +236,10 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
             return false;
         if (other.getCopySourceArn() != null && other.getCopySourceArn().equals(this.getCopySourceArn()) == false)
             return false;
+        if (other.getSecretArn() == null ^ this.getSecretArn() == null)
+            return false;
+        if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +250,7 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getCredentialPair() == null) ? 0 : getCredentialPair().hashCode());
         hashCode = prime * hashCode + ((getCopySourceArn() == null) ? 0 : getCopySourceArn().hashCode());
+        hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         return hashCode;
     }
 

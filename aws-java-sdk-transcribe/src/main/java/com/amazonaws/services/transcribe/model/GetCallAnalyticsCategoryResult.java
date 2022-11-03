@@ -25,7 +25,7 @@ public class GetCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Provides you with the rules associated with the category you specified in your
+     * Provides you with the properties of the Call Analytics category you specified in your
      * <code>GetCallAnalyticsCategory</code> request.
      * </p>
      */
@@ -33,12 +33,12 @@ public class GetCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Provides you with the rules associated with the category you specified in your
+     * Provides you with the properties of the Call Analytics category you specified in your
      * <code>GetCallAnalyticsCategory</code> request.
      * </p>
      * 
      * @param categoryProperties
-     *        Provides you with the rules associated with the category you specified in your
+     *        Provides you with the properties of the Call Analytics category you specified in your
      *        <code>GetCallAnalyticsCategory</code> request.
      */
 
@@ -48,11 +48,11 @@ public class GetCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Provides you with the rules associated with the category you specified in your
+     * Provides you with the properties of the Call Analytics category you specified in your
      * <code>GetCallAnalyticsCategory</code> request.
      * </p>
      * 
-     * @return Provides you with the rules associated with the category you specified in your
+     * @return Provides you with the properties of the Call Analytics category you specified in your
      *         <code>GetCallAnalyticsCategory</code> request.
      */
 
@@ -62,12 +62,12 @@ public class GetCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Provides you with the rules associated with the category you specified in your
+     * Provides you with the properties of the Call Analytics category you specified in your
      * <code>GetCallAnalyticsCategory</code> request.
      * </p>
      * 
      * @param categoryProperties
-     *        Provides you with the rules associated with the category you specified in your
+     *        Provides you with the properties of the Call Analytics category you specified in your
      *        <code>GetCallAnalyticsCategory</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

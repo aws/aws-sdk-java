@@ -26,7 +26,7 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you
+ * Add values for each required property from CloudWatch. You can use an existing metric, or a new metric that you
  * create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom
  * metrics</a> in the <i>Amazon CloudWatch User Guide</i>.

@@ -27,18 +27,18 @@ public class DeleteMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the media capture pipeline being deleted.
+     * The ID of the media pipeline being deleted.
      * </p>
      */
     private String mediaPipelineId;
 
     /**
      * <p>
-     * The ID of the media capture pipeline being deleted.
+     * The ID of the media pipeline being deleted.
      * </p>
      * 
      * @param mediaPipelineId
-     *        The ID of the media capture pipeline being deleted.
+     *        The ID of the media pipeline being deleted.
      */
 
     public void setMediaPipelineId(String mediaPipelineId) {
@@ -47,10 +47,10 @@ public class DeleteMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the media capture pipeline being deleted.
+     * The ID of the media pipeline being deleted.
      * </p>
      * 
-     * @return The ID of the media capture pipeline being deleted.
+     * @return The ID of the media pipeline being deleted.
      */
 
     public String getMediaPipelineId() {
@@ -59,11 +59,11 @@ public class DeleteMediaCapturePipelineRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the media capture pipeline being deleted.
+     * The ID of the media pipeline being deleted.
      * </p>
      * 
      * @param mediaPipelineId
-     *        The ID of the media capture pipeline being deleted.
+     *        The ID of the media pipeline being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

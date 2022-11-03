@@ -80,9 +80,17 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      */
     private String remarks;
-
+    /**
+     * <p>
+     * Indicates whether auto-configuration is turned on for this application.
+     * </p>
+     */
     private Boolean autoConfigEnabled;
-
+    /**
+     * <p>
+     * The method used by Application Insights to onboard your resources.
+     * </p>
+     */
     private String discoveryType;
 
     /**
@@ -447,7 +455,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates whether auto-configuration is turned on for this application.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Indicates whether auto-configuration is turned on for this application.
      */
 
     public void setAutoConfigEnabled(Boolean autoConfigEnabled) {
@@ -455,7 +468,11 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether auto-configuration is turned on for this application.
+     * </p>
+     * 
+     * @return Indicates whether auto-configuration is turned on for this application.
      */
 
     public Boolean getAutoConfigEnabled() {
@@ -463,7 +480,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates whether auto-configuration is turned on for this application.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Indicates whether auto-configuration is turned on for this application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,7 +495,11 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether auto-configuration is turned on for this application.
+     * </p>
+     * 
+     * @return Indicates whether auto-configuration is turned on for this application.
      */
 
     public Boolean isAutoConfigEnabled() {
@@ -481,7 +507,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The method used by Application Insights to onboard your resources.
+     * </p>
+     * 
      * @param discoveryType
+     *        The method used by Application Insights to onboard your resources.
      * @see DiscoveryType
      */
 
@@ -490,7 +521,11 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The method used by Application Insights to onboard your resources.
+     * </p>
+     * 
+     * @return The method used by Application Insights to onboard your resources.
      * @see DiscoveryType
      */
 
@@ -499,7 +534,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The method used by Application Insights to onboard your resources.
+     * </p>
+     * 
      * @param discoveryType
+     *        The method used by Application Insights to onboard your resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiscoveryType
      */
@@ -510,7 +550,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The method used by Application Insights to onboard your resources.
+     * </p>
+     * 
      * @param discoveryType
+     *        The method used by Application Insights to onboard your resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiscoveryType
      */

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have specified a template that is not valid or supported.
+ * You have specified a template that is invalid or supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

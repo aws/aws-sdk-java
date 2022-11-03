@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed information about a lifecycle policy.
+ * <b>[All policy types]</b> Detailed information about a snapshot, AMI, or event-based lifecycle policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/LifecyclePolicy" target="_top">AWS API

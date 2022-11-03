@@ -34,6 +34,12 @@ public class LabelsInputConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private LabelsS3InputConfiguration s3InputConfiguration;
+    /**
+     * <p>
+     * The name of the label group to be used for label data.
+     * </p>
+     */
+    private String labelGroupName;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class LabelsInputConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The name of the label group to be used for label data.
+     * </p>
+     * 
+     * @param labelGroupName
+     *        The name of the label group to be used for label data.
+     */
+
+    public void setLabelGroupName(String labelGroupName) {
+        this.labelGroupName = labelGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the label group to be used for label data.
+     * </p>
+     * 
+     * @return The name of the label group to be used for label data.
+     */
+
+    public String getLabelGroupName() {
+        return this.labelGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the label group to be used for label data.
+     * </p>
+     * 
+     * @param labelGroupName
+     *        The name of the label group to be used for label data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelsInputConfiguration withLabelGroupName(String labelGroupName) {
+        setLabelGroupName(labelGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class LabelsInputConfiguration implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3InputConfiguration() != null)
-            sb.append("S3InputConfiguration: ").append(getS3InputConfiguration());
+            sb.append("S3InputConfiguration: ").append(getS3InputConfiguration()).append(",");
+        if (getLabelGroupName() != null)
+            sb.append("LabelGroupName: ").append(getLabelGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class LabelsInputConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getS3InputConfiguration() != null && other.getS3InputConfiguration().equals(this.getS3InputConfiguration()) == false)
             return false;
+        if (other.getLabelGroupName() == null ^ this.getLabelGroupName() == null)
+            return false;
+        if (other.getLabelGroupName() != null && other.getLabelGroupName().equals(this.getLabelGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class LabelsInputConfiguration implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getS3InputConfiguration() == null) ? 0 : getS3InputConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLabelGroupName() == null) ? 0 : getLabelGroupName().hashCode());
         return hashCode;
     }
 

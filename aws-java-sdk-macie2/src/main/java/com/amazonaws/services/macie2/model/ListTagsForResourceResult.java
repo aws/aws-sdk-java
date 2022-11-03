@@ -25,18 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      * </p>
      * 
-     * @return A map of key-value pairs that identifies the tags (keys and values) that are associated with the
-     *         resource.
+     * @return A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -45,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -58,11 +57,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -77,21 +77,24 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances. The EC2
-     * Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     * <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot
+     * Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted two days
+     * after its instances are terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
-     * instances. Its existing instances continue to run until they are interrupted or terminated. The request remains
-     * in this state until all instances are interrupted or terminated.
+     * <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is deleted
+     * or the Spot Fleet request is canceled and does not launch additional instances. Its existing instances continue
+     * to run until they are interrupted or terminated. The request remains in this state until all instances are
+     * interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances are
-     * terminating. The request remains in this state until all instances are terminated.
+     * <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating. The request remains in this
+     * state until all instances are terminated.
      * </p>
      * </li>
      * <li>
@@ -270,21 +273,24 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances. The EC2
-     * Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     * <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot
+     * Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted two days
+     * after its instances are terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
-     * instances. Its existing instances continue to run until they are interrupted or terminated. The request remains
-     * in this state until all instances are interrupted or terminated.
+     * <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is deleted
+     * or the Spot Fleet request is canceled and does not launch additional instances. Its existing instances continue
+     * to run until they are interrupted or terminated. The request remains in this state until all instances are
+     * interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances are
-     * terminating. The request remains in this state until all instances are terminated.
+     * <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating. The request remains in this
+     * state until all instances are terminated.
      * </p>
      * </li>
      * <li>
@@ -413,21 +419,24 @@ public class EventInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances. The
-     *        EC2 Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     *        <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the
+     *        Spot Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted
+     *        two days after its instances are terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch
-     *        additional instances. Its existing instances continue to run until they are interrupted or terminated. The
-     *        request remains in this state until all instances are interrupted or terminated.
+     *        <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     *        deleted or the Spot Fleet request is canceled and does not launch additional instances. Its existing
+     *        instances continue to run until they are interrupted or terminated. The request remains in this state
+     *        until all instances are interrupted or terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances are
-     *        terminating. The request remains in this state until all instances are terminated.
+     *        <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2
+     *        Fleet is deleted or the Spot Fleet request is canceled and its instances are terminating. The request
+     *        remains in this state until all instances are terminated.
      *        </p>
      *        </li>
      *        <li>
@@ -562,21 +571,24 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances. The EC2
-     * Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     * <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot
+     * Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted two days
+     * after its instances are terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
-     * instances. Its existing instances continue to run until they are interrupted or terminated. The request remains
-     * in this state until all instances are interrupted or terminated.
+     * <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is deleted
+     * or the Spot Fleet request is canceled and does not launch additional instances. Its existing instances continue
+     * to run until they are interrupted or terminated. The request remains in this state until all instances are
+     * interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances are
-     * terminating. The request remains in this state until all instances are terminated.
+     * <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating. The request remains in this
+     * state until all instances are terminated.
      * </p>
      * </li>
      * <li>
@@ -704,21 +716,24 @@ public class EventInformation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances.
-     *         The EC2 Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     *         <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the
+     *         Spot Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted
+     *         two days after its instances are terminated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch
-     *         additional instances. Its existing instances continue to run until they are interrupted or terminated.
-     *         The request remains in this state until all instances are interrupted or terminated.
+     *         <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     *         deleted or the Spot Fleet request is canceled and does not launch additional instances. Its existing
+     *         instances continue to run until they are interrupted or terminated. The request remains in this state
+     *         until all instances are interrupted or terminated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances
-     *         are terminating. The request remains in this state until all instances are terminated.
+     *         <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2
+     *         Fleet is deleted or the Spot Fleet request is canceled and its instances are terminating. The request
+     *         remains in this state until all instances are terminated.
      *         </p>
      *         </li>
      *         <li>
@@ -853,21 +868,24 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances. The EC2
-     * Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     * <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot
+     * Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted two days
+     * after its instances are terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
-     * instances. Its existing instances continue to run until they are interrupted or terminated. The request remains
-     * in this state until all instances are interrupted or terminated.
+     * <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is deleted
+     * or the Spot Fleet request is canceled and does not launch additional instances. Its existing instances continue
+     * to run until they are interrupted or terminated. The request remains in this state until all instances are
+     * interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances are
-     * terminating. The request remains in this state until all instances are terminated.
+     * <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating. The request remains in this
+     * state until all instances are terminated.
      * </p>
      * </li>
      * <li>
@@ -996,21 +1014,24 @@ public class EventInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running instances. The
-     *        EC2 Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+     *        <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the
+     *        Spot Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted
+     *        two days after its instances are terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch
-     *        additional instances. Its existing instances continue to run until they are interrupted or terminated. The
-     *        request remains in this state until all instances are interrupted or terminated.
+     *        <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     *        deleted or the Spot Fleet request is canceled and does not launch additional instances. Its existing
+     *        instances continue to run until they are interrupted or terminated. The request remains in this state
+     *        until all instances are interrupted or terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its instances are
-     *        terminating. The request remains in this state until all instances are terminated.
+     *        <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2
+     *        Fleet is deleted or the Spot Fleet request is canceled and its instances are terminating. The request
+     *        remains in this state until all instances are terminated.
      *        </p>
      *        </li>
      *        <li>

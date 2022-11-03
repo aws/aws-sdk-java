@@ -26,7 +26,7 @@ public class ListManagedPoliciesInPermissionSetResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of the <a>AttachedManagedPolicy</a> data type object.
+     * An array of the <a>AttachedManagedPolicy</a> data type object.
      * </p>
      */
     private java.util.List<AttachedManagedPolicy> attachedManagedPolicies;
@@ -40,10 +40,10 @@ public class ListManagedPoliciesInPermissionSetResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of the <a>AttachedManagedPolicy</a> data type object.
+     * An array of the <a>AttachedManagedPolicy</a> data type object.
      * </p>
      * 
-     * @return The array of the <a>AttachedManagedPolicy</a> data type object.
+     * @return An array of the <a>AttachedManagedPolicy</a> data type object.
      */
 
     public java.util.List<AttachedManagedPolicy> getAttachedManagedPolicies() {
@@ -52,11 +52,11 @@ public class ListManagedPoliciesInPermissionSetResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of the <a>AttachedManagedPolicy</a> data type object.
+     * An array of the <a>AttachedManagedPolicy</a> data type object.
      * </p>
      * 
      * @param attachedManagedPolicies
-     *        The array of the <a>AttachedManagedPolicy</a> data type object.
+     *        An array of the <a>AttachedManagedPolicy</a> data type object.
      */
 
     public void setAttachedManagedPolicies(java.util.Collection<AttachedManagedPolicy> attachedManagedPolicies) {
@@ -70,7 +70,7 @@ public class ListManagedPoliciesInPermissionSetResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of the <a>AttachedManagedPolicy</a> data type object.
+     * An array of the <a>AttachedManagedPolicy</a> data type object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListManagedPoliciesInPermissionSetResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param attachedManagedPolicies
-     *        The array of the <a>AttachedManagedPolicy</a> data type object.
+     *        An array of the <a>AttachedManagedPolicy</a> data type object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListManagedPoliciesInPermissionSetResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of the <a>AttachedManagedPolicy</a> data type object.
+     * An array of the <a>AttachedManagedPolicy</a> data type object.
      * </p>
      * 
      * @param attachedManagedPolicies
-     *        The array of the <a>AttachedManagedPolicy</a> data type object.
+     *        An array of the <a>AttachedManagedPolicy</a> data type object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

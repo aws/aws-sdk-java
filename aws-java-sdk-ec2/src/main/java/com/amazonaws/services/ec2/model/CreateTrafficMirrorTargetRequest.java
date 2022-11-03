@@ -59,6 +59,12 @@ public class CreateTrafficMirrorTargetRequest extends AmazonWebServiceRequest im
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     */
+    private String gatewayLoadBalancerEndpointId;
 
     /**
      * <p>
@@ -312,6 +318,46 @@ public class CreateTrafficMirrorTargetRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerEndpointId
+     *        The ID of the Gateway Load Balancer endpoint.
+     */
+
+    public void setGatewayLoadBalancerEndpointId(String gatewayLoadBalancerEndpointId) {
+        this.gatewayLoadBalancerEndpointId = gatewayLoadBalancerEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     * 
+     * @return The ID of the Gateway Load Balancer endpoint.
+     */
+
+    public String getGatewayLoadBalancerEndpointId() {
+        return this.gatewayLoadBalancerEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerEndpointId
+     *        The ID of the Gateway Load Balancer endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrafficMirrorTargetRequest withGatewayLoadBalancerEndpointId(String gatewayLoadBalancerEndpointId) {
+        setGatewayLoadBalancerEndpointId(gatewayLoadBalancerEndpointId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -343,7 +389,9 @@ public class CreateTrafficMirrorTargetRequest extends AmazonWebServiceRequest im
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getGatewayLoadBalancerEndpointId() != null)
+            sb.append("GatewayLoadBalancerEndpointId: ").append(getGatewayLoadBalancerEndpointId());
         sb.append("}");
         return sb.toString();
     }
@@ -378,6 +426,11 @@ public class CreateTrafficMirrorTargetRequest extends AmazonWebServiceRequest im
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getGatewayLoadBalancerEndpointId() == null ^ this.getGatewayLoadBalancerEndpointId() == null)
+            return false;
+        if (other.getGatewayLoadBalancerEndpointId() != null
+                && other.getGatewayLoadBalancerEndpointId().equals(this.getGatewayLoadBalancerEndpointId()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +444,7 @@ public class CreateTrafficMirrorTargetRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getGatewayLoadBalancerEndpointId() == null) ? 0 : getGatewayLoadBalancerEndpointId().hashCode());
         return hashCode;
     }
 

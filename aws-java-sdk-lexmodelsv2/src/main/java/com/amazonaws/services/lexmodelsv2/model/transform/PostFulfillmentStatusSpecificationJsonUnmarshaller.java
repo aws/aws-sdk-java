@@ -60,6 +60,30 @@ public class PostFulfillmentStatusSpecificationJsonUnmarshaller implements Unmar
                     context.nextToken();
                     postFulfillmentStatusSpecification.setTimeoutResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("successNextStep", targetDepth)) {
+                    context.nextToken();
+                    postFulfillmentStatusSpecification.setSuccessNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("successConditional", targetDepth)) {
+                    context.nextToken();
+                    postFulfillmentStatusSpecification.setSuccessConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("failureNextStep", targetDepth)) {
+                    context.nextToken();
+                    postFulfillmentStatusSpecification.setFailureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("failureConditional", targetDepth)) {
+                    context.nextToken();
+                    postFulfillmentStatusSpecification.setFailureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("timeoutNextStep", targetDepth)) {
+                    context.nextToken();
+                    postFulfillmentStatusSpecification.setTimeoutNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("timeoutConditional", targetDepth)) {
+                    context.nextToken();
+                    postFulfillmentStatusSpecification.setTimeoutConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

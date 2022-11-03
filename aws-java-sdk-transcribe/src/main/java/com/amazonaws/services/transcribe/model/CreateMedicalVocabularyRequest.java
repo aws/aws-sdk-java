@@ -27,39 +27,36 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of your new vocabulary.
+     * A unique name, chosen by you, for your new custom medical vocabulary.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary with the same name as a previous vocabulary, you get a
+     * you try to create a new medical vocabulary with the same name as an existing medical vocabulary, you get a
      * <code>ConflictException</code> error.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (
+     * The language code that represents the language of the entries in your custom vocabulary. US English (
      * <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you're calling.
+     * The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Here's an example URI path:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      */
     private String vocabularyFileUri;
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create
-     * the new vocabulary.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+     * create this new vocabulary.
      * </p>
      * <p>
      * To learn more about using tags with Amazon Transcribe, refer to <a
@@ -70,20 +67,20 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of your new vocabulary.
+     * A unique name, chosen by you, for your new custom medical vocabulary.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary with the same name as a previous vocabulary, you get a
+     * you try to create a new medical vocabulary with the same name as an existing medical vocabulary, you get a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of your new vocabulary.</p>
+     *        A unique name, chosen by you, for your new custom medical vocabulary.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
-     *        account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a
-     *        <code>ConflictException</code> error.
+     *        account. If you try to create a new medical vocabulary with the same name as an existing medical
+     *        vocabulary, you get a <code>ConflictException</code> error.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -92,19 +89,19 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of your new vocabulary.
+     * A unique name, chosen by you, for your new custom medical vocabulary.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary with the same name as a previous vocabulary, you get a
+     * you try to create a new medical vocabulary with the same name as an existing medical vocabulary, you get a
      * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of your new vocabulary.</p>
+     * @return A unique name, chosen by you, for your new custom medical vocabulary.</p>
      *         <p>
      *         This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
-     *         account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a
-     *         <code>ConflictException</code> error.
+     *         account. If you try to create a new medical vocabulary with the same name as an existing medical
+     *         vocabulary, you get a <code>ConflictException</code> error.
      */
 
     public String getVocabularyName() {
@@ -113,20 +110,20 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of your new vocabulary.
+     * A unique name, chosen by you, for your new custom medical vocabulary.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
-     * you try to create a vocabulary with the same name as a previous vocabulary, you get a
+     * you try to create a new medical vocabulary with the same name as an existing medical vocabulary, you get a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of your new vocabulary.</p>
+     *        A unique name, chosen by you, for your new custom medical vocabulary.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
-     *        account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a
-     *        <code>ConflictException</code> error.
+     *        account. If you try to create a new medical vocabulary with the same name as an existing medical
+     *        vocabulary, you get a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,13 +134,13 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (
+     * The language code that represents the language of the entries in your custom vocabulary. US English (
      * <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code that represents the language of the entries in your custom vocabulary. Note that U.S.
-     *        English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     *        The language code that represents the language of the entries in your custom vocabulary. US English (
+     *        <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -153,12 +150,12 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (
+     * The language code that represents the language of the entries in your custom vocabulary. US English (
      * <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The language code that represents the language of the entries in your custom vocabulary. Note that U.S.
-     *         English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     * @return The language code that represents the language of the entries in your custom vocabulary. US English (
+     *         <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -168,13 +165,13 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (
+     * The language code that represents the language of the entries in your custom vocabulary. US English (
      * <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code that represents the language of the entries in your custom vocabulary. Note that U.S.
-     *        English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     *        The language code that represents the language of the entries in your custom vocabulary. US English (
+     *        <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -186,13 +183,13 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (
+     * The language code that represents the language of the entries in your custom vocabulary. US English (
      * <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code that represents the language of the entries in your custom vocabulary. Note that U.S.
-     *        English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     *        The language code that represents the language of the entries in your custom vocabulary. US English (
+     *        <code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -204,24 +201,18 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you're calling.
+     * The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Here's an example URI path:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      * 
      * @param vocabularyFileUri
-     *        The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the
-     *        same Amazon Web Services Region as the resource that you're calling.</p>
+     *        The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must
+     *        be in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        Here's an example URI path:
-     *        </p>
-     *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      */
 
     public void setVocabularyFileUri(String vocabularyFileUri) {
@@ -230,23 +221,17 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you're calling.
+     * The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Here's an example URI path:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      * 
-     * @return The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in
-     *         the same Amazon Web Services Region as the resource that you're calling.</p>
+     * @return The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must
+     *         be in the same Amazon Web Services Region as the resource you're calling.</p>
      *         <p>
-     *         Here's an example URI path:
-     *         </p>
-     *         <p>
-     *         <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     *         Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      */
 
     public String getVocabularyFileUri() {
@@ -255,24 +240,18 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same
-     * Amazon Web Services Region as the resource that you're calling.
+     * The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in
+     * the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * Here's an example URI path:
-     * </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * </p>
      * 
      * @param vocabularyFileUri
-     *        The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the
-     *        same Amazon Web Services Region as the resource that you're calling.</p>
+     *        The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must
+     *        be in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        Here's an example URI path:
-     *        </p>
-     *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,16 +262,16 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create
-     * the new vocabulary.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+     * create this new vocabulary.
      * </p>
      * <p>
      * To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
      * </p>
      * 
-     * @return Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
-     *         create the new vocabulary.</p>
+     * @return Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the
+     *         time you create this new vocabulary.</p>
      *         <p>
      *         To learn more about using tags with Amazon Transcribe, refer to <a
      *         href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
@@ -304,8 +283,8 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create
-     * the new vocabulary.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+     * create this new vocabulary.
      * </p>
      * <p>
      * To learn more about using tags with Amazon Transcribe, refer to <a
@@ -313,8 +292,8 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
-     *        create the new vocabulary.</p>
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the
+     *        time you create this new vocabulary.</p>
      *        <p>
      *        To learn more about using tags with Amazon Transcribe, refer to <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
@@ -331,8 +310,8 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create
-     * the new vocabulary.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+     * create this new vocabulary.
      * </p>
      * <p>
      * To learn more about using tags with Amazon Transcribe, refer to <a
@@ -345,8 +324,8 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
-     *        create the new vocabulary.</p>
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the
+     *        time you create this new vocabulary.</p>
      *        <p>
      *        To learn more about using tags with Amazon Transcribe, refer to <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
@@ -365,8 +344,8 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create
-     * the new vocabulary.
+     * Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+     * create this new vocabulary.
      * </p>
      * <p>
      * To learn more about using tags with Amazon Transcribe, refer to <a
@@ -374,8 +353,8 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
-     *        create the new vocabulary.</p>
+     *        Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the
+     *        time you create this new vocabulary.</p>
      *        <p>
      *        To learn more about using tags with Amazon Transcribe, refer to <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.

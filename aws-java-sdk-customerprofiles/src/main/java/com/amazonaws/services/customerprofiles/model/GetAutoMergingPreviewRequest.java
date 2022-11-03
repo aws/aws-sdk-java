@@ -43,6 +43,13 @@ public class GetAutoMergingPreviewRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ConflictResolution conflictResolution;
+    /**
+     * <p>
+     * Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     * process.
+     * </p>
+     */
+    private Double minAllowedConfidenceScoreForMerging;
 
     /**
      * <p>
@@ -165,6 +172,52 @@ public class GetAutoMergingPreviewRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     * process.
+     * </p>
+     * 
+     * @param minAllowedConfidenceScoreForMerging
+     *        Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     *        process.
+     */
+
+    public void setMinAllowedConfidenceScoreForMerging(Double minAllowedConfidenceScoreForMerging) {
+        this.minAllowedConfidenceScoreForMerging = minAllowedConfidenceScoreForMerging;
+    }
+
+    /**
+     * <p>
+     * Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     * process.
+     * </p>
+     * 
+     * @return Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     *         process.
+     */
+
+    public Double getMinAllowedConfidenceScoreForMerging() {
+        return this.minAllowedConfidenceScoreForMerging;
+    }
+
+    /**
+     * <p>
+     * Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     * process.
+     * </p>
+     * 
+     * @param minAllowedConfidenceScoreForMerging
+     *        Minimum confidence score required for profiles within a matching group to be merged during the auto-merge
+     *        process.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAutoMergingPreviewRequest withMinAllowedConfidenceScoreForMerging(Double minAllowedConfidenceScoreForMerging) {
+        setMinAllowedConfidenceScoreForMerging(minAllowedConfidenceScoreForMerging);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +234,9 @@ public class GetAutoMergingPreviewRequest extends com.amazonaws.AmazonWebService
         if (getConsolidation() != null)
             sb.append("Consolidation: ").append(getConsolidation()).append(",");
         if (getConflictResolution() != null)
-            sb.append("ConflictResolution: ").append(getConflictResolution());
+            sb.append("ConflictResolution: ").append(getConflictResolution()).append(",");
+        if (getMinAllowedConfidenceScoreForMerging() != null)
+            sb.append("MinAllowedConfidenceScoreForMerging: ").append(getMinAllowedConfidenceScoreForMerging());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +263,11 @@ public class GetAutoMergingPreviewRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getConflictResolution() != null && other.getConflictResolution().equals(this.getConflictResolution()) == false)
             return false;
+        if (other.getMinAllowedConfidenceScoreForMerging() == null ^ this.getMinAllowedConfidenceScoreForMerging() == null)
+            return false;
+        if (other.getMinAllowedConfidenceScoreForMerging() != null
+                && other.getMinAllowedConfidenceScoreForMerging().equals(this.getMinAllowedConfidenceScoreForMerging()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +279,7 @@ public class GetAutoMergingPreviewRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getConsolidation() == null) ? 0 : getConsolidation().hashCode());
         hashCode = prime * hashCode + ((getConflictResolution() == null) ? 0 : getConflictResolution().hashCode());
+        hashCode = prime * hashCode + ((getMinAllowedConfidenceScoreForMerging() == null) ? 0 : getMinAllowedConfidenceScoreForMerging().hashCode());
         return hashCode;
     }
 

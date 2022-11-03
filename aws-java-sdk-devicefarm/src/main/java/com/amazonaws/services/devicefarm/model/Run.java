@@ -418,7 +418,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      */
     private Boolean skipAppResign;
@@ -434,6 +434,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DeviceSelectionResult deviceSelectionResult;
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
 
     /**
      * <p>
@@ -3875,7 +3881,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
@@ -3883,7 +3889,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information about how Device Farm re-signs your apps, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      */
 
@@ -3898,14 +3904,14 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information about how Device Farm re-signs your apps, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
 
@@ -3920,7 +3926,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
@@ -3928,7 +3934,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information about how Device Farm re-signs your apps, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3945,14 +3951,14 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information about how Device Farm re-signs your apps, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
 
@@ -4041,6 +4047,46 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @return The VPC security groups and subnets that are attached to a project.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4113,7 +4159,9 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         if (getTestSpecArn() != null)
             sb.append("TestSpecArn: ").append(getTestSpecArn()).append(",");
         if (getDeviceSelectionResult() != null)
-            sb.append("DeviceSelectionResult: ").append(getDeviceSelectionResult());
+            sb.append("DeviceSelectionResult: ").append(getDeviceSelectionResult()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -4252,6 +4300,10 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceSelectionResult() != null && other.getDeviceSelectionResult().equals(this.getDeviceSelectionResult()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -4291,6 +4343,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         hashCode = prime * hashCode + ((getTestSpecArn() == null) ? 0 : getTestSpecArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceSelectionResult() == null) ? 0 : getDeviceSelectionResult().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

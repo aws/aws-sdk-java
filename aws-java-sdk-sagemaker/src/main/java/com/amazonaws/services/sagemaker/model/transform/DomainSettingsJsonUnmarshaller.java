@@ -58,6 +58,10 @@ public class DomainSettingsJsonUnmarshaller implements Unmarshaller<DomainSettin
                     context.nextToken();
                     domainSettings.setRStudioServerProDomainSettings(RStudioServerProDomainSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ExecutionRoleIdentityConfig", targetDepth)) {
+                    context.nextToken();
+                    domainSettings.setExecutionRoleIdentityConfig(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

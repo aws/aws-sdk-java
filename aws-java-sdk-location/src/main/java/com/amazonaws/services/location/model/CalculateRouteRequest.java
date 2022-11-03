@@ -56,8 +56,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean departNow;
     /**
      * <p>
-     * The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The start position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -101,8 +102,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Date departureTime;
     /**
      * <p>
-     * The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The finish position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -147,7 +149,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     * compatibility.
+     * compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.
      * </p>
      * <p>
      * The <code>TravelMode</code> you specify also determines how you specify route preferences:
@@ -419,8 +422,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The start position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -442,8 +446,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The start position for the route. Defined in <a
-     *         href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *         <code>[longitude, latitude]</code>.</p>
+     *         href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *         format: <code>[longitude, latitude]</code>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -469,8 +473,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The start position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -493,8 +498,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param departurePosition
      *        The start position for the route. Defined in <a
-     *        href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *        <code>[longitude, latitude]</code>.</p>
+     *        href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *        format: <code>[longitude, latitude]</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -525,8 +530,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The start position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -554,8 +560,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param departurePosition
      *        The start position for the route. Defined in <a
-     *        href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *        <code>[longitude, latitude]</code>.</p>
+     *        href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *        format: <code>[longitude, latitude]</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -588,8 +594,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The start position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -612,8 +619,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param departurePosition
      *        The start position for the route. Defined in <a
-     *        href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *        <code>[longitude, latitude]</code>.</p>
+     *        href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *        format: <code>[longitude, latitude]</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -759,8 +766,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The finish position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -781,8 +789,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The finish position for the route. Defined in <a
-     *         href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *         <code>[longitude, latitude]</code>.</p>
+     *         href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *         format: <code>[longitude, latitude]</code>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -807,8 +815,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The finish position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -830,8 +839,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param destinationPosition
      *        The finish position for the route. Defined in <a
-     *        href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *        <code>[longitude, latitude]</code>.</p>
+     *        href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *        format: <code>[longitude, latitude]</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -861,8 +870,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The finish position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -889,8 +899,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param destinationPosition
      *        The finish position for the route. Defined in <a
-     *        href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *        <code>[longitude, latitude]</code>.</p>
+     *        href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *        format: <code>[longitude, latitude]</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -922,8 +932,9 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     * 84</a> format: <code>[longitude, latitude]</code>.
+     * The finish position for the route. Defined in <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format:
+     * <code>[longitude, latitude]</code>.
      * </p>
      * <ul>
      * <li>
@@ -945,8 +956,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param destinationPosition
      *        The finish position for the route. Defined in <a
-     *        href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     *        <code>[longitude, latitude]</code>.</p>
+     *        href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a>
+     *        format: <code>[longitude, latitude]</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1149,7 +1160,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     * compatibility.
+     * compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.
      * </p>
      * <p>
      * The <code>TravelMode</code> you specify also determines how you specify route preferences:
@@ -1172,7 +1184,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param travelMode
      *        Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     *        compatibility.</p>
+     *        compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for
+     *        the <code>TravelMode</code>.</p>
      *        <p>
      *        The <code>TravelMode</code> you specify also determines how you specify route preferences:
      *        </p>
@@ -1200,7 +1213,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     * compatibility.
+     * compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.
      * </p>
      * <p>
      * The <code>TravelMode</code> you specify also determines how you specify route preferences:
@@ -1222,7 +1236,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     *         compatibility.</p>
+     *         compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options
+     *         for the <code>TravelMode</code>.</p>
      *         <p>
      *         The <code>TravelMode</code> you specify also determines how you specify route preferences:
      *         </p>
@@ -1250,7 +1265,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     * compatibility.
+     * compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.
      * </p>
      * <p>
      * The <code>TravelMode</code> you specify also determines how you specify route preferences:
@@ -1273,7 +1289,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param travelMode
      *        Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     *        compatibility.</p>
+     *        compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for
+     *        the <code>TravelMode</code>.</p>
      *        <p>
      *        The <code>TravelMode</code> you specify also determines how you specify route preferences:
      *        </p>
@@ -1303,7 +1320,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     * compatibility.
+     * compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.
      * </p>
      * <p>
      * The <code>TravelMode</code> you specify also determines how you specify route preferences:
@@ -1326,7 +1344,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param travelMode
      *        Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
-     *        compatibility.</p>
+     *        compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for
+     *        the <code>TravelMode</code>.</p>
      *        <p>
      *        The <code>TravelMode</code> you specify also determines how you specify route preferences:
      *        </p>

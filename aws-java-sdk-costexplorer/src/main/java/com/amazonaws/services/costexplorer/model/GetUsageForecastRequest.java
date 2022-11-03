@@ -27,11 +27,12 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,
-     * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or
-     * later than the current date to avoid a validation error.
+     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in
+     * the period, but the end date isn't included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is
+     * retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     * <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation
+     * error.
      * </p>
      */
     private DateInterval timePeriod;
@@ -193,28 +194,29 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
     private Expression filter;
     /**
      * <p>
-     * Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around
-     * the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is
-     * about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction
-     * intervals.
+     * Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     * prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels
+     * result in wider prediction intervals.
      * </p>
      */
     private Integer predictionIntervalLevel;
 
     /**
      * <p>
-     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,
-     * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or
-     * later than the current date to avoid a validation error.
+     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in
+     * the period, but the end date isn't included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is
+     * retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     * <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation
+     * error.
      * </p>
      * 
      * @param timePeriod
      *        The start and end dates of the period that you want to retrieve usage forecast for. The start date is
-     *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-     *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *        included in the period, but the end date isn't included in the period. For example, if <code>start</code>
+     *        is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data
+     *        is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
      *        <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a
      *        validation error.
      */
@@ -225,17 +227,18 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,
-     * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or
-     * later than the current date to avoid a validation error.
+     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in
+     * the period, but the end date isn't included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is
+     * retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     * <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation
+     * error.
      * </p>
      * 
      * @return The start and end dates of the period that you want to retrieve usage forecast for. The start date is
-     *         inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-     *         and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     *         <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *         included in the period, but the end date isn't included in the period. For example, if <code>start</code>
+     *         is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data
+     *         is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
      *         <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a
      *         validation error.
      */
@@ -246,18 +249,19 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,
-     * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or
-     * later than the current date to avoid a validation error.
+     * The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in
+     * the period, but the end date isn't included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is
+     * retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     * <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation
+     * error.
      * </p>
      * 
      * @param timePeriod
      *        The start and end dates of the period that you want to retrieve usage forecast for. The start date is
-     *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-     *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *        included in the period, but the end date isn't included in the period. For example, if <code>start</code>
+     *        is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data
+     *        is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
      *        <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a
      *        validation error.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1285,17 +1289,17 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around
-     * the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is
-     * about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction
-     * intervals.
+     * Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     * prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels
+     * result in wider prediction intervals.
      * </p>
      * 
      * @param predictionIntervalLevel
-     *        Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval
-     *        around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost
-     *        Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in
-     *        wider prediction intervals.
+     *        Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     *        prediction interval around the mean by specifying a confidence level. The higher the confidence level, the
+     *        more confident Cost Explorer is about the actual value falling in the prediction interval. Higher
+     *        confidence levels result in wider prediction intervals.
      */
 
     public void setPredictionIntervalLevel(Integer predictionIntervalLevel) {
@@ -1304,16 +1308,16 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around
-     * the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is
-     * about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction
-     * intervals.
+     * Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     * prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels
+     * result in wider prediction intervals.
      * </p>
      * 
-     * @return Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval
-     *         around the mean by specifying a confidence level. The higher the confidence level, the more confident
-     *         Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels
-     *         result in wider prediction intervals.
+     * @return Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     *         prediction interval around the mean by specifying a confidence level. The higher the confidence level,
+     *         the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher
+     *         confidence levels result in wider prediction intervals.
      */
 
     public Integer getPredictionIntervalLevel() {
@@ -1322,17 +1326,17 @@ public class GetUsageForecastRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around
-     * the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is
-     * about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction
-     * intervals.
+     * Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     * prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels
+     * result in wider prediction intervals.
      * </p>
      * 
      * @param predictionIntervalLevel
-     *        Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval
-     *        around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost
-     *        Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in
-     *        wider prediction intervals.
+     *        Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a
+     *        prediction interval around the mean by specifying a confidence level. The higher the confidence level, the
+     *        more confident Cost Explorer is about the actual value falling in the prediction interval. Higher
+     *        confidence levels result in wider prediction intervals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

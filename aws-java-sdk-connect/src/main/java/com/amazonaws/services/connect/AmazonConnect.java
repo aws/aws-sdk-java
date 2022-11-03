@@ -47,7 +47,7 @@ import com.amazonaws.services.connect.model.*;
  * </p>
  * <note>
  * <p>
- * Working with contact flows? Check out the <a
+ * Working with flows? Check out the <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
  * </p>
  * </note>
@@ -243,8 +243,18 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Associates a contact flow with a phone number claimed to your Amazon Connect instance.
+     * Associates a flow with a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param associatePhoneNumberContactFlowRequest
      * @return Result of the AssociatePhoneNumberContactFlow operation returned by the service.
@@ -347,8 +357,19 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Claims an available phone number to your Amazon Connect instance.
+     * Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this
+     * API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group
+     * was created.
      * </p>
+     * <important>
+     * <p>
+     * You can call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber
+     * </a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param claimPhoneNumberRequest
      * @return Result of the ClaimPhoneNumber operation returned by the service.
@@ -402,10 +423,10 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Creates a contact flow for the specified Amazon Connect instance.
+     * Creates a flow for the specified Amazon Connect instance.
      * </p>
      * <p>
-     * You can also create and update contact flows using the <a
+     * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * 
@@ -414,7 +435,7 @@ public interface AmazonConnect {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidContactFlowException
-     *         The contact flow is not valid.
+     *         The flow is not valid.
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws DuplicateResourceException
@@ -435,7 +456,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Creates a contact flow module for the specified Amazon Connect instance.
+     * Creates a flow module for the specified Amazon Connect instance.
      * </p>
      * 
      * @param createContactFlowModuleRequest
@@ -560,6 +581,18 @@ public interface AmazonConnect {
      * <p>
      * Creates a new queue for the specified Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param createQueueRequest
      * @return Result of the CreateQueue operation returned by the service.
@@ -666,6 +699,65 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     CreateSecurityProfileResult createSecurityProfile(CreateSecurityProfileRequest createSecurityProfileRequest);
+
+    /**
+     * <p>
+     * Creates a new task template in the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createTaskTemplateRequest
+     * @return Result of the CreateTaskTemplate operation returned by the service.
+     * @throws PropertyValidationException
+     *         The property is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTaskTemplateResult createTaskTemplate(CreateTaskTemplateRequest createTaskTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a traffic distribution group given an Amazon Connect instance that has been replicated.
+     * </p>
+     * <p>
+     * For more information about creating traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createTrafficDistributionGroupRequest
+     * @return Result of the CreateTrafficDistributionGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws ResourceNotReadyException
+     *         The resource is not ready.
+     * @sample AmazonConnect.CreateTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTrafficDistributionGroupResult createTrafficDistributionGroup(CreateTrafficDistributionGroupRequest createTrafficDistributionGroupRequest);
 
     /**
      * <p>
@@ -780,7 +872,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Deletes a contact flow for the specified Amazon Connect instance.
+     * Deletes a flow for the specified Amazon Connect instance.
      * </p>
      * 
      * @param deleteContactFlowRequest
@@ -805,7 +897,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Deletes the specified contact flow module.
+     * Deletes the specified flow module.
      * </p>
      * 
      * @param deleteContactFlowModuleRequest
@@ -959,6 +1051,58 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Deletes the task template.
+     * </p>
+     * 
+     * @param deleteTaskTemplateRequest
+     * @return Result of the DeleteTaskTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTaskTemplateResult deleteTaskTemplate(DeleteTaskTemplateRequest deleteTaskTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution
+     * group is created.
+     * </p>
+     * <p>
+     * For more information about deleting traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteTrafficDistributionGroupRequest
+     * @return Result of the DeleteTrafficDistributionGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceInUseException
+     *         That resource is already in use. Please try another.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTrafficDistributionGroupResult deleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest deleteTrafficDistributionGroupRequest);
+
+    /**
+     * <p>
      * Deletes a use case from an integration association.
      * </p>
      * 
@@ -1094,6 +1238,9 @@ public interface AmazonConnect {
      * <p>
      * Contact information remains available in Amazon Connect for 24 months, and then it is deleted.
      * </p>
+     * <p>
+     * Only data from November 12, 2021, and later is returned by this API.
+     * </p>
      * </important>
      * 
      * @param describeContactRequest
@@ -1116,10 +1263,10 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Describes the specified contact flow.
+     * Describes the specified flow.
      * </p>
      * <p>
-     * You can also create and update contact flows using the <a
+     * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * 
@@ -1132,7 +1279,7 @@ public interface AmazonConnect {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ContactFlowNotPublishedException
-     *         The contact flow has not been published.
+     *         The flow has not been published.
      * @throws ThrottlingException
      *         The throttling limit has been exceeded.
      * @throws InternalServiceException
@@ -1145,7 +1292,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Describes the specified contact flow module.
+     * Describes the specified flow module.
      * </p>
      * 
      * @param describeContactFlowModuleRequest
@@ -1275,8 +1422,19 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region
+     * where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the
+     * <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution
+     * group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic
+     * distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will
+     * receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param describePhoneNumberRequest
      * @return Result of the DescribePhoneNumber operation returned by the service.
@@ -1393,6 +1551,29 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeSecurityProfileResult describeSecurityProfile(DescribeSecurityProfileRequest describeSecurityProfileRequest);
+
+    /**
+     * <p>
+     * Gets details and status of a traffic distribution group.
+     * </p>
+     * 
+     * @param describeTrafficDistributionGroupRequest
+     * @return Result of the DescribeTrafficDistributionGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DescribeTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTrafficDistributionGroupResult describeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest describeTrafficDistributionGroupRequest);
 
     /**
      * <p>
@@ -1568,7 +1749,7 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Remove the Lambda function from the dropdown options available in the relevant contact flow blocks.
+     * Remove the Lambda function from the dropdown options available in the relevant flow blocks.
      * </p>
      * 
      * @param disassociateLambdaFunctionRequest
@@ -1617,9 +1798,18 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Removes the contact flow association from a phone number claimed to your Amazon Connect instance, if a contact
-     * flow association exists.
+     * Removes the flow association from a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param disassociatePhoneNumberContactFlowRequest
      * @return Result of the DisassociatePhoneNumberContactFlow operation returned by the service.
@@ -1717,6 +1907,34 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to
+     * receive a new routed contact. Contacts can only be dismissed if they are in a <code>MISSED</code>,
+     * <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code> state in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent Event Stream</a>.
+     * </p>
+     * 
+     * @param dismissUserContactRequest
+     * @return Result of the DismissUserContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DismissUserContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DismissUserContactResult dismissUserContact(DismissUserContactRequest dismissUserContactRequest);
+
+    /**
+     * <p>
      * Retrieves the contact attributes for the specified contact.
      * </p>
      * 
@@ -1761,6 +1979,29 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     GetCurrentMetricDataResult getCurrentMetricData(GetCurrentMetricDataRequest getCurrentMetricDataRequest);
+
+    /**
+     * <p>
+     * Gets the real-time active user data from the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param getCurrentUserDataRequest
+     * @return Result of the GetCurrentUserData operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.GetCurrentUserData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentUserData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCurrentUserDataResult getCurrentUserData(GetCurrentUserDataRequest getCurrentUserDataRequest);
 
     /**
      * <p>
@@ -1826,6 +2067,52 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Gets details about a specific task template in the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param getTaskTemplateRequest
+     * @return Result of the GetTaskTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.GetTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTaskTemplateResult getTaskTemplate(GetTaskTemplateRequest getTaskTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves the current traffic distribution for a given traffic distribution group.
+     * </p>
+     * 
+     * @param getTrafficDistributionRequest
+     * @return Result of the GetTrafficDistribution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.GetTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetTrafficDistributionResult getTrafficDistribution(GetTrafficDistributionRequest getTrafficDistributionRequest);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -1882,7 +2169,7 @@ public interface AmazonConnect {
      * </p>
      * <p>
      * For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated
-     * with the instance.
+     * with the instance. Use this API to returns both Amazon Lex V1 and V2 bots.
      * </p>
      * 
      * @param listBotsRequest
@@ -1903,7 +2190,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Provides information about the contact flow modules for the specified Amazon Connect instance.
+     * Provides information about the flow modules for the specified Amazon Connect instance.
      * </p>
      * 
      * @param listContactFlowModulesRequest
@@ -1928,15 +2215,15 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Provides information about the contact flows for the specified Amazon Connect instance.
+     * Provides information about the flows for the specified Amazon Connect instance.
      * </p>
      * <p>
-     * You can also create and update contact flows using the <a
+     * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * <p>
-     * For more information about contact flows, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the
+     * For more information about flows, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a> in the
      * <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
@@ -2134,8 +2421,8 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant contact
-     * flow blocks.
+     * Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant flow
+     * blocks.
      * </p>
      * 
      * @param listLambdaFunctionsRequest
@@ -2161,7 +2448,9 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
+     * Returns a paginated list of all the Amazon Lex V1 bots currently associated with the instance. To return both
+     * Amazon Lex V1 and V2 bots, use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a> API.
      * </p>
      * 
      * @param listLexBotsRequest
@@ -2191,6 +2480,16 @@ public interface AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone
      * Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * The phone number <code>Arn</code> value that is returned from each of the items in the <a href=
+     * "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList"
+     * >PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a
+     * <code>ResourceNotFoundException</code>. Instead, use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * API. It returns the new phone number ARN that can be used to tag phone number resources.
+     * </p>
+     * </important>
      * 
      * @param listPhoneNumbersRequest
      * @return Result of the ListPhoneNumbers operation returned by the service.
@@ -2212,7 +2511,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Lists phone numbers claimed to your Amazon Connect instance.
+     * Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided
+     * <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions
+     * associated with traffic distribution group.
      * </p>
      * <p>
      * For more information about phone numbers, see <a
@@ -2505,6 +2806,50 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Lists task templates for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listTaskTemplatesRequest
+     * @return Result of the ListTaskTemplates operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListTaskTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTaskTemplatesResult listTaskTemplates(ListTaskTemplatesRequest listTaskTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists traffic distribution groups.
+     * </p>
+     * 
+     * @param listTrafficDistributionGroupsRequest
+     * @return Result of the ListTrafficDistributionGroups operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListTrafficDistributionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTrafficDistributionGroupsResult listTrafficDistributionGroups(ListTrafficDistributionGroupsRequest listTrafficDistributionGroupsRequest);
+
+    /**
+     * <p>
      * Lists the use cases for the integration association.
      * </p>
      * 
@@ -2610,8 +2955,20 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Releases a phone number previously claimed to an Amazon Connect instance.
+     * Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group. You can
+     * call this API only in the Amazon Web Services Region where the number was claimed.
      * </p>
+     * <important>
+     * <p>
+     * To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code> API, not the
+     * Amazon Connect console.
+     * </p>
+     * <p>
+     * After releasing a phone number, the phone number enters into a cooldown period of 30 days. It cannot be searched
+     * for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web
+     * Services Support.
+     * </p>
+     * </important>
      * 
      * @param releasePhoneNumberRequest
      * @return Result of the ReleasePhoneNumber operation returned by the service.
@@ -2634,6 +2991,40 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     ReleasePhoneNumberResult releasePhoneNumber(ReleasePhoneNumberRequest releasePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about replicating an Amazon Connect instance, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a
+     * replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param replicateInstanceRequest
+     * @return Result of the ReplicateInstance operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ResourceNotReadyException
+     *         The resource is not ready.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @sample AmazonConnect.ReplicateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ReplicateInstanceResult replicateInstance(ReplicateInstanceRequest replicateInstanceRequest);
 
     /**
      * <p>
@@ -2660,7 +3051,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Searches for available phone numbers that you can claim to your Amazon Connect instance.
+     * Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both
+     * Amazon Web Services Regions associated with the traffic distribution group.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -2681,8 +3074,91 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Searches queues in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchQueuesRequest
+     * @return Result of the SearchQueues operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchQueues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SearchQueuesResult searchQueues(SearchQueuesRequest searchQueuesRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Searches routing profiles in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchRoutingProfilesRequest
+     * @return Result of the SearchRoutingProfiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchRoutingProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SearchRoutingProfilesResult searchRoutingProfiles(SearchRoutingProfilesRequest searchRoutingProfilesRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Searches security profiles in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchSecurityProfilesRequest
+     * @return Result of the SearchSecurityProfiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchSecurityProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SearchSecurityProfilesResult searchSecurityProfiles(SearchSecurityProfilesRequest searchSecurityProfilesRequest);
+
+    /**
+     * <p>
      * Searches users in an Amazon Connect instance, with optional filtering.
      * </p>
+     * <note>
+     * <p>
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
+     * </p>
+     * </note>
      * 
      * @param searchUsersRequest
      * @return Result of the SearchUsers operation returned by the service.
@@ -2726,8 +3202,8 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Initiates a contact flow to start a new chat for the customer. Response of this API provides a token required to
-     * obtain credentials from the <a
+     * Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain
+     * credentials from the <a
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
      * >CreateParticipantConnection</a> API in the Amazon Connect Participant Service.
      * </p>
@@ -2858,13 +3334,13 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Places an outbound call to a contact, and then initiates the contact flow. It performs the actions in the contact
-     * flow that's specified (in <code>ContactFlowId</code>).
+     * Places an outbound call to a contact, and then initiates the flow. It performs the actions in the flow that's
+     * specified (in <code>ContactFlowId</code>).
      * </p>
      * <p>
-     * Agents do not initiate the outbound API, which means that they do not dial the contact. If the contact flow
-     * places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent,
-     * like any other inbound case.
+     * Agents do not initiate the outbound API, which means that they do not dial the contact. If the flow places an
+     * outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent, like any
+     * other inbound case.
      * </p>
      * <p>
      * There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
@@ -2879,9 +3355,9 @@ public interface AmazonConnect {
      * </note> <note>
      * <p>
      * Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code> =
-     * <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
-     * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * <code>CAMPAIGN</code>, you must submit a service quota increase request to the quota <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas"
+     * >Amazon Connect campaigns</a>.
      * </p>
      * </note>
      * 
@@ -2909,7 +3385,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Initiates a contact flow to start a new task.
+     * Initiates a flow to start a new task.
      * </p>
      * 
      * @param startTaskContactRequest
@@ -3052,8 +3528,10 @@ public interface AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status,
-     * hours of operation, and phone number.
+     * Some of the supported resource types are agents, routing profiles, queues, quick connects, contact flows, agent
+     * statuses, hours of operation, phone numbers, security profiles, and task templates. For a complete list, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging resources in Amazon
+     * Connect</a>.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -3078,6 +3556,66 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You
+     * can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination
+     * queue. This gives you more control over contact handling and helps you adhere to the service level agreement
+     * (SLA) guaranteed to your customers.
+     * </p>
+     * <p>
+     * Note the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Transfer is supported for only <code>TASK</code> contacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>TransferContact</code> API can be called only on active contacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A contact cannot be transferred more than 11 times.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transferContactRequest
+     * @return Result of the TransferContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws IdempotencyException
+     *         An entity with the same name already exists.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.TransferContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TransferContactResult transferContact(TransferContactRequest transferContactRequest);
 
     /**
      * <p>
@@ -3176,17 +3714,10 @@ public interface AmazonConnect {
      * Connect. You could also flag calls for additional analysis, such as legal review or to identify abusive callers.
      * </p>
      * <p>
-     * Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For information about CTR
-     * retention and the maximum size of the CTR attributes section, see <a
+     * Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For information about
+     * contact record retention and the maximum size of the contact record attributes section, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
      * >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
-     * </p>
-     * <p>
-     * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
-     * release of the API, which was September 12, 2018. You can update attributes only for contacts that started after
-     * the release of the API. If you attempt to update attributes for a contact that occurred prior to the release of
-     * the API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release
-     * of the API but are still active in your instance.
      * </p>
      * 
      * @param updateContactAttributesRequest
@@ -3207,10 +3738,10 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Updates the specified contact flow.
+     * Updates the specified flow.
      * </p>
      * <p>
-     * You can also create and update contact flows using the <a
+     * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * 
@@ -3219,7 +3750,7 @@ public interface AmazonConnect {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws InvalidContactFlowException
-     *         The contact flow is not valid.
+     *         The flow is not valid.
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws ResourceNotFoundException
@@ -3236,7 +3767,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Updates metadata about specified contact flow.
+     * Updates metadata about specified flow.
      * </p>
      * 
      * @param updateContactFlowMetadataRequest
@@ -3261,7 +3792,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Updates specified contact flow module for the specified Amazon Connect instance.
+     * Updates specified flow module for the specified Amazon Connect instance.
      * </p>
      * 
      * @param updateContactFlowModuleContentRequest
@@ -3286,7 +3817,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Updates metadata about specified contact flow module.
+     * Updates metadata about specified flow module.
      * </p>
      * 
      * @param updateContactFlowModuleMetadataRequest
@@ -3313,10 +3844,10 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * <p>
-     * You can also create and update contact flows using the <a
+     * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * 
@@ -3447,9 +3978,18 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Updates your claimed phone number from its current Amazon Connect instance to another Amazon Connect instance in
-     * the same Region.
+     * Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to
+     * another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.
      * </p>
+     * <important>
+     * <p>
+     * You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber
+     * </a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param updatePhoneNumberRequest
      * @return Result of the UpdatePhoneNumber operation returned by the service.
@@ -3561,6 +4101,18 @@ public interface AmazonConnect {
      * <p>
      * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param updateQueueOutboundCallerConfigRequest
      * @return Result of the UpdateQueueOutboundCallerConfig operation returned by the service.
@@ -3774,6 +4326,63 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest updateSecurityProfileRequest);
+
+    /**
+     * <p>
+     * Updates details about a specific task template in the specified Amazon Connect instance. This operation does not
+     * support partial updates. Instead it does a full update of template content.
+     * </p>
+     * 
+     * @param updateTaskTemplateRequest
+     * @return Result of the UpdateTaskTemplate operation returned by the service.
+     * @throws PropertyValidationException
+     *         The property is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTaskTemplateResult updateTaskTemplate(UpdateTaskTemplateRequest updateTaskTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the traffic distribution for a given traffic distribution group.
+     * </p>
+     * <p>
+     * For more information about updating a traffic distribution group, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+     * telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateTrafficDistributionRequest
+     * @return Result of the UpdateTrafficDistribution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTrafficDistributionResult updateTrafficDistribution(UpdateTrafficDistributionRequest updateTrafficDistributionRequest);
 
     /**
      * <p>

@@ -25,34 +25,36 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The requested vocabulary state.
+     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
+     * creation date, with the newest vocabulary first.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the maximum
-     * number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there are more jobs in
-     * the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the
-     * next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
-     * operation.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of objects that describe the vocabularies that match your search criteria.
+     * Provides information about the custom medical vocabularies that match the criteria specified in your request.
      * </p>
      */
     private java.util.List<VocabularyInfo> vocabularies;
 
     /**
      * <p>
-     * The requested vocabulary state.
+     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
+     * creation date, with the newest vocabulary first.
      * </p>
      * 
      * @param status
-     *        The requested vocabulary state.
+     *        Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
+     *        ordered by creation date, with the newest vocabulary first.
      * @see VocabularyState
      */
 
@@ -62,10 +64,12 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The requested vocabulary state.
+     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
+     * creation date, with the newest vocabulary first.
      * </p>
      * 
-     * @return The requested vocabulary state.
+     * @return Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
+     *         ordered by creation date, with the newest vocabulary first.
      * @see VocabularyState
      */
 
@@ -75,11 +79,13 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The requested vocabulary state.
+     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
+     * creation date, with the newest vocabulary first.
      * </p>
      * 
      * @param status
-     *        The requested vocabulary state.
+     *        Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
+     *        ordered by creation date, with the newest vocabulary first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -91,11 +97,13 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The requested vocabulary state.
+     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
+     * creation date, with the newest vocabulary first.
      * </p>
      * 
      * @param status
-     *        The requested vocabulary state.
+     *        Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
+     *        ordered by creation date, with the newest vocabulary first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -107,19 +115,17 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the maximum
-     * number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there are more jobs in
-     * the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the
-     * next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
-     * operation.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the
-     *        maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there
-     *        are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code>
-     *        token. To return the next page of vocabularies, include the token in the next request to the
-     *        <code>ListMedicalVocabularies</code> operation.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,18 +134,16 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the maximum
-     * number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there are more jobs in
-     * the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the
-     * next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
-     * operation.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
-     * @return The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the
-     *         maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there
-     *         are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code>
-     *         token. To return the next page of vocabularies, include the token in the next request to the
-     *         <code>ListMedicalVocabularies</code> operation.
+     * @return If <code>NextToken</code> is present in your response, it indicates that not all results are displayed.
+     *         To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in
+     *         your results output, then run your request again including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -148,19 +152,17 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the maximum
-     * number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there are more jobs in
-     * the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the
-     * next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
-     * operation.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the
-     *        maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there
-     *        are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code>
-     *        token. To return the next page of vocabularies, include the token in the next request to the
-     *        <code>ListMedicalVocabularies</code> operation.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,10 +173,11 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of objects that describe the vocabularies that match your search criteria.
+     * Provides information about the custom medical vocabularies that match the criteria specified in your request.
      * </p>
      * 
-     * @return A list of objects that describe the vocabularies that match your search criteria.
+     * @return Provides information about the custom medical vocabularies that match the criteria specified in your
+     *         request.
      */
 
     public java.util.List<VocabularyInfo> getVocabularies() {
@@ -183,11 +186,12 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of objects that describe the vocabularies that match your search criteria.
+     * Provides information about the custom medical vocabularies that match the criteria specified in your request.
      * </p>
      * 
      * @param vocabularies
-     *        A list of objects that describe the vocabularies that match your search criteria.
+     *        Provides information about the custom medical vocabularies that match the criteria specified in your
+     *        request.
      */
 
     public void setVocabularies(java.util.Collection<VocabularyInfo> vocabularies) {
@@ -201,7 +205,7 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of objects that describe the vocabularies that match your search criteria.
+     * Provides information about the custom medical vocabularies that match the criteria specified in your request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -210,7 +214,8 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param vocabularies
-     *        A list of objects that describe the vocabularies that match your search criteria.
+     *        Provides information about the custom medical vocabularies that match the criteria specified in your
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +231,12 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of objects that describe the vocabularies that match your search criteria.
+     * Provides information about the custom medical vocabularies that match the criteria specified in your request.
      * </p>
      * 
      * @param vocabularies
-     *        A list of objects that describe the vocabularies that match your search criteria.
+     *        Provides information about the custom medical vocabularies that match the criteria specified in your
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

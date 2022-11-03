@@ -40,4 +40,17 @@ public class AbstractAmazonForecastQueryAsync extends AbstractAmazonForecastQuer
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<QueryWhatIfForecastResult> queryWhatIfForecastAsync(QueryWhatIfForecastRequest request) {
+
+        return queryWhatIfForecastAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<QueryWhatIfForecastResult> queryWhatIfForecastAsync(QueryWhatIfForecastRequest request,
+            com.amazonaws.handlers.AsyncHandler<QueryWhatIfForecastRequest, QueryWhatIfForecastResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

@@ -33,7 +33,7 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
     private String launchProfileId;
     /**
      * <p>
-     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * The principal ID. This currently supports a IAM Identity Center UserId.
      * </p>
      */
     private String principalId;
@@ -86,11 +86,11 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * The principal ID. This currently supports a IAM Identity Center UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     *        The principal ID. This currently supports a IAM Identity Center UserId.
      */
 
     public void setPrincipalId(String principalId) {
@@ -99,10 +99,10 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * The principal ID. This currently supports a IAM Identity Center UserId.
      * </p>
      * 
-     * @return The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * @return The principal ID. This currently supports a IAM Identity Center UserId.
      */
 
     public String getPrincipalId() {
@@ -111,11 +111,11 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * The principal ID. This currently supports a IAM Identity Center UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     *        The principal ID. This currently supports a IAM Identity Center UserId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

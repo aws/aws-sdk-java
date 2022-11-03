@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object specifying a stream’s video configuration.
+ * Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part
+ * of the <a>IngestConfiguration</a> object and used for monitoring stream health.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/VideoConfiguration" target="_top">AWS API

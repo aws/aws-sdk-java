@@ -30,7 +30,8 @@ public class AwsS3BucketServerSideEncryptionByDefault implements Serializable, C
 
     /**
      * <p>
-     * Server-side encryption algorithm to use for the default encryption.
+     * Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or
+     * <code>AES256</code>.
      * </p>
      */
     private String sSEAlgorithm;
@@ -43,11 +44,13 @@ public class AwsS3BucketServerSideEncryptionByDefault implements Serializable, C
 
     /**
      * <p>
-     * Server-side encryption algorithm to use for the default encryption.
+     * Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or
+     * <code>AES256</code>.
      * </p>
      * 
      * @param sSEAlgorithm
-     *        Server-side encryption algorithm to use for the default encryption.
+     *        Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code>
+     *        or <code>AES256</code>.
      */
 
     public void setSSEAlgorithm(String sSEAlgorithm) {
@@ -56,10 +59,12 @@ public class AwsS3BucketServerSideEncryptionByDefault implements Serializable, C
 
     /**
      * <p>
-     * Server-side encryption algorithm to use for the default encryption.
+     * Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or
+     * <code>AES256</code>.
      * </p>
      * 
-     * @return Server-side encryption algorithm to use for the default encryption.
+     * @return Server-side encryption algorithm to use for the default encryption. Valid values are
+     *         <code>aws: kms</code> or <code>AES256</code>.
      */
 
     public String getSSEAlgorithm() {
@@ -68,11 +73,13 @@ public class AwsS3BucketServerSideEncryptionByDefault implements Serializable, C
 
     /**
      * <p>
-     * Server-side encryption algorithm to use for the default encryption.
+     * Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or
+     * <code>AES256</code>.
      * </p>
      * 
      * @param sSEAlgorithm
-     *        Server-side encryption algorithm to use for the default encryption.
+     *        Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code>
+     *        or <code>AES256</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,6 +66,11 @@ public class EventNotificationItemConfigurationsJsonUnmarshaller implements Unma
                     eventNotificationItemConfigurations.setConnectionStatus(ConnectionStatusEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("MessageDeliveryStatus", targetDepth)) {
+                    context.nextToken();
+                    eventNotificationItemConfigurations.setMessageDeliveryStatus(MessageDeliveryStatusEventConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

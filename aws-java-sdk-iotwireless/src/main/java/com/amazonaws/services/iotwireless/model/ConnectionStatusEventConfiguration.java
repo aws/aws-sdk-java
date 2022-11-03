@@ -36,7 +36,7 @@ public class ConnectionStatusEventConfiguration implements Serializable, Cloneab
     private LoRaWANConnectionStatusEventNotificationConfigurations loRaWAN;
     /**
      * <p>
-     * Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     * Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * </p>
      */
     private String wirelessGatewayIdEventTopic;
@@ -83,11 +83,11 @@ public class ConnectionStatusEventConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     * Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessGatewayIdEventTopic
-     *        Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     *        Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -97,10 +97,10 @@ public class ConnectionStatusEventConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     * Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * </p>
      * 
-     * @return Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     * @return Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -110,11 +110,11 @@ public class ConnectionStatusEventConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     * Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessGatewayIdEventTopic
-     *        Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     *        Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */
@@ -126,11 +126,11 @@ public class ConnectionStatusEventConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     * Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessGatewayIdEventTopic
-     *        Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .
+     *        Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */

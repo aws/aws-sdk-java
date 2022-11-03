@@ -596,6 +596,59 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to
+     * an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.
+     * </p>
+     * <p>
+     * For an Amazon S3 origin, this makes it possible to block public access to the Amazon S3 bucket so that viewers
+     * (users) can access the content in the bucket only through CloudFront.
+     * </p>
+     * <p>
+     * For more information about using a CloudFront origin access control, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginAccessControlRequest
+     * @return A Java Future containing the result of the CreateOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOriginAccessControlResult> createOriginAccessControlAsync(
+            CreateOriginAccessControlRequest createOriginAccessControlRequest);
+
+    /**
+     * <p>
+     * Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to
+     * an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.
+     * </p>
+     * <p>
+     * For an Amazon S3 origin, this makes it possible to block public access to the Amazon S3 bucket so that viewers
+     * (users) can access the content in the bucket only through CloudFront.
+     * </p>
+     * <p>
+     * For more information about using a CloudFront origin access control, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginAccessControlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOriginAccessControlResult> createOriginAccessControlAsync(
+            CreateOriginAccessControlRequest createOriginAccessControlRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOriginAccessControlRequest, CreateOriginAccessControlResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an origin request policy.
      * </p>
      * <p>
@@ -1351,6 +1404,47 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<DeleteMonitoringSubscriptionResult> deleteMonitoringSubscriptionAsync(
             DeleteMonitoringSubscriptionRequest deleteMonitoringSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMonitoringSubscriptionRequest, DeleteMonitoringSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a CloudFront origin access control.
+     * </p>
+     * <p>
+     * You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin
+     * access control from all origins, then delete the origin access control.
+     * </p>
+     * 
+     * @param deleteOriginAccessControlRequest
+     * @return A Java Future containing the result of the DeleteOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOriginAccessControlResult> deleteOriginAccessControlAsync(
+            DeleteOriginAccessControlRequest deleteOriginAccessControlRequest);
+
+    /**
+     * <p>
+     * Deletes a CloudFront origin access control.
+     * </p>
+     * <p>
+     * You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin
+     * access control from all origins, then delete the origin access control.
+     * </p>
+     * 
+     * @param deleteOriginAccessControlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOriginAccessControlResult> deleteOriginAccessControlAsync(
+            DeleteOriginAccessControlRequest deleteOriginAccessControlRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOriginAccessControlRequest, DeleteOriginAccessControlResult> asyncHandler);
 
     /**
      * <p>
@@ -2318,6 +2412,72 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<GetMonitoringSubscriptionResult> getMonitoringSubscriptionAsync(
             GetMonitoringSubscriptionRequest getMonitoringSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<GetMonitoringSubscriptionRequest, GetMonitoringSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control, including its unique identifier.
+     * </p>
+     * 
+     * @param getOriginAccessControlRequest
+     * @return A Java Future containing the result of the GetOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginAccessControlResult> getOriginAccessControlAsync(GetOriginAccessControlRequest getOriginAccessControlRequest);
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control, including its unique identifier.
+     * </p>
+     * 
+     * @param getOriginAccessControlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginAccessControlResult> getOriginAccessControlAsync(GetOriginAccessControlRequest getOriginAccessControlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOriginAccessControlRequest, GetOriginAccessControlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control configuration.
+     * </p>
+     * 
+     * @param getOriginAccessControlConfigRequest
+     * @return A Java Future containing the result of the GetOriginAccessControlConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.GetOriginAccessControlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginAccessControlConfigResult> getOriginAccessControlConfigAsync(
+            GetOriginAccessControlConfigRequest getOriginAccessControlConfigRequest);
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control configuration.
+     * </p>
+     * 
+     * @param getOriginAccessControlConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOriginAccessControlConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.GetOriginAccessControlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginAccessControlConfigResult> getOriginAccessControlConfigAsync(
+            GetOriginAccessControlConfigRequest getOriginAccessControlConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOriginAccessControlConfigRequest, GetOriginAccessControlConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -3391,6 +3551,49 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send another request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the next request.
+     * </p>
+     * 
+     * @param listOriginAccessControlsRequest
+     * @return A Java Future containing the result of the ListOriginAccessControls operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListOriginAccessControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOriginAccessControlsResult> listOriginAccessControlsAsync(ListOriginAccessControlsRequest listOriginAccessControlsRequest);
+
+    /**
+     * <p>
+     * Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send another request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the next request.
+     * </p>
+     * 
+     * @param listOriginAccessControlsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOriginAccessControls operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListOriginAccessControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOriginAccessControlsResult> listOriginAccessControlsAsync(ListOriginAccessControlsRequest listOriginAccessControlsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOriginAccessControlsRequest, ListOriginAccessControlsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of origin request policies.
      * </p>
      * <p>
@@ -4365,6 +4568,39 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest updateKeyGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateKeyGroupRequest, UpdateKeyGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a CloudFront origin access control.
+     * </p>
+     * 
+     * @param updateOriginAccessControlRequest
+     * @return A Java Future containing the result of the UpdateOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOriginAccessControlResult> updateOriginAccessControlAsync(
+            UpdateOriginAccessControlRequest updateOriginAccessControlRequest);
+
+    /**
+     * <p>
+     * Updates a CloudFront origin access control.
+     * </p>
+     * 
+     * @param updateOriginAccessControlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOriginAccessControl operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOriginAccessControlResult> updateOriginAccessControlAsync(
+            UpdateOriginAccessControlRequest updateOriginAccessControlRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOriginAccessControlRequest, UpdateOriginAccessControlResult> asyncHandler);
 
     /**
      * <p>

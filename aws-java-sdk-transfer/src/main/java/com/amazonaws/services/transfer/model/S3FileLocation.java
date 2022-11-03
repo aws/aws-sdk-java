@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the details for the file location for the file being used in the workflow. Only applicable if you are using
- * S3 storage.
+ * Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you
+ * are using S3 storage.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/S3FileLocation" target="_top">AWS API
@@ -37,7 +37,7 @@ public class S3FileLocation implements Serializable, Cloneable, StructuredPojo {
     private String bucket;
     /**
      * <p>
-     * The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     * The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.
      * </p>
      */
     private String key;
@@ -97,11 +97,12 @@ public class S3FileLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     * The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.
      * </p>
      * 
      * @param key
-     *        The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     *        The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the
+     *        object.
      */
 
     public void setKey(String key) {
@@ -110,10 +111,11 @@ public class S3FileLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     * The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.
      * </p>
      * 
-     * @return The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     * @return The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the
+     *         object.
      */
 
     public String getKey() {
@@ -122,11 +124,12 @@ public class S3FileLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     * The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.
      * </p>
      * 
      * @param key
-     *        The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
+     *        The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the
+     *        object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

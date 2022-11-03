@@ -105,6 +105,21 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessControlConfigurationResult> createAccessControlConfigurationAsync(
+            CreateAccessControlConfigurationRequest request) {
+
+        return createAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessControlConfigurationResult> createAccessControlConfigurationAsync(
+            CreateAccessControlConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessControlConfigurationRequest, CreateAccessControlConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataSourceResult> createDataSourceAsync(CreateDataSourceRequest request) {
 
         return createDataSourceAsync(request, null);
@@ -180,6 +195,21 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessControlConfigurationResult> deleteAccessControlConfigurationAsync(
+            DeleteAccessControlConfigurationRequest request) {
+
+        return deleteAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessControlConfigurationResult> deleteAccessControlConfigurationAsync(
+            DeleteAccessControlConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessControlConfigurationRequest, DeleteAccessControlConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -273,6 +303,21 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessControlConfigurationResult> describeAccessControlConfigurationAsync(
+            DescribeAccessControlConfigurationRequest request) {
+
+        return describeAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessControlConfigurationResult> describeAccessControlConfigurationAsync(
+            DescribeAccessControlConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccessControlConfigurationRequest, DescribeAccessControlConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -435,6 +480,21 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<GetSnapshotsResult> getSnapshotsAsync(GetSnapshotsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSnapshotsRequest, GetSnapshotsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessControlConfigurationsResult> listAccessControlConfigurationsAsync(
+            ListAccessControlConfigurationsRequest request) {
+
+        return listAccessControlConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessControlConfigurationsResult> listAccessControlConfigurationsAsync(
+            ListAccessControlConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessControlConfigurationsRequest, ListAccessControlConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -668,6 +728,21 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessControlConfigurationResult> updateAccessControlConfigurationAsync(
+            UpdateAccessControlConfigurationRequest request) {
+
+        return updateAccessControlConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessControlConfigurationResult> updateAccessControlConfigurationAsync(
+            UpdateAccessControlConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessControlConfigurationRequest, UpdateAccessControlConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

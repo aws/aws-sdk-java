@@ -67,6 +67,8 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
      */
     private String volumeKmsKeyId;
 
+    private VpcConfig vpcConfig;
+
     /**
      * <p>
      * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
@@ -291,6 +293,32 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
     }
 
     /**
+     * @param vpcConfig
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * @param vpcConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelingJobResourceConfig withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -303,7 +331,9 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeKmsKeyId() != null)
-            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId());
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -322,6 +352,10 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -331,6 +365,7 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

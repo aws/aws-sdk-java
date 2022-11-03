@@ -104,6 +104,11 @@ public class StackInstanceStaxUnmarshaller implements Unmarshaller<StackInstance
                     stackInstance.setLastDriftCheckTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LastOperationId", targetDepth)) {
+                    stackInstance.setLastOperationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackInstance;

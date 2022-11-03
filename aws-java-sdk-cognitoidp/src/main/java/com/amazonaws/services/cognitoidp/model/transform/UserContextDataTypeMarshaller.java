@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UserContextDataTypeMarshaller {
 
+    private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IpAddress").build();
     private static final MarshallingInfo<String> ENCODEDDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncodedData").build();
 
@@ -46,6 +48,7 @@ public class UserContextDataTypeMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(userContextDataType.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(userContextDataType.getEncodedData(), ENCODEDDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -104,6 +104,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
     }
 
     @Override
+    public GlobalCluster createGlobalCluster(CreateGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster deleteDBCluster(DeleteDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,6 +145,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
 
     @Override
     public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,6 +234,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
     }
 
     @Override
+    public DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -240,6 +255,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
 
     @Override
     public DBCluster failoverDBCluster(FailoverDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster failoverGlobalCluster(FailoverGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -289,12 +309,22 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
     }
 
     @Override
+    public GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster promoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DBInstance rebootDBInstance(RebootDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

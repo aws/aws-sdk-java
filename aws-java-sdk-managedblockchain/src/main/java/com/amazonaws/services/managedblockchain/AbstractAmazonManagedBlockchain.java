@@ -28,6 +28,11 @@ public class AbstractAmazonManagedBlockchain implements AmazonManagedBlockchain 
     }
 
     @Override
+    public CreateAccessorResult createAccessor(CreateAccessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMemberResult createMember(CreateMemberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,12 +53,22 @@ public class AbstractAmazonManagedBlockchain implements AmazonManagedBlockchain 
     }
 
     @Override
+    public DeleteAccessorResult deleteAccessor(DeleteAccessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMemberResult deleteMember(DeleteMemberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteNodeResult deleteNode(DeleteNodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessorResult getAccessor(GetAccessorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +89,11 @@ public class AbstractAmazonManagedBlockchain implements AmazonManagedBlockchain 
 
     @Override
     public GetProposalResult getProposal(GetProposalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessorsResult listAccessors(ListAccessorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PositionMarshaller {
 
-    private static final MarshallingInfo<Integer> COLUMN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("column").build();
     private static final MarshallingInfo<Integer> LINE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("line").build();
+    private static final MarshallingInfo<Integer> COLUMN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("column").build();
     private static final MarshallingInfo<Integer> OFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("offset").build();
 
@@ -50,8 +50,8 @@ public class PositionMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(position.getColumn(), COLUMN_BINDING);
             protocolMarshaller.marshall(position.getLine(), LINE_BINDING);
+            protocolMarshaller.marshall(position.getColumn(), COLUMN_BINDING);
             protocolMarshaller.marshall(position.getOffset(), OFFSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

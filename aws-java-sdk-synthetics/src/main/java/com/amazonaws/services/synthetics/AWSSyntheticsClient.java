@@ -94,17 +94,32 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.synthetics.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.synthetics.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.synthetics.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.synthetics.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.synthetics.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestEntityTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.synthetics.model.transform.RequestEntityTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.synthetics.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.synthetics.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.synthetics.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.synthetics.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.synthetics.model.AWSSyntheticsException.class));
 
     public static AWSSyntheticsClientBuilder builder() {
@@ -155,6 +170,75 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
+     * Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you
+     * can also view aggregated run results and statistics for all canaries in a group.
+     * </p>
+     * <p>
+     * You must run this operation in the Region where the canary exists.
+     * </p>
+     * 
+     * @param associateResourceRequest
+     * @return Result of the AssociateResource operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded a service quota value.
+     * @sample AWSSynthetics.AssociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/AssociateResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateResourceResult associateResource(AssociateResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateResource(request);
+    }
+
+    @SdkInternalApi
+    final AssociateResourceResult executeAssociateResource(AssociateResourceRequest associateResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateResourceRequest> request = null;
+        Response<AssociateResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help
      * you check the availability and latency of your web services and troubleshoot anomalies by investigating load time
      * data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once.
@@ -166,7 +250,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
      * </p>
      * <p>
      * To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a
-     * new IAM role for the canary, you also need the the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
+     * new IAM role for the canary, you also need the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
      * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles"
      * >Necessary Roles and Permissions</a>.
@@ -237,6 +321,87 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
+     * Creates a group which you can use to associate canaries with each other, including cross-Region canaries. Using
+     * groups can help you with managing and automating your canaries, and you can also view aggregated run results and
+     * statistics for all canaries in a group.
+     * </p>
+     * <p>
+     * Groups are global resources. When you create a group, it is replicated across Amazon Web Services Regions, and
+     * you can view it and add canaries to it from any Region. Although the group ARN format reflects the Region name
+     * where it was created, a group is not constrained to any Region. This means that you can put canaries from
+     * multiple Regions into the same group, and then use that group to view and manage all of those canaries in a
+     * single view.
+     * </p>
+     * <p>
+     * Groups are supported in all Regions except the Regions that are disabled by default. For more information about
+     * these Regions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling a Region</a>.
+     * </p>
+     * <p>
+     * Each group can contain as many as 10 canaries. You can have as many as 20 groups in your account. Any single
+     * canary can be a member of up to 10 groups.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return Result of the CreateGroup operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded a service quota value.
+     * @sample AWSSynthetics.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateGroupResult executeCreateGroup(CreateGroupRequest createGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGroupRequest> request = null;
+        Response<CreateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Permanently deletes the specified canary.
      * </p>
      * <p>
@@ -244,7 +409,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
      * functions and layers that are used by the canary.
      * </p>
      * <p>
-     * Other esources used and created by the canary are not automatically deleted. After you delete a canary that you
+     * Other resources used and created by the canary are not automatically deleted. After you delete a canary that you
      * do not intend to use again, you should also delete the following:
      * </p>
      * <ul>
@@ -326,6 +491,74 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCanaryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCanaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a group. The group doesn't need to be empty to be deleted. If there are canaries in the group, they are
+     * not deleted when you delete the group.
+     * </p>
+     * <p>
+     * Groups are a global resource that appear in all Regions, but the request to delete a group must be made from its
+     * home Region. You can find the home Region of a group within its ARN.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGroupResult executeDeleteGroup(DeleteGroupRequest deleteGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGroupRequest> request = null;
+        Response<DeleteGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -545,6 +778,69 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
+     * Removes a canary from a group. You must run this operation in the Region where the canary exists.
+     * </p>
+     * 
+     * @param disassociateResourceRequest
+     * @return Result of the DisassociateResource operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.DisassociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DisassociateResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateResourceResult disassociateResource(DisassociateResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateResource(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateResourceResult executeDisassociateResource(DisassociateResourceRequest disassociateResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateResourceRequest> request = null;
+        Response<DisassociateResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves complete information about one canary. You must specify the name of the canary that you want. To get a
      * list of canaries and their names, use <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
@@ -668,17 +964,269 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
-     * Displays the tags associated with a canary.
+     * Returns information about one group. Groups are a global resource, so you can use this operation from any Region.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return Result of the GetGroup operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupResult executeGetGroup(GetGroupRequest getGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupRequest> request = null;
+        Response<GetGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGroupResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the groups that the specified canary is associated with. The canary that you specify must be in
+     * the current Region.
+     * </p>
+     * 
+     * @param listAssociatedGroupsRequest
+     * @return Result of the ListAssociatedGroups operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @sample AWSSynthetics.ListAssociatedGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListAssociatedGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssociatedGroupsResult listAssociatedGroups(ListAssociatedGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociatedGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociatedGroupsResult executeListAssociatedGroups(ListAssociatedGroupsRequest listAssociatedGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssociatedGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssociatedGroupsRequest> request = null;
+        Response<ListAssociatedGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssociatedGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociatedGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssociatedGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssociatedGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation returns a list of the ARNs of the canaries that are associated with the specified group.
+     * </p>
+     * 
+     * @param listGroupResourcesRequest
+     * @return Result of the ListGroupResources operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.ListGroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroupResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListGroupResourcesResult listGroupResources(ListGroupResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroupResources(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupResourcesResult executeListGroupResources(ListGroupResourcesRequest listGroupResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGroupResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupResourcesRequest> request = null;
+        Response<ListGroupResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGroupResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupResourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all groups in the account, displaying their names, unique IDs, and ARNs. The groups from all
+     * Regions are returned.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @return Result of the ListGroups operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @sample AWSSynthetics.ListGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListGroupsResult listGroups(ListGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupsResult executeListGroups(ListGroupsRequest listGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupsRequest> request = null;
+        Response<ListGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGroupsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Displays the tags associated with a canary or group.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws InternalServerException
-     *         An unknown internal error occurred.
-     * @throws ResourceNotFoundException
-     *         One of the specified resources was not found.
-     * @throws ValidationException
-     *         A parameter could not be validated.
+     * @throws BadRequestException
+     *         The request was not valid.
+     * @throws NotFoundException
+     *         The specified resource was not found.
+     * @throws TooManyRequestsException
+     *         There were too many simultaneous requests. Try the operation again.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try the operation again.
      * @sample AWSSynthetics.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -794,9 +1342,9 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
-     * Stops the canary to prevent all future runs. If the canary is currently running, Synthetics stops waiting for the
-     * current run of the specified canary to complete. The run that is in progress completes on its own, publishes
-     * metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.
+     * Stops the canary to prevent all future runs. If the canary is currently running,the run that is in progress
+     * completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a
+     * completed run.
      * </p>
      * <p>
      * You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in
@@ -863,7 +1411,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
-     * Assigns one or more tags (key-value pairs) to the specified canary.
+     * Assigns one or more tags (key-value pairs) to the specified canary or group.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
@@ -874,23 +1422,27 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
      * characters.
      * </p>
      * <p>
-     * You can use the <code>TagResource</code> action with a canary that already has tags. If you specify a new tag key
-     * for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that
-     * is already associated with the alarm, the new tag value that you specify replaces the previous value for that
-     * tag.
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag
+     * key that is already associated with the resource, the new tag value that you specify replaces the previous value
+     * for that tag.
      * </p>
      * <p>
-     * You can associate as many as 50 tags with a canary.
+     * You can associate as many as 50 tags with a canary or group.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws InternalServerException
-     *         An unknown internal error occurred.
-     * @throws ResourceNotFoundException
-     *         One of the specified resources was not found.
-     * @throws ValidationException
-     *         A parameter could not be validated.
+     * @throws BadRequestException
+     *         The request was not valid.
+     * @throws NotFoundException
+     *         The specified resource was not found.
+     * @throws TooManyRequestsException
+     *         There were too many simultaneous requests. Try the operation again.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try the operation again.
      * @sample AWSSynthetics.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -941,17 +1493,21 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
-     * Removes one or more tags from the specified canary.
+     * Removes one or more tags from the specified resource.
      * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws InternalServerException
-     *         An unknown internal error occurred.
-     * @throws ResourceNotFoundException
-     *         One of the specified resources was not found.
-     * @throws ValidationException
-     *         A parameter could not be validated.
+     * @throws BadRequestException
+     *         The request was not valid.
+     * @throws NotFoundException
+     *         The specified resource was not found.
+     * @throws TooManyRequestsException
+     *         There were too many simultaneous requests. Try the operation again.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try the operation again.
      * @sample AWSSynthetics.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1002,7 +1558,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
 
     /**
      * <p>
-     * Use this operation to change the settings of a canary that has already been created.
+     * Updates the configuration of a canary that has already been created.
      * </p>
      * <p>
      * You can't use this operation to update the tags of an existing canary. To change the tags of an existing canary,

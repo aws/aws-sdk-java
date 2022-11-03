@@ -48,33 +48,45 @@ public class ColumnMetadataJsonUnmarshaller implements Unmarshaller<ColumnMetada
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arrayBaseColumnType", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    columnMetadata.setArrayBaseColumnType(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    columnMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("isAutoIncrement", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    columnMetadata.setIsAutoIncrement(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    columnMetadata.setType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("isCaseSensitive", targetDepth)) {
+                if (context.testExpression("typeName", targetDepth)) {
                     context.nextToken();
-                    columnMetadata.setIsCaseSensitive(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("isCurrency", targetDepth)) {
-                    context.nextToken();
-                    columnMetadata.setIsCurrency(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("isSigned", targetDepth)) {
-                    context.nextToken();
-                    columnMetadata.setIsSigned(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    columnMetadata.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("label", targetDepth)) {
                     context.nextToken();
                     columnMetadata.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("name", targetDepth)) {
+                if (context.testExpression("schemaName", targetDepth)) {
                     context.nextToken();
-                    columnMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    columnMetadata.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tableName", targetDepth)) {
+                    context.nextToken();
+                    columnMetadata.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("isAutoIncrement", targetDepth)) {
+                    context.nextToken();
+                    columnMetadata.setIsAutoIncrement(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("isSigned", targetDepth)) {
+                    context.nextToken();
+                    columnMetadata.setIsSigned(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("isCurrency", targetDepth)) {
+                    context.nextToken();
+                    columnMetadata.setIsCurrency(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("isCaseSensitive", targetDepth)) {
+                    context.nextToken();
+                    columnMetadata.setIsCaseSensitive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("nullable", targetDepth)) {
                     context.nextToken();
@@ -88,21 +100,9 @@ public class ColumnMetadataJsonUnmarshaller implements Unmarshaller<ColumnMetada
                     context.nextToken();
                     columnMetadata.setScale(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("schemaName", targetDepth)) {
+                if (context.testExpression("arrayBaseColumnType", targetDepth)) {
                     context.nextToken();
-                    columnMetadata.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("tableName", targetDepth)) {
-                    context.nextToken();
-                    columnMetadata.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("type", targetDepth)) {
-                    context.nextToken();
-                    columnMetadata.setType(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("typeName", targetDepth)) {
-                    context.nextToken();
-                    columnMetadata.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
+                    columnMetadata.setArrayBaseColumnType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

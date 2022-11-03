@@ -104,6 +104,60 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Creates a label for an event.
+     * </p>
+     * 
+     * @param createLabelRequest
+     * @return Result of the CreateLabel operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ServiceQuotaExceededException
+     *         Resource limitations have been exceeded.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.CreateLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateLabelResult createLabel(CreateLabelRequest createLabelRequest);
+
+    /**
+     * <p>
+     * Creates a group of labels.
+     * </p>
+     * 
+     * @param createLabelGroupRequest
+     * @return Result of the CreateLabelGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ServiceQuotaExceededException
+     *         Resource limitations have been exceeded.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.CreateLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLabelGroupResult createLabelGroup(CreateLabelGroupRequest createLabelGroupRequest);
+
+    /**
+     * <p>
      * Creates an ML model for data inference.
      * </p>
      * <p>
@@ -192,6 +246,52 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteInferenceSchedulerResult deleteInferenceScheduler(DeleteInferenceSchedulerRequest deleteInferenceSchedulerRequest);
+
+    /**
+     * <p>
+     * Deletes a label.
+     * </p>
+     * 
+     * @param deleteLabelRequest
+     * @return Result of the DeleteLabel operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AmazonLookoutEquipment.DeleteLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteLabelResult deleteLabel(DeleteLabelRequest deleteLabelRequest);
+
+    /**
+     * <p>
+     * Deletes a group of labels.
+     * </p>
+     * 
+     * @param deleteLabelGroupRequest
+     * @return Result of the DeleteLabelGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AmazonLookoutEquipment.DeleteLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLabelGroupResult deleteLabelGroup(DeleteLabelGroupRequest deleteLabelGroupRequest);
 
     /**
      * <p>
@@ -293,6 +393,54 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Returns the name of the label.
+     * </p>
+     * 
+     * @param describeLabelRequest
+     * @return Result of the DescribeLabel operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DescribeLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeLabelResult describeLabel(DescribeLabelRequest describeLabelRequest);
+
+    /**
+     * <p>
+     * Returns information about the label group.
+     * </p>
+     * 
+     * @param describeLabelGroupRequest
+     * @return Result of the DescribeLabelGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DescribeLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLabelGroupResult describeLabelGroup(DescribeLabelGroupRequest describeLabelGroupRequest);
+
+    /**
+     * <p>
      * Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
      * dataset, training and evaluation information, status, and so on.
      * </p>
@@ -363,6 +511,30 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @return Result of the ListInferenceEvents operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInferenceEventsResult listInferenceEvents(ListInferenceEventsRequest listInferenceEventsRequest);
+
+    /**
+     * <p>
      * Lists all inference executions that have been performed by the specified inference scheduler.
      * </p>
      * 
@@ -406,6 +578,50 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     ListInferenceSchedulersResult listInferenceSchedulers(ListInferenceSchedulersRequest listInferenceSchedulersRequest);
+
+    /**
+     * <p>
+     * Returns a list of the label groups.
+     * </p>
+     * 
+     * @param listLabelGroupsRequest
+     * @return Result of the ListLabelGroups operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListLabelGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLabelGroupsResult listLabelGroups(ListLabelGroupsRequest listLabelGroupsRequest);
+
+    /**
+     * <p>
+     * Provides a list of labels.
+     * </p>
+     * 
+     * @param listLabelsRequest
+     * @return Result of the ListLabels operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListLabelsResult listLabels(ListLabelsRequest listLabelsRequest);
 
     /**
      * <p>
@@ -636,6 +852,32 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateInferenceSchedulerResult updateInferenceScheduler(UpdateInferenceSchedulerRequest updateInferenceSchedulerRequest);
+
+    /**
+     * <p>
+     * Updates the label group.
+     * </p>
+     * 
+     * @param updateLabelGroupRequest
+     * @return Result of the UpdateLabelGroup operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.UpdateLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLabelGroupResult updateLabelGroup(UpdateLabelGroupRequest updateLabelGroupRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

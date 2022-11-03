@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the TLS/SSL configuration that the distribution uses to communicate with viewers.
+ * Provides information about the TLS/SSL configuration that the CloudFront distribution uses to communicate with
+ * viewers.
  * </p>
  * 
  * @see <a

@@ -137,6 +137,12 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * </ul>
      */
     private java.util.Date lastModificationTime;
+    /**
+     * <p>
+     * The time series to include in the forecast.
+     * </p>
+     */
+    private TimeSeriesSelector timeSeriesSelector;
 
     /**
      * <p>
@@ -890,6 +896,46 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The time series to include in the forecast.
+     * </p>
+     * 
+     * @param timeSeriesSelector
+     *        The time series to include in the forecast.
+     */
+
+    public void setTimeSeriesSelector(TimeSeriesSelector timeSeriesSelector) {
+        this.timeSeriesSelector = timeSeriesSelector;
+    }
+
+    /**
+     * <p>
+     * The time series to include in the forecast.
+     * </p>
+     * 
+     * @return The time series to include in the forecast.
+     */
+
+    public TimeSeriesSelector getTimeSeriesSelector() {
+        return this.timeSeriesSelector;
+    }
+
+    /**
+     * <p>
+     * The time series to include in the forecast.
+     * </p>
+     * 
+     * @param timeSeriesSelector
+     *        The time series to include in the forecast.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeForecastResult withTimeSeriesSelector(TimeSeriesSelector timeSeriesSelector) {
+        setTimeSeriesSelector(timeSeriesSelector);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -920,7 +966,9 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModificationTime() != null)
-            sb.append("LastModificationTime: ").append(getLastModificationTime());
+            sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
+        if (getTimeSeriesSelector() != null)
+            sb.append("TimeSeriesSelector: ").append(getTimeSeriesSelector());
         sb.append("}");
         return sb.toString();
     }
@@ -976,6 +1024,10 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getLastModificationTime() != null && other.getLastModificationTime().equals(this.getLastModificationTime()) == false)
             return false;
+        if (other.getTimeSeriesSelector() == null ^ this.getTimeSeriesSelector() == null)
+            return false;
+        if (other.getTimeSeriesSelector() != null && other.getTimeSeriesSelector().equals(this.getTimeSeriesSelector()) == false)
+            return false;
         return true;
     }
 
@@ -994,6 +1046,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getTimeSeriesSelector() == null) ? 0 : getTimeSeriesSelector().hashCode());
         return hashCode;
     }
 

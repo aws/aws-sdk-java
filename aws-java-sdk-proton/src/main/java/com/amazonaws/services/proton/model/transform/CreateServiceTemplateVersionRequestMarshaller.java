@@ -41,6 +41,8 @@ public class CreateServiceTemplateVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("majorVersion").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
+    private static final MarshallingInfo<List> SUPPORTEDCOMPONENTSOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedComponentSources").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class CreateServiceTemplateVersionRequestMarshaller {
             protocolMarshaller.marshall(createServiceTemplateVersionRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createServiceTemplateVersionRequest.getMajorVersion(), MAJORVERSION_BINDING);
             protocolMarshaller.marshall(createServiceTemplateVersionRequest.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(createServiceTemplateVersionRequest.getSupportedComponentSources(), SUPPORTEDCOMPONENTSOURCES_BINDING);
             protocolMarshaller.marshall(createServiceTemplateVersionRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createServiceTemplateVersionRequest.getTemplateName(), TEMPLATENAME_BINDING);
         } catch (Exception e) {

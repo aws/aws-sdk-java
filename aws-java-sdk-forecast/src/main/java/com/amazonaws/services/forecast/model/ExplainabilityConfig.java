@@ -44,7 +44,7 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      * Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.
      * </p>
      * <p>
-     * Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
+     * Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.
      * </p>
      */
@@ -67,7 +67,7 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      * Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.
      * </p>
      * <p>
-     * Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
+     * Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.
      * </p>
      * 
@@ -75,8 +75,8 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      *        To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an
      *        Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
      *        <p>
-     *        Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
-     *        <a>DataDestination</a> data type.
+     *        Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within
+     *        the <a>DataDestination</a> data type.
      * @see TimeSeriesGranularity
      */
 
@@ -90,15 +90,15 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      * Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.
      * </p>
      * <p>
-     * Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
+     * Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.
      * </p>
      * 
      * @return To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an
      *         Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
      *         <p>
-     *         Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
-     *         <a>DataDestination</a> data type.
+     *         Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within
+     *         the <a>DataDestination</a> data type.
      * @see TimeSeriesGranularity
      */
 
@@ -112,7 +112,7 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      * Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.
      * </p>
      * <p>
-     * Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
+     * Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.
      * </p>
      * 
@@ -120,8 +120,8 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      *        To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an
      *        Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
      *        <p>
-     *        Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
-     *        <a>DataDestination</a> data type.
+     *        Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within
+     *        the <a>DataDestination</a> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeSeriesGranularity
      */
@@ -137,7 +137,7 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      * Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.
      * </p>
      * <p>
-     * Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
+     * Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.
      * </p>
      * 
@@ -145,8 +145,8 @@ public class ExplainabilityConfig implements Serializable, Cloneable, Structured
      *        To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an
      *        Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
      *        <p>
-     *        Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the
-     *        <a>DataDestination</a> data type.
+     *        Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within
+     *        the <a>DataDestination</a> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeSeriesGranularity
      */

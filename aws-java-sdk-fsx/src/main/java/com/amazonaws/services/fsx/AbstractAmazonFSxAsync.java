@@ -107,6 +107,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFileCacheResult> createFileCacheAsync(CreateFileCacheRequest request) {
+
+        return createFileCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFileCacheResult> createFileCacheAsync(CreateFileCacheRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFileCacheRequest, CreateFileCacheResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFileSystemResult> createFileSystemAsync(CreateFileSystemRequest request) {
 
         return createFileSystemAsync(request, null);
@@ -213,6 +226,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFileCacheResult> deleteFileCacheAsync(DeleteFileCacheRequest request) {
+
+        return deleteFileCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileCacheResult> deleteFileCacheAsync(DeleteFileCacheRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFileCacheRequest, DeleteFileCacheResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(DeleteFileSystemRequest request) {
 
         return deleteFileSystemAsync(request, null);
@@ -301,6 +327,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     @Override
     public java.util.concurrent.Future<DescribeDataRepositoryTasksResult> describeDataRepositoryTasksAsync(DescribeDataRepositoryTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDataRepositoryTasksRequest, DescribeDataRepositoryTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileCachesResult> describeFileCachesAsync(DescribeFileCachesRequest request) {
+
+        return describeFileCachesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileCachesResult> describeFileCachesAsync(DescribeFileCachesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFileCachesRequest, DescribeFileCachesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -459,6 +498,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     public java.util.concurrent.Future<UpdateDataRepositoryAssociationResult> updateDataRepositoryAssociationAsync(
             UpdateDataRepositoryAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDataRepositoryAssociationRequest, UpdateDataRepositoryAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileCacheResult> updateFileCacheAsync(UpdateFileCacheRequest request) {
+
+        return updateFileCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileCacheResult> updateFileCacheAsync(UpdateFileCacheRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFileCacheRequest, UpdateFileCacheResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

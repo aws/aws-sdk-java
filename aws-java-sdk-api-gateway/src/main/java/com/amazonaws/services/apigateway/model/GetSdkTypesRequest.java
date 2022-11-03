@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Get the <a>SdkTypes</a> collection.
+ * Get the SdkTypes collection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -334,6 +334,18 @@ public class Explanation implements Serializable, Cloneable {
      * </p>
      */
     private AnalysisComponent transitGatewayAttachment;
+    /**
+     * <p>
+     * The Amazon Web Services account for the component.
+     * </p>
+     */
+    private String componentAccount;
+    /**
+     * <p>
+     * The Region for the component.
+     * </p>
+     */
+    private String componentRegion;
 
     /**
      * <p>
@@ -2596,6 +2608,86 @@ public class Explanation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account for the component.
+     * </p>
+     * 
+     * @param componentAccount
+     *        The Amazon Web Services account for the component.
+     */
+
+    public void setComponentAccount(String componentAccount) {
+        this.componentAccount = componentAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account for the component.
+     * </p>
+     * 
+     * @return The Amazon Web Services account for the component.
+     */
+
+    public String getComponentAccount() {
+        return this.componentAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account for the component.
+     * </p>
+     * 
+     * @param componentAccount
+     *        The Amazon Web Services account for the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Explanation withComponentAccount(String componentAccount) {
+        setComponentAccount(componentAccount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Region for the component.
+     * </p>
+     * 
+     * @param componentRegion
+     *        The Region for the component.
+     */
+
+    public void setComponentRegion(String componentRegion) {
+        this.componentRegion = componentRegion;
+    }
+
+    /**
+     * <p>
+     * The Region for the component.
+     * </p>
+     * 
+     * @return The Region for the component.
+     */
+
+    public String getComponentRegion() {
+        return this.componentRegion;
+    }
+
+    /**
+     * <p>
+     * The Region for the component.
+     * </p>
+     * 
+     * @param componentRegion
+     *        The Region for the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Explanation withComponentRegion(String componentRegion) {
+        setComponentRegion(componentRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2704,7 +2796,11 @@ public class Explanation implements Serializable, Cloneable {
         if (getTransitGatewayRouteTableRoute() != null)
             sb.append("TransitGatewayRouteTableRoute: ").append(getTransitGatewayRouteTableRoute()).append(",");
         if (getTransitGatewayAttachment() != null)
-            sb.append("TransitGatewayAttachment: ").append(getTransitGatewayAttachment());
+            sb.append("TransitGatewayAttachment: ").append(getTransitGatewayAttachment()).append(",");
+        if (getComponentAccount() != null)
+            sb.append("ComponentAccount: ").append(getComponentAccount()).append(",");
+        if (getComponentRegion() != null)
+            sb.append("ComponentRegion: ").append(getComponentRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -2916,6 +3012,14 @@ public class Explanation implements Serializable, Cloneable {
             return false;
         if (other.getTransitGatewayAttachment() != null && other.getTransitGatewayAttachment().equals(this.getTransitGatewayAttachment()) == false)
             return false;
+        if (other.getComponentAccount() == null ^ this.getComponentAccount() == null)
+            return false;
+        if (other.getComponentAccount() != null && other.getComponentAccount().equals(this.getComponentAccount()) == false)
+            return false;
+        if (other.getComponentRegion() == null ^ this.getComponentRegion() == null)
+            return false;
+        if (other.getComponentRegion() != null && other.getComponentRegion().equals(this.getComponentRegion()) == false)
+            return false;
         return true;
     }
 
@@ -2973,6 +3077,8 @@ public class Explanation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitGatewayRouteTable() == null) ? 0 : getTransitGatewayRouteTable().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayRouteTableRoute() == null) ? 0 : getTransitGatewayRouteTableRoute().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayAttachment() == null) ? 0 : getTransitGatewayAttachment().hashCode());
+        hashCode = prime * hashCode + ((getComponentAccount() == null) ? 0 : getComponentAccount().hashCode());
+        hashCode = prime * hashCode + ((getComponentRegion() == null) ? 0 : getComponentRegion().hashCode());
         return hashCode;
     }
 

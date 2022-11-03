@@ -44,6 +44,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      */
     private String targetSelection;
     /**
@@ -169,8 +175,21 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> documentParameters;
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     */
+    private Boolean isConcurrent;
 
     /**
      * <p>
@@ -259,13 +278,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a device when the thing representing
      *        the device is added to a target group, even after the job was completed by all things originally in the
-     *        group.
+     *        group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @see TargetSelection
      */
 
@@ -280,12 +310,23 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *         specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *         when a change is detected in a target. For example, a job will run on a device when the thing
      *         representing the device is added to a target group, even after the job was completed by all things
-     *         originally in the group.
+     *         originally in the group. </p> <note>
+     *         <p>
+     *         We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *         using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *         created.
+     *         </p>
      * @see TargetSelection
      */
 
@@ -300,13 +341,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a device when the thing representing
      *        the device is added to a target group, even after the job was completed by all things originally in the
-     *        group.
+     *        group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -323,13 +375,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a device when the thing representing
      *        the device is added to a target group, even after the job was completed by all things originally in the
-     *        group.
+     *        group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -1182,10 +1245,20 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @return A key-value map that pairs the patterns that need to be replaced in a managed template job document
      *         schema. You can use the description of each key as a guidance to specify the inputs during runtime when
-     *         creating a job.
+     *         creating a job.</p> <note>
+     *         <p>
+     *         <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *         templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *         </p>
      */
 
     public java.util.Map<String, String> getDocumentParameters() {
@@ -1197,11 +1270,21 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
      *        A key-value map that pairs the patterns that need to be replaced in a managed template job document
      *        schema. You can use the description of each key as a guidance to specify the inputs during runtime when
-     *        creating a job.
+     *        creating a job.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      */
 
     public void setDocumentParameters(java.util.Map<String, String> documentParameters) {
@@ -1213,11 +1296,21 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
      *        A key-value map that pairs the patterns that need to be replaced in a managed template job document
      *        schema. You can use the description of each key as a guidance to specify the inputs during runtime when
-     *        creating a job.
+     *        creating a job.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1252,6 +1345,66 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     public Job clearDocumentParametersEntries() {
         this.documentParameters = null;
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @param isConcurrent
+     *        Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *        canceling previously created executions, otherwise false.
+     */
+
+    public void setIsConcurrent(Boolean isConcurrent) {
+        this.isConcurrent = isConcurrent;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @return Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *         canceling previously created executions, otherwise false.
+     */
+
+    public Boolean getIsConcurrent() {
+        return this.isConcurrent;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @param isConcurrent
+     *        Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *        canceling previously created executions, otherwise false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withIsConcurrent(Boolean isConcurrent) {
+        setIsConcurrent(isConcurrent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling
+     * previously created executions, otherwise false.
+     * </p>
+     * 
+     * @return Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or
+     *         canceling previously created executions, otherwise false.
+     */
+
+    public Boolean isConcurrent() {
+        return this.isConcurrent;
     }
 
     /**
@@ -1307,7 +1460,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getJobExecutionsRetryConfig() != null)
             sb.append("JobExecutionsRetryConfig: ").append(getJobExecutionsRetryConfig()).append(",");
         if (getDocumentParameters() != null)
-            sb.append("DocumentParameters: ").append(getDocumentParameters());
+            sb.append("DocumentParameters: ").append(getDocumentParameters()).append(",");
+        if (getIsConcurrent() != null)
+            sb.append("IsConcurrent: ").append(getIsConcurrent());
         sb.append("}");
         return sb.toString();
     }
@@ -1406,6 +1561,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDocumentParameters() != null && other.getDocumentParameters().equals(this.getDocumentParameters()) == false)
             return false;
+        if (other.getIsConcurrent() == null ^ this.getIsConcurrent() == null)
+            return false;
+        if (other.getIsConcurrent() != null && other.getIsConcurrent().equals(this.getIsConcurrent()) == false)
+            return false;
         return true;
     }
 
@@ -1435,6 +1594,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobTemplateArn() == null) ? 0 : getJobTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
         hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
+        hashCode = prime * hashCode + ((getIsConcurrent() == null) ? 0 : getIsConcurrent().hashCode());
         return hashCode;
     }
 

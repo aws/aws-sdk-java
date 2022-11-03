@@ -66,6 +66,10 @@ public class AssetCompositeModelJsonUnmarshaller implements Unmarshaller<AssetCo
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    assetCompositeModel.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,7 +27,7 @@ public class GetMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization to which you want to apply the override.
+     * The WorkMail organization to which you want to apply the override.
      * </p>
      */
     private String organizationId;
@@ -64,11 +64,11 @@ public class GetMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization to which you want to apply the override.
+     * The WorkMail organization to which you want to apply the override.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization to which you want to apply the override.
+     *        The WorkMail organization to which you want to apply the override.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -77,10 +77,10 @@ public class GetMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization to which you want to apply the override.
+     * The WorkMail organization to which you want to apply the override.
      * </p>
      * 
-     * @return The Amazon WorkMail organization to which you want to apply the override.
+     * @return The WorkMail organization to which you want to apply the override.
      */
 
     public String getOrganizationId() {
@@ -89,11 +89,11 @@ public class GetMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization to which you want to apply the override.
+     * The WorkMail organization to which you want to apply the override.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization to which you want to apply the override.
+     *        The WorkMail organization to which you want to apply the override.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,12 @@ public class DescribeNodeConfigurationOptionsRequest extends com.amazonaws.Amazo
     private String snapshotIdentifier;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+     * </p>
+     */
+    private String snapshotArn;
+    /**
+     * <p>
      * The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you
      * do not own, optional if you own the snapshot.
      * </p>
@@ -244,6 +250,47 @@ public class DescribeNodeConfigurationOptionsRequest extends com.amazonaws.Amazo
 
     public DescribeNodeConfigurationOptionsRequest withSnapshotIdentifier(String snapshotIdentifier) {
         setSnapshotIdentifier(snapshotIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+     */
+
+    public void setSnapshotArn(String snapshotArn) {
+        this.snapshotArn = snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node
+     *         configuration.
+     */
+
+    public String getSnapshotArn() {
+        return this.snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNodeConfigurationOptionsRequest withSnapshotArn(String snapshotArn) {
+        setSnapshotArn(snapshotArn);
         return this;
     }
 
@@ -536,6 +583,8 @@ public class DescribeNodeConfigurationOptionsRequest extends com.amazonaws.Amazo
             sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getSnapshotIdentifier() != null)
             sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
+        if (getSnapshotArn() != null)
+            sb.append("SnapshotArn: ").append(getSnapshotArn()).append(",");
         if (getOwnerAccount() != null)
             sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getFilters() != null)
@@ -570,6 +619,10 @@ public class DescribeNodeConfigurationOptionsRequest extends com.amazonaws.Amazo
             return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false)
             return false;
+        if (other.getSnapshotArn() == null ^ this.getSnapshotArn() == null)
+            return false;
+        if (other.getSnapshotArn() != null && other.getSnapshotArn().equals(this.getSnapshotArn()) == false)
+            return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
         if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
@@ -597,6 +650,7 @@ public class DescribeNodeConfigurationOptionsRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getActionType() == null) ? 0 : getActionType().hashCode());
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotArn() == null) ? 0 : getSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());

@@ -25,6 +25,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * </p>
+     */
+    private java.util.List<String> allowListIds;
+    /**
+     * <p>
      * The token that was provided to ensure the idempotency of the request to create the job.
      * </p>
      */
@@ -37,8 +43,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private java.util.Date createdAt;
     /**
      * <p>
-     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
-     * is null if the job uses only managed data identifiers to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This
+     * value is null if the job uses only managed data identifiers to analyze data.
      * </p>
      */
     private java.util.List<String> customDataIdentifierIds;
@@ -142,7 +148,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
-     * value indicates when the most recent run started.
+     * value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.
      * </p>
      */
     private java.util.Date lastRunTime;
@@ -237,6 +243,76 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * </p>
+     * 
+     * @return An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     */
+
+    public java.util.List<String> getAllowListIds() {
+        return allowListIds;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * </p>
+     * 
+     * @param allowListIds
+     *        An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     */
+
+    public void setAllowListIds(java.util.Collection<String> allowListIds) {
+        if (allowListIds == null) {
+            this.allowListIds = null;
+            return;
+        }
+
+        this.allowListIds = new java.util.ArrayList<String>(allowListIds);
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowListIds(java.util.Collection)} or {@link #withAllowListIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param allowListIds
+     *        An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withAllowListIds(String... allowListIds) {
+        if (this.allowListIds == null) {
+            setAllowListIds(new java.util.ArrayList<String>(allowListIds.length));
+        }
+        for (String ele : allowListIds) {
+            this.allowListIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * </p>
+     * 
+     * @param allowListIds
+     *        An array of unique identifiers, one for each allow list that the job uses when it analyzes data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withAllowListIds(java.util.Collection<String> allowListIds) {
+        setAllowListIds(allowListIds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The token that was provided to ensure the idempotency of the request to create the job.
      * </p>
      * 
@@ -317,12 +393,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
-     * is null if the job uses only managed data identifiers to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This
+     * value is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * 
-     * @return An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
-     *         This value is null if the job uses only managed data identifiers to analyze data.
+     * @return An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes
+     *         data. This value is null if the job uses only managed data identifiers to analyze data.
      */
 
     public java.util.List<String> getCustomDataIdentifierIds() {
@@ -331,13 +407,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
-     * is null if the job uses only managed data identifiers to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This
+     * value is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
-     *        This value is null if the job uses only managed data identifiers to analyze data.
+     *        An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes
+     *        data. This value is null if the job uses only managed data identifiers to analyze data.
      */
 
     public void setCustomDataIdentifierIds(java.util.Collection<String> customDataIdentifierIds) {
@@ -351,8 +427,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
-     * is null if the job uses only managed data identifiers to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This
+     * value is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -361,8 +437,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
-     *        This value is null if the job uses only managed data identifiers to analyze data.
+     *        An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes
+     *        data. This value is null if the job uses only managed data identifiers to analyze data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,13 +454,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
-     * is null if the job uses only managed data identifiers to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This
+     * value is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
-     *        This value is null if the job uses only managed data identifiers to analyze data.
+     *        An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes
+     *        data. This value is null if the job uses only managed data identifiers to analyze data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1157,12 +1233,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
-     * value indicates when the most recent run started.
+     * value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.
      * </p>
      * 
      * @param lastRunTime
      *        The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring
-     *        job, this value indicates when the most recent run started.
+     *        job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was
+     *        created.
      */
 
     public void setLastRunTime(java.util.Date lastRunTime) {
@@ -1172,11 +1249,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
-     * value indicates when the most recent run started.
+     * value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.
      * </p>
      * 
      * @return The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring
-     *         job, this value indicates when the most recent run started.
+     *         job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job
+     *         was created.
      */
 
     public java.util.Date getLastRunTime() {
@@ -1186,12 +1264,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
-     * value indicates when the most recent run started.
+     * value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.
      * </p>
      * 
      * @param lastRunTime
      *        The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring
-     *        job, this value indicates when the most recent run started.
+     *        job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1919,6 +1998,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllowListIds() != null)
+            sb.append("AllowListIds: ").append(getAllowListIds()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getCreatedAt() != null)
@@ -1973,6 +2054,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         if (obj instanceof DescribeClassificationJobResult == false)
             return false;
         DescribeClassificationJobResult other = (DescribeClassificationJobResult) obj;
+        if (other.getAllowListIds() == null ^ this.getAllowListIds() == null)
+            return false;
+        if (other.getAllowListIds() != null && other.getAllowListIds().equals(this.getAllowListIds()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -2062,6 +2147,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllowListIds() == null) ? 0 : getAllowListIds().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getCustomDataIdentifierIds() == null) ? 0 : getCustomDataIdentifierIds().hashCode());

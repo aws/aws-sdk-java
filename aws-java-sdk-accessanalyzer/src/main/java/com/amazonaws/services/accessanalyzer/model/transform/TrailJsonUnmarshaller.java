@@ -48,10 +48,6 @@ public class TrailJsonUnmarshaller implements Unmarshaller<Trail, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("allRegions", targetDepth)) {
-                    context.nextToken();
-                    trail.setAllRegions(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("cloudTrailArn", targetDepth)) {
                     context.nextToken();
                     trail.setCloudTrailArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -61,6 +57,10 @@ public class TrailJsonUnmarshaller implements Unmarshaller<Trail, JsonUnmarshall
                     trail.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("allRegions", targetDepth)) {
+                    context.nextToken();
+                    trail.setAllRegions(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

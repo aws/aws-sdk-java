@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a user account for a Amazon Connect instance.
+ * Contains information about a user account for an Amazon Connect instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/User" target="_top">AWS API Documentation</a>

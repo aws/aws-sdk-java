@@ -30,7 +30,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      */
     private String applicationName;
@@ -48,7 +48,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private RevisionLocation revision;
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -78,7 +78,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -112,7 +112,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean updateOutdatedInstancesOnly;
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <p>
@@ -138,14 +138,32 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      */
     private String fileExistsBehavior;
+    /**
+     * <p>
+     * Allows you to specify information about alarms associated with a deployment. The alarm configuration that you
+     * specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are causing deployment failures. In
+     * this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning
+     * off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated
+     * by the previous, failed, deployment.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM
+     * permission when calling <code>CreateDeployment</code>.
+     * </p>
+     * </note>
+     */
+    private AlarmConfiguration overrideAlarmConfiguration;
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -154,10 +172,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * @return The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      */
 
     public String getApplicationName() {
@@ -166,11 +184,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,7 +279,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -270,7 +288,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
      *        <p>
      *        If not specified, the value configured in the deployment group is used as the default. If the deployment
      *        group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.
@@ -283,7 +301,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -291,7 +309,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>OneAtATime</code> is used by default.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the IAM user or AWS account.</p>
+     * @return The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
      *         <p>
      *         If not specified, the value configured in the deployment group is used as the default. If the deployment
      *         group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.
@@ -304,7 +322,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -313,7 +331,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
      *        <p>
      *        If not specified, the value configured in the deployment group is used as the default. If the deployment
      *        group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.
@@ -381,7 +399,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -407,7 +425,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      *        is attempted.
      *        </p>
      *        <p>
-     *        During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *        During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      *        <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      *        successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one
      *        of these scripts contains an error and does not run successfully, the deployment can fail.
@@ -438,7 +456,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -463,10 +481,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      *         instance is attempted.
      *         </p>
      *         <p>
-     *         During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the
-     *         previous successful deployment. (All other scripts are run from the AppSpec file in the current
-     *         deployment.) If one of these scripts contains an error and does not run successfully, the deployment can
-     *         fail.
+     *         During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *         <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
+     *         successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If
+     *         one of these scripts contains an error and does not run successfully, the deployment can fail.
      *         </p>
      *         <p>
      *         If the cause of the failure is a script from the last successful deployment that will never run
@@ -494,7 +512,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -520,7 +538,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      *        is attempted.
      *        </p>
      *        <p>
-     *        During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *        During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      *        <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      *        successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one
      *        of these scripts contains an error and does not run successfully, the deployment can fail.
@@ -553,7 +571,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
      * </p>
      * <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
      * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
      * successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of
      * these scripts contains an error and does not run successfully, the deployment can fail.
@@ -578,10 +596,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      *         instance is attempted.
      *         </p>
      *         <p>
-     *         During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the
-     *         previous successful deployment. (All other scripts are run from the AppSpec file in the current
-     *         deployment.) If one of these scripts contains an error and does not run successfully, the deployment can
-     *         fail.
+     *         During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     *         <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous
+     *         successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If
+     *         one of these scripts contains an error and does not run successfully, the deployment can fail.
      *         </p>
      *         <p>
      *         If the cause of the failure is a script from the last successful deployment that will never run
@@ -736,7 +754,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <p>
@@ -762,7 +780,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <p>
      *        The <code>fileExistsBehavior</code> parameter takes any of the following values:
@@ -793,7 +811,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <p>
@@ -818,7 +836,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     * @return Information about how CodeDeploy handles files that already exist in a deployment target location but
      *         weren't part of the previous successful deployment.</p>
      *         <p>
      *         The <code>fileExistsBehavior</code> parameter takes any of the following values:
@@ -849,7 +867,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <p>
@@ -875,7 +893,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <p>
      *        The <code>fileExistsBehavior</code> parameter takes any of the following values:
@@ -908,7 +926,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <p>
@@ -934,7 +952,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <p>
      *        The <code>fileExistsBehavior</code> parameter takes any of the following values:
@@ -965,7 +983,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * Information about how CodeDeploy handles files that already exist in a deployment target location but weren't
      * part of the previous successful deployment.
      * </p>
      * <p>
@@ -991,7 +1009,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param fileExistsBehavior
-     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        Information about how CodeDeploy handles files that already exist in a deployment target location but
      *        weren't part of the previous successful deployment.</p>
      *        <p>
      *        The <code>fileExistsBehavior</code> parameter takes any of the following values:
@@ -1019,6 +1037,113 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     public CreateDeploymentRequest withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
         this.fileExistsBehavior = fileExistsBehavior.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify information about alarms associated with a deployment. The alarm configuration that you
+     * specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are causing deployment failures. In
+     * this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning
+     * off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated
+     * by the previous, failed, deployment.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM
+     * permission when calling <code>CreateDeployment</code>.
+     * </p>
+     * </note>
+     * 
+     * @param overrideAlarmConfiguration
+     *        Allows you to specify information about alarms associated with a deployment. The alarm configuration that
+     *        you specify here will override the alarm configuration at the deployment group level. Consider overriding
+     *        the alarm configuration if you have set up alarms at the deployment group level that are causing
+     *        deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment
+     *        that uses a previous application revision that is known to work, and set its alarm configuration to turn
+     *        off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being
+     *        blocked by the alarm that was generated by the previous, failed, deployment.</p> <note>
+     *        <p>
+     *        If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code>
+     *        IAM permission when calling <code>CreateDeployment</code>.
+     *        </p>
+     */
+
+    public void setOverrideAlarmConfiguration(AlarmConfiguration overrideAlarmConfiguration) {
+        this.overrideAlarmConfiguration = overrideAlarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify information about alarms associated with a deployment. The alarm configuration that you
+     * specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are causing deployment failures. In
+     * this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning
+     * off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated
+     * by the previous, failed, deployment.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM
+     * permission when calling <code>CreateDeployment</code>.
+     * </p>
+     * </note>
+     * 
+     * @return Allows you to specify information about alarms associated with a deployment. The alarm configuration that
+     *         you specify here will override the alarm configuration at the deployment group level. Consider overriding
+     *         the alarm configuration if you have set up alarms at the deployment group level that are causing
+     *         deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new
+     *         deployment that uses a previous application revision that is known to work, and set its alarm
+     *         configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment
+     *         proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.</p>
+     *         <note>
+     *         <p>
+     *         If you specify an <code>overrideAlarmConfiguration</code>, you need the
+     *         <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.
+     *         </p>
+     */
+
+    public AlarmConfiguration getOverrideAlarmConfiguration() {
+        return this.overrideAlarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify information about alarms associated with a deployment. The alarm configuration that you
+     * specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are causing deployment failures. In
+     * this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning
+     * off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated
+     * by the previous, failed, deployment.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM
+     * permission when calling <code>CreateDeployment</code>.
+     * </p>
+     * </note>
+     * 
+     * @param overrideAlarmConfiguration
+     *        Allows you to specify information about alarms associated with a deployment. The alarm configuration that
+     *        you specify here will override the alarm configuration at the deployment group level. Consider overriding
+     *        the alarm configuration if you have set up alarms at the deployment group level that are causing
+     *        deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment
+     *        that uses a previous application revision that is known to work, and set its alarm configuration to turn
+     *        off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being
+     *        blocked by the alarm that was generated by the previous, failed, deployment.</p> <note>
+     *        <p>
+     *        If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code>
+     *        IAM permission when calling <code>CreateDeployment</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withOverrideAlarmConfiguration(AlarmConfiguration overrideAlarmConfiguration) {
+        setOverrideAlarmConfiguration(overrideAlarmConfiguration);
         return this;
     }
 
@@ -1053,7 +1178,9 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         if (getUpdateOutdatedInstancesOnly() != null)
             sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly()).append(",");
         if (getFileExistsBehavior() != null)
-            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior());
+            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior()).append(",");
+        if (getOverrideAlarmConfiguration() != null)
+            sb.append("OverrideAlarmConfiguration: ").append(getOverrideAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1109,6 +1236,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getFileExistsBehavior() != null && other.getFileExistsBehavior().equals(this.getFileExistsBehavior()) == false)
             return false;
+        if (other.getOverrideAlarmConfiguration() == null ^ this.getOverrideAlarmConfiguration() == null)
+            return false;
+        if (other.getOverrideAlarmConfiguration() != null && other.getOverrideAlarmConfiguration().equals(this.getOverrideAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1127,6 +1258,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUpdateOutdatedInstancesOnly() == null) ? 0 : getUpdateOutdatedInstancesOnly().hashCode());
         hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
+        hashCode = prime * hashCode + ((getOverrideAlarmConfiguration() == null) ? 0 : getOverrideAlarmConfiguration().hashCode());
         return hashCode;
     }
 

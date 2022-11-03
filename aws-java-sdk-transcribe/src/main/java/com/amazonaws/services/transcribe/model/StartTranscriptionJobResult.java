@@ -25,18 +25,21 @@ public class StartTranscriptionJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Provides information about your asynchronous transcription job.
+     * Provides detailed information about the current transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      */
     private TranscriptionJob transcriptionJob;
 
     /**
      * <p>
-     * Provides information about your asynchronous transcription job.
+     * Provides detailed information about the current transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param transcriptionJob
-     *        Provides information about your asynchronous transcription job.
+     *        Provides detailed information about the current transcription job, including job status and, if
+     *        applicable, failure reason.
      */
 
     public void setTranscriptionJob(TranscriptionJob transcriptionJob) {
@@ -45,10 +48,12 @@ public class StartTranscriptionJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Provides information about your asynchronous transcription job.
+     * Provides detailed information about the current transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
-     * @return Provides information about your asynchronous transcription job.
+     * @return Provides detailed information about the current transcription job, including job status and, if
+     *         applicable, failure reason.
      */
 
     public TranscriptionJob getTranscriptionJob() {
@@ -57,11 +62,13 @@ public class StartTranscriptionJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Provides information about your asynchronous transcription job.
+     * Provides detailed information about the current transcription job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param transcriptionJob
-     *        Provides information about your asynchronous transcription job.
+     *        Provides detailed information about the current transcription job, including job status and, if
+     *        applicable, failure reason.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

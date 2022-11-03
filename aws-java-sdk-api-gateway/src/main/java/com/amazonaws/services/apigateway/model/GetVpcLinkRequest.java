@@ -27,21 +27,18 @@ public class GetVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     * <a>VpcLink</a>.
+     * The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      * </p>
      */
     private String vpcLinkId;
 
     /**
      * <p>
-     * [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     * <a>VpcLink</a>.
+     * The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      * </p>
      * 
      * @param vpcLinkId
-     *        [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     *        <a>VpcLink</a>.
+     *        The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      */
 
     public void setVpcLinkId(String vpcLinkId) {
@@ -50,12 +47,10 @@ public class GetVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     * <a>VpcLink</a>.
+     * The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     *         <a>VpcLink</a>.
+     * @return The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      */
 
     public String getVpcLinkId() {
@@ -64,13 +59,11 @@ public class GetVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     * <a>VpcLink</a>.
+     * The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      * </p>
      * 
      * @param vpcLinkId
-     *        [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this
-     *        <a>VpcLink</a>.
+     *        The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

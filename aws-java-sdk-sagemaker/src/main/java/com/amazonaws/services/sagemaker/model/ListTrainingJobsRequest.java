@@ -87,6 +87,12 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String sortOrder;
+    /**
+     * <p>
+     * A filter that retrieves only training jobs with a specific warm pool status.
+     * </p>
+     */
+    private String warmPoolStatusEquals;
 
     /**
      * <p>
@@ -558,6 +564,65 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A filter that retrieves only training jobs with a specific warm pool status.
+     * </p>
+     * 
+     * @param warmPoolStatusEquals
+     *        A filter that retrieves only training jobs with a specific warm pool status.
+     * @see WarmPoolResourceStatus
+     */
+
+    public void setWarmPoolStatusEquals(String warmPoolStatusEquals) {
+        this.warmPoolStatusEquals = warmPoolStatusEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that retrieves only training jobs with a specific warm pool status.
+     * </p>
+     * 
+     * @return A filter that retrieves only training jobs with a specific warm pool status.
+     * @see WarmPoolResourceStatus
+     */
+
+    public String getWarmPoolStatusEquals() {
+        return this.warmPoolStatusEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that retrieves only training jobs with a specific warm pool status.
+     * </p>
+     * 
+     * @param warmPoolStatusEquals
+     *        A filter that retrieves only training jobs with a specific warm pool status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WarmPoolResourceStatus
+     */
+
+    public ListTrainingJobsRequest withWarmPoolStatusEquals(String warmPoolStatusEquals) {
+        setWarmPoolStatusEquals(warmPoolStatusEquals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that retrieves only training jobs with a specific warm pool status.
+     * </p>
+     * 
+     * @param warmPoolStatusEquals
+     *        A filter that retrieves only training jobs with a specific warm pool status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WarmPoolResourceStatus
+     */
+
+    public ListTrainingJobsRequest withWarmPoolStatusEquals(WarmPoolResourceStatus warmPoolStatusEquals) {
+        this.warmPoolStatusEquals = warmPoolStatusEquals.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -588,7 +653,9 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getSortBy() != null)
             sb.append("SortBy: ").append(getSortBy()).append(",");
         if (getSortOrder() != null)
-            sb.append("SortOrder: ").append(getSortOrder());
+            sb.append("SortOrder: ").append(getSortOrder()).append(",");
+        if (getWarmPoolStatusEquals() != null)
+            sb.append("WarmPoolStatusEquals: ").append(getWarmPoolStatusEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -643,6 +710,10 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getSortOrder() != null && other.getSortOrder().equals(this.getSortOrder()) == false)
             return false;
+        if (other.getWarmPoolStatusEquals() == null ^ this.getWarmPoolStatusEquals() == null)
+            return false;
+        if (other.getWarmPoolStatusEquals() != null && other.getWarmPoolStatusEquals().equals(this.getWarmPoolStatusEquals()) == false)
+            return false;
         return true;
     }
 
@@ -661,6 +732,7 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getStatusEquals() == null) ? 0 : getStatusEquals().hashCode());
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolStatusEquals() == null) ? 0 : getWarmPoolStatusEquals().hashCode());
         return hashCode;
     }
 

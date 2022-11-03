@@ -29,6 +29,8 @@ public class MonitoringInputMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ENDPOINTINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointInput").build();
+    private static final MarshallingInfo<StructuredPojo> BATCHTRANSFORMINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchTransformInput").build();
 
     private static final MonitoringInputMarshaller instance = new MonitoringInputMarshaller();
 
@@ -47,6 +49,7 @@ public class MonitoringInputMarshaller {
 
         try {
             protocolMarshaller.marshall(monitoringInput.getEndpointInput(), ENDPOINTINPUT_BINDING);
+            protocolMarshaller.marshall(monitoringInput.getBatchTransformInput(), BATCHTRANSFORMINPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

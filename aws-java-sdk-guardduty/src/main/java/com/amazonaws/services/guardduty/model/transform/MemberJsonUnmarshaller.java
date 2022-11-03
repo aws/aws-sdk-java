@@ -76,6 +76,10 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
                     context.nextToken();
                     member.setUpdatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("administratorId", targetDepth)) {
+                    context.nextToken();
+                    member.setAdministratorId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -205,6 +205,29 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
             if (tunnelOptions.getStartupAction() != null) {
                 request.addParameter("TunnelOptions.StartupAction", StringUtils.fromString(tunnelOptions.getStartupAction()));
             }
+
+            VpnTunnelLogOptionsSpecification logOptions = tunnelOptions.getLogOptions();
+            if (logOptions != null) {
+
+                CloudWatchLogOptionsSpecification cloudWatchLogOptions = logOptions.getCloudWatchLogOptions();
+                if (cloudWatchLogOptions != null) {
+
+                    if (cloudWatchLogOptions.getLogEnabled() != null) {
+                        request.addParameter("TunnelOptions.LogOptions.CloudWatchLogOptions.LogEnabled",
+                                StringUtils.fromBoolean(cloudWatchLogOptions.getLogEnabled()));
+                    }
+
+                    if (cloudWatchLogOptions.getLogGroupArn() != null) {
+                        request.addParameter("TunnelOptions.LogOptions.CloudWatchLogOptions.LogGroupArn",
+                                StringUtils.fromString(cloudWatchLogOptions.getLogGroupArn()));
+                    }
+
+                    if (cloudWatchLogOptions.getLogOutputFormat() != null) {
+                        request.addParameter("TunnelOptions.LogOptions.CloudWatchLogOptions.LogOutputFormat",
+                                StringUtils.fromString(cloudWatchLogOptions.getLogOutputFormat()));
+                    }
+                }
+            }
         }
 
         return request;

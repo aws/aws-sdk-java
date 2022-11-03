@@ -43,6 +43,12 @@ public class GrpcRouteMatch implements Serializable, Cloneable, StructuredPojo {
     private String methodName;
     /**
      * <p>
+     * The port number to match on.
+     * </p>
+     */
+    private Integer port;
+    /**
+     * <p>
      * The fully qualified domain name for the service to match from the request.
      * </p>
      */
@@ -166,6 +172,46 @@ public class GrpcRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The port number to match on.
+     * </p>
+     * 
+     * @param port
+     *        The port number to match on.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * The port number to match on.
+     * </p>
+     * 
+     * @return The port number to match on.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * The port number to match on.
+     * </p>
+     * 
+     * @param port
+     *        The port number to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GrpcRouteMatch withPort(Integer port) {
+        setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
      * The fully qualified domain name for the service to match from the request.
      * </p>
      * 
@@ -220,6 +266,8 @@ public class GrpcRouteMatch implements Serializable, Cloneable, StructuredPojo {
             sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getMethodName() != null)
             sb.append("MethodName: ").append(getMethodName()).append(",");
+        if (getPort() != null)
+            sb.append("Port: ").append(getPort()).append(",");
         if (getServiceName() != null)
             sb.append("ServiceName: ").append(getServiceName());
         sb.append("}");
@@ -244,6 +292,10 @@ public class GrpcRouteMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMethodName() != null && other.getMethodName().equals(this.getMethodName()) == false)
             return false;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
         if (other.getServiceName() == null ^ this.getServiceName() == null)
             return false;
         if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
@@ -258,6 +310,7 @@ public class GrpcRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getMethodName() == null) ? 0 : getMethodName().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         return hashCode;
     }

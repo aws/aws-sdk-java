@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an EC2 instance.
+ * The details of an Amazon EC2 instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails" target="_top">AWS
@@ -94,6 +94,18 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.List<AwsEc2InstanceNetworkInterfacesDetails> networkInterfaces;
+    /**
+     * <p>
+     * The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     * </p>
+     */
+    private String virtualizationType;
+    /**
+     * <p>
+     * Details about the metadata options for the Amazon EC2 instance.
+     * </p>
+     */
+    private AwsEc2InstanceMetadataOptions metadataOptions;
 
     /**
      * <p>
@@ -621,6 +633,86 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     */
+
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+
+    /**
+     * <p>
+     * The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     * </p>
+     * 
+     * @return The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     */
+
+    public String getVirtualizationType() {
+        return this.virtualizationType;
+    }
+
+    /**
+     * <p>
+     * The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2InstanceDetails withVirtualizationType(String virtualizationType) {
+        setVirtualizationType(virtualizationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the metadata options for the Amazon EC2 instance.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        Details about the metadata options for the Amazon EC2 instance.
+     */
+
+    public void setMetadataOptions(AwsEc2InstanceMetadataOptions metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
+    /**
+     * <p>
+     * Details about the metadata options for the Amazon EC2 instance.
+     * </p>
+     * 
+     * @return Details about the metadata options for the Amazon EC2 instance.
+     */
+
+    public AwsEc2InstanceMetadataOptions getMetadataOptions() {
+        return this.metadataOptions;
+    }
+
+    /**
+     * <p>
+     * Details about the metadata options for the Amazon EC2 instance.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        Details about the metadata options for the Amazon EC2 instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2InstanceDetails withMetadataOptions(AwsEc2InstanceMetadataOptions metadataOptions) {
+        setMetadataOptions(metadataOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -651,7 +743,11 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
         if (getLaunchedAt() != null)
             sb.append("LaunchedAt: ").append(getLaunchedAt()).append(",");
         if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
+        if (getVirtualizationType() != null)
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
+        if (getMetadataOptions() != null)
+            sb.append("MetadataOptions: ").append(getMetadataOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -706,6 +802,14 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null)
+            return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
+            return false;
+        if (other.getMetadataOptions() == null ^ this.getMetadataOptions() == null)
+            return false;
+        if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
+            return false;
         return true;
     }
 
@@ -724,6 +828,8 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getLaunchedAt() == null) ? 0 : getLaunchedAt().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
+        hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
         return hashCode;
     }
 

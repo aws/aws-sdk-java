@@ -29,10 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InlineArchiveRuleMarshaller {
 
-    private static final MarshallingInfo<Map> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("filter").build();
     private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ruleName").build();
+    private static final MarshallingInfo<Map> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filter").build();
 
     private static final InlineArchiveRuleMarshaller instance = new InlineArchiveRuleMarshaller();
 
@@ -50,8 +50,8 @@ public class InlineArchiveRuleMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(inlineArchiveRule.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(inlineArchiveRule.getRuleName(), RULENAME_BINDING);
+            protocolMarshaller.marshall(inlineArchiveRule.getFilter(), FILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

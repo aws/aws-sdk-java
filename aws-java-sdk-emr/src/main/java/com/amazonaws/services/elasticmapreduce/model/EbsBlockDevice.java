@@ -30,8 +30,8 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      */
     private VolumeSpecification volumeSpecification;
@@ -44,13 +44,13 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
-     *        volume attached to an EC2 instance in the cluster.
+     *        EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested
+     *        for the EBS volume attached to an EC2 instance in the cluster.
      */
 
     public void setVolumeSpecification(VolumeSpecification volumeSpecification) {
@@ -59,12 +59,12 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      * 
-     * @return EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
-     *         volume attached to an EC2 instance in the cluster.
+     * @return EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested
+     *         for the EBS volume attached to an EC2 instance in the cluster.
      */
 
     public VolumeSpecification getVolumeSpecification() {
@@ -73,13 +73,13 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
-     *        volume attached to an EC2 instance in the cluster.
+     *        EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested
+     *        for the EBS volume attached to an EC2 instance in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

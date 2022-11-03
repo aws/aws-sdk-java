@@ -28,6 +28,8 @@ public class UpdateReservationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /** Name of the reservation */
     private String name;
+    /** Renewal settings for the reservation */
+    private RenewalSettings renewalSettings;
     /** Unique reservation ID, e.g. '1234567' */
     private String reservationId;
 
@@ -62,6 +64,40 @@ public class UpdateReservationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdateReservationRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @param renewalSettings
+     *        Renewal settings for the reservation
+     */
+
+    public void setRenewalSettings(RenewalSettings renewalSettings) {
+        this.renewalSettings = renewalSettings;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @return Renewal settings for the reservation
+     */
+
+    public RenewalSettings getRenewalSettings() {
+        return this.renewalSettings;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @param renewalSettings
+     *        Renewal settings for the reservation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReservationRequest withRenewalSettings(RenewalSettings renewalSettings) {
+        setRenewalSettings(renewalSettings);
         return this;
     }
 
@@ -113,6 +149,8 @@ public class UpdateReservationRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRenewalSettings() != null)
+            sb.append("RenewalSettings: ").append(getRenewalSettings()).append(",");
         if (getReservationId() != null)
             sb.append("ReservationId: ").append(getReservationId());
         sb.append("}");
@@ -133,6 +171,10 @@ public class UpdateReservationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRenewalSettings() == null ^ this.getRenewalSettings() == null)
+            return false;
+        if (other.getRenewalSettings() != null && other.getRenewalSettings().equals(this.getRenewalSettings()) == false)
+            return false;
         if (other.getReservationId() == null ^ this.getReservationId() == null)
             return false;
         if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false)
@@ -146,6 +188,7 @@ public class UpdateReservationRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRenewalSettings() == null) ? 0 : getRenewalSettings().hashCode());
         hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode());
         return hashCode;
     }

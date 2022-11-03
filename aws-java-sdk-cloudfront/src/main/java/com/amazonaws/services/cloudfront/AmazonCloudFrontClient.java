@@ -328,6 +328,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("FieldLevelEncryptionProfileAlreadyExists", new FieldLevelEncryptionProfileAlreadyExistsExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileAlreadyExistsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidOriginAccessControl") == null) {
+            exceptionUnmarshallersMap.put("InvalidOriginAccessControl", new InvalidOriginAccessControlExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidOriginAccessControlExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("MissingBody") == null) {
             exceptionUnmarshallersMap.put("MissingBody", new MissingBodyExceptionUnmarshaller());
         }
@@ -376,6 +380,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("InvalidOriginKeepaliveTimeout", new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("OriginAccessControlAlreadyExists") == null) {
+            exceptionUnmarshallersMap.put("OriginAccessControlAlreadyExists", new OriginAccessControlAlreadyExistsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new OriginAccessControlAlreadyExistsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("StreamingDistributionNotDisabled") == null) {
             exceptionUnmarshallersMap.put("StreamingDistributionNotDisabled", new StreamingDistributionNotDisabledExceptionUnmarshaller());
         }
@@ -398,6 +406,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                     .put("CloudFrontOriginAccessIdentityAlreadyExists", new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("NoSuchOriginAccessControl") == null) {
+            exceptionUnmarshallersMap.put("NoSuchOriginAccessControl", new NoSuchOriginAccessControlExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new NoSuchOriginAccessControlExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("NoSuchRealtimeLogConfig") == null) {
             exceptionUnmarshallersMap.put("NoSuchRealtimeLogConfig", new NoSuchRealtimeLogConfigExceptionUnmarshaller());
         }
@@ -571,6 +583,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("InvalidOriginReadTimeout", new InvalidOriginReadTimeoutExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("OriginAccessControlInUse") == null) {
+            exceptionUnmarshallersMap.put("OriginAccessControlInUse", new OriginAccessControlInUseExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new OriginAccessControlInUseExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("OriginRequestPolicyInUse") == null) {
             exceptionUnmarshallersMap.put("OriginRequestPolicyInUse", new OriginRequestPolicyInUseExceptionUnmarshaller());
         }
@@ -653,6 +669,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("CachePolicyAlreadyExists", new CachePolicyAlreadyExistsExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new CachePolicyAlreadyExistsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidDomainNameForOriginAccessControl") == null) {
+            exceptionUnmarshallersMap.put("InvalidDomainNameForOriginAccessControl", new InvalidDomainNameForOriginAccessControlExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidDomainNameForOriginAccessControlExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyOriginCustomHeaders") == null) {
             exceptionUnmarshallersMap.put("TooManyOriginCustomHeaders", new TooManyOriginCustomHeadersExceptionUnmarshaller());
         }
@@ -677,6 +697,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("QueryArgProfileEmpty", new QueryArgProfileEmptyExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new QueryArgProfileEmptyExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("MonitoringSubscriptionAlreadyExists") == null) {
+            exceptionUnmarshallersMap.put("MonitoringSubscriptionAlreadyExists", new MonitoringSubscriptionAlreadyExistsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new MonitoringSubscriptionAlreadyExistsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyRealtimeLogConfigs") == null) {
             exceptionUnmarshallersMap.put("TooManyRealtimeLogConfigs", new TooManyRealtimeLogConfigsExceptionUnmarshaller());
         }
@@ -713,10 +737,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("InvalidFunctionAssociation", new InvalidFunctionAssociationExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidFunctionAssociationExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("NoSuchMonitoringSubscription") == null) {
+            exceptionUnmarshallersMap.put("NoSuchMonitoringSubscription", new NoSuchMonitoringSubscriptionExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new NoSuchMonitoringSubscriptionExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidLambdaFunctionAssociation") == null) {
             exceptionUnmarshallersMap.put("InvalidLambdaFunctionAssociation", new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooLongCSPInResponseHeadersPolicy") == null) {
+            exceptionUnmarshallersMap.put("TooLongCSPInResponseHeadersPolicy", new TooLongCSPInResponseHeadersPolicyExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooLongCSPInResponseHeadersPolicyExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyLambdaFunctionAssociations") == null) {
             exceptionUnmarshallersMap.put("TooManyLambdaFunctionAssociations", new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         }
@@ -737,10 +769,23 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             exceptionUnmarshallersMap.put("AccessDenied", new AccessDeniedExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyDistributionsAssociatedToOriginAccessControl") == null) {
+            exceptionUnmarshallersMap.put("TooManyDistributionsAssociatedToOriginAccessControl",
+                    new TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("IllegalOriginAccessConfiguration") == null) {
+            exceptionUnmarshallersMap.put("IllegalOriginAccessConfiguration", new IllegalOriginAccessConfigurationExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new IllegalOriginAccessConfigurationExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyCookiesInCachePolicy") == null) {
             exceptionUnmarshallersMap.put("TooManyCookiesInCachePolicy", new TooManyCookiesInCachePolicyExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new TooManyCookiesInCachePolicyExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyOriginAccessControls") == null) {
+            exceptionUnmarshallersMap.put("TooManyOriginAccessControls", new TooManyOriginAccessControlsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyOriginAccessControlsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidArgument") == null) {
             exceptionUnmarshallersMap.put("InvalidArgument", new InvalidArgumentExceptionUnmarshaller());
         }
@@ -1114,6 +1159,16 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
+     * @throws IllegalOriginAccessConfigurationException
+     *         An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).
+     * @throws TooManyDistributionsAssociatedToOriginAccessControlException
+     *         The maximum number of distributions have been associated with the specified origin access control.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -1230,7 +1285,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchResponseHeadersPolicyException
      *         The response headers policy does not exist.
      * @throws TooManyDistributionsAssociatedToResponseHeadersPolicyException
-     *         The maximum number of distributions have been associated with the specified response headers policy.</p>
+     *         The maximum number of distributions have been associated with the specified response headers policy.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
@@ -1258,6 +1314,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
      *         The specified real-time log configuration belongs to a different Amazon Web Services account.
+     * @throws InvalidDomainNameForOriginAccessControlException
+     *         An origin access control is associated with an origin whose domain name is not supported.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -1324,6 +1382,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -1470,6 +1530,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
      *         The specified real-time log configuration belongs to a different Amazon Web Services account.
+     * @throws InvalidDomainNameForOriginAccessControlException
+     *         An origin access control is associated with an origin whose domain name is not supported.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -1923,6 +1985,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws MonitoringSubscriptionAlreadyExistsException
+     *         A monitoring subscription already exists for the specified distribution.
      * @throws UnsupportedOperationException
      *         This operation is not supported in this region.
      * @sample AmazonCloudFront.CreateMonitoringSubscription
@@ -1963,6 +2027,82 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<CreateMonitoringSubscriptionResult> responseHandler = new StaxResponseHandler<CreateMonitoringSubscriptionResult>(
                     new CreateMonitoringSubscriptionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to
+     * an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.
+     * </p>
+     * <p>
+     * For an Amazon S3 origin, this makes it possible to block public access to the Amazon S3 bucket so that viewers
+     * (users) can access the content in the bucket only through CloudFront.
+     * </p>
+     * <p>
+     * For more information about using a CloudFront origin access control, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginAccessControlRequest
+     * @return Result of the CreateOriginAccessControl operation returned by the service.
+     * @throws OriginAccessControlAlreadyExistsException
+     *         An origin access control with the specified parameters already exists.
+     * @throws TooManyOriginAccessControlsException
+     *         The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.CreateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateOriginAccessControlResult createOriginAccessControl(CreateOriginAccessControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOriginAccessControl(request);
+    }
+
+    @SdkInternalApi
+    final CreateOriginAccessControlResult executeCreateOriginAccessControl(CreateOriginAccessControlRequest createOriginAccessControlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOriginAccessControlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOriginAccessControlRequest> request = null;
+        Response<CreateOriginAccessControlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOriginAccessControlRequestMarshaller().marshall(super.beforeMarshalling(createOriginAccessControlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOriginAccessControl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateOriginAccessControlResult> responseHandler = new StaxResponseHandler<CreateOriginAccessControlResult>(
+                    new CreateOriginAccessControlResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2277,6 +2417,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooLongCSPInResponseHeadersPolicyException
+     *         The length of the <code>Content-Security-Policy</code> header value in the response headers policy
+     *         exceeds the maximum.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.CreateResponseHeadersPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -2345,6 +2493,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -2430,6 +2580,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -3064,6 +3216,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws NoSuchMonitoringSubscriptionException
+     *         A monitoring subscription does not exist for the specified distribution.
      * @throws UnsupportedOperationException
      *         This operation is not supported in this region.
      * @sample AmazonCloudFront.DeleteMonitoringSubscription
@@ -3104,6 +3258,76 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteMonitoringSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteMonitoringSubscriptionResult>(
                     new DeleteMonitoringSubscriptionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a CloudFront origin access control.
+     * </p>
+     * <p>
+     * You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin
+     * access control from all origins, then delete the origin access control.
+     * </p>
+     * 
+     * @param deleteOriginAccessControlRequest
+     * @return Result of the DeleteOriginAccessControl operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws OriginAccessControlInUseException
+     *         Cannot delete the origin access control because it's in use by one or more distributions.
+     * @sample AmazonCloudFront.DeleteOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteOriginAccessControlResult deleteOriginAccessControl(DeleteOriginAccessControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOriginAccessControl(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOriginAccessControlResult executeDeleteOriginAccessControl(DeleteOriginAccessControlRequest deleteOriginAccessControlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOriginAccessControlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOriginAccessControlRequest> request = null;
+        Response<DeleteOriginAccessControlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOriginAccessControlRequestMarshaller().marshall(super.beforeMarshalling(deleteOriginAccessControlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOriginAccessControl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteOriginAccessControlResult> responseHandler = new StaxResponseHandler<DeleteOriginAccessControlResult>(
+                    new DeleteOriginAccessControlResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -4506,6 +4730,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws NoSuchMonitoringSubscriptionException
+     *         A monitoring subscription does not exist for the specified distribution.
      * @throws UnsupportedOperationException
      *         This operation is not supported in this region.
      * @sample AmazonCloudFront.GetMonitoringSubscription
@@ -4546,6 +4772,126 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<GetMonitoringSubscriptionResult> responseHandler = new StaxResponseHandler<GetMonitoringSubscriptionResult>(
                     new GetMonitoringSubscriptionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control, including its unique identifier.
+     * </p>
+     * 
+     * @param getOriginAccessControlRequest
+     * @return Result of the GetOriginAccessControl operation returned by the service.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.GetOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOriginAccessControlResult getOriginAccessControl(GetOriginAccessControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOriginAccessControl(request);
+    }
+
+    @SdkInternalApi
+    final GetOriginAccessControlResult executeGetOriginAccessControl(GetOriginAccessControlRequest getOriginAccessControlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOriginAccessControlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOriginAccessControlRequest> request = null;
+        Response<GetOriginAccessControlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOriginAccessControlRequestMarshaller().marshall(super.beforeMarshalling(getOriginAccessControlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOriginAccessControl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetOriginAccessControlResult> responseHandler = new StaxResponseHandler<GetOriginAccessControlResult>(
+                    new GetOriginAccessControlResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a CloudFront origin access control configuration.
+     * </p>
+     * 
+     * @param getOriginAccessControlConfigRequest
+     * @return Result of the GetOriginAccessControlConfig operation returned by the service.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.GetOriginAccessControlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOriginAccessControlConfigResult getOriginAccessControlConfig(GetOriginAccessControlConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOriginAccessControlConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetOriginAccessControlConfigResult executeGetOriginAccessControlConfig(GetOriginAccessControlConfigRequest getOriginAccessControlConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOriginAccessControlConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOriginAccessControlConfigRequest> request = null;
+        Response<GetOriginAccessControlConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOriginAccessControlConfigRequestMarshaller().marshall(super.beforeMarshalling(getOriginAccessControlConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOriginAccessControlConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetOriginAccessControlConfigResult> responseHandler = new StaxResponseHandler<GetOriginAccessControlConfigResult>(
+                    new GetOriginAccessControlConfigResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -6152,6 +6498,70 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send another request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the next request.
+     * </p>
+     * 
+     * @param listOriginAccessControlsRequest
+     * @return Result of the ListOriginAccessControls operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListOriginAccessControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListOriginAccessControlsResult listOriginAccessControls(ListOriginAccessControlsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOriginAccessControls(request);
+    }
+
+    @SdkInternalApi
+    final ListOriginAccessControlsResult executeListOriginAccessControls(ListOriginAccessControlsRequest listOriginAccessControlsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOriginAccessControlsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOriginAccessControlsRequest> request = null;
+        Response<ListOriginAccessControlsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOriginAccessControlsRequestMarshaller().marshall(super.beforeMarshalling(listOriginAccessControlsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginAccessControls");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListOriginAccessControlsResult> responseHandler = new StaxResponseHandler<ListOriginAccessControlsResult>(
+                    new ListOriginAccessControlsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of origin request policies.
      * </p>
      * <p>
@@ -7155,6 +7565,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         An argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
@@ -7277,6 +7689,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
      *         The specified real-time log configuration belongs to a different Amazon Web Services account.
+     * @throws IllegalOriginAccessConfigurationException
+     *         An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).
+     * @throws InvalidDomainNameForOriginAccessControlException
+     *         An origin access control is associated with an origin whose domain name is not supported.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -7660,6 +8076,76 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Updates a CloudFront origin access control.
+     * </p>
+     * 
+     * @param updateOriginAccessControlRequest
+     * @return Result of the UpdateOriginAccessControl operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws IllegalUpdateException
+     *         The update contains modifications that are not allowed.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws OriginAccessControlAlreadyExistsException
+     *         An origin access control with the specified parameters already exists.
+     * @throws NoSuchOriginAccessControlException
+     *         The origin access control does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.UpdateOriginAccessControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateOriginAccessControlResult updateOriginAccessControl(UpdateOriginAccessControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOriginAccessControl(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOriginAccessControlResult executeUpdateOriginAccessControl(UpdateOriginAccessControlRequest updateOriginAccessControlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOriginAccessControlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOriginAccessControlRequest> request = null;
+        Response<UpdateOriginAccessControlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOriginAccessControlRequestMarshaller().marshall(super.beforeMarshalling(updateOriginAccessControlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOriginAccessControl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateOriginAccessControlResult> responseHandler = new StaxResponseHandler<UpdateOriginAccessControlResult>(
+                    new UpdateOriginAccessControlResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an origin request policy configuration.
      * </p>
      * <p>
@@ -7978,6 +8464,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooLongCSPInResponseHeadersPolicyException
+     *         The length of the <code>Content-Security-Policy</code> header value in the response headers policy
+     *         exceeds the maximum.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.UpdateResponseHeadersPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -8056,6 +8550,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         An argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
+     * @throws InvalidOriginAccessControlException
+     *         The origin access control is not valid.
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException

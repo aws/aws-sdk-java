@@ -116,7 +116,7 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded
+     * Table is being reloaded
      * </p>
      */
     private String tableState;
@@ -769,14 +769,14 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded
+     * Table is being reloaded
      * </p>
      * 
      * @param tableState
      *        The state of the tables described.</p>
      *        <p>
      *        Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table
-     *        error | Table all | Table updates | Table is being reloaded
+     *        error | Table is being reloaded
      */
 
     public void setTableState(String tableState) {
@@ -789,13 +789,13 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded
+     * Table is being reloaded
      * </p>
      * 
      * @return The state of the tables described.</p>
      *         <p>
      *         Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table
-     *         error | Table all | Table updates | Table is being reloaded
+     *         error | Table is being reloaded
      */
 
     public String getTableState() {
@@ -808,14 +808,14 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded
+     * Table is being reloaded
      * </p>
      * 
      * @param tableState
      *        The state of the tables described.</p>
      *        <p>
      *        Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table
-     *        error | Table all | Table updates | Table is being reloaded
+     *        error | Table is being reloaded
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,14 +27,26 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ConfigurationMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> EBSSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebsSnapshot").build();
+    private static final MarshallingInfo<StructuredPojo> ECRREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrRepository").build();
     private static final MarshallingInfo<StructuredPojo> IAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iamRole").build();
+    private static final MarshallingInfo<StructuredPojo> EFSFILESYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("efsFileSystem").build();
     private static final MarshallingInfo<StructuredPojo> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kmsKey").build();
-    private static final MarshallingInfo<StructuredPojo> S3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3Bucket").build();
+    private static final MarshallingInfo<StructuredPojo> RDSDBCLUSTERSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rdsDbClusterSnapshot").build();
+    private static final MarshallingInfo<StructuredPojo> RDSDBSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rdsDbSnapshot").build();
     private static final MarshallingInfo<StructuredPojo> SECRETSMANAGERSECRET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secretsManagerSecret").build();
+    private static final MarshallingInfo<StructuredPojo> S3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3Bucket").build();
+    private static final MarshallingInfo<StructuredPojo> SNSTOPIC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snsTopic").build();
     private static final MarshallingInfo<StructuredPojo> SQSQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sqsQueue").build();
 
@@ -54,10 +66,16 @@ public class ConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(configuration.getEbsSnapshot(), EBSSNAPSHOT_BINDING);
+            protocolMarshaller.marshall(configuration.getEcrRepository(), ECRREPOSITORY_BINDING);
             protocolMarshaller.marshall(configuration.getIamRole(), IAMROLE_BINDING);
+            protocolMarshaller.marshall(configuration.getEfsFileSystem(), EFSFILESYSTEM_BINDING);
             protocolMarshaller.marshall(configuration.getKmsKey(), KMSKEY_BINDING);
-            protocolMarshaller.marshall(configuration.getS3Bucket(), S3BUCKET_BINDING);
+            protocolMarshaller.marshall(configuration.getRdsDbClusterSnapshot(), RDSDBCLUSTERSNAPSHOT_BINDING);
+            protocolMarshaller.marshall(configuration.getRdsDbSnapshot(), RDSDBSNAPSHOT_BINDING);
             protocolMarshaller.marshall(configuration.getSecretsManagerSecret(), SECRETSMANAGERSECRET_BINDING);
+            protocolMarshaller.marshall(configuration.getS3Bucket(), S3BUCKET_BINDING);
+            protocolMarshaller.marshall(configuration.getSnsTopic(), SNSTOPIC_BINDING);
             protocolMarshaller.marshall(configuration.getSqsQueue(), SQSQUEUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

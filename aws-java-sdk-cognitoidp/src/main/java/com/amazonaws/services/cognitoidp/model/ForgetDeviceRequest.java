@@ -30,7 +30,7 @@ public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The access token for the forgotten device request.
+     * A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      * </p>
      */
     private String accessToken;
@@ -43,11 +43,11 @@ public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The access token for the forgotten device request.
+     * A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the forgotten device request.
+     *        A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      */
 
     public void setAccessToken(String accessToken) {
@@ -56,10 +56,10 @@ public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The access token for the forgotten device request.
+     * A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      * </p>
      * 
-     * @return The access token for the forgotten device request.
+     * @return A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      */
 
     public String getAccessToken() {
@@ -68,11 +68,11 @@ public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The access token for the forgotten device request.
+     * A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the forgotten device request.
+     *        A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

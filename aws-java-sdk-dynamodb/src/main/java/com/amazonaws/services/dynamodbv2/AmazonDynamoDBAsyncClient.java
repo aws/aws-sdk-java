@@ -966,6 +966,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest request) {
+
+        return describeImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportResult> describeImportAsync(final DescribeImportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImportRequest, DescribeImportResult> asyncHandler) {
+        final DescribeImportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImportResult>() {
+            @Override
+            public DescribeImportResult call() throws Exception {
+                DescribeImportResult result = null;
+
+                try {
+                    result = executeDescribeImport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
             DescribeKinesisStreamingDestinationRequest request) {
 
@@ -1406,6 +1439,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ImportTableResult> importTableAsync(ImportTableRequest request) {
+
+        return importTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportTableResult> importTableAsync(final ImportTableRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportTableRequest, ImportTableResult> asyncHandler) {
+        final ImportTableRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportTableResult>() {
+            @Override
+            public ImportTableResult call() throws Exception {
+                ImportTableResult result = null;
+
+                try {
+                    result = executeImportTable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBackupsResult> listBackupsAsync(ListBackupsRequest request) {
 
         return listBackupsAsync(request, null);
@@ -1522,6 +1588,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
 
                 try {
                     result = executeListGlobalTables(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request) {
+
+        return listImportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(final ListImportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler) {
+        final ListImportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImportsResult>() {
+            @Override
+            public ListImportsResult call() throws Exception {
+                ListImportsResult result = null;
+
+                try {
+                    result = executeListImports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

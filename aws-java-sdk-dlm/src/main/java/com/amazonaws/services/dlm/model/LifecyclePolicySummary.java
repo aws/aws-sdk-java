@@ -56,7 +56,8 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
      * <p>
      * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
      * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
-     * AMIs.
+     * AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for
+     * snapshots that are shared with your account.
      * </p>
      */
     private String policyType;
@@ -272,13 +273,15 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
      * <p>
      * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
      * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
-     * AMIs.
+     * AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for
+     * snapshots that are shared with your account.
      * </p>
      * 
      * @param policyType
      *        The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
      *        of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     *        EBS-backed AMIs.
+     *        EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account
+     *        snapshot copies for snapshots that are shared with your account.
      * @see PolicyTypeValues
      */
 
@@ -290,12 +293,14 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
      * <p>
      * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
      * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
-     * AMIs.
+     * AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for
+     * snapshots that are shared with your account.
      * </p>
      * 
      * @return The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
      *         of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     *         EBS-backed AMIs.
+     *         EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account
+     *         snapshot copies for snapshots that are shared with your account.
      * @see PolicyTypeValues
      */
 
@@ -307,13 +312,15 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
      * <p>
      * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
      * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
-     * AMIs.
+     * AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for
+     * snapshots that are shared with your account.
      * </p>
      * 
      * @param policyType
      *        The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
      *        of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     *        EBS-backed AMIs.
+     *        EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account
+     *        snapshot copies for snapshots that are shared with your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */
@@ -327,13 +334,15 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
      * <p>
      * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
      * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
-     * AMIs.
+     * AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for
+     * snapshots that are shared with your account.
      * </p>
      * 
      * @param policyType
      *        The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
      *        of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     *        EBS-backed AMIs.
+     *        EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account
+     *        snapshot copies for snapshots that are shared with your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */

@@ -22,7 +22,8 @@ public enum SlotTypeCategory {
 
     Custom("Custom"),
     Extended("Extended"),
-    ExternalGrammar("ExternalGrammar");
+    ExternalGrammar("ExternalGrammar"),
+    Composite("Composite");
 
     private String value;
 

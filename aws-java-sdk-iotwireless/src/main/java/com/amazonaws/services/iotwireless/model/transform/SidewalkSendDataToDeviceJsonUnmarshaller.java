@@ -56,6 +56,10 @@ public class SidewalkSendDataToDeviceJsonUnmarshaller implements Unmarshaller<Si
                     context.nextToken();
                     sidewalkSendDataToDevice.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AckModeRetryDurationSecs", targetDepth)) {
+                    context.nextToken();
+                    sidewalkSendDataToDevice.setAckModeRetryDurationSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

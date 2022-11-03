@@ -33,6 +33,8 @@ public class UpdateWorkforceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceIpConfig").build();
     private static final MarshallingInfo<StructuredPojo> OIDCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OidcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> WORKFORCEVPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceVpcConfig").build();
 
     private static final UpdateWorkforceRequestMarshaller instance = new UpdateWorkforceRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateWorkforceRequestMarshaller {
             protocolMarshaller.marshall(updateWorkforceRequest.getWorkforceName(), WORKFORCENAME_BINDING);
             protocolMarshaller.marshall(updateWorkforceRequest.getSourceIpConfig(), SOURCEIPCONFIG_BINDING);
             protocolMarshaller.marshall(updateWorkforceRequest.getOidcConfig(), OIDCCONFIG_BINDING);
+            protocolMarshaller.marshall(updateWorkforceRequest.getWorkforceVpcConfig(), WORKFORCEVPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

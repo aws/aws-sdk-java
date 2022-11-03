@@ -37,6 +37,9 @@ import com.amazonaws.services.iotthingsgraph.model.*;
  * For more information about how AWS IoT Things Graph works, see the <a
  * href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User Guide</a>.
  * </p>
+ * <p>
+ * The AWS IoT Things Graph service is discontinued.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIoTThingsGraph {
@@ -68,6 +71,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateEntityToThingResult associateEntityToThing(AssociateEntityToThingRequest associateEntityToThingRequest);
 
     /**
@@ -89,6 +93,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateFlowTemplateResult createFlowTemplate(CreateFlowTemplateRequest createFlowTemplateRequest);
 
     /**
@@ -126,6 +131,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateSystemInstanceResult createSystemInstance(CreateSystemInstanceRequest createSystemInstanceRequest);
 
     /**
@@ -144,6 +150,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateSystemTemplateResult createSystemTemplate(CreateSystemTemplateRequest createSystemTemplateRequest);
 
     /**
@@ -163,12 +170,13 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteFlowTemplateResult deleteFlowTemplate(DeleteFlowTemplateRequest deleteFlowTemplateRequest);
 
     /**
      * <p>
      * Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and
-     * flows that use entities in the namespace before performing this action.
+     * flows that use entities in the namespace before performing this action. This action takes no request parameters.
      * </p>
      * 
      * @param deleteNamespaceRequest
@@ -179,6 +187,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest deleteNamespaceRequest);
 
     /**
@@ -200,6 +209,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteSystemInstanceResult deleteSystemInstance(DeleteSystemInstanceRequest deleteSystemInstanceRequest);
 
     /**
@@ -218,6 +228,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteSystemTemplateResult deleteSystemTemplate(DeleteSystemTemplateRequest deleteSystemTemplateRequest);
 
     /**
@@ -255,6 +266,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeploySystemInstanceResult deploySystemInstance(DeploySystemInstanceRequest deploySystemInstanceRequest);
 
     /**
@@ -273,6 +285,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeprecateFlowTemplateResult deprecateFlowTemplate(DeprecateFlowTemplateRequest deprecateFlowTemplateRequest);
 
     /**
@@ -290,6 +303,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeprecateSystemTemplateResult deprecateSystemTemplate(DeprecateSystemTemplateRequest deprecateSystemTemplateRequest);
 
     /**
@@ -307,6 +321,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest describeNamespaceRequest);
 
     /**
@@ -325,6 +340,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DissociateEntityFromThingResult dissociateEntityFromThing(DissociateEntityFromThingRequest dissociateEntityFromThingRequest);
 
     /**
@@ -393,6 +409,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetEntitiesResult getEntities(GetEntitiesRequest getEntitiesRequest);
 
     /**
@@ -411,6 +428,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetFlowTemplateResult getFlowTemplate(GetFlowTemplateRequest getFlowTemplateRequest);
 
     /**
@@ -430,6 +448,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetFlowTemplateRevisionsResult getFlowTemplateRevisions(GetFlowTemplateRevisionsRequest getFlowTemplateRevisionsRequest);
 
     /**
@@ -446,6 +465,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetNamespaceDeletionStatusResult getNamespaceDeletionStatus(GetNamespaceDeletionStatusRequest getNamespaceDeletionStatusRequest);
 
     /**
@@ -463,6 +483,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetSystemInstanceResult getSystemInstance(GetSystemInstanceRequest getSystemInstanceRequest);
 
     /**
@@ -480,6 +501,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetSystemTemplateResult getSystemTemplate(GetSystemTemplateRequest getSystemTemplateRequest);
 
     /**
@@ -499,6 +521,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetSystemTemplateRevisionsResult getSystemTemplateRevisions(GetSystemTemplateRevisionsRequest getSystemTemplateRevisionsRequest);
 
     /**
@@ -516,6 +539,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetUploadStatusResult getUploadStatus(GetUploadStatusRequest getUploadStatusRequest);
 
     /**
@@ -533,6 +557,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListFlowExecutionMessagesResult listFlowExecutionMessages(ListFlowExecutionMessagesRequest listFlowExecutionMessagesRequest);
 
     /**
@@ -550,6 +575,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
@@ -567,6 +593,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     SearchEntitiesResult searchEntities(SearchEntitiesRequest searchEntitiesRequest);
 
     /**
@@ -584,6 +611,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchFlowExecutionsResult searchFlowExecutions(SearchFlowExecutionsRequest searchFlowExecutionsRequest);
 
     /**
@@ -600,6 +628,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchFlowTemplatesResult searchFlowTemplates(SearchFlowTemplatesRequest searchFlowTemplatesRequest);
 
     /**
@@ -616,6 +645,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchSystemInstancesResult searchSystemInstances(SearchSystemInstancesRequest searchSystemInstancesRequest);
 
     /**
@@ -633,6 +663,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchSystemTemplatesResult searchSystemTemplates(SearchSystemTemplatesRequest searchSystemTemplatesRequest);
 
     /**
@@ -658,6 +689,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     SearchThingsResult searchThings(SearchThingsRequest searchThingsRequest);
 
     /**
@@ -675,6 +707,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
@@ -693,6 +726,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UndeploySystemInstanceResult undeploySystemInstance(UndeploySystemInstanceRequest undeploySystemInstanceRequest);
 
     /**
@@ -710,6 +744,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
@@ -730,6 +765,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateFlowTemplateResult updateFlowTemplate(UpdateFlowTemplateRequest updateFlowTemplateRequest);
 
     /**
@@ -748,6 +784,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateSystemTemplateResult updateSystemTemplate(UpdateSystemTemplateRequest updateSystemTemplateRequest);
 
     /**
@@ -785,6 +822,7 @@ public interface AWSIoTThingsGraph {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UploadEntityDefinitionsResult uploadEntityDefinitions(UploadEntityDefinitionsRequest uploadEntityDefinitionsRequest);
 
     /**

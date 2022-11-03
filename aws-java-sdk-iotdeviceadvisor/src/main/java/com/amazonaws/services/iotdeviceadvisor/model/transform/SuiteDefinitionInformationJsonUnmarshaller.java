@@ -66,6 +66,14 @@ public class SuiteDefinitionInformationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     suiteDefinitionInformation.setIntendedForQualification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("isLongDurationTest", targetDepth)) {
+                    context.nextToken();
+                    suiteDefinitionInformation.setIsLongDurationTest(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("protocol", targetDepth)) {
+                    context.nextToken();
+                    suiteDefinitionInformation.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     suiteDefinitionInformation.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

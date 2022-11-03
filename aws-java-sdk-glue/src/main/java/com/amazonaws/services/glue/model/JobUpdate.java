@@ -102,9 +102,9 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      */
@@ -141,7 +141,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -154,7 +154,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
     private Double maxCapacity;
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -175,15 +176,19 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      */
     private String workerType;
     /**
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
-     * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
      * </p>
      */
     private Integer numberOfWorkers;
@@ -210,6 +215,34 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String glueVersion;
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     */
+    private java.util.Map<String, CodeGenConfigurationNode> codeGenConfigurationNodes;
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     */
+    private String executionClass;
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     */
+    private SourceControlDetails sourceControlDetails;
 
     /**
      * <p>
@@ -713,16 +746,16 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      * 
      * @param allocatedCapacity
      *        This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *        <p>
-     *        The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100
+     *        The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2
      *        DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
@@ -737,15 +770,15 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      * 
      * @return This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *         <p>
-     *         The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100
+     *         The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2
      *         DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *         compute capacity and 16 GB of memory. For more information, see the <a
      *         href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
@@ -760,16 +793,16 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the
-     * default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and
-     * 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+     * The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs;
+     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
      * page</a>.
      * </p>
      * 
      * @param allocatedCapacity
      *        This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *        <p>
-     *        The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100
+     *        The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2
      *        DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
@@ -851,7 +884,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -883,8 +916,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
-     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
+     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      *        </ul>
@@ -921,7 +954,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -952,7 +985,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
      *         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *         </p>
      *         </li>
@@ -990,7 +1023,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1022,8 +1055,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
-     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
+     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      *        </ul>
@@ -1040,7 +1073,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1061,11 +1095,18 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *        G.2X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *        or G.025X.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1085,6 +1126,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *        This worker type is only available for Glue version 3.0 streaming jobs.
+     *        </p>
+     *        </li>
      * @see WorkerType
      */
 
@@ -1094,7 +1142,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1115,10 +1164,17 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *         G.2X.</p>
+     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *         or G.025X.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1138,6 +1194,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *         disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *         This worker type is only available for Glue version 3.0 streaming jobs.
+     *         </p>
+     *         </li>
      * @see WorkerType
      */
 
@@ -1147,7 +1210,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1168,11 +1232,18 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *        G.2X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *        or G.025X.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1190,6 +1261,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *        This worker type is only available for Glue version 3.0 streaming jobs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1203,7 +1281,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
+     * G.025X.
      * </p>
      * <ul>
      * <li>
@@ -1224,11 +1303,18 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
+     * only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
-     *        G.2X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
+     *        or G.025X.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1246,6 +1332,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
+     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
+     *        This worker type is only available for Glue version 3.0 streaming jobs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1261,14 +1354,9 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      * 
      * @param numberOfWorkers
-     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-     *        <p>
-     *        The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      */
 
     public void setNumberOfWorkers(Integer numberOfWorkers) {
@@ -1279,13 +1367,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      * 
-     * @return The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-     *         <p>
-     *         The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * @return The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      */
 
     public Integer getNumberOfWorkers() {
@@ -1296,14 +1379,9 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
-     * <p>
-     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
-     * </p>
      * 
      * @param numberOfWorkers
-     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-     *        <p>
-     *        The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1461,6 +1539,254 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     * 
+     * @return The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue
+     *         Studio code generation is based.
+     */
+
+    public java.util.Map<String, CodeGenConfigurationNode> getCodeGenConfigurationNodes() {
+        return codeGenConfigurationNodes;
+    }
+
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     * 
+     * @param codeGenConfigurationNodes
+     *        The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue
+     *        Studio code generation is based.
+     */
+
+    public void setCodeGenConfigurationNodes(java.util.Map<String, CodeGenConfigurationNode> codeGenConfigurationNodes) {
+        this.codeGenConfigurationNodes = codeGenConfigurationNodes;
+    }
+
+    /**
+     * <p>
+     * The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio
+     * code generation is based.
+     * </p>
+     * 
+     * @param codeGenConfigurationNodes
+     *        The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue
+     *        Studio code generation is based.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobUpdate withCodeGenConfigurationNodes(java.util.Map<String, CodeGenConfigurationNode> codeGenConfigurationNodes) {
+        setCodeGenConfigurationNodes(codeGenConfigurationNodes);
+        return this;
+    }
+
+    /**
+     * Add a single CodeGenConfigurationNodes entry
+     *
+     * @see JobUpdate#withCodeGenConfigurationNodes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobUpdate addCodeGenConfigurationNodesEntry(String key, CodeGenConfigurationNode value) {
+        if (null == this.codeGenConfigurationNodes) {
+            this.codeGenConfigurationNodes = new java.util.HashMap<String, CodeGenConfigurationNode>();
+        }
+        if (this.codeGenConfigurationNodes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.codeGenConfigurationNodes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CodeGenConfigurationNodes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobUpdate clearCodeGenConfigurationNodesEntries() {
+        this.codeGenConfigurationNodes = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @param executionClass
+     *        Indicates whether the job is run with a standard or flexible execution class. The standard execution-class
+     *        is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+     *        <p>
+     *        The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may
+     *        vary.
+     *        </p>
+     *        <p>
+     *        Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *        <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *        jobs.
+     * @see ExecutionClass
+     */
+
+    public void setExecutionClass(String executionClass) {
+        this.executionClass = executionClass;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @return Indicates whether the job is run with a standard or flexible execution class. The standard
+     *         execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated
+     *         resources.</p>
+     *         <p>
+     *         The flexible execution class is appropriate for time-insensitive jobs whose start and completion times
+     *         may vary.
+     *         </p>
+     *         <p>
+     *         Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *         <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *         jobs.
+     * @see ExecutionClass
+     */
+
+    public String getExecutionClass() {
+        return this.executionClass;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @param executionClass
+     *        Indicates whether the job is run with a standard or flexible execution class. The standard execution-class
+     *        is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+     *        <p>
+     *        The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may
+     *        vary.
+     *        </p>
+     *        <p>
+     *        Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *        <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *        jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionClass
+     */
+
+    public JobUpdate withExecutionClass(String executionClass) {
+        setExecutionClass(executionClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is
+     * ideal for time-sensitive workloads that require fast job startup and dedicated resources.
+     * </p>
+     * <p>
+     * The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p>
+     * <p>
+     * Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     * <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.
+     * </p>
+     * 
+     * @param executionClass
+     *        Indicates whether the job is run with a standard or flexible execution class. The standard execution-class
+     *        is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+     *        <p>
+     *        The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may
+     *        vary.
+     *        </p>
+     *        <p>
+     *        Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set
+     *        <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark
+     *        jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionClass
+     */
+
+    public JobUpdate withExecutionClass(ExecutionClass executionClass) {
+        this.executionClass = executionClass.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     * 
+     * @param sourceControlDetails
+     *        The details for a source control configuration for a job, allowing synchronization of job artifacts to or
+     *        from a remote repository.
+     */
+
+    public void setSourceControlDetails(SourceControlDetails sourceControlDetails) {
+        this.sourceControlDetails = sourceControlDetails;
+    }
+
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     * 
+     * @return The details for a source control configuration for a job, allowing synchronization of job artifacts to or
+     *         from a remote repository.
+     */
+
+    public SourceControlDetails getSourceControlDetails() {
+        return this.sourceControlDetails;
+    }
+
+    /**
+     * <p>
+     * The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a
+     * remote repository.
+     * </p>
+     * 
+     * @param sourceControlDetails
+     *        The details for a source control configuration for a job, allowing synchronization of job artifacts to or
+     *        from a remote repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobUpdate withSourceControlDetails(SourceControlDetails sourceControlDetails) {
+        setSourceControlDetails(sourceControlDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1505,7 +1831,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
         if (getNotificationProperty() != null)
             sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
         if (getGlueVersion() != null)
-            sb.append("GlueVersion: ").append(getGlueVersion());
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
+        if (getCodeGenConfigurationNodes() != null)
+            sb.append("CodeGenConfigurationNodes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getExecutionClass() != null)
+            sb.append("ExecutionClass: ").append(getExecutionClass()).append(",");
+        if (getSourceControlDetails() != null)
+            sb.append("SourceControlDetails: ").append(getSourceControlDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1588,6 +1920,18 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
             return false;
+        if (other.getCodeGenConfigurationNodes() == null ^ this.getCodeGenConfigurationNodes() == null)
+            return false;
+        if (other.getCodeGenConfigurationNodes() != null && other.getCodeGenConfigurationNodes().equals(this.getCodeGenConfigurationNodes()) == false)
+            return false;
+        if (other.getExecutionClass() == null ^ this.getExecutionClass() == null)
+            return false;
+        if (other.getExecutionClass() != null && other.getExecutionClass().equals(this.getExecutionClass()) == false)
+            return false;
+        if (other.getSourceControlDetails() == null ^ this.getSourceControlDetails() == null)
+            return false;
+        if (other.getSourceControlDetails() != null && other.getSourceControlDetails().equals(this.getSourceControlDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1613,6 +1957,9 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
         hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
+        hashCode = prime * hashCode + ((getCodeGenConfigurationNodes() == null) ? 0 : getCodeGenConfigurationNodes().hashCode());
+        hashCode = prime * hashCode + ((getExecutionClass() == null) ? 0 : getExecutionClass().hashCode());
+        hashCode = prime * hashCode + ((getSourceControlDetails() == null) ? 0 : getSourceControlDetails().hashCode());
         return hashCode;
     }
 

@@ -30,56 +30,16 @@ public class Span implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end position of the span (exclusive).
-     * </p>
-     */
-    private Position end;
-    /**
-     * <p>
      * The start position of the span (inclusive).
      * </p>
      */
     private Position start;
-
     /**
      * <p>
      * The end position of the span (exclusive).
      * </p>
-     * 
-     * @param end
-     *        The end position of the span (exclusive).
      */
-
-    public void setEnd(Position end) {
-        this.end = end;
-    }
-
-    /**
-     * <p>
-     * The end position of the span (exclusive).
-     * </p>
-     * 
-     * @return The end position of the span (exclusive).
-     */
-
-    public Position getEnd() {
-        return this.end;
-    }
-
-    /**
-     * <p>
-     * The end position of the span (exclusive).
-     * </p>
-     * 
-     * @param end
-     *        The end position of the span (exclusive).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Span withEnd(Position end) {
-        setEnd(end);
-        return this;
-    }
+    private Position end;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class Span implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The end position of the span (exclusive).
+     * </p>
+     * 
+     * @param end
+     *        The end position of the span (exclusive).
+     */
+
+    public void setEnd(Position end) {
+        this.end = end;
+    }
+
+    /**
+     * <p>
+     * The end position of the span (exclusive).
+     * </p>
+     * 
+     * @return The end position of the span (exclusive).
+     */
+
+    public Position getEnd() {
+        return this.end;
+    }
+
+    /**
+     * <p>
+     * The end position of the span (exclusive).
+     * </p>
+     * 
+     * @param end
+     *        The end position of the span (exclusive).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Span withEnd(Position end) {
+        setEnd(end);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class Span implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEnd() != null)
-            sb.append("End: ").append(getEnd()).append(",");
         if (getStart() != null)
-            sb.append("Start: ").append(getStart());
+            sb.append("Start: ").append(getStart()).append(",");
+        if (getEnd() != null)
+            sb.append("End: ").append(getEnd());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class Span implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Span == false)
             return false;
         Span other = (Span) obj;
-        if (other.getEnd() == null ^ this.getEnd() == null)
-            return false;
-        if (other.getEnd() != null && other.getEnd().equals(this.getEnd()) == false)
-            return false;
         if (other.getStart() == null ^ this.getStart() == null)
             return false;
         if (other.getStart() != null && other.getStart().equals(this.getStart()) == false)
+            return false;
+        if (other.getEnd() == null ^ this.getEnd() == null)
+            return false;
+        if (other.getEnd() != null && other.getEnd().equals(this.getEnd()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class Span implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEnd() == null) ? 0 : getEnd().hashCode());
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
+        hashCode = prime * hashCode + ((getEnd() == null) ? 0 : getEnd().hashCode());
         return hashCode;
     }
 

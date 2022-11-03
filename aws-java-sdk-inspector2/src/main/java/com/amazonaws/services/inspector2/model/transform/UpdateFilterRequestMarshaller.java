@@ -37,6 +37,8 @@ public class UpdateFilterRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterCriteria").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
 
     private static final UpdateFilterRequestMarshaller instance = new UpdateFilterRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class UpdateFilterRequestMarshaller {
             protocolMarshaller.marshall(updateFilterRequest.getFilterArn(), FILTERARN_BINDING);
             protocolMarshaller.marshall(updateFilterRequest.getFilterCriteria(), FILTERCRITERIA_BINDING);
             protocolMarshaller.marshall(updateFilterRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateFilterRequest.getReason(), REASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

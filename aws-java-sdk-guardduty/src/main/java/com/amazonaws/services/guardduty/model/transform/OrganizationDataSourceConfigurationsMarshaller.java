@@ -31,6 +31,8 @@ public class OrganizationDataSourceConfigurationsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3Logs").build();
     private static final MarshallingInfo<StructuredPojo> KUBERNETES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetes").build();
+    private static final MarshallingInfo<StructuredPojo> MALWAREPROTECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("malwareProtection").build();
 
     private static final OrganizationDataSourceConfigurationsMarshaller instance = new OrganizationDataSourceConfigurationsMarshaller();
 
@@ -50,6 +52,7 @@ public class OrganizationDataSourceConfigurationsMarshaller {
         try {
             protocolMarshaller.marshall(organizationDataSourceConfigurations.getS3Logs(), S3LOGS_BINDING);
             protocolMarshaller.marshall(organizationDataSourceConfigurations.getKubernetes(), KUBERNETES_BINDING);
+            protocolMarshaller.marshall(organizationDataSourceConfigurations.getMalwareProtection(), MALWAREPROTECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

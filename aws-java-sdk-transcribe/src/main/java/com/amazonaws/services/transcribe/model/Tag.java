@@ -19,8 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A key:value pair that adds metadata to a resource used by Amazon Transcribe. For example, a tag with the key:value
- * pair ‘Department’:’Sales’ might be added to a resource to indicate its use by your organization's sales department.
+ * Adds metadata, in the form of a key:value pair, to the specified resource.
+ * </p>
+ * <p>
+ * For example, you could add the tag <code>Department:Sales</code> to a resource to indicate that it pertains to your
+ * organization's sales department. You can also use tags for tag-based access control.
+ * </p>
+ * <p>
+ * To learn more about tagging, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+ * resources</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Tag" target="_top">AWS API
@@ -32,14 +39,18 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * <code>Department:Sales</code>, the key is 'Department'.
      * </p>
      */
     private String key;
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * <code>Department:Sales</code>, the value is 'Sales'.
+     * </p>
+     * <p>
+     * Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null.
+     * Omitting the tag value is the same as using an empty string.
      * </p>
      */
     private String value;
@@ -47,12 +58,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * <code>Department:Sales</code>, the key is 'Department'.
      * </p>
      * 
      * @param key
      *        The first part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the key is 'Department'.
+     *        tag <code>Department:Sales</code>, the key is 'Department'.
      */
 
     public void setKey(String key) {
@@ -62,11 +73,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * <code>Department:Sales</code>, the key is 'Department'.
      * </p>
      * 
      * @return The first part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *         tag ‘Department’:’Sales’, the key is 'Department'.
+     *         tag <code>Department:Sales</code>, the key is 'Department'.
      */
 
     public String getKey() {
@@ -76,12 +87,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * <code>Department:Sales</code>, the key is 'Department'.
      * </p>
      * 
      * @param key
      *        The first part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the key is 'Department'.
+     *        tag <code>Department:Sales</code>, the key is 'Department'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,12 +104,19 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * <code>Department:Sales</code>, the value is 'Sales'.
+     * </p>
+     * <p>
+     * Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null.
+     * Omitting the tag value is the same as using an empty string.
      * </p>
      * 
      * @param value
      *        The second part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the value is 'Sales'.
+     *        tag <code>Department:Sales</code>, the value is 'Sales'.</p>
+     *        <p>
+     *        Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null.
+     *        Omitting the tag value is the same as using an empty string.
      */
 
     public void setValue(String value) {
@@ -108,11 +126,18 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * <code>Department:Sales</code>, the value is 'Sales'.
+     * </p>
+     * <p>
+     * Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null.
+     * Omitting the tag value is the same as using an empty string.
      * </p>
      * 
      * @return The second part of a key:value pair that forms a tag associated with a given resource. For example, in
-     *         the tag ‘Department’:’Sales’, the value is 'Sales'.
+     *         the tag <code>Department:Sales</code>, the value is 'Sales'.</p>
+     *         <p>
+     *         Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to
+     *         null. Omitting the tag value is the same as using an empty string.
      */
 
     public String getValue() {
@@ -122,12 +147,19 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * <code>Department:Sales</code>, the value is 'Sales'.
+     * </p>
+     * <p>
+     * Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null.
+     * Omitting the tag value is the same as using an empty string.
      * </p>
      * 
      * @param value
      *        The second part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the value is 'Sales'.
+     *        tag <code>Department:Sales</code>, the value is 'Sales'.</p>
+     *        <p>
+     *        Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null.
+     *        Omitting the tag value is the same as using an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

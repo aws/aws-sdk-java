@@ -35,7 +35,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
     private Boolean primary;
     /**
      * <p>
-     * The private IPv4 addresses.
+     * The private IPv4 address.
      * </p>
      */
     private String privateIpAddress;
@@ -102,11 +102,11 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IPv4 addresses.
+     * The private IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IPv4 addresses.
+     *        The private IPv4 address.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -115,10 +115,10 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IPv4 addresses.
+     * The private IPv4 address.
      * </p>
      * 
-     * @return The private IPv4 addresses.
+     * @return The private IPv4 address.
      */
 
     public String getPrivateIpAddress() {
@@ -127,11 +127,11 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IPv4 addresses.
+     * The private IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IPv4 addresses.
+     *        The private IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,7 +45,11 @@ public class PutProfileObjectTypeRequest extends com.amazonaws.AmazonWebServiceR
     private String description;
     /**
      * <p>
-     * A unique identifier for the object template.
+     * A unique identifier for the object template. For some attributes in the request, the service will use the default
+     * value from the object template when TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation,
+     * SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when
+     * TemplateId is set, the service may return a <code>BadRequestException</code>.
      * </p>
      */
     private String templateId;
@@ -217,11 +221,20 @@ public class PutProfileObjectTypeRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the object template.
+     * A unique identifier for the object template. For some attributes in the request, the service will use the default
+     * value from the object template when TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation,
+     * SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when
+     * TemplateId is set, the service may return a <code>BadRequestException</code>.
      * </p>
      * 
      * @param templateId
-     *        A unique identifier for the object template.
+     *        A unique identifier for the object template. For some attributes in the request, the service will use the
+     *        default value from the object template when TemplateId is present. If these attributes are present in the
+     *        request, the service may return a <code>BadRequestException</code>. These attributes include:
+     *        AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if
+     *        AllowProfileCreation is set to true when TemplateId is set, the service may return a
+     *        <code>BadRequestException</code>.
      */
 
     public void setTemplateId(String templateId) {
@@ -230,10 +243,19 @@ public class PutProfileObjectTypeRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the object template.
+     * A unique identifier for the object template. For some attributes in the request, the service will use the default
+     * value from the object template when TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation,
+     * SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when
+     * TemplateId is set, the service may return a <code>BadRequestException</code>.
      * </p>
      * 
-     * @return A unique identifier for the object template.
+     * @return A unique identifier for the object template. For some attributes in the request, the service will use the
+     *         default value from the object template when TemplateId is present. If these attributes are present in the
+     *         request, the service may return a <code>BadRequestException</code>. These attributes include:
+     *         AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if
+     *         AllowProfileCreation is set to true when TemplateId is set, the service may return a
+     *         <code>BadRequestException</code>.
      */
 
     public String getTemplateId() {
@@ -242,11 +264,20 @@ public class PutProfileObjectTypeRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the object template.
+     * A unique identifier for the object template. For some attributes in the request, the service will use the default
+     * value from the object template when TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation,
+     * SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when
+     * TemplateId is set, the service may return a <code>BadRequestException</code>.
      * </p>
      * 
      * @param templateId
-     *        A unique identifier for the object template.
+     *        A unique identifier for the object template. For some attributes in the request, the service will use the
+     *        default value from the object template when TemplateId is present. If these attributes are present in the
+     *        request, the service may return a <code>BadRequestException</code>. These attributes include:
+     *        AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if
+     *        AllowProfileCreation is set to true when TemplateId is set, the service may return a
+     *        <code>BadRequestException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

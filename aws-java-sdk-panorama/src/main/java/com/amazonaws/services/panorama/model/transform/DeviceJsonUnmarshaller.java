@@ -56,6 +56,18 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CurrentSoftware", targetDepth)) {
+                    context.nextToken();
+                    device.setCurrentSoftware(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    device.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeviceAggregatedStatus", targetDepth)) {
+                    context.nextToken();
+                    device.setDeviceAggregatedStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DeviceId", targetDepth)) {
                     context.nextToken();
                     device.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +75,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
                     device.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LatestDeviceJob", targetDepth)) {
+                    context.nextToken();
+                    device.setLatestDeviceJob(LatestDeviceJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LeaseExpirationTime", targetDepth)) {
                     context.nextToken();
@@ -75,6 +91,15 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 if (context.testExpression("ProvisioningStatus", targetDepth)) {
                     context.nextToken();
                     device.setProvisioningStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    device.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    device.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

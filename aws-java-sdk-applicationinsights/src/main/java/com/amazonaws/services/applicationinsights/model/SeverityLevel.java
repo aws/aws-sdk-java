@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SeverityLevel {
 
+    Informative("Informative"),
     Low("Low"),
     Medium("Medium"),
     High("High");

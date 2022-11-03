@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteLiveSourceRequestProtocolMarshaller implements Marshaller<Request<DeleteLiveSourceRequest>, DeleteLiveSourceRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/sourceLocation/{sourceLocationName}/liveSource/{liveSourceName}").httpMethodName(HttpMethodName.DELETE)
+            .requestUri("/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}").httpMethodName(HttpMethodName.DELETE)
             .hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

@@ -34,6 +34,12 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * Settings for backtest mode.
+     * </p>
+     */
+    private BackTestConfiguration backTestConfiguration;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Settings for backtest mode.
+     * </p>
+     * 
+     * @param backTestConfiguration
+     *        Settings for backtest mode.
+     */
+
+    public void setBackTestConfiguration(BackTestConfiguration backTestConfiguration) {
+        this.backTestConfiguration = backTestConfiguration;
+    }
+
+    /**
+     * <p>
+     * Settings for backtest mode.
+     * </p>
+     * 
+     * @return Settings for backtest mode.
+     */
+
+    public BackTestConfiguration getBackTestConfiguration() {
+        return this.backTestConfiguration;
+    }
+
+    /**
+     * <p>
+     * Settings for backtest mode.
+     * </p>
+     * 
+     * @param backTestConfiguration
+     *        Settings for backtest mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudWatchConfig withBackTestConfiguration(BackTestConfiguration backTestConfiguration) {
+        setBackTestConfiguration(backTestConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getBackTestConfiguration() != null)
+            sb.append("BackTestConfiguration: ").append(getBackTestConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getBackTestConfiguration() == null ^ this.getBackTestConfiguration() == null)
+            return false;
+        if (other.getBackTestConfiguration() != null && other.getBackTestConfiguration().equals(this.getBackTestConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getBackTestConfiguration() == null) ? 0 : getBackTestConfiguration().hashCode());
         return hashCode;
     }
 

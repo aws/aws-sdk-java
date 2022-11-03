@@ -177,6 +177,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest request) {
+
+        return createBulkImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBulkImportJobRequest, CreateBulkImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDashboardResult> createDashboardAsync(CreateDashboardRequest request) {
 
         return createDashboardAsync(request, null);
@@ -380,6 +393,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<DescribeAssetPropertyResult> describeAssetPropertyAsync(DescribeAssetPropertyRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetPropertyRequest, DescribeAssetPropertyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBulkImportJobResult> describeBulkImportJobAsync(DescribeBulkImportJobRequest request) {
+
+        return describeBulkImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBulkImportJobResult> describeBulkImportJobAsync(DescribeBulkImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBulkImportJobRequest, DescribeBulkImportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -601,6 +627,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest request) {
+
+        return listAssetModelPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssetModelPropertiesRequest, ListAssetModelPropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request) {
 
         return listAssetModelsAsync(request, null);
@@ -609,6 +648,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest request) {
+
+        return listAssetPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssetPropertiesRequest, ListAssetPropertiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -648,6 +700,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListAssociatedAssetsResult> listAssociatedAssetsAsync(ListAssociatedAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociatedAssetsRequest, ListAssociatedAssetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest request) {
+
+        return listBulkImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBulkImportJobsRequest, ListBulkImportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

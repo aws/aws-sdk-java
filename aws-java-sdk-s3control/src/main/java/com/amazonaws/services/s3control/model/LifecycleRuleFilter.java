@@ -48,6 +48,18 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
      * </p>
      */
     private LifecycleRuleAndOperator and;
+    /**
+     * <p>
+     * Minimum object size to which the rule applies.
+     * </p>
+     */
+    private Long objectSizeGreaterThan;
+    /**
+     * <p>
+     * Maximum object size to which the rule applies.
+     * </p>
+     */
+    private Long objectSizeLessThan;
 
     /**
      * <p>
@@ -198,6 +210,86 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Minimum object size to which the rule applies.
+     * </p>
+     * 
+     * @param objectSizeGreaterThan
+     *        Minimum object size to which the rule applies.
+     */
+
+    public void setObjectSizeGreaterThan(Long objectSizeGreaterThan) {
+        this.objectSizeGreaterThan = objectSizeGreaterThan;
+    }
+
+    /**
+     * <p>
+     * Minimum object size to which the rule applies.
+     * </p>
+     * 
+     * @return Minimum object size to which the rule applies.
+     */
+
+    public Long getObjectSizeGreaterThan() {
+        return this.objectSizeGreaterThan;
+    }
+
+    /**
+     * <p>
+     * Minimum object size to which the rule applies.
+     * </p>
+     * 
+     * @param objectSizeGreaterThan
+     *        Minimum object size to which the rule applies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecycleRuleFilter withObjectSizeGreaterThan(Long objectSizeGreaterThan) {
+        setObjectSizeGreaterThan(objectSizeGreaterThan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum object size to which the rule applies.
+     * </p>
+     * 
+     * @param objectSizeLessThan
+     *        Maximum object size to which the rule applies.
+     */
+
+    public void setObjectSizeLessThan(Long objectSizeLessThan) {
+        this.objectSizeLessThan = objectSizeLessThan;
+    }
+
+    /**
+     * <p>
+     * Maximum object size to which the rule applies.
+     * </p>
+     * 
+     * @return Maximum object size to which the rule applies.
+     */
+
+    public Long getObjectSizeLessThan() {
+        return this.objectSizeLessThan;
+    }
+
+    /**
+     * <p>
+     * Maximum object size to which the rule applies.
+     * </p>
+     * 
+     * @param objectSizeLessThan
+     *        Maximum object size to which the rule applies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecycleRuleFilter withObjectSizeLessThan(Long objectSizeLessThan) {
+        setObjectSizeLessThan(objectSizeLessThan);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -214,7 +306,11 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
         if (getTag() != null)
             sb.append("Tag: ").append(getTag()).append(",");
         if (getAnd() != null)
-            sb.append("And: ").append(getAnd());
+            sb.append("And: ").append(getAnd()).append(",");
+        if (getObjectSizeGreaterThan() != null)
+            sb.append("ObjectSizeGreaterThan: ").append(getObjectSizeGreaterThan()).append(",");
+        if (getObjectSizeLessThan() != null)
+            sb.append("ObjectSizeLessThan: ").append(getObjectSizeLessThan());
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +337,14 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
             return false;
         if (other.getAnd() != null && other.getAnd().equals(this.getAnd()) == false)
             return false;
+        if (other.getObjectSizeGreaterThan() == null ^ this.getObjectSizeGreaterThan() == null)
+            return false;
+        if (other.getObjectSizeGreaterThan() != null && other.getObjectSizeGreaterThan().equals(this.getObjectSizeGreaterThan()) == false)
+            return false;
+        if (other.getObjectSizeLessThan() == null ^ this.getObjectSizeLessThan() == null)
+            return false;
+        if (other.getObjectSizeLessThan() != null && other.getObjectSizeLessThan().equals(this.getObjectSizeLessThan()) == false)
+            return false;
         return true;
     }
 
@@ -252,6 +356,8 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
         hashCode = prime * hashCode + ((getTag() == null) ? 0 : getTag().hashCode());
         hashCode = prime * hashCode + ((getAnd() == null) ? 0 : getAnd().hashCode());
+        hashCode = prime * hashCode + ((getObjectSizeGreaterThan() == null) ? 0 : getObjectSizeGreaterThan().hashCode());
+        hashCode = prime * hashCode + ((getObjectSizeLessThan() == null) ? 0 : getObjectSizeLessThan().hashCode());
         return hashCode;
     }
 

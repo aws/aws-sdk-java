@@ -31,63 +31,17 @@ public class FindingSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Indicates the type of access that generated the finding.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
      * bucket findings.
      * </p>
      */
     private FindingSourceDetail detail;
-    /**
-     * <p>
-     * Indicates the type of access that generated the finding.
-     * </p>
-     */
-    private String type;
-
-    /**
-     * <p>
-     * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
-     * bucket findings.
-     * </p>
-     * 
-     * @param detail
-     *        Includes details about how the access that generated the finding is granted. This is populated for Amazon
-     *        S3 bucket findings.
-     */
-
-    public void setDetail(FindingSourceDetail detail) {
-        this.detail = detail;
-    }
-
-    /**
-     * <p>
-     * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
-     * bucket findings.
-     * </p>
-     * 
-     * @return Includes details about how the access that generated the finding is granted. This is populated for Amazon
-     *         S3 bucket findings.
-     */
-
-    public FindingSourceDetail getDetail() {
-        return this.detail;
-    }
-
-    /**
-     * <p>
-     * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
-     * bucket findings.
-     * </p>
-     * 
-     * @param detail
-     *        Includes details about how the access that generated the finding is granted. This is populated for Amazon
-     *        S3 bucket findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FindingSource withDetail(FindingSourceDetail detail) {
-        setDetail(detail);
-        return this;
-    }
 
     /**
      * <p>
@@ -149,6 +103,52 @@ public class FindingSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
+     * bucket findings.
+     * </p>
+     * 
+     * @param detail
+     *        Includes details about how the access that generated the finding is granted. This is populated for Amazon
+     *        S3 bucket findings.
+     */
+
+    public void setDetail(FindingSourceDetail detail) {
+        this.detail = detail;
+    }
+
+    /**
+     * <p>
+     * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
+     * bucket findings.
+     * </p>
+     * 
+     * @return Includes details about how the access that generated the finding is granted. This is populated for Amazon
+     *         S3 bucket findings.
+     */
+
+    public FindingSourceDetail getDetail() {
+        return this.detail;
+    }
+
+    /**
+     * <p>
+     * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3
+     * bucket findings.
+     * </p>
+     * 
+     * @param detail
+     *        Includes details about how the access that generated the finding is granted. This is populated for Amazon
+     *        S3 bucket findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSource withDetail(FindingSourceDetail detail) {
+        setDetail(detail);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -160,10 +160,10 @@ public class FindingSource implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDetail() != null)
-            sb.append("Detail: ").append(getDetail()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDetail() != null)
+            sb.append("Detail: ").append(getDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -178,13 +178,13 @@ public class FindingSource implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FindingSource == false)
             return false;
         FindingSource other = (FindingSource) obj;
-        if (other.getDetail() == null ^ this.getDetail() == null)
-            return false;
-        if (other.getDetail() != null && other.getDetail().equals(this.getDetail()) == false)
-            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getDetail() == null ^ this.getDetail() == null)
+            return false;
+        if (other.getDetail() != null && other.getDetail().equals(this.getDetail()) == false)
             return false;
         return true;
     }
@@ -194,8 +194,8 @@ public class FindingSource implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDetail() == null) ? 0 : getDetail().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDetail() == null) ? 0 : getDetail().hashCode());
         return hashCode;
     }
 

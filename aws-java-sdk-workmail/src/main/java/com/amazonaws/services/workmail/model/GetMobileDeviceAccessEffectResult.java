@@ -26,7 +26,7 @@ public class GetMobileDeviceAccessEffectResult extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device
-     * access rules in the Amazon WorkMail organization for the simulated user parameters.
+     * access rules in the WorkMail organization for the simulated user parameters.
      * </p>
      */
     private String effect;
@@ -40,12 +40,12 @@ public class GetMobileDeviceAccessEffectResult extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device
-     * access rules in the Amazon WorkMail organization for the simulated user parameters.
+     * access rules in the WorkMail organization for the simulated user parameters.
      * </p>
      * 
      * @param effect
      *        The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile
-     *        device access rules in the Amazon WorkMail organization for the simulated user parameters.
+     *        device access rules in the WorkMail organization for the simulated user parameters.
      * @see MobileDeviceAccessRuleEffect
      */
 
@@ -56,11 +56,11 @@ public class GetMobileDeviceAccessEffectResult extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device
-     * access rules in the Amazon WorkMail organization for the simulated user parameters.
+     * access rules in the WorkMail organization for the simulated user parameters.
      * </p>
      * 
      * @return The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile
-     *         device access rules in the Amazon WorkMail organization for the simulated user parameters.
+     *         device access rules in the WorkMail organization for the simulated user parameters.
      * @see MobileDeviceAccessRuleEffect
      */
 
@@ -71,12 +71,12 @@ public class GetMobileDeviceAccessEffectResult extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device
-     * access rules in the Amazon WorkMail organization for the simulated user parameters.
+     * access rules in the WorkMail organization for the simulated user parameters.
      * </p>
      * 
      * @param effect
      *        The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile
-     *        device access rules in the Amazon WorkMail organization for the simulated user parameters.
+     *        device access rules in the WorkMail organization for the simulated user parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MobileDeviceAccessRuleEffect
      */
@@ -89,12 +89,12 @@ public class GetMobileDeviceAccessEffectResult extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device
-     * access rules in the Amazon WorkMail organization for the simulated user parameters.
+     * access rules in the WorkMail organization for the simulated user parameters.
      * </p>
      * 
      * @param effect
      *        The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile
-     *        device access rules in the Amazon WorkMail organization for the simulated user parameters.
+     *        device access rules in the WorkMail organization for the simulated user parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MobileDeviceAccessRuleEffect
      */

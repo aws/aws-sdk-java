@@ -67,6 +67,12 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
     private String jobId;
     /**
      * <p>
+     * The job's type.
+     * </p>
+     */
+    private String jobType;
+    /**
+     * <p>
      * The job's status.
      * </p>
      */
@@ -373,6 +379,65 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @see JobType
+     */
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @return The job's type.
+     * @see JobType
+     */
+
+    public String getJobType() {
+        return this.jobType;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public DescribeDeviceJobResult withJobType(String jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public DescribeDeviceJobResult withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The job's status.
      * </p>
      * 
@@ -456,6 +521,8 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ImageVersion: ").append(getImageVersion()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
+        if (getJobType() != null)
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus());
         sb.append("}");
@@ -500,6 +567,10 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getJobType() == null ^ this.getJobType() == null)
+            return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -519,6 +590,7 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
         hashCode = prime * hashCode + ((getImageVersion() == null) ? 0 : getImageVersion().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }

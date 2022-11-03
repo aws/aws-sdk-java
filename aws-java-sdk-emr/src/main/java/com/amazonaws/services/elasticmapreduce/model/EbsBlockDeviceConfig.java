@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration of requested EBS block device associated with the instance group with count of volumes that will be
+ * Configuration of requested EBS block device associated with the instance group with count of volumes that are
  * associated to every instance.
  * </p>
  * 
@@ -31,14 +31,14 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      */
     private VolumeSpecification volumeSpecification;
     /**
      * <p>
-     * Number of EBS volumes with a specific volume configuration that will be associated with every instance in the
+     * Number of EBS volumes with a specific volume configuration that are associated with every instance in the
      * instance group
      * </p>
      */
@@ -46,13 +46,13 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
-     *        volume attached to an EC2 instance in the cluster.
+     *        EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested
+     *        for the EBS volume attached to an EC2 instance in the cluster.
      */
 
     public void setVolumeSpecification(VolumeSpecification volumeSpecification) {
@@ -61,12 +61,12 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      * 
-     * @return EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
-     *         volume attached to an EC2 instance in the cluster.
+     * @return EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested
+     *         for the EBS volume attached to an EC2 instance in the cluster.
      */
 
     public VolumeSpecification getVolumeSpecification() {
@@ -75,13 +75,13 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
-     * attached to an EC2 instance in the cluster.
+     * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the
+     * EBS volume attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
-     *        volume attached to an EC2 instance in the cluster.
+     *        EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested
+     *        for the EBS volume attached to an EC2 instance in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,13 +92,13 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Number of EBS volumes with a specific volume configuration that will be associated with every instance in the
+     * Number of EBS volumes with a specific volume configuration that are associated with every instance in the
      * instance group
      * </p>
      * 
      * @param volumesPerInstance
-     *        Number of EBS volumes with a specific volume configuration that will be associated with every instance in
-     *        the instance group
+     *        Number of EBS volumes with a specific volume configuration that are associated with every instance in the
+     *        instance group
      */
 
     public void setVolumesPerInstance(Integer volumesPerInstance) {
@@ -107,12 +107,12 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Number of EBS volumes with a specific volume configuration that will be associated with every instance in the
+     * Number of EBS volumes with a specific volume configuration that are associated with every instance in the
      * instance group
      * </p>
      * 
-     * @return Number of EBS volumes with a specific volume configuration that will be associated with every instance in
-     *         the instance group
+     * @return Number of EBS volumes with a specific volume configuration that are associated with every instance in the
+     *         instance group
      */
 
     public Integer getVolumesPerInstance() {
@@ -121,13 +121,13 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Number of EBS volumes with a specific volume configuration that will be associated with every instance in the
+     * Number of EBS volumes with a specific volume configuration that are associated with every instance in the
      * instance group
      * </p>
      * 
      * @param volumesPerInstance
-     *        Number of EBS volumes with a specific volume configuration that will be associated with every instance in
-     *        the instance group
+     *        Number of EBS volumes with a specific volume configuration that are associated with every instance in the
+     *        instance group
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

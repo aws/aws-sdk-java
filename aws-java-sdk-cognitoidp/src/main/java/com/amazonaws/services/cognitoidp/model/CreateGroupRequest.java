@@ -53,8 +53,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A non-negative integer value that specifies the precedence of this group relative to the other groups that a user
      * can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code>
-     * values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or
-     * more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
+     * values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two
+     * or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
      * the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.
      * </p>
      * <p>
@@ -64,7 +64,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.
      * </p>
      * <p>
-     * The default <code>Precedence</code> value is null.
+     * The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.
      * </p>
      */
     private Integer precedence;
@@ -233,8 +234,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A non-negative integer value that specifies the precedence of this group relative to the other groups that a user
      * can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code>
-     * values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or
-     * more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
+     * values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two
+     * or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
      * the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.
      * </p>
      * <p>
@@ -244,13 +245,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.
      * </p>
      * <p>
-     * The default <code>Precedence</code> value is null.
+     * The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.
      * </p>
      * 
      * @param precedence
      *        A non-negative integer value that specifies the precedence of this group relative to the other groups that
      *        a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower
-     *        <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code>
+     *        <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code>
      *        values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose
      *        role ARN is given in the user's tokens for the <code>cognito:roles</code> and
      *        <code>cognito:preferred_role</code> claims.</p>
@@ -262,7 +264,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        tokens.
      *        </p>
      *        <p>
-     *        The default <code>Precedence</code> value is null.
+     *        The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     *        <code>2^31-1</code>.
      */
 
     public void setPrecedence(Integer precedence) {
@@ -273,8 +276,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A non-negative integer value that specifies the precedence of this group relative to the other groups that a user
      * can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code>
-     * values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or
-     * more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
+     * values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two
+     * or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
      * the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.
      * </p>
      * <p>
@@ -284,12 +287,13 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.
      * </p>
      * <p>
-     * The default <code>Precedence</code> value is null.
+     * The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.
      * </p>
      * 
      * @return A non-negative integer value that specifies the precedence of this group relative to the other groups
      *         that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower
-     *         <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code>
+     *         <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code>
      *         values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose
      *         role ARN is given in the user's tokens for the <code>cognito:roles</code> and
      *         <code>cognito:preferred_role</code> claims.</p>
@@ -301,7 +305,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         users' tokens.
      *         </p>
      *         <p>
-     *         The default <code>Precedence</code> value is null.
+     *         The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     *         <code>2^31-1</code>.
      */
 
     public Integer getPrecedence() {
@@ -312,8 +317,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A non-negative integer value that specifies the precedence of this group relative to the other groups that a user
      * can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code>
-     * values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or
-     * more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
+     * values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two
+     * or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for
      * the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.
      * </p>
      * <p>
@@ -323,13 +328,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.
      * </p>
      * <p>
-     * The default <code>Precedence</code> value is null.
+     * The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.
      * </p>
      * 
      * @param precedence
      *        A non-negative integer value that specifies the precedence of this group relative to the other groups that
      *        a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower
-     *        <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code>
+     *        <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code>
      *        values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose
      *        role ARN is given in the user's tokens for the <code>cognito:roles</code> and
      *        <code>cognito:preferred_role</code> claims.</p>
@@ -341,7 +347,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        tokens.
      *        </p>
      *        <p>
-     *        The default <code>Precedence</code> value is null.
+     *        The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is
+     *        <code>2^31-1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

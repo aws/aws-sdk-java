@@ -25,18 +25,18 @@ public class DeleteServiceTemplateResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the service template being deleted.
      * </p>
      */
     private ServiceTemplate serviceTemplate;
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the service template being deleted.
      * </p>
      * 
      * @param serviceTemplate
-     *        The service template detail data that's returned by Proton.
+     *        The detailed data of the service template being deleted.
      */
 
     public void setServiceTemplate(ServiceTemplate serviceTemplate) {
@@ -45,10 +45,10 @@ public class DeleteServiceTemplateResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the service template being deleted.
      * </p>
      * 
-     * @return The service template detail data that's returned by Proton.
+     * @return The detailed data of the service template being deleted.
      */
 
     public ServiceTemplate getServiceTemplate() {
@@ -57,11 +57,11 @@ public class DeleteServiceTemplateResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the service template being deleted.
      * </p>
      * 
      * @param serviceTemplate
-     *        The service template detail data that's returned by Proton.
+     *        The detailed data of the service template being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,10 @@ public class LogicalResourceIdJsonUnmarshaller implements Unmarshaller<LogicalRe
                     context.nextToken();
                     logicalResourceId.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("terraformSourceName", targetDepth)) {
+                    context.nextToken();
+                    logicalResourceId.setTerraformSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

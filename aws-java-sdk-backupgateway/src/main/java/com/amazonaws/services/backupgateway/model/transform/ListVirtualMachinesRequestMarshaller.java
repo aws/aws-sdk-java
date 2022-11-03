@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListVirtualMachinesRequestMarshaller {
 
+    private static final MarshallingInfo<String> HYPERVISORARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HypervisorArn").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,7 @@ public class ListVirtualMachinesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listVirtualMachinesRequest.getHypervisorArn(), HYPERVISORARN_BINDING);
             protocolMarshaller.marshall(listVirtualMachinesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listVirtualMachinesRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

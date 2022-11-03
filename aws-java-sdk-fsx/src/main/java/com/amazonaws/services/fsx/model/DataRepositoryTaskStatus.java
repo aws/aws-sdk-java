@@ -55,6 +55,13 @@ public class DataRepositoryTaskStatus implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically
+     * releases files from the cache.
+     * </p>
+     */
+    private Long releasedCapacity;
 
     /**
      * <p>
@@ -232,6 +239,52 @@ public class DataRepositoryTaskStatus implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically
+     * releases files from the cache.
+     * </p>
+     * 
+     * @param releasedCapacity
+     *        The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that
+     *        automatically releases files from the cache.
+     */
+
+    public void setReleasedCapacity(Long releasedCapacity) {
+        this.releasedCapacity = releasedCapacity;
+    }
+
+    /**
+     * <p>
+     * The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically
+     * releases files from the cache.
+     * </p>
+     * 
+     * @return The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that
+     *         automatically releases files from the cache.
+     */
+
+    public Long getReleasedCapacity() {
+        return this.releasedCapacity;
+    }
+
+    /**
+     * <p>
+     * The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically
+     * releases files from the cache.
+     * </p>
+     * 
+     * @param releasedCapacity
+     *        The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that
+     *        automatically releases files from the cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryTaskStatus withReleasedCapacity(Long releasedCapacity) {
+        setReleasedCapacity(releasedCapacity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +303,9 @@ public class DataRepositoryTaskStatus implements Serializable, Cloneable, Struct
         if (getFailedCount() != null)
             sb.append("FailedCount: ").append(getFailedCount()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getReleasedCapacity() != null)
+            sb.append("ReleasedCapacity: ").append(getReleasedCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +336,10 @@ public class DataRepositoryTaskStatus implements Serializable, Cloneable, Struct
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getReleasedCapacity() == null ^ this.getReleasedCapacity() == null)
+            return false;
+        if (other.getReleasedCapacity() != null && other.getReleasedCapacity().equals(this.getReleasedCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -293,6 +352,7 @@ public class DataRepositoryTaskStatus implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getSucceededCount() == null) ? 0 : getSucceededCount().hashCode());
         hashCode = prime * hashCode + ((getFailedCount() == null) ? 0 : getFailedCount().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getReleasedCapacity() == null) ? 0 : getReleasedCapacity().hashCode());
         return hashCode;
     }
 

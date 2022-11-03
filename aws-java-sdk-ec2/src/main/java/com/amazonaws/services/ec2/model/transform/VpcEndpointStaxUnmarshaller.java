@@ -105,6 +105,16 @@ public class VpcEndpointStaxUnmarshaller implements Unmarshaller<VpcEndpoint, St
                     continue;
                 }
 
+                if (context.testExpression("ipAddressType", targetDepth)) {
+                    vpcEndpoint.setIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("dnsOptions", targetDepth)) {
+                    vpcEndpoint.setDnsOptions(DnsOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("privateDnsEnabled", targetDepth)) {
                     vpcEndpoint.setPrivateDnsEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

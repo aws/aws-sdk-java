@@ -148,7 +148,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String catalogId;
-
+    /**
+     * <p>
+     * The ID of the table version.
+     * </p>
+     */
     private String versionId;
 
     /**
@@ -1041,7 +1045,12 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the table version.
+     * </p>
+     * 
      * @param versionId
+     *        The ID of the table version.
      */
 
     public void setVersionId(String versionId) {
@@ -1049,7 +1058,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the table version.
+     * </p>
+     * 
+     * @return The ID of the table version.
      */
 
     public String getVersionId() {
@@ -1057,7 +1070,12 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the table version.
+     * </p>
+     * 
      * @param versionId
+     *        The ID of the table version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

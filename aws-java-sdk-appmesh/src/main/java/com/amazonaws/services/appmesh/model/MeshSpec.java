@@ -35,6 +35,8 @@ public class MeshSpec implements Serializable, Cloneable, StructuredPojo {
      */
     private EgressFilter egressFilter;
 
+    private MeshServiceDiscovery serviceDiscovery;
+
     /**
      * <p>
      * The egress filter rules for the service mesh.
@@ -76,6 +78,32 @@ public class MeshSpec implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param serviceDiscovery
+     */
+
+    public void setServiceDiscovery(MeshServiceDiscovery serviceDiscovery) {
+        this.serviceDiscovery = serviceDiscovery;
+    }
+
+    /**
+     * @return
+     */
+
+    public MeshServiceDiscovery getServiceDiscovery() {
+        return this.serviceDiscovery;
+    }
+
+    /**
+     * @param serviceDiscovery
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MeshSpec withServiceDiscovery(MeshServiceDiscovery serviceDiscovery) {
+        setServiceDiscovery(serviceDiscovery);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +116,9 @@ public class MeshSpec implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEgressFilter() != null)
-            sb.append("EgressFilter: ").append(getEgressFilter());
+            sb.append("EgressFilter: ").append(getEgressFilter()).append(",");
+        if (getServiceDiscovery() != null)
+            sb.append("ServiceDiscovery: ").append(getServiceDiscovery());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +137,10 @@ public class MeshSpec implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEgressFilter() != null && other.getEgressFilter().equals(this.getEgressFilter()) == false)
             return false;
+        if (other.getServiceDiscovery() == null ^ this.getServiceDiscovery() == null)
+            return false;
+        if (other.getServiceDiscovery() != null && other.getServiceDiscovery().equals(this.getServiceDiscovery()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +150,7 @@ public class MeshSpec implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEgressFilter() == null) ? 0 : getEgressFilter().hashCode());
+        hashCode = prime * hashCode + ((getServiceDiscovery() == null) ? 0 : getServiceDiscovery().hashCode());
         return hashCode;
     }
 

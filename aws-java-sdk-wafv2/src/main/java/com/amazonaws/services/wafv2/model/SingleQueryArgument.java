@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The name isn't case sensitive.
  * </p>
  * <p>
- * This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
+ * This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification.
  * </p>
  * <p>
  * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>

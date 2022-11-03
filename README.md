@@ -4,12 +4,11 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get
 started in minutes using ***Maven*** or by downloading a [single zip file][install-jar].
 
-**Note**: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#aws-sdk-for-java-2x) section for more information.
+### :mega: Note: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#aws-sdk-for-java-2x) section for more information
 
 * [SDK Homepage][sdk-website]
 * [API Docs][docs-api]
 * [Developer Guide][docs-guide] ([source][docs-guide-source])
-* [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
 * [Getting Help](#getting-help)
@@ -51,7 +50,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.12.212</version>
+      <version>1.12.334</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -123,7 +122,7 @@ GitHub [issues][sdk-issues] is the preferred channel to interact with our team. 
 * If it turns out that you may have found a bug, please open an [issue][sdk-issues]
 
 ## Maintenance and Support for SDK Major Versions
-For information about maintenance and support for SDK major versions and their underlying dependencies, see the following in the AWS SDKs and Tools Shared Configuration and Credentials Reference Guide:
+For information about maintenance and support for SDK major versions and their underlying dependencies, see the following in the AWS SDKs and Tools Reference Guide:
 
 * [AWS SDKs and Tools Maintenance Policy][maintenance-policy]
 * [AWS SDKs and Tools Version Support Matrix][version-matrix]
@@ -139,24 +138,45 @@ A version 2.x of the SDK is generally available. It is a major rewrite of the 1.
 
 For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-guide] or check the project repository in https://github.com/aws/aws-sdk-java-v2.
 
-[aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/java-dg-roles.html
-[aws]: http://aws.amazon.com/
+## Maintenance and Support for Java Versions
+
+The AWS Java SDK version 1 (v1) supports Java versions from 7 to 16. The Java 17 version introduces strong encapsulation of internal Java elements, which is not backwards-compatible with the Java SDK v1. 
+This may cause issues for certain use-cases of the SDK. If you plan to use Java 17+, we recommend that you migrate to
+[AWS SDK for Java 2.x][aws-sdk-for-java-2x] that fully supports Java 8, Java 11, and Java 17 Long-Term Support(LTS) releases.
+
+If you are experiencing issues with Java 17+ and unable to migrate to AWS SDK for Java v2 at this time, below are the workarounds that you might find helpful.
+Please keep in mind that these workarounds may not work in the future 
+versions of Java. See [JEP 403: Strongly Encapsulate JDK Internals][jep-403]
+and [Breaking Encapsulation][jep-break-encapsulation]
+for more details.
+
+**Error: com.amazonaws.AmazonServiceException: Unable to unmarshall
+exception response with the unmarshallers provided caused by java.lang.
+reflect.InaccessibleObjectException**
+
+- use JVM option `--add-opens java.base/java.lang=ALL-UNNAMED` at JVM startup
+
+**WARNING: Illegal reflective access by com.amazonaws.util.XpathUtils**
+
+- use JVM option `--add-opens=java.xml/com.sun.org.apache.xpath.internal=ALL-UNNAMED` at JVM startup
+
+[aws-iam-credentials]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html
+[aws]: https://aws.amazon.com/
 [blog]: https://aws.amazon.com/blogs/developer/category/java/
-[docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
-[docs-guide]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/welcome.html
+[docs-api]: https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
+[docs-guide]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/welcome.html
 [docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
-[docs-java-env]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/setup-install.html#installing-a-java-development-environment
-[docs-signup]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/signup-create-iam-user.html
-[docs-setup]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/setup-install.html
-[install-jar]: http://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
-[sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=70
+[docs-java-env]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html#installing-a-java-development-environment
+[docs-signup]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/signup-create-iam-user.html
+[docs-setup]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html
+[install-jar]: https://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
 [sdk-issues]: https://github.com/aws/aws-sdk-java/issues
-[sdk-license]: http://aws.amazon.com/apache2.0/
-[sdk-website]: http://aws.amazon.com/sdkforjava
+[sdk-license]: https://aws.amazon.com/apache2.0/
+[sdk-website]: https://aws.amazon.com/sdkforjava
 [aws-java-sdk-bom]: https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-bom
 [release-notes-catalog]: https://aws.amazon.com/releasenotes/Java?browse=1
 [changes-file]: ./CHANGELOG.md
-[stack-overflow]: http://stackoverflow.com/questions/tagged/aws-java-sdk
+[stack-overflow]: https://stackoverflow.com/questions/tagged/aws-java-sdk
 [gitter]: https://gitter.im/aws/aws-sdk-java
 [features]: https://github.com/aws/aws-sdk-java/issues?q=is%3Aopen+is%3Aissue+label%3A%22feature-request%22
 [support-center]: https://console.aws.amazon.com/support/
@@ -165,3 +185,6 @@ For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-g
 [sdk-v2-dev-guide]: https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html
 [maintenance-policy]: https://docs.aws.amazon.com/credref/latest/refdocs/maint-policy.html
 [version-matrix]: https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html
+[jep-break-encapsulation]: https://openjdk.org/jeps/261#Breaking-encapsulation
+[jep-403]: https://openjdk.org/jeps/403
+[aws-sdk-for-java-2x]: https://github.com/aws/aws-sdk-java-v2

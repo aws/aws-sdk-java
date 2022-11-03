@@ -166,7 +166,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Use to associate an Amazon Web Services CodeCommit repository or a repostory managed by Amazon Web Services
+     * Use to associate an Amazon Web Services CodeCommit repository or a repository managed by Amazon Web Services
      * CodeStar Connections with Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru Reviewer reviews
      * source code changes in the repository's pull requests and provides automatic recommendations. You can view
      * recommendations using the CodeGuru Reviewer console. For more information, see <a
@@ -256,10 +256,9 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Use to create a code review with a <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
-     * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
-     * triggered by a pull request.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a> of
+     * <code>RepositoryAnalysis</code>. This type of code review analyzes all code under a specified branch in an
+     * associated repository. <code>PullRequest</code> code reviews are automatically triggered by a pull request.
      * </p>
      * 
      * @param createCodeReviewRequest
@@ -460,8 +459,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object that contains information about the requested repository
-     * association.
+     * RepositoryAssociation</a> object that contains information about the requested repository association.
      * </p>
      * 
      * @param describeRepositoryAssociationRequest
@@ -661,9 +659,9 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Returns a list of <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">
-     * <code>RecommendationFeedbackSummary</code> </a> objects that contain customer recommendation feedback for all
-     * CodeGuru Reviewer users.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html"
+     * >RecommendationFeedbackSummary</a> objects that contain customer recommendation feedback for all CodeGuru
+     * Reviewer users.
      * </p>
      * 
      * @param listRecommendationFeedbackRequest
@@ -796,17 +794,17 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Returns a list of <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">
-     * <code>RepositoryAssociationSummary</code> </a> objects that contain summary information about a repository
-     * association. You can filter the returned list by <a href=
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html"
+     * >RepositoryAssociationSummary</a> objects that contain summary information about a repository association. You
+     * can filter the returned list by <a href=
      * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType"
-     * > <code>ProviderType</code> </a>, <a href=
+     * >ProviderType</a>, <a href=
      * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name"
-     * > <code>Name</code> </a>, <a href=
+     * >Name</a>, <a href=
      * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State"
-     * > <code>State</code> </a>, and <a href=
+     * >State</a>, and <a href=
      * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner"
-     * > <code>Owner</code> </a>.
+     * >Owner</a>.
      * </p>
      * 
      * @param listRepositoryAssociationsRequest

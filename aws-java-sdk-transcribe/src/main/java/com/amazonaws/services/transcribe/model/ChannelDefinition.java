@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For a call analytics job, an object that indicates the audio channel that belongs to the agent and the audio channel
- * that belongs to the customer.
+ * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
+ * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+ * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ChannelDefinition" target="_top">AWS API
@@ -31,24 +32,24 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the audio channel.
+     * Specify the audio channel you want to define.
      * </p>
      */
     private Integer channelId;
     /**
      * <p>
-     * Indicates whether the person speaking on the audio channel is the agent or customer.
+     * Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      */
     private String participantRole;
 
     /**
      * <p>
-     * A value that indicates the audio channel.
+     * Specify the audio channel you want to define.
      * </p>
      * 
      * @param channelId
-     *        A value that indicates the audio channel.
+     *        Specify the audio channel you want to define.
      */
 
     public void setChannelId(Integer channelId) {
@@ -57,10 +58,10 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the audio channel.
+     * Specify the audio channel you want to define.
      * </p>
      * 
-     * @return A value that indicates the audio channel.
+     * @return Specify the audio channel you want to define.
      */
 
     public Integer getChannelId() {
@@ -69,11 +70,11 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the audio channel.
+     * Specify the audio channel you want to define.
      * </p>
      * 
      * @param channelId
-     *        A value that indicates the audio channel.
+     *        Specify the audio channel you want to define.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +85,12 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether the person speaking on the audio channel is the agent or customer.
+     * Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
      * @param participantRole
-     *        Indicates whether the person speaking on the audio channel is the agent or customer.
+     *        Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both
+     *        participants.
      * @see ParticipantRole
      */
 
@@ -98,10 +100,11 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether the person speaking on the audio channel is the agent or customer.
+     * Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
-     * @return Indicates whether the person speaking on the audio channel is the agent or customer.
+     * @return Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both
+     *         participants.
      * @see ParticipantRole
      */
 
@@ -111,11 +114,12 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether the person speaking on the audio channel is the agent or customer.
+     * Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
      * @param participantRole
-     *        Indicates whether the person speaking on the audio channel is the agent or customer.
+     *        Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both
+     *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
      */
@@ -127,11 +131,12 @@ public class ChannelDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether the person speaking on the audio channel is the agent or customer.
+     * Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.
      * </p>
      * 
      * @param participantRole
-     *        Indicates whether the person speaking on the audio channel is the agent or customer.
+     *        Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both
+     *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
      */

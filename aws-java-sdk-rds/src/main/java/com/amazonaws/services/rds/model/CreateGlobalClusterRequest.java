@@ -58,7 +58,7 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     private Boolean deletionProtection;
     /**
      * <p>
-     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will
+     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
      * not create a database in the global database cluster you are creating.
      * </p>
      */
@@ -295,12 +295,12 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will
+     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
      * not create a database in the global database cluster you are creating.
      * </p>
      * 
      * @param databaseName
-     *        The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon
+     *        The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon
      *        Aurora will not create a database in the global database cluster you are creating.
      */
 
@@ -310,11 +310,11 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will
+     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
      * not create a database in the global database cluster you are creating.
      * </p>
      * 
-     * @return The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon
+     * @return The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon
      *         Aurora will not create a database in the global database cluster you are creating.
      */
 
@@ -324,12 +324,12 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will
+     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
      * not create a database in the global database cluster you are creating.
      * </p>
      * 
      * @param databaseName
-     *        The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon
+     *        The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon
      *        Aurora will not create a database in the global database cluster you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

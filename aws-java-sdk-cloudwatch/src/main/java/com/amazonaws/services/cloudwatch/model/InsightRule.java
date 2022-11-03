@@ -57,6 +57,12 @@ public class InsightRule implements Serializable, Cloneable {
      * </p>
      */
     private String definition;
+    /**
+     * <p>
+     * An optional built-in rule that Amazon Web Services manages.
+     * </p>
+     */
+    private Boolean managedRule;
 
     /**
      * <p>
@@ -249,6 +255,58 @@ public class InsightRule implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An optional built-in rule that Amazon Web Services manages.
+     * </p>
+     * 
+     * @param managedRule
+     *        An optional built-in rule that Amazon Web Services manages.
+     */
+
+    public void setManagedRule(Boolean managedRule) {
+        this.managedRule = managedRule;
+    }
+
+    /**
+     * <p>
+     * An optional built-in rule that Amazon Web Services manages.
+     * </p>
+     * 
+     * @return An optional built-in rule that Amazon Web Services manages.
+     */
+
+    public Boolean getManagedRule() {
+        return this.managedRule;
+    }
+
+    /**
+     * <p>
+     * An optional built-in rule that Amazon Web Services manages.
+     * </p>
+     * 
+     * @param managedRule
+     *        An optional built-in rule that Amazon Web Services manages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InsightRule withManagedRule(Boolean managedRule) {
+        setManagedRule(managedRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional built-in rule that Amazon Web Services manages.
+     * </p>
+     * 
+     * @return An optional built-in rule that Amazon Web Services manages.
+     */
+
+    public Boolean isManagedRule() {
+        return this.managedRule;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -267,7 +325,9 @@ public class InsightRule implements Serializable, Cloneable {
         if (getSchema() != null)
             sb.append("Schema: ").append(getSchema()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: ").append(getDefinition());
+            sb.append("Definition: ").append(getDefinition()).append(",");
+        if (getManagedRule() != null)
+            sb.append("ManagedRule: ").append(getManagedRule());
         sb.append("}");
         return sb.toString();
     }
@@ -298,6 +358,10 @@ public class InsightRule implements Serializable, Cloneable {
             return false;
         if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
             return false;
+        if (other.getManagedRule() == null ^ this.getManagedRule() == null)
+            return false;
+        if (other.getManagedRule() != null && other.getManagedRule().equals(this.getManagedRule()) == false)
+            return false;
         return true;
     }
 
@@ -310,6 +374,7 @@ public class InsightRule implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
+        hashCode = prime * hashCode + ((getManagedRule() == null) ? 0 : getManagedRule().hashCode());
         return hashCode;
     }
 

@@ -31,7 +31,7 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      * </p>
      */
     private String spendCoveredBySavingsPlans;
@@ -57,11 +57,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      * </p>
      * 
      * @param spendCoveredBySavingsPlans
-     *        The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     *        The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      */
 
     public void setSpendCoveredBySavingsPlans(String spendCoveredBySavingsPlans) {
@@ -70,10 +70,10 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      * </p>
      * 
-     * @return The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     * @return The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      */
 
     public String getSpendCoveredBySavingsPlans() {
@@ -82,11 +82,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      * </p>
      * 
      * @param spendCoveredBySavingsPlans
-     *        The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+     *        The amount of your Amazon Web Services usage that's covered by a Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

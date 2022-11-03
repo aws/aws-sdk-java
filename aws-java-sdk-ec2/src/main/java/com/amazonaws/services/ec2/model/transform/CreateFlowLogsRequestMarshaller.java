@@ -48,6 +48,10 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("DeliverLogsPermissionArn", StringUtils.fromString(createFlowLogsRequest.getDeliverLogsPermissionArn()));
         }
 
+        if (createFlowLogsRequest.getDeliverCrossAccountRole() != null) {
+            request.addParameter("DeliverCrossAccountRole", StringUtils.fromString(createFlowLogsRequest.getDeliverCrossAccountRole()));
+        }
+
         if (createFlowLogsRequest.getLogGroupName() != null) {
             request.addParameter("LogGroupName", StringUtils.fromString(createFlowLogsRequest.getLogGroupName()));
         }

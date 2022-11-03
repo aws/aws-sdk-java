@@ -93,6 +93,19 @@ public class AbstractAWSIoTSecureTunnelingAsync extends AbstractAWSIoTSecureTunn
     }
 
     @Override
+    public java.util.concurrent.Future<RotateTunnelAccessTokenResult> rotateTunnelAccessTokenAsync(RotateTunnelAccessTokenRequest request) {
+
+        return rotateTunnelAccessTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateTunnelAccessTokenResult> rotateTunnelAccessTokenAsync(RotateTunnelAccessTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<RotateTunnelAccessTokenRequest, RotateTunnelAccessTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

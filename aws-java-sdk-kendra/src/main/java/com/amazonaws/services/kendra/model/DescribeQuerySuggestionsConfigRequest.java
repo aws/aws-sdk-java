@@ -27,18 +27,18 @@ public class DescribeQuerySuggestionsConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the index you want to describe query suggestions settings for.
+     * The identifier of the index with query suggestions that you want to get information on.
      * </p>
      */
     private String indexId;
 
     /**
      * <p>
-     * The identifier of the index you want to describe query suggestions settings for.
+     * The identifier of the index with query suggestions that you want to get information on.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index you want to describe query suggestions settings for.
+     *        The identifier of the index with query suggestions that you want to get information on.
      */
 
     public void setIndexId(String indexId) {
@@ -47,10 +47,10 @@ public class DescribeQuerySuggestionsConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the index you want to describe query suggestions settings for.
+     * The identifier of the index with query suggestions that you want to get information on.
      * </p>
      * 
-     * @return The identifier of the index you want to describe query suggestions settings for.
+     * @return The identifier of the index with query suggestions that you want to get information on.
      */
 
     public String getIndexId() {
@@ -59,11 +59,11 @@ public class DescribeQuerySuggestionsConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the index you want to describe query suggestions settings for.
+     * The identifier of the index with query suggestions that you want to get information on.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index you want to describe query suggestions settings for.
+     *        The identifier of the index with query suggestions that you want to get information on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

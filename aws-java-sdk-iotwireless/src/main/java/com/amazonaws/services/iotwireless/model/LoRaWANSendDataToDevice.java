@@ -29,6 +29,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class LoRaWANSendDataToDevice implements Serializable, Cloneable, StructuredPojo {
 
     private Integer fPort;
+    /**
+     * <p>
+     * Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in
+     * class B or class C mode.
+     * </p>
+     */
+    private ParticipatingGateways participatingGateways;
 
     /**
      * @param fPort
@@ -57,6 +64,52 @@ public class LoRaWANSendDataToDevice implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in
+     * class B or class C mode.
+     * </p>
+     * 
+     * @param participatingGateways
+     *        Choose the gateways that you want to use for the downlink data traffic when the wireless device is running
+     *        in class B or class C mode.
+     */
+
+    public void setParticipatingGateways(ParticipatingGateways participatingGateways) {
+        this.participatingGateways = participatingGateways;
+    }
+
+    /**
+     * <p>
+     * Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in
+     * class B or class C mode.
+     * </p>
+     * 
+     * @return Choose the gateways that you want to use for the downlink data traffic when the wireless device is
+     *         running in class B or class C mode.
+     */
+
+    public ParticipatingGateways getParticipatingGateways() {
+        return this.participatingGateways;
+    }
+
+    /**
+     * <p>
+     * Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in
+     * class B or class C mode.
+     * </p>
+     * 
+     * @param participatingGateways
+     *        Choose the gateways that you want to use for the downlink data traffic when the wireless device is running
+     *        in class B or class C mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANSendDataToDevice withParticipatingGateways(ParticipatingGateways participatingGateways) {
+        setParticipatingGateways(participatingGateways);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -69,7 +122,9 @@ public class LoRaWANSendDataToDevice implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFPort() != null)
-            sb.append("FPort: ").append(getFPort());
+            sb.append("FPort: ").append(getFPort()).append(",");
+        if (getParticipatingGateways() != null)
+            sb.append("ParticipatingGateways: ").append(getParticipatingGateways());
         sb.append("}");
         return sb.toString();
     }
@@ -88,6 +143,10 @@ public class LoRaWANSendDataToDevice implements Serializable, Cloneable, Structu
             return false;
         if (other.getFPort() != null && other.getFPort().equals(this.getFPort()) == false)
             return false;
+        if (other.getParticipatingGateways() == null ^ this.getParticipatingGateways() == null)
+            return false;
+        if (other.getParticipatingGateways() != null && other.getParticipatingGateways().equals(this.getParticipatingGateways()) == false)
+            return false;
         return true;
     }
 
@@ -97,6 +156,7 @@ public class LoRaWANSendDataToDevice implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFPort() == null) ? 0 : getFPort().hashCode());
+        hashCode = prime * hashCode + ((getParticipatingGateways() == null) ? 0 : getParticipatingGateways().hashCode());
         return hashCode;
     }
 

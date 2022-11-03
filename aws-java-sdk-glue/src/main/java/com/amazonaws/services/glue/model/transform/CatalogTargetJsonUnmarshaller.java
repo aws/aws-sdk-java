@@ -62,6 +62,14 @@ public class CatalogTargetJsonUnmarshaller implements Unmarshaller<CatalogTarget
                     context.nextToken();
                     catalogTarget.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EventQueueArn", targetDepth)) {
+                    context.nextToken();
+                    catalogTarget.setEventQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DlqEventQueueArn", targetDepth)) {
+                    context.nextToken();
+                    catalogTarget.setDlqEventQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

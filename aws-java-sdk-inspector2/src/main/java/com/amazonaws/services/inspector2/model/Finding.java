@@ -54,6 +54,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date firstObservedAt;
     /**
      * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     */
+    private String fixAvailable;
+    /**
+     * <p>
      * The Amazon Inspector score given to the finding.
      * </p>
      */
@@ -282,6 +290,81 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     public Finding withFirstObservedAt(java.util.Date firstObservedAt) {
         setFirstObservedAt(firstObservedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @param fixAvailable
+     *        Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *        <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *        packages identified in the finding have fixes available through updated versions.
+     * @see FixAvailable
+     */
+
+    public void setFixAvailable(String fixAvailable) {
+        this.fixAvailable = fixAvailable;
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @return Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *         <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *         packages identified in the finding have fixes available through updated versions.
+     * @see FixAvailable
+     */
+
+    public String getFixAvailable() {
+        return this.fixAvailable;
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @param fixAvailable
+     *        Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *        <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *        packages identified in the finding have fixes available through updated versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FixAvailable
+     */
+
+    public Finding withFixAvailable(String fixAvailable) {
+        setFixAvailable(fixAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     * <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     * packages identified in the finding have fixes available through updated versions.
+     * </p>
+     * 
+     * @param fixAvailable
+     *        Details on whether a fix is available through a version update. This value can be <code>YES</code>,
+     *        <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the
+     *        packages identified in the finding have fixes available through updated versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FixAvailable
+     */
+
+    public Finding withFixAvailable(FixAvailable fixAvailable) {
+        this.fixAvailable = fixAvailable.toString();
         return this;
     }
 
@@ -872,6 +955,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             sb.append("FindingArn: ").append(getFindingArn()).append(",");
         if (getFirstObservedAt() != null)
             sb.append("FirstObservedAt: ").append(getFirstObservedAt()).append(",");
+        if (getFixAvailable() != null)
+            sb.append("FixAvailable: ").append(getFixAvailable()).append(",");
         if (getInspectorScore() != null)
             sb.append("InspectorScore: ").append(getInspectorScore()).append(",");
         if (getInspectorScoreDetails() != null)
@@ -925,6 +1010,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         if (other.getFirstObservedAt() == null ^ this.getFirstObservedAt() == null)
             return false;
         if (other.getFirstObservedAt() != null && other.getFirstObservedAt().equals(this.getFirstObservedAt()) == false)
+            return false;
+        if (other.getFixAvailable() == null ^ this.getFixAvailable() == null)
+            return false;
+        if (other.getFixAvailable() != null && other.getFixAvailable().equals(this.getFixAvailable()) == false)
             return false;
         if (other.getInspectorScore() == null ^ this.getInspectorScore() == null)
             return false;
@@ -986,6 +1075,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFindingArn() == null) ? 0 : getFindingArn().hashCode());
         hashCode = prime * hashCode + ((getFirstObservedAt() == null) ? 0 : getFirstObservedAt().hashCode());
+        hashCode = prime * hashCode + ((getFixAvailable() == null) ? 0 : getFixAvailable().hashCode());
         hashCode = prime * hashCode + ((getInspectorScore() == null) ? 0 : getInspectorScore().hashCode());
         hashCode = prime * hashCode + ((getInspectorScoreDetails() == null) ? 0 : getInspectorScoreDetails().hashCode());
         hashCode = prime * hashCode + ((getLastObservedAt() == null) ? 0 : getLastObservedAt().hashCode());

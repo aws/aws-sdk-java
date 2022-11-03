@@ -3532,6 +3532,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetClusterCredentialsWithIAMResult> getClusterCredentialsWithIAMAsync(GetClusterCredentialsWithIAMRequest request) {
+
+        return getClusterCredentialsWithIAMAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterCredentialsWithIAMResult> getClusterCredentialsWithIAMAsync(final GetClusterCredentialsWithIAMRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetClusterCredentialsWithIAMRequest, GetClusterCredentialsWithIAMResult> asyncHandler) {
+        final GetClusterCredentialsWithIAMRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetClusterCredentialsWithIAMResult>() {
+            @Override
+            public GetClusterCredentialsWithIAMResult call() throws Exception {
+                GetClusterCredentialsWithIAMResult result = null;
+
+                try {
+                    result = executeGetClusterCredentialsWithIAM(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetReservedNodeExchangeConfigurationOptionsResult> getReservedNodeExchangeConfigurationOptionsAsync(
             GetReservedNodeExchangeConfigurationOptionsRequest request) {
 

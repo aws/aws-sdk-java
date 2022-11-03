@@ -33,19 +33,22 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<HttpPackageConfiguration> httpPackageConfigurations;
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      */
     private String liveSourceName;
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The tags to assign to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -122,11 +125,11 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      * 
      * @param liveSourceName
-     *        The identifier for the live source you are working on.
+     *        The name of the live source.
      */
 
     public void setLiveSourceName(String liveSourceName) {
@@ -135,10 +138,10 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      * 
-     * @return The identifier for the live source you are working on.
+     * @return The name of the live source.
      */
 
     public String getLiveSourceName() {
@@ -147,11 +150,11 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the live source you are working on.
+     * The name of the live source.
      * </p>
      * 
      * @param liveSourceName
-     *        The identifier for the live source you are working on.
+     *        The name of the live source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +165,11 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -175,10 +178,10 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location.
      */
 
     public String getSourceLocationName() {
@@ -187,11 +190,11 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,10 +205,16 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to assign to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags to assign to the live source.
+     * @return The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -214,11 +223,17 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to assign to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the live source.
+     *        The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -227,11 +242,17 @@ public class CreateLiveSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to assign to the live source.
+     * The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the live source.
+     *        The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

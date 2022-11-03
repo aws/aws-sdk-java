@@ -34,6 +34,12 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
     private String snapshotIdentifier;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     * </p>
+     */
+    private String snapshotArn;
+    /**
+     * <p>
      * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
      * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
@@ -83,6 +89,46 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     public RevokeSnapshotAccessRequest withSnapshotIdentifier(String snapshotIdentifier) {
         setSnapshotIdentifier(snapshotIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     */
+
+    public void setSnapshotArn(String snapshotArn) {
+        this.snapshotArn = snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     */
+
+    public String getSnapshotArn() {
+        return this.snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RevokeSnapshotAccessRequest withSnapshotArn(String snapshotArn) {
+        setSnapshotArn(snapshotArn);
         return this;
     }
 
@@ -189,6 +235,8 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getSnapshotIdentifier() != null)
             sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
+        if (getSnapshotArn() != null)
+            sb.append("SnapshotArn: ").append(getSnapshotArn()).append(",");
         if (getSnapshotClusterIdentifier() != null)
             sb.append("SnapshotClusterIdentifier: ").append(getSnapshotClusterIdentifier()).append(",");
         if (getAccountWithRestoreAccess() != null)
@@ -211,6 +259,10 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false)
             return false;
+        if (other.getSnapshotArn() == null ^ this.getSnapshotArn() == null)
+            return false;
+        if (other.getSnapshotArn() != null && other.getSnapshotArn().equals(this.getSnapshotArn()) == false)
+            return false;
         if (other.getSnapshotClusterIdentifier() == null ^ this.getSnapshotClusterIdentifier() == null)
             return false;
         if (other.getSnapshotClusterIdentifier() != null && other.getSnapshotClusterIdentifier().equals(this.getSnapshotClusterIdentifier()) == false)
@@ -228,6 +280,7 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotArn() == null) ? 0 : getSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getSnapshotClusterIdentifier() == null) ? 0 : getSnapshotClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAccountWithRestoreAccess() == null) ? 0 : getAccountWithRestoreAccess().hashCode());
         return hashCode;

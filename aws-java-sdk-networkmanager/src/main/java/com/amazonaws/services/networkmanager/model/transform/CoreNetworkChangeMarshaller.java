@@ -37,6 +37,8 @@ public class CoreNetworkChangeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousValues").build();
     private static final MarshallingInfo<StructuredPojo> NEWVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NewValues").build();
+    private static final MarshallingInfo<String> IDENTIFIERPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifierPath").build();
 
     private static final CoreNetworkChangeMarshaller instance = new CoreNetworkChangeMarshaller();
 
@@ -59,6 +61,7 @@ public class CoreNetworkChangeMarshaller {
             protocolMarshaller.marshall(coreNetworkChange.getIdentifier(), IDENTIFIER_BINDING);
             protocolMarshaller.marshall(coreNetworkChange.getPreviousValues(), PREVIOUSVALUES_BINDING);
             protocolMarshaller.marshall(coreNetworkChange.getNewValues(), NEWVALUES_BINDING);
+            protocolMarshaller.marshall(coreNetworkChange.getIdentifierPath(), IDENTIFIERPATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

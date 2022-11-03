@@ -30,8 +30,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
-     * APIs.
+     * Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
+     * Cognito APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -59,8 +59,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
-     * APIs.
+     * Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
+     * Cognito APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -85,7 +85,7 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * </dl>
      * 
      * @param caseSensitive
-     *        Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
+     *        Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
      *        Cognito APIs.</p>
      *        <p>
      *        Valid values include:
@@ -116,8 +116,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
-     * APIs.
+     * Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
+     * Cognito APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -141,8 +141,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * </dd>
      * </dl>
      * 
-     * @return Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
-     *         Cognito APIs.</p>
+     * @return Specifies whether user name case sensitivity will be applied for all users in the user pool through
+     *         Amazon Cognito APIs.</p>
      *         <p>
      *         Valid values include:
      *         </p>
@@ -172,8 +172,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
-     * APIs.
+     * Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
+     * Cognito APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -198,7 +198,7 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * </dl>
      * 
      * @param caseSensitive
-     *        Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
+     *        Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
      *        Cognito APIs.</p>
      *        <p>
      *        Valid values include:
@@ -231,8 +231,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
-     * APIs.
+     * Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon
+     * Cognito APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -256,8 +256,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * </dd>
      * </dl>
      * 
-     * @return Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
-     *         Cognito APIs.</p>
+     * @return Specifies whether user name case sensitivity will be applied for all users in the user pool through
+     *         Amazon Cognito APIs.</p>
      *         <p>
      *         Valid values include:
      *         </p>

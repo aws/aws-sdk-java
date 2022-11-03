@@ -46,13 +46,13 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * One or more security groups.
+     * The security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
     /**
      * <p>
-     * One or more IPv6 addresses associated with the network interface.
+     * The IPv6 addresses associated with the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> ipv6Addresses;
@@ -88,7 +88,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     private String privateIpAddress;
     /**
      * <p>
-     * One or more private IPv4 addresses associated with the network interface.
+     * The private IPv4 addresses associated with the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress> privateIpAddresses;
@@ -260,10 +260,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * The security groups.
      * </p>
      * 
-     * @return One or more security groups.
+     * @return The security groups.
      */
 
     public java.util.List<GroupIdentifier> getGroups() {
@@ -275,11 +275,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * The security groups.
      * </p>
      * 
      * @param groups
-     *        One or more security groups.
+     *        The security groups.
      */
 
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
@@ -293,7 +293,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * The security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -302,7 +302,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * </p>
      * 
      * @param groups
-     *        One or more security groups.
+     *        The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,11 +318,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * The security groups.
      * </p>
      * 
      * @param groups
-     *        One or more security groups.
+     *        The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,10 +333,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv6 addresses associated with the network interface.
+     * The IPv6 addresses associated with the network interface.
      * </p>
      * 
-     * @return One or more IPv6 addresses associated with the network interface.
+     * @return The IPv6 addresses associated with the network interface.
      */
 
     public java.util.List<InstanceIpv6Address> getIpv6Addresses() {
@@ -348,11 +348,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv6 addresses associated with the network interface.
+     * The IPv6 addresses associated with the network interface.
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more IPv6 addresses associated with the network interface.
+     *        The IPv6 addresses associated with the network interface.
      */
 
     public void setIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
@@ -366,7 +366,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv6 addresses associated with the network interface.
+     * The IPv6 addresses associated with the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -375,7 +375,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more IPv6 addresses associated with the network interface.
+     *        The IPv6 addresses associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +391,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv6 addresses associated with the network interface.
+     * The IPv6 addresses associated with the network interface.
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more IPv6 addresses associated with the network interface.
+     *        The IPv6 addresses associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -606,10 +606,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more private IPv4 addresses associated with the network interface.
+     * The private IPv4 addresses associated with the network interface.
      * </p>
      * 
-     * @return One or more private IPv4 addresses associated with the network interface.
+     * @return The private IPv4 addresses associated with the network interface.
      */
 
     public java.util.List<InstancePrivateIpAddress> getPrivateIpAddresses() {
@@ -621,11 +621,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more private IPv4 addresses associated with the network interface.
+     * The private IPv4 addresses associated with the network interface.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more private IPv4 addresses associated with the network interface.
+     *        The private IPv4 addresses associated with the network interface.
      */
 
     public void setPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
@@ -639,7 +639,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more private IPv4 addresses associated with the network interface.
+     * The private IPv4 addresses associated with the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -648,7 +648,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more private IPv4 addresses associated with the network interface.
+     *        The private IPv4 addresses associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -664,11 +664,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more private IPv4 addresses associated with the network interface.
+     * The private IPv4 addresses associated with the network interface.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more private IPv4 addresses associated with the network interface.
+     *        The private IPv4 addresses associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

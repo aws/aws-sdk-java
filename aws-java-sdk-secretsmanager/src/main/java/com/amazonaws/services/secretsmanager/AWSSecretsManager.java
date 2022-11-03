@@ -83,17 +83,24 @@ public interface AWSSecretsManager {
      * Turns off automatic rotation, and if a rotation is currently in progress, cancels the rotation.
      * </p>
      * <p>
+     * If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels in an unexpected state.
+     * You might need to remove the staging label <code>AWSPENDING</code> from the partially created version. You also
+     * need to determine whether to roll back to the previous version of the secret by moving the staging label
+     * <code>AWSCURRENT</code> to the version that has <code>AWSPENDING</code>. To determine which version has a
+     * specific staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a> to change
+     * staging labels. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation
+     * works</a>.
+     * </p>
+     * <p>
      * To turn on automatic rotation again, call <a>RotateSecret</a>.
      * </p>
-     * <note>
      * <p>
-     * If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels in an unexpected state.
-     * Depending on the step of the rotation in progress, you might need to remove the staging label
-     * <code>AWSPENDING</code> from the partially created version, specified by the <code>VersionId</code> response
-     * value. We recommend you also evaluate the partially rotated new version to see if it should be deleted. You can
-     * delete a version by removing all staging labels from it.
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
-     * </note>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
@@ -125,6 +132,14 @@ public interface AWSSecretsManager {
      *         <p>
      *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
      *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      *         </p>
      *         </li>
      * @sample AWSSecretsManager.CancelRotateSecret
@@ -171,6 +186,13 @@ public interface AWSSecretsManager {
      * key.
      * </p>
      * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters except <code>SecretBinary</code> or <code>SecretString</code> because it might be logged.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
+     * <p>
      * <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. If you include tags in the secret, you
      * also need <code>secretsmanager:TagResource</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
@@ -204,6 +226,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request failed because it would exceed one of the Secrets Manager quotas.
      * @throws EncryptionFailureException
@@ -233,6 +263,12 @@ public interface AWSSecretsManager {
      * <p>
      * Deletes the resource-based permission policy attached to the secret. To attach a policy to a secret, use
      * <a>PutResourcePolicy</a>.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For more information, see <a
@@ -266,6 +302,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The parameter name or value is invalid.
      * @sample AWSSecretsManager.DeleteResourcePolicy
@@ -282,9 +326,20 @@ public interface AWSSecretsManager {
      * recovery window, Secrets Manager deletes the secret permanently.
      * </p>
      * <p>
-     * For information about deleting a secret in the console, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html"
-     * >https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html</a>.
+     * You can't delete a primary secret that is replicated to other Regions. You must first delete the replicas using
+     * <a>RemoveRegionsFromReplication</a>, and then delete the primary secret. When you delete a replica, it is deleted
+     * immediately.
+     * </p>
+     * <p>
+     * You can't directly delete a version of a secret. Instead, you remove all staging labels from the version using
+     * <a>UpdateSecretVersionStage</a>. This marks the version as deprecated, and then Secrets Manager can automatically
+     * delete the version in the background.
+     * </p>
+     * <p>
+     * To determine whether an application still uses a secret, you can create an Amazon CloudWatch alarm to alert you
+     * to any attempts to access a secret during the recovery window. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring_cloudwatch_deleted-secrets.html">
+     * Monitor secrets scheduled for deletion</a>.
      * </p>
      * <p>
      * Secrets Manager performs the permanent secret deletion at the end of the waiting period as a background task with
@@ -296,8 +351,14 @@ public interface AWSSecretsManager {
      * and cancel the deletion of the secret.
      * </p>
      * <p>
-     * In a secret scheduled for deletion, you cannot access the encrypted secret value. To access that information,
-     * first cancel the deletion with <a>RestoreSecret</a> and then retrieve the information.
+     * When a secret is scheduled for deletion, you cannot retrieve the secret value. You must first cancel the deletion
+     * with <a>RestoreSecret</a> and then you can retrieve the secret.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more information, see <a href=
@@ -330,6 +391,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @sample AWSSecretsManager.DeleteSecret
@@ -342,6 +411,12 @@ public interface AWSSecretsManager {
      * <p>
      * Retrieves the details of a secret. It does not include the encrypted secret value. Secrets Manager only returns
      * fields that have a value in the response.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more information, see <a href=
@@ -369,6 +444,12 @@ public interface AWSSecretsManager {
      * <p>
      * Generates a random password. We recommend that you specify the maximum length and include every character type
      * that the system you are generating a password for can support.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a href=
@@ -399,6 +480,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @sample AWSSecretsManager.GetRandomPassword
@@ -413,6 +502,12 @@ public interface AWSSecretsManager {
      * permissions policies attached to a secret, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html"
      * >Permissions policies attached to a secret</a>.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For more information, see <a href=
@@ -445,6 +540,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The parameter name or value is invalid.
      * @sample AWSSecretsManager.GetResourcePolicy
@@ -463,6 +566,18 @@ public interface AWSSecretsManager {
      * reduces your costs. For more information, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache secrets for your
      * applications</a>.
+     * </p>
+     * <p>
+     * To retrieve the previous version of a secret, use <code>VersionStage</code> and specify AWSPREVIOUS. To revert to
+     * the previous version of a secret, call <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/update-secret-version-stage.html"
+     * >UpdateSecretVersionStage</a>.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a
@@ -497,6 +612,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws DecryptionFailureException
      *         Secrets Manager can't decrypt the protected secret text using the provided KMS key.
      * @throws InternalServiceErrorException
@@ -509,13 +632,19 @@ public interface AWSSecretsManager {
 
     /**
      * <p>
-     * Lists the versions for a secret.
+     * Lists the versions of a secret. Secrets Manager uses staging labels to indicate the different versions of a
+     * secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version"> Secrets
+     * Manager concepts: Versions</a>.
      * </p>
      * <p>
      * To list the secrets in the account, use <a>ListSecrets</a>.
      * </p>
      * <p>
-     * To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>, call <a>GetSecretValue</a>.
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a
@@ -548,6 +677,10 @@ public interface AWSSecretsManager {
      * that are marked for deletion. To see secrets marked for deletion, use the Secrets Manager console.
      * </p>
      * <p>
+     * ListSecrets is eventually consistent, however it might not reflect changes from the last five minutes. To get the
+     * latest information for a specific secret, use <a>DescribeSecret</a>.
+     * </p>
+     * <p>
      * To list the versions of a secret, use <a>ListSecretVersionIds</a>.
      * </p>
      * <p>
@@ -555,8 +688,14 @@ public interface AWSSecretsManager {
      * </p>
      * <p>
      * For information about finding secrets in the console, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced search
-     * capabilities for secrets in Secrets Manager</a>.
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find secrets in
+     * Secrets Manager</a>.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information, see <a href=
@@ -593,6 +732,12 @@ public interface AWSSecretsManager {
      * >Attach a permissions policy to a secret</a>.
      * </p>
      * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
+     * <p>
      * <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
      * > IAM policy actions for Secrets Manager</a> and <a
@@ -627,6 +772,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws PublicPolicyException
      *         The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy did not prevent
      *         broad access to the secret.
@@ -652,18 +805,23 @@ public interface AWSSecretsManager {
      * You can specify the staging labels to attach to the new version in <code>VersionStages</code>. If you don't
      * include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label
      * <code>AWSCURRENT</code> to this version. If this operation creates the first version for the secret, then Secrets
-     * Manager automatically attaches the staging label <code>AWSCURRENT</code> to it .
+     * Manager automatically attaches the staging label <code>AWSCURRENT</code> to it. If this operation moves the
+     * staging label <code>AWSCURRENT</code> from another version to this version, then Secrets Manager also
+     * automatically moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was
+     * removed from.
      * </p>
      * <p>
-     * If this operation moves the staging label <code>AWSCURRENT</code> from another version to this version, then
-     * Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to the version that
-     * <code>AWSCURRENT</code> was removed from.
+     * This operation is idempotent. If you call this operation with a <code>ClientRequestToken</code> that matches an
+     * existing version's VersionId, and you specify the same secret data, the operation succeeds but does nothing.
+     * However, if the secret data is different, then the operation fails because you can't modify an existing version;
+     * you can only create new ones.
      * </p>
      * <p>
-     * This operation is idempotent. If a version with a <code>VersionId</code> with the same value as the
-     * <code>ClientRequestToken</code> parameter already exists, and you specify the same secret data, the operation
-     * succeeds but does nothing. However, if the secret data is different, then the operation fails because you can't
-     * modify an existing version; you can only create new ones.
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters except <code>SecretBinary</code> or <code>SecretString</code> because it might be logged.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a href=
@@ -694,6 +852,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request failed because it would exceed one of the Secrets Manager quotas.
      * @throws EncryptionFailureException
@@ -718,6 +884,12 @@ public interface AWSSecretsManager {
     /**
      * <p>
      * For a secret that is replicated to other Regions, deletes the secret replicas from the Regions you specify.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:RemoveRegionsFromReplication</code>. For more information, see
@@ -749,6 +921,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The parameter name or value is invalid.
      * @throws InternalServiceErrorException
@@ -764,6 +944,12 @@ public interface AWSSecretsManager {
      * Replicates the secret to a new Regions. See <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html"
      * >Multi-Region secrets</a>.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see <a
@@ -795,6 +981,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The parameter name or value is invalid.
      * @throws InternalServiceErrorException
@@ -809,6 +1003,12 @@ public interface AWSSecretsManager {
      * <p>
      * Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code> time stamp. You can access a
      * secret again after it has been restored.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more information, see <a href=
@@ -839,6 +1039,14 @@ public interface AWSSecretsManager {
      *         <p>
      *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
      *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      *         </p>
      *         </li>
      * @throws InternalServiceErrorException
@@ -891,6 +1099,12 @@ public interface AWSSecretsManager {
      * an error.
      * </p>
      * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
+     * <p>
      * <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
      * > IAM policy actions for Secrets Manager</a> and <a
@@ -926,6 +1140,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @sample AWSSecretsManager.RotateSecret
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret" target="_top">AWS
      *      API Documentation</a>
@@ -939,6 +1161,12 @@ public interface AWSSecretsManager {
      * </p>
      * <p>
      * You must call this operation from the Region in which you want to promote the replica to a primary secret.
+     * </p>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>. For more information, see <a
@@ -968,6 +1196,14 @@ public interface AWSSecretsManager {
      *         <p>
      *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
      *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      *         </p>
      *         </li>
      * @throws InvalidParameterException
@@ -1033,6 +1269,12 @@ public interface AWSSecretsManager {
      * </p>
      * </important>
      * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
+     * <p>
      * <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
      * > IAM policy actions for Secrets Manager</a> and <a
@@ -1061,6 +1303,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The parameter name or value is invalid.
      * @throws InternalServiceErrorException
@@ -1086,6 +1336,12 @@ public interface AWSSecretsManager {
      * blocked and returns an Access Denied error.
      * </p>
      * </important>
+     * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
@@ -1115,6 +1371,14 @@ public interface AWSSecretsManager {
      *         you didn't include such an ARN as a parameter in this call.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The parameter name or value is invalid.
      * @throws InternalServiceErrorException
@@ -1142,24 +1406,21 @@ public interface AWSSecretsManager {
      * </p>
      * <p>
      * If you include <code>SecretString</code> or <code>SecretBinary</code> to create a new secret version, Secrets
-     * Manager automatically attaches the staging label <code>AWSCURRENT</code> to the new version.
+     * Manager automatically moves the staging label <code>AWSCURRENT</code> to the new version. Then it attaches the
+     * label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.
      * </p>
      * <p>
-     * If you call this operation with a <code>VersionId</code> that matches an existing version's
-     * <code>ClientRequestToken</code>, the operation results in an error. You can't modify an existing version, you can
-     * only create a new version. To remove a version, remove all staging labels from it. See
+     * If you call this operation with a <code>ClientRequestToken</code> that matches an existing version's
+     * <code>VersionId</code>, the operation results in an error. You can't modify an existing version, you can only
+     * create a new version. To remove a version, remove all staging labels from it. See
      * <a>UpdateSecretVersionStage</a>.
      * </p>
      * <p>
-     * If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates
-     * it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use
-     * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant
-     * delay in returning the result.
-     * </p>
-     * <p>
-     * If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed key.
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters except <code>SecretBinary</code> or <code>SecretString</code> because it might be logged.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more information, see <a href=
@@ -1191,6 +1452,14 @@ public interface AWSSecretsManager {
      *         <p>
      *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
      *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      *         </p>
      *         </li>
      * @throws LimitExceededException
@@ -1246,6 +1515,12 @@ public interface AWSSecretsManager {
      * 'deprecated' and can be deleted by Secrets Manager.
      * </p>
      * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
+     * <p>
      * <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see <a
      * href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
@@ -1275,6 +1550,14 @@ public interface AWSSecretsManager {
      *         <p>
      *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
      *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      *         </p>
      *         </li>
      * @throws LimitExceededException
@@ -1316,6 +1599,12 @@ public interface AWSSecretsManager {
      * </li>
      * </ul>
      * <p>
+     * Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information
+     * in request parameters because it might be logged. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets
+     * Manager events with CloudTrail</a>.
+     * </p>
+     * <p>
      * <b>Required permissions: </b> <code>secretsmanager:ValidateResourcePolicy</code>. For more information, see <a
      * href=
      * "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"
@@ -1349,6 +1638,14 @@ public interface AWSSecretsManager {
      *         <p>
      *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
      *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The secret is managed by another service, and you must use that service to update it. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     *         managed by other Amazon Web Services services</a>.
      *         </p>
      *         </li>
      * @sample AWSSecretsManager.ValidateResourcePolicy

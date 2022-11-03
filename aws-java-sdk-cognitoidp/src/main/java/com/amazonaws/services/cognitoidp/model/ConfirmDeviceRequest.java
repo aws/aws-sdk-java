@@ -30,7 +30,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      * </p>
      */
     private String accessToken;
@@ -55,11 +55,11 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      */
 
     public void setAccessToken(String accessToken) {
@@ -68,10 +68,10 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      * </p>
      * 
-     * @return The access token.
+     * @return A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      */
 
     public String getAccessToken() {
@@ -80,11 +80,11 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose device you want to confirm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

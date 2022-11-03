@@ -78,6 +78,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Creates a new form for an Amplify app.
+     * </p>
+     * 
+     * @param createFormRequest
+     * @return A Java Future containing the result of the CreateForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.CreateForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFormResult> createFormAsync(CreateFormRequest createFormRequest);
+
+    /**
+     * <p>
+     * Creates a new form for an Amplify app.
+     * </p>
+     * 
+     * @param createFormRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.CreateForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFormResult> createFormAsync(CreateFormRequest createFormRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFormRequest, CreateFormResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a theme to apply to the components in an Amplify app.
      * </p>
      * 
@@ -137,6 +168,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest deleteComponentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a form from an Amplify app.
+     * </p>
+     * 
+     * @param deleteFormRequest
+     * @return A Java Future containing the result of the DeleteForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.DeleteForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFormResult> deleteFormAsync(DeleteFormRequest deleteFormRequest);
+
+    /**
+     * <p>
+     * Deletes a form from an Amplify app.
+     * </p>
+     * 
+     * @param deleteFormRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.DeleteForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFormResult> deleteFormAsync(DeleteFormRequest deleteFormRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFormRequest, DeleteFormResult> asyncHandler);
 
     /**
      * <p>
@@ -233,6 +295,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Exports form configurations to code that is ready to integrate into an Amplify app.
+     * </p>
+     * 
+     * @param exportFormsRequest
+     * @return A Java Future containing the result of the ExportForms operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.ExportForms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportFormsResult> exportFormsAsync(ExportFormsRequest exportFormsRequest);
+
+    /**
+     * <p>
+     * Exports form configurations to code that is ready to integrate into an Amplify app.
+     * </p>
+     * 
+     * @param exportFormsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportForms operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.ExportForms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportFormsResult> exportFormsAsync(ExportFormsRequest exportFormsRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportFormsRequest, ExportFormsResult> asyncHandler);
+
+    /**
+     * <p>
      * Exports theme configurations to code that is ready to integrate into an Amplify app.
      * </p>
      * 
@@ -292,6 +385,68 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest getComponentRequest,
             com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an existing form for an Amplify app.
+     * </p>
+     * 
+     * @param getFormRequest
+     * @return A Java Future containing the result of the GetForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.GetForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFormResult> getFormAsync(GetFormRequest getFormRequest);
+
+    /**
+     * <p>
+     * Returns an existing form for an Amplify app.
+     * </p>
+     * 
+     * @param getFormRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.GetForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFormResult> getFormAsync(GetFormRequest getFormRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFormRequest, GetFormResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns existing metadata for an Amplify app.
+     * </p>
+     * 
+     * @param getMetadataRequest
+     * @return A Java Future containing the result of the GetMetadata operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.GetMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetadataResult> getMetadataAsync(GetMetadataRequest getMetadataRequest);
+
+    /**
+     * <p>
+     * Returns existing metadata for an Amplify app.
+     * </p>
+     * 
+     * @param getMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetadata operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.GetMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetadataResult> getMetadataAsync(GetMetadataRequest getMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetadataRequest, GetMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -357,6 +512,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Retrieves a list of forms for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listFormsRequest
+     * @return A Java Future containing the result of the ListForms operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.ListForms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFormsResult> listFormsAsync(ListFormsRequest listFormsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of forms for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listFormsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListForms operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.ListForms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFormsResult> listFormsAsync(ListFormsRequest listFormsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFormsRequest, ListFormsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of themes for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -385,6 +571,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest listThemesRequest,
             com.amazonaws.handlers.AsyncHandler<ListThemesRequest, ListThemesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stores the metadata information about a feature on a form or view.
+     * </p>
+     * 
+     * @param putMetadataFlagRequest
+     * @return A Java Future containing the result of the PutMetadataFlag operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.PutMetadataFlag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutMetadataFlagResult> putMetadataFlagAsync(PutMetadataFlagRequest putMetadataFlagRequest);
+
+    /**
+     * <p>
+     * Stores the metadata information about a feature on a form or view.
+     * </p>
+     * 
+     * @param putMetadataFlagRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMetadataFlag operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.PutMetadataFlag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutMetadataFlagResult> putMetadataFlagAsync(PutMetadataFlagRequest putMetadataFlagRequest,
+            com.amazonaws.handlers.AsyncHandler<PutMetadataFlagRequest, PutMetadataFlagResult> asyncHandler);
 
     /**
      * <p>
@@ -447,6 +664,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<UpdateComponentResult> updateComponentAsync(UpdateComponentRequest updateComponentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateComponentRequest, UpdateComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing form.
+     * </p>
+     * 
+     * @param updateFormRequest
+     * @return A Java Future containing the result of the UpdateForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.UpdateForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFormResult> updateFormAsync(UpdateFormRequest updateFormRequest);
+
+    /**
+     * <p>
+     * Updates an existing form.
+     * </p>
+     * 
+     * @param updateFormRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateForm operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.UpdateForm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFormResult> updateFormAsync(UpdateFormRequest updateFormRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFormRequest, UpdateFormResult> asyncHandler);
 
     /**
      * <p>

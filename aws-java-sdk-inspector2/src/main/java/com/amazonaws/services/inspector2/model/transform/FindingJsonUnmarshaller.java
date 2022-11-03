@@ -64,6 +64,10 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                     context.nextToken();
                     finding.setFirstObservedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("fixAvailable", targetDepth)) {
+                    context.nextToken();
+                    finding.setFixAvailable(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("inspectorScore", targetDepth)) {
                     context.nextToken();
                     finding.setInspectorScore(context.getUnmarshaller(Double.class).unmarshall(context));

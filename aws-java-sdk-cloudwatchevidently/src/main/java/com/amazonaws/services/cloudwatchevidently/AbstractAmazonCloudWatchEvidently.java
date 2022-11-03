@@ -53,6 +53,11 @@ public class AbstractAmazonCloudWatchEvidently implements AmazonCloudWatchEviden
     }
 
     @Override
+    public CreateSegmentResult createSegment(CreateSegmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteExperimentResult deleteExperiment(DeleteExperimentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonCloudWatchEvidently implements AmazonCloudWatchEviden
 
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSegmentResult deleteSegment(DeleteSegmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +113,11 @@ public class AbstractAmazonCloudWatchEvidently implements AmazonCloudWatchEviden
     }
 
     @Override
+    public GetSegmentResult getSegment(GetSegmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListExperimentsResult listExperiments(ListExperimentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,16 @@ public class AbstractAmazonCloudWatchEvidently implements AmazonCloudWatchEviden
 
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSegmentReferencesResult listSegmentReferences(ListSegmentReferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSegmentsResult listSegments(ListSegmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +179,11 @@ public class AbstractAmazonCloudWatchEvidently implements AmazonCloudWatchEviden
 
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestSegmentPatternResult testSegmentPattern(TestSegmentPatternRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

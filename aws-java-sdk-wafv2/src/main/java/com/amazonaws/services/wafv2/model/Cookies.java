@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * set of cookies to inspect by including or excluding specific keys.
  * </p>
  * <p>
- * This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
+ * This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification.
  * </p>
  * <p>
  * Example JSON:
@@ -46,7 +46,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Example JSON:
-     * <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      * </p>
      */
     private CookieMatchPattern matchPattern;
@@ -97,7 +97,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Example JSON:
-     * <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      * </p>
      * 
      * @param matchPattern
@@ -108,7 +108,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        Example JSON:
-     *        <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     *        <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      */
 
     public void setMatchPattern(CookieMatchPattern matchPattern) {
@@ -125,7 +125,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Example JSON:
-     * <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      * </p>
      * 
      * @return The filter to use to identify the subset of cookies to inspect in a web request. </p>
@@ -135,7 +135,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         Example JSON:
-     *         <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     *         <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      */
 
     public CookieMatchPattern getMatchPattern() {
@@ -152,7 +152,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Example JSON:
-     * <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      * </p>
      * 
      * @param matchPattern
@@ -163,7 +163,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        Example JSON:
-     *        <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     *        <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

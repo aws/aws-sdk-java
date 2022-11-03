@@ -52,6 +52,16 @@ public class FacetJsonUnmarshaller implements Unmarshaller<Facet, JsonUnmarshall
                     context.nextToken();
                     facet.setDocumentAttributeKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Facets", targetDepth)) {
+                    context.nextToken();
+                    facet.setFacets(new ListUnmarshaller<Facet>(FacetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("MaxResults", targetDepth)) {
+                    context.nextToken();
+                    facet.setMaxResults(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

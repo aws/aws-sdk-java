@@ -25,8 +25,7 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
-     * generate a one-time code.
+     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      * </p>
      */
     private String secretCode;
@@ -40,13 +39,11 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
-     * generate a one-time code.
+     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      * </p>
      * 
      * @param secretCode
-     *        A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
-     *        generate a one-time code.
+     *        A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      */
 
     public void setSecretCode(String secretCode) {
@@ -55,12 +52,10 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
-     * generate a one-time code.
+     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      * </p>
      * 
-     * @return A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm
-     *         to generate a one-time code.
+     * @return A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      */
 
     public String getSecretCode() {
@@ -69,13 +64,11 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
-     * generate a one-time code.
+     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      * </p>
      * 
      * @param secretCode
-     *        A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
-     *        generate a one-time code.
+     *        A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

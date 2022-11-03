@@ -124,6 +124,11 @@ public class CancelExportTaskResultStaxUnmarshaller implements Unmarshaller<Canc
                     cancelExportTaskResult.setWarningMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SourceType", targetDepth)) {
+                    cancelExportTaskResult.setSourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cancelExportTaskResult;

@@ -27,15 +27,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     * <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     * The default value is <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
+     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
+     * <code>MERGE</code>.
      * </p>
      */
     private String mode;
@@ -48,19 +48,19 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
     private Boolean failOnWarnings;
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
-     * this is a JSON object.
+     * Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a
+     * JSON object.
      * </p>
      */
     private java.nio.ByteBuffer body;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -69,10 +69,10 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -81,11 +81,11 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,15 +96,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     * <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     * The default value is <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
+     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
+     * <code>MERGE</code>.
      * </p>
      * 
      * @param mode
      *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing
-     *        one. The default value is <code>MERGE</code>.
+     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
+     *        The default value is <code>MERGE</code>.
      * @see PutMode
      */
 
@@ -114,14 +114,14 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     * <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     * The default value is <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
+     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
+     * <code>MERGE</code>.
      * </p>
      * 
      * @return A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *         <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the
-     *         existing one. The default value is <code>MERGE</code>.
+     *         DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
+     *         The default value is <code>MERGE</code>.
      * @see PutMode
      */
 
@@ -131,15 +131,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     * <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     * The default value is <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
+     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
+     * <code>MERGE</code>.
      * </p>
      * 
      * @param mode
      *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing
-     *        one. The default value is <code>MERGE</code>.
+     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
+     *        The default value is <code>MERGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PutMode
      */
@@ -151,15 +151,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     * <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     * The default value is <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
+     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
+     * <code>MERGE</code>.
      * </p>
      * 
      * @param mode
      *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing
-     *        one. The default value is <code>MERGE</code>.
+     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
+     *        The default value is <code>MERGE</code>.
      * @see PutMode
      */
 
@@ -169,15 +169,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     * <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     * The default value is <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
+     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
+     * <code>MERGE</code>.
      * </p>
      * 
      * @param mode
      *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing
-     *        one. The default value is <code>MERGE</code>.
+     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
+     *        The default value is <code>MERGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PutMode
      */
@@ -249,8 +249,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
-     * this is a JSON object.
+     * Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a
+     * JSON object.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -264,8 +264,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param body
-     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
-     *        file, this is a JSON object.
+     *        Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this
+     *        is a JSON object.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -274,8 +274,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
-     * this is a JSON object.
+     * Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a
+     * JSON object.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -285,8 +285,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * {@code position}.
      * </p>
      * 
-     * @return [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
-     *         file, this is a JSON object.
+     * @return Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this
+     *         is a JSON object.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -295,8 +295,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
-     * this is a JSON object.
+     * Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a
+     * JSON object.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -310,8 +310,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param body
-     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
-     *        file, this is a JSON object.
+     *        Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this
+     *        is a JSON object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,8 +52,13 @@ public class CreateBatchImportJobRequest extends com.amazonaws.AmazonWebServiceR
     private String eventTypeName;
     /**
      * <p>
-     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and
-     * write permissions to both input and output S3 buckets.
+     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+     * </p>
+     * <p>
+     * The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private String iamRoleArn;
@@ -232,13 +237,22 @@ public class CreateBatchImportJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and
-     * write permissions to both input and output S3 buckets.
+     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+     * </p>
+     * <p>
+     * The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have
-     *        read and write permissions to both input and output S3 buckets.
+     *        The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+     *        <p>
+     *        The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3
+     *        bucket. For more information about bucket permissions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy
+     *        examples</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -247,12 +261,21 @@ public class CreateBatchImportJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and
-     * write permissions to both input and output S3 buckets.
+     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+     * </p>
+     * <p>
+     * The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
-     * @return The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have
-     *         read and write permissions to both input and output S3 buckets.
+     * @return The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+     *         <p>
+     *         The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3
+     *         bucket. For more information about bucket permissions, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy
+     *         examples</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public String getIamRoleArn() {
@@ -261,13 +284,22 @@ public class CreateBatchImportJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and
-     * write permissions to both input and output S3 buckets.
+     * The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+     * </p>
+     * <p>
+     * The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have
-     *        read and write permissions to both input and output S3 buckets.
+     *        The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+     *        <p>
+     *        The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3
+     *        bucket. For more information about bucket permissions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy
+     *        examples</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,7 +39,8 @@ public class CreateAppImageConfigRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The KernelGatewayImageConfig.
+     * The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will
+     * be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.
      * </p>
      */
     private KernelGatewayImageConfig kernelGatewayImageConfig;
@@ -156,11 +157,14 @@ public class CreateAppImageConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The KernelGatewayImageConfig.
+     * The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will
+     * be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.
      * </p>
      * 
      * @param kernelGatewayImageConfig
-     *        The KernelGatewayImageConfig.
+     *        The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel
+     *        will be shown to users before the image starts. Once the image runs, all kernels are visible in
+     *        JupyterLab.
      */
 
     public void setKernelGatewayImageConfig(KernelGatewayImageConfig kernelGatewayImageConfig) {
@@ -169,10 +173,13 @@ public class CreateAppImageConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The KernelGatewayImageConfig.
+     * The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will
+     * be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.
      * </p>
      * 
-     * @return The KernelGatewayImageConfig.
+     * @return The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This
+     *         kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in
+     *         JupyterLab.
      */
 
     public KernelGatewayImageConfig getKernelGatewayImageConfig() {
@@ -181,11 +188,14 @@ public class CreateAppImageConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The KernelGatewayImageConfig.
+     * The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will
+     * be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.
      * </p>
      * 
      * @param kernelGatewayImageConfig
-     *        The KernelGatewayImageConfig.
+     *        The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel
+     *        will be shown to users before the image starts. Once the image runs, all kernels are visible in
+     *        JupyterLab.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

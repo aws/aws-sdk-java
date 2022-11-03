@@ -64,6 +64,10 @@ public class DataRepositoryTaskStatusJsonUnmarshaller implements Unmarshaller<Da
                     context.nextToken();
                     dataRepositoryTaskStatus.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ReleasedCapacity", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryTaskStatus.setReleasedCapacity(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

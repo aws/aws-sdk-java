@@ -49,15 +49,14 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String displayName;
     /**
      * <p>
-     * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * WorkMail).
+     * The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).
      * </p>
      */
     private String state;
     /**
      * <p>
      * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
-     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * into WorkMail as users. Because different WorkMail organizations rely on different directory types,
      * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
      * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
@@ -65,13 +64,13 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String userRole;
     /**
      * <p>
-     * The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      * </p>
      */
     private java.util.Date enabledDate;
     /**
      * <p>
-     * The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      * </p>
      */
     private java.util.Date disabledDate;
@@ -238,13 +237,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * WorkMail).
+     * The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).
      * </p>
      * 
      * @param state
-     *        The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered
-     *        to WorkMail).
+     *        The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *        WorkMail).
      * @see EntityState
      */
 
@@ -254,12 +252,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * WorkMail).
+     * The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).
      * </p>
      * 
-     * @return The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *         registered to WorkMail).
+     * @return The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *         WorkMail).
      * @see EntityState
      */
 
@@ -269,13 +266,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * WorkMail).
+     * The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).
      * </p>
      * 
      * @param state
-     *        The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered
-     *        to WorkMail).
+     *        The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *        WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -287,13 +283,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * WorkMail).
+     * The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).
      * </p>
      * 
      * @param state
-     *        The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered
-     *        to WorkMail).
+     *        The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *        WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -306,16 +301,16 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
-     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * into WorkMail as users. Because different WorkMail organizations rely on different directory types,
      * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
      * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @param userRole
      *        In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
-     *        imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
-     *        directory types, administrators can distinguish between an unregistered user (account is disabled and has
-     *        a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
+     *        imported into WorkMail as users. Because different WorkMail organizations rely on different directory
+     *        types, administrators can distinguish between an unregistered user (account is disabled and has a user
+     *        role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @see UserRole
      */
 
@@ -326,15 +321,15 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
-     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * into WorkMail as users. Because different WorkMail organizations rely on different directory types,
      * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
      * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @return In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
-     *         imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
-     *         directory types, administrators can distinguish between an unregistered user (account is disabled and has
-     *         a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
+     *         imported into WorkMail as users. Because different WorkMail organizations rely on different directory
+     *         types, administrators can distinguish between an unregistered user (account is disabled and has a user
+     *         role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @see UserRole
      */
 
@@ -345,16 +340,16 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
-     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * into WorkMail as users. Because different WorkMail organizations rely on different directory types,
      * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
      * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @param userRole
      *        In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
-     *        imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
-     *        directory types, administrators can distinguish between an unregistered user (account is disabled and has
-     *        a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
+     *        imported into WorkMail as users. Because different WorkMail organizations rely on different directory
+     *        types, administrators can distinguish between an unregistered user (account is disabled and has a user
+     *        role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserRole
      */
@@ -367,16 +362,16 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
-     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * into WorkMail as users. Because different WorkMail organizations rely on different directory types,
      * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
      * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @param userRole
      *        In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
-     *        imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
-     *        directory types, administrators can distinguish between an unregistered user (account is disabled and has
-     *        a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
+     *        imported into WorkMail as users. Because different WorkMail organizations rely on different directory
+     *        types, administrators can distinguish between an unregistered user (account is disabled and has a user
+     *        role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserRole
      */
@@ -388,11 +383,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      * </p>
      * 
      * @param enabledDate
-     *        The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     *        The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      */
 
     public void setEnabledDate(java.util.Date enabledDate) {
@@ -401,10 +396,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      * </p>
      * 
-     * @return The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * @return The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      */
 
     public java.util.Date getEnabledDate() {
@@ -413,11 +408,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      * </p>
      * 
      * @param enabledDate
-     *        The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.
+     *        The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,11 +423,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      * </p>
      * 
      * @param disabledDate
-     *        The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     *        The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      */
 
     public void setDisabledDate(java.util.Date disabledDate) {
@@ -441,10 +436,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      * </p>
      * 
-     * @return The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * @return The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      */
 
     public java.util.Date getDisabledDate() {
@@ -453,11 +448,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     * The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      * </p>
      * 
      * @param disabledDate
-     *        The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.
+     *        The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

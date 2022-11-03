@@ -29,7 +29,11 @@ public class ListStatementsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.List<Statement> statements;
-
+    /**
+     * <p>
+     * A continuation token, if not all statements have yet been returned.
+     * </p>
+     */
     private String nextToken;
 
     /**
@@ -103,7 +107,12 @@ public class ListStatementsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * A continuation token, if not all statements have yet been returned.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if not all statements have yet been returned.
      */
 
     public void setNextToken(String nextToken) {
@@ -111,7 +120,11 @@ public class ListStatementsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * A continuation token, if not all statements have yet been returned.
+     * </p>
+     * 
+     * @return A continuation token, if not all statements have yet been returned.
      */
 
     public String getNextToken() {
@@ -119,7 +132,12 @@ public class ListStatementsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * A continuation token, if not all statements have yet been returned.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if not all statements have yet been returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

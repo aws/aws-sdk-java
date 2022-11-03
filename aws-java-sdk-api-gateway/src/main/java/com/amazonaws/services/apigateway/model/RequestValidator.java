@@ -19,38 +19,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of validation rules for incoming <a>Method</a> requests.
+ * A set of validation rules for incoming Method requests.
  * </p>
- * <div class="remarks">
- * <p>
- * In OpenAPI, a <a>RequestValidator</a> of an API is defined by the <a href=
- * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html"
- * >x-amazon-apigateway-request-validators.requestValidator</a> object. It the referenced using the <a href=
- * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator"
- * >x-amazon-apigateway-request-validator</a> property.
- * </p>
- * </div> <div class="seeAlso"><a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
- * Basic Request Validation in API Gateway</a></div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RequestValidator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of this <a>RequestValidator</a>.
+     * The identifier of this RequestValidator.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of this <a>RequestValidator</a>
+     * The name of this RequestValidator
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.
+     * A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      * </p>
      */
     private Boolean validateRequestBody;
@@ -64,11 +53,11 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of this <a>RequestValidator</a>.
+     * The identifier of this RequestValidator.
      * </p>
      * 
      * @param id
-     *        The identifier of this <a>RequestValidator</a>.
+     *        The identifier of this RequestValidator.
      */
 
     public void setId(String id) {
@@ -77,10 +66,10 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of this <a>RequestValidator</a>.
+     * The identifier of this RequestValidator.
      * </p>
      * 
-     * @return The identifier of this <a>RequestValidator</a>.
+     * @return The identifier of this RequestValidator.
      */
 
     public String getId() {
@@ -89,11 +78,11 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of this <a>RequestValidator</a>.
+     * The identifier of this RequestValidator.
      * </p>
      * 
      * @param id
-     *        The identifier of this <a>RequestValidator</a>.
+     *        The identifier of this RequestValidator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +93,11 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of this <a>RequestValidator</a>
+     * The name of this RequestValidator
      * </p>
      * 
      * @param name
-     *        The name of this <a>RequestValidator</a>
+     *        The name of this RequestValidator
      */
 
     public void setName(String name) {
@@ -117,10 +106,10 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of this <a>RequestValidator</a>
+     * The name of this RequestValidator
      * </p>
      * 
-     * @return The name of this <a>RequestValidator</a>
+     * @return The name of this RequestValidator
      */
 
     public String getName() {
@@ -129,11 +118,11 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of this <a>RequestValidator</a>
+     * The name of this RequestValidator
      * </p>
      * 
      * @param name
-     *        The name of this <a>RequestValidator</a>
+     *        The name of this RequestValidator
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,12 +133,11 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.
+     * A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      * </p>
      * 
      * @param validateRequestBody
-     *        A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a>
-     *        schema.
+     *        A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      */
 
     public void setValidateRequestBody(Boolean validateRequestBody) {
@@ -158,11 +146,10 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.
+     * A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      * </p>
      * 
-     * @return A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a>
-     *         schema.
+     * @return A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      */
 
     public Boolean getValidateRequestBody() {
@@ -171,12 +158,11 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.
+     * A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      * </p>
      * 
      * @param validateRequestBody
-     *        A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a>
-     *        schema.
+     *        A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +173,10 @@ public class RequestValidator implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.
+     * A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      * </p>
      * 
-     * @return A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a>
-     *         schema.
+     * @return A Boolean flag to indicate whether to validate a request body according to the configured Model schema.
      */
 
     public Boolean isValidateRequestBody() {

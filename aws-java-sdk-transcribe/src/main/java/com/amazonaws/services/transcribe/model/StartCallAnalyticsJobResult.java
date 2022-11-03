@@ -25,18 +25,21 @@ public class StartCallAnalyticsJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object containing the details of the asynchronous call analytics job.
+     * Provides detailed information about the current Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      */
     private CallAnalyticsJob callAnalyticsJob;
 
     /**
      * <p>
-     * An object containing the details of the asynchronous call analytics job.
+     * Provides detailed information about the current Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param callAnalyticsJob
-     *        An object containing the details of the asynchronous call analytics job.
+     *        Provides detailed information about the current Call Analytics job, including job status and, if
+     *        applicable, failure reason.
      */
 
     public void setCallAnalyticsJob(CallAnalyticsJob callAnalyticsJob) {
@@ -45,10 +48,12 @@ public class StartCallAnalyticsJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object containing the details of the asynchronous call analytics job.
+     * Provides detailed information about the current Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
-     * @return An object containing the details of the asynchronous call analytics job.
+     * @return Provides detailed information about the current Call Analytics job, including job status and, if
+     *         applicable, failure reason.
      */
 
     public CallAnalyticsJob getCallAnalyticsJob() {
@@ -57,11 +62,13 @@ public class StartCallAnalyticsJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object containing the details of the asynchronous call analytics job.
+     * Provides detailed information about the current Call Analytics job, including job status and, if applicable,
+     * failure reason.
      * </p>
      * 
      * @param callAnalyticsJob
-     *        An object containing the details of the asynchronous call analytics job.
+     *        Provides detailed information about the current Call Analytics job, including job status and, if
+     *        applicable, failure reason.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

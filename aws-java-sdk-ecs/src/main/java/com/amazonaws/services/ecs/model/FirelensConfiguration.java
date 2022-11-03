@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The FireLens configuration for the container. This is used to specify and configure a log router for container logs.
  * For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the
  * <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
@@ -45,7 +45,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      * . For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * <note>
@@ -123,7 +123,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      * . For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * <note>
@@ -138,7 +138,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      *         <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      *         . For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef"
-     *         >Creating a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container
+     *         >Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container
      *         Service Developer Guide</i>.</p> <note>
      *         <p>
      *         Tasks hosted on Fargate only support the <code>file</code> configuration file type.
@@ -157,7 +157,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      * . For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * <note>
@@ -173,7 +173,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      *        <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      *        . For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef"
-     *        >Creating a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container
+     *        >Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container
      *        Service Developer Guide</i>.</p> <note>
      *        <p>
      *        Tasks hosted on Fargate only support the <code>file</code> configuration file type.
@@ -192,7 +192,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      * . For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * <note>
@@ -208,7 +208,7 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      *        <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>
      *        . For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef"
-     *        >Creating a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container
+     *        >Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container
      *        Service Developer Guide</i>.</p> <note>
      *        <p>
      *        Tasks hosted on Fargate only support the <code>file</code> configuration file type.

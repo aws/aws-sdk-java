@@ -25,6 +25,8 @@ public class InvalidRequestException extends com.amazonaws.services.datasync.mod
 
     private String errorCode;
 
+    private String datasyncErrorCode;
+
     /**
      * Constructs a new InvalidRequestException with the specified error message.
      *
@@ -60,6 +62,34 @@ public class InvalidRequestException extends com.amazonaws.services.datasync.mod
 
     public InvalidRequestException withErrorCode(String errorCode) {
         setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * @param datasyncErrorCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("datasyncErrorCode")
+    public void setDatasyncErrorCode(String datasyncErrorCode) {
+        this.datasyncErrorCode = datasyncErrorCode;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("datasyncErrorCode")
+    public String getDatasyncErrorCode() {
+        return this.datasyncErrorCode;
+    }
+
+    /**
+     * @param datasyncErrorCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidRequestException withDatasyncErrorCode(String datasyncErrorCode) {
+        setDatasyncErrorCode(datasyncErrorCode);
         return this;
     }
 

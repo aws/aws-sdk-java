@@ -47,8 +47,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     * >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     * "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     * >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * </p>
      */
     private String provisioningEngine;
@@ -140,8 +140,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     * >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     * "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     * >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param provisioningEngine
@@ -149,8 +149,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      *        Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     *        >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     *        "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     *        >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * @see ProvisionedResourceEngine
      */
 
@@ -165,16 +165,16 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     * >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     * "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     * >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @return The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web
      *         Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     *         >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     *         "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     *         >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * @see ProvisionedResourceEngine
      */
 
@@ -189,8 +189,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     * >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     * "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     * >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param provisioningEngine
@@ -198,8 +198,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      *        Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     *        >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     *        "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     *        >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedResourceEngine
      */
@@ -216,8 +216,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     * >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     * "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     * >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param provisioningEngine
@@ -225,8 +225,8 @@ public class ProvisionedResource implements Serializable, Cloneable, StructuredP
      *        Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
-     *        >Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.
+     *        "https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self"
+     *        >Self-managed provisioning</a> in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedResourceEngine
      */

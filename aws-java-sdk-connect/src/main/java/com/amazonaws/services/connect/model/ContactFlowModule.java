@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a contact flow module.
+ * Contains information about a flow module.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowModule" target="_top">AWS API
@@ -36,43 +36,44 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
     private String arn;
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The status of the contact flow module.
+     * The status of the flow module.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -119,11 +120,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      */
 
     public void setId(String id) {
@@ -132,10 +133,10 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
-     * @return The identifier of the contact flow module.
+     * @return The identifier of the flow module.
      */
 
     public String getId() {
@@ -144,11 +145,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +160,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      */
 
     public void setName(String name) {
@@ -172,10 +173,10 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
-     * @return The name of the contact flow module.
+     * @return The name of the flow module.
      */
 
     public String getName() {
@@ -184,11 +185,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +200,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow module.
+     *        The content of the flow module.
      */
 
     public void setContent(String content) {
@@ -212,10 +213,10 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
-     * @return The content of the contact flow module.
+     * @return The content of the flow module.
      */
 
     public String getContent() {
@@ -224,11 +225,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The content of the contact flow module.
+     * The content of the flow module.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow module.
+     *        The content of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +240,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow module.
+     *        The description of the flow module.
      */
 
     public void setDescription(String description) {
@@ -252,10 +253,10 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
-     * @return The description of the contact flow module.
+     * @return The description of the flow module.
      */
 
     public String getDescription() {
@@ -264,11 +265,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The description of the contact flow module.
+     * The description of the flow module.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow module.
+     *        The description of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +280,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
      * @param state
-     *        The type of contact flow module.
+     *        The type of flow module.
      * @see ContactFlowModuleState
      */
 
@@ -293,10 +294,10 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
-     * @return The type of contact flow module.
+     * @return The type of flow module.
      * @see ContactFlowModuleState
      */
 
@@ -306,11 +307,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
      * @param state
-     *        The type of contact flow module.
+     *        The type of flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */
@@ -322,11 +323,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
      * @param state
-     *        The type of contact flow module.
+     *        The type of flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */
@@ -338,11 +339,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the contact flow module.
+     * The status of the flow module.
      * </p>
      * 
      * @param status
-     *        The status of the contact flow module.
+     *        The status of the flow module.
      * @see ContactFlowModuleStatus
      */
 
@@ -352,10 +353,10 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the contact flow module.
+     * The status of the flow module.
      * </p>
      * 
-     * @return The status of the contact flow module.
+     * @return The status of the flow module.
      * @see ContactFlowModuleStatus
      */
 
@@ -365,11 +366,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the contact flow module.
+     * The status of the flow module.
      * </p>
      * 
      * @param status
-     *        The status of the contact flow module.
+     *        The status of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleStatus
      */
@@ -381,11 +382,11 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the contact flow module.
+     * The status of the flow module.
      * </p>
      * 
      * @param status
-     *        The status of the contact flow module.
+     *        The status of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleStatus
      */
@@ -397,10 +398,12 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return The tags used to organize, track, or control access for this resource.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -409,11 +412,13 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -422,11 +427,13 @@ public class ContactFlowModule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

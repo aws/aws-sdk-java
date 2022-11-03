@@ -96,6 +96,10 @@ public class ModelVersionDetailJsonUnmarshaller implements Unmarshaller<ModelVer
                     context.nextToken();
                     modelVersionDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("trainingResultV2", targetDepth)) {
+                    context.nextToken();
+                    modelVersionDetail.setTrainingResultV2(TrainingResultV2JsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

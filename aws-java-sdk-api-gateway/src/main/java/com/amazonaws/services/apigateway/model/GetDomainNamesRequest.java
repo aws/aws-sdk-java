@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to describe a collection of <a>DomainName</a> resources.
+ * Request to describe a collection of DomainName resources.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

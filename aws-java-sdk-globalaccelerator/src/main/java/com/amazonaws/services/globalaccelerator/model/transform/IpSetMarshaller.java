@@ -32,6 +32,8 @@ public class IpSetMarshaller {
             .marshallLocationName("IpFamily").build();
     private static final MarshallingInfo<List> IPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IpAddresses").build();
+    private static final MarshallingInfo<String> IPADDRESSFAMILY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IpAddressFamily").build();
 
     private static final IpSetMarshaller instance = new IpSetMarshaller();
 
@@ -51,6 +53,7 @@ public class IpSetMarshaller {
         try {
             protocolMarshaller.marshall(ipSet.getIpFamily(), IPFAMILY_BINDING);
             protocolMarshaller.marshall(ipSet.getIpAddresses(), IPADDRESSES_BINDING);
+            protocolMarshaller.marshall(ipSet.getIpAddressFamily(), IPADDRESSFAMILY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

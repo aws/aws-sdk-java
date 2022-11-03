@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to delete the <a>DomainName</a> resource.
+ * A request to delete the DomainName resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class DeleteDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource to be deleted.
+     * The name of the DomainName resource to be deleted.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource to be deleted.
+     * The name of the DomainName resource to be deleted.
      * </p>
      * 
      * @param domainName
-     *        [Required] The name of the <a>DomainName</a> resource to be deleted.
+     *        The name of the DomainName resource to be deleted.
      */
 
     public void setDomainName(String domainName) {
@@ -47,10 +47,10 @@ public class DeleteDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource to be deleted.
+     * The name of the DomainName resource to be deleted.
      * </p>
      * 
-     * @return [Required] The name of the <a>DomainName</a> resource to be deleted.
+     * @return The name of the DomainName resource to be deleted.
      */
 
     public String getDomainName() {
@@ -59,11 +59,11 @@ public class DeleteDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the <a>DomainName</a> resource to be deleted.
+     * The name of the DomainName resource to be deleted.
      * </p>
      * 
      * @param domainName
-     *        [Required] The name of the <a>DomainName</a> resource to be deleted.
+     *        The name of the DomainName resource to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

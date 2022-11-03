@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the ID, text description, and Amazon Resource Name (ARN) for the workflow.
+ * Contains the identifier, text description, and Amazon Resource Name (ARN) for the workflow.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedWorkflow" target="_top">AWS API

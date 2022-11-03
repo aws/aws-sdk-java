@@ -86,6 +86,8 @@ public class DeploymentInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalId").build();
     private static final MarshallingInfo<StructuredPojo> RELATEDDEPLOYMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relatedDeployments").build();
+    private static final MarshallingInfo<StructuredPojo> OVERRIDEALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overrideAlarmConfiguration").build();
 
     private static final DeploymentInfoMarshaller instance = new DeploymentInfoMarshaller();
 
@@ -132,6 +134,7 @@ public class DeploymentInfoMarshaller {
             protocolMarshaller.marshall(deploymentInfo.getComputePlatform(), COMPUTEPLATFORM_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getRelatedDeployments(), RELATEDDEPLOYMENTS_BINDING);
+            protocolMarshaller.marshall(deploymentInfo.getOverrideAlarmConfiguration(), OVERRIDEALARMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

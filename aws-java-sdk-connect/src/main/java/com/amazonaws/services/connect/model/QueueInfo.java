@@ -30,7 +30,7 @@ public class QueueInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the agent who accepted the contact.
+     * The unique identifier for the queue.
      * </p>
      */
     private String id;
@@ -43,11 +43,11 @@ public class QueueInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the agent who accepted the contact.
+     * The unique identifier for the queue.
      * </p>
      * 
      * @param id
-     *        The identifier of the agent who accepted the contact.
+     *        The unique identifier for the queue.
      */
 
     public void setId(String id) {
@@ -56,10 +56,10 @@ public class QueueInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the agent who accepted the contact.
+     * The unique identifier for the queue.
      * </p>
      * 
-     * @return The identifier of the agent who accepted the contact.
+     * @return The unique identifier for the queue.
      */
 
     public String getId() {
@@ -68,11 +68,11 @@ public class QueueInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the agent who accepted the contact.
+     * The unique identifier for the queue.
      * </p>
      * 
      * @param id
-     *        The identifier of the agent who accepted the contact.
+     *        The unique identifier for the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

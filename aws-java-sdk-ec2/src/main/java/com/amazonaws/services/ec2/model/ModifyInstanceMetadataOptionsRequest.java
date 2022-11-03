@@ -38,14 +38,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      * the default state is <code>optional</code>.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      */
@@ -136,14 +136,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      * the default state is <code>optional</code>.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * 
@@ -152,14 +152,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      *        request, the default state is <code>optional</code>.</p>
      *        <p>
      *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *        role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *        version 2.0 role credentials are returned.
      *        </p>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *        requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *        the version 1.0 credentials are not available.
      * @see HttpTokensState
      */
 
@@ -173,14 +173,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      * the default state is <code>optional</code>.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * 
@@ -188,14 +188,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      *         request, the default state is <code>optional</code>.</p>
      *         <p>
      *         If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *         signed token header on your request. If you retrieve the IAM role credentials without a token, the
-     *         version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed
-     *         token, the version 2.0 role credentials are returned.
+     *         session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *         role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *         version 2.0 role credentials are returned.
      *         </p>
      *         <p>
-     *         If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *         retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *         credentials; the version 1.0 credentials are not available.
+     *         If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *         requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *         the version 1.0 credentials are not available.
      * @see HttpTokensState
      */
 
@@ -209,14 +209,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      * the default state is <code>optional</code>.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * 
@@ -225,14 +225,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      *        request, the default state is <code>optional</code>.</p>
      *        <p>
      *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *        role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *        version 2.0 role credentials are returned.
      *        </p>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *        requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *        the version 1.0 credentials are not available.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpTokensState
      */
@@ -248,14 +248,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      * the default state is <code>optional</code>.
      * </p>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a session
+     * token on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials
+     * are returned. If you retrieve the IAM role credentials using a valid session token, the version 2.0 role
+     * credentials are returned.
      * </p>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials; the
+     * If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
      * version 1.0 credentials are not available.
      * </p>
      * 
@@ -264,14 +264,14 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
      *        request, the default state is <code>optional</code>.</p>
      *        <p>
      *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        session token on your request. If you retrieve the IAM role credentials without a token, the version 1.0
+     *        role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the
+     *        version 2.0 role credentials are returned.
      *        </p>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        If the state is <code>required</code>, you must send a session token with any instance metadata retrieval
+     *        requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials;
+     *        the version 1.0 credentials are not available.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpTokensState
      */

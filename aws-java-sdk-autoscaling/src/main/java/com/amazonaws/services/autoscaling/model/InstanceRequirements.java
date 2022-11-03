@@ -131,10 +131,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed
-     * as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher
-     * than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * as a percentage higher than the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance
+     * types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -148,10 +148,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price
-     * is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a
-     * percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
+     * expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
+     * instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto
+     * Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
+     * <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -223,7 +224,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
@@ -1312,10 +1313,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed
-     * as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher
-     * than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * as a percentage higher than the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance
+     * types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -1327,11 +1328,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * 
      * @param spotMaxPricePercentageOverLowestPrice
      *        The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance,
-     *        expressed as a percentage higher than the cheapest M, C, or R instance type with your specified
-     *        attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     *        instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon
-     *        EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
-     *        <code>999999</code>. </p>
+     *        expressed as a percentage higher than the least expensive current generation M, C, or R instance type with
+     *        your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we
+     *        will exclude instance types whose price is higher than your threshold. The parameter accepts an integer,
+     *        which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high
+     *        value, such as <code>999999</code>. </p>
      *        <p>
      *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is applied based on the per vCPU or per memory price instead of the per instance
@@ -1348,10 +1349,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed
-     * as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher
-     * than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * as a percentage higher than the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance
+     * types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -1362,11 +1363,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </p>
      * 
      * @return The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance,
-     *         expressed as a percentage higher than the cheapest M, C, or R instance type with your specified
-     *         attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     *         instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon
-     *         EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
-     *         <code>999999</code>. </p>
+     *         expressed as a percentage higher than the least expensive current generation M, C, or R instance type
+     *         with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes,
+     *         we will exclude instance types whose price is higher than your threshold. The parameter accepts an
+     *         integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify
+     *         a high value, such as <code>999999</code>. </p>
      *         <p>
      *         If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *         protection threshold is applied based on the per vCPU or per memory price instead of the per instance
@@ -1383,10 +1384,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed
-     * as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher
-     * than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * as a percentage higher than the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance
+     * types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -1398,11 +1399,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * 
      * @param spotMaxPricePercentageOverLowestPrice
      *        The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance,
-     *        expressed as a percentage higher than the cheapest M, C, or R instance type with your specified
-     *        attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     *        instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon
-     *        EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
-     *        <code>999999</code>. </p>
+     *        expressed as a percentage higher than the least expensive current generation M, C, or R instance type with
+     *        your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we
+     *        will exclude instance types whose price is higher than your threshold. The parameter accepts an integer,
+     *        which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high
+     *        value, such as <code>999999</code>. </p>
      *        <p>
      *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is applied based on the per vCPU or per memory price instead of the per instance
@@ -1421,10 +1422,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price
-     * is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a
-     * percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
+     * expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
+     * instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto
+     * Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
+     * <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -1436,11 +1438,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * 
      * @param onDemandMaxPricePercentageOverLowestPrice
      *        The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *        Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified
-     *        attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     *        instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon
-     *        EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
-     *        <code>999999</code>. </p>
+     *        Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance
+     *        type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     *        attributes, we will exclude instance types whose price is higher than your threshold. The parameter
+     *        accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price
+     *        protection, specify a high value, such as <code>999999</code>. </p>
      *        <p>
      *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is applied based on the per vCPU or per memory price instead of the per instance
@@ -1457,10 +1459,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price
-     * is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a
-     * percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
+     * expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
+     * instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto
+     * Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
+     * <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -1471,11 +1474,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </p>
      * 
      * @return The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *         Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified
-     *         attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     *         instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon
-     *         EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
-     *         <code>999999</code>. </p>
+     *         Instance, expressed as a percentage higher than the least expensive current generation M, C, or R
+     *         instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with
+     *         your attributes, we will exclude instance types whose price is higher than your threshold. The parameter
+     *         accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price
+     *         protection, specify a high value, such as <code>999999</code>. </p>
      *         <p>
      *         If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *         protection threshold is applied based on the per vCPU or per memory price instead of the per instance
@@ -1492,10 +1495,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price
-     * is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a
-     * percentage. To turn off price protection, specify a high value, such as <code>999999</code>.
+     * expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
+     * instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto
+     * Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
+     * <code>999999</code>.
      * </p>
      * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
@@ -1507,11 +1511,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * 
      * @param onDemandMaxPricePercentageOverLowestPrice
      *        The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *        Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified
-     *        attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     *        instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon
-     *        EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as
-     *        <code>999999</code>. </p>
+     *        Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance
+     *        type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     *        attributes, we will exclude instance types whose price is higher than your threshold. The parameter
+     *        accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price
+     *        protection, specify a high value, such as <code>999999</code>. </p>
      *        <p>
      *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is applied based on the per vCPU or per memory price instead of the per instance
@@ -1940,7 +1944,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
@@ -1957,7 +1961,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     *         For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -1985,7 +1989,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
@@ -2003,7 +2007,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2033,7 +2037,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
@@ -2056,7 +2060,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2088,7 +2092,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
@@ -2106,7 +2110,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2133,7 +2137,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
@@ -2151,7 +2155,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>

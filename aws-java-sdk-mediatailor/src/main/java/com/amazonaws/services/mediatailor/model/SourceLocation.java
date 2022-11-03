@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This response includes only the "type" : "object" property.
+ * A source location is a container for sources. For more information about source locations, see <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source
+ * locations</a> in the <i>MediaTailor User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SourceLocation" target="_top">AWS API
@@ -78,7 +80,10 @@ public class SourceLocation implements Serializable, Cloneable, StructuredPojo {
     private String sourceLocationName;
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -435,10 +440,16 @@ public class SourceLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the source location.
+     * @return The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -447,11 +458,17 @@ public class SourceLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the source location.
+     *        The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -460,11 +477,17 @@ public class SourceLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the source location.
+     *        The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

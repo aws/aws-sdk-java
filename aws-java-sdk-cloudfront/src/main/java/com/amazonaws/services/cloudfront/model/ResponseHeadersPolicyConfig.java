@@ -63,16 +63,16 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
     private ResponseHeadersPolicySecurityHeadersConfig securityHeadersConfig;
     /**
      * <p>
-     * A configuration for a set of custom HTTP response headers.
-     * </p>
-     */
-    private ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig;
-    /**
-     * <p>
      * A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.
      * </p>
      */
     private ResponseHeadersPolicyServerTimingHeadersConfig serverTimingHeadersConfig;
+    /**
+     * <p>
+     * A configuration for a set of custom HTTP response headers.
+     * </p>
+     */
+    private ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig;
 
     /**
      * <p>
@@ -267,46 +267,6 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A configuration for a set of custom HTTP response headers.
-     * </p>
-     * 
-     * @param customHeadersConfig
-     *        A configuration for a set of custom HTTP response headers.
-     */
-
-    public void setCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig) {
-        this.customHeadersConfig = customHeadersConfig;
-    }
-
-    /**
-     * <p>
-     * A configuration for a set of custom HTTP response headers.
-     * </p>
-     * 
-     * @return A configuration for a set of custom HTTP response headers.
-     */
-
-    public ResponseHeadersPolicyCustomHeadersConfig getCustomHeadersConfig() {
-        return this.customHeadersConfig;
-    }
-
-    /**
-     * <p>
-     * A configuration for a set of custom HTTP response headers.
-     * </p>
-     * 
-     * @param customHeadersConfig
-     *        A configuration for a set of custom HTTP response headers.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResponseHeadersPolicyConfig withCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig) {
-        setCustomHeadersConfig(customHeadersConfig);
-        return this;
-    }
-
-    /**
-     * <p>
      * A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.
      * </p>
      * 
@@ -347,6 +307,46 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A configuration for a set of custom HTTP response headers.
+     * </p>
+     * 
+     * @param customHeadersConfig
+     *        A configuration for a set of custom HTTP response headers.
+     */
+
+    public void setCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig) {
+        this.customHeadersConfig = customHeadersConfig;
+    }
+
+    /**
+     * <p>
+     * A configuration for a set of custom HTTP response headers.
+     * </p>
+     * 
+     * @return A configuration for a set of custom HTTP response headers.
+     */
+
+    public ResponseHeadersPolicyCustomHeadersConfig getCustomHeadersConfig() {
+        return this.customHeadersConfig;
+    }
+
+    /**
+     * <p>
+     * A configuration for a set of custom HTTP response headers.
+     * </p>
+     * 
+     * @param customHeadersConfig
+     *        A configuration for a set of custom HTTP response headers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseHeadersPolicyConfig withCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig) {
+        setCustomHeadersConfig(customHeadersConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -366,10 +366,10 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
             sb.append("CorsConfig: ").append(getCorsConfig()).append(",");
         if (getSecurityHeadersConfig() != null)
             sb.append("SecurityHeadersConfig: ").append(getSecurityHeadersConfig()).append(",");
-        if (getCustomHeadersConfig() != null)
-            sb.append("CustomHeadersConfig: ").append(getCustomHeadersConfig()).append(",");
         if (getServerTimingHeadersConfig() != null)
-            sb.append("ServerTimingHeadersConfig: ").append(getServerTimingHeadersConfig());
+            sb.append("ServerTimingHeadersConfig: ").append(getServerTimingHeadersConfig()).append(",");
+        if (getCustomHeadersConfig() != null)
+            sb.append("CustomHeadersConfig: ").append(getCustomHeadersConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -400,13 +400,13 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
             return false;
         if (other.getSecurityHeadersConfig() != null && other.getSecurityHeadersConfig().equals(this.getSecurityHeadersConfig()) == false)
             return false;
-        if (other.getCustomHeadersConfig() == null ^ this.getCustomHeadersConfig() == null)
-            return false;
-        if (other.getCustomHeadersConfig() != null && other.getCustomHeadersConfig().equals(this.getCustomHeadersConfig()) == false)
-            return false;
         if (other.getServerTimingHeadersConfig() == null ^ this.getServerTimingHeadersConfig() == null)
             return false;
         if (other.getServerTimingHeadersConfig() != null && other.getServerTimingHeadersConfig().equals(this.getServerTimingHeadersConfig()) == false)
+            return false;
+        if (other.getCustomHeadersConfig() == null ^ this.getCustomHeadersConfig() == null)
+            return false;
+        if (other.getCustomHeadersConfig() != null && other.getCustomHeadersConfig().equals(this.getCustomHeadersConfig()) == false)
             return false;
         return true;
     }
@@ -420,8 +420,8 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCorsConfig() == null) ? 0 : getCorsConfig().hashCode());
         hashCode = prime * hashCode + ((getSecurityHeadersConfig() == null) ? 0 : getSecurityHeadersConfig().hashCode());
-        hashCode = prime * hashCode + ((getCustomHeadersConfig() == null) ? 0 : getCustomHeadersConfig().hashCode());
         hashCode = prime * hashCode + ((getServerTimingHeadersConfig() == null) ? 0 : getServerTimingHeadersConfig().hashCode());
+        hashCode = prime * hashCode + ((getCustomHeadersConfig() == null) ? 0 : getCustomHeadersConfig().hashCode());
         return hashCode;
     }
 

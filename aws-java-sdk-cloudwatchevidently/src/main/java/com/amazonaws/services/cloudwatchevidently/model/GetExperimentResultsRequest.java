@@ -34,7 +34,8 @@ public class GetExperimentResultsRequest extends com.amazonaws.AmazonWebServiceR
     private String baseStat;
     /**
      * <p>
-     * The date and time that the experiment ended, if it is completed.
+     * The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the
+     * experiment start time.
      * </p>
      */
     private java.util.Date endTime;
@@ -186,11 +187,13 @@ public class GetExperimentResultsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The date and time that the experiment ended, if it is completed.
+     * The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the
+     * experiment start time.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the experiment ended, if it is completed.
+     *        The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after
+     *        the experiment start time.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -199,10 +202,12 @@ public class GetExperimentResultsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The date and time that the experiment ended, if it is completed.
+     * The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the
+     * experiment start time.
      * </p>
      * 
-     * @return The date and time that the experiment ended, if it is completed.
+     * @return The date and time that the experiment ended, if it is completed. This must be no longer than 30 days
+     *         after the experiment start time.
      */
 
     public java.util.Date getEndTime() {
@@ -211,11 +216,13 @@ public class GetExperimentResultsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The date and time that the experiment ended, if it is completed.
+     * The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the
+     * experiment start time.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the experiment ended, if it is completed.
+     *        The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after
+     *        the experiment start time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

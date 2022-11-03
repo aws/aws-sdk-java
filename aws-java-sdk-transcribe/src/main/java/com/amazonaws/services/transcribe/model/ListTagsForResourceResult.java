@@ -25,24 +25,24 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) specified in your request.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Lists all tags associated with the given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Lists all tags associated with the given Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) specified in your request.
      * </p>
      * 
      * @param resourceArn
-     *        Lists all tags associated with the given Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) specified in your request.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -51,10 +51,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) specified in your request.
      * </p>
      * 
-     * @return Lists all tags associated with the given Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) specified in your request.
      */
 
     public String getResourceArn() {
@@ -63,11 +63,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) specified in your request.
      * </p>
      * 
      * @param resourceArn
-     *        Lists all tags associated with the given Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * </p>
      * 
-     * @return Lists all tags associated with the given transcription job, vocabulary, or resource.
+     * @return Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -90,11 +90,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * </p>
      * 
      * @param tags
-     *        Lists all tags associated with the given transcription job, vocabulary, or resource.
+     *        Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -108,7 +108,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        Lists all tags associated with the given transcription job, vocabulary, or resource.
+     *        Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists all tags associated with the given transcription job, vocabulary, or resource.
+     * Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * </p>
      * 
      * @param tags
-     *        Lists all tags associated with the given transcription job, vocabulary, or resource.
+     *        Lists all tags associated with the given transcription job, vocabulary, model, or resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

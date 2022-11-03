@@ -103,7 +103,7 @@ public class AssessmentEvidenceFolder implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The number of evidence that falls under the configuration data category. This evidence is collected from
-     * configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     * configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      * </p>
      */
     private Integer evidenceByTypeConfigurationDataCount;
@@ -623,12 +623,12 @@ public class AssessmentEvidenceFolder implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The number of evidence that falls under the configuration data category. This evidence is collected from
-     * configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     * configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      * </p>
      * 
      * @param evidenceByTypeConfigurationDataCount
      *        The number of evidence that falls under the configuration data category. This evidence is collected from
-     *        configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     *        configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      */
 
     public void setEvidenceByTypeConfigurationDataCount(Integer evidenceByTypeConfigurationDataCount) {
@@ -638,11 +638,11 @@ public class AssessmentEvidenceFolder implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The number of evidence that falls under the configuration data category. This evidence is collected from
-     * configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     * configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      * </p>
      * 
      * @return The number of evidence that falls under the configuration data category. This evidence is collected from
-     *         configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     *         configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      */
 
     public Integer getEvidenceByTypeConfigurationDataCount() {
@@ -652,12 +652,12 @@ public class AssessmentEvidenceFolder implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The number of evidence that falls under the configuration data category. This evidence is collected from
-     * configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     * configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      * </p>
      * 
      * @param evidenceByTypeConfigurationDataCount
      *        The number of evidence that falls under the configuration data category. This evidence is collected from
-     *        configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
+     *        configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

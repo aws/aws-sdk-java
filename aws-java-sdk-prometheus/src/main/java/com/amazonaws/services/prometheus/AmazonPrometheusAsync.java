@@ -71,6 +71,41 @@ public interface AmazonPrometheusAsync extends AmazonPrometheus {
 
     /**
      * <p>
+     * Create logging configuration.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     *        Represents the input of a CreateLoggingConfiguration operation.
+     * @return A Java Future containing the result of the CreateLoggingConfiguration operation returned by the service.
+     * @sample AmazonPrometheusAsync.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLoggingConfigurationResult> createLoggingConfigurationAsync(
+            CreateLoggingConfigurationRequest createLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Create logging configuration.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     *        Represents the input of a CreateLoggingConfiguration operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLoggingConfiguration operation returned by the service.
+     * @sample AmazonPrometheusAsyncHandler.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLoggingConfigurationResult> createLoggingConfigurationAsync(
+            CreateLoggingConfigurationRequest createLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLoggingConfigurationRequest, CreateLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a rule group namespace.
      * </p>
      * 
@@ -176,6 +211,41 @@ public interface AmazonPrometheusAsync extends AmazonPrometheus {
 
     /**
      * <p>
+     * Delete logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     *        Represents the input of a DeleteLoggingConfiguration operation.
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AmazonPrometheusAsync.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Delete logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     *        Represents the input of a DeleteLoggingConfiguration operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AmazonPrometheusAsyncHandler.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete a rule groups namespace.
      * </p>
      * 
@@ -278,6 +348,43 @@ public interface AmazonPrometheusAsync extends AmazonPrometheus {
     java.util.concurrent.Future<DescribeAlertManagerDefinitionResult> describeAlertManagerDefinitionAsync(
             DescribeAlertManagerDefinitionRequest describeAlertManagerDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlertManagerDefinitionRequest, DescribeAlertManagerDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes logging configuration.
+     * </p>
+     * 
+     * @param describeLoggingConfigurationRequest
+     *        Represents the input of a DescribeLoggingConfiguration operation.
+     * @return A Java Future containing the result of the DescribeLoggingConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPrometheusAsync.DescribeLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLoggingConfigurationResult> describeLoggingConfigurationAsync(
+            DescribeLoggingConfigurationRequest describeLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Describes logging configuration.
+     * </p>
+     * 
+     * @param describeLoggingConfigurationRequest
+     *        Represents the input of a DescribeLoggingConfiguration operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLoggingConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPrometheusAsyncHandler.DescribeLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLoggingConfigurationResult> describeLoggingConfigurationAsync(
+            DescribeLoggingConfigurationRequest describeLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLoggingConfigurationRequest, DescribeLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -573,6 +680,41 @@ public interface AmazonPrometheusAsync extends AmazonPrometheus {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     *        Represents the input of an UpdateLoggingConfiguration operation.
+     * @return A Java Future containing the result of the UpdateLoggingConfiguration operation returned by the service.
+     * @sample AmazonPrometheusAsync.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLoggingConfigurationResult> updateLoggingConfigurationAsync(
+            UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Update logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     *        Represents the input of an UpdateLoggingConfiguration operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLoggingConfiguration operation returned by the service.
+     * @sample AmazonPrometheusAsyncHandler.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLoggingConfigurationResult> updateLoggingConfigurationAsync(
+            UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLoggingConfigurationRequest, UpdateLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>

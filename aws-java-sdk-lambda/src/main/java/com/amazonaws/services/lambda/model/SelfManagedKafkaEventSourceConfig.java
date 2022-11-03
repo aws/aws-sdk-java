@@ -1,0 +1,150 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.lambda.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Specific configuration settings for a self-managed Apache Kafka event source.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SelfManagedKafkaEventSourceConfig"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SelfManagedKafkaEventSourceConfig implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
+     * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
+     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * </p>
+     */
+    private String consumerGroupId;
+
+    /**
+     * <p>
+     * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
+     * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
+     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * </p>
+     * 
+     * @param consumerGroupId
+     *        The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your
+     *        Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you
+     *        cannot update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     */
+
+    public void setConsumerGroupId(String consumerGroupId) {
+        this.consumerGroupId = consumerGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
+     * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
+     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * </p>
+     * 
+     * @return The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your
+     *         Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified,
+     *         you cannot update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     */
+
+    public String getConsumerGroupId() {
+        return this.consumerGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
+     * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
+     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * </p>
+     * 
+     * @param consumerGroupId
+     *        The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your
+     *        Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you
+     *        cannot update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SelfManagedKafkaEventSourceConfig withConsumerGroupId(String consumerGroupId) {
+        setConsumerGroupId(consumerGroupId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getConsumerGroupId() != null)
+            sb.append("ConsumerGroupId: ").append(getConsumerGroupId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SelfManagedKafkaEventSourceConfig == false)
+            return false;
+        SelfManagedKafkaEventSourceConfig other = (SelfManagedKafkaEventSourceConfig) obj;
+        if (other.getConsumerGroupId() == null ^ this.getConsumerGroupId() == null)
+            return false;
+        if (other.getConsumerGroupId() != null && other.getConsumerGroupId().equals(this.getConsumerGroupId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getConsumerGroupId() == null) ? 0 : getConsumerGroupId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public SelfManagedKafkaEventSourceConfig clone() {
+        try {
+            return (SelfManagedKafkaEventSourceConfig) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.SelfManagedKafkaEventSourceConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

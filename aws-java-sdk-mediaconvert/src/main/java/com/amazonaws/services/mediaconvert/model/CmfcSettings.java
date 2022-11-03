@@ -93,8 +93,9 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private String iFrameOnlyManifest;
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input
-     * in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and writes each instance to a separate event message box in the output,
+     * according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      */
     private String klvMetadata;
     /**
@@ -704,12 +705,15 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input
-     * in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and writes each instance to a separate event message box in the output,
+     * according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
      * @param klvMetadata
-     *        Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     *        input in this output.
+     *        To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *        MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message
+     *        box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to
+     *        None or leave blank.
      * @see CmfcKlvMetadata
      */
 
@@ -718,11 +722,14 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input
-     * in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and writes each instance to a separate event message box in the output,
+     * according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
-     * @return Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from
-     *         the input in this output.
+     * @return To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *         MediaConvert reads KLV metadata present in your input and writes each instance to a separate event
+     *         message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata
+     *         insertion to None or leave blank.
      * @see CmfcKlvMetadata
      */
 
@@ -731,12 +738,15 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input
-     * in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and writes each instance to a separate event message box in the output,
+     * according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
      * @param klvMetadata
-     *        Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     *        input in this output.
+     *        To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *        MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message
+     *        box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to
+     *        None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmfcKlvMetadata
      */
@@ -747,12 +757,15 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input
-     * in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert
+     * reads KLV metadata present in your input and writes each instance to a separate event message box in the output,
+     * according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
      * 
      * @param klvMetadata
-     *        Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the
-     *        input in this output.
+     *        To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough.
+     *        MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message
+     *        box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to
+     *        None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmfcKlvMetadata
      */

@@ -68,6 +68,24 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
      * </p>
      */
     private String ownerId;
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     */
+    private String subnetId;
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     */
+    private String coipPoolId;
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     */
+    private String networkInterfaceId;
 
     /**
      * <p>
@@ -388,6 +406,126 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet.
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @return The ID of the subnet.
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRoute withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @param coipPoolId
+     *        The ID of the customer-owned address pool.
+     */
+
+    public void setCoipPoolId(String coipPoolId) {
+        this.coipPoolId = coipPoolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @return The ID of the customer-owned address pool.
+     */
+
+    public String getCoipPoolId() {
+        return this.coipPoolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @param coipPoolId
+     *        The ID of the customer-owned address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRoute withCoipPoolId(String coipPoolId) {
+        setCoipPoolId(coipPoolId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRoute withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -412,7 +550,13 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
         if (getLocalGatewayRouteTableArn() != null)
             sb.append("LocalGatewayRouteTableArn: ").append(getLocalGatewayRouteTableArn()).append(",");
         if (getOwnerId() != null)
-            sb.append("OwnerId: ").append(getOwnerId());
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getCoipPoolId() != null)
+            sb.append("CoipPoolId: ").append(getCoipPoolId()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -456,6 +600,18 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
             return false;
         if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
             return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        if (other.getCoipPoolId() == null ^ this.getCoipPoolId() == null)
+            return false;
+        if (other.getCoipPoolId() != null && other.getCoipPoolId().equals(this.getCoipPoolId()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+            return false;
         return true;
     }
 
@@ -471,6 +627,9 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableArn() == null) ? 0 : getLocalGatewayRouteTableArn().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getCoipPoolId() == null) ? 0 : getCoipPoolId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         return hashCode;
     }
 

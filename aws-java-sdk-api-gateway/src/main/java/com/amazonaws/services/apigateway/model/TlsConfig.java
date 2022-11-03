@@ -17,44 +17,62 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies the TLS configuration for an integration.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-     * issued by a <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
-     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
-     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
-     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that
+     * are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway
+     * still performs basic certificate validation, which includes checking the certificate's expiration date, hostname,
+     * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      */
     private Boolean insecureSkipVerification;
 
     /**
      * <p>
      * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-     * issued by a <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
-     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
-     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
-     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that
+     * are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway
+     * still performs basic certificate validation, which includes checking the certificate's expiration date, hostname,
+     * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @param insecureSkipVerification
      *        Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
-     *        is issued by a <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *        >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
-     *        are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
-     *        Gateway still performs basic certificate validation, which includes checking the certificate's expiration
-     *        date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
-     *        <code>HTTP_PROXY</code> integrations.
+     *        is issued by a supported certificate authority. This isn’t recommended, but it enables you to use
+     *        certificates that are signed by private certificate authorities, or certificates that are self-signed. If
+     *        enabled, API Gateway still performs basic certificate validation, which includes checking the
+     *        certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
+     *        <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *        <p>
+     *        Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *        HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *        man-in-the-middle attacks.
+     *        </p>
      */
 
     public void setInsecureSkipVerification(Boolean insecureSkipVerification) {
@@ -64,23 +82,31 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-     * issued by a <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
-     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
-     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
-     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that
+     * are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway
+     * still performs basic certificate validation, which includes checking the certificate's expiration date, hostname,
+     * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @return Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
-     *         is issued by a <a href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *         >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
-     *         are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
-     *         Gateway still performs basic certificate validation, which includes checking the certificate's expiration
-     *         date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
-     *         <code>HTTP_PROXY</code> integrations.
+     *         is issued by a supported certificate authority. This isn’t recommended, but it enables you to use
+     *         certificates that are signed by private certificate authorities, or certificates that are self-signed. If
+     *         enabled, API Gateway still performs basic certificate validation, which includes checking the
+     *         certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
+     *         <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *         <p>
+     *         Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *         HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *         man-in-the-middle attacks.
+     *         </p>
      */
 
     public Boolean getInsecureSkipVerification() {
@@ -90,24 +116,32 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-     * issued by a <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
-     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
-     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
-     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that
+     * are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway
+     * still performs basic certificate validation, which includes checking the certificate's expiration date, hostname,
+     * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @param insecureSkipVerification
      *        Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
-     *        is issued by a <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *        >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
-     *        are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
-     *        Gateway still performs basic certificate validation, which includes checking the certificate's expiration
-     *        date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
-     *        <code>HTTP_PROXY</code> integrations.
+     *        is issued by a supported certificate authority. This isn’t recommended, but it enables you to use
+     *        certificates that are signed by private certificate authorities, or certificates that are self-signed. If
+     *        enabled, API Gateway still performs basic certificate validation, which includes checking the
+     *        certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
+     *        <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *        <p>
+     *        Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *        HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *        man-in-the-middle attacks.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,23 +153,31 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-     * issued by a <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
-     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
-     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
-     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that
+     * are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway
+     * still performs basic certificate validation, which includes checking the certificate's expiration date, hostname,
+     * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @return Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
-     *         is issued by a <a href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *         >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
-     *         are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
-     *         Gateway still performs basic certificate validation, which includes checking the certificate's expiration
-     *         date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
-     *         <code>HTTP_PROXY</code> integrations.
+     *         is issued by a supported certificate authority. This isn’t recommended, but it enables you to use
+     *         certificates that are signed by private certificate authorities, or certificates that are self-signed. If
+     *         enabled, API Gateway still performs basic certificate validation, which includes checking the
+     *         certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
+     *         <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *         <p>
+     *         Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *         HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *         man-in-the-middle attacks.
+     *         </p>
      */
 
     public Boolean isInsecureSkipVerification() {

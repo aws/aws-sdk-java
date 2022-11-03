@@ -62,8 +62,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
     private String contentType;
     /**
      * <p>
-     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
-     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels
+     * for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * For information on specifying training and validation channel types, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     * > <code>How to specify training and validation datasets</code> </a>.
      * </p>
      */
     private String channelType;
@@ -255,13 +258,20 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
-     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels
+     * for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * For information on specifying training and validation channel types, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     * > <code>How to specify training and validation datasets</code> </a>.
      * </p>
      * 
      * @param channelType
-     *        The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
-     *        training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     *        The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
+     *        Channels for training and validation must share the same <code>ContentType</code> and
+     *        <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     *        > <code>How to specify training and validation datasets</code> </a>.
      * @see AutoMLChannelType
      */
 
@@ -271,13 +281,19 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
-     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels
+     * for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * For information on specifying training and validation channel types, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     * > <code>How to specify training and validation datasets</code> </a>.
      * </p>
      * 
-     * @return The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
-     *         training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>
-     *         .
+     * @return The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
+     *         Channels for training and validation must share the same <code>ContentType</code> and
+     *         <code>TargetAttributeName</code>. For information on specifying training and validation channel types,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     *         > <code>How to specify training and validation datasets</code> </a>.
      * @see AutoMLChannelType
      */
 
@@ -287,13 +303,20 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
-     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels
+     * for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * For information on specifying training and validation channel types, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     * > <code>How to specify training and validation datasets</code> </a>.
      * </p>
      * 
      * @param channelType
-     *        The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
-     *        training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     *        The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
+     *        Channels for training and validation must share the same <code>ContentType</code> and
+     *        <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     *        > <code>How to specify training and validation datasets</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLChannelType
      */
@@ -305,13 +328,20 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
-     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels
+     * for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * For information on specifying training and validation channel types, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     * > <code>How to specify training and validation datasets</code> </a>.
      * </p>
      * 
      * @param channelType
-     *        The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
-     *        training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     *        The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
+     *        Channels for training and validation must share the same <code>ContentType</code> and
+     *        <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation"
+     *        > <code>How to specify training and validation datasets</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLChannelType
      */

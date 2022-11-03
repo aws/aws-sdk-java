@@ -103,6 +103,14 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
                     context.nextToken();
                     setSourceRequest.setSenderIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("sourceListenerAddress", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setSourceListenerAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sourceListenerPort", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setSourceListenerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("streamId", targetDepth)) {
                     context.nextToken();
                     setSourceRequest.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));

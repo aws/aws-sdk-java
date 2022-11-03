@@ -27,7 +27,7 @@ public class ListMobileDeviceAccessOverridesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which to list mobile device access overrides.
+     * The WorkMail organization under which to list mobile device access overrides.
      * </p>
      */
     private String organizationId;
@@ -77,11 +77,11 @@ public class ListMobileDeviceAccessOverridesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which to list mobile device access overrides.
+     * The WorkMail organization under which to list mobile device access overrides.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which to list mobile device access overrides.
+     *        The WorkMail organization under which to list mobile device access overrides.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -90,10 +90,10 @@ public class ListMobileDeviceAccessOverridesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which to list mobile device access overrides.
+     * The WorkMail organization under which to list mobile device access overrides.
      * </p>
      * 
-     * @return The Amazon WorkMail organization under which to list mobile device access overrides.
+     * @return The WorkMail organization under which to list mobile device access overrides.
      */
 
     public String getOrganizationId() {
@@ -102,11 +102,11 @@ public class ListMobileDeviceAccessOverridesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which to list mobile device access overrides.
+     * The WorkMail organization under which to list mobile device access overrides.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which to list mobile device access overrides.
+     *        The WorkMail organization under which to list mobile device access overrides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,16 +48,16 @@ public class KmsKeyConfigurationJsonUnmarshaller implements Unmarshaller<KmsKeyC
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("keyPolicies", targetDepth)) {
+                    context.nextToken();
+                    kmsKeyConfiguration.setKeyPolicies(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("grants", targetDepth)) {
                     context.nextToken();
                     kmsKeyConfiguration.setGrants(new ListUnmarshaller<KmsGrantConfiguration>(KmsGrantConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("keyPolicies", targetDepth)) {
-                    context.nextToken();
-                    kmsKeyConfiguration.setKeyPolicies(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

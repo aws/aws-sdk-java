@@ -42,6 +42,19 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private UserPoolPolicyType policies;
     /**
      * <p>
+     * When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can
+     * delete a user pool that you have protected against deletion, you must deactivate this feature.
+     * </p>
+     * <p>
+     * When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns
+     * an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     * <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code>
+     * API request.
+     * </p>
+     */
+    private String deletionProtection;
+    /**
+     * <p>
      * The Lambda configuration information from the request to update the user pool.
      * </p>
      */
@@ -54,19 +67,25 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<String> autoVerifiedAttributes;
     /**
      * <p>
-     * A container with information about the SMS verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      */
     private String smsVerificationMessage;
     /**
      * <p>
-     * The contents of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      */
     private String emailVerificationMessage;
     /**
      * <p>
-     * The subject of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      */
     private String emailVerificationSubject;
@@ -84,7 +103,18 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String smsAuthenticationMessage;
     /**
      * <p>
-     * Can be one of the following values:
+     * The settings for updates to user attributes. These settings include the property
+     * <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to
+     * handle changes to the value of your users' email address and phone number attributes. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     * > Verifying updates to email addresses and phone numbers</a>.
+     * </p>
+     */
+    private UserAttributeUpdateSettingsType userAttributeUpdateSettings;
+    /**
+     * <p>
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -110,8 +140,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String mfaConfiguration;
     /**
      * <p>
-     * Device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      */
     private DeviceConfigurationType deviceConfiguration;
     /**
@@ -237,6 +274,144 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public UpdateUserPoolRequest withPolicies(UserPoolPolicyType policies) {
         setPolicies(policies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can
+     * delete a user pool that you have protected against deletion, you must deactivate this feature.
+     * </p>
+     * <p>
+     * When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns
+     * an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     * <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code>
+     * API request.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you
+     *        can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+     *        <p>
+     *        When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito
+     *        returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     *        <code>DeleteUserPool</code> request after you deactivate deletion protection in an
+     *        <code>UpdateUserPool</code> API request.
+     * @see DeletionProtectionType
+     */
+
+    public void setDeletionProtection(String deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can
+     * delete a user pool that you have protected against deletion, you must deactivate this feature.
+     * </p>
+     * <p>
+     * When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns
+     * an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     * <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code>
+     * API request.
+     * </p>
+     * 
+     * @return When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you
+     *         can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+     *         <p>
+     *         When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito
+     *         returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     *         <code>DeleteUserPool</code> request after you deactivate deletion protection in an
+     *         <code>UpdateUserPool</code> API request.
+     * @see DeletionProtectionType
+     */
+
+    public String getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can
+     * delete a user pool that you have protected against deletion, you must deactivate this feature.
+     * </p>
+     * <p>
+     * When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns
+     * an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     * <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code>
+     * API request.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you
+     *        can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+     *        <p>
+     *        When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito
+     *        returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     *        <code>DeleteUserPool</code> request after you deactivate deletion protection in an
+     *        <code>UpdateUserPool</code> API request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeletionProtectionType
+     */
+
+    public UpdateUserPoolRequest withDeletionProtection(String deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can
+     * delete a user pool that you have protected against deletion, you must deactivate this feature.
+     * </p>
+     * <p>
+     * When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns
+     * an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     * <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code>
+     * API request.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you
+     *        can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+     *        <p>
+     *        When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito
+     *        returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     *        <code>DeleteUserPool</code> request after you deactivate deletion protection in an
+     *        <code>UpdateUserPool</code> API request.
+     * @see DeletionProtectionType
+     */
+
+    public void setDeletionProtection(DeletionProtectionType deletionProtection) {
+        withDeletionProtection(deletionProtection);
+    }
+
+    /**
+     * <p>
+     * When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can
+     * delete a user pool that you have protected against deletion, you must deactivate this feature.
+     * </p>
+     * <p>
+     * When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns
+     * an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     * <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code>
+     * API request.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you
+     *        can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+     *        <p>
+     *        When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito
+     *        returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new
+     *        <code>DeleteUserPool</code> request after you deactivate deletion protection in an
+     *        <code>UpdateUserPool</code> API request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeletionProtectionType
+     */
+
+    public UpdateUserPoolRequest withDeletionProtection(DeletionProtectionType deletionProtection) {
+        this.deletionProtection = deletionProtection.toString();
         return this;
     }
 
@@ -380,11 +555,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A container with information about the SMS verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
      * @param smsVerificationMessage
-     *        A container with information about the SMS verification message.
+     *        This parameter is no longer used. See <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *        >VerificationMessageTemplateType</a>.
      */
 
     public void setSmsVerificationMessage(String smsVerificationMessage) {
@@ -393,10 +572,14 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A container with information about the SMS verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
-     * @return A container with information about the SMS verification message.
+     * @return This parameter is no longer used. See <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *         >VerificationMessageTemplateType</a>.
      */
 
     public String getSmsVerificationMessage() {
@@ -405,11 +588,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A container with information about the SMS verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
      * @param smsVerificationMessage
-     *        A container with information about the SMS verification message.
+     *        This parameter is no longer used. See <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *        >VerificationMessageTemplateType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,11 +607,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The contents of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        The contents of the email verification message.
+     *        This parameter is no longer used. See <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *        >VerificationMessageTemplateType</a>.
      */
 
     public void setEmailVerificationMessage(String emailVerificationMessage) {
@@ -433,10 +624,14 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The contents of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
-     * @return The contents of the email verification message.
+     * @return This parameter is no longer used. See <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *         >VerificationMessageTemplateType</a>.
      */
 
     public String getEmailVerificationMessage() {
@@ -445,11 +640,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The contents of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        The contents of the email verification message.
+     *        This parameter is no longer used. See <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *        >VerificationMessageTemplateType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,11 +659,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verification message.
+     *        This parameter is no longer used. See <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *        >VerificationMessageTemplateType</a>.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -473,10 +676,14 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
-     * @return The subject of the email verification message.
+     * @return This parameter is no longer used. See <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *         >VerificationMessageTemplateType</a>.
      */
 
     public String getEmailVerificationSubject() {
@@ -485,11 +692,15 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verification message.
+     * This parameter is no longer used. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     * >VerificationMessageTemplateType</a>.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verification message.
+     *        This parameter is no longer used. See <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html"
+     *        >VerificationMessageTemplateType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,7 +791,77 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * The settings for updates to user attributes. These settings include the property
+     * <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to
+     * handle changes to the value of your users' email address and phone number attributes. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     * > Verifying updates to email addresses and phone numbers</a>.
+     * </p>
+     * 
+     * @param userAttributeUpdateSettings
+     *        The settings for updates to user attributes. These settings include the property
+     *        <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how
+     *        to handle changes to the value of your users' email address and phone number attributes. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     *        > Verifying updates to email addresses and phone numbers</a>.
+     */
+
+    public void setUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
+        this.userAttributeUpdateSettings = userAttributeUpdateSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for updates to user attributes. These settings include the property
+     * <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to
+     * handle changes to the value of your users' email address and phone number attributes. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     * > Verifying updates to email addresses and phone numbers</a>.
+     * </p>
+     * 
+     * @return The settings for updates to user attributes. These settings include the property
+     *         <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how
+     *         to handle changes to the value of your users' email address and phone number attributes. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     *         > Verifying updates to email addresses and phone numbers</a>.
+     */
+
+    public UserAttributeUpdateSettingsType getUserAttributeUpdateSettings() {
+        return this.userAttributeUpdateSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for updates to user attributes. These settings include the property
+     * <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to
+     * handle changes to the value of your users' email address and phone number attributes. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     * > Verifying updates to email addresses and phone numbers</a>.
+     * </p>
+     * 
+     * @param userAttributeUpdateSettings
+     *        The settings for updates to user attributes. These settings include the property
+     *        <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how
+     *        to handle changes to the value of your users' email address and phone number attributes. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
+     *        > Verifying updates to email addresses and phone numbers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
+        setUserAttributeUpdateSettings(userAttributeUpdateSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -604,7 +885,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -633,7 +914,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -656,7 +937,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return Can be one of the following values:</p>
+     * @return Possible values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -685,7 +966,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -709,7 +990,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -740,7 +1021,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -764,7 +1045,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -793,7 +1074,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -817,7 +1098,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -848,11 +1129,23 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      * 
      * @param deviceConfiguration
-     *        Device configuration.
+     *        The device-remembering configuration for a user pool. A null value indicates that you have deactivated
+     *        device remembering in your user pool.</p> <note>
+     *        <p>
+     *        When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     *        device-remembering feature.
+     *        </p>
      */
 
     public void setDeviceConfiguration(DeviceConfigurationType deviceConfiguration) {
@@ -861,10 +1154,22 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      * 
-     * @return Device configuration.
+     * @return The device-remembering configuration for a user pool. A null value indicates that you have deactivated
+     *         device remembering in your user pool.</p> <note>
+     *         <p>
+     *         When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     *         device-remembering feature.
+     *         </p>
      */
 
     public DeviceConfigurationType getDeviceConfiguration() {
@@ -873,11 +1178,23 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      * 
      * @param deviceConfiguration
-     *        Device configuration.
+     *        The device-remembering configuration for a user pool. A null value indicates that you have deactivated
+     *        device remembering in your user pool.</p> <note>
+     *        <p>
+     *        When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     *        device-remembering feature.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1233,6 +1550,8 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getPolicies() != null)
             sb.append("Policies: ").append(getPolicies()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getLambdaConfig() != null)
             sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getAutoVerifiedAttributes() != null)
@@ -1247,6 +1566,8 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
+        if (getUserAttributeUpdateSettings() != null)
+            sb.append("UserAttributeUpdateSettings: ").append(getUserAttributeUpdateSettings()).append(",");
         if (getMfaConfiguration() != null)
             sb.append("MfaConfiguration: ").append(getMfaConfiguration()).append(",");
         if (getDeviceConfiguration() != null)
@@ -1285,6 +1606,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         if (other.getLambdaConfig() == null ^ this.getLambdaConfig() == null)
             return false;
         if (other.getLambdaConfig() != null && other.getLambdaConfig().equals(this.getLambdaConfig()) == false)
@@ -1312,6 +1637,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
         if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
+            return false;
+        if (other.getUserAttributeUpdateSettings() == null ^ this.getUserAttributeUpdateSettings() == null)
+            return false;
+        if (other.getUserAttributeUpdateSettings() != null && other.getUserAttributeUpdateSettings().equals(this.getUserAttributeUpdateSettings()) == false)
             return false;
         if (other.getMfaConfiguration() == null ^ this.getMfaConfiguration() == null)
             return false;
@@ -1355,6 +1684,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
         hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getLambdaConfig() == null) ? 0 : getLambdaConfig().hashCode());
         hashCode = prime * hashCode + ((getAutoVerifiedAttributes() == null) ? 0 : getAutoVerifiedAttributes().hashCode());
         hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
@@ -1362,6 +1692,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
         hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributeUpdateSettings() == null) ? 0 : getUserAttributeUpdateSettings().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());

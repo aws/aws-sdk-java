@@ -21,8 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata
  * rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata
- * <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
- * Format</a>.
+ * <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule" target="_top">AWS API

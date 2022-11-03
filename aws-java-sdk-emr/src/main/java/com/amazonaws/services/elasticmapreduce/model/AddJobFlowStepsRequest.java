@@ -41,6 +41,17 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepConfig> steps;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     */
+    private String executionRoleArn;
 
     /**
      * Default constructor for AddJobFlowStepsRequest object. Callers should use the setter or fluent setter (with...)
@@ -196,6 +207,74 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
+     *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+     *        <p>
+     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     *         cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
+     *         using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+     *         <p>
+     *         For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role
+     *         ARN.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     * cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the
+     * following format: <code>arn:partition:service:region:account:resource</code>.
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
+     *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
+     *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+     *        <p>
+     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddJobFlowStepsRequest withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -210,7 +289,9 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getJobFlowId() != null)
             sb.append("JobFlowId: ").append(getJobFlowId()).append(",");
         if (getSteps() != null)
-            sb.append("Steps: ").append(getSteps());
+            sb.append("Steps: ").append(getSteps()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -233,6 +314,10 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getSteps() != null && other.getSteps().equals(this.getSteps()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +328,7 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode());
         hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         return hashCode;
     }
 

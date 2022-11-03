@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to delete a <a>Stage</a> resource.
+ * Requests API Gateway to delete a Stage resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> resource to delete.
+     * The name of the Stage resource to delete.
      * </p>
      */
     private String stageName;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> resource to delete.
+     * The name of the Stage resource to delete.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name of the <a>Stage</a> resource to delete.
+     *        The name of the Stage resource to delete.
      */
 
     public void setStageName(String stageName) {
@@ -93,10 +93,10 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> resource to delete.
+     * The name of the Stage resource to delete.
      * </p>
      * 
-     * @return [Required] The name of the <a>Stage</a> resource to delete.
+     * @return The name of the Stage resource to delete.
      */
 
     public String getStageName() {
@@ -105,11 +105,11 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> resource to delete.
+     * The name of the Stage resource to delete.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name of the <a>Stage</a> resource to delete.
+     *        The name of the Stage resource to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -237,6 +237,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
                         organizationalUnitIdsListIndex++;
                     }
                 }
+
+                if (deploymentTargets.getAccountFilterType() != null) {
+                    request.addParameter("DeploymentTargets.AccountFilterType", StringUtils.fromString(deploymentTargets.getAccountFilterType()));
+                }
             }
         }
 

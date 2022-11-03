@@ -343,6 +343,25 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Retrieves setting configurations for Inspector scans.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @return Result of the GetConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetConfigurationResult getConfiguration(GetConfigurationRequest getConfigurationRequest);
+
+    /**
+     * <p>
      * Retrieves information about the Amazon Inspector delegated administrator for your organization.
      * </p>
      * 
@@ -655,6 +674,29 @@ public interface AWSInspector2 {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector
+     * delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization
+     * cannot update this setting.
+     * </p>
+     * 
+     * @param updateConfigurationRequest
+     * @return Result of the UpdateConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateConfigurationResult updateConfiguration(UpdateConfigurationRequest updateConfigurationRequest);
 
     /**
      * <p>

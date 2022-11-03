@@ -60,6 +60,10 @@ public class AutoMergingJsonUnmarshaller implements Unmarshaller<AutoMerging, Js
                     context.nextToken();
                     autoMerging.setConflictResolution(ConflictResolutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MinAllowedConfidenceScoreForMerging", targetDepth)) {
+                    context.nextToken();
+                    autoMerging.setMinAllowedConfidenceScoreForMerging(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

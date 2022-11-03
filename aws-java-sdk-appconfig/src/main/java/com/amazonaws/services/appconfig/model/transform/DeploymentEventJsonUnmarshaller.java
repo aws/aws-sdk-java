@@ -60,6 +60,12 @@ public class DeploymentEventJsonUnmarshaller implements Unmarshaller<DeploymentE
                     context.nextToken();
                     deploymentEvent.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ActionInvocations", targetDepth)) {
+                    context.nextToken();
+                    deploymentEvent.setActionInvocations(new ListUnmarshaller<ActionInvocation>(ActionInvocationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("OccurredAt", targetDepth)) {
                     context.nextToken();
                     deploymentEvent.setOccurredAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

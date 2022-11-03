@@ -119,6 +119,18 @@ public class PutCompositeAlarmRequestMarshaller implements Marshaller<Request<Pu
             }
         }
 
+        if (putCompositeAlarmRequest.getActionsSuppressor() != null) {
+            request.addParameter("ActionsSuppressor", StringUtils.fromString(putCompositeAlarmRequest.getActionsSuppressor()));
+        }
+
+        if (putCompositeAlarmRequest.getActionsSuppressorWaitPeriod() != null) {
+            request.addParameter("ActionsSuppressorWaitPeriod", StringUtils.fromInteger(putCompositeAlarmRequest.getActionsSuppressorWaitPeriod()));
+        }
+
+        if (putCompositeAlarmRequest.getActionsSuppressorExtensionPeriod() != null) {
+            request.addParameter("ActionsSuppressorExtensionPeriod", StringUtils.fromInteger(putCompositeAlarmRequest.getActionsSuppressorExtensionPeriod()));
+        }
+
         return request;
     }
 

@@ -27,7 +27,8 @@ public enum InstanceMetricName {
     StatusCheckFailed_Instance("StatusCheckFailed_Instance"),
     StatusCheckFailed_System("StatusCheckFailed_System"),
     BurstCapacityTime("BurstCapacityTime"),
-    BurstCapacityPercentage("BurstCapacityPercentage");
+    BurstCapacityPercentage("BurstCapacityPercentage"),
+    MetadataNoToken("MetadataNoToken");
 
     private String value;
 

@@ -33,6 +33,8 @@ public class ArtifactsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Video").build();
     private static final MarshallingInfo<StructuredPojo> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Content").build();
+    private static final MarshallingInfo<StructuredPojo> COMPOSITEDVIDEO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompositedVideo").build();
 
     private static final ArtifactsConfigurationMarshaller instance = new ArtifactsConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class ArtifactsConfigurationMarshaller {
             protocolMarshaller.marshall(artifactsConfiguration.getAudio(), AUDIO_BINDING);
             protocolMarshaller.marshall(artifactsConfiguration.getVideo(), VIDEO_BINDING);
             protocolMarshaller.marshall(artifactsConfiguration.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(artifactsConfiguration.getCompositedVideo(), COMPOSITEDVIDEO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

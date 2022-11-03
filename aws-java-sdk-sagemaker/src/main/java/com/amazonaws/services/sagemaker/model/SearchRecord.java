@@ -70,6 +70,18 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Project project;
+    /**
+     * <p>
+     * The feature metadata used to search through the features.
+     * </p>
+     */
+    private FeatureMetadata featureMetadata;
+    /**
+     * <p>
+     * The properties of a hyperparameter tuning job.
+     * </p>
+     */
+    private HyperParameterTuningJobSearchEntity hyperParameterTuningJob;
 
     /**
      * <p>
@@ -428,6 +440,86 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The feature metadata used to search through the features.
+     * </p>
+     * 
+     * @param featureMetadata
+     *        The feature metadata used to search through the features.
+     */
+
+    public void setFeatureMetadata(FeatureMetadata featureMetadata) {
+        this.featureMetadata = featureMetadata;
+    }
+
+    /**
+     * <p>
+     * The feature metadata used to search through the features.
+     * </p>
+     * 
+     * @return The feature metadata used to search through the features.
+     */
+
+    public FeatureMetadata getFeatureMetadata() {
+        return this.featureMetadata;
+    }
+
+    /**
+     * <p>
+     * The feature metadata used to search through the features.
+     * </p>
+     * 
+     * @param featureMetadata
+     *        The feature metadata used to search through the features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withFeatureMetadata(FeatureMetadata featureMetadata) {
+        setFeatureMetadata(featureMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The properties of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param hyperParameterTuningJob
+     *        The properties of a hyperparameter tuning job.
+     */
+
+    public void setHyperParameterTuningJob(HyperParameterTuningJobSearchEntity hyperParameterTuningJob) {
+        this.hyperParameterTuningJob = hyperParameterTuningJob;
+    }
+
+    /**
+     * <p>
+     * The properties of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @return The properties of a hyperparameter tuning job.
+     */
+
+    public HyperParameterTuningJobSearchEntity getHyperParameterTuningJob() {
+        return this.hyperParameterTuningJob;
+    }
+
+    /**
+     * <p>
+     * The properties of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param hyperParameterTuningJob
+     *        The properties of a hyperparameter tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withHyperParameterTuningJob(HyperParameterTuningJobSearchEntity hyperParameterTuningJob) {
+        setHyperParameterTuningJob(hyperParameterTuningJob);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -460,7 +552,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         if (getFeatureGroup() != null)
             sb.append("FeatureGroup: ").append(getFeatureGroup()).append(",");
         if (getProject() != null)
-            sb.append("Project: ").append(getProject());
+            sb.append("Project: ").append(getProject()).append(",");
+        if (getFeatureMetadata() != null)
+            sb.append("FeatureMetadata: ").append(getFeatureMetadata()).append(",");
+        if (getHyperParameterTuningJob() != null)
+            sb.append("HyperParameterTuningJob: ").append(getHyperParameterTuningJob());
         sb.append("}");
         return sb.toString();
     }
@@ -519,6 +615,14 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProject() != null && other.getProject().equals(this.getProject()) == false)
             return false;
+        if (other.getFeatureMetadata() == null ^ this.getFeatureMetadata() == null)
+            return false;
+        if (other.getFeatureMetadata() != null && other.getFeatureMetadata().equals(this.getFeatureMetadata()) == false)
+            return false;
+        if (other.getHyperParameterTuningJob() == null ^ this.getHyperParameterTuningJob() == null)
+            return false;
+        if (other.getHyperParameterTuningJob() != null && other.getHyperParameterTuningJob().equals(this.getHyperParameterTuningJob()) == false)
+            return false;
         return true;
     }
 
@@ -538,6 +642,8 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPipelineExecution() == null) ? 0 : getPipelineExecution().hashCode());
         hashCode = prime * hashCode + ((getFeatureGroup() == null) ? 0 : getFeatureGroup().hashCode());
         hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
+        hashCode = prime * hashCode + ((getFeatureMetadata() == null) ? 0 : getFeatureMetadata().hashCode());
+        hashCode = prime * hashCode + ((getHyperParameterTuningJob() == null) ? 0 : getHyperParameterTuningJob().hashCode());
         return hashCode;
     }
 

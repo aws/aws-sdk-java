@@ -30,31 +30,30 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      */
     private String loggingRole;
     /**
      * <p>
-     * The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow
-     * belongs.
+     * The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      * </p>
      */
     private String logGroupName;
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
-     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
-     *        set, user activity can be viewed in your CloudWatch logs.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to
+     *        turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity
+     *        in your CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -63,14 +62,14 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      * 
-     * @return Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
-     *         role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
-     *         set, user activity can be viewed in your CloudWatch logs.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to
+     *         turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity
+     *         in your CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -79,15 +78,15 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
-     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
-     *        set, user activity can be viewed in your CloudWatch logs.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to
+     *        turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity
+     *        in your CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +97,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow
-     * belongs.
+     * The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this
-     *        workflow belongs.
+     *        The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -113,12 +110,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow
-     * belongs.
+     * The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      * </p>
      * 
-     * @return The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this
-     *         workflow belongs.
+     * @return The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      */
 
     public String getLogGroupName() {
@@ -127,13 +122,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow
-     * belongs.
+     * The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this
-     *        workflow belongs.
+     *        The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

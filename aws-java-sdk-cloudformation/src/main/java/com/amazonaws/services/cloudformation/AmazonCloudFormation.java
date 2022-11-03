@@ -247,7 +247,7 @@ public interface AmazonCloudFormation {
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on resource and stack limitations, see <a
+     *         For information about resource and stack limitations, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
      *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
      * @sample AmazonCloudFormation.CreateChangeSet
@@ -268,7 +268,7 @@ public interface AmazonCloudFormation {
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on resource and stack limitations, see <a
+     *         For information about resource and stack limitations, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
      *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
      * @throws AlreadyExistsException
@@ -307,7 +307,7 @@ public interface AmazonCloudFormation {
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on resource and stack limitations, see <a
+     *         For information about resource and stack limitations, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
      *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
      * @sample AmazonCloudFormation.CreateStackInstances
@@ -330,7 +330,7 @@ public interface AmazonCloudFormation {
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on resource and stack limitations, see <a
+     *         For information about resource and stack limitations, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
      *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
      * @sample AmazonCloudFormation.CreateStackSet
@@ -429,8 +429,8 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Deletes a stack set. Before you can delete a stack set, all of its member stack instances must be deleted. For
-     * more information about how to do this, see <a>DeleteStackInstances</a>.
+     * Deletes a stack set. Before you can delete a stack set, all its member stack instances must be deleted. For more
+     * information about how to complete this, see <a>DeleteStackInstances</a>.
      * </p>
      * 
      * @param deleteStackSetRequest
@@ -542,7 +542,7 @@ public interface AmazonCloudFormation {
      * <code>DescribePublisher</code> returns information about your own publisher account.
      * </p>
      * <p>
-     * For more information on registering as a publisher, see:
+     * For more information about registering as a publisher, see:
      * </p>
      * <ul>
      * <li>
@@ -574,7 +574,7 @@ public interface AmazonCloudFormation {
      * Returns information about a stack drift detection operation. A stack drift detection operation detects whether a
      * stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the
      * stack template and any values specified as template parameters. A stack is considered to have drifted if one or
-     * more of its resources have drifted. For more information on stack and resource drift, see <a
+     * more of its resources have drifted. For more information about stack and resource drift, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
@@ -930,7 +930,7 @@ public interface AmazonCloudFormation {
      * </li>
      * </ul>
      * <p>
-     * For more information on performing a drift detection operation on a stack set, see <a
+     * For more information about performing a drift detection operation on a stack set, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting unmanaged
      * changes in stack sets</a>.
      * </p>
@@ -1106,7 +1106,7 @@ public interface AmazonCloudFormation {
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on resource and stack limitations, see <a
+     *         For information about resource and stack limitations, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
      *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
      * @throws StackSetNotFoundException
@@ -1359,8 +1359,8 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Publishes the specified extension to the CloudFormation registry as a public extension in this region. Public
-     * extensions are available for use by all CloudFormation users. For more information on publishing extensions, see
-     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions are available for use by all CloudFormation users. For more information about publishing extensions,
+     * see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
      * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
@@ -1414,7 +1414,7 @@ public interface AmazonCloudFormation {
      * Services Regions.
      * </p>
      * <p>
-     * For information on requirements for registering as a public extension publisher, see <a href=
+     * For information about requirements for registering as a public extension publisher, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs"
      * >Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -1453,7 +1453,7 @@ public interface AmazonCloudFormation {
      * </li>
      * </ul>
      * <p>
-     * For more information on how to develop extensions and ready them for registration, see <a
+     * For more information about how to develop extensions and ready them for registration, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
      * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -1668,7 +1668,8 @@ public interface AmazonCloudFormation {
      * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * Once you've initiated testing on an extension using <code>TestType</code>, you can use <a
+     * Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned
+     * <code>TypeVersionArn</code> into <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
      * to monitor the current test status and test status description for the extension.
      * </p>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container for information about an identity provider.
+ * A container for information about an IdP.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/IdentityProviderType" target="_top">AWS
@@ -36,20 +36,19 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
     private String userPoolId;
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      */
     private String providerName;
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      */
     private String providerType;
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -125,6 +124,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <p>
      * private_key
      * </p>
+     * <p>
+     * <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private
+     * key.</i>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -165,28 +168,42 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -202,7 +219,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -212,25 +229,25 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
     private java.util.Map<String, String> providerDetails;
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      */
     private java.util.Map<String, String> attributeMapping;
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      */
     private java.util.List<String> idpIdentifiers;
     /**
      * <p>
-     * The date the identity provider was last modified.
+     * The date the IdP was last modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The date the identity provider was created.
+     * The date the IdP was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -277,11 +294,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      */
 
     public void setProviderName(String providerName) {
@@ -290,10 +307,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
-     * @return The identity provider name.
+     * @return The IdP name.
      */
 
     public String getProviderName() {
@@ -302,11 +319,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,11 +334,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -331,10 +348,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
-     * @return The identity provider type.
+     * @return The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -344,11 +361,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderTypeType
      */
@@ -360,11 +377,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -374,11 +391,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderTypeType
      */
@@ -390,8 +407,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -467,6 +483,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <p>
      * private_key
      * </p>
+     * <p>
+     * <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private
+     * key.</i>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -507,28 +527,42 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -544,15 +578,14 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * 
-     * @return The identity provider details. The following list describes the provider detail keys for each identity
-     *         provider type.</p>
+     * @return The IdP details. The following list describes the provider detail keys for each IdP type.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -627,6 +660,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *         <p>
      *         private_key
      *         </p>
+     *         <p>
+     *         <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the
+     *         private key.</i>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -667,28 +704,43 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
-     *         authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         The following keys are only present if Amazon Cognito didn't discover them at the
+     *         <code>oidc_issuer</code> URL.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         authorize_url
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         token_url
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         attributes_url
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         jwks_uri
      *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
-     *         attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *         Amazon Cognito sets the value of the following keys automatically. They are read-only.
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         attributes_url_add_attributes
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         </ul>
      *         </li>
@@ -704,7 +756,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
-     *         IDPSignOut <i>optional</i>
+     *         IDPSignout <i>optional</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -717,8 +769,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -794,6 +845,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <p>
      * private_key
      * </p>
+     * <p>
+     * <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private
+     * key.</i>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -834,28 +889,42 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -871,7 +940,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -879,8 +948,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param providerDetails
-     *        The identity provider details. The following list describes the provider detail keys for each identity
-     *        provider type.</p>
+     *        The IdP details. The following list describes the provider detail keys for each IdP type.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -955,6 +1023,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        <p>
      *        private_key
      *        </p>
+     *        <p>
+     *        <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the
+     *        private key.</i>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -995,28 +1067,43 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code>
+     *        URL.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        authorize_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        token_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        attributes_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        jwks_uri
      *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        Amazon Cognito sets the value of the following keys automatically. They are read-only.
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        </ul>
      *        </li>
@@ -1032,7 +1119,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignOut <i>optional</i>
+     *        IDPSignout <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1045,8 +1132,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -1122,6 +1208,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <p>
      * private_key
      * </p>
+     * <p>
+     * <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private
+     * key.</i>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -1162,28 +1252,42 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -1199,7 +1303,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -1207,8 +1311,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param providerDetails
-     *        The identity provider details. The following list describes the provider detail keys for each identity
-     *        provider type.</p>
+     *        The IdP details. The following list describes the provider detail keys for each IdP type.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1283,6 +1386,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        <p>
      *        private_key
      *        </p>
+     *        <p>
+     *        <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the
+     *        private key.</i>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1323,28 +1430,43 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code>
+     *        URL.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        authorize_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        token_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        attributes_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        jwks_uri
      *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        Amazon Cognito sets the value of the following keys automatically. They are read-only.
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        </ul>
      *        </li>
@@ -1360,7 +1482,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignOut <i>optional</i>
+     *        IDPSignout <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1403,10 +1525,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      * 
-     * @return A mapping of identity provider attributes to standard and custom user pool attributes.
+     * @return A mapping of IdP attributes to standard and custom user pool attributes.
      */
 
     public java.util.Map<String, String> getAttributeMapping() {
@@ -1415,11 +1537,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      * 
      * @param attributeMapping
-     *        A mapping of identity provider attributes to standard and custom user pool attributes.
+     *        A mapping of IdP attributes to standard and custom user pool attributes.
      */
 
     public void setAttributeMapping(java.util.Map<String, String> attributeMapping) {
@@ -1428,11 +1550,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      * 
      * @param attributeMapping
-     *        A mapping of identity provider attributes to standard and custom user pool attributes.
+     *        A mapping of IdP attributes to standard and custom user pool attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1471,10 +1593,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
-     * @return A list of identity provider identifiers.
+     * @return A list of IdP identifiers.
      */
 
     public java.util.List<String> getIdpIdentifiers() {
@@ -1483,11 +1605,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      */
 
     public void setIdpIdentifiers(java.util.Collection<String> idpIdentifiers) {
@@ -1501,7 +1623,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1510,7 +1632,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1526,11 +1648,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1541,11 +1663,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the identity provider was last modified.
+     * The date the IdP was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date the identity provider was last modified.
+     *        The date the IdP was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -1554,10 +1676,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the identity provider was last modified.
+     * The date the IdP was last modified.
      * </p>
      * 
-     * @return The date the identity provider was last modified.
+     * @return The date the IdP was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -1566,11 +1688,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the identity provider was last modified.
+     * The date the IdP was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date the identity provider was last modified.
+     *        The date the IdP was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1581,11 +1703,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the identity provider was created.
+     * The date the IdP was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the identity provider was created.
+     *        The date the IdP was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -1594,10 +1716,10 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the identity provider was created.
+     * The date the IdP was created.
      * </p>
      * 
-     * @return The date the identity provider was created.
+     * @return The date the IdP was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -1606,11 +1728,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the identity provider was created.
+     * The date the IdP was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the identity provider was created.
+     *        The date the IdP was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

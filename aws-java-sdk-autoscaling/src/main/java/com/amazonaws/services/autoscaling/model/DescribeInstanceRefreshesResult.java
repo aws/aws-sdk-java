@@ -25,7 +25,7 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The instance refreshes for the specified group.
+     * The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceRefresh> instanceRefreshes;
@@ -40,10 +40,10 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The instance refreshes for the specified group.
+     * The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * </p>
      * 
-     * @return The instance refreshes for the specified group.
+     * @return The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      */
 
     public java.util.List<InstanceRefresh> getInstanceRefreshes() {
@@ -55,11 +55,11 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The instance refreshes for the specified group.
+     * The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * </p>
      * 
      * @param instanceRefreshes
-     *        The instance refreshes for the specified group.
+     *        The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      */
 
     public void setInstanceRefreshes(java.util.Collection<InstanceRefresh> instanceRefreshes) {
@@ -73,7 +73,7 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The instance refreshes for the specified group.
+     * The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param instanceRefreshes
-     *        The instance refreshes for the specified group.
+     *        The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The instance refreshes for the specified group.
+     * The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * </p>
      * 
      * @param instanceRefreshes
-     *        The instance refreshes for the specified group.
+     *        The instance refreshes for the specified group, sorted by creation timestamp in descending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,6 +96,14 @@ public class ModelDescriptionJsonUnmarshaller implements Unmarshaller<ModelDescr
                     context.nextToken();
                     modelDescription.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MinInferenceUnits", targetDepth)) {
+                    context.nextToken();
+                    modelDescription.setMinInferenceUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxInferenceUnits", targetDepth)) {
+                    context.nextToken();
+                    modelDescription.setMaxInferenceUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

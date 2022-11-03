@@ -26,7 +26,8 @@ public enum AddonStatus {
     UPDATING("UPDATING"),
     DELETING("DELETING"),
     DELETE_FAILED("DELETE_FAILED"),
-    DEGRADED("DEGRADED");
+    DEGRADED("DEGRADED"),
+    UPDATE_FAILED("UPDATE_FAILED");
 
     private String value;
 

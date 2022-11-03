@@ -39,7 +39,7 @@ public class GetResourceEventConfigurationRequest extends com.amazonaws.AmazonWe
     private String identifierType;
     /**
      * <p>
-     * Partner type of the resource if the identifier type is PartnerAccountId.
+     * Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * </p>
      */
     private String partnerType;
@@ -145,11 +145,11 @@ public class GetResourceEventConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Partner type of the resource if the identifier type is PartnerAccountId.
+     * Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * </p>
      * 
      * @param partnerType
-     *        Partner type of the resource if the identifier type is PartnerAccountId.
+     *        Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * @see EventNotificationPartnerType
      */
 
@@ -159,10 +159,10 @@ public class GetResourceEventConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Partner type of the resource if the identifier type is PartnerAccountId.
+     * Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * </p>
      * 
-     * @return Partner type of the resource if the identifier type is PartnerAccountId.
+     * @return Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * @see EventNotificationPartnerType
      */
 
@@ -172,11 +172,11 @@ public class GetResourceEventConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Partner type of the resource if the identifier type is PartnerAccountId.
+     * Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * </p>
      * 
      * @param partnerType
-     *        Partner type of the resource if the identifier type is PartnerAccountId.
+     *        Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationPartnerType
      */
@@ -188,11 +188,11 @@ public class GetResourceEventConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Partner type of the resource if the identifier type is PartnerAccountId.
+     * Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * </p>
      * 
      * @param partnerType
-     *        Partner type of the resource if the identifier type is PartnerAccountId.
+     *        Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationPartnerType
      */

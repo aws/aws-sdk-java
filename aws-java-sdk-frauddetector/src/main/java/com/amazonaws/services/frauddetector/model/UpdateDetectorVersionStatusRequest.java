@@ -41,6 +41,9 @@ public class UpdateDetectorVersionStatusRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
+     * </p>
      */
     private String status;
 
@@ -128,9 +131,14 @@ public class UpdateDetectorVersionStatusRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
+     * </p>
      * 
      * @param status
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
      * @see DetectorVersionStatus
      */
 
@@ -142,8 +150,13 @@ public class UpdateDetectorVersionStatusRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
+     * </p>
      * 
-     * @return The new status.
+     * @return The new status.</p>
+     *         <p>
+     *         The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
      * @see DetectorVersionStatus
      */
 
@@ -155,9 +168,14 @@ public class UpdateDetectorVersionStatusRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
+     * </p>
      * 
      * @param status
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetectorVersionStatus
      */
@@ -171,9 +189,14 @@ public class UpdateDetectorVersionStatusRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
+     * </p>
      * 
      * @param status
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetectorVersionStatus
      */

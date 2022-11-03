@@ -25,18 +25,18 @@ public class DescribeContactFlowModuleResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      */
     private ContactFlowModule contactFlowModule;
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * 
      * @param contactFlowModule
-     *        Information about the contact flow module.
+     *        Information about the flow module.
      */
 
     public void setContactFlowModule(ContactFlowModule contactFlowModule) {
@@ -45,10 +45,10 @@ public class DescribeContactFlowModuleResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * 
-     * @return Information about the contact flow module.
+     * @return Information about the flow module.
      */
 
     public ContactFlowModule getContactFlowModule() {
@@ -57,11 +57,11 @@ public class DescribeContactFlowModuleResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * 
      * @param contactFlowModule
-     *        Information about the contact flow module.
+     *        Information about the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing summary details of a job.
+ * An object that represents summary details of a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobSummary" target="_top">AWS API
@@ -36,13 +36,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String jobArn;
     /**
      * <p>
-     * The ID of the job.
+     * The job ID.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * The name of the job.
+     * The job name.
      * </p>
      */
     private String jobName;
@@ -62,33 +62,33 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job.
+     * A short, human-readable string to provide more details for the current status of the job.
      * </p>
      */
     private String statusReason;
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      */
     private Long startedAt;
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to
-     * a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.
      * </p>
      */
     private Long stoppedAt;
     /**
      * <p>
-     * An object representing the details of the container that's associated with the job.
+     * An object that represents the details of the container that's associated with the job.
      * </p>
      */
     private ContainerSummary container;
     /**
      * <p>
-     * The array properties of the job, if it is an array job.
+     * The array properties of the job, if it's an array job.
      * </p>
      */
     private ArrayPropertiesSummary arrayProperties;
@@ -152,11 +152,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the job.
+     * The job ID.
      * </p>
      * 
      * @param jobId
-     *        The ID of the job.
+     *        The job ID.
      */
 
     public void setJobId(String jobId) {
@@ -165,10 +165,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the job.
+     * The job ID.
      * </p>
      * 
-     * @return The ID of the job.
+     * @return The job ID.
      */
 
     public String getJobId() {
@@ -177,11 +177,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the job.
+     * The job ID.
      * </p>
      * 
      * @param jobId
-     *        The ID of the job.
+     *        The job ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job.
+     * The job name.
      * </p>
      * 
      * @param jobName
-     *        The name of the job.
+     *        The job name.
      */
 
     public void setJobName(String jobName) {
@@ -205,10 +205,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job.
+     * The job name.
      * </p>
      * 
-     * @return The name of the job.
+     * @return The job name.
      */
 
     public String getJobName() {
@@ -217,11 +217,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job.
+     * The job name.
      * </p>
      * 
      * @param jobName
-     *        The name of the job.
+     *        The job name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,11 +346,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job.
+     * A short, human-readable string to provide more details for the current status of the job.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the job.
+     *        A short, human-readable string to provide more details for the current status of the job.
      */
 
     public void setStatusReason(String statusReason) {
@@ -359,10 +359,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job.
+     * A short, human-readable string to provide more details for the current status of the job.
      * </p>
      * 
-     * @return A short, human-readable string to provide additional details about the current status of the job.
+     * @return A short, human-readable string to provide more details for the current status of the job.
      */
 
     public String getStatusReason() {
@@ -371,11 +371,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the job.
+     * A short, human-readable string to provide more details for the current status of the job.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the job.
+     *        A short, human-readable string to provide more details for the current status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,13 +386,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code>
-     *        state to the <code>RUNNING</code> state).
+     *        The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from
+     *        the <code>STARTING</code> state to the <code>RUNNING</code> state.
      */
 
     public void setStartedAt(Long startedAt) {
@@ -401,12 +401,12 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      * 
-     * @return The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code>
-     *         state to the <code>RUNNING</code> state).
+     * @return The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from
+     *         the <code>STARTING</code> state to the <code>RUNNING</code> state.
      */
 
     public Long getStartedAt() {
@@ -415,13 +415,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code>
-     *        state to the <code>RUNNING</code> state).
+     *        The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from
+     *        the <code>STARTING</code> state to the <code>RUNNING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,13 +432,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to
-     * a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code>
-     *        state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     *        The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from
+     *        the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.
      */
 
     public void setStoppedAt(Long stoppedAt) {
@@ -447,12 +447,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to
-     * a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.
      * </p>
      * 
-     * @return The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code>
-     *         state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * @return The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from
+     *         the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>
+     *         .
      */
 
     public Long getStoppedAt() {
@@ -461,13 +462,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to
-     * a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code>
-     *        state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     *        The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from
+     *        the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,11 +479,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that's associated with the job.
+     * An object that represents the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that's associated with the job.
+     *        An object that represents the details of the container that's associated with the job.
      */
 
     public void setContainer(ContainerSummary container) {
@@ -491,10 +492,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that's associated with the job.
+     * An object that represents the details of the container that's associated with the job.
      * </p>
      * 
-     * @return An object representing the details of the container that's associated with the job.
+     * @return An object that represents the details of the container that's associated with the job.
      */
 
     public ContainerSummary getContainer() {
@@ -503,11 +504,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that's associated with the job.
+     * An object that represents the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that's associated with the job.
+     *        An object that represents the details of the container that's associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,11 +519,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array properties of the job, if it is an array job.
+     * The array properties of the job, if it's an array job.
      * </p>
      * 
      * @param arrayProperties
-     *        The array properties of the job, if it is an array job.
+     *        The array properties of the job, if it's an array job.
      */
 
     public void setArrayProperties(ArrayPropertiesSummary arrayProperties) {
@@ -531,10 +532,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array properties of the job, if it is an array job.
+     * The array properties of the job, if it's an array job.
      * </p>
      * 
-     * @return The array properties of the job, if it is an array job.
+     * @return The array properties of the job, if it's an array job.
      */
 
     public ArrayPropertiesSummary getArrayProperties() {
@@ -543,11 +544,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array properties of the job, if it is an array job.
+     * The array properties of the job, if it's an array job.
      * </p>
      * 
      * @param arrayProperties
-     *        The array properties of the job, if it is an array job.
+     *        The array properties of the job, if it's an array job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

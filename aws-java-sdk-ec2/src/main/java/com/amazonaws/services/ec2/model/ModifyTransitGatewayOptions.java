@@ -81,6 +81,17 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
      * </p>
      */
     private String propagationDefaultRouteTableId;
+    /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * </p>
+     * <p>
+     * The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all
+     * transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.
+     * </p>
+     */
+    private Long amazonSideAsn;
 
     /**
      * <p>
@@ -612,6 +623,76 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * </p>
+     * <p>
+     * The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all
+     * transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534
+     *        for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
+     *        <p>
+     *        The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first
+     *        delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit
+     *        gateway.
+     */
+
+    public void setAmazonSideAsn(Long amazonSideAsn) {
+        this.amazonSideAsn = amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * </p>
+     * <p>
+     * The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all
+     * transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.
+     * </p>
+     * 
+     * @return A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to
+     *         65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
+     *         <p>
+     *         The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first
+     *         delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit
+     *         gateway.
+     */
+
+    public Long getAmazonSideAsn() {
+        return this.amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * </p>
+     * <p>
+     * The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all
+     * transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534
+     *        for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
+     *        <p>
+     *        The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first
+     *        delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit
+     *        gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyTransitGatewayOptions withAmazonSideAsn(Long amazonSideAsn) {
+        setAmazonSideAsn(amazonSideAsn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +721,9 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
         if (getDefaultRouteTablePropagation() != null)
             sb.append("DefaultRouteTablePropagation: ").append(getDefaultRouteTablePropagation()).append(",");
         if (getPropagationDefaultRouteTableId() != null)
-            sb.append("PropagationDefaultRouteTableId: ").append(getPropagationDefaultRouteTableId());
+            sb.append("PropagationDefaultRouteTableId: ").append(getPropagationDefaultRouteTableId()).append(",");
+        if (getAmazonSideAsn() != null)
+            sb.append("AmazonSideAsn: ").append(getAmazonSideAsn());
         sb.append("}");
         return sb.toString();
     }
@@ -694,6 +777,10 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
         if (other.getPropagationDefaultRouteTableId() != null
                 && other.getPropagationDefaultRouteTableId().equals(this.getPropagationDefaultRouteTableId()) == false)
             return false;
+        if (other.getAmazonSideAsn() == null ^ this.getAmazonSideAsn() == null)
+            return false;
+        if (other.getAmazonSideAsn() != null && other.getAmazonSideAsn().equals(this.getAmazonSideAsn()) == false)
+            return false;
         return true;
     }
 
@@ -711,6 +798,7 @@ public class ModifyTransitGatewayOptions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssociationDefaultRouteTableId() == null) ? 0 : getAssociationDefaultRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getDefaultRouteTablePropagation() == null) ? 0 : getDefaultRouteTablePropagation().hashCode());
         hashCode = prime * hashCode + ((getPropagationDefaultRouteTableId() == null) ? 0 : getPropagationDefaultRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getAmazonSideAsn() == null) ? 0 : getAmazonSideAsn().hashCode());
         return hashCode;
     }
 

@@ -62,6 +62,12 @@ public class DescribeReleaseLabelResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeReleaseLabelResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailableOSReleases", targetDepth)) {
+                    context.nextToken();
+                    describeReleaseLabelResult.setAvailableOSReleases(new ListUnmarshaller<OSRelease>(OSReleaseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

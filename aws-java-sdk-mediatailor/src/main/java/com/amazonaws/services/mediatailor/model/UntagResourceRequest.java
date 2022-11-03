@@ -27,27 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * A comma-separated list of the tag keys to remove from the playback configuration.
+     * The tag keys associated with the resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any
-     *        playback configuration request.
+     *        The Amazon Resource Name (ARN) of the resource to untag.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,12 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any
-     *         playback configuration request.
+     * @return The Amazon Resource Name (ARN) of the resource to untag.
      */
 
     public String getResourceArn() {
@@ -70,13 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any
-     *        playback configuration request.
+     *        The Amazon Resource Name (ARN) of the resource to untag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A comma-separated list of the tag keys to remove from the playback configuration.
+     * The tag keys associated with the resource.
      * </p>
      * 
-     * @return A comma-separated list of the tag keys to remove from the playback configuration.
+     * @return The tag keys associated with the resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -99,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A comma-separated list of the tag keys to remove from the playback configuration.
+     * The tag keys associated with the resource.
      * </p>
      * 
      * @param tagKeys
-     *        A comma-separated list of the tag keys to remove from the playback configuration.
+     *        The tag keys associated with the resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -117,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A comma-separated list of the tag keys to remove from the playback configuration.
+     * The tag keys associated with the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        A comma-separated list of the tag keys to remove from the playback configuration.
+     *        The tag keys associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A comma-separated list of the tag keys to remove from the playback configuration.
+     * The tag keys associated with the resource.
      * </p>
      * 
      * @param tagKeys
-     *        A comma-separated list of the tag keys to remove from the playback configuration.
+     *        The tag keys associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

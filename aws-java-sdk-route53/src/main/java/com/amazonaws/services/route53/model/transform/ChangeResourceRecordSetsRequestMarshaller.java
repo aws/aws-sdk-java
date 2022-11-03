@@ -180,6 +180,22 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                             xmlWriter.startElement("TrafficPolicyInstanceId").value(resourceRecordSet.getTrafficPolicyInstanceId())
                                                     .endElement();
                                         }
+
+                                        {
+                                            CidrRoutingConfig cidrRoutingConfig = resourceRecordSet.getCidrRoutingConfig();
+                                            if (cidrRoutingConfig != null) {
+                                                xmlWriter.startElement("CidrRoutingConfig");
+
+                                                if (cidrRoutingConfig.getCollectionId() != null) {
+                                                    xmlWriter.startElement("CollectionId").value(cidrRoutingConfig.getCollectionId()).endElement();
+                                                }
+
+                                                if (cidrRoutingConfig.getLocationName() != null) {
+                                                    xmlWriter.startElement("LocationName").value(cidrRoutingConfig.getLocationName()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
                                         xmlWriter.endElement();
                                     }
                                 }

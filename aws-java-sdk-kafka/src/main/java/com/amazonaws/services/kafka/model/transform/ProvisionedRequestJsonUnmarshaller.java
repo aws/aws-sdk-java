@@ -84,6 +84,10 @@ public class ProvisionedRequestJsonUnmarshaller implements Unmarshaller<Provisio
                     context.nextToken();
                     provisionedRequest.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("storageMode", targetDepth)) {
+                    context.nextToken();
+                    provisionedRequest.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

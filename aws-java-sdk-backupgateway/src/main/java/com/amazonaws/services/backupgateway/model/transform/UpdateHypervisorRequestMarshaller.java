@@ -31,6 +31,8 @@ public class UpdateHypervisorRequestMarshaller {
             .marshallLocationName("Host").build();
     private static final MarshallingInfo<String> HYPERVISORARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HypervisorArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class UpdateHypervisorRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateHypervisorRequest.getHost(), HOST_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getHypervisorArn(), HYPERVISORARN_BINDING);
+            protocolMarshaller.marshall(updateHypervisorRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getUsername(), USERNAME_BINDING);
         } catch (Exception e) {

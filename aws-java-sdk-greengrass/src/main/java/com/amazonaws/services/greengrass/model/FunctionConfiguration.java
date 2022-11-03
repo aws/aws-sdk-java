@@ -46,6 +46,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      * to pinned Lambda functions for each request.
      */
     private Integer timeout;
+    /**
+     * The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     * function.
+     */
+    private String functionRuntimeOverride;
 
     /**
      * The expected encoding type of the input payload for the function. The default is ''json''.
@@ -325,6 +330,46 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     * function.
+     * 
+     * @param functionRuntimeOverride
+     *        The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     *        function.
+     */
+
+    public void setFunctionRuntimeOverride(String functionRuntimeOverride) {
+        this.functionRuntimeOverride = functionRuntimeOverride;
+    }
+
+    /**
+     * The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     * function.
+     * 
+     * @return The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     *         function.
+     */
+
+    public String getFunctionRuntimeOverride() {
+        return this.functionRuntimeOverride;
+    }
+
+    /**
+     * The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     * function.
+     * 
+     * @param functionRuntimeOverride
+     *        The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda
+     *        function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withFunctionRuntimeOverride(String functionRuntimeOverride) {
+        setFunctionRuntimeOverride(functionRuntimeOverride);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -349,7 +394,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         if (getPinned() != null)
             sb.append("Pinned: ").append(getPinned()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: ").append(getTimeout());
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getFunctionRuntimeOverride() != null)
+            sb.append("FunctionRuntimeOverride: ").append(getFunctionRuntimeOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -392,6 +439,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getFunctionRuntimeOverride() == null ^ this.getFunctionRuntimeOverride() == null)
+            return false;
+        if (other.getFunctionRuntimeOverride() != null && other.getFunctionRuntimeOverride().equals(this.getFunctionRuntimeOverride()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +458,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getPinned() == null) ? 0 : getPinned().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getFunctionRuntimeOverride() == null) ? 0 : getFunctionRuntimeOverride().hashCode());
         return hashCode;
     }
 

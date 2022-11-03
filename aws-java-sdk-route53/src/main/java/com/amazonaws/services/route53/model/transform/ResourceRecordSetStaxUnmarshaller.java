@@ -114,6 +114,11 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     resourceRecordSet.setTrafficPolicyInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CidrRoutingConfig", targetDepth)) {
+                    resourceRecordSet.setCidrRoutingConfig(CidrRoutingConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return resourceRecordSet;

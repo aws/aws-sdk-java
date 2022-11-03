@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum FailureReason {
 
     TOKEN_MISSING("TOKEN_MISSING"),
-    TOKEN_EXPIRED("TOKEN_EXPIRED");
+    TOKEN_EXPIRED("TOKEN_EXPIRED"),
+    TOKEN_INVALID("TOKEN_INVALID"),
+    TOKEN_DOMAIN_MISMATCH("TOKEN_DOMAIN_MISMATCH");
 
     private String value;
 

@@ -31,7 +31,9 @@ public class GetSolutionMetricsResult extends com.amazonaws.AmazonWebServiceResu
     private String solutionVersionArn;
     /**
      * <p>
-     * The metrics for the solution version.
+     * The metrics for the solution version. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     * solution version with metrics </a>.
      * </p>
      */
     private java.util.Map<String, Double> metrics;
@@ -78,10 +80,14 @@ public class GetSolutionMetricsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The metrics for the solution version.
+     * The metrics for the solution version. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     * solution version with metrics </a>.
      * </p>
      * 
-     * @return The metrics for the solution version.
+     * @return The metrics for the solution version. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     *         solution version with metrics </a>.
      */
 
     public java.util.Map<String, Double> getMetrics() {
@@ -90,11 +96,15 @@ public class GetSolutionMetricsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The metrics for the solution version.
+     * The metrics for the solution version. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     * solution version with metrics </a>.
      * </p>
      * 
      * @param metrics
-     *        The metrics for the solution version.
+     *        The metrics for the solution version. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     *        solution version with metrics </a>.
      */
 
     public void setMetrics(java.util.Map<String, Double> metrics) {
@@ -103,11 +113,15 @@ public class GetSolutionMetricsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The metrics for the solution version.
+     * The metrics for the solution version. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     * solution version with metrics </a>.
      * </p>
      * 
      * @param metrics
-     *        The metrics for the solution version.
+     *        The metrics for the solution version. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a
+     *        solution version with metrics </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

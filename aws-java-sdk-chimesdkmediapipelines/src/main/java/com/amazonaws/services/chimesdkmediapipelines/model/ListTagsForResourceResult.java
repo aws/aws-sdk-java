@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * 
-     * @return The tag key-value pairs.
+     * @return The tags associated with the specified media pipeline.
      */
 
     public java.util.List<Tag> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs.
+     *        The tags associated with the specified media pipeline.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -62,7 +62,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs.
+     *        The tags associated with the specified media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag key-value pairs.
+     * The tags associated with the specified media pipeline.
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs.
+     *        The tags associated with the specified media pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,21 +25,21 @@ public class UpdateCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The attributes describing the analytics category. You can see information such as the rules that you've used to
-     * update the category and when the category was originally created.
+     * Provides you with the properties of the Call Analytics category you specified in your
+     * <code>UpdateCallAnalyticsCategory</code> request.
      * </p>
      */
     private CategoryProperties categoryProperties;
 
     /**
      * <p>
-     * The attributes describing the analytics category. You can see information such as the rules that you've used to
-     * update the category and when the category was originally created.
+     * Provides you with the properties of the Call Analytics category you specified in your
+     * <code>UpdateCallAnalyticsCategory</code> request.
      * </p>
      * 
      * @param categoryProperties
-     *        The attributes describing the analytics category. You can see information such as the rules that you've
-     *        used to update the category and when the category was originally created.
+     *        Provides you with the properties of the Call Analytics category you specified in your
+     *        <code>UpdateCallAnalyticsCategory</code> request.
      */
 
     public void setCategoryProperties(CategoryProperties categoryProperties) {
@@ -48,12 +48,12 @@ public class UpdateCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The attributes describing the analytics category. You can see information such as the rules that you've used to
-     * update the category and when the category was originally created.
+     * Provides you with the properties of the Call Analytics category you specified in your
+     * <code>UpdateCallAnalyticsCategory</code> request.
      * </p>
      * 
-     * @return The attributes describing the analytics category. You can see information such as the rules that you've
-     *         used to update the category and when the category was originally created.
+     * @return Provides you with the properties of the Call Analytics category you specified in your
+     *         <code>UpdateCallAnalyticsCategory</code> request.
      */
 
     public CategoryProperties getCategoryProperties() {
@@ -62,13 +62,13 @@ public class UpdateCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The attributes describing the analytics category. You can see information such as the rules that you've used to
-     * update the category and when the category was originally created.
+     * Provides you with the properties of the Call Analytics category you specified in your
+     * <code>UpdateCallAnalyticsCategory</code> request.
      * </p>
      * 
      * @param categoryProperties
-     *        The attributes describing the analytics category. You can see information such as the rules that you've
-     *        used to update the category and when the category was originally created.
+     *        Provides you with the properties of the Call Analytics category you specified in your
+     *        <code>UpdateCallAnalyticsCategory</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

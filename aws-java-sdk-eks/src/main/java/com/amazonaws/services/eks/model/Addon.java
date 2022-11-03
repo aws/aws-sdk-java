@@ -55,7 +55,7 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     private String addonVersion;
     /**
      * <p>
-     * An object that represents the health of the add-on.
+     * An object representing the health of the add-on.
      * </p>
      */
     private AddonHealth health;
@@ -274,11 +274,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the health of the add-on.
+     * An object representing the health of the add-on.
      * </p>
      * 
      * @param health
-     *        An object that represents the health of the add-on.
+     *        An object representing the health of the add-on.
      */
 
     public void setHealth(AddonHealth health) {
@@ -287,10 +287,10 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the health of the add-on.
+     * An object representing the health of the add-on.
      * </p>
      * 
-     * @return An object that represents the health of the add-on.
+     * @return An object representing the health of the add-on.
      */
 
     public AddonHealth getHealth() {
@@ -299,11 +299,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the health of the add-on.
+     * An object representing the health of the add-on.
      * </p>
      * 
      * @param health
-     *        An object that represents the health of the add-on.
+     *        An object representing the health of the add-on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

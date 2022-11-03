@@ -56,12 +56,9 @@ public class RevisionEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision
      * tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this
-     * read-only state, you can publish the revision to your products.
-     * </p>
-     * <p>
-     * Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API,
-     * using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely
-     * identified by their ARN.
+     * read-only state, you can publish the revision to your products. Finalized revisions can be published through the
+     * AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog
+     * API action. When using the API, revisions are uniquely identified by their ARN.
      * </p>
      */
     private Boolean finalized;
@@ -267,22 +264,18 @@ public class RevisionEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision
      * tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this
-     * read-only state, you can publish the revision to your products.
-     * </p>
-     * <p>
-     * Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API,
-     * using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely
-     * identified by their ARN.
+     * read-only state, you can publish the revision to your products. Finalized revisions can be published through the
+     * AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog
+     * API action. When using the API, revisions are uniquely identified by their ARN.
      * </p>
      * 
      * @param finalized
      *        To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a
      *        revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's
-     *        in this read-only state, you can publish the revision to your products.</p>
-     *        <p>
-     *        Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     *        API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are
-     *        uniquely identified by their ARN.
+     *        in this read-only state, you can publish the revision to your products. Finalized revisions can be
+     *        published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the
+     *        StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified
+     *        by their ARN.
      */
 
     public void setFinalized(Boolean finalized) {
@@ -293,21 +286,17 @@ public class RevisionEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision
      * tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this
-     * read-only state, you can publish the revision to your products.
-     * </p>
-     * <p>
-     * Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API,
-     * using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely
-     * identified by their ARN.
+     * read-only state, you can publish the revision to your products. Finalized revisions can be published through the
+     * AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog
+     * API action. When using the API, revisions are uniquely identified by their ARN.
      * </p>
      * 
      * @return To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a
      *         revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's
-     *         in this read-only state, you can publish the revision to your products.</p>
-     *         <p>
-     *         Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     *         API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are
-     *         uniquely identified by their ARN.
+     *         in this read-only state, you can publish the revision to your products. Finalized revisions can be
+     *         published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the
+     *         StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified
+     *         by their ARN.
      */
 
     public Boolean getFinalized() {
@@ -318,22 +307,18 @@ public class RevisionEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision
      * tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this
-     * read-only state, you can publish the revision to your products.
-     * </p>
-     * <p>
-     * Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API,
-     * using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely
-     * identified by their ARN.
+     * read-only state, you can publish the revision to your products. Finalized revisions can be published through the
+     * AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog
+     * API action. When using the API, revisions are uniquely identified by their ARN.
      * </p>
      * 
      * @param finalized
      *        To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a
      *        revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's
-     *        in this read-only state, you can publish the revision to your products.</p>
-     *        <p>
-     *        Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     *        API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are
-     *        uniquely identified by their ARN.
+     *        in this read-only state, you can publish the revision to your products. Finalized revisions can be
+     *        published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the
+     *        StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified
+     *        by their ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,21 +331,17 @@ public class RevisionEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision
      * tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this
-     * read-only state, you can publish the revision to your products.
-     * </p>
-     * <p>
-     * Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API,
-     * using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely
-     * identified by their ARN.
+     * read-only state, you can publish the revision to your products. Finalized revisions can be published through the
+     * AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog
+     * API action. When using the API, revisions are uniquely identified by their ARN.
      * </p>
      * 
      * @return To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a
      *         revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's
-     *         in this read-only state, you can publish the revision to your products.</p>
-     *         <p>
-     *         Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     *         API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are
-     *         uniquely identified by their ARN.
+     *         in this read-only state, you can publish the revision to your products. Finalized revisions can be
+     *         published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the
+     *         StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified
+     *         by their ARN.
      */
 
     public Boolean isFinalized() {

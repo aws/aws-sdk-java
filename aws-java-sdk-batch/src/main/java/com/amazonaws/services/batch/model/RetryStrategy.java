@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retry strategy associated with a job. For more information, see <a
+ * The retry strategy that's associated with a job. For more information, see <a
  * href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch
  * User Guide</i>.
  * </p>
@@ -40,8 +40,9 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
     private Integer attempts;
     /**
      * <p>
-     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is
+     * specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions
+     * match, then the job is retried.
      * </p>
      */
     private java.util.List<EvaluateOnExit> evaluateOnExit;
@@ -100,12 +101,14 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is
+     * specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions
+     * match, then the job is retried.
      * </p>
      * 
-     * @return Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     *         parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * @return Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter
+     *         is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed
+     *         conditions match, then the job is retried.
      */
 
     public java.util.List<EvaluateOnExit> getEvaluateOnExit() {
@@ -114,13 +117,15 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is
+     * specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions
+     * match, then the job is retried.
      * </p>
      * 
      * @param evaluateOnExit
-     *        Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     *        parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     *        Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter
+     *        is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed
+     *        conditions match, then the job is retried.
      */
 
     public void setEvaluateOnExit(java.util.Collection<EvaluateOnExit> evaluateOnExit) {
@@ -134,8 +139,9 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is
+     * specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions
+     * match, then the job is retried.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -144,8 +150,9 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param evaluateOnExit
-     *        Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     *        parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     *        Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter
+     *        is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed
+     *        conditions match, then the job is retried.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +168,15 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is
+     * specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions
+     * match, then the job is retried.
      * </p>
      * 
      * @param evaluateOnExit
-     *        Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
-     *        parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     *        Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter
+     *        is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed
+     *        conditions match, then the job is retried.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

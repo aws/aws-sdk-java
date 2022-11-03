@@ -33,6 +33,18 @@ public class PostFulfillmentStatusSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureResponse").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUTRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutResponse").build();
+    private static final MarshallingInfo<StructuredPojo> SUCCESSNEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("successNextStep").build();
+    private static final MarshallingInfo<StructuredPojo> SUCCESSCONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("successConditional").build();
+    private static final MarshallingInfo<StructuredPojo> FAILURENEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureNextStep").build();
+    private static final MarshallingInfo<StructuredPojo> FAILURECONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureConditional").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUTNEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutNextStep").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUTCONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutConditional").build();
 
     private static final PostFulfillmentStatusSpecificationMarshaller instance = new PostFulfillmentStatusSpecificationMarshaller();
 
@@ -53,6 +65,12 @@ public class PostFulfillmentStatusSpecificationMarshaller {
             protocolMarshaller.marshall(postFulfillmentStatusSpecification.getSuccessResponse(), SUCCESSRESPONSE_BINDING);
             protocolMarshaller.marshall(postFulfillmentStatusSpecification.getFailureResponse(), FAILURERESPONSE_BINDING);
             protocolMarshaller.marshall(postFulfillmentStatusSpecification.getTimeoutResponse(), TIMEOUTRESPONSE_BINDING);
+            protocolMarshaller.marshall(postFulfillmentStatusSpecification.getSuccessNextStep(), SUCCESSNEXTSTEP_BINDING);
+            protocolMarshaller.marshall(postFulfillmentStatusSpecification.getSuccessConditional(), SUCCESSCONDITIONAL_BINDING);
+            protocolMarshaller.marshall(postFulfillmentStatusSpecification.getFailureNextStep(), FAILURENEXTSTEP_BINDING);
+            protocolMarshaller.marshall(postFulfillmentStatusSpecification.getFailureConditional(), FAILURECONDITIONAL_BINDING);
+            protocolMarshaller.marshall(postFulfillmentStatusSpecification.getTimeoutNextStep(), TIMEOUTNEXTSTEP_BINDING);
+            protocolMarshaller.marshall(postFulfillmentStatusSpecification.getTimeoutConditional(), TIMEOUTCONDITIONAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

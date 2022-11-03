@@ -35,6 +35,12 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * </p>
      */
     private EgressConfiguration egressConfiguration;
+    /**
+     * <p>
+     * Network configuration settings for inbound message traffic.
+     * </p>
+     */
+    private IngressConfiguration ingressConfiguration;
 
     /**
      * <p>
@@ -77,6 +83,46 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Network configuration settings for inbound message traffic.
+     * </p>
+     * 
+     * @param ingressConfiguration
+     *        Network configuration settings for inbound message traffic.
+     */
+
+    public void setIngressConfiguration(IngressConfiguration ingressConfiguration) {
+        this.ingressConfiguration = ingressConfiguration;
+    }
+
+    /**
+     * <p>
+     * Network configuration settings for inbound message traffic.
+     * </p>
+     * 
+     * @return Network configuration settings for inbound message traffic.
+     */
+
+    public IngressConfiguration getIngressConfiguration() {
+        return this.ingressConfiguration;
+    }
+
+    /**
+     * <p>
+     * Network configuration settings for inbound message traffic.
+     * </p>
+     * 
+     * @param ingressConfiguration
+     *        Network configuration settings for inbound message traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkConfiguration withIngressConfiguration(IngressConfiguration ingressConfiguration) {
+        setIngressConfiguration(ingressConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +135,9 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEgressConfiguration() != null)
-            sb.append("EgressConfiguration: ").append(getEgressConfiguration());
+            sb.append("EgressConfiguration: ").append(getEgressConfiguration()).append(",");
+        if (getIngressConfiguration() != null)
+            sb.append("IngressConfiguration: ").append(getIngressConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,10 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getEgressConfiguration() != null && other.getEgressConfiguration().equals(this.getEgressConfiguration()) == false)
             return false;
+        if (other.getIngressConfiguration() == null ^ this.getIngressConfiguration() == null)
+            return false;
+        if (other.getIngressConfiguration() != null && other.getIngressConfiguration().equals(this.getIngressConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +169,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEgressConfiguration() == null) ? 0 : getEgressConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getIngressConfiguration() == null) ? 0 : getIngressConfiguration().hashCode());
         return hashCode;
     }
 

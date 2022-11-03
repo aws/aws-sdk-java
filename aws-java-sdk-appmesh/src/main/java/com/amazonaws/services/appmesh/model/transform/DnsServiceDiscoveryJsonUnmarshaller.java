@@ -52,6 +52,10 @@ public class DnsServiceDiscoveryJsonUnmarshaller implements Unmarshaller<DnsServ
                     context.nextToken();
                     dnsServiceDiscovery.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ipPreference", targetDepth)) {
+                    context.nextToken();
+                    dnsServiceDiscovery.setIpPreference(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("responseType", targetDepth)) {
                     context.nextToken();
                     dnsServiceDiscovery.setResponseType(context.getUnmarshaller(String.class).unmarshall(context));

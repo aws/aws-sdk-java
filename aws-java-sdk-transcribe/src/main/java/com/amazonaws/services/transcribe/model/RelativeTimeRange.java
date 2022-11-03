@@ -19,10 +19,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that allows percentages to specify the proportion of the call where you would like to apply a filter. For
- * example, you can specify the first half of the call. You can also specify the period of time between halfway through
- * to three-quarters of the way through the call. Because the length of conversation can vary between calls, you can
- * apply relative time ranges across all calls.
+ * A time range, in percentage, between two points in your media file.
+ * </p>
+ * <p>
+ * You can use <code>StartPercentage</code> and <code>EndPercentage</code> to search a custom segment. For example,
+ * setting <code>StartPercentage</code> to 10 and <code>EndPercentage</code> to 50 only searches for your specified
+ * criteria in the audio contained between the 10 percent mark and the 50 percent mark of your media file.
+ * </p>
+ * <p>
+ * You can use also <code>First</code> to search from the start of the media file until the time you specify, or
+ * <code>Last</code> to search from the time you specify until the end of the media file. For example, setting
+ * <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of
+ * the media file.
+ * </p>
+ * <p>
+ * If you prefer to use milliseconds instead of percentage, see .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/RelativeTimeRange" target="_top">AWS API
@@ -33,112 +44,43 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the percentage of the beginning of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file.
+     * If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.
      * </p>
      */
     private Integer startPercentage;
     /**
      * <p>
-     * A value that indicates the percentage of the end of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If
+     * you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.
      * </p>
      */
     private Integer endPercentage;
     /**
      * <p>
-     * A range that takes the portion of the call up to the time in milliseconds set by the value that you've specified.
-     * For example, if you specify <code>120000</code>, the time range is set for the first 120,000 milliseconds of the
-     * call.
+     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      */
     private Integer first;
     /**
      * <p>
-     * A range that takes the portion of the call from the time in milliseconds set by the value that you've specified
-     * to the end of the call. For example, if you specify <code>120000</code>, the time range is set for the last
-     * 120,000 milliseconds of the call.
+     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      */
     private Integer last;
 
     /**
      * <p>
-     * A value that indicates the percentage of the beginning of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file.
+     * If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.
      * </p>
      * 
      * @param startPercentage
-     *        A value that indicates the percentage of the beginning of the time range. To set a relative time range,
-     *        you must specify a start percentage and an end percentage. For example, if you specify the following
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartPercentage - 10
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EndPercentage - 50
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This looks at the time range starting from 10% of the way into the call to 50% of the way through the
-     *        call. For a call that lasts 100,000 milliseconds, this example range would apply from the 10,000
-     *        millisecond mark to the 50,000 millisecond mark.
+     *        The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media
+     *        file. If you include <code>StartPercentage</code> in your request, you must also include
+     *        <code>EndPercentage</code>.
      */
 
     public void setStartPercentage(Integer startPercentage) {
@@ -147,46 +89,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the percentage of the beginning of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file.
+     * If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.
      * </p>
      * 
-     * @return A value that indicates the percentage of the beginning of the time range. To set a relative time range,
-     *         you must specify a start percentage and an end percentage. For example, if you specify the following
-     *         values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         StartPercentage - 10
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EndPercentage - 50
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         This looks at the time range starting from 10% of the way into the call to 50% of the way through the
-     *         call. For a call that lasts 100,000 milliseconds, this example range would apply from the 10,000
-     *         millisecond mark to the 50,000 millisecond mark.
+     * @return The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media
+     *         file. If you include <code>StartPercentage</code> in your request, you must also include
+     *         <code>EndPercentage</code>.
      */
 
     public Integer getStartPercentage() {
@@ -195,47 +104,14 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the percentage of the beginning of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file.
+     * If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.
      * </p>
      * 
      * @param startPercentage
-     *        A value that indicates the percentage of the beginning of the time range. To set a relative time range,
-     *        you must specify a start percentage and an end percentage. For example, if you specify the following
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartPercentage - 10
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EndPercentage - 50
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This looks at the time range starting from 10% of the way into the call to 50% of the way through the
-     *        call. For a call that lasts 100,000 milliseconds, this example range would apply from the 10,000
-     *        millisecond mark to the 50,000 millisecond mark.
+     *        The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media
+     *        file. If you include <code>StartPercentage</code> in your request, you must also include
+     *        <code>EndPercentage</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,46 +122,14 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the percentage of the end of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If
+     * you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.
      * </p>
      * 
      * @param endPercentage
-     *        A value that indicates the percentage of the end of the time range. To set a relative time range, you must
-     *        specify a start percentage and an end percentage. For example, if you specify the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartPercentage - 10
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EndPercentage - 50
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This looks at the time range starting from 10% of the way into the call to 50% of the way through the
-     *        call. For a call that lasts 100,000 milliseconds, this example range would apply from the 10,000
-     *        millisecond mark to the 50,000 millisecond mark.
+     *        The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media
+     *        file. If you include <code>EndPercentage</code> in your request, you must also include
+     *        <code>StartPercentage</code>.
      */
 
     public void setEndPercentage(Integer endPercentage) {
@@ -294,46 +138,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the percentage of the end of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If
+     * you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.
      * </p>
      * 
-     * @return A value that indicates the percentage of the end of the time range. To set a relative time range, you
-     *         must specify a start percentage and an end percentage. For example, if you specify the following
-     *         values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         StartPercentage - 10
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EndPercentage - 50
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         This looks at the time range starting from 10% of the way into the call to 50% of the way through the
-     *         call. For a call that lasts 100,000 milliseconds, this example range would apply from the 10,000
-     *         millisecond mark to the 50,000 millisecond mark.
+     * @return The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media
+     *         file. If you include <code>EndPercentage</code> in your request, you must also include
+     *         <code>StartPercentage</code>.
      */
 
     public Integer getEndPercentage() {
@@ -342,46 +153,14 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A value that indicates the percentage of the end of the time range. To set a relative time range, you must
-     * specify a start percentage and an end percentage. For example, if you specify the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * StartPercentage - 10
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EndPercentage - 50
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
-     * call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
-     * 50,000 millisecond mark.
+     * The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If
+     * you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.
      * </p>
      * 
      * @param endPercentage
-     *        A value that indicates the percentage of the end of the time range. To set a relative time range, you must
-     *        specify a start percentage and an end percentage. For example, if you specify the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        StartPercentage - 10
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EndPercentage - 50
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This looks at the time range starting from 10% of the way into the call to 50% of the way through the
-     *        call. For a call that lasts 100,000 milliseconds, this example range would apply from the 10,000
-     *        millisecond mark to the 50,000 millisecond mark.
+     *        The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media
+     *        file. If you include <code>EndPercentage</code> in your request, you must also include
+     *        <code>StartPercentage</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,15 +171,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A range that takes the portion of the call up to the time in milliseconds set by the value that you've specified.
-     * For example, if you specify <code>120000</code>, the time range is set for the first 120,000 milliseconds of the
-     * call.
+     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
      * @param first
-     *        A range that takes the portion of the call up to the time in milliseconds set by the value that you've
-     *        specified. For example, if you specify <code>120000</code>, the time range is set for the first 120,000
-     *        milliseconds of the call.
+     *        The time, in percentage, from the start of your media file until the value you specify in which Amazon
+     *        Transcribe searches for your specified criteria.
      */
 
     public void setFirst(Integer first) {
@@ -409,14 +186,12 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A range that takes the portion of the call up to the time in milliseconds set by the value that you've specified.
-     * For example, if you specify <code>120000</code>, the time range is set for the first 120,000 milliseconds of the
-     * call.
+     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
-     * @return A range that takes the portion of the call up to the time in milliseconds set by the value that you've
-     *         specified. For example, if you specify <code>120000</code>, the time range is set for the first 120,000
-     *         milliseconds of the call.
+     * @return The time, in percentage, from the start of your media file until the value you specify in which Amazon
+     *         Transcribe searches for your specified criteria.
      */
 
     public Integer getFirst() {
@@ -425,15 +200,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A range that takes the portion of the call up to the time in milliseconds set by the value that you've specified.
-     * For example, if you specify <code>120000</code>, the time range is set for the first 120,000 milliseconds of the
-     * call.
+     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
      * @param first
-     *        A range that takes the portion of the call up to the time in milliseconds set by the value that you've
-     *        specified. For example, if you specify <code>120000</code>, the time range is set for the first 120,000
-     *        milliseconds of the call.
+     *        The time, in percentage, from the start of your media file until the value you specify in which Amazon
+     *        Transcribe searches for your specified criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,15 +217,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A range that takes the portion of the call from the time in milliseconds set by the value that you've specified
-     * to the end of the call. For example, if you specify <code>120000</code>, the time range is set for the last
-     * 120,000 milliseconds of the call.
+     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
      * @param last
-     *        A range that takes the portion of the call from the time in milliseconds set by the value that you've
-     *        specified to the end of the call. For example, if you specify <code>120000</code>, the time range is set
-     *        for the last 120,000 milliseconds of the call.
+     *        The time, in percentage, from the value you specify until the end of your media file in which Amazon
+     *        Transcribe searches for your specified criteria.
      */
 
     public void setLast(Integer last) {
@@ -461,14 +232,12 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A range that takes the portion of the call from the time in milliseconds set by the value that you've specified
-     * to the end of the call. For example, if you specify <code>120000</code>, the time range is set for the last
-     * 120,000 milliseconds of the call.
+     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
-     * @return A range that takes the portion of the call from the time in milliseconds set by the value that you've
-     *         specified to the end of the call. For example, if you specify <code>120000</code>, the time range is set
-     *         for the last 120,000 milliseconds of the call.
+     * @return The time, in percentage, from the value you specify until the end of your media file in which Amazon
+     *         Transcribe searches for your specified criteria.
      */
 
     public Integer getLast() {
@@ -477,15 +246,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A range that takes the portion of the call from the time in milliseconds set by the value that you've specified
-     * to the end of the call. For example, if you specify <code>120000</code>, the time range is set for the last
-     * 120,000 milliseconds of the call.
+     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
+     * searches for your specified criteria.
      * </p>
      * 
      * @param last
-     *        A range that takes the portion of the call from the time in milliseconds set by the value that you've
-     *        specified to the end of the call. For example, if you specify <code>120000</code>, the time range is set
-     *        for the last 120,000 milliseconds of the call.
+     *        The time, in percentage, from the value you specify until the end of your media file in which Amazon
+     *        Transcribe searches for your specified criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

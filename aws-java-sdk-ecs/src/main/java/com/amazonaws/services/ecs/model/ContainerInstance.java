@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An EC2 instance that's running the Amazon ECS agent and has been registered with a cluster.
+ * An Amazon EC2 or External instance that's running the Amazon ECS agent and has been registered with a cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerInstance" target="_top">AWS API
@@ -30,10 +30,9 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     * The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      */
     private String containerInstanceArn;
@@ -106,7 +105,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String status;
@@ -118,8 +117,8 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private String statusReason;
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that
+     * may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task
      * placement requests.
      * </p>
      */
@@ -157,7 +156,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private java.util.Date registeredAt;
     /**
      * <p>
-     * The resources attached to a container instance, such as elastic network interfaces.
+     * The resources attached to a container instance, such as an elastic network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
@@ -221,17 +220,16 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     * The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the
-     *        container instance owner, the <code>container-instance</code> namespace, and then the container instance
-     *        ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     *        The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *        >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      */
 
     public void setContainerInstanceArn(String containerInstanceArn) {
@@ -240,16 +238,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     * The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     *         namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the
-     *         container instance owner, the <code>container-instance</code> namespace, and then the container instance
-     *         ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     * @return The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *         >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      */
 
     public String getContainerInstanceArn() {
@@ -258,17 +255,16 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     * The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     * >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the
-     *        container instance owner, the <code>container-instance</code> namespace, and then the container instance
-     *        ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+     *        The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids"
+     *        >Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,7 +700,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param status
@@ -725,7 +721,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
-     *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setStatus(String status) {
@@ -752,7 +748,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The status of the container instance. The valid values are <code>REGISTERING</code>,
@@ -772,7 +768,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *         <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service
      *         tasks running on the container instance are removed if possible. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
-     *         >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         >Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getStatus() {
@@ -799,7 +795,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param status
@@ -820,7 +816,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
-     *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -871,15 +867,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that
+     * may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task
      * placement requests.
      * </p>
      * 
      * @param agentConnected
-     *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *        with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
-     *        agent can accept placement requests.
+     *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an
+     *        agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can
+     *        accept task placement requests.
      */
 
     public void setAgentConnected(Boolean agentConnected) {
@@ -888,14 +884,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that
+     * may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task
      * placement requests.
      * </p>
      * 
-     * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *         with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
-     *         agent can accept placement requests.
+     * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an
+     *         agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent
+     *         can accept task placement requests.
      */
 
     public Boolean getAgentConnected() {
@@ -904,15 +900,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that
+     * may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task
      * placement requests.
      * </p>
      * 
      * @param agentConnected
-     *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *        with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
-     *        agent can accept placement requests.
+     *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an
+     *        agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can
+     *        accept task placement requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -923,14 +919,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that
+     * may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task
      * placement requests.
      * </p>
      * 
-     * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *         with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
-     *         agent can accept placement requests.
+     * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an
+     *         agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent
+     *         can accept task placement requests.
      */
 
     public Boolean isAgentConnected() {
@@ -1218,10 +1214,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The resources attached to a container instance, such as elastic network interfaces.
+     * The resources attached to a container instance, such as an elastic network interface.
      * </p>
      * 
-     * @return The resources attached to a container instance, such as elastic network interfaces.
+     * @return The resources attached to a container instance, such as an elastic network interface.
      */
 
     public java.util.List<Attachment> getAttachments() {
@@ -1233,11 +1229,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The resources attached to a container instance, such as elastic network interfaces.
+     * The resources attached to a container instance, such as an elastic network interface.
      * </p>
      * 
      * @param attachments
-     *        The resources attached to a container instance, such as elastic network interfaces.
+     *        The resources attached to a container instance, such as an elastic network interface.
      */
 
     public void setAttachments(java.util.Collection<Attachment> attachments) {
@@ -1251,7 +1247,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The resources attached to a container instance, such as elastic network interfaces.
+     * The resources attached to a container instance, such as an elastic network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1260,7 +1256,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param attachments
-     *        The resources attached to a container instance, such as elastic network interfaces.
+     *        The resources attached to a container instance, such as an elastic network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1276,11 +1272,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The resources attached to a container instance, such as elastic network interfaces.
+     * The resources attached to a container instance, such as an elastic network interface.
      * </p>
      * 
      * @param attachments
-     *        The resources attached to a container instance, such as elastic network interfaces.
+     *        The resources attached to a container instance, such as an elastic network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

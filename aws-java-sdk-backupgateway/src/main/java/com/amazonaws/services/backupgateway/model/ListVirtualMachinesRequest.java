@@ -27,6 +27,12 @@ public class ListVirtualMachinesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     * </p>
+     */
+    private String hypervisorArn;
+    /**
+     * <p>
      * The maximum number of virtual machines to list.
      * </p>
      */
@@ -39,6 +45,46 @@ public class ListVirtualMachinesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     * </p>
+     * 
+     * @param hypervisorArn
+     *        The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     */
+
+    public void setHypervisorArn(String hypervisorArn) {
+        this.hypervisorArn = hypervisorArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     */
+
+    public String getHypervisorArn() {
+        return this.hypervisorArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     * </p>
+     * 
+     * @param hypervisorArn
+     *        The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVirtualMachinesRequest withHypervisorArn(String hypervisorArn) {
+        setHypervisorArn(hypervisorArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -144,6 +190,8 @@ public class ListVirtualMachinesRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getHypervisorArn() != null)
+            sb.append("HypervisorArn: ").append(getHypervisorArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -162,6 +210,10 @@ public class ListVirtualMachinesRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof ListVirtualMachinesRequest == false)
             return false;
         ListVirtualMachinesRequest other = (ListVirtualMachinesRequest) obj;
+        if (other.getHypervisorArn() == null ^ this.getHypervisorArn() == null)
+            return false;
+        if (other.getHypervisorArn() != null && other.getHypervisorArn().equals(this.getHypervisorArn()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -178,6 +230,7 @@ public class ListVirtualMachinesRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getHypervisorArn() == null) ? 0 : getHypervisorArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

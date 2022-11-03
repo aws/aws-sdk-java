@@ -31,8 +31,8 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
-     * This value is also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A
+     * value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)
      * </p>
      */
     private Double max24HourSend;
@@ -53,13 +53,14 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
-     * This value is also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A
+     * value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)
      * </p>
      * 
      * @param max24HourSend
      *        The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour
-     *        period. This value is also called your <i>sending quota</i>.
+     *        period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending
+     *        quota</i>.)
      */
 
     public void setMax24HourSend(Double max24HourSend) {
@@ -68,12 +69,13 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
-     * This value is also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A
+     * value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)
      * </p>
      * 
      * @return The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour
-     *         period. This value is also called your <i>sending quota</i>.
+     *         period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending
+     *         quota</i>.)
      */
 
     public Double getMax24HourSend() {
@@ -82,13 +84,14 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
-     * This value is also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A
+     * value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)
      * </p>
      * 
      * @param max24HourSend
      *        The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour
-     *        period. This value is also called your <i>sending quota</i>.
+     *        period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending
+     *        quota</i>.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

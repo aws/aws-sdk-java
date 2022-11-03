@@ -27,7 +27,7 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     * A UTF-8 string. The maximum string size is 5 KB.
      * </p>
      */
     private String text;
@@ -41,11 +41,11 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     * A UTF-8 string. The maximum string size is 5 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     *        A UTF-8 string. The maximum string size is 5 KB.
      */
 
     public void setText(String text) {
@@ -54,10 +54,10 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     * A UTF-8 string. The maximum string size is 5 KB.
      * </p>
      * 
-     * @return A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     * @return A UTF-8 string. The maximum string size is 5 KB.
      */
 
     public String getText() {
@@ -66,11 +66,11 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     * A UTF-8 string. The maximum string size is 5 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+     *        A UTF-8 string. The maximum string size is 5 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

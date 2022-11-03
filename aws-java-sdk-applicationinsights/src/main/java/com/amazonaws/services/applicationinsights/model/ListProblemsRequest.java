@@ -58,7 +58,11 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String nextToken;
-
+    /**
+     * <p>
+     * The name of the component.
+     * </p>
+     */
     private String componentName;
 
     /**
@@ -280,7 +284,12 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the component.
+     * </p>
+     * 
      * @param componentName
+     *        The name of the component.
      */
 
     public void setComponentName(String componentName) {
@@ -288,7 +297,11 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the component.
+     * </p>
+     * 
+     * @return The name of the component.
      */
 
     public String getComponentName() {
@@ -296,7 +309,12 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the component.
+     * </p>
+     * 
      * @param componentName
+     *        The name of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

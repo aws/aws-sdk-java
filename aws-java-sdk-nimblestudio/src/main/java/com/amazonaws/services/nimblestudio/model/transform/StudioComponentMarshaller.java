@@ -45,8 +45,12 @@ public class StudioComponentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initializationScripts").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> RUNTIMEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeRoleArn").build();
     private static final MarshallingInfo<List> SCRIPTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scriptParameters").build();
+    private static final MarshallingInfo<String> SECUREINITIALIZATIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secureInitializationRoleArn").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -90,7 +94,9 @@ public class StudioComponentMarshaller {
             protocolMarshaller.marshall(studioComponent.getEc2SecurityGroupIds(), EC2SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(studioComponent.getInitializationScripts(), INITIALIZATIONSCRIPTS_BINDING);
             protocolMarshaller.marshall(studioComponent.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(studioComponent.getRuntimeRoleArn(), RUNTIMEROLEARN_BINDING);
             protocolMarshaller.marshall(studioComponent.getScriptParameters(), SCRIPTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(studioComponent.getSecureInitializationRoleArn(), SECUREINITIALIZATIONROLEARN_BINDING);
             protocolMarshaller.marshall(studioComponent.getState(), STATE_BINDING);
             protocolMarshaller.marshall(studioComponent.getStatusCode(), STATUSCODE_BINDING);
             protocolMarshaller.marshall(studioComponent.getStatusMessage(), STATUSMESSAGE_BINDING);

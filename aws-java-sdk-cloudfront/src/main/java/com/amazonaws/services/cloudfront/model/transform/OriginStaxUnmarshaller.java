@@ -87,6 +87,11 @@ public class OriginStaxUnmarshaller implements Unmarshaller<Origin, StaxUnmarsha
                     origin.setOriginShield(OriginShieldStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("OriginAccessControlId", targetDepth)) {
+                    origin.setOriginAccessControlId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return origin;

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Specifies data Model Monitor will capture.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureOption" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptureOption implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Specify the boundary of data to capture.
+     * </p>
+     */
     private String captureMode;
 
     /**
-     * <p/>
+     * <p>
+     * Specify the boundary of data to capture.
+     * </p>
      * 
      * @param captureMode
+     *        Specify the boundary of data to capture.
      * @see CaptureMode
      */
 
@@ -41,9 +50,11 @@ public class CaptureOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specify the boundary of data to capture.
+     * </p>
      * 
-     * @return
+     * @return Specify the boundary of data to capture.
      * @see CaptureMode
      */
 
@@ -52,9 +63,12 @@ public class CaptureOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specify the boundary of data to capture.
+     * </p>
      * 
      * @param captureMode
+     *        Specify the boundary of data to capture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptureMode
      */
@@ -65,9 +79,12 @@ public class CaptureOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specify the boundary of data to capture.
+     * </p>
      * 
      * @param captureMode
+     *        Specify the boundary of data to capture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptureMode
      */

@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateProjectRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> APPCONFIGRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appConfigResource").build();
     private static final MarshallingInfo<StructuredPojo> DATADELIVERY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataDelivery").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class CreateProjectRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createProjectRequest.getAppConfigResource(), APPCONFIGRESOURCE_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getDataDelivery(), DATADELIVERY_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getName(), NAME_BINDING);

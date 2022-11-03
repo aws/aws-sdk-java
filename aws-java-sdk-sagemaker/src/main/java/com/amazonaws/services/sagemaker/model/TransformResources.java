@@ -37,8 +37,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     private String instanceType;
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
-     * greater than 1. The default value is <code>1</code>.
+     * The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the
+     * maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.
      * </p>
      */
     private Integer instanceCount;
@@ -161,13 +161,14 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
-     * greater than 1. The default value is <code>1</code>.
+     * The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the
+     * maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.
      * </p>
      * 
      * @param instanceCount
-     *        The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a
-     *        value greater than 1. The default value is <code>1</code>.
+     *        The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and
+     *        the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than
+     *        <code>1</code>.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -176,12 +177,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
-     * greater than 1. The default value is <code>1</code>.
+     * The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the
+     * maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.
      * </p>
      * 
-     * @return The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a
-     *         value greater than 1. The default value is <code>1</code>.
+     * @return The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and
+     *         the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than
+     *         <code>1</code>.
      */
 
     public Integer getInstanceCount() {
@@ -190,13 +192,14 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
-     * greater than 1. The default value is <code>1</code>.
+     * The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the
+     * maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.
      * </p>
      * 
      * @param instanceCount
-     *        The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a
-     *        value greater than 1. The default value is <code>1</code>.
+     *        The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and
+     *        the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than
+     *        <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

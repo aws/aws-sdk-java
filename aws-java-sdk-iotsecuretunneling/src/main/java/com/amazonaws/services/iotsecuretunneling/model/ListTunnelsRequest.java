@@ -39,7 +39,8 @@ public class ListTunnelsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer maxResults;
     /**
      * <p>
-     * A token to retrieve the next set of results.
+     * To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the
+     * first set of results.
      * </p>
      */
     private String nextToken;
@@ -126,11 +127,13 @@ public class ListTunnelsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token to retrieve the next set of results.
+     * To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the
+     * first set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to retrieve the next set of results.
+     *        To retrieve the next set of results, the nextToken value from a previous response; otherwise null to
+     *        receive the first set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -139,10 +142,12 @@ public class ListTunnelsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token to retrieve the next set of results.
+     * To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the
+     * first set of results.
      * </p>
      * 
-     * @return A token to retrieve the next set of results.
+     * @return To retrieve the next set of results, the nextToken value from a previous response; otherwise null to
+     *         receive the first set of results.
      */
 
     public String getNextToken() {
@@ -151,11 +156,13 @@ public class ListTunnelsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token to retrieve the next set of results.
+     * To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the
+     * first set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to retrieve the next set of results.
+     *        To retrieve the next set of results, the nextToken value from a previous response; otherwise null to
+     *        receive the first set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

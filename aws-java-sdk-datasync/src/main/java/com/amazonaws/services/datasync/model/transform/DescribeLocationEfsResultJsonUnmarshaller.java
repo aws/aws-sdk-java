@@ -64,6 +64,18 @@ public class DescribeLocationEfsResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeLocationEfsResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("AccessPointArn", targetDepth)) {
+                    context.nextToken();
+                    describeLocationEfsResult.setAccessPointArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FileSystemAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    describeLocationEfsResult.setFileSystemAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InTransitEncryption", targetDepth)) {
+                    context.nextToken();
+                    describeLocationEfsResult.setInTransitEncryption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

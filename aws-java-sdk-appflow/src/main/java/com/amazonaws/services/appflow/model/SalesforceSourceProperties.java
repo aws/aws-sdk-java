@@ -47,6 +47,53 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private Boolean includeDeletedRecords;
+    /**
+     * <p>
+     * Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.
+     * </p>
+     * <dl>
+     * <dt>AUTOMATIC</dt>
+     * <dd>
+     * <p>
+     * The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from
+     * Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your
+     * flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.
+     * </p>
+     * <p>
+     * Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be
+     * aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow
+     * runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the
+     * next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the
+     * data differently. Some of the differences include how dates are formatted and null values are represented. Also,
+     * Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     * </p>
+     * <p>
+     * By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff
+     * is inconsistent formatting in the output.
+     * </p>
+     * </dd>
+     * <dt>BULKV2</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for
+     * large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize
+     * performance only for large data transfers.
+     * </p>
+     * <p>
+     * Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     * </p>
+     * </dd>
+     * <dt>REST_SYNC</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String dataTransferApi;
 
     /**
      * <p>
@@ -201,6 +248,402 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.
+     * </p>
+     * <dl>
+     * <dt>AUTOMATIC</dt>
+     * <dd>
+     * <p>
+     * The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from
+     * Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your
+     * flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.
+     * </p>
+     * <p>
+     * Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be
+     * aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow
+     * runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the
+     * next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the
+     * data differently. Some of the differences include how dates are formatted and null values are represented. Also,
+     * Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     * </p>
+     * <p>
+     * By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff
+     * is inconsistent formatting in the output.
+     * </p>
+     * </dd>
+     * <dt>BULKV2</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for
+     * large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize
+     * performance only for large data transfers.
+     * </p>
+     * <p>
+     * Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     * </p>
+     * </dd>
+     * <dt>REST_SYNC</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param dataTransferApi
+     *        Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from
+     *        Salesforce.</p>
+     *        <dl>
+     *        <dt>AUTOMATIC</dt>
+     *        <dd>
+     *        <p>
+     *        The default. Amazon AppFlow selects which API to use based on the number of records that your flow
+     *        transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses
+     *        Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk
+     *        API 2.0.
+     *        </p>
+     *        <p>
+     *        Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API
+     *        automatically, be aware that, for recurring flows, the data output might vary from one flow run to the
+     *        next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and
+     *        it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the
+     *        respective Salesforce API formats the data differently. Some of the differences include how dates are
+     *        formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     *        </p>
+     *        <p>
+     *        By choosing this option, you optimize flow performance for both small and large data transfers, but the
+     *        tradeoff is inconsistent formatting in the output.
+     *        </p>
+     *        </dd>
+     *        <dt>BULKV2</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's
+     *        optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent
+     *        output, but you optimize performance only for large data transfers.
+     *        </p>
+     *        <p>
+     *        Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     *        </p>
+     *        </dd>
+     *        <dt>REST_SYNC</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     *        consistent output, but you decrease performance for large data transfers that are better suited for Bulk
+     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *        timed out error.
+     *        </p>
+     *        </dd>
+     * @see SalesforceDataTransferApi
+     */
+
+    public void setDataTransferApi(String dataTransferApi) {
+        this.dataTransferApi = dataTransferApi;
+    }
+
+    /**
+     * <p>
+     * Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.
+     * </p>
+     * <dl>
+     * <dt>AUTOMATIC</dt>
+     * <dd>
+     * <p>
+     * The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from
+     * Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your
+     * flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.
+     * </p>
+     * <p>
+     * Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be
+     * aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow
+     * runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the
+     * next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the
+     * data differently. Some of the differences include how dates are formatted and null values are represented. Also,
+     * Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     * </p>
+     * <p>
+     * By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff
+     * is inconsistent formatting in the output.
+     * </p>
+     * </dd>
+     * <dt>BULKV2</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for
+     * large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize
+     * performance only for large data transfers.
+     * </p>
+     * <p>
+     * Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     * </p>
+     * </dd>
+     * <dt>REST_SYNC</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from
+     *         Salesforce.</p>
+     *         <dl>
+     *         <dt>AUTOMATIC</dt>
+     *         <dd>
+     *         <p>
+     *         The default. Amazon AppFlow selects which API to use based on the number of records that your flow
+     *         transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses
+     *         Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce
+     *         Bulk API 2.0.
+     *         </p>
+     *         <p>
+     *         Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API
+     *         automatically, be aware that, for recurring flows, the data output might vary from one flow run to the
+     *         next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records,
+     *         and it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs,
+     *         the respective Salesforce API formats the data differently. Some of the differences include how dates are
+     *         formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound
+     *         fields.
+     *         </p>
+     *         <p>
+     *         By choosing this option, you optimize flow performance for both small and large data transfers, but the
+     *         tradeoff is inconsistent formatting in the output.
+     *         </p>
+     *         </dd>
+     *         <dt>BULKV2</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's
+     *         optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent
+     *         output, but you optimize performance only for large data transfers.
+     *         </p>
+     *         <p>
+     *         Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     *         </p>
+     *         </dd>
+     *         <dt>REST_SYNC</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     *         consistent output, but you decrease performance for large data transfers that are better suited for Bulk
+     *         API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *         timed out error.
+     *         </p>
+     *         </dd>
+     * @see SalesforceDataTransferApi
+     */
+
+    public String getDataTransferApi() {
+        return this.dataTransferApi;
+    }
+
+    /**
+     * <p>
+     * Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.
+     * </p>
+     * <dl>
+     * <dt>AUTOMATIC</dt>
+     * <dd>
+     * <p>
+     * The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from
+     * Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your
+     * flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.
+     * </p>
+     * <p>
+     * Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be
+     * aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow
+     * runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the
+     * next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the
+     * data differently. Some of the differences include how dates are formatted and null values are represented. Also,
+     * Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     * </p>
+     * <p>
+     * By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff
+     * is inconsistent formatting in the output.
+     * </p>
+     * </dd>
+     * <dt>BULKV2</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for
+     * large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize
+     * performance only for large data transfers.
+     * </p>
+     * <p>
+     * Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     * </p>
+     * </dd>
+     * <dt>REST_SYNC</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param dataTransferApi
+     *        Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from
+     *        Salesforce.</p>
+     *        <dl>
+     *        <dt>AUTOMATIC</dt>
+     *        <dd>
+     *        <p>
+     *        The default. Amazon AppFlow selects which API to use based on the number of records that your flow
+     *        transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses
+     *        Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk
+     *        API 2.0.
+     *        </p>
+     *        <p>
+     *        Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API
+     *        automatically, be aware that, for recurring flows, the data output might vary from one flow run to the
+     *        next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and
+     *        it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the
+     *        respective Salesforce API formats the data differently. Some of the differences include how dates are
+     *        formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     *        </p>
+     *        <p>
+     *        By choosing this option, you optimize flow performance for both small and large data transfers, but the
+     *        tradeoff is inconsistent formatting in the output.
+     *        </p>
+     *        </dd>
+     *        <dt>BULKV2</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's
+     *        optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent
+     *        output, but you optimize performance only for large data transfers.
+     *        </p>
+     *        <p>
+     *        Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     *        </p>
+     *        </dd>
+     *        <dt>REST_SYNC</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     *        consistent output, but you decrease performance for large data transfers that are better suited for Bulk
+     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *        timed out error.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SalesforceDataTransferApi
+     */
+
+    public SalesforceSourceProperties withDataTransferApi(String dataTransferApi) {
+        setDataTransferApi(dataTransferApi);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.
+     * </p>
+     * <dl>
+     * <dt>AUTOMATIC</dt>
+     * <dd>
+     * <p>
+     * The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers from
+     * Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your
+     * flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.
+     * </p>
+     * <p>
+     * Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be
+     * aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow
+     * runs daily, it might use REST API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the
+     * next day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce API formats the
+     * data differently. Some of the differences include how dates are formatted and null values are represented. Also,
+     * Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     * </p>
+     * <p>
+     * By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff
+     * is inconsistent formatting in the output.
+     * </p>
+     * </dd>
+     * <dt>BULKV2</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for
+     * large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize
+     * performance only for large data transfers.
+     * </p>
+     * <p>
+     * Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     * </p>
+     * </dd>
+     * <dt>REST_SYNC</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param dataTransferApi
+     *        Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from
+     *        Salesforce.</p>
+     *        <dl>
+     *        <dt>AUTOMATIC</dt>
+     *        <dd>
+     *        <p>
+     *        The default. Amazon AppFlow selects which API to use based on the number of records that your flow
+     *        transfers from Salesforce. If your flow transfers fewer than 1,000,000 records, Amazon AppFlow uses
+     *        Salesforce REST API. If your flow transfers 1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk
+     *        API 2.0.
+     *        </p>
+     *        <p>
+     *        Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API
+     *        automatically, be aware that, for recurring flows, the data output might vary from one flow run to the
+     *        next. For example, if a flow runs daily, it might use REST API on one day to transfer 900,000 records, and
+     *        it might use Bulk API 2.0 on the next day to transfer 1,100,000 records. For each of these flow runs, the
+     *        respective Salesforce API formats the data differently. Some of the differences include how dates are
+     *        formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.
+     *        </p>
+     *        <p>
+     *        By choosing this option, you optimize flow performance for both small and large data transfers, but the
+     *        tradeoff is inconsistent formatting in the output.
+     *        </p>
+     *        </dd>
+     *        <dt>BULKV2</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's
+     *        optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent
+     *        output, but you optimize performance only for large data transfers.
+     *        </p>
+     *        <p>
+     *        Note that Bulk API 2.0 does not transfer Salesforce compound fields.
+     *        </p>
+     *        </dd>
+     *        <dt>REST_SYNC</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
+     *        consistent output, but you decrease performance for large data transfers that are better suited for Bulk
+     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *        timed out error.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SalesforceDataTransferApi
+     */
+
+    public SalesforceSourceProperties withDataTransferApi(SalesforceDataTransferApi dataTransferApi) {
+        this.dataTransferApi = dataTransferApi.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -217,7 +660,9 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
         if (getEnableDynamicFieldUpdate() != null)
             sb.append("EnableDynamicFieldUpdate: ").append(getEnableDynamicFieldUpdate()).append(",");
         if (getIncludeDeletedRecords() != null)
-            sb.append("IncludeDeletedRecords: ").append(getIncludeDeletedRecords());
+            sb.append("IncludeDeletedRecords: ").append(getIncludeDeletedRecords()).append(",");
+        if (getDataTransferApi() != null)
+            sb.append("DataTransferApi: ").append(getDataTransferApi());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +689,10 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getIncludeDeletedRecords() != null && other.getIncludeDeletedRecords().equals(this.getIncludeDeletedRecords()) == false)
             return false;
+        if (other.getDataTransferApi() == null ^ this.getDataTransferApi() == null)
+            return false;
+        if (other.getDataTransferApi() != null && other.getDataTransferApi().equals(this.getDataTransferApi()) == false)
+            return false;
         return true;
     }
 
@@ -255,6 +704,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getObject() == null) ? 0 : getObject().hashCode());
         hashCode = prime * hashCode + ((getEnableDynamicFieldUpdate() == null) ? 0 : getEnableDynamicFieldUpdate().hashCode());
         hashCode = prime * hashCode + ((getIncludeDeletedRecords() == null) ? 0 : getIncludeDeletedRecords().hashCode());
+        hashCode = prime * hashCode + ((getDataTransferApi() == null) ? 0 : getDataTransferApi().hashCode());
         return hashCode;
     }
 

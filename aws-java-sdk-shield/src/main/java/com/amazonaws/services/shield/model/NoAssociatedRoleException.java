@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The ARN of the role that you specifed does not exist.
+ * The ARN of the role that you specified does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

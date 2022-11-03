@@ -28,6 +28,8 @@ public class H265ColorSpaceSettings implements Serializable, Cloneable, Structur
 
     private ColorSpacePassthroughSettings colorSpacePassthroughSettings;
 
+    private DolbyVision81Settings dolbyVision81Settings;
+
     private Hdr10Settings hdr10Settings;
 
     private Rec601Settings rec601Settings;
@@ -57,6 +59,32 @@ public class H265ColorSpaceSettings implements Serializable, Cloneable, Structur
 
     public H265ColorSpaceSettings withColorSpacePassthroughSettings(ColorSpacePassthroughSettings colorSpacePassthroughSettings) {
         setColorSpacePassthroughSettings(colorSpacePassthroughSettings);
+        return this;
+    }
+
+    /**
+     * @param dolbyVision81Settings
+     */
+
+    public void setDolbyVision81Settings(DolbyVision81Settings dolbyVision81Settings) {
+        this.dolbyVision81Settings = dolbyVision81Settings;
+    }
+
+    /**
+     * @return
+     */
+
+    public DolbyVision81Settings getDolbyVision81Settings() {
+        return this.dolbyVision81Settings;
+    }
+
+    /**
+     * @param dolbyVision81Settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H265ColorSpaceSettings withDolbyVision81Settings(DolbyVision81Settings dolbyVision81Settings) {
+        setDolbyVision81Settings(dolbyVision81Settings);
         return this;
     }
 
@@ -152,6 +180,8 @@ public class H265ColorSpaceSettings implements Serializable, Cloneable, Structur
         sb.append("{");
         if (getColorSpacePassthroughSettings() != null)
             sb.append("ColorSpacePassthroughSettings: ").append(getColorSpacePassthroughSettings()).append(",");
+        if (getDolbyVision81Settings() != null)
+            sb.append("DolbyVision81Settings: ").append(getDolbyVision81Settings()).append(",");
         if (getHdr10Settings() != null)
             sb.append("Hdr10Settings: ").append(getHdr10Settings()).append(",");
         if (getRec601Settings() != null)
@@ -177,6 +207,10 @@ public class H265ColorSpaceSettings implements Serializable, Cloneable, Structur
         if (other.getColorSpacePassthroughSettings() != null
                 && other.getColorSpacePassthroughSettings().equals(this.getColorSpacePassthroughSettings()) == false)
             return false;
+        if (other.getDolbyVision81Settings() == null ^ this.getDolbyVision81Settings() == null)
+            return false;
+        if (other.getDolbyVision81Settings() != null && other.getDolbyVision81Settings().equals(this.getDolbyVision81Settings()) == false)
+            return false;
         if (other.getHdr10Settings() == null ^ this.getHdr10Settings() == null)
             return false;
         if (other.getHdr10Settings() != null && other.getHdr10Settings().equals(this.getHdr10Settings()) == false)
@@ -198,6 +232,7 @@ public class H265ColorSpaceSettings implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getColorSpacePassthroughSettings() == null) ? 0 : getColorSpacePassthroughSettings().hashCode());
+        hashCode = prime * hashCode + ((getDolbyVision81Settings() == null) ? 0 : getDolbyVision81Settings().hashCode());
         hashCode = prime * hashCode + ((getHdr10Settings() == null) ? 0 : getHdr10Settings().hashCode());
         hashCode = prime * hashCode + ((getRec601Settings() == null) ? 0 : getRec601Settings().hashCode());
         hashCode = prime * hashCode + ((getRec709Settings() == null) ? 0 : getRec709Settings().hashCode());

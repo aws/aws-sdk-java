@@ -57,6 +57,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeGlobalTable("dynamodb:DescribeGlobalTable"),
     /** Action for the DescribeGlobalTableSettings operation. */
     DescribeGlobalTableSettings("dynamodb:DescribeGlobalTableSettings"),
+    /** Action for the DescribeImport operation. */
+    DescribeImport("dynamodb:DescribeImport"),
     /** Action for the DescribeKinesisStreamingDestination operation. */
     DescribeKinesisStreamingDestination("dynamodb:DescribeKinesisStreamingDestination"),
     /** Action for the DescribeLimits operation. */
@@ -79,6 +81,8 @@ public enum DynamoDBv2Actions implements Action {
     ExportTableToPointInTime("dynamodb:ExportTableToPointInTime"),
     /** Action for the GetItem operation. */
     GetItem("dynamodb:GetItem"),
+    /** Action for the ImportTable operation. */
+    ImportTable("dynamodb:ImportTable"),
     /** Action for the ListBackups operation. */
     ListBackups("dynamodb:ListBackups"),
     /** Action for the ListContributorInsights operation. */
@@ -87,6 +91,8 @@ public enum DynamoDBv2Actions implements Action {
     ListExports("dynamodb:ListExports"),
     /** Action for the ListGlobalTables operation. */
     ListGlobalTables("dynamodb:ListGlobalTables"),
+    /** Action for the ListImports operation. */
+    ListImports("dynamodb:ListImports"),
     /** Action for the ListTables operation. */
     ListTables("dynamodb:ListTables"),
     /** Action for the ListTagsOfResource operation. */

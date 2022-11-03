@@ -6460,6 +6460,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<ValidateE911AddressResult> validateE911AddressAsync(ValidateE911AddressRequest request) {
+
+        return validateE911AddressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateE911AddressResult> validateE911AddressAsync(final ValidateE911AddressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ValidateE911AddressRequest, ValidateE911AddressResult> asyncHandler) {
+        final ValidateE911AddressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidateE911AddressResult>() {
+            @Override
+            public ValidateE911AddressResult call() throws Exception {
+                ValidateE911AddressResult result = null;
+
+                try {
+                    result = executeValidateE911Address(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

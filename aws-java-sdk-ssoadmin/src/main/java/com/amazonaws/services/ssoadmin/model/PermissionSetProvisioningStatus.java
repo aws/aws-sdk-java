@@ -43,15 +43,15 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
     private String requestId;
     /**
      * <p>
-     * The identifier of the Amazon Web Services account from which to list the assignments.
+     * The identifier of the AWS account from which to list the assignments.
      * </p>
      */
     private String accountId;
     /**
      * <p>
      * The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String permissionSetArn;
@@ -175,11 +175,11 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The identifier of the Amazon Web Services account from which to list the assignments.
+     * The identifier of the AWS account from which to list the assignments.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the Amazon Web Services account from which to list the assignments.
+     *        The identifier of the AWS account from which to list the assignments.
      */
 
     public void setAccountId(String accountId) {
@@ -188,10 +188,10 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The identifier of the Amazon Web Services account from which to list the assignments.
+     * The identifier of the AWS account from which to list the assignments.
      * </p>
      * 
-     * @return The identifier of the Amazon Web Services account from which to list the assignments.
+     * @return The identifier of the AWS account from which to list the assignments.
      */
 
     public String getAccountId() {
@@ -200,11 +200,11 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The identifier of the Amazon Web Services account from which to list the assignments.
+     * The identifier of the AWS account from which to list the assignments.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the Amazon Web Services account from which to list the assignments.
+     *        The identifier of the AWS account from which to list the assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,14 +216,14 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
     /**
      * <p>
      * The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param permissionSetArn
      *        The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *        Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setPermissionSetArn(String permissionSetArn) {
@@ -233,13 +233,13 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
     /**
      * <p>
      * The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *         Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getPermissionSetArn() {
@@ -249,14 +249,14 @@ public class PermissionSetProvisioningStatus implements Serializable, Cloneable,
     /**
      * <p>
      * The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param permissionSetArn
      *        The ARN of the permission set that is being provisioned. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *        Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

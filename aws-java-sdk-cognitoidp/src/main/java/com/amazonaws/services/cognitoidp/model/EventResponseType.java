@@ -20,8 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EventResponseType {
 
-    Success("Success"),
-    Failure("Failure");
+    Pass("Pass"),
+    Fail("Fail"),
+    InProgress("InProgress");
 
     private String value;
 

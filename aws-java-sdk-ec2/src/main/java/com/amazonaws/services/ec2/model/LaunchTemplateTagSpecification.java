@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The tag specification for the launch template.
+ * The tags specification for the launch template.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateTagSpecification" target="_top">AWS
@@ -28,7 +28,7 @@ public class LaunchTemplateTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource to tag.
      * </p>
      */
     private String resourceType;
@@ -41,11 +41,11 @@ public class LaunchTemplateTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource to tag.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        The type of resource to tag.
      * @see ResourceType
      */
 
@@ -55,10 +55,10 @@ public class LaunchTemplateTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource to tag.
      * </p>
      * 
-     * @return The type of resource.
+     * @return The type of resource to tag.
      * @see ResourceType
      */
 
@@ -68,11 +68,11 @@ public class LaunchTemplateTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource to tag.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        The type of resource to tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -84,11 +84,11 @@ public class LaunchTemplateTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource to tag.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        The type of resource to tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

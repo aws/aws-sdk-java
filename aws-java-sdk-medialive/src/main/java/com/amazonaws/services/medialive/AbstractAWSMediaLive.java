@@ -244,12 +244,22 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public RebootInputDeviceResult rebootInputDevice(RebootInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartChannelResult startChannel(StartChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartInputDeviceMaintenanceWindowResult startInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

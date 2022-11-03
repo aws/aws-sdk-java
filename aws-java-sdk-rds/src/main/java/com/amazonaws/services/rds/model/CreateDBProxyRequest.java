@@ -36,8 +36,9 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The kinds of databases that the proxy can connect to. This value determines which database network protocol the
-     * proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL
-     * and PostgreSQL for both RDS and Aurora.
+     * proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB,
+     * and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases,
+     * specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.
      * </p>
      */
     private String engineFamily;
@@ -155,14 +156,17 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The kinds of databases that the proxy can connect to. This value determines which database network protocol the
-     * proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL
-     * and PostgreSQL for both RDS and Aurora.
+     * proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB,
+     * and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases,
+     * specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.
      * </p>
      * 
      * @param engineFamily
      *        The kinds of databases that the proxy can connect to. This value determines which database network
-     *        protocol the proxy recognizes when it interprets network traffic to and from the database. The engine
-     *        family applies to MySQL and PostgreSQL for both RDS and Aurora.
+     *        protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora
+     *        MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and
+     *        RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify
+     *        <code>SQLSERVER</code>.
      * @see EngineFamily
      */
 
@@ -173,13 +177,16 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The kinds of databases that the proxy can connect to. This value determines which database network protocol the
-     * proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL
-     * and PostgreSQL for both RDS and Aurora.
+     * proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB,
+     * and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases,
+     * specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.
      * </p>
      * 
      * @return The kinds of databases that the proxy can connect to. This value determines which database network
-     *         protocol the proxy recognizes when it interprets network traffic to and from the database. The engine
-     *         family applies to MySQL and PostgreSQL for both RDS and Aurora.
+     *         protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora
+     *         MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL
+     *         and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server,
+     *         specify <code>SQLSERVER</code>.
      * @see EngineFamily
      */
 
@@ -190,14 +197,17 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The kinds of databases that the proxy can connect to. This value determines which database network protocol the
-     * proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL
-     * and PostgreSQL for both RDS and Aurora.
+     * proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB,
+     * and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases,
+     * specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.
      * </p>
      * 
      * @param engineFamily
      *        The kinds of databases that the proxy can connect to. This value determines which database network
-     *        protocol the proxy recognizes when it interprets network traffic to and from the database. The engine
-     *        family applies to MySQL and PostgreSQL for both RDS and Aurora.
+     *        protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora
+     *        MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and
+     *        RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify
+     *        <code>SQLSERVER</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineFamily
      */
@@ -210,14 +220,17 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The kinds of databases that the proxy can connect to. This value determines which database network protocol the
-     * proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL
-     * and PostgreSQL for both RDS and Aurora.
+     * proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB,
+     * and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases,
+     * specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.
      * </p>
      * 
      * @param engineFamily
      *        The kinds of databases that the proxy can connect to. This value determines which database network
-     *        protocol the proxy recognizes when it interprets network traffic to and from the database. The engine
-     *        family applies to MySQL and PostgreSQL for both RDS and Aurora.
+     *        protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora
+     *        MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and
+     *        RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify
+     *        <code>SQLSERVER</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineFamily
      */

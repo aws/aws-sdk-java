@@ -33,9 +33,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available
+     * The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available
      * in Amazon EKS is used.
      * </p>
+     * <note>
+     * <p>
+     * The default version might not be the latest version available.
+     * </p>
+     * </note>
      */
     private String version;
     /**
@@ -99,6 +104,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<EncryptionConfig> encryptionConfig;
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * Before creating a local cluster on an Outpost, review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
+     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
+     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * </p>
+     */
+    private OutpostConfigRequest outpostConfig;
 
     /**
      * <p>
@@ -142,13 +157,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available
+     * The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available
      * in Amazon EKS is used.
      * </p>
+     * <note>
+     * <p>
+     * The default version might not be the latest version available.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version
-     *        available in Amazon EKS is used.
+     *        The desired Kubernetes version for your cluster. If you don't specify a value here, the default version
+     *        available in Amazon EKS is used.</p> <note>
+     *        <p>
+     *        The default version might not be the latest version available.
+     *        </p>
      */
 
     public void setVersion(String version) {
@@ -157,12 +180,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available
+     * The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available
      * in Amazon EKS is used.
      * </p>
+     * <note>
+     * <p>
+     * The default version might not be the latest version available.
+     * </p>
+     * </note>
      * 
-     * @return The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version
-     *         available in Amazon EKS is used.
+     * @return The desired Kubernetes version for your cluster. If you don't specify a value here, the default version
+     *         available in Amazon EKS is used.</p> <note>
+     *         <p>
+     *         The default version might not be the latest version available.
+     *         </p>
      */
 
     public String getVersion() {
@@ -171,13 +202,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available
+     * The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available
      * in Amazon EKS is used.
      * </p>
+     * <note>
+     * <p>
+     * The default version might not be the latest version available.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version
-     *        available in Amazon EKS is used.
+     *        The desired Kubernetes version for your cluster. If you don't specify a value here, the default version
+     *        available in Amazon EKS is used.</p> <note>
+     *        <p>
+     *        The default version might not be the latest version available.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,6 +672,70 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * Before creating a local cluster on an Outpost, review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
+     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
+     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param outpostConfig
+     *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
+     *        Outpost. Before creating a local cluster on an Outpost, review <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
+     *        cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     *        available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     */
+
+    public void setOutpostConfig(OutpostConfigRequest outpostConfig) {
+        this.outpostConfig = outpostConfig;
+    }
+
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * Before creating a local cluster on an Outpost, review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
+     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
+     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @return An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
+     *         Outpost. Before creating a local cluster on an Outpost, review <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon
+     *         EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     *         available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     */
+
+    public OutpostConfigRequest getOutpostConfig() {
+        return this.outpostConfig;
+    }
+
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * Before creating a local cluster on an Outpost, review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
+     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
+     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param outpostConfig
+     *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
+     *        Outpost. Before creating a local cluster on an Outpost, review <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
+     *        cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     *        available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withOutpostConfig(OutpostConfigRequest outpostConfig) {
+        setOutpostConfig(outpostConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -661,7 +764,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getEncryptionConfig() != null)
-            sb.append("EncryptionConfig: ").append(getEncryptionConfig());
+            sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
+        if (getOutpostConfig() != null)
+            sb.append("OutpostConfig: ").append(getOutpostConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -712,6 +817,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
             return false;
+        if (other.getOutpostConfig() == null ^ this.getOutpostConfig() == null)
+            return false;
+        if (other.getOutpostConfig() != null && other.getOutpostConfig().equals(this.getOutpostConfig()) == false)
+            return false;
         return true;
     }
 
@@ -729,6 +838,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
+        hashCode = prime * hashCode + ((getOutpostConfig() == null) ? 0 : getOutpostConfig().hashCode());
         return hashCode;
     }
 

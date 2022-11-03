@@ -30,7 +30,7 @@ public class IdentityProviderConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The type of the identity provider configuration.
+     * The type of the identity provider configuration. The only type available is <code>oidc</code>.
      * </p>
      */
     private String type;
@@ -43,11 +43,11 @@ public class IdentityProviderConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The type of the identity provider configuration.
+     * The type of the identity provider configuration. The only type available is <code>oidc</code>.
      * </p>
      * 
      * @param type
-     *        The type of the identity provider configuration.
+     *        The type of the identity provider configuration. The only type available is <code>oidc</code>.
      */
 
     public void setType(String type) {
@@ -56,10 +56,10 @@ public class IdentityProviderConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The type of the identity provider configuration.
+     * The type of the identity provider configuration. The only type available is <code>oidc</code>.
      * </p>
      * 
-     * @return The type of the identity provider configuration.
+     * @return The type of the identity provider configuration. The only type available is <code>oidc</code>.
      */
 
     public String getType() {
@@ -68,11 +68,11 @@ public class IdentityProviderConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The type of the identity provider configuration.
+     * The type of the identity provider configuration. The only type available is <code>oidc</code>.
      * </p>
      * 
      * @param type
-     *        The type of the identity provider configuration.
+     *        The type of the identity provider configuration. The only type available is <code>oidc</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

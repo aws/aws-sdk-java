@@ -43,6 +43,8 @@ public class SourceServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceProperties").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerID").build();
+    private static final MarshallingInfo<StructuredPojo> STAGINGAREA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stagingArea").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -69,6 +71,7 @@ public class SourceServerMarshaller {
             protocolMarshaller.marshall(sourceServer.getRecoveryInstanceId(), RECOVERYINSTANCEID_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceProperties(), SOURCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceServerID(), SOURCESERVERID_BINDING);
+            protocolMarshaller.marshall(sourceServer.getStagingArea(), STAGINGAREA_BINDING);
             protocolMarshaller.marshall(sourceServer.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

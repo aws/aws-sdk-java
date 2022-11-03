@@ -45,6 +45,13 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ChoiceContent improvementPlan;
+    /**
+     * <p>
+     * The additional resources for a choice. A choice can have up to two additional resources: one of type
+     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * </p>
+     */
+    private java.util.List<AdditionalResources> additionalResources;
 
     /**
      * @param choiceId
@@ -205,6 +212,84 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The additional resources for a choice. A choice can have up to two additional resources: one of type
+     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * </p>
+     * 
+     * @return The additional resources for a choice. A choice can have up to two additional resources: one of type
+     *         <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     */
+
+    public java.util.List<AdditionalResources> getAdditionalResources() {
+        return additionalResources;
+    }
+
+    /**
+     * <p>
+     * The additional resources for a choice. A choice can have up to two additional resources: one of type
+     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * </p>
+     * 
+     * @param additionalResources
+     *        The additional resources for a choice. A choice can have up to two additional resources: one of type
+     *        <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     */
+
+    public void setAdditionalResources(java.util.Collection<AdditionalResources> additionalResources) {
+        if (additionalResources == null) {
+            this.additionalResources = null;
+            return;
+        }
+
+        this.additionalResources = new java.util.ArrayList<AdditionalResources>(additionalResources);
+    }
+
+    /**
+     * <p>
+     * The additional resources for a choice. A choice can have up to two additional resources: one of type
+     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalResources(java.util.Collection)} or {@link #withAdditionalResources(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalResources
+     *        The additional resources for a choice. A choice can have up to two additional resources: one of type
+     *        <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Choice withAdditionalResources(AdditionalResources... additionalResources) {
+        if (this.additionalResources == null) {
+            setAdditionalResources(new java.util.ArrayList<AdditionalResources>(additionalResources.length));
+        }
+        for (AdditionalResources ele : additionalResources) {
+            this.additionalResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The additional resources for a choice. A choice can have up to two additional resources: one of type
+     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * </p>
+     * 
+     * @param additionalResources
+     *        The additional resources for a choice. A choice can have up to two additional resources: one of type
+     *        <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Choice withAdditionalResources(java.util.Collection<AdditionalResources> additionalResources) {
+        setAdditionalResources(additionalResources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -225,7 +310,9 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
         if (getHelpfulResource() != null)
             sb.append("HelpfulResource: ").append(getHelpfulResource()).append(",");
         if (getImprovementPlan() != null)
-            sb.append("ImprovementPlan: ").append(getImprovementPlan());
+            sb.append("ImprovementPlan: ").append(getImprovementPlan()).append(",");
+        if (getAdditionalResources() != null)
+            sb.append("AdditionalResources: ").append(getAdditionalResources());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +347,10 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImprovementPlan() != null && other.getImprovementPlan().equals(this.getImprovementPlan()) == false)
             return false;
+        if (other.getAdditionalResources() == null ^ this.getAdditionalResources() == null)
+            return false;
+        if (other.getAdditionalResources() != null && other.getAdditionalResources().equals(this.getAdditionalResources()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +364,7 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHelpfulResource() == null) ? 0 : getHelpfulResource().hashCode());
         hashCode = prime * hashCode + ((getImprovementPlan() == null) ? 0 : getImprovementPlan().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalResources() == null) ? 0 : getAdditionalResources().hashCode());
         return hashCode;
     }
 

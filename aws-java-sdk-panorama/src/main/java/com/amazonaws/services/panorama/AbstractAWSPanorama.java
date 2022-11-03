@@ -178,6 +178,11 @@ public class AbstractAWSPanorama implements AWSPanorama {
     }
 
     @Override
+    public SignalApplicationInstanceNodeInstancesResult signalApplicationInstanceNodeInstances(SignalApplicationInstanceNodeInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

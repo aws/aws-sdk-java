@@ -48,21 +48,9 @@ public class ArrayValueJsonUnmarshaller implements Unmarshaller<ArrayValue, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arrayValues", targetDepth)) {
-                    context.nextToken();
-                    arrayValue.setArrayValues(new ListUnmarshaller<ArrayValue>(ArrayValueJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("booleanValues", targetDepth)) {
                     context.nextToken();
                     arrayValue.setBooleanValues(new ListUnmarshaller<Boolean>(context.getUnmarshaller(Boolean.class))
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("doubleValues", targetDepth)) {
-                    context.nextToken();
-                    arrayValue.setDoubleValues(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
@@ -72,9 +60,21 @@ public class ArrayValueJsonUnmarshaller implements Unmarshaller<ArrayValue, Json
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("doubleValues", targetDepth)) {
+                    context.nextToken();
+                    arrayValue.setDoubleValues(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("stringValues", targetDepth)) {
                     context.nextToken();
                     arrayValue.setStringValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("arrayValues", targetDepth)) {
+                    context.nextToken();
+                    arrayValue.setArrayValues(new ListUnmarshaller<ArrayValue>(ArrayValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

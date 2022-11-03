@@ -41,6 +41,8 @@ public class MemberMarshaller {
             .marshallLocationName("invitedAt").build();
     private static final MarshallingInfo<String> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("updatedAt").build();
+    private static final MarshallingInfo<String> ADMINISTRATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("administratorId").build();
 
     private static final MemberMarshaller instance = new MemberMarshaller();
 
@@ -65,6 +67,7 @@ public class MemberMarshaller {
             protocolMarshaller.marshall(member.getRelationshipStatus(), RELATIONSHIPSTATUS_BINDING);
             protocolMarshaller.marshall(member.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(member.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(member.getAdministratorId(), ADMINISTRATORID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

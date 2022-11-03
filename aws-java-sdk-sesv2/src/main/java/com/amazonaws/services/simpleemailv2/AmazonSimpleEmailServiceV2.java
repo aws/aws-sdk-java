@@ -51,6 +51,32 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Retrieves batches of metric data collected based on your sending activity.
+     * </p>
+     * <p>
+     * You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches
+     * per second (cumulative).
+     * </p>
+     * 
+     * @param batchGetMetricDataRequest
+     *        Represents a request to retrieve a batch of metric data.
+     * @return Result of the BatchGetMetricData operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws InternalServiceErrorException
+     *         The request couldn't be processed because an error occurred with the Amazon SES API v2.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.BatchGetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchGetMetricDataResult batchGetMetricData(BatchGetMetricDataRequest batchGetMetricDataRequest);
+
+    /**
+     * <p>
      * Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that
      * you send. You apply a configuration set to an email by specifying the name of the configuration set when you call
      * the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set
@@ -157,8 +183,8 @@ public interface AmazonSimpleEmailServiceV2 {
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -501,8 +527,8 @@ public interface AmazonSimpleEmailServiceV2 {
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -790,8 +816,8 @@ public interface AmazonSimpleEmailServiceV2 {
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -833,6 +859,26 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     GetDedicatedIpResult getDedicatedIp(GetDedicatedIpRequest getDedicatedIpRequest);
+
+    /**
+     * <p>
+     * Retrieve information about the dedicated pool.
+     * </p>
+     * 
+     * @param getDedicatedIpPoolRequest
+     *        A request to obtain more information about a dedicated IP pool.
+     * @return Result of the GetDedicatedIpPool operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetDedicatedIpPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPool" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDedicatedIpPoolResult getDedicatedIpPool(GetDedicatedIpPoolRequest getDedicatedIpPoolRequest);
 
     /**
      * <p>
@@ -1141,8 +1187,8 @@ public interface AmazonSimpleEmailServiceV2 {
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1292,6 +1338,29 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     *        Represents a request to list the existing recommendations for your account.
+     * @return Result of the ListRecommendations operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListRecommendationsResult listRecommendations(ListRecommendationsRequest listRecommendationsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of email addresses that are on the suppression list for your account.
      * </p>
      * 
@@ -1409,6 +1478,27 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Update your Amazon SES account VDM attributes.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param putAccountVdmAttributesRequest
+     *        A request to submit new account VDM attributes.
+     * @return Result of the PutAccountVdmAttributes operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.PutAccountVdmAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutAccountVdmAttributesResult putAccountVdmAttributes(PutAccountVdmAttributesRequest putAccountVdmAttributesRequest);
+
+    /**
+     * <p>
      * Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of
      * dedicated IP addresses for sending specific types of email.
      * </p>
@@ -1514,6 +1604,29 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     PutConfigurationSetTrackingOptionsResult putConfigurationSetTrackingOptions(
             PutConfigurationSetTrackingOptionsRequest putConfigurationSetTrackingOptionsRequest);
+
+    /**
+     * <p>
+     * Specify VDM preferences for email that you send using the configuration set.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param putConfigurationSetVdmOptionsRequest
+     *        A request to add specific VDM settings to a configuration set.
+     * @return Result of the PutConfigurationSetVdmOptions operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutConfigurationSetVdmOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutConfigurationSetVdmOptionsResult putConfigurationSetVdmOptions(PutConfigurationSetVdmOptionsRequest putConfigurationSetVdmOptionsRequest);
 
     /**
      * <p>
@@ -1811,8 +1924,8 @@ public interface AmazonSimpleEmailServiceV2 {
      * <p>
      * To use this operation, you must first create a custom verification email template. For more information about
      * creating and using custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2043,8 +2156,8 @@ public interface AmazonSimpleEmailServiceV2 {
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

@@ -33,8 +33,8 @@ public class CreateCustomRoutingEndpointGroupRequest extends com.amazonaws.Amazo
     private String listenerArn;
     /**
      * <p>
-     * The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific
-     * Region.
+     * The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group
+     * in a specific Region.
      * </p>
      */
     private String endpointGroupRegion;
@@ -95,13 +95,13 @@ public class CreateCustomRoutingEndpointGroupRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific
-     * Region.
+     * The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group
+     * in a specific Region.
      * </p>
      * 
      * @param endpointGroupRegion
-     *        The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-     *        specific Region.
+     *        The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint
+     *        group in a specific Region.
      */
 
     public void setEndpointGroupRegion(String endpointGroupRegion) {
@@ -110,12 +110,12 @@ public class CreateCustomRoutingEndpointGroupRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific
-     * Region.
+     * The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group
+     * in a specific Region.
      * </p>
      * 
-     * @return The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-     *         specific Region.
+     * @return The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint
+     *         group in a specific Region.
      */
 
     public String getEndpointGroupRegion() {
@@ -124,13 +124,13 @@ public class CreateCustomRoutingEndpointGroupRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific
-     * Region.
+     * The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group
+     * in a specific Region.
      * </p>
      * 
      * @param endpointGroupRegion
-     *        The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-     *        specific Region.
+     *        The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint
+     *        group in a specific Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

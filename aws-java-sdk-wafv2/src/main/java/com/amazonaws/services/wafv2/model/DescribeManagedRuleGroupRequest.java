@@ -41,7 +41,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -157,7 +158,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -177,8 +179,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -204,7 +206,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -223,8 +226,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *         GraphQL API. </p>
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *         API, or an Amazon Cognito user pool. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -250,7 +253,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -270,8 +274,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -299,7 +303,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -319,8 +324,8 @@ public class DescribeManagedRuleGroupRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>

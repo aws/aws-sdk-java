@@ -220,6 +220,30 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     continue;
                 }
 
+                if (context.testExpression("SupportsStorageThroughput", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsStorageThroughput(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinStorageThroughputPerDbInstance", targetDepth)) {
+                    orderableDBInstanceOption.setMinStorageThroughputPerDbInstance(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxStorageThroughputPerDbInstance", targetDepth)) {
+                    orderableDBInstanceOption.setMaxStorageThroughputPerDbInstance(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinStorageThroughputPerIops", targetDepth)) {
+                    orderableDBInstanceOption.setMinStorageThroughputPerIops(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxStorageThroughputPerIops", targetDepth)) {
+                    orderableDBInstanceOption.setMaxStorageThroughputPerIops(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return orderableDBInstanceOption;

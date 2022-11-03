@@ -56,6 +56,10 @@ public class RegistrationConfigJsonUnmarshaller implements Unmarshaller<Registra
                     context.nextToken();
                     registrationConfig.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("templateName", targetDepth)) {
+                    context.nextToken();
+                    registrationConfig.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

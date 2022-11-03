@@ -230,6 +230,36 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedNetworkTypes;
+    /**
+     * <p>
+     * Indicates whether a DB instance supports storage throughput.
+     * </p>
+     */
+    private Boolean supportsStorageThroughput;
+    /**
+     * <p>
+     * Minimum storage throughput for a DB instance.
+     * </p>
+     */
+    private Integer minStorageThroughputPerDbInstance;
+    /**
+     * <p>
+     * Maximum storage throughput for a DB instance.
+     * </p>
+     */
+    private Integer maxStorageThroughputPerDbInstance;
+    /**
+     * <p>
+     * Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     */
+    private Double minStorageThroughputPerIops;
+    /**
+     * <p>
+     * Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     */
+    private Double maxStorageThroughputPerIops;
 
     /**
      * <p>
@@ -1913,6 +1943,218 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether a DB instance supports storage throughput.
+     * </p>
+     * 
+     * @param supportsStorageThroughput
+     *        Indicates whether a DB instance supports storage throughput.
+     */
+
+    public void setSupportsStorageThroughput(Boolean supportsStorageThroughput) {
+        this.supportsStorageThroughput = supportsStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a DB instance supports storage throughput.
+     * </p>
+     * 
+     * @return Indicates whether a DB instance supports storage throughput.
+     */
+
+    public Boolean getSupportsStorageThroughput() {
+        return this.supportsStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a DB instance supports storage throughput.
+     * </p>
+     * 
+     * @param supportsStorageThroughput
+     *        Indicates whether a DB instance supports storage throughput.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportsStorageThroughput(Boolean supportsStorageThroughput) {
+        setSupportsStorageThroughput(supportsStorageThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a DB instance supports storage throughput.
+     * </p>
+     * 
+     * @return Indicates whether a DB instance supports storage throughput.
+     */
+
+    public Boolean isSupportsStorageThroughput() {
+        return this.supportsStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * Minimum storage throughput for a DB instance.
+     * </p>
+     * 
+     * @param minStorageThroughputPerDbInstance
+     *        Minimum storage throughput for a DB instance.
+     */
+
+    public void setMinStorageThroughputPerDbInstance(Integer minStorageThroughputPerDbInstance) {
+        this.minStorageThroughputPerDbInstance = minStorageThroughputPerDbInstance;
+    }
+
+    /**
+     * <p>
+     * Minimum storage throughput for a DB instance.
+     * </p>
+     * 
+     * @return Minimum storage throughput for a DB instance.
+     */
+
+    public Integer getMinStorageThroughputPerDbInstance() {
+        return this.minStorageThroughputPerDbInstance;
+    }
+
+    /**
+     * <p>
+     * Minimum storage throughput for a DB instance.
+     * </p>
+     * 
+     * @param minStorageThroughputPerDbInstance
+     *        Minimum storage throughput for a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withMinStorageThroughputPerDbInstance(Integer minStorageThroughputPerDbInstance) {
+        setMinStorageThroughputPerDbInstance(minStorageThroughputPerDbInstance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum storage throughput for a DB instance.
+     * </p>
+     * 
+     * @param maxStorageThroughputPerDbInstance
+     *        Maximum storage throughput for a DB instance.
+     */
+
+    public void setMaxStorageThroughputPerDbInstance(Integer maxStorageThroughputPerDbInstance) {
+        this.maxStorageThroughputPerDbInstance = maxStorageThroughputPerDbInstance;
+    }
+
+    /**
+     * <p>
+     * Maximum storage throughput for a DB instance.
+     * </p>
+     * 
+     * @return Maximum storage throughput for a DB instance.
+     */
+
+    public Integer getMaxStorageThroughputPerDbInstance() {
+        return this.maxStorageThroughputPerDbInstance;
+    }
+
+    /**
+     * <p>
+     * Maximum storage throughput for a DB instance.
+     * </p>
+     * 
+     * @param maxStorageThroughputPerDbInstance
+     *        Maximum storage throughput for a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withMaxStorageThroughputPerDbInstance(Integer maxStorageThroughputPerDbInstance) {
+        setMaxStorageThroughputPerDbInstance(maxStorageThroughputPerDbInstance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     * 
+     * @param minStorageThroughputPerIops
+     *        Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     */
+
+    public void setMinStorageThroughputPerIops(Double minStorageThroughputPerIops) {
+        this.minStorageThroughputPerIops = minStorageThroughputPerIops;
+    }
+
+    /**
+     * <p>
+     * Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     * 
+     * @return Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     */
+
+    public Double getMinStorageThroughputPerIops() {
+        return this.minStorageThroughputPerIops;
+    }
+
+    /**
+     * <p>
+     * Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     * 
+     * @param minStorageThroughputPerIops
+     *        Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withMinStorageThroughputPerIops(Double minStorageThroughputPerIops) {
+        setMinStorageThroughputPerIops(minStorageThroughputPerIops);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     * 
+     * @param maxStorageThroughputPerIops
+     *        Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     */
+
+    public void setMaxStorageThroughputPerIops(Double maxStorageThroughputPerIops) {
+        this.maxStorageThroughputPerIops = maxStorageThroughputPerIops;
+    }
+
+    /**
+     * <p>
+     * Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     * 
+     * @return Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     */
+
+    public Double getMaxStorageThroughputPerIops() {
+        return this.maxStorageThroughputPerIops;
+    }
+
+    /**
+     * <p>
+     * Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     * </p>
+     * 
+     * @param maxStorageThroughputPerIops
+     *        Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withMaxStorageThroughputPerIops(Double maxStorageThroughputPerIops) {
+        setMaxStorageThroughputPerIops(maxStorageThroughputPerIops);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1983,7 +2225,17 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getSupportsClusters() != null)
             sb.append("SupportsClusters: ").append(getSupportsClusters()).append(",");
         if (getSupportedNetworkTypes() != null)
-            sb.append("SupportedNetworkTypes: ").append(getSupportedNetworkTypes());
+            sb.append("SupportedNetworkTypes: ").append(getSupportedNetworkTypes()).append(",");
+        if (getSupportsStorageThroughput() != null)
+            sb.append("SupportsStorageThroughput: ").append(getSupportsStorageThroughput()).append(",");
+        if (getMinStorageThroughputPerDbInstance() != null)
+            sb.append("MinStorageThroughputPerDbInstance: ").append(getMinStorageThroughputPerDbInstance()).append(",");
+        if (getMaxStorageThroughputPerDbInstance() != null)
+            sb.append("MaxStorageThroughputPerDbInstance: ").append(getMaxStorageThroughputPerDbInstance()).append(",");
+        if (getMinStorageThroughputPerIops() != null)
+            sb.append("MinStorageThroughputPerIops: ").append(getMinStorageThroughputPerIops()).append(",");
+        if (getMaxStorageThroughputPerIops() != null)
+            sb.append("MaxStorageThroughputPerIops: ").append(getMaxStorageThroughputPerIops());
         sb.append("}");
         return sb.toString();
     }
@@ -2120,6 +2372,28 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getSupportedNetworkTypes() != null && other.getSupportedNetworkTypes().equals(this.getSupportedNetworkTypes()) == false)
             return false;
+        if (other.getSupportsStorageThroughput() == null ^ this.getSupportsStorageThroughput() == null)
+            return false;
+        if (other.getSupportsStorageThroughput() != null && other.getSupportsStorageThroughput().equals(this.getSupportsStorageThroughput()) == false)
+            return false;
+        if (other.getMinStorageThroughputPerDbInstance() == null ^ this.getMinStorageThroughputPerDbInstance() == null)
+            return false;
+        if (other.getMinStorageThroughputPerDbInstance() != null
+                && other.getMinStorageThroughputPerDbInstance().equals(this.getMinStorageThroughputPerDbInstance()) == false)
+            return false;
+        if (other.getMaxStorageThroughputPerDbInstance() == null ^ this.getMaxStorageThroughputPerDbInstance() == null)
+            return false;
+        if (other.getMaxStorageThroughputPerDbInstance() != null
+                && other.getMaxStorageThroughputPerDbInstance().equals(this.getMaxStorageThroughputPerDbInstance()) == false)
+            return false;
+        if (other.getMinStorageThroughputPerIops() == null ^ this.getMinStorageThroughputPerIops() == null)
+            return false;
+        if (other.getMinStorageThroughputPerIops() != null && other.getMinStorageThroughputPerIops().equals(this.getMinStorageThroughputPerIops()) == false)
+            return false;
+        if (other.getMaxStorageThroughputPerIops() == null ^ this.getMaxStorageThroughputPerIops() == null)
+            return false;
+        if (other.getMaxStorageThroughputPerIops() != null && other.getMaxStorageThroughputPerIops().equals(this.getMaxStorageThroughputPerIops()) == false)
+            return false;
         return true;
     }
 
@@ -2158,6 +2432,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         hashCode = prime * hashCode + ((getSupportsClusters() == null) ? 0 : getSupportsClusters().hashCode());
         hashCode = prime * hashCode + ((getSupportedNetworkTypes() == null) ? 0 : getSupportedNetworkTypes().hashCode());
+        hashCode = prime * hashCode + ((getSupportsStorageThroughput() == null) ? 0 : getSupportsStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getMinStorageThroughputPerDbInstance() == null) ? 0 : getMinStorageThroughputPerDbInstance().hashCode());
+        hashCode = prime * hashCode + ((getMaxStorageThroughputPerDbInstance() == null) ? 0 : getMaxStorageThroughputPerDbInstance().hashCode());
+        hashCode = prime * hashCode + ((getMinStorageThroughputPerIops() == null) ? 0 : getMinStorageThroughputPerIops().hashCode());
+        hashCode = prime * hashCode + ((getMaxStorageThroughputPerIops() == null) ? 0 : getMaxStorageThroughputPerIops().hashCode());
         return hashCode;
     }
 

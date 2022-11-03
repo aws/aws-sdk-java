@@ -29,6 +29,8 @@ public class AppSummaryMarshaller {
 
     private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<String> ASSESSMENTSCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentSchedule").build();
     private static final MarshallingInfo<String> COMPLIANCESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("complianceStatus").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -39,6 +41,8 @@ public class AppSummaryMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Double> RESILIENCYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resiliencyScore").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
     private static final AppSummaryMarshaller instance = new AppSummaryMarshaller();
 
@@ -57,11 +61,13 @@ public class AppSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(appSummary.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(appSummary.getAssessmentSchedule(), ASSESSMENTSCHEDULE_BINDING);
             protocolMarshaller.marshall(appSummary.getComplianceStatus(), COMPLIANCESTATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(appSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(appSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(appSummary.getResiliencyScore(), RESILIENCYSCORE_BINDING);
+            protocolMarshaller.marshall(appSummary.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

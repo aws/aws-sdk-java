@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to create a <a>Stage</a> resource.
+ * Requests API Gateway to create a Stage resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,26 +27,26 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
-     * and underscores. Maximum length is 128 characters.
+     * The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores.
+     * Maximum length is 128 characters.
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * The identifier of the Deployment resource for the Stage resource.
      * </p>
      */
     private String deploymentId;
     /**
      * <p>
-     * The description of the <a>Stage</a> resource.
+     * The description of the Stage resource.
      * </p>
      */
     private String description;
@@ -64,8 +64,8 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String cacheClusterSize;
     /**
      * <p>
-     * A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have alphanumeric
-     * and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
     private java.util.Map<String, String> variables;
@@ -83,7 +83,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private CanarySettings canarySettings;
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      */
     private Boolean tracingEnabled;
@@ -97,11 +97,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -110,10 +110,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -122,11 +122,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,13 +137,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
-     * and underscores. Maximum length is 128 characters.
+     * The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores.
+     * Maximum length is 128 characters.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters,
-     *        hyphens, and underscores. Maximum length is 128 characters.
+     *        The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and
+     *        underscores. Maximum length is 128 characters.
      */
 
     public void setStageName(String stageName) {
@@ -152,12 +152,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
-     * and underscores. Maximum length is 128 characters.
+     * The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores.
+     * Maximum length is 128 characters.
      * </p>
      * 
-     * @return [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters,
-     *         hyphens, and underscores. Maximum length is 128 characters.
+     * @return The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and
+     *         underscores. Maximum length is 128 characters.
      */
 
     public String getStageName() {
@@ -166,13 +166,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
-     * and underscores. Maximum length is 128 characters.
+     * The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores.
+     * Maximum length is 128 characters.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters,
-     *        hyphens, and underscores. Maximum length is 128 characters.
+     *        The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and
+     *        underscores. Maximum length is 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * The identifier of the Deployment resource for the Stage resource.
      * </p>
      * 
      * @param deploymentId
-     *        [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     *        The identifier of the Deployment resource for the Stage resource.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -196,10 +196,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * The identifier of the Deployment resource for the Stage resource.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * @return The identifier of the Deployment resource for the Stage resource.
      */
 
     public String getDeploymentId() {
@@ -208,11 +208,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * The identifier of the Deployment resource for the Stage resource.
      * </p>
      * 
      * @param deploymentId
-     *        [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     *        The identifier of the Deployment resource for the Stage resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +223,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the <a>Stage</a> resource.
+     * The description of the Stage resource.
      * </p>
      * 
      * @param description
-     *        The description of the <a>Stage</a> resource.
+     *        The description of the Stage resource.
      */
 
     public void setDescription(String description) {
@@ -236,10 +236,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the <a>Stage</a> resource.
+     * The description of the Stage resource.
      * </p>
      * 
-     * @return The description of the <a>Stage</a> resource.
+     * @return The description of the Stage resource.
      */
 
     public String getDescription() {
@@ -248,11 +248,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the <a>Stage</a> resource.
+     * The description of the Stage resource.
      * </p>
      * 
      * @param description
-     *        The description of the <a>Stage</a> resource.
+     *        The description of the Stage resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,13 +355,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have alphanumeric
-     * and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
-     * @return A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have
-     *         alphanumeric and underscore characters, and the values must match
-     *         <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * @return A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric
+     *         and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -370,14 +369,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have alphanumeric
-     * and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have
-     *        alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>
-     *        .
+     *        A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric
+     *        and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -386,14 +384,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have alphanumeric
-     * and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have
-     *        alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>
-     *        .
+     *        A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric
+     *        and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,11 +509,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
      * @param tracingEnabled
-     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     *        Specifies whether active tracing with X-ray is enabled for the Stage.
      */
 
     public void setTracingEnabled(Boolean tracingEnabled) {
@@ -525,10 +522,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
-     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * @return Specifies whether active tracing with X-ray is enabled for the Stage.
      */
 
     public Boolean getTracingEnabled() {
@@ -537,11 +534,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
      * @param tracingEnabled
-     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     *        Specifies whether active tracing with X-ray is enabled for the Stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,10 +549,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * Specifies whether active tracing with X-ray is enabled for the Stage.
      * </p>
      * 
-     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * @return Specifies whether active tracing with X-ray is enabled for the Stage.
      */
 
     public Boolean isTracingEnabled() {

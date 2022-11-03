@@ -109,6 +109,68 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Creates a label for an event.
+     * </p>
+     * 
+     * @param createLabelRequest
+     * @return A Java Future containing the result of the CreateLabel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.CreateLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLabelResult> createLabelAsync(CreateLabelRequest createLabelRequest);
+
+    /**
+     * <p>
+     * Creates a label for an event.
+     * </p>
+     * 
+     * @param createLabelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLabel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.CreateLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLabelResult> createLabelAsync(CreateLabelRequest createLabelRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLabelRequest, CreateLabelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a group of labels.
+     * </p>
+     * 
+     * @param createLabelGroupRequest
+     * @return A Java Future containing the result of the CreateLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.CreateLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLabelGroupResult> createLabelGroupAsync(CreateLabelGroupRequest createLabelGroupRequest);
+
+    /**
+     * <p>
+     * Creates a group of labels.
+     * </p>
+     * 
+     * @param createLabelGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.CreateLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLabelGroupResult> createLabelGroupAsync(CreateLabelGroupRequest createLabelGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLabelGroupRequest, CreateLabelGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an ML model for data inference.
      * </p>
      * <p>
@@ -227,6 +289,68 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<DeleteInferenceSchedulerResult> deleteInferenceSchedulerAsync(DeleteInferenceSchedulerRequest deleteInferenceSchedulerRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInferenceSchedulerRequest, DeleteInferenceSchedulerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a label.
+     * </p>
+     * 
+     * @param deleteLabelRequest
+     * @return A Java Future containing the result of the DeleteLabel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DeleteLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest deleteLabelRequest);
+
+    /**
+     * <p>
+     * Deletes a label.
+     * </p>
+     * 
+     * @param deleteLabelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLabel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DeleteLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest deleteLabelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelRequest, DeleteLabelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a group of labels.
+     * </p>
+     * 
+     * @param deleteLabelGroupRequest
+     * @return A Java Future containing the result of the DeleteLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DeleteLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelGroupResult> deleteLabelGroupAsync(DeleteLabelGroupRequest deleteLabelGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a group of labels.
+     * </p>
+     * 
+     * @param deleteLabelGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DeleteLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelGroupResult> deleteLabelGroupAsync(DeleteLabelGroupRequest deleteLabelGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelGroupRequest, DeleteLabelGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -362,6 +486,68 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Returns the name of the label.
+     * </p>
+     * 
+     * @param describeLabelRequest
+     * @return A Java Future containing the result of the DescribeLabel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DescribeLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLabelResult> describeLabelAsync(DescribeLabelRequest describeLabelRequest);
+
+    /**
+     * <p>
+     * Returns the name of the label.
+     * </p>
+     * 
+     * @param describeLabelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLabel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DescribeLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLabelResult> describeLabelAsync(DescribeLabelRequest describeLabelRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLabelRequest, DescribeLabelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the label group.
+     * </p>
+     * 
+     * @param describeLabelGroupRequest
+     * @return A Java Future containing the result of the DescribeLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DescribeLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLabelGroupResult> describeLabelGroupAsync(DescribeLabelGroupRequest describeLabelGroupRequest);
+
+    /**
+     * <p>
+     * Returns information about the label group.
+     * </p>
+     * 
+     * @param describeLabelGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DescribeLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLabelGroupResult> describeLabelGroupAsync(DescribeLabelGroupRequest describeLabelGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLabelGroupRequest, DescribeLabelGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
      * dataset, training and evaluation information, status, and so on.
      * </p>
@@ -459,6 +645,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @return A Java Future containing the result of the ListInferenceEvents operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest listInferenceEventsRequest);
+
+    /**
+     * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceEvents operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest listInferenceEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceEventsRequest, ListInferenceEventsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all inference executions that have been performed by the specified inference scheduler.
      * </p>
      * 
@@ -518,6 +735,68 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<ListInferenceSchedulersResult> listInferenceSchedulersAsync(ListInferenceSchedulersRequest listInferenceSchedulersRequest,
             com.amazonaws.handlers.AsyncHandler<ListInferenceSchedulersRequest, ListInferenceSchedulersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the label groups.
+     * </p>
+     * 
+     * @param listLabelGroupsRequest
+     * @return A Java Future containing the result of the ListLabelGroups operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListLabelGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLabelGroupsResult> listLabelGroupsAsync(ListLabelGroupsRequest listLabelGroupsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the label groups.
+     * </p>
+     * 
+     * @param listLabelGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLabelGroups operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListLabelGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLabelGroupsResult> listLabelGroupsAsync(ListLabelGroupsRequest listLabelGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLabelGroupsRequest, ListLabelGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a list of labels.
+     * </p>
+     * 
+     * @param listLabelsRequest
+     * @return A Java Future containing the result of the ListLabels operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLabelsResult> listLabelsAsync(ListLabelsRequest listLabelsRequest);
+
+    /**
+     * <p>
+     * Provides a list of labels.
+     * </p>
+     * 
+     * @param listLabelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLabels operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLabelsResult> listLabelsAsync(ListLabelsRequest listLabelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLabelsRequest, ListLabelsResult> asyncHandler);
 
     /**
      * <p>
@@ -805,5 +1084,36 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<UpdateInferenceSchedulerResult> updateInferenceSchedulerAsync(UpdateInferenceSchedulerRequest updateInferenceSchedulerRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInferenceSchedulerRequest, UpdateInferenceSchedulerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the label group.
+     * </p>
+     * 
+     * @param updateLabelGroupRequest
+     * @return A Java Future containing the result of the UpdateLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.UpdateLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest updateLabelGroupRequest);
+
+    /**
+     * <p>
+     * Updates the label group.
+     * </p>
+     * 
+     * @param updateLabelGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLabelGroup operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.UpdateLabelGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest updateLabelGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLabelGroupRequest, UpdateLabelGroupResult> asyncHandler);
 
 }

@@ -43,7 +43,7 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
     private InstanceTarget instanceTarget;
     /**
      * <p>
-     * Information about the target for a deployment that uses the AWS Lambda compute platform.
+     * Information about the target for a deployment that uses the Lambda compute platform.
      * </p>
      */
     private LambdaTarget lambdaTarget;
@@ -165,11 +165,11 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the target for a deployment that uses the AWS Lambda compute platform.
+     * Information about the target for a deployment that uses the Lambda compute platform.
      * </p>
      * 
      * @param lambdaTarget
-     *        Information about the target for a deployment that uses the AWS Lambda compute platform.
+     *        Information about the target for a deployment that uses the Lambda compute platform.
      */
 
     public void setLambdaTarget(LambdaTarget lambdaTarget) {
@@ -178,10 +178,10 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the target for a deployment that uses the AWS Lambda compute platform.
+     * Information about the target for a deployment that uses the Lambda compute platform.
      * </p>
      * 
-     * @return Information about the target for a deployment that uses the AWS Lambda compute platform.
+     * @return Information about the target for a deployment that uses the Lambda compute platform.
      */
 
     public LambdaTarget getLambdaTarget() {
@@ -190,11 +190,11 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the target for a deployment that uses the AWS Lambda compute platform.
+     * Information about the target for a deployment that uses the Lambda compute platform.
      * </p>
      * 
      * @param lambdaTarget
-     *        Information about the target for a deployment that uses the AWS Lambda compute platform.
+     *        Information about the target for a deployment that uses the Lambda compute platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -72,6 +72,10 @@ public class ResourceMappingJsonUnmarshaller implements Unmarshaller<ResourceMap
                     context.nextToken();
                     resourceMapping.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("terraformSourceName", targetDepth)) {
+                    context.nextToken();
+                    resourceMapping.setTerraformSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

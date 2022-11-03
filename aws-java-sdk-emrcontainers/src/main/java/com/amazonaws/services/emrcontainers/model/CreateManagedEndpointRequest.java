@@ -57,7 +57,7 @@ public class CreateManagedEndpointRequest extends com.amazonaws.AmazonWebService
     private String executionRoleArn;
     /**
      * <p>
-     * The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be
+     * The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be
      * removed in future releases.
      * </p>
      */
@@ -284,12 +284,12 @@ public class CreateManagedEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be
+     * The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be
      * removed in future releases.
      * </p>
      * 
      * @param certificateArn
-     *        The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will
+     *        The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will
      *        be removed in future releases.
      */
     @Deprecated
@@ -299,11 +299,11 @@ public class CreateManagedEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be
+     * The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be
      * removed in future releases.
      * </p>
      * 
-     * @return The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will
+     * @return The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will
      *         be removed in future releases.
      */
     @Deprecated
@@ -313,12 +313,12 @@ public class CreateManagedEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be
+     * The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be
      * removed in future releases.
      * </p>
      * 
      * @param certificateArn
-     *        The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will
+     *        The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will
      *        be removed in future releases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

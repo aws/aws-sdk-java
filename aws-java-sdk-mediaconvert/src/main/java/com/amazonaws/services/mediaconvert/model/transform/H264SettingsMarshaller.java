@@ -59,6 +59,8 @@ public class H264SettingsMarshaller {
             .marshallLocationName("gopSize").build();
     private static final MarshallingInfo<String> GOPSIZEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gopSizeUnits").build();
+    private static final MarshallingInfo<Integer> HRDBUFFERFINALFILLPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hrdBufferFinalFillPercentage").build();
     private static final MarshallingInfo<Integer> HRDBUFFERINITIALFILLPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hrdBufferInitialFillPercentage").build();
     private static final MarshallingInfo<Integer> HRDBUFFERSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -140,6 +142,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getGopClosedCadence(), GOPCLOSEDCADENCE_BINDING);
             protocolMarshaller.marshall(h264Settings.getGopSize(), GOPSIZE_BINDING);
             protocolMarshaller.marshall(h264Settings.getGopSizeUnits(), GOPSIZEUNITS_BINDING);
+            protocolMarshaller.marshall(h264Settings.getHrdBufferFinalFillPercentage(), HRDBUFFERFINALFILLPERCENTAGE_BINDING);
             protocolMarshaller.marshall(h264Settings.getHrdBufferInitialFillPercentage(), HRDBUFFERINITIALFILLPERCENTAGE_BINDING);
             protocolMarshaller.marshall(h264Settings.getHrdBufferSize(), HRDBUFFERSIZE_BINDING);
             protocolMarshaller.marshall(h264Settings.getInterlaceMode(), INTERLACEMODE_BINDING);

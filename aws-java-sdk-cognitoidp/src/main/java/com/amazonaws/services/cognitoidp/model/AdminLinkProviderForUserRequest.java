@@ -33,10 +33,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
     private String userPoolId;
     /**
      * <p>
-     * The existing user in the user pool that you want to assign to the external identity provider user account. This
-     * user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a
-     * SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns
-     * this user when the new user (with the linked identity provider attribute) signs in.
+     * The existing user in the user pool that you want to assign to the external IdP user account. This user can be a
+     * native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook
+     * user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when
+     * the new user (with the linked IdP attribute) signs in.
      * </p>
      * <p>
      * For a native username + password user, the <code>ProviderAttributeValue</code> for the
@@ -59,25 +59,25 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
     private ProviderUserIdentifierType destinationUser;
     /**
      * <p>
-     * An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a
-     * federated user (for example, a SAML or Facebook user), not another native user.
+     * An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user
+     * (for example, a SAML or Facebook user), not another native user.
      * </p>
      * <p>
-     * If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login
-     * with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
-     * identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-     * <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with
-     * Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     * If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon,
+     * you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the
+     * <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>,
+     * and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for
+     * <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
      * <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>,
-     * or <code>user_id</code> value found in the social identity provider token.
+     * or <code>user_id</code> value found in the social IdP token.
      * </p>
      * <p/>
      * <p>
      * For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If
      * you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim
-     * through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you
-     * set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse
-     * the default unique identifier found in the subject from the SAML token.
+     * through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set
+     * <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the
+     * default unique identifier found in the subject from the SAML token.
      * </p>
      */
     private ProviderUserIdentifierType sourceUser;
@@ -124,10 +124,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The existing user in the user pool that you want to assign to the external identity provider user account. This
-     * user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a
-     * SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns
-     * this user when the new user (with the linked identity provider attribute) signs in.
+     * The existing user in the user pool that you want to assign to the external IdP user account. This user can be a
+     * native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook
+     * user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when
+     * the new user (with the linked IdP attribute) signs in.
      * </p>
      * <p>
      * For a native username + password user, the <code>ProviderAttributeValue</code> for the
@@ -148,11 +148,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * </important>
      * 
      * @param destinationUser
-     *        The existing user in the user pool that you want to assign to the external identity provider user account.
-     *        This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for
-     *        example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception.
-     *        Amazon Cognito returns this user when the new user (with the linked identity provider attribute) signs
-     *        in.</p>
+     *        The existing user in the user pool that you want to assign to the external IdP user account. This user can
+     *        be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML
+     *        or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito
+     *        returns this user when the new user (with the linked IdP attribute) signs in.</p>
      *        <p>
      *        For a native username + password user, the <code>ProviderAttributeValue</code> for the
      *        <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be
@@ -177,10 +176,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The existing user in the user pool that you want to assign to the external identity provider user account. This
-     * user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a
-     * SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns
-     * this user when the new user (with the linked identity provider attribute) signs in.
+     * The existing user in the user pool that you want to assign to the external IdP user account. This user can be a
+     * native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook
+     * user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when
+     * the new user (with the linked IdP attribute) signs in.
      * </p>
      * <p>
      * For a native username + password user, the <code>ProviderAttributeValue</code> for the
@@ -200,11 +199,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * </important>
      * 
-     * @return The existing user in the user pool that you want to assign to the external identity provider user
-     *         account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated
-     *         user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an
-     *         exception. Amazon Cognito returns this user when the new user (with the linked identity provider
-     *         attribute) signs in.</p>
+     * @return The existing user in the user pool that you want to assign to the external IdP user account. This user
+     *         can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a
+     *         SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito
+     *         returns this user when the new user (with the linked IdP attribute) signs in.</p>
      *         <p>
      *         For a native username + password user, the <code>ProviderAttributeValue</code> for the
      *         <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be
@@ -229,10 +227,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The existing user in the user pool that you want to assign to the external identity provider user account. This
-     * user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a
-     * SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns
-     * this user when the new user (with the linked identity provider attribute) signs in.
+     * The existing user in the user pool that you want to assign to the external IdP user account. This user can be a
+     * native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook
+     * user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when
+     * the new user (with the linked IdP attribute) signs in.
      * </p>
      * <p>
      * For a native username + password user, the <code>ProviderAttributeValue</code> for the
@@ -253,11 +251,10 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * </important>
      * 
      * @param destinationUser
-     *        The existing user in the user pool that you want to assign to the external identity provider user account.
-     *        This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for
-     *        example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception.
-     *        Amazon Cognito returns this user when the new user (with the linked identity provider attribute) signs
-     *        in.</p>
+     *        The existing user in the user pool that you want to assign to the external IdP user account. This user can
+     *        be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML
+     *        or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito
+     *        returns this user when the new user (with the linked IdP attribute) signs in.</p>
      *        <p>
      *        For a native username + password user, the <code>ProviderAttributeValue</code> for the
      *        <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be
@@ -284,45 +281,44 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a
-     * federated user (for example, a SAML or Facebook user), not another native user.
+     * An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user
+     * (for example, a SAML or Facebook user), not another native user.
      * </p>
      * <p>
-     * If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login
-     * with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
-     * identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-     * <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with
-     * Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     * If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon,
+     * you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the
+     * <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>,
+     * and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for
+     * <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
      * <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>,
-     * or <code>user_id</code> value found in the social identity provider token.
+     * or <code>user_id</code> value found in the social IdP token.
      * </p>
      * <p/>
      * <p>
      * For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If
      * you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim
-     * through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you
-     * set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse
-     * the default unique identifier found in the subject from the SAML token.
+     * through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set
+     * <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the
+     * default unique identifier found in the subject from the SAML token.
      * </p>
      * 
      * @param sourceUser
-     *        An external identity provider account for a user who doesn't exist yet in the user pool. This user must be
-     *        a federated user (for example, a SAML or Facebook user), not another native user.</p>
+     *        An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated
+     *        user (for example, a SAML or Facebook user), not another native user.</p>
      *        <p>
-     *        If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or
-     *        Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>.
-     *        For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>,
-     *        <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the
-     *        Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-     *        <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same
-     *        value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity
-     *        provider token.
+     *        If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with
+     *        Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
+     *        IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
+     *        <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login
+     *        with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     *        <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>,
+     *        <code>sub</code>, or <code>user_id</code> value found in the social IdP token.
      *        </p>
      *        <p/>
      *        <p>
      *        For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML
      *        assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the
-     *        subject to a claim through the SAML identity provider and submit that claim name as the
+     *        subject to a claim through the SAML IdP and submit that claim name as the
      *        <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to
      *        <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found
      *        in the subject from the SAML token.
@@ -334,44 +330,43 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a
-     * federated user (for example, a SAML or Facebook user), not another native user.
+     * An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user
+     * (for example, a SAML or Facebook user), not another native user.
      * </p>
      * <p>
-     * If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login
-     * with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
-     * identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-     * <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with
-     * Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     * If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon,
+     * you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the
+     * <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>,
+     * and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for
+     * <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
      * <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>,
-     * or <code>user_id</code> value found in the social identity provider token.
+     * or <code>user_id</code> value found in the social IdP token.
      * </p>
      * <p/>
      * <p>
      * For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If
      * you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim
-     * through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you
-     * set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse
-     * the default unique identifier found in the subject from the SAML token.
+     * through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set
+     * <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the
+     * default unique identifier found in the subject from the SAML token.
      * </p>
      * 
-     * @return An external identity provider account for a user who doesn't exist yet in the user pool. This user must
-     *         be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+     * @return An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated
+     *         user (for example, a SAML or Facebook user), not another native user.</p>
      *         <p>
-     *         If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google,
-     *         or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>
-     *         . For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>,
-     *         <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the
-     *         Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-     *         <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same
-     *         value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social
-     *         identity provider token.
+     *         If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with
+     *         Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
+     *         IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
+     *         <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login
+     *         with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     *         <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>,
+     *         <code>sub</code>, or <code>user_id</code> value found in the social IdP token.
      *         </p>
      *         <p/>
      *         <p>
      *         For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML
      *         assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the
-     *         subject to a claim through the SAML identity provider and submit that claim name as the
+     *         subject to a claim through the SAML IdP and submit that claim name as the
      *         <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to
      *         <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found
      *         in the subject from the SAML token.
@@ -383,45 +378,44 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An external identity provider account for a user who doesn't exist yet in the user pool. This user must be a
-     * federated user (for example, a SAML or Facebook user), not another native user.
+     * An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user
+     * (for example, a SAML or Facebook user), not another native user.
      * </p>
      * <p>
-     * If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or Login
-     * with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
-     * identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-     * <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with
-     * Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     * If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon,
+     * you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the
+     * <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>,
+     * and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for
+     * <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
      * <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>,
-     * or <code>user_id</code> value found in the social identity provider token.
+     * or <code>user_id</code> value found in the social IdP token.
      * </p>
      * <p/>
      * <p>
      * For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If
      * you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim
-     * through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you
-     * set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse
-     * the default unique identifier found in the subject from the SAML token.
+     * through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set
+     * <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the
+     * default unique identifier found in the subject from the SAML token.
      * </p>
      * 
      * @param sourceUser
-     *        An external identity provider account for a user who doesn't exist yet in the user pool. This user must be
-     *        a federated user (for example, a SAML or Facebook user), not another native user.</p>
+     *        An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated
+     *        user (for example, a SAML or Facebook user), not another native user.</p>
      *        <p>
-     *        If the <code>SourceUser</code> is using a federated social identity provider, such as Facebook, Google, or
-     *        Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>.
-     *        For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>,
-     *        <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the
-     *        Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-     *        <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same
-     *        value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity
-     *        provider token.
+     *        If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with
+     *        Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social
+     *        IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
+     *        <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login
+     *        with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
+     *        <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>,
+     *        <code>sub</code>, or <code>user_id</code> value found in the social IdP token.
      *        </p>
      *        <p/>
      *        <p>
      *        For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML
      *        assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the
-     *        subject to a claim through the SAML identity provider and submit that claim name as the
+     *        subject to a claim through the SAML IdP and submit that claim name as the
      *        <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to
      *        <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found
      *        in the subject from the SAML token.

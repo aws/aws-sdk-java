@@ -36,8 +36,25 @@ public class AwsRdsDbClusterAssociatedRole implements Serializable, Cloneable, S
     private String roleArn;
     /**
      * <p>
-     * The status of the association between the IAM role and the DB cluster.
+     * The status of the association between the IAM role and the DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
 
@@ -83,11 +100,44 @@ public class AwsRdsDbClusterAssociatedRole implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The status of the association between the IAM role and the DB cluster.
+     * The status of the association between the IAM role and the DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the association between the IAM role and the DB cluster.
+     *        The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVALID</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -96,10 +146,43 @@ public class AwsRdsDbClusterAssociatedRole implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The status of the association between the IAM role and the DB cluster.
+     * The status of the association between the IAM role and the DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the association between the IAM role and the DB cluster.
+     * @return The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INVALID</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -108,11 +191,44 @@ public class AwsRdsDbClusterAssociatedRole implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The status of the association between the IAM role and the DB cluster.
+     * The status of the association between the IAM role and the DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the association between the IAM role and the DB cluster.
+     *        The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVALID</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

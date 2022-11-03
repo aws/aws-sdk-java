@@ -1108,8 +1108,9 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Deletes the password for the specified IAM user, which terminates the user's ability to access Amazon Web
-     * Services services through the Amazon Web Services Management Console.
+     * Deletes the password for the specified IAM user, For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_admin-change-user.html">Managing
+     * passwords for IAM users</a>.
      * </p>
      * <p>
      * You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to delete a
@@ -2902,10 +2903,12 @@ public interface AmazonIdentityManagement {
      * <code>MaxItems</code> and <code>Marker</code> parameters.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the Amazon
-     * Web Services access key ID used to sign the request. This operation works for access keys under the Amazon Web
-     * Services account. Consequently, you can use this operation to manage Amazon Web Services account root user
-     * credentials even if the Amazon Web Services account has no associated users.
+     * If the <code>UserName</code> is not specified, the user name is determined implicitly based on the Amazon Web
+     * Services access key ID used to sign the request. If a temporary access key is used, then <code>UserName</code> is
+     * required. If a long-term key is assigned to the user, then <code>UserName</code> is not required. This operation
+     * works for access keys under the Amazon Web Services account. Consequently, you can use this operation to manage
+     * Amazon Web Services account root user credentials even if the Amazon Web Services account has no associated
+     * users.
      * </p>
      * <note>
      * <p>
@@ -5237,9 +5240,11 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> is not specified, the user name is determined implicitly based on the Amazon Web
-     * Services access key ID used to sign the request. This operation works for access keys under the Amazon Web
-     * Services account. Consequently, you can use this operation to manage Amazon Web Services account root user
-     * credentials even if the Amazon Web Services account has no associated users.
+     * Services access key ID used to sign the request. If a temporary access key is used, then <code>UserName</code> is
+     * required. If a long-term key is assigned to the user, then <code>UserName</code> is not required. This operation
+     * works for access keys under the Amazon Web Services account. Consequently, you can use this operation to manage
+     * Amazon Web Services account root user credentials even if the Amazon Web Services account has no associated
+     * users.
      * </p>
      * <p>
      * For information about rotating keys, see <a

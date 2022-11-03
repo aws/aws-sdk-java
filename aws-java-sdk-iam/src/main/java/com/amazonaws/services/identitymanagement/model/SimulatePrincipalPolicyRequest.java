@@ -242,22 +242,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
@@ -1877,22 +1861,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
@@ -1941,22 +1909,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>EC2-Classic-InstanceStore</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>EC2-Classic-EBS</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security group, volume
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <b>EC2-VPC-InstanceStore</b>
@@ -2014,22 +1966,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
@@ -2077,22 +2013,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>EC2-Classic-InstanceStore</b>
-     *         </p>
-     *         <p>
-     *         instance, image, security group
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>EC2-Classic-EBS</b>
-     *         </p>
-     *         <p>
-     *         instance, image, security group, volume
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <b>EC2-VPC-InstanceStore</b>
@@ -2150,22 +2070,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>EC2-Classic-InstanceStore</b>
-     * </p>
-     * <p>
-     * instance, image, security group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>EC2-Classic-EBS</b>
-     * </p>
-     * <p>
-     * instance, image, security group, volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
@@ -2214,22 +2118,6 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>EC2-Classic-InstanceStore</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>EC2-Classic-EBS</b>
-     *        </p>
-     *        <p>
-     *        instance, image, security group, volume
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <b>EC2-VPC-InstanceStore</b>

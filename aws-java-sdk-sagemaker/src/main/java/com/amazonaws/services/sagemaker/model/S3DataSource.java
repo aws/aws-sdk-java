@@ -139,6 +139,12 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> attributeNames;
+    /**
+     * <p>
+     * A list of names of instance groups that get data from the S3 data source.
+     * </p>
+     */
+    private java.util.List<String> instanceGroupNames;
 
     /**
      * <p>
@@ -941,6 +947,76 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of names of instance groups that get data from the S3 data source.
+     * </p>
+     * 
+     * @return A list of names of instance groups that get data from the S3 data source.
+     */
+
+    public java.util.List<String> getInstanceGroupNames() {
+        return instanceGroupNames;
+    }
+
+    /**
+     * <p>
+     * A list of names of instance groups that get data from the S3 data source.
+     * </p>
+     * 
+     * @param instanceGroupNames
+     *        A list of names of instance groups that get data from the S3 data source.
+     */
+
+    public void setInstanceGroupNames(java.util.Collection<String> instanceGroupNames) {
+        if (instanceGroupNames == null) {
+            this.instanceGroupNames = null;
+            return;
+        }
+
+        this.instanceGroupNames = new java.util.ArrayList<String>(instanceGroupNames);
+    }
+
+    /**
+     * <p>
+     * A list of names of instance groups that get data from the S3 data source.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceGroupNames(java.util.Collection)} or {@link #withInstanceGroupNames(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param instanceGroupNames
+     *        A list of names of instance groups that get data from the S3 data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3DataSource withInstanceGroupNames(String... instanceGroupNames) {
+        if (this.instanceGroupNames == null) {
+            setInstanceGroupNames(new java.util.ArrayList<String>(instanceGroupNames.length));
+        }
+        for (String ele : instanceGroupNames) {
+            this.instanceGroupNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of names of instance groups that get data from the S3 data source.
+     * </p>
+     * 
+     * @param instanceGroupNames
+     *        A list of names of instance groups that get data from the S3 data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3DataSource withInstanceGroupNames(java.util.Collection<String> instanceGroupNames) {
+        setInstanceGroupNames(instanceGroupNames);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -959,7 +1035,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
         if (getS3DataDistributionType() != null)
             sb.append("S3DataDistributionType: ").append(getS3DataDistributionType()).append(",");
         if (getAttributeNames() != null)
-            sb.append("AttributeNames: ").append(getAttributeNames());
+            sb.append("AttributeNames: ").append(getAttributeNames()).append(",");
+        if (getInstanceGroupNames() != null)
+            sb.append("InstanceGroupNames: ").append(getInstanceGroupNames());
         sb.append("}");
         return sb.toString();
     }
@@ -990,6 +1068,10 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false)
             return false;
+        if (other.getInstanceGroupNames() == null ^ this.getInstanceGroupNames() == null)
+            return false;
+        if (other.getInstanceGroupNames() != null && other.getInstanceGroupNames().equals(this.getInstanceGroupNames()) == false)
+            return false;
         return true;
     }
 
@@ -1002,6 +1084,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         hashCode = prime * hashCode + ((getS3DataDistributionType() == null) ? 0 : getS3DataDistributionType().hashCode());
         hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGroupNames() == null) ? 0 : getInstanceGroupNames().hashCode());
         return hashCode;
     }
 

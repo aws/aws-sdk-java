@@ -27,7 +27,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the aximum number of executions to return.
+     * Specifies the maximum number of executions to return.
      * </p>
      */
     private Integer maxResults;
@@ -38,14 +38,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to
-     * list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     * list first 10. If so, call the API by specifying the <code>max-results</code>:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10</code>
      * </p>
      * <p>
      * This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code> value you received:
+     * execution. You can now call the API again, supplying the <code>NextToken</code> value you received:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
@@ -65,11 +65,11 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the aximum number of executions to return.
+     * Specifies the maximum number of executions to return.
      * </p>
      * 
      * @param maxResults
-     *        Specifies the aximum number of executions to return.
+     *        Specifies the maximum number of executions to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -78,10 +78,10 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the aximum number of executions to return.
+     * Specifies the maximum number of executions to return.
      * </p>
      * 
-     * @return Specifies the aximum number of executions to return.
+     * @return Specifies the maximum number of executions to return.
      */
 
     public Integer getMaxResults() {
@@ -90,11 +90,11 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the aximum number of executions to return.
+     * Specifies the maximum number of executions to return.
      * </p>
      * 
      * @param maxResults
-     *        Specifies the aximum number of executions to return.
+     *        Specifies the maximum number of executions to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,14 +110,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to
-     * list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     * list first 10. If so, call the API by specifying the <code>max-results</code>:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10</code>
      * </p>
      * <p>
      * This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code> value you received:
+     * execution. You can now call the API again, supplying the <code>NextToken</code> value you received:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
@@ -133,14 +133,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        executions.</p>
      *        <p>
      *        This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only
-     *        want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     *        want to list first 10. If so, call the API by specifying the <code>max-results</code>:
      *        </p>
      *        <p>
      *        <code>aws transfer list-executions --max-results 10</code>
      *        </p>
      *        <p>
      *        This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the
-     *        eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you
+     *        eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you
      *        received:
      *        </p>
      *        <p>
@@ -162,14 +162,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to
-     * list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     * list first 10. If so, call the API by specifying the <code>max-results</code>:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10</code>
      * </p>
      * <p>
      * This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code> value you received:
+     * execution. You can now call the API again, supplying the <code>NextToken</code> value you received:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
@@ -184,14 +184,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         executions.</p>
      *         <p>
      *         This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only
-     *         want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     *         want to list first 10. If so, call the API by specifying the <code>max-results</code>:
      *         </p>
      *         <p>
      *         <code>aws transfer list-executions --max-results 10</code>
      *         </p>
      *         <p>
      *         This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the
-     *         eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you
+     *         eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you
      *         received:
      *         </p>
      *         <p>
@@ -213,14 +213,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to
-     * list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     * list first 10. If so, call the API by specifying the <code>max-results</code>:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10</code>
      * </p>
      * <p>
      * This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code> value you received:
+     * execution. You can now call the API again, supplying the <code>NextToken</code> value you received:
      * </p>
      * <p>
      * <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
@@ -236,14 +236,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        executions.</p>
      *        <p>
      *        This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only
-     *        want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+     *        want to list first 10. If so, call the API by specifying the <code>max-results</code>:
      *        </p>
      *        <p>
      *        <code>aws transfer list-executions --max-results 10</code>
      *        </p>
      *        <p>
      *        This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the
-     *        eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you
+     *        eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you
      *        received:
      *        </p>
      *        <p>

@@ -27,7 +27,7 @@ public class GetMailDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain is retrieved.
+     * The WorkMail organization for which the domain is retrieved.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class GetMailDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain is retrieved.
+     * The WorkMail organization for which the domain is retrieved.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the domain is retrieved.
+     *        The WorkMail organization for which the domain is retrieved.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class GetMailDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain is retrieved.
+     * The WorkMail organization for which the domain is retrieved.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the domain is retrieved.
+     * @return The WorkMail organization for which the domain is retrieved.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class GetMailDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the domain is retrieved.
+     * The WorkMail organization for which the domain is retrieved.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the domain is retrieved.
+     *        The WorkMail organization for which the domain is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

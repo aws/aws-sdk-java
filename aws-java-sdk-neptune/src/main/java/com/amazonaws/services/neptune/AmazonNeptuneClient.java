@@ -267,6 +267,10 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("DBClusterRoleAlreadyExists", new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("GlobalClusterNotFoundFault") == null) {
+            exceptionUnmarshallersMap.put("GlobalClusterNotFoundFault", new GlobalClusterNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new GlobalClusterNotFoundExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidEventSubscriptionState") == null) {
             exceptionUnmarshallersMap.put("InvalidEventSubscriptionState", new InvalidEventSubscriptionStateExceptionUnmarshaller());
         }
@@ -315,10 +319,18 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("SnapshotQuotaExceeded", new SnapshotQuotaExceededExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("GlobalClusterQuotaExceededFault") == null) {
+            exceptionUnmarshallersMap.put("GlobalClusterQuotaExceededFault", new GlobalClusterQuotaExceededExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new GlobalClusterQuotaExceededExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("DBInstanceNotFound") == null) {
             exceptionUnmarshallersMap.put("DBInstanceNotFound", new DBInstanceNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("GlobalClusterAlreadyExistsFault") == null) {
+            exceptionUnmarshallersMap.put("GlobalClusterAlreadyExistsFault", new GlobalClusterAlreadyExistsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new GlobalClusterAlreadyExistsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("SharedSnapshotQuotaExceeded") == null) {
             exceptionUnmarshallersMap.put("SharedSnapshotQuotaExceeded", new SharedSnapshotQuotaExceededExceptionUnmarshaller());
         }
@@ -327,6 +339,10 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("InvalidDBClusterEndpointStateFault", new InvalidDBClusterEndpointStateExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidGlobalClusterStateFault") == null) {
+            exceptionUnmarshallersMap.put("InvalidGlobalClusterStateFault", new InvalidGlobalClusterStateExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidGlobalClusterStateExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidDBClusterStateFault") == null) {
             exceptionUnmarshallersMap.put("InvalidDBClusterStateFault", new InvalidDBClusterStateExceptionUnmarshaller());
         }
@@ -894,6 +910,10 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @sample AmazonNeptune.CreateDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1483,6 +1503,77 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Creates a Neptune global database spread across multiple Amazon Regions. The global database contains a single
+     * primary cluster with read-write capability, and read-only secondary clusters that receive data from the primary
+     * cluster through high-speed replication performed by the Neptune storage subsystem.
+     * </p>
+     * <p>
+     * You can create a global database that is initially empty, and then add a primary cluster and secondary clusters
+     * to it, or you can specify an existing Neptune cluster during the create operation to become the primary cluster
+     * of the global database.
+     * </p>
+     * 
+     * @param createGlobalClusterRequest
+     * @return Result of the CreateGlobalCluster operation returned by the service.
+     * @throws GlobalClusterAlreadyExistsException
+     *         The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique
+     *         name) to create a new global database cluster.
+     * @throws GlobalClusterQuotaExceededException
+     *         The number of global database clusters for this account is already at the maximum allowed.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @sample AmazonNeptune.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GlobalCluster createGlobalCluster(CreateGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeCreateGlobalCluster(CreateGlobalClusterRequest createGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(createGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all
      * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
@@ -1998,6 +2089,65 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a global database. The primary and all secondary clusters must already be detached or deleted first.
+     * </p>
+     * 
+     * @param deleteGlobalClusterRequest
+     * @return Result of the DeleteGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @sample AmazonNeptune.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeDeleteGlobalCluster(DeleteGlobalClusterRequest deleteGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(deleteGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2972,6 +3122,64 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Returns information about Neptune global database clusters. This API supports pagination.
+     * </p>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return Result of the DescribeGlobalClusters operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @sample AmazonNeptune.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGlobalClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGlobalClustersResult executeDescribeGlobalClusters(DescribeGlobalClustersRequest describeGlobalClustersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGlobalClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGlobalClustersRequest> request = null;
+        Response<DescribeGlobalClustersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGlobalClustersRequestMarshaller().marshall(super.beforeMarshalling(describeGlobalClustersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalClusters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeGlobalClustersResult> responseHandler = new StaxResponseHandler<DescribeGlobalClustersResult>(
+                    new DescribeGlobalClustersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of orderable DB instance options for the specified engine.
      * </p>
      * 
@@ -3210,6 +3418,82 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates the failover process for a Neptune global database.
+     * </p>
+     * <p>
+     * A failover for a Neptune global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected target secondary DB cluster are switched. The selected
+     * secondary DB cluster assumes full read/write capabilities for the Neptune global database.
+     * </p>
+     * <note>
+     * <p>
+     * This action applies <b>only</b> to Neptune global databases. This action is only intended for use on healthy
+     * Neptune global databases with healthy Neptune DB clusters and no region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure the global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @return Result of the FailoverGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @sample AmazonNeptune.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GlobalCluster failoverGlobalCluster(FailoverGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeFailoverGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeFailoverGlobalCluster(FailoverGlobalClusterRequest failoverGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(failoverGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FailoverGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FailoverGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(failoverGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FailoverGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -3896,6 +4180,66 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration
+     * parameters by specifying these parameters and their new values in the request.
+     * </p>
+     * 
+     * @param modifyGlobalClusterRequest
+     * @return Result of the ModifyGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @sample AmazonNeptune.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeModifyGlobalCluster(ModifyGlobalClusterRequest modifyGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(modifyGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Not supported.
      * </p>
      * 
@@ -4007,6 +4351,69 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone
+     * cluster with read-write capability instead of being read-only, and no longer receives data from a the primary
+     * cluster.
+     * </p>
+     * 
+     * @param removeFromGlobalClusterRequest
+     * @return Result of the RemoveFromGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @sample AmazonNeptune.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveFromGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeRemoveFromGlobalCluster(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeFromGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveFromGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveFromGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(removeFromGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFromGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

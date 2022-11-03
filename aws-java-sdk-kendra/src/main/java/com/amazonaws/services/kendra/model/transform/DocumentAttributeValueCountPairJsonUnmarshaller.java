@@ -56,6 +56,12 @@ public class DocumentAttributeValueCountPairJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     documentAttributeValueCountPair.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("FacetResults", targetDepth)) {
+                    context.nextToken();
+                    documentAttributeValueCountPair.setFacetResults(new ListUnmarshaller<FacetResult>(FacetResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

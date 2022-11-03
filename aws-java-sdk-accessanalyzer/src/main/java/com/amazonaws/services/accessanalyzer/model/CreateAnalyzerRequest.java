@@ -36,17 +36,18 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String analyzerName;
     /**
      * <p>
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the
      * criteria you define for the rule.
      * </p>
      */
     private java.util.List<InlineArchiveRule> archiveRules;
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     */
-    private String clientToken;
     /**
      * <p>
      * The tags to apply to the analyzer.
@@ -55,11 +56,10 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * A client token.
      * </p>
      */
-    private String type;
+    private String clientToken;
 
     /**
      * <p>
@@ -98,6 +98,73 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateAnalyzerRequest withAnalyzerName(String analyzerName) {
         setAnalyzerName(analyzerName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * </p>
+     * 
+     * @param type
+     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
+     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * @see Type
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * </p>
+     * 
+     * @return The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create
+     *         only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * @see Type
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * </p>
+     * 
+     * @param type
+     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
+     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Type
+     */
+
+    public CreateAnalyzerRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * </p>
+     * 
+     * @param type
+     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
+     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Type
+     */
+
+    public CreateAnalyzerRequest withType(Type type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -181,46 +248,6 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @return A client token.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAnalyzerRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
-     * <p>
      * The tags to apply to the analyzer.
      * </p>
      * 
@@ -289,68 +316,41 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * A client token.
      * </p>
      * 
-     * @param type
-     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
-     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
-     * @see Type
+     * @param clientToken
+     *        A client token.
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * A client token.
      * </p>
      * 
-     * @return The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create
-     *         only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
-     * @see Type
+     * @return A client token.
      */
 
-    public String getType() {
-        return this.type;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * A client token.
      * </p>
      * 
-     * @param type
-     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
-     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * @param clientToken
+     *        A client token.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Type
      */
 
-    public CreateAnalyzerRequest withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
-     * </p>
-     * 
-     * @param type
-     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
-     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Type
-     */
-
-    public CreateAnalyzerRequest withType(Type type) {
-        this.type = type.toString();
+    public CreateAnalyzerRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -368,14 +368,14 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getAnalyzerName() != null)
             sb.append("AnalyzerName: ").append(getAnalyzerName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getArchiveRules() != null)
             sb.append("ArchiveRules: ").append(getArchiveRules()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -394,21 +394,21 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAnalyzerName() != null && other.getAnalyzerName().equals(this.getAnalyzerName()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getArchiveRules() == null ^ this.getArchiveRules() == null)
             return false;
         if (other.getArchiveRules() != null && other.getArchiveRules().equals(this.getArchiveRules()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -419,10 +419,10 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerName() == null) ? 0 : getAnalyzerName().hashCode());
-        hashCode = prime * hashCode + ((getArchiveRules() == null) ? 0 : getArchiveRules().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getArchiveRules() == null) ? 0 : getArchiveRules().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

@@ -26,13 +26,13 @@ import com.amazonaws.services.iotsecuretunneling.model.*;
  * {@link com.amazonaws.services.iotsecuretunneling.AbstractAWSIoTSecureTunneling} instead.
  * </p>
  * <p>
- * <fullname>AWS IoT Secure Tunneling</fullname>
+ * <fullname>IoT Secure Tunneling</fullname>
  * <p>
- * AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
+ * IoT Secure Tunneling creates remote connections to devices deployed in the field.
  * </p>
  * <p>
- * For more information about how AWS IoT Secure Tunneling works, see <a
- * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS IoT Secure Tunneling</a>.
+ * For more information about how IoT Secure Tunneling works, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT Secure Tunneling</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -51,6 +51,11 @@ public interface AWSIoTSecureTunneling {
      * Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close
      * the WebSocket connections between the client and proxy server so no data can be transmitted.
      * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CloseTunnel</a> action.
+     * </p>
      * 
      * @param closeTunnelRequest
      * @return Result of the CloseTunnel operation returned by the service.
@@ -65,6 +70,11 @@ public interface AWSIoTSecureTunneling {
     /**
      * <p>
      * Gets information about a tunnel identified by the unique tunnel id.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeTunnel</a> action.
      * </p>
      * 
      * @param describeTunnelRequest
@@ -94,8 +104,13 @@ public interface AWSIoTSecureTunneling {
 
     /**
      * <p>
-     * List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will
-     * be listed before older tunnels.
+     * List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order,
+     * newer tunnels will be listed before older tunnels.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListTunnels</a> action.
      * </p>
      * 
      * @param listTunnelsRequest
@@ -108,8 +123,13 @@ public interface AWSIoTSecureTunneling {
 
     /**
      * <p>
-     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure
+     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure
      * Tunneling proxy server.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >OpenTunnel</a> action.
      * </p>
      * 
      * @param openTunnelRequest
@@ -121,6 +141,34 @@ public interface AWSIoTSecureTunneling {
      *      API Documentation</a>
      */
     OpenTunnelResult openTunnel(OpenTunnelRequest openTunnelRequest);
+
+    /**
+     * <p>
+     * Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure
+     * tunneling to access the same tunnel.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >RotateTunnelAccessToken</a> action.
+     * </p>
+     * <note>
+     * <p>
+     * Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration is 12 hours and the
+     * tunnel has already been open for 4 hours. When you rotate the access tokens, the new tokens that are generated
+     * can only be used for the remaining 8 hours.
+     * </p>
+     * </note>
+     * 
+     * @param rotateTunnelAccessTokenRequest
+     * @return Result of the RotateTunnelAccessToken operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Thrown when an operation is attempted on a resource that does not exist.
+     * @sample AWSIoTSecureTunneling.RotateTunnelAccessToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RotateTunnelAccessTokenResult rotateTunnelAccessToken(RotateTunnelAccessTokenRequest rotateTunnelAccessTokenRequest);
 
     /**
      * <p>

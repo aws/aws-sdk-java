@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FindingSourceMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> DETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("detail").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<StructuredPojo> DETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("detail").build();
 
     private static final FindingSourceMarshaller instance = new FindingSourceMarshaller();
 
@@ -48,8 +48,8 @@ public class FindingSourceMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(findingSource.getDetail(), DETAIL_BINDING);
             protocolMarshaller.marshall(findingSource.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(findingSource.getDetail(), DETAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -35,12 +35,12 @@ public class ResultSetOptions implements Serializable, Cloneable, StructuredPojo
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double
      * value otherwise.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to
      * String, especially when working with currency values.
      * </p>
-     * </important>
+     * </note>
      */
     private String decimalReturnType;
     /**
@@ -59,18 +59,18 @@ public class ResultSetOptions implements Serializable, Cloneable, StructuredPojo
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double
      * value otherwise.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to
      * String, especially when working with currency values.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param decimalReturnType
      *        A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value
      *        of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of
      *        <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a
-     *        Double value otherwise.</p> <important>
+     *        Double value otherwise.</p> <note>
      *        <p>
      *        Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting
      *        to String, especially when working with currency values.
@@ -89,17 +89,17 @@ public class ResultSetOptions implements Serializable, Cloneable, StructuredPojo
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double
      * value otherwise.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to
      * String, especially when working with currency values.
      * </p>
-     * </important>
+     * </note>
      * 
      * @return A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value
      *         of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of
      *         <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a
-     *         Double value otherwise.</p> <important>
+     *         Double value otherwise.</p> <note>
      *         <p>
      *         Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting
      *         to String, especially when working with currency values.
@@ -118,18 +118,18 @@ public class ResultSetOptions implements Serializable, Cloneable, StructuredPojo
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double
      * value otherwise.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to
      * String, especially when working with currency values.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param decimalReturnType
      *        A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value
      *        of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of
      *        <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a
-     *        Double value otherwise.</p> <important>
+     *        Double value otherwise.</p> <note>
      *        <p>
      *        Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting
      *        to String, especially when working with currency values.
@@ -150,18 +150,18 @@ public class ResultSetOptions implements Serializable, Cloneable, StructuredPojo
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double
      * value otherwise.
      * </p>
-     * <important>
+     * <note>
      * <p>
      * Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to
      * String, especially when working with currency values.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param decimalReturnType
      *        A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value
      *        of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of
      *        <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a
-     *        Double value otherwise.</p> <important>
+     *        Double value otherwise.</p> <note>
      *        <p>
      *        Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting
      *        to String, especially when working with currency values.

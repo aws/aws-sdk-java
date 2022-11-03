@@ -33,6 +33,8 @@ public class SsmAutomationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentVersion").build();
+    private static final MarshallingInfo<Map> DYNAMICPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicParameters").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("parameters").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class SsmAutomationMarshaller {
         try {
             protocolMarshaller.marshall(ssmAutomation.getDocumentName(), DOCUMENTNAME_BINDING);
             protocolMarshaller.marshall(ssmAutomation.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(ssmAutomation.getDynamicParameters(), DYNAMICPARAMETERS_BINDING);
             protocolMarshaller.marshall(ssmAutomation.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(ssmAutomation.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(ssmAutomation.getTargetAccount(), TARGETACCOUNT_BINDING);

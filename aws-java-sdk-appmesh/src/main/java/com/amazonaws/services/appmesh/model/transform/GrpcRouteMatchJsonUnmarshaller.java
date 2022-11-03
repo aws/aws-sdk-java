@@ -58,6 +58,10 @@ public class GrpcRouteMatchJsonUnmarshaller implements Unmarshaller<GrpcRouteMat
                     context.nextToken();
                     grpcRouteMatch.setMethodName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("port", targetDepth)) {
+                    context.nextToken();
+                    grpcRouteMatch.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("serviceName", targetDepth)) {
                     context.nextToken();
                     grpcRouteMatch.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));

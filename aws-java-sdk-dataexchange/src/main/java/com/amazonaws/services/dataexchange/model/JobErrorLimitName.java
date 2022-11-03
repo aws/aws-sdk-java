@@ -15,7 +15,7 @@ package com.amazonaws.services.dataexchange.model;
 import javax.annotation.Generated;
 
 /**
- * The name of the limit that was reached.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobErrorLimitName {

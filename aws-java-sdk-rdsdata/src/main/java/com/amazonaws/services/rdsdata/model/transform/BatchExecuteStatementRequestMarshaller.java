@@ -28,18 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BatchExecuteStatementRequestMarshaller {
 
-    private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("database").build();
-    private static final MarshallingInfo<List> PARAMETERSETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("parameterSets").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
-    private static final MarshallingInfo<String> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("schema").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("secretArn").build();
     private static final MarshallingInfo<String> SQL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sql").build();
+    private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("database").build();
+    private static final MarshallingInfo<String> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("schema").build();
+    private static final MarshallingInfo<List> PARAMETERSETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("parameterSets").build();
     private static final MarshallingInfo<String> TRANSACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transactionId").build();
 
@@ -59,12 +59,12 @@ public class BatchExecuteStatementRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(batchExecuteStatementRequest.getDatabase(), DATABASE_BINDING);
-            protocolMarshaller.marshall(batchExecuteStatementRequest.getParameterSets(), PARAMETERSETS_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getResourceArn(), RESOURCEARN_BINDING);
-            protocolMarshaller.marshall(batchExecuteStatementRequest.getSchema(), SCHEMA_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getSql(), SQL_BINDING);
+            protocolMarshaller.marshall(batchExecuteStatementRequest.getDatabase(), DATABASE_BINDING);
+            protocolMarshaller.marshall(batchExecuteStatementRequest.getSchema(), SCHEMA_BINDING);
+            protocolMarshaller.marshall(batchExecuteStatementRequest.getParameterSets(), PARAMETERSETS_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getTransactionId(), TRANSACTIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

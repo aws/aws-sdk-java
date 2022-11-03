@@ -52,6 +52,12 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
      * </p>
      */
     private String channelArn;
+    /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -263,6 +269,46 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     * 
+     * @return The ID of the SubChannel.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchChannelMemberships withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +327,9 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
         if (getMembers() != null)
             sb.append("Members: ").append(getMembers()).append(",");
         if (getChannelArn() != null)
-            sb.append("ChannelArn: ").append(getChannelArn());
+            sb.append("ChannelArn: ").append(getChannelArn()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +360,10 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
             return false;
         if (other.getChannelArn() != null && other.getChannelArn().equals(this.getChannelArn()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -324,6 +376,7 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getMembers() == null) ? 0 : getMembers().hashCode());
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

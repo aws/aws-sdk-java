@@ -34,7 +34,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -112,6 +113,27 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private CaptchaConfig captchaConfig;
+    /**
+     * <p>
+     * Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     * <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>ChallengeConfig</code>.
+     * </p>
+     */
+    private ChallengeConfig challengeConfig;
+    /**
+     * <p>
+     * Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     * multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource
+     * that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the
+     * domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all
+     * domains in the token domain list, including their prefixed subdomains.
+     * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * </p>
+     */
+    private java.util.List<String> tokenDomains;
 
     /**
      * <p>
@@ -156,7 +178,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -176,8 +199,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -203,7 +226,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -222,8 +246,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *         GraphQL API. </p>
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *         API, or an Amazon Cognito user pool. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -249,7 +273,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -269,8 +294,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -298,7 +323,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -318,8 +344,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -816,6 +842,181 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     * <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>ChallengeConfig</code>.
+     * </p>
+     * 
+     * @param challengeConfig
+     *        Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     *        <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     *        <code>ChallengeConfig</code>.
+     */
+
+    public void setChallengeConfig(ChallengeConfig challengeConfig) {
+        this.challengeConfig = challengeConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     * <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>ChallengeConfig</code>.
+     * </p>
+     * 
+     * @return Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     *         <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     *         <code>ChallengeConfig</code>.
+     */
+
+    public ChallengeConfig getChallengeConfig() {
+        return this.challengeConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     * <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>ChallengeConfig</code>.
+     * </p>
+     * 
+     * @param challengeConfig
+     *        Specifies how WAF should handle challenge evaluations for rules that don't have their own
+     *        <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     *        <code>ChallengeConfig</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebACLRequest withChallengeConfig(ChallengeConfig challengeConfig) {
+        setChallengeConfig(challengeConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     * multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource
+     * that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the
+     * domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all
+     * domains in the token domain list, including their prefixed subdomains.
+     * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * </p>
+     * 
+     * @return Specifies the domains that WAF should accept in a web request token. This enables the use of tokens
+     *         across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web
+     *         Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF
+     *         accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the
+     *         resource's host domain plus all domains in the token domain list, including their prefixed
+     *         subdomains.</p>
+     *         <p>
+     *         Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     */
+
+    public java.util.List<String> getTokenDomains() {
+        return tokenDomains;
+    }
+
+    /**
+     * <p>
+     * Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     * multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource
+     * that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the
+     * domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all
+     * domains in the token domain list, including their prefixed subdomains.
+     * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * </p>
+     * 
+     * @param tokenDomains
+     *        Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     *        multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services
+     *        resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     *        only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host
+     *        domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+     *        <p>
+     *        Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     */
+
+    public void setTokenDomains(java.util.Collection<String> tokenDomains) {
+        if (tokenDomains == null) {
+            this.tokenDomains = null;
+            return;
+        }
+
+        this.tokenDomains = new java.util.ArrayList<String>(tokenDomains);
+    }
+
+    /**
+     * <p>
+     * Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     * multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource
+     * that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the
+     * domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all
+     * domains in the token domain list, including their prefixed subdomains.
+     * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTokenDomains(java.util.Collection)} or {@link #withTokenDomains(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param tokenDomains
+     *        Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     *        multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services
+     *        resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     *        only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host
+     *        domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+     *        <p>
+     *        Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebACLRequest withTokenDomains(String... tokenDomains) {
+        if (this.tokenDomains == null) {
+            setTokenDomains(new java.util.ArrayList<String>(tokenDomains.length));
+        }
+        for (String ele : tokenDomains) {
+            this.tokenDomains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     * multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource
+     * that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the
+     * domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all
+     * domains in the token domain list, including their prefixed subdomains.
+     * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * </p>
+     * 
+     * @param tokenDomains
+     *        Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
+     *        multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services
+     *        resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     *        only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host
+     *        domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+     *        <p>
+     *        Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebACLRequest withTokenDomains(java.util.Collection<String> tokenDomains) {
+        setTokenDomains(tokenDomains);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -844,7 +1045,11 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getCustomResponseBodies() != null)
             sb.append("CustomResponseBodies: ").append(getCustomResponseBodies()).append(",");
         if (getCaptchaConfig() != null)
-            sb.append("CaptchaConfig: ").append(getCaptchaConfig());
+            sb.append("CaptchaConfig: ").append(getCaptchaConfig()).append(",");
+        if (getChallengeConfig() != null)
+            sb.append("ChallengeConfig: ").append(getChallengeConfig()).append(",");
+        if (getTokenDomains() != null)
+            sb.append("TokenDomains: ").append(getTokenDomains());
         sb.append("}");
         return sb.toString();
     }
@@ -895,6 +1100,14 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getCaptchaConfig() != null && other.getCaptchaConfig().equals(this.getCaptchaConfig()) == false)
             return false;
+        if (other.getChallengeConfig() == null ^ this.getChallengeConfig() == null)
+            return false;
+        if (other.getChallengeConfig() != null && other.getChallengeConfig().equals(this.getChallengeConfig()) == false)
+            return false;
+        if (other.getTokenDomains() == null ^ this.getTokenDomains() == null)
+            return false;
+        if (other.getTokenDomains() != null && other.getTokenDomains().equals(this.getTokenDomains()) == false)
+            return false;
         return true;
     }
 
@@ -912,6 +1125,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
         hashCode = prime * hashCode + ((getCaptchaConfig() == null) ? 0 : getCaptchaConfig().hashCode());
+        hashCode = prime * hashCode + ((getChallengeConfig() == null) ? 0 : getChallengeConfig().hashCode());
+        hashCode = prime * hashCode + ((getTokenDomains() == null) ? 0 : getTokenDomains().hashCode());
         return hashCode;
     }
 

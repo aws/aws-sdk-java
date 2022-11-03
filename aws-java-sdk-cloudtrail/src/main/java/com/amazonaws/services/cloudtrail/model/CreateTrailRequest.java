@@ -132,8 +132,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
-     * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
-     * identifier.
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
      * </p>
      * <p>
      * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
@@ -146,22 +146,22 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * alias/MyAliasName
+     * <code>alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * 12345678-1234-1234-1234-123456789012
+     * <code>12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * </ul>
@@ -875,8 +875,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
-     * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
-     * identifier.
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
      * </p>
      * <p>
      * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
@@ -889,30 +889,30 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * alias/MyAliasName
+     * <code>alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * 12345678-1234-1234-1234-123456789012
+     * <code>12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias
-     *        name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a
-     *        globally unique identifier.</p>
+     *        name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p>
      *        <p>
      *        CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
@@ -924,22 +924,22 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        alias/MyAliasName
+     *        <code>alias/MyAliasName</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     *        <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        12345678-1234-1234-1234-123456789012
+     *        <code>12345678-1234-1234-1234-123456789012</code>
      *        </p>
      *        </li>
      */
@@ -951,8 +951,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
-     * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
-     * identifier.
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
      * </p>
      * <p>
      * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
@@ -965,29 +965,29 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * alias/MyAliasName
+     * <code>alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * 12345678-1234-1234-1234-123456789012
+     * <code>12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @return Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias
-     *         name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a
-     *         globally unique identifier.</p>
+     *         name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *         or a globally unique identifier.</p>
      *         <p>
      *         CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
@@ -999,22 +999,22 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         alias/MyAliasName
+     *         <code>alias/MyAliasName</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     *         <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         12345678-1234-1234-1234-123456789012
+     *         <code>12345678-1234-1234-1234-123456789012</code>
      *         </p>
      *         </li>
      */
@@ -1026,8 +1026,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
-     * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
-     * identifier.
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
      * </p>
      * <p>
      * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
@@ -1040,30 +1040,30 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * alias/MyAliasName
+     * <code>alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * 12345678-1234-1234-1234-123456789012
+     * <code>12345678-1234-1234-1234-123456789012</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias
-     *        name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a
-     *        globally unique identifier.</p>
+     *        name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p>
      *        <p>
      *        CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
@@ -1075,22 +1075,22 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        alias/MyAliasName
+     *        <code>alias/MyAliasName</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+     *        <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        12345678-1234-1234-1234-123456789012
+     *        <code>12345678-1234-1234-1234-123456789012</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -414,6 +414,30 @@ public interface AmazonLookoutMetrics {
 
     /**
      * <p>
+     * Returns details about the requested data quality metrics.
+     * </p>
+     * 
+     * @param getDataQualityMetricsRequest
+     * @return Result of the GetDataQualityMetrics operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the ARN of the resource and try again.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
+     *         again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws TooManyRequestsException
+     *         The request was denied due to too many requests being submitted at the same time.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AmazonLookoutMetrics.GetDataQualityMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDataQualityMetricsResult getDataQualityMetrics(GetDataQualityMetricsRequest getDataQualityMetricsRequest);
+
+    /**
+     * <p>
      * Get feedback for an anomaly group.
      * </p>
      * 
@@ -702,6 +726,30 @@ public interface AmazonLookoutMetrics {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Make changes to an existing alert.
+     * </p>
+     * 
+     * @param updateAlertRequest
+     * @return Result of the UpdateAlert operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
+     *         again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the ARN of the resource and try again.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws TooManyRequestsException
+     *         The request was denied due to too many requests being submitted at the same time.
+     * @sample AmazonLookoutMetrics.UpdateAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAlertResult updateAlert(UpdateAlertRequest updateAlertRequest);
 
     /**
      * <p>

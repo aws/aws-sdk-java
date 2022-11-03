@@ -34,16 +34,19 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
-     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
-     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To
+     * use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.
      * </p>
      * <p>
-     * For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     * specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.
      * </p>
      * <note>
      * <p>
-     * Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     * The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      * </p>
      * </note>
      */
@@ -74,19 +77,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * Desktop Licenses</a>.
      * </p>
      * <note>
-     * <ul>
-     * <li>
      * <p>
-     * Although this parameter is an array, only one item is allowed at this time
+     * Although this parameter is an array, only one item is allowed at this time.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring
-     * Your Own License (BYOL) images
-     * </p>
-     * </li>
-     * </ul>
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> applications;
@@ -134,31 +127,37 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
-     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
-     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To
+     * use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.
      * </p>
      * <p>
-     * For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     * specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.
      * </p>
      * <note>
      * <p>
-     * Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     * The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      * </p>
      * </note>
      * 
      * @param ingestionProcess
      *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
-     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
-     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
-     *        . </p>
+     *        your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol
+     *        (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that
+     *        does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
      *        <p>
-     *        For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     *        specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     *        the protocol.
      *        </p>
      *        <note>
      *        <p>
-     *        Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     *        The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by
+     *        Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more
+     *        information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      *        </p>
      * @see WorkspaceImageIngestionProcess
      */
@@ -170,31 +169,37 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
-     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
-     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To
+     * use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.
      * </p>
      * <p>
-     * For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     * specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.
      * </p>
      * <note>
      * <p>
-     * Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     * The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      * </p>
      * </note>
      * 
      * @return The ingestion process to be used when importing the image, depending on which protocol you want to use
-     *         for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
-     *         value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     *         <code>_WSP</code>. </p>
+     *         for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own
+     *         protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a
+     *         value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     *         <code>_BYOP</code>.</p>
      *         <p>
-     *         For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or
-     *         GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the
-     *         protocol.
+     *         For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *         <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     *         the protocol.
      *         </p>
      *         <note>
      *         <p>
-     *         Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     *         The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by
+     *         Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more
+     *         information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      *         </p>
      * @see WorkspaceImageIngestionProcess
      */
@@ -206,31 +211,37 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
-     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
-     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To
+     * use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.
      * </p>
      * <p>
-     * For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     * specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.
      * </p>
      * <note>
      * <p>
-     * Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     * The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      * </p>
      * </note>
      * 
      * @param ingestionProcess
      *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
-     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
-     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
-     *        . </p>
+     *        your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol
+     *        (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that
+     *        does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
      *        <p>
-     *        For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     *        specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     *        the protocol.
      *        </p>
      *        <note>
      *        <p>
-     *        Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     *        The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by
+     *        Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more
+     *        information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceImageIngestionProcess
@@ -244,31 +255,37 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
-     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
-     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To
+     * use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.
      * </p>
      * <p>
-     * For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     * specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.
      * </p>
      * <note>
      * <p>
-     * Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     * The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      * </p>
      * </note>
      * 
      * @param ingestionProcess
      *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
-     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
-     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
-     *        . </p>
+     *        your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol
+     *        (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that
+     *        does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
      *        <p>
-     *        For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro),
-     *        specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     *        the protocol.
      *        </p>
      *        <note>
      *        <p>
-     *        Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
+     *        The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by
+     *        Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more
+     *        information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceImageIngestionProcess
@@ -440,38 +457,18 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * Desktop Licenses</a>.
      * </p>
      * <note>
-     * <ul>
-     * <li>
      * <p>
-     * Although this parameter is an array, only one item is allowed at this time
+     * Although this parameter is an array, only one item is allowed at this time.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring
-     * Your Own License (BYOL) images
-     * </p>
-     * </li>
-     * </ul>
      * </note>
      * 
      * @return If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
      *         more information about subscribing to Office for BYOL images, see <a
      *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *         Windows Desktop Licenses</a>.</p> <note>
-     *         <ul>
-     *         <li>
      *         <p>
-     *         Although this parameter is an array, only one item is allowed at this time
+     *         Although this parameter is an array, only one item is allowed at this time.
      *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn
-     *         Bring Your Own License (BYOL) images
-     *         </p>
-     *         </li>
-     *         </ul>
      * @see Application
      */
 
@@ -490,19 +487,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * Desktop Licenses</a>.
      * </p>
      * <note>
-     * <ul>
-     * <li>
      * <p>
-     * Although this parameter is an array, only one item is allowed at this time
+     * Although this parameter is an array, only one item is allowed at this time.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring
-     * Your Own License (BYOL) images
-     * </p>
-     * </li>
-     * </ul>
      * </note>
      * 
      * @param applications
@@ -510,19 +497,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      *        more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        Although this parameter is an array, only one item is allowed at this time
+     *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn
-     *        Bring Your Own License (BYOL) images
-     *        </p>
-     *        </li>
-     *        </ul>
      * @see Application
      */
 
@@ -543,19 +520,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * Desktop Licenses</a>.
      * </p>
      * <note>
-     * <ul>
-     * <li>
      * <p>
-     * Although this parameter is an array, only one item is allowed at this time
+     * Although this parameter is an array, only one item is allowed at this time.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring
-     * Your Own License (BYOL) images
-     * </p>
-     * </li>
-     * </ul>
      * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -568,19 +535,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      *        more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        Although this parameter is an array, only one item is allowed at this time
+     *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn
-     *        Bring Your Own License (BYOL) images
-     *        </p>
-     *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Application
      */
@@ -603,19 +560,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * Desktop Licenses</a>.
      * </p>
      * <note>
-     * <ul>
-     * <li>
      * <p>
-     * Although this parameter is an array, only one item is allowed at this time
+     * Although this parameter is an array, only one item is allowed at this time.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring
-     * Your Own License (BYOL) images
-     * </p>
-     * </li>
-     * </ul>
      * </note>
      * 
      * @param applications
@@ -623,19 +570,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      *        more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        Although this parameter is an array, only one item is allowed at this time
+     *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn
-     *        Bring Your Own License (BYOL) images
-     *        </p>
-     *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Application
      */
@@ -653,19 +590,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * Desktop Licenses</a>.
      * </p>
      * <note>
-     * <ul>
-     * <li>
      * <p>
-     * Although this parameter is an array, only one item is allowed at this time
+     * Although this parameter is an array, only one item is allowed at this time.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring
-     * Your Own License (BYOL) images
-     * </p>
-     * </li>
-     * </ul>
      * </note>
      * 
      * @param applications
@@ -673,19 +600,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      *        more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        Although this parameter is an array, only one item is allowed at this time
+     *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn
-     *        Bring Your Own License (BYOL) images
-     *        </p>
-     *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Application
      */

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about phone numbers that have been claimed to your Amazon Connect instance.
+ * Information about phone numbers that have been claimed to your Amazon Connect instance or traffic distribution group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersSummary" target="_top">AWS
@@ -61,7 +61,8 @@ public class ListPhoneNumbersSummary implements Serializable, Cloneable, Structu
     private String phoneNumberType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      */
     private String targetArn;
@@ -312,11 +313,13 @@ public class ListPhoneNumbersSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
+     *        numbers are claimed to.
      */
 
     public void setTargetArn(String targetArn) {
@@ -325,10 +328,12 @@ public class ListPhoneNumbersSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * @return The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
+     *         numbers are claimed to.
      */
 
     public String getTargetArn() {
@@ -337,11 +342,13 @@ public class ListPhoneNumbersSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
+     * claimed to.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.
+     *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
+     *        numbers are claimed to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

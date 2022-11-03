@@ -93,8 +93,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date lastChangedDate;
     /**
      * <p>
-     * The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows
-     * only the date, not the time.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      */
     private java.util.Date lastAccessedDate;
@@ -566,13 +566,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows
-     * only the date, not the time.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
      * @param lastAccessedDate
-     *        The last date that this secret was accessed. This value is truncated to midnight of the date and therefore
-     *        shows only the date, not the time.
+     *        The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *        been retrieved in the Region.
      */
 
     public void setLastAccessedDate(java.util.Date lastAccessedDate) {
@@ -581,12 +581,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows
-     * only the date, not the time.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
-     * @return The last date that this secret was accessed. This value is truncated to midnight of the date and
-     *         therefore shows only the date, not the time.
+     * @return The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *         been retrieved in the Region.
      */
 
     public java.util.Date getLastAccessedDate() {
@@ -595,13 +595,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows
-     * only the date, not the time.
+     * The date that the secret was last accessed in the Region. This field is omitted if the secret has never been
+     * retrieved in the Region.
      * </p>
      * 
      * @param lastAccessedDate
-     *        The last date that this secret was accessed. This value is truncated to midnight of the date and therefore
-     *        shows only the date, not the time.
+     *        The date that the secret was last accessed in the Region. This field is omitted if the secret has never
+     *        been retrieved in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

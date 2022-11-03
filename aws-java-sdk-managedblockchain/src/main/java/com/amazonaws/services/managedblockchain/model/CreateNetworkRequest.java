@@ -27,9 +27,10 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
+     * idempotent operation completes no more than once. This identifier is required only if you make a service request
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon
+     * Web Services CLI.
      * </p>
      */
     private String clientRequestToken;
@@ -95,16 +96,17 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
+     * idempotent operation completes no more than once. This identifier is required only if you make a service request
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon
+     * Web Services CLI.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
-     *        idempotent operation completes no more than one time. This identifier is required only if you make a
-     *        service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *        AWS CLI.
+     *        This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation.
+     *        An idempotent operation completes no more than once. This identifier is required only if you make a
+     *        service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *        Services SDK or the Amazon Web Services CLI.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -113,15 +115,16 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
+     * idempotent operation completes no more than once. This identifier is required only if you make a service request
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon
+     * Web Services CLI.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
-     *         idempotent operation completes no more than one time. This identifier is required only if you make a
-     *         service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *         AWS CLI.
+     * @return This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation.
+     *         An idempotent operation completes no more than once. This identifier is required only if you make a
+     *         service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *         Services SDK or the Amazon Web Services CLI.
      */
 
     public String getClientRequestToken() {
@@ -130,16 +133,17 @@ public class CreateNetworkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
+     * idempotent operation completes no more than once. This identifier is required only if you make a service request
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon
+     * Web Services CLI.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
-     *        idempotent operation completes no more than one time. This identifier is required only if you make a
-     *        service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *        AWS CLI.
+     *        This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation.
+     *        An idempotent operation completes no more than once. This identifier is required only if you make a
+     *        service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *        Services SDK or the Amazon Web Services CLI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

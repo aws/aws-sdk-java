@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeLiveSourceRequestProtocolMarshaller implements Marshaller<Request<DescribeLiveSourceRequest>, DescribeLiveSourceRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/sourceLocation/{sourceLocationName}/liveSource/{liveSourceName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
+            .requestUri("/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
             .hasPayloadMembers(false).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

@@ -51,7 +51,7 @@ import com.amazonaws.services.location.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+ * "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
  * </p>
  */
 @ThreadSafe
@@ -428,6 +428,11 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of
      * a <code>DevicePositionUpdate</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a
+     * <code>Tracker</code> associated with the <code>DeviceID</code>.
+     * </p>
      * </note>
      * 
      * @param batchEvaluateGeofencesRequest
@@ -787,7 +792,12 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or
      * <code>TruckModeOptions</code> if traveling by <code>Truck</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination
+     * must be within 40km.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param calculateRouteRequest
@@ -2797,6 +2807,104 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMapTileResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetMapTileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.
+     * </p>
+     * <note>
+     * <p>
+     * A PlaceId is valid only if all of the following are the same in the original search request and the call to
+     * <code>GetPlace</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data provider specified in the place index resource
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param getPlaceRequest
+     * @return Result of the GetPlace operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.GetPlace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPlaceResult getPlace(GetPlaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPlace(request);
+    }
+
+    @SdkInternalApi
+    final GetPlaceResult executeGetPlace(GetPlaceRequest getPlaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPlaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPlaceRequest> request = null;
+        Response<GetPlaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPlaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPlaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "places.";
+                String resolvedHostPrefix = String.format("places.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPlaceResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPlaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

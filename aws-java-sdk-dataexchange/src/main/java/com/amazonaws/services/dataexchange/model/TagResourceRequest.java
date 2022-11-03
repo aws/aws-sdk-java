@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * The request body for TagResource.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TagResource" target="_top">AWS API
  *      Documentation</a>
@@ -34,7 +31,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String resourceArn;
-    /** A label that consists of a customer-defined key and an optional value. */
+    /**
+     * <p>
+     * A label that consists of a customer-defined key and an optional value.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
@@ -78,7 +79,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * A label that consists of a customer-defined key and an optional value.
+     * </p>
      * 
      * @return A label that consists of a customer-defined key and an optional value.
      */
@@ -88,7 +91,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * A label that consists of a customer-defined key and an optional value.
+     * </p>
      * 
      * @param tags
      *        A label that consists of a customer-defined key and an optional value.
@@ -99,7 +104,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * A label that consists of a customer-defined key and an optional value.
+     * </p>
      * 
      * @param tags
      *        A label that consists of a customer-defined key and an optional value.

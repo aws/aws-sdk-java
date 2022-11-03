@@ -39,7 +39,8 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
     private String updateId;
     /**
      * <p>
-     * The name of the Amazon EKS node group associated with the update.
+     * The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a
+     * node group update.
      * </p>
      */
     private String nodegroupName;
@@ -47,6 +48,7 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * This parameter is required if the update is an add-on update.
      * </p>
      */
     private String addonName;
@@ -133,11 +135,13 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Amazon EKS node group associated with the update.
+     * The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a
+     * node group update.
      * </p>
      * 
      * @param nodegroupName
-     *        The name of the Amazon EKS node group associated with the update.
+     *        The name of the Amazon EKS node group associated with the update. This parameter is required if the update
+     *        is a node group update.
      */
 
     public void setNodegroupName(String nodegroupName) {
@@ -146,10 +150,12 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Amazon EKS node group associated with the update.
+     * The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a
+     * node group update.
      * </p>
      * 
-     * @return The name of the Amazon EKS node group associated with the update.
+     * @return The name of the Amazon EKS node group associated with the update. This parameter is required if the
+     *         update is a node group update.
      */
 
     public String getNodegroupName() {
@@ -158,11 +164,13 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Amazon EKS node group associated with the update.
+     * The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a
+     * node group update.
      * </p>
      * 
      * @param nodegroupName
-     *        The name of the Amazon EKS node group associated with the update.
+     *        The name of the Amazon EKS node group associated with the update. This parameter is required if the update
+     *        is a node group update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,12 +183,13 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * This parameter is required if the update is an add-on update.
      * </p>
      * 
      * @param addonName
      *        The name of the add-on. The name must match one of the names returned by <a
      *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code>
-     *        </a>.
+     *        </a>. This parameter is required if the update is an add-on update.
      */
 
     public void setAddonName(String addonName) {
@@ -191,11 +200,12 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * This parameter is required if the update is an add-on update.
      * </p>
      * 
      * @return The name of the add-on. The name must match one of the names returned by <a
      *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code>
-     *         </a>.
+     *         </a>. This parameter is required if the update is an add-on update.
      */
 
     public String getAddonName() {
@@ -206,12 +216,13 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * This parameter is required if the update is an add-on update.
      * </p>
      * 
      * @param addonName
      *        The name of the add-on. The name must match one of the names returned by <a
      *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code>
-     *        </a>.
+     *        </a>. This parameter is required if the update is an add-on update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

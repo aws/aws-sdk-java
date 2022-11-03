@@ -27,7 +27,7 @@ public class ListMailDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list domains.
+     * The WorkMail organization for which to list domains.
      * </p>
      */
     private String organizationId;
@@ -46,11 +46,11 @@ public class ListMailDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list domains.
+     * The WorkMail organization for which to list domains.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which to list domains.
+     *        The WorkMail organization for which to list domains.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -59,10 +59,10 @@ public class ListMailDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list domains.
+     * The WorkMail organization for which to list domains.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which to list domains.
+     * @return The WorkMail organization for which to list domains.
      */
 
     public String getOrganizationId() {
@@ -71,11 +71,11 @@ public class ListMailDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list domains.
+     * The WorkMail organization for which to list domains.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which to list domains.
+     *        The WorkMail organization for which to list domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

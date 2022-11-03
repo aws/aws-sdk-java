@@ -67,15 +67,15 @@ public interface AWSDataExchange {
      * @param cancelJobRequest
      * @return Result of the CancelJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.CancelJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CancelJob" target="_top">AWS API
      *      Documentation</a>
@@ -88,18 +88,17 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param createDataSetRequest
-     *        The request body for CreateDataSet.
      * @return Result of the CreateDataSet operation returned by the service.
-     * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
      * @throws ServiceLimitExceededException
-     *         402 response
+     *         The request has exceeded the quotas imposed by the service.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
-     *         403 response
+     *         Access to the resource is denied.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.CreateDataSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataSet" target="_top">AWS API
      *      Documentation</a>
@@ -112,18 +111,17 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param createEventActionRequest
-     *        The request body for CreateEventAction.
      * @return Result of the CreateEventAction operation returned by the service.
-     * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
      * @throws ServiceLimitExceededException
-     *         402 response
+     *         The request has exceeded the quotas imposed by the service.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
-     *         403 response
+     *         Access to the resource is denied.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.CreateEventAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction" target="_top">AWS
      *      API Documentation</a>
@@ -136,20 +134,19 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param createJobRequest
-     *        The request body for CreateJob.
      * @return Result of the CreateJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
-     *         403 response
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.CreateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateJob" target="_top">AWS API
      *      Documentation</a>
@@ -162,18 +159,17 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param createRevisionRequest
-     *        The request body for CreateRevision.
      * @return Result of the CreateRevision operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
-     *         403 response
+     *         Access to the resource is denied.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.CreateRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateRevision" target="_top">AWS
      *      API Documentation</a>
@@ -187,18 +183,18 @@ public interface AWSDataExchange {
      * 
      * @param deleteAssetRequest
      * @return Result of the DeleteAsset operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.DeleteAsset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteAsset" target="_top">AWS API
      *      Documentation</a>
@@ -212,18 +208,18 @@ public interface AWSDataExchange {
      * 
      * @param deleteDataSetRequest
      * @return Result of the DeleteDataSet operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.DeleteDataSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataSet" target="_top">AWS API
      *      Documentation</a>
@@ -238,13 +234,13 @@ public interface AWSDataExchange {
      * @param deleteEventActionRequest
      * @return Result of the DeleteEventAction operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.DeleteEventAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction" target="_top">AWS
      *      API Documentation</a>
@@ -258,18 +254,18 @@ public interface AWSDataExchange {
      * 
      * @param deleteRevisionRequest
      * @return Result of the DeleteRevision operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.DeleteRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteRevision" target="_top">AWS
      *      API Documentation</a>
@@ -284,13 +280,13 @@ public interface AWSDataExchange {
      * @param getAssetRequest
      * @return Result of the GetAsset operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.GetAsset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetAsset" target="_top">AWS API
      *      Documentation</a>
@@ -305,13 +301,13 @@ public interface AWSDataExchange {
      * @param getDataSetRequest
      * @return Result of the GetDataSet operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.GetDataSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataSet" target="_top">AWS API
      *      Documentation</a>
@@ -326,13 +322,13 @@ public interface AWSDataExchange {
      * @param getEventActionRequest
      * @return Result of the GetEventAction operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.GetEventAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction" target="_top">AWS
      *      API Documentation</a>
@@ -347,13 +343,13 @@ public interface AWSDataExchange {
      * @param getJobRequest
      * @return Result of the GetJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.GetJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetJob" target="_top">AWS API
      *      Documentation</a>
@@ -368,13 +364,13 @@ public interface AWSDataExchange {
      * @param getRevisionRequest
      * @return Result of the GetRevision operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.GetRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetRevision" target="_top">AWS API
      *      Documentation</a>
@@ -389,13 +385,13 @@ public interface AWSDataExchange {
      * @param listDataSetRevisionsRequest
      * @return Result of the ListDataSetRevisions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.ListDataSetRevisions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSetRevisions"
      *      target="_top">AWS API Documentation</a>
@@ -411,13 +407,13 @@ public interface AWSDataExchange {
      * @param listDataSetsRequest
      * @return Result of the ListDataSets operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.ListDataSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSets" target="_top">AWS API
      *      Documentation</a>
@@ -432,13 +428,13 @@ public interface AWSDataExchange {
      * @param listEventActionsRequest
      * @return Result of the ListEventActions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.ListEventActions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions" target="_top">AWS
      *      API Documentation</a>
@@ -453,13 +449,13 @@ public interface AWSDataExchange {
      * @param listJobsRequest
      * @return Result of the ListJobs operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.ListJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListJobs" target="_top">AWS API
      *      Documentation</a>
@@ -474,13 +470,13 @@ public interface AWSDataExchange {
      * @param listRevisionAssetsRequest
      * @return Result of the ListRevisionAssets operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws ValidationException
-     *         400 response
+     *         The request was invalid.
      * @throws InternalServerException
-     *         500 response
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.ListRevisionAssets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListRevisionAssets"
      *      target="_top">AWS API Documentation</a>
@@ -506,20 +502,19 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param revokeRevisionRequest
-     *        The request body for RevokeRevision.
      * @return Result of the RevokeRevision operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.RevokeRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision" target="_top">AWS
      *      API Documentation</a>
@@ -533,18 +528,18 @@ public interface AWSDataExchange {
      * 
      * @param startJobRequest
      * @return Result of the StartJob operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.StartJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/StartJob" target="_top">AWS API
      *      Documentation</a>
@@ -557,7 +552,6 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param tagResourceRequest
-     *        The request body for TagResource.
      * @return Result of the TagResource operation returned by the service.
      * @sample AWSDataExchange.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TagResource" target="_top">AWS API
@@ -584,20 +578,19 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param updateAssetRequest
-     *        The request body for UpdateAsset.
      * @return Result of the UpdateAsset operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.UpdateAsset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateAsset" target="_top">AWS API
      *      Documentation</a>
@@ -610,18 +603,17 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param updateDataSetRequest
-     *        The request body for UpdateDataSet.
      * @return Result of the UpdateDataSet operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
-     *         403 response
+     *         Access to the resource is denied.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.UpdateDataSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateDataSet" target="_top">AWS API
      *      Documentation</a>
@@ -634,18 +626,17 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param updateEventActionRequest
-     *        The request body for UpdateEventAction.
      * @return Result of the UpdateEventAction operation returned by the service.
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
+     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
-     *         403 response
+     *         Access to the resource is denied.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.UpdateEventAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction" target="_top">AWS
      *      API Documentation</a>
@@ -658,20 +649,19 @@ public interface AWSDataExchange {
      * </p>
      * 
      * @param updateRevisionRequest
-     *        The request body for UpdateRevision.
      * @return Result of the UpdateRevision operation returned by the service.
-     * @throws ValidationException
-     *         400 response
-     * @throws InternalServerException
-     *         500 response
-     * @throws AccessDeniedException
-     *         403 response
      * @throws ResourceNotFoundException
-     *         404 response
+     *         The resource couldn't be found.
      * @throws ThrottlingException
-     *         429 response
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
      * @throws ConflictException
-     *         409 response
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
      * @sample AWSDataExchange.UpdateRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateRevision" target="_top">AWS
      *      API Documentation</a>

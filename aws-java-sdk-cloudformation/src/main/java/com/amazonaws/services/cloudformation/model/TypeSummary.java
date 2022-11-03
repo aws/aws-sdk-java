@@ -166,7 +166,7 @@ public class TypeSummary implements Serializable, Cloneable {
     private String publisherName;
     /**
      * <p>
-     * Whether or not the extension is activated for this account and region.
+     * Whether the extension is activated for this account and region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
@@ -1091,14 +1091,14 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not the extension is activated for this account and region.
+     * Whether the extension is activated for this account and region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
      * @param isActivated
-     *        Whether or not the extension is activated for this account and region.</p>
+     *        Whether the extension is activated for this account and region.</p>
      *        <p>
      *        This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *        default.
@@ -1110,13 +1110,13 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not the extension is activated for this account and region.
+     * Whether the extension is activated for this account and region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
-     * @return Whether or not the extension is activated for this account and region.</p>
+     * @return Whether the extension is activated for this account and region.</p>
      *         <p>
      *         This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *         default.
@@ -1128,14 +1128,14 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not the extension is activated for this account and region.
+     * Whether the extension is activated for this account and region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
      * @param isActivated
-     *        Whether or not the extension is activated for this account and region.</p>
+     *        Whether the extension is activated for this account and region.</p>
      *        <p>
      *        This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *        default.
@@ -1149,13 +1149,13 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not the extension is activated for this account and region.
+     * Whether the extension is activated for this account and region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
-     * @return Whether or not the extension is activated for this account and region.</p>
+     * @return Whether the extension is activated for this account and region.</p>
      *         <p>
      *         This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *         default.

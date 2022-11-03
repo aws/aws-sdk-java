@@ -76,8 +76,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      */
@@ -93,7 +93,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the
-     * filter will match any job name that begins with the string before the '*'. This corresponds to the
+     * filter matches any job name that begins with the string before the '*'. This corresponds to the
      * <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      * <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
      * <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
@@ -105,12 +105,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
      * <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
      * definition name, the results include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name that begins with the string before
+     * value ends with an asterisk (*), the filter matches any job definition name that begins with the string before
      * the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
      * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
      * order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-     * results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
+     * results include jobs that used the specified revision of the job definition. Asterisk (*) isn't supported when
      * the ARN is used.
      * </p>
      * </dd>
@@ -438,8 +438,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      * 
@@ -449,8 +449,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
      *        is <code>null</code> when there are no more results to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
-     *        and not for other programmatic purposes.
+     *        Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for
+     *        other programmatic purposes.
      *        </p>
      */
 
@@ -467,8 +467,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      * 
@@ -477,8 +477,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
      *         is <code>null</code> when there are no more results to return.</p> <note>
      *         <p>
-     *         This token should be treated as an opaque identifier that's only used to retrieve the next items in a
-     *         list and not for other programmatic purposes.
+     *         Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not
+     *         for other programmatic purposes.
      *         </p>
      */
 
@@ -495,8 +495,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
-     * not for other programmatic purposes.
+     * Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.
      * </p>
      * </note>
      * 
@@ -506,8 +506,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
      *        is <code>null</code> when there are no more results to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
-     *        and not for other programmatic purposes.
+     *        Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for
+     *        other programmatic purposes.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -528,7 +528,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the
-     * filter will match any job name that begins with the string before the '*'. This corresponds to the
+     * filter matches any job name that begins with the string before the '*'. This corresponds to the
      * <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      * <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
      * <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
@@ -540,12 +540,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
      * <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
      * definition name, the results include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name that begins with the string before
+     * value ends with an asterisk (*), the filter matches any job definition name that begins with the string before
      * the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
      * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
      * order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-     * results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
+     * results include jobs that used the specified revision of the job definition. Asterisk (*) isn't supported when
      * the ARN is used.
      * </p>
      * </dd>
@@ -576,8 +576,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <dd>
      *         <p>
      *         The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk
-     *         (*), the filter will match any job name that begins with the string before the '*'. This corresponds to
-     *         the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
+     *         (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the
+     *         <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      *         <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When
      *         the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
      *         </p>
@@ -588,13 +588,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This
      *         corresponds to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the
      *         filter is the job definition name, the results include all the jobs that used any revision of that job
-     *         definition name. If the value ends with an asterisk (*), the filter will match any job definition name
-     *         that begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>,
-     *         and <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job
-     *         definition that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used
-     *         and the ARN is used (which is in the form
+     *         definition name. If the value ends with an asterisk (*), the filter matches any job definition name that
+     *         begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and
+     *         <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition
+     *         that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the
+     *         ARN is used (which is in the form
      *         <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     *         ), the results include jobs that used the specified revision of the job definition. Asterisk (*) is not
+     *         ), the results include jobs that used the specified revision of the job definition. Asterisk (*) isn't
      *         supported when the ARN is used.
      *         </p>
      *         </dd>
@@ -631,7 +631,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the
-     * filter will match any job name that begins with the string before the '*'. This corresponds to the
+     * filter matches any job name that begins with the string before the '*'. This corresponds to the
      * <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      * <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
      * <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
@@ -643,12 +643,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
      * <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
      * definition name, the results include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name that begins with the string before
+     * value ends with an asterisk (*), the filter matches any job definition name that begins with the string before
      * the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
      * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
      * order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-     * results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
+     * results include jobs that used the specified revision of the job definition. Asterisk (*) isn't supported when
      * the ARN is used.
      * </p>
      * </dd>
@@ -680,8 +680,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <dd>
      *        <p>
      *        The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk
-     *        (*), the filter will match any job name that begins with the string before the '*'. This corresponds to
-     *        the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
+     *        (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the
+     *        <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      *        <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When
      *        the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
      *        </p>
@@ -692,13 +692,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds
      *        to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the
      *        job definition name, the results include all the jobs that used any revision of that job definition name.
-     *        If the value ends with an asterisk (*), the filter will match any job definition name that begins with the
+     *        If the value ends with an asterisk (*), the filter matches any job definition name that begins with the
      *        string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code>
      *        matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't
      *        affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is
      *        in the form
      *        <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
-     *        the results include jobs that used the specified revision of the job definition. Asterisk (*) is not
+     *        the results include jobs that used the specified revision of the job definition. Asterisk (*) isn't
      *        supported when the ARN is used.
      *        </p>
      *        </dd>
@@ -740,7 +740,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the
-     * filter will match any job name that begins with the string before the '*'. This corresponds to the
+     * filter matches any job name that begins with the string before the '*'. This corresponds to the
      * <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      * <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
      * <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
@@ -752,12 +752,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
      * <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
      * definition name, the results include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name that begins with the string before
+     * value ends with an asterisk (*), the filter matches any job definition name that begins with the string before
      * the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
      * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
      * order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-     * results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
+     * results include jobs that used the specified revision of the job definition. Asterisk (*) isn't supported when
      * the ARN is used.
      * </p>
      * </dd>
@@ -794,8 +794,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <dd>
      *        <p>
      *        The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk
-     *        (*), the filter will match any job name that begins with the string before the '*'. This corresponds to
-     *        the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
+     *        (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the
+     *        <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      *        <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When
      *        the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
      *        </p>
@@ -806,13 +806,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds
      *        to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the
      *        job definition name, the results include all the jobs that used any revision of that job definition name.
-     *        If the value ends with an asterisk (*), the filter will match any job definition name that begins with the
+     *        If the value ends with an asterisk (*), the filter matches any job definition name that begins with the
      *        string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code>
      *        matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't
      *        affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is
      *        in the form
      *        <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
-     *        the results include jobs that used the specified revision of the job definition. Asterisk (*) is not
+     *        the results include jobs that used the specified revision of the job definition. Asterisk (*) isn't
      *        supported when the ARN is used.
      *        </p>
      *        </dd>
@@ -856,7 +856,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the
-     * filter will match any job name that begins with the string before the '*'. This corresponds to the
+     * filter matches any job name that begins with the string before the '*'. This corresponds to the
      * <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      * <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
      * <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
@@ -868,12 +868,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
      * <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
      * definition name, the results include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name that begins with the string before
+     * value ends with an asterisk (*), the filter matches any job definition name that begins with the string before
      * the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
      * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
      * order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-     * results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
+     * results include jobs that used the specified revision of the job definition. Asterisk (*) isn't supported when
      * the ARN is used.
      * </p>
      * </dd>
@@ -905,8 +905,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <dd>
      *        <p>
      *        The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk
-     *        (*), the filter will match any job name that begins with the string before the '*'. This corresponds to
-     *        the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
+     *        (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the
+     *        <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
      *        <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When
      *        the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.
      *        </p>
@@ -917,13 +917,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds
      *        to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the
      *        job definition name, the results include all the jobs that used any revision of that job definition name.
-     *        If the value ends with an asterisk (*), the filter will match any job definition name that begins with the
+     *        If the value ends with an asterisk (*), the filter matches any job definition name that begins with the
      *        string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code>
      *        matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't
      *        affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is
      *        in the form
      *        <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
-     *        the results include jobs that used the specified revision of the job definition. Asterisk (*) is not
+     *        the results include jobs that used the specified revision of the job definition. Asterisk (*) isn't
      *        supported when the ARN is used.
      *        </p>
      *        </dd>

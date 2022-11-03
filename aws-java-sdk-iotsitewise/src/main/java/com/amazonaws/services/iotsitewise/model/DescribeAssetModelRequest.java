@@ -31,6 +31,12 @@ public class DescribeAssetModelRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String assetModelId;
+    /**
+     * <p>
+     * Whether or not to exclude asset model properties from the response.
+     * </p>
+     */
+    private Boolean excludeProperties;
 
     /**
      * <p>
@@ -73,6 +79,58 @@ public class DescribeAssetModelRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Whether or not to exclude asset model properties from the response.
+     * </p>
+     * 
+     * @param excludeProperties
+     *        Whether or not to exclude asset model properties from the response.
+     */
+
+    public void setExcludeProperties(Boolean excludeProperties) {
+        this.excludeProperties = excludeProperties;
+    }
+
+    /**
+     * <p>
+     * Whether or not to exclude asset model properties from the response.
+     * </p>
+     * 
+     * @return Whether or not to exclude asset model properties from the response.
+     */
+
+    public Boolean getExcludeProperties() {
+        return this.excludeProperties;
+    }
+
+    /**
+     * <p>
+     * Whether or not to exclude asset model properties from the response.
+     * </p>
+     * 
+     * @param excludeProperties
+     *        Whether or not to exclude asset model properties from the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetModelRequest withExcludeProperties(Boolean excludeProperties) {
+        setExcludeProperties(excludeProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not to exclude asset model properties from the response.
+     * </p>
+     * 
+     * @return Whether or not to exclude asset model properties from the response.
+     */
+
+    public Boolean isExcludeProperties() {
+        return this.excludeProperties;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +143,9 @@ public class DescribeAssetModelRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssetModelId() != null)
-            sb.append("AssetModelId: ").append(getAssetModelId());
+            sb.append("AssetModelId: ").append(getAssetModelId()).append(",");
+        if (getExcludeProperties() != null)
+            sb.append("ExcludeProperties: ").append(getExcludeProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +164,10 @@ public class DescribeAssetModelRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAssetModelId() != null && other.getAssetModelId().equals(this.getAssetModelId()) == false)
             return false;
+        if (other.getExcludeProperties() == null ^ this.getExcludeProperties() == null)
+            return false;
+        if (other.getExcludeProperties() != null && other.getExcludeProperties().equals(this.getExcludeProperties()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +177,7 @@ public class DescribeAssetModelRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAssetModelId() == null) ? 0 : getAssetModelId().hashCode());
+        hashCode = prime * hashCode + ((getExcludeProperties() == null) ? 0 : getExcludeProperties().hashCode());
         return hashCode;
     }
 

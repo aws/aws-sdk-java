@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * AWS Cloud Map is not available in the eu-south-1 Region.
+ * Cloud Map is not available in the eu-south-1 Region.
  * </p>
  * </note>
  * 

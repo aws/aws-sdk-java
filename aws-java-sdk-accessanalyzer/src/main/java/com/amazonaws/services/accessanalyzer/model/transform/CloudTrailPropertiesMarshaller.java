@@ -28,12 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CloudTrailPropertiesMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<List> TRAILPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trailProperties").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("iso8601").build();
 
     private static final CloudTrailPropertiesMarshaller instance = new CloudTrailPropertiesMarshaller();
 
@@ -51,9 +51,9 @@ public class CloudTrailPropertiesMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(cloudTrailProperties.getEndTime(), ENDTIME_BINDING);
-            protocolMarshaller.marshall(cloudTrailProperties.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(cloudTrailProperties.getTrailProperties(), TRAILPROPERTIES_BINDING);
+            protocolMarshaller.marshall(cloudTrailProperties.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(cloudTrailProperties.getEndTime(), ENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

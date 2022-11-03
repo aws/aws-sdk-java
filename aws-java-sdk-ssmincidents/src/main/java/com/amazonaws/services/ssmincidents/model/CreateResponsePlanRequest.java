@@ -51,7 +51,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
     private String displayName;
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      */
     private java.util.List<String> engagements;
@@ -266,10 +267,12 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
-     * @return The contacts and escalation plans that the response plan engages during an incident.
+     * @return The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages
+     *         during an incident.
      */
 
     public java.util.List<String> getEngagements() {
@@ -278,11 +281,13 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that the response plan engages during an incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      */
 
     public void setEngagements(java.util.Collection<String> engagements) {
@@ -296,7 +301,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,7 +311,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that the response plan engages during an incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,11 +328,13 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that the response plan engages during an incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the default cache configuration for the distribution.
+ * Contains information about the default cache configuration for the CloudFront distribution.
  * </p>
  * 
  * @see <a

@@ -41,7 +41,7 @@ public class ListAccountRolesRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The token issued by the <code>CreateToken</code> API call. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in
-     * the <i>AWS SSO OIDC API Reference Guide</i>.
+     * the <i>IAM Identity Center OIDC API Reference Guide</i>.
      * </p>
      */
     private String accessToken;
@@ -136,13 +136,13 @@ public class ListAccountRolesRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The token issued by the <code>CreateToken</code> API call. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in
-     * the <i>AWS SSO OIDC API Reference Guide</i>.
+     * the <i>IAM Identity Center OIDC API Reference Guide</i>.
      * </p>
      * 
      * @param accessToken
      *        The token issued by the <code>CreateToken</code> API call. For more information, see <a
      *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html"
-     *        >CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.
+     *        >CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.
      */
 
     public void setAccessToken(String accessToken) {
@@ -153,12 +153,12 @@ public class ListAccountRolesRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The token issued by the <code>CreateToken</code> API call. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in
-     * the <i>AWS SSO OIDC API Reference Guide</i>.
+     * the <i>IAM Identity Center OIDC API Reference Guide</i>.
      * </p>
      * 
      * @return The token issued by the <code>CreateToken</code> API call. For more information, see <a
      *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html"
-     *         >CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.
+     *         >CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.
      */
 
     public String getAccessToken() {
@@ -169,13 +169,13 @@ public class ListAccountRolesRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The token issued by the <code>CreateToken</code> API call. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in
-     * the <i>AWS SSO OIDC API Reference Guide</i>.
+     * the <i>IAM Identity Center OIDC API Reference Guide</i>.
      * </p>
      * 
      * @param accessToken
      *        The token issued by the <code>CreateToken</code> API call. For more information, see <a
      *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html"
-     *        >CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.
+     *        >CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

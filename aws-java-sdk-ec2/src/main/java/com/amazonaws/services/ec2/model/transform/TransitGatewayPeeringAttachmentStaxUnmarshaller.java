@@ -50,6 +50,11 @@ public class TransitGatewayPeeringAttachmentStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("accepterTransitGatewayAttachmentId", targetDepth)) {
+                    transitGatewayPeeringAttachment.setAccepterTransitGatewayAttachmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("requesterTgwInfo", targetDepth)) {
                     transitGatewayPeeringAttachment.setRequesterTgwInfo(PeeringTgwInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -57,6 +62,11 @@ public class TransitGatewayPeeringAttachmentStaxUnmarshaller implements Unmarsha
 
                 if (context.testExpression("accepterTgwInfo", targetDepth)) {
                     transitGatewayPeeringAttachment.setAccepterTgwInfo(PeeringTgwInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("options", targetDepth)) {
+                    transitGatewayPeeringAttachment.setOptions(TransitGatewayPeeringAttachmentOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

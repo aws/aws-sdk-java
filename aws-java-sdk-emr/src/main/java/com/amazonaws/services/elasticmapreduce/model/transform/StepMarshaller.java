@@ -37,6 +37,8 @@ public class StepMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActionOnFailure").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
 
     private static final StepMarshaller instance = new StepMarshaller();
 
@@ -59,6 +61,7 @@ public class StepMarshaller {
             protocolMarshaller.marshall(step.getConfig(), CONFIG_BINDING);
             protocolMarshaller.marshall(step.getActionOnFailure(), ACTIONONFAILURE_BINDING);
             protocolMarshaller.marshall(step.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(step.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -28,12 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TrailPropertiesMarshaller {
 
-    private static final MarshallingInfo<Boolean> ALLREGIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allRegions").build();
     private static final MarshallingInfo<String> CLOUDTRAILARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudTrailArn").build();
     private static final MarshallingInfo<List> REGIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("regions").build();
+    private static final MarshallingInfo<Boolean> ALLREGIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allRegions").build();
 
     private static final TrailPropertiesMarshaller instance = new TrailPropertiesMarshaller();
 
@@ -51,9 +51,9 @@ public class TrailPropertiesMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(trailProperties.getAllRegions(), ALLREGIONS_BINDING);
             protocolMarshaller.marshall(trailProperties.getCloudTrailArn(), CLOUDTRAILARN_BINDING);
             protocolMarshaller.marshall(trailProperties.getRegions(), REGIONS_BINDING);
+            protocolMarshaller.marshall(trailProperties.getAllRegions(), ALLREGIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

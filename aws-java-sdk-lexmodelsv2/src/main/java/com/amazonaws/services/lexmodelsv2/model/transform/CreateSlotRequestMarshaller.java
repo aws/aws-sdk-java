@@ -47,6 +47,8 @@ public class CreateSlotRequestMarshaller {
             .marshallLocationName("intentId").build();
     private static final MarshallingInfo<StructuredPojo> MULTIPLEVALUESSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multipleValuesSetting").build();
+    private static final MarshallingInfo<StructuredPojo> SUBSLOTSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subSlotSetting").build();
 
     private static final CreateSlotRequestMarshaller instance = new CreateSlotRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class CreateSlotRequestMarshaller {
             protocolMarshaller.marshall(createSlotRequest.getLocaleId(), LOCALEID_BINDING);
             protocolMarshaller.marshall(createSlotRequest.getIntentId(), INTENTID_BINDING);
             protocolMarshaller.marshall(createSlotRequest.getMultipleValuesSetting(), MULTIPLEVALUESSETTING_BINDING);
+            protocolMarshaller.marshall(createSlotRequest.getSubSlotSetting(), SUBSLOTSETTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

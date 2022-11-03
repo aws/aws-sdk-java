@@ -92,10 +92,17 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      */
     private RegisteredUserQSearchBarEmbeddingConfiguration qSearchBar;
+    /**
+     * <p>
+     * The type of embedding experience. In this case, Amazon QuickSight visuals.
+     * </p>
+     */
+    private RegisteredUserDashboardVisualEmbeddingConfiguration dashboardVisual;
 
     /**
      * <p>
@@ -411,14 +418,16 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param qSearchBar
      *        The configuration details for embedding the Q search bar.</p>
      *        <p>
      *        For more information about embedding the Q search bar, see <a
-     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *        in the <i>Amazon QuickSight User Guide</i>.
      */
 
     public void setQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration qSearchBar) {
@@ -431,13 +440,15 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @return The configuration details for embedding the Q search bar.</p>
      *         <p>
      *         For more information about embedding the Q search bar, see <a
-     *         href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *         in the <i>Amazon QuickSight User Guide</i>.
      */
 
     public RegisteredUserQSearchBarEmbeddingConfiguration getQSearchBar() {
@@ -450,19 +461,61 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param qSearchBar
      *        The configuration details for embedding the Q search bar.</p>
      *        <p>
      *        For more information about embedding the Q search bar, see <a
-     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *        in the <i>Amazon QuickSight User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisteredUserEmbeddingExperienceConfiguration withQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration qSearchBar) {
         setQSearchBar(qSearchBar);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of embedding experience. In this case, Amazon QuickSight visuals.
+     * </p>
+     * 
+     * @param dashboardVisual
+     *        The type of embedding experience. In this case, Amazon QuickSight visuals.
+     */
+
+    public void setDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration dashboardVisual) {
+        this.dashboardVisual = dashboardVisual;
+    }
+
+    /**
+     * <p>
+     * The type of embedding experience. In this case, Amazon QuickSight visuals.
+     * </p>
+     * 
+     * @return The type of embedding experience. In this case, Amazon QuickSight visuals.
+     */
+
+    public RegisteredUserDashboardVisualEmbeddingConfiguration getDashboardVisual() {
+        return this.dashboardVisual;
+    }
+
+    /**
+     * <p>
+     * The type of embedding experience. In this case, Amazon QuickSight visuals.
+     * </p>
+     * 
+     * @param dashboardVisual
+     *        The type of embedding experience. In this case, Amazon QuickSight visuals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisteredUserEmbeddingExperienceConfiguration withDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration dashboardVisual) {
+        setDashboardVisual(dashboardVisual);
         return this;
     }
 
@@ -483,7 +536,9 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
         if (getQuickSightConsole() != null)
             sb.append("QuickSightConsole: ").append(getQuickSightConsole()).append(",");
         if (getQSearchBar() != null)
-            sb.append("QSearchBar: ").append(getQSearchBar());
+            sb.append("QSearchBar: ").append(getQSearchBar()).append(",");
+        if (getDashboardVisual() != null)
+            sb.append("DashboardVisual: ").append(getDashboardVisual());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +565,10 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
             return false;
         if (other.getQSearchBar() != null && other.getQSearchBar().equals(this.getQSearchBar()) == false)
             return false;
+        if (other.getDashboardVisual() == null ^ this.getDashboardVisual() == null)
+            return false;
+        if (other.getDashboardVisual() != null && other.getDashboardVisual().equals(this.getDashboardVisual()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +580,7 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
         hashCode = prime * hashCode + ((getDashboard() == null) ? 0 : getDashboard().hashCode());
         hashCode = prime * hashCode + ((getQuickSightConsole() == null) ? 0 : getQuickSightConsole().hashCode());
         hashCode = prime * hashCode + ((getQSearchBar() == null) ? 0 : getQSearchBar().hashCode());
+        hashCode = prime * hashCode + ((getDashboardVisual() == null) ? 0 : getDashboardVisual().hashCode());
         return hashCode;
     }
 

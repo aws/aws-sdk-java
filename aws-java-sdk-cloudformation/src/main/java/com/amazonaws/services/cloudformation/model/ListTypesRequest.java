@@ -52,8 +52,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     * account. This includes extensions from Amazon, as well as third-party publishers.
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web
+     * Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -144,7 +144,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer maxResults;
     /**
      * <p>
-     * If the previous paginated request didn't return all of the remaining results, the response object's
+     * If the previous paginated request didn't return all the remaining results, the response object's
      * <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action
      * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
      * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
@@ -179,8 +179,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     * account. This includes extensions from Amazon, as well as third-party publishers.
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web
+     * Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -215,7 +215,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     *        account. This includes extensions from Amazon, as well as third-party publishers.
+     *        Web Services account. This includes extensions from Amazon Web Services, in addition to third-party
+     *        publishers.
      *        </p>
      *        </li>
      *        </ul>
@@ -255,8 +256,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     * account. This includes extensions from Amazon, as well as third-party publishers.
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web
+     * Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -290,7 +291,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     *         account. This includes extensions from Amazon, as well as third-party publishers.
+     *         Web Services account. This includes extensions from Amazon Web Services, in addition to third-party
+     *         publishers.
      *         </p>
      *         </li>
      *         </ul>
@@ -330,8 +332,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     * account. This includes extensions from Amazon, as well as third-party publishers.
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web
+     * Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -366,7 +368,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     *        account. This includes extensions from Amazon, as well as third-party publishers.
+     *        Web Services account. This includes extensions from Amazon Web Services, in addition to third-party
+     *        publishers.
      *        </p>
      *        </li>
      *        </ul>
@@ -408,8 +411,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     * account. This includes extensions from Amazon, as well as third-party publishers.
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web
+     * Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -444,7 +447,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
-     *        account. This includes extensions from Amazon, as well as third-party publishers.
+     *        Web Services account. This includes extensions from Amazon Web Services, in addition to third-party
+     *        publishers.
      *        </p>
      *        </li>
      *        </ul>
@@ -1100,14 +1104,14 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If the previous paginated request didn't return all of the remaining results, the response object's
+     * If the previous paginated request didn't return all the remaining results, the response object's
      * <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action
      * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
      * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If the previous paginated request didn't return all of the remaining results, the response object's
+     *        If the previous paginated request didn't return all the remaining results, the response object's
      *        <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this
      *        action again and assign that token to the request object's <code>NextToken</code> parameter. If there are
      *        no remaining results, the previous response object's <code>NextToken</code> parameter is set to
@@ -1120,13 +1124,13 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If the previous paginated request didn't return all of the remaining results, the response object's
+     * If the previous paginated request didn't return all the remaining results, the response object's
      * <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action
      * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
      * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
-     * @return If the previous paginated request didn't return all of the remaining results, the response object's
+     * @return If the previous paginated request didn't return all the remaining results, the response object's
      *         <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this
      *         action again and assign that token to the request object's <code>NextToken</code> parameter. If there are
      *         no remaining results, the previous response object's <code>NextToken</code> parameter is set to
@@ -1139,14 +1143,14 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If the previous paginated request didn't return all of the remaining results, the response object's
+     * If the previous paginated request didn't return all the remaining results, the response object's
      * <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action
      * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
      * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If the previous paginated request didn't return all of the remaining results, the response object's
+     *        If the previous paginated request didn't return all the remaining results, the response object's
      *        <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this
      *        action again and assign that token to the request object's <code>NextToken</code> parameter. If there are
      *        no remaining results, the previous response object's <code>NextToken</code> parameter is set to

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Details from an import from Amazon Redshift datashare request.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetsFromRedshiftDataSharesRequestDetails"
@@ -27,15 +29,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Serializable, Cloneable, StructuredPojo {
 
-    /** A list of Amazon Redshift datashare assets. */
+    /**
+     * <p>
+     * A list of Amazon Redshift datashare assets.
+     * </p>
+     */
     private java.util.List<RedshiftDataShareAssetSourceEntry> assetSources;
-    /** The unique identifier for the data set associated with this import job. */
+    /**
+     * <p>
+     * The unique identifier for the data set associated with this import job.
+     * </p>
+     */
     private String dataSetId;
-    /** The unique identifier for the revision associated with this import job. */
+    /**
+     * <p>
+     * The unique identifier for the revision associated with this import job.
+     * </p>
+     */
     private String revisionId;
 
     /**
+     * <p>
      * A list of Amazon Redshift datashare assets.
+     * </p>
      * 
      * @return A list of Amazon Redshift datashare assets.
      */
@@ -45,7 +61,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * A list of Amazon Redshift datashare assets.
+     * </p>
      * 
      * @param assetSources
      *        A list of Amazon Redshift datashare assets.
@@ -61,7 +79,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * A list of Amazon Redshift datashare assets.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssetSources(java.util.Collection)} or {@link #withAssetSources(java.util.Collection)} if you want to
@@ -84,7 +104,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * A list of Amazon Redshift datashare assets.
+     * </p>
      * 
      * @param assetSources
      *        A list of Amazon Redshift datashare assets.
@@ -97,7 +119,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * The unique identifier for the data set associated with this import job.
+     * </p>
      * 
      * @param dataSetId
      *        The unique identifier for the data set associated with this import job.
@@ -108,7 +132,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * The unique identifier for the data set associated with this import job.
+     * </p>
      * 
      * @return The unique identifier for the data set associated with this import job.
      */
@@ -118,7 +144,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * The unique identifier for the data set associated with this import job.
+     * </p>
      * 
      * @param dataSetId
      *        The unique identifier for the data set associated with this import job.
@@ -131,7 +159,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * The unique identifier for the revision associated with this import job.
+     * </p>
      * 
      * @param revisionId
      *        The unique identifier for the revision associated with this import job.
@@ -142,7 +172,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * The unique identifier for the revision associated with this import job.
+     * </p>
      * 
      * @return The unique identifier for the revision associated with this import job.
      */
@@ -152,7 +184,9 @@ public class ImportAssetsFromRedshiftDataSharesRequestDetails implements Seriali
     }
 
     /**
+     * <p>
      * The unique identifier for the revision associated with this import job.
+     * </p>
      * 
      * @param revisionId
      *        The unique identifier for the revision associated with this import job.

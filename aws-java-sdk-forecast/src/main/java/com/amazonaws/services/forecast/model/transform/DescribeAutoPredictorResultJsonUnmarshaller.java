@@ -122,6 +122,14 @@ public class DescribeAutoPredictorResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeAutoPredictorResult.setExplainabilityInfo(ExplainabilityInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MonitorInfo", targetDepth)) {
+                    context.nextToken();
+                    describeAutoPredictorResult.setMonitorInfo(MonitorInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TimeAlignmentBoundary", targetDepth)) {
+                    context.nextToken();
+                    describeAutoPredictorResult.setTimeAlignmentBoundary(TimeAlignmentBoundaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

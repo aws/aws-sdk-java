@@ -26,7 +26,7 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * One or more metrics.
+     * The metrics.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricCollectionType> metrics;
@@ -39,10 +39,10 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * One or more metrics.
+     * The metrics.
      * </p>
      * 
-     * @return One or more metrics.
+     * @return The metrics.
      */
 
     public java.util.List<MetricCollectionType> getMetrics() {
@@ -54,11 +54,11 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * One or more metrics.
+     * The metrics.
      * </p>
      * 
      * @param metrics
-     *        One or more metrics.
+     *        The metrics.
      */
 
     public void setMetrics(java.util.Collection<MetricCollectionType> metrics) {
@@ -72,7 +72,7 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * One or more metrics.
+     * The metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param metrics
-     *        One or more metrics.
+     *        The metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * One or more metrics.
+     * The metrics.
      * </p>
      * 
      * @param metrics
-     *        One or more metrics.
+     *        The metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

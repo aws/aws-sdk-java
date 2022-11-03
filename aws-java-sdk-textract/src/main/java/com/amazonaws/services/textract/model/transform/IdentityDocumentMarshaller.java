@@ -32,6 +32,8 @@ public class IdentityDocumentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentIndex").build();
     private static final MarshallingInfo<List> IDENTITYDOCUMENTFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityDocumentFields").build();
+    private static final MarshallingInfo<List> BLOCKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Blocks").build();
 
     private static final IdentityDocumentMarshaller instance = new IdentityDocumentMarshaller();
 
@@ -51,6 +53,7 @@ public class IdentityDocumentMarshaller {
         try {
             protocolMarshaller.marshall(identityDocument.getDocumentIndex(), DOCUMENTINDEX_BINDING);
             protocolMarshaller.marshall(identityDocument.getIdentityDocumentFields(), IDENTITYDOCUMENTFIELDS_BINDING);
+            protocolMarshaller.marshall(identityDocument.getBlocks(), BLOCKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

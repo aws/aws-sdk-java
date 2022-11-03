@@ -31,6 +31,8 @@ public class ServiceHealthMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceName").build();
     private static final MarshallingInfo<StructuredPojo> INSIGHT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Insight").build();
+    private static final MarshallingInfo<Long> ANALYZEDRESOURCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyzedResourceCount").build();
 
     private static final ServiceHealthMarshaller instance = new ServiceHealthMarshaller();
 
@@ -50,6 +52,7 @@ public class ServiceHealthMarshaller {
         try {
             protocolMarshaller.marshall(serviceHealth.getServiceName(), SERVICENAME_BINDING);
             protocolMarshaller.marshall(serviceHealth.getInsight(), INSIGHT_BINDING);
+            protocolMarshaller.marshall(serviceHealth.getAnalyzedResourceCount(), ANALYZEDRESOURCECOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

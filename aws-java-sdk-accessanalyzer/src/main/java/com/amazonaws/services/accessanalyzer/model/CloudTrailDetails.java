@@ -30,19 +30,17 @@ public class CloudTrailDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * A <code>Trail</code> object that contains settings for a trail.
+     * </p>
+     */
+    private java.util.List<Trail> trails;
+    /**
+     * <p>
      * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
      * accessed information.
      * </p>
      */
     private String accessRole;
-    /**
-     * <p>
-     * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
-     * after this time are not considered to generate a policy. If this is not included in the request, the default
-     * value is the current time.
-     * </p>
-     */
-    private java.util.Date endTime;
     /**
      * <p>
      * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
@@ -52,154 +50,12 @@ public class CloudTrailDetails implements Serializable, Cloneable, StructuredPoj
     private java.util.Date startTime;
     /**
      * <p>
-     * A <code>Trail</code> object that contains settings for a trail.
-     * </p>
-     */
-    private java.util.List<Trail> trails;
-
-    /**
-     * <p>
-     * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
-     * accessed information.
-     * </p>
-     * 
-     * @param accessRole
-     *        The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
-     *        accessed information.
-     */
-
-    public void setAccessRole(String accessRole) {
-        this.accessRole = accessRole;
-    }
-
-    /**
-     * <p>
-     * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
-     * accessed information.
-     * </p>
-     * 
-     * @return The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service
-     *         last accessed information.
-     */
-
-    public String getAccessRole() {
-        return this.accessRole;
-    }
-
-    /**
-     * <p>
-     * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
-     * accessed information.
-     * </p>
-     * 
-     * @param accessRole
-     *        The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
-     *        accessed information.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudTrailDetails withAccessRole(String accessRole) {
-        setAccessRole(accessRole);
-        return this;
-    }
-
-    /**
-     * <p>
      * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
      * after this time are not considered to generate a policy. If this is not included in the request, the default
      * value is the current time.
      * </p>
-     * 
-     * @param endTime
-     *        The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
-     *        timestamp after this time are not considered to generate a policy. If this is not included in the request,
-     *        the default value is the current time.
      */
-
-    public void setEndTime(java.util.Date endTime) {
-        this.endTime = endTime;
-    }
-
-    /**
-     * <p>
-     * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
-     * after this time are not considered to generate a policy. If this is not included in the request, the default
-     * value is the current time.
-     * </p>
-     * 
-     * @return The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
-     *         timestamp after this time are not considered to generate a policy. If this is not included in the
-     *         request, the default value is the current time.
-     */
-
-    public java.util.Date getEndTime() {
-        return this.endTime;
-    }
-
-    /**
-     * <p>
-     * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
-     * after this time are not considered to generate a policy. If this is not included in the request, the default
-     * value is the current time.
-     * </p>
-     * 
-     * @param endTime
-     *        The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
-     *        timestamp after this time are not considered to generate a policy. If this is not included in the request,
-     *        the default value is the current time.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudTrailDetails withEndTime(java.util.Date endTime) {
-        setEndTime(endTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
-     * before this time are not considered to generate a policy.
-     * </p>
-     * 
-     * @param startTime
-     *        The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
-     *        timestamp before this time are not considered to generate a policy.
-     */
-
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
-    }
-
-    /**
-     * <p>
-     * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
-     * before this time are not considered to generate a policy.
-     * </p>
-     * 
-     * @return The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
-     *         timestamp before this time are not considered to generate a policy.
-     */
-
-    public java.util.Date getStartTime() {
-        return this.startTime;
-    }
-
-    /**
-     * <p>
-     * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
-     * before this time are not considered to generate a policy.
-     * </p>
-     * 
-     * @param startTime
-     *        The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
-     *        timestamp before this time are not considered to generate a policy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CloudTrailDetails withStartTime(java.util.Date startTime) {
-        setStartTime(startTime);
-        return this;
-    }
+    private java.util.Date endTime;
 
     /**
      * <p>
@@ -272,6 +128,150 @@ public class CloudTrailDetails implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
+     * accessed information.
+     * </p>
+     * 
+     * @param accessRole
+     *        The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
+     *        accessed information.
+     */
+
+    public void setAccessRole(String accessRole) {
+        this.accessRole = accessRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
+     * accessed information.
+     * </p>
+     * 
+     * @return The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service
+     *         last accessed information.
+     */
+
+    public String getAccessRole() {
+        return this.accessRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
+     * accessed information.
+     * </p>
+     * 
+     * @param accessRole
+     *        The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last
+     *        accessed information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudTrailDetails withAccessRole(String accessRole) {
+        setAccessRole(accessRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
+     * before this time are not considered to generate a policy.
+     * </p>
+     * 
+     * @param startTime
+     *        The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
+     *        timestamp before this time are not considered to generate a policy.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
+     * before this time are not considered to generate a policy.
+     * </p>
+     * 
+     * @return The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
+     *         timestamp before this time are not considered to generate a policy.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
+     * before this time are not considered to generate a policy.
+     * </p>
+     * 
+     * @param startTime
+     *        The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
+     *        timestamp before this time are not considered to generate a policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudTrailDetails withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
+     * after this time are not considered to generate a policy. If this is not included in the request, the default
+     * value is the current time.
+     * </p>
+     * 
+     * @param endTime
+     *        The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
+     *        timestamp after this time are not considered to generate a policy. If this is not included in the request,
+     *        the default value is the current time.
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
+     * after this time are not considered to generate a policy. If this is not included in the request, the default
+     * value is the current time.
+     * </p>
+     * 
+     * @return The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
+     *         timestamp after this time are not considered to generate a policy. If this is not included in the
+     *         request, the default value is the current time.
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp
+     * after this time are not considered to generate a policy. If this is not included in the request, the default
+     * value is the current time.
+     * </p>
+     * 
+     * @param endTime
+     *        The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a
+     *        timestamp after this time are not considered to generate a policy. If this is not included in the request,
+     *        the default value is the current time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudTrailDetails withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -283,14 +283,14 @@ public class CloudTrailDetails implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTrails() != null)
+            sb.append("Trails: ").append(getTrails()).append(",");
         if (getAccessRole() != null)
             sb.append("AccessRole: ").append(getAccessRole()).append(",");
-        if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
-        if (getTrails() != null)
-            sb.append("Trails: ").append(getTrails());
+        if (getEndTime() != null)
+            sb.append("EndTime: ").append(getEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -305,21 +305,21 @@ public class CloudTrailDetails implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof CloudTrailDetails == false)
             return false;
         CloudTrailDetails other = (CloudTrailDetails) obj;
+        if (other.getTrails() == null ^ this.getTrails() == null)
+            return false;
+        if (other.getTrails() != null && other.getTrails().equals(this.getTrails()) == false)
+            return false;
         if (other.getAccessRole() == null ^ this.getAccessRole() == null)
             return false;
         if (other.getAccessRole() != null && other.getAccessRole().equals(this.getAccessRole()) == false)
-            return false;
-        if (other.getEndTime() == null ^ this.getEndTime() == null)
-            return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
-        if (other.getTrails() == null ^ this.getTrails() == null)
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getTrails() != null && other.getTrails().equals(this.getTrails()) == false)
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         return true;
     }
@@ -329,10 +329,10 @@ public class CloudTrailDetails implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccessRole() == null) ? 0 : getAccessRole().hashCode());
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getTrails() == null) ? 0 : getTrails().hashCode());
+        hashCode = prime * hashCode + ((getAccessRole() == null) ? 0 : getAccessRole().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         return hashCode;
     }
 

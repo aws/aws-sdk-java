@@ -40,6 +40,8 @@ public class UpdateAssetPropertyRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> PROPERTYUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propertyUnit").build();
 
     private static final UpdateAssetPropertyRequestMarshaller instance = new UpdateAssetPropertyRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class UpdateAssetPropertyRequestMarshaller {
             protocolMarshaller.marshall(updateAssetPropertyRequest.getPropertyAlias(), PROPERTYALIAS_BINDING);
             protocolMarshaller.marshall(updateAssetPropertyRequest.getPropertyNotificationState(), PROPERTYNOTIFICATIONSTATE_BINDING);
             protocolMarshaller.marshall(updateAssetPropertyRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(updateAssetPropertyRequest.getPropertyUnit(), PROPERTYUNIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

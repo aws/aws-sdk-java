@@ -41,6 +41,173 @@ public interface AWSCloudWatchRUMAsync extends AWSCloudWatchRUM {
 
     /**
      * <p>
+     * Specifies the extended metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid
+     * destinations include CloudWatch and Evidently.
+     * </p>
+     * <p>
+     * By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+     * metrics that you can collect with CloudWatch RUM</a>.
+     * </p>
+     * <p>
+     * If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch, and you can also
+     * optionally send the metrics with additional dimensions. The valid dimension names for the additional dimensions
+     * are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
+     * <code>OSName</code>, and <code>PageId</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+     * Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;The maximum number of metric definitions that one destination can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination for the metrics before you send them. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt; operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param batchCreateRumMetricDefinitionsRequest
+     * @return A Java Future containing the result of the BatchCreateRumMetricDefinitions operation returned by the
+     *         service.
+     * @sample AWSCloudWatchRUMAsync.BatchCreateRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateRumMetricDefinitionsResult> batchCreateRumMetricDefinitionsAsync(
+            BatchCreateRumMetricDefinitionsRequest batchCreateRumMetricDefinitionsRequest);
+
+    /**
+     * <p>
+     * Specifies the extended metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid
+     * destinations include CloudWatch and Evidently.
+     * </p>
+     * <p>
+     * By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+     * metrics that you can collect with CloudWatch RUM</a>.
+     * </p>
+     * <p>
+     * If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch, and you can also
+     * optionally send the metrics with additional dimensions. The valid dimension names for the additional dimensions
+     * are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
+     * <code>OSName</code>, and <code>PageId</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+     * Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;The maximum number of metric definitions that one destination can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination for the metrics before you send them. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt; operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param batchCreateRumMetricDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchCreateRumMetricDefinitions operation returned by the
+     *         service.
+     * @sample AWSCloudWatchRUMAsyncHandler.BatchCreateRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateRumMetricDefinitionsResult> batchCreateRumMetricDefinitionsAsync(
+            BatchCreateRumMetricDefinitionsRequest batchCreateRumMetricDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateRumMetricDefinitionsRequest, BatchCreateRumMetricDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified metrics from being sent to an extended metrics destination.
+     * </p>
+     * <p>
+     * If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not
+     * valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation
+     * are still deleted.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * @param batchDeleteRumMetricDefinitionsRequest
+     * @return A Java Future containing the result of the BatchDeleteRumMetricDefinitions operation returned by the
+     *         service.
+     * @sample AWSCloudWatchRUMAsync.BatchDeleteRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteRumMetricDefinitionsResult> batchDeleteRumMetricDefinitionsAsync(
+            BatchDeleteRumMetricDefinitionsRequest batchDeleteRumMetricDefinitionsRequest);
+
+    /**
+     * <p>
+     * Removes the specified metrics from being sent to an extended metrics destination.
+     * </p>
+     * <p>
+     * If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not
+     * valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation
+     * are still deleted.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * @param batchDeleteRumMetricDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteRumMetricDefinitions operation returned by the
+     *         service.
+     * @sample AWSCloudWatchRUMAsyncHandler.BatchDeleteRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteRumMetricDefinitionsResult> batchDeleteRumMetricDefinitionsAsync(
+            BatchDeleteRumMetricDefinitionsRequest batchDeleteRumMetricDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteRumMetricDefinitionsRequest, BatchDeleteRumMetricDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
+     * </p>
+     * 
+     * @param batchGetRumMetricDefinitionsRequest
+     * @return A Java Future containing the result of the BatchGetRumMetricDefinitions operation returned by the
+     *         service.
+     * @sample AWSCloudWatchRUMAsync.BatchGetRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetRumMetricDefinitionsResult> batchGetRumMetricDefinitionsAsync(
+            BatchGetRumMetricDefinitionsRequest batchGetRumMetricDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
+     * </p>
+     * 
+     * @param batchGetRumMetricDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetRumMetricDefinitions operation returned by the
+     *         service.
+     * @sample AWSCloudWatchRUMAsyncHandler.BatchGetRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetRumMetricDefinitionsResult> batchGetRumMetricDefinitionsAsync(
+            BatchGetRumMetricDefinitionsRequest batchGetRumMetricDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetRumMetricDefinitionsRequest, BatchGetRumMetricDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that
      * data to RUM. The data includes performance and reliability information such as page load time, client-side
      * errors, and user behavior.
@@ -126,6 +293,41 @@ public interface AWSCloudWatchRUMAsync extends AWSCloudWatchRUM {
      */
     java.util.concurrent.Future<DeleteAppMonitorResult> deleteAppMonitorAsync(DeleteAppMonitorRequest deleteAppMonitorRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAppMonitorRequest, DeleteAppMonitorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending
+     * extended metrics to that destination.
+     * </p>
+     * 
+     * @param deleteRumMetricsDestinationRequest
+     * @return A Java Future containing the result of the DeleteRumMetricsDestination operation returned by the service.
+     * @sample AWSCloudWatchRUMAsync.DeleteRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRumMetricsDestinationResult> deleteRumMetricsDestinationAsync(
+            DeleteRumMetricsDestinationRequest deleteRumMetricsDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending
+     * extended metrics to that destination.
+     * </p>
+     * 
+     * @param deleteRumMetricsDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRumMetricsDestination operation returned by the service.
+     * @sample AWSCloudWatchRUMAsyncHandler.DeleteRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRumMetricsDestinationResult> deleteRumMetricsDestinationAsync(
+            DeleteRumMetricsDestinationRequest deleteRumMetricsDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRumMetricsDestinationRequest, DeleteRumMetricsDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -224,6 +426,49 @@ public interface AWSCloudWatchRUMAsync extends AWSCloudWatchRUM {
 
     /**
      * <p>
+     * Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app
+     * monitor.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param listRumMetricsDestinationsRequest
+     * @return A Java Future containing the result of the ListRumMetricsDestinations operation returned by the service.
+     * @sample AWSCloudWatchRUMAsync.ListRumMetricsDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRumMetricsDestinationsResult> listRumMetricsDestinationsAsync(
+            ListRumMetricsDestinationsRequest listRumMetricsDestinationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app
+     * monitor.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param listRumMetricsDestinationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRumMetricsDestinations operation returned by the service.
+     * @sample AWSCloudWatchRUMAsyncHandler.ListRumMetricsDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRumMetricsDestinationsResult> listRumMetricsDestinationsAsync(
+            ListRumMetricsDestinationsRequest listRumMetricsDestinationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRumMetricsDestinationsRequest, ListRumMetricsDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Displays the tags associated with a CloudWatch RUM resource.
      * </p>
      * 
@@ -293,6 +538,47 @@ public interface AWSCloudWatchRUMAsync extends AWSCloudWatchRUM {
      */
     java.util.concurrent.Future<PutRumEventsResult> putRumEventsAsync(PutRumEventsRequest putRumEventsRequest,
             com.amazonaws.handlers.AsyncHandler<PutRumEventsRequest, PutRumEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics
+     * to CloudWatch or to a CloudWatch Evidently experiment.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param putRumMetricsDestinationRequest
+     * @return A Java Future containing the result of the PutRumMetricsDestination operation returned by the service.
+     * @sample AWSCloudWatchRUMAsync.PutRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRumMetricsDestinationResult> putRumMetricsDestinationAsync(PutRumMetricsDestinationRequest putRumMetricsDestinationRequest);
+
+    /**
+     * <p>
+     * Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics
+     * to CloudWatch or to a CloudWatch Evidently experiment.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param putRumMetricsDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRumMetricsDestination operation returned by the service.
+     * @sample AWSCloudWatchRUMAsyncHandler.PutRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRumMetricsDestinationResult> putRumMetricsDestinationAsync(PutRumMetricsDestinationRequest putRumMetricsDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRumMetricsDestinationRequest, PutRumMetricsDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -466,5 +752,44 @@ public interface AWSCloudWatchRUMAsync extends AWSCloudWatchRUM {
      */
     java.util.concurrent.Future<UpdateAppMonitorResult> updateAppMonitorAsync(UpdateAppMonitorRequest updateAppMonitorRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAppMonitorRequest, UpdateAppMonitorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html"
+     * >BatchCreateRumMetricsDefinitions</a>.
+     * </p>
+     * 
+     * @param updateRumMetricDefinitionRequest
+     * @return A Java Future containing the result of the UpdateRumMetricDefinition operation returned by the service.
+     * @sample AWSCloudWatchRUMAsync.UpdateRumMetricDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRumMetricDefinitionResult> updateRumMetricDefinitionAsync(
+            UpdateRumMetricDefinitionRequest updateRumMetricDefinitionRequest);
+
+    /**
+     * <p>
+     * Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html"
+     * >BatchCreateRumMetricsDefinitions</a>.
+     * </p>
+     * 
+     * @param updateRumMetricDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRumMetricDefinition operation returned by the service.
+     * @sample AWSCloudWatchRUMAsyncHandler.UpdateRumMetricDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRumMetricDefinitionResult> updateRumMetricDefinitionAsync(
+            UpdateRumMetricDefinitionRequest updateRumMetricDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRumMetricDefinitionRequest, UpdateRumMetricDefinitionResult> asyncHandler);
 
 }

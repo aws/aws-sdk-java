@@ -80,6 +80,17 @@ public class MaintenanceWindowExecutionTaskIdentityJsonUnmarshaller implements U
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setTaskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowExecutionTaskIdentity.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowExecutionTaskIdentity.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(AlarmStateInformationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

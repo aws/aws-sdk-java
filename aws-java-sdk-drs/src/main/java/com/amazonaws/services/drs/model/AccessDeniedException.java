@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * TYou do not have sufficient access to perform this action.
+ * You do not have sufficient access to perform this action.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

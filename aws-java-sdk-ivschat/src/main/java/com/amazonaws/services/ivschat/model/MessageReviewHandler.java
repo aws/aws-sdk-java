@@ -31,8 +31,10 @@ public class MessageReviewHandler implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid
-     * response, encounters an error or times out. If allowed, the message is delivered with returned content to all
-     * users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.
+     * response, encounters an error, or times out. (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the
+     * message is delivered with returned content to all users connected to the room. If denied, the message is not
+     * delivered to any user. Default: <code>ALLOW</code>.
      * </p>
      */
     private String fallbackResult;
@@ -46,15 +48,18 @@ public class MessageReviewHandler implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid
-     * response, encounters an error or times out. If allowed, the message is delivered with returned content to all
-     * users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.
+     * response, encounters an error, or times out. (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the
+     * message is delivered with returned content to all users connected to the room. If denied, the message is not
+     * delivered to any user. Default: <code>ALLOW</code>.
      * </p>
      * 
      * @param fallbackResult
      *        Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return
-     *        a valid response, encounters an error or times out. If allowed, the message is delivered with returned
-     *        content to all users connected to the room. If denied, the message is not delivered to any user. Default:
-     *        <code>ALLOW</code>.
+     *        a valid response, encounters an error, or times out. (For the timeout period, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If
+     *        allowed, the message is delivered with returned content to all users connected to the room. If denied, the
+     *        message is not delivered to any user. Default: <code>ALLOW</code>.
      * @see FallbackResult
      */
 
@@ -65,14 +70,17 @@ public class MessageReviewHandler implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid
-     * response, encounters an error or times out. If allowed, the message is delivered with returned content to all
-     * users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.
+     * response, encounters an error, or times out. (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the
+     * message is delivered with returned content to all users connected to the room. If denied, the message is not
+     * delivered to any user. Default: <code>ALLOW</code>.
      * </p>
      * 
      * @return Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return
-     *         a valid response, encounters an error or times out. If allowed, the message is delivered with returned
-     *         content to all users connected to the room. If denied, the message is not delivered to any user. Default:
-     *         <code>ALLOW</code>.
+     *         a valid response, encounters an error, or times out. (For the timeout period, see <a
+     *         href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If
+     *         allowed, the message is delivered with returned content to all users connected to the room. If denied,
+     *         the message is not delivered to any user. Default: <code>ALLOW</code>.
      * @see FallbackResult
      */
 
@@ -83,15 +91,18 @@ public class MessageReviewHandler implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid
-     * response, encounters an error or times out. If allowed, the message is delivered with returned content to all
-     * users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.
+     * response, encounters an error, or times out. (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the
+     * message is delivered with returned content to all users connected to the room. If denied, the message is not
+     * delivered to any user. Default: <code>ALLOW</code>.
      * </p>
      * 
      * @param fallbackResult
      *        Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return
-     *        a valid response, encounters an error or times out. If allowed, the message is delivered with returned
-     *        content to all users connected to the room. If denied, the message is not delivered to any user. Default:
-     *        <code>ALLOW</code>.
+     *        a valid response, encounters an error, or times out. (For the timeout period, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If
+     *        allowed, the message is delivered with returned content to all users connected to the room. If denied, the
+     *        message is not delivered to any user. Default: <code>ALLOW</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FallbackResult
      */
@@ -104,15 +115,18 @@ public class MessageReviewHandler implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid
-     * response, encounters an error or times out. If allowed, the message is delivered with returned content to all
-     * users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.
+     * response, encounters an error, or times out. (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the
+     * message is delivered with returned content to all users connected to the room. If denied, the message is not
+     * delivered to any user. Default: <code>ALLOW</code>.
      * </p>
      * 
      * @param fallbackResult
      *        Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return
-     *        a valid response, encounters an error or times out. If allowed, the message is delivered with returned
-     *        content to all users connected to the room. If denied, the message is not delivered to any user. Default:
-     *        <code>ALLOW</code>.
+     *        a valid response, encounters an error, or times out. (For the timeout period, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If
+     *        allowed, the message is delivered with returned content to all users connected to the room. If denied, the
+     *        message is not delivered to any user. Default: <code>ALLOW</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FallbackResult
      */

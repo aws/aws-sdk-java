@@ -29,12 +29,12 @@ public class ListAnalyzedResourcesRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerArn").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
 
     private static final ListAnalyzedResourcesRequestMarshaller instance = new ListAnalyzedResourcesRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class ListAnalyzedResourcesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listAnalyzedResourcesRequest.getAnalyzerArn(), ANALYZERARN_BINDING);
-            protocolMarshaller.marshall(listAnalyzedResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
-            protocolMarshaller.marshall(listAnalyzedResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAnalyzedResourcesRequest.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(listAnalyzedResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAnalyzedResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

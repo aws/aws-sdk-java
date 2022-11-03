@@ -88,23 +88,23 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchrum.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cloudwatchrum.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchrum.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cloudwatchrum.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchrum.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cloudwatchrum.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchrum.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchrum.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchrum.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchrum.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.cloudwatchrum.model.AWSCloudWatchRUMException.class));
 
     public static AWSCloudWatchRUMClientBuilder builder() {
@@ -155,6 +155,244 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Specifies the extended metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid
+     * destinations include CloudWatch and Evidently.
+     * </p>
+     * <p>
+     * By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+     * metrics that you can collect with CloudWatch RUM</a>.
+     * </p>
+     * <p>
+     * If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch, and you can also
+     * optionally send the metrics with additional dimensions. The valid dimension names for the additional dimensions
+     * are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
+     * <code>OSName</code>, and <code>PageId</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+     * Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;The maximum number of metric definitions that one destination can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination for the metrics before you send them. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt; operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param batchCreateRumMetricDefinitionsRequest
+     * @return Result of the BatchCreateRumMetricDefinitions operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ServiceQuotaExceededException
+     *         This request exceeds a service quota.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.BatchCreateRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchCreateRumMetricDefinitionsResult batchCreateRumMetricDefinitions(BatchCreateRumMetricDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchCreateRumMetricDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final BatchCreateRumMetricDefinitionsResult executeBatchCreateRumMetricDefinitions(
+            BatchCreateRumMetricDefinitionsRequest batchCreateRumMetricDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchCreateRumMetricDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchCreateRumMetricDefinitionsRequest> request = null;
+        Response<BatchCreateRumMetricDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchCreateRumMetricDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchCreateRumMetricDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateRumMetricDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchCreateRumMetricDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchCreateRumMetricDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified metrics from being sent to an extended metrics destination.
+     * </p>
+     * <p>
+     * If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not
+     * valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation
+     * are still deleted.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * @param batchDeleteRumMetricDefinitionsRequest
+     * @return Result of the BatchDeleteRumMetricDefinitions operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.BatchDeleteRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDeleteRumMetricDefinitionsResult batchDeleteRumMetricDefinitions(BatchDeleteRumMetricDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteRumMetricDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteRumMetricDefinitionsResult executeBatchDeleteRumMetricDefinitions(
+            BatchDeleteRumMetricDefinitionsRequest batchDeleteRumMetricDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteRumMetricDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteRumMetricDefinitionsRequest> request = null;
+        Response<BatchDeleteRumMetricDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteRumMetricDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchDeleteRumMetricDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteRumMetricDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteRumMetricDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchDeleteRumMetricDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
+     * </p>
+     * 
+     * @param batchGetRumMetricDefinitionsRequest
+     * @return Result of the BatchGetRumMetricDefinitions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.BatchGetRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetRumMetricDefinitionsResult batchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetRumMetricDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetRumMetricDefinitionsResult executeBatchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest batchGetRumMetricDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetRumMetricDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetRumMetricDefinitionsRequest> request = null;
+        Response<BatchGetRumMetricDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetRumMetricDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetRumMetricDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetRumMetricDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetRumMetricDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetRumMetricDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that
      * data to RUM. The data includes performance and reliability information such as page load time, client-side
      * errors, and user behavior.
@@ -177,6 +415,8 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
      *         This operation attempted to create a resource that already exists.
      * @throws ServiceQuotaExceededException
      *         This request exceeds a service quota.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
      * @throws InternalServerException
      *         Internal service exception.
      * @throws ValidationException
@@ -290,6 +530,76 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending
+     * extended metrics to that destination.
+     * </p>
+     * 
+     * @param deleteRumMetricsDestinationRequest
+     * @return Result of the DeleteRumMetricsDestination operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.DeleteRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRumMetricsDestinationResult deleteRumMetricsDestination(DeleteRumMetricsDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRumMetricsDestination(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRumMetricsDestinationResult executeDeleteRumMetricsDestination(DeleteRumMetricsDestinationRequest deleteRumMetricsDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRumMetricsDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRumMetricsDestinationRequest> request = null;
+        Response<DeleteRumMetricsDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRumMetricsDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRumMetricsDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRumMetricsDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRumMetricsDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRumMetricsDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -496,6 +806,76 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app
+     * monitor.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param listRumMetricsDestinationsRequest
+     * @return Result of the ListRumMetricsDestinations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.ListRumMetricsDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListRumMetricsDestinationsResult listRumMetricsDestinations(ListRumMetricsDestinationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRumMetricsDestinations(request);
+    }
+
+    @SdkInternalApi
+    final ListRumMetricsDestinationsResult executeListRumMetricsDestinations(ListRumMetricsDestinationsRequest listRumMetricsDestinationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRumMetricsDestinationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRumMetricsDestinationsRequest> request = null;
+        Response<ListRumMetricsDestinationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRumMetricsDestinationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRumMetricsDestinationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRumMetricsDestinations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRumMetricsDestinationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRumMetricsDestinationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Displays the tags associated with a CloudWatch RUM resource.
      * </p>
      * 
@@ -625,6 +1005,80 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<PutRumEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutRumEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics
+     * to CloudWatch or to a CloudWatch Evidently experiment.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param putRumMetricsDestinationRequest
+     * @return Result of the PutRumMetricsDestination operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.PutRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutRumMetricsDestinationResult putRumMetricsDestination(PutRumMetricsDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRumMetricsDestination(request);
+    }
+
+    @SdkInternalApi
+    final PutRumMetricsDestinationResult executePutRumMetricsDestination(PutRumMetricsDestinationRequest putRumMetricsDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRumMetricsDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRumMetricsDestinationRequest> request = null;
+        Response<PutRumMetricsDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRumMetricsDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putRumMetricsDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRumMetricsDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRumMetricsDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutRumMetricsDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -853,6 +1307,80 @@ public class AWSCloudWatchRUMClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAppMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html"
+     * >BatchCreateRumMetricsDefinitions</a>.
+     * </p>
+     * 
+     * @param updateRumMetricDefinitionRequest
+     * @return Result of the UpdateRumMetricDefinition operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ServiceQuotaExceededException
+     *         This request exceeds a service quota.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.UpdateRumMetricDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateRumMetricDefinitionResult updateRumMetricDefinition(UpdateRumMetricDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRumMetricDefinition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRumMetricDefinitionResult executeUpdateRumMetricDefinition(UpdateRumMetricDefinitionRequest updateRumMetricDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRumMetricDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRumMetricDefinitionRequest> request = null;
+        Response<UpdateRumMetricDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRumMetricDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateRumMetricDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RUM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRumMetricDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRumMetricDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateRumMetricDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

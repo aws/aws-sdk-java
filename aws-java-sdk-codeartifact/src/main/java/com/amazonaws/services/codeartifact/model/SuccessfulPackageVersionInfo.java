@@ -36,35 +36,8 @@ public class SuccessfulPackageVersionInfo implements Serializable, Cloneable, St
     private String revision;
     /**
      * <p>
-     * The status of a package version. Valid statuses are:
+     * The status of a package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String status;
 
@@ -110,64 +83,11 @@ public class SuccessfulPackageVersionInfo implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of a package version. Valid statuses are:
+     * The status of a package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        The status of a package version. Valid statuses are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        The status of a package version.
      * @see PackageVersionStatus
      */
 
@@ -177,63 +97,10 @@ public class SuccessfulPackageVersionInfo implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of a package version. Valid statuses are:
+     * The status of a package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The status of a package version. Valid statuses are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Published</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unfinished</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unlisted</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Archived</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Disposed</code>
-     *         </p>
-     *         </li>
+     * @return The status of a package version.
      * @see PackageVersionStatus
      */
 
@@ -243,64 +110,11 @@ public class SuccessfulPackageVersionInfo implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of a package version. Valid statuses are:
+     * The status of a package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        The status of a package version. Valid statuses are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        The status of a package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */
@@ -312,64 +126,11 @@ public class SuccessfulPackageVersionInfo implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of a package version. Valid statuses are:
+     * The status of a package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        The status of a package version. Valid statuses are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        The status of a package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */

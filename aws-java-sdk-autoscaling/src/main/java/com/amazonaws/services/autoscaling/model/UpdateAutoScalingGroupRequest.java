@@ -136,8 +136,8 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     * parameter must reside in those Availability Zones.
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in
+     * those Availability Zones.
      * </p>
      */
     private String vPCZoneIdentifier;
@@ -145,8 +145,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A policy or a list of policies that are used to select the instances to terminate. The policies are executed in
      * the order that you list them. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto
-     * Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with
+     * Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> |
+     * <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicies;
@@ -181,8 +186,9 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.
      * </p>
      */
     private Boolean capacityRebalance;
@@ -953,14 +959,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     * parameter must reside in those Availability Zones.
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in
+     * those Availability Zones.
      * </p>
      * 
      * @param vPCZoneIdentifier
      *        A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     *        <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     *        parameter must reside in those Availability Zones.
+     *        <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must
+     *        reside in those Availability Zones.
      */
 
     public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
@@ -970,13 +976,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     * parameter must reside in those Availability Zones.
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in
+     * those Availability Zones.
      * </p>
      * 
      * @return A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     *         <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     *         parameter must reside in those Availability Zones.
+     *         <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must
+     *         reside in those Availability Zones.
      */
 
     public String getVPCZoneIdentifier() {
@@ -986,14 +992,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     * parameter must reside in those Availability Zones.
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in
+     * those Availability Zones.
      * </p>
      * 
      * @param vPCZoneIdentifier
      *        A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-     *        <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this
-     *        parameter must reside in those Availability Zones.
+     *        <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must
+     *        reside in those Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1006,15 +1012,25 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A policy or a list of policies that are used to select the instances to terminate. The policies are executed in
      * the order that you list them. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto
-     * Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with
+     * Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> |
+     * <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * </p>
      * 
      * @return A policy or a list of policies that are used to select the instances to terminate. The policies are
      *         executed in the order that you list them. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     *         which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User
-     *         Guide</i>.
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html"
+     *         >Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.</p>
+     *         <p>
+     *         Valid values: <code>Default</code> | <code>AllocationStrategy</code> |
+     *         <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> |
+     *         <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     *         <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      */
 
     public java.util.List<String> getTerminationPolicies() {
@@ -1028,16 +1044,26 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A policy or a list of policies that are used to select the instances to terminate. The policies are executed in
      * the order that you list them. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto
-     * Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with
+     * Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> |
+     * <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * </p>
      * 
      * @param terminationPolicies
      *        A policy or a list of policies that are used to select the instances to terminate. The policies are
      *        executed in the order that you list them. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     *        which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html"
+     *        >Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User
+     *        Guide</i>.</p>
+     *        <p>
+     *        Valid values: <code>Default</code> | <code>AllocationStrategy</code> |
+     *        <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> |
+     *        <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     *        <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      */
 
     public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
@@ -1053,8 +1079,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A policy or a list of policies that are used to select the instances to terminate. The policies are executed in
      * the order that you list them. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto
-     * Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with
+     * Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> |
+     * <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1065,9 +1096,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * @param terminationPolicies
      *        A policy or a list of policies that are used to select the instances to terminate. The policies are
      *        executed in the order that you list them. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     *        which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html"
+     *        >Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User
+     *        Guide</i>.</p>
+     *        <p>
+     *        Valid values: <code>Default</code> | <code>AllocationStrategy</code> |
+     *        <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> |
+     *        <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     *        <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1085,16 +1121,26 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A policy or a list of policies that are used to select the instances to terminate. The policies are executed in
      * the order that you list them. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto
-     * Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with
+     * Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> |
+     * <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * </p>
      * 
      * @param terminationPolicies
      *        A policy or a list of policies that are used to select the instances to terminate. The policies are
      *        executed in the order that you list them. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     *        which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html"
+     *        >Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User
+     *        Guide</i>.</p>
+     *        <p>
+     *        Valid values: <code>Default</code> | <code>AllocationStrategy</code> |
+     *        <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> |
+     *        <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     *        <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1305,14 +1351,16 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.
      * </p>
      * 
      * @param capacityRebalance
      *        Enables or disables Capacity Rebalancing. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html"
-     *        >Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        >Use Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling
+     *        User Guide</i>.
      */
 
     public void setCapacityRebalance(Boolean capacityRebalance) {
@@ -1322,13 +1370,15 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.
      * </p>
      * 
      * @return Enables or disables Capacity Rebalancing. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html"
-     *         >Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         >Use Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling
+     *         User Guide</i>.
      */
 
     public Boolean getCapacityRebalance() {
@@ -1338,14 +1388,16 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.
      * </p>
      * 
      * @param capacityRebalance
      *        Enables or disables Capacity Rebalancing. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html"
-     *        >Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        >Use Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1357,13 +1409,15 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.
      * </p>
      * 
      * @return Enables or disables Capacity Rebalancing. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html"
-     *         >Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         >Use Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling
+     *         User Guide</i>.
      */
 
     public Boolean isCapacityRebalance() {

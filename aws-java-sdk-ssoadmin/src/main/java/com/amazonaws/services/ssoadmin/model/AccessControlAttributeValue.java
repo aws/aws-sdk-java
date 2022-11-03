@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The value used for mapping a specified attribute to an identity source.
+ * The value used for mapping a specified attribute to an identity source. For more information, see <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a>
+ * in the <i>IAM Identity Center User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccessControlAttributeValue"
@@ -30,17 +32,17 @@ public class AccessControlAttributeValue implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     * The identity source to use when mapping a specified attribute to IAM Identity Center.
      * </p>
      */
     private java.util.List<String> source;
 
     /**
      * <p>
-     * The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     * The identity source to use when mapping a specified attribute to IAM Identity Center.
      * </p>
      * 
-     * @return The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     * @return The identity source to use when mapping a specified attribute to IAM Identity Center.
      */
 
     public java.util.List<String> getSource() {
@@ -49,11 +51,11 @@ public class AccessControlAttributeValue implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     * The identity source to use when mapping a specified attribute to IAM Identity Center.
      * </p>
      * 
      * @param source
-     *        The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     *        The identity source to use when mapping a specified attribute to IAM Identity Center.
      */
 
     public void setSource(java.util.Collection<String> source) {
@@ -67,7 +69,7 @@ public class AccessControlAttributeValue implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     * The identity source to use when mapping a specified attribute to IAM Identity Center.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +78,7 @@ public class AccessControlAttributeValue implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param source
-     *        The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     *        The identity source to use when mapping a specified attribute to IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +94,11 @@ public class AccessControlAttributeValue implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     * The identity source to use when mapping a specified attribute to IAM Identity Center.
      * </p>
      * 
      * @param source
-     *        The identity source to use when mapping a specified attribute to Amazon Web Services SSO.
+     *        The identity source to use when mapping a specified attribute to IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

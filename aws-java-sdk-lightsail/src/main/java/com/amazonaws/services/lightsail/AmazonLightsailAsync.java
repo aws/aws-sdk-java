@@ -3252,9 +3252,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual
-     * private server (or <i>instance</i>).
+     * Returns the bundles that you can apply to an Amazon Lightsail instance when you create it.
      * </p>
+     * <p>
+     * A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of
+     * vCPUs, amount of storage space, and monthly network data transfer quota.
+     * </p>
+     * <note>
+     * <p>
+     * Bundles are referred to as <i>instance plans</i> in the Lightsail console.
+     * </p>
+     * </note>
      * 
      * @param getBundlesRequest
      * @return A Java Future containing the result of the GetBundles operation returned by the service.
@@ -3266,9 +3274,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual
-     * private server (or <i>instance</i>).
+     * Returns the bundles that you can apply to an Amazon Lightsail instance when you create it.
      * </p>
+     * <p>
+     * A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of
+     * vCPUs, amount of storage space, and monthly network data transfer quota.
+     * </p>
+     * <note>
+     * <p>
+     * Bundles are referred to as <i>instance plans</i> in the Lightsail console.
+     * </p>
+     * </note>
      * 
      * @param getBundlesRequest
      * @param asyncHandler
@@ -4560,7 +4576,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * For more information about load balancer TLS security policies, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy"
-     * >Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * >Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * 
      * @param getLoadBalancerTlsPoliciesRequest
@@ -4579,7 +4596,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * For more information about load balancer TLS security policies, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy"
-     * >Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * >Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * 
      * @param getLoadBalancerTlsPoliciesRequest
@@ -6542,6 +6560,53 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<UpdateDomainEntryResult> updateDomainEntryAsync(UpdateDomainEntryRequest updateDomainEntryRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainEntryRequest, UpdateDomainEntryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the Amazon Lightsail instance metadata parameters on a running or stopped instance. When you modify the
+     * parameters on a running instance, the <code>GetInstance</code> or <code>GetInstances</code> API operation
+     * initially responds with a state of <code>pending</code>. After the parameter modifications are successfully
+     * applied, the state changes to <code>applied</code> in subsequent <code>GetInstance</code> or
+     * <code>GetInstances</code> API calls. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service"
+     * >Use IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateInstanceMetadataOptionsRequest
+     * @return A Java Future containing the result of the UpdateInstanceMetadataOptions operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.UpdateInstanceMetadataOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceMetadataOptionsResult> updateInstanceMetadataOptionsAsync(
+            UpdateInstanceMetadataOptionsRequest updateInstanceMetadataOptionsRequest);
+
+    /**
+     * <p>
+     * Modifies the Amazon Lightsail instance metadata parameters on a running or stopped instance. When you modify the
+     * parameters on a running instance, the <code>GetInstance</code> or <code>GetInstances</code> API operation
+     * initially responds with a state of <code>pending</code>. After the parameter modifications are successfully
+     * applied, the state changes to <code>applied</code> in subsequent <code>GetInstance</code> or
+     * <code>GetInstances</code> API calls. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service"
+     * >Use IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateInstanceMetadataOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstanceMetadataOptions operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.UpdateInstanceMetadataOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceMetadataOptionsResult> updateInstanceMetadataOptionsAsync(
+            UpdateInstanceMetadataOptionsRequest updateInstanceMetadataOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceMetadataOptionsRequest, UpdateInstanceMetadataOptionsResult> asyncHandler);
 
     /**
      * <p>

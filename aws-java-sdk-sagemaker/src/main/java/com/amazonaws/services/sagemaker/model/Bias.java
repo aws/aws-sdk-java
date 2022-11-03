@@ -34,9 +34,17 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MetricsSource report;
-
+    /**
+     * <p>
+     * The pre-training bias report for a model.
+     * </p>
+     */
     private MetricsSource preTrainingReport;
-
+    /**
+     * <p>
+     * The post-training bias report for a model.
+     * </p>
+     */
     private MetricsSource postTrainingReport;
 
     /**
@@ -80,7 +88,12 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The pre-training bias report for a model.
+     * </p>
+     * 
      * @param preTrainingReport
+     *        The pre-training bias report for a model.
      */
 
     public void setPreTrainingReport(MetricsSource preTrainingReport) {
@@ -88,7 +101,11 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The pre-training bias report for a model.
+     * </p>
+     * 
+     * @return The pre-training bias report for a model.
      */
 
     public MetricsSource getPreTrainingReport() {
@@ -96,7 +113,12 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The pre-training bias report for a model.
+     * </p>
+     * 
      * @param preTrainingReport
+     *        The pre-training bias report for a model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +128,12 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The post-training bias report for a model.
+     * </p>
+     * 
      * @param postTrainingReport
+     *        The post-training bias report for a model.
      */
 
     public void setPostTrainingReport(MetricsSource postTrainingReport) {
@@ -114,7 +141,11 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The post-training bias report for a model.
+     * </p>
+     * 
+     * @return The post-training bias report for a model.
      */
 
     public MetricsSource getPostTrainingReport() {
@@ -122,7 +153,12 @@ public class Bias implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The post-training bias report for a model.
+     * </p>
+     * 
      * @param postTrainingReport
+     *        The post-training bias report for a model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

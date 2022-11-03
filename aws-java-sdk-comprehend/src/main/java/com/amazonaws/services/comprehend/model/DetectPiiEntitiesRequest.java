@@ -27,24 +27,24 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      */
     private String text;
     /**
      * <p>
-     * The language of the input documents.
+     * The language of the input documents. Currently, English is the only valid language.
      * </p>
      */
     private String languageCode;
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The maximum string size is 100 KB.
      */
 
     public void setText(String text) {
@@ -53,10 +53,10 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      * 
-     * @return A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * @return A UTF-8 text string. The maximum string size is 100 KB.
      */
 
     public String getText() {
@@ -65,11 +65,11 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A UTF-8 text string. The maximum string size is 100 KB.
      * </p>
      * 
      * @param text
-     *        A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A UTF-8 text string. The maximum string size is 100 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The language of the input documents.
+     * The language of the input documents. Currently, English is the only valid language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents.
+     *        The language of the input documents. Currently, English is the only valid language.
      * @see LanguageCode
      */
 
@@ -94,10 +94,10 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The language of the input documents.
+     * The language of the input documents. Currently, English is the only valid language.
      * </p>
      * 
-     * @return The language of the input documents.
+     * @return The language of the input documents. Currently, English is the only valid language.
      * @see LanguageCode
      */
 
@@ -107,11 +107,11 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The language of the input documents.
+     * The language of the input documents. Currently, English is the only valid language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents.
+     *        The language of the input documents. Currently, English is the only valid language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -123,11 +123,11 @@ public class DetectPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The language of the input documents.
+     * The language of the input documents. Currently, English is the only valid language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents.
+     *        The language of the input documents. Currently, English is the only valid language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

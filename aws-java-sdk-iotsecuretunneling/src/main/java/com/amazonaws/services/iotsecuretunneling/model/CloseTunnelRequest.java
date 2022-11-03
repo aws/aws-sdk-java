@@ -33,7 +33,7 @@ public class CloseTunnelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String tunnelId;
     /**
      * <p>
-     * When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      * </p>
      */
     private Boolean delete;
@@ -80,11 +80,11 @@ public class CloseTunnelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      * </p>
      * 
      * @param delete
-     *        When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     *        When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      */
 
     public void setDelete(Boolean delete) {
@@ -93,10 +93,10 @@ public class CloseTunnelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      * </p>
      * 
-     * @return When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * @return When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      */
 
     public Boolean getDelete() {
@@ -105,11 +105,11 @@ public class CloseTunnelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      * </p>
      * 
      * @param delete
-     *        When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     *        When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class CloseTunnelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      * </p>
      * 
-     * @return When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.
+     * @return When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
      */
 
     public Boolean isDelete() {

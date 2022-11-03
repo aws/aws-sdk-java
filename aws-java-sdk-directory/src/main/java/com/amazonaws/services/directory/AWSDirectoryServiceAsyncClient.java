@@ -1257,6 +1257,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSettingsResult> describeSettingsAsync(DescribeSettingsRequest request) {
+
+        return describeSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSettingsResult> describeSettingsAsync(final DescribeSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSettingsRequest, DescribeSettingsResult> asyncHandler) {
+        final DescribeSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSettingsResult>() {
+            @Override
+            public DescribeSettingsResult call() throws Exception {
+                DescribeSettingsResult result = null;
+
+                try {
+                    result = executeDescribeSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request) {
 
         return describeSharedDirectoriesAsync(request, null);
@@ -1363,6 +1396,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeDescribeTrusts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(DescribeUpdateDirectoryRequest request) {
+
+        return describeUpdateDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(final DescribeUpdateDirectoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUpdateDirectoryRequest, DescribeUpdateDirectoryResult> asyncHandler) {
+        final DescribeUpdateDirectoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeUpdateDirectoryResult>() {
+            @Override
+            public DescribeUpdateDirectoryResult call() throws Exception {
+                DescribeUpdateDirectoryResult result = null;
+
+                try {
+                    result = executeDescribeUpdateDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2293,6 +2359,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(UpdateDirectorySetupRequest request) {
+
+        return updateDirectorySetupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(final UpdateDirectorySetupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDirectorySetupRequest, UpdateDirectorySetupResult> asyncHandler) {
+        final UpdateDirectorySetupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDirectorySetupResult>() {
+            @Override
+            public UpdateDirectorySetupResult call() throws Exception {
+                UpdateDirectorySetupResult result = null;
+
+                try {
+                    result = executeUpdateDirectorySetup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
             UpdateNumberOfDomainControllersRequest request) {
 
@@ -2345,6 +2444,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeUpdateRadius(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSettingsResult> updateSettingsAsync(UpdateSettingsRequest request) {
+
+        return updateSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSettingsResult> updateSettingsAsync(final UpdateSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSettingsRequest, UpdateSettingsResult> asyncHandler) {
+        final UpdateSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSettingsResult>() {
+            @Override
+            public UpdateSettingsResult call() throws Exception {
+                UpdateSettingsResult result = null;
+
+                try {
+                    result = executeUpdateSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

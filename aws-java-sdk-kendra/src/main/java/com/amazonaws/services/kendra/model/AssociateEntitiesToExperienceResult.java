@@ -26,20 +26,20 @@ public class AssociateEntitiesToExperienceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with
-     * your Amazon Kendra experience.
+     * Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      */
     private java.util.List<FailedEntity> failedEntityList;
 
     /**
      * <p>
-     * Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with
-     * your Amazon Kendra experience.
+     * Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * 
-     * @return Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly
-     *         configure with your Amazon Kendra experience.
+     * @return Lists the users or groups in your IAM Identity Center identity source that failed to properly configure
+     *         with your Amazon Kendra experience.
      */
 
     public java.util.List<FailedEntity> getFailedEntityList() {
@@ -48,13 +48,13 @@ public class AssociateEntitiesToExperienceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with
-     * your Amazon Kendra experience.
+     * Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * 
      * @param failedEntityList
-     *        Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly
-     *        configure with your Amazon Kendra experience.
+     *        Lists the users or groups in your IAM Identity Center identity source that failed to properly configure
+     *        with your Amazon Kendra experience.
      */
 
     public void setFailedEntityList(java.util.Collection<FailedEntity> failedEntityList) {
@@ -68,8 +68,8 @@ public class AssociateEntitiesToExperienceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with
-     * your Amazon Kendra experience.
+     * Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,8 +78,8 @@ public class AssociateEntitiesToExperienceResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param failedEntityList
-     *        Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly
-     *        configure with your Amazon Kendra experience.
+     *        Lists the users or groups in your IAM Identity Center identity source that failed to properly configure
+     *        with your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,13 +95,13 @@ public class AssociateEntitiesToExperienceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with
-     * your Amazon Kendra experience.
+     * Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your
+     * Amazon Kendra experience.
      * </p>
      * 
      * @param failedEntityList
-     *        Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly
-     *        configure with your Amazon Kendra experience.
+     *        Lists the users or groups in your IAM Identity Center identity source that failed to properly configure
+     *        with your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -67,9 +67,13 @@ import com.amazonaws.services.detective.model.transform.*;
  * <p>
  * Detective is also integrated with Organizations. The organization management account designates the Detective
  * administrator account for the organization. That account becomes the administrator account for the organization
- * behavior graph. The Detective administrator account can enable any organization account as a member account in the
- * organization behavior graph. The organization accounts do not receive invitations. The Detective administrator
- * account can also invite other accounts to the organization behavior graph.
+ * behavior graph. The Detective administrator account is also the delegated administrator account for Detective in
+ * Organizations.
+ * </p>
+ * <p>
+ * The Detective administrator account can enable any organization account as a member account in the organization
+ * behavior graph. The organization accounts do not receive invitations. The Detective administrator account can also
+ * invite other accounts to the organization behavior graph.
  * </p>
  * <p>
  * Every behavior graph is specific to a Region. You can only use the API to manage behavior graphs that belong to the
@@ -311,6 +315,132 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<AcceptInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptInvitationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets data source package information for the behavior graph.
+     * </p>
+     * 
+     * @param batchGetGraphMemberDatasourcesRequest
+     * @return Result of the BatchGetGraphMemberDatasources operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.BatchGetGraphMemberDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetGraphMemberDatasourcesResult batchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetGraphMemberDatasources(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetGraphMemberDatasourcesResult executeBatchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest batchGetGraphMemberDatasourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetGraphMemberDatasourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetGraphMemberDatasourcesRequest> request = null;
+        Response<BatchGetGraphMemberDatasourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetGraphMemberDatasourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetGraphMemberDatasourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetGraphMemberDatasources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetGraphMemberDatasourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetGraphMemberDatasourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information on the data source package history for an account.
+     * </p>
+     * 
+     * @param batchGetMembershipDatasourcesRequest
+     * @return Result of the BatchGetMembershipDatasources operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.BatchGetMembershipDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetMembershipDatasourcesResult batchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetMembershipDatasources(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetMembershipDatasourcesResult executeBatchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest batchGetMembershipDatasourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetMembershipDatasourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetMembershipDatasourcesRequest> request = null;
+        Response<BatchGetMembershipDatasourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetMembershipDatasourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetMembershipDatasourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetMembershipDatasources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetMembershipDatasourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetMembershipDatasourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -750,12 +880,19 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Removes the Detective administrator account for the organization in the current Region. Deletes the behavior
-     * graph for that account.
+     * Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.
      * </p>
      * <p>
-     * Can only be called by the organization management account. Before you can select a different Detective
-     * administrator account, you must remove the Detective administrator account in all Regions.
+     * Can only be called by the organization management account.
+     * </p>
+     * <p>
+     * Removing the Detective administrator account does not affect the delegated administrator account for Detective in
+     * Organizations.
+     * </p>
+     * <p>
+     * To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated
+     * administrator account also removes the Detective administrator account in all Regions, except for Regions where
+     * the Detective administrator account is the organization management account.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -899,8 +1036,14 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * Can only be called by the organization management account.
      * </p>
      * <p>
-     * The Detective administrator account for an organization must be the same in all Regions. If you already
-     * designated a Detective administrator account in another Region, then you must designate the same account.
+     * If the organization has a delegated administrator account in Organizations, then the Detective administrator
+     * account must be either the delegated administrator account or the organization management account.
+     * </p>
+     * <p>
+     * If the organization does not have a delegated administrator account in Organizations, then you can choose any
+     * account in the organization. If you choose an account other than the organization management account, Detective
+     * calls Organizations to make that account the delegated administrator account for Detective. The organization
+     * management account cannot be the delegated administrator account.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -1012,6 +1155,68 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMembersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMembersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists data source packages in the behavior graph.
+     * </p>
+     * 
+     * @param listDatasourcePackagesRequest
+     * @return Result of the ListDatasourcePackages operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.ListDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDatasourcePackagesResult listDatasourcePackages(ListDatasourcePackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatasourcePackages(request);
+    }
+
+    @SdkInternalApi
+    final ListDatasourcePackagesResult executeListDatasourcePackages(ListDatasourcePackagesRequest listDatasourcePackagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDatasourcePackagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDatasourcePackagesRequest> request = null;
+        Response<ListDatasourcePackagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDatasourcePackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasourcePackagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasourcePackages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDatasourcePackagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDatasourcePackagesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1626,6 +1831,89 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a data source packages for the behavior graph.
+     * </p>
+     * 
+     * @param updateDatasourcePackagesRequest
+     * @return Result of the UpdateDatasourcePackages operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ServiceQuotaExceededException
+     *         This request cannot be completed for one of the following reasons.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
+     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Detective is unable to verify the data rate for the member account. This is usually because the member
+     *         account is not enrolled in Amazon GuardDuty.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.UpdateDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDatasourcePackagesResult updateDatasourcePackages(UpdateDatasourcePackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDatasourcePackages(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDatasourcePackagesResult executeUpdateDatasourcePackages(UpdateDatasourcePackagesRequest updateDatasourcePackagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDatasourcePackagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDatasourcePackagesRequest> request = null;
+        Response<UpdateDatasourcePackagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDatasourcePackagesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDatasourcePackagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatasourcePackages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDatasourcePackagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDatasourcePackagesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -117,6 +117,8 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsRdsDbCluster").build();
     private static final MarshallingInfo<StructuredPojo> AWSECSCLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEcsCluster").build();
+    private static final MarshallingInfo<StructuredPojo> AWSECSCONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEcsContainer").build();
     private static final MarshallingInfo<StructuredPojo> AWSECSTASKDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEcsTaskDefinition").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -155,6 +157,36 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsNetworkFirewallRuleGroup").build();
     private static final MarshallingInfo<StructuredPojo> AWSRDSDBSECURITYGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsRdsDbSecurityGroup").build();
+    private static final MarshallingInfo<StructuredPojo> AWSKINESISSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsKinesisStream").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2TRANSITGATEWAY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2TransitGateway").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEFSACCESSPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEfsAccessPoint").build();
+    private static final MarshallingInfo<StructuredPojo> AWSCLOUDFORMATIONSTACK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCloudFormationStack").build();
+    private static final MarshallingInfo<StructuredPojo> AWSCLOUDWATCHALARM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCloudWatchAlarm").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2VPCPEERINGCONNECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2VpcPeeringConnection").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFREGIONALRULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafRegionalRuleGroup").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFREGIONALRULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafRegionalRule").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFREGIONALWEBACL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafRegionalWebAcl").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFRULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafRule").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFRULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafRuleGroup").build();
+    private static final MarshallingInfo<StructuredPojo> AWSECSTASK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEcsTask").build();
+    private static final MarshallingInfo<StructuredPojo> AWSBACKUPBACKUPVAULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsBackupBackupVault").build();
+    private static final MarshallingInfo<StructuredPojo> AWSBACKUPBACKUPPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsBackupBackupPlan").build();
+    private static final MarshallingInfo<StructuredPojo> AWSBACKUPRECOVERYPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsBackupRecoveryPoint").build();
 
     private static final ResourceDetailsMarshaller instance = new ResourceDetailsMarshaller();
 
@@ -216,6 +248,7 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsRdsDbClusterSnapshot(), AWSRDSDBCLUSTERSNAPSHOT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsRdsDbCluster(), AWSRDSDBCLUSTER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEcsCluster(), AWSECSCLUSTER_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEcsContainer(), AWSECSCONTAINER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEcsTaskDefinition(), AWSECSTASKDEFINITION_BINDING);
             protocolMarshaller.marshall(resourceDetails.getContainer(), CONTAINER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getOther(), OTHER_BINDING);
@@ -235,6 +268,21 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsNetworkFirewallFirewall(), AWSNETWORKFIREWALLFIREWALL_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsNetworkFirewallRuleGroup(), AWSNETWORKFIREWALLRULEGROUP_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsRdsDbSecurityGroup(), AWSRDSDBSECURITYGROUP_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsKinesisStream(), AWSKINESISSTREAM_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2TransitGateway(), AWSEC2TRANSITGATEWAY_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEfsAccessPoint(), AWSEFSACCESSPOINT_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsCloudFormationStack(), AWSCLOUDFORMATIONSTACK_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsCloudWatchAlarm(), AWSCLOUDWATCHALARM_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2VpcPeeringConnection(), AWSEC2VPCPEERINGCONNECTION_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafRegionalRuleGroup(), AWSWAFREGIONALRULEGROUP_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafRegionalRule(), AWSWAFREGIONALRULE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafRegionalWebAcl(), AWSWAFREGIONALWEBACL_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafRule(), AWSWAFRULE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafRuleGroup(), AWSWAFRULEGROUP_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEcsTask(), AWSECSTASK_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsBackupBackupVault(), AWSBACKUPBACKUPVAULT_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsBackupBackupPlan(), AWSBACKUPBACKUPPLAN_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsBackupRecoveryPoint(), AWSBACKUPRECOVERYPOINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

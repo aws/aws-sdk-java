@@ -48,15 +48,32 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    finding.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("principal", targetDepth)) {
+                    context.nextToken();
+                    finding.setPrincipal(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("action", targetDepth)) {
                     context.nextToken();
                     finding.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("analyzedAt", targetDepth)) {
+                if (context.testExpression("resource", targetDepth)) {
                     context.nextToken();
-                    finding.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    finding.setResource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("isPublic", targetDepth)) {
+                    context.nextToken();
+                    finding.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceType", targetDepth)) {
+                    context.nextToken();
+                    finding.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
                     context.nextToken();
@@ -67,48 +84,31 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                     context.nextToken();
                     finding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("error", targetDepth)) {
+                if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
-                    finding.setError(context.getUnmarshaller(String.class).unmarshall(context));
+                    finding.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
+                if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    finding.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                    finding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("isPublic", targetDepth)) {
+                if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    finding.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("principal", targetDepth)) {
-                    context.nextToken();
-                    finding.setPrincipal(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
-                            .unmarshall(context));
-                }
-                if (context.testExpression("resource", targetDepth)) {
-                    context.nextToken();
-                    finding.setResource(context.getUnmarshaller(String.class).unmarshall(context));
+                    finding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceOwnerAccount", targetDepth)) {
                     context.nextToken();
                     finding.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("resourceType", targetDepth)) {
+                if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
-                    finding.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                    finding.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
                     finding.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    finding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("updatedAt", targetDepth)) {
-                    context.nextToken();
-                    finding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

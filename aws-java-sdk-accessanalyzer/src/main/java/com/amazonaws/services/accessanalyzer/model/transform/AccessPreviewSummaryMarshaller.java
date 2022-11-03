@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AccessPreviewSummaryMarshaller {
 
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> ANALYZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerArn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<StructuredPojo> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,9 +54,9 @@ public class AccessPreviewSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(accessPreviewSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(accessPreviewSummary.getAnalyzerArn(), ANALYZERARN_BINDING);
             protocolMarshaller.marshall(accessPreviewSummary.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(accessPreviewSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(accessPreviewSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(accessPreviewSummary.getStatusReason(), STATUSREASON_BINDING);
         } catch (Exception e) {

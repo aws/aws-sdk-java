@@ -33,7 +33,9 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     private String description;
     /**
      * <p>
-     * The permissions granted to a security profile.
+     * The permissions granted to a security profile. For a list of valid permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile
+     * permissions</a>.
      * </p>
      */
     private java.util.List<String> permissions;
@@ -92,10 +94,14 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The permissions granted to a security profile.
+     * The permissions granted to a security profile. For a list of valid permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile
+     * permissions</a>.
      * </p>
      * 
-     * @return The permissions granted to a security profile.
+     * @return The permissions granted to a security profile. For a list of valid permissions, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security
+     *         profile permissions</a>.
      */
 
     public java.util.List<String> getPermissions() {
@@ -104,11 +110,15 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The permissions granted to a security profile.
+     * The permissions granted to a security profile. For a list of valid permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile
+     * permissions</a>.
      * </p>
      * 
      * @param permissions
-     *        The permissions granted to a security profile.
+     *        The permissions granted to a security profile. For a list of valid permissions, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security
+     *        profile permissions</a>.
      */
 
     public void setPermissions(java.util.Collection<String> permissions) {
@@ -122,7 +132,9 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The permissions granted to a security profile.
+     * The permissions granted to a security profile. For a list of valid permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile
+     * permissions</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +143,9 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param permissions
-     *        The permissions granted to a security profile.
+     *        The permissions granted to a security profile. For a list of valid permissions, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security
+     *        profile permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +161,15 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The permissions granted to a security profile.
+     * The permissions granted to a security profile. For a list of valid permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile
+     * permissions</a>.
      * </p>
      * 
      * @param permissions
-     *        The permissions granted to a security profile.
+     *        The permissions granted to a security profile. For a list of valid permissions, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security
+     *        profile permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

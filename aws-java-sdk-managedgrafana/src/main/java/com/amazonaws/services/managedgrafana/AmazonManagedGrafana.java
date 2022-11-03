@@ -107,6 +107,36 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
+     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
+     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * requests.
+     * </p>
+     * 
+     * @param createWorkspaceApiKeyRequest
+     * @return Result of the CreateWorkspaceApiKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @sample AmazonManagedGrafana.CreateWorkspaceApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateWorkspaceApiKeyResult createWorkspaceApiKey(CreateWorkspaceApiKeyRequest createWorkspaceApiKeyRequest);
+
+    /**
+     * <p>
      * Deletes an Amazon Managed Grafana workspace.
      * </p>
      * 
@@ -129,6 +159,31 @@ public interface AmazonManagedGrafana {
      *      Documentation</a>
      */
     DeleteWorkspaceResult deleteWorkspace(DeleteWorkspaceRequest deleteWorkspaceRequest);
+
+    /**
+     * <p>
+     * Deletes an API key for a workspace.
+     * </p>
+     * 
+     * @param deleteWorkspaceApiKeyRequest
+     * @return Result of the DeleteWorkspaceApiKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DeleteWorkspaceApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteWorkspaceApiKeyResult deleteWorkspaceApiKey(DeleteWorkspaceApiKeyRequest deleteWorkspaceApiKeyRequest);
 
     /**
      * <p>

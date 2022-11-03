@@ -34,7 +34,10 @@ public class VpcSecurityGroupMembership implements Serializable, Cloneable {
     private String vpcSecurityGroupId;
     /**
      * <p>
-     * The status of the VPC security group.
+     * The membership status of the VPC security group.
+     * </p>
+     * <p>
+     * Currently, the only valid status is <code>active</code>.
      * </p>
      */
     private String status;
@@ -81,11 +84,16 @@ public class VpcSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the VPC security group.
+     * The membership status of the VPC security group.
+     * </p>
+     * <p>
+     * Currently, the only valid status is <code>active</code>.
      * </p>
      * 
      * @param status
-     *        The status of the VPC security group.
+     *        The membership status of the VPC security group.</p>
+     *        <p>
+     *        Currently, the only valid status is <code>active</code>.
      */
 
     public void setStatus(String status) {
@@ -94,10 +102,15 @@ public class VpcSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the VPC security group.
+     * The membership status of the VPC security group.
+     * </p>
+     * <p>
+     * Currently, the only valid status is <code>active</code>.
      * </p>
      * 
-     * @return The status of the VPC security group.
+     * @return The membership status of the VPC security group.</p>
+     *         <p>
+     *         Currently, the only valid status is <code>active</code>.
      */
 
     public String getStatus() {
@@ -106,11 +119,16 @@ public class VpcSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the VPC security group.
+     * The membership status of the VPC security group.
+     * </p>
+     * <p>
+     * Currently, the only valid status is <code>active</code>.
      * </p>
      * 
      * @param status
-     *        The status of the VPC security group.
+     *        The membership status of the VPC security group.</p>
+     *        <p>
+     *        Currently, the only valid status is <code>active</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

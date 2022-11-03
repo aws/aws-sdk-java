@@ -508,7 +508,7 @@ public class Cluster implements Serializable, Cloneable {
     private Long totalStorageCapacityInMegaBytes;
     /**
      * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
      */
     private AquaConfiguration aquaConfiguration;
@@ -3968,11 +3968,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
      * 
      * @param aquaConfiguration
-     *        The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      */
 
     public void setAquaConfiguration(AquaConfiguration aquaConfiguration) {
@@ -3981,10 +3982,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
      * 
-     * @return The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * @return This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *         Accelerator).
      */
 
     public AquaConfiguration getAquaConfiguration() {
@@ -3993,11 +3995,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
      * 
      * @param aquaConfiguration
-     *        The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

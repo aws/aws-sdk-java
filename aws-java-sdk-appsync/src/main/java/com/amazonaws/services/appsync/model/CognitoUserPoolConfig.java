@@ -42,7 +42,8 @@ public class CognitoUserPoolConfig implements Serializable, Cloneable, Structure
     private String awsRegion;
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set,
+     * no filtering is applied.
      * </p>
      */
     private String appIdClientRegex;
@@ -129,11 +130,13 @@ public class CognitoUserPoolConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set,
+     * no filtering is applied.
      * </p>
      * 
      * @param appIdClientRegex
-     *        A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     *        A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value
+     *        isn't set, no filtering is applied.
      */
 
     public void setAppIdClientRegex(String appIdClientRegex) {
@@ -142,10 +145,12 @@ public class CognitoUserPoolConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set,
+     * no filtering is applied.
      * </p>
      * 
-     * @return A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     * @return A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value
+     *         isn't set, no filtering is applied.
      */
 
     public String getAppIdClientRegex() {
@@ -154,11 +159,13 @@ public class CognitoUserPoolConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set,
+     * no filtering is applied.
      * </p>
      * 
      * @param appIdClientRegex
-     *        A regular expression for validating the incoming Amazon Cognito user pool app client ID.
+     *        A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value
+     *        isn't set, no filtering is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

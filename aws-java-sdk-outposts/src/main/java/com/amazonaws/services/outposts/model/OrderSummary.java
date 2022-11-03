@@ -94,13 +94,13 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, Integer> lineItemCountsByStatus;
     /**
      * <p>
-     * Submission date for the order.
+     * The submission date for the order.
      * </p>
      */
     private java.util.Date orderSubmissionDate;
     /**
      * <p>
-     * Fulfilment date for the order.
+     * The fulfilment date for the order.
      * </p>
      */
     private java.util.Date orderFulfilledDate;
@@ -641,11 +641,11 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Submission date for the order.
+     * The submission date for the order.
      * </p>
      * 
      * @param orderSubmissionDate
-     *        Submission date for the order.
+     *        The submission date for the order.
      */
 
     public void setOrderSubmissionDate(java.util.Date orderSubmissionDate) {
@@ -654,10 +654,10 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Submission date for the order.
+     * The submission date for the order.
      * </p>
      * 
-     * @return Submission date for the order.
+     * @return The submission date for the order.
      */
 
     public java.util.Date getOrderSubmissionDate() {
@@ -666,11 +666,11 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Submission date for the order.
+     * The submission date for the order.
      * </p>
      * 
      * @param orderSubmissionDate
-     *        Submission date for the order.
+     *        The submission date for the order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,11 +681,11 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fulfilment date for the order.
+     * The fulfilment date for the order.
      * </p>
      * 
      * @param orderFulfilledDate
-     *        Fulfilment date for the order.
+     *        The fulfilment date for the order.
      */
 
     public void setOrderFulfilledDate(java.util.Date orderFulfilledDate) {
@@ -694,10 +694,10 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fulfilment date for the order.
+     * The fulfilment date for the order.
      * </p>
      * 
-     * @return Fulfilment date for the order.
+     * @return The fulfilment date for the order.
      */
 
     public java.util.Date getOrderFulfilledDate() {
@@ -706,11 +706,11 @@ public class OrderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fulfilment date for the order.
+     * The fulfilment date for the order.
      * </p>
      * 
      * @param orderFulfilledDate
-     *        Fulfilment date for the order.
+     *        The fulfilment date for the order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of the environment detail data.
+ * Summary data of an Proton environment resource. An Proton environment is a set of resources shared across Proton
+ * services.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/EnvironmentSummary" target="_top">AWS API
@@ -34,6 +35,22 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     */
+    private String componentRoleArn;
     /**
      * <p>
      * The time when the environment was created.
@@ -157,6 +174,106 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     public EnvironmentSummary withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in this environment. It determines the scope of infrastructure that a component can
+     *        provision.</p>
+     *        <p>
+     *        The environment must have a <code>componentRoleArn</code> to allow directly defined components to be
+     *        associated with the environment.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     */
+
+    public void setComponentRoleArn(String componentRoleArn) {
+        this.componentRoleArn = componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly
+     *         defined components in this environment. It determines the scope of infrastructure that a component can
+     *         provision.</p>
+     *         <p>
+     *         The environment must have a <code>componentRoleArn</code> to allow directly defined components to be
+     *         associated with the environment.
+     *         </p>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton User Guide</i>.
+     */
+
+    public String getComponentRoleArn() {
+        return this.componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in this environment. It determines the scope of infrastructure that a component can
+     *        provision.</p>
+     *        <p>
+     *        The environment must have a <code>componentRoleArn</code> to allow directly defined components to be
+     *        associated with the environment.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnvironmentSummary withComponentRoleArn(String componentRoleArn) {
+        setComponentRoleArn(componentRoleArn);
         return this;
     }
 
@@ -782,6 +899,8 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getComponentRoleArn() != null)
+            sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDeploymentStatus() != null)
@@ -827,6 +946,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
+            return false;
+        if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -894,6 +1017,7 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatusMessage() == null) ? 0 : getDeploymentStatusMessage().hashCode());

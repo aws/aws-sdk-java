@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of a media capture pipeline.
+ * The summary data of a media capture pipeline.
  * </p>
  * 
  * @see <a
@@ -31,24 +31,24 @@ public class MediaCapturePipelineSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of the media pipeline in the summary.
      * </p>
      */
     private String mediaPipelineId;
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media pipeline in the summary.
      * </p>
      */
     private String mediaPipelineArn;
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of the media pipeline in the summary.
      * </p>
      * 
      * @param mediaPipelineId
-     *        The ID of a media capture pipeline.
+     *        The ID of the media pipeline in the summary.
      */
 
     public void setMediaPipelineId(String mediaPipelineId) {
@@ -57,10 +57,10 @@ public class MediaCapturePipelineSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of the media pipeline in the summary.
      * </p>
      * 
-     * @return The ID of a media capture pipeline.
+     * @return The ID of the media pipeline in the summary.
      */
 
     public String getMediaPipelineId() {
@@ -69,11 +69,11 @@ public class MediaCapturePipelineSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ID of a media capture pipeline.
+     * The ID of the media pipeline in the summary.
      * </p>
      * 
      * @param mediaPipelineId
-     *        The ID of a media capture pipeline.
+     *        The ID of the media pipeline in the summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class MediaCapturePipelineSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media pipeline in the summary.
      * </p>
      * 
      * @param mediaPipelineArn
-     *        The ARN of a media capture pipeline.
+     *        The ARN of the media pipeline in the summary.
      */
 
     public void setMediaPipelineArn(String mediaPipelineArn) {
@@ -97,10 +97,10 @@ public class MediaCapturePipelineSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media pipeline in the summary.
      * </p>
      * 
-     * @return The ARN of a media capture pipeline.
+     * @return The ARN of the media pipeline in the summary.
      */
 
     public String getMediaPipelineArn() {
@@ -109,11 +109,11 @@ public class MediaCapturePipelineSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of a media capture pipeline.
+     * The ARN of the media pipeline in the summary.
      * </p>
      * 
      * @param mediaPipelineArn
-     *        The ARN of a media capture pipeline.
+     *        The ARN of the media pipeline in the summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

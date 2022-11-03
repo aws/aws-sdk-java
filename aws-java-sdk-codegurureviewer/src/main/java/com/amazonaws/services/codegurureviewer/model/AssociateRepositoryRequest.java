@@ -73,7 +73,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -188,7 +188,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @return An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *         two parts: </p>
+     *         two parts:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -232,7 +232,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param tags
      *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *        two parts: </p>
+     *        two parts:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -276,7 +276,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param tags
      *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
-     *        two parts: </p>
+     *        two parts:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -340,7 +340,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -357,7 +357,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     *        The ID of the Amazon Web Services KMS key that is associated with this repository association.
      *        </p>
      *        </li>
      */
@@ -379,7 +379,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -395,7 +395,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     *         The ID of the Amazon Web Services KMS key that is associated with this repository association.
      *         </p>
      *         </li>
      */
@@ -417,7 +417,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -434,7 +434,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     *        The ID of the Amazon Web Services KMS key that is associated with this repository association.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -35,6 +35,10 @@ public class ImportJobSummaryMarshaller {
             .marshallLocationName("JobStatus").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Integer> PROCESSEDRECORDSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessedRecordsCount").build();
+    private static final MarshallingInfo<Integer> FAILEDRECORDSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailedRecordsCount").build();
 
     private static final ImportJobSummaryMarshaller instance = new ImportJobSummaryMarshaller();
 
@@ -56,6 +60,8 @@ public class ImportJobSummaryMarshaller {
             protocolMarshaller.marshall(importJobSummary.getImportDestination(), IMPORTDESTINATION_BINDING);
             protocolMarshaller.marshall(importJobSummary.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(importJobSummary.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(importJobSummary.getProcessedRecordsCount(), PROCESSEDRECORDSCOUNT_BINDING);
+            protocolMarshaller.marshall(importJobSummary.getFailedRecordsCount(), FAILEDRECORDSCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

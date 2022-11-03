@@ -60,7 +60,8 @@ public class VirtualMachine implements Serializable, Cloneable, StructuredPojo {
     private String path;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the virtual machine.
+     * The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      * </p>
      */
     private String resourceArn;
@@ -267,11 +268,13 @@ public class VirtualMachine implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the virtual machine.
+     * The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the virtual machine.
+     *        The Amazon Resource Name (ARN) of the virtual machine. For example,
+     *        <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -280,10 +283,12 @@ public class VirtualMachine implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the virtual machine.
+     * The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the virtual machine.
+     * @return The Amazon Resource Name (ARN) of the virtual machine. For example,
+     *         <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      */
 
     public String getResourceArn() {
@@ -292,11 +297,13 @@ public class VirtualMachine implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the virtual machine.
+     * The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the virtual machine.
+     *        The Amazon Resource Name (ARN) of the virtual machine. For example,
+     *        <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

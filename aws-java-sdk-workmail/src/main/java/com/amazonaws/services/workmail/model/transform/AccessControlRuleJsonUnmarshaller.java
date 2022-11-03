@@ -104,6 +104,18 @@ public class AccessControlRuleJsonUnmarshaller implements Unmarshaller<AccessCon
                     context.nextToken();
                     accessControlRule.setDateModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ImpersonationRoleIds", targetDepth)) {
+                    context.nextToken();
+                    accessControlRule.setImpersonationRoleIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("NotImpersonationRoleIds", targetDepth)) {
+                    context.nextToken();
+                    accessControlRule.setNotImpersonationRoleIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

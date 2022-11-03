@@ -48,6 +48,12 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     private HttpPathMatch path;
     /**
      * <p>
+     * The port number to match on.
+     * </p>
+     */
+    private Integer port;
+    /**
+     * <p>
      * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
      * matches all requests to the virtual service name. You can also match for path-based routing of requests. For
      * example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests
@@ -234,6 +240,46 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     public HttpRouteMatch withPath(HttpPathMatch path) {
         setPath(path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The port number to match on.
+     * </p>
+     * 
+     * @param port
+     *        The port number to match on.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * The port number to match on.
+     * </p>
+     * 
+     * @return The port number to match on.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * The port number to match on.
+     * </p>
+     * 
+     * @param port
+     *        The port number to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRouteMatch withPort(Integer port) {
+        setPort(port);
         return this;
     }
 
@@ -445,6 +491,8 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
             sb.append("Method: ").append(getMethod()).append(",");
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
+        if (getPort() != null)
+            sb.append("Port: ").append(getPort()).append(",");
         if (getPrefix() != null)
             sb.append("Prefix: ").append(getPrefix()).append(",");
         if (getQueryParameters() != null)
@@ -477,6 +525,10 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
             return false;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
         if (other.getPrefix() == null ^ this.getPrefix() == null)
             return false;
         if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
@@ -500,6 +552,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getMethod() == null) ? 0 : getMethod().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
         hashCode = prime * hashCode + ((getQueryParameters() == null) ? 0 : getQueryParameters().hashCode());
         hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());

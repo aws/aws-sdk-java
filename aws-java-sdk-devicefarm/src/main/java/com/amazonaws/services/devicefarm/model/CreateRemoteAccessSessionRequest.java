@@ -137,7 +137,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information on how Device Farm modifies your uploads during tests, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      * </p>
      */
     private Boolean skipAppResign;
@@ -889,7 +889,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information on how Device Farm modifies your uploads during tests, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      * </p>
      * 
      * @param skipAppResign
@@ -897,7 +897,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information on how Device Farm modifies your uploads during tests, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      */
 
     public void setSkipAppResign(Boolean skipAppResign) {
@@ -911,14 +911,14 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information on how Device Farm modifies your uploads during tests, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information on how Device Farm modifies your uploads during tests, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      */
 
     public Boolean getSkipAppResign() {
@@ -932,7 +932,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information on how Device Farm modifies your uploads during tests, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      * </p>
      * 
      * @param skipAppResign
@@ -940,7 +940,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information on how Device Farm modifies your uploads during tests, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -956,14 +956,14 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information on how Device Farm modifies your uploads during tests, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information on how Device Farm modifies your uploads during tests, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a>
      */
 
     public Boolean isSkipAppResign() {

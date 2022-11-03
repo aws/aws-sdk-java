@@ -45,10 +45,36 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The protocol settings that are configured for your server.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file
+     * that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to
+     * your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can
+     * determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
      */
     private ProtocolDetails protocolDetails;
     /**
@@ -60,9 +86,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
-     * automatically assigned to your endpoint.
+     * endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can
+     * attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
@@ -90,38 +116,38 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to
+     * store and access user credentials within the Transfer Family service.
      * </p>
      * <p>
-     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
-     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for
+     * Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     * Services using AD Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
      * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     * authentication by using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
-     * Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the
+     * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      */
     private String identityProviderType;
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      */
     private String loggingRole;
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed after the user
+     * Specifies a string to display when users connect to a server. This string is displayed after the user
      * authenticates.
      * </p>
      * <note>
@@ -133,8 +159,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private String postAuthenticationLoginBanner;
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed before the user
-     * authenticates. For example, the following banner displays details about using the system.
+     * Specifies a string to display when users connect to a server. This string is displayed before the user
+     * authenticates. For example, the following banner displays details about using the system:
      * </p>
      * <p>
      * <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
@@ -162,7 +188,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     * </p>
+     * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used
+     * to identify your server when clients connect to it over FTPS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private java.util.List<String> protocols;
     /**
@@ -179,9 +244,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private String serverId;
     /**
      * <p>
-     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
-     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.
+     * The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can
+     * accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
+     * perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -205,7 +270,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private Integer userCount;
     /**
      * <p>
-     * Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.
+     * Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     * workflow.
+     * </p>
+     * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
      * </p>
      */
     private WorkflowDetails workflowDetails;
@@ -300,16 +371,69 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The protocol settings that are configured for your server.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file
+     * that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to
+     * your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can
+     * determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protocolDetails
-     *        The protocol settings that are configured for your server. </p>
+     *        The protocol settings that are configured for your server.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
-     *        address, such as the external IP address of a firewall, router, or load balancer.
+     *        To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a
+     *        single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on
+     *        a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To
+     *        have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing
+     *        to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the
+     *        <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry
+     *        to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code>
+     *        call.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique
+     *        session ID, use the <code>TlsSessionResumptionMode</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     *        supported.
+     *        </p>
+     *        </li>
      */
 
     public void setProtocolDetails(ProtocolDetails protocolDetails) {
@@ -320,15 +444,68 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The protocol settings that are configured for your server.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file
+     * that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to
+     * your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can
+     * determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The protocol settings that are configured for your server. </p>
+     * @return The protocol settings that are configured for your server.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
-     *         address, such as the external IP address of a firewall, router, or load balancer.
+     *         To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a
+     *         single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on
+     *         a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To
+     *         have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing
+     *         to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the
+     *         <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry
+     *         to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code>
+     *         call.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique
+     *         session ID, use the <code>TlsSessionResumptionMode</code> parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     *         supported.
+     *         </p>
+     *         </li>
      */
 
     public ProtocolDetails getProtocolDetails() {
@@ -339,16 +516,69 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The protocol settings that are configured for your server.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file
+     * that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to
+     * your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can
+     * determine when the client is making a <code>SETSTAT</code> call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protocolDetails
-     *        The protocol settings that are configured for your server. </p>
+     *        The protocol settings that are configured for your server.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
-     *        address, such as the external IP address of a firewall, router, or load balancer.
+     *        To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a
+     *        single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on
+     *        a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To
+     *        have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing
+     *        to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the
+     *        <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry
+     *        to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code>
+     *        call.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique
+     *        session ID, use the <code>TlsSessionResumptionMode</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is
+     *        supported.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,16 +649,16 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
-     * automatically assigned to your endpoint.
+     * endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can
+     * attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
      *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
-     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
-     *        groups are automatically assigned to your endpoint.
+     *        endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you
+     *        can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's
+     *        default security groups are automatically assigned to your endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -438,15 +668,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
-     * automatically assigned to your endpoint.
+     * endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can
+     * attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      * 
      * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     *         endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
-     *         Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
-     *         groups are automatically assigned to your endpoint.
+     *         endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you
+     *         can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your
+     *         VPC's default security groups are automatically assigned to your endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -456,16 +686,16 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
-     * automatically assigned to your endpoint.
+     * endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can
+     * attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
      *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
-     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
-     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
-     *        groups are automatically assigned to your endpoint.
+     *        endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you
+     *        can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's
+     *        default security groups are automatically assigned to your endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,45 +871,44 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to
+     * store and access user credentials within the Transfer Family service.
      * </p>
      * <p>
-     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
-     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for
+     * Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     * Services using AD Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
      * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     * authentication by using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
-     * Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the
+     * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
-     *        service.</p>
+     *        The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows
+     *        you to store and access user credentials within the Transfer Family service.</p>
      *        <p>
-     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
-     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service
+     *        for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon
+     *        Web Services using AD Connector. This option also requires you to provide a Directory ID by using the
      *        <code>IdentityProviderDetails</code> parameter.
      *        </p>
      *        <p>
      *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     *        authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     *        authentication by using the <code>IdentityProviderDetails</code> parameter.
      *        </p>
      *        <p>
-     *        Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you
-     *        choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter
-     *        for the <code>IdentityProviderDetails</code> data type.
+     *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
+     *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
+     *        or the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -689,44 +918,43 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to
+     * store and access user credentials within the Transfer Family service.
      * </p>
      * <p>
-     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
-     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for
+     * Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     * Services using AD Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
      * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     * authentication by using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
-     * Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the
+     * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
-     * @return Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *         which allows you to store and access user credentials within the Amazon Web Services Transfer Family
-     *         service.</p>
+     * @return The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows
+     *         you to store and access user credentials within the Transfer Family service.</p>
      *         <p>
-     *         Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web
-     *         Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in
-     *         Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using
-     *         the <code>IdentityProviderDetails</code> parameter.
+     *         Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service
+     *         for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon
+     *         Web Services using AD Connector. This option also requires you to provide a Directory ID by using the
+     *         <code>IdentityProviderDetails</code> parameter.
      *         </p>
      *         <p>
      *         Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *         <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     *         authentication using the <code>IdentityProviderDetails</code> parameter.
+     *         <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     *         authentication by using the <code>IdentityProviderDetails</code> parameter.
      *         </p>
      *         <p>
-     *         Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you
-     *         choose this value, you must specify the ARN for the lambda function in the <code>Function</code>
-     *         parameter for the <code>IdentityProviderDetails</code> data type.
+     *         Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If
+     *         you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code>
+     *         parameter or the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -736,45 +964,44 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to
+     * store and access user credentials within the Transfer Family service.
      * </p>
      * <p>
-     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
-     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for
+     * Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     * Services using AD Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
      * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     * authentication by using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
-     * Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the
+     * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
-     *        service.</p>
+     *        The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows
+     *        you to store and access user credentials within the Transfer Family service.</p>
      *        <p>
-     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
-     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service
+     *        for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon
+     *        Web Services using AD Connector. This option also requires you to provide a Directory ID by using the
      *        <code>IdentityProviderDetails</code> parameter.
      *        </p>
      *        <p>
      *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     *        authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     *        authentication by using the <code>IdentityProviderDetails</code> parameter.
      *        </p>
      *        <p>
-     *        Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you
-     *        choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter
-     *        for the <code>IdentityProviderDetails</code> data type.
+     *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
+     *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
+     *        or the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -786,45 +1013,44 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to
+     * store and access user credentials within the Transfer Family service.
      * </p>
      * <p>
-     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
-     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for
+     * Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     * Services using AD Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
      * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     * authentication by using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * <p>
-     * Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the
+     * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
-     *        service.</p>
+     *        The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows
+     *        you to store and access user credentials within the Transfer Family service.</p>
      *        <p>
-     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
-     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
-     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service
+     *        for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon
+     *        Web Services using AD Connector. This option also requires you to provide a Directory ID by using the
      *        <code>IdentityProviderDetails</code> parameter.
      *        </p>
      *        <p>
      *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     *        authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for
+     *        authentication by using the <code>IdentityProviderDetails</code> parameter.
      *        </p>
      *        <p>
-     *        Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you
-     *        choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter
-     *        for the <code>IdentityProviderDetails</code> data type.
+     *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
+     *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
+     *        or the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -836,15 +1062,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
-     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
-     *        set, user activity can be viewed in your CloudWatch logs.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to
+     *        turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity
+     *        in your CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -853,14 +1079,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      * 
-     * @return Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
-     *         role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
-     *         set, user activity can be viewed in your CloudWatch logs.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to
+     *         turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity
+     *         in your CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -869,15 +1095,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
-     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
-     * activity can be viewed in your CloudWatch logs.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on
+     * Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your
+     * CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
-     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
-     *        set, user activity can be viewed in your CloudWatch logs.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to
+     *        turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity
+     *        in your CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -888,7 +1114,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed after the user
+     * Specifies a string to display when users connect to a server. This string is displayed after the user
      * authenticates.
      * </p>
      * <note>
@@ -898,7 +1124,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param postAuthenticationLoginBanner
-     *        Specify a string to display when users connect to a server. This string is displayed after the user
+     *        Specifies a string to display when users connect to a server. This string is displayed after the user
      *        authenticates.</p> <note>
      *        <p>
      *        The SFTP protocol does not support post-authentication display banners.
@@ -911,7 +1137,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed after the user
+     * Specifies a string to display when users connect to a server. This string is displayed after the user
      * authenticates.
      * </p>
      * <note>
@@ -920,7 +1146,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return Specify a string to display when users connect to a server. This string is displayed after the user
+     * @return Specifies a string to display when users connect to a server. This string is displayed after the user
      *         authenticates.</p> <note>
      *         <p>
      *         The SFTP protocol does not support post-authentication display banners.
@@ -933,7 +1159,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed after the user
+     * Specifies a string to display when users connect to a server. This string is displayed after the user
      * authenticates.
      * </p>
      * <note>
@@ -943,7 +1169,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param postAuthenticationLoginBanner
-     *        Specify a string to display when users connect to a server. This string is displayed after the user
+     *        Specifies a string to display when users connect to a server. This string is displayed after the user
      *        authenticates.</p> <note>
      *        <p>
      *        The SFTP protocol does not support post-authentication display banners.
@@ -958,16 +1184,16 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed before the user
-     * authenticates. For example, the following banner displays details about using the system.
+     * Specifies a string to display when users connect to a server. This string is displayed before the user
+     * authenticates. For example, the following banner displays details about using the system:
      * </p>
      * <p>
      * <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
      * </p>
      * 
      * @param preAuthenticationLoginBanner
-     *        Specify a string to display when users connect to a server. This string is displayed before the user
-     *        authenticates. For example, the following banner displays details about using the system.</p>
+     *        Specifies a string to display when users connect to a server. This string is displayed before the user
+     *        authenticates. For example, the following banner displays details about using the system:</p>
      *        <p>
      *        <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
      */
@@ -978,15 +1204,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed before the user
-     * authenticates. For example, the following banner displays details about using the system.
+     * Specifies a string to display when users connect to a server. This string is displayed before the user
+     * authenticates. For example, the following banner displays details about using the system:
      * </p>
      * <p>
      * <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
      * </p>
      * 
-     * @return Specify a string to display when users connect to a server. This string is displayed before the user
-     *         authenticates. For example, the following banner displays details about using the system.</p>
+     * @return Specifies a string to display when users connect to a server. This string is displayed before the user
+     *         authenticates. For example, the following banner displays details about using the system:</p>
      *         <p>
      *         <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
      */
@@ -997,16 +1223,16 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a string to display when users connect to a server. This string is displayed before the user
-     * authenticates. For example, the following banner displays details about using the system.
+     * Specifies a string to display when users connect to a server. This string is displayed before the user
+     * authenticates. For example, the following banner displays details about using the system:
      * </p>
      * <p>
      * <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
      * </p>
      * 
      * @param preAuthenticationLoginBanner
-     *        Specify a string to display when users connect to a server. This string is displayed before the user
-     *        authenticates. For example, the following banner displays details about using the system.</p>
+     *        Specifies a string to display when users connect to a server. This string is displayed before the user
+     *        authenticates. For example, the following banner displays details about using the system:</p>
      *        <p>
      *        <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1038,7 +1264,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     * </p>
+     * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used
+     * to identify your server when clients connect to it over FTPS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @return Specifies the file transfer protocol or protocols over which your file transfer protocol client can
      *         connect to your server's endpoint. The available protocols are:</p>
@@ -1058,6 +1323,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *         <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which
+     *         is used to identify your server when clients connect to it over FTPS.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *         <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *         <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *         associated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *         <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     *         <code>VPC</code>, and domain must be Amazon S3.
+     *         </p>
+     *         </li>
+     *         </ul>
      * @see Protocol
      */
 
@@ -1086,7 +1391,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     * </p>
+     * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used
+     * to identify your server when clients connect to it over FTPS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param protocols
      *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
@@ -1107,6 +1451,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which
+     *        is used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     *        <code>VPC</code>, and domain must be Amazon S3.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @see Protocol
      */
 
@@ -1140,7 +1524,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     * </p>
+     * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used
+     * to identify your server when clients connect to it over FTPS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
@@ -1166,6 +1589,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which
+     *        is used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     *        <code>VPC</code>, and domain must be Amazon S3.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -1201,7 +1664,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     * </p>
+     * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used
+     * to identify your server when clients connect to it over FTPS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param protocols
      *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
@@ -1222,6 +1724,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which
+     *        is used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     *        <code>VPC</code>, and domain must be Amazon S3.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -1252,7 +1794,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     * </p>
+     * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used
+     * to identify your server when clients connect to it over FTPS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param protocols
      *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
@@ -1273,6 +1854,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which
+     *        is used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     *        <code>VPC</code>, and domain must be Amazon S3.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -1372,9 +1993,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
-     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.
+     * The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can
+     * accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
+     * perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -1383,9 +2004,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param state
-     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
-     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     *        The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server
+     *        can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the
+     *        server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -1399,9 +2020,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
-     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.
+     * The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can
+     * accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
+     * perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -1409,9 +2030,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
      * 
-     * @return Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
-     *         indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     *         <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     * @return The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server
+     *         can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the
+     *         server cannot perform file transfer operations.</p>
      *         <p>
      *         The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *         intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -1425,9 +2046,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
-     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.
+     * The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can
+     * accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
+     * perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -1436,9 +2057,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param state
-     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
-     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     *        The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server
+     *        can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the
+     *        server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -1454,9 +2075,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
-     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.
+     * The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can
+     * accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
+     * perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -1465,9 +2086,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param state
-     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
-     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     *        The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server
+     *        can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the
+     *        server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -1601,12 +2222,22 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.
+     * Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     * workflow.
+     * </p>
+     * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
      * </p>
      * 
      * @param workflowDetails
-     *        Specifies the workflow ID for the workflow to assign and the execution role used for executing the
-     *        workflow.
+     *        Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     *        workflow.</p>
+     *        <p>
+     *        In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *        also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
+     *        upload occurs when a file is open when the session disconnects.
      */
 
     public void setWorkflowDetails(WorkflowDetails workflowDetails) {
@@ -1615,11 +2246,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.
+     * Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     * workflow.
+     * </p>
+     * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
      * </p>
      * 
-     * @return Specifies the workflow ID for the workflow to assign and the execution role used for executing the
-     *         workflow.
+     * @return Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     *         workflow.</p>
+     *         <p>
+     *         In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *         also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
+     *         upload occurs when a file is open when the session disconnects.
      */
 
     public WorkflowDetails getWorkflowDetails() {
@@ -1628,12 +2269,22 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.
+     * Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     * workflow.
+     * </p>
+     * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
      * </p>
      * 
      * @param workflowDetails
-     *        Specifies the workflow ID for the workflow to assign and the execution role used for executing the
-     *        workflow.
+     *        Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
+     *        workflow.</p>
+     *        <p>
+     *        In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *        also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
+     *        upload occurs when a file is open when the session disconnects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

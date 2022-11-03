@@ -92,9 +92,19 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                     context.nextToken();
                     transcriptionJobSummary.setIdentifyLanguage(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IdentifyMultipleLanguages", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setIdentifyMultipleLanguages(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("IdentifiedLanguageScore", targetDepth)) {
                     context.nextToken();
                     transcriptionJobSummary.setIdentifiedLanguageScore(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (context.testExpression("LanguageCodes", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setLanguageCodes(new ListUnmarshaller<LanguageCodeItem>(LanguageCodeItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

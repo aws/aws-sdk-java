@@ -617,6 +617,77 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
     /**
      * <p>
+     * Create an App Runner VPC Ingress Connection resource. App Runner requires this resource when you want to
+     * associate your App Runner service with an Amazon VPC endpoint.
+     * </p>
+     * 
+     * @param createVpcIngressConnectionRequest
+     * @return Result of the CreateVpcIngressConnection operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InvalidStateException
+     *         You can't perform this action when the resource is in its current state.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ServiceQuotaExceededException
+     *         App Runner can't create this resource. You've reached your account quota for this resource type.</p>
+     *         <p>
+     *         For App Runner per-resource quotas, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a>
+     *         in the <i>Amazon Web Services General Reference</i>.
+     * @sample AWSAppRunner.CreateVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVpcIngressConnectionResult createVpcIngressConnection(CreateVpcIngressConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcIngressConnection(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcIngressConnectionResult executeCreateVpcIngressConnection(CreateVpcIngressConnectionRequest createVpcIngressConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcIngressConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcIngressConnectionRequest> request = null;
+        Response<CreateVpcIngressConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcIngressConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createVpcIngressConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcIngressConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVpcIngressConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateVpcIngressConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest
      * active revision. You can't delete a configuration that's used by one or more App Runner services.
      * </p>
@@ -820,6 +891,11 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
      * This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and
      * the <a>ListOperations</a> call to track the operation's progress.
      * </p>
+     * <note>
+     * <p>
+     * Make sure that you don't have any active VPCIngressConnections associated with the service you want to delete.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @return Result of the DeleteService operation returned by the service.
@@ -935,6 +1011,96 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVpcConnectorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVpcConnectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete an App Runner VPC Ingress Connection resource that's associated with an App Runner service. The VPC
+     * Ingress Connection must be in one of the following states to be deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_CREATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_UPDATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_DELETION</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteVpcIngressConnectionRequest
+     * @return Result of the DeleteVpcIngressConnection operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @throws InvalidStateException
+     *         You can't perform this action when the resource is in its current state.
+     * @sample AWSAppRunner.DeleteVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVpcIngressConnectionResult deleteVpcIngressConnection(DeleteVpcIngressConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVpcIngressConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVpcIngressConnectionResult executeDeleteVpcIngressConnection(DeleteVpcIngressConnectionRequest deleteVpcIngressConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVpcIngressConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcIngressConnectionRequest> request = null;
+        Response<DeleteVpcIngressConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcIngressConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVpcIngressConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcIngressConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVpcIngressConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteVpcIngressConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1257,6 +1423,71 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeVpcConnectorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeVpcConnectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Return a full description of an App Runner VPC Ingress Connection resource.
+     * </p>
+     * 
+     * @param describeVpcIngressConnectionRequest
+     * @return Result of the DescribeVpcIngressConnection operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @sample AWSAppRunner.DescribeVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVpcIngressConnectionResult describeVpcIngressConnection(DescribeVpcIngressConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVpcIngressConnection(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVpcIngressConnectionResult executeDescribeVpcIngressConnection(DescribeVpcIngressConnectionRequest describeVpcIngressConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVpcIngressConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcIngressConnectionRequest> request = null;
+        Response<DescribeVpcIngressConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcIngressConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeVpcIngressConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcIngressConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVpcIngressConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeVpcIngressConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1792,6 +2023,68 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
     /**
      * <p>
+     * Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVpcIngressConnectionsRequest
+     * @return Result of the ListVpcIngressConnections operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @sample AWSAppRunner.ListVpcIngressConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListVpcIngressConnectionsResult listVpcIngressConnections(ListVpcIngressConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVpcIngressConnections(request);
+    }
+
+    @SdkInternalApi
+    final ListVpcIngressConnectionsResult executeListVpcIngressConnections(ListVpcIngressConnectionsRequest listVpcIngressConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVpcIngressConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVpcIngressConnectionsRequest> request = null;
+        Response<ListVpcIngressConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVpcIngressConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listVpcIngressConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVpcIngressConnections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVpcIngressConnectionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListVpcIngressConnectionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state
      * (for example, ephemeral storage is removed).
      * </p>
@@ -2197,6 +2490,91 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateServiceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateServiceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the
+     * following states to be updated:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AVAILABLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED_CREATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED_UPDATE
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateVpcIngressConnectionRequest
+     * @return Result of the UpdateVpcIngressConnection operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @throws InvalidStateException
+     *         You can't perform this action when the resource is in its current state.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @sample AWSAppRunner.UpdateVpcIngressConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateVpcIngressConnectionResult updateVpcIngressConnection(UpdateVpcIngressConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVpcIngressConnection(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVpcIngressConnectionResult executeUpdateVpcIngressConnection(UpdateVpcIngressConnectionRequest updateVpcIngressConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVpcIngressConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVpcIngressConnectionRequest> request = null;
+        Response<UpdateVpcIngressConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVpcIngressConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateVpcIngressConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVpcIngressConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVpcIngressConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateVpcIngressConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

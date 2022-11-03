@@ -30,9 +30,8 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     * repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a commit diff created by a pull request on an associated repository.
      * </p>
      */
     private CommitDiffSourceCodeType commitDiff;
@@ -40,9 +39,9 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
     private RepositoryHeadSourceCodeType repositoryHead;
     /**
      * <p>
-     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     * associated repository.
+     * A type of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a source branch name and a destination branch name in an associated repository.
      * </p>
      */
     private BranchDiffSourceCodeType branchDiff;
@@ -52,8 +51,8 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
      * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
      * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      * <code>S3BucketRepository</code> is required in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
-     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     * <code>S3BucketRepository</code> based code reviews.
      * </p>
      */
     private S3BucketRepository s3BucketRepository;
@@ -68,15 +67,13 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     * repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a commit diff created by a pull request on an associated repository.
      * </p>
      * 
      * @param commitDiff
-     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     *        repository.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *        that specifies a commit diff created by a pull request on an associated repository.
      */
 
     public void setCommitDiff(CommitDiffSourceCodeType commitDiff) {
@@ -85,14 +82,13 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     * repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a commit diff created by a pull request on an associated repository.
      * </p>
      * 
-     * @return A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *         <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     *         repository.
+     * @return A <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *         that specifies a commit diff created by a pull request on an associated repository.
      */
 
     public CommitDiffSourceCodeType getCommitDiff() {
@@ -101,15 +97,13 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     * repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a commit diff created by a pull request on an associated repository.
      * </p>
      * 
      * @param commitDiff
-     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
-     *        repository.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *        that specifies a commit diff created by a pull request on an associated repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,15 +140,15 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     * associated repository.
+     * A type of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a source branch name and a destination branch name in an associated repository.
      * </p>
      * 
      * @param branchDiff
-     *        A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     *        associated repository.
+     *        A type of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     *        specifies a source branch name and a destination branch name in an associated repository.
      */
 
     public void setBranchDiff(BranchDiffSourceCodeType branchDiff) {
@@ -163,14 +157,14 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     * associated repository.
+     * A type of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a source branch name and a destination branch name in an associated repository.
      * </p>
      * 
-     * @return A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *         <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     *         associated repository.
+     * @return A type of <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *         that specifies a source branch name and a destination branch name in an associated repository.
      */
 
     public BranchDiffSourceCodeType getBranchDiff() {
@@ -179,15 +173,15 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     * associated repository.
+     * A type of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies a source branch name and a destination branch name in an associated repository.
      * </p>
      * 
      * @param branchDiff
-     *        A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
-     *        associated repository.
+     *        A type of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     *        specifies a source branch name and a destination branch name in an associated repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,8 +196,8 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
      * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
      * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      * <code>S3BucketRepository</code> is required in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
-     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     * <code>S3BucketRepository</code> based code reviews.
      * </p>
      * 
      * @param s3BucketRepository
@@ -211,8 +205,8 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
      *        <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of
      *        an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      *        <code>S3BucketRepository</code> is required in <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     *        <code>S3BucketRepository</code> based code reviews.
      */
 
     public void setS3BucketRepository(S3BucketRepository s3BucketRepository) {
@@ -225,16 +219,16 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
      * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
      * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      * <code>S3BucketRepository</code> is required in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
-     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     * <code>S3BucketRepository</code> based code reviews.
      * </p>
      * 
      * @return Information about an associated repository in an S3 bucket that includes its name and an
      *         <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of
      *         an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      *         <code>S3BucketRepository</code> is required in <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *         <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     *         <code>S3BucketRepository</code> based code reviews.
      */
 
     public S3BucketRepository getS3BucketRepository() {
@@ -247,8 +241,8 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
      * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
      * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      * <code>S3BucketRepository</code> is required in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
-     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     * <code>S3BucketRepository</code> based code reviews.
      * </p>
      * 
      * @param s3BucketRepository
@@ -256,8 +250,8 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
      *        <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of
      *        an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
      *        <code>S3BucketRepository</code> is required in <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for
+     *        <code>S3BucketRepository</code> based code reviews.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

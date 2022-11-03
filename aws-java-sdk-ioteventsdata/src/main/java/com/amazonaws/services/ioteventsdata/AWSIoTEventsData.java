@@ -72,6 +72,30 @@ public interface AWSIoTEventsData {
 
     /**
      * <p>
+     * Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the
+     * detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">
+     * ListDetectors</a> API call.
+     * </p>
+     * 
+     * @param batchDeleteDetectorRequest
+     * @return Result of the BatchDeleteDetector operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchDeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDeleteDetectorResult batchDeleteDetector(BatchDeleteDetectorRequest batchDeleteDetectorRequest);
+
+    /**
+     * <p>
      * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
      * </p>
      * 

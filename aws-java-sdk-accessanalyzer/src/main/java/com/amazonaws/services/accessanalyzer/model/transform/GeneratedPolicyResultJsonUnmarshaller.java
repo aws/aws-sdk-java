@@ -48,15 +48,15 @@ public class GeneratedPolicyResultJsonUnmarshaller implements Unmarshaller<Gener
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("properties", targetDepth)) {
+                    context.nextToken();
+                    generatedPolicyResult.setProperties(GeneratedPolicyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("generatedPolicies", targetDepth)) {
                     context.nextToken();
                     generatedPolicyResult.setGeneratedPolicies(new ListUnmarshaller<GeneratedPolicy>(GeneratedPolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("properties", targetDepth)) {
-                    context.nextToken();
-                    generatedPolicyResult.setProperties(GeneratedPolicyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

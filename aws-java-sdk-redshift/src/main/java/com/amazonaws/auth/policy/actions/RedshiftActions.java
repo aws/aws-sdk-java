@@ -197,6 +197,8 @@ public enum RedshiftActions implements Action {
     EnableSnapshotCopy("redshift:EnableSnapshotCopy"),
     /** Action for the GetClusterCredentials operation. */
     GetClusterCredentials("redshift:GetClusterCredentials"),
+    /** Action for the GetClusterCredentialsWithIAM operation. */
+    GetClusterCredentialsWithIAM("redshift:GetClusterCredentialsWithIAM"),
     /** Action for the GetReservedNodeExchangeConfigurationOptions operation. */
     GetReservedNodeExchangeConfigurationOptions("redshift:GetReservedNodeExchangeConfigurationOptions"),
     /** Action for the GetReservedNodeExchangeOfferings operation. */

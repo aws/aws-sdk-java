@@ -78,7 +78,7 @@ public class CoreNetwork implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<CoreNetworkEdge> edges;
     /**
      * <p>
-     * The tags associated with a core network.
+     * The list of key-value tags associated with a core network.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -484,10 +484,10 @@ public class CoreNetwork implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with a core network.
+     * The list of key-value tags associated with a core network.
      * </p>
      * 
-     * @return The tags associated with a core network.
+     * @return The list of key-value tags associated with a core network.
      */
 
     public java.util.List<Tag> getTags() {
@@ -496,11 +496,11 @@ public class CoreNetwork implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with a core network.
+     * The list of key-value tags associated with a core network.
      * </p>
      * 
      * @param tags
-     *        The tags associated with a core network.
+     *        The list of key-value tags associated with a core network.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -514,7 +514,7 @@ public class CoreNetwork implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with a core network.
+     * The list of key-value tags associated with a core network.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -523,7 +523,7 @@ public class CoreNetwork implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        The tags associated with a core network.
+     *        The list of key-value tags associated with a core network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -539,11 +539,11 @@ public class CoreNetwork implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with a core network.
+     * The list of key-value tags associated with a core network.
      * </p>
      * 
      * @param tags
-     *        The tags associated with a core network.
+     *        The list of key-value tags associated with a core network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

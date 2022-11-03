@@ -63,7 +63,7 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
     private String jobId;
     /**
      * <p>
-     * The client-provied name for the fraudster registration job.
+     * The client-provided name for the fraudster registration job.
      * </p>
      */
     private String jobName;
@@ -300,11 +300,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The client-provied name for the fraudster registration job.
+     * The client-provided name for the fraudster registration job.
      * </p>
      * 
      * @param jobName
-     *        The client-provied name for the fraudster registration job.
+     *        The client-provided name for the fraudster registration job.
      */
 
     public void setJobName(String jobName) {
@@ -313,10 +313,10 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The client-provied name for the fraudster registration job.
+     * The client-provided name for the fraudster registration job.
      * </p>
      * 
-     * @return The client-provied name for the fraudster registration job.
+     * @return The client-provided name for the fraudster registration job.
      */
 
     public String getJobName() {
@@ -325,11 +325,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The client-provied name for the fraudster registration job.
+     * The client-provided name for the fraudster registration job.
      * </p>
      * 
      * @param jobName
-     *        The client-provied name for the fraudster registration job.
+     *        The client-provided name for the fraudster registration job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

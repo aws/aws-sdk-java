@@ -30,17 +30,17 @@ public class AddonHealth implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the add-on's health issues.
+     * An object representing the health issues for an add-on.
      * </p>
      */
     private java.util.List<AddonIssue> issues;
 
     /**
      * <p>
-     * An object that represents the add-on's health issues.
+     * An object representing the health issues for an add-on.
      * </p>
      * 
-     * @return An object that represents the add-on's health issues.
+     * @return An object representing the health issues for an add-on.
      */
 
     public java.util.List<AddonIssue> getIssues() {
@@ -49,11 +49,11 @@ public class AddonHealth implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the add-on's health issues.
+     * An object representing the health issues for an add-on.
      * </p>
      * 
      * @param issues
-     *        An object that represents the add-on's health issues.
+     *        An object representing the health issues for an add-on.
      */
 
     public void setIssues(java.util.Collection<AddonIssue> issues) {
@@ -67,7 +67,7 @@ public class AddonHealth implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the add-on's health issues.
+     * An object representing the health issues for an add-on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class AddonHealth implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param issues
-     *        An object that represents the add-on's health issues.
+     *        An object representing the health issues for an add-on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class AddonHealth implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the add-on's health issues.
+     * An object representing the health issues for an add-on.
      * </p>
      * 
      * @param issues
-     *        An object that represents the add-on's health issues.
+     *        An object representing the health issues for an add-on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

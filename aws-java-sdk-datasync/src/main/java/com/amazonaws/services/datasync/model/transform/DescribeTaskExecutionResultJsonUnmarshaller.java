@@ -100,6 +100,10 @@ public class DescribeTaskExecutionResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeTaskExecutionResult.setResult(TaskExecutionResultDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BytesCompressed", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

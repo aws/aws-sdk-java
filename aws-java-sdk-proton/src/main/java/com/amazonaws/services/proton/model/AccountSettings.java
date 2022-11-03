@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Proton pipeline service role and repository data shared across the Amazon Web Services account.
+ * Proton settings that are used for multiple services in the Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AccountSettings" target="_top">AWS API
@@ -30,8 +30,9 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have
-     * environments configured for self-managed provisioning with services that include pipelines.
+     * The linked repository for pipeline provisioning. Required if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
      * </p>
      */
     private RepositoryBranch pipelineProvisioningRepository;
@@ -45,13 +46,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have
-     * environments configured for self-managed provisioning with services that include pipelines.
+     * The linked repository for pipeline provisioning. Required if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
      * </p>
      * 
      * @param pipelineProvisioningRepository
-     *        The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you
-     *        have environments configured for self-managed provisioning with services that include pipelines.
+     *        The linked repository for pipeline provisioning. Required if you have environments configured for
+     *        self-managed provisioning with services that include pipelines. A linked repository is a repository that
+     *        has been registered with Proton. For more information, see <a>CreateRepository</a>.
      */
 
     public void setPipelineProvisioningRepository(RepositoryBranch pipelineProvisioningRepository) {
@@ -60,12 +63,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have
-     * environments configured for self-managed provisioning with services that include pipelines.
+     * The linked repository for pipeline provisioning. Required if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
      * </p>
      * 
-     * @return The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if
-     *         you have environments configured for self-managed provisioning with services that include pipelines.
+     * @return The linked repository for pipeline provisioning. Required if you have environments configured for
+     *         self-managed provisioning with services that include pipelines. A linked repository is a repository that
+     *         has been registered with Proton. For more information, see <a>CreateRepository</a>.
      */
 
     public RepositoryBranch getPipelineProvisioningRepository() {
@@ -74,13 +79,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have
-     * environments configured for self-managed provisioning with services that include pipelines.
+     * The linked repository for pipeline provisioning. Required if you have environments configured for self-managed
+     * provisioning with services that include pipelines. A linked repository is a repository that has been registered
+     * with Proton. For more information, see <a>CreateRepository</a>.
      * </p>
      * 
      * @param pipelineProvisioningRepository
-     *        The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you
-     *        have environments configured for self-managed provisioning with services that include pipelines.
+     *        The linked repository for pipeline provisioning. Required if you have environments configured for
+     *        self-managed provisioning with services that include pipelines. A linked repository is a repository that
+     *        has been registered with Proton. For more information, see <a>CreateRepository</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

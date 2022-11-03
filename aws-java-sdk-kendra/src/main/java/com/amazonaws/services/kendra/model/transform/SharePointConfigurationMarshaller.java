@@ -52,6 +52,10 @@ public class SharePointConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableLocalGroups").build();
     private static final MarshallingInfo<StructuredPojo> SSLCERTIFICATES3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslCertificateS3Path").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
+    private static final MarshallingInfo<StructuredPojo> PROXYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProxyConfiguration").build();
 
     private static final SharePointConfigurationMarshaller instance = new SharePointConfigurationMarshaller();
 
@@ -81,6 +85,8 @@ public class SharePointConfigurationMarshaller {
             protocolMarshaller.marshall(sharePointConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getDisableLocalGroups(), DISABLELOCALGROUPS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getSslCertificateS3Path(), SSLCERTIFICATES3PATH_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getProxyConfiguration(), PROXYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

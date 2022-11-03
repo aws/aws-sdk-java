@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that describes the S3 bucket, HTTP server (for example, a web server), AWS Elemental MediaStore, or
- * other server from which CloudFront gets your files.
+ * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), AWS Elemental
+ * MediaStore, or other server from which CloudFront gets your files.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem"
@@ -54,6 +54,14 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
      * </p>
      */
     private AwsCloudFrontDistributionOriginS3OriginConfig s3OriginConfig;
+    /**
+     * <p>
+     * An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static
+     * website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use
+     * the <code>S3OriginConfig</code> type instead.
+     * </p>
+     */
+    private AwsCloudFrontDistributionOriginCustomOriginConfig customOriginConfig;
 
     /**
      * <p>
@@ -225,6 +233,58 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static
+     * website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use
+     * the <code>S3OriginConfig</code> type instead.
+     * </p>
+     * 
+     * @param customOriginConfig
+     *        An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with
+     *        static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website
+     *        hosting, use the <code>S3OriginConfig</code> type instead.
+     */
+
+    public void setCustomOriginConfig(AwsCloudFrontDistributionOriginCustomOriginConfig customOriginConfig) {
+        this.customOriginConfig = customOriginConfig;
+    }
+
+    /**
+     * <p>
+     * An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static
+     * website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use
+     * the <code>S3OriginConfig</code> type instead.
+     * </p>
+     * 
+     * @return An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with
+     *         static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website
+     *         hosting, use the <code>S3OriginConfig</code> type instead.
+     */
+
+    public AwsCloudFrontDistributionOriginCustomOriginConfig getCustomOriginConfig() {
+        return this.customOriginConfig;
+    }
+
+    /**
+     * <p>
+     * An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static
+     * website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use
+     * the <code>S3OriginConfig</code> type instead.
+     * </p>
+     * 
+     * @param customOriginConfig
+     *        An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with
+     *        static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website
+     *        hosting, use the <code>S3OriginConfig</code> type instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsCloudFrontDistributionOriginItem withCustomOriginConfig(AwsCloudFrontDistributionOriginCustomOriginConfig customOriginConfig) {
+        setCustomOriginConfig(customOriginConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +303,9 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
         if (getOriginPath() != null)
             sb.append("OriginPath: ").append(getOriginPath()).append(",");
         if (getS3OriginConfig() != null)
-            sb.append("S3OriginConfig: ").append(getS3OriginConfig());
+            sb.append("S3OriginConfig: ").append(getS3OriginConfig()).append(",");
+        if (getCustomOriginConfig() != null)
+            sb.append("CustomOriginConfig: ").append(getCustomOriginConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +336,10 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
             return false;
         if (other.getS3OriginConfig() != null && other.getS3OriginConfig().equals(this.getS3OriginConfig()) == false)
             return false;
+        if (other.getCustomOriginConfig() == null ^ this.getCustomOriginConfig() == null)
+            return false;
+        if (other.getCustomOriginConfig() != null && other.getCustomOriginConfig().equals(this.getCustomOriginConfig()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +352,7 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getOriginPath() == null) ? 0 : getOriginPath().hashCode());
         hashCode = prime * hashCode + ((getS3OriginConfig() == null) ? 0 : getS3OriginConfig().hashCode());
+        hashCode = prime * hashCode + ((getCustomOriginConfig() == null) ? 0 : getCustomOriginConfig().hashCode());
         return hashCode;
     }
 

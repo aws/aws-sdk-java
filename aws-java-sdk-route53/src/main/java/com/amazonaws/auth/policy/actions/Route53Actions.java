@@ -29,10 +29,14 @@ public enum Route53Actions implements Action {
     ActivateKeySigningKey("route53:ActivateKeySigningKey"),
     /** Action for the AssociateVPCWithHostedZone operation. */
     AssociateVPCWithHostedZone("route53:AssociateVPCWithHostedZone"),
+    /** Action for the ChangeCidrCollection operation. */
+    ChangeCidrCollection("route53:ChangeCidrCollection"),
     /** Action for the ChangeResourceRecordSets operation. */
     ChangeResourceRecordSets("route53:ChangeResourceRecordSets"),
     /** Action for the ChangeTagsForResource operation. */
     ChangeTagsForResource("route53:ChangeTagsForResource"),
+    /** Action for the CreateCidrCollection operation. */
+    CreateCidrCollection("route53:CreateCidrCollection"),
     /** Action for the CreateHealthCheck operation. */
     CreateHealthCheck("route53:CreateHealthCheck"),
     /** Action for the CreateHostedZone operation. */
@@ -53,6 +57,8 @@ public enum Route53Actions implements Action {
     CreateVPCAssociationAuthorization("route53:CreateVPCAssociationAuthorization"),
     /** Action for the DeactivateKeySigningKey operation. */
     DeactivateKeySigningKey("route53:DeactivateKeySigningKey"),
+    /** Action for the DeleteCidrCollection operation. */
+    DeleteCidrCollection("route53:DeleteCidrCollection"),
     /** Action for the DeleteHealthCheck operation. */
     DeleteHealthCheck("route53:DeleteHealthCheck"),
     /** Action for the DeleteHostedZone operation. */
@@ -111,6 +117,12 @@ public enum Route53Actions implements Action {
     GetTrafficPolicyInstance("route53:GetTrafficPolicyInstance"),
     /** Action for the GetTrafficPolicyInstanceCount operation. */
     GetTrafficPolicyInstanceCount("route53:GetTrafficPolicyInstanceCount"),
+    /** Action for the ListCidrBlocks operation. */
+    ListCidrBlocks("route53:ListCidrBlocks"),
+    /** Action for the ListCidrCollections operation. */
+    ListCidrCollections("route53:ListCidrCollections"),
+    /** Action for the ListCidrLocations operation. */
+    ListCidrLocations("route53:ListCidrLocations"),
     /** Action for the ListGeoLocations operation. */
     ListGeoLocations("route53:ListGeoLocations"),
     /** Action for the ListHealthChecks operation. */

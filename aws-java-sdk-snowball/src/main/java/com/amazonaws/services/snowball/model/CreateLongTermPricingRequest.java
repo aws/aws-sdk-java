@@ -33,13 +33,16 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
     private String longTermPricingType;
     /**
      * <p>
+     * snowballty
+     * </p>
+     * <p>
      * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      */
     private Boolean isLongTermPricingAutoRenew;
     /**
      * <p>
-     * The type of Snow Family Devices to use for the long-term pricing job.
+     * The type of Snow Family devices to use for the long-term pricing job.
      * </p>
      */
     private String snowballType;
@@ -105,10 +108,15 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * snowballty
+     * </p>
+     * <p>
      * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
+     *        snowballty</p>
+     *        <p>
      *        Specifies whether the current long-term pricing type for the device should be renewed.
      */
 
@@ -118,10 +126,15 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * snowballty
+     * </p>
+     * <p>
      * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
-     * @return Specifies whether the current long-term pricing type for the device should be renewed.
+     * @return snowballty</p>
+     *         <p>
+     *         Specifies whether the current long-term pricing type for the device should be renewed.
      */
 
     public Boolean getIsLongTermPricingAutoRenew() {
@@ -130,10 +143,15 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * snowballty
+     * </p>
+     * <p>
      * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
+     *        snowballty</p>
+     *        <p>
      *        Specifies whether the current long-term pricing type for the device should be renewed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,10 +163,15 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * snowballty
+     * </p>
+     * <p>
      * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
-     * @return Specifies whether the current long-term pricing type for the device should be renewed.
+     * @return snowballty</p>
+     *         <p>
+     *         Specifies whether the current long-term pricing type for the device should be renewed.
      */
 
     public Boolean isLongTermPricingAutoRenew() {
@@ -157,11 +180,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for the long-term pricing job.
+     * The type of Snow Family devices to use for the long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for the long-term pricing job.
+     *        The type of Snow Family devices to use for the long-term pricing job.
      * @see SnowballType
      */
 
@@ -171,10 +194,10 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for the long-term pricing job.
+     * The type of Snow Family devices to use for the long-term pricing job.
      * </p>
      * 
-     * @return The type of Snow Family Devices to use for the long-term pricing job.
+     * @return The type of Snow Family devices to use for the long-term pricing job.
      * @see SnowballType
      */
 
@@ -184,11 +207,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for the long-term pricing job.
+     * The type of Snow Family devices to use for the long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for the long-term pricing job.
+     *        The type of Snow Family devices to use for the long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -200,11 +223,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for the long-term pricing job.
+     * The type of Snow Family devices to use for the long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for the long-term pricing job.
+     *        The type of Snow Family devices to use for the long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */

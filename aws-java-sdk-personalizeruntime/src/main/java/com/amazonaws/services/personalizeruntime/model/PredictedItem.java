@@ -44,6 +44,12 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double score;
+    /**
+     * <p>
+     * The name of the promotion that included the predicted item.
+     * </p>
+     */
+    private String promotionName;
 
     /**
      * <p>
@@ -132,6 +138,46 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the promotion that included the predicted item.
+     * </p>
+     * 
+     * @param promotionName
+     *        The name of the promotion that included the predicted item.
+     */
+
+    public void setPromotionName(String promotionName) {
+        this.promotionName = promotionName;
+    }
+
+    /**
+     * <p>
+     * The name of the promotion that included the predicted item.
+     * </p>
+     * 
+     * @return The name of the promotion that included the predicted item.
+     */
+
+    public String getPromotionName() {
+        return this.promotionName;
+    }
+
+    /**
+     * <p>
+     * The name of the promotion that included the predicted item.
+     * </p>
+     * 
+     * @param promotionName
+     *        The name of the promotion that included the predicted item.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PredictedItem withPromotionName(String promotionName) {
+        setPromotionName(promotionName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -146,7 +192,9 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
         if (getItemId() != null)
             sb.append("ItemId: ").append(getItemId()).append(",");
         if (getScore() != null)
-            sb.append("Score: ").append(getScore());
+            sb.append("Score: ").append(getScore()).append(",");
+        if (getPromotionName() != null)
+            sb.append("PromotionName: ").append(getPromotionName());
         sb.append("}");
         return sb.toString();
     }
@@ -169,6 +217,10 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScore() != null && other.getScore().equals(this.getScore()) == false)
             return false;
+        if (other.getPromotionName() == null ^ this.getPromotionName() == null)
+            return false;
+        if (other.getPromotionName() != null && other.getPromotionName().equals(this.getPromotionName()) == false)
+            return false;
         return true;
     }
 
@@ -179,6 +231,7 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getItemId() == null) ? 0 : getItemId().hashCode());
         hashCode = prime * hashCode + ((getScore() == null) ? 0 : getScore().hashCode());
+        hashCode = prime * hashCode + ((getPromotionName() == null) ? 0 : getPromotionName().hashCode());
         return hashCode;
     }
 

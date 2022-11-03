@@ -31,8 +31,9 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
     private String sessionId;
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * managed node.
+     * An encrypted token value containing session and caller information. This token is used to authenticate the
+     * connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share
+     * your session's token.
      * </p>
      */
     private String tokenValue;
@@ -97,13 +98,15 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * managed node.
+     * An encrypted token value containing session and caller information. This token is used to authenticate the
+     * connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share
+     * your session's token.
      * </p>
      * 
      * @param tokenValue
-     *        An encrypted token value containing session and caller information. Used to authenticate the connection to
-     *        the managed node.
+     *        An encrypted token value containing session and caller information. This token is used to authenticate the
+     *        connection to the managed node, and is valid only long enough to ensure the connection is successful.
+     *        Never share your session's token.
      */
 
     public void setTokenValue(String tokenValue) {
@@ -112,12 +115,14 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * managed node.
+     * An encrypted token value containing session and caller information. This token is used to authenticate the
+     * connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share
+     * your session's token.
      * </p>
      * 
-     * @return An encrypted token value containing session and caller information. Used to authenticate the connection
-     *         to the managed node.
+     * @return An encrypted token value containing session and caller information. This token is used to authenticate
+     *         the connection to the managed node, and is valid only long enough to ensure the connection is successful.
+     *         Never share your session's token.
      */
 
     public String getTokenValue() {
@@ -126,13 +131,15 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * managed node.
+     * An encrypted token value containing session and caller information. This token is used to authenticate the
+     * connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share
+     * your session's token.
      * </p>
      * 
      * @param tokenValue
-     *        An encrypted token value containing session and caller information. Used to authenticate the connection to
-     *        the managed node.
+     *        An encrypted token value containing session and caller information. This token is used to authenticate the
+     *        connection to the managed node, and is valid only long enough to ensure the connection is successful.
+     *        Never share your session's token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

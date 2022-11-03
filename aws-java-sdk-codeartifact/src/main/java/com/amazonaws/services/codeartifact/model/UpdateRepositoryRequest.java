@@ -33,7 +33,8 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -52,7 +53,7 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
@@ -101,11 +102,13 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -114,11 +117,12 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -127,11 +131,13 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,14 +229,14 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
      * 
      * @return A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *         in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *         For more information, see <a
+     *         in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *         more information, see <a
      *         href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *         repositories</a>.
      */
@@ -242,15 +248,15 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
      * 
      * @param upstreams
      *        A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *        in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *        For more information, see <a
+     *        in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *        repositories</a>.
      */
@@ -267,7 +273,7 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
@@ -279,8 +285,8 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param upstreams
      *        A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *        in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *        For more information, see <a
+     *        in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *        repositories</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -299,15 +305,15 @@ public class UpdateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
      * 
      * @param upstreams
      *        A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *        in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *        For more information, see <a
+     *        in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *        repositories</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

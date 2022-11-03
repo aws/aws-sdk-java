@@ -104,6 +104,16 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                     context.nextToken();
                     memberDetail.setInvitationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeUsageByDatasourcePackage", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setVolumeUsageByDatasourcePackage(new MapUnmarshaller<String, DatasourcePackageUsageInfo>(context
+                            .getUnmarshaller(String.class), DatasourcePackageUsageInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("DatasourcePackageIngestStates", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setDatasourcePackageIngestStates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

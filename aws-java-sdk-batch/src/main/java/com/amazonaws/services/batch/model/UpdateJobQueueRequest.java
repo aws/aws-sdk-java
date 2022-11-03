@@ -47,7 +47,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share
      * scheduling policy can be replaced but not removed. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      */
     private String schedulingPolicyArn;
@@ -217,14 +217,14 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share
      * scheduling policy can be replaced but not removed. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
      *        Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair
      *        share scheduling policy can be replaced but not removed. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
-     *        example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *        example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      */
 
     public void setSchedulingPolicyArn(String schedulingPolicyArn) {
@@ -236,13 +236,13 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share
      * scheduling policy can be replaced but not removed. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @return Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair
      *         share scheduling policy can be replaced but not removed. The format is
      *         <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
-     *         example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *         example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      */
 
     public String getSchedulingPolicyArn() {
@@ -254,14 +254,14 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share
      * scheduling policy can be replaced but not removed. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
      *        Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair
      *        share scheduling policy can be replaced but not removed. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
-     *        example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *        example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

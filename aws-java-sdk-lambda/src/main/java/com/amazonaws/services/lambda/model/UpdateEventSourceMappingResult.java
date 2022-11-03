@@ -186,10 +186,22 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private Integer tumblingWindowInSeconds;
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     */
+    private AmazonManagedKafkaEventSourceConfig amazonManagedKafkaEventSourceConfig;
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     */
+    private SelfManagedKafkaEventSourceConfig selfManagedKafkaEventSourceConfig;
 
     /**
      * <p>
@@ -1364,10 +1376,10 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
-     * @return (Streams only) A list of current response type enums applied to the event source mapping.
+     * @return (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1380,11 +1392,11 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1399,7 +1411,7 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1408,7 +1420,7 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1425,11 +1437,11 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1441,11 +1453,11 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1461,6 +1473,89 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         } else {
             getFunctionResponseTypes().addAll(functionResponseTypesCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     * 
+     * @param amazonManagedKafkaEventSourceConfig
+     *        Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event
+     *        source.
+     */
+
+    public void setAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig amazonManagedKafkaEventSourceConfig) {
+        this.amazonManagedKafkaEventSourceConfig = amazonManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     * 
+     * @return Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event
+     *         source.
+     */
+
+    public AmazonManagedKafkaEventSourceConfig getAmazonManagedKafkaEventSourceConfig() {
+        return this.amazonManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     * 
+     * @param amazonManagedKafkaEventSourceConfig
+     *        Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event
+     *        source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingResult withAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig amazonManagedKafkaEventSourceConfig) {
+        setAmazonManagedKafkaEventSourceConfig(amazonManagedKafkaEventSourceConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     * 
+     * @param selfManagedKafkaEventSourceConfig
+     *        Specific configuration settings for a self-managed Apache Kafka event source.
+     */
+
+    public void setSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig selfManagedKafkaEventSourceConfig) {
+        this.selfManagedKafkaEventSourceConfig = selfManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     * 
+     * @return Specific configuration settings for a self-managed Apache Kafka event source.
+     */
+
+    public SelfManagedKafkaEventSourceConfig getSelfManagedKafkaEventSourceConfig() {
+        return this.selfManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     * 
+     * @param selfManagedKafkaEventSourceConfig
+     *        Specific configuration settings for a self-managed Apache Kafka event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingResult withSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig selfManagedKafkaEventSourceConfig) {
+        setSelfManagedKafkaEventSourceConfig(selfManagedKafkaEventSourceConfig);
         return this;
     }
 
@@ -1521,7 +1616,11 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         if (getTumblingWindowInSeconds() != null)
             sb.append("TumblingWindowInSeconds: ").append(getTumblingWindowInSeconds()).append(",");
         if (getFunctionResponseTypes() != null)
-            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes());
+            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes()).append(",");
+        if (getAmazonManagedKafkaEventSourceConfig() != null)
+            sb.append("AmazonManagedKafkaEventSourceConfig: ").append(getAmazonManagedKafkaEventSourceConfig()).append(",");
+        if (getSelfManagedKafkaEventSourceConfig() != null)
+            sb.append("SelfManagedKafkaEventSourceConfig: ").append(getSelfManagedKafkaEventSourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1629,6 +1728,16 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getFunctionResponseTypes() != null && other.getFunctionResponseTypes().equals(this.getFunctionResponseTypes()) == false)
             return false;
+        if (other.getAmazonManagedKafkaEventSourceConfig() == null ^ this.getAmazonManagedKafkaEventSourceConfig() == null)
+            return false;
+        if (other.getAmazonManagedKafkaEventSourceConfig() != null
+                && other.getAmazonManagedKafkaEventSourceConfig().equals(this.getAmazonManagedKafkaEventSourceConfig()) == false)
+            return false;
+        if (other.getSelfManagedKafkaEventSourceConfig() == null ^ this.getSelfManagedKafkaEventSourceConfig() == null)
+            return false;
+        if (other.getSelfManagedKafkaEventSourceConfig() != null
+                && other.getSelfManagedKafkaEventSourceConfig().equals(this.getSelfManagedKafkaEventSourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1660,6 +1769,8 @@ public class UpdateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
         hashCode = prime * hashCode + ((getTumblingWindowInSeconds() == null) ? 0 : getTumblingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getFunctionResponseTypes() == null) ? 0 : getFunctionResponseTypes().hashCode());
+        hashCode = prime * hashCode + ((getAmazonManagedKafkaEventSourceConfig() == null) ? 0 : getAmazonManagedKafkaEventSourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedKafkaEventSourceConfig() == null) ? 0 : getSelfManagedKafkaEventSourceConfig().hashCode());
         return hashCode;
     }
 

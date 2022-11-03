@@ -44,6 +44,10 @@ public class RevokeSnapshotAccessRequestMarshaller implements Marshaller<Request
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(revokeSnapshotAccessRequest.getSnapshotIdentifier()));
         }
 
+        if (revokeSnapshotAccessRequest.getSnapshotArn() != null) {
+            request.addParameter("SnapshotArn", StringUtils.fromString(revokeSnapshotAccessRequest.getSnapshotArn()));
+        }
+
         if (revokeSnapshotAccessRequest.getSnapshotClusterIdentifier() != null) {
             request.addParameter("SnapshotClusterIdentifier", StringUtils.fromString(revokeSnapshotAccessRequest.getSnapshotClusterIdentifier()));
         }

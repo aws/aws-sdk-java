@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -121,6 +121,10 @@
         "exceptionName" : "EC2InstanceStateInvalidException",
         "documentation" : "<p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "EC2InstanceUnavailableException",
+        "documentation" : "<p>The instance is currently unavailable. Wait a few minutes and try again.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -193,6 +197,10 @@
       }, {
         "exceptionName" : "EC2InstanceStateInvalidException",
         "documentation" : "<p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "EC2InstanceUnavailableException",
+        "documentation" : "<p>The instance is currently unavailable. Wait a few minutes and try again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -378,6 +386,47 @@
         "documentation" : null,
         "simpleType" : "EC2InstanceTypeInvalidException",
         "variableSetterType" : "EC2InstanceTypeInvalidException"
+      },
+      "wrapper" : false
+    },
+    "EC2InstanceUnavailableException" : {
+      "c2jName" : "EC2InstanceUnavailableException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The instance is currently unavailable. Wait a few minutes and try again.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "EC2InstanceUnavailableException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.EC2InstanceUnavailableException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "EC2InstanceUnavailableException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "EC2InstanceUnavailableException",
+        "variableName" : "eC2InstanceUnavailableException",
+        "variableType" : "EC2InstanceUnavailableException",
+        "documentation" : null,
+        "simpleType" : "EC2InstanceUnavailableException",
+        "variableSetterType" : "EC2InstanceUnavailableException"
       },
       "wrapper" : false
     },

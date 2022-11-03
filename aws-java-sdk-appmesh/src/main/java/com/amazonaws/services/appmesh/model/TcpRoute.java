@@ -36,6 +36,12 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
     private TcpRouteAction action;
     /**
      * <p>
+     * An object that represents the criteria for determining a request match.
+     * </p>
+     */
+    private TcpRouteMatch match;
+    /**
+     * <p>
      * An object that represents types of timeouts.
      * </p>
      */
@@ -78,6 +84,46 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
 
     public TcpRoute withAction(TcpRouteAction action) {
         setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that represents the criteria for determining a request match.
+     * </p>
+     * 
+     * @param match
+     *        An object that represents the criteria for determining a request match.
+     */
+
+    public void setMatch(TcpRouteMatch match) {
+        this.match = match;
+    }
+
+    /**
+     * <p>
+     * An object that represents the criteria for determining a request match.
+     * </p>
+     * 
+     * @return An object that represents the criteria for determining a request match.
+     */
+
+    public TcpRouteMatch getMatch() {
+        return this.match;
+    }
+
+    /**
+     * <p>
+     * An object that represents the criteria for determining a request match.
+     * </p>
+     * 
+     * @param match
+     *        An object that represents the criteria for determining a request match.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TcpRoute withMatch(TcpRouteMatch match) {
+        setMatch(match);
         return this;
     }
 
@@ -135,6 +181,8 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
+        if (getMatch() != null)
+            sb.append("Match: ").append(getMatch()).append(",");
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
@@ -155,6 +203,10 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getMatch() == null ^ this.getMatch() == null)
+            return false;
+        if (other.getMatch() != null && other.getMatch().equals(this.getMatch()) == false)
+            return false;
         if (other.getTimeout() == null ^ this.getTimeout() == null)
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
@@ -168,6 +220,7 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getMatch() == null) ? 0 : getMatch().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }

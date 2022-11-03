@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the properties of a node that's associated with a multi-node parallel job.
+ * An object that represents the properties of a node that's associated with a multi-node parallel job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertiesSummary" target="_top">AWS API
@@ -36,7 +36,7 @@ public class NodePropertiesSummary implements Serializable, Cloneable, Structure
     private Boolean isMainNode;
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      */
     private Integer numNodes;
@@ -102,11 +102,11 @@ public class NodePropertiesSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      * 
      * @param numNodes
-     *        The number of nodes associated with a multi-node parallel job.
+     *        The number of nodes that are associated with a multi-node parallel job.
      */
 
     public void setNumNodes(Integer numNodes) {
@@ -115,10 +115,10 @@ public class NodePropertiesSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      * 
-     * @return The number of nodes associated with a multi-node parallel job.
+     * @return The number of nodes that are associated with a multi-node parallel job.
      */
 
     public Integer getNumNodes() {
@@ -127,11 +127,11 @@ public class NodePropertiesSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of nodes associated with a multi-node parallel job.
+     * The number of nodes that are associated with a multi-node parallel job.
      * </p>
      * 
      * @param numNodes
-     *        The number of nodes associated with a multi-node parallel job.
+     *        The number of nodes that are associated with a multi-node parallel job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

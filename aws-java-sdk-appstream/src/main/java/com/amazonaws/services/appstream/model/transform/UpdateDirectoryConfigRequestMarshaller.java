@@ -34,6 +34,8 @@ public class UpdateDirectoryConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationalUnitDistinguishedNames").build();
     private static final MarshallingInfo<StructuredPojo> SERVICEACCOUNTCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccountCredentials").build();
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATEBASEDAUTHPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateBasedAuthProperties").build();
 
     private static final UpdateDirectoryConfigRequestMarshaller instance = new UpdateDirectoryConfigRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class UpdateDirectoryConfigRequestMarshaller {
             protocolMarshaller.marshall(updateDirectoryConfigRequest.getDirectoryName(), DIRECTORYNAME_BINDING);
             protocolMarshaller.marshall(updateDirectoryConfigRequest.getOrganizationalUnitDistinguishedNames(), ORGANIZATIONALUNITDISTINGUISHEDNAMES_BINDING);
             protocolMarshaller.marshall(updateDirectoryConfigRequest.getServiceAccountCredentials(), SERVICEACCOUNTCREDENTIALS_BINDING);
+            protocolMarshaller.marshall(updateDirectoryConfigRequest.getCertificateBasedAuthProperties(), CERTIFICATEBASEDAUTHPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detail input data for a repository branch.
+ * Detail input data for a linked repository branch.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositoryBranchInput" target="_top">AWS API

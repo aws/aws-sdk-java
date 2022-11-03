@@ -80,6 +80,12 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.Map<String, MessageAttributeValue> messageAttributes;
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -514,6 +520,46 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * 
+     * @return The ID of the SubChannel in the request.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendChannelMessageRequest withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -542,7 +588,9 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
         if (getPushNotification() != null)
             sb.append("PushNotification: ").append(getPushNotification()).append(",");
         if (getMessageAttributes() != null)
-            sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***");
+            sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -593,6 +641,10 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMessageAttributes() != null && other.getMessageAttributes().equals(this.getMessageAttributes()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -610,6 +662,7 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         hashCode = prime * hashCode + ((getPushNotification() == null) ? 0 : getPushNotification().hashCode());
         hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

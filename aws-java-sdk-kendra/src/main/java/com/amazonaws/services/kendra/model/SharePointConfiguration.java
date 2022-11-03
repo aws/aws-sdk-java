@@ -30,32 +30,35 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The version of Microsoft SharePoint that you are using as a data source.
+     * The version of Microsoft SharePoint that you use.
      * </p>
      */
     private String sharePointVersion;
     /**
      * <p>
-     * The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     * The Microsoft SharePoint site URLs for the documents you want to index.
      * </p>
      */
     private java.util.List<String> urls;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     * user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the
-     * credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
+     * connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name
+     * as part of the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
-     * Source</a>. For more information about Secrets Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the
-     * <i>Secrets Manager </i> user guide.
+     * Source</a>.
+     * </p>
+     * <p>
+     * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     * >Authentication for a SharePoint data source</a>.
      * </p>
      */
     private String secretArn;
     /**
      * <p>
-     * <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index;
-     * otherwise, <code>FALSE</code>.
+     * <code>TRUE</code> to index document attachments.
      * </p>
      */
     private Boolean crawlAttachments;
@@ -75,7 +78,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      */
     private java.util.List<String> inclusionPatterns;
@@ -87,11 +90,17 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      */
     private java.util.List<String> exclusionPatterns;
-
+    /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     */
     private DataSourceVpcConfiguration vpcConfiguration;
     /**
      * <p>
@@ -111,21 +120,60 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     private String documentTitleFieldName;
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      */
     private Boolean disableLocalGroups;
-
+    /**
+     * <p>
+     * The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if
+     * you require a secure SSL connection.
+     * </p>
+     * <p>
+     * You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using
+     * OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509
+     * certificate</a>.
+     * </p>
+     */
     private S3Path sslCertificateS3Path;
+    /**
+     * <p>
+     * Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     * authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     * SharePoint Online.
+     * </p>
+     */
+    private String authenticationType;
+    /**
+     * <p>
+     * Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can
+     * use this option for SharePoint Server.
+     * </p>
+     * <p>
+     * You must provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.
+     * </p>
+     * <p>
+     * Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.
+     * </p>
+     * <p>
+     * It is recommended that you follow best security practices when configuring your web proxy. This includes setting
+     * up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use
+     * your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your
+     * proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.
+     * </p>
+     */
+    private ProxyConfiguration proxyConfiguration;
 
     /**
      * <p>
-     * The version of Microsoft SharePoint that you are using as a data source.
+     * The version of Microsoft SharePoint that you use.
      * </p>
      * 
      * @param sharePointVersion
-     *        The version of Microsoft SharePoint that you are using as a data source.
+     *        The version of Microsoft SharePoint that you use.
      * @see SharePointVersion
      */
 
@@ -135,10 +183,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The version of Microsoft SharePoint that you are using as a data source.
+     * The version of Microsoft SharePoint that you use.
      * </p>
      * 
-     * @return The version of Microsoft SharePoint that you are using as a data source.
+     * @return The version of Microsoft SharePoint that you use.
      * @see SharePointVersion
      */
 
@@ -148,11 +196,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The version of Microsoft SharePoint that you are using as a data source.
+     * The version of Microsoft SharePoint that you use.
      * </p>
      * 
      * @param sharePointVersion
-     *        The version of Microsoft SharePoint that you are using as a data source.
+     *        The version of Microsoft SharePoint that you use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharePointVersion
      */
@@ -164,11 +212,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The version of Microsoft SharePoint that you are using as a data source.
+     * The version of Microsoft SharePoint that you use.
      * </p>
      * 
      * @param sharePointVersion
-     *        The version of Microsoft SharePoint that you are using as a data source.
+     *        The version of Microsoft SharePoint that you use.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharePointVersion
      */
@@ -180,10 +228,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     * The Microsoft SharePoint site URLs for the documents you want to index.
      * </p>
      * 
-     * @return The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     * @return The Microsoft SharePoint site URLs for the documents you want to index.
      */
 
     public java.util.List<String> getUrls() {
@@ -192,11 +240,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     * The Microsoft SharePoint site URLs for the documents you want to index.
      * </p>
      * 
      * @param urls
-     *        The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     *        The Microsoft SharePoint site URLs for the documents you want to index.
      */
 
     public void setUrls(java.util.Collection<String> urls) {
@@ -210,7 +258,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     * The Microsoft SharePoint site URLs for the documents you want to index.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -219,7 +267,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param urls
-     *        The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     *        The Microsoft SharePoint site URLs for the documents you want to index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +283,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     * The Microsoft SharePoint site URLs for the documents you want to index.
      * </p>
      * 
      * @param urls
-     *        The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.
+     *        The Microsoft SharePoint site URLs for the documents you want to index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,23 +298,30 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     * user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the
-     * credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
+     * connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name
+     * as part of the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
-     * Source</a>. For more information about Secrets Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the
-     * <i>Secrets Manager </i> user guide.
+     * Source</a>.
+     * </p>
+     * <p>
+     * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     * >Authentication for a SharePoint data source</a>.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     *        user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part
-     *        of the credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
+     *        required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the
+     *        sever domain name as part of the credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
-     *        SharePoint Data Source</a>. For more information about Secrets Manager see <a
-     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a>
-     *        in the <i>Secrets Manager </i> user guide.
+     *        SharePoint Data Source</a>.</p>
+     *        <p>
+     *        You can also provide OAuth authentication credentials of user name, password, client ID, and client
+     *        secret. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     *        >Authentication for a SharePoint data source</a>.
      */
 
     public void setSecretArn(String secretArn) {
@@ -275,22 +330,29 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     * user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the
-     * credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
+     * connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name
+     * as part of the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
-     * Source</a>. For more information about Secrets Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the
-     * <i>Secrets Manager </i> user guide.
+     * Source</a>.
+     * </p>
+     * <p>
+     * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     * >Authentication for a SharePoint data source</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     *         user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part
-     *         of the credentials. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
+     *         required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide
+     *         the sever domain name as part of the credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
-     *         SharePoint Data Source</a>. For more information about Secrets Manager see <a
-     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets
-     *         Manager</a> in the <i>Secrets Manager </i> user guide.
+     *         SharePoint Data Source</a>.</p>
+     *         <p>
+     *         You can also provide OAuth authentication credentials of user name, password, client ID, and client
+     *         secret. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     *         >Authentication for a SharePoint data source</a>.
      */
 
     public String getSecretArn() {
@@ -299,23 +361,30 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     * user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the
-     * credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
+     * connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name
+     * as part of the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
-     * Source</a>. For more information about Secrets Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the
-     * <i>Secrets Manager </i> user guide.
+     * Source</a>.
+     * </p>
+     * <p>
+     * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     * >Authentication for a SharePoint data source</a>.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a
-     *        user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part
-     *        of the credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
+     *        required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the
+     *        sever domain name as part of the credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
-     *        SharePoint Data Source</a>. For more information about Secrets Manager see <a
-     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a>
-     *        in the <i>Secrets Manager </i> user guide.
+     *        SharePoint Data Source</a>.</p>
+     *        <p>
+     *        You can also provide OAuth authentication credentials of user name, password, client ID, and client
+     *        secret. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
+     *        >Authentication for a SharePoint data source</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,13 +395,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index;
-     * otherwise, <code>FALSE</code>.
+     * <code>TRUE</code> to index document attachments.
      * </p>
      * 
      * @param crawlAttachments
-     *        <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the
-     *        index; otherwise, <code>FALSE</code>.
+     *        <code>TRUE</code> to index document attachments.
      */
 
     public void setCrawlAttachments(Boolean crawlAttachments) {
@@ -341,12 +408,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index;
-     * otherwise, <code>FALSE</code>.
+     * <code>TRUE</code> to index document attachments.
      * </p>
      * 
-     * @return <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the
-     *         index; otherwise, <code>FALSE</code>.
+     * @return <code>TRUE</code> to index document attachments.
      */
 
     public Boolean getCrawlAttachments() {
@@ -355,13 +420,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index;
-     * otherwise, <code>FALSE</code>.
+     * <code>TRUE</code> to index document attachments.
      * </p>
      * 
      * @param crawlAttachments
-     *        <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the
-     *        index; otherwise, <code>FALSE</code>.
+     *        <code>TRUE</code> to index document attachments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,12 +435,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index;
-     * otherwise, <code>FALSE</code>.
+     * <code>TRUE</code> to index document attachments.
      * </p>
      * 
-     * @return <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the
-     *         index; otherwise, <code>FALSE</code>.
+     * @return <code>TRUE</code> to index document attachments.
      */
 
     public Boolean isCrawlAttachments() {
@@ -460,7 +521,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * 
      * @return A list of regular expression patterns to include certain documents in your SharePoint. Documents that
@@ -468,7 +529,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *         the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *         precedence and the document isn't included in the index.</p>
      *         <p>
-     *         The regex is applied to the display URL of the SharePoint document.
+     *         The regex applies to the display URL of the SharePoint document.
      */
 
     public java.util.List<String> getInclusionPatterns() {
@@ -483,7 +544,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * 
      * @param inclusionPatterns
@@ -492,7 +553,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *        precedence and the document isn't included in the index.</p>
      *        <p>
-     *        The regex is applied to the display URL of the SharePoint document.
+     *        The regex applies to the display URL of the SharePoint document.
      */
 
     public void setInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
@@ -512,7 +573,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -526,7 +587,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *        precedence and the document isn't included in the index.</p>
      *        <p>
-     *        The regex is applied to the display URL of the SharePoint document.
+     *        The regex applies to the display URL of the SharePoint document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,7 +609,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * 
      * @param inclusionPatterns
@@ -557,7 +618,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *        precedence and the document isn't included in the index.</p>
      *        <p>
-     *        The regex is applied to the display URL of the SharePoint document.
+     *        The regex applies to the display URL of the SharePoint document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,7 +635,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * 
      * @return A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that
@@ -582,7 +643,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *         the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *         precedence and the document isn't included in the index.</p>
      *         <p>
-     *         The regex is applied to the display URL of the SharePoint document.
+     *         The regex applies to the display URL of the SharePoint document.
      */
 
     public java.util.List<String> getExclusionPatterns() {
@@ -597,7 +658,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * 
      * @param exclusionPatterns
@@ -606,7 +667,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *        precedence and the document isn't included in the index.</p>
      *        <p>
-     *        The regex is applied to the display URL of the SharePoint document.
+     *        The regex applies to the display URL of the SharePoint document.
      */
 
     public void setExclusionPatterns(java.util.Collection<String> exclusionPatterns) {
@@ -626,7 +687,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -640,7 +701,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *        precedence and the document isn't included in the index.</p>
      *        <p>
-     *        The regex is applied to the display URL of the SharePoint document.
+     *        The regex applies to the display URL of the SharePoint document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -662,7 +723,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * isn't included in the index.
      * </p>
      * <p>
-     * The regex is applied to the display URL of the SharePoint document.
+     * The regex applies to the display URL of the SharePoint document.
      * </p>
      * 
      * @param exclusionPatterns
@@ -671,7 +732,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes
      *        precedence and the document isn't included in the index.</p>
      *        <p>
-     *        The regex is applied to the display URL of the SharePoint document.
+     *        The regex applies to the display URL of the SharePoint document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,7 +742,16 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
      * @param vpcConfiguration
+     *        Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.
      */
 
     public void setVpcConfiguration(DataSourceVpcConfiguration vpcConfiguration) {
@@ -689,7 +759,15 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @return Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.
      */
 
     public DataSourceVpcConfiguration getVpcConfiguration() {
@@ -697,7 +775,16 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
      * @param vpcConfiguration
+     *        Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -850,13 +937,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
      * @param disableLocalGroups
-     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *        <code>False</code>).
+     *        <code>TRUE</code> to disable local groups information.
      */
 
     public void setDisableLocalGroups(Boolean disableLocalGroups) {
@@ -865,12 +950,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
-     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *         <code>False</code>).
+     * @return <code>TRUE</code> to disable local groups information.
      */
 
     public Boolean getDisableLocalGroups() {
@@ -879,13 +962,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
      * @param disableLocalGroups
-     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *        <code>False</code>).
+     *        <code>TRUE</code> to disable local groups information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -896,12 +977,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     * <code>False</code>).
+     * <code>TRUE</code> to disable local groups information.
      * </p>
      * 
-     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
-     *         <code>False</code>).
+     * @return <code>TRUE</code> to disable local groups information.
      */
 
     public Boolean isDisableLocalGroups() {
@@ -909,7 +988,25 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if
+     * you require a secure SSL connection.
+     * </p>
+     * <p>
+     * You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using
+     * OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509
+     * certificate</a>.
+     * </p>
+     * 
      * @param sslCertificateS3Path
+     *        The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint
+     *        Server if you require a secure SSL connection.</p>
+     *        <p>
+     *        You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of
+     *        using OpenSSL to create an X509 certificate, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign
+     *        an X509 certificate</a>.
      */
 
     public void setSslCertificateS3Path(S3Path sslCertificateS3Path) {
@@ -917,7 +1014,24 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if
+     * you require a secure SSL connection.
+     * </p>
+     * <p>
+     * You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using
+     * OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509
+     * certificate</a>.
+     * </p>
+     * 
+     * @return The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint
+     *         Server if you require a secure SSL connection.</p>
+     *         <p>
+     *         You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of
+     *         using OpenSSL to create an X509 certificate, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign
+     *         an X509 certificate</a>.
      */
 
     public S3Path getSslCertificateS3Path() {
@@ -925,12 +1039,241 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if
+     * you require a secure SSL connection.
+     * </p>
+     * <p>
+     * You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using
+     * OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509
+     * certificate</a>.
+     * </p>
+     * 
      * @param sslCertificateS3Path
+     *        The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint
+     *        Server if you require a secure SSL connection.</p>
+     *        <p>
+     *        You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of
+     *        using OpenSSL to create an X509 certificate, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign
+     *        an X509 certificate</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SharePointConfiguration withSslCertificateS3Path(S3Path sslCertificateS3Path) {
         setSslCertificateS3Path(sslCertificateS3Path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     * authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     * SharePoint Online.
+     * </p>
+     * 
+     * @param authenticationType
+     *        Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     *        authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     *        SharePoint Online.
+     * @see SharePointOnlineAuthenticationType
+     */
+
+    public void setAuthenticationType(String authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    /**
+     * <p>
+     * Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     * authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     * SharePoint Online.
+     * </p>
+     * 
+     * @return Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     *         authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     *         SharePoint Online.
+     * @see SharePointOnlineAuthenticationType
+     */
+
+    public String getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * <p>
+     * Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     * authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     * SharePoint Online.
+     * </p>
+     * 
+     * @param authenticationType
+     *        Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     *        authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     *        SharePoint Online.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SharePointOnlineAuthenticationType
+     */
+
+    public SharePointConfiguration withAuthenticationType(String authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     * authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     * SharePoint Online.
+     * </p>
+     * 
+     * @param authenticationType
+     *        Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth
+     *        authentication of user name, password, client ID, and client secret. You can use OAuth authentication for
+     *        SharePoint Online.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SharePointOnlineAuthenticationType
+     */
+
+    public SharePointConfiguration withAuthenticationType(SharePointOnlineAuthenticationType authenticationType) {
+        this.authenticationType = authenticationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can
+     * use this option for SharePoint Server.
+     * </p>
+     * <p>
+     * You must provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.
+     * </p>
+     * <p>
+     * Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.
+     * </p>
+     * <p>
+     * It is recommended that you follow best security practices when configuring your web proxy. This includes setting
+     * up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use
+     * your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your
+     * proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.
+     * </p>
+     * 
+     * @param proxyConfiguration
+     *        Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy.
+     *        You can use this option for SharePoint Server.</p>
+     *        <p>
+     *        You must provide the website host name and port number. For example, the host name of
+     *        <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for
+     *        HTTPS.
+     *        </p>
+     *        <p>
+     *        Web proxy credentials are optional and you can use them to connect to a web proxy server that requires
+     *        basic authentication of user name and password. To store web proxy credentials, you use a secret in
+     *        Secrets Manager.
+     *        </p>
+     *        <p>
+     *        It is recommended that you follow best security practices when configuring your web proxy. This includes
+     *        setting up throttling, setting up logging and monitoring, and applying security patches on a regular
+     *        basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could
+     *        strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and
+     *        load requirements.
+     */
+
+    public void setProxyConfiguration(ProxyConfiguration proxyConfiguration) {
+        this.proxyConfiguration = proxyConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can
+     * use this option for SharePoint Server.
+     * </p>
+     * <p>
+     * You must provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.
+     * </p>
+     * <p>
+     * Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.
+     * </p>
+     * <p>
+     * It is recommended that you follow best security practices when configuring your web proxy. This includes setting
+     * up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use
+     * your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your
+     * proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.
+     * </p>
+     * 
+     * @return Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy.
+     *         You can use this option for SharePoint Server.</p>
+     *         <p>
+     *         You must provide the website host name and port number. For example, the host name of
+     *         <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for
+     *         HTTPS.
+     *         </p>
+     *         <p>
+     *         Web proxy credentials are optional and you can use them to connect to a web proxy server that requires
+     *         basic authentication of user name and password. To store web proxy credentials, you use a secret in
+     *         Secrets Manager.
+     *         </p>
+     *         <p>
+     *         It is recommended that you follow best security practices when configuring your web proxy. This includes
+     *         setting up throttling, setting up logging and monitoring, and applying security patches on a regular
+     *         basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could
+     *         strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and
+     *         load requirements.
+     */
+
+    public ProxyConfiguration getProxyConfiguration() {
+        return this.proxyConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can
+     * use this option for SharePoint Server.
+     * </p>
+     * <p>
+     * You must provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.
+     * </p>
+     * <p>
+     * Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.
+     * </p>
+     * <p>
+     * It is recommended that you follow best security practices when configuring your web proxy. This includes setting
+     * up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use
+     * your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your
+     * proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.
+     * </p>
+     * 
+     * @param proxyConfiguration
+     *        Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy.
+     *        You can use this option for SharePoint Server.</p>
+     *        <p>
+     *        You must provide the website host name and port number. For example, the host name of
+     *        <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for
+     *        HTTPS.
+     *        </p>
+     *        <p>
+     *        Web proxy credentials are optional and you can use them to connect to a web proxy server that requires
+     *        basic authentication of user name and password. To store web proxy credentials, you use a secret in
+     *        Secrets Manager.
+     *        </p>
+     *        <p>
+     *        It is recommended that you follow best security practices when configuring your web proxy. This includes
+     *        setting up throttling, setting up logging and monitoring, and applying security patches on a regular
+     *        basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could
+     *        strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and
+     *        load requirements.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withProxyConfiguration(ProxyConfiguration proxyConfiguration) {
+        setProxyConfiguration(proxyConfiguration);
         return this;
     }
 
@@ -969,7 +1312,11 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         if (getDisableLocalGroups() != null)
             sb.append("DisableLocalGroups: ").append(getDisableLocalGroups()).append(",");
         if (getSslCertificateS3Path() != null)
-            sb.append("SslCertificateS3Path: ").append(getSslCertificateS3Path());
+            sb.append("SslCertificateS3Path: ").append(getSslCertificateS3Path()).append(",");
+        if (getAuthenticationType() != null)
+            sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
+        if (getProxyConfiguration() != null)
+            sb.append("ProxyConfiguration: ").append(getProxyConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1032,6 +1379,14 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getSslCertificateS3Path() != null && other.getSslCertificateS3Path().equals(this.getSslCertificateS3Path()) == false)
             return false;
+        if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
+            return false;
+        if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
+            return false;
+        if (other.getProxyConfiguration() == null ^ this.getProxyConfiguration() == null)
+            return false;
+        if (other.getProxyConfiguration() != null && other.getProxyConfiguration().equals(this.getProxyConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1052,6 +1407,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDocumentTitleFieldName() == null) ? 0 : getDocumentTitleFieldName().hashCode());
         hashCode = prime * hashCode + ((getDisableLocalGroups() == null) ? 0 : getDisableLocalGroups().hashCode());
         hashCode = prime * hashCode + ((getSslCertificateS3Path() == null) ? 0 : getSslCertificateS3Path().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
+        hashCode = prime * hashCode + ((getProxyConfiguration() == null) ? 0 : getProxyConfiguration().hashCode());
         return hashCode;
     }
 

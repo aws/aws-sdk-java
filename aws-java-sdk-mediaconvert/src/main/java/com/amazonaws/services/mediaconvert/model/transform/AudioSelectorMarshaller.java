@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AudioSelectorMarshaller {
 
+    private static final MarshallingInfo<String> AUDIODURATIONCORRECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDurationCorrection").build();
     private static final MarshallingInfo<String> CUSTOMLANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customLanguageCode").build();
     private static final MarshallingInfo<String> DEFAULTSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class AudioSelectorMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(audioSelector.getAudioDurationCorrection(), AUDIODURATIONCORRECTION_BINDING);
             protocolMarshaller.marshall(audioSelector.getCustomLanguageCode(), CUSTOMLANGUAGECODE_BINDING);
             protocolMarshaller.marshall(audioSelector.getDefaultSelection(), DEFAULTSELECTION_BINDING);
             protocolMarshaller.marshall(audioSelector.getExternalAudioFileInput(), EXTERNALAUDIOFILEINPUT_BINDING);

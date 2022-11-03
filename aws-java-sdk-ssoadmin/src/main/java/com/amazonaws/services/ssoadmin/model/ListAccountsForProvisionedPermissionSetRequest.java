@@ -27,21 +27,21 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String instanceArn;
     /**
      * <p>
-     * The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be listed.
+     * The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      * </p>
      */
     private String permissionSetArn;
     /**
      * <p>
-     * The permission set provisioning status for an Amazon Web Services account.
+     * The permission set provisioning status for an AWS account.
      * </p>
      */
     private String provisioningStatus;
@@ -61,15 +61,15 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *        see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -78,14 +78,14 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *         see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -94,15 +94,15 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *        see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be listed.
+     * The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      * </p>
      * 
      * @param permissionSetArn
-     *        The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be listed.
+     *        The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      */
 
     public void setPermissionSetArn(String permissionSetArn) {
@@ -126,11 +126,10 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be listed.
+     * The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      * </p>
      * 
-     * @return The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be
-     *         listed.
+     * @return The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      */
 
     public String getPermissionSetArn() {
@@ -139,11 +138,11 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be listed.
+     * The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      * </p>
      * 
      * @param permissionSetArn
-     *        The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts will be listed.
+     *        The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +153,11 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The permission set provisioning status for an Amazon Web Services account.
+     * The permission set provisioning status for an AWS account.
      * </p>
      * 
      * @param provisioningStatus
-     *        The permission set provisioning status for an Amazon Web Services account.
+     *        The permission set provisioning status for an AWS account.
      * @see ProvisioningStatus
      */
 
@@ -168,10 +167,10 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The permission set provisioning status for an Amazon Web Services account.
+     * The permission set provisioning status for an AWS account.
      * </p>
      * 
-     * @return The permission set provisioning status for an Amazon Web Services account.
+     * @return The permission set provisioning status for an AWS account.
      * @see ProvisioningStatus
      */
 
@@ -181,11 +180,11 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The permission set provisioning status for an Amazon Web Services account.
+     * The permission set provisioning status for an AWS account.
      * </p>
      * 
      * @param provisioningStatus
-     *        The permission set provisioning status for an Amazon Web Services account.
+     *        The permission set provisioning status for an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningStatus
      */
@@ -197,11 +196,11 @@ public class ListAccountsForProvisionedPermissionSetRequest extends com.amazonaw
 
     /**
      * <p>
-     * The permission set provisioning status for an Amazon Web Services account.
+     * The permission set provisioning status for an AWS account.
      * </p>
      * 
      * @param provisioningStatus
-     *        The permission set provisioning status for an Amazon Web Services account.
+     *        The permission set provisioning status for an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningStatus
      */

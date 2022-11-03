@@ -15,7 +15,9 @@ package com.amazonaws.services.dataexchange.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * An exception occurred with the service.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerException extends com.amazonaws.services.dataexchange.model.AWSDataExchangeException {

@@ -30,10 +30,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current patch compliance status.
-     * </p>
-     * <p>
-     * The possible status values are:
+     * The current patch compliance status. Valid values are as follows:
      * </p>
      * <ul>
      * <li>
@@ -135,8 +132,40 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
     private String patchBaselineId;
     /**
      * <p>
-     * The highest severity for the patches.
+     * The highest severity for the patches. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNSPECIFIED</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String overallSeverity;
     /**
@@ -161,10 +190,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current patch compliance status.
-     * </p>
-     * <p>
-     * The possible status values are:
+     * The current patch compliance status. Valid values are as follows:
      * </p>
      * <ul>
      * <li>
@@ -185,10 +211,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param status
-     *        The current patch compliance status.</p>
-     *        <p>
-     *        The possible status values are:
-     *        </p>
+     *        The current patch compliance status. Valid values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -213,10 +236,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current patch compliance status.
-     * </p>
-     * <p>
-     * The possible status values are:
+     * The current patch compliance status. Valid values are as follows:
      * </p>
      * <ul>
      * <li>
@@ -236,10 +256,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * 
-     * @return The current patch compliance status.</p>
-     *         <p>
-     *         The possible status values are:
-     *         </p>
+     * @return The current patch compliance status. Valid values are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -264,10 +281,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current patch compliance status.
-     * </p>
-     * <p>
-     * The possible status values are:
+     * The current patch compliance status. Valid values are as follows:
      * </p>
      * <ul>
      * <li>
@@ -288,10 +302,7 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param status
-     *        The current patch compliance status.</p>
-     *        <p>
-     *        The possible status values are:
-     *        </p>
+     *        The current patch compliance status. Valid values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -850,11 +861,74 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The highest severity for the patches.
+     * The highest severity for the patches. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNSPECIFIED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param overallSeverity
-     *        The highest severity for the patches.
+     *        The highest severity for the patches. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CRITICAL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIGH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOW</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFORMATIONAL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNSPECIFIED</code>
+     *        </p>
+     *        </li>
      */
 
     public void setOverallSeverity(String overallSeverity) {
@@ -863,10 +937,73 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The highest severity for the patches.
+     * The highest severity for the patches. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNSPECIFIED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The highest severity for the patches.
+     * @return The highest severity for the patches. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CRITICAL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HIGH</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MEDIUM</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LOW</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INFORMATIONAL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNSPECIFIED</code>
+     *         </p>
+     *         </li>
      */
 
     public String getOverallSeverity() {
@@ -875,11 +1012,74 @@ public class AwsSsmComplianceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The highest severity for the patches.
+     * The highest severity for the patches. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNSPECIFIED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param overallSeverity
-     *        The highest severity for the patches.
+     *        The highest severity for the patches. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CRITICAL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIGH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOW</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFORMATIONAL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNSPECIFIED</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

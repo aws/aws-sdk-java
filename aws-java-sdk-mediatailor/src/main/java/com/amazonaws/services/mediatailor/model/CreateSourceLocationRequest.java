@@ -52,13 +52,16 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<SegmentDeliveryConfiguration> segmentDeliveryConfigurations;
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name associated with the source location.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The tags to assign to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -261,11 +264,11 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name associated with the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name associated with the source location.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -274,10 +277,10 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name associated with the source location.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name associated with the source location.
      */
 
     public String getSourceLocationName() {
@@ -286,11 +289,11 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name associated with the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name associated with the source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,10 +304,16 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to assign to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags to assign to the source location.
+     * @return The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -313,11 +322,17 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to assign to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the source location.
+     *        The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -326,11 +341,17 @@ public class CreateSourceLocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to assign to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the source location.
+     *        The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

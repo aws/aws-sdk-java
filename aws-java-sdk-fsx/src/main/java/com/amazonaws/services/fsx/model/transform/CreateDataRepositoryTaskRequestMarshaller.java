@@ -43,6 +43,8 @@ public class CreateDataRepositoryTaskRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Long> CAPACITYTORELEASE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityToRelease").build();
 
     private static final CreateDataRepositoryTaskRequestMarshaller instance = new CreateDataRepositoryTaskRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateDataRepositoryTaskRequestMarshaller {
             protocolMarshaller.marshall(createDataRepositoryTaskRequest.getReport(), REPORT_BINDING);
             protocolMarshaller.marshall(createDataRepositoryTaskRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createDataRepositoryTaskRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDataRepositoryTaskRequest.getCapacityToRelease(), CAPACITYTORELEASE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

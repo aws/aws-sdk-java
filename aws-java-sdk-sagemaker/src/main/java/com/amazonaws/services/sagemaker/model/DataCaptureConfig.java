@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Configuration to control how SageMaker captures inference data.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfig" target="_top">AWS API
  *      Documentation</a>
@@ -26,23 +28,77 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DataCaptureConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Whether data capture should be enabled or disabled (defaults to enabled).
+     * </p>
+     */
     private Boolean enableCapture;
-    /** <p/> */
+    /**
+     * <p>
+     * The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.
+     * </p>
+     */
     private Integer initialSamplingPercentage;
-    /** <p/> */
+    /**
+     * <p>
+     * The Amazon S3 location used to capture the data.
+     * </p>
+     */
     private String destinationS3Uri;
-    /** <p/> */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String kmsKeyId;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both
+     * </p>
+     */
     private java.util.List<CaptureOption> captureOptions;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default
+     * base64 encode when capturing the data.
+     * </p>
+     */
     private CaptureContentTypeHeader captureContentTypeHeader;
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture should be enabled or disabled (defaults to enabled).
+     * </p>
      * 
      * @param enableCapture
+     *        Whether data capture should be enabled or disabled (defaults to enabled).
      */
 
     public void setEnableCapture(Boolean enableCapture) {
@@ -50,9 +106,11 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture should be enabled or disabled (defaults to enabled).
+     * </p>
      * 
-     * @return
+     * @return Whether data capture should be enabled or disabled (defaults to enabled).
      */
 
     public Boolean getEnableCapture() {
@@ -60,9 +118,12 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture should be enabled or disabled (defaults to enabled).
+     * </p>
      * 
      * @param enableCapture
+     *        Whether data capture should be enabled or disabled (defaults to enabled).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,9 +133,11 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture should be enabled or disabled (defaults to enabled).
+     * </p>
      * 
-     * @return
+     * @return Whether data capture should be enabled or disabled (defaults to enabled).
      */
 
     public Boolean isEnableCapture() {
@@ -82,9 +145,13 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.
+     * </p>
      * 
      * @param initialSamplingPercentage
+     *        The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high
+     *        traffic.
      */
 
     public void setInitialSamplingPercentage(Integer initialSamplingPercentage) {
@@ -92,9 +159,12 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.
+     * </p>
      * 
-     * @return
+     * @return The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high
+     *         traffic.
      */
 
     public Integer getInitialSamplingPercentage() {
@@ -102,9 +172,13 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.
+     * </p>
      * 
      * @param initialSamplingPercentage
+     *        The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high
+     *        traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,9 +188,12 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon S3 location used to capture the data.
+     * </p>
      * 
      * @param destinationS3Uri
+     *        The Amazon S3 location used to capture the data.
      */
 
     public void setDestinationS3Uri(String destinationS3Uri) {
@@ -124,9 +201,11 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon S3 location used to capture the data.
+     * </p>
      * 
-     * @return
+     * @return The Amazon S3 location used to capture the data.
      */
 
     public String getDestinationS3Uri() {
@@ -134,9 +213,12 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon S3 location used to capture the data.
+     * </p>
      * 
      * @param destinationS3Uri
+     *        The Amazon S3 location used to capture the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,9 +228,63 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *        <p>
+     *        The KmsKeyId can be any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name: <code>alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -156,9 +292,62 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return
+     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *         encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *         <p>
+     *         The KmsKeyId can be any of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name: <code>alias/ExampleAlias</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     *         </p>
+     *         </li>
      */
 
     public String getKmsKeyId() {
@@ -166,9 +355,63 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *        <p>
+     *        The KmsKeyId can be any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name: <code>alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,9 +421,12 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both
+     * </p>
      * 
-     * @return
+     * @return Specifies data Model Monitor will capture. You can configure whether to collect only input, only output,
+     *         or both
      */
 
     public java.util.List<CaptureOption> getCaptureOptions() {
@@ -188,9 +434,13 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both
+     * </p>
      * 
      * @param captureOptions
+     *        Specifies data Model Monitor will capture. You can configure whether to collect only input, only output,
+     *        or both
      */
 
     public void setCaptureOptions(java.util.Collection<CaptureOption> captureOptions) {
@@ -203,7 +453,9 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCaptureOptions(java.util.Collection)} or {@link #withCaptureOptions(java.util.Collection)} if you want
@@ -211,6 +463,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param captureOptions
+     *        Specifies data Model Monitor will capture. You can configure whether to collect only input, only output,
+     *        or both
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,9 +479,13 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both
+     * </p>
      * 
      * @param captureOptions
+     *        Specifies data Model Monitor will capture. You can configure whether to collect only input, only output,
+     *        or both
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,9 +495,14 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default
+     * base64 encode when capturing the data.
+     * </p>
      * 
      * @param captureContentTypeHeader
+     *        Configuration specifying how to treat different headers. If no headers are specified SageMaker will by
+     *        default base64 encode when capturing the data.
      */
 
     public void setCaptureContentTypeHeader(CaptureContentTypeHeader captureContentTypeHeader) {
@@ -247,9 +510,13 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default
+     * base64 encode when capturing the data.
+     * </p>
      * 
-     * @return
+     * @return Configuration specifying how to treat different headers. If no headers are specified SageMaker will by
+     *         default base64 encode when capturing the data.
      */
 
     public CaptureContentTypeHeader getCaptureContentTypeHeader() {
@@ -257,9 +524,14 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default
+     * base64 encode when capturing the data.
+     * </p>
      * 
      * @param captureContentTypeHeader
+     *        Configuration specifying how to treat different headers. If no headers are specified SageMaker will by
+     *        default base64 encode when capturing the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

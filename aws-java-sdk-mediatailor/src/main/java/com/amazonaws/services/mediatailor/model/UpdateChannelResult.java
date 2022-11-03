@@ -25,7 +25,7 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) associated with the channel.
      * </p>
      */
     private String arn;
@@ -37,7 +37,7 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
     private String channelName;
     /**
      * <p>
-     * Indicates whether the channel is in a running state or not.
+     * Returns the state whether the channel is running or not.
      * </p>
      */
     private String channelState;
@@ -49,13 +49,15 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.Date creationTime;
     /**
      * <p>
-     * Contains information about the slate used to fill gaps between programs in the schedule.
+     * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      */
     private SlateSource fillerSlate;
     /**
      * <p>
-     * The timestamp of when the channel was last modified.
+     * The timestamp that indicates when the channel was last modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
@@ -67,30 +69,40 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<ResponseOutputItem> outputs;
     /**
      * <p>
-     * The channel's playback mode.
+     * The type of playback mode for this channel.
+     * </p>
+     * <p>
+     * <code>LINEAR</code> - Programs play back-to-back only once.
+     * </p>
+     * <p>
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      */
     private String playbackMode;
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The channel's tier.
+     * The tier associated with this Channel.
      * </p>
      */
     private String tier;
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) associated with the channel.
      * </p>
      * 
      * @param arn
-     *        The ARN of the channel.
+     *        The Amazon Resource Name (ARN) associated with the channel.
      */
 
     public void setArn(String arn) {
@@ -99,10 +111,10 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) associated with the channel.
      * </p>
      * 
-     * @return The ARN of the channel.
+     * @return The Amazon Resource Name (ARN) associated with the channel.
      */
 
     public String getArn() {
@@ -111,11 +123,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) associated with the channel.
      * </p>
      * 
      * @param arn
-     *        The ARN of the channel.
+     *        The Amazon Resource Name (ARN) associated with the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +178,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Indicates whether the channel is in a running state or not.
+     * Returns the state whether the channel is running or not.
      * </p>
      * 
      * @param channelState
-     *        Indicates whether the channel is in a running state or not.
+     *        Returns the state whether the channel is running or not.
      * @see ChannelState
      */
 
@@ -180,10 +192,10 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Indicates whether the channel is in a running state or not.
+     * Returns the state whether the channel is running or not.
      * </p>
      * 
-     * @return Indicates whether the channel is in a running state or not.
+     * @return Returns the state whether the channel is running or not.
      * @see ChannelState
      */
 
@@ -193,11 +205,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Indicates whether the channel is in a running state or not.
+     * Returns the state whether the channel is running or not.
      * </p>
      * 
      * @param channelState
-     *        Indicates whether the channel is in a running state or not.
+     *        Returns the state whether the channel is running or not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelState
      */
@@ -209,11 +221,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Indicates whether the channel is in a running state or not.
+     * Returns the state whether the channel is running or not.
      * </p>
      * 
      * @param channelState
-     *        Indicates whether the channel is in a running state or not.
+     *        Returns the state whether the channel is running or not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelState
      */
@@ -265,11 +277,15 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Contains information about the slate used to fill gaps between programs in the schedule.
+     * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
-     *        Contains information about the slate used to fill gaps between programs in the schedule.
+     *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public void setFillerSlate(SlateSource fillerSlate) {
@@ -278,10 +294,14 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Contains information about the slate used to fill gaps between programs in the schedule.
+     * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
-     * @return Contains information about the slate used to fill gaps between programs in the schedule.
+     * @return The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
+     *         channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *         for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public SlateSource getFillerSlate() {
@@ -290,11 +310,15 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Contains information about the slate used to fill gaps between programs in the schedule.
+     * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
-     *        Contains information about the slate used to fill gaps between programs in the schedule.
+     *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +329,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The timestamp of when the channel was last modified.
+     * The timestamp that indicates when the channel was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The timestamp of when the channel was last modified.
+     *        The timestamp that indicates when the channel was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -318,10 +342,10 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The timestamp of when the channel was last modified.
+     * The timestamp that indicates when the channel was last modified.
      * </p>
      * 
-     * @return The timestamp of when the channel was last modified.
+     * @return The timestamp that indicates when the channel was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -330,11 +354,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The timestamp of when the channel was last modified.
+     * The timestamp that indicates when the channel was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The timestamp of when the channel was last modified.
+     *        The timestamp that indicates when the channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +439,24 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's playback mode.
+     * The type of playback mode for this channel.
+     * </p>
+     * <p>
+     * <code>LINEAR</code> - Programs play back-to-back only once.
+     * </p>
+     * <p>
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
-     *        The channel's playback mode.
+     *        The type of playback mode for this channel.</p>
+     *        <p>
+     *        <code>LINEAR</code> - Programs play back-to-back only once.
+     *        </p>
+     *        <p>
+     *        <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule
+     *        plays, playback loops back to the first program in the schedule.
      */
 
     public void setPlaybackMode(String playbackMode) {
@@ -428,10 +465,23 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's playback mode.
+     * The type of playback mode for this channel.
+     * </p>
+     * <p>
+     * <code>LINEAR</code> - Programs play back-to-back only once.
+     * </p>
+     * <p>
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      * 
-     * @return The channel's playback mode.
+     * @return The type of playback mode for this channel.</p>
+     *         <p>
+     *         <code>LINEAR</code> - Programs play back-to-back only once.
+     *         </p>
+     *         <p>
+     *         <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule
+     *         plays, playback loops back to the first program in the schedule.
      */
 
     public String getPlaybackMode() {
@@ -440,11 +490,24 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's playback mode.
+     * The type of playback mode for this channel.
+     * </p>
+     * <p>
+     * <code>LINEAR</code> - Programs play back-to-back only once.
+     * </p>
+     * <p>
+     * <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
-     *        The channel's playback mode.
+     *        The type of playback mode for this channel.</p>
+     *        <p>
+     *        <code>LINEAR</code> - Programs play back-to-back only once.
+     *        </p>
+     *        <p>
+     *        <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule
+     *        plays, playback loops back to the first program in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,10 +518,16 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the channel.
+     * @return The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *         to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -467,11 +536,17 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -480,11 +555,17 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,11 +604,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's tier.
+     * The tier associated with this Channel.
      * </p>
      * 
      * @param tier
-     *        The channel's tier.
+     *        The tier associated with this Channel.
      */
 
     public void setTier(String tier) {
@@ -536,10 +617,10 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's tier.
+     * The tier associated with this Channel.
      * </p>
      * 
-     * @return The channel's tier.
+     * @return The tier associated with this Channel.
      */
 
     public String getTier() {
@@ -548,11 +629,11 @@ public class UpdateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's tier.
+     * The tier associated with this Channel.
      * </p>
      * 
      * @param tier
-     *        The channel's tier.
+     *        The tier associated with this Channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -132,10 +132,16 @@ public class SnsMessageManager {
             case GovCloud:
             case US_GOV_EAST_1:
                 return "sns-us-gov-west-1.amazonaws.com";
+            case US_ISO_EAST_1:
+                return "sns-us-iso-east-1.c2s.ic.gov";
+            case US_ISOB_EAST_1:
+                return "sns-us-isob-east-1.sc2s.sgov.gov";
             case AP_EAST_1:
             case ME_SOUTH_1:
+            case ME_CENTRAL_1:
             case EU_SOUTH_1:
             case AF_SOUTH_1:
+            case AP_SOUTHEAST_3:
                 return "sns-signing." + regionStr + ".amazonaws.com";
             default:
                 return "sns.amazonaws.com";

@@ -207,7 +207,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateGatewayRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute" target="_top">AWS API
      *      Documentation</a>
@@ -291,7 +291,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateMesh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh" target="_top">AWS API
      *      Documentation</a>
@@ -374,7 +374,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute" target="_top">AWS API
      *      Documentation</a>
@@ -459,7 +459,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateVirtualGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway" target="_top">AWS
      *      API Documentation</a>
@@ -542,7 +542,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be
      * using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp
      * Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
-     * image</a> in the AWS App Mesh User Guide.
+     * image</a> in the App Mesh User Guide.
      * </p>
      * 
      * @param createVirtualNodeRequest
@@ -566,7 +566,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateVirtualNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode" target="_top">AWS API
      *      Documentation</a>
@@ -651,7 +651,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateVirtualRouter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
@@ -736,7 +736,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.CreateVirtualService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService" target="_top">AWS
      *      API Documentation</a>
@@ -2479,7 +2479,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateGatewayRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute" target="_top">AWS API
      *      Documentation</a>
@@ -2625,7 +2625,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute" target="_top">AWS API
      *      Documentation</a>
@@ -2700,7 +2700,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateVirtualGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway" target="_top">AWS
      *      API Documentation</a>
@@ -2775,7 +2775,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateVirtualNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode" target="_top">AWS API
      *      Documentation</a>
@@ -2850,7 +2850,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateVirtualRouter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
@@ -2925,7 +2925,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
-     *         the <i>AWS App Mesh User Guide</i>.
+     *         the <i>App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateVirtualService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService" target="_top">AWS
      *      API Documentation</a>

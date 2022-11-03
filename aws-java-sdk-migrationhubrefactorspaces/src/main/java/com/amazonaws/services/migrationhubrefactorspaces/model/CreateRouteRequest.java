@@ -39,6 +39,12 @@ public class CreateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientToken;
     /**
      * <p>
+     * Configuration for the default route type.
+     * </p>
+     */
+    private DefaultRouteInput defaultRoute;
+    /**
+     * <p>
      * The ID of the environment in which the route is created.
      * </p>
      */
@@ -149,6 +155,46 @@ public class CreateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public CreateRouteRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for the default route type.
+     * </p>
+     * 
+     * @param defaultRoute
+     *        Configuration for the default route type.
+     */
+
+    public void setDefaultRoute(DefaultRouteInput defaultRoute) {
+        this.defaultRoute = defaultRoute;
+    }
+
+    /**
+     * <p>
+     * Configuration for the default route type.
+     * </p>
+     * 
+     * @return Configuration for the default route type.
+     */
+
+    public DefaultRouteInput getDefaultRoute() {
+        return this.defaultRoute;
+    }
+
+    /**
+     * <p>
+     * Configuration for the default route type.
+     * </p>
+     * 
+     * @param defaultRoute
+     *        Configuration for the default route type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withDefaultRoute(DefaultRouteInput defaultRoute) {
+        setDefaultRoute(defaultRoute);
         return this;
     }
 
@@ -443,6 +489,8 @@ public class CreateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("ApplicationIdentifier: ").append(getApplicationIdentifier()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDefaultRoute() != null)
+            sb.append("DefaultRoute: ").append(getDefaultRoute()).append(",");
         if (getEnvironmentIdentifier() != null)
             sb.append("EnvironmentIdentifier: ").append(getEnvironmentIdentifier()).append(",");
         if (getRouteType() != null)
@@ -475,6 +523,10 @@ public class CreateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getDefaultRoute() == null ^ this.getDefaultRoute() == null)
+            return false;
+        if (other.getDefaultRoute() != null && other.getDefaultRoute().equals(this.getDefaultRoute()) == false)
+            return false;
         if (other.getEnvironmentIdentifier() == null ^ this.getEnvironmentIdentifier() == null)
             return false;
         if (other.getEnvironmentIdentifier() != null && other.getEnvironmentIdentifier().equals(this.getEnvironmentIdentifier()) == false)
@@ -505,6 +557,7 @@ public class CreateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getApplicationIdentifier() == null) ? 0 : getApplicationIdentifier().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDefaultRoute() == null) ? 0 : getDefaultRoute().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentIdentifier() == null) ? 0 : getEnvironmentIdentifier().hashCode());
         hashCode = prime * hashCode + ((getRouteType() == null) ? 0 : getRouteType().hashCode());
         hashCode = prime * hashCode + ((getServiceIdentifier() == null) ? 0 : getServiceIdentifier().hashCode());

@@ -50,7 +50,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF
      * then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
-     * <code>COUNT</code> for the default action for a WebACL.
+     * <code>COUNT</code> for the default action for a web ACL.
      * </p>
      * </li>
      * </ul>
@@ -79,7 +79,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF
      * then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
-     * <code>COUNT</code> for the default action for a WebACL.
+     * <code>COUNT</code> for the default action for a web ACL.
      * </p>
      * </li>
      * </ul>
@@ -104,7 +104,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the
      *        rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     *        specify <code>COUNT</code> for the default action for a WebACL.
+     *        specify <code>COUNT</code> for the default action for a web ACL.
      *        </p>
      *        </li>
      */
@@ -135,7 +135,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF
      * then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
-     * <code>COUNT</code> for the default action for a WebACL.
+     * <code>COUNT</code> for the default action for a web ACL.
      * </p>
      * </li>
      * </ul>
@@ -159,7 +159,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the
      *         rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You
-     *         can't specify <code>COUNT</code> for the default action for a WebACL.
+     *         can't specify <code>COUNT</code> for the default action for a web ACL.
      *         </p>
      *         </li>
      */
@@ -190,7 +190,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF
      * then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
-     * <code>COUNT</code> for the default action for a WebACL.
+     * <code>COUNT</code> for the default action for a web ACL.
      * </p>
      * </li>
      * </ul>
@@ -215,7 +215,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the
      *        rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     *        specify <code>COUNT</code> for the default action for a WebACL.
+     *        specify <code>COUNT</code> for the default action for a web ACL.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

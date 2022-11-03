@@ -21,8 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A code review type that analyzes all code under a specified branch in an associated repository. The associated
  * repository is specified using its ARN when you call <a
- * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code>
- * </a>.
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAnalysis"
@@ -33,8 +32,8 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies the tip of a branch in an associated repository.
      * </p>
      */
     private RepositoryHeadSourceCodeType repositoryHead;
@@ -43,13 +42,13 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies the tip of a branch in an associated repository.
      * </p>
      * 
      * @param repositoryHead
-     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *        that specifies the tip of a branch in an associated repository.
      */
 
     public void setRepositoryHead(RepositoryHeadSourceCodeType repositoryHead) {
@@ -58,12 +57,13 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies the tip of a branch in an associated repository.
      * </p>
      * 
-     * @return A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *         <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     * @return A <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *         that specifies the tip of a branch in an associated repository.
      */
 
     public RepositoryHeadSourceCodeType getRepositoryHead() {
@@ -72,13 +72,13 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that
+     * specifies the tip of a branch in an associated repository.
      * </p>
      * 
      * @param repositoryHead
-     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     *        <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     *        that specifies the tip of a branch in an associated repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.greengrassv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,14 @@ public class InstalledComponentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleStateDetails").build();
     private static final MarshallingInfo<Boolean> ISROOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("isRoot").build();
+    private static final MarshallingInfo<java.util.Date> LASTSTATUSCHANGETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStatusChangeTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTREPORTEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastReportedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTINSTALLATIONSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastInstallationSource").build();
+    private static final MarshallingInfo<List> LIFECYCLESTATUSCODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleStatusCodes").build();
 
     private static final InstalledComponentMarshaller instance = new InstalledComponentMarshaller();
 
@@ -59,6 +68,10 @@ public class InstalledComponentMarshaller {
             protocolMarshaller.marshall(installedComponent.getLifecycleState(), LIFECYCLESTATE_BINDING);
             protocolMarshaller.marshall(installedComponent.getLifecycleStateDetails(), LIFECYCLESTATEDETAILS_BINDING);
             protocolMarshaller.marshall(installedComponent.getIsRoot(), ISROOT_BINDING);
+            protocolMarshaller.marshall(installedComponent.getLastStatusChangeTimestamp(), LASTSTATUSCHANGETIMESTAMP_BINDING);
+            protocolMarshaller.marshall(installedComponent.getLastReportedTimestamp(), LASTREPORTEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(installedComponent.getLastInstallationSource(), LASTINSTALLATIONSOURCE_BINDING);
+            protocolMarshaller.marshall(installedComponent.getLifecycleStatusCodes(), LIFECYCLESTATUSCODES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

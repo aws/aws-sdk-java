@@ -21,12 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The result set returned by a SQL statement.
  * </p>
- * <important>
+ * <note>
  * <p>
  * This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the
  * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.
  * </p>
- * </important>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultFrame" target="_top">AWS API
  *      Documentation</a>
@@ -36,16 +36,56 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The records in the result set.
-     * </p>
-     */
-    private java.util.List<Record> records;
-    /**
-     * <p>
      * The result-set metadata in the result set.
      * </p>
      */
     private ResultSetMetadata resultSetMetadata;
+    /**
+     * <p>
+     * The records in the result set.
+     * </p>
+     */
+    private java.util.List<Record> records;
+
+    /**
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
+     * 
+     * @param resultSetMetadata
+     *        The result-set metadata in the result set.
+     */
+
+    public void setResultSetMetadata(ResultSetMetadata resultSetMetadata) {
+        this.resultSetMetadata = resultSetMetadata;
+    }
+
+    /**
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
+     * 
+     * @return The result-set metadata in the result set.
+     */
+
+    public ResultSetMetadata getResultSetMetadata() {
+        return this.resultSetMetadata;
+    }
+
+    /**
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
+     * 
+     * @param resultSetMetadata
+     *        The result-set metadata in the result set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResultFrame withResultSetMetadata(ResultSetMetadata resultSetMetadata) {
+        setResultSetMetadata(resultSetMetadata);
+        return this;
+    }
 
     /**
      * <p>
@@ -118,46 +158,6 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The result-set metadata in the result set.
-     * </p>
-     * 
-     * @param resultSetMetadata
-     *        The result-set metadata in the result set.
-     */
-
-    public void setResultSetMetadata(ResultSetMetadata resultSetMetadata) {
-        this.resultSetMetadata = resultSetMetadata;
-    }
-
-    /**
-     * <p>
-     * The result-set metadata in the result set.
-     * </p>
-     * 
-     * @return The result-set metadata in the result set.
-     */
-
-    public ResultSetMetadata getResultSetMetadata() {
-        return this.resultSetMetadata;
-    }
-
-    /**
-     * <p>
-     * The result-set metadata in the result set.
-     * </p>
-     * 
-     * @param resultSetMetadata
-     *        The result-set metadata in the result set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResultFrame withResultSetMetadata(ResultSetMetadata resultSetMetadata) {
-        setResultSetMetadata(resultSetMetadata);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -169,10 +169,10 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRecords() != null)
-            sb.append("Records: ").append(getRecords()).append(",");
         if (getResultSetMetadata() != null)
-            sb.append("ResultSetMetadata: ").append(getResultSetMetadata());
+            sb.append("ResultSetMetadata: ").append(getResultSetMetadata()).append(",");
+        if (getRecords() != null)
+            sb.append("Records: ").append(getRecords());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +187,13 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ResultFrame == false)
             return false;
         ResultFrame other = (ResultFrame) obj;
-        if (other.getRecords() == null ^ this.getRecords() == null)
-            return false;
-        if (other.getRecords() != null && other.getRecords().equals(this.getRecords()) == false)
-            return false;
         if (other.getResultSetMetadata() == null ^ this.getResultSetMetadata() == null)
             return false;
         if (other.getResultSetMetadata() != null && other.getResultSetMetadata().equals(this.getResultSetMetadata()) == false)
+            return false;
+        if (other.getRecords() == null ^ this.getRecords() == null)
+            return false;
+        if (other.getRecords() != null && other.getRecords().equals(this.getRecords()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRecords() == null) ? 0 : getRecords().hashCode());
         hashCode = prime * hashCode + ((getResultSetMetadata() == null) ? 0 : getResultSetMetadata().hashCode());
+        hashCode = prime * hashCode + ((getRecords() == null) ? 0 : getRecords().hashCode());
         return hashCode;
     }
 

@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Ad marker for Apple HLS manifest.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsAdMarkers {

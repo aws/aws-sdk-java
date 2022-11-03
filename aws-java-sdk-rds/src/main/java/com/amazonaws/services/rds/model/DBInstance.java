@@ -305,7 +305,7 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBInstanceStatusInfo> statusInfos;
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      */
     private String storageType;
@@ -464,8 +464,50 @@ public class DBInstance implements Serializable, Cloneable {
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer performanceInsightsRetentionPeriod;
     /**
@@ -663,6 +705,18 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String networkType;
+    /**
+     * <p>
+     * The status of the policy state of the activity stream.
+     * </p>
+     */
+    private String activityStreamPolicyStatus;
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     */
+    private Integer storageThroughput;
 
     /**
      * <p>
@@ -2750,11 +2804,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with DB instance.
+     *        Specifies the storage type associated with the DB instance.
      */
 
     public void setStorageType(String storageType) {
@@ -2763,10 +2817,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      * 
-     * @return Specifies the storage type associated with DB instance.
+     * @return Specifies the storage type associated with the DB instance.
      */
 
     public String getStorageType() {
@@ -2775,11 +2829,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with DB instance.
+     *        Specifies the storage type associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3912,11 +3966,95 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
+     *        valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        7
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, the following values are valid:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        93 (3 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        341 (11 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        589 (19 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
      */
 
     public void setPerformanceInsightsRetentionPeriod(Integer performanceInsightsRetentionPeriod) {
@@ -3925,10 +4063,94 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
+     *         valid:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         7
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         731
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, the following values are valid:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         93 (3 months * 31)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         341 (11 months * 31)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         589 (19 months * 31)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         731
+     *         </p>
+     *         </li>
      */
 
     public Integer getPerformanceInsightsRetentionPeriod() {
@@ -3937,11 +4159,95 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, the following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 93 (3 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 341 (11 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 589 (19 months * 31)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 731
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
+     *        valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        7
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, the following values are valid:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        93 (3 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        341 (11 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        589 (19 months * 31)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        731
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5517,6 +5823,105 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the policy state of the activity stream.
+     * </p>
+     * 
+     * @param activityStreamPolicyStatus
+     *        The status of the policy state of the activity stream.
+     * @see ActivityStreamPolicyStatus
+     */
+
+    public void setActivityStreamPolicyStatus(String activityStreamPolicyStatus) {
+        this.activityStreamPolicyStatus = activityStreamPolicyStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the policy state of the activity stream.
+     * </p>
+     * 
+     * @return The status of the policy state of the activity stream.
+     * @see ActivityStreamPolicyStatus
+     */
+
+    public String getActivityStreamPolicyStatus() {
+        return this.activityStreamPolicyStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the policy state of the activity stream.
+     * </p>
+     * 
+     * @param activityStreamPolicyStatus
+     *        The status of the policy state of the activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamPolicyStatus
+     */
+
+    public DBInstance withActivityStreamPolicyStatus(String activityStreamPolicyStatus) {
+        setActivityStreamPolicyStatus(activityStreamPolicyStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the policy state of the activity stream.
+     * </p>
+     * 
+     * @param activityStreamPolicyStatus
+     *        The status of the policy state of the activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamPolicyStatus
+     */
+
+    public DBInstance withActivityStreamPolicyStatus(ActivityStreamPolicyStatus activityStreamPolicyStatus) {
+        this.activityStreamPolicyStatus = activityStreamPolicyStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the DB instance.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * 
+     * @return Specifies the storage throughput for the DB instance.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5677,7 +6082,11 @@ public class DBInstance implements Serializable, Cloneable {
         if (getBackupTarget() != null)
             sb.append("BackupTarget: ").append(getBackupTarget()).append(",");
         if (getNetworkType() != null)
-            sb.append("NetworkType: ").append(getNetworkType());
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getActivityStreamPolicyStatus() != null)
+            sb.append("ActivityStreamPolicyStatus: ").append(getActivityStreamPolicyStatus()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -6001,6 +6410,14 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
+        if (other.getActivityStreamPolicyStatus() == null ^ this.getActivityStreamPolicyStatus() == null)
+            return false;
+        if (other.getActivityStreamPolicyStatus() != null && other.getActivityStreamPolicyStatus().equals(this.getActivityStreamPolicyStatus()) == false)
+            return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -6085,6 +6502,8 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamPolicyStatus() == null) ? 0 : getActivityStreamPolicyStatus().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         return hashCode;
     }
 

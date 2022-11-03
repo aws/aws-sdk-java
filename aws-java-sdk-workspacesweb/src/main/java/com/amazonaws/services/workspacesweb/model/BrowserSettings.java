@@ -213,7 +213,7 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
         if (getAssociatedPortalArns() != null)
             sb.append("AssociatedPortalArns: ").append(getAssociatedPortalArns()).append(",");
         if (getBrowserPolicy() != null)
-            sb.append("BrowserPolicy: ").append(getBrowserPolicy()).append(",");
+            sb.append("BrowserPolicy: ").append("***Sensitive Data Redacted***").append(",");
         if (getBrowserSettingsArn() != null)
             sb.append("BrowserSettingsArn: ").append(getBrowserSettingsArn());
         sb.append("}");

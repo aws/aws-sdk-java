@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures the firewall policy deployment model for a third-party firewall. The deployment model can either be
- * distributed or centralized.
+ * Configures the third-party firewall's firewall policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallFirewallPolicy"

@@ -43,6 +43,12 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
+    /**
+     * <p>
+     * The training job <code>ResourceConfig</code> to update warm pool retention length.
+     * </p>
+     */
+    private ResourceConfigForUpdate resourceConfig;
 
     /**
      * <p>
@@ -195,6 +201,46 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The training job <code>ResourceConfig</code> to update warm pool retention length.
+     * </p>
+     * 
+     * @param resourceConfig
+     *        The training job <code>ResourceConfig</code> to update warm pool retention length.
+     */
+
+    public void setResourceConfig(ResourceConfigForUpdate resourceConfig) {
+        this.resourceConfig = resourceConfig;
+    }
+
+    /**
+     * <p>
+     * The training job <code>ResourceConfig</code> to update warm pool retention length.
+     * </p>
+     * 
+     * @return The training job <code>ResourceConfig</code> to update warm pool retention length.
+     */
+
+    public ResourceConfigForUpdate getResourceConfig() {
+        return this.resourceConfig;
+    }
+
+    /**
+     * <p>
+     * The training job <code>ResourceConfig</code> to update warm pool retention length.
+     * </p>
+     * 
+     * @param resourceConfig
+     *        The training job <code>ResourceConfig</code> to update warm pool retention length.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTrainingJobRequest withResourceConfig(ResourceConfigForUpdate resourceConfig) {
+        setResourceConfig(resourceConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -211,7 +257,9 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getProfilerConfig() != null)
             sb.append("ProfilerConfig: ").append(getProfilerConfig()).append(",");
         if (getProfilerRuleConfigurations() != null)
-            sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations());
+            sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations()).append(",");
+        if (getResourceConfig() != null)
+            sb.append("ResourceConfig: ").append(getResourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +286,10 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getProfilerRuleConfigurations() != null && other.getProfilerRuleConfigurations().equals(this.getProfilerRuleConfigurations()) == false)
             return false;
+        if (other.getResourceConfig() == null ^ this.getResourceConfig() == null)
+            return false;
+        if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -249,6 +301,7 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getTrainingJobName() == null) ? 0 : getTrainingJobName().hashCode());
         hashCode = prime * hashCode + ((getProfilerConfig() == null) ? 0 : getProfilerConfig().hashCode());
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
         return hashCode;
     }
 

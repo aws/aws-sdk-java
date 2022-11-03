@@ -53,6 +53,11 @@ public class DisableTransitGatewayRouteTablePropagationRequestMarshaller impleme
                     StringUtils.fromString(disableTransitGatewayRouteTablePropagationRequest.getTransitGatewayAttachmentId()));
         }
 
+        if (disableTransitGatewayRouteTablePropagationRequest.getTransitGatewayRouteTableAnnouncementId() != null) {
+            request.addParameter("TransitGatewayRouteTableAnnouncementId",
+                    StringUtils.fromString(disableTransitGatewayRouteTablePropagationRequest.getTransitGatewayRouteTableAnnouncementId()));
+        }
+
         return request;
     }
 

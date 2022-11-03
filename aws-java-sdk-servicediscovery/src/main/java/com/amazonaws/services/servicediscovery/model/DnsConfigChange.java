@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you
+ * A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you
  * register an instance.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      */
@@ -39,11 +39,11 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * 
-     * @return An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     * @return An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
      *         to create when you register an instance.
      */
 
@@ -53,12 +53,12 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
      *        to create when you register an instance.
      */
 
@@ -73,7 +73,7 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * <p>
@@ -83,7 +83,7 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
      *        to create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -100,12 +100,12 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
      *        to create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

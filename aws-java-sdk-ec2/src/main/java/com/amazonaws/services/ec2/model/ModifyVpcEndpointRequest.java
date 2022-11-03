@@ -86,6 +86,18 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> removeSecurityGroupIds;
     /**
      * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     */
+    private DnsOptionsSpecification dnsOptions;
+    /**
+     * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      */
@@ -685,6 +697,105 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @return The IP address type for the endpoint.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public ModifyVpcEndpointRequest withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public ModifyVpcEndpointRequest withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     * 
+     * @param dnsOptions
+     *        The DNS options for the endpoint.
+     */
+
+    public void setDnsOptions(DnsOptionsSpecification dnsOptions) {
+        this.dnsOptions = dnsOptions;
+    }
+
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     * 
+     * @return The DNS options for the endpoint.
+     */
+
+    public DnsOptionsSpecification getDnsOptions() {
+        return this.dnsOptions;
+    }
+
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     * 
+     * @param dnsOptions
+     *        The DNS options for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointRequest withDnsOptions(DnsOptionsSpecification dnsOptions) {
+        setDnsOptions(dnsOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      * 
@@ -776,6 +887,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
             sb.append("AddSecurityGroupIds: ").append(getAddSecurityGroupIds()).append(",");
         if (getRemoveSecurityGroupIds() != null)
             sb.append("RemoveSecurityGroupIds: ").append(getRemoveSecurityGroupIds()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getDnsOptions() != null)
+            sb.append("DnsOptions: ").append(getDnsOptions()).append(",");
         if (getPrivateDnsEnabled() != null)
             sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled());
         sb.append("}");
@@ -828,6 +943,14 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getRemoveSecurityGroupIds() != null && other.getRemoveSecurityGroupIds().equals(this.getRemoveSecurityGroupIds()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
+        if (other.getDnsOptions() == null ^ this.getDnsOptions() == null)
+            return false;
+        if (other.getDnsOptions() != null && other.getDnsOptions().equals(this.getDnsOptions()) == false)
+            return false;
         if (other.getPrivateDnsEnabled() == null ^ this.getPrivateDnsEnabled() == null)
             return false;
         if (other.getPrivateDnsEnabled() != null && other.getPrivateDnsEnabled().equals(this.getPrivateDnsEnabled()) == false)
@@ -849,6 +972,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getRemoveSubnetIds() == null) ? 0 : getRemoveSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getAddSecurityGroupIds() == null) ? 0 : getAddSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getRemoveSecurityGroupIds() == null) ? 0 : getRemoveSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getDnsOptions() == null) ? 0 : getDnsOptions().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
         return hashCode;
     }

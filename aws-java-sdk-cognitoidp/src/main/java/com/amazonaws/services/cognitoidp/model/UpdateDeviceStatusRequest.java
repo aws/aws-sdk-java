@@ -30,7 +30,7 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      * </p>
      */
     private String accessToken;
@@ -49,11 +49,11 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      */
 
     public void setAccessToken(String accessToken) {
@@ -62,10 +62,10 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      * </p>
      * 
-     * @return The access token.
+     * @return A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      */
 
     public String getAccessToken() {
@@ -74,11 +74,11 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose device status you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

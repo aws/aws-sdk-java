@@ -29,6 +29,8 @@ public class ClientPropertiesMarshaller {
 
     private static final MarshallingInfo<String> RECONNECTENABLED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReconnectEnabled").build();
+    private static final MarshallingInfo<String> LOGUPLOADENABLED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogUploadEnabled").build();
 
     private static final ClientPropertiesMarshaller instance = new ClientPropertiesMarshaller();
 
@@ -47,6 +49,7 @@ public class ClientPropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(clientProperties.getReconnectEnabled(), RECONNECTENABLED_BINDING);
+            protocolMarshaller.marshall(clientProperties.getLogUploadEnabled(), LOGUPLOADENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

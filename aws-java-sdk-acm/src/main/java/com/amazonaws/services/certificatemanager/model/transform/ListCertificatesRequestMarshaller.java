@@ -36,6 +36,10 @@ public class ListCertificatesRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
 
     private static final ListCertificatesRequestMarshaller instance = new ListCertificatesRequestMarshaller();
 
@@ -57,6 +61,8 @@ public class ListCertificatesRequestMarshaller {
             protocolMarshaller.marshall(listCertificatesRequest.getIncludes(), INCLUDES_BINDING);
             protocolMarshaller.marshall(listCertificatesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listCertificatesRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(listCertificatesRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(listCertificatesRequest.getSortOrder(), SORTORDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information for users or groups in your Amazon Web Services SSO identity source with granted access to your
+ * Summary information for users or groups in your IAM Identity Center identity source with granted access to your
  * Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more
  * information on creating a search application experience, see <a
  * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
@@ -34,8 +34,8 @@ public class ExperienceEntitiesSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      */
     private String entityId;
@@ -54,12 +54,12 @@ public class ExperienceEntitiesSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     *        The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *        could be an email.
      */
 
@@ -69,11 +69,11 @@ public class ExperienceEntitiesSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
-     * @return The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     * @return The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *         could be an email.
      */
 
@@ -83,12 +83,12 @@ public class ExperienceEntitiesSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     *        The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *        could be an email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

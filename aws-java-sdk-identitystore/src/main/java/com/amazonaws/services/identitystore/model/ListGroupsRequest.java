@@ -29,14 +29,14 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
      * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
-     * number and lower case letters. This value is generated at the time that a new identity store is created.
+     * numbers and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      */
     private String identityStoreId;
     /**
      * <p>
      * The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code>
-     * and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50
+     * and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50
      * characters.
      * </p>
      */
@@ -52,22 +52,23 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code>
-     * request.
+     * requests.
      * </p>
      */
+    @Deprecated
     private java.util.List<Filter> filters;
 
     /**
      * <p>
      * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
      * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
-     * number and lower case letters. This value is generated at the time that a new identity store is created.
+     * numbers and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      * 
      * @param identityStoreId
      *        The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
      *        <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that
-     *        contains number and lower case letters. This value is generated at the time that a new identity store is
+     *        contains numbers and lower case letters. This value is generated at the time that a new identity store is
      *        created.
      */
 
@@ -79,12 +80,12 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
      * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
-     * number and lower case letters. This value is generated at the time that a new identity store is created.
+     * numbers and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      * 
      * @return The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this
      *         example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string
-     *         that contains number and lower case letters. This value is generated at the time that a new identity
+     *         that contains numbers and lower case letters. This value is generated at the time that a new identity
      *         store is created.
      */
 
@@ -96,13 +97,13 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
      * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
-     * number and lower case letters. This value is generated at the time that a new identity store is created.
+     * numbers and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      * 
      * @param identityStoreId
      *        The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
      *        <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that
-     *        contains number and lower case letters. This value is generated at the time that a new identity store is
+     *        contains numbers and lower case letters. This value is generated at the time that a new identity store is
      *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -115,13 +116,13 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code>
-     * and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50
+     * and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50
      * characters.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to be returned per request. This parameter is used in the
-     *        <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one
+     *        <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one
      *        page. The length limit is 50 characters.
      */
 
@@ -132,12 +133,12 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code>
-     * and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50
+     * and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50
      * characters.
      * </p>
      * 
      * @return The maximum number of results to be returned per request. This parameter is used in the
-     *         <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one
+     *         <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one
      *         page. The length limit is 50 characters.
      */
 
@@ -148,13 +149,13 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code>
-     * and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50
+     * and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50
      * characters.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to be returned per request. This parameter is used in the
-     *        <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one
+     *        <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one
      *        page. The length limit is 50 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -222,13 +223,13 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code>
-     * request.
+     * requests.
      * </p>
      * 
      * @return A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and
-     *         <code>ListGroups</code> request.
+     *         <code>ListGroups</code> requests.
      */
-
+    @Deprecated
     public java.util.List<Filter> getFilters() {
         return filters;
     }
@@ -236,14 +237,14 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code>
-     * request.
+     * requests.
      * </p>
      * 
      * @param filters
      *        A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and
-     *        <code>ListGroups</code> request.
+     *        <code>ListGroups</code> requests.
      */
-
+    @Deprecated
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -256,7 +257,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code>
-     * request.
+     * requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -266,10 +267,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param filters
      *        A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and
-     *        <code>ListGroups</code> request.
+     *        <code>ListGroups</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ListGroupsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -283,15 +284,15 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code>
-     * request.
+     * requests.
      * </p>
      * 
      * @param filters
      *        A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and
-     *        <code>ListGroups</code> request.
+     *        <code>ListGroups</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ListGroupsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;

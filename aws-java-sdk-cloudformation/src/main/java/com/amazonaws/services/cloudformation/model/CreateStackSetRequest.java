@@ -70,7 +70,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String templateURL;
     /**
      * <p>
-     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the stack.
+     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      * </p>
      */
     private String stackId;
@@ -213,7 +213,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -589,12 +589,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the stack.
+     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      * </p>
      * 
      * @param stackId
-     *        The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the
-     *        stack.
+     *        The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      */
 
     public void setStackId(String stackId) {
@@ -603,11 +602,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the stack.
+     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      * </p>
      * 
-     * @return The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the
-     *         stack.
+     * @return The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      */
 
     public String getStackId() {
@@ -616,12 +614,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the stack.
+     * The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      * </p>
      * 
      * @param stackId
-     *        The stack ID you are importing into a new stack set. Specify the Amazon Resource Number (ARN) of the
-     *        stack.
+     *        The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2057,7 +2054,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2067,7 +2064,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
@@ -2081,7 +2078,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2090,7 +2087,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
      *         <p>
      *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *         can manage specific stack sets within the same administrator account. For more information, see <a
@@ -2105,7 +2102,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2115,7 +2112,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a

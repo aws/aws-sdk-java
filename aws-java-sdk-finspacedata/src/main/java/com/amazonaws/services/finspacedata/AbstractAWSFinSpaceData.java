@@ -28,6 +28,11 @@ public class AbstractAWSFinSpaceData implements AWSFinSpaceData {
     }
 
     @Override
+    public AssociateUserToPermissionGroupResult associateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateChangesetResult createChangeset(CreateChangesetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,6 +73,11 @@ public class AbstractAWSFinSpaceData implements AWSFinSpaceData {
     }
 
     @Override
+    public DisassociateUserFromPermissionGroupResult disassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EnableUserResult enableUser(EnableUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +94,16 @@ public class AbstractAWSFinSpaceData implements AWSFinSpaceData {
 
     @Override
     public GetDatasetResult getDataset(GetDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExternalDataViewAccessDetailsResult getExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPermissionGroupResult getPermissionGroup(GetPermissionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,7 +143,17 @@ public class AbstractAWSFinSpaceData implements AWSFinSpaceData {
     }
 
     @Override
+    public ListPermissionGroupsByUserResult listPermissionGroupsByUser(ListPermissionGroupsByUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUsersResult listUsers(ListUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUsersByPermissionGroupResult listUsersByPermissionGroup(ListUsersByPermissionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

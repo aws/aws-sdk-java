@@ -46,7 +46,7 @@ public class ListContactFlowModulesRequest extends com.amazonaws.AmazonWebServic
     private Integer maxResults;
     /**
      * <p>
-     * The state of the contact flow module.
+     * The state of the flow module.
      * </p>
      */
     private String contactFlowModuleState;
@@ -179,11 +179,11 @@ public class ListContactFlowModulesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The state of the contact flow module.
+     * The state of the flow module.
      * </p>
      * 
      * @param contactFlowModuleState
-     *        The state of the contact flow module.
+     *        The state of the flow module.
      * @see ContactFlowModuleState
      */
 
@@ -193,10 +193,10 @@ public class ListContactFlowModulesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The state of the contact flow module.
+     * The state of the flow module.
      * </p>
      * 
-     * @return The state of the contact flow module.
+     * @return The state of the flow module.
      * @see ContactFlowModuleState
      */
 
@@ -206,11 +206,11 @@ public class ListContactFlowModulesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The state of the contact flow module.
+     * The state of the flow module.
      * </p>
      * 
      * @param contactFlowModuleState
-     *        The state of the contact flow module.
+     *        The state of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */
@@ -222,11 +222,11 @@ public class ListContactFlowModulesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The state of the contact flow module.
+     * The state of the flow module.
      * </p>
      * 
      * @param contactFlowModuleState
-     *        The state of the contact flow module.
+     *        The state of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */

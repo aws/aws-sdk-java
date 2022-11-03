@@ -30,20 +30,25 @@ public class DocumentRelevanceConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name of the tuning configuration to override document relevance at the index level.
+     * The name of the index field.
      * </p>
      */
     private String name;
-
+    /**
+     * <p>
+     * Provides information for tuning the relevance of a field in a search. When a query includes terms that match the
+     * field, the results are given a boost in the response based on these tuning parameters.
+     * </p>
+     */
     private Relevance relevance;
 
     /**
      * <p>
-     * The name of the tuning configuration to override document relevance at the index level.
+     * The name of the index field.
      * </p>
      * 
      * @param name
-     *        The name of the tuning configuration to override document relevance at the index level.
+     *        The name of the index field.
      */
 
     public void setName(String name) {
@@ -52,10 +57,10 @@ public class DocumentRelevanceConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name of the tuning configuration to override document relevance at the index level.
+     * The name of the index field.
      * </p>
      * 
-     * @return The name of the tuning configuration to override document relevance at the index level.
+     * @return The name of the index field.
      */
 
     public String getName() {
@@ -64,11 +69,11 @@ public class DocumentRelevanceConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name of the tuning configuration to override document relevance at the index level.
+     * The name of the index field.
      * </p>
      * 
      * @param name
-     *        The name of the tuning configuration to override document relevance at the index level.
+     *        The name of the index field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +83,14 @@ public class DocumentRelevanceConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Provides information for tuning the relevance of a field in a search. When a query includes terms that match the
+     * field, the results are given a boost in the response based on these tuning parameters.
+     * </p>
+     * 
      * @param relevance
+     *        Provides information for tuning the relevance of a field in a search. When a query includes terms that
+     *        match the field, the results are given a boost in the response based on these tuning parameters.
      */
 
     public void setRelevance(Relevance relevance) {
@@ -86,7 +98,13 @@ public class DocumentRelevanceConfiguration implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * Provides information for tuning the relevance of a field in a search. When a query includes terms that match the
+     * field, the results are given a boost in the response based on these tuning parameters.
+     * </p>
+     * 
+     * @return Provides information for tuning the relevance of a field in a search. When a query includes terms that
+     *         match the field, the results are given a boost in the response based on these tuning parameters.
      */
 
     public Relevance getRelevance() {
@@ -94,7 +112,14 @@ public class DocumentRelevanceConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Provides information for tuning the relevance of a field in a search. When a query includes terms that match the
+     * field, the results are given a boost in the response based on these tuning parameters.
+     * </p>
+     * 
      * @param relevance
+     *        Provides information for tuning the relevance of a field in a search. When a query includes terms that
+     *        match the field, the results are given a boost in the response based on these tuning parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,8 @@ public class CreateAssetRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> ASSETDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetDescription").build();
 
     private static final CreateAssetRequestMarshaller instance = new CreateAssetRequestMarshaller();
 
@@ -61,6 +63,7 @@ public class CreateAssetRequestMarshaller {
             protocolMarshaller.marshall(createAssetRequest.getAssetModelId(), ASSETMODELID_BINDING);
             protocolMarshaller.marshall(createAssetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createAssetRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAssetRequest.getAssetDescription(), ASSETDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

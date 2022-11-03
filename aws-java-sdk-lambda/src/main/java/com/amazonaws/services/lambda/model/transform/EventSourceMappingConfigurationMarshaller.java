@@ -74,6 +74,10 @@ public class EventSourceMappingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TumblingWindowInSeconds").build();
     private static final MarshallingInfo<List> FUNCTIONRESPONSETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionResponseTypes").build();
+    private static final MarshallingInfo<StructuredPojo> AMAZONMANAGEDKAFKAEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmazonManagedKafkaEventSourceConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedKafkaEventSourceConfig").build();
 
     private static final EventSourceMappingConfigurationMarshaller instance = new EventSourceMappingConfigurationMarshaller();
 
@@ -114,6 +118,8 @@ public class EventSourceMappingConfigurationMarshaller {
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getMaximumRetryAttempts(), MAXIMUMRETRYATTEMPTS_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getTumblingWindowInSeconds(), TUMBLINGWINDOWINSECONDS_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getFunctionResponseTypes(), FUNCTIONRESPONSETYPES_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getAmazonManagedKafkaEventSourceConfig(), AMAZONMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getSelfManagedKafkaEventSourceConfig(), SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

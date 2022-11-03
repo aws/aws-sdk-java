@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum ObjectLambdaAllowedFeature {
 
     GetObjectRange("GetObject-Range"),
-    GetObjectPartNumber("GetObject-PartNumber");
+    GetObjectPartNumber("GetObject-PartNumber"),
+    HeadObjectRange("HeadObject-Range"),
+    HeadObjectPartNumber("HeadObject-PartNumber");
 
     private String value;
 

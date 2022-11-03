@@ -33,11 +33,11 @@ public class CreateAccessPreviewRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerArn").build();
+    private static final MarshallingInfo<Map> CONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("configurations").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<Map> CONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("configurations").build();
 
     private static final CreateAccessPreviewRequestMarshaller instance = new CreateAccessPreviewRequestMarshaller();
 
@@ -56,8 +56,8 @@ public class CreateAccessPreviewRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createAccessPreviewRequest.getAnalyzerArn(), ANALYZERARN_BINDING);
-            protocolMarshaller.marshall(createAccessPreviewRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createAccessPreviewRequest.getConfigurations(), CONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(createAccessPreviewRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

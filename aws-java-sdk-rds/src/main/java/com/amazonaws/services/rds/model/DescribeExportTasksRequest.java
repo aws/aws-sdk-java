@@ -123,6 +123,12 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Integer maxRecords;
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     */
+    private String sourceType;
 
     /**
      * <p>
@@ -875,6 +881,65 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of source for the export.
+     * @see ExportSourceType
+     */
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @return The type of source for the export.
+     * @see ExportSourceType
+     */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of source for the export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportSourceType
+     */
+
+    public DescribeExportTasksRequest withSourceType(String sourceType) {
+        setSourceType(sourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of source for the export.
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of source for the export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportSourceType
+     */
+
+    public DescribeExportTasksRequest withSourceType(ExportSourceType sourceType) {
+        this.sourceType = sourceType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -895,7 +960,9 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: ").append(getMaxRecords());
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
+        if (getSourceType() != null)
+            sb.append("SourceType: ").append(getSourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -930,6 +997,10 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
         return true;
     }
 
@@ -943,6 +1014,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
         return hashCode;
     }
 

@@ -22,7 +22,8 @@ public enum DataRepositoryTaskFilterName {
 
     FileSystemId("file-system-id"),
     TaskLifecycle("task-lifecycle"),
-    DataRepositoryAssociationId("data-repository-association-id");
+    DataRepositoryAssociationId("data-repository-association-id"),
+    FileCacheId("file-cache-id");
 
     private String value;
 

@@ -58,15 +58,17 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      */
     private String ipv4IpamPoolId;
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      */
     private Integer ipv4NetmaskLength;
@@ -75,16 +77,18 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you
      * can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and
      * auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services
-     * Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     * <i>Amazon VPC IPAM User Guide</i>.
+     * Organization. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      */
     private String ipv6IpamPoolId;
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      */
     private Integer ipv6NetmaskLength;
@@ -354,12 +358,14 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4IpamPoolId
      *        The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     *        href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv4IpamPoolId(String ipv4IpamPoolId) {
@@ -369,11 +375,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @return The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     *         href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public String getIpv4IpamPoolId() {
@@ -383,12 +391,14 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4IpamPoolId
      *        The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a
-     *        href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,14 +410,16 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4NetmaskLength
      *        The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv4NetmaskLength(Integer ipv4NetmaskLength) {
@@ -417,13 +429,15 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @return The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address
      *         Manager (IPAM) pool. For more information about IPAM, see <a
-     *         href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public Integer getIpv4NetmaskLength() {
@@ -433,14 +447,16 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4NetmaskLength
      *        The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,8 +470,9 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you
      * can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and
      * auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services
-     * Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     * <i>Amazon VPC IPAM User Guide</i>.
+     * Organization. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6IpamPoolId
@@ -463,7 +480,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *        that you can use to automate your IP address management workflows including assigning, tracking,
      *        troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your
      *        Amazon Web Services Organization. For more information, see <a
-     *        href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv6IpamPoolId(String ipv6IpamPoolId) {
@@ -475,15 +493,17 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you
      * can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and
      * auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services
-     * Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     * <i>Amazon VPC IPAM User Guide</i>.
+     * Organization. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @return The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature
      *         that you can use to automate your IP address management workflows including assigning, tracking,
      *         troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout
      *         your Amazon Web Services Organization. For more information, see <a
-     *         href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public String getIpv6IpamPoolId() {
@@ -495,8 +515,9 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you
      * can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and
      * auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services
-     * Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     * <i>Amazon VPC IPAM User Guide</i>.
+     * Organization. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6IpamPoolId
@@ -504,7 +525,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *        that you can use to automate your IP address management workflows including assigning, tracking,
      *        troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your
      *        Amazon Web Services Organization. For more information, see <a
-     *        href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,14 +538,16 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6NetmaskLength
      *        The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv6NetmaskLength(Integer ipv6NetmaskLength) {
@@ -533,13 +557,15 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @return The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address
      *         Manager (IPAM) pool. For more information about IPAM, see <a
-     *         href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public Integer getIpv6NetmaskLength() {
@@ -549,14 +575,16 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6NetmaskLength
      *        The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

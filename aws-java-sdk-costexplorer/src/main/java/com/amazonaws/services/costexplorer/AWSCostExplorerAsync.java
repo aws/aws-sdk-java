@@ -257,12 +257,13 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.
+     * Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that's
+     * defined in the account.
      * </p>
      * <p>
-     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date.
-     * If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current
-     * date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that's active on a specific date.
+     * If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date.
+     * If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
      * </p>
      * 
      * @param describeCostCategoryDefinitionRequest
@@ -277,12 +278,13 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.
+     * Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that's
+     * defined in the account.
      * </p>
      * <p>
-     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date.
-     * If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current
-     * date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that's active on a specific date.
+     * If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date.
+     * If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
      * </p>
      * 
      * @param describeCostCategoryDefinitionRequest
@@ -465,7 +467,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * <note>
      * <p>
      * This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information
-     * on how to access the Settings page, see <a
+     * about how to access the Settings page, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost
      * Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
@@ -494,7 +496,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * <note>
      * <p>
      * This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information
-     * on how to access the Settings page, see <a
+     * about how to access the Settings page, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost
      * Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
@@ -624,7 +626,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
+     * Retrieves the reservation coverage for your account, which you can use to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
      * reservation. An organization's management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
@@ -708,7 +710,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
+     * Retrieves the reservation coverage for your account, which you can use to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
      * reservation. An organization's management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
@@ -797,22 +799,22 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs.
+     * Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs.
      * Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.
      * </p>
      * <p>
      * Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time
      * period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services
      * has these categories, it simulates every combination of reservations in each category of usage to identify the
-     * best number of each type of RI to purchase to maximize your estimated savings.
+     * best number of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
      * </p>
      * <p>
      * For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family
      * usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to
      * the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes
-     * it easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number of normalized units so
-     * that you can purchase any instance size that you want. For this example, your RI recommendation would be for
-     * <code>c4.large</code> because that is the smallest size instance in the c4 instance family.
+     * it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of
+     * normalized units. This way, you can purchase any instance size that you want. For this example, your RI
+     * recommendation is for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.
      * </p>
      * 
      * @param getReservationPurchaseRecommendationRequest
@@ -827,22 +829,22 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs.
+     * Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs.
      * Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.
      * </p>
      * <p>
      * Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time
      * period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services
      * has these categories, it simulates every combination of reservations in each category of usage to identify the
-     * best number of each type of RI to purchase to maximize your estimated savings.
+     * best number of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
      * </p>
      * <p>
      * For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family
      * usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to
      * the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes
-     * it easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number of normalized units so
-     * that you can purchase any instance size that you want. For this example, your RI recommendation would be for
-     * <code>c4.large</code> because that is the smallest size instance in the c4 instance family.
+     * it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of
+     * normalized units. This way, you can purchase any instance size that you want. For this example, your RI
+     * recommendation is for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.
      * </p>
      * 
      * @param getReservationPurchaseRecommendationRequest
@@ -903,7 +905,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </p>
      * <p>
      * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
-     * metrics. For details on calculation and function, see <a
+     * metrics. For more information about calculation and function, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with
      * Rightsizing Recommendations</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
@@ -924,7 +926,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </p>
      * <p>
      * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
-     * metrics. For details on calculation and function, see <a
+     * metrics. For more information about calculation and function, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with
      * Rightsizing Recommendations</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
@@ -1074,7 +1076,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </p>
      * <note>
      * <p>
-     * You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+     * You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
      * </p>
      * </note>
      * 
@@ -1095,7 +1097,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </p>
      * <note>
      * <p>
-     * You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+     * You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
      * </p>
      * </note>
      * 
@@ -1234,12 +1236,45 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the
-     * account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active
-     * on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are
-     * effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
-     * response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a
-     * <code>MaxResults</code> range up to 100.
+     * Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost
+     * allocation tags are returned.
+     * </p>
+     * 
+     * @param listCostAllocationTagsRequest
+     * @return A Java Future containing the result of the ListCostAllocationTags operation returned by the service.
+     * @sample AWSCostExplorerAsync.ListCostAllocationTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCostAllocationTagsResult> listCostAllocationTagsAsync(ListCostAllocationTagsRequest listCostAllocationTagsRequest);
+
+    /**
+     * <p>
+     * Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost
+     * allocation tags are returned.
+     * </p>
+     * 
+     * @param listCostAllocationTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCostAllocationTags operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.ListCostAllocationTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCostAllocationTagsResult> listCostAllocationTagsAsync(ListCostAllocationTagsRequest listCostAllocationTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCostAllocationTagsRequest, ListCostAllocationTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost
+     * Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost
+     * Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
+     * Cost Categories that are effective on the current date. If Cost Category is still effective,
+     * <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports
+     * pagination. The request can have a <code>MaxResults</code> range up to 100.
      * </p>
      * 
      * @param listCostCategoryDefinitionsRequest
@@ -1253,12 +1288,12 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the
-     * account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active
-     * on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are
-     * effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
-     * response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a
-     * <code>MaxResults</code> range up to 100.
+     * Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost
+     * Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost
+     * Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
+     * Cost Categories that are effective on the current date. If Cost Category is still effective,
+     * <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports
+     * pagination. The request can have a <code>MaxResults</code> range up to 100.
      * </p>
      * 
      * @param listCostCategoryDefinitionsRequest
@@ -1390,7 +1425,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Removes one or more tags from a resource. Specify only tag key(s) in your request. Do not specify the value.
+     * Removes one or more tags from a resource. Specify only tag keys in your request. Don't specify the value.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1403,7 +1438,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Removes one or more tags from a resource. Specify only tag key(s) in your request. Do not specify the value.
+     * Removes one or more tags from a resource. Specify only tag keys in your request. Don't specify the value.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1484,6 +1519,45 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     java.util.concurrent.Future<UpdateAnomalySubscriptionResult> updateAnomalySubscriptionAsync(
             UpdateAnomalySubscriptionRequest updateAnomalySubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAnomalySubscriptionRequest, UpdateAnomalySubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated
+     * is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag
+     * status (for example, activating the active tag).
+     * </p>
+     * 
+     * @param updateCostAllocationTagsStatusRequest
+     * @return A Java Future containing the result of the UpdateCostAllocationTagsStatus operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.UpdateCostAllocationTagsStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCostAllocationTagsStatusResult> updateCostAllocationTagsStatusAsync(
+            UpdateCostAllocationTagsStatusRequest updateCostAllocationTagsStatusRequest);
+
+    /**
+     * <p>
+     * Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated
+     * is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag
+     * status (for example, activating the active tag).
+     * </p>
+     * 
+     * @param updateCostAllocationTagsStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCostAllocationTagsStatus operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.UpdateCostAllocationTagsStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCostAllocationTagsStatusResult> updateCostAllocationTagsStatusAsync(
+            UpdateCostAllocationTagsStatusRequest updateCostAllocationTagsStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCostAllocationTagsStatusRequest, UpdateCostAllocationTagsStatusResult> asyncHandler);
 
     /**
      * <p>

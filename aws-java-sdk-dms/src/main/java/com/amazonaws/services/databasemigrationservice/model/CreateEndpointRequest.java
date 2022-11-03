@@ -76,7 +76,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer port;
     /**
      * <p>
-     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate
+     * to a specific database, use this setting and <code>targetDbType</code>.
      * </p>
      */
     private String databaseName;
@@ -683,11 +684,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate
+     * to a specific database, use this setting and <code>targetDbType</code>.
      * </p>
      * 
      * @param databaseName
-     *        The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     *        The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To
+     *        migrate to a specific database, use this setting and <code>targetDbType</code>.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -696,10 +699,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate
+     * to a specific database, use this setting and <code>targetDbType</code>.
      * </p>
      * 
-     * @return The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     * @return The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To
+     *         migrate to a specific database, use this setting and <code>targetDbType</code>.
      */
 
     public String getDatabaseName() {
@@ -708,11 +713,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     * The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate
+     * to a specific database, use this setting and <code>targetDbType</code>.
      * </p>
      * 
      * @param databaseName
-     *        The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.
+     *        The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To
+     *        migrate to a specific database, use this setting and <code>targetDbType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

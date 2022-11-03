@@ -36,8 +36,8 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
     private Integer ipv6AddressCount;
     /**
      * <p>
-     * One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if you're
-     * specifying a number of IPv6 addresses.
+     * The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a
+     * number of IPv6 addresses.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ipv6Addresses;
@@ -122,12 +122,12 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if you're
-     * specifying a number of IPv6 addresses.
+     * The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a
+     * number of IPv6 addresses.
      * </p>
      * 
-     * @return One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if
-     *         you're specifying a number of IPv6 addresses.
+     * @return The IPv6 addresses to be assigned to the network interface. You can't use this option if you're
+     *         specifying a number of IPv6 addresses.
      */
 
     public java.util.List<String> getIpv6Addresses() {
@@ -139,13 +139,13 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if you're
-     * specifying a number of IPv6 addresses.
+     * The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a
+     * number of IPv6 addresses.
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if
-     *        you're specifying a number of IPv6 addresses.
+     *        The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying
+     *        a number of IPv6 addresses.
      */
 
     public void setIpv6Addresses(java.util.Collection<String> ipv6Addresses) {
@@ -159,8 +159,8 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if you're
-     * specifying a number of IPv6 addresses.
+     * The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a
+     * number of IPv6 addresses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -169,8 +169,8 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if
-     *        you're specifying a number of IPv6 addresses.
+     *        The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying
+     *        a number of IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,13 +186,13 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if you're
-     * specifying a number of IPv6 addresses.
+     * The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a
+     * number of IPv6 addresses.
      * </p>
      * 
      * @param ipv6Addresses
-     *        One or more specific IPv6 addresses to be assigned to the network interface. You can't use this option if
-     *        you're specifying a number of IPv6 addresses.
+     *        The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying
+     *        a number of IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

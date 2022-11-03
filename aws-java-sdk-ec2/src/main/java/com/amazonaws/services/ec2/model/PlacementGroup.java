@@ -68,6 +68,12 @@ public class PlacementGroup implements Serializable, Cloneable {
      * </p>
      */
     private String groupArn;
+    /**
+     * <p>
+     * The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * </p>
+     */
+    private String spreadLevel;
 
     /**
      * Default constructor for PlacementGroup object. Callers should use the setter or fluent setter (with...) methods
@@ -467,6 +473,80 @@ public class PlacementGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * </p>
+     * 
+     * @param spreadLevel
+     *        The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * @see SpreadLevel
+     */
+
+    public void setSpreadLevel(String spreadLevel) {
+        this.spreadLevel = spreadLevel;
+    }
+
+    /**
+     * <p>
+     * The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * </p>
+     * 
+     * @return The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across
+     *         hosts.
+     * @see SpreadLevel
+     */
+
+    public String getSpreadLevel() {
+        return this.spreadLevel;
+    }
+
+    /**
+     * <p>
+     * The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * </p>
+     * 
+     * @param spreadLevel
+     *        The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpreadLevel
+     */
+
+    public PlacementGroup withSpreadLevel(String spreadLevel) {
+        setSpreadLevel(spreadLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * </p>
+     * 
+     * @param spreadLevel
+     *        The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * @see SpreadLevel
+     */
+
+    public void setSpreadLevel(SpreadLevel spreadLevel) {
+        withSpreadLevel(spreadLevel);
+    }
+
+    /**
+     * <p>
+     * The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * </p>
+     * 
+     * @param spreadLevel
+     *        The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpreadLevel
+     */
+
+    public PlacementGroup withSpreadLevel(SpreadLevel spreadLevel) {
+        this.spreadLevel = spreadLevel.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -491,7 +571,9 @@ public class PlacementGroup implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getGroupArn() != null)
-            sb.append("GroupArn: ").append(getGroupArn());
+            sb.append("GroupArn: ").append(getGroupArn()).append(",");
+        if (getSpreadLevel() != null)
+            sb.append("SpreadLevel: ").append(getSpreadLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -534,6 +616,10 @@ public class PlacementGroup implements Serializable, Cloneable {
             return false;
         if (other.getGroupArn() != null && other.getGroupArn().equals(this.getGroupArn()) == false)
             return false;
+        if (other.getSpreadLevel() == null ^ this.getSpreadLevel() == null)
+            return false;
+        if (other.getSpreadLevel() != null && other.getSpreadLevel().equals(this.getSpreadLevel()) == false)
+            return false;
         return true;
     }
 
@@ -549,6 +635,7 @@ public class PlacementGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getGroupArn() == null) ? 0 : getGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getSpreadLevel() == null) ? 0 : getSpreadLevel().hashCode());
         return hashCode;
     }
 

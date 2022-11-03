@@ -27,48 +27,51 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
-     * another vocabulary filter, you get a <code>ConflictException</code> error.
+     * The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      * </p>
      */
     private String vocabularyFilterName;
     /**
      * <p>
-     * The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for updating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
-     * If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     * <code>VocabularyFilterFileUri</code> parameter.
+     * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+     * you must choose one or the other.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
      * </p>
      */
     private java.util.List<String> words;
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * The specified file must be less than 50 KB of UTF-8 characters.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
-     * If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't
-     * use the <code>Words</code> parameter.
+     * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
+     * you must choose one or the other.
      * </p>
      */
     private String vocabularyFilterFileUri;
 
     /**
      * <p>
-     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
-     * another vocabulary filter, you get a <code>ConflictException</code> error.
+     * The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name
-     *        as another vocabulary filter, you get a <code>ConflictException</code> error.
+     *        The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -77,12 +80,10 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
-     * another vocabulary filter, you get a <code>ConflictException</code> error.
+     * The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      * </p>
      * 
-     * @return The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name
-     *         as another vocabulary filter, you get a <code>ConflictException</code> error.
+     * @return The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      */
 
     public String getVocabularyFilterName() {
@@ -91,13 +92,11 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
-     * another vocabulary filter, you get a <code>ConflictException</code> error.
+     * The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name
-     *        as another vocabulary filter, you get a <code>ConflictException</code> error.
+     *        The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,22 +107,35 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
-     * </p>
-     * <p>
-     * If you provide a list of words in the <code>Words</code> parameter, you can't use the
+     * Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for updating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
      * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
+     * <p>
+     * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+     * you must choose one or the other.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
+     * </p>
      * 
-     * @return The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     *         vocabularies. For a list of character sets, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *         Vocabularies</a>.</p>
+     * @return Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     *         comma-separated values, within your request. The other option for updating your vocabulary filter is to
+     *         save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of
+     *         your file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *         <p>
-     *         If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     *         <code>VocabularyFilterFileUri</code> parameter.
+     *         Note that if you include <code>Words</code> in your request, you cannot use
+     *         <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *         </p>
+     *         <p>
+     *         Each language has a character set that contains all allowed characters for that specific language. If you
+     *         use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *         Vocabularies</a> to get the character set for your language.
      */
 
     public java.util.List<String> getWords() {
@@ -132,23 +144,36 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for updating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
-     * If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     * <code>VocabularyFilterFileUri</code> parameter.
+     * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+     * you must choose one or the other.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
      * </p>
      * 
      * @param words
-     *        The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     *        vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     *        comma-separated values, within your request. The other option for updating your vocabulary filter is to
+     *        save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your
+     *        file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *        <p>
-     *        If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     *        <code>VocabularyFilterFileUri</code> parameter.
+     *        Note that if you include <code>Words</code> in your request, you cannot use
+     *        <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *        </p>
+     *        <p>
+     *        Each language has a character set that contains all allowed characters for that specific language. If you
+     *        use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *        Vocabularies</a> to get the character set for your language.
      */
 
     public void setWords(java.util.Collection<String> words) {
@@ -162,13 +187,20 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for updating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
-     * If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     * <code>VocabularyFilterFileUri</code> parameter.
+     * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+     * you must choose one or the other.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -177,13 +209,19 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param words
-     *        The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     *        vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     *        comma-separated values, within your request. The other option for updating your vocabulary filter is to
+     *        save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your
+     *        file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *        <p>
-     *        If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     *        <code>VocabularyFilterFileUri</code> parameter.
+     *        Note that if you include <code>Words</code> in your request, you cannot use
+     *        <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *        </p>
+     *        <p>
+     *        Each language has a character set that contains all allowed characters for that specific language. If you
+     *        use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *        Vocabularies</a> to get the character set for your language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,23 +237,36 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     * comma-separated values, within your request. The other option for updating your vocabulary filter is to save your
+     * entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFilterFileUri</code> parameter.
      * </p>
      * <p>
-     * If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     * <code>VocabularyFilterFileUri</code> parameter.
+     * Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+     * you must choose one or the other.
+     * </p>
+     * <p>
+     * Each language has a character set that contains all allowed characters for that specific language. If you use
+     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
+     * to get the character set for your language.
      * </p>
      * 
      * @param words
-     *        The words to use in the vocabulary filter. Only use characters from the character set defined for custom
-     *        vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        Use this parameter if you want to update your vocabulary filter by including all desired terms, as
+     *        comma-separated values, within your request. The other option for updating your vocabulary filter is to
+     *        save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your
+     *        file using the <code>VocabularyFilterFileUri</code> parameter.</p>
      *        <p>
-     *        If you provide a list of words in the <code>Words</code> parameter, you can't use the
-     *        <code>VocabularyFilterFileUri</code> parameter.
+     *        Note that if you include <code>Words</code> in your request, you cannot use
+     *        <code>VocabularyFilterFileUri</code>; you must choose one or the other.
+     *        </p>
+     *        <p>
+     *        Each language has a character set that contains all allowed characters for that specific language. If you
+     *        use unsupported characters, your vocabulary filter request fails. Refer to <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
+     *        Vocabularies</a> to get the character set for your language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,29 +277,26 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * The specified file must be less than 50 KB of UTF-8 characters.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
-     * If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't
-     * use the <code>Words</code> parameter.
+     * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
+     * you must choose one or the other.
      * </p>
      * 
      * @param vocabularyFilterFileUri
-     *        The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters
-     *        from the character set defined for custom vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     *        located in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        The specified file must be less than 50 KB of UTF-8 characters.
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      *        </p>
      *        <p>
-     *        If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you
-     *        can't use the <code>Words</code> parameter.
+     *        Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use
+     *        <code>Words</code>; you must choose one or the other.
      */
 
     public void setVocabularyFilterFileUri(String vocabularyFilterFileUri) {
@@ -257,28 +305,25 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * The specified file must be less than 50 KB of UTF-8 characters.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
-     * If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't
-     * use the <code>Words</code> parameter.
+     * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
+     * you must choose one or the other.
      * </p>
      * 
-     * @return The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters
-     *         from the character set defined for custom vocabularies. For a list of character sets, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *         Vocabularies</a>.</p>
+     * @return The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must
+     *         be located in the same Amazon Web Services Region as the resource you're calling.</p>
      *         <p>
-     *         The specified file must be less than 50 KB of UTF-8 characters.
+     *         Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      *         </p>
      *         <p>
-     *         If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you
-     *         can't use the <code>Words</code> parameter.
+     *         Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use
+     *         <code>Words</code>; you must choose one or the other.
      */
 
     public String getVocabularyFilterFileUri() {
@@ -287,29 +332,26 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the
-     * character set defined for custom vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.
+     * The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     * located in the same Amazon Web Services Region as the resource you're calling.
      * </p>
      * <p>
-     * The specified file must be less than 50 KB of UTF-8 characters.
+     * Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      * </p>
      * <p>
-     * If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't
-     * use the <code>Words</code> parameter.
+     * Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>;
+     * you must choose one or the other.
      * </p>
      * 
      * @param vocabularyFilterFileUri
-     *        The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters
-     *        from the character set defined for custom vocabularies. For a list of character sets, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom
-     *        Vocabularies</a>.</p>
+     *        The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be
+     *        located in the same Amazon Web Services Region as the resource you're calling.</p>
      *        <p>
-     *        The specified file must be less than 50 KB of UTF-8 characters.
+     *        Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
      *        </p>
      *        <p>
-     *        If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you
-     *        can't use the <code>Words</code> parameter.
+     *        Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use
+     *        <code>Words</code>; you must choose one or the other.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

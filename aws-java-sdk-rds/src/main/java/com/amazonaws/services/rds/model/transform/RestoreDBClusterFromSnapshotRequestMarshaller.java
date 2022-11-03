@@ -237,6 +237,10 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             }
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getNetworkType() != null) {
+            request.addParameter("NetworkType", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getNetworkType()));
+        }
+
         return request;
     }
 

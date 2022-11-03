@@ -33,7 +33,7 @@ public class DescribeQuerySuggestionsBlockListRequest extends com.amazonaws.Amaz
     private String indexId;
     /**
      * <p>
-     * The unique identifier of the block list.
+     * The identifier of the block list you want to get information on.
      * </p>
      */
     private String id;
@@ -80,11 +80,11 @@ public class DescribeQuerySuggestionsBlockListRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The unique identifier of the block list.
+     * The identifier of the block list you want to get information on.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the block list.
+     *        The identifier of the block list you want to get information on.
      */
 
     public void setId(String id) {
@@ -93,10 +93,10 @@ public class DescribeQuerySuggestionsBlockListRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The unique identifier of the block list.
+     * The identifier of the block list you want to get information on.
      * </p>
      * 
-     * @return The unique identifier of the block list.
+     * @return The identifier of the block list you want to get information on.
      */
 
     public String getId() {
@@ -105,11 +105,11 @@ public class DescribeQuerySuggestionsBlockListRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The unique identifier of the block list.
+     * The identifier of the block list you want to get information on.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the block list.
+     *        The identifier of the block list you want to get information on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

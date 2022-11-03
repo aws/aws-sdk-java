@@ -46,7 +46,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that
      * grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
-     * S3 Bucket</a> in the Config Developer Guide.
+     * S3 Bucket</a> in the <i>Config Developer Guide</i>.
      * </p>
      */
     private String s3BucketName;
@@ -72,7 +72,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you choose a topic from another account, the topic must have policies that grant access permissions to Config.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
-     * SNS Topic</a> in the Config Developer Guide.
+     * SNS Topic</a> in the <i>Config Developer Guide</i>.
      * </p>
      */
     private String snsTopicARN;
@@ -150,7 +150,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that
      * grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
-     * S3 Bucket</a> in the Config Developer Guide.
+     * S3 Bucket</a> in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @param s3BucketName
@@ -160,7 +160,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have
      *        policies that grant access permissions to Config. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
-     *        Amazon S3 Bucket</a> in the Config Developer Guide.
+     *        Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -176,7 +176,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that
      * grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
-     * S3 Bucket</a> in the Config Developer Guide.
+     * S3 Bucket</a> in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @return The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration
@@ -185,7 +185,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *         If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have
      *         policies that grant access permissions to Config. For more information, see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
-     *         Amazon S3 Bucket</a> in the Config Developer Guide.
+     *         Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.
      */
 
     public String getS3BucketName() {
@@ -201,7 +201,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that
      * grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
-     * S3 Bucket</a> in the Config Developer Guide.
+     * S3 Bucket</a> in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @param s3BucketName
@@ -211,7 +211,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have
      *        policies that grant access permissions to Config. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
-     *        Amazon S3 Bucket</a> in the Config Developer Guide.
+     *        Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +315,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you choose a topic from another account, the topic must have policies that grant access permissions to Config.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
-     * SNS Topic</a> in the Config Developer Guide.
+     * SNS Topic</a> in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @param snsTopicARN
@@ -325,7 +325,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        If you choose a topic from another account, the topic must have policies that grant access permissions to
      *        Config. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
-     *        Amazon SNS Topic</a> in the Config Developer Guide.
+     *        Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.
      */
 
     public void setSnsTopicARN(String snsTopicARN) {
@@ -341,7 +341,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you choose a topic from another account, the topic must have policies that grant access permissions to Config.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
-     * SNS Topic</a> in the Config Developer Guide.
+     * SNS Topic</a> in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about
@@ -350,7 +350,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *         If you choose a topic from another account, the topic must have policies that grant access permissions to
      *         Config. For more information, see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
-     *         Amazon SNS Topic</a> in the Config Developer Guide.
+     *         Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.
      */
 
     public String getSnsTopicARN() {
@@ -366,7 +366,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * If you choose a topic from another account, the topic must have policies that grant access permissions to Config.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
-     * SNS Topic</a> in the Config Developer Guide.
+     * SNS Topic</a> in the <i>Config Developer Guide</i>.
      * </p>
      * 
      * @param snsTopicARN
@@ -376,7 +376,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        If you choose a topic from another account, the topic must have policies that grant access permissions to
      *        Config. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
-     *        Amazon SNS Topic</a> in the Config Developer Guide.
+     *        Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

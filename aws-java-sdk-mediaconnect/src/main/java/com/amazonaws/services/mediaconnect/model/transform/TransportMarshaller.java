@@ -48,6 +48,10 @@ public class TransportMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("senderIpAddress").build();
     private static final MarshallingInfo<Integer> SMOOTHINGLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("smoothingLatency").build();
+    private static final MarshallingInfo<String> SOURCELISTENERADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceListenerAddress").build();
+    private static final MarshallingInfo<Integer> SOURCELISTENERPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceListenerPort").build();
     private static final MarshallingInfo<String> STREAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("streamId").build();
 
@@ -77,6 +81,8 @@ public class TransportMarshaller {
             protocolMarshaller.marshall(transport.getSenderControlPort(), SENDERCONTROLPORT_BINDING);
             protocolMarshaller.marshall(transport.getSenderIpAddress(), SENDERIPADDRESS_BINDING);
             protocolMarshaller.marshall(transport.getSmoothingLatency(), SMOOTHINGLATENCY_BINDING);
+            protocolMarshaller.marshall(transport.getSourceListenerAddress(), SOURCELISTENERADDRESS_BINDING);
+            protocolMarshaller.marshall(transport.getSourceListenerPort(), SOURCELISTENERPORT_BINDING);
             protocolMarshaller.marshall(transport.getStreamId(), STREAMID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

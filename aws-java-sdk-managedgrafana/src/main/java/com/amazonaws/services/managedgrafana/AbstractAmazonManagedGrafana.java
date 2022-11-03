@@ -38,7 +38,17 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
     }
 
     @Override
+    public CreateWorkspaceApiKeyResult createWorkspaceApiKey(CreateWorkspaceApiKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWorkspaceResult deleteWorkspace(DeleteWorkspaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkspaceApiKeyResult deleteWorkspaceApiKey(DeleteWorkspaceApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

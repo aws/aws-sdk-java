@@ -37,7 +37,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      * </p>
      */
     private String airflowVersion;
@@ -262,12 +262,12 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      * </p>
      * 
      * @param airflowVersion
      *        The Apache Airflow version for your environment. If no value is specified, defaults to the latest version.
-     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      */
 
     public void setAirflowVersion(String airflowVersion) {
@@ -277,11 +277,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      * </p>
      * 
      * @return The Apache Airflow version for your environment. If no value is specified, defaults to the latest
-     *         version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     *         version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      */
 
     public String getAirflowVersion() {
@@ -291,12 +291,12 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      * </p>
      * 
      * @param airflowVersion
      *        The Apache Airflow version for your environment. If no value is specified, defaults to the latest version.
-     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

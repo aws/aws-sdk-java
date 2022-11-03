@@ -27,18 +27,18 @@ public class DeleteCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the call analytics category you want to delete. Category names are case-sensitive.
+     * The name of the Call Analytics category you want to delete. Category names are case sensitive.
      * </p>
      */
     private String categoryName;
 
     /**
      * <p>
-     * The name of the call analytics category you want to delete. Category names are case-sensitive.
+     * The name of the Call Analytics category you want to delete. Category names are case sensitive.
      * </p>
      * 
      * @param categoryName
-     *        The name of the call analytics category you want to delete. Category names are case-sensitive.
+     *        The name of the Call Analytics category you want to delete. Category names are case sensitive.
      */
 
     public void setCategoryName(String categoryName) {
@@ -47,10 +47,10 @@ public class DeleteCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the call analytics category you want to delete. Category names are case-sensitive.
+     * The name of the Call Analytics category you want to delete. Category names are case sensitive.
      * </p>
      * 
-     * @return The name of the call analytics category you want to delete. Category names are case-sensitive.
+     * @return The name of the Call Analytics category you want to delete. Category names are case sensitive.
      */
 
     public String getCategoryName() {
@@ -59,11 +59,11 @@ public class DeleteCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the call analytics category you want to delete. Category names are case-sensitive.
+     * The name of the Call Analytics category you want to delete. Category names are case sensitive.
      * </p>
      * 
      * @param categoryName
-     *        The name of the call analytics category you want to delete. Category names are case-sensitive.
+     *        The name of the Call Analytics category you want to delete. Category names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

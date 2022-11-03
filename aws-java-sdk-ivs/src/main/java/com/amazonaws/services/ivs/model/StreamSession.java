@@ -37,7 +37,8 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
     private Channel channel;
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.
+     * Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
+     * For live streams, this is <code>NULL</code>.
      * </p>
      */
     private java.util.Date endTime;
@@ -55,7 +56,7 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
     private RecordingConfiguration recordingConfiguration;
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went live.
+     * Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      */
     private java.util.Date startTime;
@@ -117,12 +118,13 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.
+     * Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
+     * For live streams, this is <code>NULL</code>.
      * </p>
      * 
      * @param endTime
-     *        UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is
-     *        <code>NULL</code>.
+     *        Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *        string</i>. For live streams, this is <code>NULL</code>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -131,11 +133,12 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.
+     * Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
+     * For live streams, this is <code>NULL</code>.
      * </p>
      * 
-     * @return UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is
-     *         <code>NULL</code>.
+     * @return Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *         string</i>. For live streams, this is <code>NULL</code>.
      */
 
     public java.util.Date getEndTime() {
@@ -144,12 +147,13 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.
+     * Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
+     * For live streams, this is <code>NULL</code>.
      * </p>
      * 
      * @param endTime
-     *        UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is
-     *        <code>NULL</code>.
+     *        Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *        string</i>. For live streams, this is <code>NULL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +244,12 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went live.
+     * Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
      * @param startTime
-     *        UTC ISO-8601 formatted timestamp of when the channel went live.
+     *        Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *        string</i>.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -253,10 +258,11 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went live.
+     * Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
-     * @return UTC ISO-8601 formatted timestamp of when the channel went live.
+     * @return Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *         string</i>.
      */
 
     public java.util.Date getStartTime() {
@@ -265,11 +271,12 @@ public class StreamSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC ISO-8601 formatted timestamp of when the channel went live.
+     * Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
      * </p>
      * 
      * @param startTime
-     *        UTC ISO-8601 formatted timestamp of when the channel went live.
+     *        Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a
+     *        string</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

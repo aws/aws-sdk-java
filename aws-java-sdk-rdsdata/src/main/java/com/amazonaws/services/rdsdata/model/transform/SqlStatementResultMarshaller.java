@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SqlStatementResultMarshaller {
 
-    private static final MarshallingInfo<Long> NUMBEROFRECORDSUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfRecordsUpdated").build();
     private static final MarshallingInfo<StructuredPojo> RESULTFRAME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resultFrame").build();
+    private static final MarshallingInfo<Long> NUMBEROFRECORDSUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfRecordsUpdated").build();
 
     private static final SqlStatementResultMarshaller instance = new SqlStatementResultMarshaller();
 
@@ -48,8 +48,8 @@ public class SqlStatementResultMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(sqlStatementResult.getNumberOfRecordsUpdated(), NUMBEROFRECORDSUPDATED_BINDING);
             protocolMarshaller.marshall(sqlStatementResult.getResultFrame(), RESULTFRAME_BINDING);
+            protocolMarshaller.marshall(sqlStatementResult.getNumberOfRecordsUpdated(), NUMBEROFRECORDSUPDATED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

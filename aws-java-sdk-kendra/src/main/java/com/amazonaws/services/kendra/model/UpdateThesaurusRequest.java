@@ -27,31 +27,31 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the thesaurus to update.
+     * The identifier of the thesaurus you want to update.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The updated name of the thesaurus.
+     * A new name for the thesaurus.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to update.
+     * The identifier of the index for the thesaurus.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The updated description of the thesaurus.
+     * A new description for the thesaurus.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The updated role ARN of the thesaurus.
+     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
      * </p>
      */
     private String roleArn;
@@ -60,11 +60,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the thesaurus to update.
+     * The identifier of the thesaurus you want to update.
      * </p>
      * 
      * @param id
-     *        The identifier of the thesaurus to update.
+     *        The identifier of the thesaurus you want to update.
      */
 
     public void setId(String id) {
@@ -73,10 +73,10 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the thesaurus to update.
+     * The identifier of the thesaurus you want to update.
      * </p>
      * 
-     * @return The identifier of the thesaurus to update.
+     * @return The identifier of the thesaurus you want to update.
      */
 
     public String getId() {
@@ -85,11 +85,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the thesaurus to update.
+     * The identifier of the thesaurus you want to update.
      * </p>
      * 
      * @param id
-     *        The identifier of the thesaurus to update.
+     *        The identifier of the thesaurus you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated name of the thesaurus.
+     * A new name for the thesaurus.
      * </p>
      * 
      * @param name
-     *        The updated name of the thesaurus.
+     *        A new name for the thesaurus.
      */
 
     public void setName(String name) {
@@ -113,10 +113,10 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated name of the thesaurus.
+     * A new name for the thesaurus.
      * </p>
      * 
-     * @return The updated name of the thesaurus.
+     * @return A new name for the thesaurus.
      */
 
     public String getName() {
@@ -125,11 +125,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated name of the thesaurus.
+     * A new name for the thesaurus.
      * </p>
      * 
      * @param name
-     *        The updated name of the thesaurus.
+     *        A new name for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to update.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to update.
+     *        The identifier of the index for the thesaurus.
      */
 
     public void setIndexId(String indexId) {
@@ -153,10 +153,10 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to update.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
-     * @return The identifier of the index associated with the thesaurus to update.
+     * @return The identifier of the index for the thesaurus.
      */
 
     public String getIndexId() {
@@ -165,11 +165,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to update.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to update.
+     *        The identifier of the index for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +180,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated description of the thesaurus.
+     * A new description for the thesaurus.
      * </p>
      * 
      * @param description
-     *        The updated description of the thesaurus.
+     *        A new description for the thesaurus.
      */
 
     public void setDescription(String description) {
@@ -193,10 +193,10 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated description of the thesaurus.
+     * A new description for the thesaurus.
      * </p>
      * 
-     * @return The updated description of the thesaurus.
+     * @return A new description for the thesaurus.
      */
 
     public String getDescription() {
@@ -205,11 +205,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated description of the thesaurus.
+     * A new description for the thesaurus.
      * </p>
      * 
      * @param description
-     *        The updated description of the thesaurus.
+     *        A new description for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,12 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated role ARN of the thesaurus.
+     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
      * </p>
      * 
      * @param roleArn
-     *        The updated role ARN of the thesaurus.
+     *        An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in
+     *        <code>SourceS3Path</code>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -233,10 +234,11 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated role ARN of the thesaurus.
+     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
      * </p>
      * 
-     * @return The updated role ARN of the thesaurus.
+     * @return An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in
+     *         <code>SourceS3Path</code>.
      */
 
     public String getRoleArn() {
@@ -245,11 +247,12 @@ public class UpdateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated role ARN of the thesaurus.
+     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
      * </p>
      * 
      * @param roleArn
-     *        The updated role ARN of the thesaurus.
+     *        An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in
+     *        <code>SourceS3Path</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,17 +50,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/opsinsights/opscenter</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>
      * </p>
      * </li>
      * </ul>
@@ -89,17 +94,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/opsinsights/opscenter</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>
      * </p>
      * </li>
      * </ul>
@@ -124,17 +134,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
+     *        <code>/ssm/managed-instance/activation-tier</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/opsinsights/opscenter</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>/ssm/parameter-store/default-parameter-tier</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/parameter-store/high-throughput-enabled</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>/ssm/managed-instance/activation-tier</code>
      *        </p>
      *        </li>
      */
@@ -165,17 +180,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/opsinsights/opscenter</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>
      * </p>
      * </li>
      * </ul>
@@ -199,17 +219,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
+     *         <code>/ssm/managed-instance/activation-tier</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/opsinsights/opscenter</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>/ssm/parameter-store/default-parameter-tier</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>/ssm/parameter-store/high-throughput-enabled</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>/ssm/managed-instance/activation-tier</code>
      *         </p>
      *         </li>
      */
@@ -240,17 +265,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/opsinsights/opscenter</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>
      * </p>
      * </li>
      * </ul>
@@ -275,17 +305,22 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
+     *        <code>/ssm/managed-instance/activation-tier</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/opsinsights/opscenter</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>/ssm/parameter-store/default-parameter-tier</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/parameter-store/high-throughput-enabled</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>/ssm/managed-instance/activation-tier</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

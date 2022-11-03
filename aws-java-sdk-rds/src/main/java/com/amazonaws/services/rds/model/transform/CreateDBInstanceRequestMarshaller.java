@@ -311,6 +311,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("NetworkType", StringUtils.fromString(createDBInstanceRequest.getNetworkType()));
         }
 
+        if (createDBInstanceRequest.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(createDBInstanceRequest.getStorageThroughput()));
+        }
+
         return request;
     }
 

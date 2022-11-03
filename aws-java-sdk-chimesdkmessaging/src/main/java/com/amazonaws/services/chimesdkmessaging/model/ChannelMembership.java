@@ -64,6 +64,12 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date lastUpdatedTimestamp;
+    /**
+     * <p>
+     * The ID of the SubChannel that a user belongs to.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -325,6 +331,46 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel that a user belongs to.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel that a user belongs to.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel that a user belongs to.
+     * </p>
+     * 
+     * @return The ID of the SubChannel that a user belongs to.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel that a user belongs to.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel that a user belongs to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelMembership withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,7 +393,9 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
         if (getCreatedTimestamp() != null)
             sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
         if (getLastUpdatedTimestamp() != null)
-            sb.append("LastUpdatedTimestamp: ").append(getLastUpdatedTimestamp());
+            sb.append("LastUpdatedTimestamp: ").append(getLastUpdatedTimestamp()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +434,10 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getLastUpdatedTimestamp() != null && other.getLastUpdatedTimestamp().equals(this.getLastUpdatedTimestamp()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +452,7 @@ public class ChannelMembership implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTimestamp() == null) ? 0 : getLastUpdatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

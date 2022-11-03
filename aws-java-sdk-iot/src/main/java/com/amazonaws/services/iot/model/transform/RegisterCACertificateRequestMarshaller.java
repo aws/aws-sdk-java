@@ -40,6 +40,8 @@ public class RegisterCACertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registrationConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CERTIFICATEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateMode").build();
 
     private static final RegisterCACertificateRequestMarshaller instance = new RegisterCACertificateRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class RegisterCACertificateRequestMarshaller {
             protocolMarshaller.marshall(registerCACertificateRequest.getAllowAutoRegistration(), ALLOWAUTOREGISTRATION_BINDING);
             protocolMarshaller.marshall(registerCACertificateRequest.getRegistrationConfig(), REGISTRATIONCONFIG_BINDING);
             protocolMarshaller.marshall(registerCACertificateRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(registerCACertificateRequest.getCertificateMode(), CERTIFICATEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

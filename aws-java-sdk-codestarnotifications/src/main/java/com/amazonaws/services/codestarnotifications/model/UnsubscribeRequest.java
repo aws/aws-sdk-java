@@ -33,7 +33,7 @@ public class UnsubscribeRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String arn;
     /**
      * <p>
-     * The ARN of the SNS topic to unsubscribe from the notification rule.
+     * The ARN of the Chatbot topic to unsubscribe from the notification rule.
      * </p>
      */
     private String targetAddress;
@@ -80,11 +80,11 @@ public class UnsubscribeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the SNS topic to unsubscribe from the notification rule.
+     * The ARN of the Chatbot topic to unsubscribe from the notification rule.
      * </p>
      * 
      * @param targetAddress
-     *        The ARN of the SNS topic to unsubscribe from the notification rule.
+     *        The ARN of the Chatbot topic to unsubscribe from the notification rule.
      */
 
     public void setTargetAddress(String targetAddress) {
@@ -93,10 +93,10 @@ public class UnsubscribeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the SNS topic to unsubscribe from the notification rule.
+     * The ARN of the Chatbot topic to unsubscribe from the notification rule.
      * </p>
      * 
-     * @return The ARN of the SNS topic to unsubscribe from the notification rule.
+     * @return The ARN of the Chatbot topic to unsubscribe from the notification rule.
      */
 
     public String getTargetAddress() {
@@ -105,11 +105,11 @@ public class UnsubscribeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the SNS topic to unsubscribe from the notification rule.
+     * The ARN of the Chatbot topic to unsubscribe from the notification rule.
      * </p>
      * 
      * @param targetAddress
-     *        The ARN of the SNS topic to unsubscribe from the notification rule.
+     *        The ARN of the Chatbot topic to unsubscribe from the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

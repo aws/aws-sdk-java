@@ -31,32 +31,36 @@ public class ManifestProcessingRules implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
+     * For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     * <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the
+     * MediaTailor personalized manifest.
      * </p>
      * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     * <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.
      * </p>
      */
     private AdMarkerPassthrough adMarkerPassthrough;
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
+     * For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     * <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the
+     * MediaTailor personalized manifest.
      * </p>
      * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     * <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.
      * </p>
      * 
      * @param adMarkerPassthrough
-     *        For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *        EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
+     *        For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     *        <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest
+     *        to the MediaTailor personalized manifest.</p>
      *        <p>
-     *        No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *        filled for that ad break, MediaTailor will not set the value to 0.
+     *        No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     *        <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to
+     *        <code>0</code>.
      */
 
     public void setAdMarkerPassthrough(AdMarkerPassthrough adMarkerPassthrough) {
@@ -65,20 +69,22 @@ public class ManifestProcessingRules implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
+     * For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     * <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the
+     * MediaTailor personalized manifest.
      * </p>
      * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     * <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.
      * </p>
      * 
-     * @return For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *         EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized
-     *         manifest.</p>
+     * @return For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     *         <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest
+     *         to the MediaTailor personalized manifest.</p>
      *         <p>
-     *         No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *         filled for that ad break, MediaTailor will not set the value to 0.
+     *         No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     *         <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to
+     *         <code>0</code>.
      */
 
     public AdMarkerPassthrough getAdMarkerPassthrough() {
@@ -87,20 +93,23 @@ public class ManifestProcessingRules implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
+     * For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     * <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the
+     * MediaTailor personalized manifest.
      * </p>
      * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     * <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.
      * </p>
      * 
      * @param adMarkerPassthrough
-     *        For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *        EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
+     *        For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
+     *        <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest
+     *        to the MediaTailor personalized manifest.</p>
      *        <p>
-     *        No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *        filled for that ad break, MediaTailor will not set the value to 0.
+     *        No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of
+     *        <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to
+     *        <code>0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

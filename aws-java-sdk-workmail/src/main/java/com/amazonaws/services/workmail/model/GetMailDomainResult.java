@@ -25,9 +25,9 @@ public class GetMailDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
-     * experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES.
-     * See admin guide for more details.
+     * A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The
+     * records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide
+     * for more details.
      * </p>
      */
     private java.util.List<DnsRecord> records;
@@ -58,12 +58,12 @@ public class GetMailDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
-     * experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES.
-     * See admin guide for more details.
+     * A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The
+     * records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide
+     * for more details.
      * </p>
      * 
-     * @return A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
+     * @return A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user
      *         experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to
      *         SES. See admin guide for more details.
      */
@@ -74,13 +74,13 @@ public class GetMailDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
-     * experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES.
-     * See admin guide for more details.
+     * A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The
+     * records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide
+     * for more details.
      * </p>
      * 
      * @param records
-     *        A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
+     *        A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user
      *        experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to
      *        SES. See admin guide for more details.
      */
@@ -96,9 +96,9 @@ public class GetMailDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
-     * experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES.
-     * See admin guide for more details.
+     * A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The
+     * records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide
+     * for more details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,7 +107,7 @@ public class GetMailDomainResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param records
-     *        A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
+     *        A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user
      *        experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to
      *        SES. See admin guide for more details.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -125,13 +125,13 @@ public class GetMailDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
-     * experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES.
-     * See admin guide for more details.
+     * A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The
+     * records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide
+     * for more details.
      * </p>
      * 
      * @param records
-     *        A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user
+     *        A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user
      *        experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to
      *        SES. See admin guide for more details.
      * @return Returns a reference to this object so that method calls can be chained together.

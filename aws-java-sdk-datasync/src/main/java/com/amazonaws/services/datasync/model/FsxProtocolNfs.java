@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the Network File System (NFS) protocol that DataSync uses to access your Amazon FSx for OpenZFS file
- * system.
+ * Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for
+ * OpenZFS or Amazon FSx for NetApp ONTAP file system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolNfs" target="_top">AWS API

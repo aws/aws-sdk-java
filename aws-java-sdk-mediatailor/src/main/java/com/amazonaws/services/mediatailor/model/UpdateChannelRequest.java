@@ -27,14 +27,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      */
     private String channelName;
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      */
     private SlateSource fillerSlate;
@@ -47,11 +48,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      */
 
     public void setChannelName(String channelName) {
@@ -60,10 +61,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel.
      */
 
     public String getChannelName() {
@@ -72,11 +73,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +89,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
      *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *        channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP
-     *        PlaybackMode.
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public void setFillerSlate(SlateSource fillerSlate) {
@@ -104,12 +106,13 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @return The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *         channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the
-     *         LOOP PlaybackMode.
+     *         channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *         for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public SlateSource getFillerSlate() {
@@ -119,13 +122,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
      *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *        channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP
-     *        PlaybackMode.
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

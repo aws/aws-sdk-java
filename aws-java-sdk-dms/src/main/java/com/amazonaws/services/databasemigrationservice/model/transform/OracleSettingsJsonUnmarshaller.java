@@ -210,6 +210,10 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                     context.nextToken();
                     oracleSettings.setSecretsManagerOracleAsmSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TrimSpaceInChar", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setTrimSpaceInChar(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -54,6 +54,10 @@ public class DescribeNodeConfigurationOptionsRequestMarshaller implements
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(describeNodeConfigurationOptionsRequest.getSnapshotIdentifier()));
         }
 
+        if (describeNodeConfigurationOptionsRequest.getSnapshotArn() != null) {
+            request.addParameter("SnapshotArn", StringUtils.fromString(describeNodeConfigurationOptionsRequest.getSnapshotArn()));
+        }
+
         if (describeNodeConfigurationOptionsRequest.getOwnerAccount() != null) {
             request.addParameter("OwnerAccount", StringUtils.fromString(describeNodeConfigurationOptionsRequest.getOwnerAccount()));
         }

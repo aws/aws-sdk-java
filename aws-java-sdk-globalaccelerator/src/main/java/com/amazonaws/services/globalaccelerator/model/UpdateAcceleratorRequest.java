@@ -33,14 +33,15 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
     private String acceleratorArn;
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     * DUAL_STACK.
      * </p>
      */
     private String ipAddressType;
@@ -96,13 +97,13 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      * 
      * @param name
-     *        The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *        characters or hyphens (-), and must not begin or end with a hyphen.
+     *        The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     *        characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      */
 
     public void setName(String name) {
@@ -111,12 +112,12 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      * 
-     * @return The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *         characters or hyphens (-), and must not begin or end with a hyphen.
+     * @return The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     *         characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      */
 
     public String getName() {
@@ -125,13 +126,13 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     * characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * </p>
      * 
      * @param name
-     *        The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *        characters or hyphens (-), and must not begin or end with a hyphen.
+     *        The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric
+     *        characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +143,13 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     * DUAL_STACK.
      * </p>
      * 
      * @param ipAddressType
-     *        The IP address type, which must be IPv4.
+     *        The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     *        DUAL_STACK.
      * @see IpAddressType
      */
 
@@ -156,10 +159,12 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     * DUAL_STACK.
      * </p>
      * 
-     * @return The IP address type, which must be IPv4.
+     * @return The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     *         DUAL_STACK.
      * @see IpAddressType
      */
 
@@ -169,11 +174,13 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     * DUAL_STACK.
      * </p>
      * 
      * @param ipAddressType
-     *        The IP address type, which must be IPv4.
+     *        The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     *        DUAL_STACK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -185,11 +192,13 @@ public class UpdateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The IP address type, which must be IPv4.
+     * The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     * DUAL_STACK.
      * </p>
      * 
      * @param ipAddressType
-     *        The IP address type, which must be IPv4.
+     *        The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or
+     *        DUAL_STACK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

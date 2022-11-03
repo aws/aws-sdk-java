@@ -153,6 +153,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * The data volume in bytes per day for the member account.
      * </p>
      */
+    @Deprecated
     private Long volumeUsageInBytes;
     /**
      * <p>
@@ -160,6 +161,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * For example, <code>2021-08-18T16:35:56.284Z</code>.
      * </p>
      */
+    @Deprecated
     private java.util.Date volumeUsageUpdatedTime;
     /**
      * <p>
@@ -197,6 +199,18 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String invitationType;
+    /**
+     * <p>
+     * Details on the volume of usage for each data source package in a behavior graph.
+     * </p>
+     */
+    private java.util.Map<String, DatasourcePackageUsageInfo> volumeUsageByDatasourcePackage;
+    /**
+     * <p>
+     * The state of a data source package for the behavior graph.
+     * </p>
+     */
+    private java.util.Map<String, String> datasourcePackageIngestStates;
 
     /**
      * <p>
@@ -1117,7 +1131,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * @param volumeUsageInBytes
      *        The data volume in bytes per day for the member account.
      */
-
+    @Deprecated
     public void setVolumeUsageInBytes(Long volumeUsageInBytes) {
         this.volumeUsageInBytes = volumeUsageInBytes;
     }
@@ -1129,7 +1143,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The data volume in bytes per day for the member account.
      */
-
+    @Deprecated
     public Long getVolumeUsageInBytes() {
         return this.volumeUsageInBytes;
     }
@@ -1143,7 +1157,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        The data volume in bytes per day for the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public MemberDetail withVolumeUsageInBytes(Long volumeUsageInBytes) {
         setVolumeUsageInBytes(volumeUsageInBytes);
         return this;
@@ -1159,7 +1173,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        The data and time when the member account data volume was last updated. The value is an ISO8601 formatted
      *        string. For example, <code>2021-08-18T16:35:56.284Z</code>.
      */
-
+    @Deprecated
     public void setVolumeUsageUpdatedTime(java.util.Date volumeUsageUpdatedTime) {
         this.volumeUsageUpdatedTime = volumeUsageUpdatedTime;
     }
@@ -1173,7 +1187,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * @return The data and time when the member account data volume was last updated. The value is an ISO8601 formatted
      *         string. For example, <code>2021-08-18T16:35:56.284Z</code>.
      */
-
+    @Deprecated
     public java.util.Date getVolumeUsageUpdatedTime() {
         return this.volumeUsageUpdatedTime;
     }
@@ -1189,7 +1203,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        string. For example, <code>2021-08-18T16:35:56.284Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public MemberDetail withVolumeUsageUpdatedTime(java.util.Date volumeUsageUpdatedTime) {
         setVolumeUsageUpdatedTime(volumeUsageUpdatedTime);
         return this;
@@ -1436,6 +1450,142 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Details on the volume of usage for each data source package in a behavior graph.
+     * </p>
+     * 
+     * @return Details on the volume of usage for each data source package in a behavior graph.
+     */
+
+    public java.util.Map<String, DatasourcePackageUsageInfo> getVolumeUsageByDatasourcePackage() {
+        return volumeUsageByDatasourcePackage;
+    }
+
+    /**
+     * <p>
+     * Details on the volume of usage for each data source package in a behavior graph.
+     * </p>
+     * 
+     * @param volumeUsageByDatasourcePackage
+     *        Details on the volume of usage for each data source package in a behavior graph.
+     */
+
+    public void setVolumeUsageByDatasourcePackage(java.util.Map<String, DatasourcePackageUsageInfo> volumeUsageByDatasourcePackage) {
+        this.volumeUsageByDatasourcePackage = volumeUsageByDatasourcePackage;
+    }
+
+    /**
+     * <p>
+     * Details on the volume of usage for each data source package in a behavior graph.
+     * </p>
+     * 
+     * @param volumeUsageByDatasourcePackage
+     *        Details on the volume of usage for each data source package in a behavior graph.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail withVolumeUsageByDatasourcePackage(java.util.Map<String, DatasourcePackageUsageInfo> volumeUsageByDatasourcePackage) {
+        setVolumeUsageByDatasourcePackage(volumeUsageByDatasourcePackage);
+        return this;
+    }
+
+    /**
+     * Add a single VolumeUsageByDatasourcePackage entry
+     *
+     * @see MemberDetail#withVolumeUsageByDatasourcePackage
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail addVolumeUsageByDatasourcePackageEntry(String key, DatasourcePackageUsageInfo value) {
+        if (null == this.volumeUsageByDatasourcePackage) {
+            this.volumeUsageByDatasourcePackage = new java.util.HashMap<String, DatasourcePackageUsageInfo>();
+        }
+        if (this.volumeUsageByDatasourcePackage.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.volumeUsageByDatasourcePackage.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into VolumeUsageByDatasourcePackage.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail clearVolumeUsageByDatasourcePackageEntries() {
+        this.volumeUsageByDatasourcePackage = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of a data source package for the behavior graph.
+     * </p>
+     * 
+     * @return The state of a data source package for the behavior graph.
+     */
+
+    public java.util.Map<String, String> getDatasourcePackageIngestStates() {
+        return datasourcePackageIngestStates;
+    }
+
+    /**
+     * <p>
+     * The state of a data source package for the behavior graph.
+     * </p>
+     * 
+     * @param datasourcePackageIngestStates
+     *        The state of a data source package for the behavior graph.
+     */
+
+    public void setDatasourcePackageIngestStates(java.util.Map<String, String> datasourcePackageIngestStates) {
+        this.datasourcePackageIngestStates = datasourcePackageIngestStates;
+    }
+
+    /**
+     * <p>
+     * The state of a data source package for the behavior graph.
+     * </p>
+     * 
+     * @param datasourcePackageIngestStates
+     *        The state of a data source package for the behavior graph.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail withDatasourcePackageIngestStates(java.util.Map<String, String> datasourcePackageIngestStates) {
+        setDatasourcePackageIngestStates(datasourcePackageIngestStates);
+        return this;
+    }
+
+    /**
+     * Add a single DatasourcePackageIngestStates entry
+     *
+     * @see MemberDetail#withDatasourcePackageIngestStates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail addDatasourcePackageIngestStatesEntry(String key, String value) {
+        if (null == this.datasourcePackageIngestStates) {
+            this.datasourcePackageIngestStates = new java.util.HashMap<String, String>();
+        }
+        if (this.datasourcePackageIngestStates.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.datasourcePackageIngestStates.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into DatasourcePackageIngestStates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail clearDatasourcePackageIngestStatesEntries() {
+        this.datasourcePackageIngestStates = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1474,7 +1624,11 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         if (getPercentOfGraphUtilizationUpdatedTime() != null)
             sb.append("PercentOfGraphUtilizationUpdatedTime: ").append(getPercentOfGraphUtilizationUpdatedTime()).append(",");
         if (getInvitationType() != null)
-            sb.append("InvitationType: ").append(getInvitationType());
+            sb.append("InvitationType: ").append(getInvitationType()).append(",");
+        if (getVolumeUsageByDatasourcePackage() != null)
+            sb.append("VolumeUsageByDatasourcePackage: ").append(getVolumeUsageByDatasourcePackage()).append(",");
+        if (getDatasourcePackageIngestStates() != null)
+            sb.append("DatasourcePackageIngestStates: ").append(getDatasourcePackageIngestStates());
         sb.append("}");
         return sb.toString();
     }
@@ -1546,6 +1700,16 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInvitationType() != null && other.getInvitationType().equals(this.getInvitationType()) == false)
             return false;
+        if (other.getVolumeUsageByDatasourcePackage() == null ^ this.getVolumeUsageByDatasourcePackage() == null)
+            return false;
+        if (other.getVolumeUsageByDatasourcePackage() != null
+                && other.getVolumeUsageByDatasourcePackage().equals(this.getVolumeUsageByDatasourcePackage()) == false)
+            return false;
+        if (other.getDatasourcePackageIngestStates() == null ^ this.getDatasourcePackageIngestStates() == null)
+            return false;
+        if (other.getDatasourcePackageIngestStates() != null
+                && other.getDatasourcePackageIngestStates().equals(this.getDatasourcePackageIngestStates()) == false)
+            return false;
         return true;
     }
 
@@ -1568,6 +1732,8 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPercentOfGraphUtilization() == null) ? 0 : getPercentOfGraphUtilization().hashCode());
         hashCode = prime * hashCode + ((getPercentOfGraphUtilizationUpdatedTime() == null) ? 0 : getPercentOfGraphUtilizationUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getInvitationType() == null) ? 0 : getInvitationType().hashCode());
+        hashCode = prime * hashCode + ((getVolumeUsageByDatasourcePackage() == null) ? 0 : getVolumeUsageByDatasourcePackage().hashCode());
+        hashCode = prime * hashCode + ((getDatasourcePackageIngestStates() == null) ? 0 : getDatasourcePackageIngestStates().hashCode());
         return hashCode;
     }
 

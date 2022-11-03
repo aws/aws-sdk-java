@@ -38,6 +38,8 @@ public class SendHeartbeatRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceName").build();
     private static final MarshallingInfo<String> DEVICEFLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceFleetName").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentResult").build();
 
     private static final SendHeartbeatRequestMarshaller instance = new SendHeartbeatRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class SendHeartbeatRequestMarshaller {
             protocolMarshaller.marshall(sendHeartbeatRequest.getAgentVersion(), AGENTVERSION_BINDING);
             protocolMarshaller.marshall(sendHeartbeatRequest.getDeviceName(), DEVICENAME_BINDING);
             protocolMarshaller.marshall(sendHeartbeatRequest.getDeviceFleetName(), DEVICEFLEETNAME_BINDING);
+            protocolMarshaller.marshall(sendHeartbeatRequest.getDeploymentResult(), DEPLOYMENTRESULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

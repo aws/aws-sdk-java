@@ -175,12 +175,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * container instance where the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
-     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should not
-     * specify fewer than 6 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
      * </p>
      * <p>
-     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      */
     private Integer memory;
@@ -211,8 +211,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * needed.
      * </p>
      * <p>
-     * The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you specify
-     * fewer than 4 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
+     * </p>
+     * <p>
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      */
     private Integer memoryReservation;
@@ -405,8 +409,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<Secret> secrets;
     /**
      * <p>
-     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
-     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies on
+     * other containers in a task definition. When a dependency is defined for container startup, for container shutdown
+     * it is reversed.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
@@ -1664,12 +1669,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * container instance where the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
-     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should not
-     * specify fewer than 6 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
      * </p>
      * <p>
-     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      * 
      * @param memory
@@ -1692,12 +1697,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container instance where the container is placed. Otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
-     *        The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should
-     *        not specify fewer than 6 MiB of memory for your containers.
+     *        The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't
+     *        specify less than 6 MiB of memory for your containers.
      *        </p>
      *        <p>
-     *        The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you
-     *        should not specify fewer than 4 MiB of memory for your containers.
+     *        The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
+     *        specify less than 4 MiB of memory for your containers.
      */
 
     public void setMemory(Integer memory) {
@@ -1725,12 +1730,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * container instance where the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
-     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should not
-     * specify fewer than 6 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
      * </p>
      * <p>
-     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      * 
      * @return The amount (in MiB) of memory to present to the container. If your container attempts to exceed the
@@ -1753,12 +1758,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         Otherwise, the value of <code>memory</code> is used.
      *         </p>
      *         <p>
-     *         The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should
-     *         not specify fewer than 6 MiB of memory for your containers.
+     *         The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't
+     *         specify less than 6 MiB of memory for your containers.
      *         </p>
      *         <p>
-     *         The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you
-     *         should not specify fewer than 4 MiB of memory for your containers.
+     *         The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
+     *         specify less than 4 MiB of memory for your containers.
      */
 
     public Integer getMemory() {
@@ -1786,12 +1791,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * container instance where the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
-     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should not
-     * specify fewer than 6 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
      * </p>
      * <p>
-     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      * 
      * @param memory
@@ -1814,12 +1819,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container instance where the container is placed. Otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
-     *        The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container, so you should
-     *        not specify fewer than 6 MiB of memory for your containers.
+     *        The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't
+     *        specify less than 6 MiB of memory for your containers.
      *        </p>
      *        <p>
-     *        The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container, so you
-     *        should not specify fewer than 4 MiB of memory for your containers.
+     *        The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
+     *        specify less than 4 MiB of memory for your containers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1855,8 +1860,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * needed.
      * </p>
      * <p>
-     * The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you specify
-     * fewer than 4 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
+     * </p>
+     * <p>
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      * 
      * @param memoryReservation
@@ -1884,8 +1893,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        consume more memory resources when needed.
      *        </p>
      *        <p>
-     *        The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you
-     *        specify fewer than 4 MiB of memory for your containers.
+     *        The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't
+     *        specify less than 6 MiB of memory for your containers.
+     *        </p>
+     *        <p>
+     *        The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
+     *        specify less than 4 MiB of memory for your containers.
      */
 
     public void setMemoryReservation(Integer memoryReservation) {
@@ -1919,8 +1932,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * needed.
      * </p>
      * <p>
-     * The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you specify
-     * fewer than 4 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
+     * </p>
+     * <p>
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      * 
      * @return The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
@@ -1947,8 +1964,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         consume more memory resources when needed.
      *         </p>
      *         <p>
-     *         The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you
-     *         specify fewer than 4 MiB of memory for your containers.
+     *         The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't
+     *         specify less than 6 MiB of memory for your containers.
+     *         </p>
+     *         <p>
+     *         The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
+     *         specify less than 4 MiB of memory for your containers.
      */
 
     public Integer getMemoryReservation() {
@@ -1982,8 +2003,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * needed.
      * </p>
      * <p>
-     * The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you specify
-     * fewer than 4 MiB of memory for your containers.
+     * The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't specify less
+     * than 6 MiB of memory for your containers.
+     * </p>
+     * <p>
+     * The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't specify
+     * less than 4 MiB of memory for your containers.
      * </p>
      * 
      * @param memoryReservation
@@ -2011,8 +2036,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        consume more memory resources when needed.
      *        </p>
      *        <p>
-     *        The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we recommend that you
-     *        specify fewer than 4 MiB of memory for your containers.
+     *        The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container. So, don't
+     *        specify less than 6 MiB of memory for your containers.
+     *        </p>
+     *        <p>
+     *        The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
+     *        specify less than 4 MiB of memory for your containers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3742,8 +3771,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
-     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies on
+     * other containers in a task definition. When a dependency is defined for container startup, for container shutdown
+     * it is reversed.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
@@ -3774,8 +3804,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @return The dependencies defined for container startup and shutdown. A container can contain multiple
-     *         dependencies. When a dependency is defined for container startup, for container shutdown it is
-     *         reversed.</p>
+     *         dependencies on other containers in a task definition. When a dependency is defined for container
+     *         startup, for container shutdown it is reversed.</p>
      *         <p>
      *         For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
      *         container agent to turn on container dependencies. However, we recommend using the latest container agent
@@ -3814,8 +3844,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
-     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies on
+     * other containers in a task definition. When a dependency is defined for container startup, for container shutdown
+     * it is reversed.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
@@ -3846,9 +3877,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param dependsOn
-     *        The dependencies defined for container startup and shutdown. A container can contain multiple
-     *        dependencies. When a dependency is defined for container startup, for container shutdown it is
-     *        reversed.</p>
+     *        The dependencies defined for container startup and shutdown. A container can contain multiple dependencies
+     *        on other containers in a task definition. When a dependency is defined for container startup, for
+     *        container shutdown it is reversed.</p>
      *        <p>
      *        For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
      *        container agent to turn on container dependencies. However, we recommend using the latest container agent
@@ -3889,8 +3920,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
-     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies on
+     * other containers in a task definition. When a dependency is defined for container startup, for container shutdown
+     * it is reversed.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
@@ -3926,9 +3958,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param dependsOn
-     *        The dependencies defined for container startup and shutdown. A container can contain multiple
-     *        dependencies. When a dependency is defined for container startup, for container shutdown it is
-     *        reversed.</p>
+     *        The dependencies defined for container startup and shutdown. A container can contain multiple dependencies
+     *        on other containers in a task definition. When a dependency is defined for container startup, for
+     *        container shutdown it is reversed.</p>
      *        <p>
      *        For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
      *        container agent to turn on container dependencies. However, we recommend using the latest container agent
@@ -3971,8 +4003,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
-     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies on
+     * other containers in a task definition. When a dependency is defined for container startup, for container shutdown
+     * it is reversed.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
@@ -4003,9 +4036,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param dependsOn
-     *        The dependencies defined for container startup and shutdown. A container can contain multiple
-     *        dependencies. When a dependency is defined for container startup, for container shutdown it is
-     *        reversed.</p>
+     *        The dependencies defined for container startup and shutdown. A container can contain multiple dependencies
+     *        on other containers in a task definition. When a dependency is defined for container startup, for
+     *        container shutdown it is reversed.</p>
      *        <p>
      *        For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
      *        container agent to turn on container dependencies. However, we recommend using the latest container agent

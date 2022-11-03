@@ -33,16 +33,18 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
      * The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates
      * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
      * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are
-     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
-     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are
+     * <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the inclusion of
+     * the tag and is the default value.
      * </p>
      */
     private String mpdLocation;
     /**
      * <p>
      * The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests
-     * or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD.
-     * The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.
+     * or single-period manifests. If your origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit
+     * this setting or set it to <code>MULTI_PERIOD</code>.
      * </p>
      */
     private String originManifestType;
@@ -52,8 +54,9 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
      * The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates
      * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
      * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are
-     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
-     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are
+     * <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the inclusion of
+     * the tag and is the default value.
      * </p>
      * 
      * @param mpdLocation
@@ -61,8 +64,8 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
      *        populates the Location tag with the URL for manifest update requests, to be used by players that don't
      *        support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor
      *        manifests, and you are either using client-side reporting or your players support sticky HTTP redirects.
-     *        Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is
-     *        the default value.
+     *        Valid values are <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting
+     *        enables the inclusion of the tag and is the default value.
      */
 
     public void setMpdLocation(String mpdLocation) {
@@ -74,16 +77,17 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
      * The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates
      * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
      * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are
-     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
-     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are
+     * <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the inclusion of
+     * the tag and is the default value.
      * </p>
      * 
      * @return The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor
      *         populates the Location tag with the URL for manifest update requests, to be used by players that don't
      *         support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor
      *         manifests, and you are either using client-side reporting or your players support sticky HTTP redirects.
-     *         Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and
-     *         is the default value.
+     *         Valid values are <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting
+     *         enables the inclusion of the tag and is the default value.
      */
 
     public String getMpdLocation() {
@@ -95,8 +99,9 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
      * The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates
      * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
      * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are
-     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
-     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are
+     * <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the inclusion of
+     * the tag and is the default value.
      * </p>
      * 
      * @param mpdLocation
@@ -104,8 +109,8 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
      *        populates the Location tag with the URL for manifest update requests, to be used by players that don't
      *        support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor
      *        manifests, and you are either using client-side reporting or your players support sticky HTTP redirects.
-     *        Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is
-     *        the default value.
+     *        Valid values are <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting
+     *        enables the inclusion of the tag and is the default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,15 +122,16 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests
-     * or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD.
-     * The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.
+     * or single-period manifests. If your origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit
+     * this setting or set it to <code>MULTI_PERIOD</code>.
      * </p>
      * 
      * @param originManifestType
      *        The setting that controls whether MediaTailor handles manifests from the origin server as multi-period
      *        manifests or single-period manifests. If your origin server produces single-period manifests, set this to
-     *        SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set
-     *        it to MULTI_PERIOD.
+     *        <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests,
+     *        omit this setting or set it to <code>MULTI_PERIOD</code>.
      * @see OriginManifestType
      */
 
@@ -136,14 +142,15 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests
-     * or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD.
-     * The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.
+     * or single-period manifests. If your origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit
+     * this setting or set it to <code>MULTI_PERIOD</code>.
      * </p>
      * 
      * @return The setting that controls whether MediaTailor handles manifests from the origin server as multi-period
      *         manifests or single-period manifests. If your origin server produces single-period manifests, set this to
-     *         SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set
-     *         it to MULTI_PERIOD.
+     *         <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests,
+     *         omit this setting or set it to <code>MULTI_PERIOD</code>.
      * @see OriginManifestType
      */
 
@@ -154,15 +161,16 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests
-     * or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD.
-     * The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.
+     * or single-period manifests. If your origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit
+     * this setting or set it to <code>MULTI_PERIOD</code>.
      * </p>
      * 
      * @param originManifestType
      *        The setting that controls whether MediaTailor handles manifests from the origin server as multi-period
      *        manifests or single-period manifests. If your origin server produces single-period manifests, set this to
-     *        SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set
-     *        it to MULTI_PERIOD.
+     *        <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests,
+     *        omit this setting or set it to <code>MULTI_PERIOD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginManifestType
      */
@@ -175,15 +183,16 @@ public class DashConfigurationForPut implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests
-     * or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD.
-     * The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.
+     * or single-period manifests. If your origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit
+     * this setting or set it to <code>MULTI_PERIOD</code>.
      * </p>
      * 
      * @param originManifestType
      *        The setting that controls whether MediaTailor handles manifests from the origin server as multi-period
      *        manifests or single-period manifests. If your origin server produces single-period manifests, set this to
-     *        SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set
-     *        it to MULTI_PERIOD.
+     *        <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests,
+     *        omit this setting or set it to <code>MULTI_PERIOD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginManifestType
      */

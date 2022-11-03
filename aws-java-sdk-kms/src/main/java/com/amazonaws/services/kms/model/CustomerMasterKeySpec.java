@@ -32,7 +32,8 @@ public enum CustomerMasterKeySpec {
     HMAC_224("HMAC_224"),
     HMAC_256("HMAC_256"),
     HMAC_384("HMAC_384"),
-    HMAC_512("HMAC_512");
+    HMAC_512("HMAC_512"),
+    SM2("SM2");
 
     private String value;
 

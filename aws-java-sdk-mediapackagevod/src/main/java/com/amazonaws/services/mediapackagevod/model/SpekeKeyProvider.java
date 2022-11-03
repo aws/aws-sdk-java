@@ -27,6 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo {
 
+    private EncryptionContractConfiguration encryptionContractConfiguration;
     /**
      * An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key
      * provider service.
@@ -36,6 +37,32 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> systemIds;
     /** The URL of the external key provider service. */
     private String url;
+
+    /**
+     * @param encryptionContractConfiguration
+     */
+
+    public void setEncryptionContractConfiguration(EncryptionContractConfiguration encryptionContractConfiguration) {
+        this.encryptionContractConfiguration = encryptionContractConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public EncryptionContractConfiguration getEncryptionContractConfiguration() {
+        return this.encryptionContractConfiguration;
+    }
+
+    /**
+     * @param encryptionContractConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpekeKeyProvider withEncryptionContractConfiguration(EncryptionContractConfiguration encryptionContractConfiguration) {
+        setEncryptionContractConfiguration(encryptionContractConfiguration);
+        return this;
+    }
 
     /**
      * An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key
@@ -185,6 +212,8 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEncryptionContractConfiguration() != null)
+            sb.append("EncryptionContractConfiguration: ").append(getEncryptionContractConfiguration()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSystemIds() != null)
@@ -205,6 +234,11 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof SpekeKeyProvider == false)
             return false;
         SpekeKeyProvider other = (SpekeKeyProvider) obj;
+        if (other.getEncryptionContractConfiguration() == null ^ this.getEncryptionContractConfiguration() == null)
+            return false;
+        if (other.getEncryptionContractConfiguration() != null
+                && other.getEncryptionContractConfiguration().equals(this.getEncryptionContractConfiguration()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -225,6 +259,7 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEncryptionContractConfiguration() == null) ? 0 : getEncryptionContractConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSystemIds() == null) ? 0 : getSystemIds().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());

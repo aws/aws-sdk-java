@@ -52,6 +52,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
      * </p>
      * </li>
@@ -87,6 +92,13 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String slotElicitationStyle;
+    /**
+     * <p>
+     * The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from
+     * the user.
+     * </p>
+     */
+    private ElicitSubSlot subSlotToElicit;
 
     /**
      * <p>
@@ -108,6 +120,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
      * </p>
      * </li>
      * <li>
@@ -135,6 +152,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
      *        </p>
      *        </li>
      *        <li>
@@ -173,6 +195,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
      * </p>
      * </li>
@@ -195,6 +222,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
      *         </p>
      *         </li>
      *         <li>
@@ -233,6 +265,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
      * </p>
      * </li>
@@ -256,6 +293,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
      *        </p>
      *        </li>
      *        <li>
@@ -296,6 +338,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
      * </p>
      * </li>
@@ -319,6 +366,11 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
      *        </p>
      *        </li>
      *        <li>
@@ -567,6 +619,52 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from
+     * the user.
+     * </p>
+     * 
+     * @param subSlotToElicit
+     *        The name of the constituent sub slot of the composite slot specified in slotToElicit that should be
+     *        elicited from the user.
+     */
+
+    public void setSubSlotToElicit(ElicitSubSlot subSlotToElicit) {
+        this.subSlotToElicit = subSlotToElicit;
+    }
+
+    /**
+     * <p>
+     * The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from
+     * the user.
+     * </p>
+     * 
+     * @return The name of the constituent sub slot of the composite slot specified in slotToElicit that should be
+     *         elicited from the user.
+     */
+
+    public ElicitSubSlot getSubSlotToElicit() {
+        return this.subSlotToElicit;
+    }
+
+    /**
+     * <p>
+     * The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from
+     * the user.
+     * </p>
+     * 
+     * @param subSlotToElicit
+     *        The name of the constituent sub slot of the composite slot specified in slotToElicit that should be
+     *        elicited from the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DialogAction withSubSlotToElicit(ElicitSubSlot subSlotToElicit) {
+        setSubSlotToElicit(subSlotToElicit);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -583,7 +681,9 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
         if (getSlotToElicit() != null)
             sb.append("SlotToElicit: ").append(getSlotToElicit()).append(",");
         if (getSlotElicitationStyle() != null)
-            sb.append("SlotElicitationStyle: ").append(getSlotElicitationStyle());
+            sb.append("SlotElicitationStyle: ").append(getSlotElicitationStyle()).append(",");
+        if (getSubSlotToElicit() != null)
+            sb.append("SubSlotToElicit: ").append(getSubSlotToElicit());
         sb.append("}");
         return sb.toString();
     }
@@ -610,6 +710,10 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSlotElicitationStyle() != null && other.getSlotElicitationStyle().equals(this.getSlotElicitationStyle()) == false)
             return false;
+        if (other.getSubSlotToElicit() == null ^ this.getSubSlotToElicit() == null)
+            return false;
+        if (other.getSubSlotToElicit() != null && other.getSubSlotToElicit().equals(this.getSubSlotToElicit()) == false)
+            return false;
         return true;
     }
 
@@ -621,6 +725,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
         hashCode = prime * hashCode + ((getSlotElicitationStyle() == null) ? 0 : getSlotElicitationStyle().hashCode());
+        hashCode = prime * hashCode + ((getSubSlotToElicit() == null) ? 0 : getSubSlotToElicit().hashCode());
         return hashCode;
     }
 

@@ -52,6 +52,10 @@ public class AwsEc2VolumeDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2V
                     context.nextToken();
                     awsEc2VolumeDetails.setCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeviceName", targetDepth)) {
+                    context.nextToken();
+                    awsEc2VolumeDetails.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Encrypted", targetDepth)) {
                     context.nextToken();
                     awsEc2VolumeDetails.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -77,6 +81,18 @@ public class AwsEc2VolumeDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2V
                     awsEc2VolumeDetails.setAttachments(new ListUnmarshaller<AwsEc2VolumeAttachment>(AwsEc2VolumeAttachmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("VolumeId", targetDepth)) {
+                    context.nextToken();
+                    awsEc2VolumeDetails.setVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeType", targetDepth)) {
+                    context.nextToken();
+                    awsEc2VolumeDetails.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeScanStatus", targetDepth)) {
+                    context.nextToken();
+                    awsEc2VolumeDetails.setVolumeScanStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

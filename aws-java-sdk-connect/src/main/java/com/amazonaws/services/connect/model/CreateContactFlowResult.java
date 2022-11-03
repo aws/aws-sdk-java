@@ -25,24 +25,24 @@ public class CreateContactFlowResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      */
     private String contactFlowArn;
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -51,10 +51,10 @@ public class CreateContactFlowResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -63,11 +63,11 @@ public class CreateContactFlowResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class CreateContactFlowResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
      * @param contactFlowArn
-     *        The Amazon Resource Name (ARN) of the contact flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      */
 
     public void setContactFlowArn(String contactFlowArn) {
@@ -91,10 +91,10 @@ public class CreateContactFlowResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the contact flow.
+     * @return The Amazon Resource Name (ARN) of the flow.
      */
 
     public String getContactFlowArn() {
@@ -103,11 +103,11 @@ public class CreateContactFlowResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
      * @param contactFlowArn
-     *        The Amazon Resource Name (ARN) of the contact flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

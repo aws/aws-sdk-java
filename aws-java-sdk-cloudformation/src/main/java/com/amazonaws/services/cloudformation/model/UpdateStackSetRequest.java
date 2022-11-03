@@ -244,7 +244,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private StackSetOperationPreferences operationPreferences;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2417,7 +2417,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2431,7 +2431,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.</p>
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
@@ -2450,7 +2450,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2463,7 +2463,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * administrator role, even if it is the same customized administrator role used with this stack set previously.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.</p>
      *         <p>
      *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *         can manage specific stack sets within the same administrator account. For more information, see <a
@@ -2482,7 +2482,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.
      * </p>
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
@@ -2496,7 +2496,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.</p>
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a

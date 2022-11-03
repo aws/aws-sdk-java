@@ -53,6 +53,8 @@ public class ExperimentMarshaller {
             .marshallLocationName("samplingRate").build();
     private static final MarshallingInfo<StructuredPojo> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schedule").build();
+    private static final MarshallingInfo<String> SEGMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("segment").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -92,6 +94,7 @@ public class ExperimentMarshaller {
             protocolMarshaller.marshall(experiment.getRandomizationSalt(), RANDOMIZATIONSALT_BINDING);
             protocolMarshaller.marshall(experiment.getSamplingRate(), SAMPLINGRATE_BINDING);
             protocolMarshaller.marshall(experiment.getSchedule(), SCHEDULE_BINDING);
+            protocolMarshaller.marshall(experiment.getSegment(), SEGMENT_BINDING);
             protocolMarshaller.marshall(experiment.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(experiment.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(experiment.getTags(), TAGS_BINDING);

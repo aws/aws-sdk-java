@@ -52,6 +52,10 @@ public class FraudRiskDetailsJsonUnmarshaller implements Unmarshaller<FraudRiskD
                     context.nextToken();
                     fraudRiskDetails.setKnownFraudsterRisk(KnownFraudsterRiskJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VoiceSpoofingRisk", targetDepth)) {
+                    context.nextToken();
+                    fraudRiskDetails.setVoiceSpoofingRisk(VoiceSpoofingRiskJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

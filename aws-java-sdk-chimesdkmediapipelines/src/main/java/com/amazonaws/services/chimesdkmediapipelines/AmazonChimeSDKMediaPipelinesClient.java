@@ -52,10 +52,10 @@ import com.amazonaws.services.chimesdkmediapipelines.model.transform.*;
  * <p>
  * <p>
  * The Amazon Chime SDK media pipeline APIs in this section allow software developers to create Amazon Chime SDK media
- * pipelines and capture audio, video, events, and data messages from Amazon Chime SDK meetings. For more information
- * about media pipleines, see <a
- * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html"
- * >Amzon Chime SDK media pipelines</a>.
+ * pipelines that capture, concatenate, or stream your Amazon Chime SDK meetings. For more information about media
+ * pipleines, see <a
+ * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
+ * Chime SDK media pipelines</a>.
  * </p>
  */
 @ThreadSafe
@@ -82,23 +82,23 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottledClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.ThrottledClientExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottledClientException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.ThrottledClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
@@ -157,7 +157,7 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Creates a media capture pipeline.
+     * Creates a media pipeline.
      * </p>
      * 
      * @param createMediaCapturePipelineRequest
@@ -229,7 +229,153 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Deletes the media capture pipeline.
+     * Creates a media concatenation pipeline.
+     * </p>
+     * 
+     * @param createMediaConcatenationPipelineRequest
+     * @return Result of the CreateMediaConcatenationPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaConcatenationPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMediaConcatenationPipelineResult createMediaConcatenationPipeline(CreateMediaConcatenationPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMediaConcatenationPipeline(request);
+    }
+
+    @SdkInternalApi
+    final CreateMediaConcatenationPipelineResult executeCreateMediaConcatenationPipeline(
+            CreateMediaConcatenationPipelineRequest createMediaConcatenationPipelineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMediaConcatenationPipelineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMediaConcatenationPipelineRequest> request = null;
+        Response<CreateMediaConcatenationPipelineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMediaConcatenationPipelineRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMediaConcatenationPipelineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMediaConcatenationPipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMediaConcatenationPipelineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMediaConcatenationPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a streaming media pipeline in an Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param createMediaLiveConnectorPipelineRequest
+     * @return Result of the CreateMediaLiveConnectorPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaLiveConnectorPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMediaLiveConnectorPipelineResult createMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMediaLiveConnectorPipeline(request);
+    }
+
+    @SdkInternalApi
+    final CreateMediaLiveConnectorPipelineResult executeCreateMediaLiveConnectorPipeline(
+            CreateMediaLiveConnectorPipelineRequest createMediaLiveConnectorPipelineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMediaLiveConnectorPipelineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMediaLiveConnectorPipelineRequest> request = null;
+        Response<CreateMediaLiveConnectorPipelineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMediaLiveConnectorPipelineRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMediaLiveConnectorPipelineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMediaLiveConnectorPipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMediaLiveConnectorPipelineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMediaLiveConnectorPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the media pipeline.
      * </p>
      * 
      * @param deleteMediaCapturePipelineRequest
@@ -301,7 +447,76 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Gets an existing media capture pipeline.
+     * Deletes the media pipeline.
+     * </p>
+     * 
+     * @param deleteMediaPipelineRequest
+     * @return Result of the DeleteMediaPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.DeleteMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMediaPipelineResult deleteMediaPipeline(DeleteMediaPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMediaPipeline(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMediaPipelineResult executeDeleteMediaPipeline(DeleteMediaPipelineRequest deleteMediaPipelineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMediaPipelineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMediaPipelineRequest> request = null;
+        Response<DeleteMediaPipelineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMediaPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMediaPipelineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMediaPipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMediaPipelineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMediaPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets an existing media pipeline.
      * </p>
      * 
      * @param getMediaCapturePipelineRequest
@@ -373,7 +588,76 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Returns a list of media capture pipelines.
+     * Gets an existing media pipeline.
+     * </p>
+     * 
+     * @param getMediaPipelineRequest
+     * @return Result of the GetMediaPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.GetMediaPipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMediaPipelineResult getMediaPipeline(GetMediaPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMediaPipeline(request);
+    }
+
+    @SdkInternalApi
+    final GetMediaPipelineResult executeGetMediaPipeline(GetMediaPipelineRequest getMediaPipelineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMediaPipelineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMediaPipelineRequest> request = null;
+        Response<GetMediaPipelineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMediaPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMediaPipelineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMediaPipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMediaPipelineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMediaPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of media pipelines.
      * </p>
      * 
      * @param listMediaCapturePipelinesRequest
@@ -445,7 +729,76 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon Chime SDK media capture pipeline.
+     * Returns a list of media pipelines.
+     * </p>
+     * 
+     * @param listMediaPipelinesRequest
+     * @return Result of the ListMediaPipelines operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.ListMediaPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMediaPipelinesResult listMediaPipelines(ListMediaPipelinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMediaPipelines(request);
+    }
+
+    @SdkInternalApi
+    final ListMediaPipelinesResult executeListMediaPipelines(ListMediaPipelinesRequest listMediaPipelinesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMediaPipelinesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMediaPipelinesRequest> request = null;
+        Response<ListMediaPipelinesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMediaPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMediaPipelinesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMediaPipelines");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMediaPipelinesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMediaPipelinesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags available for a media pipeline.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -514,7 +867,8 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon Chime SDK media capture pipeline.
+     * The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint region, resource ID, and
+     * pipeline ID.
      * </p>
      * 
      * @param tagResourceRequest
@@ -583,7 +937,7 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Removes the specified tags from the specified Amazon Chime SDK media capture pipeline.
+     * Removes any tags from a media pipeline.
      * </p>
      * 
      * @param untagResourceRequest

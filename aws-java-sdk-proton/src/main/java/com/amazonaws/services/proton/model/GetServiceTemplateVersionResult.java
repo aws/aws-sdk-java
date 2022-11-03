@@ -25,18 +25,18 @@ public class GetServiceTemplateVersionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the requested service template version.
      * </p>
      */
     private ServiceTemplateVersion serviceTemplateVersion;
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the requested service template version.
      * </p>
      * 
      * @param serviceTemplateVersion
-     *        The service template version detail data that's returned by Proton.
+     *        The detailed data of the requested service template version.
      */
 
     public void setServiceTemplateVersion(ServiceTemplateVersion serviceTemplateVersion) {
@@ -45,10 +45,10 @@ public class GetServiceTemplateVersionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the requested service template version.
      * </p>
      * 
-     * @return The service template version detail data that's returned by Proton.
+     * @return The detailed data of the requested service template version.
      */
 
     public ServiceTemplateVersion getServiceTemplateVersion() {
@@ -57,11 +57,11 @@ public class GetServiceTemplateVersionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The service template version detail data that's returned by Proton.
+     * The detailed data of the requested service template version.
      * </p>
      * 
      * @param serviceTemplateVersion
-     *        The service template version detail data that's returned by Proton.
+     *        The detailed data of the requested service template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

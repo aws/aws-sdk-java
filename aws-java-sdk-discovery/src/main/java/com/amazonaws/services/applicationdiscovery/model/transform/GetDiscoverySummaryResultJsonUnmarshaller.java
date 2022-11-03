@@ -72,6 +72,14 @@ public class GetDiscoverySummaryResultJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     getDiscoverySummaryResult.setConnectorSummary(CustomerConnectorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("meCollectorSummary", targetDepth)) {
+                    context.nextToken();
+                    getDiscoverySummaryResult.setMeCollectorSummary(CustomerMeCollectorInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("agentlessCollectorSummary", targetDepth)) {
+                    context.nextToken();
+                    getDiscoverySummaryResult.setAgentlessCollectorSummary(CustomerAgentlessCollectorInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -29,7 +29,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
 
-    /** EBS volume provisioned throughput information. */
+    /**
+     * <p>
+     * EBS volume provisioned throughput information.
+     * </p>
+     */
     private ProvisionedThroughput provisionedThroughput;
     /**
      * <p>
@@ -39,10 +43,14 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
     private Integer volumeSize;
 
     /**
+     * <p>
      * EBS volume provisioned throughput information.
+     * </p>
      * 
      * @param provisionedThroughput
+     *        <p>
      *        EBS volume provisioned throughput information.
+     *        </p>
      */
 
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
@@ -50,9 +58,13 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * EBS volume provisioned throughput information.
+     * </p>
      * 
-     * @return EBS volume provisioned throughput information.
+     * @return <p>
+     *         EBS volume provisioned throughput information.
+     *         </p>
      */
 
     public ProvisionedThroughput getProvisionedThroughput() {
@@ -60,10 +72,14 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * EBS volume provisioned throughput information.
+     * </p>
      * 
      * @param provisionedThroughput
+     *        <p>
      *        EBS volume provisioned throughput information.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

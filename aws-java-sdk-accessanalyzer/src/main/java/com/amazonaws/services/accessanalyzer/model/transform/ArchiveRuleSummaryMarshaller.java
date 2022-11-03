@@ -29,12 +29,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ArchiveRuleSummaryMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<Map> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("filter").build();
     private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ruleName").build();
+    private static final MarshallingInfo<Map> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filter").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("iso8601").build();
 
@@ -54,9 +54,9 @@ public class ArchiveRuleSummaryMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(archiveRuleSummary.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(archiveRuleSummary.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(archiveRuleSummary.getRuleName(), RULENAME_BINDING);
+            protocolMarshaller.marshall(archiveRuleSummary.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(archiveRuleSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(archiveRuleSummary.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

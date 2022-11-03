@@ -89,6 +89,18 @@ public class PutAccessControlRuleRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String organizationId;
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     */
+    private java.util.List<String> impersonationRoleIds;
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     */
+    private java.util.List<String> notImpersonationRoleIds;
 
     /**
      * <p>
@@ -722,6 +734,146 @@ public class PutAccessControlRuleRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * 
+     * @return Impersonation role IDs to include in the rule.
+     */
+
+    public java.util.List<String> getImpersonationRoleIds() {
+        return impersonationRoleIds;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * 
+     * @param impersonationRoleIds
+     *        Impersonation role IDs to include in the rule.
+     */
+
+    public void setImpersonationRoleIds(java.util.Collection<String> impersonationRoleIds) {
+        if (impersonationRoleIds == null) {
+            this.impersonationRoleIds = null;
+            return;
+        }
+
+        this.impersonationRoleIds = new java.util.ArrayList<String>(impersonationRoleIds);
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImpersonationRoleIds(java.util.Collection)} or {@link #withImpersonationRoleIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param impersonationRoleIds
+     *        Impersonation role IDs to include in the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutAccessControlRuleRequest withImpersonationRoleIds(String... impersonationRoleIds) {
+        if (this.impersonationRoleIds == null) {
+            setImpersonationRoleIds(new java.util.ArrayList<String>(impersonationRoleIds.length));
+        }
+        for (String ele : impersonationRoleIds) {
+            this.impersonationRoleIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to include in the rule.
+     * </p>
+     * 
+     * @param impersonationRoleIds
+     *        Impersonation role IDs to include in the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutAccessControlRuleRequest withImpersonationRoleIds(java.util.Collection<String> impersonationRoleIds) {
+        setImpersonationRoleIds(impersonationRoleIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * 
+     * @return Impersonation role IDs to exclude from the rule.
+     */
+
+    public java.util.List<String> getNotImpersonationRoleIds() {
+        return notImpersonationRoleIds;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * 
+     * @param notImpersonationRoleIds
+     *        Impersonation role IDs to exclude from the rule.
+     */
+
+    public void setNotImpersonationRoleIds(java.util.Collection<String> notImpersonationRoleIds) {
+        if (notImpersonationRoleIds == null) {
+            this.notImpersonationRoleIds = null;
+            return;
+        }
+
+        this.notImpersonationRoleIds = new java.util.ArrayList<String>(notImpersonationRoleIds);
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotImpersonationRoleIds(java.util.Collection)} or
+     * {@link #withNotImpersonationRoleIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param notImpersonationRoleIds
+     *        Impersonation role IDs to exclude from the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutAccessControlRuleRequest withNotImpersonationRoleIds(String... notImpersonationRoleIds) {
+        if (this.notImpersonationRoleIds == null) {
+            setNotImpersonationRoleIds(new java.util.ArrayList<String>(notImpersonationRoleIds.length));
+        }
+        for (String ele : notImpersonationRoleIds) {
+            this.notImpersonationRoleIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Impersonation role IDs to exclude from the rule.
+     * </p>
+     * 
+     * @param notImpersonationRoleIds
+     *        Impersonation role IDs to exclude from the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutAccessControlRuleRequest withNotImpersonationRoleIds(java.util.Collection<String> notImpersonationRoleIds) {
+        setNotImpersonationRoleIds(notImpersonationRoleIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -752,7 +904,11 @@ public class PutAccessControlRuleRequest extends com.amazonaws.AmazonWebServiceR
         if (getNotUserIds() != null)
             sb.append("NotUserIds: ").append(getNotUserIds()).append(",");
         if (getOrganizationId() != null)
-            sb.append("OrganizationId: ").append(getOrganizationId());
+            sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
+        if (getImpersonationRoleIds() != null)
+            sb.append("ImpersonationRoleIds: ").append(getImpersonationRoleIds()).append(",");
+        if (getNotImpersonationRoleIds() != null)
+            sb.append("NotImpersonationRoleIds: ").append(getNotImpersonationRoleIds());
         sb.append("}");
         return sb.toString();
     }
@@ -807,6 +963,14 @@ public class PutAccessControlRuleRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOrganizationId() != null && other.getOrganizationId().equals(this.getOrganizationId()) == false)
             return false;
+        if (other.getImpersonationRoleIds() == null ^ this.getImpersonationRoleIds() == null)
+            return false;
+        if (other.getImpersonationRoleIds() != null && other.getImpersonationRoleIds().equals(this.getImpersonationRoleIds()) == false)
+            return false;
+        if (other.getNotImpersonationRoleIds() == null ^ this.getNotImpersonationRoleIds() == null)
+            return false;
+        if (other.getNotImpersonationRoleIds() != null && other.getNotImpersonationRoleIds().equals(this.getNotImpersonationRoleIds()) == false)
+            return false;
         return true;
     }
 
@@ -825,6 +989,8 @@ public class PutAccessControlRuleRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getUserIds() == null) ? 0 : getUserIds().hashCode());
         hashCode = prime * hashCode + ((getNotUserIds() == null) ? 0 : getNotUserIds().hashCode());
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
+        hashCode = prime * hashCode + ((getImpersonationRoleIds() == null) ? 0 : getImpersonationRoleIds().hashCode());
+        hashCode = prime * hashCode + ((getNotImpersonationRoleIds() == null) ? 0 : getNotImpersonationRoleIds().hashCode());
         return hashCode;
     }
 

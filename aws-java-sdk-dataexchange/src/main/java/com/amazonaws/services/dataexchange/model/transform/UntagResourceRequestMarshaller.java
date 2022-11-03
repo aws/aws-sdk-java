@@ -29,7 +29,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UntagResourceRequestMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("resource-arn").build();
+            .marshallLocationName("ResourceArn").build();
     private static final MarshallingInfo<List> TAGKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("tagKeys").build();
 

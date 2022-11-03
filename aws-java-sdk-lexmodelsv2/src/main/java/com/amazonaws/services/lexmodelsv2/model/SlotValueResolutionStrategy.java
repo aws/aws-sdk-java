@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SlotValueResolutionStrategy {
 
     OriginalValue("OriginalValue"),
-    TopResolution("TopResolution");
+    TopResolution("TopResolution"),
+    Concatenation("Concatenation");
 
     private String value;
 

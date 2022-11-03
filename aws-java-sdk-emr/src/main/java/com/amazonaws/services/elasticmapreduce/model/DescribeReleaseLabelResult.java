@@ -42,6 +42,15 @@ public class DescribeReleaseLabelResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is
+     * formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon
+     * Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<OSRelease> availableOSReleases;
 
     /**
      * <p>
@@ -205,6 +214,104 @@ public class DescribeReleaseLabelResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is
+     * formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon
+     * Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * </p>
+     * 
+     * @return The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field
+     *         that is formatted as shown in <a
+     *         href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release
+     *         Notes</i> </a>. For example, <a
+     *         href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     */
+
+    public java.util.List<OSRelease> getAvailableOSReleases() {
+        if (availableOSReleases == null) {
+            availableOSReleases = new com.amazonaws.internal.SdkInternalList<OSRelease>();
+        }
+        return availableOSReleases;
+    }
+
+    /**
+     * <p>
+     * The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is
+     * formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon
+     * Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * </p>
+     * 
+     * @param availableOSReleases
+     *        The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that
+     *        is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     *        <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     *        href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     */
+
+    public void setAvailableOSReleases(java.util.Collection<OSRelease> availableOSReleases) {
+        if (availableOSReleases == null) {
+            this.availableOSReleases = null;
+            return;
+        }
+
+        this.availableOSReleases = new com.amazonaws.internal.SdkInternalList<OSRelease>(availableOSReleases);
+    }
+
+    /**
+     * <p>
+     * The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is
+     * formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon
+     * Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailableOSReleases(java.util.Collection)} or {@link #withAvailableOSReleases(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param availableOSReleases
+     *        The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that
+     *        is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     *        <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     *        href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReleaseLabelResult withAvailableOSReleases(OSRelease... availableOSReleases) {
+        if (this.availableOSReleases == null) {
+            setAvailableOSReleases(new com.amazonaws.internal.SdkInternalList<OSRelease>(availableOSReleases.length));
+        }
+        for (OSRelease ele : availableOSReleases) {
+            this.availableOSReleases.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is
+     * formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon
+     * Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * </p>
+     * 
+     * @param availableOSReleases
+     *        The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that
+     *        is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     *        <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     *        href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReleaseLabelResult withAvailableOSReleases(java.util.Collection<OSRelease> availableOSReleases) {
+        setAvailableOSReleases(availableOSReleases);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -221,7 +328,9 @@ public class DescribeReleaseLabelResult extends com.amazonaws.AmazonWebServiceRe
         if (getApplications() != null)
             sb.append("Applications: ").append(getApplications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getAvailableOSReleases() != null)
+            sb.append("AvailableOSReleases: ").append(getAvailableOSReleases());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +357,10 @@ public class DescribeReleaseLabelResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getAvailableOSReleases() == null ^ this.getAvailableOSReleases() == null)
+            return false;
+        if (other.getAvailableOSReleases() != null && other.getAvailableOSReleases().equals(this.getAvailableOSReleases()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +372,7 @@ public class DescribeReleaseLabelResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAvailableOSReleases() == null) ? 0 : getAvailableOSReleases().hashCode());
         return hashCode;
     }
 

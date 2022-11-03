@@ -49,7 +49,7 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
     private Schema schema;
     /**
      * <p>
-     * Create an Expainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the AWS console.
      * </p>
      */
     private Boolean enableVisualization;
@@ -298,11 +298,11 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Expainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the AWS console.
      * </p>
      * 
      * @param enableVisualization
-     *        Create an Expainability visualization that is viewable within the AWS console.
+     *        Create an Explainability visualization that is viewable within the AWS console.
      */
 
     public void setEnableVisualization(Boolean enableVisualization) {
@@ -311,10 +311,10 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Expainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the AWS console.
      * </p>
      * 
-     * @return Create an Expainability visualization that is viewable within the AWS console.
+     * @return Create an Explainability visualization that is viewable within the AWS console.
      */
 
     public Boolean getEnableVisualization() {
@@ -323,11 +323,11 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Expainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the AWS console.
      * </p>
      * 
      * @param enableVisualization
-     *        Create an Expainability visualization that is viewable within the AWS console.
+     *        Create an Explainability visualization that is viewable within the AWS console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,10 +338,10 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Expainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the AWS console.
      * </p>
      * 
-     * @return Create an Expainability visualization that is viewable within the AWS console.
+     * @return Create an Explainability visualization that is viewable within the AWS console.
      */
 
     public Boolean isEnableVisualization() {

@@ -29,6 +29,8 @@ public class ModelQualityJobInputMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ENDPOINTINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointInput").build();
+    private static final MarshallingInfo<StructuredPojo> BATCHTRANSFORMINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchTransformInput").build();
     private static final MarshallingInfo<StructuredPojo> GROUNDTRUTHS3INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GroundTruthS3Input").build();
 
@@ -49,6 +51,7 @@ public class ModelQualityJobInputMarshaller {
 
         try {
             protocolMarshaller.marshall(modelQualityJobInput.getEndpointInput(), ENDPOINTINPUT_BINDING);
+            protocolMarshaller.marshall(modelQualityJobInput.getBatchTransformInput(), BATCHTRANSFORMINPUT_BINDING);
             protocolMarshaller.marshall(modelQualityJobInput.getGroundTruthS3Input(), GROUNDTRUTHS3INPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

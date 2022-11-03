@@ -36,6 +36,8 @@ public class HttpGatewayRouteMatchMarshaller {
             .marshallLocationName("method").build();
     private static final MarshallingInfo<StructuredPojo> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("path").build();
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("port").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("prefix").build();
     private static final MarshallingInfo<List> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -61,6 +63,7 @@ public class HttpGatewayRouteMatchMarshaller {
             protocolMarshaller.marshall(httpGatewayRouteMatch.getHostname(), HOSTNAME_BINDING);
             protocolMarshaller.marshall(httpGatewayRouteMatch.getMethod(), METHOD_BINDING);
             protocolMarshaller.marshall(httpGatewayRouteMatch.getPath(), PATH_BINDING);
+            protocolMarshaller.marshall(httpGatewayRouteMatch.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(httpGatewayRouteMatch.getPrefix(), PREFIX_BINDING);
             protocolMarshaller.marshall(httpGatewayRouteMatch.getQueryParameters(), QUERYPARAMETERS_BINDING);
         } catch (Exception e) {

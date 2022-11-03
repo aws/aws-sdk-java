@@ -46,7 +46,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Creates a job to run on one or more devices.</p>"
+      "documentation":"<p>Creates a job to run on one or more devices. A job can update a device's software or reboot it.</p>"
     },
     "CreateNodeFromTemplateJob":{
       "name":"CreateNodeFromTemplateJob",
@@ -529,6 +529,23 @@
       ],
       "documentation":"<p>Removes an application instance.</p>"
     },
+    "SignalApplicationInstanceNodeInstances":{
+      "name":"SignalApplicationInstanceNodeInstances",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/application-instances/{ApplicationInstanceId}/node-signals",
+        "responseCode":200
+      },
+      "input":{"shape":"SignalApplicationInstanceNodeInstancesRequest"},
+      "output":{"shape":"SignalApplicationInstanceNodeInstancesResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Signal camera nodes to stop or resume.</p>"
+    },
     "TagResource":{
       "name":"TagResource",
       "http":{
@@ -642,6 +659,10 @@
         "Name":{
           "shape":"ApplicationInstanceName",
           "documentation":"<p>The application instance's name.</p>"
+        },
+        "RuntimeContextStates":{
+          "shape":"ReportedRuntimeContextStates",
+          "documentation":"<p>The application's state.</p>"
         },
         "Status":{
           "shape":"ApplicationInstanceStatus",
@@ -840,7 +861,6 @@
       "type":"structure",
       "required":[
         "DeviceIds",
-        "DeviceJobConfig",
         "JobType"
       ],
       "members":{
@@ -850,7 +870,7 @@
         },
         "DeviceJobConfig":{
           "shape":"DeviceJobConfig",
-          "documentation":"<p>Configuration settings for the job.</p>"
+          "documentation":"<p>Configuration settings for a software update job.</p>"
         },
         "JobType":{
           "shape":"JobType",
@@ -1202,6 +1222,10 @@
           "shape":"ApplicationInstanceName",
           "documentation":"<p>The application instance's name.</p>"
         },
+        "RuntimeContextStates":{
+          "shape":"ReportedRuntimeContextStates",
+          "documentation":"<p>The application instance's state.</p>"
+        },
         "RuntimeRoleArn":{
           "shape":"RuntimeRoleArn",
           "documentation":"<p>The application instance's runtime role ARN.</p>"
@@ -1263,6 +1287,10 @@
           "shape":"JobId",
           "documentation":"<p>The job's ID.</p>"
         },
+        "JobType":{
+          "shape":"JobType",
+          "documentation":"<p>The job's type.</p>"
+        },
         "Status":{
           "shape":"UpdateProgress",
           "documentation":"<p>The job's status.</p>"
@@ -1312,6 +1340,10 @@
           "shape":"Description",
           "documentation":"<p>The device's description.</p>"
         },
+        "DeviceAggregatedStatus":{
+          "shape":"DeviceAggregatedStatus",
+          "documentation":"<p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>"
+        },
         "DeviceConnectionStatus":{
           "shape":"DeviceConnectionStatus",
           "documentation":"<p>The device's connection status.</p>"
@@ -1323,6 +1355,10 @@
         "LatestAlternateSoftware":{
           "shape":"LatestAlternateSoftware",
           "documentation":"<p>The most recent beta software release.</p>"
+        },
+        "LatestDeviceJob":{
+          "shape":"LatestDeviceJob",
+          "documentation":"<p>A device's latest job. Includes the target image version, and the job status.</p>"
         },
         "LatestSoftware":{
           "shape":"LatestSoftware",
@@ -1749,6 +1785,14 @@
       "min":0,
       "pattern":"^.*$"
     },
+    "DesiredState":{
+      "type":"string",
+      "enum":[
+        "RUNNING",
+        "STOPPED",
+        "REMOVED"
+      ]
+    },
     "Device":{
       "type":"structure",
       "members":{
@@ -1760,6 +1804,18 @@
           "shape":"CreatedTime",
           "documentation":"<p>When the device was created.</p>"
         },
+        "CurrentSoftware":{
+          "shape":"CurrentSoftware",
+          "documentation":"<p>A device's current software.</p>"
+        },
+        "Description":{
+          "shape":"Description",
+          "documentation":"<p>A description for the device.</p>"
+        },
+        "DeviceAggregatedStatus":{
+          "shape":"DeviceAggregatedStatus",
+          "documentation":"<p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>"
+        },
         "DeviceId":{
           "shape":"DeviceId",
           "documentation":"<p>The device's ID.</p>"
@@ -1767,6 +1823,10 @@
         "LastUpdatedTime":{
           "shape":"LastUpdatedTime",
           "documentation":"<p>When the device was updated.</p>"
+        },
+        "LatestDeviceJob":{
+          "shape":"LatestDeviceJob",
+          "documentation":"<p>A device's latest job. Includes the target image version, and the update job status.</p>"
         },
         "LeaseExpirationTime":{
           "shape":"LeaseExpirationTime",
@@ -1779,9 +1839,32 @@
         "ProvisioningStatus":{
           "shape":"DeviceStatus",
           "documentation":"<p>The device's provisioning status.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The device's tags.</p>"
+        },
+        "Type":{
+          "shape":"DeviceType",
+          "documentation":"<p>The device's type.</p>"
         }
       },
       "documentation":"<p>A device.</p>"
+    },
+    "DeviceAggregatedStatus":{
+      "type":"string",
+      "enum":[
+        "ERROR",
+        "AWAITING_PROVISIONING",
+        "PENDING",
+        "FAILED",
+        "DELETING",
+        "ONLINE",
+        "OFFLINE",
+        "LEASE_EXPIRED",
+        "UPDATE_NEEDED",
+        "REBOOTING"
+      ]
     },
     "DeviceArn":{
       "type":"string",
@@ -1835,6 +1918,10 @@
         "JobId":{
           "shape":"JobId",
           "documentation":"<p>The job's ID.</p>"
+        },
+        "JobType":{
+          "shape":"JobType",
+          "documentation":"<p>The job's type.</p>"
         }
       },
       "documentation":"<p>A job that runs on a device.</p>"
@@ -1862,6 +1949,22 @@
       "max":255,
       "min":1,
       "pattern":"^[a-zA-Z0-9\\-\\_]+$"
+    },
+    "DeviceReportedStatus":{
+      "type":"string",
+      "enum":[
+        "STOPPING",
+        "STOPPED",
+        "STOP_ERROR",
+        "REMOVAL_FAILED",
+        "REMOVAL_IN_PROGRESS",
+        "STARTING",
+        "RUNNING",
+        "INSTALL_ERROR",
+        "LAUNCHED",
+        "LAUNCH_ERROR",
+        "INSTALL_IN_PROGRESS"
+      ]
     },
     "DeviceSerialNumber":{
       "type":"string",
@@ -2029,13 +2132,34 @@
     },
     "JobType":{
       "type":"string",
-      "enum":["OTA"]
+      "enum":[
+        "OTA",
+        "REBOOT"
+      ]
     },
     "LastUpdatedTime":{"type":"timestamp"},
     "LatestAlternateSoftware":{
       "type":"string",
       "max":255,
       "min":1
+    },
+    "LatestDeviceJob":{
+      "type":"structure",
+      "members":{
+        "ImageVersion":{
+          "shape":"ImageVersion",
+          "documentation":"<p>The target version of the device software.</p>"
+        },
+        "JobType":{
+          "shape":"JobType",
+          "documentation":"<p>The job's type.</p>"
+        },
+        "Status":{
+          "shape":"UpdateProgress",
+          "documentation":"<p>Status of the latest device job.</p>"
+        }
+      },
+      "documentation":"<p>Returns information about the latest device job.</p>"
     },
     "LatestSoftware":{
       "type":"string",
@@ -2198,17 +2322,41 @@
     "ListDevicesRequest":{
       "type":"structure",
       "members":{
+        "DeviceAggregatedStatusFilter":{
+          "shape":"DeviceAggregatedStatus",
+          "documentation":"<p>Filter based on a device's status.</p>",
+          "location":"querystring",
+          "locationName":"DeviceAggregatedStatusFilter"
+        },
         "MaxResults":{
           "shape":"MaxSize25",
           "documentation":"<p>The maximum number of devices to return in one page of results.</p>",
           "location":"querystring",
           "locationName":"MaxResults"
         },
+        "NameFilter":{
+          "shape":"NameFilter",
+          "documentation":"<p>Filter based on device's name. Prefixes supported.</p>",
+          "location":"querystring",
+          "locationName":"NameFilter"
+        },
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>Specify the pagination token from a previous request to retrieve the next page of results.</p>",
           "location":"querystring",
           "locationName":"NextToken"
+        },
+        "SortBy":{
+          "shape":"ListDevicesSortBy",
+          "documentation":"<p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>",
+          "location":"querystring",
+          "locationName":"SortBy"
+        },
+        "SortOrder":{
+          "shape":"SortOrder",
+          "documentation":"<p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>",
+          "location":"querystring",
+          "locationName":"SortOrder"
         }
       }
     },
@@ -2225,6 +2373,15 @@
           "documentation":"<p>A pagination token that's included if more results are available.</p>"
         }
       }
+    },
+    "ListDevicesSortBy":{
+      "type":"string",
+      "enum":[
+        "DEVICE_ID",
+        "CREATED_TIME",
+        "NAME",
+        "DEVICE_AGGREGATED_STATUS"
+      ]
     },
     "ListNodeFromTemplateJobsRequest":{
       "type":"structure",
@@ -2446,6 +2603,7 @@
       "max":25,
       "min":0
     },
+    "NameFilter":{"type":"string"},
     "NetworkConnectionStatus":{
       "type":"string",
       "enum":[
@@ -2699,7 +2857,8 @@
       "enum":[
         "RUNNING",
         "ERROR",
-        "NOT_AVAILABLE"
+        "NOT_AVAILABLE",
+        "PAUSED"
       ]
     },
     "NodeInstances":{
@@ -2776,6 +2935,36 @@
       "max":255,
       "min":1,
       "pattern":"^([0-9]+)\\.([0-9]+)$"
+    },
+    "NodeSignal":{
+      "type":"structure",
+      "required":[
+        "NodeInstanceId",
+        "Signal"
+      ],
+      "members":{
+        "NodeInstanceId":{
+          "shape":"NodeInstanceId",
+          "documentation":"<p>The camera node's name, from the application manifest.</p>"
+        },
+        "Signal":{
+          "shape":"NodeSignalValue",
+          "documentation":"<p>The signal value.</p>"
+        }
+      },
+      "documentation":"<p>A signal to a camera node to start or stop processing video.</p>"
+    },
+    "NodeSignalList":{
+      "type":"list",
+      "member":{"shape":"NodeSignal"},
+      "min":1
+    },
+    "NodeSignalValue":{
+      "type":"string",
+      "enum":[
+        "PAUSE",
+        "RESUME"
+      ]
     },
     "NodesList":{
       "type":"list",
@@ -3215,6 +3404,38 @@
       "members":{
       }
     },
+    "ReportedRuntimeContextState":{
+      "type":"structure",
+      "required":[
+        "DesiredState",
+        "DeviceReportedStatus",
+        "DeviceReportedTime",
+        "RuntimeContextName"
+      ],
+      "members":{
+        "DesiredState":{
+          "shape":"DesiredState",
+          "documentation":"<p>The application's desired state.</p>"
+        },
+        "DeviceReportedStatus":{
+          "shape":"DeviceReportedStatus",
+          "documentation":"<p>The application's reported status.</p>"
+        },
+        "DeviceReportedTime":{
+          "shape":"TimeStamp",
+          "documentation":"<p>When the device reported the application's state.</p>"
+        },
+        "RuntimeContextName":{
+          "shape":"RuntimeContextName",
+          "documentation":"<p>The device's name.</p>"
+        }
+      },
+      "documentation":"<p>An application instance's state.</p>"
+    },
+    "ReportedRuntimeContextStates":{
+      "type":"list",
+      "member":{"shape":"ReportedRuntimeContextState"}
+    },
     "ResourceArn":{
       "type":"string",
       "max":2048,
@@ -3247,6 +3468,12 @@
       "exception":true
     },
     "RetryAfterSeconds":{"type":"integer"},
+    "RuntimeContextName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^.+$"
+    },
     "RuntimeRoleArn":{
       "type":"string",
       "max":255,
@@ -3307,6 +3534,42 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "SignalApplicationInstanceNodeInstancesRequest":{
+      "type":"structure",
+      "required":[
+        "ApplicationInstanceId",
+        "NodeSignals"
+      ],
+      "members":{
+        "ApplicationInstanceId":{
+          "shape":"ApplicationInstanceId",
+          "documentation":"<p>An application instance ID.</p>",
+          "location":"uri",
+          "locationName":"ApplicationInstanceId"
+        },
+        "NodeSignals":{
+          "shape":"NodeSignalList",
+          "documentation":"<p>A list of signals.</p>"
+        }
+      }
+    },
+    "SignalApplicationInstanceNodeInstancesResponse":{
+      "type":"structure",
+      "required":["ApplicationInstanceId"],
+      "members":{
+        "ApplicationInstanceId":{
+          "shape":"ApplicationInstanceId",
+          "documentation":"<p>An application instance ID.</p>"
+        }
+      }
+    },
+    "SortOrder":{
+      "type":"string",
+      "enum":[
+        "ASCENDING",
+        "DESCENDING"
+      ]
     },
     "StaticIpConnectionInfo":{
       "type":"structure",

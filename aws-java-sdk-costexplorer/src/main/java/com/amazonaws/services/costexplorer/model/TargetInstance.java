@@ -66,8 +66,8 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
     private ResourceUtilization expectedResourceUtilization;
     /**
      * <p>
-     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
-     * instance type to the recommended instance type.
+     * Explains the actions that you might need to take to successfully migrate your workloads from the current instance
+     * type to the recommended instance type.
      * </p>
      */
     private java.util.List<String> platformDifferences;
@@ -326,12 +326,12 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
-     * instance type to the recommended instance type.
+     * Explains the actions that you might need to take to successfully migrate your workloads from the current instance
+     * type to the recommended instance type.
      * </p>
      * 
-     * @return Explains the actions you might need to take in order to successfully migrate your workloads from the
-     *         current instance type to the recommended instance type.
+     * @return Explains the actions that you might need to take to successfully migrate your workloads from the current
+     *         instance type to the recommended instance type.
      * @see PlatformDifference
      */
 
@@ -341,13 +341,13 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
-     * instance type to the recommended instance type.
+     * Explains the actions that you might need to take to successfully migrate your workloads from the current instance
+     * type to the recommended instance type.
      * </p>
      * 
      * @param platformDifferences
-     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
-     *        current instance type to the recommended instance type.
+     *        Explains the actions that you might need to take to successfully migrate your workloads from the current
+     *        instance type to the recommended instance type.
      * @see PlatformDifference
      */
 
@@ -362,8 +362,8 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
-     * instance type to the recommended instance type.
+     * Explains the actions that you might need to take to successfully migrate your workloads from the current instance
+     * type to the recommended instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,8 +372,8 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param platformDifferences
-     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
-     *        current instance type to the recommended instance type.
+     *        Explains the actions that you might need to take to successfully migrate your workloads from the current
+     *        instance type to the recommended instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformDifference
      */
@@ -390,13 +390,13 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
-     * instance type to the recommended instance type.
+     * Explains the actions that you might need to take to successfully migrate your workloads from the current instance
+     * type to the recommended instance type.
      * </p>
      * 
      * @param platformDifferences
-     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
-     *        current instance type to the recommended instance type.
+     *        Explains the actions that you might need to take to successfully migrate your workloads from the current
+     *        instance type to the recommended instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformDifference
      */
@@ -408,13 +408,13 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
-     * instance type to the recommended instance type.
+     * Explains the actions that you might need to take to successfully migrate your workloads from the current instance
+     * type to the recommended instance type.
      * </p>
      * 
      * @param platformDifferences
-     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
-     *        current instance type to the recommended instance type.
+     *        Explains the actions that you might need to take to successfully migrate your workloads from the current
+     *        instance type to the recommended instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformDifference
      */

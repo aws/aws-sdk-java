@@ -48,7 +48,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
     private String renewalStatus;
     /**
      * <p>
-     * The reason that a renewal request was unsuccessful.
+     * The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code>
+     * is <code>FAILED</code>.
      * </p>
      * <p>
      * Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
@@ -215,7 +216,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
 
     /**
      * <p>
-     * The reason that a renewal request was unsuccessful.
+     * The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code>
+     * is <code>FAILED</code>.
      * </p>
      * <p>
      * Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
@@ -227,7 +229,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
      * </p>
      * 
      * @param renewalStatusReason
-     *        The reason that a renewal request was unsuccessful.</p>
+     *        The reason that a renewal request was unsuccessful. This attribute is used only when
+     *        <code>RenewalStatus</code> is <code>FAILED</code>.</p>
      *        <p>
      *        Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
      *        <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> |
@@ -244,7 +247,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
 
     /**
      * <p>
-     * The reason that a renewal request was unsuccessful.
+     * The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code>
+     * is <code>FAILED</code>.
      * </p>
      * <p>
      * Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
@@ -255,7 +259,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
      * <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code>
      * </p>
      * 
-     * @return The reason that a renewal request was unsuccessful.</p>
+     * @return The reason that a renewal request was unsuccessful. This attribute is used only when
+     *         <code>RenewalStatus</code> is <code>FAILED</code>.</p>
      *         <p>
      *         Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
      *         <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> |
@@ -272,7 +277,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
 
     /**
      * <p>
-     * The reason that a renewal request was unsuccessful.
+     * The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code>
+     * is <code>FAILED</code>.
      * </p>
      * <p>
      * Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
@@ -284,7 +290,8 @@ public class AwsCertificateManagerCertificateRenewalSummary implements Serializa
      * </p>
      * 
      * @param renewalStatusReason
-     *        The reason that a renewal request was unsuccessful.</p>
+     *        The reason that a renewal request was unsuccessful. This attribute is used only when
+     *        <code>RenewalStatus</code> is <code>FAILED</code>.</p>
      *        <p>
      *        Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> |
      *        <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> |

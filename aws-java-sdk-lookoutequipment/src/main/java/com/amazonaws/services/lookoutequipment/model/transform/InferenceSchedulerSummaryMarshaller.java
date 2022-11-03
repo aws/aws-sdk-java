@@ -41,6 +41,8 @@ public class InferenceSchedulerSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataDelayOffsetInMinutes").build();
     private static final MarshallingInfo<String> DATAUPLOADFREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataUploadFrequency").build();
+    private static final MarshallingInfo<String> LATESTINFERENCERESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestInferenceResult").build();
 
     private static final InferenceSchedulerSummaryMarshaller instance = new InferenceSchedulerSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class InferenceSchedulerSummaryMarshaller {
             protocolMarshaller.marshall(inferenceSchedulerSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(inferenceSchedulerSummary.getDataDelayOffsetInMinutes(), DATADELAYOFFSETINMINUTES_BINDING);
             protocolMarshaller.marshall(inferenceSchedulerSummary.getDataUploadFrequency(), DATAUPLOADFREQUENCY_BINDING);
+            protocolMarshaller.marshall(inferenceSchedulerSummary.getLatestInferenceResult(), LATESTINFERENCERESULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

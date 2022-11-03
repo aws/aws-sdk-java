@@ -35,6 +35,15 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If
+     * you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps
+     * or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
+     * <p>
+     * If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast
+     * horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
+     * </p>
      */
     private Integer forecastHorizon;
     /**
@@ -152,6 +161,29 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor
+     * monitoring.
+     * </p>
+     * <p>
+     * Predictor monitoring allows you to see how your predictor's performance changes over time. For more information,
+     * see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     * </p>
+     */
+    private MonitorConfig monitorConfig;
+    /**
+     * <p>
+     * The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency.
+     * Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a
+     * Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time
+     * Boundaries</a>.
+     * </p>
+     */
+    private TimeAlignmentBoundary timeAlignmentBoundary;
 
     /**
      * <p>
@@ -197,10 +229,27 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If
+     * you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps
+     * or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
+     * <p>
+     * If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast
+     * horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
+     * </p>
      * 
      * @param forecastHorizon
      *        The number of time-steps that the model predicts. The forecast horizon is also called the prediction
-     *        length.
+     *        length.</p>
+     *        <p>
+     *        The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset
+     *        length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser
+     *        of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     *        </p>
+     *        <p>
+     *        If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the
+     *        forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
      */
 
     public void setForecastHorizon(Integer forecastHorizon) {
@@ -211,9 +260,26 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If
+     * you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps
+     * or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
+     * <p>
+     * If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast
+     * horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
+     * </p>
      * 
      * @return The number of time-steps that the model predicts. The forecast horizon is also called the prediction
-     *         length.
+     *         length.</p>
+     *         <p>
+     *         The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset
+     *         length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser
+     *         of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     *         </p>
+     *         <p>
+     *         If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the
+     *         forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
      */
 
     public Integer getForecastHorizon() {
@@ -224,10 +290,27 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If
+     * you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps
+     * or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
+     * <p>
+     * If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast
+     * horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
+     * </p>
      * 
      * @param forecastHorizon
      *        The number of time-steps that the model predicts. The forecast horizon is also called the prediction
-     *        length.
+     *        length.</p>
+     *        <p>
+     *        The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset
+     *        length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser
+     *        of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     *        </p>
+     *        <p>
+     *        If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the
+     *        forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1180,6 +1263,152 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor
+     * monitoring.
+     * </p>
+     * <p>
+     * Predictor monitoring allows you to see how your predictor's performance changes over time. For more information,
+     * see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     * </p>
+     * 
+     * @param monitorConfig
+     *        The configuration details for predictor monitoring. Provide a name for the monitor resource to enable
+     *        predictor monitoring.</p>
+     *        <p>
+     *        Predictor monitoring allows you to see how your predictor's performance changes over time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     */
+
+    public void setMonitorConfig(MonitorConfig monitorConfig) {
+        this.monitorConfig = monitorConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor
+     * monitoring.
+     * </p>
+     * <p>
+     * Predictor monitoring allows you to see how your predictor's performance changes over time. For more information,
+     * see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     * </p>
+     * 
+     * @return The configuration details for predictor monitoring. Provide a name for the monitor resource to enable
+     *         predictor monitoring.</p>
+     *         <p>
+     *         Predictor monitoring allows you to see how your predictor's performance changes over time. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     */
+
+    public MonitorConfig getMonitorConfig() {
+        return this.monitorConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor
+     * monitoring.
+     * </p>
+     * <p>
+     * Predictor monitoring allows you to see how your predictor's performance changes over time. For more information,
+     * see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     * </p>
+     * 
+     * @param monitorConfig
+     *        The configuration details for predictor monitoring. Provide a name for the monitor resource to enable
+     *        predictor monitoring.</p>
+     *        <p>
+     *        Predictor monitoring allows you to see how your predictor's performance changes over time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoPredictorRequest withMonitorConfig(MonitorConfig monitorConfig) {
+        setMonitorConfig(monitorConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency.
+     * Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a
+     * Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time
+     * Boundaries</a>.
+     * </p>
+     * 
+     * @param timeAlignmentBoundary
+     *        The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast
+     *        frequency. Provide the unit of time and the time boundary as a key value pair. For more information on
+     *        specifying a time boundary, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary"
+     *        >Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries"
+     *        >Default Time Boundaries</a>.
+     */
+
+    public void setTimeAlignmentBoundary(TimeAlignmentBoundary timeAlignmentBoundary) {
+        this.timeAlignmentBoundary = timeAlignmentBoundary;
+    }
+
+    /**
+     * <p>
+     * The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency.
+     * Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a
+     * Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time
+     * Boundaries</a>.
+     * </p>
+     * 
+     * @return The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast
+     *         frequency. Provide the unit of time and the time boundary as a key value pair. For more information on
+     *         specifying a time boundary, see <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary"
+     *         >Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries"
+     *         >Default Time Boundaries</a>.
+     */
+
+    public TimeAlignmentBoundary getTimeAlignmentBoundary() {
+        return this.timeAlignmentBoundary;
+    }
+
+    /**
+     * <p>
+     * The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency.
+     * Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a
+     * Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time
+     * Boundaries</a>.
+     * </p>
+     * 
+     * @param timeAlignmentBoundary
+     *        The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast
+     *        frequency. Provide the unit of time and the time boundary as a key value pair. For more information on
+     *        specifying a time boundary, see <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary"
+     *        >Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries"
+     *        >Default Time Boundaries</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoPredictorRequest withTimeAlignmentBoundary(TimeAlignmentBoundary timeAlignmentBoundary) {
+        setTimeAlignmentBoundary(timeAlignmentBoundary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1212,7 +1441,11 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
         if (getExplainPredictor() != null)
             sb.append("ExplainPredictor: ").append(getExplainPredictor()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getMonitorConfig() != null)
+            sb.append("MonitorConfig: ").append(getMonitorConfig()).append(",");
+        if (getTimeAlignmentBoundary() != null)
+            sb.append("TimeAlignmentBoundary: ").append(getTimeAlignmentBoundary());
         sb.append("}");
         return sb.toString();
     }
@@ -1271,6 +1504,14 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getMonitorConfig() == null ^ this.getMonitorConfig() == null)
+            return false;
+        if (other.getMonitorConfig() != null && other.getMonitorConfig().equals(this.getMonitorConfig()) == false)
+            return false;
+        if (other.getTimeAlignmentBoundary() == null ^ this.getTimeAlignmentBoundary() == null)
+            return false;
+        if (other.getTimeAlignmentBoundary() != null && other.getTimeAlignmentBoundary().equals(this.getTimeAlignmentBoundary()) == false)
+            return false;
         return true;
     }
 
@@ -1290,6 +1531,8 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getOptimizationMetric() == null) ? 0 : getOptimizationMetric().hashCode());
         hashCode = prime * hashCode + ((getExplainPredictor() == null) ? 0 : getExplainPredictor().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMonitorConfig() == null) ? 0 : getMonitorConfig().hashCode());
+        hashCode = prime * hashCode + ((getTimeAlignmentBoundary() == null) ? 0 : getTimeAlignmentBoundary().hashCode());
         return hashCode;
     }
 

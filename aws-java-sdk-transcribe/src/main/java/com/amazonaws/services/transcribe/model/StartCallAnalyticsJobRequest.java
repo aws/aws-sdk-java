@@ -27,9 +27,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
-     * must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the
-     * same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your Call Analytics job.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      */
     private String callAnalyticsJobName;
@@ -37,129 +40,148 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     private Media media;
     /**
      * <p>
-     * The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
-     * location types to store the output of call analytics job:
+     * The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the
+     * following formats to specify the output location:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1
-     * </p>
-     * <p>
-     * If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level
-     * of the bucket.
+     * s3://DOC-EXAMPLE-BUCKET
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/
-     * </p>
-     * <p>
-     * f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     * </p>
-     * <p>
-     * If you specify a folder, you must provide a trailing slash.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     * </p>
-     * <p>
-     * If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      * </p>
      * </li>
-     * </ul>
+     * </ol>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics
-     * job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe
-     * uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3
-     * bucket.
+     * Unless you specify a file name (option 3), the name of your output file has a default value that matches the name
+     * you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     * </p>
+     * <p>
+     * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
+     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * </p>
+     * <p>
+     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
+     * and you are provided with a URI to access your transcript.
      * </p>
      */
     private String outputLocation;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output
-     * of the call analytics job. The user calling the operation must have permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your Call Analytics output.
      * </p>
      * <p>
-     * You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon
-     * S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      */
     private String outputEncryptionKMSKeyId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files. Amazon
-     * Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your
-     * transcription results, this role should have access to the output bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * A <code>Settings</code> object that provides optional settings for a call analytics job.
+     * Specify additional optional settings in your request, including content redaction; allows you to apply custom
+     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      * </p>
      */
     private CallAnalyticsJobSettings settings;
     /**
      * <p>
-     * When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
-     * audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
-     * their own channel. You can't assign more than one channel to an agent or customer.
+     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
+     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      */
     private java.util.List<ChannelDefinition> channelDefinitions;
 
     /**
      * <p>
-     * The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
-     * must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the
-     * same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your Call Analytics job.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      * 
      * @param callAnalyticsJobName
-     *        The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name.
-     *        The name must also be unique within an Amazon Web Services account. If you try to create a call analytics
-     *        job with the same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     *        A unique name, chosen by you, for your Call Analytics job.</p>
+     *        <p>
+     *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+     *        account. If you try to create a new job with the same name as an existing job, you get a
+     *        <code>ConflictException</code> error.
      */
 
     public void setCallAnalyticsJobName(String callAnalyticsJobName) {
@@ -168,14 +190,19 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
-     * must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the
-     * same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your Call Analytics job.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      * 
-     * @return The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name.
-     *         The name must also be unique within an Amazon Web Services account. If you try to create a call analytics
-     *         job with the same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     * @return A unique name, chosen by you, for your Call Analytics job.</p>
+     *         <p>
+     *         This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+     *         account. If you try to create a new job with the same name as an existing job, you get a
+     *         <code>ConflictException</code> error.
      */
 
     public String getCallAnalyticsJobName() {
@@ -184,15 +211,20 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
-     * must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the
-     * same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     * A unique name, chosen by you, for your Call Analytics job.
+     * </p>
+     * <p>
+     * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
+     * you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code>
+     * error.
      * </p>
      * 
      * @param callAnalyticsJobName
-     *        The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name.
-     *        The name must also be unique within an Amazon Web Services account. If you try to create a call analytics
-     *        job with the same name as a previous call analytics job, you get a <code>ConflictException</code> error.
+     *        A unique name, chosen by you, for your Call Analytics job.</p>
+     *        <p>
+     *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+     *        account. If you try to create a new job with the same name as an existing job, you get a
+     *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,88 +261,71 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
-     * location types to store the output of call analytics job:
+     * The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the
+     * following formats to specify the output location:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1
-     * </p>
-     * <p>
-     * If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level
-     * of the bucket.
+     * s3://DOC-EXAMPLE-BUCKET
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/
-     * </p>
-     * <p>
-     * f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     * </p>
-     * <p>
-     * If you specify a folder, you must provide a trailing slash.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     * </p>
-     * <p>
-     * If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      * </p>
      * </li>
-     * </ul>
+     * </ol>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics
-     * job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe
-     * uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3
-     * bucket.
+     * Unless you specify a file name (option 3), the name of your output file has a default value that matches the name
+     * you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     * </p>
+     * <p>
+     * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
+     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * </p>
+     * <p>
+     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
+     * and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @param outputLocation
-     *        The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
-     *        location types to store the output of call analytics job:</p>
-     *        <ul>
+     *        The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of
+     *        the following formats to specify the output location:</p>
+     *        <ol>
      *        <li>
      *        <p>
-     *        s3://DOC-EXAMPLE-BUCKET1
-     *        </p>
-     *        <p>
-     *        If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the
-     *        root level of the bucket.
+     *        s3://DOC-EXAMPLE-BUCKET
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        s3://DOC-EXAMPLE-BUCKET1/folder/
-     *        </p>
-     *        <p>
-     *        f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     *        s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     *        </p>
-     *        <p>
-     *        If you specify a folder, you must provide a trailing slash.
+     *        s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     *        </p>
-     *        <p>
-     *        If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics
-     *        job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     *        s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      *        </p>
      *        </li>
-     *        </ul>
+     *        </ol>
      *        <p>
-     *        You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our
-     *        analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     *        Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output
-     *        that is placed in your S3 bucket.
+     *        Unless you specify a file name (option 3), the name of your output file has a default value that matches
+     *        the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     *        </p>
+     *        <p>
+     *        You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
+     *        parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+     *        server-side encryption.
+     *        </p>
+     *        <p>
+     *        If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
+     *        bucket and you are provided with a URI to access your transcript.
      */
 
     public void setOutputLocation(String outputLocation) {
@@ -319,87 +334,70 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
-     * location types to store the output of call analytics job:
+     * The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the
+     * following formats to specify the output location:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1
-     * </p>
-     * <p>
-     * If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level
-     * of the bucket.
+     * s3://DOC-EXAMPLE-BUCKET
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/
-     * </p>
-     * <p>
-     * f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     * </p>
-     * <p>
-     * If you specify a folder, you must provide a trailing slash.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     * </p>
-     * <p>
-     * If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      * </p>
      * </li>
-     * </ul>
+     * </ol>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics
-     * job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe
-     * uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3
-     * bucket.
+     * Unless you specify a file name (option 3), the name of your output file has a default value that matches the name
+     * you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     * </p>
+     * <p>
+     * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
+     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * </p>
+     * <p>
+     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
+     * and you are provided with a URI to access your transcript.
      * </p>
      * 
-     * @return The Amazon S3 location where the output of the call analytics job is stored. You can provide the
-     *         following location types to store the output of call analytics job:</p>
-     *         <ul>
+     * @return The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of
+     *         the following formats to specify the output location:</p>
+     *         <ol>
      *         <li>
      *         <p>
-     *         s3://DOC-EXAMPLE-BUCKET1
-     *         </p>
-     *         <p>
-     *         If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the
-     *         root level of the bucket.
+     *         s3://DOC-EXAMPLE-BUCKET
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         s3://DOC-EXAMPLE-BUCKET1/folder/
-     *         </p>
-     *         <p>
-     *         f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     *         s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     *         </p>
-     *         <p>
-     *         If you specify a folder, you must provide a trailing slash.
+     *         s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     *         </p>
-     *         <p>
-     *         If you provide a path that has the filename specified, Amazon Transcribe saves the output of the
-     *         analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     *         s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      *         </p>
      *         </li>
-     *         </ul>
+     *         </ol>
      *         <p>
-     *         You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our
-     *         analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     *         Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output
-     *         that is placed in your S3 bucket.
+     *         Unless you specify a file name (option 3), the name of your output file has a default value that matches
+     *         the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     *         </p>
+     *         <p>
+     *         You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
+     *         parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+     *         server-side encryption.
+     *         </p>
+     *         <p>
+     *         If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon
+     *         S3 bucket and you are provided with a URI to access your transcript.
      */
 
     public String getOutputLocation() {
@@ -408,88 +406,71 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
-     * location types to store the output of call analytics job:
+     * The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the
+     * following formats to specify the output location:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1
-     * </p>
-     * <p>
-     * If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level
-     * of the bucket.
+     * s3://DOC-EXAMPLE-BUCKET
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/
-     * </p>
-     * <p>
-     * f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     * </p>
-     * <p>
-     * If you specify a folder, you must provide a trailing slash.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      * </p>
      * </li>
      * <li>
      * <p>
-     * s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     * </p>
-     * <p>
-     * If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     * s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      * </p>
      * </li>
-     * </ul>
+     * </ol>
      * <p>
-     * You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics
-     * job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe
-     * uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3
-     * bucket.
+     * Unless you specify a file name (option 3), the name of your output file has a default value that matches the name
+     * you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     * </p>
+     * <p>
+     * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
+     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * </p>
+     * <p>
+     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
+     * and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @param outputLocation
-     *        The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
-     *        location types to store the output of call analytics job:</p>
-     *        <ul>
+     *        The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of
+     *        the following formats to specify the output location:</p>
+     *        <ol>
      *        <li>
      *        <p>
-     *        s3://DOC-EXAMPLE-BUCKET1
-     *        </p>
-     *        <p>
-     *        If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the
-     *        root level of the bucket.
+     *        s3://DOC-EXAMPLE-BUCKET
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        s3://DOC-EXAMPLE-BUCKET1/folder/
-     *        </p>
-     *        <p>
-     *        f you specify a path, Amazon Transcribe saves the output of the analytics job as
-     *        s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
-     *        </p>
-     *        <p>
-     *        If you specify a folder, you must provide a trailing slash.
+     *        s3://DOC-EXAMPLE-BUCKET/my-output-folder/
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
-     *        </p>
-     *        <p>
-     *        If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics
-     *        job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
+     *        s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json
      *        </p>
      *        </li>
-     *        </ul>
+     *        </ol>
      *        <p>
-     *        You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our
-     *        analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     *        Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output
-     *        that is placed in your S3 bucket.
+     *        Unless you specify a file name (option 3), the name of your output file has a default value that matches
+     *        the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.
+     *        </p>
+     *        <p>
+     *        You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
+     *        parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+     *        server-side encryption.
+     *        </p>
+     *        <p>
+     *        If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
+     *        bucket and you are provided with a URI to access your transcript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,91 +481,120 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output
-     * of the call analytics job. The user calling the operation must have permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your Call Analytics output.
      * </p>
      * <p>
-     * You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon
-     * S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @param outputEncryptionKMSKeyId
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the
-     *        output of the call analytics job. The user calling the operation must have permission to use the specified
-     *        KMS key.</p>
+     *        The KMS key you want to use to encrypt your Call Analytics output.</p>
      *        <p>
-     *        You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     *        If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in
+     *        one of four ways:
      *        </p>
-     *        <ul>
+     *        <ol>
      *        <li>
      *        <p>
-     *        KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     *        Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        KMS Key Alias: "alias/ExampleAlias"
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        You can use either of the following to identify a KMS key in the current account or another account:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     *        "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     *        Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     *        Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        If you don't specify an encryption key, the output of the call analytics job is encrypted with the default
-     *        Amazon S3 key (SSE-S3).
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web
+     *        Services account, you can specify your KMS key in one of two ways:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *        </p>
      *        <p>
-     *        If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     *        If you specify a KMS key to encrypt your output, you must also specify an output location using the
      *        <code>OutputLocation</code> parameter.
+     *        </p>
+     *        <p>
+     *        Note that the user making the request must have permission to use the specified KMS key.
      */
 
     public void setOutputEncryptionKMSKeyId(String outputEncryptionKMSKeyId) {
@@ -593,90 +603,119 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output
-     * of the call analytics job. The user calling the operation must have permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your Call Analytics output.
      * </p>
      * <p>
-     * You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon
-     * S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
      * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the
-     *         output of the call analytics job. The user calling the operation must have permission to use the
-     *         specified KMS key.</p>
+     * @return The KMS key you want to use to encrypt your Call Analytics output.</p>
      *         <p>
-     *         You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     *         If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in
+     *         one of four ways:
      *         </p>
-     *         <ul>
+     *         <ol>
      *         <li>
      *         <p>
-     *         KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     *         Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         KMS Key Alias: "alias/ExampleAlias"
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         You can use either of the following to identify a KMS key in the current account or another account:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     *         "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     *         Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     *         Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     *         <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
      *         <p>
-     *         If you don't specify an encryption key, the output of the call analytics job is encrypted with the
-     *         default Amazon S3 key (SSE-S3).
+     *         Use the ARN for the KMS key alias. For example,
+     *         <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *         </p>
+     *         </li>
+     *         </ol>
+     *         <p>
+     *         If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web
+     *         Services account, you can specify your KMS key in one of two ways:
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         Use the ARN for the KMS key ID. For example,
+     *         <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use the ARN for the KMS key alias. For example,
+     *         <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *         </p>
+     *         </li>
+     *         </ol>
+     *         <p>
+     *         If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *         </p>
      *         <p>
-     *         If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     *         If you specify a KMS key to encrypt your output, you must also specify an output location using the
      *         <code>OutputLocation</code> parameter.
+     *         </p>
+     *         <p>
+     *         Note that the user making the request must have permission to use the specified KMS key.
      */
 
     public String getOutputEncryptionKMSKeyId() {
@@ -685,91 +724,120 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output
-     * of the call analytics job. The user calling the operation must have permission to use the specified KMS key.
+     * The KMS key you want to use to encrypt your Call Analytics output.
      * </p>
      * <p>
-     * You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     * If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of
+     * four ways:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
-     * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     * Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * KMS Key Alias: "alias/ExampleAlias"
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can use either of the following to identify a KMS key in the current account or another account:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     * "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     * Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     * Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon
-     * S3 key (SSE-S3).
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services
+     * account, you can specify your KMS key in one of two ways:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
-     * If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
+     * </p>
+     * <p>
+     * Note that the user making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @param outputEncryptionKMSKeyId
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the
-     *        output of the call analytics job. The user calling the operation must have permission to use the specified
-     *        KMS key.</p>
+     *        The KMS key you want to use to encrypt your Call Analytics output.</p>
      *        <p>
-     *        You use either of the following to identify an Amazon Web Services KMS key in the current account:
+     *        If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in
+     *        one of four ways:
      *        </p>
-     *        <ul>
+     *        <ol>
      *        <li>
      *        <p>
-     *        KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+     *        Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        KMS Key Alias: "alias/ExampleAlias"
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        You can use either of the following to identify a KMS key in the current account or another account:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Resource Name (ARN) of a KMS key in the current account or another account:
-     *        "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"
+     *        Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
+     *        Use the Amazon Resource Name (ARN) for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        If you don't specify an encryption key, the output of the call analytics job is encrypted with the default
-     *        Amazon S3 key (SSE-S3).
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web
+     *        Services account, you can specify your KMS key in one of two ways:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key ID. For example,
+     *        <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the ARN for the KMS key alias. For example,
+     *        <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *        </p>
      *        <p>
-     *        If you specify a KMS key to encrypt your output, you must also specify an output location in the
+     *        If you specify a KMS key to encrypt your output, you must also specify an output location using the
      *        <code>OutputLocation</code> parameter.
+     *        </p>
+     *        <p>
+     *        Note that the user making the request must have permission to use the specified KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -780,15 +848,31 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files. Amazon
-     * Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your
-     * transcription results, this role should have access to the output bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files.
-     *        Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket
-     *        for your transcription results, this role should have access to the output bucket as well.
+     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *        specified Amazon S3 location, your request fails.</p>
+     *        <p>
+     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *        ARNs</a>.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -797,14 +881,30 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files. Amazon
-     * Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your
-     * transcription results, this role should have access to the output bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files.
-     *         Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket
-     *         for your transcription results, this role should have access to the output bucket as well.
+     * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *         specified Amazon S3 location, your request fails.</p>
+     *         <p>
+     *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *         example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *         ARNs</a>.
      */
 
     public String getDataAccessRoleArn() {
@@ -813,15 +913,31 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files. Amazon
-     * Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your
-     * transcription results, this role should have access to the output bucket as well.
+     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
+     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.
+     * </p>
+     * <p>
+     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files.
-     *        Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket
-     *        for your transcription results, this role should have access to the output bucket as well.
+     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
+     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
+     *        specified Amazon S3 location, your request fails.</p>
+     *        <p>
+     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
+     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     *        ARNs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -832,11 +948,13 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A <code>Settings</code> object that provides optional settings for a call analytics job.
+     * Specify additional optional settings in your request, including content redaction; allows you to apply custom
+     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      * </p>
      * 
      * @param settings
-     *        A <code>Settings</code> object that provides optional settings for a call analytics job.
+     *        Specify additional optional settings in your request, including content redaction; allows you to apply
+     *        custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      */
 
     public void setSettings(CallAnalyticsJobSettings settings) {
@@ -845,10 +963,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A <code>Settings</code> object that provides optional settings for a call analytics job.
+     * Specify additional optional settings in your request, including content redaction; allows you to apply custom
+     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      * </p>
      * 
-     * @return A <code>Settings</code> object that provides optional settings for a call analytics job.
+     * @return Specify additional optional settings in your request, including content redaction; allows you to apply
+     *         custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      */
 
     public CallAnalyticsJobSettings getSettings() {
@@ -857,11 +977,13 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A <code>Settings</code> object that provides optional settings for a call analytics job.
+     * Specify additional optional settings in your request, including content redaction; allows you to apply custom
+     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      * </p>
      * 
      * @param settings
-     *        A <code>Settings</code> object that provides optional settings for a call analytics job.
+     *        Specify additional optional settings in your request, including content redaction; allows you to apply
+     *        custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -872,14 +994,15 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
-     * audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
-     * their own channel. You can't assign more than one channel to an agent or customer.
+     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
+     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
-     * @return When you start a call analytics job, you must pass an array that maps the agent and the customer to
-     *         specific audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer
-     *         must each have their own channel. You can't assign more than one channel to an agent or customer.
+     * @return Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *         participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
+     *         channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
+     *         speaking).
      */
 
     public java.util.List<ChannelDefinition> getChannelDefinitions() {
@@ -888,15 +1011,16 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
-     * audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
-     * their own channel. You can't assign more than one channel to an agent or customer.
+     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
+     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
      * @param channelDefinitions
-     *        When you start a call analytics job, you must pass an array that maps the agent and the customer to
-     *        specific audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer
-     *        must each have their own channel. You can't assign more than one channel to an agent or customer.
+     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
+     *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
+     *        speaking).
      */
 
     public void setChannelDefinitions(java.util.Collection<ChannelDefinition> channelDefinitions) {
@@ -910,9 +1034,9 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
-     * audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
-     * their own channel. You can't assign more than one channel to an agent or customer.
+     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
+     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -921,9 +1045,10 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param channelDefinitions
-     *        When you start a call analytics job, you must pass an array that maps the agent and the customer to
-     *        specific audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer
-     *        must each have their own channel. You can't assign more than one channel to an agent or customer.
+     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
+     *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
+     *        speaking).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -939,15 +1064,16 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
-     * audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
-     * their own channel. You can't assign more than one channel to an agent or customer.
+     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
+     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
      * @param channelDefinitions
-     *        When you start a call analytics job, you must pass an array that maps the agent and the customer to
-     *        specific audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer
-     *        must each have their own channel. You can't assign more than one channel to an agent or customer.
+     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
+     *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
+     *        speaking).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

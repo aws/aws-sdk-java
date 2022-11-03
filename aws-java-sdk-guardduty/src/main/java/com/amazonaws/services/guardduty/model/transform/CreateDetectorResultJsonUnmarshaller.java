@@ -52,6 +52,10 @@ public class CreateDetectorResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createDetectorResult.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("unprocessedDataSources", targetDepth)) {
+                    context.nextToken();
+                    createDetectorResult.setUnprocessedDataSources(UnprocessedDataSourcesResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

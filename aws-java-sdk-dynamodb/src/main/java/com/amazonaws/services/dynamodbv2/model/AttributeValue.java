@@ -112,7 +112,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * An attribute of type List. For example:
      * </p>
      * <p>
-     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * </p>
      */
     private java.util.List<AttributeValue> l;
@@ -774,12 +774,12 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * An attribute of type List. For example:
      * </p>
      * <p>
-     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * </p>
      * 
      * @return An attribute of type List. For example:</p>
      *         <p>
-     *         <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     *         <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      */
 
     public java.util.List<AttributeValue> getL() {
@@ -791,13 +791,13 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * An attribute of type List. For example:
      * </p>
      * <p>
-     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * </p>
      * 
      * @param l
      *        An attribute of type List. For example:</p>
      *        <p>
-     *        <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     *        <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      */
 
     public void setL(java.util.Collection<AttributeValue> l) {
@@ -814,7 +814,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * An attribute of type List. For example:
      * </p>
      * <p>
-     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -825,7 +825,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * @param l
      *        An attribute of type List. For example:</p>
      *        <p>
-     *        <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     *        <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -844,13 +844,13 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * An attribute of type List. For example:
      * </p>
      * <p>
-     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     * <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * </p>
      * 
      * @param l
      *        An attribute of type List. For example:</p>
      *        <p>
-     *        <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
+     *        <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

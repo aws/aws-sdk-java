@@ -56,6 +56,10 @@ public class CreateChannelMembershipResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     createChannelMembershipResult.setMember(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SubChannelId", targetDepth)) {
+                    context.nextToken();
+                    createChannelMembershipResult.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

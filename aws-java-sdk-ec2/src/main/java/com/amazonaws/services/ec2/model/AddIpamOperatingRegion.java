@@ -22,8 +22,9 @@ import javax.annotation.Generated;
  * operating Regions.
  * </p>
  * <p>
- * For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in
- * the <i>Amazon VPC IPAM User Guide</i>.
+ * For more information about operating Regions, see <a
+ * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User
+ * Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AddIpamOperatingRegion" target="_top">AWS API

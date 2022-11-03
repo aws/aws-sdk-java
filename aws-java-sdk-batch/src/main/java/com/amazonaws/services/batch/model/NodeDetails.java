@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the details of a multi-node parallel job node.
+ * An object that represents the details of a multi-node parallel job node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeDetails" target="_top">AWS API
@@ -30,7 +30,7 @@ public class NodeDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node index for the node. Node index numbering begins at zero. This index is also available on the node with
+     * The node index for the node. Node index numbering starts at zero. This index is also available on the node with
      * the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      * </p>
      */
@@ -44,12 +44,12 @@ public class NodeDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node index for the node. Node index numbering begins at zero. This index is also available on the node with
+     * The node index for the node. Node index numbering starts at zero. This index is also available on the node with
      * the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      * </p>
      * 
      * @param nodeIndex
-     *        The node index for the node. Node index numbering begins at zero. This index is also available on the node
+     *        The node index for the node. Node index numbering starts at zero. This index is also available on the node
      *        with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      */
 
@@ -59,11 +59,11 @@ public class NodeDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node index for the node. Node index numbering begins at zero. This index is also available on the node with
+     * The node index for the node. Node index numbering starts at zero. This index is also available on the node with
      * the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      * </p>
      * 
-     * @return The node index for the node. Node index numbering begins at zero. This index is also available on the
+     * @return The node index for the node. Node index numbering starts at zero. This index is also available on the
      *         node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      */
 
@@ -73,12 +73,12 @@ public class NodeDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node index for the node. Node index numbering begins at zero. This index is also available on the node with
+     * The node index for the node. Node index numbering starts at zero. This index is also available on the node with
      * the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      * </p>
      * 
      * @param nodeIndex
-     *        The node index for the node. Node index numbering begins at zero. This index is also available on the node
+     *        The node index for the node. Node index numbering starts at zero. This index is also available on the node
      *        with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

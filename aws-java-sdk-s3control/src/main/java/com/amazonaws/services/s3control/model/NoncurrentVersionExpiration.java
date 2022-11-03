@@ -35,6 +35,15 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
      * </p>
      */
     private Integer noncurrentDays;
+    /**
+     * <p>
+     * Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent
+     * versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration
+     * elements</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     */
+    private Integer newerNoncurrentVersions;
 
     /**
      * <p>
@@ -95,6 +104,67 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent
+     * versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration
+     * elements</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * 
+     * @param newerNoncurrentVersions
+     *        Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent
+     *        noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent
+     *        versions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     *        configuration elements</a> in the <i>Amazon S3 User Guide</i>.
+     */
+
+    public void setNewerNoncurrentVersions(Integer newerNoncurrentVersions) {
+        this.newerNoncurrentVersions = newerNoncurrentVersions;
+    }
+
+    /**
+     * <p>
+     * Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent
+     * versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration
+     * elements</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent
+     *         noncurrent versions, S3 on Outposts will take the associated action. For more information about
+     *         noncurrent versions, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     *         configuration elements</a> in the <i>Amazon S3 User Guide</i>.
+     */
+
+    public Integer getNewerNoncurrentVersions() {
+        return this.newerNoncurrentVersions;
+    }
+
+    /**
+     * <p>
+     * Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent
+     * versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration
+     * elements</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * 
+     * @param newerNoncurrentVersions
+     *        Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent
+     *        noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent
+     *        versions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     *        configuration elements</a> in the <i>Amazon S3 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NoncurrentVersionExpiration withNewerNoncurrentVersions(Integer newerNoncurrentVersions) {
+        setNewerNoncurrentVersions(newerNoncurrentVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -107,7 +177,9 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNoncurrentDays() != null)
-            sb.append("NoncurrentDays: ").append(getNoncurrentDays());
+            sb.append("NoncurrentDays: ").append(getNoncurrentDays()).append(",");
+        if (getNewerNoncurrentVersions() != null)
+            sb.append("NewerNoncurrentVersions: ").append(getNewerNoncurrentVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -126,6 +198,10 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
             return false;
         if (other.getNoncurrentDays() != null && other.getNoncurrentDays().equals(this.getNoncurrentDays()) == false)
             return false;
+        if (other.getNewerNoncurrentVersions() == null ^ this.getNewerNoncurrentVersions() == null)
+            return false;
+        if (other.getNewerNoncurrentVersions() != null && other.getNewerNoncurrentVersions().equals(this.getNewerNoncurrentVersions()) == false)
+            return false;
         return true;
     }
 
@@ -135,6 +211,7 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNoncurrentDays() == null) ? 0 : getNoncurrentDays().hashCode());
+        hashCode = prime * hashCode + ((getNewerNoncurrentVersions() == null) ? 0 : getNewerNoncurrentVersions().hashCode());
         return hashCode;
     }
 

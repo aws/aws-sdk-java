@@ -105,6 +105,12 @@ public class DescribeInferenceRecommendationsJobResult extends com.amazonaws.Ama
      * </p>
      */
     private java.util.List<InferenceRecommendation> inferenceRecommendations;
+    /**
+     * <p>
+     * The performance results from running an Inference Recommender job on an existing endpoint.
+     * </p>
+     */
+    private java.util.List<EndpointPerformance> endpointPerformances;
 
     /**
      * <p>
@@ -713,6 +719,76 @@ public class DescribeInferenceRecommendationsJobResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The performance results from running an Inference Recommender job on an existing endpoint.
+     * </p>
+     * 
+     * @return The performance results from running an Inference Recommender job on an existing endpoint.
+     */
+
+    public java.util.List<EndpointPerformance> getEndpointPerformances() {
+        return endpointPerformances;
+    }
+
+    /**
+     * <p>
+     * The performance results from running an Inference Recommender job on an existing endpoint.
+     * </p>
+     * 
+     * @param endpointPerformances
+     *        The performance results from running an Inference Recommender job on an existing endpoint.
+     */
+
+    public void setEndpointPerformances(java.util.Collection<EndpointPerformance> endpointPerformances) {
+        if (endpointPerformances == null) {
+            this.endpointPerformances = null;
+            return;
+        }
+
+        this.endpointPerformances = new java.util.ArrayList<EndpointPerformance>(endpointPerformances);
+    }
+
+    /**
+     * <p>
+     * The performance results from running an Inference Recommender job on an existing endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEndpointPerformances(java.util.Collection)} or {@link #withEndpointPerformances(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param endpointPerformances
+     *        The performance results from running an Inference Recommender job on an existing endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInferenceRecommendationsJobResult withEndpointPerformances(EndpointPerformance... endpointPerformances) {
+        if (this.endpointPerformances == null) {
+            setEndpointPerformances(new java.util.ArrayList<EndpointPerformance>(endpointPerformances.length));
+        }
+        for (EndpointPerformance ele : endpointPerformances) {
+            this.endpointPerformances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The performance results from running an Inference Recommender job on an existing endpoint.
+     * </p>
+     * 
+     * @param endpointPerformances
+     *        The performance results from running an Inference Recommender job on an existing endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInferenceRecommendationsJobResult withEndpointPerformances(java.util.Collection<EndpointPerformance> endpointPerformances) {
+        setEndpointPerformances(endpointPerformances);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -749,7 +825,9 @@ public class DescribeInferenceRecommendationsJobResult extends com.amazonaws.Ama
         if (getStoppingConditions() != null)
             sb.append("StoppingConditions: ").append(getStoppingConditions()).append(",");
         if (getInferenceRecommendations() != null)
-            sb.append("InferenceRecommendations: ").append(getInferenceRecommendations());
+            sb.append("InferenceRecommendations: ").append(getInferenceRecommendations()).append(",");
+        if (getEndpointPerformances() != null)
+            sb.append("EndpointPerformances: ").append(getEndpointPerformances());
         sb.append("}");
         return sb.toString();
     }
@@ -816,6 +894,10 @@ public class DescribeInferenceRecommendationsJobResult extends com.amazonaws.Ama
             return false;
         if (other.getInferenceRecommendations() != null && other.getInferenceRecommendations().equals(this.getInferenceRecommendations()) == false)
             return false;
+        if (other.getEndpointPerformances() == null ^ this.getEndpointPerformances() == null)
+            return false;
+        if (other.getEndpointPerformances() != null && other.getEndpointPerformances().equals(this.getEndpointPerformances()) == false)
+            return false;
         return true;
     }
 
@@ -837,6 +919,7 @@ public class DescribeInferenceRecommendationsJobResult extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingConditions() == null) ? 0 : getStoppingConditions().hashCode());
         hashCode = prime * hashCode + ((getInferenceRecommendations() == null) ? 0 : getInferenceRecommendations().hashCode());
+        hashCode = prime * hashCode + ((getEndpointPerformances() == null) ? 0 : getEndpointPerformances().hashCode());
         return hashCode;
     }
 

@@ -277,6 +277,10 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
         }
 
+        if (createCacheClusterRequest.getTransitEncryptionEnabled() != null) {
+            request.addParameter("TransitEncryptionEnabled", StringUtils.fromBoolean(createCacheClusterRequest.getTransitEncryptionEnabled()));
+        }
+
         return request;
     }
 

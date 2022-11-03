@@ -44,6 +44,8 @@ public class RuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
     private static final MarshallingInfo<StructuredPojo> CAPTCHACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptchaConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CHALLENGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChallengeConfig").build();
 
     private static final RuleMarshaller instance = new RuleMarshaller();
 
@@ -69,6 +71,7 @@ public class RuleMarshaller {
             protocolMarshaller.marshall(rule.getRuleLabels(), RULELABELS_BINDING);
             protocolMarshaller.marshall(rule.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
             protocolMarshaller.marshall(rule.getCaptchaConfig(), CAPTCHACONFIG_BINDING);
+            protocolMarshaller.marshall(rule.getChallengeConfig(), CHALLENGECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

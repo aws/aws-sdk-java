@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies an AMI deprecation rule for cross-Region AMI copies created by a cross-Region copy rule.
+ * <b>[AMI policies only]</b> Specifies an AMI deprecation rule for cross-Region AMI copies created by an AMI policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyDeprecateRule" target="_top">AWS
@@ -38,7 +38,8 @@ public class CrossRegionCopyDeprecateRule implements Serializable, Cloneable, St
     private Integer interval;
     /**
      * <p>
-     * The unit of time in which to measure the <b>Interval</b>.
+     * The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after
+     * 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      */
     private String intervalUnit;
@@ -97,11 +98,13 @@ public class CrossRegionCopyDeprecateRule implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unit of time in which to measure the <b>Interval</b>.
+     * The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after
+     * 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time in which to measure the <b>Interval</b>.
+     *        The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI
+     *        copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @see RetentionIntervalUnitValues
      */
 
@@ -111,10 +114,12 @@ public class CrossRegionCopyDeprecateRule implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unit of time in which to measure the <b>Interval</b>.
+     * The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after
+     * 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
-     * @return The unit of time in which to measure the <b>Interval</b>.
+     * @return The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI
+     *         copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @see RetentionIntervalUnitValues
      */
 
@@ -124,11 +129,13 @@ public class CrossRegionCopyDeprecateRule implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unit of time in which to measure the <b>Interval</b>.
+     * The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after
+     * 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time in which to measure the <b>Interval</b>.
+     *        The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI
+     *        copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionIntervalUnitValues
      */
@@ -140,11 +147,13 @@ public class CrossRegionCopyDeprecateRule implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unit of time in which to measure the <b>Interval</b>.
+     * The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after
+     * 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time in which to measure the <b>Interval</b>.
+     *        The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI
+     *        copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionIntervalUnitValues
      */

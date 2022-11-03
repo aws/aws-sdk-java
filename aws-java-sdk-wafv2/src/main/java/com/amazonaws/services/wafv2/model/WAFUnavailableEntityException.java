@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying
- * in your request parameters and then retry the operation.
+ * WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're
+ * using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of
+ * minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then
+ * retry the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

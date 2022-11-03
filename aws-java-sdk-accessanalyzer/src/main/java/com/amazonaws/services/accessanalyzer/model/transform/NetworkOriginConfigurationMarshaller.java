@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NetworkOriginConfigurationMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> INTERNETCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("internetConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> INTERNETCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("internetConfiguration").build();
 
     private static final NetworkOriginConfigurationMarshaller instance = new NetworkOriginConfigurationMarshaller();
 
@@ -48,8 +48,8 @@ public class NetworkOriginConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(networkOriginConfiguration.getInternetConfiguration(), INTERNETCONFIGURATION_BINDING);
             protocolMarshaller.marshall(networkOriginConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(networkOriginConfiguration.getInternetConfiguration(), INTERNETCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

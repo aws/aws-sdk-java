@@ -985,6 +985,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public ValidateE911AddressResult validateE911Address(ValidateE911AddressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

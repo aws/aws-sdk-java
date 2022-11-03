@@ -45,7 +45,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the Amazon Web Services Systems Manager document (SSM document). For example,
+     * <code>AWS-RestartEC2Instance</code>.
      * </p>
      * <p>
      * If you are using a shared SSM document, you must provide the ARN instead of the name.
@@ -54,7 +55,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Version</dt>
      * <dd>
      * <p>
-     * The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     * The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code>
      * </p>
      * </dd>
      * <dt>AssumeRole</dt>
@@ -224,7 +225,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the Amazon Web Services Systems Manager document (SSM document). For example,
+     * <code>AWS-RestartEC2Instance</code>.
      * </p>
      * <p>
      * If you are using a shared SSM document, you must provide the ARN instead of the name.
@@ -233,7 +235,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Version</dt>
      * <dd>
      * <p>
-     * The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     * The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code>
      * </p>
      * </dd>
      * <dt>AssumeRole</dt>
@@ -263,7 +265,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *         <dt>Name</dt>
      *         <dd>
      *         <p>
-     *         The name of the AWS Systems Manager document (SSM document). For example,
+     *         The name of the Amazon Web Services Systems Manager document (SSM document). For example,
      *         <code>AWS-RestartEC2Instance</code>.
      *         </p>
      *         <p>
@@ -273,7 +275,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *         <dt>Version</dt>
      *         <dd>
      *         <p>
-     *         The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     *         The Amazon Web Services Systems Manager automation document version. For example,
+     *         <code>"Version": "1"</code>
      *         </p>
      *         </dd>
      *         <dt>AssumeRole</dt>
@@ -310,7 +313,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the Amazon Web Services Systems Manager document (SSM document). For example,
+     * <code>AWS-RestartEC2Instance</code>.
      * </p>
      * <p>
      * If you are using a shared SSM document, you must provide the ARN instead of the name.
@@ -319,7 +323,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Version</dt>
      * <dd>
      * <p>
-     * The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     * The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code>
      * </p>
      * </dd>
      * <dt>AssumeRole</dt>
@@ -350,7 +354,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <dt>Name</dt>
      *        <dd>
      *        <p>
-     *        The name of the AWS Systems Manager document (SSM document). For example,
+     *        The name of the Amazon Web Services Systems Manager document (SSM document). For example,
      *        <code>AWS-RestartEC2Instance</code>.
      *        </p>
      *        <p>
@@ -360,7 +364,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <dt>Version</dt>
      *        <dd>
      *        <p>
-     *        The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     *        The Amazon Web Services Systems Manager automation document version. For example,
+     *        <code>"Version": "1"</code>
      *        </p>
      *        </dd>
      *        <dt>AssumeRole</dt>
@@ -397,7 +402,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the Amazon Web Services Systems Manager document (SSM document). For example,
+     * <code>AWS-RestartEC2Instance</code>.
      * </p>
      * <p>
      * If you are using a shared SSM document, you must provide the ARN instead of the name.
@@ -406,7 +412,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Version</dt>
      * <dd>
      * <p>
-     * The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     * The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code>
      * </p>
      * </dd>
      * <dt>AssumeRole</dt>
@@ -437,7 +443,7 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <dt>Name</dt>
      *        <dd>
      *        <p>
-     *        The name of the AWS Systems Manager document (SSM document). For example,
+     *        The name of the Amazon Web Services Systems Manager document (SSM document). For example,
      *        <code>AWS-RestartEC2Instance</code>.
      *        </p>
      *        <p>
@@ -447,7 +453,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <dt>Version</dt>
      *        <dd>
      *        <p>
-     *        The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+     *        The Amazon Web Services Systems Manager automation document version. For example,
+     *        <code>"Version": "1"</code>
      *        </p>
      *        </dd>
      *        <dt>AssumeRole</dt>

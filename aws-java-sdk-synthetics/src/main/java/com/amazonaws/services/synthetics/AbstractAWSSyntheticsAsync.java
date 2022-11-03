@@ -28,6 +28,19 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateResourceResult> associateResourceAsync(AssociateResourceRequest request) {
+
+        return associateResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateResourceResult> associateResourceAsync(AssociateResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateResourceRequest, AssociateResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCanaryResult> createCanaryAsync(CreateCanaryRequest request) {
 
         return createCanaryAsync(request, null);
@@ -41,6 +54,19 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request) {
+
+        return createGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCanaryResult> deleteCanaryAsync(DeleteCanaryRequest request) {
 
         return deleteCanaryAsync(request, null);
@@ -49,6 +75,19 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     @Override
     public java.util.concurrent.Future<DeleteCanaryResult> deleteCanaryAsync(DeleteCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCanaryRequest, DeleteCanaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request) {
+
+        return deleteGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +132,19 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateResourceResult> disassociateResourceAsync(DisassociateResourceRequest request) {
+
+        return disassociateResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateResourceResult> disassociateResourceAsync(DisassociateResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateResourceRequest, DisassociateResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCanaryResult> getCanaryAsync(GetCanaryRequest request) {
 
         return getCanaryAsync(request, null);
@@ -114,6 +166,58 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     @Override
     public java.util.concurrent.Future<GetCanaryRunsResult> getCanaryRunsAsync(GetCanaryRunsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCanaryRunsRequest, GetCanaryRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest request) {
+
+        return getGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedGroupsResult> listAssociatedGroupsAsync(ListAssociatedGroupsRequest request) {
+
+        return listAssociatedGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedGroupsResult> listAssociatedGroupsAsync(ListAssociatedGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssociatedGroupsRequest, ListAssociatedGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupResourcesResult> listGroupResourcesAsync(ListGroupResourcesRequest request) {
+
+        return listGroupResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupResourcesResult> listGroupResourcesAsync(ListGroupResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGroupResourcesRequest, ListGroupResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request) {
+
+        return listGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

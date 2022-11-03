@@ -68,6 +68,12 @@ public class TrafficMirrorTarget implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     */
+    private String gatewayLoadBalancerEndpointId;
 
     /**
      * <p>
@@ -402,6 +408,46 @@ public class TrafficMirrorTarget implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerEndpointId
+     *        The ID of the Gateway Load Balancer endpoint.
+     */
+
+    public void setGatewayLoadBalancerEndpointId(String gatewayLoadBalancerEndpointId) {
+        this.gatewayLoadBalancerEndpointId = gatewayLoadBalancerEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     * 
+     * @return The ID of the Gateway Load Balancer endpoint.
+     */
+
+    public String getGatewayLoadBalancerEndpointId() {
+        return this.gatewayLoadBalancerEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Gateway Load Balancer endpoint.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerEndpointId
+     *        The ID of the Gateway Load Balancer endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrafficMirrorTarget withGatewayLoadBalancerEndpointId(String gatewayLoadBalancerEndpointId) {
+        setGatewayLoadBalancerEndpointId(gatewayLoadBalancerEndpointId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -426,7 +472,9 @@ public class TrafficMirrorTarget implements Serializable, Cloneable {
         if (getOwnerId() != null)
             sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getGatewayLoadBalancerEndpointId() != null)
+            sb.append("GatewayLoadBalancerEndpointId: ").append(getGatewayLoadBalancerEndpointId());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +517,11 @@ public class TrafficMirrorTarget implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getGatewayLoadBalancerEndpointId() == null ^ this.getGatewayLoadBalancerEndpointId() == null)
+            return false;
+        if (other.getGatewayLoadBalancerEndpointId() != null
+                && other.getGatewayLoadBalancerEndpointId().equals(this.getGatewayLoadBalancerEndpointId()) == false)
+            return false;
         return true;
     }
 
@@ -484,6 +537,7 @@ public class TrafficMirrorTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getGatewayLoadBalancerEndpointId() == null) ? 0 : getGatewayLoadBalancerEndpointId().hashCode());
         return hashCode;
     }
 

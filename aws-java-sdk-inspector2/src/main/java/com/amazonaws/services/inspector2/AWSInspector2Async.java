@@ -450,6 +450,37 @@ public interface AWSInspector2Async extends AWSInspector2 {
 
     /**
      * <p>
+     * Retrieves setting configurations for Inspector scans.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @return A Java Future containing the result of the GetConfiguration operation returned by the service.
+     * @sample AWSInspector2Async.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest getConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves setting configurations for Inspector scans.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConfiguration operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest getConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConfigurationRequest, GetConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about the Amazon Inspector delegated administrator for your organization.
      * </p>
      * 
@@ -914,6 +945,41 @@ public interface AWSInspector2Async extends AWSInspector2 {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector
+     * delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization
+     * cannot update this setting.
+     * </p>
+     * 
+     * @param updateConfigurationRequest
+     * @return A Java Future containing the result of the UpdateConfiguration operation returned by the service.
+     * @sample AWSInspector2Async.UpdateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationResult> updateConfigurationAsync(UpdateConfigurationRequest updateConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector
+     * delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization
+     * cannot update this setting.
+     * </p>
+     * 
+     * @param updateConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConfiguration operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.UpdateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationResult> updateConfigurationAsync(UpdateConfigurationRequest updateConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationRequest, UpdateConfigurationResult> asyncHandler);
 
     /**
      * <p>

@@ -25,7 +25,7 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     * The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      * </p>
      */
     private String clusterIdentifier;
@@ -61,14 +61,20 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String secretArn;
+    /**
+     * <p>
+     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * </p>
+     */
+    private String workgroupName;
 
     /**
      * <p>
-     * The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     * The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     *        The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      */
 
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -77,10 +83,10 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     * The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      * </p>
      * 
-     * @return The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     * @return The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      */
 
     public String getClusterIdentifier() {
@@ -89,11 +95,11 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     * The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The cluster identifier. This parameter is not returned when connecting to a serverless endpoint.
+     *        The cluster identifier. This element is not returned when connecting to a serverless workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,6 +321,46 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     */
+
+    public void setWorkgroupName(String workgroupName) {
+        this.workgroupName = workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * </p>
+     * 
+     * @return The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     */
+
+    public String getWorkgroupName() {
+        return this.workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchExecuteStatementResult withWorkgroupName(String workgroupName) {
+        setWorkgroupName(workgroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -337,7 +383,9 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getSecretArn() != null)
-            sb.append("SecretArn: ").append(getSecretArn());
+            sb.append("SecretArn: ").append(getSecretArn()).append(",");
+        if (getWorkgroupName() != null)
+            sb.append("WorkgroupName: ").append(getWorkgroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -376,6 +424,10 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
             return false;
+        if (other.getWorkgroupName() == null ^ this.getWorkgroupName() == null)
+            return false;
+        if (other.getWorkgroupName() != null && other.getWorkgroupName().equals(this.getWorkgroupName()) == false)
+            return false;
         return true;
     }
 
@@ -390,6 +442,7 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDbUser() == null) ? 0 : getDbUser().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());
         return hashCode;
     }
 

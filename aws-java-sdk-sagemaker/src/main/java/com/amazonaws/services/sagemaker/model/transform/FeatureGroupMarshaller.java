@@ -40,6 +40,8 @@ public class FeatureGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureDefinitions").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> ONLINESTORECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnlineStoreConfig").build();
     private static final MarshallingInfo<StructuredPojo> OFFLINESTORECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -50,6 +52,8 @@ public class FeatureGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureGroupStatus").build();
     private static final MarshallingInfo<StructuredPojo> OFFLINESTORESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OfflineStoreStatus").build();
+    private static final MarshallingInfo<StructuredPojo> LASTUPDATESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateStatus").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,11 +83,13 @@ public class FeatureGroupMarshaller {
             protocolMarshaller.marshall(featureGroup.getEventTimeFeatureName(), EVENTTIMEFEATURENAME_BINDING);
             protocolMarshaller.marshall(featureGroup.getFeatureDefinitions(), FEATUREDEFINITIONS_BINDING);
             protocolMarshaller.marshall(featureGroup.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(featureGroup.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(featureGroup.getOnlineStoreConfig(), ONLINESTORECONFIG_BINDING);
             protocolMarshaller.marshall(featureGroup.getOfflineStoreConfig(), OFFLINESTORECONFIG_BINDING);
             protocolMarshaller.marshall(featureGroup.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(featureGroup.getFeatureGroupStatus(), FEATUREGROUPSTATUS_BINDING);
             protocolMarshaller.marshall(featureGroup.getOfflineStoreStatus(), OFFLINESTORESTATUS_BINDING);
+            protocolMarshaller.marshall(featureGroup.getLastUpdateStatus(), LASTUPDATESTATUS_BINDING);
             protocolMarshaller.marshall(featureGroup.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(featureGroup.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(featureGroup.getTags(), TAGS_BINDING);

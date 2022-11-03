@@ -65,6 +65,12 @@ public class CreateBatchPredictionJobRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The ARN of the IAM role to use for this job request.
      * </p>
+     * <p>
+     * The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      */
     private String iamRoleArn;
     /**
@@ -318,9 +324,20 @@ public class CreateBatchPredictionJobRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The ARN of the IAM role to use for this job request.
      * </p>
+     * <p>
+     * The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of the IAM role to use for this job request.
+     *        The ARN of the IAM role to use for this job request.</p>
+     *        <p>
+     *        The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3
+     *        bucket. For more information about bucket permissions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy
+     *        examples</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -331,8 +348,19 @@ public class CreateBatchPredictionJobRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The ARN of the IAM role to use for this job request.
      * </p>
+     * <p>
+     * The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      * 
-     * @return The ARN of the IAM role to use for this job request.
+     * @return The ARN of the IAM role to use for this job request.</p>
+     *         <p>
+     *         The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3
+     *         bucket. For more information about bucket permissions, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy
+     *         examples</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public String getIamRoleArn() {
@@ -343,9 +371,20 @@ public class CreateBatchPredictionJobRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The ARN of the IAM role to use for this job request.
      * </p>
+     * <p>
+     * The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket.
+     * For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of the IAM role to use for this job request.
+     *        The ARN of the IAM role to use for this job request.</p>
+     *        <p>
+     *        The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3
+     *        bucket. For more information about bucket permissions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy
+     *        examples</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

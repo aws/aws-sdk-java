@@ -48,10 +48,6 @@ public class GeneratedPolicyPropertiesJsonUnmarshaller implements Unmarshaller<G
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("cloudTrailProperties", targetDepth)) {
-                    context.nextToken();
-                    generatedPolicyProperties.setCloudTrailProperties(CloudTrailPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("isComplete", targetDepth)) {
                     context.nextToken();
                     generatedPolicyProperties.setIsComplete(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -59,6 +55,10 @@ public class GeneratedPolicyPropertiesJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("principalArn", targetDepth)) {
                     context.nextToken();
                     generatedPolicyProperties.setPrincipalArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cloudTrailProperties", targetDepth)) {
+                    context.nextToken();
+                    generatedPolicyProperties.setCloudTrailProperties(CloudTrailPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

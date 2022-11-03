@@ -43,6 +43,12 @@ public class WorkforceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OidcConfig").build();
     private static final MarshallingInfo<java.util.Date> CREATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> WORKFORCEVPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceVpcConfig").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
 
     private static final WorkforceMarshaller instance = new WorkforceMarshaller();
 
@@ -68,6 +74,9 @@ public class WorkforceMarshaller {
             protocolMarshaller.marshall(workforce.getCognitoConfig(), COGNITOCONFIG_BINDING);
             protocolMarshaller.marshall(workforce.getOidcConfig(), OIDCCONFIG_BINDING);
             protocolMarshaller.marshall(workforce.getCreateDate(), CREATEDATE_BINDING);
+            protocolMarshaller.marshall(workforce.getWorkforceVpcConfig(), WORKFORCEVPCCONFIG_BINDING);
+            protocolMarshaller.marshall(workforce.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workforce.getFailureReason(), FAILUREREASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

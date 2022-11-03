@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to update an existing <a>MethodResponse</a> resource.
+ * A request to update an existing MethodResponse resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,42 +27,43 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * The Resource identifier for the MethodResponse resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * [Required] The HTTP verb of the <a>Method</a> resource.
+     * The HTTP verb of the Method resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * [Required] The status code for the <a>MethodResponse</a> resource.
+     * The status code for the MethodResponse resource.
      * </p>
      */
     private String statusCode;
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -71,10 +72,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -83,11 +84,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +99,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * The Resource identifier for the MethodResponse resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     *        The Resource identifier for the MethodResponse resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -111,10 +112,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * The Resource identifier for the MethodResponse resource.
      * </p>
      * 
-     * @return [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * @return The Resource identifier for the MethodResponse resource.
      */
 
     public String getResourceId() {
@@ -123,11 +124,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * The Resource identifier for the MethodResponse resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     *        The Resource identifier for the MethodResponse resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +139,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The HTTP verb of the <a>Method</a> resource.
+     * The HTTP verb of the Method resource.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] The HTTP verb of the <a>Method</a> resource.
+     *        The HTTP verb of the Method resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -151,10 +152,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The HTTP verb of the <a>Method</a> resource.
+     * The HTTP verb of the Method resource.
      * </p>
      * 
-     * @return [Required] The HTTP verb of the <a>Method</a> resource.
+     * @return The HTTP verb of the Method resource.
      */
 
     public String getHttpMethod() {
@@ -163,11 +164,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The HTTP verb of the <a>Method</a> resource.
+     * The HTTP verb of the Method resource.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] The HTTP verb of the <a>Method</a> resource.
+     *        The HTTP verb of the Method resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +179,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The status code for the <a>MethodResponse</a> resource.
+     * The status code for the MethodResponse resource.
      * </p>
      * 
      * @param statusCode
-     *        [Required] The status code for the <a>MethodResponse</a> resource.
+     *        The status code for the MethodResponse resource.
      */
 
     public void setStatusCode(String statusCode) {
@@ -191,10 +192,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The status code for the <a>MethodResponse</a> resource.
+     * The status code for the MethodResponse resource.
      * </p>
      * 
-     * @return [Required] The status code for the <a>MethodResponse</a> resource.
+     * @return The status code for the MethodResponse resource.
      */
 
     public String getStatusCode() {
@@ -203,11 +204,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Required] The status code for the <a>MethodResponse</a> resource.
+     * The status code for the MethodResponse resource.
      * </p>
      * 
      * @param statusCode
-     *        [Required] The status code for the <a>MethodResponse</a> resource.
+     *        The status code for the MethodResponse resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +219,12 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -231,12 +233,13 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -250,7 +253,8 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -259,8 +263,8 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,12 +280,13 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

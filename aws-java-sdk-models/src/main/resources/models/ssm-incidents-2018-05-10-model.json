@@ -371,7 +371,7 @@
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Adds a resource policy to the specified response plan.</p>"
+      "documentation":"<p>Adds a resource policy to the specified response plan. The resource policy is used to share the response plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html\">Cross-Region and cross-account incident management</a>.</p>"
     },
     "StartIncident":{
       "name":"StartIncident",
@@ -505,6 +505,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Add or delete Regions from your replication set.</p>"
@@ -714,12 +715,16 @@
       "members":{
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A token ensuring that the operation is called only once with the specified details.</p>",
+          "documentation":"<p>A token that ensures that the operation is called only once with the specified details.</p>",
           "idempotencyToken":true
         },
         "regions":{
           "shape":"RegionMapInput",
           "documentation":"<p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A list of tags to add to the replication set.</p>"
         }
       }
     },
@@ -759,7 +764,7 @@
         },
         "engagements":{
           "shape":"EngagementSet",
-          "documentation":"<p>The contacts and escalation plans that the response plan engages during an incident.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>"
         },
         "incidentTemplate":{
           "shape":"IncidentTemplate",
@@ -801,7 +806,7 @@
         },
         "eventData":{
           "shape":"EventData",
-          "documentation":"<p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>"
+          "documentation":"<p>A short description of the event.</p>"
         },
         "eventTime":{
           "shape":"Timestamp",
@@ -941,6 +946,29 @@
       "members":{
       }
     },
+    "DynamicSsmParameterValue":{
+      "type":"structure",
+      "members":{
+        "variable":{
+          "shape":"VariableType",
+          "documentation":"<p>Variable dynamic parameters. A parameter value is determined when an incident is created.</p>"
+        }
+      },
+      "documentation":"<p>The dynamic SSM parameter value.</p>",
+      "union":true
+    },
+    "DynamicSsmParameters":{
+      "type":"map",
+      "key":{"shape":"DynamicSsmParametersKeyString"},
+      "value":{"shape":"DynamicSsmParameterValue"},
+      "max":200,
+      "min":1
+    },
+    "DynamicSsmParametersKeyString":{
+      "type":"string",
+      "max":50,
+      "min":1
+    },
     "EmptyChatChannel":{
       "type":"structure",
       "members":{
@@ -1077,7 +1105,7 @@
       "members":{
         "maxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of resource policies to display per page of results.</p>"
+          "documentation":"<p>The maximum number of resource policies to display for each page of results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
@@ -1143,7 +1171,7 @@
         },
         "engagements":{
           "shape":"EngagementSet",
-          "documentation":"<p>The contacts and escalation plans that the response plan engages during an incident.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>"
         },
         "incidentTemplate":{
           "shape":"IncidentTemplate",
@@ -1278,7 +1306,7 @@
         },
         "invokedBy":{
           "shape":"ServicePrincipal",
-          "documentation":"<p>The principal the assumed the role specified of the <code>createdBy</code>.</p>"
+          "documentation":"<p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>"
         },
         "resourceArn":{
           "shape":"Arn",
@@ -1371,6 +1399,10 @@
           "shape":"Impact",
           "documentation":"<p>The impact of the incident on your customers and applications. </p>"
         },
+        "incidentTags":{
+          "shape":"TagMap",
+          "documentation":"<p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>"
+        },
         "notificationTargets":{
           "shape":"NotificationTargetSet",
           "documentation":"<p>The Amazon SNS targets that are notified when updates are made to an incident.</p>"
@@ -1421,7 +1453,7 @@
       "members":{
         "type":{
           "shape":"ItemType",
-          "documentation":"<p>The type of related item. Incident Manager supports the following types:</p> <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code> </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code> </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p> <code>OTHER</code> </p> </li> </ul>"
+          "documentation":"<p>The type of related item. </p>"
         },
         "value":{
           "shape":"ItemValue",
@@ -1439,7 +1471,9 @@
         "PARENT",
         "ATTACHMENT",
         "OTHER",
-        "AUTOMATION"
+        "AUTOMATION",
+        "INVOLVED_RESOURCE",
+        "TASK"
       ]
     },
     "ItemValue":{
@@ -1700,7 +1734,7 @@
         },
         "resourceArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>"
         }
       }
     },
@@ -2062,6 +2096,10 @@
           "shape":"SsmAutomationDocumentVersionString",
           "documentation":"<p>The automation document's version to use when running.</p>"
         },
+        "dynamicParameters":{
+          "shape":"DynamicSsmParameters",
+          "documentation":"<p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>"
+        },
         "parameters":{
           "shape":"SsmParameters",
           "documentation":"<p>The key-value pair parameters to use when running the automation document.</p>"
@@ -2090,7 +2128,7 @@
       "type":"string",
       "max":2048,
       "min":0,
-      "pattern":"^arn:[-\\w+=/,.@]+:ssm-contacts:[-\\w+=/,.@]*:[0-9]+:([\\w+=/,.@:-]+)*$"
+      "pattern":"^arn:aws(-cn|-us-gov)?:ssm-contacts:[a-z0-9-]*:([0-9]{12}):contact/[a-z0-9_-]+$"
     },
     "SsmParameterValues":{
       "type":"list",
@@ -2194,6 +2232,13 @@
       "max":50,
       "min":1
     },
+    "TagMapUpdate":{
+      "type":"map",
+      "key":{"shape":"TagKey"},
+      "value":{"shape":"TagValue"},
+      "max":50,
+      "min":0
+    },
     "TagResourceRequest":{
       "type":"structure",
       "required":[
@@ -2209,7 +2254,7 @@
         },
         "tags":{
           "shape":"TagMap",
-          "documentation":"<p>A list of tags that you are adding to the response plan.</p>"
+          "documentation":"<p>A list of tags to add to the response plan.</p>"
         }
       }
     },
@@ -2343,7 +2388,7 @@
         },
         "tagKeys":{
           "shape":"TagKeyList",
-          "documentation":"<p>The name of the tag you're removing from the response plan.</p>",
+          "documentation":"<p>The name of the tag to remove from the response plan.</p>",
           "location":"querystring",
           "locationName":"tagKeys"
         }
@@ -2363,16 +2408,16 @@
       "members":{
         "arn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the replication set to update.</p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A token ensuring that the operation is called only once with the specified details.</p>",
+          "documentation":"<p>A token that ensures that the operation is called only once with the specified details.</p>",
           "idempotencyToken":true
         },
         "deletionProtected":{
           "shape":"Boolean",
-          "documentation":"<p>Details if deletion protection is enabled or disabled in your account.</p>"
+          "documentation":"<p>Specifies if deletion protection is turned on or off in your account. </p>"
         }
       }
     },
@@ -2484,7 +2529,7 @@
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A token ensuring that the operation is called only once with the specified details.</p>",
+          "documentation":"<p>A token that ensures that the operation is called only once with the specified details.</p>",
           "idempotencyToken":true
         }
       }
@@ -2527,7 +2572,7 @@
         },
         "engagements":{
           "shape":"EngagementSet",
-          "documentation":"<p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>"
         },
         "incidentTemplateDedupeString":{
           "shape":"DedupeString",
@@ -2544,6 +2589,10 @@
         "incidentTemplateSummary":{
           "shape":"IncidentSummary",
           "documentation":"<p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>"
+        },
+        "incidentTemplateTags":{
+          "shape":"TagMapUpdate",
+          "documentation":"<p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>"
         },
         "incidentTemplateTitle":{
           "shape":"IncidentTitle",
@@ -2612,6 +2661,13 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "VariableType":{
+      "type":"string",
+      "enum":[
+        "INCIDENT_RECORD_ARN",
+        "INVOLVED_RESOURCES"
+      ]
     }
   },
   "documentation":"<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>"

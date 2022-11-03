@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides user and group information for document access filtering.
+ * Provides user and group information for <a
+ * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Principal" target="_top">AWS API
@@ -42,7 +43,7 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * Whether to allow or deny access to the principal.
+     * Whether to allow or deny document access to the principal.
      * </p>
      */
     private String access;
@@ -154,11 +155,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether to allow or deny access to the principal.
+     * Whether to allow or deny document access to the principal.
      * </p>
      * 
      * @param access
-     *        Whether to allow or deny access to the principal.
+     *        Whether to allow or deny document access to the principal.
      * @see ReadAccessType
      */
 
@@ -168,10 +169,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether to allow or deny access to the principal.
+     * Whether to allow or deny document access to the principal.
      * </p>
      * 
-     * @return Whether to allow or deny access to the principal.
+     * @return Whether to allow or deny document access to the principal.
      * @see ReadAccessType
      */
 
@@ -181,11 +182,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether to allow or deny access to the principal.
+     * Whether to allow or deny document access to the principal.
      * </p>
      * 
      * @param access
-     *        Whether to allow or deny access to the principal.
+     *        Whether to allow or deny document access to the principal.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReadAccessType
      */
@@ -197,11 +198,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether to allow or deny access to the principal.
+     * Whether to allow or deny document access to the principal.
      * </p>
      * 
      * @param access
-     *        Whether to allow or deny access to the principal.
+     *        Whether to allow or deny document access to the principal.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReadAccessType
      */

@@ -31,6 +31,8 @@ public class PredictedItemMarshaller {
             .marshallLocationName("itemId").build();
     private static final MarshallingInfo<Double> SCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("score").build();
+    private static final MarshallingInfo<String> PROMOTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("promotionName").build();
 
     private static final PredictedItemMarshaller instance = new PredictedItemMarshaller();
 
@@ -50,6 +52,7 @@ public class PredictedItemMarshaller {
         try {
             protocolMarshaller.marshall(predictedItem.getItemId(), ITEMID_BINDING);
             protocolMarshaller.marshall(predictedItem.getScore(), SCORE_BINDING);
+            protocolMarshaller.marshall(predictedItem.getPromotionName(), PROMOTIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

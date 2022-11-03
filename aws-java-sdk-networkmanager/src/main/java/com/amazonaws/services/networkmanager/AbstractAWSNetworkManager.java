@@ -98,6 +98,16 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public CreateTransitGatewayPeeringResult createTransitGatewayPeering(CreateTransitGatewayPeeringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTransitGatewayRouteTableAttachmentResult createTransitGatewayRouteTableAttachment(CreateTransitGatewayRouteTableAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVpcAttachmentResult createVpcAttachment(CreateVpcAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +149,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public DeleteLinkResult deleteLink(DeleteLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePeeringResult deletePeering(DeletePeeringRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,6 +224,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public GetCoreNetworkResult getCoreNetwork(GetCoreNetworkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCoreNetworkChangeEventsResult getCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -293,7 +313,17 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public GetTransitGatewayPeeringResult getTransitGatewayPeering(GetTransitGatewayPeeringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTransitGatewayRegistrationsResult getTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTransitGatewayRouteTableAttachmentResult getTransitGatewayRouteTableAttachment(GetTransitGatewayRouteTableAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -319,6 +349,16 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public ListCoreNetworksResult listCoreNetworks(ListCoreNetworksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOrganizationServiceAccessStatusResult listOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPeeringsResult listPeerings(ListPeeringsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,6 +389,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public RestoreCoreNetworkPolicyVersionResult restoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartOrganizationServiceAccessUpdateResult startOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

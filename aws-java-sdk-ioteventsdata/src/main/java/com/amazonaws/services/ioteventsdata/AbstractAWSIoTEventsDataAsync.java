@@ -41,6 +41,19 @@ public class AbstractAWSIoTEventsDataAsync extends AbstractAWSIoTEventsData impl
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteDetectorResult> batchDeleteDetectorAsync(BatchDeleteDetectorRequest request) {
+
+        return batchDeleteDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteDetectorResult> batchDeleteDetectorAsync(BatchDeleteDetectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteDetectorRequest, BatchDeleteDetectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDisableAlarmResult> batchDisableAlarmAsync(BatchDisableAlarmRequest request) {
 
         return batchDisableAlarmAsync(request, null);

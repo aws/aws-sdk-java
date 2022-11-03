@@ -56,6 +56,10 @@ public class AudioCodecSettingsJsonUnmarshaller implements Unmarshaller<AudioCod
                     context.nextToken();
                     audioCodecSettings.setAc3Settings(Ac3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("eac3AtmosSettings", targetDepth)) {
+                    context.nextToken();
+                    audioCodecSettings.setEac3AtmosSettings(Eac3AtmosSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("eac3Settings", targetDepth)) {
                     context.nextToken();
                     audioCodecSettings.setEac3Settings(Eac3SettingsJsonUnmarshaller.getInstance().unmarshall(context));

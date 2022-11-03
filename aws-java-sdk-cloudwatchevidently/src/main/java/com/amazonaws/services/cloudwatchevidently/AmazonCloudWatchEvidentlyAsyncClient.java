@@ -250,6 +250,39 @@ public class AmazonCloudWatchEvidentlyAsyncClient extends AmazonCloudWatchEviden
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest request) {
+
+        return createSegmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(final CreateSegmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSegmentRequest, CreateSegmentResult> asyncHandler) {
+        final CreateSegmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSegmentResult>() {
+            @Override
+            public CreateSegmentResult call() throws Exception {
+                CreateSegmentResult result = null;
+
+                try {
+                    result = executeCreateSegment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteExperimentResult> deleteExperimentAsync(DeleteExperimentRequest request) {
 
         return deleteExperimentAsync(request, null);
@@ -366,6 +399,39 @@ public class AmazonCloudWatchEvidentlyAsyncClient extends AmazonCloudWatchEviden
 
                 try {
                     result = executeDeleteProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(DeleteSegmentRequest request) {
+
+        return deleteSegmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(final DeleteSegmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSegmentRequest, DeleteSegmentResult> asyncHandler) {
+        final DeleteSegmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSegmentResult>() {
+            @Override
+            public DeleteSegmentResult call() throws Exception {
+                DeleteSegmentResult result = null;
+
+                try {
+                    result = executeDeleteSegment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -580,6 +646,39 @@ public class AmazonCloudWatchEvidentlyAsyncClient extends AmazonCloudWatchEviden
     }
 
     @Override
+    public java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest request) {
+
+        return getSegmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(final GetSegmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSegmentRequest, GetSegmentResult> asyncHandler) {
+        final GetSegmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSegmentResult>() {
+            @Override
+            public GetSegmentResult call() throws Exception {
+                GetSegmentResult result = null;
+
+                try {
+                    result = executeGetSegment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExperimentsResult> listExperimentsAsync(ListExperimentsRequest request) {
 
         return listExperimentsAsync(request, null);
@@ -696,6 +795,72 @@ public class AmazonCloudWatchEvidentlyAsyncClient extends AmazonCloudWatchEviden
 
                 try {
                     result = executeListProjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentReferencesResult> listSegmentReferencesAsync(ListSegmentReferencesRequest request) {
+
+        return listSegmentReferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentReferencesResult> listSegmentReferencesAsync(final ListSegmentReferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSegmentReferencesRequest, ListSegmentReferencesResult> asyncHandler) {
+        final ListSegmentReferencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSegmentReferencesResult>() {
+            @Override
+            public ListSegmentReferencesResult call() throws Exception {
+                ListSegmentReferencesResult result = null;
+
+                try {
+                    result = executeListSegmentReferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentsResult> listSegmentsAsync(ListSegmentsRequest request) {
+
+        return listSegmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentsResult> listSegmentsAsync(final ListSegmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSegmentsRequest, ListSegmentsResult> asyncHandler) {
+        final ListSegmentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSegmentsResult>() {
+            @Override
+            public ListSegmentsResult call() throws Exception {
+                ListSegmentsResult result = null;
+
+                try {
+                    result = executeListSegments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -927,6 +1092,39 @@ public class AmazonCloudWatchEvidentlyAsyncClient extends AmazonCloudWatchEviden
 
                 try {
                     result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestSegmentPatternResult> testSegmentPatternAsync(TestSegmentPatternRequest request) {
+
+        return testSegmentPatternAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestSegmentPatternResult> testSegmentPatternAsync(final TestSegmentPatternRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TestSegmentPatternRequest, TestSegmentPatternResult> asyncHandler) {
+        final TestSegmentPatternRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TestSegmentPatternResult>() {
+            @Override
+            public TestSegmentPatternResult call() throws Exception {
+                TestSegmentPatternResult result = null;
+
+                try {
+                    result = executeTestSegmentPattern(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

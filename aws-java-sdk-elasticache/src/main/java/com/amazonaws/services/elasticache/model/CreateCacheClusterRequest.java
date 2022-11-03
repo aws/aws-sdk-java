@@ -523,6 +523,18 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurations;
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
+     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     * <code>1.6.12</code> or later.
+     * </p>
+     */
+    private Boolean transitEncryptionEnabled;
 
     /**
      * Default constructor for CreateCacheClusterRequest object. Callers should use the setter or fluent setter
@@ -4208,6 +4220,102 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
+     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     * <code>1.6.12</code> or later.
+     * </p>
+     * 
+     * @param transitEncryptionEnabled
+     *        A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     *        <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
+     *        cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     *        <code>1.6.12</code> or later.
+     */
+
+    public void setTransitEncryptionEnabled(Boolean transitEncryptionEnabled) {
+        this.transitEncryptionEnabled = transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
+     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     * <code>1.6.12</code> or later.
+     * </p>
+     * 
+     * @return A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     *         <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
+     *         cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     *         <code>1.6.12</code> or later.
+     */
+
+    public Boolean getTransitEncryptionEnabled() {
+        return this.transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
+     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     * <code>1.6.12</code> or later.
+     * </p>
+     * 
+     * @param transitEncryptionEnabled
+     *        A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     *        <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
+     *        cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     *        <code>1.6.12</code> or later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withTransitEncryptionEnabled(Boolean transitEncryptionEnabled) {
+        setTransitEncryptionEnabled(transitEncryptionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
+     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     * <code>1.6.12</code> or later.
+     * </p>
+     * 
+     * @return A flag that enables in-transit encryption when set to true. You cannot modify the value of
+     *         <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
+     *         cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using Memcached version
+     *         <code>1.6.12</code> or later.
+     */
+
+    public Boolean isTransitEncryptionEnabled() {
+        return this.transitEncryptionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4272,7 +4380,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         if (getPreferredOutpostArns() != null)
             sb.append("PreferredOutpostArns: ").append(getPreferredOutpostArns()).append(",");
         if (getLogDeliveryConfigurations() != null)
-            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations()).append(",");
+        if (getTransitEncryptionEnabled() != null)
+            sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -4395,6 +4505,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
             return false;
+        if (other.getTransitEncryptionEnabled() == null ^ this.getTransitEncryptionEnabled() == null)
+            return false;
+        if (other.getTransitEncryptionEnabled() != null && other.getTransitEncryptionEnabled().equals(this.getTransitEncryptionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -4430,6 +4544,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getPreferredOutpostArns() == null) ? 0 : getPreferredOutpostArns().hashCode());
         hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         return hashCode;
     }
 

@@ -37,7 +37,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a
-     * 30 minute expiration.
+     * 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -98,7 +98,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a
-     * 30 minute expiration.
+     * 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -116,7 +116,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
      * 
      * @param location
      *        The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to
-     *        that has a 30 minute expiration.</p> <important>
+     *        that has a 30-minute expiration.</p> <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
      *        </p>
@@ -138,7 +138,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a
-     * 30 minute expiration.
+     * 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -155,7 +155,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
      * </important>
      * 
      * @return The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to
-     *         that has a 30 minute expiration.</p> <important>
+     *         that has a 30-minute expiration.</p> <important>
      *         <p>
      *         Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
      *         </p>
@@ -177,7 +177,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a
-     * 30 minute expiration.
+     * 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -195,7 +195,7 @@ public class ParallelDataDataLocation implements Serializable, Cloneable, Struct
      * 
      * @param location
      *        The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to
-     *        that has a 30 minute expiration.</p> <important>
+     *        that has a 30-minute expiration.</p> <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
      *        </p>

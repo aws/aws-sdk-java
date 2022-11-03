@@ -36,6 +36,8 @@ public class CreateForecastRequestMarshaller {
             .marshallLocationName("ForecastTypes").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESERIESSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeSeriesSelector").build();
 
     private static final CreateForecastRequestMarshaller instance = new CreateForecastRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateForecastRequestMarshaller {
             protocolMarshaller.marshall(createForecastRequest.getPredictorArn(), PREDICTORARN_BINDING);
             protocolMarshaller.marshall(createForecastRequest.getForecastTypes(), FORECASTTYPES_BINDING);
             protocolMarshaller.marshall(createForecastRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createForecastRequest.getTimeSeriesSelector(), TIMESERIESSELECTOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

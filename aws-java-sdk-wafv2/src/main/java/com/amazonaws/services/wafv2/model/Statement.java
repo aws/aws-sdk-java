@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule.
  * </p>
+ * <p>
+ * For example specifications, see the examples section of <a>CreateWebACL</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement" target="_top">AWS API
  *      Documentation</a>
@@ -33,27 +36,22 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
      * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
      * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
-     * developer guide, this is refered to as a string match statement.
+     * developer guide, this is called a string match statement.
      * </p>
      */
     private ByteMatchStatement byteMatchStatement;
     /**
      * <p>
-     * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
-     * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
-     * allow or block requests that appear to contain malicious SQL code.
+     * A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to
+     * do things like modify your database or extract data from it.
      * </p>
      */
     private SqliMatchStatement sqliMatchStatement;
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
-     * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-     * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
-     * sequences that are likely to be malicious strings.
+     * A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     * vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate
+     * web browsers.
      * </p>
      */
     private XssMatchStatement xssMatchStatement;
@@ -65,8 +63,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
-     * requests that have a request body greater than 8192 bytes.
+     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
+     * that have a request body greater than 8192 bytes.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -156,9 +154,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that
-     * meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes,
-     * the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and
-     * are not affected by this rule.
+     * meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five
+     * minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are
+     * not counted towards the rate limit and are not affected by this rule.
      * </p>
      * <p>
      * You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -198,6 +196,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
+     * <note>
+     * <p>
+     * You are charged additional fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed
+     * rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     * </p>
+     * </note>
      */
     private ManagedRuleGroupStatement managedRuleGroupStatement;
     /**
@@ -226,14 +232,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
      * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
      * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
-     * developer guide, this is refered to as a string match statement.
+     * developer guide, this is called a string match statement.
      * </p>
      * 
      * @param byteMatchStatement
      *        A rule statement that defines a string match search for WAF to apply to web requests. The byte match
      *        statement provides the bytes to search for, the location in requests that you want WAF to search, and
      *        other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In
-     *        the WAF console and the developer guide, this is refered to as a string match statement.
+     *        the WAF console and the developer guide, this is called a string match statement.
      */
 
     public void setByteMatchStatement(ByteMatchStatement byteMatchStatement) {
@@ -245,13 +251,13 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
      * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
      * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
-     * developer guide, this is refered to as a string match statement.
+     * developer guide, this is called a string match statement.
      * </p>
      * 
      * @return A rule statement that defines a string match search for WAF to apply to web requests. The byte match
      *         statement provides the bytes to search for, the location in requests that you want WAF to search, and
      *         other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In
-     *         the WAF console and the developer guide, this is refered to as a string match statement.
+     *         the WAF console and the developer guide, this is called a string match statement.
      */
 
     public ByteMatchStatement getByteMatchStatement() {
@@ -263,14 +269,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
      * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
      * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
-     * developer guide, this is refered to as a string match statement.
+     * developer guide, this is called a string match statement.
      * </p>
      * 
      * @param byteMatchStatement
      *        A rule statement that defines a string match search for WAF to apply to web requests. The byte match
      *        statement provides the bytes to search for, the location in requests that you want WAF to search, and
      *        other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In
-     *        the WAF console and the developer guide, this is refered to as a string match statement.
+     *        the WAF console and the developer guide, this is called a string match statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,19 +287,13 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
-     * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
-     * allow or block requests that appear to contain malicious SQL code.
+     * A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to
+     * do things like modify your database or extract data from it.
      * </p>
      * 
      * @param sqliMatchStatement
-     *        Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your
-     *        database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL
-     *        injection match conditions. An SQL injection match condition identifies the part of web requests, such as
-     *        the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web
-     *        ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
+     *        A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web
+     *        requests to do things like modify your database or extract data from it.
      */
 
     public void setSqliMatchStatement(SqliMatchStatement sqliMatchStatement) {
@@ -302,18 +302,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
-     * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
-     * allow or block requests that appear to contain malicious SQL code.
+     * A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to
+     * do things like modify your database or extract data from it.
      * </p>
      * 
-     * @return Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your
-     *         database. To allow or block web requests that appear to contain malicious SQL code, create one or more
-     *         SQL injection match conditions. An SQL injection match condition identifies the part of web requests,
-     *         such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create
-     *         a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
+     * @return A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web
+     *         requests to do things like modify your database or extract data from it.
      */
 
     public SqliMatchStatement getSqliMatchStatement() {
@@ -322,19 +316,13 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
-     * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
-     * allow or block requests that appear to contain malicious SQL code.
+     * A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to
+     * do things like modify your database or extract data from it.
      * </p>
      * 
      * @param sqliMatchStatement
-     *        Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your
-     *        database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL
-     *        injection match conditions. An SQL injection match condition identifies the part of web requests, such as
-     *        the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web
-     *        ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
+     *        A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web
+     *        requests to do things like modify your database or extract data from it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,19 +333,15 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
-     * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-     * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
-     * sequences that are likely to be malicious strings.
+     * A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     * vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate
+     * web browsers.
      * </p>
      * 
      * @param xssMatchStatement
-     *        A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-     *        XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject
-     *        malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the
-     *        location in requests that you want WAF to search and text transformations to use on the search area before
-     *        WAF searches for character sequences that are likely to be malicious strings.
+     *        A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     *        vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other
+     *        legitimate web browsers.
      */
 
     public void setXssMatchStatement(XssMatchStatement xssMatchStatement) {
@@ -366,18 +350,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
-     * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-     * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
-     * sequences that are likely to be malicious strings.
+     * A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     * vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate
+     * web browsers.
      * </p>
      * 
-     * @return A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-     *         XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject
-     *         malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the
-     *         location in requests that you want WAF to search and text transformations to use on the search area
-     *         before WAF searches for character sequences that are likely to be malicious strings.
+     * @return A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     *         vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other
+     *         legitimate web browsers.
      */
 
     public XssMatchStatement getXssMatchStatement() {
@@ -386,19 +366,15 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
-     * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-     * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
-     * sequences that are likely to be malicious strings.
+     * A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     * vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate
+     * web browsers.
      * </p>
      * 
      * @param xssMatchStatement
-     *        A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-     *        XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject
-     *        malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the
-     *        location in requests that you want WAF to search and text transformations to use on the search area before
-     *        WAF searches for character sequences that are likely to be malicious strings.
+     *        A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+     *        vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other
+     *        legitimate web browsers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,8 +391,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
-     * requests that have a request body greater than 8192 bytes.
+     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
+     * that have a request body greater than 8192 bytes.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -429,8 +405,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        constraint statement to look for query strings that are longer than 100 bytes. </p>
      *        <p>
      *        If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
-     *        request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition
-     *        and block requests that have a request body greater than 8192 bytes.
+     *        request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to
+     *        block requests that have a request body greater than 8192 bytes.
      *        </p>
      *        <p>
      *        If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -449,8 +425,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
-     * requests that have a request body greater than 8192 bytes.
+     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
+     * that have a request body greater than 8192 bytes.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -462,8 +438,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         constraint statement to look for query strings that are longer than 100 bytes. </p>
      *         <p>
      *         If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
-     *         request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition
-     *         and block requests that have a request body greater than 8192 bytes.
+     *         request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to
+     *         block requests that have a request body greater than 8192 bytes.
      *         </p>
      *         <p>
      *         If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -482,8 +458,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
-     * requests that have a request body greater than 8192 bytes.
+     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
+     * that have a request body greater than 8192 bytes.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -496,8 +472,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        constraint statement to look for query strings that are longer than 100 bytes. </p>
      *        <p>
      *        If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
-     *        request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition
-     *        and block requests that have a request body greater than 8192 bytes.
+     *        request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to
+     *        block requests that have a request body greater than 8192 bytes.
      *        </p>
      *        <p>
      *        If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -827,9 +803,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that
-     * meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes,
-     * the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and
-     * are not affected by this rule.
+     * meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five
+     * minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are
+     * not counted towards the rate limit and are not affected by this rule.
      * </p>
      * <p>
      * You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -873,9 +849,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests
-     *        that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per
-     *        five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards
-     *        the rate limit and are not affected by this rule.
+     *        that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests
+     *        per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested
+     *        statements are not counted towards the rate limit and are not affected by this rule.
      *        </p>
      *        <p>
      *        You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -924,9 +900,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that
-     * meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes,
-     * the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and
-     * are not affected by this rule.
+     * meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five
+     * minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are
+     * not counted towards the rate limit and are not affected by this rule.
      * </p>
      * <p>
      * You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -970,9 +946,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000.
-     *         Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000
-     *         requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not
-     *         counted towards the rate limit and are not affected by this rule.
+     *         Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000
+     *         requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of
+     *         the nested statements are not counted towards the rate limit and are not affected by this rule.
      *         </p>
      *         <p>
      *         You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -1021,9 +997,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that
-     * meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes,
-     * the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and
-     * are not affected by this rule.
+     * meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five
+     * minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are
+     * not counted towards the rate limit and are not affected by this rule.
      * </p>
      * <p>
      * You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -1067,9 +1043,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests
-     *        that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per
-     *        five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards
-     *        the rate limit and are not affected by this rule.
+     *        that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests
+     *        per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested
+     *        statements are not counted towards the rate limit and are not affected by this rule.
      *        </p>
      *        <p>
      *        You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a
@@ -1231,6 +1207,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
+     * <note>
+     * <p>
+     * You are charged additional fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed
+     * rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     * </p>
+     * </note>
      * 
      * @param managedRuleGroupStatement
      *        A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the
@@ -1240,6 +1224,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
      *        <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
      *        within a rule.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You are charged additional fees when you use the WAF Bot Control managed rule group
+     *        <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP)
+     *        managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     *        href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     *        </p>
      */
 
     public void setManagedRuleGroupStatement(ManagedRuleGroupStatement managedRuleGroupStatement) {
@@ -1256,6 +1248,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
+     * <note>
+     * <p>
+     * You are charged additional fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed
+     * rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     * </p>
+     * </note>
      * 
      * @return A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the
      *         vendor name and the name of the rule group in this statement. You can retrieve the required names by
@@ -1264,6 +1264,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
      *         <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
      *         within a rule.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You are charged additional fees when you use the WAF Bot Control managed rule group
+     *         <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP)
+     *         managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     *         href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     *         </p>
      */
 
     public ManagedRuleGroupStatement getManagedRuleGroupStatement() {
@@ -1280,6 +1288,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
+     * <note>
+     * <p>
+     * You are charged additional fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed
+     * rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     * </p>
+     * </note>
      * 
      * @param managedRuleGroupStatement
      *        A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the
@@ -1289,6 +1305,14 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
      *        <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
      *        within a rule.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You are charged additional fees when you use the WAF Bot Control managed rule group
+     *        <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP)
+     *        managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     *        href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

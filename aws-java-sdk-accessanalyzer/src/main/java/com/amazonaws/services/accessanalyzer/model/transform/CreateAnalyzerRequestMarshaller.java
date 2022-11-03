@@ -33,15 +33,15 @@ public class CreateAnalyzerRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerName").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<List> ARCHIVERULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("archiveRules").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
 
     private static final CreateAnalyzerRequestMarshaller instance = new CreateAnalyzerRequestMarshaller();
 
@@ -60,10 +60,10 @@ public class CreateAnalyzerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createAnalyzerRequest.getAnalyzerName(), ANALYZERNAME_BINDING);
-            protocolMarshaller.marshall(createAnalyzerRequest.getArchiveRules(), ARCHIVERULES_BINDING);
-            protocolMarshaller.marshall(createAnalyzerRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createAnalyzerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAnalyzerRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createAnalyzerRequest.getArchiveRules(), ARCHIVERULES_BINDING);
+            protocolMarshaller.marshall(createAnalyzerRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAnalyzerRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

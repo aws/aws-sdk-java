@@ -34,6 +34,12 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
     private String snapshotIdentifier;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     * </p>
+     */
+    private String snapshotArn;
+    /**
+     * <p>
      * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
      * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
@@ -86,6 +92,46 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
 
     public AuthorizeSnapshotAccessRequest withSnapshotIdentifier(String snapshotIdentifier) {
         setSnapshotIdentifier(snapshotIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     */
+
+    public void setSnapshotArn(String snapshotArn) {
+        this.snapshotArn = snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     */
+
+    public String getSnapshotArn() {
+        return this.snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSnapshotAccessRequest withSnapshotArn(String snapshotArn) {
+        setSnapshotArn(snapshotArn);
         return this;
     }
 
@@ -207,6 +253,8 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getSnapshotIdentifier() != null)
             sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
+        if (getSnapshotArn() != null)
+            sb.append("SnapshotArn: ").append(getSnapshotArn()).append(",");
         if (getSnapshotClusterIdentifier() != null)
             sb.append("SnapshotClusterIdentifier: ").append(getSnapshotClusterIdentifier()).append(",");
         if (getAccountWithRestoreAccess() != null)
@@ -229,6 +277,10 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false)
             return false;
+        if (other.getSnapshotArn() == null ^ this.getSnapshotArn() == null)
+            return false;
+        if (other.getSnapshotArn() != null && other.getSnapshotArn().equals(this.getSnapshotArn()) == false)
+            return false;
         if (other.getSnapshotClusterIdentifier() == null ^ this.getSnapshotClusterIdentifier() == null)
             return false;
         if (other.getSnapshotClusterIdentifier() != null && other.getSnapshotClusterIdentifier().equals(this.getSnapshotClusterIdentifier()) == false)
@@ -246,6 +298,7 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotArn() == null) ? 0 : getSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getSnapshotClusterIdentifier() == null) ? 0 : getSnapshotClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAccountWithRestoreAccess() == null) ? 0 : getAccountWithRestoreAccess().hashCode());
         return hashCode;

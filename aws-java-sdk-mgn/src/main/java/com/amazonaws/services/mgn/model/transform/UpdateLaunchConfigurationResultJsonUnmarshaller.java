@@ -76,6 +76,10 @@ public class UpdateLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     updateLaunchConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("postLaunchActions", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationResult.setPostLaunchActions(PostLaunchActionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("sourceServerID", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));

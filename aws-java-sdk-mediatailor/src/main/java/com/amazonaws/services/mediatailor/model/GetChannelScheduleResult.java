@@ -31,7 +31,8 @@ public class GetChannelScheduleResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.List<ScheduleEntry> items;
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      */
     private String nextToken;
@@ -108,11 +109,13 @@ public class GetChannelScheduleResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +124,12 @@ public class GetChannelScheduleResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
-     * @return Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * @return Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *         fetch the next page of results.
      */
 
     public String getNextToken() {
@@ -133,11 +138,13 @@ public class GetChannelScheduleResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

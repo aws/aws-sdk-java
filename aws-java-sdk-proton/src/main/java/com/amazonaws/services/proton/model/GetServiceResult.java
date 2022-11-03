@@ -25,18 +25,18 @@ public class GetServiceResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the requested service.
      * </p>
      */
     private Service service;
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the requested service.
      * </p>
      * 
      * @param service
-     *        The service detail data that's returned by Proton.
+     *        The detailed data of the requested service.
      */
 
     public void setService(Service service) {
@@ -45,10 +45,10 @@ public class GetServiceResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the requested service.
      * </p>
      * 
-     * @return The service detail data that's returned by Proton.
+     * @return The detailed data of the requested service.
      */
 
     public Service getService() {
@@ -57,11 +57,11 @@ public class GetServiceResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The service detail data that's returned by Proton.
+     * The detailed data of the requested service.
      * </p>
      * 
      * @param service
-     *        The service detail data that's returned by Proton.
+     *        The detailed data of the requested service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

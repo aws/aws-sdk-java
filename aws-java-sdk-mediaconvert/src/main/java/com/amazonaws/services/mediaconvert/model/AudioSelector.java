@@ -28,6 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections,
+     * your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply
+     * no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and
+     * determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a
+     * constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch,
+     * and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a
+     * variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames.
+     * Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such
+     * as speech or percussion.
+     */
+    private String audioDurationCorrection;
+    /**
      * Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter
      * language code
      */
@@ -77,6 +90,130 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
      * file, provide the track numbers in an array. For example, "tracks": [1,2,3].
      */
     private java.util.List<Integer> tracks;
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections,
+     * your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply
+     * no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and
+     * determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a
+     * constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch,
+     * and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a
+     * variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames.
+     * Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such
+     * as speech or percussion.
+     * 
+     * @param audioDurationCorrection
+     *        Apply audio timing corrections to help synchronize audio and video in your output. To apply timing
+     *        corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate
+     *        time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction
+     *        settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert
+     *        analyzes the audio timing in your input and determines which correction setting to use, if needed. *
+     *        Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with
+     *        STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content
+     *        such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames
+     *        with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect
+     *        the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+     * @see AudioDurationCorrection
+     */
+
+    public void setAudioDurationCorrection(String audioDurationCorrection) {
+        this.audioDurationCorrection = audioDurationCorrection;
+    }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections,
+     * your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply
+     * no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and
+     * determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a
+     * constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch,
+     * and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a
+     * variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames.
+     * Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such
+     * as speech or percussion.
+     * 
+     * @return Apply audio timing corrections to help synchronize audio and video in your output. To apply timing
+     *         corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate
+     *         time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction
+     *         settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert
+     *         analyzes the audio timing in your input and determines which correction setting to use, if needed. *
+     *         Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with
+     *         STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content
+     *         such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio
+     *         frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction
+     *         may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or
+     *         percussion.
+     * @see AudioDurationCorrection
+     */
+
+    public String getAudioDurationCorrection() {
+        return this.audioDurationCorrection;
+    }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections,
+     * your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply
+     * no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and
+     * determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a
+     * constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch,
+     * and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a
+     * variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames.
+     * Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such
+     * as speech or percussion.
+     * 
+     * @param audioDurationCorrection
+     *        Apply audio timing corrections to help synchronize audio and video in your output. To apply timing
+     *        corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate
+     *        time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction
+     *        settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert
+     *        analyzes the audio timing in your input and determines which correction setting to use, if needed. *
+     *        Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with
+     *        STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content
+     *        such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames
+     *        with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect
+     *        the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AudioDurationCorrection
+     */
+
+    public AudioSelector withAudioDurationCorrection(String audioDurationCorrection) {
+        setAudioDurationCorrection(audioDurationCorrection);
+        return this;
+    }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections,
+     * your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply
+     * no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and
+     * determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a
+     * constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch,
+     * and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a
+     * variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames.
+     * Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such
+     * as speech or percussion.
+     * 
+     * @param audioDurationCorrection
+     *        Apply audio timing corrections to help synchronize audio and video in your output. To apply timing
+     *        corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate
+     *        time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction
+     *        settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert
+     *        analyzes the audio timing in your input and determines which correction setting to use, if needed. *
+     *        Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with
+     *        STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content
+     *        such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames
+     *        with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect
+     *        the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AudioDurationCorrection
+     */
+
+    public AudioSelector withAudioDurationCorrection(AudioDurationCorrection audioDurationCorrection) {
+        this.audioDurationCorrection = audioDurationCorrection.toString();
+        return this;
+    }
 
     /**
      * Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter
@@ -680,6 +817,8 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudioDurationCorrection() != null)
+            sb.append("AudioDurationCorrection: ").append(getAudioDurationCorrection()).append(",");
         if (getCustomLanguageCode() != null)
             sb.append("CustomLanguageCode: ").append(getCustomLanguageCode()).append(",");
         if (getDefaultSelection() != null)
@@ -716,6 +855,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AudioSelector == false)
             return false;
         AudioSelector other = (AudioSelector) obj;
+        if (other.getAudioDurationCorrection() == null ^ this.getAudioDurationCorrection() == null)
+            return false;
+        if (other.getAudioDurationCorrection() != null && other.getAudioDurationCorrection().equals(this.getAudioDurationCorrection()) == false)
+            return false;
         if (other.getCustomLanguageCode() == null ^ this.getCustomLanguageCode() == null)
             return false;
         if (other.getCustomLanguageCode() != null && other.getCustomLanguageCode().equals(this.getCustomLanguageCode()) == false)
@@ -768,6 +911,7 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudioDurationCorrection() == null) ? 0 : getAudioDurationCorrection().hashCode());
         hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDefaultSelection() == null) ? 0 : getDefaultSelection().hashCode());
         hashCode = prime * hashCode + ((getExternalAudioFileInput() == null) ? 0 : getExternalAudioFileInput().hashCode());

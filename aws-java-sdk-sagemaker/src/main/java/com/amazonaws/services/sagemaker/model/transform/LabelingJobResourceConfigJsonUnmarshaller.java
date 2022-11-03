@@ -52,6 +52,10 @@ public class LabelingJobResourceConfigJsonUnmarshaller implements Unmarshaller<L
                     context.nextToken();
                     labelingJobResourceConfig.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    labelingJobResourceConfig.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

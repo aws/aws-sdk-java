@@ -27,18 +27,18 @@ public class DeleteCallAnalyticsJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the call analytics job you want to delete. Job names are case-sensitive.
+     * The name of the Call Analytics job you want to delete. Job names are case sensitive.
      * </p>
      */
     private String callAnalyticsJobName;
 
     /**
      * <p>
-     * The name of the call analytics job you want to delete. Job names are case-sensitive.
+     * The name of the Call Analytics job you want to delete. Job names are case sensitive.
      * </p>
      * 
      * @param callAnalyticsJobName
-     *        The name of the call analytics job you want to delete. Job names are case-sensitive.
+     *        The name of the Call Analytics job you want to delete. Job names are case sensitive.
      */
 
     public void setCallAnalyticsJobName(String callAnalyticsJobName) {
@@ -47,10 +47,10 @@ public class DeleteCallAnalyticsJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the call analytics job you want to delete. Job names are case-sensitive.
+     * The name of the Call Analytics job you want to delete. Job names are case sensitive.
      * </p>
      * 
-     * @return The name of the call analytics job you want to delete. Job names are case-sensitive.
+     * @return The name of the Call Analytics job you want to delete. Job names are case sensitive.
      */
 
     public String getCallAnalyticsJobName() {
@@ -59,11 +59,11 @@ public class DeleteCallAnalyticsJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the call analytics job you want to delete. Job names are case-sensitive.
+     * The name of the Call Analytics job you want to delete. Job names are case sensitive.
      * </p>
      * 
      * @param callAnalyticsJobName
-     *        The name of the call analytics job you want to delete. Job names are case-sensitive.
+     *        The name of the Call Analytics job you want to delete. Job names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

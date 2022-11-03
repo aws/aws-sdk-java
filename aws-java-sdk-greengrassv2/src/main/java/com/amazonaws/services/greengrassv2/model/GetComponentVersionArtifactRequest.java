@@ -28,7 +28,7 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version. Specify the ARN of a public component version.
+     * version. Specify the ARN of a public or a Lambda component version.
      * </p>
      */
     private String arn;
@@ -49,12 +49,12 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version. Specify the ARN of a public component version.
+     * version. Specify the ARN of a public or a Lambda component version.
      * </p>
      * 
      * @param arn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        component version. Specify the ARN of a public component version.
+     *        component version. Specify the ARN of a public or a Lambda component version.
      */
 
     public void setArn(String arn) {
@@ -64,11 +64,11 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version. Specify the ARN of a public component version.
+     * version. Specify the ARN of a public or a Lambda component version.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         component version. Specify the ARN of a public component version.
+     *         component version. Specify the ARN of a public or a Lambda component version.
      */
 
     public String getArn() {
@@ -78,12 +78,12 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component
-     * version. Specify the ARN of a public component version.
+     * version. Specify the ARN of a public or a Lambda component version.
      * </p>
      * 
      * @param arn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        component version. Specify the ARN of a public component version.
+     *        component version. Specify the ARN of a public or a Lambda component version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

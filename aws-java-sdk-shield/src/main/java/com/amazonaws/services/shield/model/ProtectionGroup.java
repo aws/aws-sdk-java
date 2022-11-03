@@ -66,7 +66,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The criteria to use to choose the protected resources for inclusion in the group. You can include all resources
-     * that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a
+     * that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a
      * specified resource type.
      * </p>
      */
@@ -81,7 +81,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     private String resourceType;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you
+     * The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you
      * set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code>
      * setting.
      * </p>
@@ -370,13 +370,13 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The criteria to use to choose the protected resources for inclusion in the group. You can include all resources
-     * that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a
+     * that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a
      * specified resource type.
      * </p>
      * 
      * @param pattern
      *        The criteria to use to choose the protected resources for inclusion in the group. You can include all
-     *        resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all
+     *        resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all
      *        resources of a specified resource type.
      * @see ProtectionGroupPattern
      */
@@ -388,12 +388,12 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The criteria to use to choose the protected resources for inclusion in the group. You can include all resources
-     * that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a
+     * that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a
      * specified resource type.
      * </p>
      * 
      * @return The criteria to use to choose the protected resources for inclusion in the group. You can include all
-     *         resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all
+     *         resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all
      *         resources of a specified resource type.
      * @see ProtectionGroupPattern
      */
@@ -405,13 +405,13 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The criteria to use to choose the protected resources for inclusion in the group. You can include all resources
-     * that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a
+     * that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a
      * specified resource type.
      * </p>
      * 
      * @param pattern
      *        The criteria to use to choose the protected resources for inclusion in the group. You can include all
-     *        resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all
+     *        resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all
      *        resources of a specified resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionGroupPattern
@@ -425,13 +425,13 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The criteria to use to choose the protected resources for inclusion in the group. You can include all resources
-     * that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a
+     * that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a
      * specified resource type.
      * </p>
      * 
      * @param pattern
      *        The criteria to use to choose the protected resources for inclusion in the group. You can include all
-     *        resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all
+     *        resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all
      *        resources of a specified resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionGroupPattern
@@ -519,12 +519,12 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you
+     * The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you
      * set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code>
      * setting.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this
+     * @return The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this
      *         when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other
      *         <code>Pattern</code> setting.
      */
@@ -535,13 +535,13 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you
+     * The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you
      * set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code>
      * setting.
      * </p>
      * 
      * @param members
-     *        The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this
+     *        The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this
      *        when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other
      *        <code>Pattern</code> setting.
      */
@@ -557,7 +557,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you
+     * The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you
      * set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code>
      * setting.
      * </p>
@@ -568,7 +568,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param members
-     *        The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this
+     *        The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this
      *        when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other
      *        <code>Pattern</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -586,13 +586,13 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you
+     * The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you
      * set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code>
      * setting.
      * </p>
      * 
      * @param members
-     *        The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this
+     *        The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this
      *        when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other
      *        <code>Pattern</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.

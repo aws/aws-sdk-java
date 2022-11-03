@@ -33,6 +33,11 @@ public class AbstractAmazonForecastQuery implements AmazonForecastQuery {
     }
 
     @Override
+    public QueryWhatIfForecastResult queryWhatIfForecast(QueryWhatIfForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

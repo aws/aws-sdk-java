@@ -149,6 +149,12 @@ public class StackInstanceSummary implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date lastDriftCheckTimestamp;
+    /**
+     * <p>
+     * The last unique ID of a StackSet operation performed on a stack instance.
+     * </p>
+     */
+    private String lastOperationId;
 
     /**
      * <p>
@@ -1231,6 +1237,46 @@ public class StackInstanceSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The last unique ID of a StackSet operation performed on a stack instance.
+     * </p>
+     * 
+     * @param lastOperationId
+     *        The last unique ID of a StackSet operation performed on a stack instance.
+     */
+
+    public void setLastOperationId(String lastOperationId) {
+        this.lastOperationId = lastOperationId;
+    }
+
+    /**
+     * <p>
+     * The last unique ID of a StackSet operation performed on a stack instance.
+     * </p>
+     * 
+     * @return The last unique ID of a StackSet operation performed on a stack instance.
+     */
+
+    public String getLastOperationId() {
+        return this.lastOperationId;
+    }
+
+    /**
+     * <p>
+     * The last unique ID of a StackSet operation performed on a stack instance.
+     * </p>
+     * 
+     * @param lastOperationId
+     *        The last unique ID of a StackSet operation performed on a stack instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstanceSummary withLastOperationId(String lastOperationId) {
+        setLastOperationId(lastOperationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1261,7 +1307,9 @@ public class StackInstanceSummary implements Serializable, Cloneable {
         if (getDriftStatus() != null)
             sb.append("DriftStatus: ").append(getDriftStatus()).append(",");
         if (getLastDriftCheckTimestamp() != null)
-            sb.append("LastDriftCheckTimestamp: ").append(getLastDriftCheckTimestamp());
+            sb.append("LastDriftCheckTimestamp: ").append(getLastDriftCheckTimestamp()).append(",");
+        if (getLastOperationId() != null)
+            sb.append("LastOperationId: ").append(getLastOperationId());
         sb.append("}");
         return sb.toString();
     }
@@ -1316,6 +1364,10 @@ public class StackInstanceSummary implements Serializable, Cloneable {
             return false;
         if (other.getLastDriftCheckTimestamp() != null && other.getLastDriftCheckTimestamp().equals(this.getLastDriftCheckTimestamp()) == false)
             return false;
+        if (other.getLastOperationId() == null ^ this.getLastOperationId() == null)
+            return false;
+        if (other.getLastOperationId() != null && other.getLastOperationId().equals(this.getLastOperationId()) == false)
+            return false;
         return true;
     }
 
@@ -1334,6 +1386,7 @@ public class StackInstanceSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOrganizationalUnitId() == null) ? 0 : getOrganizationalUnitId().hashCode());
         hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());
         hashCode = prime * hashCode + ((getLastDriftCheckTimestamp() == null) ? 0 : getLastDriftCheckTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastOperationId() == null) ? 0 : getLastOperationId().hashCode());
         return hashCode;
     }
 

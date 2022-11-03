@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteProgramRequestProtocolMarshaller implements Marshaller<Request<DeleteProgramRequest>, DeleteProgramRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/channel/{channelName}/program/{programName}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
+            .requestUri("/channel/{ChannelName}/program/{ProgramName}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
             .hasPayloadMembers(false).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

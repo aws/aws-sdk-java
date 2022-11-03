@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a node group launch template specification. The launch template cannot include <a
+ * An object representing a node group launch template specification. The launch template can't include <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code>
  * </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
  * <code>IamInstanceProfile</code> </a>, <a
@@ -33,10 +33,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch
  * templates with Amazon EKS, see <a
  * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
- * Amazon EKS User Guide.
+ * <i>Amazon EKS User Guide</i>.
  * </p>
  * <p>
- * Specify either <code>name</code> or <code>id</code>, but not both.
+ * You must specify either the launch template ID or the launch template name in the request, but not both.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/LaunchTemplateSpecification" target="_top">AWS
@@ -49,18 +49,32 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The name of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template name or the launch template ID in the request, but not both.
+     * </p>
      */
     private String name;
     /**
      * <p>
-     * The version of the launch template to use. If no version is specified, then the template's default version is
-     * used.
+     * The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
+     * </p>
+     * <p>
+     * If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     * </p>
+     * <p>
+     * If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     * </p>
+     * <p>
+     * Default: The default version of the launch template.
      * </p>
      */
     private String version;
     /**
      * <p>
      * The ID of the launch template.
+     * </p>
+     * <p>
+     * You must specify either the launch template ID or the launch template name in the request, but not both.
      * </p>
      */
     private String id;
@@ -69,9 +83,14 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The name of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template name or the launch template ID in the request, but not both.
+     * </p>
      * 
      * @param name
-     *        The name of the launch template.
+     *        The name of the launch template.</p>
+     *        <p>
+     *        You must specify either the launch template name or the launch template ID in the request, but not both.
      */
 
     public void setName(String name) {
@@ -82,8 +101,13 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The name of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template name or the launch template ID in the request, but not both.
+     * </p>
      * 
-     * @return The name of the launch template.
+     * @return The name of the launch template.</p>
+     *         <p>
+     *         You must specify either the launch template name or the launch template ID in the request, but not both.
      */
 
     public String getName() {
@@ -94,9 +118,14 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The name of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template name or the launch template ID in the request, but not both.
+     * </p>
      * 
      * @param name
-     *        The name of the launch template.
+     *        The name of the launch template.</p>
+     *        <p>
+     *        You must specify either the launch template name or the launch template ID in the request, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +136,28 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version of the launch template to use. If no version is specified, then the template's default version is
-     * used.
+     * The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
+     * </p>
+     * <p>
+     * If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     * </p>
+     * <p>
+     * If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     * </p>
+     * <p>
+     * Default: The default version of the launch template.
      * </p>
      * 
      * @param version
-     *        The version of the launch template to use. If no version is specified, then the template's default version
-     *        is used.
+     *        The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+     *        <p>
+     *        If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     *        </p>
+     *        <p>
+     *        If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     *        </p>
+     *        <p>
+     *        Default: The default version of the launch template.
      */
 
     public void setVersion(String version) {
@@ -122,12 +166,27 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version of the launch template to use. If no version is specified, then the template's default version is
-     * used.
+     * The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
+     * </p>
+     * <p>
+     * If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     * </p>
+     * <p>
+     * If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     * </p>
+     * <p>
+     * Default: The default version of the launch template.
      * </p>
      * 
-     * @return The version of the launch template to use. If no version is specified, then the template's default
-     *         version is used.
+     * @return The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+     *         <p>
+     *         If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     *         </p>
+     *         <p>
+     *         If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     *         </p>
+     *         <p>
+     *         Default: The default version of the launch template.
      */
 
     public String getVersion() {
@@ -136,13 +195,28 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version of the launch template to use. If no version is specified, then the template's default version is
-     * used.
+     * The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
+     * </p>
+     * <p>
+     * If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     * </p>
+     * <p>
+     * If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     * </p>
+     * <p>
+     * Default: The default version of the launch template.
      * </p>
      * 
      * @param version
-     *        The version of the launch template to use. If no version is specified, then the template's default version
-     *        is used.
+     *        The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+     *        <p>
+     *        If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.
+     *        </p>
+     *        <p>
+     *        If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.
+     *        </p>
+     *        <p>
+     *        Default: The default version of the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,9 +229,14 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The ID of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template ID or the launch template name in the request, but not both.
+     * </p>
      * 
      * @param id
-     *        The ID of the launch template.
+     *        The ID of the launch template.</p>
+     *        <p>
+     *        You must specify either the launch template ID or the launch template name in the request, but not both.
      */
 
     public void setId(String id) {
@@ -168,8 +247,13 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The ID of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template ID or the launch template name in the request, but not both.
+     * </p>
      * 
-     * @return The ID of the launch template.
+     * @return The ID of the launch template.</p>
+     *         <p>
+     *         You must specify either the launch template ID or the launch template name in the request, but not both.
      */
 
     public String getId() {
@@ -180,9 +264,14 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
      * <p>
      * The ID of the launch template.
      * </p>
+     * <p>
+     * You must specify either the launch template ID or the launch template name in the request, but not both.
+     * </p>
      * 
      * @param id
-     *        The ID of the launch template.
+     *        The ID of the launch template.</p>
+     *        <p>
+     *        You must specify either the launch template ID or the launch template name in the request, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

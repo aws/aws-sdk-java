@@ -26,36 +26,42 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the device registration state event
+     * Resource type event configuration for the device registration state event.
      * </p>
      */
     private DeviceRegistrationStateResourceTypeEventConfiguration deviceRegistrationState;
     /**
      * <p>
-     * Resource type event configuration for the proximity event
+     * Resource type event configuration for the proximity event.
      * </p>
      */
     private ProximityResourceTypeEventConfiguration proximity;
     /**
      * <p>
-     * Resource type event configuration for the join event
+     * Resource type event configuration for the join event.
      * </p>
      */
     private JoinResourceTypeEventConfiguration join;
     /**
      * <p>
-     * Resource type event configuration for the connection status event
+     * Resource type event configuration for the connection status event.
      * </p>
      */
     private ConnectionStatusResourceTypeEventConfiguration connectionStatus;
+    /**
+     * <p>
+     * Resource type event configuration object for the message delivery status event.
+     * </p>
+     */
+    private MessageDeliveryStatusResourceTypeEventConfiguration messageDeliveryStatus;
 
     /**
      * <p>
-     * Resource type event configuration for the device registration state event
+     * Resource type event configuration for the device registration state event.
      * </p>
      * 
      * @param deviceRegistrationState
-     *        Resource type event configuration for the device registration state event
+     *        Resource type event configuration for the device registration state event.
      */
 
     public void setDeviceRegistrationState(DeviceRegistrationStateResourceTypeEventConfiguration deviceRegistrationState) {
@@ -64,10 +70,10 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the device registration state event
+     * Resource type event configuration for the device registration state event.
      * </p>
      * 
-     * @return Resource type event configuration for the device registration state event
+     * @return Resource type event configuration for the device registration state event.
      */
 
     public DeviceRegistrationStateResourceTypeEventConfiguration getDeviceRegistrationState() {
@@ -76,11 +82,11 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the device registration state event
+     * Resource type event configuration for the device registration state event.
      * </p>
      * 
      * @param deviceRegistrationState
-     *        Resource type event configuration for the device registration state event
+     *        Resource type event configuration for the device registration state event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +97,11 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the proximity event
+     * Resource type event configuration for the proximity event.
      * </p>
      * 
      * @param proximity
-     *        Resource type event configuration for the proximity event
+     *        Resource type event configuration for the proximity event.
      */
 
     public void setProximity(ProximityResourceTypeEventConfiguration proximity) {
@@ -104,10 +110,10 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the proximity event
+     * Resource type event configuration for the proximity event.
      * </p>
      * 
-     * @return Resource type event configuration for the proximity event
+     * @return Resource type event configuration for the proximity event.
      */
 
     public ProximityResourceTypeEventConfiguration getProximity() {
@@ -116,11 +122,11 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the proximity event
+     * Resource type event configuration for the proximity event.
      * </p>
      * 
      * @param proximity
-     *        Resource type event configuration for the proximity event
+     *        Resource type event configuration for the proximity event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +137,11 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the join event
+     * Resource type event configuration for the join event.
      * </p>
      * 
      * @param join
-     *        Resource type event configuration for the join event
+     *        Resource type event configuration for the join event.
      */
 
     public void setJoin(JoinResourceTypeEventConfiguration join) {
@@ -144,10 +150,10 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the join event
+     * Resource type event configuration for the join event.
      * </p>
      * 
-     * @return Resource type event configuration for the join event
+     * @return Resource type event configuration for the join event.
      */
 
     public JoinResourceTypeEventConfiguration getJoin() {
@@ -156,11 +162,11 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the join event
+     * Resource type event configuration for the join event.
      * </p>
      * 
      * @param join
-     *        Resource type event configuration for the join event
+     *        Resource type event configuration for the join event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +177,11 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the connection status event
+     * Resource type event configuration for the connection status event.
      * </p>
      * 
      * @param connectionStatus
-     *        Resource type event configuration for the connection status event
+     *        Resource type event configuration for the connection status event.
      */
 
     public void setConnectionStatus(ConnectionStatusResourceTypeEventConfiguration connectionStatus) {
@@ -184,10 +190,10 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the connection status event
+     * Resource type event configuration for the connection status event.
      * </p>
      * 
-     * @return Resource type event configuration for the connection status event
+     * @return Resource type event configuration for the connection status event.
      */
 
     public ConnectionStatusResourceTypeEventConfiguration getConnectionStatus() {
@@ -196,16 +202,56 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * Resource type event configuration for the connection status event
+     * Resource type event configuration for the connection status event.
      * </p>
      * 
      * @param connectionStatus
-     *        Resource type event configuration for the connection status event
+     *        Resource type event configuration for the connection status event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetEventConfigurationByResourceTypesResult withConnectionStatus(ConnectionStatusResourceTypeEventConfiguration connectionStatus) {
         setConnectionStatus(connectionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Resource type event configuration object for the message delivery status event.
+     * </p>
+     * 
+     * @param messageDeliveryStatus
+     *        Resource type event configuration object for the message delivery status event.
+     */
+
+    public void setMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration messageDeliveryStatus) {
+        this.messageDeliveryStatus = messageDeliveryStatus;
+    }
+
+    /**
+     * <p>
+     * Resource type event configuration object for the message delivery status event.
+     * </p>
+     * 
+     * @return Resource type event configuration object for the message delivery status event.
+     */
+
+    public MessageDeliveryStatusResourceTypeEventConfiguration getMessageDeliveryStatus() {
+        return this.messageDeliveryStatus;
+    }
+
+    /**
+     * <p>
+     * Resource type event configuration object for the message delivery status event.
+     * </p>
+     * 
+     * @param messageDeliveryStatus
+     *        Resource type event configuration object for the message delivery status event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEventConfigurationByResourceTypesResult withMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration messageDeliveryStatus) {
+        setMessageDeliveryStatus(messageDeliveryStatus);
         return this;
     }
 
@@ -228,7 +274,9 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
         if (getJoin() != null)
             sb.append("Join: ").append(getJoin()).append(",");
         if (getConnectionStatus() != null)
-            sb.append("ConnectionStatus: ").append(getConnectionStatus());
+            sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
+        if (getMessageDeliveryStatus() != null)
+            sb.append("MessageDeliveryStatus: ").append(getMessageDeliveryStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +307,10 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
             return false;
         if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
             return false;
+        if (other.getMessageDeliveryStatus() == null ^ this.getMessageDeliveryStatus() == null)
+            return false;
+        if (other.getMessageDeliveryStatus() != null && other.getMessageDeliveryStatus().equals(this.getMessageDeliveryStatus()) == false)
+            return false;
         return true;
     }
 
@@ -271,6 +323,7 @@ public class GetEventConfigurationByResourceTypesResult extends com.amazonaws.Am
         hashCode = prime * hashCode + ((getProximity() == null) ? 0 : getProximity().hashCode());
         hashCode = prime * hashCode + ((getJoin() == null) ? 0 : getJoin().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getMessageDeliveryStatus() == null) ? 0 : getMessageDeliveryStatus().hashCode());
         return hashCode;
     }
 

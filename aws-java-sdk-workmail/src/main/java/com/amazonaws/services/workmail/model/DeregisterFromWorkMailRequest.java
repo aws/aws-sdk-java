@@ -27,7 +27,7 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the WorkMail entity exists.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the WorkMail entity exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier for the organization under which the Amazon WorkMail entity exists.
+     *        The identifier for the organization under which the WorkMail entity exists.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the WorkMail entity exists.
      * </p>
      * 
-     * @return The identifier for the organization under which the Amazon WorkMail entity exists.
+     * @return The identifier for the organization under which the WorkMail entity exists.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the WorkMail entity exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier for the organization under which the Amazon WorkMail entity exists.
+     *        The identifier for the organization under which the WorkMail entity exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

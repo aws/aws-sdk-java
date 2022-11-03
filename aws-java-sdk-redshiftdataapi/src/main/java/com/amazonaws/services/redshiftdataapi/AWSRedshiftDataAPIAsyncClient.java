@@ -30,7 +30,7 @@ import java.util.concurrent.ExecutorService;
  * are committed if the statement succeeds.
  * </p>
  * <p>
- * For more information about the Amazon Redshift Data API, see <a
+ * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
  * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
  * <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>

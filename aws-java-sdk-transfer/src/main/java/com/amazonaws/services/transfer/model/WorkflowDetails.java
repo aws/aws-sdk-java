@@ -42,6 +42,16 @@ public class WorkflowDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<WorkflowDetail> onUpload;
+    /**
+     * <p>
+     * A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that
+     * executes whenever there is a partial upload.
+     * </p>
+     * <p>
+     * A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * </p>
+     */
+    private java.util.List<WorkflowDetail> onPartialUpload;
 
     /**
      * <p>
@@ -166,6 +176,104 @@ public class WorkflowDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that
+     * executes whenever there is a partial upload.
+     * </p>
+     * <p>
+     * A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * </p>
+     * 
+     * @return A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a
+     *         server that executes whenever there is a partial upload.</p>
+     *         <p>
+     *         A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     */
+
+    public java.util.List<WorkflowDetail> getOnPartialUpload() {
+        return onPartialUpload;
+    }
+
+    /**
+     * <p>
+     * A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that
+     * executes whenever there is a partial upload.
+     * </p>
+     * <p>
+     * A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * </p>
+     * 
+     * @param onPartialUpload
+     *        A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a
+     *        server that executes whenever there is a partial upload.</p>
+     *        <p>
+     *        A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     */
+
+    public void setOnPartialUpload(java.util.Collection<WorkflowDetail> onPartialUpload) {
+        if (onPartialUpload == null) {
+            this.onPartialUpload = null;
+            return;
+        }
+
+        this.onPartialUpload = new java.util.ArrayList<WorkflowDetail>(onPartialUpload);
+    }
+
+    /**
+     * <p>
+     * A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that
+     * executes whenever there is a partial upload.
+     * </p>
+     * <p>
+     * A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOnPartialUpload(java.util.Collection)} or {@link #withOnPartialUpload(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param onPartialUpload
+     *        A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a
+     *        server that executes whenever there is a partial upload.</p>
+     *        <p>
+     *        A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowDetails withOnPartialUpload(WorkflowDetail... onPartialUpload) {
+        if (this.onPartialUpload == null) {
+            setOnPartialUpload(new java.util.ArrayList<WorkflowDetail>(onPartialUpload.length));
+        }
+        for (WorkflowDetail ele : onPartialUpload) {
+            this.onPartialUpload.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that
+     * executes whenever there is a partial upload.
+     * </p>
+     * <p>
+     * A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * </p>
+     * 
+     * @param onPartialUpload
+     *        A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a
+     *        server that executes whenever there is a partial upload.</p>
+     *        <p>
+     *        A <i>partial upload</i> occurs when a file is open when the session disconnects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowDetails withOnPartialUpload(java.util.Collection<WorkflowDetail> onPartialUpload) {
+        setOnPartialUpload(onPartialUpload);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -178,7 +286,9 @@ public class WorkflowDetails implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOnUpload() != null)
-            sb.append("OnUpload: ").append(getOnUpload());
+            sb.append("OnUpload: ").append(getOnUpload()).append(",");
+        if (getOnPartialUpload() != null)
+            sb.append("OnPartialUpload: ").append(getOnPartialUpload());
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +307,10 @@ public class WorkflowDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getOnUpload() != null && other.getOnUpload().equals(this.getOnUpload()) == false)
             return false;
+        if (other.getOnPartialUpload() == null ^ this.getOnPartialUpload() == null)
+            return false;
+        if (other.getOnPartialUpload() != null && other.getOnPartialUpload().equals(this.getOnPartialUpload()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +320,7 @@ public class WorkflowDetails implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getOnUpload() == null) ? 0 : getOnUpload().hashCode());
+        hashCode = prime * hashCode + ((getOnPartialUpload() == null) ? 0 : getOnPartialUpload().hashCode());
         return hashCode;
     }
 

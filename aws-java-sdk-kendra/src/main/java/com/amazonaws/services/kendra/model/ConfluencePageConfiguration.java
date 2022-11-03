@@ -30,8 +30,8 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
-     * fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
+     * Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields,
+     * use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The
      * Confluence data source field names must exist in your Confluence custom metadata.
      * </p>
@@ -43,8 +43,8 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
-     * fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
+     * Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields,
+     * use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The
      * Confluence data source field names must exist in your Confluence custom metadata.
      * </p>
@@ -52,11 +52,10 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
      * If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.
      * </p>
      * 
-     * @return &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create
-     *         custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more
-     *         information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data
-     *         source fields</a>. The Confluence data source field names must exist in your Confluence custom
-     *         metadata.</p>
+     * @return Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
+     *         fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information,
+     *         see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source
+     *         fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
      *         <p>
      *         If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.
      */
@@ -67,8 +66,8 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
-     * fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
+     * Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields,
+     * use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The
      * Confluence data source field names must exist in your Confluence custom metadata.
      * </p>
@@ -77,11 +76,10 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param pageFieldMappings
-     *        &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create
-     *        custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more
-     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data
-     *        source fields</a>. The Confluence data source field names must exist in your Confluence custom
-     *        metadata.</p>
+     *        Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
+     *        fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information,
+     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source
+     *        fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
      *        <p>
      *        If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.
      */
@@ -97,8 +95,8 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
-     * fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
+     * Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields,
+     * use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The
      * Confluence data source field names must exist in your Confluence custom metadata.
      * </p>
@@ -112,11 +110,10 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param pageFieldMappings
-     *        &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create
-     *        custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more
-     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data
-     *        source fields</a>. The Confluence data source field names must exist in your Confluence custom
-     *        metadata.</p>
+     *        Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
+     *        fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information,
+     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source
+     *        fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
      *        <p>
      *        If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -134,8 +131,8 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
-     * fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
+     * Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields,
+     * use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The
      * Confluence data source field names must exist in your Confluence custom metadata.
      * </p>
@@ -144,11 +141,10 @@ public class ConfluencePageConfiguration implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param pageFieldMappings
-     *        &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create
-     *        custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more
-     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data
-     *        source fields</a>. The Confluence data source field names must exist in your Confluence custom
-     *        metadata.</p>
+     *        Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom
+     *        fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information,
+     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source
+     *        fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
      *        <p>
      *        If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.
      * @return Returns a reference to this object so that method calls can be chained together.

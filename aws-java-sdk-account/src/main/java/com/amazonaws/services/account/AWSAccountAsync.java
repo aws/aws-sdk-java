@@ -41,6 +41,15 @@ public interface AWSAccountAsync extends AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param deleteAlternateContactRequest
      * @return A Java Future containing the result of the DeleteAlternateContact operation returned by the service.
@@ -59,6 +68,15 @@ public interface AWSAccountAsync extends AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param deleteAlternateContactRequest
      * @param asyncHandler
@@ -82,6 +100,15 @@ public interface AWSAccountAsync extends AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param getAlternateContactRequest
      * @return A Java Future containing the result of the GetAlternateContact operation returned by the service.
@@ -100,6 +127,15 @@ public interface AWSAccountAsync extends AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param getAlternateContactRequest
      * @param asyncHandler
@@ -116,6 +152,47 @@ public interface AWSAccountAsync extends AWSAccount {
 
     /**
      * <p>
+     * Retrieves the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param getContactInformationRequest
+     * @return A Java Future containing the result of the GetContactInformation operation returned by the service.
+     * @sample AWSAccountAsync.GetContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(GetContactInformationRequest getContactInformationRequest);
+
+    /**
+     * <p>
+     * Retrieves the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param getContactInformationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContactInformation operation returned by the service.
+     * @sample AWSAccountAsyncHandler.GetContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(GetContactInformationRequest getContactInformationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContactInformationRequest, GetContactInformationResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the specified alternate contact attached to an Amazon Web Services account.
      * </p>
      * <p>
@@ -123,6 +200,15 @@ public interface AWSAccountAsync extends AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param putAlternateContactRequest
      * @return A Java Future containing the result of the PutAlternateContact operation returned by the service.
@@ -141,6 +227,15 @@ public interface AWSAccountAsync extends AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param putAlternateContactRequest
      * @param asyncHandler
@@ -154,5 +249,46 @@ public interface AWSAccountAsync extends AWSAccount {
      */
     java.util.concurrent.Future<PutAlternateContactResult> putAlternateContactAsync(PutAlternateContactRequest putAlternateContactRequest,
             com.amazonaws.handlers.AsyncHandler<PutAlternateContactRequest, PutAlternateContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param putContactInformationRequest
+     * @return A Java Future containing the result of the PutContactInformation operation returned by the service.
+     * @sample AWSAccountAsync.PutContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutContactInformationResult> putContactInformationAsync(PutContactInformationRequest putContactInformationRequest);
+
+    /**
+     * <p>
+     * Updates the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param putContactInformationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutContactInformation operation returned by the service.
+     * @sample AWSAccountAsyncHandler.PutContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutContactInformationResult> putContactInformationAsync(PutContactInformationRequest putContactInformationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutContactInformationRequest, PutContactInformationResult> asyncHandler);
 
 }

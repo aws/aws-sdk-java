@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the target AWS Lambda function during an AWS Lambda deployment.
+ * Information about the target Lambda function during an Lambda deployment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LambdaTarget" target="_top">AWS API
@@ -48,7 +48,7 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
     private String targetArn;
     /**
      * <p>
-     * The status an AWS Lambda deployment's target Lambda function.
+     * The status an Lambda deployment's target Lambda function.
      * </p>
      */
     private String status;
@@ -193,11 +193,11 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status an AWS Lambda deployment's target Lambda function.
+     * The status an Lambda deployment's target Lambda function.
      * </p>
      * 
      * @param status
-     *        The status an AWS Lambda deployment's target Lambda function.
+     *        The status an Lambda deployment's target Lambda function.
      * @see TargetStatus
      */
 
@@ -207,10 +207,10 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status an AWS Lambda deployment's target Lambda function.
+     * The status an Lambda deployment's target Lambda function.
      * </p>
      * 
-     * @return The status an AWS Lambda deployment's target Lambda function.
+     * @return The status an Lambda deployment's target Lambda function.
      * @see TargetStatus
      */
 
@@ -220,11 +220,11 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status an AWS Lambda deployment's target Lambda function.
+     * The status an Lambda deployment's target Lambda function.
      * </p>
      * 
      * @param status
-     *        The status an AWS Lambda deployment's target Lambda function.
+     *        The status an Lambda deployment's target Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetStatus
      */
@@ -236,11 +236,11 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status an AWS Lambda deployment's target Lambda function.
+     * The status an Lambda deployment's target Lambda function.
      * </p>
      * 
      * @param status
-     *        The status an AWS Lambda deployment's target Lambda function.
+     *        The status an Lambda deployment's target Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetStatus
      */

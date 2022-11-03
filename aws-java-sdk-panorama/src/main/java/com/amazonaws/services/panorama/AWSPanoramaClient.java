@@ -218,7 +218,7 @@ public class AWSPanoramaClient extends AmazonWebServiceClient implements AWSPano
 
     /**
      * <p>
-     * Creates a job to run on one or more devices.
+     * Creates a job to run on one or more devices. A job can update a device's software or reboot it.
      * </p>
      * 
      * @param createJobForDevicesRequest
@@ -2083,6 +2083,72 @@ public class AWSPanoramaClient extends AmazonWebServiceClient implements AWSPano
             HttpResponseHandler<AmazonWebServiceResponse<RemoveApplicationInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RemoveApplicationInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Signal camera nodes to stop or resume.
+     * </p>
+     * 
+     * @param signalApplicationInstanceNodeInstancesRequest
+     * @return Result of the SignalApplicationInstanceNodeInstances operation returned by the service.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a limit to be exceeded.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @sample AWSPanorama.SignalApplicationInstanceNodeInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SignalApplicationInstanceNodeInstancesResult signalApplicationInstanceNodeInstances(SignalApplicationInstanceNodeInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSignalApplicationInstanceNodeInstances(request);
+    }
+
+    @SdkInternalApi
+    final SignalApplicationInstanceNodeInstancesResult executeSignalApplicationInstanceNodeInstances(
+            SignalApplicationInstanceNodeInstancesRequest signalApplicationInstanceNodeInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(signalApplicationInstanceNodeInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SignalApplicationInstanceNodeInstancesRequest> request = null;
+        Response<SignalApplicationInstanceNodeInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SignalApplicationInstanceNodeInstancesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(signalApplicationInstanceNodeInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Panorama");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignalApplicationInstanceNodeInstances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SignalApplicationInstanceNodeInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new SignalApplicationInstanceNodeInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

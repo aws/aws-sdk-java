@@ -501,6 +501,11 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                                 }
                             }
                         }
+
+                        if (fleetLaunchTemplateConfigRequestOverridesListValue.getImageId() != null) {
+                            request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".ImageId",
+                                    StringUtils.fromString(fleetLaunchTemplateConfigRequestOverridesListValue.getImageId()));
+                        }
                         overridesListIndex++;
                     }
                 }

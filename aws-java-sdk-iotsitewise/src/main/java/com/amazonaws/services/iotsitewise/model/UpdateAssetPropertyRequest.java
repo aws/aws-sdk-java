@@ -68,6 +68,13 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     * parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     * </p>
+     */
+    private String propertyUnit;
 
     /**
      * <p>
@@ -372,6 +379,52 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     * parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     * </p>
+     * 
+     * @param propertyUnit
+     *        The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     *        parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     */
+
+    public void setPropertyUnit(String propertyUnit) {
+        this.propertyUnit = propertyUnit;
+    }
+
+    /**
+     * <p>
+     * The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     * parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     * </p>
+     * 
+     * @return The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     *         parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     */
+
+    public String getPropertyUnit() {
+        return this.propertyUnit;
+    }
+
+    /**
+     * <p>
+     * The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     * parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     * </p>
+     * 
+     * @param propertyUnit
+     *        The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this
+     *        parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssetPropertyRequest withPropertyUnit(String propertyUnit) {
+        setPropertyUnit(propertyUnit);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +445,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
         if (getPropertyNotificationState() != null)
             sb.append("PropertyNotificationState: ").append(getPropertyNotificationState()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getPropertyUnit() != null)
+            sb.append("PropertyUnit: ").append(getPropertyUnit());
         sb.append("}");
         return sb.toString();
     }
@@ -427,6 +482,10 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getPropertyUnit() == null ^ this.getPropertyUnit() == null)
+            return false;
+        if (other.getPropertyUnit() != null && other.getPropertyUnit().equals(this.getPropertyUnit()) == false)
+            return false;
         return true;
     }
 
@@ -440,6 +499,7 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getPropertyAlias() == null) ? 0 : getPropertyAlias().hashCode());
         hashCode = prime * hashCode + ((getPropertyNotificationState() == null) ? 0 : getPropertyNotificationState().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getPropertyUnit() == null) ? 0 : getPropertyUnit().hashCode());
         return hashCode;
     }
 

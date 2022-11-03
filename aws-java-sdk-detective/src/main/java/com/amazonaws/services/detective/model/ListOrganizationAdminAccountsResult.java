@@ -26,7 +26,7 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of delegated administrator accounts.
+     * The list of Detective administrator accounts.
      * </p>
      */
     private java.util.List<Administrator> administrators;
@@ -40,10 +40,10 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of delegated administrator accounts.
+     * The list of Detective administrator accounts.
      * </p>
      * 
-     * @return The list of delegated administrator accounts.
+     * @return The list of Detective administrator accounts.
      */
 
     public java.util.List<Administrator> getAdministrators() {
@@ -52,11 +52,11 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of delegated administrator accounts.
+     * The list of Detective administrator accounts.
      * </p>
      * 
      * @param administrators
-     *        The list of delegated administrator accounts.
+     *        The list of Detective administrator accounts.
      */
 
     public void setAdministrators(java.util.Collection<Administrator> administrators) {
@@ -70,7 +70,7 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of delegated administrator accounts.
+     * The list of Detective administrator accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param administrators
-     *        The list of delegated administrator accounts.
+     *        The list of Detective administrator accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of delegated administrator accounts.
+     * The list of Detective administrator accounts.
      * </p>
      * 
      * @param administrators
-     *        The list of delegated administrator accounts.
+     *        The list of Detective administrator accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

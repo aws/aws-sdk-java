@@ -31,7 +31,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter
-     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on
+     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on
      * EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any
      * vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override
      * vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition,
@@ -46,9 +46,9 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified
-     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
+     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
      * resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any
-     * memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To
+     * memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To
      * override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job
      * definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with
      * <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information,
@@ -86,8 +86,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      */
@@ -103,7 +103,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter
-     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on
+     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on
      * EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any
      * vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override
      * vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition,
@@ -116,7 +116,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * @param vcpus
      *        This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code>
      *        parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For
-     *        jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition,
+     *        jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition,
      *        but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in
      *        the job definition. To override vCPU requirements that are specified in the
      *        <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must
@@ -133,7 +133,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter
-     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on
+     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on
      * EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any
      * vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override
      * vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition,
@@ -145,7 +145,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * 
      * @return This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code>
      *         parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For
-     *         jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition,
+     *         jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition,
      *         but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in
      *         the job definition. To override vCPU requirements that are specified in the
      *         <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must
@@ -162,7 +162,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter
-     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on
+     * that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on
      * EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any
      * vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override
      * vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition,
@@ -175,7 +175,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * @param vcpus
      *        This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code>
      *        parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For
-     *        jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition,
+     *        jobs that run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition,
      *        but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in
      *        the job definition. To override vCPU requirements that are specified in the
      *        <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must
@@ -194,9 +194,9 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified
-     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
+     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
      * resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any
-     * memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To
+     * memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To
      * override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job
      * definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with
      * <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information,
@@ -207,10 +207,10 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * 
      * @param memory
      *        This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements
-     *        specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs
-     *        running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but
-     *        doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in
-     *        the job definition. To override memory requirements that are specified in the
+     *        specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that
+     *        run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but
+     *        doesn't override any memory requirement that's specified in the <code>resourceRequirements</code>
+     *        structure in the job definition. To override memory requirements that are specified in the
      *        <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must
      *        be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and
      *        <code>value</code> set to the new value. For more information, see <a
@@ -225,9 +225,9 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified
-     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
+     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
      * resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any
-     * memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To
+     * memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To
      * override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job
      * definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with
      * <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information,
@@ -237,10 +237,10 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @return This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements
-     *         specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs
-     *         running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but
-     *         doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in
-     *         the job definition. To override memory requirements that are specified in the
+     *         specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that
+     *         run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but
+     *         doesn't override any memory requirement that's specified in the <code>resourceRequirements</code>
+     *         structure in the job definition. To override memory requirements that are specified in the
      *         <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must
      *         be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and
      *         <code>value</code> set to the new value. For more information, see <a
@@ -255,9 +255,9 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified
-     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
+     * in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
      * resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any
-     * memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To
+     * memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To
      * override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job
      * definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with
      * <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information,
@@ -268,10 +268,10 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * 
      * @param memory
      *        This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements
-     *        specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs
-     *        running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but
-     *        doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in
-     *        the job definition. To override memory requirements that are specified in the
+     *        specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that
+     *        run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but
+     *        doesn't override any memory requirement that's specified in the <code>resourceRequirements</code>
+     *        structure in the job definition. To override memory requirements that are specified in the
      *        <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must
      *        be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and
      *        <code>value</code> set to the new value. For more information, see <a
@@ -441,8 +441,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
@@ -450,8 +450,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      *         added to the container at launch, or you can override the existing environment variables from the Docker
      *         image or the job definition.</p> <note>
      *         <p>
-     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *         variables that are set by the Batch service.
+     *         Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *         variables that Batch sets.
      *         </p>
      */
 
@@ -467,8 +467,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
@@ -477,8 +477,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      *        to the container at launch, or you can override the existing environment variables from the Docker image
      *        or the job definition.</p> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      */
 
@@ -499,8 +499,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * <p>
@@ -514,8 +514,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      *        to the container at launch, or you can override the existing environment variables from the Docker image
      *        or the job definition.</p> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -538,8 +538,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
@@ -548,8 +548,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      *        to the container at launch, or you can override the existing environment variables from the Docker image
      *        or the job definition.</p> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

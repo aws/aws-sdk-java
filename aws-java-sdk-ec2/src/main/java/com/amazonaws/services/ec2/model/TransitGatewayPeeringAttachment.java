@@ -34,6 +34,12 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
     private String transitGatewayAttachmentId;
     /**
      * <p>
+     * The ID of the accepter transit gateway attachment.
+     * </p>
+     */
+    private String accepterTransitGatewayAttachmentId;
+    /**
+     * <p>
      * Information about the requester transit gateway.
      * </p>
      */
@@ -44,6 +50,12 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
      * </p>
      */
     private PeeringTgwInfo accepterTgwInfo;
+    /**
+     * <p>
+     * Details about the transit gateway peering attachment.
+     * </p>
+     */
+    private TransitGatewayPeeringAttachmentOptions options;
     /**
      * <p>
      * The status of the transit gateway peering attachment.
@@ -107,6 +119,46 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
 
     public TransitGatewayPeeringAttachment withTransitGatewayAttachmentId(String transitGatewayAttachmentId) {
         setTransitGatewayAttachmentId(transitGatewayAttachmentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the accepter transit gateway attachment.
+     * </p>
+     * 
+     * @param accepterTransitGatewayAttachmentId
+     *        The ID of the accepter transit gateway attachment.
+     */
+
+    public void setAccepterTransitGatewayAttachmentId(String accepterTransitGatewayAttachmentId) {
+        this.accepterTransitGatewayAttachmentId = accepterTransitGatewayAttachmentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the accepter transit gateway attachment.
+     * </p>
+     * 
+     * @return The ID of the accepter transit gateway attachment.
+     */
+
+    public String getAccepterTransitGatewayAttachmentId() {
+        return this.accepterTransitGatewayAttachmentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the accepter transit gateway attachment.
+     * </p>
+     * 
+     * @param accepterTransitGatewayAttachmentId
+     *        The ID of the accepter transit gateway attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayPeeringAttachment withAccepterTransitGatewayAttachmentId(String accepterTransitGatewayAttachmentId) {
+        setAccepterTransitGatewayAttachmentId(accepterTransitGatewayAttachmentId);
         return this;
     }
 
@@ -187,6 +239,46 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
 
     public TransitGatewayPeeringAttachment withAccepterTgwInfo(PeeringTgwInfo accepterTgwInfo) {
         setAccepterTgwInfo(accepterTgwInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the transit gateway peering attachment.
+     * </p>
+     * 
+     * @param options
+     *        Details about the transit gateway peering attachment.
+     */
+
+    public void setOptions(TransitGatewayPeeringAttachmentOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * Details about the transit gateway peering attachment.
+     * </p>
+     * 
+     * @return Details about the transit gateway peering attachment.
+     */
+
+    public TransitGatewayPeeringAttachmentOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * Details about the transit gateway peering attachment.
+     * </p>
+     * 
+     * @param options
+     *        Details about the transit gateway peering attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayPeeringAttachment withOptions(TransitGatewayPeeringAttachmentOptions options) {
+        setOptions(options);
         return this;
     }
 
@@ -424,10 +516,14 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
         sb.append("{");
         if (getTransitGatewayAttachmentId() != null)
             sb.append("TransitGatewayAttachmentId: ").append(getTransitGatewayAttachmentId()).append(",");
+        if (getAccepterTransitGatewayAttachmentId() != null)
+            sb.append("AccepterTransitGatewayAttachmentId: ").append(getAccepterTransitGatewayAttachmentId()).append(",");
         if (getRequesterTgwInfo() != null)
             sb.append("RequesterTgwInfo: ").append(getRequesterTgwInfo()).append(",");
         if (getAccepterTgwInfo() != null)
             sb.append("AccepterTgwInfo: ").append(getAccepterTgwInfo()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getState() != null)
@@ -454,6 +550,11 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
             return false;
         if (other.getTransitGatewayAttachmentId() != null && other.getTransitGatewayAttachmentId().equals(this.getTransitGatewayAttachmentId()) == false)
             return false;
+        if (other.getAccepterTransitGatewayAttachmentId() == null ^ this.getAccepterTransitGatewayAttachmentId() == null)
+            return false;
+        if (other.getAccepterTransitGatewayAttachmentId() != null
+                && other.getAccepterTransitGatewayAttachmentId().equals(this.getAccepterTransitGatewayAttachmentId()) == false)
+            return false;
         if (other.getRequesterTgwInfo() == null ^ this.getRequesterTgwInfo() == null)
             return false;
         if (other.getRequesterTgwInfo() != null && other.getRequesterTgwInfo().equals(this.getRequesterTgwInfo()) == false)
@@ -461,6 +562,10 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
         if (other.getAccepterTgwInfo() == null ^ this.getAccepterTgwInfo() == null)
             return false;
         if (other.getAccepterTgwInfo() != null && other.getAccepterTgwInfo().equals(this.getAccepterTgwInfo()) == false)
+            return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -487,8 +592,10 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTransitGatewayAttachmentId() == null) ? 0 : getTransitGatewayAttachmentId().hashCode());
+        hashCode = prime * hashCode + ((getAccepterTransitGatewayAttachmentId() == null) ? 0 : getAccepterTransitGatewayAttachmentId().hashCode());
         hashCode = prime * hashCode + ((getRequesterTgwInfo() == null) ? 0 : getRequesterTgwInfo().hashCode());
         hashCode = prime * hashCode + ((getAccepterTgwInfo() == null) ? 0 : getAccepterTgwInfo().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

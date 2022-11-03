@@ -587,6 +587,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<RebootInputDeviceResult> rebootInputDeviceAsync(RebootInputDeviceRequest request) {
+
+        return rebootInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootInputDeviceResult> rebootInputDeviceAsync(RebootInputDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RebootInputDeviceRequest, RebootInputDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(RejectInputDeviceTransferRequest request) {
 
         return rejectInputDeviceTransferAsync(request, null);
@@ -608,6 +621,21 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     @Override
     public java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<StartChannelRequest, StartChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
+            StartInputDeviceMaintenanceWindowRequest request) {
+
+        return startInputDeviceMaintenanceWindowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
+            StartInputDeviceMaintenanceWindowRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartInputDeviceMaintenanceWindowRequest, StartInputDeviceMaintenanceWindowResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

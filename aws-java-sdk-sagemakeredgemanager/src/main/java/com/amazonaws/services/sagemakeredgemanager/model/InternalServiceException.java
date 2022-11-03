@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.
+ * An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer
+ * support.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

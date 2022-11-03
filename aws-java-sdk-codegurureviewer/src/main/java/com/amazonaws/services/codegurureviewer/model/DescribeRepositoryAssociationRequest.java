@@ -28,10 +28,10 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      */
     private String associationArn;
@@ -39,18 +39,18 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      * 
      * @param associationArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *        <code>ListRepositoryAssociations</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *        >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *        >ListRepositoryAssociations</a>.
      */
 
     public void setAssociationArn(String associationArn) {
@@ -60,17 +60,17 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *         <code>ListRepositoryAssociations</code> </a>.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *         >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *         >ListRepositoryAssociations</a>.
      */
 
     public String getAssociationArn() {
@@ -80,18 +80,18 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     * >ListRepositoryAssociations</a>.
      * </p>
      * 
      * @param associationArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *        <code>ListRepositoryAssociations</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *        >RepositoryAssociation</a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *        >ListRepositoryAssociations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

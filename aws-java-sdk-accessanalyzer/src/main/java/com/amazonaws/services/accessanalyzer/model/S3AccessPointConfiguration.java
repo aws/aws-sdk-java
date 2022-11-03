@@ -23,9 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for
  * an existing bucket, the access preview uses the proposed access point configuration in place of the existing access
  * points. To propose an access point without a policy, you can provide an empty string as the access point policy. For
- * more information, see <a
- * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html"
- * >Creating access points</a>. For more information about access point policy limits, see <a
+ * more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating
+ * access points</a>. For more information about access point policy limits, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points
  * restrictions and limitations</a>.
  * </p>
@@ -44,6 +43,13 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
     private String accessPointPolicy;
     /**
      * <p>
+     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     * multi-region access point.
+     * </p>
+     */
+    private S3PublicAccessBlockConfiguration publicAccessBlock;
+    /**
+     * <p>
      * The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point.
      * <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new
      * resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the
@@ -52,13 +58,6 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
      * </p>
      */
     private NetworkOriginConfiguration networkOrigin;
-    /**
-     * <p>
-     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     * multi-region access point.
-     * </p>
-     */
-    private S3PublicAccessBlockConfiguration publicAccessBlock;
 
     /**
      * <p>
@@ -97,6 +96,52 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
 
     public S3AccessPointConfiguration withAccessPointPolicy(String accessPointPolicy) {
         setAccessPointPolicy(accessPointPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     * multi-region access point.
+     * </p>
+     * 
+     * @param publicAccessBlock
+     *        The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     *        multi-region access point.
+     */
+
+    public void setPublicAccessBlock(S3PublicAccessBlockConfiguration publicAccessBlock) {
+        this.publicAccessBlock = publicAccessBlock;
+    }
+
+    /**
+     * <p>
+     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     * multi-region access point.
+     * </p>
+     * 
+     * @return The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     *         multi-region access point.
+     */
+
+    public S3PublicAccessBlockConfiguration getPublicAccessBlock() {
+        return this.publicAccessBlock;
+    }
+
+    /**
+     * <p>
+     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     * multi-region access point.
+     * </p>
+     * 
+     * @param publicAccessBlock
+     *        The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
+     *        multi-region access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3AccessPointConfiguration withPublicAccessBlock(S3PublicAccessBlockConfiguration publicAccessBlock) {
+        setPublicAccessBlock(publicAccessBlock);
         return this;
     }
 
@@ -165,52 +210,6 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
-     * <p>
-     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     * multi-region access point.
-     * </p>
-     * 
-     * @param publicAccessBlock
-     *        The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     *        multi-region access point.
-     */
-
-    public void setPublicAccessBlock(S3PublicAccessBlockConfiguration publicAccessBlock) {
-        this.publicAccessBlock = publicAccessBlock;
-    }
-
-    /**
-     * <p>
-     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     * multi-region access point.
-     * </p>
-     * 
-     * @return The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     *         multi-region access point.
-     */
-
-    public S3PublicAccessBlockConfiguration getPublicAccessBlock() {
-        return this.publicAccessBlock;
-    }
-
-    /**
-     * <p>
-     * The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     * multi-region access point.
-     * </p>
-     * 
-     * @param publicAccessBlock
-     *        The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or
-     *        multi-region access point.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3AccessPointConfiguration withPublicAccessBlock(S3PublicAccessBlockConfiguration publicAccessBlock) {
-        setPublicAccessBlock(publicAccessBlock);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -224,10 +223,10 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getAccessPointPolicy() != null)
             sb.append("AccessPointPolicy: ").append(getAccessPointPolicy()).append(",");
-        if (getNetworkOrigin() != null)
-            sb.append("NetworkOrigin: ").append(getNetworkOrigin()).append(",");
         if (getPublicAccessBlock() != null)
-            sb.append("PublicAccessBlock: ").append(getPublicAccessBlock());
+            sb.append("PublicAccessBlock: ").append(getPublicAccessBlock()).append(",");
+        if (getNetworkOrigin() != null)
+            sb.append("NetworkOrigin: ").append(getNetworkOrigin());
         sb.append("}");
         return sb.toString();
     }
@@ -246,13 +245,13 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getAccessPointPolicy() != null && other.getAccessPointPolicy().equals(this.getAccessPointPolicy()) == false)
             return false;
-        if (other.getNetworkOrigin() == null ^ this.getNetworkOrigin() == null)
-            return false;
-        if (other.getNetworkOrigin() != null && other.getNetworkOrigin().equals(this.getNetworkOrigin()) == false)
-            return false;
         if (other.getPublicAccessBlock() == null ^ this.getPublicAccessBlock() == null)
             return false;
         if (other.getPublicAccessBlock() != null && other.getPublicAccessBlock().equals(this.getPublicAccessBlock()) == false)
+            return false;
+        if (other.getNetworkOrigin() == null ^ this.getNetworkOrigin() == null)
+            return false;
+        if (other.getNetworkOrigin() != null && other.getNetworkOrigin().equals(this.getNetworkOrigin()) == false)
             return false;
         return true;
     }
@@ -263,8 +262,8 @@ public class S3AccessPointConfiguration implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessPointPolicy() == null) ? 0 : getAccessPointPolicy().hashCode());
-        hashCode = prime * hashCode + ((getNetworkOrigin() == null) ? 0 : getNetworkOrigin().hashCode());
         hashCode = prime * hashCode + ((getPublicAccessBlock() == null) ? 0 : getPublicAccessBlock().hashCode());
+        hashCode = prime * hashCode + ((getNetworkOrigin() == null) ? 0 : getNetworkOrigin().hashCode());
         return hashCode;
     }
 

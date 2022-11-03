@@ -48,6 +48,10 @@ public class JobLogEventDataJsonUnmarshaller implements Unmarshaller<JobLogEvent
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("conversionProperties", targetDepth)) {
+                    context.nextToken();
+                    jobLogEventData.setConversionProperties(ConversionPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("conversionServerID", targetDepth)) {
                     context.nextToken();
                     jobLogEventData.setConversionServerID(context.getUnmarshaller(String.class).unmarshall(context));

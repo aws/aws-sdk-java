@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1123,7 +1123,7 @@
       "asyncReturnType" : "PutContactPolicyResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Adds a resource to the specified contact or escalation plan.</p>",
+      "documentation" : "<p>Adds a resource policy to the specified contact or escalation plan. The resource policy is used to share the contact or escalation plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html\">Setting up cross-account functionality</a>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -32909,7 +32909,7 @@
           "Content" : "Testing engagements",
           "PublicSubject" : "test",
           "PublicContent" : "Testing engagements",
-          "StartTime" : "$2021-05-18T18:25:41.151000+00:00"
+          "StartTime" : "2021-05-18T18:25:41.151000+00:00"
         },
         "title" : "To describe the details of an engagement"
       } ],

@@ -33,6 +33,8 @@ public class CreateRecordingConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> RECORDINGRECONNECTWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingReconnectWindowSeconds").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> THUMBNAILCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -56,6 +58,7 @@ public class CreateRecordingConfigurationRequestMarshaller {
         try {
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getDestinationConfiguration(), DESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createRecordingConfigurationRequest.getRecordingReconnectWindowSeconds(), RECORDINGRECONNECTWINDOWSECONDS_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getThumbnailConfiguration(), THUMBNAILCONFIGURATION_BINDING);
         } catch (Exception e) {

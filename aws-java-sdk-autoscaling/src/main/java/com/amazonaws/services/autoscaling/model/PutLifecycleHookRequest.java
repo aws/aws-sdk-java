@@ -39,17 +39,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
     private String autoScalingGroupName;
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. The valid values are:
+     * The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_LAUNCHING
+     * To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_TERMINATING
+     * To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
      * </p>
      * </li>
      * </ul>
@@ -70,8 +70,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
     private String roleARN;
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
-     * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.
+     * The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you when an
+     * instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or an Amazon SQS
+     * queue.
      * </p>
      * <p>
      * If you specify an empty string, this overrides the current ARN.
@@ -98,18 +99,15 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
      * <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      * </p>
-     * <p>
-     * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     * <a>RecordLifecycleActionHeartbeat</a> API.
-     * </p>
      */
     private Integer heartbeatTimeout;
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
-     * <code>ABANDON</code>.
+     * The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure
+     * occurs. The default value is <code>ABANDON</code>.
+     * </p>
+     * <p>
+     * Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      * </p>
      */
     private String defaultResult;
@@ -196,17 +194,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. The valid values are:
+     * The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_LAUNCHING
+     * To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_TERMINATING
+     * To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
      * </p>
      * </li>
      * </ul>
@@ -215,16 +213,16 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param lifecycleTransition
-     *        The instance state to which you want to attach the lifecycle hook. The valid values are:</p>
+     *        The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        autoscaling:EC2_INSTANCE_LAUNCHING
+     *        To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        autoscaling:EC2_INSTANCE_TERMINATING
+     *        To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -238,17 +236,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. The valid values are:
+     * The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_LAUNCHING
+     * To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_TERMINATING
+     * To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
      * </p>
      * </li>
      * </ul>
@@ -256,16 +254,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
-     * @return The instance state to which you want to attach the lifecycle hook. The valid values are:</p>
+     * @return The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         autoscaling:EC2_INSTANCE_LAUNCHING
+     *         To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         autoscaling:EC2_INSTANCE_TERMINATING
+     *         To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+     *         .
      *         </p>
      *         </li>
      *         </ul>
@@ -279,17 +278,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. The valid values are:
+     * The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_LAUNCHING
+     * To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_TERMINATING
+     * To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
      * </p>
      * </li>
      * </ul>
@@ -298,16 +297,16 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param lifecycleTransition
-     *        The instance state to which you want to attach the lifecycle hook. The valid values are:</p>
+     *        The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        autoscaling:EC2_INSTANCE_LAUNCHING
+     *        To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        autoscaling:EC2_INSTANCE_TERMINATING
+     *        To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -387,8 +386,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
-     * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.
+     * The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you when an
+     * instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or an Amazon SQS
+     * queue.
      * </p>
      * <p>
      * If you specify an empty string, this overrides the current ARN.
@@ -403,8 +403,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in
-     *        the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.</p>
+     *        The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you
+     *        when an instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or
+     *        an Amazon SQS queue.</p>
      *        <p>
      *        If you specify an empty string, this overrides the current ARN.
      *        </p>
@@ -423,8 +424,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
-     * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.
+     * The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you when an
+     * instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or an Amazon SQS
+     * queue.
      * </p>
      * <p>
      * If you specify an empty string, this overrides the current ARN.
@@ -438,8 +440,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
-     * @return The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in
-     *         the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.</p>
+     * @return The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you
+     *         when an instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or
+     *         an Amazon SQS queue.</p>
      *         <p>
      *         If you specify an empty string, this overrides the current ARN.
      *         </p>
@@ -458,8 +461,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
-     * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.
+     * The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you when an
+     * instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or an Amazon SQS
+     * queue.
      * </p>
      * <p>
      * If you specify an empty string, this overrides the current ARN.
@@ -474,8 +478,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in
-     *        the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.</p>
+     *        The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you
+     *        when an instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or
+     *        an Amazon SQS queue.</p>
      *        <p>
      *        If you specify an empty string, this overrides the current ARN.
      *        </p>
@@ -545,19 +550,10 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
      * <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      * </p>
-     * <p>
-     * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     * <a>RecordLifecycleActionHeartbeat</a> API.
-     * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
-     *        <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
-     *        <p>
-     *        If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     *        <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     *        <a>RecordLifecycleActionHeartbeat</a> API.
+     *        <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      */
 
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -569,19 +565,9 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
      * <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      * </p>
-     * <p>
-     * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     * <a>RecordLifecycleActionHeartbeat</a> API.
-     * </p>
      * 
      * @return The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
-     *         <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1
-     *         hour).</p>
-     *         <p>
-     *         If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     *         <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     *         <a>RecordLifecycleActionHeartbeat</a> API.
+     *         <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      */
 
     public Integer getHeartbeatTimeout() {
@@ -593,19 +579,10 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
      * <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      * </p>
-     * <p>
-     * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     * <a>RecordLifecycleActionHeartbeat</a> API.
-     * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
-     *        <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
-     *        <p>
-     *        If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     *        <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
-     *        <a>RecordLifecycleActionHeartbeat</a> API.
+     *        <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -616,15 +593,18 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
-     * <code>ABANDON</code>.
+     * The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure
+     * occurs. The default value is <code>ABANDON</code>.
+     * </p>
+     * <p>
+     * Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      * </p>
      * 
      * @param defaultResult
-     *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-     *        unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The
-     *        default value is <code>ABANDON</code>.
+     *        The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
+     *        failure occurs. The default value is <code>ABANDON</code>.</p>
+     *        <p>
+     *        Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      */
 
     public void setDefaultResult(String defaultResult) {
@@ -633,14 +613,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
-     * <code>ABANDON</code>.
+     * The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure
+     * occurs. The default value is <code>ABANDON</code>.
+     * </p>
+     * <p>
+     * Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      * </p>
      * 
-     * @return Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-     *         unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
-     *         The default value is <code>ABANDON</code>.
+     * @return The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
+     *         failure occurs. The default value is <code>ABANDON</code>.</p>
+     *         <p>
+     *         Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      */
 
     public String getDefaultResult() {
@@ -649,15 +632,18 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
-     * <code>ABANDON</code>.
+     * The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure
+     * occurs. The default value is <code>ABANDON</code>.
+     * </p>
+     * <p>
+     * Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      * </p>
      * 
      * @param defaultResult
-     *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-     *        unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The
-     *        default value is <code>ABANDON</code>.
+     *        The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected
+     *        failure occurs. The default value is <code>ABANDON</code>.</p>
+     *        <p>
+     *        Valid values: <code>CONTINUE</code> | <code>ABANDON</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

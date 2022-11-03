@@ -111,7 +111,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -127,7 +127,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -169,7 +169,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * </p>
      */
     private String startingPosition;
@@ -200,13 +200,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      */
     private Integer tumblingWindowInSeconds;
@@ -230,7 +230,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
     /**
      * <p>
-     * The Self-Managed Apache Kafka cluster to send records.
+     * The self-managed Apache Kafka cluster to receive records from.
      * </p>
      */
     private SelfManagedEventSource selfManagedEventSource;
@@ -240,6 +240,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     */
+    private AmazonManagedKafkaEventSourceConfig amazonManagedKafkaEventSourceConfig;
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     */
+    private SelfManagedKafkaEventSourceConfig selfManagedKafkaEventSourceConfig;
 
     /**
      * <p>
@@ -708,7 +720,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -724,7 +736,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -746,7 +758,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -762,7 +774,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -790,7 +802,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -806,7 +818,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -827,7 +839,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
@@ -843,7 +855,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     *         <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
@@ -871,7 +883,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -887,7 +899,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -909,7 +921,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -925,7 +937,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -1124,12 +1136,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
      *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
-     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * @see EventSourcePosition
      */
 
@@ -1140,11 +1152,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * </p>
      * 
      * @return The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
-     *         Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     *         Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * @see EventSourcePosition
      */
 
@@ -1155,12 +1167,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
      *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
-     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSourcePosition
      */
@@ -1173,12 +1185,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
      *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
-     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * @see EventSourcePosition
      */
 
@@ -1189,12 +1201,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
      *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
-     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSourcePosition
      */
@@ -1380,12 +1392,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
      *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *        When set to infinite (-1), failed records will be retried until the record expires.
+     *        When set to infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -1395,11 +1407,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @return (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *         When set to infinite (-1), failed records will be retried until the record expires.
+     *         When set to infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -1409,12 +1421,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records will be retried until the record expires.
+     * set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
      *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *        When set to infinite (-1), failed records will be retried until the record expires.
+     *        When set to infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1425,11 +1437,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
      *        seconds.
      */
 
@@ -1439,10 +1451,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      * 
-     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
      *         seconds.
      */
 
@@ -1452,11 +1464,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
      *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1687,11 +1699,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Self-Managed Apache Kafka cluster to send records.
+     * The self-managed Apache Kafka cluster to receive records from.
      * </p>
      * 
      * @param selfManagedEventSource
-     *        The Self-Managed Apache Kafka cluster to send records.
+     *        The self-managed Apache Kafka cluster to receive records from.
      */
 
     public void setSelfManagedEventSource(SelfManagedEventSource selfManagedEventSource) {
@@ -1700,10 +1712,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Self-Managed Apache Kafka cluster to send records.
+     * The self-managed Apache Kafka cluster to receive records from.
      * </p>
      * 
-     * @return The Self-Managed Apache Kafka cluster to send records.
+     * @return The self-managed Apache Kafka cluster to receive records from.
      */
 
     public SelfManagedEventSource getSelfManagedEventSource() {
@@ -1712,11 +1724,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Self-Managed Apache Kafka cluster to send records.
+     * The self-managed Apache Kafka cluster to receive records from.
      * </p>
      * 
      * @param selfManagedEventSource
-     *        The Self-Managed Apache Kafka cluster to send records.
+     *        The self-managed Apache Kafka cluster to receive records from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1828,6 +1840,89 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     * 
+     * @param amazonManagedKafkaEventSourceConfig
+     *        Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event
+     *        source.
+     */
+
+    public void setAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig amazonManagedKafkaEventSourceConfig) {
+        this.amazonManagedKafkaEventSourceConfig = amazonManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     * 
+     * @return Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event
+     *         source.
+     */
+
+    public AmazonManagedKafkaEventSourceConfig getAmazonManagedKafkaEventSourceConfig() {
+        return this.amazonManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+     * </p>
+     * 
+     * @param amazonManagedKafkaEventSourceConfig
+     *        Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event
+     *        source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig amazonManagedKafkaEventSourceConfig) {
+        setAmazonManagedKafkaEventSourceConfig(amazonManagedKafkaEventSourceConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     * 
+     * @param selfManagedKafkaEventSourceConfig
+     *        Specific configuration settings for a self-managed Apache Kafka event source.
+     */
+
+    public void setSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig selfManagedKafkaEventSourceConfig) {
+        this.selfManagedKafkaEventSourceConfig = selfManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     * 
+     * @return Specific configuration settings for a self-managed Apache Kafka event source.
+     */
+
+    public SelfManagedKafkaEventSourceConfig getSelfManagedKafkaEventSourceConfig() {
+        return this.selfManagedKafkaEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a self-managed Apache Kafka event source.
+     * </p>
+     * 
+     * @param selfManagedKafkaEventSourceConfig
+     *        Specific configuration settings for a self-managed Apache Kafka event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig selfManagedKafkaEventSourceConfig) {
+        setSelfManagedKafkaEventSourceConfig(selfManagedKafkaEventSourceConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1876,7 +1971,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (getSelfManagedEventSource() != null)
             sb.append("SelfManagedEventSource: ").append(getSelfManagedEventSource()).append(",");
         if (getFunctionResponseTypes() != null)
-            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes());
+            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes()).append(",");
+        if (getAmazonManagedKafkaEventSourceConfig() != null)
+            sb.append("AmazonManagedKafkaEventSourceConfig: ").append(getAmazonManagedKafkaEventSourceConfig()).append(",");
+        if (getSelfManagedKafkaEventSourceConfig() != null)
+            sb.append("SelfManagedKafkaEventSourceConfig: ").append(getSelfManagedKafkaEventSourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1968,6 +2067,16 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getFunctionResponseTypes() != null && other.getFunctionResponseTypes().equals(this.getFunctionResponseTypes()) == false)
             return false;
+        if (other.getAmazonManagedKafkaEventSourceConfig() == null ^ this.getAmazonManagedKafkaEventSourceConfig() == null)
+            return false;
+        if (other.getAmazonManagedKafkaEventSourceConfig() != null
+                && other.getAmazonManagedKafkaEventSourceConfig().equals(this.getAmazonManagedKafkaEventSourceConfig()) == false)
+            return false;
+        if (other.getSelfManagedKafkaEventSourceConfig() == null ^ this.getSelfManagedKafkaEventSourceConfig() == null)
+            return false;
+        if (other.getSelfManagedKafkaEventSourceConfig() != null
+                && other.getSelfManagedKafkaEventSourceConfig().equals(this.getSelfManagedKafkaEventSourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1995,6 +2104,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getSourceAccessConfigurations() == null) ? 0 : getSourceAccessConfigurations().hashCode());
         hashCode = prime * hashCode + ((getSelfManagedEventSource() == null) ? 0 : getSelfManagedEventSource().hashCode());
         hashCode = prime * hashCode + ((getFunctionResponseTypes() == null) ? 0 : getFunctionResponseTypes().hashCode());
+        hashCode = prime * hashCode + ((getAmazonManagedKafkaEventSourceConfig() == null) ? 0 : getAmazonManagedKafkaEventSourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedKafkaEventSourceConfig() == null) ? 0 : getSelfManagedKafkaEventSourceConfig().hashCode());
         return hashCode;
     }
 

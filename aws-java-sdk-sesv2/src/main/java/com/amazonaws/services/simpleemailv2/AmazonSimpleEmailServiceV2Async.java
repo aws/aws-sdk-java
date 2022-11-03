@@ -42,6 +42,47 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Retrieves batches of metric data collected based on your sending activity.
+     * </p>
+     * <p>
+     * You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches
+     * per second (cumulative).
+     * </p>
+     * 
+     * @param batchGetMetricDataRequest
+     *        Represents a request to retrieve a batch of metric data.
+     * @return A Java Future containing the result of the BatchGetMetricData operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.BatchGetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(BatchGetMetricDataRequest batchGetMetricDataRequest);
+
+    /**
+     * <p>
+     * Retrieves batches of metric data collected based on your sending activity.
+     * </p>
+     * <p>
+     * You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches
+     * per second (cumulative).
+     * </p>
+     * 
+     * @param batchGetMetricDataRequest
+     *        Represents a request to retrieve a batch of metric data.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetMetricData operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.BatchGetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(BatchGetMetricDataRequest batchGetMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetMetricDataRequest, BatchGetMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that
      * you send. You apply a configuration set to an email by specifying the name of the configuration set when you call
      * the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set
@@ -196,8 +237,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -220,8 +261,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -745,8 +786,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -769,8 +810,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1243,8 +1284,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1267,8 +1308,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1324,6 +1365,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<GetDedicatedIpResult> getDedicatedIpAsync(GetDedicatedIpRequest getDedicatedIpRequest,
             com.amazonaws.handlers.AsyncHandler<GetDedicatedIpRequest, GetDedicatedIpResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve information about the dedicated pool.
+     * </p>
+     * 
+     * @param getDedicatedIpPoolRequest
+     *        A request to obtain more information about a dedicated IP pool.
+     * @return A Java Future containing the result of the GetDedicatedIpPool operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetDedicatedIpPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPool" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDedicatedIpPoolResult> getDedicatedIpPoolAsync(GetDedicatedIpPoolRequest getDedicatedIpPoolRequest);
+
+    /**
+     * <p>
+     * Retrieve information about the dedicated pool.
+     * </p>
+     * 
+     * @param getDedicatedIpPoolRequest
+     *        A request to obtain more information about a dedicated IP pool.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDedicatedIpPool operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetDedicatedIpPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPool" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDedicatedIpPoolResult> getDedicatedIpPoolAsync(GetDedicatedIpPoolRequest getDedicatedIpPoolRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDedicatedIpPoolRequest, GetDedicatedIpPoolResult> asyncHandler);
 
     /**
      * <p>
@@ -1861,8 +1935,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1886,8 +1960,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2149,6 +2223,45 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     *        Represents a request to list the existing recommendations for your account.
+     * @return A Java Future containing the result of the ListRecommendations operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest listRecommendationsRequest);
+
+    /**
+     * <p>
+     * Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     *        Represents a request to list the existing recommendations for your account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRecommendations operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest listRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationsRequest, ListRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of email addresses that are on the suppression list for your account.
      * </p>
      * 
@@ -2363,6 +2476,45 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Update your Amazon SES account VDM attributes.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param putAccountVdmAttributesRequest
+     *        A request to submit new account VDM attributes.
+     * @return A Java Future containing the result of the PutAccountVdmAttributes operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutAccountVdmAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountVdmAttributesResult> putAccountVdmAttributesAsync(PutAccountVdmAttributesRequest putAccountVdmAttributesRequest);
+
+    /**
+     * <p>
+     * Update your Amazon SES account VDM attributes.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param putAccountVdmAttributesRequest
+     *        A request to submit new account VDM attributes.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountVdmAttributes operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutAccountVdmAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountVdmAttributesResult> putAccountVdmAttributesAsync(PutAccountVdmAttributesRequest putAccountVdmAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountVdmAttributesRequest, PutAccountVdmAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of
      * dedicated IP addresses for sending specific types of email.
      * </p>
@@ -2553,6 +2705,49 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutConfigurationSetTrackingOptionsResult> putConfigurationSetTrackingOptionsAsync(
             PutConfigurationSetTrackingOptionsRequest putConfigurationSetTrackingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetTrackingOptionsRequest, PutConfigurationSetTrackingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Specify VDM preferences for email that you send using the configuration set.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param putConfigurationSetVdmOptionsRequest
+     *        A request to add specific VDM settings to a configuration set.
+     * @return A Java Future containing the result of the PutConfigurationSetVdmOptions operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutConfigurationSetVdmOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationSetVdmOptionsResult> putConfigurationSetVdmOptionsAsync(
+            PutConfigurationSetVdmOptionsRequest putConfigurationSetVdmOptionsRequest);
+
+    /**
+     * <p>
+     * Specify VDM preferences for email that you send using the configuration set.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param putConfigurationSetVdmOptionsRequest
+     *        A request to add specific VDM settings to a configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConfigurationSetVdmOptions operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutConfigurationSetVdmOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationSetVdmOptionsResult> putConfigurationSetVdmOptionsAsync(
+            PutConfigurationSetVdmOptionsRequest putConfigurationSetVdmOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationSetVdmOptionsRequest, PutConfigurationSetVdmOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -3063,8 +3258,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <p>
      * To use this operation, you must first create a custom verification email template. For more information about
      * creating and using custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3089,8 +3284,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <p>
      * To use this operation, you must first create a custom verification email template. For more information about
      * creating and using custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3426,8 +3621,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3450,8 +3645,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
-     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+     * custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

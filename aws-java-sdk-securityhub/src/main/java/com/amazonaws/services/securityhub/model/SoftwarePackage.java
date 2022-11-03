@@ -70,6 +70,18 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String filePath;
+    /**
+     * <p>
+     * The version of the software package in which the vulnerability has been resolved.
+     * </p>
+     */
+    private String fixedInVersion;
+    /**
+     * <p>
+     * Describes the actions a customer can take to resolve the vulnerability in the software package.
+     * </p>
+     */
+    private String remediation;
 
     /**
      * <p>
@@ -352,6 +364,86 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The version of the software package in which the vulnerability has been resolved.
+     * </p>
+     * 
+     * @param fixedInVersion
+     *        The version of the software package in which the vulnerability has been resolved.
+     */
+
+    public void setFixedInVersion(String fixedInVersion) {
+        this.fixedInVersion = fixedInVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the software package in which the vulnerability has been resolved.
+     * </p>
+     * 
+     * @return The version of the software package in which the vulnerability has been resolved.
+     */
+
+    public String getFixedInVersion() {
+        return this.fixedInVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the software package in which the vulnerability has been resolved.
+     * </p>
+     * 
+     * @param fixedInVersion
+     *        The version of the software package in which the vulnerability has been resolved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SoftwarePackage withFixedInVersion(String fixedInVersion) {
+        setFixedInVersion(fixedInVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the actions a customer can take to resolve the vulnerability in the software package.
+     * </p>
+     * 
+     * @param remediation
+     *        Describes the actions a customer can take to resolve the vulnerability in the software package.
+     */
+
+    public void setRemediation(String remediation) {
+        this.remediation = remediation;
+    }
+
+    /**
+     * <p>
+     * Describes the actions a customer can take to resolve the vulnerability in the software package.
+     * </p>
+     * 
+     * @return Describes the actions a customer can take to resolve the vulnerability in the software package.
+     */
+
+    public String getRemediation() {
+        return this.remediation;
+    }
+
+    /**
+     * <p>
+     * Describes the actions a customer can take to resolve the vulnerability in the software package.
+     * </p>
+     * 
+     * @param remediation
+     *        Describes the actions a customer can take to resolve the vulnerability in the software package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SoftwarePackage withRemediation(String remediation) {
+        setRemediation(remediation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +468,11 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
         if (getPackageManager() != null)
             sb.append("PackageManager: ").append(getPackageManager()).append(",");
         if (getFilePath() != null)
-            sb.append("FilePath: ").append(getFilePath());
+            sb.append("FilePath: ").append(getFilePath()).append(",");
+        if (getFixedInVersion() != null)
+            sb.append("FixedInVersion: ").append(getFixedInVersion()).append(",");
+        if (getRemediation() != null)
+            sb.append("Remediation: ").append(getRemediation());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +515,14 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFilePath() != null && other.getFilePath().equals(this.getFilePath()) == false)
             return false;
+        if (other.getFixedInVersion() == null ^ this.getFixedInVersion() == null)
+            return false;
+        if (other.getFixedInVersion() != null && other.getFixedInVersion().equals(this.getFixedInVersion()) == false)
+            return false;
+        if (other.getRemediation() == null ^ this.getRemediation() == null)
+            return false;
+        if (other.getRemediation() != null && other.getRemediation().equals(this.getRemediation()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +538,8 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         hashCode = prime * hashCode + ((getPackageManager() == null) ? 0 : getPackageManager().hashCode());
         hashCode = prime * hashCode + ((getFilePath() == null) ? 0 : getFilePath().hashCode());
+        hashCode = prime * hashCode + ((getFixedInVersion() == null) ? 0 : getFixedInVersion().hashCode());
+        hashCode = prime * hashCode + ((getRemediation() == null) ? 0 : getRemediation().hashCode());
         return hashCode;
     }
 

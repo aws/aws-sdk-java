@@ -19,8 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation. To get the complete set of
- * properties, call the <a>DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.
+ * Provides a summary of the dataset properties used in the <a
+ * href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a> operation. To get the
+ * complete set of properties, call the <a
+ * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation, and
+ * provide the <code>DatasetArn</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetSummary" target="_top">AWS API
@@ -63,8 +66,9 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
      * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     * <code>LastModificationTime</code> is when the import job completed or failed.
+     * <code>ListDatasets</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      */
     private java.util.Date lastModificationTime;
@@ -311,15 +315,18 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
      * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     * <code>LastModificationTime</code> is when the import job completed or failed.
+     * <code>ListDatasets</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      * 
      * @param lastModificationTime
      *        When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
      *        While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     *        <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     *        <code>LastModificationTime</code> is when the import job completed or failed.
+     *        <code>ListDatasets</code> call. After a <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html"
+     *        >CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import
+     *        job completed or failed.
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -330,14 +337,17 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
      * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     * <code>LastModificationTime</code> is when the import job completed or failed.
+     * <code>ListDatasets</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      * 
      * @return When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
      *         While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     *         <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     *         <code>LastModificationTime</code> is when the import job completed or failed.
+     *         <code>ListDatasets</code> call. After a <a
+     *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html"
+     *         >CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import
+     *         job completed or failed.
      */
 
     public java.util.Date getLastModificationTime() {
@@ -348,15 +358,18 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
      * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     * <code>LastModificationTime</code> is when the import job completed or failed.
+     * <code>ListDatasets</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      * 
      * @param lastModificationTime
      *        When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
      *        While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
-     *        <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
-     *        <code>LastModificationTime</code> is when the import job completed or failed.
+     *        <code>ListDatasets</code> call. After a <a
+     *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html"
+     *        >CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import
+     *        job completed or failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

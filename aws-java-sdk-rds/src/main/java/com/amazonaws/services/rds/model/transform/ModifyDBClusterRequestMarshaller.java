@@ -261,6 +261,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             }
         }
 
+        if (modifyDBClusterRequest.getNetworkType() != null) {
+            request.addParameter("NetworkType", StringUtils.fromString(modifyDBClusterRequest.getNetworkType()));
+        }
+
         return request;
     }
 

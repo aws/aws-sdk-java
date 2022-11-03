@@ -29,10 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class KmsKeyConfigurationMarshaller {
 
-    private static final MarshallingInfo<List> GRANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("grants").build();
     private static final MarshallingInfo<Map> KEYPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("keyPolicies").build();
+    private static final MarshallingInfo<List> GRANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("grants").build();
 
     private static final KmsKeyConfigurationMarshaller instance = new KmsKeyConfigurationMarshaller();
 
@@ -50,8 +50,8 @@ public class KmsKeyConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(kmsKeyConfiguration.getGrants(), GRANTS_BINDING);
             protocolMarshaller.marshall(kmsKeyConfiguration.getKeyPolicies(), KEYPOLICIES_BINDING);
+            protocolMarshaller.marshall(kmsKeyConfiguration.getGrants(), GRANTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

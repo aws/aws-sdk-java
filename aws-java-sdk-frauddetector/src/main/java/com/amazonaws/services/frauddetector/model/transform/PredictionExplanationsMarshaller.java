@@ -30,6 +30,8 @@ public class PredictionExplanationsMarshaller {
 
     private static final MarshallingInfo<List> VARIABLEIMPACTEXPLANATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("variableImpactExplanations").build();
+    private static final MarshallingInfo<List> AGGREGATEDVARIABLESIMPACTEXPLANATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aggregatedVariablesImpactExplanations").build();
 
     private static final PredictionExplanationsMarshaller instance = new PredictionExplanationsMarshaller();
 
@@ -48,6 +50,7 @@ public class PredictionExplanationsMarshaller {
 
         try {
             protocolMarshaller.marshall(predictionExplanations.getVariableImpactExplanations(), VARIABLEIMPACTEXPLANATIONS_BINDING);
+            protocolMarshaller.marshall(predictionExplanations.getAggregatedVariablesImpactExplanations(), AGGREGATEDVARIABLESIMPACTEXPLANATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

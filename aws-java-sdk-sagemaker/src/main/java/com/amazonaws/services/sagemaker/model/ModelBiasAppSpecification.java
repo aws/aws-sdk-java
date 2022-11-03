@@ -37,8 +37,8 @@ public class ModelBiasAppSpecification implements Serializable, Cloneable, Struc
     /**
      * <p>
      * JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     * parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure
+     * bias parameters</a>.
      * </p>
      */
     private String configUri;
@@ -92,14 +92,15 @@ public class ModelBiasAppSpecification implements Serializable, Cloneable, Struc
     /**
      * <p>
      * JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     * parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure
+     * bias parameters</a>.
      * </p>
      * 
      * @param configUri
      *        JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file,
-     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     *        parameters</a>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html"
+     *        >Configure bias parameters</a>.
      */
 
     public void setConfigUri(String configUri) {
@@ -109,14 +110,14 @@ public class ModelBiasAppSpecification implements Serializable, Cloneable, Struc
     /**
      * <p>
      * JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     * parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure
+     * bias parameters</a>.
      * </p>
      * 
      * @return JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration
      *         file, see <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     *         parameters</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html"
+     *         >Configure bias parameters</a>.
      */
 
     public String getConfigUri() {
@@ -126,14 +127,15 @@ public class ModelBiasAppSpecification implements Serializable, Cloneable, Struc
     /**
      * <p>
      * JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     * parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure
+     * bias parameters</a>.
      * </p>
      * 
      * @param configUri
      *        JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file,
-     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias
-     *        parameters</a>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html"
+     *        >Configure bias parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

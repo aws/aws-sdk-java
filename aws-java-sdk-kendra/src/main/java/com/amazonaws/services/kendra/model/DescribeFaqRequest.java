@@ -27,24 +27,24 @@ public class DescribeFaqRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ you want to get information on.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      */
     private String indexId;
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ you want to get information on.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the FAQ.
+     *        The identifier of the FAQ you want to get information on.
      */
 
     public void setId(String id) {
@@ -53,10 +53,10 @@ public class DescribeFaqRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ you want to get information on.
      * </p>
      * 
-     * @return The unique identifier of the FAQ.
+     * @return The identifier of the FAQ you want to get information on.
      */
 
     public String getId() {
@@ -65,11 +65,11 @@ public class DescribeFaqRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ you want to get information on.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the FAQ.
+     *        The identifier of the FAQ you want to get information on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DescribeFaqRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the FAQ.
+     *        The identifier of the index for the FAQ.
      */
 
     public void setIndexId(String indexId) {
@@ -93,10 +93,10 @@ public class DescribeFaqRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
-     * @return The identifier of the index that contains the FAQ.
+     * @return The identifier of the index for the FAQ.
      */
 
     public String getIndexId() {
@@ -105,11 +105,11 @@ public class DescribeFaqRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the FAQ.
+     *        The identifier of the index for the FAQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

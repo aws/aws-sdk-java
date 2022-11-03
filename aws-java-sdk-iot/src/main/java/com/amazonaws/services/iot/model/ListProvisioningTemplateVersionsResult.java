@@ -21,7 +21,7 @@ public class ListProvisioningTemplateVersionsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of fleet provisioning template versions.
+     * The list of provisioning template versions.
      * </p>
      */
     private java.util.List<ProvisioningTemplateVersionSummary> versions;
@@ -34,10 +34,10 @@ public class ListProvisioningTemplateVersionsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of fleet provisioning template versions.
+     * The list of provisioning template versions.
      * </p>
      * 
-     * @return The list of fleet provisioning template versions.
+     * @return The list of provisioning template versions.
      */
 
     public java.util.List<ProvisioningTemplateVersionSummary> getVersions() {
@@ -46,11 +46,11 @@ public class ListProvisioningTemplateVersionsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of fleet provisioning template versions.
+     * The list of provisioning template versions.
      * </p>
      * 
      * @param versions
-     *        The list of fleet provisioning template versions.
+     *        The list of provisioning template versions.
      */
 
     public void setVersions(java.util.Collection<ProvisioningTemplateVersionSummary> versions) {
@@ -64,7 +64,7 @@ public class ListProvisioningTemplateVersionsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of fleet provisioning template versions.
+     * The list of provisioning template versions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class ListProvisioningTemplateVersionsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param versions
-     *        The list of fleet provisioning template versions.
+     *        The list of provisioning template versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ListProvisioningTemplateVersionsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of fleet provisioning template versions.
+     * The list of provisioning template versions.
      * </p>
      * 
      * @param versions
-     *        The list of fleet provisioning template versions.
+     *        The list of provisioning template versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

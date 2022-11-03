@@ -37,8 +37,8 @@ public class PermissionSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String permissionSetArn;
@@ -110,14 +110,14 @@ public class PermissionSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param permissionSetArn
      *        The ARN of the permission set. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *        Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setPermissionSetArn(String permissionSetArn) {
@@ -127,13 +127,13 @@ public class PermissionSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The ARN of the permission set. For more information about ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *         Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getPermissionSetArn() {
@@ -143,14 +143,14 @@ public class PermissionSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     * Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param permissionSetArn
      *        The ARN of the permission set. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
+     *        Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

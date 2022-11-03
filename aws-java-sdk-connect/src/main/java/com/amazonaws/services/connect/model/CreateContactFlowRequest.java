@@ -33,33 +33,34 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
     private String instanceId;
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -106,11 +107,11 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      */
 
     public void setName(String name) {
@@ -119,10 +120,10 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
-     * @return The name of the contact flow.
+     * @return The name of the flow.
      */
 
     public String getName() {
@@ -131,11 +132,11 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,15 +147,15 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the contact flow. For descriptions of the available types, see <a
+     *        The type of the flow. For descriptions of the available types, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *        >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @see ContactFlowType
      */
 
@@ -164,14 +165,14 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
-     * @return The type of the contact flow. For descriptions of the available types, see <a
+     * @return The type of the flow. For descriptions of the available types, see <a
      *         href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *         >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *         >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @see ContactFlowType
      */
 
@@ -181,15 +182,15 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the contact flow. For descriptions of the available types, see <a
+     *        The type of the flow. For descriptions of the available types, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *        >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -201,15 +202,15 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the contact flow. For descriptions of the available types, see <a
+     *        The type of the flow. For descriptions of the available types, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *        >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -221,11 +222,11 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      */
 
     public void setDescription(String description) {
@@ -234,10 +235,10 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
-     * @return The description of the contact flow.
+     * @return The description of the flow.
      */
 
     public String getDescription() {
@@ -246,11 +247,11 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,11 +262,11 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow.
+     *        The content of the flow.
      */
 
     public void setContent(String content) {
@@ -274,10 +275,10 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      * 
-     * @return The content of the contact flow.
+     * @return The content of the flow.
      */
 
     public String getContent() {
@@ -286,11 +287,11 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow.
+     *        The content of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,10 +302,12 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -313,11 +316,13 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -326,11 +331,13 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

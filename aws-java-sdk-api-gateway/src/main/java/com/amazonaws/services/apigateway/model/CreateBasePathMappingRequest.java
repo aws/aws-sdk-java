@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to create a new <a>BasePathMapping</a> resource.
+ * Requests API Gateway to create a new BasePathMapping resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     * The domain name of the BasePathMapping resource to create.
      * </p>
      */
     private String domainName;
@@ -41,7 +41,7 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     private String basePath;
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
@@ -55,11 +55,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     * The domain name of the BasePathMapping resource to create.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     *        The domain name of the BasePathMapping resource to create.
      */
 
     public void setDomainName(String domainName) {
@@ -68,10 +68,10 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     * The domain name of the BasePathMapping resource to create.
      * </p>
      * 
-     * @return [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     * @return The domain name of the BasePathMapping resource to create.
      */
 
     public String getDomainName() {
@@ -80,11 +80,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     * The domain name of the BasePathMapping resource to create.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+     *        The domain name of the BasePathMapping resource to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -160,10 +160,10 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -172,11 +172,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

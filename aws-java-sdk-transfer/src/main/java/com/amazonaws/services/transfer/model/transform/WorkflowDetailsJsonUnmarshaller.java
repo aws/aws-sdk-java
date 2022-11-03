@@ -54,6 +54,12 @@ public class WorkflowDetailsJsonUnmarshaller implements Unmarshaller<WorkflowDet
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("OnPartialUpload", targetDepth)) {
+                    context.nextToken();
+                    workflowDetails.setOnPartialUpload(new ListUnmarshaller<WorkflowDetail>(WorkflowDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

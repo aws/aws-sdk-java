@@ -42,8 +42,40 @@ public class Ipv6CidrBlockAssociation implements Serializable, Cloneable, Struct
     private String ipv6CidrBlock;
     /**
      * <p>
-     * Information about the state of the CIDR block.
+     * Information about the state of the CIDR block. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>associating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>associated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failing</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String cidrBlockState;
 
@@ -129,11 +161,74 @@ public class Ipv6CidrBlockAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about the state of the CIDR block.
+     * Information about the state of the CIDR block. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>associating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>associated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failing</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cidrBlockState
-     *        Information about the state of the CIDR block.
+     *        Information about the state of the CIDR block. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>associating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>associated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>disassociating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>disassociated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failing</code>
+     *        </p>
+     *        </li>
      */
 
     public void setCidrBlockState(String cidrBlockState) {
@@ -142,10 +237,73 @@ public class Ipv6CidrBlockAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about the state of the CIDR block.
+     * Information about the state of the CIDR block. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>associating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>associated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failing</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Information about the state of the CIDR block.
+     * @return Information about the state of the CIDR block. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>associating</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>associated</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>disassociating</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>disassociated</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>failing</code>
+     *         </p>
+     *         </li>
      */
 
     public String getCidrBlockState() {
@@ -154,11 +312,74 @@ public class Ipv6CidrBlockAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about the state of the CIDR block.
+     * Information about the state of the CIDR block. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>associating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>associated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>disassociated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failing</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cidrBlockState
-     *        Information about the state of the CIDR block.
+     *        Information about the state of the CIDR block. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>associating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>associated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>disassociating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>disassociated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failing</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

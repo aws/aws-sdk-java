@@ -36,7 +36,7 @@ public class TemplateSyncConfig implements Serializable, Cloneable, StructuredPo
     private String branch;
     /**
      * <p>
-     * The name of the repository, for example <code>myrepos/myrepo</code>.
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      */
     private String repositoryName;
@@ -107,11 +107,11 @@ public class TemplateSyncConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the repository, for example <code>myrepos/myrepo</code>.
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository, for example <code>myrepos/myrepo</code>.
+     *        The repository name (for example, <code>myrepos/myrepo</code>).
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -120,10 +120,10 @@ public class TemplateSyncConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the repository, for example <code>myrepos/myrepo</code>.
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      * 
-     * @return The name of the repository, for example <code>myrepos/myrepo</code>.
+     * @return The repository name (for example, <code>myrepos/myrepo</code>).
      */
 
     public String getRepositoryName() {
@@ -132,11 +132,11 @@ public class TemplateSyncConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the repository, for example <code>myrepos/myrepo</code>.
+     * The repository name (for example, <code>myrepos/myrepo</code>).
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository, for example <code>myrepos/myrepo</code>.
+     *        The repository name (for example, <code>myrepos/myrepo</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

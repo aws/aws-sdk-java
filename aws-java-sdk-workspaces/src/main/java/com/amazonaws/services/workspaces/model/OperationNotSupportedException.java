@@ -24,6 +24,13 @@ public class OperationNotSupportedException extends com.amazonaws.services.works
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * The exception error reason.
+     * </p>
+     */
+    private String reason;
+
+    /**
      * Constructs a new OperationNotSupportedException with the specified error message.
      *
      * @param message
@@ -31,6 +38,48 @@ public class OperationNotSupportedException extends com.amazonaws.services.works
      */
     public OperationNotSupportedException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The exception error reason.
+     * </p>
+     * 
+     * @param reason
+     *        The exception error reason.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The exception error reason.
+     * </p>
+     * 
+     * @return The exception error reason.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The exception error reason.
+     * </p>
+     * 
+     * @param reason
+     *        The exception error reason.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OperationNotSupportedException withReason(String reason) {
+        setReason(reason);
+        return this;
     }
 
 }

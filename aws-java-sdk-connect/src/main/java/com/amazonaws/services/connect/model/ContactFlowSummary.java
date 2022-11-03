@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains summary information about a contact flow.
+ * Contains summary information about a flow.
  * </p>
  * <p>
- * You can also create and update contact flows using the <a
+ * You can also create and update flows using the <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
  * </p>
  * 
@@ -34,42 +34,42 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      */
     private String contactFlowType;
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      */
     private String contactFlowState;
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setId(String id) {
@@ -78,10 +78,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getId() {
@@ -90,11 +90,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      */
 
     public void setArn(String arn) {
@@ -118,10 +118,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the contact flow.
+     * @return The Amazon Resource Name (ARN) of the flow.
      */
 
     public String getArn() {
@@ -130,11 +130,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      */
 
     public void setName(String name) {
@@ -158,10 +158,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
-     * @return The name of the contact flow.
+     * @return The name of the flow.
      */
 
     public String getName() {
@@ -170,11 +170,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +185,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowType
-     *        The type of contact flow.
+     *        The type of flow.
      * @see ContactFlowType
      */
 
@@ -199,10 +199,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
-     * @return The type of contact flow.
+     * @return The type of flow.
      * @see ContactFlowType
      */
 
@@ -212,11 +212,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowType
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -228,11 +228,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowType
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -244,11 +244,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowState
-     *        The type of contact flow.
+     *        The type of flow.
      * @see ContactFlowState
      */
 
@@ -258,10 +258,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
-     * @return The type of contact flow.
+     * @return The type of flow.
      * @see ContactFlowState
      */
 
@@ -271,11 +271,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowState
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowState
      */
@@ -287,11 +287,11 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param contactFlowState
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowState
      */

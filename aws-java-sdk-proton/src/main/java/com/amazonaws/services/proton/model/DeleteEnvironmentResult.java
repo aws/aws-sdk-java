@@ -25,18 +25,18 @@ public class DeleteEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the environment being deleted.
      * </p>
      */
     private Environment environment;
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the environment being deleted.
      * </p>
      * 
      * @param environment
-     *        The environment detail data that's returned by Proton.
+     *        The detailed data of the environment being deleted.
      */
 
     public void setEnvironment(Environment environment) {
@@ -45,10 +45,10 @@ public class DeleteEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the environment being deleted.
      * </p>
      * 
-     * @return The environment detail data that's returned by Proton.
+     * @return The detailed data of the environment being deleted.
      */
 
     public Environment getEnvironment() {
@@ -57,11 +57,11 @@ public class DeleteEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the environment being deleted.
      * </p>
      * 
      * @param environment
-     *        The environment detail data that's returned by Proton.
+     *        The detailed data of the environment being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

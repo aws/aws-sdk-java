@@ -38,6 +38,24 @@ public class AllowedPrincipal implements Serializable, Cloneable {
      * </p>
      */
     private String principal;
+    /**
+     * <p>
+     * The ID of the service permission.
+     * </p>
+     */
+    private String servicePermissionId;
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of the service.
+     * </p>
+     */
+    private String serviceId;
 
     /**
      * <p>
@@ -139,6 +157,159 @@ public class AllowedPrincipal implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the service permission.
+     * </p>
+     * 
+     * @param servicePermissionId
+     *        The ID of the service permission.
+     */
+
+    public void setServicePermissionId(String servicePermissionId) {
+        this.servicePermissionId = servicePermissionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the service permission.
+     * </p>
+     * 
+     * @return The ID of the service permission.
+     */
+
+    public String getServicePermissionId() {
+        return this.servicePermissionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the service permission.
+     * </p>
+     * 
+     * @param servicePermissionId
+     *        The ID of the service permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllowedPrincipal withServicePermissionId(String servicePermissionId) {
+        setServicePermissionId(servicePermissionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @return The tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllowedPrincipal withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllowedPrincipal withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the service.
+     * </p>
+     * 
+     * @param serviceId
+     *        The ID of the service.
+     */
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the service.
+     * </p>
+     * 
+     * @return The ID of the service.
+     */
+
+    public String getServiceId() {
+        return this.serviceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the service.
+     * </p>
+     * 
+     * @param serviceId
+     *        The ID of the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllowedPrincipal withServiceId(String serviceId) {
+        setServiceId(serviceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -153,7 +324,13 @@ public class AllowedPrincipal implements Serializable, Cloneable {
         if (getPrincipalType() != null)
             sb.append("PrincipalType: ").append(getPrincipalType()).append(",");
         if (getPrincipal() != null)
-            sb.append("Principal: ").append(getPrincipal());
+            sb.append("Principal: ").append(getPrincipal()).append(",");
+        if (getServicePermissionId() != null)
+            sb.append("ServicePermissionId: ").append(getServicePermissionId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getServiceId() != null)
+            sb.append("ServiceId: ").append(getServiceId());
         sb.append("}");
         return sb.toString();
     }
@@ -176,6 +353,18 @@ public class AllowedPrincipal implements Serializable, Cloneable {
             return false;
         if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
             return false;
+        if (other.getServicePermissionId() == null ^ this.getServicePermissionId() == null)
+            return false;
+        if (other.getServicePermissionId() != null && other.getServicePermissionId().equals(this.getServicePermissionId()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getServiceId() == null ^ this.getServiceId() == null)
+            return false;
+        if (other.getServiceId() != null && other.getServiceId().equals(this.getServiceId()) == false)
+            return false;
         return true;
     }
 
@@ -186,6 +375,9 @@ public class AllowedPrincipal implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
         hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
+        hashCode = prime * hashCode + ((getServicePermissionId() == null) ? 0 : getServicePermissionId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getServiceId() == null) ? 0 : getServiceId().hashCode());
         return hashCode;
     }
 

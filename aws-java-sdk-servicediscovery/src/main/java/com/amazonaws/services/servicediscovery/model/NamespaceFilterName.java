@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NamespaceFilterName {
 
-    TYPE("TYPE");
+    TYPE("TYPE"),
+    NAME("NAME"),
+    HTTP_NAME("HTTP_NAME");
 
     private String value;
 

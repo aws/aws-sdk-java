@@ -30,62 +30,22 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * A token used for pagination of results returned.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
      * The type of analyzer.
      * </p>
      */
     private String type;
-
-    /**
-     * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return in the response.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     * 
-     * @return The maximum number of results to return in the response.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in the response.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return in the response.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListAnalyzersRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
 
     /**
      * <p>
@@ -124,6 +84,46 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public ListAnalyzersRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in the response.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     * 
+     * @return The maximum number of results to return in the response.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnalyzersRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -198,10 +198,10 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -218,13 +218,13 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof ListAnalyzersRequest == false)
             return false;
         ListAnalyzersRequest other = (ListAnalyzersRequest) obj;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -238,8 +238,8 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

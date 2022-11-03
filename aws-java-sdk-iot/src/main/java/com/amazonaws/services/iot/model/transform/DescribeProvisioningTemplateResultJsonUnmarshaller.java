@@ -88,6 +88,10 @@ public class DescribeProvisioningTemplateResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     describeProvisioningTemplateResult.setPreProvisioningHook(ProvisioningHookJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    describeProvisioningTemplateResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

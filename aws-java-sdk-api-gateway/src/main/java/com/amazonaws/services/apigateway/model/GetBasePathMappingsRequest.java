@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to get information about a collection of <a>BasePathMapping</a> resources.
+ * A request to get information about a collection of BasePathMapping resources.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The domain name of a <a>BasePathMapping</a> resource.
+     * The domain name of a BasePathMapping resource.
      * </p>
      */
     private String domainName;
@@ -46,11 +46,11 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The domain name of a <a>BasePathMapping</a> resource.
+     * The domain name of a BasePathMapping resource.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of a <a>BasePathMapping</a> resource.
+     *        The domain name of a BasePathMapping resource.
      */
 
     public void setDomainName(String domainName) {
@@ -59,10 +59,10 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The domain name of a <a>BasePathMapping</a> resource.
+     * The domain name of a BasePathMapping resource.
      * </p>
      * 
-     * @return [Required] The domain name of a <a>BasePathMapping</a> resource.
+     * @return The domain name of a BasePathMapping resource.
      */
 
     public String getDomainName() {
@@ -71,11 +71,11 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The domain name of a <a>BasePathMapping</a> resource.
+     * The domain name of a BasePathMapping resource.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of a <a>BasePathMapping</a> resource.
+     *        The domain name of a BasePathMapping resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

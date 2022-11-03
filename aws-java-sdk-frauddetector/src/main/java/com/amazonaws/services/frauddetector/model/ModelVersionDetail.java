@@ -102,6 +102,12 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The training result details. The details include the relative importance of the variables.
+     * </p>
+     */
+    private TrainingResultV2 trainingResultV2;
 
     /**
      * <p>
@@ -634,6 +640,46 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The training result details. The details include the relative importance of the variables.
+     * </p>
+     * 
+     * @param trainingResultV2
+     *        The training result details. The details include the relative importance of the variables.
+     */
+
+    public void setTrainingResultV2(TrainingResultV2 trainingResultV2) {
+        this.trainingResultV2 = trainingResultV2;
+    }
+
+    /**
+     * <p>
+     * The training result details. The details include the relative importance of the variables.
+     * </p>
+     * 
+     * @return The training result details. The details include the relative importance of the variables.
+     */
+
+    public TrainingResultV2 getTrainingResultV2() {
+        return this.trainingResultV2;
+    }
+
+    /**
+     * <p>
+     * The training result details. The details include the relative importance of the variables.
+     * </p>
+     * 
+     * @param trainingResultV2
+     *        The training result details. The details include the relative importance of the variables.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelVersionDetail withTrainingResultV2(TrainingResultV2 trainingResultV2) {
+        setTrainingResultV2(trainingResultV2);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -668,7 +714,9 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getTrainingResultV2() != null)
+            sb.append("TrainingResultV2: ").append(getTrainingResultV2());
         sb.append("}");
         return sb.toString();
     }
@@ -731,6 +779,10 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getTrainingResultV2() == null ^ this.getTrainingResultV2() == null)
+            return false;
+        if (other.getTrainingResultV2() != null && other.getTrainingResultV2().equals(this.getTrainingResultV2()) == false)
+            return false;
         return true;
     }
 
@@ -751,6 +803,7 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getTrainingResultV2() == null) ? 0 : getTrainingResultV2().hashCode());
         return hashCode;
     }
 

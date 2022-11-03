@@ -36,7 +36,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -59,7 +60,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      */
     private java.util.List<OrderByElement> orderBy;
@@ -147,7 +149,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * 
      * @return You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
@@ -158,7 +161,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         For a complete list of filter options and guidance about using them with this action, see <a href=
      *         "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *         >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *         >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *         Guide</i>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -175,7 +179,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * 
      * @param filters
@@ -187,7 +192,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For a complete list of filter options and guidance about using them with this action, see <a href=
      *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *        >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *        >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *        Guide</i>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -209,7 +215,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -226,7 +233,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For a complete list of filter options and guidance about using them with this action, see <a href=
      *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *        >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *        >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,7 +258,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * 
      * @param filters
@@ -262,7 +271,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For a complete list of filter options and guidance about using them with this action, see <a href=
      *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *        >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *        >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,13 +378,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * 
      * @return Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *         output characteristics for each filter, see <a href=
      *         "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *         >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *         >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *         Guide</i>.
      */
 
     public java.util.List<OrderByElement> getOrderBy() {
@@ -386,14 +398,16 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * 
      * @param orderBy
      *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *        output characteristics for each filter, see <a href=
      *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *        >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *        >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *        Guide</i>.
      */
 
     public void setOrderBy(java.util.Collection<OrderByElement> orderBy) {
@@ -410,7 +424,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -422,7 +437,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *        output characteristics for each filter, see <a href=
      *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *        >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *        >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,14 +457,16 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
      * "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     * >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     * Guide</i>.
      * </p>
      * 
      * @param orderBy
      *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *        output characteristics for each filter, see <a href=
      *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations"
-     *        >Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     *        >Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

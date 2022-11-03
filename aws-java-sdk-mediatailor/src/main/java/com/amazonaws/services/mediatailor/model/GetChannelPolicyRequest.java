@@ -27,18 +27,18 @@ public class GetChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Policy.
      * </p>
      */
     private String channelName;
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Policy.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel associated with this Channel Policy.
      */
 
     public void setChannelName(String channelName) {
@@ -47,10 +47,10 @@ public class GetChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Policy.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel associated with this Channel Policy.
      */
 
     public String getChannelName() {
@@ -59,11 +59,11 @@ public class GetChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Policy.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel associated with this Channel Policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

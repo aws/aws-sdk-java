@@ -30,68 +30,28 @@ public class BeginTransactionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the database.
-     * </p>
-     */
-    private String database;
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The name of the database schema.
-     * </p>
-     */
-    private String schema;
-    /**
-     * <p>
      * The name or ARN of the secret that enables access to the DB cluster.
      * </p>
      */
     private String secretArn;
-
     /**
      * <p>
      * The name of the database.
      * </p>
-     * 
-     * @param database
-     *        The name of the database.
      */
-
-    public void setDatabase(String database) {
-        this.database = database;
-    }
-
+    private String database;
     /**
      * <p>
-     * The name of the database.
+     * The name of the database schema.
      * </p>
-     * 
-     * @return The name of the database.
      */
-
-    public String getDatabase() {
-        return this.database;
-    }
-
-    /**
-     * <p>
-     * The name of the database.
-     * </p>
-     * 
-     * @param database
-     *        The name of the database.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BeginTransactionRequest withDatabase(String database) {
-        setDatabase(database);
-        return this;
-    }
+    private String schema;
 
     /**
      * <p>
@@ -130,46 +90,6 @@ public class BeginTransactionRequest extends com.amazonaws.AmazonWebServiceReque
 
     public BeginTransactionRequest withResourceArn(String resourceArn) {
         setResourceArn(resourceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     * 
-     * @param schema
-     *        The name of the database schema.
-     */
-
-    public void setSchema(String schema) {
-        this.schema = schema;
-    }
-
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     * 
-     * @return The name of the database schema.
-     */
-
-    public String getSchema() {
-        return this.schema;
-    }
-
-    /**
-     * <p>
-     * The name of the database schema.
-     * </p>
-     * 
-     * @param schema
-     *        The name of the database schema.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BeginTransactionRequest withSchema(String schema) {
-        setSchema(schema);
         return this;
     }
 
@@ -214,6 +134,86 @@ public class BeginTransactionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the database.
+     * </p>
+     * 
+     * @param database
+     *        The name of the database.
+     */
+
+    public void setDatabase(String database) {
+        this.database = database;
+    }
+
+    /**
+     * <p>
+     * The name of the database.
+     * </p>
+     * 
+     * @return The name of the database.
+     */
+
+    public String getDatabase() {
+        return this.database;
+    }
+
+    /**
+     * <p>
+     * The name of the database.
+     * </p>
+     * 
+     * @param database
+     *        The name of the database.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BeginTransactionRequest withDatabase(String database) {
+        setDatabase(database);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * 
+     * @param schema
+     *        The name of the database schema.
+     */
+
+    public void setSchema(String schema) {
+        this.schema = schema;
+    }
+
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * 
+     * @return The name of the database schema.
+     */
+
+    public String getSchema() {
+        return this.schema;
+    }
+
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     * 
+     * @param schema
+     *        The name of the database schema.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BeginTransactionRequest withSchema(String schema) {
+        setSchema(schema);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -225,14 +225,14 @@ public class BeginTransactionRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDatabase() != null)
-            sb.append("Database: ").append(getDatabase()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
-        if (getSchema() != null)
-            sb.append("Schema: ").append(getSchema()).append(",");
         if (getSecretArn() != null)
-            sb.append("SecretArn: ").append(getSecretArn());
+            sb.append("SecretArn: ").append(getSecretArn()).append(",");
+        if (getDatabase() != null)
+            sb.append("Database: ").append(getDatabase()).append(",");
+        if (getSchema() != null)
+            sb.append("Schema: ").append(getSchema());
         sb.append("}");
         return sb.toString();
     }
@@ -247,21 +247,21 @@ public class BeginTransactionRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof BeginTransactionRequest == false)
             return false;
         BeginTransactionRequest other = (BeginTransactionRequest) obj;
-        if (other.getDatabase() == null ^ this.getDatabase() == null)
-            return false;
-        if (other.getDatabase() != null && other.getDatabase().equals(this.getDatabase()) == false)
-            return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
-        if (other.getSchema() == null ^ this.getSchema() == null)
-            return false;
-        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
-            return false;
         if (other.getSecretArn() == null ^ this.getSecretArn() == null)
             return false;
         if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
+            return false;
+        if (other.getDatabase() == null ^ this.getDatabase() == null)
+            return false;
+        if (other.getDatabase() != null && other.getDatabase().equals(this.getDatabase()) == false)
+            return false;
+        if (other.getSchema() == null ^ this.getSchema() == null)
+            return false;
+        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
             return false;
         return true;
     }
@@ -271,10 +271,10 @@ public class BeginTransactionRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
-        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
+        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         return hashCode;
     }
 

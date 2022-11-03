@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ValidationExceptionFieldMarshaller {
 
-    private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("message").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("message").build();
 
     private static final ValidationExceptionFieldMarshaller instance = new ValidationExceptionFieldMarshaller();
 
@@ -48,8 +48,8 @@ public class ValidationExceptionFieldMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(validationExceptionField.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(validationExceptionField.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(validationExceptionField.getMessage(), MESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

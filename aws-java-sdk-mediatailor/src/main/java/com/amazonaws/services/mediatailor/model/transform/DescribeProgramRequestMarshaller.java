@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeProgramRequestMarshaller {
 
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("channelName").build();
+            .marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> PROGRAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("programName").build();
+            .marshallLocationName("ProgramName").build();
 
     private static final DescribeProgramRequestMarshaller instance = new DescribeProgramRequestMarshaller();
 

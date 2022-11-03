@@ -53,6 +53,39 @@ public class ResolvedComponentVersion implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.nio.ByteBuffer recipe;
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String vendorGuidance;
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     */
+    private String message;
 
     /**
      * <p>
@@ -248,6 +281,267 @@ public class ResolvedComponentVersion implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The vendor guidance state for the component version. This state indicates whether the component version
+     *        has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> – This component version is available and recommended for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *        this component version, but we recommend that you use a different version of this component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *        If you have any existing deployments that specify this component version, those deployments will fail.
+     *        </p>
+     *        </li>
+     * @see VendorGuidance
+     */
+
+    public void setVendorGuidance(String vendorGuidance) {
+        this.vendorGuidance = vendorGuidance;
+    }
+
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The vendor guidance state for the component version. This state indicates whether the component version
+     *         has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code> – This component version is available and recommended for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *         this component version, but we recommend that you use a different version of this component.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *         If you have any existing deployments that specify this component version, those deployments will fail.
+     *         </p>
+     *         </li>
+     * @see VendorGuidance
+     */
+
+    public String getVendorGuidance() {
+        return this.vendorGuidance;
+    }
+
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The vendor guidance state for the component version. This state indicates whether the component version
+     *        has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> – This component version is available and recommended for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *        this component version, but we recommend that you use a different version of this component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *        If you have any existing deployments that specify this component version, those deployments will fail.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VendorGuidance
+     */
+
+    public ResolvedComponentVersion withVendorGuidance(String vendorGuidance) {
+        setVendorGuidance(vendorGuidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The vendor guidance state for the component version. This state indicates whether the component version
+     *        has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> – This component version is available and recommended for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *        this component version, but we recommend that you use a different version of this component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *        If you have any existing deployments that specify this component version, those deployments will fail.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VendorGuidance
+     */
+
+    public ResolvedComponentVersion withVendorGuidance(VendorGuidance vendorGuidance) {
+        this.vendorGuidance = vendorGuidance.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     * 
+     * @param message
+     *        A message that communicates details about the vendor guidance state of the component version. This message
+     *        communicates why a component version is discontinued or deleted.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     * 
+     * @return A message that communicates details about the vendor guidance state of the component version. This
+     *         message communicates why a component version is discontinued or deleted.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     * 
+     * @param message
+     *        A message that communicates details about the vendor guidance state of the component version. This message
+     *        communicates why a component version is discontinued or deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResolvedComponentVersion withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -266,7 +560,11 @@ public class ResolvedComponentVersion implements Serializable, Cloneable, Struct
         if (getComponentVersion() != null)
             sb.append("ComponentVersion: ").append(getComponentVersion()).append(",");
         if (getRecipe() != null)
-            sb.append("Recipe: ").append(getRecipe());
+            sb.append("Recipe: ").append(getRecipe()).append(",");
+        if (getVendorGuidance() != null)
+            sb.append("VendorGuidance: ").append(getVendorGuidance()).append(",");
+        if (getMessage() != null)
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +595,14 @@ public class ResolvedComponentVersion implements Serializable, Cloneable, Struct
             return false;
         if (other.getRecipe() != null && other.getRecipe().equals(this.getRecipe()) == false)
             return false;
+        if (other.getVendorGuidance() == null ^ this.getVendorGuidance() == null)
+            return false;
+        if (other.getVendorGuidance() != null && other.getVendorGuidance().equals(this.getVendorGuidance()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +615,8 @@ public class ResolvedComponentVersion implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
         hashCode = prime * hashCode + ((getComponentVersion() == null) ? 0 : getComponentVersion().hashCode());
         hashCode = prime * hashCode + ((getRecipe() == null) ? 0 : getRecipe().hashCode());
+        hashCode = prime * hashCode + ((getVendorGuidance() == null) ? 0 : getVendorGuidance().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 

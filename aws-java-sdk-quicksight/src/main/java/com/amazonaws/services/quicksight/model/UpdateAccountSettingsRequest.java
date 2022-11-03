@@ -35,7 +35,7 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>.
      * Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an
-     * email that becomes associated with the default namespace.
+     * email address that becomes associated with the default namespace.
      * </p>
      */
     private String defaultNamespace;
@@ -94,13 +94,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>.
      * Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an
-     * email that becomes associated with the default namespace.
+     * email address that becomes associated with the default namespace.
      * </p>
      * 
      * @param defaultNamespace
      *        The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>
      *        . Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight
-     *        provide an email that becomes associated with the default namespace.
+     *        provide an email address that becomes associated with the default namespace.
      */
 
     public void setDefaultNamespace(String defaultNamespace) {
@@ -111,12 +111,12 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>.
      * Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an
-     * email that becomes associated with the default namespace.
+     * email address that becomes associated with the default namespace.
      * </p>
      * 
      * @return The default namespace for this Amazon Web Services account. Currently, the default is
      *         <code>default</code>. Identity and Access Management (IAM) users that register for the first time with
-     *         Amazon QuickSight provide an email that becomes associated with the default namespace.
+     *         Amazon QuickSight provide an email address that becomes associated with the default namespace.
      */
 
     public String getDefaultNamespace() {
@@ -127,13 +127,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>.
      * Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an
-     * email that becomes associated with the default namespace.
+     * email address that becomes associated with the default namespace.
      * </p>
      * 
      * @param defaultNamespace
      *        The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>
      *        . Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight
-     *        provide an email that becomes associated with the default namespace.
+     *        provide an email address that becomes associated with the default namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -87,7 +87,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.
+     * recommendations and user segments</a>.
      * </p>
      */
     private java.util.Map<String, String> filterValues;
@@ -98,6 +98,13 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String recommenderArn;
+    /**
+     * <p>
+     * The promotions to apply to the recommendation request. A promotion defines additional business rules that apply
+     * to a configurable subset of recommended items.
+     * </p>
+     */
+    private java.util.List<Promotion> promotions;
 
     /**
      * <p>
@@ -444,7 +451,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.
+     * recommendations and user segments</a>.
      * </p>
      * 
      * @return The values to use when filtering recommendations. For each placeholder parameter in your filter
@@ -458,7 +465,8 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user
+     *         segments</a>.
      */
 
     public java.util.Map<String, String> getFilterValues() {
@@ -479,7 +487,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.
+     * recommendations and user segments</a>.
      * </p>
      * 
      * @param filterValues
@@ -494,7 +502,8 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user
+     *        segments</a>.
      */
 
     public void setFilterValues(java.util.Map<String, String> filterValues) {
@@ -515,7 +524,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.
+     * recommendations and user segments</a>.
      * </p>
      * 
      * @param filterValues
@@ -530,7 +539,8 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user
+     *        segments</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,6 +624,84 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The promotions to apply to the recommendation request. A promotion defines additional business rules that apply
+     * to a configurable subset of recommended items.
+     * </p>
+     * 
+     * @return The promotions to apply to the recommendation request. A promotion defines additional business rules that
+     *         apply to a configurable subset of recommended items.
+     */
+
+    public java.util.List<Promotion> getPromotions() {
+        return promotions;
+    }
+
+    /**
+     * <p>
+     * The promotions to apply to the recommendation request. A promotion defines additional business rules that apply
+     * to a configurable subset of recommended items.
+     * </p>
+     * 
+     * @param promotions
+     *        The promotions to apply to the recommendation request. A promotion defines additional business rules that
+     *        apply to a configurable subset of recommended items.
+     */
+
+    public void setPromotions(java.util.Collection<Promotion> promotions) {
+        if (promotions == null) {
+            this.promotions = null;
+            return;
+        }
+
+        this.promotions = new java.util.ArrayList<Promotion>(promotions);
+    }
+
+    /**
+     * <p>
+     * The promotions to apply to the recommendation request. A promotion defines additional business rules that apply
+     * to a configurable subset of recommended items.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPromotions(java.util.Collection)} or {@link #withPromotions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param promotions
+     *        The promotions to apply to the recommendation request. A promotion defines additional business rules that
+     *        apply to a configurable subset of recommended items.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest withPromotions(Promotion... promotions) {
+        if (this.promotions == null) {
+            setPromotions(new java.util.ArrayList<Promotion>(promotions.length));
+        }
+        for (Promotion ele : promotions) {
+            this.promotions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The promotions to apply to the recommendation request. A promotion defines additional business rules that apply
+     * to a configurable subset of recommended items.
+     * </p>
+     * 
+     * @param promotions
+     *        The promotions to apply to the recommendation request. A promotion defines additional business rules that
+     *        apply to a configurable subset of recommended items.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest withPromotions(java.util.Collection<Promotion> promotions) {
+        setPromotions(promotions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +728,9 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getFilterValues() != null)
             sb.append("FilterValues: ").append("***Sensitive Data Redacted***").append(",");
         if (getRecommenderArn() != null)
-            sb.append("RecommenderArn: ").append(getRecommenderArn());
+            sb.append("RecommenderArn: ").append(getRecommenderArn()).append(",");
+        if (getPromotions() != null)
+            sb.append("Promotions: ").append(getPromotions());
         sb.append("}");
         return sb.toString();
     }
@@ -687,6 +777,10 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getRecommenderArn() != null && other.getRecommenderArn().equals(this.getRecommenderArn()) == false)
             return false;
+        if (other.getPromotions() == null ^ this.getPromotions() == null)
+            return false;
+        if (other.getPromotions() != null && other.getPromotions().equals(this.getPromotions()) == false)
+            return false;
         return true;
     }
 
@@ -703,6 +797,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getFilterValues() == null) ? 0 : getFilterValues().hashCode());
         hashCode = prime * hashCode + ((getRecommenderArn() == null) ? 0 : getRecommenderArn().hashCode());
+        hashCode = prime * hashCode + ((getPromotions() == null) ? 0 : getPromotions().hashCode());
         return hashCode;
     }
 

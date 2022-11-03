@@ -36,8 +36,7 @@ public class TunnelSummary implements Serializable, Cloneable, StructuredPojo {
     private String tunnelId;
     /**
      * <p>
-     * The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name of the tunnel.
      * </p>
      */
     private String tunnelArn;
@@ -108,13 +107,11 @@ public class TunnelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name of the tunnel.
      * </p>
      * 
      * @param tunnelArn
-     *        The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     *        <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     *        The Amazon Resource Name of the tunnel.
      */
 
     public void setTunnelArn(String tunnelArn) {
@@ -123,12 +120,10 @@ public class TunnelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name of the tunnel.
      * </p>
      * 
-     * @return The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     *         <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * @return The Amazon Resource Name of the tunnel.
      */
 
     public String getTunnelArn() {
@@ -137,13 +132,11 @@ public class TunnelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name of the tunnel.
      * </p>
      * 
      * @param tunnelArn
-     *        The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     *        <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     *        The Amazon Resource Name of the tunnel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

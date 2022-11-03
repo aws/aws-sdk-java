@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lexruntimev2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -30,6 +31,8 @@ public class RuntimeHintDetailsMarshaller {
 
     private static final MarshallingInfo<List> RUNTIMEHINTVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeHintValues").build();
+    private static final MarshallingInfo<Map> SUBSLOTHINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("subSlotHints").build();
 
     private static final RuntimeHintDetailsMarshaller instance = new RuntimeHintDetailsMarshaller();
 
@@ -48,6 +51,7 @@ public class RuntimeHintDetailsMarshaller {
 
         try {
             protocolMarshaller.marshall(runtimeHintDetails.getRuntimeHintValues(), RUNTIMEHINTVALUES_BINDING);
+            protocolMarshaller.marshall(runtimeHintDetails.getSubSlotHints(), SUBSLOTHINTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

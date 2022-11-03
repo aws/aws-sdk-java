@@ -59,7 +59,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an Global Accelerator accelerator:
+     * For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -152,7 +152,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an Global Accelerator accelerator:
+     * For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -195,7 +195,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For an Global Accelerator accelerator:
+     *        For an Global Accelerator standard accelerator:
      *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      *        </p>
      *        </li>
@@ -244,7 +244,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an Global Accelerator accelerator:
+     * For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -286,7 +286,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         For an Global Accelerator accelerator:
+     *         For an Global Accelerator standard accelerator:
      *         <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      *         </p>
      *         </li>
@@ -335,7 +335,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an Global Accelerator accelerator:
+     * For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -378,7 +378,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For an Global Accelerator accelerator:
+     *        For an Global Accelerator standard accelerator:
      *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      *        </p>
      *        </li>

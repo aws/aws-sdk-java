@@ -52,6 +52,10 @@ public class HyperParameterTuningJobConfigJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     hyperParameterTuningJobConfig.setStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StrategyConfig", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTuningJobConfig.setStrategyConfig(HyperParameterTuningJobStrategyConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("HyperParameterTuningJobObjective", targetDepth)) {
                     context.nextToken();
                     hyperParameterTuningJobConfig.setHyperParameterTuningJobObjective(HyperParameterTuningJobObjectiveJsonUnmarshaller.getInstance()

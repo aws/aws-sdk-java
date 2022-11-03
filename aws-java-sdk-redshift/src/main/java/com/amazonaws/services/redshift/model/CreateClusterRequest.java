@@ -198,7 +198,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -429,8 +430,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -504,26 +506,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean availabilityZoneRelocation;
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
-     * Possible values include the following.
+     * This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     * determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String aquaConfigurationStatus;
     /**
@@ -533,6 +518,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String defaultIamRoleArn;
+    /**
+     * <p>
+     * A flag that specifies whether to load sample data once the cluster is created.
+     * </p>
+     */
+    private String loadSampleData;
 
     /**
      * <p>
@@ -1424,7 +1415,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1457,8 +1449,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /,
-     *        or @.
+     *        Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote),
+     *        <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      *        </p>
      *        </li>
      */
@@ -1497,7 +1489,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1529,8 +1522,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /,
-     *         or @.
+     *         Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote),
+     *         <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      *         </p>
      *         </li>
      */
@@ -1569,7 +1562,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1602,8 +1596,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /,
-     *        or @.
+     *        Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote),
+     *        <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3107,8 +3101,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3117,7 +3112,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The Elastic IP (EIP) address for the cluster.</p>
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     *        gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone
+     *        relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a
      *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
@@ -3131,8 +3127,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3140,7 +3137,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The Elastic IP (EIP) address for the cluster.</p>
      *         <p>
      *         Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     *         gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     *         gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone
+     *         relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a
      *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *         >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
@@ -3154,8 +3152,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3164,7 +3163,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The Elastic IP (EIP) address for the cluster.</p>
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     *        gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone
+     *        relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a
      *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3723,47 +3723,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
-     * Possible values include the following.
+     * This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     * determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
-     *        created. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     *        determines whether to use AQUA (Advanced Query Accelerator).
      * @see AquaConfigurationStatus
      */
 
@@ -3773,46 +3739,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
-     * Possible values include the following.
+     * This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     * determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
-     *         created. Possible values include the following.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *         type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         disabled - Don't use AQUA.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         auto - Amazon Redshift determines whether to use AQUA.
-     *         </p>
-     *         </li>
+     * @return This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     *         determines whether to use AQUA (Advanced Query Accelerator).
      * @see AquaConfigurationStatus
      */
 
@@ -3822,47 +3754,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
-     * Possible values include the following.
+     * This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     * determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
-     *        created. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     *        determines whether to use AQUA (Advanced Query Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaConfigurationStatus
      */
@@ -3874,47 +3772,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
-     * Possible values include the following.
+     * This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     * determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
-     *        created. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically
+     *        determines whether to use AQUA (Advanced Query Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaConfigurationStatus
      */
@@ -3967,6 +3831,46 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateClusterRequest withDefaultIamRoleArn(String defaultIamRoleArn) {
         setDefaultIamRoleArn(defaultIamRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that specifies whether to load sample data once the cluster is created.
+     * </p>
+     * 
+     * @param loadSampleData
+     *        A flag that specifies whether to load sample data once the cluster is created.
+     */
+
+    public void setLoadSampleData(String loadSampleData) {
+        this.loadSampleData = loadSampleData;
+    }
+
+    /**
+     * <p>
+     * A flag that specifies whether to load sample data once the cluster is created.
+     * </p>
+     * 
+     * @return A flag that specifies whether to load sample data once the cluster is created.
+     */
+
+    public String getLoadSampleData() {
+        return this.loadSampleData;
+    }
+
+    /**
+     * <p>
+     * A flag that specifies whether to load sample data once the cluster is created.
+     * </p>
+     * 
+     * @param loadSampleData
+     *        A flag that specifies whether to load sample data once the cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withLoadSampleData(String loadSampleData) {
+        setLoadSampleData(loadSampleData);
         return this;
     }
 
@@ -4047,7 +3951,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAquaConfigurationStatus() != null)
             sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus()).append(",");
         if (getDefaultIamRoleArn() != null)
-            sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn());
+            sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn()).append(",");
+        if (getLoadSampleData() != null)
+            sb.append("LoadSampleData: ").append(getLoadSampleData());
         sb.append("}");
         return sb.toString();
     }
@@ -4197,6 +4103,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDefaultIamRoleArn() != null && other.getDefaultIamRoleArn().equals(this.getDefaultIamRoleArn()) == false)
             return false;
+        if (other.getLoadSampleData() == null ^ this.getLoadSampleData() == null)
+            return false;
+        if (other.getLoadSampleData() != null && other.getLoadSampleData().equals(this.getLoadSampleData()) == false)
+            return false;
         return true;
     }
 
@@ -4238,6 +4148,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
         hashCode = prime * hashCode + ((getAquaConfigurationStatus() == null) ? 0 : getAquaConfigurationStatus().hashCode());
         hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getLoadSampleData() == null) ? 0 : getLoadSampleData().hashCode());
         return hashCode;
     }
 

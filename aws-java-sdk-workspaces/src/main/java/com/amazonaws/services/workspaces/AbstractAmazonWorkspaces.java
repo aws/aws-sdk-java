@@ -88,6 +88,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public CreateWorkspaceImageResult createWorkspaceImage(CreateWorkspaceImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +269,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public ModifyClientPropertiesResult modifyClientProperties(ModifyClientPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifySamlPropertiesResult modifySamlProperties(ModifySamlPropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

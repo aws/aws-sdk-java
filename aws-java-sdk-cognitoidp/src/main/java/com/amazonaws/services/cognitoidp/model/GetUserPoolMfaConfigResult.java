@@ -25,19 +25,19 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SMS text message multi-factor (MFA) configuration.
+     * The SMS text message multi-factor authentication (MFA) configuration.
      * </p>
      */
     private SmsMfaConfigType smsMfaConfiguration;
     /**
      * <p>
-     * The software token multi-factor (MFA) configuration.
+     * The software token multi-factor authentication (MFA) configuration.
      * </p>
      */
     private SoftwareTokenMfaConfigType softwareTokenMfaConfiguration;
     /**
      * <p>
-     * The multi-factor (MFA) configuration. Valid values include:
+     * The multi-factor authentication (MFA) configuration. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -61,11 +61,11 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SMS text message multi-factor (MFA) configuration.
+     * The SMS text message multi-factor authentication (MFA) configuration.
      * </p>
      * 
      * @param smsMfaConfiguration
-     *        The SMS text message multi-factor (MFA) configuration.
+     *        The SMS text message multi-factor authentication (MFA) configuration.
      */
 
     public void setSmsMfaConfiguration(SmsMfaConfigType smsMfaConfiguration) {
@@ -74,10 +74,10 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SMS text message multi-factor (MFA) configuration.
+     * The SMS text message multi-factor authentication (MFA) configuration.
      * </p>
      * 
-     * @return The SMS text message multi-factor (MFA) configuration.
+     * @return The SMS text message multi-factor authentication (MFA) configuration.
      */
 
     public SmsMfaConfigType getSmsMfaConfiguration() {
@@ -86,11 +86,11 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SMS text message multi-factor (MFA) configuration.
+     * The SMS text message multi-factor authentication (MFA) configuration.
      * </p>
      * 
      * @param smsMfaConfiguration
-     *        The SMS text message multi-factor (MFA) configuration.
+     *        The SMS text message multi-factor authentication (MFA) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The software token multi-factor (MFA) configuration.
+     * The software token multi-factor authentication (MFA) configuration.
      * </p>
      * 
      * @param softwareTokenMfaConfiguration
-     *        The software token multi-factor (MFA) configuration.
+     *        The software token multi-factor authentication (MFA) configuration.
      */
 
     public void setSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType softwareTokenMfaConfiguration) {
@@ -114,10 +114,10 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The software token multi-factor (MFA) configuration.
+     * The software token multi-factor authentication (MFA) configuration.
      * </p>
      * 
-     * @return The software token multi-factor (MFA) configuration.
+     * @return The software token multi-factor authentication (MFA) configuration.
      */
 
     public SoftwareTokenMfaConfigType getSoftwareTokenMfaConfiguration() {
@@ -126,11 +126,11 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The software token multi-factor (MFA) configuration.
+     * The software token multi-factor authentication (MFA) configuration.
      * </p>
      * 
      * @param softwareTokenMfaConfiguration
-     *        The software token multi-factor (MFA) configuration.
+     *        The software token multi-factor authentication (MFA) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +141,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The multi-factor (MFA) configuration. Valid values include:
+     * The multi-factor authentication (MFA) configuration. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -162,7 +162,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param mfaConfiguration
-     *        The multi-factor (MFA) configuration. Valid values include:</p>
+     *        The multi-factor authentication (MFA) configuration. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -188,7 +188,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The multi-factor (MFA) configuration. Valid values include:
+     * The multi-factor authentication (MFA) configuration. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -208,7 +208,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * 
-     * @return The multi-factor (MFA) configuration. Valid values include:</p>
+     * @return The multi-factor authentication (MFA) configuration. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -234,7 +234,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The multi-factor (MFA) configuration. Valid values include:
+     * The multi-factor authentication (MFA) configuration. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -255,7 +255,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param mfaConfiguration
-     *        The multi-factor (MFA) configuration. Valid values include:</p>
+     *        The multi-factor authentication (MFA) configuration. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -283,7 +283,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The multi-factor (MFA) configuration. Valid values include:
+     * The multi-factor authentication (MFA) configuration. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -304,7 +304,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param mfaConfiguration
-     *        The multi-factor (MFA) configuration. Valid values include:</p>
+     *        The multi-factor authentication (MFA) configuration. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>

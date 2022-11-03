@@ -52,6 +52,10 @@ public class ModelBiasJobInputJsonUnmarshaller implements Unmarshaller<ModelBias
                     context.nextToken();
                     modelBiasJobInput.setEndpointInput(EndpointInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BatchTransformInput", targetDepth)) {
+                    context.nextToken();
+                    modelBiasJobInput.setBatchTransformInput(BatchTransformInputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("GroundTruthS3Input", targetDepth)) {
                     context.nextToken();
                     modelBiasJobInput.setGroundTruthS3Input(MonitoringGroundTruthS3InputJsonUnmarshaller.getInstance().unmarshall(context));

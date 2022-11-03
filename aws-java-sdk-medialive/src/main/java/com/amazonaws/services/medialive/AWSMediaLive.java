@@ -1167,6 +1167,35 @@ public interface AWSMediaLive {
     PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
 
     /**
+     * Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of
+     * sending the command. When the reboot is complete, the device’s connection status will change to connected.
+     * 
+     * @param rebootInputDeviceRequest
+     *        A request to reboot an AWS Elemental device.
+     * @return Result of the RebootInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Reboot operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to reboot input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on reboot device calls to the input device service.
+     * @sample AWSMediaLive.RebootInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RebootInputDeviceResult rebootInputDevice(RebootInputDeviceRequest rebootInputDeviceRequest);
+
+    /**
      * Reject the transfer of the specified input device to your AWS account.
      * 
      * @param rejectInputDeviceTransferRequest
@@ -1223,6 +1252,39 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     StartChannelResult startChannel(StartChannelRequest startChannelRequest);
+
+    /**
+     * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
+     * to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming
+     * when the software is fully installed. Devices automatically install updates while they are powered on and their
+     * MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop
+     * MediaLive channels that use the device. The device must remain powered on and connected to the internet for the
+     * duration of the maintenance.
+     * 
+     * @param startInputDeviceMaintenanceWindowRequest
+     *        Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
+     * @return Result of the StartInputDeviceMaintenanceWindow operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Start maintenance window operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start a maintenance window for this input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start maintenance window calls to the input device service.
+     * @sample AWSMediaLive.StartInputDeviceMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartInputDeviceMaintenanceWindowResult startInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest startInputDeviceMaintenanceWindowRequest);
 
     /**
      * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each

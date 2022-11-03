@@ -58,9 +58,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-     * queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a
-     * lower scheduling priority.
+     * The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower
+     * scheduling priority.
      * </p>
      * <p>
      * The minimum supported value is 0 and the maximum supported value is 9999.
@@ -69,9 +69,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private Integer schedulingPriority;
     /**
      * <p>
-     * An object with various properties specific to single-node container-based jobs. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.
+     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
+     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * job definitions.
      * </p>
      * <note>
      * <p>
@@ -95,6 +96,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * <code>containerProperties</code> instead.
      * </p>
+     * </note> <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
+     * </p>
      * </note>
      */
     private NodeProperties nodeProperties;
@@ -113,6 +118,11 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
      * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     * </p>
+     * </note>
      */
     private Boolean propagateTags;
     /**
@@ -140,8 +150,20 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * The platform capabilities required by the job definition. If no value is specified, it defaults to
      * <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<String> platformCapabilities;
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
+     * Amazon ECS based job definitions.
+     * </p>
+     */
+    private EksProperties eksProperties;
 
     /**
      * <p>
@@ -404,18 +426,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-     * queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a
-     * lower scheduling priority.
+     * The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower
+     * scheduling priority.
      * </p>
      * <p>
      * The minimum supported value is 0 and the maximum supported value is 9999.
      * </p>
      * 
      * @param schedulingPriority
-     *        The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs
-     *        in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before
-     *        jobs with a lower scheduling priority.</p>
+     *        The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in
+     *        job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with
+     *        a lower scheduling priority.</p>
      *        <p>
      *        The minimum supported value is 0 and the maximum supported value is 9999.
      */
@@ -426,17 +448,17 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-     * queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a
-     * lower scheduling priority.
+     * The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower
+     * scheduling priority.
      * </p>
      * <p>
      * The minimum supported value is 0 and the maximum supported value is 9999.
      * </p>
      * 
-     * @return The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs
-     *         in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before
-     *         jobs with a lower scheduling priority.</p>
+     * @return The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in
+     *         job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs
+     *         with a lower scheduling priority.</p>
      *         <p>
      *         The minimum supported value is 0 and the maximum supported value is 9999.
      */
@@ -447,18 +469,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-     * queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a
-     * lower scheduling priority.
+     * The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower
+     * scheduling priority.
      * </p>
      * <p>
      * The minimum supported value is 0 and the maximum supported value is 9999.
      * </p>
      * 
      * @param schedulingPriority
-     *        The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs
-     *        in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before
-     *        jobs with a lower scheduling priority.</p>
+     *        The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in
+     *        job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with
+     *        a lower scheduling priority.</p>
      *        <p>
      *        The minimum supported value is 0 and the maximum supported value is 9999.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -471,9 +493,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to single-node container-based jobs. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.
+     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
+     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * job definitions.
      * </p>
      * <note>
      * <p>
@@ -483,9 +506,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param containerProperties
-     *        An object with various properties specific to single-node container-based jobs. If the job definition's
-     *        <code>type</code> parameter is <code>container</code>, then you must specify either
-     *        <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+     *        An object with various properties specific to Amazon ECS based single-node container-based jobs. If the
+     *        job definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS
+     *        based job definitions.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
      *        <code>containerProperties</code>.
@@ -498,9 +522,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to single-node container-based jobs. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.
+     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
+     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * job definitions.
      * </p>
      * <note>
      * <p>
@@ -509,9 +534,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * </note>
      * 
-     * @return An object with various properties specific to single-node container-based jobs. If the job definition's
-     *         <code>type</code> parameter is <code>container</code>, then you must specify either
-     *         <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+     * @return An object with various properties specific to Amazon ECS based single-node container-based jobs. If the
+     *         job definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     *         <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon
+     *         EKS based job definitions.</p> <note>
      *         <p>
      *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
      *         <code>containerProperties</code>.
@@ -524,9 +550,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to single-node container-based jobs. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.
+     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
+     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * job definitions.
      * </p>
      * <note>
      * <p>
@@ -536,9 +563,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param containerProperties
-     *        An object with various properties specific to single-node container-based jobs. If the job definition's
-     *        <code>type</code> parameter is <code>container</code>, then you must specify either
-     *        <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+     *        An object with various properties specific to Amazon ECS based single-node container-based jobs. If the
+     *        job definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS
+     *        based job definitions.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
      *        <code>containerProperties</code>.
@@ -565,6 +593,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * <code>containerProperties</code> instead.
      * </p>
+     * </note> <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
+     * </p>
      * </note>
      * 
      * @param nodeProperties
@@ -577,6 +609,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      *        <code>containerProperties</code> instead.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
      *        </p>
      */
 
@@ -598,6 +634,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * <code>containerProperties</code> instead.
      * </p>
+     * </note> <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
+     * </p>
      * </note>
      * 
      * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
@@ -609,6 +649,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *         <p>
      *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      *         <code>containerProperties</code> instead.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
      *         </p>
      */
 
@@ -630,6 +674,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * <code>containerProperties</code> instead.
      * </p>
+     * </note> <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
+     * </p>
      * </note>
      * 
      * @param nodeProperties
@@ -642,6 +690,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      *        <code>containerProperties</code> instead.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -710,13 +762,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
      * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     * </p>
+     * </note>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
      *        task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
      *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
-     *        <code>FAILED</code> state.
+     *        <code>FAILED</code> state.</p> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     *        </p>
      */
 
     public void setPropagateTags(Boolean propagateTags) {
@@ -730,12 +790,20 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
      * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
      *         task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
      *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
-     *         <code>FAILED</code> state.
+     *         <code>FAILED</code> state.</p> <note>
+     *         <p>
+     *         If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     *         </p>
      */
 
     public Boolean getPropagateTags() {
@@ -749,13 +817,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
      * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     * </p>
+     * </note>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
      *        task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
      *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
-     *        <code>FAILED</code> state.
+     *        <code>FAILED</code> state.</p> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -771,12 +847,20 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
      * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
      *         task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
      *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
-     *         <code>FAILED</code> state.
+     *         <code>FAILED</code> state.</p> <note>
+     *         <p>
+     *         If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+     *         </p>
      */
 
     public Boolean isPropagateTags() {
@@ -944,9 +1028,17 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * The platform capabilities required by the job definition. If no value is specified, it defaults to
      * <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     * </p>
+     * </note>
      * 
      * @return The platform capabilities required by the job definition. If no value is specified, it defaults to
-     *         <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
+     *         <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>
+     *         <p>
+     *         If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     *         </p>
      * @see PlatformCapability
      */
 
@@ -959,10 +1051,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * The platform capabilities required by the job definition. If no value is specified, it defaults to
      * <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     * </p>
+     * </note>
      * 
      * @param platformCapabilities
      *        The platform capabilities required by the job definition. If no value is specified, it defaults to
-     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
+     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     *        </p>
      * @see PlatformCapability
      */
 
@@ -980,6 +1080,11 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * The platform capabilities required by the job definition. If no value is specified, it defaults to
      * <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPlatformCapabilities(java.util.Collection)} or {@link #withPlatformCapabilities(java.util.Collection)}
@@ -988,7 +1093,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * 
      * @param platformCapabilities
      *        The platform capabilities required by the job definition. If no value is specified, it defaults to
-     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
+     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformCapability
      */
@@ -1008,10 +1116,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * The platform capabilities required by the job definition. If no value is specified, it defaults to
      * <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     * </p>
+     * </note>
      * 
      * @param platformCapabilities
      *        The platform capabilities required by the job definition. If no value is specified, it defaults to
-     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
+     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformCapability
      */
@@ -1026,10 +1142,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * The platform capabilities required by the job definition. If no value is specified, it defaults to
      * <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     * </p>
+     * </note>
      * 
      * @param platformCapabilities
      *        The platform capabilities required by the job definition. If no value is specified, it defaults to
-     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
+     *        <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>
+     *        <p>
+     *        If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformCapability
      */
@@ -1044,6 +1168,52 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         } else {
             getPlatformCapabilities().addAll(platformCapabilitiesCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
+     * Amazon ECS based job definitions.
+     * </p>
+     * 
+     * @param eksProperties
+     *        An object with various properties that are specific to Amazon EKS based jobs. This must not be specified
+     *        for Amazon ECS based job definitions.
+     */
+
+    public void setEksProperties(EksProperties eksProperties) {
+        this.eksProperties = eksProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
+     * Amazon ECS based job definitions.
+     * </p>
+     * 
+     * @return An object with various properties that are specific to Amazon EKS based jobs. This must not be specified
+     *         for Amazon ECS based job definitions.
+     */
+
+    public EksProperties getEksProperties() {
+        return this.eksProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
+     * Amazon ECS based job definitions.
+     * </p>
+     * 
+     * @param eksProperties
+     *        An object with various properties that are specific to Amazon EKS based jobs. This must not be specified
+     *        for Amazon ECS based job definitions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withEksProperties(EksProperties eksProperties) {
+        setEksProperties(eksProperties);
         return this;
     }
 
@@ -1080,7 +1250,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getPlatformCapabilities() != null)
-            sb.append("PlatformCapabilities: ").append(getPlatformCapabilities());
+            sb.append("PlatformCapabilities: ").append(getPlatformCapabilities()).append(",");
+        if (getEksProperties() != null)
+            sb.append("EksProperties: ").append(getEksProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -1139,6 +1311,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getPlatformCapabilities() != null && other.getPlatformCapabilities().equals(this.getPlatformCapabilities()) == false)
             return false;
+        if (other.getEksProperties() == null ^ this.getEksProperties() == null)
+            return false;
+        if (other.getEksProperties() != null && other.getEksProperties().equals(this.getEksProperties()) == false)
+            return false;
         return true;
     }
 
@@ -1158,6 +1334,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getEksProperties() == null) ? 0 : getEksProperties().hashCode());
         return hashCode;
     }
 

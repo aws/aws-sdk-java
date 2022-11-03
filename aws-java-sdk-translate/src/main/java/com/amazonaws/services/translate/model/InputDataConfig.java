@@ -30,9 +30,17 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API
-     * endpoint you are calling.
+     * The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the
+     * folder. The folder must be in the same Region as the API endpoint you are calling.
      * </p>
+     * <note>
+     * <p>
+     * The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file,
+     * Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses
+     * all of them as input.
+     * </p>
+     * </note>
      */
     private String s3Uri;
     /**
@@ -91,13 +99,27 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API
-     * endpoint you are calling.
+     * The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the
+     * folder. The folder must be in the same Region as the API endpoint you are calling.
      * </p>
+     * <note>
+     * <p>
+     * The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file,
+     * Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses
+     * all of them as input.
+     * </p>
+     * </note>
      * 
      * @param s3Uri
-     *        The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the
-     *        API endpoint you are calling.
+     *        The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in
+     *        the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+     *        <p>
+     *        The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     *        documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single
+     *        file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon
+     *        Translate uses all of them as input.
+     *        </p>
      */
 
     public void setS3Uri(String s3Uri) {
@@ -106,12 +128,26 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API
-     * endpoint you are calling.
+     * The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the
+     * folder. The folder must be in the same Region as the API endpoint you are calling.
      * </p>
+     * <note>
+     * <p>
+     * The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file,
+     * Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses
+     * all of them as input.
+     * </p>
+     * </note>
      * 
-     * @return The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the
-     *         API endpoint you are calling.
+     * @return The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in
+     *         the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+     *         <p>
+     *         The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     *         documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single
+     *         file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon
+     *         Translate uses all of them as input.
+     *         </p>
      */
 
     public String getS3Uri() {
@@ -120,13 +156,27 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API
-     * endpoint you are calling.
+     * The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the
+     * folder. The folder must be in the same Region as the API endpoint you are calling.
      * </p>
+     * <note>
+     * <p>
+     * The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file,
+     * Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses
+     * all of them as input.
+     * </p>
+     * </note>
      * 
      * @param s3Uri
-     *        The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the
-     *        API endpoint you are calling.
+     *        The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in
+     *        the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+     *        <p>
+     *        The URI can also point to a single input document, or it can provide the prefix for a collection of input
+     *        documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single
+     *        file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon
+     *        Translate uses all of them as input.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

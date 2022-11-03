@@ -33,25 +33,25 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
     private String instanceId;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
     /**
      * <p>
-     * TThe name of the contact flow.
+     * The name of the flow.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The state of contact flow.
+     * The state of flow.
      * </p>
      */
     private String contactFlowState;
@@ -98,11 +98,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -111,10 +111,10 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -123,11 +123,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * TThe name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        TThe name of the contact flow.
+     *        The name of the flow.
      */
 
     public void setName(String name) {
@@ -151,10 +151,10 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * TThe name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
-     * @return TThe name of the contact flow.
+     * @return The name of the flow.
      */
 
     public String getName() {
@@ -163,11 +163,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * TThe name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        TThe name of the contact flow.
+     *        The name of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      */
 
     public void setDescription(String description) {
@@ -191,10 +191,10 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
-     * @return The description of the contact flow.
+     * @return The description of the flow.
      */
 
     public String getDescription() {
@@ -203,11 +203,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of contact flow.
+     * The state of flow.
      * </p>
      * 
      * @param contactFlowState
-     *        The state of contact flow.
+     *        The state of flow.
      * @see ContactFlowState
      */
 
@@ -232,10 +232,10 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of contact flow.
+     * The state of flow.
      * </p>
      * 
-     * @return The state of contact flow.
+     * @return The state of flow.
      * @see ContactFlowState
      */
 
@@ -245,11 +245,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of contact flow.
+     * The state of flow.
      * </p>
      * 
      * @param contactFlowState
-     *        The state of contact flow.
+     *        The state of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowState
      */
@@ -261,11 +261,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of contact flow.
+     * The state of flow.
      * </p>
      * 
      * @param contactFlowState
-     *        The state of contact flow.
+     *        The state of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowState
      */

@@ -64,6 +64,10 @@ public class AdBreakJsonUnmarshaller implements Unmarshaller<AdBreak, JsonUnmars
                     context.nextToken();
                     adBreak.setSpliceInsertMessage(SpliceInsertMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TimeSignalMessage", targetDepth)) {
+                    context.nextToken();
+                    adBreak.setTimeSignalMessage(TimeSignalMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

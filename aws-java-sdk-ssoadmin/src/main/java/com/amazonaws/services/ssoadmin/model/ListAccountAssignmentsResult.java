@@ -25,7 +25,7 @@ public class ListAccountAssignmentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of assignments that match the input Amazon Web Services account and permission set.
+     * The list of assignments that match the input AWS account and permission set.
      * </p>
      */
     private java.util.List<AccountAssignment> accountAssignments;
@@ -39,10 +39,10 @@ public class ListAccountAssignmentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of assignments that match the input Amazon Web Services account and permission set.
+     * The list of assignments that match the input AWS account and permission set.
      * </p>
      * 
-     * @return The list of assignments that match the input Amazon Web Services account and permission set.
+     * @return The list of assignments that match the input AWS account and permission set.
      */
 
     public java.util.List<AccountAssignment> getAccountAssignments() {
@@ -51,11 +51,11 @@ public class ListAccountAssignmentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of assignments that match the input Amazon Web Services account and permission set.
+     * The list of assignments that match the input AWS account and permission set.
      * </p>
      * 
      * @param accountAssignments
-     *        The list of assignments that match the input Amazon Web Services account and permission set.
+     *        The list of assignments that match the input AWS account and permission set.
      */
 
     public void setAccountAssignments(java.util.Collection<AccountAssignment> accountAssignments) {
@@ -69,7 +69,7 @@ public class ListAccountAssignmentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of assignments that match the input Amazon Web Services account and permission set.
+     * The list of assignments that match the input AWS account and permission set.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListAccountAssignmentsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param accountAssignments
-     *        The list of assignments that match the input Amazon Web Services account and permission set.
+     *        The list of assignments that match the input AWS account and permission set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListAccountAssignmentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of assignments that match the input Amazon Web Services account and permission set.
+     * The list of assignments that match the input AWS account and permission set.
      * </p>
      * 
      * @param accountAssignments
-     *        The list of assignments that match the input Amazon Web Services account and permission set.
+     *        The list of assignments that match the input AWS account and permission set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

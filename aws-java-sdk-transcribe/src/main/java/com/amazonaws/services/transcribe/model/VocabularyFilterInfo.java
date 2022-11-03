@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a vocabulary filter.
+ * Provides information about a vocabulary filter, including the language of the filter, when it was last modified, and
+ * its name.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyFilterInfo" target="_top">AWS
@@ -30,30 +31,47 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     * A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot contain
+     * spaces, and must be unique within an Amazon Web Services account.
      * </p>
      */
     private String vocabularyFilterName;
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The date and time that the vocabulary was last updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date lastModifiedTime;
 
     /**
      * <p>
-     * The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     * A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot contain
+     * spaces, and must be unique within an Amazon Web Services account.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     *        A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot
+     *        contain spaces, and must be unique within an Amazon Web Services account.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -62,10 +80,12 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     * A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot contain
+     * spaces, and must be unique within an Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     * @return A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot
+     *         contain spaces, and must be unique within an Amazon Web Services account.
      */
 
     public String getVocabularyFilterName() {
@@ -74,11 +94,13 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     * A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot contain
+     * spaces, and must be unique within an Amazon Web Services account.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter. The name must be unique in the account that holds the filter.
+     *        A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot
+     *        contain spaces, and must be unique within an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +111,31 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter.
+     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *        filter must contain terms in only one language.</p>
+     *        <p>
+     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     *        files that contain English audio.
+     *        </p>
+     *        <p>
+     *        For a list of supported languages and their associated language codes, refer to the <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *        table.
      * @see LanguageCode
      */
 
@@ -103,10 +145,30 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
-     * @return The language code of the words in the vocabulary filter.
+     * @return The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *         filter must contain terms in only one language.</p>
+     *         <p>
+     *         A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *         if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter
+     *         to files that contain English audio.
+     *         </p>
+     *         <p>
+     *         For a list of supported languages and their associated language codes, refer to the <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *         table.
      * @see LanguageCode
      */
 
@@ -116,11 +178,31 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter.
+     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *        filter must contain terms in only one language.</p>
+     *        <p>
+     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     *        files that contain English audio.
+     *        </p>
+     *        <p>
+     *        For a list of supported languages and their associated language codes, refer to the <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -132,11 +214,31 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
+     * must contain terms in only one language.
+     * </p>
+     * <p>
+     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
+     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
+     * contain English audio.
+     * </p>
+     * <p>
+     * For a list of supported languages and their associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter.
+     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
+     *        filter must contain terms in only one language.</p>
+     *        <p>
+     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     *        files that contain English audio.
+     *        </p>
+     *        <p>
+     *        For a list of supported languages and their associated language codes, refer to the <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -148,11 +250,18 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time that the vocabulary was last updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the vocabulary was last updated.
+     *        The date and time the specified vocabulary filter was last modified.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -161,10 +270,17 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time that the vocabulary was last updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time that the vocabulary was last updated.
+     * @return The date and time the specified vocabulary filter was last modified.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -173,11 +289,18 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time that the vocabulary was last updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the vocabulary was last updated.
+     *        The date and time the specified vocabulary filter was last modified.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

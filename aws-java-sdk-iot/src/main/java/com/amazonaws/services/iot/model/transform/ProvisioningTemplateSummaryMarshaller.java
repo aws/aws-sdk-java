@@ -39,6 +39,8 @@ public class ProvisioningTemplateSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("enabled").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final ProvisioningTemplateSummaryMarshaller instance = new ProvisioningTemplateSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class ProvisioningTemplateSummaryMarshaller {
             protocolMarshaller.marshall(provisioningTemplateSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(provisioningTemplateSummary.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(provisioningTemplateSummary.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(provisioningTemplateSummary.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

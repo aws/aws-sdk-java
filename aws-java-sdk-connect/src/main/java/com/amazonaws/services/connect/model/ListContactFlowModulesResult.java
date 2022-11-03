@@ -25,7 +25,7 @@ public class ListContactFlowModulesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      */
     private java.util.List<ContactFlowModuleSummary> contactFlowModulesSummaryList;
@@ -38,10 +38,10 @@ public class ListContactFlowModulesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * 
-     * @return Information about the contact flow module.
+     * @return Information about the flow module.
      */
 
     public java.util.List<ContactFlowModuleSummary> getContactFlowModulesSummaryList() {
@@ -50,11 +50,11 @@ public class ListContactFlowModulesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * 
      * @param contactFlowModulesSummaryList
-     *        Information about the contact flow module.
+     *        Information about the flow module.
      */
 
     public void setContactFlowModulesSummaryList(java.util.Collection<ContactFlowModuleSummary> contactFlowModulesSummaryList) {
@@ -68,7 +68,7 @@ public class ListContactFlowModulesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListContactFlowModulesResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param contactFlowModulesSummaryList
-     *        Information about the contact flow module.
+     *        Information about the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListContactFlowModulesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the contact flow module.
+     * Information about the flow module.
      * </p>
      * 
      * @param contactFlowModulesSummaryList
-     *        Information about the contact flow module.
+     *        Information about the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

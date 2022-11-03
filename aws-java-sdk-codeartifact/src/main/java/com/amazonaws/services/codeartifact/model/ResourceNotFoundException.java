@@ -31,7 +31,7 @@ public class ResourceNotFoundException extends com.amazonaws.services.codeartifa
     private String resourceId;
     /**
      * <p>
-     * The type of AWS resource.
+     * The type of Amazon Web Services resource.
      * </p>
      */
     private String resourceType;
@@ -90,11 +90,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.codeartifa
 
     /**
      * <p>
-     * The type of AWS resource.
+     * The type of Amazon Web Services resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource.
+     *        The type of Amazon Web Services resource.
      * @see ResourceType
      */
 
@@ -105,10 +105,10 @@ public class ResourceNotFoundException extends com.amazonaws.services.codeartifa
 
     /**
      * <p>
-     * The type of AWS resource.
+     * The type of Amazon Web Services resource.
      * </p>
      * 
-     * @return The type of AWS resource.
+     * @return The type of Amazon Web Services resource.
      * @see ResourceType
      */
 
@@ -119,11 +119,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.codeartifa
 
     /**
      * <p>
-     * The type of AWS resource.
+     * The type of Amazon Web Services resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource.
+     *        The type of Amazon Web Services resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -135,11 +135,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.codeartifa
 
     /**
      * <p>
-     * The type of AWS resource.
+     * The type of Amazon Web Services resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource.
+     *        The type of Amazon Web Services resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

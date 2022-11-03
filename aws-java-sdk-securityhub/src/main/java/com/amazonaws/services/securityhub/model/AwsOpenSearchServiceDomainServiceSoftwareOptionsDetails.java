@@ -68,8 +68,35 @@ public class AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails implements 
     private Boolean updateAvailable;
     /**
      * <p>
-     * The status of the service software update.
+     * The status of the service software update. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_UPDATE</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String updateStatus;
     /**
@@ -351,11 +378,64 @@ public class AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails implements 
 
     /**
      * <p>
-     * The status of the service software update.
+     * The status of the service software update. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_UPDATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateStatus
-     *        The status of the service software update.
+     *        The status of the service software update. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELIGIBLE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_ELIGIBLE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_UPDATE</code>
+     *        </p>
+     *        </li>
      */
 
     public void setUpdateStatus(String updateStatus) {
@@ -364,10 +444,63 @@ public class AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails implements 
 
     /**
      * <p>
-     * The status of the service software update.
+     * The status of the service software update. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_UPDATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the service software update.
+     * @return The status of the service software update. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COMPLETED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELIGIBLE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOT_ELIGIBLE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_UPDATE</code>
+     *         </p>
+     *         </li>
      */
 
     public String getUpdateStatus() {
@@ -376,11 +509,64 @@ public class AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails implements 
 
     /**
      * <p>
-     * The status of the service software update.
+     * The status of the service software update. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_ELIGIBLE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_UPDATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateStatus
-     *        The status of the service software update.
+     *        The status of the service software update. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELIGIBLE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_ELIGIBLE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_UPDATE</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

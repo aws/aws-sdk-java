@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+ * Gets a RequestValidator of a given RestApi.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class GetRequestValidatorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     * The identifier of the RequestValidator to be retrieved.
      * </p>
      */
     private String requestValidatorId;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class GetRequestValidatorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class GetRequestValidatorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetRequestValidatorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     * The identifier of the RequestValidator to be retrieved.
      * </p>
      * 
      * @param requestValidatorId
-     *        [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     *        The identifier of the RequestValidator to be retrieved.
      */
 
     public void setRequestValidatorId(String requestValidatorId) {
@@ -93,10 +93,10 @@ public class GetRequestValidatorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     * The identifier of the RequestValidator to be retrieved.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     * @return The identifier of the RequestValidator to be retrieved.
      */
 
     public String getRequestValidatorId() {
@@ -105,11 +105,11 @@ public class GetRequestValidatorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     * The identifier of the RequestValidator to be retrieved.
      * </p>
      * 
      * @param requestValidatorId
-     *        [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
+     *        The identifier of the RequestValidator to be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

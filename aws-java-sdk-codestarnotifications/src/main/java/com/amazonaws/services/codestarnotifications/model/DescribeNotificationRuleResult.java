@@ -49,14 +49,14 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
     private String resource;
     /**
      * <p>
-     * A list of the SNS topics associated with the notification rule.
+     * A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * </p>
      */
     private java.util.List<TargetSummary> targets;
     /**
      * <p>
      * The level of detail included in the notifications for this resource. BASIC will include only the contents of the
-     * event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      */
@@ -285,10 +285,10 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the SNS topics associated with the notification rule.
+     * A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * </p>
      * 
-     * @return A list of the SNS topics associated with the notification rule.
+     * @return A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      */
 
     public java.util.List<TargetSummary> getTargets() {
@@ -297,11 +297,11 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the SNS topics associated with the notification rule.
+     * A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * </p>
      * 
      * @param targets
-     *        A list of the SNS topics associated with the notification rule.
+     *        A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      */
 
     public void setTargets(java.util.Collection<TargetSummary> targets) {
@@ -315,7 +315,7 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the SNS topics associated with the notification rule.
+     * A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -324,7 +324,7 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param targets
-     *        A list of the SNS topics associated with the notification rule.
+     *        A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,11 +340,11 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the SNS topics associated with the notification rule.
+     * A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * </p>
      * 
      * @param targets
-     *        A list of the SNS topics associated with the notification rule.
+     *        A list of the Chatbot topics and Chatbot clients associated with the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,14 +356,15 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The level of detail included in the notifications for this resource. BASIC will include only the contents of the
-     * event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @param detailType
      *        The level of detail included in the notifications for this resource. BASIC will include only the contents
-     *        of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided
-     *        by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.
+     *        of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information
+     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
+     *        created.
      * @see DetailType
      */
 
@@ -374,12 +375,12 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The level of detail included in the notifications for this resource. BASIC will include only the contents of the
-     * event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @return The level of detail included in the notifications for this resource. BASIC will include only the contents
-     *         of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
+     *         of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information
      *         provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
      *         created.
      * @see DetailType
@@ -392,14 +393,15 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The level of detail included in the notifications for this resource. BASIC will include only the contents of the
-     * event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @param detailType
      *        The level of detail included in the notifications for this resource. BASIC will include only the contents
-     *        of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided
-     *        by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.
+     *        of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information
+     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetailType
      */
@@ -412,14 +414,15 @@ public class DescribeNotificationRuleResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The level of detail included in the notifications for this resource. BASIC will include only the contents of the
-     * event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
+     * event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the notification is created.
      * </p>
      * 
      * @param detailType
      *        The level of detail included in the notifications for this resource. BASIC will include only the contents
-     *        of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided
-     *        by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.
+     *        of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information
+     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetailType
      */

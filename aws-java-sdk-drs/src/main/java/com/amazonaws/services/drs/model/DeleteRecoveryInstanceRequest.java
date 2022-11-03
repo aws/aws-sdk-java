@@ -27,18 +27,18 @@ public class DeleteRecoveryInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * RThe ID of the Recovery Instance to be deleted.
+     * The ID of the Recovery Instance to be deleted.
      * </p>
      */
     private String recoveryInstanceID;
 
     /**
      * <p>
-     * RThe ID of the Recovery Instance to be deleted.
+     * The ID of the Recovery Instance to be deleted.
      * </p>
      * 
      * @param recoveryInstanceID
-     *        RThe ID of the Recovery Instance to be deleted.
+     *        The ID of the Recovery Instance to be deleted.
      */
 
     public void setRecoveryInstanceID(String recoveryInstanceID) {
@@ -47,10 +47,10 @@ public class DeleteRecoveryInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * RThe ID of the Recovery Instance to be deleted.
+     * The ID of the Recovery Instance to be deleted.
      * </p>
      * 
-     * @return RThe ID of the Recovery Instance to be deleted.
+     * @return The ID of the Recovery Instance to be deleted.
      */
 
     public String getRecoveryInstanceID() {
@@ -59,11 +59,11 @@ public class DeleteRecoveryInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * RThe ID of the Recovery Instance to be deleted.
+     * The ID of the Recovery Instance to be deleted.
      * </p>
      * 
      * @param recoveryInstanceID
-     *        RThe ID of the Recovery Instance to be deleted.
+     *        The ID of the Recovery Instance to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

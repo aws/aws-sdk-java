@@ -369,6 +369,43 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Returns information about a specific channel. Amazon Web Services services create service-linked channels to get
+     * information about CloudTrail events on your behalf. For more information about service-linked channels, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+     * service-linked channels for CloudTrail by using the CLI.</a>.
+     * </p>
+     * 
+     * @param getChannelRequest
+     * @return A Java Future containing the result of the GetChannel operation returned by the service.
+     * @sample AWSCloudTrailAsync.GetChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetChannelResult> getChannelAsync(GetChannelRequest getChannelRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific channel. Amazon Web Services services create service-linked channels to get
+     * information about CloudTrail events on your behalf. For more information about service-linked channels, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+     * service-linked channels for CloudTrail by using the CLI.</a>.
+     * </p>
+     * 
+     * @param getChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetChannel operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.GetChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetChannelResult> getChannelAsync(GetChannelRequest getChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetChannelRequest, GetChannelResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about an event data store specified as either an ARN or the ID portion of the ARN.
      * </p>
      * 
@@ -422,10 +459,24 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+     * For more information about logging management and data events, see the following topics in the <i>CloudTrail User
+     * Guide</i>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+     * >Logging management events for trails </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
+     * Logging data events for trails </a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getEventSelectorsRequest
      * @return A Java Future containing the result of the GetEventSelectors operation returned by the service.
@@ -459,10 +510,24 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+     * For more information about logging management and data events, see the following topics in the <i>CloudTrail User
+     * Guide</i>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+     * >Logging management events for trails </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
+     * Logging data events for trails </a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getEventSelectorsRequest
      * @param asyncHandler
@@ -476,6 +541,37 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(GetEventSelectorsRequest getEventSelectorsRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventSelectorsRequest, GetEventSelectorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific import.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @return A Java Future containing the result of the GetImport operation returned by the service.
+     * @sample AWSCloudTrailAsync.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest getImportRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific import.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetImport operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest getImportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetImportRequest, GetImportResult> asyncHandler);
 
     /**
      * <p>
@@ -629,6 +725,45 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Lists the channels in the current account, and their source names. Amazon Web Services services create
+     * service-linked channels get information about CloudTrail events on your behalf. For more information about
+     * service-linked channels, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+     * service-linked channels for CloudTrail by using the CLI</a>.
+     * </p>
+     * 
+     * @param listChannelsRequest
+     * @return A Java Future containing the result of the ListChannels operation returned by the service.
+     * @sample AWSCloudTrailAsync.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * <p>
+     * Lists the channels in the current account, and their source names. Amazon Web Services services create
+     * service-linked channels get information about CloudTrail events on your behalf. For more information about
+     * service-linked channels, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+     * service-linked channels for CloudTrail by using the CLI</a>.
+     * </p>
+     * 
+     * @param listChannelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannels operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about all event data stores in the account, in the current region.
      * </p>
      * 
@@ -657,6 +792,70 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<ListEventDataStoresResult> listEventDataStoresAsync(ListEventDataStoresRequest listEventDataStoresRequest,
             com.amazonaws.handlers.AsyncHandler<ListEventDataStoresRequest, ListEventDataStoresResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of failures for the specified import.
+     * </p>
+     * 
+     * @param listImportFailuresRequest
+     * @return A Java Future containing the result of the ListImportFailures operation returned by the service.
+     * @sample AWSCloudTrailAsync.ListImportFailures
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportFailuresResult> listImportFailuresAsync(ListImportFailuresRequest listImportFailuresRequest);
+
+    /**
+     * <p>
+     * Returns a list of failures for the specified import.
+     * </p>
+     * 
+     * @param listImportFailuresRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImportFailures operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListImportFailures
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportFailuresResult> listImportFailuresAsync(ListImportFailuresRequest listImportFailuresRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportFailuresRequest, ListImportFailuresResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information on all imports, or a select set of imports by <code>ImportStatus</code> or
+     * <code>Destination</code>.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AWSCloudTrailAsync.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * Returns information on all imports, or a select set of imports by <code>ImportStatus</code> or
+     * <code>Destination</code>.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler);
 
     /**
      * <p>
@@ -1076,8 +1275,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging data and management events for trails </a> and <a
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+     * >Logging management events for trails </a>, <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails </a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1147,8 +1348,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging data and management events for trails </a> and <a
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+     * >Logging management events for trails </a>, <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails </a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1282,6 +1485,69 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Starts an import of logged trail events from a source S3 bucket to a destination event data store. By default,
+     * CloudTrail only imports events contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
+     * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web Services services. If
+     * you want to import CloudTrail events contained in another prefix, you must include the prefix in the
+     * <code>S3LocationUri</code>. For more considerations about importing trail events, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations"
+     * >Considerations</a>.
+     * </p>
+     * <p>
+     * When you start a new import, the <code>Destinations</code> and <code>ImportSource</code> parameters are required.
+     * Before starting a new import, disable any access control lists (ACLs) attached to the source S3 bucket. For more
+     * information about disabling ACLs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of
+     * objects and disabling ACLs for your bucket</a>.
+     * </p>
+     * <p>
+     * When you retry an import, the <code>ImportID</code> parameter is required.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AWSCloudTrailAsync.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
+     * Starts an import of logged trail events from a source S3 bucket to a destination event data store. By default,
+     * CloudTrail only imports events contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
+     * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web Services services. If
+     * you want to import CloudTrail events contained in another prefix, you must include the prefix in the
+     * <code>S3LocationUri</code>. For more considerations about importing trail events, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations"
+     * >Considerations</a>.
+     * </p>
+     * <p>
+     * When you start a new import, the <code>Destinations</code> and <code>ImportSource</code> parameters are required.
+     * Before starting a new import, disable any access control lists (ACLs) attached to the source S3 bucket. For more
+     * information about disabling ACLs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of
+     * objects and disabling ACLs for your bucket</a>.
+     * </p>
+     * <p>
+     * When you retry an import, the <code>ImportID</code> parameter is required.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
      * enabled in all regions, this operation must be called from the region in which the trail was created. This
      * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
@@ -1322,7 +1588,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks.
+     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
+     * results to an S3 bucket.
      * </p>
      * 
      * @param startQueryRequest
@@ -1336,7 +1603,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks.
+     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
+     * results to an S3 bucket.
      * </p>
      * 
      * @param startQueryRequest
@@ -1351,6 +1619,37 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<StartQueryResult> startQueryAsync(StartQueryRequest startQueryRequest,
             com.amazonaws.handlers.AsyncHandler<StartQueryRequest, StartQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a specified import.
+     * </p>
+     * 
+     * @param stopImportRequest
+     * @return A Java Future containing the result of the StopImport operation returned by the service.
+     * @sample AWSCloudTrailAsync.StopImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopImportResult> stopImportAsync(StopImportRequest stopImportRequest);
+
+    /**
+     * <p>
+     * Stops a specified import.
+     * </p>
+     * 
+     * @param stopImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopImport operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.StopImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopImportResult> stopImportAsync(StopImportRequest stopImportRequest,
+            com.amazonaws.handlers.AsyncHandler<StopImportRequest, StopImportResult> asyncHandler);
 
     /**
      * <p>
@@ -1397,7 +1696,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the
      * ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws
-     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2555. By default,
+     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default,
      * <code>TerminationProtection</code> is enabled. <code>AdvancedEventSelectors</code> includes or excludes
      * management and data events in your event data store; for more information about
      * <code>AdvancedEventSelectors</code>, see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
@@ -1415,7 +1714,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the
      * ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws
-     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2555. By default,
+     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default,
      * <code>TerminationProtection</code> is enabled. <code>AdvancedEventSelectors</code> includes or excludes
      * management and data events in your event data store; for more information about
      * <code>AdvancedEventSelectors</code>, see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.

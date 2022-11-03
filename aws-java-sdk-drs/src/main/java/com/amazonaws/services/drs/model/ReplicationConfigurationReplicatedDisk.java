@@ -48,6 +48,13 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
     private Boolean isBootDisk;
     /**
      * <p>
+     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
+     * This is a read-only field.
+     * </p>
+     */
+    private String optimizedStagingDiskType;
+    /**
+     * <p>
      * The Staging Disk EBS volume type to be used during replication.
      * </p>
      */
@@ -193,6 +200,73 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
 
     /**
      * <p>
+     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
+     * This is a read-only field.
+     * </p>
+     * 
+     * @param optimizedStagingDiskType
+     *        The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to
+     *        Auto. This is a read-only field.
+     * @see ReplicationConfigurationReplicatedDiskStagingDiskType
+     */
+
+    public void setOptimizedStagingDiskType(String optimizedStagingDiskType) {
+        this.optimizedStagingDiskType = optimizedStagingDiskType;
+    }
+
+    /**
+     * <p>
+     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
+     * This is a read-only field.
+     * </p>
+     * 
+     * @return The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set
+     *         to Auto. This is a read-only field.
+     * @see ReplicationConfigurationReplicatedDiskStagingDiskType
+     */
+
+    public String getOptimizedStagingDiskType() {
+        return this.optimizedStagingDiskType;
+    }
+
+    /**
+     * <p>
+     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
+     * This is a read-only field.
+     * </p>
+     * 
+     * @param optimizedStagingDiskType
+     *        The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to
+     *        Auto. This is a read-only field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicationConfigurationReplicatedDiskStagingDiskType
+     */
+
+    public ReplicationConfigurationReplicatedDisk withOptimizedStagingDiskType(String optimizedStagingDiskType) {
+        setOptimizedStagingDiskType(optimizedStagingDiskType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
+     * This is a read-only field.
+     * </p>
+     * 
+     * @param optimizedStagingDiskType
+     *        The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to
+     *        Auto. This is a read-only field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicationConfigurationReplicatedDiskStagingDiskType
+     */
+
+    public ReplicationConfigurationReplicatedDisk withOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType optimizedStagingDiskType) {
+        this.optimizedStagingDiskType = optimizedStagingDiskType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The Staging Disk EBS volume type to be used during replication.
      * </p>
      * 
@@ -308,6 +382,8 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
             sb.append("Iops: ").append(getIops()).append(",");
         if (getIsBootDisk() != null)
             sb.append("IsBootDisk: ").append(getIsBootDisk()).append(",");
+        if (getOptimizedStagingDiskType() != null)
+            sb.append("OptimizedStagingDiskType: ").append(getOptimizedStagingDiskType()).append(",");
         if (getStagingDiskType() != null)
             sb.append("StagingDiskType: ").append(getStagingDiskType()).append(",");
         if (getThroughput() != null)
@@ -338,6 +414,10 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
             return false;
         if (other.getIsBootDisk() != null && other.getIsBootDisk().equals(this.getIsBootDisk()) == false)
             return false;
+        if (other.getOptimizedStagingDiskType() == null ^ this.getOptimizedStagingDiskType() == null)
+            return false;
+        if (other.getOptimizedStagingDiskType() != null && other.getOptimizedStagingDiskType().equals(this.getOptimizedStagingDiskType()) == false)
+            return false;
         if (other.getStagingDiskType() == null ^ this.getStagingDiskType() == null)
             return false;
         if (other.getStagingDiskType() != null && other.getStagingDiskType().equals(this.getStagingDiskType()) == false)
@@ -357,6 +437,7 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getIsBootDisk() == null) ? 0 : getIsBootDisk().hashCode());
+        hashCode = prime * hashCode + ((getOptimizedStagingDiskType() == null) ? 0 : getOptimizedStagingDiskType().hashCode());
         hashCode = prime * hashCode + ((getStagingDiskType() == null) ? 0 : getStagingDiskType().hashCode());
         hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;

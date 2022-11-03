@@ -103,6 +103,10 @@ public class S3SettingsMarshaller {
             .marshallLocationName("Rfc4180").build();
     private static final MarshallingInfo<String> DATEPARTITIONTIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionTimezone").build();
+    private static final MarshallingInfo<Boolean> ADDTRAILINGPADDINGCHARACTER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddTrailingPaddingCharacter").build();
+    private static final MarshallingInfo<String> EXPECTEDBUCKETOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpectedBucketOwner").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -158,6 +162,8 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getMaxFileSize(), MAXFILESIZE_BINDING);
             protocolMarshaller.marshall(s3Settings.getRfc4180(), RFC4180_BINDING);
             protocolMarshaller.marshall(s3Settings.getDatePartitionTimezone(), DATEPARTITIONTIMEZONE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getAddTrailingPaddingCharacter(), ADDTRAILINGPADDINGCHARACTER_BINDING);
+            protocolMarshaller.marshall(s3Settings.getExpectedBucketOwner(), EXPECTEDBUCKETOWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -108,6 +108,14 @@ public class JobDefinitionJsonUnmarshaller implements Unmarshaller<JobDefinition
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("eksProperties", targetDepth)) {
+                    context.nextToken();
+                    jobDefinition.setEksProperties(EksPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("containerOrchestrationType", targetDepth)) {
+                    context.nextToken();
+                    jobDefinition.setContainerOrchestrationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

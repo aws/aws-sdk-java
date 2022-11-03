@@ -51,14 +51,14 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * AWS CodeArtifact is a fully managed artifact repository compatible with language-native package managers and build
- * tools such as npm, Apache Maven, and pip. You can use CodeArtifact to share packages with development teams and pull
- * packages. Packages can be pulled from both public and CodeArtifact repositories. You can also create an upstream
+ * CodeArtifact is a fully managed artifact repository compatible with language-native package managers and build tools
+ * such as npm, Apache Maven, pip, and dotnet. You can use CodeArtifact to share packages with development teams and
+ * pull packages. Packages can be pulled from both public and CodeArtifact repositories. You can also create an upstream
  * relationship between a CodeArtifact repository and another repository, which effectively merges their contents from
  * the point of view of a package manager client.
  * </p>
  * <p>
- * <b>AWS CodeArtifact Components</b>
+ * <b>CodeArtifact Components</b>
  * </p>
  * <p>
  * Use the information in this guide to help you work with the following CodeArtifact components:
@@ -70,8 +70,8 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
- * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code>
- * </b>.
+ * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b>
+ * <code>pip</code> </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
  * </p>
  * </li>
  * <li>
@@ -79,7 +79,7 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a <i>domain</i>. All package assets
  * and metadata are stored in the domain, but are consumed through repositories. A given package asset, such as a Maven
  * JAR file, is stored once per domain, no matter how many repositories it's present in. All of the assets and metadata
- * in a domain are encrypted with the same customer master key (CMK) stored in AWS Key Management Service (AWS KMS).
+ * in a domain are encrypted with the same customer master key (CMK) stored in Key Management Service (KMS).
  * </p>
  * <p>
  * Each repository is a member of a single domain and can't be moved to a different domain.
@@ -98,8 +98,9 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required to resolve dependencies and
  * install the software. CodeArtifact supports <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a> package formats.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -209,6 +210,13 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>DescribePackage</code>: Returns a <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html"
+ * >PackageDescription</a> object that contains details about a package.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePackageVersion</code>: Returns a <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
  * >PackageVersionDescription</a> object that contains details about a package version.
@@ -261,17 +269,22 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <ul>
  * <li>
  * <p>
+ * <code>maven</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>npm</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>pypi</code>
+ * <code>nuget</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>maven</code>
+ * <code>pypi</code>
  * </p>
  * </li>
  * </ul>
@@ -309,7 +322,8 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <code>ListRepositories</code>: Returns a list of repositories owned by the AWS account that called this method.
+ * <code>ListRepositories</code>: Returns a list of repositories owned by the Amazon Web Services account that called
+ * this method.
  * </p>
  * </li>
  * <li>
@@ -320,6 +334,12 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <li>
  * <p>
  * <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PutPackageOriginConfiguration</code>: Sets the package origin configuration for a package, which determine how
+ * new versions of the package can be added to a specific repository.
  * </p>
  * </li>
  * <li>
@@ -449,7 +469,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -525,7 +545,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -585,8 +605,8 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
     /**
      * <p>
      * Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an
-     * organization. You can use a domain to apply permissions across many repositories owned by different AWS accounts.
-     * An asset is stored only once in a domain, even if it's in multiple repositories.
+     * organization. You can use a domain to apply permissions across many repositories owned by different Amazon Web
+     * Services accounts. An asset is stored only once in a domain, even if it's in multiple repositories.
      * </p>
      * <p>
      * Although you can have multiple domains, we recommend a single production domain that contains all published
@@ -601,7 +621,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -670,7 +690,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -740,7 +760,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ThrottlingException
      *         The operation did not succeed because too many requests are sent to the service.
      * @throws ValidationException
@@ -805,7 +825,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -881,7 +901,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -949,7 +969,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1012,8 +1032,8 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <important>
      * <p>
-     * Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, AWS users, roles, and
-     * accounts lose permissions to perform the repository actions granted by the deleted policy.
+     * Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, Amazon Web Services
+     * users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy.
      * </p>
      * </important>
      * 
@@ -1024,7 +1044,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1093,7 +1113,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1150,6 +1170,72 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">
+     * PackageDescription</a> object that contains information about the requested package.
+     * </p>
+     * 
+     * @param describePackageRequest
+     * @return Result of the DescribePackage operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.DescribePackage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribePackageResult describePackage(DescribePackageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePackage(request);
+    }
+
+    @SdkInternalApi
+    final DescribePackageResult executeDescribePackage(DescribePackageRequest describePackageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePackageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePackageRequest> request = null;
+        Response<DescribePackageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePackageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePackageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePackageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >PackageVersionDescription</a> object that contains information about the requested package version.
@@ -1162,7 +1248,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1229,7 +1315,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1296,7 +1382,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -1380,7 +1466,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1441,8 +1527,8 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * Generates a temporary authorization token for accessing repositories in the domain. This API requires the
      * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more
      * information about authorization tokens, see <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact
-     * authentication and tokens</a>.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact authentication
+     * and tokens</a>.
      * </p>
      * <note>
      * <p>
@@ -1469,7 +1555,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1533,7 +1619,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * <p>
      * The policy is a resource-based policy, not an identity-based policy. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-     * policies and resource-based policies </a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * policies and resource-based policies </a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1542,7 +1628,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1611,7 +1697,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1687,7 +1773,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1752,17 +1838,22 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * <ul>
      * <li>
      * <p>
+     * <code>maven</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>npm</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>pypi</code>
+     * <code>nuget</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>maven</code>
+     * <code>pypi</code>
      * </p>
      * </li>
      * </ul>
@@ -1772,7 +1863,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1838,7 +1929,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -1899,8 +1990,8 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * <p>
      * Returns a list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
-     * >DomainSummary</a> objects for all domains owned by the AWS account that makes this call. Each returned
-     * <code>DomainSummary</code> object contains information about a domain.
+     * >DomainSummary</a> objects for all domains owned by the Amazon Web Services account that makes this call. Each
+     * returned <code>DomainSummary</code> object contains information about a domain.
      * </p>
      * 
      * @param listDomainsRequest
@@ -1908,7 +1999,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ThrottlingException
      *         The operation did not succeed because too many requests are sent to the service.
      * @throws ValidationException
@@ -1973,7 +2064,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -2045,7 +2136,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -2114,7 +2205,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -2181,7 +2272,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -2241,7 +2332,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * Returns a list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
      * >RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in
-     * the specified AWS account and that matches the input parameters.
+     * the specified Amazon Web Services account and that matches the input parameters.
      * </p>
      * 
      * @param listRepositoriesRequest
@@ -2249,7 +2340,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ThrottlingException
      *         The operation did not succeed because too many requests are sent to the service.
      * @throws ValidationException
@@ -2315,7 +2406,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws AccessDeniedException
      *         The operation did not succeed because of an unauthorized access attempt.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -2374,7 +2465,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeArtifact.
+     * Gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in CodeArtifact.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2452,7 +2543,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -2513,6 +2604,87 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Sets the package origin configuration for a package.
+     * </p>
+     * <p>
+     * The package origin configuration determines how new versions of a package can be added to a repository. You can
+     * allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from
+     * an external connection or upstream source. For more information about package origin controls and configuration,
+     * see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing package
+     * origin controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * <p>
+     * <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't yet exist in the repository.
+     * When called on a package that does not exist, a package is created in the repository with no versions and the
+     * requested restrictions are set on the package. This can be used to preemptively block ingesting or retaining any
+     * versions from external connections or upstream repositories, or to block publishing any versions of the package
+     * into the repository before connecting any package managers or publishers to the repository.
+     * </p>
+     * 
+     * @param putPackageOriginConfigurationRequest
+     * @return Result of the PutPackageOriginConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.PutPackageOriginConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutPackageOriginConfigurationResult putPackageOriginConfiguration(PutPackageOriginConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutPackageOriginConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutPackageOriginConfigurationResult executePutPackageOriginConfiguration(PutPackageOriginConfigurationRequest putPackageOriginConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putPackageOriginConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPackageOriginConfigurationRequest> request = null;
+        Response<PutPackageOriginConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPackageOriginConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putPackageOriginConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPackageOriginConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutPackageOriginConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutPackageOriginConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets the resource policy on a repository that specifies permissions to access it.
      * </p>
      * <p>
@@ -2528,7 +2700,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException
@@ -2589,7 +2761,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Adds or updates tags for a resource in AWS CodeArtifact.
+     * Adds or updates tags for a resource in CodeArtifact.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2654,7 +2826,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Removes tags from a resource in AWS CodeArtifact.
+     * Removes tags from a resource in CodeArtifact.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2717,7 +2889,11 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Updates the status of one or more versions of a package.
+     * Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>, you can
+     * update the status of package versions to <code>Archived</code>, <code>Published</code>, or <code>Unlisted</code>.
+     * To set the status of a package version to <code>Disposed</code>, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html"
+     * >DisposePackageVersions</a>.
      * </p>
      * 
      * @param updatePackageVersionsStatusRequest
@@ -2727,7 +2903,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
@@ -2796,7 +2972,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * @throws ConflictException
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
-     *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
      * @throws ResourceNotFoundException
      *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ServiceQuotaExceededException

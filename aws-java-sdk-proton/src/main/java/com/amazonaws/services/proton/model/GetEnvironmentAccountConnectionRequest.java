@@ -27,18 +27,18 @@ public class GetEnvironmentAccountConnectionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the environment account connection.
+     * The ID of the environment account connection that you want to get the detailed data for.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The ID of the environment account connection.
+     * The ID of the environment account connection that you want to get the detailed data for.
      * </p>
      * 
      * @param id
-     *        The ID of the environment account connection.
+     *        The ID of the environment account connection that you want to get the detailed data for.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class GetEnvironmentAccountConnectionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the environment account connection.
+     * The ID of the environment account connection that you want to get the detailed data for.
      * </p>
      * 
-     * @return The ID of the environment account connection.
+     * @return The ID of the environment account connection that you want to get the detailed data for.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class GetEnvironmentAccountConnectionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the environment account connection.
+     * The ID of the environment account connection that you want to get the detailed data for.
      * </p>
      * 
      * @param id
-     *        The ID of the environment account connection.
+     *        The ID of the environment account connection that you want to get the detailed data for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

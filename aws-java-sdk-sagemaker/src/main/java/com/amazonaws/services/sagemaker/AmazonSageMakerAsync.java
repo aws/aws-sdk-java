@@ -308,10 +308,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the
-     * associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps
-     * active simultaneously.
+     * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
+     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
+     * may have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -324,10 +323,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the
-     * associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps
-     * active simultaneously.
+     * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
+     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
+     * may have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -867,6 +865,72 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest createDomainRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an edge deployment plan, consisting of multiple stages. Each stage may have a different deployment
+     * configuration and devices.
+     * </p>
+     * 
+     * @param createEdgeDeploymentPlanRequest
+     * @return A Java Future containing the result of the CreateEdgeDeploymentPlan operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateEdgeDeploymentPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEdgeDeploymentPlanResult> createEdgeDeploymentPlanAsync(CreateEdgeDeploymentPlanRequest createEdgeDeploymentPlanRequest);
+
+    /**
+     * <p>
+     * Creates an edge deployment plan, consisting of multiple stages. Each stage may have a different deployment
+     * configuration and devices.
+     * </p>
+     * 
+     * @param createEdgeDeploymentPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEdgeDeploymentPlan operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateEdgeDeploymentPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEdgeDeploymentPlanResult> createEdgeDeploymentPlanAsync(CreateEdgeDeploymentPlanRequest createEdgeDeploymentPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEdgeDeploymentPlanRequest, CreateEdgeDeploymentPlanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new stage in an existing edge deployment plan.
+     * </p>
+     * 
+     * @param createEdgeDeploymentStageRequest
+     * @return A Java Future containing the result of the CreateEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEdgeDeploymentStageResult> createEdgeDeploymentStageAsync(
+            CreateEdgeDeploymentStageRequest createEdgeDeploymentStageRequest);
+
+    /**
+     * <p>
+     * Creates a new stage in an existing edge deployment plan.
+     * </p>
+     * 
+     * @param createEdgeDeploymentStageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEdgeDeploymentStageResult> createEdgeDeploymentStageAsync(
+            CreateEdgeDeploymentStageRequest createEdgeDeploymentStageRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEdgeDeploymentStageRequest, CreateEdgeDeploymentStageResult> asyncHandler);
 
     /**
      * <p>
@@ -1424,6 +1488,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
      * by an objective metric that you choose.
      * </p>
+     * <p>
+     * A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for
+     * each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+     * Experiments, Trials, and Trial Components</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param createHyperParameterTuningJobRequest
      * @return A Java Future containing the result of the CreateHyperParameterTuningJob operation returned by the
@@ -1442,6 +1519,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
      * by an objective metric that you choose.
      * </p>
+     * <p>
+     * A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for
+     * each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+     * Experiments, Trials, and Trial Components</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param createHyperParameterTuningJobRequest
      * @param asyncHandler
@@ -1709,9 +1799,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * you defined for the model in the hosting environment.
      * </p>
      * <p>
-     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the
-     * Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a>
+     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model"
+     * >Create a Model (Amazon Web Services SDK for Python (Boto 3)).</a>
      * </p>
      * <p>
      * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API.
@@ -1747,9 +1837,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * you defined for the model in the hosting environment.
      * </p>
      * <p>
-     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the
-     * Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a>
+     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model"
+     * >Create a Model (Amazon Web Services SDK for Python (Boto 3)).</a>
      * </p>
      * <p>
      * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API.
@@ -2272,7 +2362,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * authentication mode equals IAM.
      * </p>
      * <p>
-     * The IAM role or user used to call this API defines the permissions to access the app. Once the presigned URL is
+     * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
      * created, no additional permission is required to access this URL. IAM authorization policies for this API are
      * also enforced for every HTTP request and WebSocket frame that attempts to connect to the app.
      * </p>
@@ -2306,7 +2396,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * authentication mode equals IAM.
      * </p>
      * <p>
-     * The IAM role or user used to call this API defines the permissions to access the app. Once the presigned URL is
+     * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
      * created, no additional permission is required to access this URL. IAM authorization policies for this API are
      * also enforced for every HTTP request and WebSocket frame that attempts to connect to the app.
      * </p>
@@ -2541,11 +2631,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
-     * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is
-     * stored.
+     * <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx
+     * location where it is stored.
      * </p>
      * </li>
      * <li>
@@ -2633,11 +2729,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
-     * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is
-     * stored.
+     * <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx
+     * location where it is stored.
      * </p>
      * </li>
      * <li>
@@ -2726,7 +2828,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing
      * Amazon SageMaker model in the same Amazon Web Services Region and Amazon Web Services account. For information on
-     * creating a model, see <a>CreateModel</a>.
+     * creating a model, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.
      * </p>
      * </li>
      * <li>
@@ -2782,7 +2885,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing
      * Amazon SageMaker model in the same Amazon Web Services Region and Amazon Web Services account. For information on
-     * creating a model, see <a>CreateModel</a>.
+     * creating a model, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.
      * </p>
      * </li>
      * <li>
@@ -2938,8 +3042,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
      * a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from
-     * SSO, a user profile is automatically created. A user profile is the primary holder of settings for an individual
-     * user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * IAM Identity Center, a user profile is automatically created. A user profile is the primary holder of settings
+     * for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -2955,8 +3059,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
      * a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from
-     * SSO, a user profile is automatically created. A user profile is the primary holder of settings for an individual
-     * user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * IAM Identity Center, a user profile is automatically created. A user profile is the primary holder of settings
+     * for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -3401,8 +3505,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again
-     * using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including
-     * data, notebooks, and other artifacts.
+     * using IAM Identity Center. Use with caution. All of the members of the domain will lose access to their EFS
+     * volume, including data, notebooks, and other artifacts.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -3416,8 +3520,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again
-     * using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including
-     * data, notebooks, and other artifacts.
+     * using IAM Identity Center. Use with caution. All of the members of the domain will lose access to their EFS
+     * volume, including data, notebooks, and other artifacts.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -3432,6 +3536,72 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest deleteDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive or there are no stages
+     * in the plan.
+     * </p>
+     * 
+     * @param deleteEdgeDeploymentPlanRequest
+     * @return A Java Future containing the result of the DeleteEdgeDeploymentPlan operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteEdgeDeploymentPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEdgeDeploymentPlanResult> deleteEdgeDeploymentPlanAsync(DeleteEdgeDeploymentPlanRequest deleteEdgeDeploymentPlanRequest);
+
+    /**
+     * <p>
+     * Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive or there are no stages
+     * in the plan.
+     * </p>
+     * 
+     * @param deleteEdgeDeploymentPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEdgeDeploymentPlan operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteEdgeDeploymentPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEdgeDeploymentPlanResult> deleteEdgeDeploymentPlanAsync(DeleteEdgeDeploymentPlanRequest deleteEdgeDeploymentPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEdgeDeploymentPlanRequest, DeleteEdgeDeploymentPlanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a stage in an edge deployment plan if (and only if) the stage is inactive.
+     * </p>
+     * 
+     * @param deleteEdgeDeploymentStageRequest
+     * @return A Java Future containing the result of the DeleteEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEdgeDeploymentStageResult> deleteEdgeDeploymentStageAsync(
+            DeleteEdgeDeploymentStageRequest deleteEdgeDeploymentStageRequest);
+
+    /**
+     * <p>
+     * Delete a stage in an edge deployment plan if (and only if) the stage is inactive.
+     * </p>
+     * 
+     * @param deleteEdgeDeploymentStageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEdgeDeploymentStageResult> deleteEdgeDeploymentStageAsync(
+            DeleteEdgeDeploymentStageRequest deleteEdgeDeploymentStageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEdgeDeploymentStageRequest, DeleteEdgeDeploymentStageResult> asyncHandler);
 
     /**
      * <p>
@@ -4894,6 +5064,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Describes an edge deployment plan with deployment status per stage.
+     * </p>
+     * 
+     * @param describeEdgeDeploymentPlanRequest
+     * @return A Java Future containing the result of the DescribeEdgeDeploymentPlan operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeEdgeDeploymentPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgeDeploymentPlanResult> describeEdgeDeploymentPlanAsync(
+            DescribeEdgeDeploymentPlanRequest describeEdgeDeploymentPlanRequest);
+
+    /**
+     * <p>
+     * Describes an edge deployment plan with deployment status per stage.
+     * </p>
+     * 
+     * @param describeEdgeDeploymentPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEdgeDeploymentPlan operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeEdgeDeploymentPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgeDeploymentPlanResult> describeEdgeDeploymentPlanAsync(
+            DescribeEdgeDeploymentPlanRequest describeEdgeDeploymentPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEdgeDeploymentPlanRequest, DescribeEdgeDeploymentPlanResult> asyncHandler);
+
+    /**
+     * <p>
      * A description of edge packaging jobs.
      * </p>
      * 
@@ -5048,6 +5251,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DescribeFeatureGroupResult> describeFeatureGroupAsync(DescribeFeatureGroupRequest describeFeatureGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFeatureGroupRequest, DescribeFeatureGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Shows the metadata for a feature within a feature group.
+     * </p>
+     * 
+     * @param describeFeatureMetadataRequest
+     * @return A Java Future containing the result of the DescribeFeatureMetadata operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeFeatureMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFeatureMetadataResult> describeFeatureMetadataAsync(DescribeFeatureMetadataRequest describeFeatureMetadataRequest);
+
+    /**
+     * <p>
+     * Shows the metadata for a feature within a feature group.
+     * </p>
+     * 
+     * @param describeFeatureMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFeatureMetadata operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeFeatureMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFeatureMetadataResult> describeFeatureMetadataAsync(DescribeFeatureMetadataRequest describeFeatureMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFeatureMetadataRequest, DescribeFeatureMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -6883,6 +7117,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Lists all edge deployment plans.
+     * </p>
+     * 
+     * @param listEdgeDeploymentPlansRequest
+     * @return A Java Future containing the result of the ListEdgeDeploymentPlans operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListEdgeDeploymentPlans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEdgeDeploymentPlansResult> listEdgeDeploymentPlansAsync(ListEdgeDeploymentPlansRequest listEdgeDeploymentPlansRequest);
+
+    /**
+     * <p>
+     * Lists all edge deployment plans.
+     * </p>
+     * 
+     * @param listEdgeDeploymentPlansRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEdgeDeploymentPlans operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListEdgeDeploymentPlans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEdgeDeploymentPlansResult> listEdgeDeploymentPlansAsync(ListEdgeDeploymentPlansRequest listEdgeDeploymentPlansRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEdgeDeploymentPlansRequest, ListEdgeDeploymentPlansResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of edge packaging jobs.
      * </p>
      * 
@@ -7202,6 +7467,47 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest listImagesRequest,
             com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return A Java Future containing the result of the ListInferenceRecommendationsJobSteps operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceRecommendationsJobSteps operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceRecommendationsJobStepsRequest, ListInferenceRecommendationsJobStepsResult> asyncHandler);
 
     /**
      * <p>
@@ -7885,6 +8191,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest listProjectsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists devices allocated to the stage, containing detailed device information and deployment status.
+     * </p>
+     * 
+     * @param listStageDevicesRequest
+     * @return A Java Future containing the result of the ListStageDevices operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListStageDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStageDevicesResult> listStageDevicesAsync(ListStageDevicesRequest listStageDevicesRequest);
+
+    /**
+     * <p>
+     * Lists devices allocated to the stage, containing detailed device information and deployment status.
+     * </p>
+     * 
+     * @param listStageDevicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStageDevices operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListStageDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStageDevicesResult> listStageDevicesAsync(ListStageDevicesRequest listStageDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStageDevicesRequest, ListStageDevicesResult> asyncHandler);
 
     /**
      * <p>
@@ -8623,6 +8960,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Starts a stage in an edge deployment plan.
+     * </p>
+     * 
+     * @param startEdgeDeploymentStageRequest
+     * @return A Java Future containing the result of the StartEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsync.StartEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEdgeDeploymentStageResult> startEdgeDeploymentStageAsync(StartEdgeDeploymentStageRequest startEdgeDeploymentStageRequest);
+
+    /**
+     * <p>
+     * Starts a stage in an edge deployment plan.
+     * </p>
+     * 
+     * @param startEdgeDeploymentStageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StartEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEdgeDeploymentStageResult> startEdgeDeploymentStageAsync(StartEdgeDeploymentStageRequest startEdgeDeploymentStageRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEdgeDeploymentStageRequest, StartEdgeDeploymentStageResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>
@@ -8809,6 +9177,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<StopCompilationJobResult> stopCompilationJobAsync(StopCompilationJobRequest stopCompilationJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopCompilationJobRequest, StopCompilationJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a stage in an edge deployment plan.
+     * </p>
+     * 
+     * @param stopEdgeDeploymentStageRequest
+     * @return A Java Future containing the result of the StopEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsync.StopEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEdgeDeploymentStageResult> stopEdgeDeploymentStageAsync(StopEdgeDeploymentStageRequest stopEdgeDeploymentStageRequest);
+
+    /**
+     * <p>
+     * Stops a stage in an edge deployment plan.
+     * </p>
+     * 
+     * @param stopEdgeDeploymentStageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEdgeDeploymentStage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StopEdgeDeploymentStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEdgeDeploymentStageResult> stopEdgeDeploymentStageAsync(StopEdgeDeploymentStageRequest stopEdgeDeploymentStageRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEdgeDeploymentStageRequest, StopEdgeDeploymentStageResult> asyncHandler);
 
     /**
      * <p>
@@ -9619,6 +10018,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Updates the feature group.
+     * </p>
+     * 
+     * @param updateFeatureGroupRequest
+     * @return A Java Future containing the result of the UpdateFeatureGroup operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateFeatureGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFeatureGroupResult> updateFeatureGroupAsync(UpdateFeatureGroupRequest updateFeatureGroupRequest);
+
+    /**
+     * <p>
+     * Updates the feature group.
+     * </p>
+     * 
+     * @param updateFeatureGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFeatureGroup operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateFeatureGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFeatureGroupResult> updateFeatureGroupAsync(UpdateFeatureGroupRequest updateFeatureGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFeatureGroupRequest, UpdateFeatureGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the description and parameters of the feature group.
+     * </p>
+     * 
+     * @param updateFeatureMetadataRequest
+     * @return A Java Future containing the result of the UpdateFeatureMetadata operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateFeatureMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFeatureMetadataResult> updateFeatureMetadataAsync(UpdateFeatureMetadataRequest updateFeatureMetadataRequest);
+
+    /**
+     * <p>
+     * Updates the description and parameters of the feature group.
+     * </p>
+     * 
+     * @param updateFeatureMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFeatureMetadata operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateFeatureMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFeatureMetadataResult> updateFeatureMetadataAsync(UpdateFeatureMetadataRequest updateFeatureMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFeatureMetadataRequest, UpdateFeatureMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
      * <a>DeleteTags</a> APIs.
      * </p>
@@ -9893,7 +10354,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Update a model training job to request a new Debugger profiling configuration.
+     * Update a model training job to request a new Debugger profiling configuration or to change warm pool retention
+     * length.
      * </p>
      * 
      * @param updateTrainingJobRequest
@@ -9906,7 +10368,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Update a model training job to request a new Debugger profiling configuration.
+     * Update a model training job to request a new Debugger profiling configuration or to change warm pool retention
+     * length.
      * </p>
      * 
      * @param updateTrainingJobRequest
@@ -10022,6 +10485,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * configuration.
      * </p>
      * <p>
+     * The worker portal is now supported in VPC and public internet.
+     * </p>
+     * <p>
      * Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses. You
      * specify allowed IP addresses by creating a list of up to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>. By default, a workforce isn't
@@ -10029,6 +10495,15 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * using any IP address outside the specified range are denied and get a <code>Not Found</code> error message on the
      * worker portal.
      * </p>
+     * <p>
+     * To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code> CIDR value as
+     * "0.0.0.0/0".
+     * </p>
+     * <important>
+     * <p>
+     * Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+     * </p>
+     * </important>
      * <p>
      * Use <code>OidcConfig</code> to update the configuration of a workforce created using your own OIDC IdP.
      * </p>
@@ -10063,6 +10538,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * configuration.
      * </p>
      * <p>
+     * The worker portal is now supported in VPC and public internet.
+     * </p>
+     * <p>
      * Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses. You
      * specify allowed IP addresses by creating a list of up to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>. By default, a workforce isn't
@@ -10070,6 +10548,15 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * using any IP address outside the specified range are denied and get a <code>Not Found</code> error message on the
      * worker portal.
      * </p>
+     * <p>
+     * To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code> CIDR value as
+     * "0.0.0.0/0".
+     * </p>
+     * <important>
+     * <p>
+     * Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+     * </p>
+     * </important>
      * <p>
      * Use <code>OidcConfig</code> to update the configuration of a workforce created using your own OIDC IdP.
      * </p>

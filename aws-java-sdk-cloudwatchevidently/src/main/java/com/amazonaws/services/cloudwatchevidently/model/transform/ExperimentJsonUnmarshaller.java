@@ -98,6 +98,10 @@ public class ExperimentJsonUnmarshaller implements Unmarshaller<Experiment, Json
                     context.nextToken();
                     experiment.setSchedule(ExperimentScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("segment", targetDepth)) {
+                    context.nextToken();
+                    experiment.setSegment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     experiment.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

@@ -31,17 +31,17 @@ public class InstanceAccessControlAttributeConfiguration implements Serializable
 
     /**
      * <p>
-     * Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     * Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * </p>
      */
     private java.util.List<AccessControlAttribute> accessControlAttributes;
 
     /**
      * <p>
-     * Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     * Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * </p>
      * 
-     * @return Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     * @return Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      */
 
     public java.util.List<AccessControlAttribute> getAccessControlAttributes() {
@@ -50,11 +50,11 @@ public class InstanceAccessControlAttributeConfiguration implements Serializable
 
     /**
      * <p>
-     * Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     * Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * </p>
      * 
      * @param accessControlAttributes
-     *        Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     *        Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      */
 
     public void setAccessControlAttributes(java.util.Collection<AccessControlAttribute> accessControlAttributes) {
@@ -68,7 +68,7 @@ public class InstanceAccessControlAttributeConfiguration implements Serializable
 
     /**
      * <p>
-     * Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     * Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class InstanceAccessControlAttributeConfiguration implements Serializable
      * </p>
      * 
      * @param accessControlAttributes
-     *        Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     *        Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class InstanceAccessControlAttributeConfiguration implements Serializable
 
     /**
      * <p>
-     * Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     * Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * </p>
      * 
      * @param accessControlAttributes
-     *        Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.
+     *        Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

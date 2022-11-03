@@ -33,7 +33,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     private String autoScalingGroupName;
     /**
      * <p>
-     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If
      * you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * <p>
@@ -43,13 +43,13 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<String> scheduledActionNames;
     /**
      * <p>
-     * The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      */
     private java.util.Date endTime;
@@ -109,14 +109,14 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If
      * you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 actions.
      * </p>
      * 
-     * @return The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     * @return The names of one or more scheduled actions. If you omit this property, all scheduled actions are
      *         described. If you specify an unknown scheduled action, it is ignored with no error.</p>
      *         <p>
      *         Array Members: Maximum number of 50 actions.
@@ -131,7 +131,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If
      * you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * <p>
@@ -139,7 +139,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param scheduledActionNames
-     *        The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *        The names of one or more scheduled actions. If you omit this property, all scheduled actions are
      *        described. If you specify an unknown scheduled action, it is ignored with no error.</p>
      *        <p>
      *        Array Members: Maximum number of 50 actions.
@@ -156,7 +156,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If
      * you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * <p>
@@ -169,7 +169,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param scheduledActionNames
-     *        The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *        The names of one or more scheduled actions. If you omit this property, all scheduled actions are
      *        described. If you specify an unknown scheduled action, it is ignored with no error.</p>
      *        <p>
      *        Array Members: Maximum number of 50 actions.
@@ -188,7 +188,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If
      * you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * <p>
@@ -196,7 +196,7 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param scheduledActionNames
-     *        The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *        The names of one or more scheduled actions. If you omit this property, all scheduled actions are
      *        described. If you specify an unknown scheduled action, it is ignored with no error.</p>
      *        <p>
      *        Array Members: Maximum number of 50 actions.
@@ -210,11 +210,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      * 
      * @param startTime
-     *        The earliest scheduled start time to return. If scheduled action names are provided, this parameter is
+     *        The earliest scheduled start time to return. If scheduled action names are provided, this property is
      *        ignored.
      */
 
@@ -224,10 +224,10 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      * 
-     * @return The earliest scheduled start time to return. If scheduled action names are provided, this parameter is
+     * @return The earliest scheduled start time to return. If scheduled action names are provided, this property is
      *         ignored.
      */
 
@@ -237,11 +237,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      * 
      * @param startTime
-     *        The earliest scheduled start time to return. If scheduled action names are provided, this parameter is
+     *        The earliest scheduled start time to return. If scheduled action names are provided, this property is
      *        ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -253,11 +253,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      * 
      * @param endTime
-     *        The latest scheduled start time to return. If scheduled action names are provided, this parameter is
+     *        The latest scheduled start time to return. If scheduled action names are provided, this property is
      *        ignored.
      */
 
@@ -267,10 +267,10 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      * 
-     * @return The latest scheduled start time to return. If scheduled action names are provided, this parameter is
+     * @return The latest scheduled start time to return. If scheduled action names are provided, this property is
      *         ignored.
      */
 
@@ -280,11 +280,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.
+     * The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.
      * </p>
      * 
      * @param endTime
-     *        The latest scheduled start time to return. If scheduled action names are provided, this parameter is
+     *        The latest scheduled start time to return. If scheduled action names are provided, this property is
      *        ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

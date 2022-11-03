@@ -45,6 +45,10 @@ public class ListBackupJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> BYACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("accountId").build();
+    private static final MarshallingInfo<java.util.Date> BYCOMPLETEAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeAfter").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> BYCOMPLETEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeBefore").timestampFormat("iso8601").build();
 
     private static final ListBackupJobsRequestMarshaller instance = new ListBackupJobsRequestMarshaller();
 
@@ -71,6 +75,8 @@ public class ListBackupJobsRequestMarshaller {
             protocolMarshaller.marshall(listBackupJobsRequest.getByCreatedAfter(), BYCREATEDAFTER_BINDING);
             protocolMarshaller.marshall(listBackupJobsRequest.getByResourceType(), BYRESOURCETYPE_BINDING);
             protocolMarshaller.marshall(listBackupJobsRequest.getByAccountId(), BYACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listBackupJobsRequest.getByCompleteAfter(), BYCOMPLETEAFTER_BINDING);
+            protocolMarshaller.marshall(listBackupJobsRequest.getByCompleteBefore(), BYCOMPLETEBEFORE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

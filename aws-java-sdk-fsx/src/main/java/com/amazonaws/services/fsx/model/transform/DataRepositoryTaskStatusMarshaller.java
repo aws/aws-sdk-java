@@ -35,6 +35,8 @@ public class DataRepositoryTaskStatusMarshaller {
             .marshallLocationName("FailedCount").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Long> RELEASEDCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReleasedCapacity").build();
 
     private static final DataRepositoryTaskStatusMarshaller instance = new DataRepositoryTaskStatusMarshaller();
 
@@ -56,6 +58,7 @@ public class DataRepositoryTaskStatusMarshaller {
             protocolMarshaller.marshall(dataRepositoryTaskStatus.getSucceededCount(), SUCCEEDEDCOUNT_BINDING);
             protocolMarshaller.marshall(dataRepositoryTaskStatus.getFailedCount(), FAILEDCOUNT_BINDING);
             protocolMarshaller.marshall(dataRepositoryTaskStatus.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(dataRepositoryTaskStatus.getReleasedCapacity(), RELEASEDCAPACITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

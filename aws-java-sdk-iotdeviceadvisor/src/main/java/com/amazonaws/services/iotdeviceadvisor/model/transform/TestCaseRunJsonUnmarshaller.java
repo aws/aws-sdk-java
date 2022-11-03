@@ -84,6 +84,12 @@ public class TestCaseRunJsonUnmarshaller implements Unmarshaller<TestCaseRun, Js
                     context.nextToken();
                     testCaseRun.setFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("testScenarios", targetDepth)) {
+                    context.nextToken();
+                    testCaseRun.setTestScenarios(new ListUnmarshaller<TestCaseScenario>(TestCaseScenarioJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

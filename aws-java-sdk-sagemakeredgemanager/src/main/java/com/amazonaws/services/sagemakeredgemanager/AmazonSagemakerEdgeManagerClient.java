@@ -132,14 +132,72 @@ public class AmazonSagemakerEdgeManagerClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Use to get the active deployments from a device.
+     * </p>
+     * 
+     * @param getDeploymentsRequest
+     * @return Result of the GetDeployments operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
+     * @sample AmazonSagemakerEdgeManager.GetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetDeploymentsResult getDeployments(GetDeploymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeployments(request);
+    }
+
+    @SdkInternalApi
+    final GetDeploymentsResult executeGetDeployments(GetDeploymentsRequest getDeploymentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDeploymentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeploymentsRequest> request = null;
+        Response<GetDeploymentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Sagemaker Edge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeployments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeploymentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Use to check if a device is registered with SageMaker Edge Manager.
      * </p>
      * 
      * @param getDeviceRegistrationRequest
      * @return Result of the GetDeviceRegistration operation returned by the service.
      * @throws InternalServiceException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @sample AmazonSagemakerEdgeManager.GetDeviceRegistration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration"
      *      target="_top">AWS API Documentation</a>
@@ -197,8 +255,8 @@ public class AmazonSagemakerEdgeManagerClient extends AmazonWebServiceClient imp
      * @param sendHeartbeatRequest
      * @return Result of the SendHeartbeat operation returned by the service.
      * @throws InternalServiceException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @sample AmazonSagemakerEdgeManager.SendHeartbeat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat" target="_top">AWS
      *      API Documentation</a>

@@ -36,6 +36,20 @@ public class AwsSnsTopicDetailsMarshaller {
             .marshallLocationName("TopicName").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Owner").build();
+    private static final MarshallingInfo<String> SQSSUCCESSFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqsSuccessFeedbackRoleArn").build();
+    private static final MarshallingInfo<String> SQSFAILUREFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqsFailureFeedbackRoleArn").build();
+    private static final MarshallingInfo<String> APPLICATIONSUCCESSFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSuccessFeedbackRoleArn").build();
+    private static final MarshallingInfo<String> FIREHOSESUCCESSFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirehoseSuccessFeedbackRoleArn").build();
+    private static final MarshallingInfo<String> FIREHOSEFAILUREFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirehoseFailureFeedbackRoleArn").build();
+    private static final MarshallingInfo<String> HTTPSUCCESSFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpSuccessFeedbackRoleArn").build();
+    private static final MarshallingInfo<String> HTTPFAILUREFEEDBACKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpFailureFeedbackRoleArn").build();
 
     private static final AwsSnsTopicDetailsMarshaller instance = new AwsSnsTopicDetailsMarshaller();
 
@@ -57,6 +71,13 @@ public class AwsSnsTopicDetailsMarshaller {
             protocolMarshaller.marshall(awsSnsTopicDetails.getSubscription(), SUBSCRIPTION_BINDING);
             protocolMarshaller.marshall(awsSnsTopicDetails.getTopicName(), TOPICNAME_BINDING);
             protocolMarshaller.marshall(awsSnsTopicDetails.getOwner(), OWNER_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getSqsSuccessFeedbackRoleArn(), SQSSUCCESSFEEDBACKROLEARN_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getSqsFailureFeedbackRoleArn(), SQSFAILUREFEEDBACKROLEARN_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getApplicationSuccessFeedbackRoleArn(), APPLICATIONSUCCESSFEEDBACKROLEARN_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getFirehoseSuccessFeedbackRoleArn(), FIREHOSESUCCESSFEEDBACKROLEARN_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getFirehoseFailureFeedbackRoleArn(), FIREHOSEFAILUREFEEDBACKROLEARN_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getHttpSuccessFeedbackRoleArn(), HTTPSUCCESSFEEDBACKROLEARN_BINDING);
+            protocolMarshaller.marshall(awsSnsTopicDetails.getHttpFailureFeedbackRoleArn(), HTTPFAILUREFEEDBACKROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -98,7 +98,8 @@ public enum OperationType {
     DeleteBucketAccessKey("DeleteBucketAccessKey"),
     UpdateBucketBundle("UpdateBucketBundle"),
     UpdateBucket("UpdateBucket"),
-    SetResourceAccessForBucket("SetResourceAccessForBucket");
+    SetResourceAccessForBucket("SetResourceAccessForBucket"),
+    UpdateInstanceMetadataOptions("UpdateInstanceMetadataOptions");
 
     private String value;
 

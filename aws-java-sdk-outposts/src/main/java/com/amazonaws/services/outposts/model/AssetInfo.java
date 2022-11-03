@@ -52,6 +52,12 @@ public class AssetInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ComputeAttributes computeAttributes;
+    /**
+     * <p>
+     * The position of an asset in a rack.
+     * </p>
+     */
+    private AssetLocation assetLocation;
 
     /**
      * <p>
@@ -233,6 +239,46 @@ public class AssetInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The position of an asset in a rack.
+     * </p>
+     * 
+     * @param assetLocation
+     *        The position of an asset in a rack.
+     */
+
+    public void setAssetLocation(AssetLocation assetLocation) {
+        this.assetLocation = assetLocation;
+    }
+
+    /**
+     * <p>
+     * The position of an asset in a rack.
+     * </p>
+     * 
+     * @return The position of an asset in a rack.
+     */
+
+    public AssetLocation getAssetLocation() {
+        return this.assetLocation;
+    }
+
+    /**
+     * <p>
+     * The position of an asset in a rack.
+     * </p>
+     * 
+     * @param assetLocation
+     *        The position of an asset in a rack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetInfo withAssetLocation(AssetLocation assetLocation) {
+        setAssetLocation(assetLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +297,9 @@ public class AssetInfo implements Serializable, Cloneable, StructuredPojo {
         if (getAssetType() != null)
             sb.append("AssetType: ").append(getAssetType()).append(",");
         if (getComputeAttributes() != null)
-            sb.append("ComputeAttributes: ").append(getComputeAttributes());
+            sb.append("ComputeAttributes: ").append(getComputeAttributes()).append(",");
+        if (getAssetLocation() != null)
+            sb.append("AssetLocation: ").append(getAssetLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +330,10 @@ public class AssetInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getComputeAttributes() != null && other.getComputeAttributes().equals(this.getComputeAttributes()) == false)
             return false;
+        if (other.getAssetLocation() == null ^ this.getAssetLocation() == null)
+            return false;
+        if (other.getAssetLocation() != null && other.getAssetLocation().equals(this.getAssetLocation()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +346,7 @@ public class AssetInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRackId() == null) ? 0 : getRackId().hashCode());
         hashCode = prime * hashCode + ((getAssetType() == null) ? 0 : getAssetType().hashCode());
         hashCode = prime * hashCode + ((getComputeAttributes() == null) ? 0 : getComputeAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAssetLocation() == null) ? 0 : getAssetLocation().hashCode());
         return hashCode;
     }
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,10 @@ public class MaintenanceWindowExecutionTaskIdentityMarshaller {
             .marshallLocationName("TaskArn").build();
     private static final MarshallingInfo<String> TASKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TaskType").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlarmConfiguration").build();
+    private static final MarshallingInfo<List> TRIGGEREDALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredAlarms").build();
 
     private static final MaintenanceWindowExecutionTaskIdentityMarshaller instance = new MaintenanceWindowExecutionTaskIdentityMarshaller();
 
@@ -68,6 +73,8 @@ public class MaintenanceWindowExecutionTaskIdentityMarshaller {
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskIdentity.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskIdentity.getTaskArn(), TASKARN_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskIdentity.getTaskType(), TASKTYPE_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowExecutionTaskIdentity.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowExecutionTaskIdentity.getTriggeredAlarms(), TRIGGEREDALARMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -36,7 +36,7 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
     private String code;
     /**
      * <p>
-     * The error message associated with the PartiQL batch resposne.
+     * The error message associated with the PartiQL batch response.
      * </p>
      */
     private String message;
@@ -102,11 +102,11 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The error message associated with the PartiQL batch resposne.
+     * The error message associated with the PartiQL batch response.
      * </p>
      * 
      * @param message
-     *        The error message associated with the PartiQL batch resposne.
+     *        The error message associated with the PartiQL batch response.
      */
 
     public void setMessage(String message) {
@@ -115,10 +115,10 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The error message associated with the PartiQL batch resposne.
+     * The error message associated with the PartiQL batch response.
      * </p>
      * 
-     * @return The error message associated with the PartiQL batch resposne.
+     * @return The error message associated with the PartiQL batch response.
      */
 
     public String getMessage() {
@@ -127,11 +127,11 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The error message associated with the PartiQL batch resposne.
+     * The error message associated with the PartiQL batch response.
      * </p>
      * 
      * @param message
-     *        The error message associated with the PartiQL batch resposne.
+     *        The error message associated with the PartiQL batch response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

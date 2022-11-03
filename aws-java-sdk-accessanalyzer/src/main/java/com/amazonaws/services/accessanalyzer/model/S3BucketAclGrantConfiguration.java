@@ -31,56 +31,16 @@ public class S3BucketAclGrantConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The grantee to whom you’re assigning access rights.
-     * </p>
-     */
-    private AclGrantee grantee;
-    /**
-     * <p>
      * The permissions being granted.
      * </p>
      */
     private String permission;
-
     /**
      * <p>
      * The grantee to whom you’re assigning access rights.
      * </p>
-     * 
-     * @param grantee
-     *        The grantee to whom you’re assigning access rights.
      */
-
-    public void setGrantee(AclGrantee grantee) {
-        this.grantee = grantee;
-    }
-
-    /**
-     * <p>
-     * The grantee to whom you’re assigning access rights.
-     * </p>
-     * 
-     * @return The grantee to whom you’re assigning access rights.
-     */
-
-    public AclGrantee getGrantee() {
-        return this.grantee;
-    }
-
-    /**
-     * <p>
-     * The grantee to whom you’re assigning access rights.
-     * </p>
-     * 
-     * @param grantee
-     *        The grantee to whom you’re assigning access rights.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3BucketAclGrantConfiguration withGrantee(AclGrantee grantee) {
-        setGrantee(grantee);
-        return this;
-    }
+    private AclGrantee grantee;
 
     /**
      * <p>
@@ -142,6 +102,46 @@ public class S3BucketAclGrantConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The grantee to whom you’re assigning access rights.
+     * </p>
+     * 
+     * @param grantee
+     *        The grantee to whom you’re assigning access rights.
+     */
+
+    public void setGrantee(AclGrantee grantee) {
+        this.grantee = grantee;
+    }
+
+    /**
+     * <p>
+     * The grantee to whom you’re assigning access rights.
+     * </p>
+     * 
+     * @return The grantee to whom you’re assigning access rights.
+     */
+
+    public AclGrantee getGrantee() {
+        return this.grantee;
+    }
+
+    /**
+     * <p>
+     * The grantee to whom you’re assigning access rights.
+     * </p>
+     * 
+     * @param grantee
+     *        The grantee to whom you’re assigning access rights.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3BucketAclGrantConfiguration withGrantee(AclGrantee grantee) {
+        setGrantee(grantee);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -153,10 +153,10 @@ public class S3BucketAclGrantConfiguration implements Serializable, Cloneable, S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGrantee() != null)
-            sb.append("Grantee: ").append(getGrantee()).append(",");
         if (getPermission() != null)
-            sb.append("Permission: ").append(getPermission());
+            sb.append("Permission: ").append(getPermission()).append(",");
+        if (getGrantee() != null)
+            sb.append("Grantee: ").append(getGrantee());
         sb.append("}");
         return sb.toString();
     }
@@ -171,13 +171,13 @@ public class S3BucketAclGrantConfiguration implements Serializable, Cloneable, S
         if (obj instanceof S3BucketAclGrantConfiguration == false)
             return false;
         S3BucketAclGrantConfiguration other = (S3BucketAclGrantConfiguration) obj;
-        if (other.getGrantee() == null ^ this.getGrantee() == null)
-            return false;
-        if (other.getGrantee() != null && other.getGrantee().equals(this.getGrantee()) == false)
-            return false;
         if (other.getPermission() == null ^ this.getPermission() == null)
             return false;
         if (other.getPermission() != null && other.getPermission().equals(this.getPermission()) == false)
+            return false;
+        if (other.getGrantee() == null ^ this.getGrantee() == null)
+            return false;
+        if (other.getGrantee() != null && other.getGrantee().equals(this.getGrantee()) == false)
             return false;
         return true;
     }
@@ -187,8 +187,8 @@ public class S3BucketAclGrantConfiguration implements Serializable, Cloneable, S
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGrantee() == null) ? 0 : getGrantee().hashCode());
         hashCode = prime * hashCode + ((getPermission() == null) ? 0 : getPermission().hashCode());
+        hashCode = prime * hashCode + ((getGrantee() == null) ? 0 : getGrantee().hashCode());
         return hashCode;
     }
 

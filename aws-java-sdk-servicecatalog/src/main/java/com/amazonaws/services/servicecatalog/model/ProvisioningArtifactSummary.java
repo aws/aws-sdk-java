@@ -54,7 +54,7 @@ public class ProvisioningArtifactSummary implements Serializable, Cloneable, Str
     private java.util.Date createdTime;
     /**
      * <p>
-     * The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     * The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      * </p>
      */
     private java.util.Map<String, String> provisioningArtifactMetadata;
@@ -221,10 +221,10 @@ public class ProvisioningArtifactSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     * The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      * </p>
      * 
-     * @return The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     * @return The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      */
 
     public java.util.Map<String, String> getProvisioningArtifactMetadata() {
@@ -233,11 +233,11 @@ public class ProvisioningArtifactSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     * The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      * </p>
      * 
      * @param provisioningArtifactMetadata
-     *        The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     *        The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      */
 
     public void setProvisioningArtifactMetadata(java.util.Map<String, String> provisioningArtifactMetadata) {
@@ -246,11 +246,11 @@ public class ProvisioningArtifactSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     * The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      * </p>
      * 
      * @param provisioningArtifactMetadata
-     *        The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+     *        The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

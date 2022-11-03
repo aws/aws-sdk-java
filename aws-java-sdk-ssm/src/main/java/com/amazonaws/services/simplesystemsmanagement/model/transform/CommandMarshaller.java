@@ -77,6 +77,10 @@ public class CommandMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchOutputConfig").build();
     private static final MarshallingInfo<Integer> TIMEOUTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlarmConfiguration").build();
+    private static final MarshallingInfo<List> TRIGGEREDALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredAlarms").build();
 
     private static final CommandMarshaller instance = new CommandMarshaller();
 
@@ -118,6 +122,8 @@ public class CommandMarshaller {
             protocolMarshaller.marshall(command.getNotificationConfig(), NOTIFICATIONCONFIG_BINDING);
             protocolMarshaller.marshall(command.getCloudWatchOutputConfig(), CLOUDWATCHOUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(command.getTimeoutSeconds(), TIMEOUTSECONDS_BINDING);
+            protocolMarshaller.marshall(command.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(command.getTriggeredAlarms(), TRIGGEREDALARMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SpanMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> END_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("end").build();
     private static final MarshallingInfo<StructuredPojo> START_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("start").build();
+    private static final MarshallingInfo<StructuredPojo> END_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("end").build();
 
     private static final SpanMarshaller instance = new SpanMarshaller();
 
@@ -48,8 +48,8 @@ public class SpanMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(span.getEnd(), END_BINDING);
             protocolMarshaller.marshall(span.getStart(), START_BINDING);
+            protocolMarshaller.marshall(span.getEnd(), END_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

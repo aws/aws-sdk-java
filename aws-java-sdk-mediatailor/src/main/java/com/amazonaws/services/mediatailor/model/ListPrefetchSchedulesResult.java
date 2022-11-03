@@ -25,26 +25,27 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that
-     * page was empty.
+     * Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch,
+     * just that that page was empty.
      * </p>
      */
     private java.util.List<PrefetchSchedule> items;
     /**
      * <p>
-     * The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that
-     * page was empty.
+     * Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch,
+     * just that that page was empty.
      * </p>
      * 
-     * @return Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just
-     *         that that page was empty.
+     * @return Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to
+     *         fetch, just that that page was empty.
      */
 
     public java.util.List<PrefetchSchedule> getItems() {
@@ -53,13 +54,13 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that
-     * page was empty.
+     * Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch,
+     * just that that page was empty.
      * </p>
      * 
      * @param items
-     *        Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that
-     *        that page was empty.
+     *        Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to
+     *        fetch, just that that page was empty.
      */
 
     public void setItems(java.util.Collection<PrefetchSchedule> items) {
@@ -73,8 +74,8 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that
-     * page was empty.
+     * Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch,
+     * just that that page was empty.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +84,8 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param items
-     *        Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that
-     *        that page was empty.
+     *        Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to
+     *        fetch, just that that page was empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +101,13 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that
-     * page was empty.
+     * Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch,
+     * just that that page was empty.
      * </p>
      * 
      * @param items
-     *        Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that
-     *        that page was empty.
+     *        Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to
+     *        fetch, just that that page was empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +118,13 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,10 +133,12 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
-     * @return The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     * @return Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *         fetch the next page of results.
      */
 
     public String getNextToken() {
@@ -142,11 +147,13 @@ public class ListPrefetchSchedulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

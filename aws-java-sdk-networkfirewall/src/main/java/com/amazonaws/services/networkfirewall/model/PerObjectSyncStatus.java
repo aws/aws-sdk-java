@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum PerObjectSyncStatus {
 
     PENDING("PENDING"),
-    IN_SYNC("IN_SYNC");
+    IN_SYNC("IN_SYNC"),
+    CAPACITY_CONSTRAINED("CAPACITY_CONSTRAINED");
 
     private String value;
 

@@ -95,6 +95,12 @@ public class ServiceTemplateVersionJsonUnmarshaller implements Unmarshaller<Serv
                     context.nextToken();
                     serviceTemplateVersion.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("supportedComponentSources", targetDepth)) {
+                    context.nextToken();
+                    serviceTemplateVersion.setSupportedComponentSources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("templateName", targetDepth)) {
                     context.nextToken();
                     serviceTemplateVersion.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));

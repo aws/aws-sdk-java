@@ -37,8 +37,7 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      */
     private String codeReviewArn;
@@ -130,11 +129,10 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
-     * repository ARNs by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by
+     * calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * ListRepositoryAssociations</a>.
      * </p>
      */
     private String associationArn;
@@ -203,14 +201,12 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @param codeReviewArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *        <code>CodeReview</code> </a> object.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -220,13 +216,12 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *         <code>CodeReview</code> </a> object.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+     *         object.
      */
 
     public String getCodeReviewArn() {
@@ -236,14 +231,12 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @param codeReviewArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *        <code>CodeReview</code> </a> object.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -902,20 +895,19 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
-     * repository ARNs by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by
+     * calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * ListRepositoryAssociations</a>.
      * </p>
      * 
      * @param associationArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve
-     *        associated repository ARNs by calling <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *        <code>ListRepositoryAssociations</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *        >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository
+     *        ARNs by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *        >ListRepositoryAssociations</a>.
      */
 
     public void setAssociationArn(String associationArn) {
@@ -925,19 +917,18 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
-     * repository ARNs by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by
+     * calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * ListRepositoryAssociations</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *         <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve
-     *         associated repository ARNs by calling <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *         <code>ListRepositoryAssociations</code> </a>.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *         >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository
+     *         ARNs by calling <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *         >ListRepositoryAssociations</a>.
      */
 
     public String getAssociationArn() {
@@ -947,20 +938,19 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
-     * repository ARNs by calling <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     * <code>ListRepositoryAssociations</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     * >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by
+     * calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * ListRepositoryAssociations</a>.
      * </p>
      * 
      * @param associationArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve
-     *        associated repository ARNs by calling <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-     *        <code>ListRepositoryAssociations</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"
+     *        >RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository
+     *        ARNs by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"
+     *        >ListRepositoryAssociations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

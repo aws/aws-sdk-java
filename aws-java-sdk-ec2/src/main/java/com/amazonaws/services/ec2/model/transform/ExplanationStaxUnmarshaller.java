@@ -324,6 +324,16 @@ public class ExplanationStaxUnmarshaller implements Unmarshaller<Explanation, St
                     explanation.setTransitGatewayAttachment(AnalysisComponentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("componentAccount", targetDepth)) {
+                    explanation.setComponentAccount(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("componentRegion", targetDepth)) {
+                    explanation.setComponentRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return explanation;

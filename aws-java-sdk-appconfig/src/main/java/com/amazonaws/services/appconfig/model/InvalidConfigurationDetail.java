@@ -52,6 +52,12 @@ public class InvalidConfigurationDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Details about an error with Lambda when a synchronous extension experiences an error during an invocation.
+     * </p>
+     */
+    private String value;
 
     /**
      * <p>
@@ -214,6 +220,47 @@ public class InvalidConfigurationDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Details about an error with Lambda when a synchronous extension experiences an error during an invocation.
+     * </p>
+     * 
+     * @param value
+     *        Details about an error with Lambda when a synchronous extension experiences an error during an invocation.
+     */
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * Details about an error with Lambda when a synchronous extension experiences an error during an invocation.
+     * </p>
+     * 
+     * @return Details about an error with Lambda when a synchronous extension experiences an error during an
+     *         invocation.
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * Details about an error with Lambda when a synchronous extension experiences an error during an invocation.
+     * </p>
+     * 
+     * @param value
+     *        Details about an error with Lambda when a synchronous extension experiences an error during an invocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidConfigurationDetail withValue(String value) {
+        setValue(value);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +279,9 @@ public class InvalidConfigurationDetail implements Serializable, Cloneable, Stru
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getValue() != null)
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +312,10 @@ public class InvalidConfigurationDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +328,7 @@ public class InvalidConfigurationDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 

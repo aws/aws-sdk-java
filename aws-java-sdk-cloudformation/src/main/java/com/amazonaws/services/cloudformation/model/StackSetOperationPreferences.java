@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * The user-specified preferences for how CloudFormation performs a stack set operation.
  * </p>
  * <p>
- * For more information on maximum concurrent accounts and failure tolerance, see <a
+ * For more information about maximum concurrent accounts and failure tolerance, see <a
  * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
  * >Stack set operation options</a>.
  * </p>

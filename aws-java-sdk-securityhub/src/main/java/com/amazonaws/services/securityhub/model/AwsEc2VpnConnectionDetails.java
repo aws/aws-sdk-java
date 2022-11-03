@@ -36,8 +36,30 @@ public class AwsEc2VpnConnectionDetails implements Serializable, Cloneable, Stru
     private String vpnConnectionId;
     /**
      * <p>
-     * The current state of the VPN connection.
+     * The current state of the VPN connection. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String state;
     /**
@@ -138,11 +160,54 @@ public class AwsEc2VpnConnectionDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the VPN connection.
+     * The current state of the VPN connection. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The current state of the VPN connection.
+     *        The current state of the VPN connection. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>
+     *        </p>
+     *        </li>
      */
 
     public void setState(String state) {
@@ -151,10 +216,53 @@ public class AwsEc2VpnConnectionDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the VPN connection.
+     * The current state of the VPN connection. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current state of the VPN connection.
+     * @return The current state of the VPN connection. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleted</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>
+     *         </p>
+     *         </li>
      */
 
     public String getState() {
@@ -163,11 +271,54 @@ public class AwsEc2VpnConnectionDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the VPN connection.
+     * The current state of the VPN connection. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The current state of the VPN connection.
+     *        The current state of the VPN connection. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

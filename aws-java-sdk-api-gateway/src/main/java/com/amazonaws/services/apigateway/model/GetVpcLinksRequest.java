@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+ * Gets the VpcLinks collection under the caller's account in a selected region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

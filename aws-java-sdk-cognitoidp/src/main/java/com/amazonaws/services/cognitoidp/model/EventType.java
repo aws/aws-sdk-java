@@ -22,7 +22,9 @@ public enum EventType {
 
     SignIn("SignIn"),
     SignUp("SignUp"),
-    ForgotPassword("ForgotPassword");
+    ForgotPassword("ForgotPassword"),
+    PasswordChange("PasswordChange"),
+    ResendCode("ResendCode");
 
     private String value;
 

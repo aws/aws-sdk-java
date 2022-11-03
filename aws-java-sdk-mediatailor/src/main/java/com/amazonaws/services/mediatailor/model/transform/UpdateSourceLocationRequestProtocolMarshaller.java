@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UpdateSourceLocationRequestProtocolMarshaller implements Marshaller<Request<UpdateSourceLocationRequest>, UpdateSourceLocationRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/sourceLocation/{sourceLocationName}").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .requestUri("/sourceLocation/{SourceLocationName}").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
             .serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

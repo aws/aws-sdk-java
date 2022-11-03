@@ -38,6 +38,12 @@ public class EnableTransitGatewayRouteTablePropagationRequest extends AmazonWebS
      * </p>
      */
     private String transitGatewayAttachmentId;
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     */
+    private String transitGatewayRouteTableAnnouncementId;
 
     /**
      * <p>
@@ -120,6 +126,46 @@ public class EnableTransitGatewayRouteTablePropagationRequest extends AmazonWebS
     }
 
     /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @param transitGatewayRouteTableAnnouncementId
+     *        The ID of the transit gateway route table announcement.
+     */
+
+    public void setTransitGatewayRouteTableAnnouncementId(String transitGatewayRouteTableAnnouncementId) {
+        this.transitGatewayRouteTableAnnouncementId = transitGatewayRouteTableAnnouncementId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @return The ID of the transit gateway route table announcement.
+     */
+
+    public String getTransitGatewayRouteTableAnnouncementId() {
+        return this.transitGatewayRouteTableAnnouncementId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @param transitGatewayRouteTableAnnouncementId
+     *        The ID of the transit gateway route table announcement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableTransitGatewayRouteTablePropagationRequest withTransitGatewayRouteTableAnnouncementId(String transitGatewayRouteTableAnnouncementId) {
+        setTransitGatewayRouteTableAnnouncementId(transitGatewayRouteTableAnnouncementId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -145,7 +191,9 @@ public class EnableTransitGatewayRouteTablePropagationRequest extends AmazonWebS
         if (getTransitGatewayRouteTableId() != null)
             sb.append("TransitGatewayRouteTableId: ").append(getTransitGatewayRouteTableId()).append(",");
         if (getTransitGatewayAttachmentId() != null)
-            sb.append("TransitGatewayAttachmentId: ").append(getTransitGatewayAttachmentId());
+            sb.append("TransitGatewayAttachmentId: ").append(getTransitGatewayAttachmentId()).append(",");
+        if (getTransitGatewayRouteTableAnnouncementId() != null)
+            sb.append("TransitGatewayRouteTableAnnouncementId: ").append(getTransitGatewayRouteTableAnnouncementId());
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +216,11 @@ public class EnableTransitGatewayRouteTablePropagationRequest extends AmazonWebS
             return false;
         if (other.getTransitGatewayAttachmentId() != null && other.getTransitGatewayAttachmentId().equals(this.getTransitGatewayAttachmentId()) == false)
             return false;
+        if (other.getTransitGatewayRouteTableAnnouncementId() == null ^ this.getTransitGatewayRouteTableAnnouncementId() == null)
+            return false;
+        if (other.getTransitGatewayRouteTableAnnouncementId() != null
+                && other.getTransitGatewayRouteTableAnnouncementId().equals(this.getTransitGatewayRouteTableAnnouncementId()) == false)
+            return false;
         return true;
     }
 
@@ -178,6 +231,7 @@ public class EnableTransitGatewayRouteTablePropagationRequest extends AmazonWebS
 
         hashCode = prime * hashCode + ((getTransitGatewayRouteTableId() == null) ? 0 : getTransitGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayAttachmentId() == null) ? 0 : getTransitGatewayAttachmentId().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayRouteTableAnnouncementId() == null) ? 0 : getTransitGatewayRouteTableAnnouncementId().hashCode());
         return hashCode;
     }
 

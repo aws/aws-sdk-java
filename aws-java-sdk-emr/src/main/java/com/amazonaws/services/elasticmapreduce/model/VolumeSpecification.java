@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
- * attached to an EC2 instance in the cluster.
+ * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS
+ * volume attached to an EC2 instance in the cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/VolumeSpecification"
@@ -48,6 +48,13 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Integer sizeInGB;
+    /**
+     * <p>
+     * The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is
+     * valid only for gp3 volumes.
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * <p>
@@ -176,6 +183,52 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is
+     * valid only for gp3 volumes.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000
+     *        and is valid only for gp3 volumes.
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is
+     * valid only for gp3 volumes.
+     * </p>
+     * 
+     * @return The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000
+     *         and is valid only for gp3 volumes.
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is
+     * valid only for gp3 volumes.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000
+     *        and is valid only for gp3 volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeSpecification withThroughput(Integer throughput) {
+        setThroughput(throughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -192,7 +245,9 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
         if (getIops() != null)
             sb.append("Iops: ").append(getIops()).append(",");
         if (getSizeInGB() != null)
-            sb.append("SizeInGB: ").append(getSizeInGB());
+            sb.append("SizeInGB: ").append(getSizeInGB()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +274,10 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSizeInGB() != null && other.getSizeInGB().equals(this.getSizeInGB()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +289,7 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getSizeInGB() == null) ? 0 : getSizeInGB().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

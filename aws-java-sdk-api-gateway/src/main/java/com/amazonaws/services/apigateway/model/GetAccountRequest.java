@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to get information about the current <a>Account</a> resource.
+ * Requests API Gateway to get information about the current Account resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

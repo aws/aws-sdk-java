@@ -39,8 +39,8 @@ public class UpdateContactScheduleRequest extends com.amazonaws.AmazonWebService
     private String contactId;
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      */
     private java.util.Date scheduledTime;
@@ -127,13 +127,13 @@ public class UpdateContactScheduleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      * 
      * @param scheduledTime
-     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The
-     *        scheduled time cannot be in the past. It must be within up to 6 days in future.
+     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled
+     *        time cannot be in the past. It must be within up to 6 days in future.
      */
 
     public void setScheduledTime(java.util.Date scheduledTime) {
@@ -142,12 +142,12 @@ public class UpdateContactScheduleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      * 
-     * @return The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The
-     *         scheduled time cannot be in the past. It must be within up to 6 days in future.
+     * @return The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled
+     *         time cannot be in the past. It must be within up to 6 days in future.
      */
 
     public java.util.Date getScheduledTime() {
@@ -156,13 +156,13 @@ public class UpdateContactScheduleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled
-     * time cannot be in the past. It must be within up to 6 days in future.
+     * The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time
+     * cannot be in the past. It must be within up to 6 days in future.
      * </p>
      * 
      * @param scheduledTime
-     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The
-     *        scheduled time cannot be in the past. It must be within up to 6 days in future.
+     *        The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled
+     *        time cannot be in the past. It must be within up to 6 days in future.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

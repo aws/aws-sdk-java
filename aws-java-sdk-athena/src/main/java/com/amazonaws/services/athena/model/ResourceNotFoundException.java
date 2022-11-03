@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 public class ResourceNotFoundException extends com.amazonaws.services.athena.model.AmazonAthenaException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * The name of the Amazon resource.
+     * </p>
+     */
     private String resourceName;
 
     /**
@@ -36,7 +41,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.athena.mod
     }
 
     /**
+     * <p>
+     * The name of the Amazon resource.
+     * </p>
+     * 
      * @param resourceName
+     *        The name of the Amazon resource.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceName")
@@ -45,7 +55,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.athena.mod
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the Amazon resource.
+     * </p>
+     * 
+     * @return The name of the Amazon resource.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceName")
@@ -54,7 +68,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.athena.mod
     }
 
     /**
+     * <p>
+     * The name of the Amazon resource.
+     * </p>
+     * 
      * @param resourceName
+     *        The name of the Amazon resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

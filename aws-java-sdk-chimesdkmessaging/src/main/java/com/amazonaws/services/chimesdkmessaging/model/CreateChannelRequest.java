@@ -76,6 +76,31 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String chimeBearer;
+    /**
+     * <p>
+     * The ID of the channel in the request.
+     * </p>
+     */
+    private String channelId;
+    /**
+     * <p>
+     * The ARNs of the channel members in the request.
+     * </p>
+     */
+    private java.util.List<String> memberArns;
+    /**
+     * <p>
+     * The ARNs of the channel moderators in the request.
+     * </p>
+     */
+    private java.util.List<String> moderatorArns;
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million users, excluding moderators.
+     * </p>
+     */
+    private ElasticChannelConfiguration elasticChannelConfiguration;
 
     /**
      * <p>
@@ -494,6 +519,232 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The ID of the channel in the request.
+     * </p>
+     * 
+     * @param channelId
+     *        The ID of the channel in the request.
+     */
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the channel in the request.
+     * </p>
+     * 
+     * @return The ID of the channel in the request.
+     */
+
+    public String getChannelId() {
+        return this.channelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the channel in the request.
+     * </p>
+     * 
+     * @param channelId
+     *        The ID of the channel in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withChannelId(String channelId) {
+        setChannelId(channelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel members in the request.
+     * </p>
+     * 
+     * @return The ARNs of the channel members in the request.
+     */
+
+    public java.util.List<String> getMemberArns() {
+        return memberArns;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel members in the request.
+     * </p>
+     * 
+     * @param memberArns
+     *        The ARNs of the channel members in the request.
+     */
+
+    public void setMemberArns(java.util.Collection<String> memberArns) {
+        if (memberArns == null) {
+            this.memberArns = null;
+            return;
+        }
+
+        this.memberArns = new java.util.ArrayList<String>(memberArns);
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel members in the request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMemberArns(java.util.Collection)} or {@link #withMemberArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param memberArns
+     *        The ARNs of the channel members in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withMemberArns(String... memberArns) {
+        if (this.memberArns == null) {
+            setMemberArns(new java.util.ArrayList<String>(memberArns.length));
+        }
+        for (String ele : memberArns) {
+            this.memberArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel members in the request.
+     * </p>
+     * 
+     * @param memberArns
+     *        The ARNs of the channel members in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withMemberArns(java.util.Collection<String> memberArns) {
+        setMemberArns(memberArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel moderators in the request.
+     * </p>
+     * 
+     * @return The ARNs of the channel moderators in the request.
+     */
+
+    public java.util.List<String> getModeratorArns() {
+        return moderatorArns;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel moderators in the request.
+     * </p>
+     * 
+     * @param moderatorArns
+     *        The ARNs of the channel moderators in the request.
+     */
+
+    public void setModeratorArns(java.util.Collection<String> moderatorArns) {
+        if (moderatorArns == null) {
+            this.moderatorArns = null;
+            return;
+        }
+
+        this.moderatorArns = new java.util.ArrayList<String>(moderatorArns);
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel moderators in the request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setModeratorArns(java.util.Collection)} or {@link #withModeratorArns(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param moderatorArns
+     *        The ARNs of the channel moderators in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withModeratorArns(String... moderatorArns) {
+        if (this.moderatorArns == null) {
+            setModeratorArns(new java.util.ArrayList<String>(moderatorArns.length));
+        }
+        for (String ele : moderatorArns) {
+            this.moderatorArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the channel moderators in the request.
+     * </p>
+     * 
+     * @param moderatorArns
+     *        The ARNs of the channel moderators in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withModeratorArns(java.util.Collection<String> moderatorArns) {
+        setModeratorArns(moderatorArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million users, excluding moderators.
+     * </p>
+     * 
+     * @param elasticChannelConfiguration
+     *        The attributes required to configure and create an elastic channel. An elastic channel can support a
+     *        maximum of 1-million users, excluding moderators.
+     */
+
+    public void setElasticChannelConfiguration(ElasticChannelConfiguration elasticChannelConfiguration) {
+        this.elasticChannelConfiguration = elasticChannelConfiguration;
+    }
+
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million users, excluding moderators.
+     * </p>
+     * 
+     * @return The attributes required to configure and create an elastic channel. An elastic channel can support a
+     *         maximum of 1-million users, excluding moderators.
+     */
+
+    public ElasticChannelConfiguration getElasticChannelConfiguration() {
+        return this.elasticChannelConfiguration;
+    }
+
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million users, excluding moderators.
+     * </p>
+     * 
+     * @param elasticChannelConfiguration
+     *        The attributes required to configure and create an elastic channel. An elastic channel can support a
+     *        maximum of 1-million users, excluding moderators.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withElasticChannelConfiguration(ElasticChannelConfiguration elasticChannelConfiguration) {
+        setElasticChannelConfiguration(elasticChannelConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -520,7 +771,15 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getChimeBearer() != null)
-            sb.append("ChimeBearer: ").append(getChimeBearer());
+            sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
+        if (getChannelId() != null)
+            sb.append("ChannelId: ").append("***Sensitive Data Redacted***").append(",");
+        if (getMemberArns() != null)
+            sb.append("MemberArns: ").append(getMemberArns()).append(",");
+        if (getModeratorArns() != null)
+            sb.append("ModeratorArns: ").append(getModeratorArns()).append(",");
+        if (getElasticChannelConfiguration() != null)
+            sb.append("ElasticChannelConfiguration: ").append(getElasticChannelConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -567,6 +826,22 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
             return false;
+        if (other.getChannelId() == null ^ this.getChannelId() == null)
+            return false;
+        if (other.getChannelId() != null && other.getChannelId().equals(this.getChannelId()) == false)
+            return false;
+        if (other.getMemberArns() == null ^ this.getMemberArns() == null)
+            return false;
+        if (other.getMemberArns() != null && other.getMemberArns().equals(this.getMemberArns()) == false)
+            return false;
+        if (other.getModeratorArns() == null ^ this.getModeratorArns() == null)
+            return false;
+        if (other.getModeratorArns() != null && other.getModeratorArns().equals(this.getModeratorArns()) == false)
+            return false;
+        if (other.getElasticChannelConfiguration() == null ^ this.getElasticChannelConfiguration() == null)
+            return false;
+        if (other.getElasticChannelConfiguration() != null && other.getElasticChannelConfiguration().equals(this.getElasticChannelConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -583,6 +858,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
+        hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
+        hashCode = prime * hashCode + ((getMemberArns() == null) ? 0 : getMemberArns().hashCode());
+        hashCode = prime * hashCode + ((getModeratorArns() == null) ? 0 : getModeratorArns().hashCode());
+        hashCode = prime * hashCode + ((getElasticChannelConfiguration() == null) ? 0 : getElasticChannelConfiguration().hashCode());
         return hashCode;
     }
 

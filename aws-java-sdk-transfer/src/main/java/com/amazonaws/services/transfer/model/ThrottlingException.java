@@ -18,9 +18,6 @@ import javax.annotation.Generated;
  * <p>
  * The request was denied due to request throttling.
  * </p>
- * <p>
- * HTTP Status Code: 400
- * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThrottlingException extends com.amazonaws.services.transfer.model.AWSTransferException {

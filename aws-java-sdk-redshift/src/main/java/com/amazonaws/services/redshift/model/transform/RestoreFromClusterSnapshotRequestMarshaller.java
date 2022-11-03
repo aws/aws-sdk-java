@@ -49,6 +49,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(restoreFromClusterSnapshotRequest.getSnapshotIdentifier()));
         }
 
+        if (restoreFromClusterSnapshotRequest.getSnapshotArn() != null) {
+            request.addParameter("SnapshotArn", StringUtils.fromString(restoreFromClusterSnapshotRequest.getSnapshotArn()));
+        }
+
         if (restoreFromClusterSnapshotRequest.getSnapshotClusterIdentifier() != null) {
             request.addParameter("SnapshotClusterIdentifier", StringUtils.fromString(restoreFromClusterSnapshotRequest.getSnapshotClusterIdentifier()));
         }

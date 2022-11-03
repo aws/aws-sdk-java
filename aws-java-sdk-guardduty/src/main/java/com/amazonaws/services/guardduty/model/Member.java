@@ -70,6 +70,12 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String updatedAt;
+    /**
+     * <p>
+     * The administrator account ID.
+     * </p>
+     */
+    private String administratorId;
 
     /**
      * <p>
@@ -352,6 +358,46 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The administrator account ID.
+     * </p>
+     * 
+     * @param administratorId
+     *        The administrator account ID.
+     */
+
+    public void setAdministratorId(String administratorId) {
+        this.administratorId = administratorId;
+    }
+
+    /**
+     * <p>
+     * The administrator account ID.
+     * </p>
+     * 
+     * @return The administrator account ID.
+     */
+
+    public String getAdministratorId() {
+        return this.administratorId;
+    }
+
+    /**
+     * <p>
+     * The administrator account ID.
+     * </p>
+     * 
+     * @param administratorId
+     *        The administrator account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Member withAdministratorId(String administratorId) {
+        setAdministratorId(administratorId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +422,9 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         if (getInvitedAt() != null)
             sb.append("InvitedAt: ").append(getInvitedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getAdministratorId() != null)
+            sb.append("AdministratorId: ").append(getAdministratorId());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +467,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getAdministratorId() == null ^ this.getAdministratorId() == null)
+            return false;
+        if (other.getAdministratorId() != null && other.getAdministratorId().equals(this.getAdministratorId()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +486,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRelationshipStatus() == null) ? 0 : getRelationshipStatus().hashCode());
         hashCode = prime * hashCode + ((getInvitedAt() == null) ? 0 : getInvitedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getAdministratorId() == null) ? 0 : getAdministratorId().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides optional settings for the <code>CallAnalyticsJob</code> operation.
+ * Provides additional optional settings for your request, including content redaction, automatic language
+ * identification; allows you to apply custom language models, vocabulary filters, and custom vocabularies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CallAnalyticsJobSettings"
@@ -30,30 +31,46 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of a vocabulary to use when processing the call analytics job.
+     * The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary
+     * names are case sensitive.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The name of the vocabulary filter to use when running a call analytics job. The filter that you specify must have
-     * the same language code as the analytics job.
+     * The name of the custom vocabulary filter you want to include in your Call Analytics transcription request.
+     * Vocabulary filter names are case sensitive.
+     * </p>
+     * <p>
+     * Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     * <code>VocabularyFilterMethod</code>.
      * </p>
      */
     private String vocabularyFilterName;
     /**
      * <p>
-     * Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     * placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
-     * are not masked or removed.
+     * Specify how you want your vocabulary filter applied to your transcript.
+     * </p>
+     * <p>
+     * To replace words with <code>***</code>, choose <code>mask</code>.
+     * </p>
+     * <p>
+     * To delete words, choose <code>remove</code>.
+     * </p>
+     * <p>
+     * To flag words without changing them, choose <code>tag</code>.
      * </p>
      */
     private String vocabularyFilterMethod;
     /**
      * <p>
-     * The structure used to describe a custom language model.
+     * The name of the custom language model you want to use when processing your Call Analytics job. Note that language
+     * model names are case sensitive.
+     * </p>
+     * <p>
+     * The language of the specified language model must match the language code you specify in your transcription
+     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.
      * </p>
      */
     private String languageModelName;
@@ -61,34 +78,60 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
     private ContentRedaction contentRedaction;
     /**
      * <p>
-     * When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon
-     * Transcribe identify the language for you.
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * parameter.
      * </p>
      * <p>
-     * To specify a language, specify an array with one language code. If you don't know the language, you can leave
-     * this field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the
-     * ability of Amazon Transcribe to correctly identify the language, you can provide an array of the languages that
-     * can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for
-     * additional information.
+     * Including language options can improve the accuracy of language identification.
+     * </p>
+     * <p>
+     * For a list of languages supported with Call Analytics, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      */
     private java.util.List<String> languageOptions;
     /**
      * <p>
-     * The language identification settings associated with your call analytics job. These settings include
-     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
+     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * </p>
+     * <p>
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. Each language code you include can have an associated custom
+     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
+     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * </p>
+     * <p>
+     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
+     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
+     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
+     * identification.
+     * </p>
+     * <p>
+     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
+     * </p>
+     * <p>
+     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the
+     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     * sub-parameter.
      * </p>
      */
     private java.util.Map<String, LanguageIdSettings> languageIdSettings;
 
     /**
      * <p>
-     * The name of a vocabulary to use when processing the call analytics job.
+     * The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary
+     * names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of a vocabulary to use when processing the call analytics job.
+     *        The name of the custom vocabulary you want to include in your Call Analytics transcription request.
+     *        Vocabulary names are case sensitive.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -97,10 +140,12 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of a vocabulary to use when processing the call analytics job.
+     * The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary
+     * names are case sensitive.
      * </p>
      * 
-     * @return The name of a vocabulary to use when processing the call analytics job.
+     * @return The name of the custom vocabulary you want to include in your Call Analytics transcription request.
+     *         Vocabulary names are case sensitive.
      */
 
     public String getVocabularyName() {
@@ -109,11 +154,13 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of a vocabulary to use when processing the call analytics job.
+     * The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary
+     * names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of a vocabulary to use when processing the call analytics job.
+     *        The name of the custom vocabulary you want to include in your Call Analytics transcription request.
+     *        Vocabulary names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,13 +171,20 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the vocabulary filter to use when running a call analytics job. The filter that you specify must have
-     * the same language code as the analytics job.
+     * The name of the custom vocabulary filter you want to include in your Call Analytics transcription request.
+     * Vocabulary filter names are case sensitive.
+     * </p>
+     * <p>
+     * Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     * <code>VocabularyFilterMethod</code>.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter to use when running a call analytics job. The filter that you specify
-     *        must have the same language code as the analytics job.
+     *        The name of the custom vocabulary filter you want to include in your Call Analytics transcription request.
+     *        Vocabulary filter names are case sensitive.</p>
+     *        <p>
+     *        Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     *        <code>VocabularyFilterMethod</code>.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -139,12 +193,19 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the vocabulary filter to use when running a call analytics job. The filter that you specify must have
-     * the same language code as the analytics job.
+     * The name of the custom vocabulary filter you want to include in your Call Analytics transcription request.
+     * Vocabulary filter names are case sensitive.
+     * </p>
+     * <p>
+     * Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     * <code>VocabularyFilterMethod</code>.
      * </p>
      * 
-     * @return The name of the vocabulary filter to use when running a call analytics job. The filter that you specify
-     *         must have the same language code as the analytics job.
+     * @return The name of the custom vocabulary filter you want to include in your Call Analytics transcription
+     *         request. Vocabulary filter names are case sensitive.</p>
+     *         <p>
+     *         Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     *         <code>VocabularyFilterMethod</code>.
      */
 
     public String getVocabularyFilterName() {
@@ -153,13 +214,20 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the vocabulary filter to use when running a call analytics job. The filter that you specify must have
-     * the same language code as the analytics job.
+     * The name of the custom vocabulary filter you want to include in your Call Analytics transcription request.
+     * Vocabulary filter names are case sensitive.
+     * </p>
+     * <p>
+     * Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     * <code>VocabularyFilterMethod</code>.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter to use when running a call analytics job. The filter that you specify
-     *        must have the same language code as the analytics job.
+     *        The name of the custom vocabulary filter you want to include in your Call Analytics transcription request.
+     *        Vocabulary filter names are case sensitive.</p>
+     *        <p>
+     *        Note that if you include <code>VocabularyFilterName</code> in your request, you must also include
+     *        <code>VocabularyFilterMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,19 +238,28 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     * placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
-     * are not masked or removed.
+     * Specify how you want your vocabulary filter applied to your transcript.
+     * </p>
+     * <p>
+     * To replace words with <code>***</code>, choose <code>mask</code>.
+     * </p>
+     * <p>
+     * To delete words, choose <code>remove</code>.
+     * </p>
+     * <p>
+     * To flag words without changing them, choose <code>tag</code>.
      * </p>
      * 
      * @param vocabularyFilterMethod
-     *        Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     *        placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     *        placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     *        vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary
-     *        filter are not masked or removed.
+     *        Specify how you want your vocabulary filter applied to your transcript.</p>
+     *        <p>
+     *        To replace words with <code>***</code>, choose <code>mask</code>.
+     *        </p>
+     *        <p>
+     *        To delete words, choose <code>remove</code>.
+     *        </p>
+     *        <p>
+     *        To flag words without changing them, choose <code>tag</code>.
      * @see VocabularyFilterMethod
      */
 
@@ -192,18 +269,27 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     * placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
-     * are not masked or removed.
+     * Specify how you want your vocabulary filter applied to your transcript.
+     * </p>
+     * <p>
+     * To replace words with <code>***</code>, choose <code>mask</code>.
+     * </p>
+     * <p>
+     * To delete words, choose <code>remove</code>.
+     * </p>
+     * <p>
+     * To flag words without changing them, choose <code>tag</code>.
      * </p>
      * 
-     * @return Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     *         placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     *         placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     *         vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary
-     *         filter are not masked or removed.
+     * @return Specify how you want your vocabulary filter applied to your transcript.</p>
+     *         <p>
+     *         To replace words with <code>***</code>, choose <code>mask</code>.
+     *         </p>
+     *         <p>
+     *         To delete words, choose <code>remove</code>.
+     *         </p>
+     *         <p>
+     *         To flag words without changing them, choose <code>tag</code>.
      * @see VocabularyFilterMethod
      */
 
@@ -213,19 +299,28 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     * placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
-     * are not masked or removed.
+     * Specify how you want your vocabulary filter applied to your transcript.
+     * </p>
+     * <p>
+     * To replace words with <code>***</code>, choose <code>mask</code>.
+     * </p>
+     * <p>
+     * To delete words, choose <code>remove</code>.
+     * </p>
+     * <p>
+     * To flag words without changing them, choose <code>tag</code>.
      * </p>
      * 
      * @param vocabularyFilterMethod
-     *        Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     *        placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     *        placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     *        vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary
-     *        filter are not masked or removed.
+     *        Specify how you want your vocabulary filter applied to your transcript.</p>
+     *        <p>
+     *        To replace words with <code>***</code>, choose <code>mask</code>.
+     *        </p>
+     *        <p>
+     *        To delete words, choose <code>remove</code>.
+     *        </p>
+     *        <p>
+     *        To flag words without changing them, choose <code>tag</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyFilterMethod
      */
@@ -237,19 +332,28 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     * placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
-     * are not masked or removed.
+     * Specify how you want your vocabulary filter applied to your transcript.
+     * </p>
+     * <p>
+     * To replace words with <code>***</code>, choose <code>mask</code>.
+     * </p>
+     * <p>
+     * To delete words, choose <code>remove</code>.
+     * </p>
+     * <p>
+     * To flag words without changing them, choose <code>tag</code>.
      * </p>
      * 
      * @param vocabularyFilterMethod
-     *        Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as
-     *        placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     *        placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
-     *        vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary
-     *        filter are not masked or removed.
+     *        Specify how you want your vocabulary filter applied to your transcript.</p>
+     *        <p>
+     *        To replace words with <code>***</code>, choose <code>mask</code>.
+     *        </p>
+     *        <p>
+     *        To delete words, choose <code>remove</code>.
+     *        </p>
+     *        <p>
+     *        To flag words without changing them, choose <code>tag</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyFilterMethod
      */
@@ -261,11 +365,22 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The structure used to describe a custom language model.
+     * The name of the custom language model you want to use when processing your Call Analytics job. Note that language
+     * model names are case sensitive.
+     * </p>
+     * <p>
+     * The language of the specified language model must match the language code you specify in your transcription
+     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.
      * </p>
      * 
      * @param languageModelName
-     *        The structure used to describe a custom language model.
+     *        The name of the custom language model you want to use when processing your Call Analytics job. Note that
+     *        language model names are case sensitive.</p>
+     *        <p>
+     *        The language of the specified language model must match the language code you specify in your
+     *        transcription request. If the languages don't match, the language model isn't applied. There are no errors
+     *        or warnings associated with a language mismatch.
      */
 
     public void setLanguageModelName(String languageModelName) {
@@ -274,10 +389,21 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The structure used to describe a custom language model.
+     * The name of the custom language model you want to use when processing your Call Analytics job. Note that language
+     * model names are case sensitive.
+     * </p>
+     * <p>
+     * The language of the specified language model must match the language code you specify in your transcription
+     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.
      * </p>
      * 
-     * @return The structure used to describe a custom language model.
+     * @return The name of the custom language model you want to use when processing your Call Analytics job. Note that
+     *         language model names are case sensitive.</p>
+     *         <p>
+     *         The language of the specified language model must match the language code you specify in your
+     *         transcription request. If the languages don't match, the language model isn't applied. There are no
+     *         errors or warnings associated with a language mismatch.
      */
 
     public String getLanguageModelName() {
@@ -286,11 +412,22 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The structure used to describe a custom language model.
+     * The name of the custom language model you want to use when processing your Call Analytics job. Note that language
+     * model names are case sensitive.
+     * </p>
+     * <p>
+     * The language of the specified language model must match the language code you specify in your transcription
+     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.
      * </p>
      * 
      * @param languageModelName
-     *        The structure used to describe a custom language model.
+     *        The name of the custom language model you want to use when processing your Call Analytics job. Note that
+     *        language model names are case sensitive.</p>
+     *        <p>
+     *        The language of the specified language model must match the language code you specify in your
+     *        transcription request. If the languages don't match, the language model isn't applied. There are no errors
+     *        or warnings associated with a language mismatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,27 +464,28 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon
-     * Transcribe identify the language for you.
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * parameter.
      * </p>
      * <p>
-     * To specify a language, specify an array with one language code. If you don't know the language, you can leave
-     * this field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the
-     * ability of Amazon Transcribe to correctly identify the language, you can provide an array of the languages that
-     * can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for
-     * additional information.
+     * Including language options can improve the accuracy of language identification.
+     * </p>
+     * <p>
+     * For a list of languages supported with Call Analytics, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
-     * @return When you run a call analytics job, you can specify the language spoken in the audio, or you can have
-     *         Amazon Transcribe identify the language for you.</p>
+     * @return You can specify two or more language codes that represent the languages you think may be present in your
+     *         media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *         include this parameter.</p>
      *         <p>
-     *         To specify a language, specify an array with one language code. If you don't know the language, you can
-     *         leave this field blank and Amazon Transcribe will use machine learning to identify the language for you.
-     *         To improve the ability of Amazon Transcribe to correctly identify the language, you can provide an array
-     *         of the languages that can be present in the audio. Refer to <a
+     *         Including language options can improve the accuracy of language identification.
+     *         </p>
+     *         <p>
+     *         For a list of languages supported with Call Analytics, refer to the <a
      *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *         for additional information.
+     *         table.
      * @see LanguageCode
      */
 
@@ -357,28 +495,29 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon
-     * Transcribe identify the language for you.
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * parameter.
      * </p>
      * <p>
-     * To specify a language, specify an array with one language code. If you don't know the language, you can leave
-     * this field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the
-     * ability of Amazon Transcribe to correctly identify the language, you can provide an array of the languages that
-     * can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for
-     * additional information.
+     * Including language options can improve the accuracy of language identification.
+     * </p>
+     * <p>
+     * For a list of languages supported with Call Analytics, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageOptions
-     *        When you run a call analytics job, you can specify the language spoken in the audio, or you can have
-     *        Amazon Transcribe identify the language for you.</p>
+     *        You can specify two or more language codes that represent the languages you think may be present in your
+     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        include this parameter.</p>
      *        <p>
-     *        To specify a language, specify an array with one language code. If you don't know the language, you can
-     *        leave this field blank and Amazon Transcribe will use machine learning to identify the language for you.
-     *        To improve the ability of Amazon Transcribe to correctly identify the language, you can provide an array
-     *        of the languages that can be present in the audio. Refer to <a
+     *        Including language options can improve the accuracy of language identification.
+     *        </p>
+     *        <p>
+     *        For a list of languages supported with Call Analytics, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        for additional information.
+     *        table.
      * @see LanguageCode
      */
 
@@ -393,16 +532,16 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon
-     * Transcribe identify the language for you.
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * parameter.
      * </p>
      * <p>
-     * To specify a language, specify an array with one language code. If you don't know the language, you can leave
-     * this field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the
-     * ability of Amazon Transcribe to correctly identify the language, you can provide an array of the languages that
-     * can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for
-     * additional information.
+     * Including language options can improve the accuracy of language identification.
+     * </p>
+     * <p>
+     * For a list of languages supported with Call Analytics, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -411,15 +550,16 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param languageOptions
-     *        When you run a call analytics job, you can specify the language spoken in the audio, or you can have
-     *        Amazon Transcribe identify the language for you.</p>
+     *        You can specify two or more language codes that represent the languages you think may be present in your
+     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        include this parameter.</p>
      *        <p>
-     *        To specify a language, specify an array with one language code. If you don't know the language, you can
-     *        leave this field blank and Amazon Transcribe will use machine learning to identify the language for you.
-     *        To improve the ability of Amazon Transcribe to correctly identify the language, you can provide an array
-     *        of the languages that can be present in the audio. Refer to <a
+     *        Including language options can improve the accuracy of language identification.
+     *        </p>
+     *        <p>
+     *        For a list of languages supported with Call Analytics, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        for additional information.
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -436,28 +576,29 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon
-     * Transcribe identify the language for you.
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * parameter.
      * </p>
      * <p>
-     * To specify a language, specify an array with one language code. If you don't know the language, you can leave
-     * this field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the
-     * ability of Amazon Transcribe to correctly identify the language, you can provide an array of the languages that
-     * can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for
-     * additional information.
+     * Including language options can improve the accuracy of language identification.
+     * </p>
+     * <p>
+     * For a list of languages supported with Call Analytics, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageOptions
-     *        When you run a call analytics job, you can specify the language spoken in the audio, or you can have
-     *        Amazon Transcribe identify the language for you.</p>
+     *        You can specify two or more language codes that represent the languages you think may be present in your
+     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        include this parameter.</p>
      *        <p>
-     *        To specify a language, specify an array with one language code. If you don't know the language, you can
-     *        leave this field blank and Amazon Transcribe will use machine learning to identify the language for you.
-     *        To improve the ability of Amazon Transcribe to correctly identify the language, you can provide an array
-     *        of the languages that can be present in the audio. Refer to <a
+     *        Including language options can improve the accuracy of language identification.
+     *        </p>
+     *        <p>
+     *        For a list of languages supported with Call Analytics, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        for additional information.
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -469,28 +610,29 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon
-     * Transcribe identify the language for you.
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * parameter.
      * </p>
      * <p>
-     * To specify a language, specify an array with one language code. If you don't know the language, you can leave
-     * this field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the
-     * ability of Amazon Transcribe to correctly identify the language, you can provide an array of the languages that
-     * can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for
-     * additional information.
+     * Including language options can improve the accuracy of language identification.
+     * </p>
+     * <p>
+     * For a list of languages supported with Call Analytics, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
      * @param languageOptions
-     *        When you run a call analytics job, you can specify the language spoken in the audio, or you can have
-     *        Amazon Transcribe identify the language for you.</p>
+     *        You can specify two or more language codes that represent the languages you think may be present in your
+     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        include this parameter.</p>
      *        <p>
-     *        To specify a language, specify an array with one language code. If you don't know the language, you can
-     *        leave this field blank and Amazon Transcribe will use machine learning to identify the language for you.
-     *        To improve the ability of Amazon Transcribe to correctly identify the language, you can provide an array
-     *        of the languages that can be present in the audio. Refer to <a
+     *        Including language options can improve the accuracy of language identification.
+     *        </p>
+     *        <p>
+     *        For a list of languages supported with Call Analytics, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        for additional information.
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -510,12 +652,61 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The language identification settings associated with your call analytics job. These settings include
-     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
+     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * </p>
+     * <p>
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. Each language code you include can have an associated custom
+     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
+     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * </p>
+     * <p>
+     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
+     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
+     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
+     * identification.
+     * </p>
+     * <p>
+     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
+     * </p>
+     * <p>
+     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the
+     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     * sub-parameter.
      * </p>
      * 
-     * @return The language identification settings associated with your call analytics job. These settings include
-     *         <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     * @return If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want
+     *         to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     *         <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     *         <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     *         <p>
+     *         You can specify two or more language codes that represent the languages you think may be present in your
+     *         media; including more than five is not recommended. Each language code you include can have an associated
+     *         custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
+     *         match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
+     *         filters.
+     *         </p>
+     *         <p>
+     *         To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom
+     *         language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code>
+     *         instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of
+     *         automatic language identification.
+     *         </p>
+     *         <p>
+     *         If you want to include a custom language model with your request but <b>do not</b> want to use automatic
+     *         language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
+     *         sub-parameter.
+     *         </p>
+     *         <p>
+     *         If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
+     *         <b>do not</b> want to use automatic language identification, use instead the
+     *         <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     *         sub-parameter.
      */
 
     public java.util.Map<String, LanguageIdSettings> getLanguageIdSettings() {
@@ -524,13 +715,62 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The language identification settings associated with your call analytics job. These settings include
-     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
+     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * </p>
+     * <p>
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. Each language code you include can have an associated custom
+     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
+     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * </p>
+     * <p>
+     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
+     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
+     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
+     * identification.
+     * </p>
+     * <p>
+     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
+     * </p>
+     * <p>
+     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the
+     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     * sub-parameter.
      * </p>
      * 
      * @param languageIdSettings
-     *        The language identification settings associated with your call analytics job. These settings include
-     *        <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     *        If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to
+     *        apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     *        <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     *        <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     *        <p>
+     *        You can specify two or more language codes that represent the languages you think may be present in your
+     *        media; including more than five is not recommended. Each language code you include can have an associated
+     *        custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
+     *        match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
+     *        filters.
+     *        </p>
+     *        <p>
+     *        To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language
+     *        model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
+     *        <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
+     *        identification.
+     *        </p>
+     *        <p>
+     *        If you want to include a custom language model with your request but <b>do not</b> want to use automatic
+     *        language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
+     *        sub-parameter.
+     *        </p>
+     *        <p>
+     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
+     *        <b>do not</b> want to use automatic language identification, use instead the
+     *        <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     *        sub-parameter.
      */
 
     public void setLanguageIdSettings(java.util.Map<String, LanguageIdSettings> languageIdSettings) {
@@ -539,13 +779,62 @@ public class CallAnalyticsJobSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The language identification settings associated with your call analytics job. These settings include
-     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
+     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * </p>
+     * <p>
+     * You can specify two or more language codes that represent the languages you think may be present in your media;
+     * including more than five is not recommended. Each language code you include can have an associated custom
+     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
+     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * </p>
+     * <p>
+     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
+     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
+     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
+     * identification.
+     * </p>
+     * <p>
+     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
+     * </p>
+     * <p>
+     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the
+     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     * sub-parameter.
      * </p>
      * 
      * @param languageIdSettings
-     *        The language identification settings associated with your call analytics job. These settings include
-     *        <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.
+     *        If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to
+     *        apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
+     *        <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+     *        <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     *        <p>
+     *        You can specify two or more language codes that represent the languages you think may be present in your
+     *        media; including more than five is not recommended. Each language code you include can have an associated
+     *        custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
+     *        match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
+     *        filters.
+     *        </p>
+     *        <p>
+     *        To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language
+     *        model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
+     *        <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
+     *        identification.
+     *        </p>
+     *        <p>
+     *        If you want to include a custom language model with your request but <b>do not</b> want to use automatic
+     *        language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
+     *        sub-parameter.
+     *        </p>
+     *        <p>
+     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
+     *        <b>do not</b> want to use automatic language identification, use instead the
+     *        <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
+     *        sub-parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

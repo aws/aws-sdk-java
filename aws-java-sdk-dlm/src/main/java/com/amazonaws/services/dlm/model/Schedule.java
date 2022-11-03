@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a backup schedule for a snapshot or AMI lifecycle policy.
+ * <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI lifecycle policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule" target="_top">AWS API Documentation</a>
@@ -48,9 +48,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Tag> tagsToAdd;
     /**
      * <p>
-     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
-     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
-     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with
+     * values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must
+     * be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags
+     * are only valid for EBS Snapshot Management – Instance policies.
      * </p>
      */
     private java.util.List<Tag> variableTags;
@@ -62,39 +63,54 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private CreateRule createRule;
     /**
      * <p>
-     * The retention rule.
+     * The retention rule for snapshots or AMIs created by the policy.
      * </p>
      */
     private RetainRule retainRule;
     /**
      * <p>
-     * The rule for enabling fast snapshot restore.
+     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      */
     private FastRestoreRule fastRestoreRule;
     /**
      * <p>
-     * The rule for cross-Region snapshot copies.
+     * Specifies a rule for copying snapshots or AMIs across regions.
      * </p>
+     * <note>
      * <p>
-     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
-     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates
+     * snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * </p>
+     * </note>
      */
     private java.util.List<CrossRegionCopyRule> crossRegionCopyRules;
     /**
      * <p>
-     * The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      */
     private java.util.List<ShareRule> shareRules;
     /**
      * <p>
-     * The AMI deprecation rule for the schedule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      */
     private DeprecateRule deprecateRule;
+    /**
+     * <p>
+     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
+     * period that you specify.
+     * </p>
+     * <p>
+     * For more information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.
+     * </p>
+     */
+    private ArchiveRule archiveRule;
 
     /**
      * <p>
@@ -268,15 +284,16 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
-     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
-     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with
+     * values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must
+     * be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags
+     * are only valid for EBS Snapshot Management – Instance policies.
      * </p>
      * 
-     * @return A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
-     *         be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
-     *         <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
-     *         Management – Instance policies.
+     * @return <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs
+     *         with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key.
+     *         Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     *         <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
      */
 
     public java.util.List<Tag> getVariableTags() {
@@ -285,16 +302,17 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
-     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
-     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with
+     * values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must
+     * be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags
+     * are only valid for EBS Snapshot Management – Instance policies.
      * </p>
      * 
      * @param variableTags
-     *        A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
-     *        be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
-     *        <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
-     *        Management – Instance policies.
+     *        <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs
+     *        with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key.
+     *        Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     *        <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
      */
 
     public void setVariableTags(java.util.Collection<Tag> variableTags) {
@@ -308,9 +326,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
-     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
-     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with
+     * values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must
+     * be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags
+     * are only valid for EBS Snapshot Management – Instance policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -319,10 +338,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param variableTags
-     *        A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
-     *        be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
-     *        <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
-     *        Management – Instance policies.
+     *        <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs
+     *        with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key.
+     *        Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     *        <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,16 +357,17 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
-     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
-     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with
+     * values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must
+     * be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags
+     * are only valid for EBS Snapshot Management – Instance policies.
      * </p>
      * 
      * @param variableTags
-     *        A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
-     *        be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
-     *        <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
-     *        Management – Instance policies.
+     *        <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs
+     *        with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key.
+     *        Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     *        <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,11 +418,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retention rule.
+     * The retention rule for snapshots or AMIs created by the policy.
      * </p>
      * 
      * @param retainRule
-     *        The retention rule.
+     *        The retention rule for snapshots or AMIs created by the policy.
      */
 
     public void setRetainRule(RetainRule retainRule) {
@@ -411,10 +431,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retention rule.
+     * The retention rule for snapshots or AMIs created by the policy.
      * </p>
      * 
-     * @return The retention rule.
+     * @return The retention rule for snapshots or AMIs created by the policy.
      */
 
     public RetainRule getRetainRule() {
@@ -423,11 +443,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retention rule.
+     * The retention rule for snapshots or AMIs created by the policy.
      * </p>
      * 
      * @param retainRule
-     *        The retention rule.
+     *        The retention rule for snapshots or AMIs created by the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,11 +458,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for enabling fast snapshot restore.
+     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      * 
      * @param fastRestoreRule
-     *        The rule for enabling fast snapshot restore.
+     *        <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      */
 
     public void setFastRestoreRule(FastRestoreRule fastRestoreRule) {
@@ -451,10 +471,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for enabling fast snapshot restore.
+     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      * 
-     * @return The rule for enabling fast snapshot restore.
+     * @return <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      */
 
     public FastRestoreRule getFastRestoreRule() {
@@ -463,11 +483,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for enabling fast snapshot restore.
+     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      * 
      * @param fastRestoreRule
-     *        The rule for enabling fast snapshot restore.
+     *        <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,20 +498,20 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for cross-Region snapshot copies.
+     * Specifies a rule for copying snapshots or AMIs across regions.
      * </p>
+     * <note>
      * <p>
-     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
-     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates
+     * snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * </p>
+     * </note>
      * 
-     * @return The rule for cross-Region snapshot copies.</p>
+     * @return Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
      *         <p>
-     *         You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the
-     *         policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost.
-     *         If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or
-     *         Outposts.
+     *         You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy
+     *         creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *         </p>
      */
 
     public java.util.List<CrossRegionCopyRule> getCrossRegionCopyRules() {
@@ -500,20 +520,21 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for cross-Region snapshot copies.
+     * Specifies a rule for copying snapshots or AMIs across regions.
      * </p>
+     * <note>
      * <p>
-     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
-     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates
+     * snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * </p>
+     * </note>
      * 
      * @param crossRegionCopyRules
-     *        The rule for cross-Region snapshot copies.</p>
+     *        Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
      *        <p>
-     *        You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     *        creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the
-     *        policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *        You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy
+     *        creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *        </p>
      */
 
     public void setCrossRegionCopyRules(java.util.Collection<CrossRegionCopyRule> crossRegionCopyRules) {
@@ -527,13 +548,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for cross-Region snapshot copies.
+     * Specifies a rule for copying snapshots or AMIs across regions.
      * </p>
+     * <note>
      * <p>
-     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
-     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates
+     * snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCrossRegionCopyRules(java.util.Collection)} or {@link #withCrossRegionCopyRules(java.util.Collection)}
@@ -541,11 +563,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param crossRegionCopyRules
-     *        The rule for cross-Region snapshot copies.</p>
+     *        Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
      *        <p>
-     *        You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     *        creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the
-     *        policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *        You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy
+     *        creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,20 +583,21 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for cross-Region snapshot copies.
+     * Specifies a rule for copying snapshots or AMIs across regions.
      * </p>
+     * <note>
      * <p>
-     * You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     * creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy
-     * creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     * You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates
+     * snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
      * </p>
+     * </note>
      * 
      * @param crossRegionCopyRules
-     *        The rule for cross-Region snapshot copies.</p>
+     *        Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
      *        <p>
-     *        You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy
-     *        creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the
-     *        policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *        You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy
+     *        creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,10 +608,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * 
-     * @return The rule for sharing snapshots with other Amazon Web Services accounts.
+     * @return <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      */
 
     public java.util.List<ShareRule> getShareRules() {
@@ -597,11 +620,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * 
      * @param shareRules
-     *        The rule for sharing snapshots with other Amazon Web Services accounts.
+     *        <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      */
 
     public void setShareRules(java.util.Collection<ShareRule> shareRules) {
@@ -615,7 +638,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -624,7 +647,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param shareRules
-     *        The rule for sharing snapshots with other Amazon Web Services accounts.
+     *        <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,11 +663,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * 
      * @param shareRules
-     *        The rule for sharing snapshots with other Amazon Web Services accounts.
+     *        <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -655,11 +678,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI deprecation rule for the schedule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      * 
      * @param deprecateRule
-     *        The AMI deprecation rule for the schedule.
+     *        <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      */
 
     public void setDeprecateRule(DeprecateRule deprecateRule) {
@@ -668,10 +691,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI deprecation rule for the schedule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      * 
-     * @return The AMI deprecation rule for the schedule.
+     * @return <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      */
 
     public DeprecateRule getDeprecateRule() {
@@ -680,16 +703,101 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI deprecation rule for the schedule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      * 
      * @param deprecateRule
-     *        The AMI deprecation rule for the schedule.
+     *        <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Schedule withDeprecateRule(DeprecateRule deprecateRule) {
         setDeprecateRule(deprecateRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
+     * period that you specify.
+     * </p>
+     * <p>
+     * For more information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.
+     * </p>
+     * 
+     * @param archiveRule
+     *        <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     *        specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier
+     *        once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the
+     *        archive retention period that you specify. </p>
+     *        <p>
+     *        For more information about using snapshot archiving, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive"
+     *        >Considerations for snapshot lifecycle policies</a>.
+     */
+
+    public void setArchiveRule(ArchiveRule archiveRule) {
+        this.archiveRule = archiveRule;
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
+     * period that you specify.
+     * </p>
+     * <p>
+     * For more information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.
+     * </p>
+     * 
+     * @return <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When
+     *         you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive
+     *         tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for
+     *         the archive retention period that you specify. </p>
+     *         <p>
+     *         For more information about using snapshot archiving, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive"
+     *         >Considerations for snapshot lifecycle policies</a>.
+     */
+
+    public ArchiveRule getArchiveRule() {
+        return this.archiveRule;
+    }
+
+    /**
+     * <p>
+     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
+     * period that you specify.
+     * </p>
+     * <p>
+     * For more information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.
+     * </p>
+     * 
+     * @param archiveRule
+     *        <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     *        specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier
+     *        once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the
+     *        archive retention period that you specify. </p>
+     *        <p>
+     *        For more information about using snapshot archiving, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive"
+     *        >Considerations for snapshot lifecycle policies</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withArchiveRule(ArchiveRule archiveRule) {
+        setArchiveRule(archiveRule);
         return this;
     }
 
@@ -724,7 +832,9 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         if (getShareRules() != null)
             sb.append("ShareRules: ").append(getShareRules()).append(",");
         if (getDeprecateRule() != null)
-            sb.append("DeprecateRule: ").append(getDeprecateRule());
+            sb.append("DeprecateRule: ").append(getDeprecateRule()).append(",");
+        if (getArchiveRule() != null)
+            sb.append("ArchiveRule: ").append(getArchiveRule());
         sb.append("}");
         return sb.toString();
     }
@@ -779,6 +889,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeprecateRule() != null && other.getDeprecateRule().equals(this.getDeprecateRule()) == false)
             return false;
+        if (other.getArchiveRule() == null ^ this.getArchiveRule() == null)
+            return false;
+        if (other.getArchiveRule() != null && other.getArchiveRule().equals(this.getArchiveRule()) == false)
+            return false;
         return true;
     }
 
@@ -797,6 +911,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCrossRegionCopyRules() == null) ? 0 : getCrossRegionCopyRules().hashCode());
         hashCode = prime * hashCode + ((getShareRules() == null) ? 0 : getShareRules().hashCode());
         hashCode = prime * hashCode + ((getDeprecateRule() == null) ? 0 : getDeprecateRule().hashCode());
+        hashCode = prime * hashCode + ((getArchiveRule() == null) ? 0 : getArchiveRule().hashCode());
         return hashCode;
     }
 

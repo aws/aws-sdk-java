@@ -42,6 +42,12 @@ public class SsmAutomation implements Serializable, Cloneable, StructuredPojo {
     private String documentVersion;
     /**
      * <p>
+     * The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
+     * </p>
+     */
+    private java.util.Map<String, DynamicSsmParameterValue> dynamicParameters;
+    /**
+     * <p>
      * The key-value pair parameters to use when running the automation document.
      * </p>
      */
@@ -137,6 +143,77 @@ public class SsmAutomation implements Serializable, Cloneable, StructuredPojo {
 
     public SsmAutomation withDocumentVersion(String documentVersion) {
         setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
+     * </p>
+     * 
+     * @return The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation
+     *         runbook.
+     */
+
+    public java.util.Map<String, DynamicSsmParameterValue> getDynamicParameters() {
+        return dynamicParameters;
+    }
+
+    /**
+     * <p>
+     * The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
+     * </p>
+     * 
+     * @param dynamicParameters
+     *        The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation
+     *        runbook.
+     */
+
+    public void setDynamicParameters(java.util.Map<String, DynamicSsmParameterValue> dynamicParameters) {
+        this.dynamicParameters = dynamicParameters;
+    }
+
+    /**
+     * <p>
+     * The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
+     * </p>
+     * 
+     * @param dynamicParameters
+     *        The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation
+     *        runbook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SsmAutomation withDynamicParameters(java.util.Map<String, DynamicSsmParameterValue> dynamicParameters) {
+        setDynamicParameters(dynamicParameters);
+        return this;
+    }
+
+    /**
+     * Add a single DynamicParameters entry
+     *
+     * @see SsmAutomation#withDynamicParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SsmAutomation addDynamicParametersEntry(String key, DynamicSsmParameterValue value) {
+        if (null == this.dynamicParameters) {
+            this.dynamicParameters = new java.util.HashMap<String, DynamicSsmParameterValue>();
+        }
+        if (this.dynamicParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.dynamicParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into DynamicParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SsmAutomation clearDynamicParametersEntries() {
+        this.dynamicParameters = null;
         return this;
     }
 
@@ -332,6 +409,8 @@ public class SsmAutomation implements Serializable, Cloneable, StructuredPojo {
             sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getDynamicParameters() != null)
+            sb.append("DynamicParameters: ").append(getDynamicParameters()).append(",");
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getRoleArn() != null)
@@ -360,6 +439,10 @@ public class SsmAutomation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
+        if (other.getDynamicParameters() == null ^ this.getDynamicParameters() == null)
+            return false;
+        if (other.getDynamicParameters() != null && other.getDynamicParameters().equals(this.getDynamicParameters()) == false)
+            return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
@@ -382,6 +465,7 @@ public class SsmAutomation implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDocumentName() == null) ? 0 : getDocumentName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getDynamicParameters() == null) ? 0 : getDynamicParameters().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTargetAccount() == null) ? 0 : getTargetAccount().hashCode());

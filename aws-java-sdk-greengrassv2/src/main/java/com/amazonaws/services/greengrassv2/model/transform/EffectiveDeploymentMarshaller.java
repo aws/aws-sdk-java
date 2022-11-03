@@ -47,6 +47,8 @@ public class EffectiveDeploymentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> MODIFIEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusDetails").build();
 
     private static final EffectiveDeploymentMarshaller instance = new EffectiveDeploymentMarshaller();
 
@@ -74,6 +76,7 @@ public class EffectiveDeploymentMarshaller {
             protocolMarshaller.marshall(effectiveDeployment.getReason(), REASON_BINDING);
             protocolMarshaller.marshall(effectiveDeployment.getCreationTimestamp(), CREATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(effectiveDeployment.getModifiedTimestamp(), MODIFIEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(effectiveDeployment.getStatusDetails(), STATUSDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

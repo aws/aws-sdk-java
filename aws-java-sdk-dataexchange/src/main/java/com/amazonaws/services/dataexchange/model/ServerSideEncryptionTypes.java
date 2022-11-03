@@ -15,9 +15,7 @@ package com.amazonaws.services.dataexchange.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The types of encryption supported in export jobs to Amazon S3.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ServerSideEncryptionTypes {

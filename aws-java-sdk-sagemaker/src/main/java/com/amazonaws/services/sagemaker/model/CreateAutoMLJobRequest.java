@@ -34,7 +34,8 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of channel objects that describes the input data and its location. Each channel is a named input source.
-     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows
+     * is required for the training dataset. There is not a minimum number of rows required for the validation dataset.
      * </p>
      */
     private java.util.List<AutoMLChannel> inputDataConfig;
@@ -47,9 +48,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     private AutoMLOutputDataConfig outputDataConfig;
     /**
      * <p>
-     * Defines the type of supervised learning available for the candidates. Options include:
-     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * Defines the type of supervised learning available for the candidates. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
@@ -64,7 +63,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     private AutoMLJobObjective autoMLJobObjective;
     /**
      * <p>
-     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     * A collection of settings used to configure an AutoML job.
      * </p>
      */
     private AutoMLJobConfig autoMLJobConfig;
@@ -137,12 +136,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of channel objects that describes the input data and its location. Each channel is a named input source.
-     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows
+     * is required for the training dataset. There is not a minimum number of rows required for the validation dataset.
      * </p>
      * 
      * @return An array of channel objects that describes the input data and its location. Each channel is a named input
-     *         source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
-     *         rows.
+     *         source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A
+     *         minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required
+     *         for the validation dataset.
      */
 
     public java.util.List<AutoMLChannel> getInputDataConfig() {
@@ -152,13 +153,15 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of channel objects that describes the input data and its location. Each channel is a named input source.
-     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows
+     * is required for the training dataset. There is not a minimum number of rows required for the validation dataset.
      * </p>
      * 
      * @param inputDataConfig
      *        An array of channel objects that describes the input data and its location. Each channel is a named input
-     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
-     *        rows.
+     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A
+     *        minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required
+     *        for the validation dataset.
      */
 
     public void setInputDataConfig(java.util.Collection<AutoMLChannel> inputDataConfig) {
@@ -173,7 +176,8 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of channel objects that describes the input data and its location. Each channel is a named input source.
-     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows
+     * is required for the training dataset. There is not a minimum number of rows required for the validation dataset.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -183,8 +187,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param inputDataConfig
      *        An array of channel objects that describes the input data and its location. Each channel is a named input
-     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
-     *        rows.
+     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A
+     *        minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required
+     *        for the validation dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,13 +206,15 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of channel objects that describes the input data and its location. Each channel is a named input source.
-     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows
+     * is required for the training dataset. There is not a minimum number of rows required for the validation dataset.
      * </p>
      * 
      * @param inputDataConfig
      *        An array of channel objects that describes the input data and its location. Each channel is a named input
-     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
-     *        rows.
+     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A
+     *        minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required
+     *        for the validation dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,17 +271,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the type of supervised learning available for the candidates. Options include:
-     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * Defines the type of supervised learning available for the candidates. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
      * @param problemType
-     *        Defines the type of supervised learning available for the candidates. Options include:
-     *        <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For
-     *        more information, see <a href=
+     *        Defines the type of supervised learning available for the candidates. For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      *        Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @see ProblemType
@@ -286,17 +289,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the type of supervised learning available for the candidates. Options include:
-     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * Defines the type of supervised learning available for the candidates. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
-     * @return Defines the type of supervised learning available for the candidates. Options include:
-     *         <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>.
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"
+     * @return Defines the type of supervised learning available for the candidates. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"
      *         > Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @see ProblemType
      */
@@ -307,17 +306,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the type of supervised learning available for the candidates. Options include:
-     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * Defines the type of supervised learning available for the candidates. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
      * @param problemType
-     *        Defines the type of supervised learning available for the candidates. Options include:
-     *        <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For
-     *        more information, see <a href=
+     *        Defines the type of supervised learning available for the candidates. For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      *        Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -331,17 +326,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the type of supervised learning available for the candidates. Options include:
-     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * Defines the type of supervised learning available for the candidates. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
      * @param problemType
-     *        Defines the type of supervised learning available for the candidates. Options include:
-     *        <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For
-     *        more information, see <a href=
+     *        Defines the type of supervised learning available for the candidates. For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      *        Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -401,11 +392,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     * A collection of settings used to configure an AutoML job.
      * </p>
      * 
      * @param autoMLJobConfig
-     *        Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     *        A collection of settings used to configure an AutoML job.
      */
 
     public void setAutoMLJobConfig(AutoMLJobConfig autoMLJobConfig) {
@@ -414,10 +405,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     * A collection of settings used to configure an AutoML job.
      * </p>
      * 
-     * @return Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     * @return A collection of settings used to configure an AutoML job.
      */
 
     public AutoMLJobConfig getAutoMLJobConfig() {
@@ -426,11 +417,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     * A collection of settings used to configure an AutoML job.
      * </p>
      * 
      * @param autoMLJobConfig
-     *        Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
+     *        A collection of settings used to configure an AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

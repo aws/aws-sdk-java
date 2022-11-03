@@ -1000,7 +1000,7 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
-     * Get the event configuration by resource types.
+     * Get the event configuration based on resource types.
      * </p>
      * 
      * @param getEventConfigurationByResourceTypesRequest
@@ -1155,6 +1155,52 @@ public interface AWSIoTWireless {
      *      API Documentation</a>
      */
     GetPartnerAccountResult getPartnerAccount(GetPartnerAccountRequest getPartnerAccountRequest);
+
+    /**
+     * <p>
+     * Get the position information for a given resource.
+     * </p>
+     * 
+     * @param getPositionRequest
+     * @return Result of the GetPosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetPosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPositionResult getPosition(GetPositionRequest getPositionRequest);
+
+    /**
+     * <p>
+     * Get position configuration for a given resource.
+     * </p>
+     * 
+     * @param getPositionConfigurationRequest
+     * @return Result of the GetPositionConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetPositionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest getPositionConfigurationRequest);
 
     /**
      * <p>
@@ -1606,6 +1652,27 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * List position configurations for a given resource, such as positioning solvers.
+     * </p>
+     * 
+     * @param listPositionConfigurationsRequest
+     * @return Result of the ListPositionConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.ListPositionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest listPositionConfigurationsRequest);
+
+    /**
+     * <p>
      * List queued messages in the downlink queue.
      * </p>
      * 
@@ -1734,6 +1801,29 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     ListWirelessGatewaysResult listWirelessGateways(ListWirelessGatewaysRequest listWirelessGatewaysRequest);
+
+    /**
+     * <p>
+     * Put position configuration for a given resource.
+     * </p>
+     * 
+     * @param putPositionConfigurationRequest
+     * @return Result of the PutPositionConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.PutPositionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest putPositionConfigurationRequest);
 
     /**
      * <p>
@@ -2046,7 +2136,7 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
-     * Update the event configuration by resource types.
+     * Update the event configuration based on resource types.
      * </p>
      * 
      * @param updateEventConfigurationByResourceTypesRequest
@@ -2187,6 +2277,29 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePartnerAccountResult updatePartnerAccount(UpdatePartnerAccountRequest updatePartnerAccountRequest);
+
+    /**
+     * <p>
+     * Update the position information of a resource.
+     * </p>
+     * 
+     * @param updatePositionRequest
+     * @return Result of the UpdatePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdatePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdatePositionResult updatePosition(UpdatePositionRequest updatePositionRequest);
 
     /**
      * <p>

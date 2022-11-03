@@ -46,6 +46,12 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String resourceGroupName;
+    /**
+     * <p>
+     * The name of the Terraform S3 state file this resource belongs to.
+     * </p>
+     */
+    private String terraformSourceName;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The name of the Terraform S3 state file this resource belongs to.
+     * </p>
+     * 
+     * @param terraformSourceName
+     *        The name of the Terraform S3 state file this resource belongs to.
+     */
+
+    public void setTerraformSourceName(String terraformSourceName) {
+        this.terraformSourceName = terraformSourceName;
+    }
+
+    /**
+     * <p>
+     * The name of the Terraform S3 state file this resource belongs to.
+     * </p>
+     * 
+     * @return The name of the Terraform S3 state file this resource belongs to.
+     */
+
+    public String getTerraformSourceName() {
+        return this.terraformSourceName;
+    }
+
+    /**
+     * <p>
+     * The name of the Terraform S3 state file this resource belongs to.
+     * </p>
+     * 
+     * @param terraformSourceName
+     *        The name of the Terraform S3 state file this resource belongs to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogicalResourceId withTerraformSourceName(String terraformSourceName) {
+        setTerraformSourceName(terraformSourceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
         if (getLogicalStackName() != null)
             sb.append("LogicalStackName: ").append(getLogicalStackName()).append(",");
         if (getResourceGroupName() != null)
-            sb.append("ResourceGroupName: ").append(getResourceGroupName());
+            sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
+        if (getTerraformSourceName() != null)
+            sb.append("TerraformSourceName: ").append(getTerraformSourceName());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
             return false;
+        if (other.getTerraformSourceName() == null ^ this.getTerraformSourceName() == null)
+            return false;
+        if (other.getTerraformSourceName() != null && other.getTerraformSourceName().equals(this.getTerraformSourceName()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getIdentifier() == null) ? 0 : getIdentifier().hashCode());
         hashCode = prime * hashCode + ((getLogicalStackName() == null) ? 0 : getLogicalStackName().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTerraformSourceName() == null) ? 0 : getTerraformSourceName().hashCode());
         return hashCode;
     }
 

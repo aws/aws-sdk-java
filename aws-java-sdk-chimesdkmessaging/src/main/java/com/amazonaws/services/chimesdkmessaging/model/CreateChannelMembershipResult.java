@@ -35,6 +35,12 @@ public class CreateChannelMembershipResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Identity member;
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -117,6 +123,46 @@ public class CreateChannelMembershipResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the response.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * 
+     * @return The ID of the SubChannel in the response.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the response.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelMembershipResult withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +177,9 @@ public class CreateChannelMembershipResult extends com.amazonaws.AmazonWebServic
         if (getChannelArn() != null)
             sb.append("ChannelArn: ").append(getChannelArn()).append(",");
         if (getMember() != null)
-            sb.append("Member: ").append(getMember());
+            sb.append("Member: ").append(getMember()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +202,10 @@ public class CreateChannelMembershipResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMember() != null && other.getMember().equals(this.getMember()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +216,7 @@ public class CreateChannelMembershipResult extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getMember() == null) ? 0 : getMember().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

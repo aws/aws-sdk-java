@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class AutomatedAbrSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxRenditions").build();
     private static final MarshallingInfo<Integer> MINABRBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minAbrBitrate").build();
+    private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("rules").build();
 
     private static final AutomatedAbrSettingsMarshaller instance = new AutomatedAbrSettingsMarshaller();
 
@@ -53,6 +56,7 @@ public class AutomatedAbrSettingsMarshaller {
             protocolMarshaller.marshall(automatedAbrSettings.getMaxAbrBitrate(), MAXABRBITRATE_BINDING);
             protocolMarshaller.marshall(automatedAbrSettings.getMaxRenditions(), MAXRENDITIONS_BINDING);
             protocolMarshaller.marshall(automatedAbrSettings.getMinAbrBitrate(), MINABRBITRATE_BINDING);
+            protocolMarshaller.marshall(automatedAbrSettings.getRules(), RULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

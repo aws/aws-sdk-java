@@ -27,8 +27,8 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     * <a>UsagePlanKey</a> resource representing a plan customer.
+     * The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource
+     * representing a plan customer.
      * </p>
      */
     private String usagePlanId;
@@ -53,13 +53,13 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     * <a>UsagePlanKey</a> resource representing a plan customer.
+     * The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource
+     * representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
-     *        to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
+     *        The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey
+     *        resource representing a plan customer.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -68,12 +68,12 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     * <a>UsagePlanKey</a> resource representing a plan customer.
+     * The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource
+     * representing a plan customer.
      * </p>
      * 
-     * @return [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
-     *         to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
+     * @return The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey
+     *         resource representing a plan customer.
      */
 
     public String getUsagePlanId() {
@@ -82,13 +82,13 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     * <a>UsagePlanKey</a> resource representing a plan customer.
+     * The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource
+     * representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
-     *        to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
+     *        The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey
+     *        resource representing a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

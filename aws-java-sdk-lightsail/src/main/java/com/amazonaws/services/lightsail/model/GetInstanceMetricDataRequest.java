@@ -157,6 +157,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <code>Unit</code>: The published unit is <code>Count</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     * successfully accessed without a token. This metric determines if there are any processes accessing instance
+     * metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use
+     * token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String metricName;
@@ -399,6 +413,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <code>Unit</code>: The published unit is <code>Count</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     * successfully accessed without a token. This metric determines if there are any processes accessing instance
+     * metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use
+     * token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param metricName
@@ -518,6 +546,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     *        successfully accessed without a token. This metric determines if there are any processes accessing
+     *        instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests
+     *        use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -659,6 +701,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <code>Unit</code>: The published unit is <code>Count</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     * successfully accessed without a token. This metric determines if there are any processes accessing instance
+     * metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use
+     * token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The metric for which you want to return information.</p>
@@ -778,6 +834,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *         status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *         1-minute (60 seconds) granularity.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Count</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service
+     *         was successfully accessed without a token. This metric determines if there are any processes accessing
+     *         instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all
+     *         requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
      *         </p>
      *         <p>
      *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -919,6 +989,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <code>Unit</code>: The published unit is <code>Count</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     * successfully accessed without a token. This metric determines if there are any processes accessing instance
+     * metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use
+     * token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param metricName
@@ -1038,6 +1122,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     *        successfully accessed without a token. This metric determines if there are any processes accessing
+     *        instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests
+     *        use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -1181,6 +1279,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <code>Unit</code>: The published unit is <code>Count</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     * successfully accessed without a token. This metric determines if there are any processes accessing instance
+     * metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use
+     * token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param metricName
@@ -1300,6 +1412,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     *        successfully accessed without a token. This metric determines if there are any processes accessing
+     *        instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests
+     *        use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -1441,6 +1567,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <code>Unit</code>: The published unit is <code>Count</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     * successfully accessed without a token. This metric determines if there are any processes accessing instance
+     * metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use
+     * token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param metricName
@@ -1560,6 +1700,20 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was
+     *        successfully accessed without a token. This metric determines if there are any processes accessing
+     *        instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests
+     *        use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.

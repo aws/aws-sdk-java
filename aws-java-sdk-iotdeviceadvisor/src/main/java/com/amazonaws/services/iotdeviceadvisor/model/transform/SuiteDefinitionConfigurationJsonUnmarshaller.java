@@ -62,6 +62,10 @@ public class SuiteDefinitionConfigurationJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     suiteDefinitionConfiguration.setIntendedForQualification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("isLongDurationTest", targetDepth)) {
+                    context.nextToken();
+                    suiteDefinitionConfiguration.setIsLongDurationTest(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("rootGroup", targetDepth)) {
                     context.nextToken();
                     suiteDefinitionConfiguration.setRootGroup(context.getUnmarshaller(String.class).unmarshall(context));
@@ -69,6 +73,10 @@ public class SuiteDefinitionConfigurationJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("devicePermissionRoleArn", targetDepth)) {
                     context.nextToken();
                     suiteDefinitionConfiguration.setDevicePermissionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("protocol", targetDepth)) {
+                    context.nextToken();
+                    suiteDefinitionConfiguration.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

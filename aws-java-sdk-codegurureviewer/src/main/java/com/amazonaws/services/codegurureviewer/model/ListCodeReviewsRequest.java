@@ -84,9 +84,9 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer maxResults;
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      */
     private String nextToken;
@@ -231,7 +231,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return List of states for filtering that needs to be applied before displaying the result. For example,
-     *         <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *         <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
      *         <p>
      *         The valid code review states are:
      *         </p>
@@ -296,7 +296,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
      *        <p>
      *        The valid code review states are:
      *        </p>
@@ -371,7 +371,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
      *        <p>
      *        The valid code review states are:
      *        </p>
@@ -443,7 +443,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
      *        <p>
      *        The valid code review states are:
      *        </p>
@@ -510,7 +510,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
      *        <p>
      *        The valid code review states are:
      *        </p>
@@ -723,15 +723,15 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page. Keep all other arguments unchanged.
      */
 
     public void setNextToken(String nextToken) {
@@ -740,14 +740,14 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *         token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *         other arguments unchanged.
+     * @return If <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page. Keep all other arguments unchanged.
      */
 
     public String getNextToken() {
@@ -756,15 +756,15 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page. Keep all other arguments unchanged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision information.
+     * The name of an CodeDeploy application about which to get revision information.
      * </p>
      */
     private String applicationName;
@@ -45,11 +45,11 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision information.
+     * The name of an CodeDeploy application about which to get revision information.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application about which to get revision information.
+     *        The name of an CodeDeploy application about which to get revision information.
      */
 
     public void setApplicationName(String applicationName) {
@@ -58,10 +58,10 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision information.
+     * The name of an CodeDeploy application about which to get revision information.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application about which to get revision information.
+     * @return The name of an CodeDeploy application about which to get revision information.
      */
 
     public String getApplicationName() {
@@ -70,11 +70,11 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision information.
+     * The name of an CodeDeploy application about which to get revision information.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application about which to get revision information.
+     *        The name of an CodeDeploy application about which to get revision information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

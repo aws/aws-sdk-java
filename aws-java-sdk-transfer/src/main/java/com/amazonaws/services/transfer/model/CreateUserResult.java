@@ -25,7 +25,7 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the server that the user is attached to.
+     * The identifier of the server that the user is attached to.
      * </p>
      */
     private String serverId;
@@ -38,11 +38,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the server that the user is attached to.
+     * The identifier of the server that the user is attached to.
      * </p>
      * 
      * @param serverId
-     *        The ID of the server that the user is attached to.
+     *        The identifier of the server that the user is attached to.
      */
 
     public void setServerId(String serverId) {
@@ -51,10 +51,10 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the server that the user is attached to.
+     * The identifier of the server that the user is attached to.
      * </p>
      * 
-     * @return The ID of the server that the user is attached to.
+     * @return The identifier of the server that the user is attached to.
      */
 
     public String getServerId() {
@@ -63,11 +63,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the server that the user is attached to.
+     * The identifier of the server that the user is attached to.
      * </p>
      * 
      * @param serverId
-     *        The ID of the server that the user is attached to.
+     *        The identifier of the server that the user is attached to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

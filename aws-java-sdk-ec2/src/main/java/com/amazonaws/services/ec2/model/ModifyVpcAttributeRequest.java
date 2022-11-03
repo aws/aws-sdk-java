@@ -55,6 +55,12 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * Indicates whether Network Address Usage metrics are enabled for your VPC.
+     * </p>
+     */
+    private Boolean enableNetworkAddressUsageMetrics;
 
     /**
      * <p>
@@ -289,6 +295,58 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * <p>
+     * Indicates whether Network Address Usage metrics are enabled for your VPC.
+     * </p>
+     * 
+     * @param enableNetworkAddressUsageMetrics
+     *        Indicates whether Network Address Usage metrics are enabled for your VPC.
+     */
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Network Address Usage metrics are enabled for your VPC.
+     * </p>
+     * 
+     * @return Indicates whether Network Address Usage metrics are enabled for your VPC.
+     */
+
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return this.enableNetworkAddressUsageMetrics;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Network Address Usage metrics are enabled for your VPC.
+     * </p>
+     * 
+     * @param enableNetworkAddressUsageMetrics
+     *        Indicates whether Network Address Usage metrics are enabled for your VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcAttributeRequest withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        setEnableNetworkAddressUsageMetrics(enableNetworkAddressUsageMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Network Address Usage metrics are enabled for your VPC.
+     * </p>
+     * 
+     * @return Indicates whether Network Address Usage metrics are enabled for your VPC.
+     */
+
+    public Boolean isEnableNetworkAddressUsageMetrics() {
+        return this.enableNetworkAddressUsageMetrics;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -316,7 +374,9 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
         if (getEnableDnsSupport() != null)
             sb.append("EnableDnsSupport: ").append(getEnableDnsSupport()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getEnableNetworkAddressUsageMetrics() != null)
+            sb.append("EnableNetworkAddressUsageMetrics: ").append(getEnableNetworkAddressUsageMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -343,6 +403,11 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getEnableNetworkAddressUsageMetrics() == null ^ this.getEnableNetworkAddressUsageMetrics() == null)
+            return false;
+        if (other.getEnableNetworkAddressUsageMetrics() != null
+                && other.getEnableNetworkAddressUsageMetrics().equals(this.getEnableNetworkAddressUsageMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -354,6 +419,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getEnableDnsHostnames() == null) ? 0 : getEnableDnsHostnames().hashCode());
         hashCode = prime * hashCode + ((getEnableDnsSupport() == null) ? 0 : getEnableDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getEnableNetworkAddressUsageMetrics() == null) ? 0 : getEnableNetworkAddressUsageMetrics().hashCode());
         return hashCode;
     }
 

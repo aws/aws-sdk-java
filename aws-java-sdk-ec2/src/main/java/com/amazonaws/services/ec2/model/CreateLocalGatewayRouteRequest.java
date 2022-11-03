@@ -44,6 +44,12 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String localGatewayVirtualInterfaceGroupId;
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     */
+    private String networkInterfaceId;
 
     /**
      * <p>
@@ -166,6 +172,46 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLocalGatewayRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -193,7 +239,9 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
         if (getLocalGatewayRouteTableId() != null)
             sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId()).append(",");
         if (getLocalGatewayVirtualInterfaceGroupId() != null)
-            sb.append("LocalGatewayVirtualInterfaceGroupId: ").append(getLocalGatewayVirtualInterfaceGroupId());
+            sb.append("LocalGatewayVirtualInterfaceGroupId: ").append(getLocalGatewayVirtualInterfaceGroupId()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +269,10 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
         if (other.getLocalGatewayVirtualInterfaceGroupId() != null
                 && other.getLocalGatewayVirtualInterfaceGroupId().equals(this.getLocalGatewayVirtualInterfaceGroupId()) == false)
             return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+            return false;
         return true;
     }
 
@@ -232,6 +284,7 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceGroupId() == null) ? 0 : getLocalGatewayVirtualInterfaceGroupId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         return hashCode;
     }
 

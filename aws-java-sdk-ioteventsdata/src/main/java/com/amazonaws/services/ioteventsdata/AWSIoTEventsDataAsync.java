@@ -74,6 +74,43 @@ public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
 
     /**
      * <p>
+     * Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the
+     * detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">
+     * ListDetectors</a> API call.
+     * </p>
+     * 
+     * @param batchDeleteDetectorRequest
+     * @return A Java Future containing the result of the BatchDeleteDetector operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.BatchDeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteDetectorResult> batchDeleteDetectorAsync(BatchDeleteDetectorRequest batchDeleteDetectorRequest);
+
+    /**
+     * <p>
+     * Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the
+     * detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">
+     * ListDetectors</a> API call.
+     * </p>
+     * 
+     * @param batchDeleteDetectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteDetector operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.BatchDeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteDetectorResult> batchDeleteDetectorAsync(BatchDeleteDetectorRequest batchDeleteDetectorRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteDetectorRequest, BatchDeleteDetectorResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
      * </p>
      * 

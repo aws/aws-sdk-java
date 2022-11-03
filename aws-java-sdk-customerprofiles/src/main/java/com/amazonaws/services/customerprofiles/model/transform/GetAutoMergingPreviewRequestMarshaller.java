@@ -33,6 +33,8 @@ public class GetAutoMergingPreviewRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Consolidation").build();
     private static final MarshallingInfo<StructuredPojo> CONFLICTRESOLUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConflictResolution").build();
+    private static final MarshallingInfo<Double> MINALLOWEDCONFIDENCESCOREFORMERGING_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinAllowedConfidenceScoreForMerging").build();
 
     private static final GetAutoMergingPreviewRequestMarshaller instance = new GetAutoMergingPreviewRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class GetAutoMergingPreviewRequestMarshaller {
             protocolMarshaller.marshall(getAutoMergingPreviewRequest.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(getAutoMergingPreviewRequest.getConsolidation(), CONSOLIDATION_BINDING);
             protocolMarshaller.marshall(getAutoMergingPreviewRequest.getConflictResolution(), CONFLICTRESOLUTION_BINDING);
+            protocolMarshaller.marshall(getAutoMergingPreviewRequest.getMinAllowedConfidenceScoreForMerging(), MINALLOWEDCONFIDENCESCOREFORMERGING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

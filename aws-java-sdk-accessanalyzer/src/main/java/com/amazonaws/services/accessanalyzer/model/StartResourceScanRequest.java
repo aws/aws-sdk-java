@@ -42,6 +42,13 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     */
+    private String resourceOwnerAccount;
 
     /**
      * <p>
@@ -136,6 +143,52 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
+     *        owning account is the account in which the resource was created.
+     */
+
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
+     *         owning account is the account in which the resource was created.
+     */
+
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+     * account is the account in which the resource was created.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the
+     *        owning account is the account in which the resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartResourceScanRequest withResourceOwnerAccount(String resourceOwnerAccount) {
+        setResourceOwnerAccount(resourceOwnerAccount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -150,7 +203,9 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAnalyzerArn() != null)
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount());
         sb.append("}");
         return sb.toString();
     }
@@ -173,6 +228,10 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
+            return false;
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
         return true;
     }
 
@@ -183,6 +242,7 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
         return hashCode;
     }
 

@@ -116,6 +116,39 @@ public class AWSIoTEventsDataAsyncClient extends AWSIoTEventsDataClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteDetectorResult> batchDeleteDetectorAsync(BatchDeleteDetectorRequest request) {
+
+        return batchDeleteDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteDetectorResult> batchDeleteDetectorAsync(final BatchDeleteDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteDetectorRequest, BatchDeleteDetectorResult> asyncHandler) {
+        final BatchDeleteDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteDetectorResult>() {
+            @Override
+            public BatchDeleteDetectorResult call() throws Exception {
+                BatchDeleteDetectorResult result = null;
+
+                try {
+                    result = executeBatchDeleteDetector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDisableAlarmResult> batchDisableAlarmAsync(BatchDisableAlarmRequest request) {
 
         return batchDisableAlarmAsync(request, null);

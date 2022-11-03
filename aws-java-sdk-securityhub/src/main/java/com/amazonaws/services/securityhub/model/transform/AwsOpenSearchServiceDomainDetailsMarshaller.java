@@ -57,6 +57,8 @@ public class AwsOpenSearchServiceDomainDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
     private static final MarshallingInfo<Map> DOMAINENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DomainEndpoints").build();
+    private static final MarshallingInfo<StructuredPojo> ADVANCEDSECURITYOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedSecurityOptions").build();
 
     private static final AwsOpenSearchServiceDomainDetailsMarshaller instance = new AwsOpenSearchServiceDomainDetailsMarshaller();
 
@@ -88,6 +90,7 @@ public class AwsOpenSearchServiceDomainDetailsMarshaller {
             protocolMarshaller.marshall(awsOpenSearchServiceDomainDetails.getVpcOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(awsOpenSearchServiceDomainDetails.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
             protocolMarshaller.marshall(awsOpenSearchServiceDomainDetails.getDomainEndpoints(), DOMAINENDPOINTS_BINDING);
+            protocolMarshaller.marshall(awsOpenSearchServiceDomainDetails.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

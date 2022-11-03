@@ -76,6 +76,10 @@ public class DisconnectSourceServerResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     disconnectSourceServerResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stagingArea", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setStagingArea(StagingAreaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     disconnectSourceServerResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
- * doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception
- * <code>Message</code> field for more information.
+ * Your request didn't pass one or more validation tests. This can occur when the entity you're trying to delete doesn't
+ * exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the exception message field for more
+ * information.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

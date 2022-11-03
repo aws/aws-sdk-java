@@ -38,6 +38,16 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public CreateLabelResult createLabel(CreateLabelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLabelGroupResult createLabelGroup(CreateLabelGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateModelResult createModel(CreateModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +59,16 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public DeleteInferenceSchedulerResult deleteInferenceScheduler(DeleteInferenceSchedulerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLabelResult deleteLabel(DeleteLabelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLabelGroupResult deleteLabelGroup(DeleteLabelGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,6 +93,16 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public DescribeLabelResult describeLabel(DescribeLabelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLabelGroupResult describeLabelGroup(DescribeLabelGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeModelResult describeModel(DescribeModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,12 +118,27 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public ListInferenceEventsResult listInferenceEvents(ListInferenceEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInferenceExecutionsResult listInferenceExecutions(ListInferenceExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListInferenceSchedulersResult listInferenceSchedulers(ListInferenceSchedulersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLabelGroupsResult listLabelGroups(ListLabelGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLabelsResult listLabels(ListLabelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,6 +184,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public UpdateInferenceSchedulerResult updateInferenceScheduler(UpdateInferenceSchedulerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLabelGroupResult updateLabelGroup(UpdateLabelGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

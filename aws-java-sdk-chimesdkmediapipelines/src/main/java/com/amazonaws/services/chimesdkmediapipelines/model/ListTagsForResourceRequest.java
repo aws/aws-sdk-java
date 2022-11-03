@@ -27,18 +27,21 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID,
+     * and pipeline ID.
      * </p>
      */
     private String resourceARN;
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID,
+     * and pipeline ID.
      * </p>
      * 
      * @param resourceARN
-     *        The resource ARN.
+     *        The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region,
+     *        resource ID, and pipeline ID.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -47,10 +50,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID,
+     * and pipeline ID.
      * </p>
      * 
-     * @return The resource ARN.
+     * @return The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region,
+     *         resource ID, and pipeline ID.
      */
 
     public String getResourceARN() {
@@ -59,11 +64,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource ARN.
+     * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID,
+     * and pipeline ID.
      * </p>
      * 
      * @param resourceARN
-     *        The resource ARN.
+     *        The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region,
+     *        resource ID, and pipeline ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

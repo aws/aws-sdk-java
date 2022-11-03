@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TrafficMirrorTargetType {
 
     NetworkInterface("network-interface"),
-    NetworkLoadBalancer("network-load-balancer");
+    NetworkLoadBalancer("network-load-balancer"),
+    GatewayLoadBalancerEndpoint("gateway-load-balancer-endpoint");
 
     private String value;
 

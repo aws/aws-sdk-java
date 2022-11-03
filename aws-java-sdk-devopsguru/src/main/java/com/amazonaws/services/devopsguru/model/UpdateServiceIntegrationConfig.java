@@ -30,6 +30,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, StructuredPojo {
 
     private OpsCenterIntegrationConfig opsCenter;
+    /**
+     * <p>
+     * Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log
+     * groups.
+     * </p>
+     */
+    private LogsAnomalyDetectionIntegrationConfig logsAnomalyDetection;
 
     /**
      * @param opsCenter
@@ -58,6 +65,52 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log
+     * groups.
+     * </p>
+     * 
+     * @param logsAnomalyDetection
+     *        Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch
+     *        log groups.
+     */
+
+    public void setLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfig logsAnomalyDetection) {
+        this.logsAnomalyDetection = logsAnomalyDetection;
+    }
+
+    /**
+     * <p>
+     * Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log
+     * groups.
+     * </p>
+     * 
+     * @return Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch
+     *         log groups.
+     */
+
+    public LogsAnomalyDetectionIntegrationConfig getLogsAnomalyDetection() {
+        return this.logsAnomalyDetection;
+    }
+
+    /**
+     * <p>
+     * Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log
+     * groups.
+     * </p>
+     * 
+     * @param logsAnomalyDetection
+     *        Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch
+     *        log groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceIntegrationConfig withLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfig logsAnomalyDetection) {
+        setLogsAnomalyDetection(logsAnomalyDetection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -70,7 +123,9 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpsCenter() != null)
-            sb.append("OpsCenter: ").append(getOpsCenter());
+            sb.append("OpsCenter: ").append(getOpsCenter()).append(",");
+        if (getLogsAnomalyDetection() != null)
+            sb.append("LogsAnomalyDetection: ").append(getLogsAnomalyDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -89,6 +144,10 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
             return false;
         if (other.getOpsCenter() != null && other.getOpsCenter().equals(this.getOpsCenter()) == false)
             return false;
+        if (other.getLogsAnomalyDetection() == null ^ this.getLogsAnomalyDetection() == null)
+            return false;
+        if (other.getLogsAnomalyDetection() != null && other.getLogsAnomalyDetection().equals(this.getLogsAnomalyDetection()) == false)
+            return false;
         return true;
     }
 
@@ -98,6 +157,7 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getOpsCenter() == null) ? 0 : getOpsCenter().hashCode());
+        hashCode = prime * hashCode + ((getLogsAnomalyDetection() == null) ? 0 : getLogsAnomalyDetection().hashCode());
         return hashCode;
     }
 

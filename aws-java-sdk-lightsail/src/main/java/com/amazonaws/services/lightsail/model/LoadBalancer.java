@@ -153,21 +153,6 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the TLS security policy for the load balancer.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String tlsPolicyName;
 
@@ -1221,38 +1206,9 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the TLS security policy for the load balancer.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tlsPolicyName
-     *        The name of the TLS security policy for the load balancer.</p>
-     *        <p>
-     *        The following TLS security policy names are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>TLS-2016-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TLS-FS-Res-1-2-2019-08</code>
-     *        </p>
-     *        </li>
+     *        The name of the TLS security policy for the load balancer.
      */
 
     public void setTlsPolicyName(String tlsPolicyName) {
@@ -1263,37 +1219,8 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the TLS security policy for the load balancer.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The name of the TLS security policy for the load balancer.</p>
-     *         <p>
-     *         The following TLS security policy names are possible:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>TLS-2016-08</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>TLS-FS-Res-1-2-2019-08</code>
-     *         </p>
-     *         </li>
+     * @return The name of the TLS security policy for the load balancer.
      */
 
     public String getTlsPolicyName() {
@@ -1304,38 +1231,9 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the TLS security policy for the load balancer.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tlsPolicyName
-     *        The name of the TLS security policy for the load balancer.</p>
-     *        <p>
-     *        The following TLS security policy names are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>TLS-2016-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TLS-FS-Res-1-2-2019-08</code>
-     *        </p>
-     *        </li>
+     *        The name of the TLS security policy for the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

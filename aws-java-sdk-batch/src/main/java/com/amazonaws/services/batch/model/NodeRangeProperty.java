@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the properties of the node range for a multi-node parallel job.
+ * An object that represents the properties of the node range for a multi-node parallel job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeRangeProperty" target="_top">AWS API
@@ -34,7 +34,7 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      * <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the
      * highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (
-     * <code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case
+     * <code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case,
      * the <code>4:5</code> range properties override the <code>0:10</code> properties.
      * </p>
      */
@@ -52,7 +52,7 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      * <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the
      * highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (
-     * <code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case
+     * <code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case,
      * the <code>4:5</code> range properties override the <code>0:10</code> properties.
      * </p>
      * 
@@ -61,8 +61,9 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      *        of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      *        <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then
      *        the highest possible node index is used to end the range. Your accumulative node ranges must account for
-     *        all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>
-     *        , in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.
+     *        all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and
+     *        <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code>
+     *        properties.
      */
 
     public void setTargetNodes(String targetNodes) {
@@ -75,7 +76,7 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      * <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the
      * highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (
-     * <code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case
+     * <code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case,
      * the <code>4:5</code> range properties override the <code>0:10</code> properties.
      * </p>
      * 
@@ -83,8 +84,8 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      *         values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>
      *         ), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>
      *         ), then the highest possible node index is used to end the range. Your accumulative node ranges must
-     *         account for all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and
-     *         <code>4:5</code>, in which case the <code>4:5</code> range properties override the <code>0:10</code>
+     *         account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and
+     *         <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code>
      *         properties.
      */
 
@@ -98,7 +99,7 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      * <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the
      * highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (
-     * <code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case
+     * <code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case,
      * the <code>4:5</code> range properties override the <code>0:10</code> properties.
      * </p>
      * 
@@ -107,8 +108,9 @@ public class NodeRangeProperty implements Serializable, Cloneable, StructuredPoj
      *        of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      *        <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then
      *        the highest possible node index is used to end the range. Your accumulative node ranges must account for
-     *        all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>
-     *        , in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.
+     *        all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and
+     *        <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code>
+     *        properties.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

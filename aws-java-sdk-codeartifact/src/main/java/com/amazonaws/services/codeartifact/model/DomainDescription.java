@@ -37,7 +37,7 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The AWS account ID that owns the domain.
+     * The Amazon Web Services account ID that owns the domain.
      * </p>
      */
     private String owner;
@@ -49,20 +49,8 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
     private String arn;
     /**
      * <p>
-     * The current status of a domain. The valid values are
+     * The current status of a domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String status;
     /**
@@ -73,7 +61,7 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
     private java.util.Date createdTime;
     /**
      * <p>
-     * The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     * The ARN of an Key Management Service (KMS) key associated with a domain.
      * </p>
      */
     private String encryptionKey;
@@ -138,11 +126,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS account ID that owns the domain.
+     * The Amazon Web Services account ID that owns the domain.
      * </p>
      * 
      * @param owner
-     *        The AWS account ID that owns the domain.
+     *        The Amazon Web Services account ID that owns the domain.
      */
 
     public void setOwner(String owner) {
@@ -151,10 +139,10 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS account ID that owns the domain.
+     * The Amazon Web Services account ID that owns the domain.
      * </p>
      * 
-     * @return The AWS account ID that owns the domain.
+     * @return The Amazon Web Services account ID that owns the domain.
      */
 
     public String getOwner() {
@@ -163,11 +151,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS account ID that owns the domain.
+     * The Amazon Web Services account ID that owns the domain.
      * </p>
      * 
      * @param owner
-     *        The AWS account ID that owns the domain.
+     *        The Amazon Web Services account ID that owns the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,34 +206,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current status of a domain. The valid values are
+     * The current status of a domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        The current status of a domain. The valid values are </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Active</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Deleted</code>
-     *        </p>
-     *        </li>
+     *        The current status of a domain.
      * @see DomainStatus
      */
 
@@ -255,33 +220,10 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current status of a domain. The valid values are
+     * The current status of a domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The current status of a domain. The valid values are </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Active</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Deleted</code>
-     *         </p>
-     *         </li>
+     * @return The current status of a domain.
      * @see DomainStatus
      */
 
@@ -291,34 +233,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current status of a domain. The valid values are
+     * The current status of a domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        The current status of a domain. The valid values are </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Active</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Deleted</code>
-     *        </p>
-     *        </li>
+     *        The current status of a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
@@ -330,34 +249,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current status of a domain. The valid values are
+     * The current status of a domain.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Active</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Deleted</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        The current status of a domain. The valid values are </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Active</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Deleted</code>
-     *        </p>
-     *        </li>
+     *        The current status of a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
@@ -409,11 +305,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     * The ARN of an Key Management Service (KMS) key associated with a domain.
      * </p>
      * 
      * @param encryptionKey
-     *        The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     *        The ARN of an Key Management Service (KMS) key associated with a domain.
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -422,10 +318,10 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     * The ARN of an Key Management Service (KMS) key associated with a domain.
      * </p>
      * 
-     * @return The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     * @return The ARN of an Key Management Service (KMS) key associated with a domain.
      */
 
     public String getEncryptionKey() {
@@ -434,11 +330,11 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     * The ARN of an Key Management Service (KMS) key associated with a domain.
      * </p>
      * 
      * @param encryptionKey
-     *        The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
+     *        The ARN of an Key Management Service (KMS) key associated with a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

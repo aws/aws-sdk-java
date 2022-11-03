@@ -232,6 +232,10 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getNetworkType()));
         }
 
+        if (restoreDBInstanceFromDBSnapshotRequest.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(restoreDBInstanceFromDBSnapshotRequest.getStorageThroughput()));
+        }
+
         return request;
     }
 

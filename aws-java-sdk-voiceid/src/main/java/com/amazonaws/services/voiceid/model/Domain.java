@@ -66,11 +66,19 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt
+     * The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt
      * your data.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
+    /**
+     * <p>
+     * Details about the most recent server-side encryption configuration update. When the server-side encryption
+     * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
+     * update is complete, the domain's data can only be accessed using the new KMS key.
+     * </p>
+     */
+    private ServerSideEncryptionUpdateDetails serverSideEncryptionUpdateDetails;
     /**
      * <p>
      * The timestamp showing the domain's last update.
@@ -339,12 +347,12 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt
+     * The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt
      * your data.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to
+     *        The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to
      *        encrypt your data.
      */
 
@@ -354,11 +362,11 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt
+     * The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt
      * your data.
      * </p>
      * 
-     * @return The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to
+     * @return The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to
      *         encrypt your data.
      */
 
@@ -368,18 +376,70 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt
+     * The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt
      * your data.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to
+     *        The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to
      *        encrypt your data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Domain withServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
         setServerSideEncryptionConfiguration(serverSideEncryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the most recent server-side encryption configuration update. When the server-side encryption
+     * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
+     * update is complete, the domain's data can only be accessed using the new KMS key.
+     * </p>
+     * 
+     * @param serverSideEncryptionUpdateDetails
+     *        Details about the most recent server-side encryption configuration update. When the server-side encryption
+     *        configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When
+     *        this update is complete, the domain's data can only be accessed using the new KMS key.
+     */
+
+    public void setServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails serverSideEncryptionUpdateDetails) {
+        this.serverSideEncryptionUpdateDetails = serverSideEncryptionUpdateDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the most recent server-side encryption configuration update. When the server-side encryption
+     * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
+     * update is complete, the domain's data can only be accessed using the new KMS key.
+     * </p>
+     * 
+     * @return Details about the most recent server-side encryption configuration update. When the server-side
+     *         encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous
+     *         process. When this update is complete, the domain's data can only be accessed using the new KMS key.
+     */
+
+    public ServerSideEncryptionUpdateDetails getServerSideEncryptionUpdateDetails() {
+        return this.serverSideEncryptionUpdateDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the most recent server-side encryption configuration update. When the server-side encryption
+     * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
+     * update is complete, the domain's data can only be accessed using the new KMS key.
+     * </p>
+     * 
+     * @param serverSideEncryptionUpdateDetails
+     *        Details about the most recent server-side encryption configuration update. When the server-side encryption
+     *        configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When
+     *        this update is complete, the domain's data can only be accessed using the new KMS key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Domain withServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails serverSideEncryptionUpdateDetails) {
+        setServerSideEncryptionUpdateDetails(serverSideEncryptionUpdateDetails);
         return this;
     }
 
@@ -449,6 +509,8 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getServerSideEncryptionConfiguration() != null)
             sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration()).append(",");
+        if (getServerSideEncryptionUpdateDetails() != null)
+            sb.append("ServerSideEncryptionUpdateDetails: ").append(getServerSideEncryptionUpdateDetails()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -494,6 +556,11 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
         if (other.getServerSideEncryptionConfiguration() != null
                 && other.getServerSideEncryptionConfiguration().equals(this.getServerSideEncryptionConfiguration()) == false)
             return false;
+        if (other.getServerSideEncryptionUpdateDetails() == null ^ this.getServerSideEncryptionUpdateDetails() == null)
+            return false;
+        if (other.getServerSideEncryptionUpdateDetails() != null
+                && other.getServerSideEncryptionUpdateDetails().equals(this.getServerSideEncryptionUpdateDetails()) == false)
+            return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
@@ -513,6 +580,7 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDomainStatus() == null) ? 0 : getDomainStatus().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getServerSideEncryptionUpdateDetails() == null) ? 0 : getServerSideEncryptionUpdateDetails().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

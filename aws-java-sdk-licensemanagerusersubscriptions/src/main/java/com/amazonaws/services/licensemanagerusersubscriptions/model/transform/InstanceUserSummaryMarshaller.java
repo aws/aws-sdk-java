@@ -1,0 +1,76 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.licensemanagerusersubscriptions.model.transform;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.licensemanagerusersubscriptions.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * InstanceUserSummaryMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class InstanceUserSummaryMarshaller {
+
+    private static final MarshallingInfo<String> ASSOCIATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationDate").build();
+    private static final MarshallingInfo<String> DISASSOCIATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociationDate").build();
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Domain").build();
+    private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProvider").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+
+    private static final InstanceUserSummaryMarshaller instance = new InstanceUserSummaryMarshaller();
+
+    public static InstanceUserSummaryMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(InstanceUserSummary instanceUserSummary, ProtocolMarshaller protocolMarshaller) {
+
+        if (instanceUserSummary == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(instanceUserSummary.getAssociationDate(), ASSOCIATIONDATE_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getDisassociationDate(), DISASSOCIATIONDATE_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getIdentityProvider(), IDENTITYPROVIDER_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(instanceUserSummary.getUsername(), USERNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

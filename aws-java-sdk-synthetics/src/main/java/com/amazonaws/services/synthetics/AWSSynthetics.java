@@ -56,6 +56,33 @@ public interface AWSSynthetics {
 
     /**
      * <p>
+     * Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you
+     * can also view aggregated run results and statistics for all canaries in a group.
+     * </p>
+     * <p>
+     * You must run this operation in the Region where the canary exists.
+     * </p>
+     * 
+     * @param associateResourceRequest
+     * @return Result of the AssociateResource operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded a service quota value.
+     * @sample AWSSynthetics.AssociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/AssociateResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AssociateResourceResult associateResource(AssociateResourceRequest associateResourceRequest);
+
+    /**
+     * <p>
      * Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help
      * you check the availability and latency of your web services and troubleshoot anomalies by investigating load time
      * data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once.
@@ -67,7 +94,7 @@ public interface AWSSynthetics {
      * </p>
      * <p>
      * To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a
-     * new IAM role for the canary, you also need the the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
+     * new IAM role for the canary, you also need the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
      * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles"
      * >Necessary Roles and Permissions</a>.
@@ -96,6 +123,45 @@ public interface AWSSynthetics {
 
     /**
      * <p>
+     * Creates a group which you can use to associate canaries with each other, including cross-Region canaries. Using
+     * groups can help you with managing and automating your canaries, and you can also view aggregated run results and
+     * statistics for all canaries in a group.
+     * </p>
+     * <p>
+     * Groups are global resources. When you create a group, it is replicated across Amazon Web Services Regions, and
+     * you can view it and add canaries to it from any Region. Although the group ARN format reflects the Region name
+     * where it was created, a group is not constrained to any Region. This means that you can put canaries from
+     * multiple Regions into the same group, and then use that group to view and manage all of those canaries in a
+     * single view.
+     * </p>
+     * <p>
+     * Groups are supported in all Regions except the Regions that are disabled by default. For more information about
+     * these Regions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling a Region</a>.
+     * </p>
+     * <p>
+     * Each group can contain as many as 10 canaries. You can have as many as 20 groups in your account. Any single
+     * canary can be a member of up to 10 groups.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return Result of the CreateGroup operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded a service quota value.
+     * @sample AWSSynthetics.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateGroupResult createGroup(CreateGroupRequest createGroupRequest);
+
+    /**
+     * <p>
      * Permanently deletes the specified canary.
      * </p>
      * <p>
@@ -103,7 +169,7 @@ public interface AWSSynthetics {
      * functions and layers that are used by the canary.
      * </p>
      * <p>
-     * Other esources used and created by the canary are not automatically deleted. After you delete a canary that you
+     * Other resources used and created by the canary are not automatically deleted. After you delete a canary that you
      * do not intend to use again, you should also delete the following:
      * </p>
      * <ul>
@@ -152,6 +218,32 @@ public interface AWSSynthetics {
      *      Documentation</a>
      */
     DeleteCanaryResult deleteCanary(DeleteCanaryRequest deleteCanaryRequest);
+
+    /**
+     * <p>
+     * Deletes a group. The group doesn't need to be empty to be deleted. If there are canaries in the group, they are
+     * not deleted when you delete the group.
+     * </p>
+     * <p>
+     * Groups are a global resource that appear in all Regions, but the request to delete a group must be made from its
+     * home Region. You can find the home Region of a group within its ARN.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
 
     /**
      * <p>
@@ -232,6 +324,27 @@ public interface AWSSynthetics {
 
     /**
      * <p>
+     * Removes a canary from a group. You must run this operation in the Region where the canary exists.
+     * </p>
+     * 
+     * @param disassociateResourceRequest
+     * @return Result of the DisassociateResource operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.DisassociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DisassociateResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateResourceResult disassociateResource(DisassociateResourceRequest disassociateResourceRequest);
+
+    /**
+     * <p>
      * Retrieves complete information about one canary. You must specify the name of the canary that you want. To get a
      * list of canaries and their names, use <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
@@ -271,17 +384,101 @@ public interface AWSSynthetics {
 
     /**
      * <p>
-     * Displays the tags associated with a canary.
+     * Returns information about one group. Groups are a global resource, so you can use this operation from any Region.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return Result of the GetGroup operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetGroupResult getGroup(GetGroupRequest getGroupRequest);
+
+    /**
+     * <p>
+     * Returns a list of the groups that the specified canary is associated with. The canary that you specify must be in
+     * the current Region.
+     * </p>
+     * 
+     * @param listAssociatedGroupsRequest
+     * @return Result of the ListAssociatedGroups operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @sample AWSSynthetics.ListAssociatedGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListAssociatedGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssociatedGroupsResult listAssociatedGroups(ListAssociatedGroupsRequest listAssociatedGroupsRequest);
+
+    /**
+     * <p>
+     * This operation returns a list of the ARNs of the canaries that are associated with the specified group.
+     * </p>
+     * 
+     * @param listGroupResourcesRequest
+     * @return Result of the ListGroupResources operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @throws ResourceNotFoundException
+     *         One of the specified resources was not found.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @sample AWSSynthetics.ListGroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroupResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListGroupResourcesResult listGroupResources(ListGroupResourcesRequest listGroupResourcesRequest);
+
+    /**
+     * <p>
+     * Returns a list of all groups in the account, displaying their names, unique IDs, and ARNs. The groups from all
+     * Regions are returned.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @return Result of the ListGroups operation returned by the service.
+     * @throws InternalServerException
+     *         An unknown internal error occurred.
+     * @throws ValidationException
+     *         A parameter could not be validated.
+     * @sample AWSSynthetics.ListGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest);
+
+    /**
+     * <p>
+     * Displays the tags associated with a canary or group.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws InternalServerException
-     *         An unknown internal error occurred.
-     * @throws ResourceNotFoundException
-     *         One of the specified resources was not found.
-     * @throws ValidationException
-     *         A parameter could not be validated.
+     * @throws BadRequestException
+     *         The request was not valid.
+     * @throws NotFoundException
+     *         The specified resource was not found.
+     * @throws TooManyRequestsException
+     *         There were too many simultaneous requests. Try the operation again.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try the operation again.
      * @sample AWSSynthetics.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -313,9 +510,9 @@ public interface AWSSynthetics {
 
     /**
      * <p>
-     * Stops the canary to prevent all future runs. If the canary is currently running, Synthetics stops waiting for the
-     * current run of the specified canary to complete. The run that is in progress completes on its own, publishes
-     * metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.
+     * Stops the canary to prevent all future runs. If the canary is currently running,the run that is in progress
+     * completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a
+     * completed run.
      * </p>
      * <p>
      * You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in
@@ -340,7 +537,7 @@ public interface AWSSynthetics {
 
     /**
      * <p>
-     * Assigns one or more tags (key-value pairs) to the specified canary.
+     * Assigns one or more tags (key-value pairs) to the specified canary or group.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
@@ -351,23 +548,27 @@ public interface AWSSynthetics {
      * characters.
      * </p>
      * <p>
-     * You can use the <code>TagResource</code> action with a canary that already has tags. If you specify a new tag key
-     * for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that
-     * is already associated with the alarm, the new tag value that you specify replaces the previous value for that
-     * tag.
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag
+     * key that is already associated with the resource, the new tag value that you specify replaces the previous value
+     * for that tag.
      * </p>
      * <p>
-     * You can associate as many as 50 tags with a canary.
+     * You can associate as many as 50 tags with a canary or group.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws InternalServerException
-     *         An unknown internal error occurred.
-     * @throws ResourceNotFoundException
-     *         One of the specified resources was not found.
-     * @throws ValidationException
-     *         A parameter could not be validated.
+     * @throws BadRequestException
+     *         The request was not valid.
+     * @throws NotFoundException
+     *         The specified resource was not found.
+     * @throws TooManyRequestsException
+     *         There were too many simultaneous requests. Try the operation again.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try the operation again.
      * @sample AWSSynthetics.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -376,17 +577,21 @@ public interface AWSSynthetics {
 
     /**
      * <p>
-     * Removes one or more tags from the specified canary.
+     * Removes one or more tags from the specified resource.
      * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws InternalServerException
-     *         An unknown internal error occurred.
-     * @throws ResourceNotFoundException
-     *         One of the specified resources was not found.
-     * @throws ValidationException
-     *         A parameter could not be validated.
+     * @throws BadRequestException
+     *         The request was not valid.
+     * @throws NotFoundException
+     *         The specified resource was not found.
+     * @throws TooManyRequestsException
+     *         There were too many simultaneous requests. Try the operation again.
+     * @throws ConflictException
+     *         A conflicting operation is already in progress.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try the operation again.
      * @sample AWSSynthetics.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -395,7 +600,7 @@ public interface AWSSynthetics {
 
     /**
      * <p>
-     * Use this operation to change the settings of a canary that has already been created.
+     * Updates the configuration of a canary that has already been created.
      * </p>
      * <p>
      * You can't use this operation to update the tags of an existing canary. To change the tags of an existing canary,

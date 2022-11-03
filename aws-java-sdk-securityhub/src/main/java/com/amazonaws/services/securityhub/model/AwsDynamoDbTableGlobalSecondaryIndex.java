@@ -56,6 +56,28 @@ public class AwsDynamoDbTableGlobalSecondaryIndex implements Serializable, Clone
      * <p>
      * The current status of the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String indexStatus;
     /**
@@ -259,9 +281,52 @@ public class AwsDynamoDbTableGlobalSecondaryIndex implements Serializable, Clone
      * <p>
      * The current status of the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexStatus
-     *        The current status of the index.
+     *        The current status of the index.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      */
 
     public void setIndexStatus(String indexStatus) {
@@ -272,8 +337,51 @@ public class AwsDynamoDbTableGlobalSecondaryIndex implements Serializable, Clone
      * <p>
      * The current status of the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current status of the index.
+     * @return The current status of the index.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code>
+     *         </p>
+     *         </li>
      */
 
     public String getIndexStatus() {
@@ -284,9 +392,52 @@ public class AwsDynamoDbTableGlobalSecondaryIndex implements Serializable, Clone
      * <p>
      * The current status of the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexStatus
-     *        The current status of the index.
+     *        The current status of the index.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

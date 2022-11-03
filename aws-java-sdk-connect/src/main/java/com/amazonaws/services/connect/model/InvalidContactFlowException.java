@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The contact flow is not valid.
+ * The flow is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,7 +25,7 @@ public class InvalidContactFlowException extends com.amazonaws.services.connect.
 
     /**
      * <p>
-     * The problems with the contact flow. Please fix before trying again.
+     * The problems with the flow. Please fix before trying again.
      * </p>
      */
     private java.util.List<ProblemDetail> problems;
@@ -42,10 +42,10 @@ public class InvalidContactFlowException extends com.amazonaws.services.connect.
 
     /**
      * <p>
-     * The problems with the contact flow. Please fix before trying again.
+     * The problems with the flow. Please fix before trying again.
      * </p>
      * 
-     * @return The problems with the contact flow. Please fix before trying again.
+     * @return The problems with the flow. Please fix before trying again.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("problems")
@@ -55,11 +55,11 @@ public class InvalidContactFlowException extends com.amazonaws.services.connect.
 
     /**
      * <p>
-     * The problems with the contact flow. Please fix before trying again.
+     * The problems with the flow. Please fix before trying again.
      * </p>
      * 
      * @param problems
-     *        The problems with the contact flow. Please fix before trying again.
+     *        The problems with the flow. Please fix before trying again.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("problems")
@@ -74,7 +74,7 @@ public class InvalidContactFlowException extends com.amazonaws.services.connect.
 
     /**
      * <p>
-     * The problems with the contact flow. Please fix before trying again.
+     * The problems with the flow. Please fix before trying again.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class InvalidContactFlowException extends com.amazonaws.services.connect.
      * </p>
      * 
      * @param problems
-     *        The problems with the contact flow. Please fix before trying again.
+     *        The problems with the flow. Please fix before trying again.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class InvalidContactFlowException extends com.amazonaws.services.connect.
 
     /**
      * <p>
-     * The problems with the contact flow. Please fix before trying again.
+     * The problems with the flow. Please fix before trying again.
      * </p>
      * 
      * @param problems
-     *        The problems with the contact flow. Please fix before trying again.
+     *        The problems with the flow. Please fix before trying again.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,23 @@ public class UpdateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with any environments running in the account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     */
+    private String componentRoleArn;
+    /**
+     * <p>
      * The ID of the environment account connection to update.
      * </p>
      */
@@ -38,6 +55,109 @@ public class UpdateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * </p>
      */
     private String roleArn;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with any environments running in the account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in the associated environment account. It determines the scope of infrastructure that a
+     *        component can provision in the account.</p>
+     *        <p>
+     *        The environment account connection must have a <code>componentRoleArn</code> to allow directly defined
+     *        components to be associated with any environments running in the account.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     */
+
+    public void setComponentRoleArn(String componentRoleArn) {
+        this.componentRoleArn = componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with any environments running in the account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly
+     *         defined components in the associated environment account. It determines the scope of infrastructure that
+     *         a component can provision in the account.</p>
+     *         <p>
+     *         The environment account connection must have a <code>componentRoleArn</code> to allow directly defined
+     *         components to be associated with any environments running in the account.
+     *         </p>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton User Guide</i>.
+     */
+
+    public String getComponentRoleArn() {
+        return this.componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with any environments running in the account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in the associated environment account. It determines the scope of infrastructure that a
+     *        component can provision in the account.</p>
+     *        <p>
+     *        The environment account connection must have a <code>componentRoleArn</code> to allow directly defined
+     *        components to be associated with any environments running in the account.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentAccountConnectionRequest withComponentRoleArn(String componentRoleArn) {
+        setComponentRoleArn(componentRoleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -137,6 +257,8 @@ public class UpdateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getComponentRoleArn() != null)
+            sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getRoleArn() != null)
@@ -155,6 +277,10 @@ public class UpdateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         if (obj instanceof UpdateEnvironmentAccountConnectionRequest == false)
             return false;
         UpdateEnvironmentAccountConnectionRequest other = (UpdateEnvironmentAccountConnectionRequest) obj;
+        if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
+            return false;
+        if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -171,6 +297,7 @@ public class UpdateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;

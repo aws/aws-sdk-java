@@ -25,21 +25,19 @@ public class CreateMediaCapturePipelineResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture
-     * pipeline object.
+     * A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.
      * </p>
      */
     private MediaCapturePipeline mediaCapturePipeline;
 
     /**
      * <p>
-     * A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture
-     * pipeline object.
+     * A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.
      * </p>
      * 
      * @param mediaCapturePipeline
-     *        A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media
-     *        capture pipeline object.
+     *        A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline
+     *        object.
      */
 
     public void setMediaCapturePipeline(MediaCapturePipeline mediaCapturePipeline) {
@@ -48,12 +46,11 @@ public class CreateMediaCapturePipelineResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture
-     * pipeline object.
+     * A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.
      * </p>
      * 
-     * @return A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media
-     *         capture pipeline object.
+     * @return A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline
+     *         object.
      */
 
     public MediaCapturePipeline getMediaCapturePipeline() {
@@ -62,13 +59,12 @@ public class CreateMediaCapturePipelineResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture
-     * pipeline object.
+     * A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.
      * </p>
      * 
      * @param mediaCapturePipeline
-     *        A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media
-     *        capture pipeline object.
+     *        A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline
+     *        object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -78,7 +78,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of
      * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
      * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      * </p>
@@ -149,7 +149,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of
      * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
      * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      * </p>
@@ -210,7 +210,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN
+     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN
      *        of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
      *        password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      *        </p>
@@ -278,7 +278,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of
      * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
      * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      * </p>
@@ -338,7 +338,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager
+     *         <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager
      *         ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and
      *         private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      *         </p>
@@ -406,7 +406,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of
      * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
      * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      * </p>
@@ -467,7 +467,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN
+     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN
      *        of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
      *        password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      *        </p>
@@ -537,7 +537,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of
      * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
      * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      * </p>
@@ -598,7 +598,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN
+     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN
      *        of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
      *        password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
      *        </p>

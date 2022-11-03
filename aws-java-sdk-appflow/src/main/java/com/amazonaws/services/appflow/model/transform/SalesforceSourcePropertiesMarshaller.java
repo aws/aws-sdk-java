@@ -33,6 +33,8 @@ public class SalesforceSourcePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableDynamicFieldUpdate").build();
     private static final MarshallingInfo<Boolean> INCLUDEDELETEDRECORDS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeDeletedRecords").build();
+    private static final MarshallingInfo<String> DATATRANSFERAPI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTransferApi").build();
 
     private static final SalesforceSourcePropertiesMarshaller instance = new SalesforceSourcePropertiesMarshaller();
 
@@ -53,6 +55,7 @@ public class SalesforceSourcePropertiesMarshaller {
             protocolMarshaller.marshall(salesforceSourceProperties.getObject(), OBJECT_BINDING);
             protocolMarshaller.marshall(salesforceSourceProperties.getEnableDynamicFieldUpdate(), ENABLEDYNAMICFIELDUPDATE_BINDING);
             protocolMarshaller.marshall(salesforceSourceProperties.getIncludeDeletedRecords(), INCLUDEDELETEDRECORDS_BINDING);
+            protocolMarshaller.marshall(salesforceSourceProperties.getDataTransferApi(), DATATRANSFERAPI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

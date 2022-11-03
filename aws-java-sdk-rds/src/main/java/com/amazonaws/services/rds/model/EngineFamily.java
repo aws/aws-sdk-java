@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum EngineFamily {
 
     MYSQL("MYSQL"),
-    POSTGRESQL("POSTGRESQL");
+    POSTGRESQL("POSTGRESQL"),
+    SQLSERVER("SQLSERVER");
 
     private String value;
 

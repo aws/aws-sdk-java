@@ -143,6 +143,72 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLabelResult> createLabelAsync(CreateLabelRequest request) {
+
+        return createLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelResult> createLabelAsync(final CreateLabelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLabelRequest, CreateLabelResult> asyncHandler) {
+        final CreateLabelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLabelResult>() {
+            @Override
+            public CreateLabelResult call() throws Exception {
+                CreateLabelResult result = null;
+
+                try {
+                    result = executeCreateLabel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelGroupResult> createLabelGroupAsync(CreateLabelGroupRequest request) {
+
+        return createLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelGroupResult> createLabelGroupAsync(final CreateLabelGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLabelGroupRequest, CreateLabelGroupResult> asyncHandler) {
+        final CreateLabelGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLabelGroupResult>() {
+            @Override
+            public CreateLabelGroupResult call() throws Exception {
+                CreateLabelGroupResult result = null;
+
+                try {
+                    result = executeCreateLabelGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResult> createModelAsync(CreateModelRequest request) {
 
         return createModelAsync(request, null);
@@ -226,6 +292,72 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
 
                 try {
                     result = executeDeleteInferenceScheduler(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest request) {
+
+        return deleteLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(final DeleteLabelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLabelRequest, DeleteLabelResult> asyncHandler) {
+        final DeleteLabelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLabelResult>() {
+            @Override
+            public DeleteLabelResult call() throws Exception {
+                DeleteLabelResult result = null;
+
+                try {
+                    result = executeDeleteLabel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelGroupResult> deleteLabelGroupAsync(DeleteLabelGroupRequest request) {
+
+        return deleteLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelGroupResult> deleteLabelGroupAsync(final DeleteLabelGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLabelGroupRequest, DeleteLabelGroupResult> asyncHandler) {
+        final DeleteLabelGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLabelGroupResult>() {
+            @Override
+            public DeleteLabelGroupResult call() throws Exception {
+                DeleteLabelGroupResult result = null;
+
+                try {
+                    result = executeDeleteLabelGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -374,6 +506,72 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLabelResult> describeLabelAsync(DescribeLabelRequest request) {
+
+        return describeLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLabelResult> describeLabelAsync(final DescribeLabelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLabelRequest, DescribeLabelResult> asyncHandler) {
+        final DescribeLabelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLabelResult>() {
+            @Override
+            public DescribeLabelResult call() throws Exception {
+                DescribeLabelResult result = null;
+
+                try {
+                    result = executeDescribeLabel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLabelGroupResult> describeLabelGroupAsync(DescribeLabelGroupRequest request) {
+
+        return describeLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLabelGroupResult> describeLabelGroupAsync(final DescribeLabelGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLabelGroupRequest, DescribeLabelGroupResult> asyncHandler) {
+        final DescribeLabelGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLabelGroupResult>() {
+            @Override
+            public DescribeLabelGroupResult call() throws Exception {
+                DescribeLabelGroupResult result = null;
+
+                try {
+                    result = executeDescribeLabelGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeModelResult> describeModelAsync(DescribeModelRequest request) {
 
         return describeModelAsync(request, null);
@@ -473,6 +671,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest request) {
+
+        return listInferenceEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(final ListInferenceEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInferenceEventsRequest, ListInferenceEventsResult> asyncHandler) {
+        final ListInferenceEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInferenceEventsResult>() {
+            @Override
+            public ListInferenceEventsResult call() throws Exception {
+                ListInferenceEventsResult result = null;
+
+                try {
+                    result = executeListInferenceEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInferenceExecutionsResult> listInferenceExecutionsAsync(ListInferenceExecutionsRequest request) {
 
         return listInferenceExecutionsAsync(request, null);
@@ -523,6 +754,72 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
 
                 try {
                     result = executeListInferenceSchedulers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelGroupsResult> listLabelGroupsAsync(ListLabelGroupsRequest request) {
+
+        return listLabelGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelGroupsResult> listLabelGroupsAsync(final ListLabelGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLabelGroupsRequest, ListLabelGroupsResult> asyncHandler) {
+        final ListLabelGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLabelGroupsResult>() {
+            @Override
+            public ListLabelGroupsResult call() throws Exception {
+                ListLabelGroupsResult result = null;
+
+                try {
+                    result = executeListLabelGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelsResult> listLabelsAsync(ListLabelsRequest request) {
+
+        return listLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLabelsResult> listLabelsAsync(final ListLabelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLabelsRequest, ListLabelsResult> asyncHandler) {
+        final ListLabelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLabelsResult>() {
+            @Override
+            public ListLabelsResult call() throws Exception {
+                ListLabelsResult result = null;
+
+                try {
+                    result = executeListLabels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -820,6 +1117,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
 
                 try {
                     result = executeUpdateInferenceScheduler(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest request) {
+
+        return updateLabelGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(final UpdateLabelGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLabelGroupRequest, UpdateLabelGroupResult> asyncHandler) {
+        final UpdateLabelGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLabelGroupResult>() {
+            @Override
+            public UpdateLabelGroupResult call() throws Exception {
+                UpdateLabelGroupResult result = null;
+
+                try {
+                    result = executeUpdateLabelGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

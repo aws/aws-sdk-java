@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the status of a component in the IoT Greengrass service.
+ * Contains the status of a component version in the IoT Greengrass service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CloudComponentStatus" target="_top">AWS
@@ -30,32 +30,65 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the component.
+     * The state of the component version.
      * </p>
      */
     private String componentState;
     /**
      * <p>
-     * A message that communicates details, such as errors, about the status of the component.
+     * A message that communicates details, such as errors, about the status of the component version.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass
-     * can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and
-     * the error message as the value for that key.
+     * A dictionary of errors that communicate why the component version is in an error state. For example, if IoT
+     * Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's
+     * URI as a key, and the error message as the value for that key.
      * </p>
      */
     private java.util.Map<String, String> errors;
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String vendorGuidance;
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     */
+    private String vendorGuidanceMessage;
 
     /**
      * <p>
-     * The state of the component.
+     * The state of the component version.
      * </p>
      * 
      * @param componentState
-     *        The state of the component.
+     *        The state of the component version.
      * @see CloudComponentState
      */
 
@@ -65,10 +98,10 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the component.
+     * The state of the component version.
      * </p>
      * 
-     * @return The state of the component.
+     * @return The state of the component version.
      * @see CloudComponentState
      */
 
@@ -78,11 +111,11 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the component.
+     * The state of the component version.
      * </p>
      * 
      * @param componentState
-     *        The state of the component.
+     *        The state of the component version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudComponentState
      */
@@ -94,11 +127,11 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the component.
+     * The state of the component version.
      * </p>
      * 
      * @param componentState
-     *        The state of the component.
+     *        The state of the component version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudComponentState
      */
@@ -110,11 +143,11 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A message that communicates details, such as errors, about the status of the component.
+     * A message that communicates details, such as errors, about the status of the component version.
      * </p>
      * 
      * @param message
-     *        A message that communicates details, such as errors, about the status of the component.
+     *        A message that communicates details, such as errors, about the status of the component version.
      */
 
     public void setMessage(String message) {
@@ -123,10 +156,10 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A message that communicates details, such as errors, about the status of the component.
+     * A message that communicates details, such as errors, about the status of the component version.
      * </p>
      * 
-     * @return A message that communicates details, such as errors, about the status of the component.
+     * @return A message that communicates details, such as errors, about the status of the component version.
      */
 
     public String getMessage() {
@@ -135,11 +168,11 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A message that communicates details, such as errors, about the status of the component.
+     * A message that communicates details, such as errors, about the status of the component version.
      * </p>
      * 
      * @param message
-     *        A message that communicates details, such as errors, about the status of the component.
+     *        A message that communicates details, such as errors, about the status of the component version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,14 +183,14 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass
-     * can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and
-     * the error message as the value for that key.
+     * A dictionary of errors that communicate why the component version is in an error state. For example, if IoT
+     * Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's
+     * URI as a key, and the error message as the value for that key.
      * </p>
      * 
-     * @return A dictionary of errors that communicate why the component is in an error state. For example, if IoT
-     *         Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's
-     *         URI as a key, and the error message as the value for that key.
+     * @return A dictionary of errors that communicate why the component version is in an error state. For example, if
+     *         IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the
+     *         artifact's URI as a key, and the error message as the value for that key.
      */
 
     public java.util.Map<String, String> getErrors() {
@@ -166,15 +199,15 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass
-     * can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and
-     * the error message as the value for that key.
+     * A dictionary of errors that communicate why the component version is in an error state. For example, if IoT
+     * Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's
+     * URI as a key, and the error message as the value for that key.
      * </p>
      * 
      * @param errors
-     *        A dictionary of errors that communicate why the component is in an error state. For example, if IoT
-     *        Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's
-     *        URI as a key, and the error message as the value for that key.
+     *        A dictionary of errors that communicate why the component version is in an error state. For example, if
+     *        IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the
+     *        artifact's URI as a key, and the error message as the value for that key.
      */
 
     public void setErrors(java.util.Map<String, String> errors) {
@@ -183,15 +216,15 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass
-     * can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and
-     * the error message as the value for that key.
+     * A dictionary of errors that communicate why the component version is in an error state. For example, if IoT
+     * Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's
+     * URI as a key, and the error message as the value for that key.
      * </p>
      * 
      * @param errors
-     *        A dictionary of errors that communicate why the component is in an error state. For example, if IoT
-     *        Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's
-     *        URI as a key, and the error message as the value for that key.
+     *        A dictionary of errors that communicate why the component version is in an error state. For example, if
+     *        IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the
+     *        artifact's URI as a key, and the error message as the value for that key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,6 +262,267 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The vendor guidance state for the component version. This state indicates whether the component version
+     *        has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> – This component version is available and recommended for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *        this component version, but we recommend that you use a different version of this component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *        If you have any existing deployments that specify this component version, those deployments will fail.
+     *        </p>
+     *        </li>
+     * @see VendorGuidance
+     */
+
+    public void setVendorGuidance(String vendorGuidance) {
+        this.vendorGuidance = vendorGuidance;
+    }
+
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The vendor guidance state for the component version. This state indicates whether the component version
+     *         has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code> – This component version is available and recommended for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *         this component version, but we recommend that you use a different version of this component.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *         If you have any existing deployments that specify this component version, those deployments will fail.
+     *         </p>
+     *         </li>
+     * @see VendorGuidance
+     */
+
+    public String getVendorGuidance() {
+        return this.vendorGuidance;
+    }
+
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The vendor guidance state for the component version. This state indicates whether the component version
+     *        has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> – This component version is available and recommended for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *        this component version, but we recommend that you use a different version of this component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *        If you have any existing deployments that specify this component version, those deployments will fail.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VendorGuidance
+     */
+
+    public CloudComponentStatus withVendorGuidance(String vendorGuidance) {
+        setVendorGuidance(vendorGuidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The vendor guidance state for the component version. This state indicates whether the component version has any
+     * issues that you should consider before you deploy it. The vendor guidance state can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> – This component version is available and recommended for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this
+     * component version, but we recommend that you use a different version of this component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you
+     * have any existing deployments that specify this component version, those deployments will fail.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The vendor guidance state for the component version. This state indicates whether the component version
+     *        has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> – This component version is available and recommended for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy
+     *        this component version, but we recommend that you use a different version of this component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it.
+     *        If you have any existing deployments that specify this component version, those deployments will fail.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VendorGuidance
+     */
+
+    public CloudComponentStatus withVendorGuidance(VendorGuidance vendorGuidance) {
+        this.vendorGuidance = vendorGuidance.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     * 
+     * @param vendorGuidanceMessage
+     *        A message that communicates details about the vendor guidance state of the component version. This message
+     *        communicates why a component version is discontinued or deleted.
+     */
+
+    public void setVendorGuidanceMessage(String vendorGuidanceMessage) {
+        this.vendorGuidanceMessage = vendorGuidanceMessage;
+    }
+
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     * 
+     * @return A message that communicates details about the vendor guidance state of the component version. This
+     *         message communicates why a component version is discontinued or deleted.
+     */
+
+    public String getVendorGuidanceMessage() {
+        return this.vendorGuidanceMessage;
+    }
+
+    /**
+     * <p>
+     * A message that communicates details about the vendor guidance state of the component version. This message
+     * communicates why a component version is discontinued or deleted.
+     * </p>
+     * 
+     * @param vendorGuidanceMessage
+     *        A message that communicates details about the vendor guidance state of the component version. This message
+     *        communicates why a component version is discontinued or deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CloudComponentStatus withVendorGuidanceMessage(String vendorGuidanceMessage) {
+        setVendorGuidanceMessage(vendorGuidanceMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -245,7 +539,11 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage()).append(",");
         if (getErrors() != null)
-            sb.append("Errors: ").append(getErrors());
+            sb.append("Errors: ").append(getErrors()).append(",");
+        if (getVendorGuidance() != null)
+            sb.append("VendorGuidance: ").append(getVendorGuidance()).append(",");
+        if (getVendorGuidanceMessage() != null)
+            sb.append("VendorGuidanceMessage: ").append(getVendorGuidanceMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -272,6 +570,14 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
             return false;
         if (other.getErrors() != null && other.getErrors().equals(this.getErrors()) == false)
             return false;
+        if (other.getVendorGuidance() == null ^ this.getVendorGuidance() == null)
+            return false;
+        if (other.getVendorGuidance() != null && other.getVendorGuidance().equals(this.getVendorGuidance()) == false)
+            return false;
+        if (other.getVendorGuidanceMessage() == null ^ this.getVendorGuidanceMessage() == null)
+            return false;
+        if (other.getVendorGuidanceMessage() != null && other.getVendorGuidanceMessage().equals(this.getVendorGuidanceMessage()) == false)
+            return false;
         return true;
     }
 
@@ -283,6 +589,8 @@ public class CloudComponentStatus implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getComponentState() == null) ? 0 : getComponentState().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getErrors() == null) ? 0 : getErrors().hashCode());
+        hashCode = prime * hashCode + ((getVendorGuidance() == null) ? 0 : getVendorGuidance().hashCode());
+        hashCode = prime * hashCode + ((getVendorGuidanceMessage() == null) ? 0 : getVendorGuidanceMessage().hashCode());
         return hashCode;
     }
 

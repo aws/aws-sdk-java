@@ -22,7 +22,8 @@ public enum NodeInstanceStatus {
 
     RUNNING("RUNNING"),
     ERROR("ERROR"),
-    NOT_AVAILABLE("NOT_AVAILABLE");
+    NOT_AVAILABLE("NOT_AVAILABLE"),
+    PAUSED("PAUSED");
 
     private String value;
 

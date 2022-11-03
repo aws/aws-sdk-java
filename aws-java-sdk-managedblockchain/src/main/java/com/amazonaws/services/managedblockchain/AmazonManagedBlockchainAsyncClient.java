@@ -35,7 +35,7 @@ import java.util.concurrent.ExecutorService;
  * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Because of fundamental
  * differences between the frameworks, some API actions or data types may only apply in the context of one framework and
  * not the other. For example, actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
- * and <code>DeleteMember</code> do not apply to Ethereum.
+ * and <code>DeleteMember</code> don't apply to Ethereum.
  * </p>
  * <p>
  * The description for each action indicates the framework or frameworks to which it applies. Data types and properties
@@ -86,6 +86,39 @@ public class AmazonManagedBlockchainAsyncClient extends AmazonManagedBlockchainC
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessorResult> createAccessorAsync(CreateAccessorRequest request) {
+
+        return createAccessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessorResult> createAccessorAsync(final CreateAccessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessorRequest, CreateAccessorResult> asyncHandler) {
+        final CreateAccessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessorResult>() {
+            @Override
+            public CreateAccessorResult call() throws Exception {
+                CreateAccessorResult result = null;
+
+                try {
+                    result = executeCreateAccessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -221,6 +254,39 @@ public class AmazonManagedBlockchainAsyncClient extends AmazonManagedBlockchainC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccessorResult> deleteAccessorAsync(DeleteAccessorRequest request) {
+
+        return deleteAccessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessorResult> deleteAccessorAsync(final DeleteAccessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessorRequest, DeleteAccessorResult> asyncHandler) {
+        final DeleteAccessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessorResult>() {
+            @Override
+            public DeleteAccessorResult call() throws Exception {
+                DeleteAccessorResult result = null;
+
+                try {
+                    result = executeDeleteAccessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMemberResult> deleteMemberAsync(DeleteMemberRequest request) {
 
         return deleteMemberAsync(request, null);
@@ -271,6 +337,39 @@ public class AmazonManagedBlockchainAsyncClient extends AmazonManagedBlockchainC
 
                 try {
                     result = executeDeleteNode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessorResult> getAccessorAsync(GetAccessorRequest request) {
+
+        return getAccessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessorResult> getAccessorAsync(final GetAccessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessorRequest, GetAccessorResult> asyncHandler) {
+        final GetAccessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessorResult>() {
+            @Override
+            public GetAccessorResult call() throws Exception {
+                GetAccessorResult result = null;
+
+                try {
+                    result = executeGetAccessor(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -403,6 +502,39 @@ public class AmazonManagedBlockchainAsyncClient extends AmazonManagedBlockchainC
 
                 try {
                     result = executeGetProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessorsResult> listAccessorsAsync(ListAccessorsRequest request) {
+
+        return listAccessorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessorsResult> listAccessorsAsync(final ListAccessorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessorsRequest, ListAccessorsResult> asyncHandler) {
+        final ListAccessorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessorsResult>() {
+            @Override
+            public ListAccessorsResult call() throws Exception {
+                ListAccessorsResult result = null;
+
+                try {
+                    result = executeListAccessors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

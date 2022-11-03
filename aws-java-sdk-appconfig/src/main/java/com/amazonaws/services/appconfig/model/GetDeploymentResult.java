@@ -132,6 +132,14 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.Date completedAt;
+    /**
+     * <p>
+     * A list of extensions that were processed as part of the deployment. The extensions that were previously
+     * associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was
+     * called.
+     * </p>
+     */
+    private java.util.List<AppliedExtension> appliedExtensions;
 
     /**
      * <p>
@@ -928,6 +936,92 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * A list of extensions that were processed as part of the deployment. The extensions that were previously
+     * associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was
+     * called.
+     * </p>
+     * 
+     * @return A list of extensions that were processed as part of the deployment. The extensions that were previously
+     *         associated to the configuration profile, environment, or the application when
+     *         <code>StartDeployment</code> was called.
+     */
+
+    public java.util.List<AppliedExtension> getAppliedExtensions() {
+        return appliedExtensions;
+    }
+
+    /**
+     * <p>
+     * A list of extensions that were processed as part of the deployment. The extensions that were previously
+     * associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was
+     * called.
+     * </p>
+     * 
+     * @param appliedExtensions
+     *        A list of extensions that were processed as part of the deployment. The extensions that were previously
+     *        associated to the configuration profile, environment, or the application when <code>StartDeployment</code>
+     *        was called.
+     */
+
+    public void setAppliedExtensions(java.util.Collection<AppliedExtension> appliedExtensions) {
+        if (appliedExtensions == null) {
+            this.appliedExtensions = null;
+            return;
+        }
+
+        this.appliedExtensions = new java.util.ArrayList<AppliedExtension>(appliedExtensions);
+    }
+
+    /**
+     * <p>
+     * A list of extensions that were processed as part of the deployment. The extensions that were previously
+     * associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was
+     * called.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAppliedExtensions(java.util.Collection)} or {@link #withAppliedExtensions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param appliedExtensions
+     *        A list of extensions that were processed as part of the deployment. The extensions that were previously
+     *        associated to the configuration profile, environment, or the application when <code>StartDeployment</code>
+     *        was called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withAppliedExtensions(AppliedExtension... appliedExtensions) {
+        if (this.appliedExtensions == null) {
+            setAppliedExtensions(new java.util.ArrayList<AppliedExtension>(appliedExtensions.length));
+        }
+        for (AppliedExtension ele : appliedExtensions) {
+            this.appliedExtensions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of extensions that were processed as part of the deployment. The extensions that were previously
+     * associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was
+     * called.
+     * </p>
+     * 
+     * @param appliedExtensions
+     *        A list of extensions that were processed as part of the deployment. The extensions that were previously
+     *        associated to the configuration profile, environment, or the application when <code>StartDeployment</code>
+     *        was called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withAppliedExtensions(java.util.Collection<AppliedExtension> appliedExtensions) {
+        setAppliedExtensions(appliedExtensions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -974,7 +1068,9 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: ").append(getCompletedAt());
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
+        if (getAppliedExtensions() != null)
+            sb.append("AppliedExtensions: ").append(getAppliedExtensions());
         sb.append("}");
         return sb.toString();
     }
@@ -1061,6 +1157,10 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getCompletedAt() != null && other.getCompletedAt().equals(this.getCompletedAt()) == false)
             return false;
+        if (other.getAppliedExtensions() == null ^ this.getAppliedExtensions() == null)
+            return false;
+        if (other.getAppliedExtensions() != null && other.getAppliedExtensions().equals(this.getAppliedExtensions()) == false)
+            return false;
         return true;
     }
 
@@ -1087,6 +1187,7 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getPercentageComplete() == null) ? 0 : getPercentageComplete().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
+        hashCode = prime * hashCode + ((getAppliedExtensions() == null) ? 0 : getAppliedExtensions().hashCode());
         return hashCode;
     }
 

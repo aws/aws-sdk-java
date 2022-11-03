@@ -37,7 +37,7 @@ public class AwsS3BucketBucketVersioningConfiguration implements Serializable, C
     private Boolean isMfaDeleteEnabled;
     /**
      * <p>
-     * The versioning status of the S3 bucket.
+     * The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      * </p>
      */
     private String status;
@@ -104,11 +104,11 @@ public class AwsS3BucketBucketVersioningConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The versioning status of the S3 bucket.
+     * The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      * </p>
      * 
      * @param status
-     *        The versioning status of the S3 bucket.
+     *        The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      */
 
     public void setStatus(String status) {
@@ -117,10 +117,10 @@ public class AwsS3BucketBucketVersioningConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The versioning status of the S3 bucket.
+     * The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      * </p>
      * 
-     * @return The versioning status of the S3 bucket.
+     * @return The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      */
 
     public String getStatus() {
@@ -129,11 +129,11 @@ public class AwsS3BucketBucketVersioningConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The versioning status of the S3 bucket.
+     * The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      * </p>
      * 
      * @param status
-     *        The versioning status of the S3 bucket.
+     *        The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

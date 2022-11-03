@@ -27,61 +27,72 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     * Specifies the ARN of the object storage system location that you're updating.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.
+     * Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      */
     private Integer serverPort;
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     * <code>HTTPS</code>.
+     * Specifies the protocol that your object storage server uses to communicate.
      * </p>
      */
     private String serverProtocol;
     /**
      * <p>
-     * The subdirectory in the self-managed object storage server that is used to read data from.
+     * Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies
+     * objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.
      * </p>
      */
     private String subdirectory;
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the access key (for example, a user name) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      */
     private String accessKey;
     /**
      * <p>
-     * Optional. The secret key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the secret key (for example, a password) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      */
     private String secretKey;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.
      * </p>
      */
     private java.util.List<String> agentArns;
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * </p>
+     */
+    private java.nio.ByteBuffer serverCertificate;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     * Specifies the ARN of the object storage system location that you're updating.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     *        Specifies the ARN of the object storage system location that you're updating.
      */
 
     public void setLocationArn(String locationArn) {
@@ -90,10 +101,10 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     * Specifies the ARN of the object storage system location that you're updating.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     * @return Specifies the ARN of the object storage system location that you're updating.
      */
 
     public String getLocationArn() {
@@ -102,11 +113,11 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     * Specifies the ARN of the object storage system location that you're updating.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.
+     *        Specifies the ARN of the object storage system location that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,15 +128,12 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.
+     * Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      * 
      * @param serverPort
-     *        The port that your self-managed object storage server accepts inbound network traffic on. The server port
-     *        is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed
-     *        object storage server requires one.
+     *        Specifies the port that your object storage server accepts inbound network traffic on (for example, port
+     *        443).
      */
 
     public void setServerPort(Integer serverPort) {
@@ -134,14 +142,11 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.
+     * Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      * 
-     * @return The port that your self-managed object storage server accepts inbound network traffic on. The server port
-     *         is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed
-     *         object storage server requires one.
+     * @return Specifies the port that your object storage server accepts inbound network traffic on (for example, port
+     *         443).
      */
 
     public Integer getServerPort() {
@@ -150,15 +155,12 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.
+     * Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      * 
      * @param serverPort
-     *        The port that your self-managed object storage server accepts inbound network traffic on. The server port
-     *        is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed
-     *        object storage server requires one.
+     *        Specifies the port that your object storage server accepts inbound network traffic on (for example, port
+     *        443).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,13 +171,11 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     * <code>HTTPS</code>.
+     * Specifies the protocol that your object storage server uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     *        <code>HTTPS</code>.
+     *        Specifies the protocol that your object storage server uses to communicate.
      * @see ObjectStorageServerProtocol
      */
 
@@ -185,12 +185,10 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     * <code>HTTPS</code>.
+     * Specifies the protocol that your object storage server uses to communicate.
      * </p>
      * 
-     * @return The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     *         <code>HTTPS</code>.
+     * @return Specifies the protocol that your object storage server uses to communicate.
      * @see ObjectStorageServerProtocol
      */
 
@@ -200,13 +198,11 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     * <code>HTTPS</code>.
+     * Specifies the protocol that your object storage server uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     *        <code>HTTPS</code>.
+     *        Specifies the protocol that your object storage server uses to communicate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectStorageServerProtocol
      */
@@ -218,13 +214,11 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     * <code>HTTPS</code>.
+     * Specifies the protocol that your object storage server uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or
-     *        <code>HTTPS</code>.
+     *        Specifies the protocol that your object storage server uses to communicate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectStorageServerProtocol
      */
@@ -236,11 +230,14 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The subdirectory in the self-managed object storage server that is used to read data from.
+     * Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies
+     * objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.
      * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the self-managed object storage server that is used to read data from.
+     *        Specifies the object prefix for your object storage server. If this is a source location, DataSync only
+     *        copies objects with this prefix. If this is a destination location, DataSync writes all objects with this
+     *        prefix.
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -249,10 +246,13 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The subdirectory in the self-managed object storage server that is used to read data from.
+     * Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies
+     * objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.
      * </p>
      * 
-     * @return The subdirectory in the self-managed object storage server that is used to read data from.
+     * @return Specifies the object prefix for your object storage server. If this is a source location, DataSync only
+     *         copies objects with this prefix. If this is a destination location, DataSync writes all objects with this
+     *         prefix.
      */
 
     public String getSubdirectory() {
@@ -261,11 +261,14 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The subdirectory in the self-managed object storage server that is used to read data from.
+     * Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies
+     * objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.
      * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the self-managed object storage server that is used to read data from.
+     *        Specifies the object prefix for your object storage server. If this is a source location, DataSync only
+     *        copies objects with this prefix. If this is a destination location, DataSync writes all objects with this
+     *        prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,15 +279,13 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the access key (for example, a user name) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      * 
      * @param accessKey
-     *        Optional. The access key is used if credentials are required to access the self-managed object storage
-     *        server. If your object storage requires a user name and password to authenticate, use
-     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     *        Specifies the access key (for example, a user name) if credentials are required to authenticate with the
+     *        object storage server.
      */
 
     public void setAccessKey(String accessKey) {
@@ -293,14 +294,12 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the access key (for example, a user name) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      * 
-     * @return Optional. The access key is used if credentials are required to access the self-managed object storage
-     *         server. If your object storage requires a user name and password to authenticate, use
-     *         <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     * @return Specifies the access key (for example, a user name) if credentials are required to authenticate with the
+     *         object storage server.
      */
 
     public String getAccessKey() {
@@ -309,15 +308,13 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the access key (for example, a user name) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      * 
      * @param accessKey
-     *        Optional. The access key is used if credentials are required to access the self-managed object storage
-     *        server. If your object storage requires a user name and password to authenticate, use
-     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     *        Specifies the access key (for example, a user name) if credentials are required to authenticate with the
+     *        object storage server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,15 +325,13 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Optional. The secret key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the secret key (for example, a password) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      * 
      * @param secretKey
-     *        Optional. The secret key is used if credentials are required to access the self-managed object storage
-     *        server. If your object storage requires a user name and password to authenticate, use
-     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     *        Specifies the secret key (for example, a password) if credentials are required to authenticate with the
+     *        object storage server.
      */
 
     public void setSecretKey(String secretKey) {
@@ -345,14 +340,12 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Optional. The secret key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the secret key (for example, a password) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      * 
-     * @return Optional. The secret key is used if credentials are required to access the self-managed object storage
-     *         server. If your object storage requires a user name and password to authenticate, use
-     *         <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     * @return Specifies the secret key (for example, a password) if credentials are required to authenticate with the
+     *         object storage server.
      */
 
     public String getSecretKey() {
@@ -361,15 +354,13 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Optional. The secret key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * Specifies the secret key (for example, a password) if credentials are required to authenticate with the object
+     * storage server.
      * </p>
      * 
      * @param secretKey
-     *        Optional. The secret key is used if credentials are required to access the self-managed object storage
-     *        server. If your object storage requires a user name and password to authenticate, use
-     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     *        Specifies the secret key (for example, a password) if credentials are required to authenticate with the
+     *        object storage server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,10 +371,10 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
+     * @return Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your
      *         location.
      */
 
@@ -393,11 +384,11 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
+     *        Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your
      *        location.
      */
 
@@ -412,7 +403,7 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -421,7 +412,7 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
+     *        Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your
      *        location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -438,17 +429,135 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
+     *        Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your
      *        location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateLocationObjectStorageRequest withAgentArns(java.util.Collection<String> agentArns) {
         setAgentArns(agentArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     *        (before Base64 encoding).</p>
+     *        <p>
+     *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     *        </p>
+     *        <p>
+     *        Updating the certificate doesn't interfere with tasks that you have in progress.
+     */
+
+    public void setServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        this.serverCertificate = serverCertificate;
+    }
+
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
+     * </p>
+     * 
+     * @return Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     *         certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     *         <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768
+     *         bytes (before Base64 encoding).</p>
+     *         <p>
+     *         To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     *         </p>
+     *         <p>
+     *         Updating the certificate doesn't interfere with tasks that you have in progress.
+     */
+
+    public java.nio.ByteBuffer getServerCertificate() {
+        return this.serverCertificate;
+    }
+
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     *        (before Base64 encoding).</p>
+     *        <p>
+     *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     *        </p>
+     *        <p>
+     *        Updating the certificate doesn't interfere with tasks that you have in progress.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLocationObjectStorageRequest withServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        setServerCertificate(serverCertificate);
         return this;
     }
 
@@ -477,7 +586,9 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
         if (getSecretKey() != null)
             sb.append("SecretKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getAgentArns() != null)
-            sb.append("AgentArns: ").append(getAgentArns());
+            sb.append("AgentArns: ").append(getAgentArns()).append(",");
+        if (getServerCertificate() != null)
+            sb.append("ServerCertificate: ").append(getServerCertificate());
         sb.append("}");
         return sb.toString();
     }
@@ -520,6 +631,10 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getAgentArns() != null && other.getAgentArns().equals(this.getAgentArns()) == false)
             return false;
+        if (other.getServerCertificate() == null ^ this.getServerCertificate() == null)
+            return false;
+        if (other.getServerCertificate() != null && other.getServerCertificate().equals(this.getServerCertificate()) == false)
+            return false;
         return true;
     }
 
@@ -535,6 +650,7 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getAccessKey() == null) ? 0 : getAccessKey().hashCode());
         hashCode = prime * hashCode + ((getSecretKey() == null) ? 0 : getSecretKey().hashCode());
         hashCode = prime * hashCode + ((getAgentArns() == null) ? 0 : getAgentArns().hashCode());
+        hashCode = prime * hashCode + ((getServerCertificate() == null) ? 0 : getServerCertificate().hashCode());
         return hashCode;
     }
 

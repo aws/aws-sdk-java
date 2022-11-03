@@ -132,6 +132,10 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                     context.nextToken();
                     remoteAccessSession.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("vpcConfig", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

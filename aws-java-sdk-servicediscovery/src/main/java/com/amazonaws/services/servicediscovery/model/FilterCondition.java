@@ -22,7 +22,8 @@ public enum FilterCondition {
 
     EQ("EQ"),
     IN("IN"),
-    BETWEEN("BETWEEN");
+    BETWEEN("BETWEEN"),
+    BEGINS_WITH("BEGINS_WITH");
 
     private String value;
 

@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** A label that consists of a customer-defined key and an optional value. */
+    /**
+     * <p>
+     * A label that consists of a customer-defined key and an optional value.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
+     * <p>
      * A label that consists of a customer-defined key and an optional value.
+     * </p>
      * 
      * @return A label that consists of a customer-defined key and an optional value.
      */
@@ -37,7 +43,9 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * A label that consists of a customer-defined key and an optional value.
+     * </p>
      * 
      * @param tags
      *        A label that consists of a customer-defined key and an optional value.
@@ -48,7 +56,9 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * A label that consists of a customer-defined key and an optional value.
+     * </p>
      * 
      * @param tags
      *        A label that consists of a customer-defined key and an optional value.

@@ -368,13 +368,13 @@ public class CreateBrowserSettingsRequest extends com.amazonaws.AmazonWebService
         if (getAdditionalEncryptionContext() != null)
             sb.append("AdditionalEncryptionContext: ").append(getAdditionalEncryptionContext()).append(",");
         if (getBrowserPolicy() != null)
-            sb.append("BrowserPolicy: ").append(getBrowserPolicy()).append(",");
+            sb.append("BrowserPolicy: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getCustomerManagedKey() != null)
             sb.append("CustomerManagedKey: ").append(getCustomerManagedKey()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

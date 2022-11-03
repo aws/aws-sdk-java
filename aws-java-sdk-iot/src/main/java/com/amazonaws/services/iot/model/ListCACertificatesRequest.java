@@ -43,6 +43,12 @@ public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean ascendingOrder;
+    /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     */
+    private String templateName;
 
     /**
      * <p>
@@ -177,6 +183,46 @@ public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the provisioning template.
+     */
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     * 
+     * @return The name of the provisioning template.
+     */
+
+    public String getTemplateName() {
+        return this.templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning template.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the provisioning template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCACertificatesRequest withTemplateName(String templateName) {
+        setTemplateName(templateName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -193,7 +239,9 @@ public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getAscendingOrder() != null)
-            sb.append("AscendingOrder: ").append(getAscendingOrder());
+            sb.append("AscendingOrder: ").append(getAscendingOrder()).append(",");
+        if (getTemplateName() != null)
+            sb.append("TemplateName: ").append(getTemplateName());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +268,10 @@ public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAscendingOrder() != null && other.getAscendingOrder().equals(this.getAscendingOrder()) == false)
             return false;
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null)
+            return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
+            return false;
         return true;
     }
 
@@ -231,6 +283,7 @@ public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getAscendingOrder() == null) ? 0 : getAscendingOrder().hashCode());
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         return hashCode;
     }
 

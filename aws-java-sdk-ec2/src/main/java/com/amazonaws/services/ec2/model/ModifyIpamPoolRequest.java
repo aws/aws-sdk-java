@@ -83,8 +83,8 @@ public class ModifyIpamPoolRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     * href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RequestIpamResourceTag> addAllocationResourceTags;
@@ -496,13 +496,13 @@ public class ModifyIpamPoolRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     * href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @return Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     *         href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     *         Guide</i>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in
+     *         the <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public java.util.List<RequestIpamResourceTag> getAddAllocationResourceTags() {
@@ -515,14 +515,14 @@ public class ModifyIpamPoolRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     * href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param addAllocationResourceTags
      *        Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     *        href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     *        <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public void setAddAllocationResourceTags(java.util.Collection<RequestIpamResourceTag> addAllocationResourceTags) {
@@ -537,8 +537,8 @@ public class ModifyIpamPoolRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     * href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -548,8 +548,8 @@ public class ModifyIpamPoolRequest extends AmazonWebServiceRequest implements Se
      * 
      * @param addAllocationResourceTags
      *        Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     *        href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     *        <i>Amazon VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,14 +566,14 @@ public class ModifyIpamPoolRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     * href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param addAllocationResourceTags
      *        Add tag allocation rules to a pool. For more information about allocation rules, see <a
-     *        href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the
+     *        <i>Amazon VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

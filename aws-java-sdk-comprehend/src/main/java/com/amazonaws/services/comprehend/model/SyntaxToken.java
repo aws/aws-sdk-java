@@ -56,7 +56,9 @@ public class SyntaxToken implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was
-     * correctly identified. For more information, see <a>how-syntax</a>.
+     * correctly identified. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      */
     private PartOfSpeechTag partOfSpeech;
@@ -224,12 +226,16 @@ public class SyntaxToken implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was
-     * correctly identified. For more information, see <a>how-syntax</a>.
+     * correctly identified. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * 
      * @param partOfSpeech
      *        Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of
-     *        speech was correctly identified. For more information, see <a>how-syntax</a>.
+     *        speech was correctly identified. For more information, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *        Developer Guide.
      */
 
     public void setPartOfSpeech(PartOfSpeechTag partOfSpeech) {
@@ -239,11 +245,15 @@ public class SyntaxToken implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was
-     * correctly identified. For more information, see <a>how-syntax</a>.
+     * correctly identified. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * 
      * @return Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of
-     *         speech was correctly identified. For more information, see <a>how-syntax</a>.
+     *         speech was correctly identified. For more information, see <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *         Developer Guide.
      */
 
     public PartOfSpeechTag getPartOfSpeech() {
@@ -253,12 +263,16 @@ public class SyntaxToken implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was
-     * correctly identified. For more information, see <a>how-syntax</a>.
+     * correctly identified. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * 
      * @param partOfSpeech
      *        Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of
-     *        speech was correctly identified. For more information, see <a>how-syntax</a>.
+     *        speech was correctly identified. For more information, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,8 +43,8 @@ public class TargetInstances implements Serializable, Cloneable, StructuredPojo 
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroups;
     /**
      * <p>
-     * Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be
-     * included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
+     * Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it
+     * to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.
      * </p>
      */
@@ -210,15 +210,15 @@ public class TargetInstances implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be
-     * included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
+     * Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it
+     * to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about the groups of EC2 instance tags that an instance must be identified by in order for it
-     *        to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call
-     *        as <code>tagFilters</code>.
+     *        Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order
+     *        for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the
+     *        same call as <code>tagFilters</code>.
      */
 
     public void setEc2TagSet(EC2TagSet ec2TagSet) {
@@ -227,14 +227,14 @@ public class TargetInstances implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be
-     * included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
+     * Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it
+     * to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.
      * </p>
      * 
-     * @return Information about the groups of EC2 instance tags that an instance must be identified by in order for it
-     *         to be included in the replacement environment for a blue/green deployment. Cannot be used in the same
-     *         call as <code>tagFilters</code>.
+     * @return Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order
+     *         for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the
+     *         same call as <code>tagFilters</code>.
      */
 
     public EC2TagSet getEc2TagSet() {
@@ -243,15 +243,15 @@ public class TargetInstances implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be
-     * included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
+     * Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it
+     * to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about the groups of EC2 instance tags that an instance must be identified by in order for it
-     *        to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call
-     *        as <code>tagFilters</code>.
+     *        Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order
+     *        for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the
+     *        same call as <code>tagFilters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

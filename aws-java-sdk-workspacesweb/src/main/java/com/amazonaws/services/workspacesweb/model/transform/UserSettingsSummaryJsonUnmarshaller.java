@@ -52,9 +52,17 @@ public class UserSettingsSummaryJsonUnmarshaller implements Unmarshaller<UserSet
                     context.nextToken();
                     userSettingsSummary.setCopyAllowed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("disconnectTimeoutInMinutes", targetDepth)) {
+                    context.nextToken();
+                    userSettingsSummary.setDisconnectTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("downloadAllowed", targetDepth)) {
                     context.nextToken();
                     userSettingsSummary.setDownloadAllowed(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("idleDisconnectTimeoutInMinutes", targetDepth)) {
+                    context.nextToken();
+                    userSettingsSummary.setIdleDisconnectTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pasteAllowed", targetDepth)) {
                     context.nextToken();

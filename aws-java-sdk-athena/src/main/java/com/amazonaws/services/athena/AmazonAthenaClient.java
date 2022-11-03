@@ -166,6 +166,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * </p>
      * 
      * @param batchGetNamedQueryRequest
+     *        Contains an array of named query IDs.
      * @return Result of the BatchGetNamedQuery operation returned by the service.
      * @throws InternalServerException
      *         Indicates a platform issue, which may be due to a transient condition or outage.
@@ -222,6 +223,71 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of
+     * prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared
+     * statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in
+     * <code>UnprocessedPreparedStatementNames</code>.
+     * </p>
+     * 
+     * @param batchGetPreparedStatementRequest
+     * @return Result of the BatchGetPreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.BatchGetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetPreparedStatementResult batchGetPreparedStatement(BatchGetPreparedStatementRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetPreparedStatement(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetPreparedStatementResult executeBatchGetPreparedStatement(BatchGetPreparedStatementRequest batchGetPreparedStatementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetPreparedStatementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetPreparedStatementRequest> request = null;
+        Response<BatchGetPreparedStatementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetPreparedStatementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetPreparedStatementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetPreparedStatement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetPreparedStatementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetPreparedStatementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an
      * array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To
      * get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from
@@ -229,6 +295,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * </p>
      * 
      * @param batchGetQueryExecutionRequest
+     *        Contains an array of query execution IDs.
      * @return Result of the BatchGetQueryExecution operation returned by the service.
      * @throws InternalServerException
      *         Indicates a platform issue, which may be due to a transient condition or outage.
@@ -1168,6 +1235,70 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns query execution runtime statistics related to a single execution of a query if you have access to the
+     * workgroup in which the query ran. The query execution runtime statistics is returned only when
+     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state.
+     * </p>
+     * 
+     * @param getQueryRuntimeStatisticsRequest
+     * @return Result of the GetQueryRuntimeStatistics operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.GetQueryRuntimeStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetQueryRuntimeStatisticsResult getQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetQueryRuntimeStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetQueryRuntimeStatisticsResult executeGetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest getQueryRuntimeStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getQueryRuntimeStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetQueryRuntimeStatisticsRequest> request = null;
+        Response<GetQueryRuntimeStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetQueryRuntimeStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getQueryRuntimeStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryRuntimeStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetQueryRuntimeStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetQueryRuntimeStatisticsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns table metadata for the specified catalog, database, and table.
      * </p>
      * 
@@ -1545,7 +1676,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Lists the prepared statements in the specfied workgroup.
+     * Lists the prepared statements in the specified workgroup.
      * </p>
      * 
      * @param listPreparedStatementsRequest

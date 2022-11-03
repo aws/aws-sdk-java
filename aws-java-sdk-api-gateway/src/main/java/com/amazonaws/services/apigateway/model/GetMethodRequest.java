@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to describe an existing <a>Method</a> resource.
+ * Request to describe an existing Method resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,30 +27,30 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * The Resource identifier for the Method resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * [Required] Specifies the method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      */
     private String httpMethod;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * The Resource identifier for the Method resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        The Resource identifier for the Method resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -99,10 +99,10 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * The Resource identifier for the Method resource.
      * </p>
      * 
-     * @return [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return The Resource identifier for the Method resource.
      */
 
     public String getResourceId() {
@@ -111,11 +111,11 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * The Resource identifier for the Method resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        The Resource identifier for the Method resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] Specifies the method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] Specifies the method request's HTTP method type.
+     *        Specifies the method request's HTTP method type.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -139,10 +139,10 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] Specifies the method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      * 
-     * @return [Required] Specifies the method request's HTTP method type.
+     * @return Specifies the method request's HTTP method type.
      */
 
     public String getHttpMethod() {
@@ -151,11 +151,11 @@ public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] Specifies the method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] Specifies the method request's HTTP method type.
+     *        Specifies the method request's HTTP method type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

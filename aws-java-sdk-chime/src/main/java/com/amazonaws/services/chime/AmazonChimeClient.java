@@ -11518,8 +11518,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
-     * hours, for the Amazon Kinesis data.
+     * specifies whether media streaming is enabled for sending to Kinesis. It also sets the retention period, in hours,
+     * for the Amazon Kinesis data.
      * </p>
      * 
      * @param putVoiceConnectorStreamingConfigurationRequest
@@ -14449,6 +14449,77 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<UpdateVoiceConnectorGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateVoiceConnectorGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated
+     * addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps
+     * ensure that addresses are routed to the appropriate Public Safety Answering Point.
+     * </p>
+     * 
+     * @param validateE911AddressRequest
+     * @return Result of the ValidateE911Address operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ValidateE911Address
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ValidateE911AddressResult validateE911Address(ValidateE911AddressRequest request) {
+        request = beforeClientExecution(request);
+        return executeValidateE911Address(request);
+    }
+
+    @SdkInternalApi
+    final ValidateE911AddressResult executeValidateE911Address(ValidateE911AddressRequest validateE911AddressRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(validateE911AddressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ValidateE911AddressRequest> request = null;
+        Response<ValidateE911AddressResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ValidateE911AddressRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(validateE911AddressRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateE911Address");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ValidateE911AddressResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ValidateE911AddressResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -52,6 +52,12 @@ public class CreateTransitGatewayPeeringAttachmentRequest extends AmazonWebServi
     private String peerRegion;
     /**
      * <p>
+     * Requests a transit gateway peering attachment.
+     * </p>
+     */
+    private CreateTransitGatewayPeeringAttachmentRequestOptions options;
+    /**
+     * <p>
      * The tags to apply to the transit gateway peering attachment.
      * </p>
      */
@@ -219,6 +225,46 @@ public class CreateTransitGatewayPeeringAttachmentRequest extends AmazonWebServi
 
     /**
      * <p>
+     * Requests a transit gateway peering attachment.
+     * </p>
+     * 
+     * @param options
+     *        Requests a transit gateway peering attachment.
+     */
+
+    public void setOptions(CreateTransitGatewayPeeringAttachmentRequestOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * Requests a transit gateway peering attachment.
+     * </p>
+     * 
+     * @return Requests a transit gateway peering attachment.
+     */
+
+    public CreateTransitGatewayPeeringAttachmentRequestOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * Requests a transit gateway peering attachment.
+     * </p>
+     * 
+     * @param options
+     *        Requests a transit gateway peering attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTransitGatewayPeeringAttachmentRequest withOptions(CreateTransitGatewayPeeringAttachmentRequestOptions options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags to apply to the transit gateway peering attachment.
      * </p>
      * 
@@ -321,6 +367,8 @@ public class CreateTransitGatewayPeeringAttachmentRequest extends AmazonWebServi
             sb.append("PeerAccountId: ").append(getPeerAccountId()).append(",");
         if (getPeerRegion() != null)
             sb.append("PeerRegion: ").append(getPeerRegion()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
@@ -353,6 +401,10 @@ public class CreateTransitGatewayPeeringAttachmentRequest extends AmazonWebServi
             return false;
         if (other.getPeerRegion() != null && other.getPeerRegion().equals(this.getPeerRegion()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -369,6 +421,7 @@ public class CreateTransitGatewayPeeringAttachmentRequest extends AmazonWebServi
         hashCode = prime * hashCode + ((getPeerTransitGatewayId() == null) ? 0 : getPeerTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getPeerAccountId() == null) ? 0 : getPeerAccountId().hashCode());
         hashCode = prime * hashCode + ((getPeerRegion() == null) ? 0 : getPeerRegion().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }

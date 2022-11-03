@@ -30,8 +30,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package that this package depends on. The package component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -46,7 +46,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
@@ -76,8 +77,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package that this package depends on. The package component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -92,14 +93,15 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        The namespace of the package that this package depends on. The package component that specifies its
+     *        namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -113,7 +115,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *        a namespace.
      *        </p>
      *        </li>
      */
@@ -124,8 +127,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package that this package depends on. The package component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -140,13 +143,14 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *         example: </p>
+     * @return The namespace of the package that this package depends on. The package component that specifies its
+     *         namespace depends on its type. For example:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -160,7 +164,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *         a namespace.
      *         </p>
      *         </li>
      */
@@ -171,8 +176,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package that this package depends on. The package component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -187,14 +192,15 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
+     * namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        The namespace of the package that this package depends on. The package component that specifies its
+     *        namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -208,7 +214,8 @@ public class PackageDependency implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
+     *        a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

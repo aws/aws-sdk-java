@@ -31,6 +31,8 @@ public class RegistrationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateBody").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateName").build();
 
     private static final RegistrationConfigMarshaller instance = new RegistrationConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class RegistrationConfigMarshaller {
         try {
             protocolMarshaller.marshall(registrationConfig.getTemplateBody(), TEMPLATEBODY_BINDING);
             protocolMarshaller.marshall(registrationConfig.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(registrationConfig.getTemplateName(), TEMPLATENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -36,6 +36,8 @@ public class ListAssetsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<List> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("StatusFilter").build();
 
     private static final ListAssetsRequestMarshaller instance = new ListAssetsRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class ListAssetsRequestMarshaller {
             protocolMarshaller.marshall(listAssetsRequest.getHostIdFilter(), HOSTIDFILTER_BINDING);
             protocolMarshaller.marshall(listAssetsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAssetsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAssetsRequest.getStatusFilter(), STATUSFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,9 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to
- * retrieve all your Amazon S3 locations, you can use <code>ListLocations</code> with filter name
- * <code>LocationType S3</code> and <code>Operator Equals</code>.
+ * Narrow down the list of resources returned by <code>ListLocations</code>. For example, to see all your Amazon S3
+ * locations, create a filter using <code>"Name": "LocationType"</code>, <code>"Operator": "Equals"</code>, and
+ * <code>"Values": "S3"</code>.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering resources</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/LocationFilter" target="_top">AWS API
@@ -46,9 +50,6 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
-     * For more about API filtering operators, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and
-     * ListLocations</a>.
      * </p>
      */
     private String operator;
@@ -193,16 +194,11 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
-     * For more about API filtering operators, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and
-     * ListLocations</a>.
      * </p>
      * 
      * @param operator
      *        The operator that is used to compare filter values (for example, <code>Equals</code> or
-     *        <code>Contains</code>). For more about API filtering operators, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for
-     *        ListTasks and ListLocations</a>.
+     *        <code>Contains</code>).
      * @see Operator
      */
 
@@ -213,15 +209,10 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
-     * For more about API filtering operators, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and
-     * ListLocations</a>.
      * </p>
      * 
      * @return The operator that is used to compare filter values (for example, <code>Equals</code> or
-     *         <code>Contains</code>). For more about API filtering operators, see <a
-     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for
-     *         ListTasks and ListLocations</a>.
+     *         <code>Contains</code>).
      * @see Operator
      */
 
@@ -232,16 +223,11 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
-     * For more about API filtering operators, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and
-     * ListLocations</a>.
      * </p>
      * 
      * @param operator
      *        The operator that is used to compare filter values (for example, <code>Equals</code> or
-     *        <code>Contains</code>). For more about API filtering operators, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for
-     *        ListTasks and ListLocations</a>.
+     *        <code>Contains</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */
@@ -254,16 +240,11 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
-     * For more about API filtering operators, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and
-     * ListLocations</a>.
      * </p>
      * 
      * @param operator
      *        The operator that is used to compare filter values (for example, <code>Equals</code> or
-     *        <code>Contains</code>). For more about API filtering operators, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for
-     *        ListTasks and ListLocations</a>.
+     *        <code>Contains</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */

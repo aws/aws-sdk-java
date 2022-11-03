@@ -40,6 +40,8 @@ public class ManagedRuleGroupStatementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScopeDownStatement").build();
     private static final MarshallingInfo<List> MANAGEDRULEGROUPCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedRuleGroupConfigs").build();
+    private static final MarshallingInfo<List> RULEACTIONOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleActionOverrides").build();
 
     private static final ManagedRuleGroupStatementMarshaller instance = new ManagedRuleGroupStatementMarshaller();
 
@@ -63,6 +65,7 @@ public class ManagedRuleGroupStatementMarshaller {
             protocolMarshaller.marshall(managedRuleGroupStatement.getExcludedRules(), EXCLUDEDRULES_BINDING);
             protocolMarshaller.marshall(managedRuleGroupStatement.getScopeDownStatement(), SCOPEDOWNSTATEMENT_BINDING);
             protocolMarshaller.marshall(managedRuleGroupStatement.getManagedRuleGroupConfigs(), MANAGEDRULEGROUPCONFIGS_BINDING);
+            protocolMarshaller.marshall(managedRuleGroupStatement.getRuleActionOverrides(), RULEACTIONOVERRIDES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

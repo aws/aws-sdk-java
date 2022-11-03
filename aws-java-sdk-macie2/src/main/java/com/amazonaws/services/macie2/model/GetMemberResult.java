@@ -69,8 +69,8 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String relationshipStatus;
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account
-     * in Amazon Macie.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon
+     * Macie.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -395,12 +395,12 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account
-     * in Amazon Macie.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon
+     * Macie.
      * </p>
      * 
-     * @return A map of key-value pairs that identifies the tags (keys and values) that are associated with the member
-     *         account in Amazon Macie.
+     * @return A map of key-value pairs that specifies which tags (keys and values) are associated with the account in
+     *         Amazon Macie.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -409,13 +409,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account
-     * in Amazon Macie.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon
+     * Macie.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the member
-     *        account in Amazon Macie.
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the account in
+     *        Amazon Macie.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -424,13 +424,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account
-     * in Amazon Macie.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon
+     * Macie.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the member
-     *        account in Amazon Macie.
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the account in
+     *        Amazon Macie.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -93,6 +93,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for egress
+     * rules, or <code>false</code> for ingress rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
@@ -219,6 +225,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for egress
+     * rules, or <code>false</code> for ingress rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
@@ -315,6 +327,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         <p>
      *         <code>entry.rule-action</code> - Allows or denies the matching traffic (<code>allow</code> |
      *         <code>deny</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for
+     *         egress rules, or <code>false</code> for ingress rules.
      *         </p>
      *         </li>
      *         <li>
@@ -428,6 +446,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for egress
+     * rules, or <code>false</code> for ingress rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
@@ -525,6 +549,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        <code>entry.rule-action</code> - Allows or denies the matching traffic (<code>allow</code> |
      *        <code>deny</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for
+     *        egress rules, or <code>false</code> for ingress rules.
      *        </p>
      *        </li>
      *        <li>
@@ -640,6 +670,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for egress
+     * rules, or <code>false</code> for ingress rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
@@ -742,6 +778,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        <code>entry.rule-action</code> - Allows or denies the matching traffic (<code>allow</code> |
      *        <code>deny</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for
+     *        egress rules, or <code>false</code> for ingress rules.
      *        </p>
      *        </li>
      *        <li>
@@ -859,6 +901,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for egress
+     * rules, or <code>false</code> for ingress rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
@@ -956,6 +1004,12 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        <code>entry.rule-action</code> - Allows or denies the matching traffic (<code>allow</code> |
      *        <code>deny</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code> for
+     *        egress rules, or <code>false</code> for ingress rules.
      *        </p>
      *        </li>
      *        <li>

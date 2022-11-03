@@ -56,6 +56,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setActiveLaunchCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("appConfigResource", targetDepth)) {
+                    context.nextToken();
+                    project.setAppConfigResource(ProjectAppConfigResourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     project.setArn(context.getUnmarshaller(String.class).unmarshall(context));

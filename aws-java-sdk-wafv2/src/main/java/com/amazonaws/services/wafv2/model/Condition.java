@@ -30,24 +30,29 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single action condition.
+     * A single action condition. This is the action setting that a log record must contain in order to meet the
+     * condition.
      * </p>
      */
     private ActionCondition actionCondition;
     /**
      * <p>
-     * A single label name condition.
+     * A single label name condition. This is the fully qualified label name that a log record must contain in order to
+     * meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix
+     * identifies the rule group or web ACL context of the rule that added the label.
      * </p>
      */
     private LabelNameCondition labelNameCondition;
 
     /**
      * <p>
-     * A single action condition.
+     * A single action condition. This is the action setting that a log record must contain in order to meet the
+     * condition.
      * </p>
      * 
      * @param actionCondition
-     *        A single action condition.
+     *        A single action condition. This is the action setting that a log record must contain in order to meet the
+     *        condition.
      */
 
     public void setActionCondition(ActionCondition actionCondition) {
@@ -56,10 +61,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single action condition.
+     * A single action condition. This is the action setting that a log record must contain in order to meet the
+     * condition.
      * </p>
      * 
-     * @return A single action condition.
+     * @return A single action condition. This is the action setting that a log record must contain in order to meet the
+     *         condition.
      */
 
     public ActionCondition getActionCondition() {
@@ -68,11 +75,13 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single action condition.
+     * A single action condition. This is the action setting that a log record must contain in order to meet the
+     * condition.
      * </p>
      * 
      * @param actionCondition
-     *        A single action condition.
+     *        A single action condition. This is the action setting that a log record must contain in order to meet the
+     *        condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +92,15 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single label name condition.
+     * A single label name condition. This is the fully qualified label name that a log record must contain in order to
+     * meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix
+     * identifies the rule group or web ACL context of the rule that added the label.
      * </p>
      * 
      * @param labelNameCondition
-     *        A single label name condition.
+     *        A single label name condition. This is the fully qualified label name that a log record must contain in
+     *        order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name.
+     *        The prefix identifies the rule group or web ACL context of the rule that added the label.
      */
 
     public void setLabelNameCondition(LabelNameCondition labelNameCondition) {
@@ -96,10 +109,14 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single label name condition.
+     * A single label name condition. This is the fully qualified label name that a log record must contain in order to
+     * meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix
+     * identifies the rule group or web ACL context of the rule that added the label.
      * </p>
      * 
-     * @return A single label name condition.
+     * @return A single label name condition. This is the fully qualified label name that a log record must contain in
+     *         order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name.
+     *         The prefix identifies the rule group or web ACL context of the rule that added the label.
      */
 
     public LabelNameCondition getLabelNameCondition() {
@@ -108,11 +125,15 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single label name condition.
+     * A single label name condition. This is the fully qualified label name that a log record must contain in order to
+     * meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix
+     * identifies the rule group or web ACL context of the rule that added the label.
      * </p>
      * 
      * @param labelNameCondition
-     *        A single label name condition.
+     *        A single label name condition. This is the fully qualified label name that a log record must contain in
+     *        order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name.
+     *        The prefix identifies the rule group or web ACL context of the rule that added the label.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

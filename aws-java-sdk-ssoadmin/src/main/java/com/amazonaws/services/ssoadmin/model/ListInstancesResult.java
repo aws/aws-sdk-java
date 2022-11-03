@@ -25,7 +25,7 @@ public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the SSO instances that the caller has access to.
+     * Lists the IAM Identity Center instances that the caller has access to.
      * </p>
      */
     private java.util.List<InstanceMetadata> instances;
@@ -39,10 +39,10 @@ public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the SSO instances that the caller has access to.
+     * Lists the IAM Identity Center instances that the caller has access to.
      * </p>
      * 
-     * @return Lists the SSO instances that the caller has access to.
+     * @return Lists the IAM Identity Center instances that the caller has access to.
      */
 
     public java.util.List<InstanceMetadata> getInstances() {
@@ -51,11 +51,11 @@ public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the SSO instances that the caller has access to.
+     * Lists the IAM Identity Center instances that the caller has access to.
      * </p>
      * 
      * @param instances
-     *        Lists the SSO instances that the caller has access to.
+     *        Lists the IAM Identity Center instances that the caller has access to.
      */
 
     public void setInstances(java.util.Collection<InstanceMetadata> instances) {
@@ -69,7 +69,7 @@ public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the SSO instances that the caller has access to.
+     * Lists the IAM Identity Center instances that the caller has access to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param instances
-     *        Lists the SSO instances that the caller has access to.
+     *        Lists the IAM Identity Center instances that the caller has access to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the SSO instances that the caller has access to.
+     * Lists the IAM Identity Center instances that the caller has access to.
      * </p>
      * 
      * @param instances
-     *        Lists the SSO instances that the caller has access to.
+     *        Lists the IAM Identity Center instances that the caller has access to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

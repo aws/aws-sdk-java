@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to describe an existing <a>Authorizer</a> resource.
+ * Request to describe an existing Authorizer resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier of the <a>Authorizer</a> resource.
+     * The identifier of the Authorizer resource.
      * </p>
      */
     private String authorizerId;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Authorizer</a> resource.
+     * The identifier of the Authorizer resource.
      * </p>
      * 
      * @param authorizerId
-     *        [Required] The identifier of the <a>Authorizer</a> resource.
+     *        The identifier of the Authorizer resource.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -93,10 +93,10 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Authorizer</a> resource.
+     * The identifier of the Authorizer resource.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>Authorizer</a> resource.
+     * @return The identifier of the Authorizer resource.
      */
 
     public String getAuthorizerId() {
@@ -105,11 +105,11 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Authorizer</a> resource.
+     * The identifier of the Authorizer resource.
      * </p>
      * 
      * @param authorizerId
-     *        [Required] The identifier of the <a>Authorizer</a> resource.
+     *        The identifier of the Authorizer resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

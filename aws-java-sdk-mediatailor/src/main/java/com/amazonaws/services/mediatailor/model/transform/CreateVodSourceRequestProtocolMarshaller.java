@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CreateVodSourceRequestProtocolMarshaller implements Marshaller<Request<CreateVodSourceRequest>, CreateVodSourceRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/sourceLocation/{sourceLocationName}/vodSource/{vodSourceName}").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
+            .requestUri("/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
             .hasPayloadMembers(true).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

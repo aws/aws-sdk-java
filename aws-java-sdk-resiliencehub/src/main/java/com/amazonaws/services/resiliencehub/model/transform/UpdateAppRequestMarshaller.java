@@ -29,6 +29,8 @@ public class UpdateAppRequestMarshaller {
 
     private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<String> ASSESSMENTSCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentSchedule").build();
     private static final MarshallingInfo<Boolean> CLEARRESILIENCYPOLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clearResiliencyPolicyArn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +55,7 @@ public class UpdateAppRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateAppRequest.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(updateAppRequest.getAssessmentSchedule(), ASSESSMENTSCHEDULE_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getClearResiliencyPolicyArn(), CLEARRESILIENCYPOLICYARN_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getPolicyArn(), POLICYARN_BINDING);

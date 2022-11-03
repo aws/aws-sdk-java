@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+ * The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA
+ * (Advanced Query Accelerator).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AquaConfiguration" target="_top">AWS API
@@ -28,91 +29,25 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value indicates the status of AQUA on the cluster. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - AQUA is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - AQUA is not enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * applying - AQUA status is being applied.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String aquaStatus;
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String aquaConfigurationStatus;
 
     /**
      * <p>
-     * The value indicates the status of AQUA on the cluster. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - AQUA is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - AQUA is not enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * applying - AQUA status is being applied.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaStatus
-     *        The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - AQUA is enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - AQUA is not enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        applying - AQUA status is being applied.
-     *        </p>
-     *        </li>
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @see AquaStatus
      */
 
@@ -122,43 +57,11 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value indicates the status of AQUA on the cluster. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - AQUA is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - AQUA is not enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * applying - AQUA status is being applied.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         enabled - AQUA is enabled.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         disabled - AQUA is not enabled.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         applying - AQUA status is being applied.
-     *         </p>
-     *         </li>
+     * @return This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *         Accelerator).
      * @see AquaStatus
      */
 
@@ -168,44 +71,12 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value indicates the status of AQUA on the cluster. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - AQUA is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - AQUA is not enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * applying - AQUA status is being applied.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaStatus
-     *        The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - AQUA is enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - AQUA is not enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        applying - AQUA status is being applied.
-     *        </p>
-     *        </li>
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaStatus
      */
@@ -217,44 +88,12 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value indicates the status of AQUA on the cluster. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - AQUA is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - AQUA is not enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * applying - AQUA status is being applied.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaStatus
-     *        The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - AQUA is enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - AQUA is not enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        applying - AQUA status is being applied.
-     *        </p>
-     *        </li>
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaStatus
      */
@@ -266,45 +105,12 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @see AquaConfigurationStatus
      */
 
@@ -314,45 +120,11 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The value represents how the cluster is configured to use AQUA. Possible values include the
-     *         following.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *         type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         disabled - Don't use AQUA.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         auto - Amazon Redshift determines whether to use AQUA.
-     *         </p>
-     *         </li>
+     * @return This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *         Accelerator).
      * @see AquaConfigurationStatus
      */
 
@@ -362,45 +134,12 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaConfigurationStatus
      */
@@ -412,45 +151,12 @@ public class AquaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value represents how the cluster is configured to use AQUA. Possible values include the following.
+     * This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * disabled - Don't use AQUA.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * auto - Amazon Redshift determines whether to use AQUA.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param aquaConfigurationStatus
-     *        The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node
-     *        type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        disabled - Don't use AQUA.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        auto - Amazon Redshift determines whether to use AQUA.
-     *        </p>
-     *        </li>
+     *        This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     *        Accelerator).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AquaConfigurationStatus
      */

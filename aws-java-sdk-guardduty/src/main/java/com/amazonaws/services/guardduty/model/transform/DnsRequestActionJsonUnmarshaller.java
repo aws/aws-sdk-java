@@ -52,6 +52,14 @@ public class DnsRequestActionJsonUnmarshaller implements Unmarshaller<DnsRequest
                     context.nextToken();
                     dnsRequestAction.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("protocol", targetDepth)) {
+                    context.nextToken();
+                    dnsRequestAction.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("blocked", targetDepth)) {
+                    context.nextToken();
+                    dnsRequestAction.setBlocked(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

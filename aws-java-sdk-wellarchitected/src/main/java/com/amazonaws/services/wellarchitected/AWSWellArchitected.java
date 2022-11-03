@@ -874,6 +874,11 @@ public interface AWSWellArchitected {
      * <p>
      * List the tags for a resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -937,6 +942,11 @@ public interface AWSWellArchitected {
      * <p>
      * Adds one or more tags to the specified resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -954,6 +964,11 @@ public interface AWSWellArchitected {
      * <p>
      * Deletes specified tags from a resource.
      * </p>
+     * <note>
+     * <p>
+     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * </p>
+     * </note>
      * <p>
      * To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
      * </p>
@@ -998,6 +1013,29 @@ public interface AWSWellArchitected {
      *      API Documentation</a>
      */
     UpdateAnswerResult updateAnswer(UpdateAnswerRequest updateAnswerRequest);
+
+    /**
+     * <p>
+     * Updates whether the Amazon Web Services account is opted into organization sharing features.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @return Result of the UpdateGlobalSettings operation returned by the service.
+     * @throws ValidationException
+     *         The user input is not valid.
+     * @throws ConflictException
+     *         The resource already exists.
+     * @throws InternalServerException
+     *         There is a problem with the Well-Architected Tool API service.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @sample AWSWellArchitected.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateGlobalSettingsResult updateGlobalSettings(UpdateGlobalSettingsRequest updateGlobalSettingsRequest);
 
     /**
      * <p>

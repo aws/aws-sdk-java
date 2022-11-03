@@ -25,39 +25,36 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with the
-     * most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all transcription jobs
-     * ordered by creation date.
+     * Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date,
+     * with the newest job first.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in your next request to the operation to return next
-     * page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      */
     private java.util.List<CallAnalyticsJobSummary> callAnalyticsJobSummaries;
 
     /**
      * <p>
-     * When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with the
-     * most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all transcription jobs
-     * ordered by creation date.
+     * Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date,
+     * with the newest job first.
      * </p>
      * 
      * @param status
-     *        When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with
-     *        the most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all
-     *        transcription jobs ordered by creation date.
+     *        Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation
+     *        date, with the newest job first.
      * @see CallAnalyticsJobStatus
      */
 
@@ -67,14 +64,12 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with the
-     * most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all transcription jobs
-     * ordered by creation date.
+     * Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date,
+     * with the newest job first.
      * </p>
      * 
-     * @return When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date,
-     *         with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all
-     *         transcription jobs ordered by creation date.
+     * @return Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by
+     *         creation date, with the newest job first.
      * @see CallAnalyticsJobStatus
      */
 
@@ -84,15 +79,13 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with the
-     * most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all transcription jobs
-     * ordered by creation date.
+     * Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date,
+     * with the newest job first.
      * </p>
      * 
      * @param status
-     *        When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with
-     *        the most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all
-     *        transcription jobs ordered by creation date.
+     *        Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation
+     *        date, with the newest job first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CallAnalyticsJobStatus
      */
@@ -104,15 +97,13 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with the
-     * most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all transcription jobs
-     * ordered by creation date.
+     * Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date,
+     * with the newest job first.
      * </p>
      * 
      * @param status
-     *        When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with
-     *        the most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all
-     *        transcription jobs ordered by creation date.
+     *        Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation
+     *        date, with the newest job first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CallAnalyticsJobStatus
      */
@@ -124,17 +115,17 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in your next request to the operation to return next
-     * page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     *        <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
-     *        Transcribe returns the <code>NextPage</code> token. Include the token in your next request to the
-     *        operation to return next page of jobs.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -143,16 +134,16 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in your next request to the operation to return next
-     * page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
-     * @return The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     *         <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
-     *         Transcribe returns the <code>NextPage</code> token. Include the token in your next request to the
-     *         operation to return next page of jobs.
+     * @return If <code>NextToken</code> is present in your response, it indicates that not all results are displayed.
+     *         To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in
+     *         your results output, then run your request again including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -161,17 +152,17 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in your next request to the operation to return next
-     * page of jobs.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The operation returns a page of jobs at a time. The maximum size of the page is set by the
-     *        <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
-     *        Transcribe returns the <code>NextPage</code> token. Include the token in your next request to the
-     *        operation to return next page of jobs.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,10 +173,10 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * 
-     * @return A list of objects containing summary information for a transcription job.
+     * @return Provides a summary of information about each result.
      */
 
     public java.util.List<CallAnalyticsJobSummary> getCallAnalyticsJobSummaries() {
@@ -194,11 +185,11 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * 
      * @param callAnalyticsJobSummaries
-     *        A list of objects containing summary information for a transcription job.
+     *        Provides a summary of information about each result.
      */
 
     public void setCallAnalyticsJobSummaries(java.util.Collection<CallAnalyticsJobSummary> callAnalyticsJobSummaries) {
@@ -212,7 +203,7 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -221,7 +212,7 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param callAnalyticsJobSummaries
-     *        A list of objects containing summary information for a transcription job.
+     *        Provides a summary of information about each result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +228,11 @@ public class ListCallAnalyticsJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing summary information for a transcription job.
+     * Provides a summary of information about each result.
      * </p>
      * 
      * @param callAnalyticsJobSummaries
-     *        A list of objects containing summary information for a transcription job.
+     *        Provides a summary of information about each result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

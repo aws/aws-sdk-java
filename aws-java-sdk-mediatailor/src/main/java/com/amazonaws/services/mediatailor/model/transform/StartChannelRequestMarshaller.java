@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class StartChannelRequestMarshaller {
 
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("channelName").build();
+            .marshallLocationName("ChannelName").build();
 
     private static final StartChannelRequestMarshaller instance = new StartChannelRequestMarshaller();
 

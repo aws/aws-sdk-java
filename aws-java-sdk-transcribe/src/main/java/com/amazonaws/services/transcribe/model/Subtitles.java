@@ -19,8 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Generate subtitles for your batch transcription job. Note that your subtitle files are placed in the same location as
- * your transcription output.
+ * Generate subtitles for your media file with your transcription request.
+ * </p>
+ * <p>
+ * You can choose a start index of 0 or 1, and you can specify either WebVTT or SubRip (or both) as your output format.
+ * </p>
+ * <p>
+ * Note that your subtitle files are placed in the same location as your transcription output.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Subtitles" target="_top">AWS API
@@ -31,14 +36,14 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     * formats, two output files are generated.
+     * Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (
+     * <code>srt</code>) formats, two output files are generated.
      * </p>
      */
     private java.util.List<String> formats;
     /**
      * <p>
-     * Defines the starting value that is assigned to the first subtitle segment.
+     * Specify the starting value that is assigned to the first subtitle segment.
      * </p>
      * <p>
      * The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard
@@ -50,12 +55,12 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     * formats, two output files are generated.
+     * Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (
+     * <code>srt</code>) formats, two output files are generated.
      * </p>
      * 
-     * @return Specify the output format for your subtitle file; if you select both <code>srt</code> and
-     *         <code>vtt</code> formats, two output files are generated.
+     * @return Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip
+     *         (<code>srt</code>) formats, two output files are generated.
      * @see SubtitleFormat
      */
 
@@ -65,13 +70,13 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     * formats, two output files are generated.
+     * Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (
+     * <code>srt</code>) formats, two output files are generated.
      * </p>
      * 
      * @param formats
-     *        Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     *        formats, two output files are generated.
+     *        Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip
+     *        (<code>srt</code>) formats, two output files are generated.
      * @see SubtitleFormat
      */
 
@@ -86,8 +91,8 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     * formats, two output files are generated.
+     * Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (
+     * <code>srt</code>) formats, two output files are generated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,8 +101,8 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param formats
-     *        Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     *        formats, two output files are generated.
+     *        Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip
+     *        (<code>srt</code>) formats, two output files are generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubtitleFormat
      */
@@ -114,13 +119,13 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     * formats, two output files are generated.
+     * Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (
+     * <code>srt</code>) formats, two output files are generated.
      * </p>
      * 
      * @param formats
-     *        Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     *        formats, two output files are generated.
+     *        Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip
+     *        (<code>srt</code>) formats, two output files are generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubtitleFormat
      */
@@ -132,13 +137,13 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     * formats, two output files are generated.
+     * Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (
+     * <code>srt</code>) formats, two output files are generated.
      * </p>
      * 
      * @param formats
-     *        Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code>
-     *        formats, two output files are generated.
+     *        Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip
+     *        (<code>srt</code>) formats, two output files are generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubtitleFormat
      */
@@ -158,7 +163,7 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the starting value that is assigned to the first subtitle segment.
+     * Specify the starting value that is assigned to the first subtitle segment.
      * </p>
      * <p>
      * The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard
@@ -167,7 +172,7 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param outputStartIndex
-     *        Defines the starting value that is assigned to the first subtitle segment.</p>
+     *        Specify the starting value that is assigned to the first subtitle segment.</p>
      *        <p>
      *        The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used
      *        standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>,
@@ -180,7 +185,7 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the starting value that is assigned to the first subtitle segment.
+     * Specify the starting value that is assigned to the first subtitle segment.
      * </p>
      * <p>
      * The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard
@@ -188,7 +193,7 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
      * improve compatibility with other services.
      * </p>
      * 
-     * @return Defines the starting value that is assigned to the first subtitle segment.</p>
+     * @return Specify the starting value that is assigned to the first subtitle segment.</p>
      *         <p>
      *         The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used
      *         standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>,
@@ -201,7 +206,7 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the starting value that is assigned to the first subtitle segment.
+     * Specify the starting value that is assigned to the first subtitle segment.
      * </p>
      * <p>
      * The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard
@@ -210,7 +215,7 @@ public class Subtitles implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param outputStartIndex
-     *        Defines the starting value that is assigned to the first subtitle segment.</p>
+     *        Specify the starting value that is assigned to the first subtitle segment.</p>
      *        <p>
      *        The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used
      *        standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>,

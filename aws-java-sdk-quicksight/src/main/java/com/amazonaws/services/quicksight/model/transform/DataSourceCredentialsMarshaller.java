@@ -31,6 +31,8 @@ public class DataSourceCredentialsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CredentialPair").build();
     private static final MarshallingInfo<String> COPYSOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopySourceArn").build();
+    private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SecretArn").build();
 
     private static final DataSourceCredentialsMarshaller instance = new DataSourceCredentialsMarshaller();
 
@@ -50,6 +52,7 @@ public class DataSourceCredentialsMarshaller {
         try {
             protocolMarshaller.marshall(dataSourceCredentials.getCredentialPair(), CREDENTIALPAIR_BINDING);
             protocolMarshaller.marshall(dataSourceCredentials.getCopySourceArn(), COPYSOURCEARN_BINDING);
+            protocolMarshaller.marshall(dataSourceCredentials.getSecretArn(), SECRETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

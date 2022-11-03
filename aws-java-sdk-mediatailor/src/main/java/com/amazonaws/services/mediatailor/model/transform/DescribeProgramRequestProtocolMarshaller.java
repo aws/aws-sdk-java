@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeProgramRequestProtocolMarshaller implements Marshaller<Request<DescribeProgramRequest>, DescribeProgramRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/channel/{channelName}/program/{programName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
+            .requestUri("/channel/{ChannelName}/program/{ProgramName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
             .hasPayloadMembers(false).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

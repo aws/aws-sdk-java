@@ -260,13 +260,13 @@ public class AwsRedshiftClusterDetails implements Serializable, Cloneable, Struc
      * The default number of days to retain a manual snapshot.
      * </p>
      * <p>
-     * If the value is -1, the snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, the snapshot is retained indefinitely.
      * </p>
      * <p>
      * This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      */
     private Integer manualSnapshotRetentionPeriod;
@@ -2035,25 +2035,25 @@ public class AwsRedshiftClusterDetails implements Serializable, Cloneable, Struc
      * The default number of days to retain a manual snapshot.
      * </p>
      * <p>
-     * If the value is -1, the snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, the snapshot is retained indefinitely.
      * </p>
      * <p>
      * This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default number of days to retain a manual snapshot.</p>
      *        <p>
-     *        If the value is -1, the snapshot is retained indefinitely.
+     *        If the value is <code>-1</code>, the snapshot is retained indefinitely.
      *        </p>
      *        <p>
      *        This setting doesn't change the retention period of existing snapshots.
      *        </p>
      *        <p>
-     *        Valid values: Either -1 or an integer between 1 and 3,653
+     *        Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      */
 
     public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
@@ -2065,24 +2065,24 @@ public class AwsRedshiftClusterDetails implements Serializable, Cloneable, Struc
      * The default number of days to retain a manual snapshot.
      * </p>
      * <p>
-     * If the value is -1, the snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, the snapshot is retained indefinitely.
      * </p>
      * <p>
      * This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
      * @return The default number of days to retain a manual snapshot.</p>
      *         <p>
-     *         If the value is -1, the snapshot is retained indefinitely.
+     *         If the value is <code>-1</code>, the snapshot is retained indefinitely.
      *         </p>
      *         <p>
      *         This setting doesn't change the retention period of existing snapshots.
      *         </p>
      *         <p>
-     *         Valid values: Either -1 or an integer between 1 and 3,653
+     *         Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      */
 
     public Integer getManualSnapshotRetentionPeriod() {
@@ -2094,25 +2094,25 @@ public class AwsRedshiftClusterDetails implements Serializable, Cloneable, Struc
      * The default number of days to retain a manual snapshot.
      * </p>
      * <p>
-     * If the value is -1, the snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, the snapshot is retained indefinitely.
      * </p>
      * <p>
      * This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default number of days to retain a manual snapshot.</p>
      *        <p>
-     *        If the value is -1, the snapshot is retained indefinitely.
+     *        If the value is <code>-1</code>, the snapshot is retained indefinitely.
      *        </p>
      *        <p>
      *        This setting doesn't change the retention period of existing snapshots.
      *        </p>
      *        <p>
-     *        Valid values: Either -1 or an integer between 1 and 3,653
+     *        Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

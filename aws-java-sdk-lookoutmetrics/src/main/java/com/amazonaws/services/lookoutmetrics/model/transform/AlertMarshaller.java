@@ -47,6 +47,8 @@ public class AlertMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModificationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> ALERTFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlertFilters").build();
 
     private static final AlertMarshaller instance = new AlertMarshaller();
 
@@ -74,6 +76,7 @@ public class AlertMarshaller {
             protocolMarshaller.marshall(alert.getAlertStatus(), ALERTSTATUS_BINDING);
             protocolMarshaller.marshall(alert.getLastModificationTime(), LASTMODIFICATIONTIME_BINDING);
             protocolMarshaller.marshall(alert.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(alert.getAlertFilters(), ALERTFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

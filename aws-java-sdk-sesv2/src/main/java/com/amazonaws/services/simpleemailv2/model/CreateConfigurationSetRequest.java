@@ -69,6 +69,12 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<Tag> tags;
 
     private SuppressionOptions suppressionOptions;
+    /**
+     * <p>
+     * An object that defines the VDM options for emails that you send using the configuration set.
+     * </p>
+     */
+    private VdmOptions vdmOptions;
 
     /**
      * <p>
@@ -389,6 +395,46 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An object that defines the VDM options for emails that you send using the configuration set.
+     * </p>
+     * 
+     * @param vdmOptions
+     *        An object that defines the VDM options for emails that you send using the configuration set.
+     */
+
+    public void setVdmOptions(VdmOptions vdmOptions) {
+        this.vdmOptions = vdmOptions;
+    }
+
+    /**
+     * <p>
+     * An object that defines the VDM options for emails that you send using the configuration set.
+     * </p>
+     * 
+     * @return An object that defines the VDM options for emails that you send using the configuration set.
+     */
+
+    public VdmOptions getVdmOptions() {
+        return this.vdmOptions;
+    }
+
+    /**
+     * <p>
+     * An object that defines the VDM options for emails that you send using the configuration set.
+     * </p>
+     * 
+     * @param vdmOptions
+     *        An object that defines the VDM options for emails that you send using the configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationSetRequest withVdmOptions(VdmOptions vdmOptions) {
+        setVdmOptions(vdmOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -413,7 +459,9 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSuppressionOptions() != null)
-            sb.append("SuppressionOptions: ").append(getSuppressionOptions());
+            sb.append("SuppressionOptions: ").append(getSuppressionOptions()).append(",");
+        if (getVdmOptions() != null)
+            sb.append("VdmOptions: ").append(getVdmOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -456,6 +504,10 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getSuppressionOptions() != null && other.getSuppressionOptions().equals(this.getSuppressionOptions()) == false)
             return false;
+        if (other.getVdmOptions() == null ^ this.getVdmOptions() == null)
+            return false;
+        if (other.getVdmOptions() != null && other.getVdmOptions().equals(this.getVdmOptions()) == false)
+            return false;
         return true;
     }
 
@@ -471,6 +523,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getSendingOptions() == null) ? 0 : getSendingOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSuppressionOptions() == null) ? 0 : getSuppressionOptions().hashCode());
+        hashCode = prime * hashCode + ((getVdmOptions() == null) ? 0 : getVdmOptions().hashCode());
         return hashCode;
     }
 

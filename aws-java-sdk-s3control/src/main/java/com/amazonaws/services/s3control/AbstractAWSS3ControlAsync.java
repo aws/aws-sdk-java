@@ -451,6 +451,19 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetBucketVersioningResult> getBucketVersioningAsync(GetBucketVersioningRequest request) {
+
+        return getBucketVersioningAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketVersioningResult> getBucketVersioningAsync(GetBucketVersioningRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBucketVersioningRequest, GetBucketVersioningResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(GetJobTaggingRequest request) {
 
         return getJobTaggingAsync(request, null);
@@ -707,6 +720,19 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     @Override
     public java.util.concurrent.Future<PutBucketTaggingResult> putBucketTaggingAsync(PutBucketTaggingRequest request,
             com.amazonaws.handlers.AsyncHandler<PutBucketTaggingRequest, PutBucketTaggingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketVersioningResult> putBucketVersioningAsync(PutBucketVersioningRequest request) {
+
+        return putBucketVersioningAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketVersioningResult> putBucketVersioningAsync(PutBucketVersioningRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutBucketVersioningRequest, PutBucketVersioningResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

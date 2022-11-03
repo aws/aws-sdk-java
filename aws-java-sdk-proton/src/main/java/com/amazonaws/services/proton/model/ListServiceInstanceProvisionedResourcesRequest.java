@@ -34,13 +34,13 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
     private String nextToken;
     /**
      * <p>
-     * The service instance name.
+     * The name of the service instance whose provisioned resources you want.
      * </p>
      */
     private String serviceInstanceName;
     /**
      * <p>
-     * The service name.
+     * The name of the service that <code>serviceInstanceName</code> is associated to.
      * </p>
      */
     private String serviceName;
@@ -93,11 +93,11 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service instance name.
+     * The name of the service instance whose provisioned resources you want.
      * </p>
      * 
      * @param serviceInstanceName
-     *        The service instance name.
+     *        The name of the service instance whose provisioned resources you want.
      */
 
     public void setServiceInstanceName(String serviceInstanceName) {
@@ -106,10 +106,10 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service instance name.
+     * The name of the service instance whose provisioned resources you want.
      * </p>
      * 
-     * @return The service instance name.
+     * @return The name of the service instance whose provisioned resources you want.
      */
 
     public String getServiceInstanceName() {
@@ -118,11 +118,11 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service instance name.
+     * The name of the service instance whose provisioned resources you want.
      * </p>
      * 
      * @param serviceInstanceName
-     *        The service instance name.
+     *        The name of the service instance whose provisioned resources you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service name.
+     * The name of the service that <code>serviceInstanceName</code> is associated to.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the service that <code>serviceInstanceName</code> is associated to.
      */
 
     public void setServiceName(String serviceName) {
@@ -146,10 +146,10 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service name.
+     * The name of the service that <code>serviceInstanceName</code> is associated to.
      * </p>
      * 
-     * @return The service name.
+     * @return The name of the service that <code>serviceInstanceName</code> is associated to.
      */
 
     public String getServiceName() {
@@ -158,11 +158,11 @@ public class ListServiceInstanceProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service name.
+     * The name of the service that <code>serviceInstanceName</code> is associated to.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the service that <code>serviceInstanceName</code> is associated to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

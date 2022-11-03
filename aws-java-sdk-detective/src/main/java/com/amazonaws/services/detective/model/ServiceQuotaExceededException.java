@@ -43,6 +43,13 @@ public class ServiceQuotaExceededException extends com.amazonaws.services.detect
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * The type of resource that has exceeded the service quota.
+     * </p>
+     */
+    private java.util.List<String> resources;
+
+    /**
      * Constructs a new ServiceQuotaExceededException with the specified error message.
      *
      * @param message
@@ -50,6 +57,78 @@ public class ServiceQuotaExceededException extends com.amazonaws.services.detect
      */
     public ServiceQuotaExceededException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The type of resource that has exceeded the service quota.
+     * </p>
+     * 
+     * @return The type of resource that has exceeded the service quota.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Resources")
+    public java.util.List<String> getResources() {
+        return resources;
+    }
+
+    /**
+     * <p>
+     * The type of resource that has exceeded the service quota.
+     * </p>
+     * 
+     * @param resources
+     *        The type of resource that has exceeded the service quota.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Resources")
+    public void setResources(java.util.Collection<String> resources) {
+        if (resources == null) {
+            this.resources = null;
+            return;
+        }
+
+        this.resources = new java.util.ArrayList<String>(resources);
+    }
+
+    /**
+     * <p>
+     * The type of resource that has exceeded the service quota.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param resources
+     *        The type of resource that has exceeded the service quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceQuotaExceededException withResources(String... resources) {
+        if (this.resources == null) {
+            setResources(new java.util.ArrayList<String>(resources.length));
+        }
+        for (String ele : resources) {
+            this.resources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resource that has exceeded the service quota.
+     * </p>
+     * 
+     * @param resources
+     *        The type of resource that has exceeded the service quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceQuotaExceededException withResources(java.util.Collection<String> resources) {
+        setResources(resources);
+        return this;
     }
 
 }

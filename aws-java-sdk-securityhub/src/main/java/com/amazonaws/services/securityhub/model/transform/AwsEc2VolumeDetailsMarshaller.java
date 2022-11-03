@@ -30,6 +30,8 @@ public class AwsEc2VolumeDetailsMarshaller {
 
     private static final MarshallingInfo<String> CREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").build();
+    private static final MarshallingInfo<String> DEVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceName").build();
     private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encrypted").build();
     private static final MarshallingInfo<Integer> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -42,6 +44,12 @@ public class AwsEc2VolumeDetailsMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Attachments").build();
+    private static final MarshallingInfo<String> VOLUMEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VolumeId").build();
+    private static final MarshallingInfo<String> VOLUMETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeType").build();
+    private static final MarshallingInfo<String> VOLUMESCANSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeScanStatus").build();
 
     private static final AwsEc2VolumeDetailsMarshaller instance = new AwsEc2VolumeDetailsMarshaller();
 
@@ -60,12 +68,16 @@ public class AwsEc2VolumeDetailsMarshaller {
 
         try {
             protocolMarshaller.marshall(awsEc2VolumeDetails.getCreateTime(), CREATETIME_BINDING);
+            protocolMarshaller.marshall(awsEc2VolumeDetails.getDeviceName(), DEVICENAME_BINDING);
             protocolMarshaller.marshall(awsEc2VolumeDetails.getEncrypted(), ENCRYPTED_BINDING);
             protocolMarshaller.marshall(awsEc2VolumeDetails.getSize(), SIZE_BINDING);
             protocolMarshaller.marshall(awsEc2VolumeDetails.getSnapshotId(), SNAPSHOTID_BINDING);
             protocolMarshaller.marshall(awsEc2VolumeDetails.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(awsEc2VolumeDetails.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(awsEc2VolumeDetails.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(awsEc2VolumeDetails.getVolumeId(), VOLUMEID_BINDING);
+            protocolMarshaller.marshall(awsEc2VolumeDetails.getVolumeType(), VOLUMETYPE_BINDING);
+            protocolMarshaller.marshall(awsEc2VolumeDetails.getVolumeScanStatus(), VOLUMESCANSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

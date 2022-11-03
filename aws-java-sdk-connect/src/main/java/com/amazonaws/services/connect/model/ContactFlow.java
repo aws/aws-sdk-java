@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a contact flow.
+ * Contains information about a flow.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlow" target="_top">AWS API
@@ -30,62 +30,63 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      */
 
     public void setArn(String arn) {
@@ -94,10 +95,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the contact flow.
+     * @return The Amazon Resource Name (ARN) of the flow.
      */
 
     public String getArn() {
@@ -106,11 +107,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +122,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setId(String id) {
@@ -134,10 +135,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getId() {
@@ -146,11 +147,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +162,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      */
 
     public void setName(String name) {
@@ -174,10 +175,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
-     * @return The name of the contact flow.
+     * @return The name of the flow.
      */
 
     public String getName() {
@@ -186,11 +187,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,15 +202,15 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the contact flow. For descriptions of the available types, see <a
+     *        The type of the flow. For descriptions of the available types, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *        >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @see ContactFlowType
      */
 
@@ -219,14 +220,14 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
-     * @return The type of the contact flow. For descriptions of the available types, see <a
+     * @return The type of the flow. For descriptions of the available types, see <a
      *         href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *         >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *         >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @see ContactFlowType
      */
 
@@ -236,15 +237,15 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the contact flow. For descriptions of the available types, see <a
+     *        The type of the flow. For descriptions of the available types, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *        >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -256,15 +257,15 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the contact flow. For descriptions of the available types, see <a
+     * The type of the flow. For descriptions of the available types, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a
-     * Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the contact flow. For descriptions of the available types, see <a
+     *        The type of the flow. For descriptions of the available types, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types"
-     *        >Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        >Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowType
      */
@@ -276,11 +277,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param state
-     *        The type of contact flow.
+     *        The type of flow.
      * @see ContactFlowState
      */
 
@@ -290,10 +291,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
-     * @return The type of contact flow.
+     * @return The type of flow.
      * @see ContactFlowState
      */
 
@@ -303,11 +304,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param state
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowState
      */
@@ -319,11 +320,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of contact flow.
+     * The type of flow.
      * </p>
      * 
      * @param state
-     *        The type of contact flow.
+     *        The type of flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowState
      */
@@ -335,11 +336,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      */
 
     public void setDescription(String description) {
@@ -348,10 +349,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
-     * @return The description of the contact flow.
+     * @return The description of the flow.
      */
 
     public String getDescription() {
@@ -360,11 +361,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +376,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow.
+     *        The content of the flow.
      */
 
     public void setContent(String content) {
@@ -388,10 +389,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      * 
-     * @return The content of the contact flow.
+     * @return The content of the flow.
      */
 
     public String getContent() {
@@ -400,11 +401,11 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content of the contact flow.
+     * The content of the flow.
      * </p>
      * 
      * @param content
-     *        The content of the contact flow.
+     *        The content of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,10 +416,12 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -427,11 +430,13 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -440,11 +445,13 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

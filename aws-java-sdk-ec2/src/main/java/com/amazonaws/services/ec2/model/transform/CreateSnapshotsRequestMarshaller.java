@@ -54,6 +54,20 @@ public class CreateSnapshotsRequestMarshaller implements Marshaller<Request<Crea
             if (instanceSpecification.getExcludeBootVolume() != null) {
                 request.addParameter("InstanceSpecification.ExcludeBootVolume", StringUtils.fromBoolean(instanceSpecification.getExcludeBootVolume()));
             }
+
+            com.amazonaws.internal.SdkInternalList<String> instanceSpecificationExcludeDataVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) instanceSpecification
+                    .getExcludeDataVolumeIds();
+            if (!instanceSpecificationExcludeDataVolumeIdsList.isEmpty() || !instanceSpecificationExcludeDataVolumeIdsList.isAutoConstruct()) {
+                int excludeDataVolumeIdsListIndex = 1;
+
+                for (String instanceSpecificationExcludeDataVolumeIdsListValue : instanceSpecificationExcludeDataVolumeIdsList) {
+                    if (instanceSpecificationExcludeDataVolumeIdsListValue != null) {
+                        request.addParameter("InstanceSpecification.ExcludeDataVolumeId." + excludeDataVolumeIdsListIndex,
+                                StringUtils.fromString(instanceSpecificationExcludeDataVolumeIdsListValue));
+                    }
+                    excludeDataVolumeIdsListIndex++;
+                }
+            }
         }
 
         if (createSnapshotsRequest.getOutpostArn() != null) {

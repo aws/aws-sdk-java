@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The collection of <a>SdkType</a> instances.
+ * The collection of SdkType instances.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

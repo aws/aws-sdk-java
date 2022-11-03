@@ -19,8 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a rule for cross-Region snapshot copies.
+ * <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for snapshot and AMI policies.
  * </p>
+ * <note>
+ * <p>
+ * To specify a cross-Region copy action for event-based polices, use <a>CrossRegionCopyAction</a>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyRule" target="_top">AWS API
  *      Documentation</a>
@@ -29,6 +34,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <note>
      * <p>
      * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
      * target Outpost for snapshot copies.
@@ -37,6 +43,7 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
      * Region for snapshot copies.
      * </p>
+     * </note>
      */
     private String targetRegion;
     /**
@@ -65,24 +72,26 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     private String cmkArn;
     /**
      * <p>
-     * Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.
+     * Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      * </p>
      */
     private Boolean copyTags;
     /**
      * <p>
-     * The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     * The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the
+     * destination Region.
      * </p>
      */
     private CrossRegionCopyRetainRule retainRule;
     /**
      * <p>
-     * The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      */
     private CrossRegionCopyDeprecateRule deprecateRule;
 
     /**
+     * <note>
      * <p>
      * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
      * target Outpost for snapshot copies.
@@ -91,13 +100,17 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
      * Region for snapshot copies.
      * </p>
+     * </note>
      * 
      * @param targetRegion
+     *        <p>
      *        Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
-     *        Region or a target Outpost for snapshot copies.</p>
+     *        Region or a target Outpost for snapshot copies.
+     *        </p>
      *        <p>
      *        For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the
      *        target Region for snapshot copies.
+     *        </p>
      */
 
     public void setTargetRegion(String targetRegion) {
@@ -105,6 +118,7 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <note>
      * <p>
      * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
      * target Outpost for snapshot copies.
@@ -113,12 +127,16 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
      * Region for snapshot copies.
      * </p>
+     * </note>
      * 
-     * @return Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
-     *         Region or a target Outpost for snapshot copies.</p>
+     * @return <p>
+     *         Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
+     *         Region or a target Outpost for snapshot copies.
+     *         </p>
      *         <p>
      *         For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the
      *         target Region for snapshot copies.
+     *         </p>
      */
 
     public String getTargetRegion() {
@@ -126,6 +144,7 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <note>
      * <p>
      * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
      * target Outpost for snapshot copies.
@@ -134,13 +153,17 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
      * Region for snapshot copies.
      * </p>
+     * </note>
      * 
      * @param targetRegion
+     *        <p>
      *        Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
-     *        Region or a target Outpost for snapshot copies.</p>
+     *        Region or a target Outpost for snapshot copies.
+     *        </p>
      *        <p>
      *        For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the
      *        target Region for snapshot copies.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,12 +343,11 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.
+     * Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      * </p>
      * 
      * @param copyTags
-     *        Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot
-     *        copy.
+     *        Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -334,11 +356,10 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.
+     * Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      * </p>
      * 
-     * @return Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot
-     *         copy.
+     * @return Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      */
 
     public Boolean getCopyTags() {
@@ -347,12 +368,11 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.
+     * Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      * </p>
      * 
      * @param copyTags
-     *        Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot
-     *        copy.
+     *        Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,11 +383,10 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.
+     * Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      * </p>
      * 
-     * @return Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot
-     *         copy.
+     * @return Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.
      */
 
     public Boolean isCopyTags() {
@@ -376,11 +395,13 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     * The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the
+     * destination Region.
      * </p>
      * 
      * @param retainRule
-     *        The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     *        The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in
+     *        the destination Region.
      */
 
     public void setRetainRule(CrossRegionCopyRetainRule retainRule) {
@@ -389,10 +410,12 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     * The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the
+     * destination Region.
      * </p>
      * 
-     * @return The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     * @return The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in
+     *         the destination Region.
      */
 
     public CrossRegionCopyRetainRule getRetainRule() {
@@ -401,11 +424,13 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     * The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the
+     * destination Region.
      * </p>
      * 
      * @param retainRule
-     *        The retention rule that indicates how long snapshot copies are to be retained in the destination Region.
+     *        The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in
+     *        the destination Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,11 +441,11 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      * 
      * @param deprecateRule
-     *        The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     *        <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      */
 
     public void setDeprecateRule(CrossRegionCopyDeprecateRule deprecateRule) {
@@ -429,10 +454,10 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      * 
-     * @return The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * @return <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      */
 
     public CrossRegionCopyDeprecateRule getDeprecateRule() {
@@ -441,11 +466,11 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      * 
      * @param deprecateRule
-     *        The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     *        <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

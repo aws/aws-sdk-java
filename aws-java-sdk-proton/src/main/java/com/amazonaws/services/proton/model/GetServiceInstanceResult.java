@@ -25,18 +25,18 @@ public class GetServiceInstanceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The service instance detail data that's returned by Proton.
+     * The detailed data of the requested service instance.
      * </p>
      */
     private ServiceInstance serviceInstance;
 
     /**
      * <p>
-     * The service instance detail data that's returned by Proton.
+     * The detailed data of the requested service instance.
      * </p>
      * 
      * @param serviceInstance
-     *        The service instance detail data that's returned by Proton.
+     *        The detailed data of the requested service instance.
      */
 
     public void setServiceInstance(ServiceInstance serviceInstance) {
@@ -45,10 +45,10 @@ public class GetServiceInstanceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The service instance detail data that's returned by Proton.
+     * The detailed data of the requested service instance.
      * </p>
      * 
-     * @return The service instance detail data that's returned by Proton.
+     * @return The detailed data of the requested service instance.
      */
 
     public ServiceInstance getServiceInstance() {
@@ -57,11 +57,11 @@ public class GetServiceInstanceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The service instance detail data that's returned by Proton.
+     * The detailed data of the requested service instance.
      * </p>
      * 
      * @param serviceInstance
-     *        The service instance detail data that's returned by Proton.
+     *        The detailed data of the requested service instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,6 +42,12 @@ public class GrpcGatewayRouteMatch implements Serializable, Cloneable, Structure
     private java.util.List<GrpcGatewayRouteMetadata> metadata;
     /**
      * <p>
+     * The port number to match from the request.
+     * </p>
+     */
+    private Integer port;
+    /**
+     * <p>
      * The fully qualified domain name for the service to match from the request.
      * </p>
      */
@@ -159,6 +165,46 @@ public class GrpcGatewayRouteMatch implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The port number to match from the request.
+     * </p>
+     * 
+     * @param port
+     *        The port number to match from the request.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * The port number to match from the request.
+     * </p>
+     * 
+     * @return The port number to match from the request.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * The port number to match from the request.
+     * </p>
+     * 
+     * @param port
+     *        The port number to match from the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GrpcGatewayRouteMatch withPort(Integer port) {
+        setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
      * The fully qualified domain name for the service to match from the request.
      * </p>
      * 
@@ -213,6 +259,8 @@ public class GrpcGatewayRouteMatch implements Serializable, Cloneable, Structure
             sb.append("Hostname: ").append(getHostname()).append(",");
         if (getMetadata() != null)
             sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getPort() != null)
+            sb.append("Port: ").append(getPort()).append(",");
         if (getServiceName() != null)
             sb.append("ServiceName: ").append(getServiceName());
         sb.append("}");
@@ -237,6 +285,10 @@ public class GrpcGatewayRouteMatch implements Serializable, Cloneable, Structure
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
         if (other.getServiceName() == null ^ this.getServiceName() == null)
             return false;
         if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
@@ -251,6 +303,7 @@ public class GrpcGatewayRouteMatch implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         return hashCode;
     }

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum VpcAttributeName {
 
     EnableDnsSupport("enableDnsSupport"),
-    EnableDnsHostnames("enableDnsHostnames");
+    EnableDnsHostnames("enableDnsHostnames"),
+    EnableNetworkAddressUsageMetrics("enableNetworkAddressUsageMetrics");
 
     private String value;
 

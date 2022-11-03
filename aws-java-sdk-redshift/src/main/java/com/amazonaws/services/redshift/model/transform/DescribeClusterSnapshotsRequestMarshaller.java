@@ -49,6 +49,10 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(describeClusterSnapshotsRequest.getSnapshotIdentifier()));
         }
 
+        if (describeClusterSnapshotsRequest.getSnapshotArn() != null) {
+            request.addParameter("SnapshotArn", StringUtils.fromString(describeClusterSnapshotsRequest.getSnapshotArn()));
+        }
+
         if (describeClusterSnapshotsRequest.getSnapshotType() != null) {
             request.addParameter("SnapshotType", StringUtils.fromString(describeClusterSnapshotsRequest.getSnapshotType()));
         }

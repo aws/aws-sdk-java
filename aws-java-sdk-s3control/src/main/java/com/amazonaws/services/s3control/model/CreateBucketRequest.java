@@ -125,7 +125,7 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      */
@@ -736,14 +736,14 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      * 
      * @param outpostId
      *        The ID of the Outposts where the bucket is being created.</p> <note>
      *        <p>
-     *        This is required by Amazon S3 on Outposts buckets.
+     *        This ID is required by Amazon S3 on Outposts buckets.
      *        </p>
      */
 
@@ -757,13 +757,13 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      * 
      * @return The ID of the Outposts where the bucket is being created.</p> <note>
      *         <p>
-     *         This is required by Amazon S3 on Outposts buckets.
+     *         This ID is required by Amazon S3 on Outposts buckets.
      *         </p>
      */
 
@@ -777,14 +777,14 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      * 
      * @param outpostId
      *        The ID of the Outposts where the bucket is being created.</p> <note>
      *        <p>
-     *        This is required by Amazon S3 on Outposts buckets.
+     *        This ID is required by Amazon S3 on Outposts buckets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

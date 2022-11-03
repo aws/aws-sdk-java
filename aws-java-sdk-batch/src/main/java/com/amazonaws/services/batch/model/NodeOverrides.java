@@ -19,12 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+ * An object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
  * </p>
  * <note>
  * <p>
- * This isn't applicable to jobs that are running on Fargate resources and shouldn't be provided; use
- * <code>containerOverrides</code> instead.
+ * This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.
+ * Rather, use <code>containerOverrides</code> instead.
  * </p>
  * </note>
  * 
@@ -37,25 +37,25 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
-     * specified in the job definition. To use this override:
+     * specified in the job definition. To use this override, you must meet the following conditions:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * There must be at least one node range in your job definition that has an open upper boundary (such as
-     * <code>:</code> or <code>n:</code>).
+     * There must be at least one node range in your job definition that has an open upper boundary, such as
+     * <code>:</code> or <code>n:</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
-     * specified in the override.
+     * The lower boundary of the node range that's specified in the job definition must be fewer than the number of
+     * nodes specified in the override.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
-     * override.
+     * The main node index that's specified in the job definition must be fewer than the number of nodes specified in
+     * the override.
      * </p>
      * </li>
      * </ul>
@@ -71,49 +71,49 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
-     * specified in the job definition. To use this override:
+     * specified in the job definition. To use this override, you must meet the following conditions:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * There must be at least one node range in your job definition that has an open upper boundary (such as
-     * <code>:</code> or <code>n:</code>).
+     * There must be at least one node range in your job definition that has an open upper boundary, such as
+     * <code>:</code> or <code>n:</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
-     * specified in the override.
+     * The lower boundary of the node range that's specified in the job definition must be fewer than the number of
+     * nodes specified in the override.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
-     * override.
+     * The main node index that's specified in the job definition must be fewer than the number of nodes specified in
+     * the override.
      * </p>
      * </li>
      * </ul>
      * 
      * @param numNodes
      *        The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that
-     *        are specified in the job definition. To use this override:</p>
+     *        are specified in the job definition. To use this override, you must meet the following conditions:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        There must be at least one node range in your job definition that has an open upper boundary (such as
-     *        <code>:</code> or <code>n:</code>).
+     *        There must be at least one node range in your job definition that has an open upper boundary, such as
+     *        <code>:</code> or <code>n:</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The lower boundary of the node range specified in the job definition must be fewer than the number of
-     *        nodes specified in the override.
+     *        The lower boundary of the node range that's specified in the job definition must be fewer than the number
+     *        of nodes specified in the override.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The main node index specified in the job definition must be fewer than the number of nodes specified in
-     *        the override.
+     *        The main node index that's specified in the job definition must be fewer than the number of nodes
+     *        specified in the override.
      *        </p>
      *        </li>
      */
@@ -125,48 +125,48 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
-     * specified in the job definition. To use this override:
+     * specified in the job definition. To use this override, you must meet the following conditions:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * There must be at least one node range in your job definition that has an open upper boundary (such as
-     * <code>:</code> or <code>n:</code>).
+     * There must be at least one node range in your job definition that has an open upper boundary, such as
+     * <code>:</code> or <code>n:</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
-     * specified in the override.
+     * The lower boundary of the node range that's specified in the job definition must be fewer than the number of
+     * nodes specified in the override.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
-     * override.
+     * The main node index that's specified in the job definition must be fewer than the number of nodes specified in
+     * the override.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that
-     *         are specified in the job definition. To use this override:</p>
+     *         are specified in the job definition. To use this override, you must meet the following conditions:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         There must be at least one node range in your job definition that has an open upper boundary (such as
-     *         <code>:</code> or <code>n:</code>).
+     *         There must be at least one node range in your job definition that has an open upper boundary, such as
+     *         <code>:</code> or <code>n:</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The lower boundary of the node range specified in the job definition must be fewer than the number of
-     *         nodes specified in the override.
+     *         The lower boundary of the node range that's specified in the job definition must be fewer than the number
+     *         of nodes specified in the override.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The main node index specified in the job definition must be fewer than the number of nodes specified in
-     *         the override.
+     *         The main node index that's specified in the job definition must be fewer than the number of nodes
+     *         specified in the override.
      *         </p>
      *         </li>
      */
@@ -178,49 +178,49 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
-     * specified in the job definition. To use this override:
+     * specified in the job definition. To use this override, you must meet the following conditions:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * There must be at least one node range in your job definition that has an open upper boundary (such as
-     * <code>:</code> or <code>n:</code>).
+     * There must be at least one node range in your job definition that has an open upper boundary, such as
+     * <code>:</code> or <code>n:</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
-     * specified in the override.
+     * The lower boundary of the node range that's specified in the job definition must be fewer than the number of
+     * nodes specified in the override.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
-     * override.
+     * The main node index that's specified in the job definition must be fewer than the number of nodes specified in
+     * the override.
      * </p>
      * </li>
      * </ul>
      * 
      * @param numNodes
      *        The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that
-     *        are specified in the job definition. To use this override:</p>
+     *        are specified in the job definition. To use this override, you must meet the following conditions:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        There must be at least one node range in your job definition that has an open upper boundary (such as
-     *        <code>:</code> or <code>n:</code>).
+     *        There must be at least one node range in your job definition that has an open upper boundary, such as
+     *        <code>:</code> or <code>n:</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The lower boundary of the node range specified in the job definition must be fewer than the number of
-     *        nodes specified in the override.
+     *        The lower boundary of the node range that's specified in the job definition must be fewer than the number
+     *        of nodes specified in the override.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The main node index specified in the job definition must be fewer than the number of nodes specified in
-     *        the override.
+     *        The main node index that's specified in the job definition must be fewer than the number of nodes
+     *        specified in the override.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

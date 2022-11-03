@@ -29,16 +29,15 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     * A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
-     * >DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>
-     * .
+     * A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     * >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * </p>
      */
     private java.util.List<String> values;
@@ -51,11 +50,11 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     * A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      * </p>
      * 
      * @param name
-     *        A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     *        A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      */
 
     public void setName(String name) {
@@ -64,10 +63,10 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     * A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      * </p>
      * 
-     * @return A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     * @return A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      */
 
     public String getName() {
@@ -76,11 +75,11 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     * A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      * </p>
      * 
      * @param name
-     *        A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
+     *        A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,16 +90,14 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
-     * >DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>
-     * .
+     * A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     * >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * </p>
      * 
-     * @return A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     *         href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-     *         DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
-     *         <code>o-0123456789abcdef0</code>.
+     * @return A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     *         href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     *         >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      */
 
     public java.util.List<String> getValues() {
@@ -109,17 +106,15 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
-     * >DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>
-     * .
+     * A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     * >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * </p>
      * 
      * @param values
-     *        A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-     *        DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
-     *        <code>o-0123456789abcdef0</code>.
+     *        A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     *        >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -133,10 +128,9 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
-     * >DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>
-     * .
+     * A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     * >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,10 +139,9 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-     *        DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
-     *        <code>o-0123456789abcdef0</code>.
+     *        A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     *        >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,17 +157,15 @@ public class ExportFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
-     * >DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>
-     * .
+     * A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     * >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * </p>
      * 
      * @param values
-     *        A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-     *        DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
-     *        <code>o-0123456789abcdef0</code>.
+     *        A single agent ID for a Discovery Agent. An agent ID can be found using the <a
+     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html"
+     *        >DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

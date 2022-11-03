@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Container properties are used in job definitions to describe the container that's launched as part of a job.
+ * Container properties are used for Amazon ECS based job definitions. These properties to describe the container that's
+ * launched as part of a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerProperties" target="_top">AWS API
@@ -32,11 +33,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
      * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
-     * maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes
+     * (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -55,7 +57,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -98,7 +100,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
      * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
      * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
      * hard limit can be specified in several places. It must be specified for each node at least once.
@@ -154,8 +156,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * </important> <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      */
@@ -268,7 +270,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -309,11 +311,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
      * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
-     * maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes
+     * (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -332,7 +335,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -358,9 +361,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * @param image
      *        The image used to start a container. This string is passed directly to the Docker daemon. Images in the
      *        Docker Hub registry are available by default. Other repositories are specified with
-     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     *        numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This
-     *        parameter maps to <code>Image</code> in the <a
+     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can
+     *        contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.),
+     *        forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code>
      *        parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -380,7 +383,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *        <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -411,11 +414,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
      * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
-     * maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes
+     * (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -434,7 +438,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -459,9 +463,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * 
      * @return The image used to start a container. This string is passed directly to the Docker daemon. Images in the
      *         Docker Hub registry are available by default. Other repositories are specified with
-     *         <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and
-     *         lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are
-     *         allowed. This parameter maps to <code>Image</code> in the <a
+     *         <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can
+     *         contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.),
+     *         forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code>
      *         parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -481,7 +485,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <li>
      *         <p>
      *         Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     *         <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *         <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -512,11 +516,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
      * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
-     * maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes
+     * (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -535,7 +540,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -561,9 +566,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * @param image
      *        The image used to start a container. This string is passed directly to the Docker daemon. Images in the
      *        Docker Hub registry are available by default. Other repositories are specified with
-     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     *        numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This
-     *        parameter maps to <code>Image</code> in the <a
+     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can
+     *        contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.),
+     *        forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code>
      *        parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -583,7 +588,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *        <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -709,7 +714,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
      * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
      * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
      * hard limit can be specified in several places. It must be specified for each node at least once.
@@ -717,7 +722,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * 
      * @param memory
      *        This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for
-     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
+     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
      *        resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
      *        exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *        this parameter. The memory hard limit can be specified in several places. It must be specified for each
@@ -731,15 +736,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
      * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
      * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
      * hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * 
      * @return This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements
-     *         for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
-     *         resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
+     *         for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on
+     *         EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
      *         exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *         this parameter. The memory hard limit can be specified in several places. It must be specified for each
      *         node at least once.
@@ -752,7 +757,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
      * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
      * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
      * hard limit can be specified in several places. It must be specified for each node at least once.
@@ -760,7 +765,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * 
      * @param memory
      *        This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for
-     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
+     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
      *        resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
      *        exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *        this parameter. The memory hard limit can be specified in several places. It must be specified for each
@@ -1086,8 +1091,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * </important> <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
@@ -1101,8 +1106,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </p>
      *         </important> <note>
      *         <p>
-     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *         variables that are set by the Batch service.
+     *         Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *         variables that Batch sets.
      *         </p>
      */
 
@@ -1123,8 +1128,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * </important> <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
@@ -1139,8 +1144,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </important> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      */
 
@@ -1166,8 +1171,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * </important> <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * <p>
@@ -1187,8 +1192,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </important> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1216,8 +1221,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * </important> <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
@@ -1232,8 +1237,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </important> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1955,7 +1960,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -1991,7 +1996,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      *        </p>
      *        <note>
@@ -2032,7 +2037,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -2067,7 +2072,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </note>
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *         check the Docker Remote API version on your container instance, log into your container instance and run
+     *         check the Docker Remote API version on your container instance, log in to your container instance and run
      *         the following command: <code>sudo docker version | grep "Server API version"</code>
      *         </p>
      *         <note>
@@ -2108,7 +2113,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -2144,7 +2149,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      *        </p>
      *        <note>

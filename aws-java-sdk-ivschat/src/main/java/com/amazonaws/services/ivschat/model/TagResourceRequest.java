@@ -33,7 +33,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -80,10 +83,16 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
-     * @return Array of tags to be added or updated.
+     * @return Array of tags to be added or updated. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *         details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *         Chat has no constraints beyond what is documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +101,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of tags to be added or updated.
+     *        Array of tags to be added or updated. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +120,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of tags to be added or updated.
+     *        Array of tags to be added or updated. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

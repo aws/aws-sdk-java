@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag that can be assigned to a Voice ID resource.
+ * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+ * "key2":"value2"} }.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/Tag" target="_top">AWS API Documentation</a>
@@ -30,14 +31,14 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * 'Department':'Sales', the key is 'Department'.
      * </p>
      */
     private String key;
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * 'Department':'Sales', the value is 'Sales'.
      * </p>
      */
     private String value;
@@ -45,12 +46,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * 'Department':'Sales', the key is 'Department'.
      * </p>
      * 
      * @param key
      *        The first part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the key is 'Department'.
+     *        tag 'Department':'Sales', the key is 'Department'.
      */
 
     public void setKey(String key) {
@@ -60,11 +61,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * 'Department':'Sales', the key is 'Department'.
      * </p>
      * 
      * @return The first part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *         tag ‘Department’:’Sales’, the key is 'Department'.
+     *         tag 'Department':'Sales', the key is 'Department'.
      */
 
     public String getKey() {
@@ -74,12 +75,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the key is 'Department'.
+     * 'Department':'Sales', the key is 'Department'.
      * </p>
      * 
      * @param key
      *        The first part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the key is 'Department'.
+     *        tag 'Department':'Sales', the key is 'Department'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,12 +92,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * 'Department':'Sales', the value is 'Sales'.
      * </p>
      * 
      * @param value
      *        The second part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the value is 'Sales'.
+     *        tag 'Department':'Sales', the value is 'Sales'.
      */
 
     public void setValue(String value) {
@@ -106,11 +107,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * 'Department':'Sales', the value is 'Sales'.
      * </p>
      * 
      * @return The second part of a key:value pair that forms a tag associated with a given resource. For example, in
-     *         the tag ‘Department’:’Sales’, the value is 'Sales'.
+     *         the tag 'Department':'Sales', the value is 'Sales'.
      */
 
     public String getValue() {
@@ -120,12 +121,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
-     * ‘Department’:’Sales’, the value is 'Sales'.
+     * 'Department':'Sales', the value is 'Sales'.
      * </p>
      * 
      * @param value
      *        The second part of a key:value pair that forms a tag associated with a given resource. For example, in the
-     *        tag ‘Department’:’Sales’, the value is 'Sales'.
+     *        tag 'Department':'Sales', the value is 'Sales'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -24,6 +24,7 @@ public enum ActionValue {
     BLOCK("BLOCK"),
     COUNT("COUNT"),
     CAPTCHA("CAPTCHA"),
+    CHALLENGE("CHALLENGE"),
     EXCLUDED_AS_COUNT("EXCLUDED_AS_COUNT");
 
     private String value;

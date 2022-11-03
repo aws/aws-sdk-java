@@ -166,6 +166,37 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     * <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.
+     * </p>
+     */
+    private String actionsSuppressor;
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     */
+    private Integer actionsSuppressorWaitPeriod;
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     */
+    private Integer actionsSuppressorExtensionPeriod;
 
     /**
      * <p>
@@ -1222,6 +1253,195 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     * <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.
+     * </p>
+     * 
+     * @param actionsSuppressor
+     *        Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     *        <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing
+     *        alarm.
+     */
+
+    public void setActionsSuppressor(String actionsSuppressor) {
+        this.actionsSuppressor = actionsSuppressor;
+    }
+
+    /**
+     * <p>
+     * Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     * <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.
+     * </p>
+     * 
+     * @return Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     *         <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing
+     *         alarm.
+     */
+
+    public String getActionsSuppressor() {
+        return this.actionsSuppressor;
+    }
+
+    /**
+     * <p>
+     * Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     * <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.
+     * </p>
+     * 
+     * @param actionsSuppressor
+     *        Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+     *        <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing
+     *        alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutCompositeAlarmRequest withActionsSuppressor(String actionsSuppressor) {
+        setActionsSuppressor(actionsSuppressor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     * 
+     * @param actionsSuppressorWaitPeriod
+     *        The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     *        <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+     *        <p>
+     *        <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     *        </p>
+     */
+
+    public void setActionsSuppressorWaitPeriod(Integer actionsSuppressorWaitPeriod) {
+        this.actionsSuppressorWaitPeriod = actionsSuppressorWaitPeriod;
+    }
+
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     * 
+     * @return The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     *         <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+     *         <p>
+     *         <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     *         </p>
+     */
+
+    public Integer getActionsSuppressorWaitPeriod() {
+        return this.actionsSuppressorWaitPeriod;
+    }
+
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     * 
+     * @param actionsSuppressorWaitPeriod
+     *        The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the
+     *        <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+     *        <p>
+     *        <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutCompositeAlarmRequest withActionsSuppressorWaitPeriod(Integer actionsSuppressorWaitPeriod) {
+        setActionsSuppressorWaitPeriod(actionsSuppressorWaitPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     * 
+     * @param actionsSuppressorExtensionPeriod
+     *        The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     *        <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+     *        <p>
+     *        <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     *        </p>
+     */
+
+    public void setActionsSuppressorExtensionPeriod(Integer actionsSuppressorExtensionPeriod) {
+        this.actionsSuppressorExtensionPeriod = actionsSuppressorExtensionPeriod;
+    }
+
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     * 
+     * @return The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     *         <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+     *         <p>
+     *         <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     *         </p>
+     */
+
+    public Integer getActionsSuppressorExtensionPeriod() {
+        return this.actionsSuppressorExtensionPeriod;
+    }
+
+    /**
+     * <p>
+     * The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     * <code>ALARM</code> state. After this time, the composite alarm performs its actions.
+     * </p>
+     * <important>
+     * <p>
+     * <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     * </p>
+     * </important>
+     * 
+     * @param actionsSuppressorExtensionPeriod
+     *        The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the
+     *        <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+     *        <p>
+     *        <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutCompositeAlarmRequest withActionsSuppressorExtensionPeriod(Integer actionsSuppressorExtensionPeriod) {
+        setActionsSuppressorExtensionPeriod(actionsSuppressorExtensionPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1248,7 +1468,13 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getOKActions() != null)
             sb.append("OKActions: ").append(getOKActions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getActionsSuppressor() != null)
+            sb.append("ActionsSuppressor: ").append(getActionsSuppressor()).append(",");
+        if (getActionsSuppressorWaitPeriod() != null)
+            sb.append("ActionsSuppressorWaitPeriod: ").append(getActionsSuppressorWaitPeriod()).append(",");
+        if (getActionsSuppressorExtensionPeriod() != null)
+            sb.append("ActionsSuppressorExtensionPeriod: ").append(getActionsSuppressorExtensionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -1295,6 +1521,19 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getActionsSuppressor() == null ^ this.getActionsSuppressor() == null)
+            return false;
+        if (other.getActionsSuppressor() != null && other.getActionsSuppressor().equals(this.getActionsSuppressor()) == false)
+            return false;
+        if (other.getActionsSuppressorWaitPeriod() == null ^ this.getActionsSuppressorWaitPeriod() == null)
+            return false;
+        if (other.getActionsSuppressorWaitPeriod() != null && other.getActionsSuppressorWaitPeriod().equals(this.getActionsSuppressorWaitPeriod()) == false)
+            return false;
+        if (other.getActionsSuppressorExtensionPeriod() == null ^ this.getActionsSuppressorExtensionPeriod() == null)
+            return false;
+        if (other.getActionsSuppressorExtensionPeriod() != null
+                && other.getActionsSuppressorExtensionPeriod().equals(this.getActionsSuppressorExtensionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -1311,6 +1550,9 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getInsufficientDataActions() == null) ? 0 : getInsufficientDataActions().hashCode());
         hashCode = prime * hashCode + ((getOKActions() == null) ? 0 : getOKActions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getActionsSuppressor() == null) ? 0 : getActionsSuppressor().hashCode());
+        hashCode = prime * hashCode + ((getActionsSuppressorWaitPeriod() == null) ? 0 : getActionsSuppressorWaitPeriod().hashCode());
+        hashCode = prime * hashCode + ((getActionsSuppressorExtensionPeriod() == null) ? 0 : getActionsSuppressorExtensionPeriod().hashCode());
         return hashCode;
     }
 

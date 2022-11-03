@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * WAF couldn’t perform the operation because your resource doesn’t exist.
+ * WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're
+ * using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of
+ * minutes for changes to propagate.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

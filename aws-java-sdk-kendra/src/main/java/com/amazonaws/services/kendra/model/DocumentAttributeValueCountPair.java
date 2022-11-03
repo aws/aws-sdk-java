@@ -30,7 +30,7 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR."
+     * The value of the attribute. For example, "HR".
      * </p>
      */
     private DocumentAttributeValue documentAttributeValue;
@@ -40,14 +40,28 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
      * </p>
      */
     private Integer count;
+    /**
+     * <p>
+     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
+     * counts for each facet nested within a facet.
+     * </p>
+     * <p>
+     * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
+     * document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned
+     * to "Engineering". You can display nested facets in the search results so that documents can be searched not only
+     * by department but also by a sub department within a department. The counts for documents that belong to
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * </p>
+     */
+    private java.util.List<FacetResult> facetResults;
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR."
+     * The value of the attribute. For example, "HR".
      * </p>
      * 
      * @param documentAttributeValue
-     *        The value of the attribute. For example, "HR."
+     *        The value of the attribute. For example, "HR".
      */
 
     public void setDocumentAttributeValue(DocumentAttributeValue documentAttributeValue) {
@@ -56,10 +70,10 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR."
+     * The value of the attribute. For example, "HR".
      * </p>
      * 
-     * @return The value of the attribute. For example, "HR."
+     * @return The value of the attribute. For example, "HR".
      */
 
     public DocumentAttributeValue getDocumentAttributeValue() {
@@ -68,11 +82,11 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR."
+     * The value of the attribute. For example, "HR".
      * </p>
      * 
      * @param documentAttributeValue
-     *        The value of the attribute. For example, "HR."
+     *        The value of the attribute. For example, "HR".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,6 +136,137 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
+     * counts for each facet nested within a facet.
+     * </p>
+     * <p>
+     * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
+     * document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned
+     * to "Engineering". You can display nested facets in the search results so that documents can be searched not only
+     * by department but also by a sub department within a department. The counts for documents that belong to
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * </p>
+     * 
+     * @return Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
+     *         the counts for each facet nested within a facet.</p>
+     *         <p>
+     *         For example, the document attribute or facet "Department" includes a value called "Engineering". In
+     *         addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend"
+     *         for documents assigned to "Engineering". You can display nested facets in the search results so that
+     *         documents can be searched not only by department but also by a sub department within a department. The
+     *         counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a
+     *         query.
+     */
+
+    public java.util.List<FacetResult> getFacetResults() {
+        return facetResults;
+    }
+
+    /**
+     * <p>
+     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
+     * counts for each facet nested within a facet.
+     * </p>
+     * <p>
+     * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
+     * document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned
+     * to "Engineering". You can display nested facets in the search results so that documents can be searched not only
+     * by department but also by a sub department within a department. The counts for documents that belong to
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * </p>
+     * 
+     * @param facetResults
+     *        Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
+     *        the counts for each facet nested within a facet.</p>
+     *        <p>
+     *        For example, the document attribute or facet "Department" includes a value called "Engineering". In
+     *        addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for
+     *        documents assigned to "Engineering". You can display nested facets in the search results so that documents
+     *        can be searched not only by department but also by a sub department within a department. The counts for
+     *        documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.
+     */
+
+    public void setFacetResults(java.util.Collection<FacetResult> facetResults) {
+        if (facetResults == null) {
+            this.facetResults = null;
+            return;
+        }
+
+        this.facetResults = new java.util.ArrayList<FacetResult>(facetResults);
+    }
+
+    /**
+     * <p>
+     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
+     * counts for each facet nested within a facet.
+     * </p>
+     * <p>
+     * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
+     * document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned
+     * to "Engineering". You can display nested facets in the search results so that documents can be searched not only
+     * by department but also by a sub department within a department. The counts for documents that belong to
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFacetResults(java.util.Collection)} or {@link #withFacetResults(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param facetResults
+     *        Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
+     *        the counts for each facet nested within a facet.</p>
+     *        <p>
+     *        For example, the document attribute or facet "Department" includes a value called "Engineering". In
+     *        addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for
+     *        documents assigned to "Engineering". You can display nested facets in the search results so that documents
+     *        can be searched not only by department but also by a sub department within a department. The counts for
+     *        documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentAttributeValueCountPair withFacetResults(FacetResult... facetResults) {
+        if (this.facetResults == null) {
+            setFacetResults(new java.util.ArrayList<FacetResult>(facetResults.length));
+        }
+        for (FacetResult ele : facetResults) {
+            this.facetResults.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
+     * counts for each facet nested within a facet.
+     * </p>
+     * <p>
+     * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
+     * document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned
+     * to "Engineering". You can display nested facets in the search results so that documents can be searched not only
+     * by department but also by a sub department within a department. The counts for documents that belong to
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * </p>
+     * 
+     * @param facetResults
+     *        Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
+     *        the counts for each facet nested within a facet.</p>
+     *        <p>
+     *        For example, the document attribute or facet "Department" includes a value called "Engineering". In
+     *        addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for
+     *        documents assigned to "Engineering". You can display nested facets in the search results so that documents
+     *        can be searched not only by department but also by a sub department within a department. The counts for
+     *        documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentAttributeValueCountPair withFacetResults(java.util.Collection<FacetResult> facetResults) {
+        setFacetResults(facetResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +281,9 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
         if (getDocumentAttributeValue() != null)
             sb.append("DocumentAttributeValue: ").append(getDocumentAttributeValue()).append(",");
         if (getCount() != null)
-            sb.append("Count: ").append(getCount());
+            sb.append("Count: ").append(getCount()).append(",");
+        if (getFacetResults() != null)
+            sb.append("FacetResults: ").append(getFacetResults());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +306,10 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
+        if (other.getFacetResults() == null ^ this.getFacetResults() == null)
+            return false;
+        if (other.getFacetResults() != null && other.getFacetResults().equals(this.getFacetResults()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +320,7 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
         hashCode = prime * hashCode + ((getDocumentAttributeValue() == null) ? 0 : getDocumentAttributeValue().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getFacetResults() == null) ? 0 : getFacetResults().hashCode());
         return hashCode;
     }
 

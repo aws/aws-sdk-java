@@ -27,15 +27,15 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Name of the conformance pack you want to create.
+     * The unique name of the conformance pack you want to deploy.
      * </p>
      */
     private String conformancePackName;
     /**
      * <p>
-     * Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the
-     * conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the
-     * conformance pack.
+     * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
+     * the conformance pack.
      * </p>
      * <note>
      * <p>
@@ -46,13 +46,13 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     private String templateS3Uri;
     /**
      * <p>
-     * A string containing full conformance pack template body. Structure containing the template body with a minimum
-     * length of 1 byte and a maximum length of 51,200 bytes.
+     * A string containing the full conformance pack template body. The structure containing the template body has a
+     * minimum length of 1 byte and a maximum length of 51,200 bytes.
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
-     * a remediation action (<code>AWS::Config::RemediationConfiguration</code>).
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
      */
@@ -85,14 +85,22 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConformancePackInputParameter> conformancePackInputParameters;
+    /**
+     * <p>
+     * An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name
+     * (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that
+     * is used to create a conformance pack.
+     * </p>
+     */
+    private TemplateSSMDocumentDetails templateSSMDocumentDetails;
 
     /**
      * <p>
-     * Name of the conformance pack you want to create.
+     * The unique name of the conformance pack you want to deploy.
      * </p>
      * 
      * @param conformancePackName
-     *        Name of the conformance pack you want to create.
+     *        The unique name of the conformance pack you want to deploy.
      */
 
     public void setConformancePackName(String conformancePackName) {
@@ -101,10 +109,10 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Name of the conformance pack you want to create.
+     * The unique name of the conformance pack you want to deploy.
      * </p>
      * 
-     * @return Name of the conformance pack you want to create.
+     * @return The unique name of the conformance pack you want to deploy.
      */
 
     public String getConformancePackName() {
@@ -113,11 +121,11 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Name of the conformance pack you want to create.
+     * The unique name of the conformance pack you want to deploy.
      * </p>
      * 
      * @param conformancePackName
-     *        Name of the conformance pack you want to create.
+     *        The unique name of the conformance pack you want to deploy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,9 +136,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the
-     * conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the
-     * conformance pack.
+     * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
+     * the conformance pack.
      * </p>
      * <note>
      * <p>
@@ -139,9 +147,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param templateS3Uri
-     *        Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to
-     *        the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region
-     *        as the conformance pack. </p> <note>
+     *        The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must
+     *        point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     *        Region as the conformance pack. </p> <note>
      *        <p>
      *        You must have access to read Amazon S3 bucket.
      *        </p>
@@ -153,9 +161,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the
-     * conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the
-     * conformance pack.
+     * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
+     * the conformance pack.
      * </p>
      * <note>
      * <p>
@@ -163,9 +171,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * 
-     * @return Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
-     *         to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
-     *         region as the conformance pack. </p> <note>
+     * @return The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must
+     *         point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
+     *         same Region as the conformance pack. </p> <note>
      *         <p>
      *         You must have access to read Amazon S3 bucket.
      *         </p>
@@ -177,9 +185,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the
-     * conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the
-     * conformance pack.
+     * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
+     * the conformance pack.
      * </p>
      * <note>
      * <p>
@@ -188,9 +196,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param templateS3Uri
-     *        Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to
-     *        the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region
-     *        as the conformance pack. </p> <note>
+     *        The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must
+     *        point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     *        Region as the conformance pack. </p> <note>
      *        <p>
      *        You must have access to read Amazon S3 bucket.
      *        </p>
@@ -204,23 +212,22 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A string containing full conformance pack template body. Structure containing the template body with a minimum
-     * length of 1 byte and a maximum length of 51,200 bytes.
+     * A string containing the full conformance pack template body. The structure containing the template body has a
+     * minimum length of 1 byte and a maximum length of 51,200 bytes.
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
-     * a remediation action (<code>AWS::Config::RemediationConfiguration</code>).
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
      * 
      * @param templateBody
-     *        A string containing full conformance pack template body. Structure containing the template body with a
-     *        minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
+     *        A string containing the full conformance pack template body. The structure containing the template body
+     *        has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
      *        <p>
-     *        You can only use a YAML template with two resource types: Config rule (
-     *        <code>AWS::Config::ConfigRule</code>) and a remediation action (
-     *        <code>AWS::Config::RemediationConfiguration</code>).
+     *        You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+     *        and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      *        </p>
      */
 
@@ -230,22 +237,21 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A string containing full conformance pack template body. Structure containing the template body with a minimum
-     * length of 1 byte and a maximum length of 51,200 bytes.
+     * A string containing the full conformance pack template body. The structure containing the template body has a
+     * minimum length of 1 byte and a maximum length of 51,200 bytes.
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
-     * a remediation action (<code>AWS::Config::RemediationConfiguration</code>).
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
      * 
-     * @return A string containing full conformance pack template body. Structure containing the template body with a
-     *         minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
+     * @return A string containing the full conformance pack template body. The structure containing the template body
+     *         has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
      *         <p>
-     *         You can only use a YAML template with two resource types: Config rule (
-     *         <code>AWS::Config::ConfigRule</code>) and a remediation action (
-     *         <code>AWS::Config::RemediationConfiguration</code>).
+     *         You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+     *         and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      *         </p>
      */
 
@@ -255,23 +261,22 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A string containing full conformance pack template body. Structure containing the template body with a minimum
-     * length of 1 byte and a maximum length of 51,200 bytes.
+     * A string containing the full conformance pack template body. The structure containing the template body has a
+     * minimum length of 1 byte and a maximum length of 51,200 bytes.
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
-     * a remediation action (<code>AWS::Config::RemediationConfiguration</code>).
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
      * 
      * @param templateBody
-     *        A string containing full conformance pack template body. Structure containing the template body with a
-     *        minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
+     *        A string containing the full conformance pack template body. The structure containing the template body
+     *        has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
      *        <p>
-     *        You can only use a YAML template with two resource types: Config rule (
-     *        <code>AWS::Config::ConfigRule</code>) and a remediation action (
-     *        <code>AWS::Config::RemediationConfiguration</code>).
+     *        You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+     *        and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -483,6 +488,58 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name
+     * (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that
+     * is used to create a conformance pack.
+     * </p>
+     * 
+     * @param templateSSMDocumentDetails
+     *        An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource
+     *        Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM
+     *        document that is used to create a conformance pack.
+     */
+
+    public void setTemplateSSMDocumentDetails(TemplateSSMDocumentDetails templateSSMDocumentDetails) {
+        this.templateSSMDocumentDetails = templateSSMDocumentDetails;
+    }
+
+    /**
+     * <p>
+     * An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name
+     * (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that
+     * is used to create a conformance pack.
+     * </p>
+     * 
+     * @return An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource
+     *         Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM
+     *         document that is used to create a conformance pack.
+     */
+
+    public TemplateSSMDocumentDetails getTemplateSSMDocumentDetails() {
+        return this.templateSSMDocumentDetails;
+    }
+
+    /**
+     * <p>
+     * An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name
+     * (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that
+     * is used to create a conformance pack.
+     * </p>
+     * 
+     * @param templateSSMDocumentDetails
+     *        An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource
+     *        Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM
+     *        document that is used to create a conformance pack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutConformancePackRequest withTemplateSSMDocumentDetails(TemplateSSMDocumentDetails templateSSMDocumentDetails) {
+        setTemplateSSMDocumentDetails(templateSSMDocumentDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -505,7 +562,9 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDeliveryS3KeyPrefix() != null)
             sb.append("DeliveryS3KeyPrefix: ").append(getDeliveryS3KeyPrefix()).append(",");
         if (getConformancePackInputParameters() != null)
-            sb.append("ConformancePackInputParameters: ").append(getConformancePackInputParameters());
+            sb.append("ConformancePackInputParameters: ").append(getConformancePackInputParameters()).append(",");
+        if (getTemplateSSMDocumentDetails() != null)
+            sb.append("TemplateSSMDocumentDetails: ").append(getTemplateSSMDocumentDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +604,10 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getConformancePackInputParameters() != null
                 && other.getConformancePackInputParameters().equals(this.getConformancePackInputParameters()) == false)
             return false;
+        if (other.getTemplateSSMDocumentDetails() == null ^ this.getTemplateSSMDocumentDetails() == null)
+            return false;
+        if (other.getTemplateSSMDocumentDetails() != null && other.getTemplateSSMDocumentDetails().equals(this.getTemplateSSMDocumentDetails()) == false)
+            return false;
         return true;
     }
 
@@ -559,6 +622,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDeliveryS3Bucket() == null) ? 0 : getDeliveryS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getDeliveryS3KeyPrefix() == null) ? 0 : getDeliveryS3KeyPrefix().hashCode());
         hashCode = prime * hashCode + ((getConformancePackInputParameters() == null) ? 0 : getConformancePackInputParameters().hashCode());
+        hashCode = prime * hashCode + ((getTemplateSSMDocumentDetails() == null) ? 0 : getTemplateSSMDocumentDetails().hashCode());
         return hashCode;
     }
 

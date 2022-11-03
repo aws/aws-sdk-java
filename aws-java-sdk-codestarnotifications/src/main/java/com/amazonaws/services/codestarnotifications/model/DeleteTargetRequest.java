@@ -27,25 +27,26 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic to delete.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      * </p>
      */
     private String targetAddress;
     /**
      * <p>
-     * A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If
-     * set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.
+     * A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE.
+     * If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services
+     * account are deleted.
      * </p>
      */
     private Boolean forceUnsubscribeAll;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic to delete.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      * </p>
      * 
      * @param targetAddress
-     *        The Amazon Resource Name (ARN) of the SNS topic to delete.
+     *        The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      */
 
     public void setTargetAddress(String targetAddress) {
@@ -54,10 +55,10 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic to delete.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SNS topic to delete.
+     * @return The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      */
 
     public String getTargetAddress() {
@@ -66,11 +67,11 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic to delete.
+     * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      * </p>
      * 
      * @param targetAddress
-     *        The Amazon Resource Name (ARN) of the SNS topic to delete.
+     *        The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,14 +82,15 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If
-     * set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.
+     * A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE.
+     * If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services
+     * account are deleted.
      * </p>
      * 
      * @param forceUnsubscribeAll
-     *        A Boolean value that can be used to delete all associations with this SNS topic. The default value is
-     *        FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS
-     *        account are deleted.
+     *        A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is
+     *        FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web
+     *        Services account are deleted.
      */
 
     public void setForceUnsubscribeAll(Boolean forceUnsubscribeAll) {
@@ -97,13 +99,14 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If
-     * set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.
+     * A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE.
+     * If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services
+     * account are deleted.
      * </p>
      * 
-     * @return A Boolean value that can be used to delete all associations with this SNS topic. The default value is
-     *         FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS
-     *         account are deleted.
+     * @return A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is
+     *         FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon
+     *         Web Services account are deleted.
      */
 
     public Boolean getForceUnsubscribeAll() {
@@ -112,14 +115,15 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If
-     * set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.
+     * A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE.
+     * If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services
+     * account are deleted.
      * </p>
      * 
      * @param forceUnsubscribeAll
-     *        A Boolean value that can be used to delete all associations with this SNS topic. The default value is
-     *        FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS
-     *        account are deleted.
+     *        A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is
+     *        FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web
+     *        Services account are deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +134,14 @@ public class DeleteTargetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If
-     * set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.
+     * A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE.
+     * If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services
+     * account are deleted.
      * </p>
      * 
-     * @return A Boolean value that can be used to delete all associations with this SNS topic. The default value is
-     *         FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS
-     *         account are deleted.
+     * @return A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is
+     *         FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon
+     *         Web Services account are deleted.
      */
 
     public Boolean isForceUnsubscribeAll() {

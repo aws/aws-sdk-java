@@ -30,7 +30,7 @@ public class SessionCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     * Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      * </p>
      */
     private String name;
@@ -43,11 +43,11 @@ public class SessionCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     * Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      * </p>
      * 
      * @param name
-     *        Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     *        Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class SessionCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     * Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      * </p>
      * 
-     * @return Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     * @return Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class SessionCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     * Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      * </p>
      * 
      * @param name
-     *        Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+     *        Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

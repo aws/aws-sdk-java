@@ -66,6 +66,10 @@ public class SalesforceDestinationPropertiesJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     salesforceDestinationProperties.setWriteOperationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dataTransferApi", targetDepth)) {
+                    context.nextToken();
+                    salesforceDestinationProperties.setDataTransferApi(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

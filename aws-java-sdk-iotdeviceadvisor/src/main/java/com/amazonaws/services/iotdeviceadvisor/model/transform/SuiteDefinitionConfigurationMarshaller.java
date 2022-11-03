@@ -34,10 +34,14 @@ public class SuiteDefinitionConfigurationMarshaller {
             .marshallLocationName("devices").build();
     private static final MarshallingInfo<Boolean> INTENDEDFORQUALIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("intendedForQualification").build();
+    private static final MarshallingInfo<Boolean> ISLONGDURATIONTEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isLongDurationTest").build();
     private static final MarshallingInfo<String> ROOTGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rootGroup").build();
     private static final MarshallingInfo<String> DEVICEPERMISSIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("devicePermissionRoleArn").build();
+    private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("protocol").build();
 
     private static final SuiteDefinitionConfigurationMarshaller instance = new SuiteDefinitionConfigurationMarshaller();
 
@@ -58,8 +62,10 @@ public class SuiteDefinitionConfigurationMarshaller {
             protocolMarshaller.marshall(suiteDefinitionConfiguration.getSuiteDefinitionName(), SUITEDEFINITIONNAME_BINDING);
             protocolMarshaller.marshall(suiteDefinitionConfiguration.getDevices(), DEVICES_BINDING);
             protocolMarshaller.marshall(suiteDefinitionConfiguration.getIntendedForQualification(), INTENDEDFORQUALIFICATION_BINDING);
+            protocolMarshaller.marshall(suiteDefinitionConfiguration.getIsLongDurationTest(), ISLONGDURATIONTEST_BINDING);
             protocolMarshaller.marshall(suiteDefinitionConfiguration.getRootGroup(), ROOTGROUP_BINDING);
             protocolMarshaller.marshall(suiteDefinitionConfiguration.getDevicePermissionRoleArn(), DEVICEPERMISSIONROLEARN_BINDING);
+            protocolMarshaller.marshall(suiteDefinitionConfiguration.getProtocol(), PROTOCOL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The code delivery details being returned from the server.
+ * The delivery details for an email or SMS message that Amazon Cognito sent for authentication or verification.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType"
@@ -30,30 +30,30 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The destination for the code delivery details.
+     * The email address or phone number destination where Amazon Cognito sent the code.
      * </p>
      */
     private String destination;
     /**
      * <p>
-     * The delivery medium (email message or phone number).
+     * The method that Amazon Cognito used to send the code.
      * </p>
      */
     private String deliveryMedium;
     /**
      * <p>
-     * The attribute name.
+     * The name of the attribute that Amazon Cognito verifies with the code.
      * </p>
      */
     private String attributeName;
 
     /**
      * <p>
-     * The destination for the code delivery details.
+     * The email address or phone number destination where Amazon Cognito sent the code.
      * </p>
      * 
      * @param destination
-     *        The destination for the code delivery details.
+     *        The email address or phone number destination where Amazon Cognito sent the code.
      */
 
     public void setDestination(String destination) {
@@ -62,10 +62,10 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The destination for the code delivery details.
+     * The email address or phone number destination where Amazon Cognito sent the code.
      * </p>
      * 
-     * @return The destination for the code delivery details.
+     * @return The email address or phone number destination where Amazon Cognito sent the code.
      */
 
     public String getDestination() {
@@ -74,11 +74,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The destination for the code delivery details.
+     * The email address or phone number destination where Amazon Cognito sent the code.
      * </p>
      * 
      * @param destination
-     *        The destination for the code delivery details.
+     *        The email address or phone number destination where Amazon Cognito sent the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The delivery medium (email message or phone number).
+     * The method that Amazon Cognito used to send the code.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or phone number).
+     *        The method that Amazon Cognito used to send the code.
      * @see DeliveryMediumType
      */
 
@@ -103,10 +103,10 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The delivery medium (email message or phone number).
+     * The method that Amazon Cognito used to send the code.
      * </p>
      * 
-     * @return The delivery medium (email message or phone number).
+     * @return The method that Amazon Cognito used to send the code.
      * @see DeliveryMediumType
      */
 
@@ -116,11 +116,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The delivery medium (email message or phone number).
+     * The method that Amazon Cognito used to send the code.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or phone number).
+     *        The method that Amazon Cognito used to send the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
@@ -132,11 +132,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The delivery medium (email message or phone number).
+     * The method that Amazon Cognito used to send the code.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or phone number).
+     *        The method that Amazon Cognito used to send the code.
      * @see DeliveryMediumType
      */
 
@@ -146,11 +146,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The delivery medium (email message or phone number).
+     * The method that Amazon Cognito used to send the code.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or phone number).
+     *        The method that Amazon Cognito used to send the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
@@ -162,11 +162,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The attribute name.
+     * The name of the attribute that Amazon Cognito verifies with the code.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name.
+     *        The name of the attribute that Amazon Cognito verifies with the code.
      */
 
     public void setAttributeName(String attributeName) {
@@ -175,10 +175,10 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The attribute name.
+     * The name of the attribute that Amazon Cognito verifies with the code.
      * </p>
      * 
-     * @return The attribute name.
+     * @return The name of the attribute that Amazon Cognito verifies with the code.
      */
 
     public String getAttributeName() {
@@ -187,11 +187,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The attribute name.
+     * The name of the attribute that Amazon Cognito verifies with the code.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name.
+     *        The name of the attribute that Amazon Cognito verifies with the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

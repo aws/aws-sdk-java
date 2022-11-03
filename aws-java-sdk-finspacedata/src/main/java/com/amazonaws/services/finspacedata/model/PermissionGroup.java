@@ -50,6 +50,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Indicates the permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -63,7 +70,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -101,6 +110,29 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Long lastModifiedTime;
+    /**
+     * <p>
+     * Indicates the status of the user account within a permission group.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String membershipStatus;
 
     /**
      * <p>
@@ -226,6 +258,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Indicates the permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -239,7 +278,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -265,7 +306,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @return Indicates the permissions that are granted to a specific group for accessing the FinSpace
-     *         application.</p>
+     *         application.</p> <important>
+     *         <p>
+     *         When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *         allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *         application. It should only be granted to trusted users.
+     *         </p>
+     *         </important>
      *         <ul>
      *         <li>
      *         <p>
@@ -279,7 +326,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *         <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *         privileged permission that allows users to grant themselves or others access to any functionality in the
+     *         application. It should only be granted to trusted users.
      *         </p>
      *         </li>
      *         <li>
@@ -313,6 +362,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Indicates the permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -326,7 +382,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -353,6 +411,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param applicationPermissions
      *        Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -366,7 +431,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -405,6 +472,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Indicates the permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -418,7 +492,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -450,6 +526,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param applicationPermissions
      *        Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -463,7 +546,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -504,6 +589,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Indicates the permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -517,7 +609,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -544,6 +638,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param applicationPermissions
      *        Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -557,7 +658,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -593,6 +696,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Indicates the permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -606,7 +716,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -633,6 +745,13 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param applicationPermissions
      *        Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -646,7 +765,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -773,6 +894,197 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates the status of the user account within a permission group.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param membershipStatus
+     *        Indicates the status of the user account within a permission group.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     *        </p>
+     *        </li>
+     * @see PermissionGroupMembershipStatus
+     */
+
+    public void setMembershipStatus(String membershipStatus) {
+        this.membershipStatus = membershipStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of the user account within a permission group.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates the status of the user account within a permission group.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     *         </p>
+     *         </li>
+     * @see PermissionGroupMembershipStatus
+     */
+
+    public String getMembershipStatus() {
+        return this.membershipStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of the user account within a permission group.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param membershipStatus
+     *        Indicates the status of the user account within a permission group.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionGroupMembershipStatus
+     */
+
+    public PermissionGroup withMembershipStatus(String membershipStatus) {
+        setMembershipStatus(membershipStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of the user account within a permission group.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param membershipStatus
+     *        Indicates the status of the user account within a permission group.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionGroupMembershipStatus
+     */
+
+    public PermissionGroup withMembershipStatus(PermissionGroupMembershipStatus membershipStatus) {
+        this.membershipStatus = membershipStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -795,7 +1107,9 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getMembershipStatus() != null)
+            sb.append("MembershipStatus: ").append(getMembershipStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -834,6 +1148,10 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getMembershipStatus() == null ^ this.getMembershipStatus() == null)
+            return false;
+        if (other.getMembershipStatus() != null && other.getMembershipStatus().equals(this.getMembershipStatus()) == false)
+            return false;
         return true;
     }
 
@@ -848,6 +1166,7 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getApplicationPermissions() == null) ? 0 : getApplicationPermissions().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getMembershipStatus() == null) ? 0 : getMembershipStatus().hashCode());
         return hashCode;
     }
 

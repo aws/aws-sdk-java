@@ -47,6 +47,18 @@ public class CatalogTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String connectionName;
+    /**
+     * <p>
+     * A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     * </p>
+     */
+    private String eventQueueArn;
+    /**
+     * <p>
+     * A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     * </p>
+     */
+    private String dlqEventQueueArn;
 
     /**
      * <p>
@@ -205,6 +217,86 @@ public class CatalogTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     * </p>
+     * 
+     * @param eventQueueArn
+     *        A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     */
+
+    public void setEventQueueArn(String eventQueueArn) {
+        this.eventQueueArn = eventQueueArn;
+    }
+
+    /**
+     * <p>
+     * A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     * </p>
+     * 
+     * @return A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     */
+
+    public String getEventQueueArn() {
+        return this.eventQueueArn;
+    }
+
+    /**
+     * <p>
+     * A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     * </p>
+     * 
+     * @param eventQueueArn
+     *        A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CatalogTarget withEventQueueArn(String eventQueueArn) {
+        setEventQueueArn(eventQueueArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     * </p>
+     * 
+     * @param dlqEventQueueArn
+     *        A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     */
+
+    public void setDlqEventQueueArn(String dlqEventQueueArn) {
+        this.dlqEventQueueArn = dlqEventQueueArn;
+    }
+
+    /**
+     * <p>
+     * A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     * </p>
+     * 
+     * @return A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     */
+
+    public String getDlqEventQueueArn() {
+        return this.dlqEventQueueArn;
+    }
+
+    /**
+     * <p>
+     * A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     * </p>
+     * 
+     * @param dlqEventQueueArn
+     *        A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CatalogTarget withDlqEventQueueArn(String dlqEventQueueArn) {
+        setDlqEventQueueArn(dlqEventQueueArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -221,7 +313,11 @@ public class CatalogTarget implements Serializable, Cloneable, StructuredPojo {
         if (getTables() != null)
             sb.append("Tables: ").append(getTables()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: ").append(getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
+        if (getEventQueueArn() != null)
+            sb.append("EventQueueArn: ").append(getEventQueueArn()).append(",");
+        if (getDlqEventQueueArn() != null)
+            sb.append("DlqEventQueueArn: ").append(getDlqEventQueueArn());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +344,14 @@ public class CatalogTarget implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
+        if (other.getEventQueueArn() == null ^ this.getEventQueueArn() == null)
+            return false;
+        if (other.getEventQueueArn() != null && other.getEventQueueArn().equals(this.getEventQueueArn()) == false)
+            return false;
+        if (other.getDlqEventQueueArn() == null ^ this.getDlqEventQueueArn() == null)
+            return false;
+        if (other.getDlqEventQueueArn() != null && other.getDlqEventQueueArn().equals(this.getDlqEventQueueArn()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +363,8 @@ public class CatalogTarget implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getTables() == null) ? 0 : getTables().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getEventQueueArn() == null) ? 0 : getEventQueueArn().hashCode());
+        hashCode = prime * hashCode + ((getDlqEventQueueArn() == null) ? 0 : getDlqEventQueueArn().hashCode());
         return hashCode;
     }
 

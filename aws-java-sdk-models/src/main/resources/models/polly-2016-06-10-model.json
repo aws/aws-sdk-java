@@ -418,7 +418,8 @@
         "en-NZ",
         "en-ZA",
         "ca-ES",
-        "de-AT"
+        "de-AT",
+        "yue-CN"
       ]
     },
     "LanguageCodeList":{
@@ -1077,7 +1078,13 @@
         "Aria",
         "Ayanda",
         "Arlet",
-        "Hannah"
+        "Hannah",
+        "Arthur",
+        "Daniel",
+        "Liam",
+        "Pedro",
+        "Kajal",
+        "Hiujin"
       ]
     },
     "VoiceList":{

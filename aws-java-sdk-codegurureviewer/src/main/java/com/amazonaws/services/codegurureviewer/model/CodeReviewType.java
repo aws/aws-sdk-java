@@ -32,8 +32,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated
  * repository. The associated repository is specified using its ARN in <a
- * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code>
- * </a>.
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
  * </p>
  * </li>
  * </ul>
@@ -48,8 +47,7 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
      * </p>
      */
     private RepositoryAnalysis repositoryAnalysis;
@@ -65,15 +63,13 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
      * </p>
      * 
      * @param repositoryAnalysis
      *        A code review that analyzes all code under a specified branch in an associated repository. The associated
      *        repository is specified using its ARN in <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     *        <code>CreateCodeReview</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
      */
 
     public void setRepositoryAnalysis(RepositoryAnalysis repositoryAnalysis) {
@@ -84,14 +80,13 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
      * </p>
      * 
      * @return A code review that analyzes all code under a specified branch in an associated repository. The associated
      *         repository is specified using its ARN in <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     *         <code>CreateCodeReview</code> </a>.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"
+     *         >CreateCodeReview</a>.
      */
 
     public RepositoryAnalysis getRepositoryAnalysis() {
@@ -102,15 +97,13 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
      * </p>
      * 
      * @param repositoryAnalysis
      *        A code review that analyzes all code under a specified branch in an associated repository. The associated
      *        repository is specified using its ARN in <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     *        <code>CreateCodeReview</code> </a>.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,6 +29,8 @@ public class MeshSpecMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> EGRESSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("egressFilter").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICEDISCOVERY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceDiscovery").build();
 
     private static final MeshSpecMarshaller instance = new MeshSpecMarshaller();
 
@@ -47,6 +49,7 @@ public class MeshSpecMarshaller {
 
         try {
             protocolMarshaller.marshall(meshSpec.getEgressFilter(), EGRESSFILTER_BINDING);
+            protocolMarshaller.marshall(meshSpec.getServiceDiscovery(), SERVICEDISCOVERY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

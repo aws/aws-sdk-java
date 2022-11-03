@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a
- * <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the
- * same KMS key that was used to encrypt the ciphertext.
+ * <a>Decrypt</a> request and the <code>SourceKeyId</code> in a <a>ReEncrypt</a> request must identify the same KMS key
+ * that was used to encrypt the ciphertext.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

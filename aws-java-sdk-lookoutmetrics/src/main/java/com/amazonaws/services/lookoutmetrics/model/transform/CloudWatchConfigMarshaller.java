@@ -29,6 +29,8 @@ public class CloudWatchConfigMarshaller {
 
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<StructuredPojo> BACKTESTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackTestConfiguration").build();
 
     private static final CloudWatchConfigMarshaller instance = new CloudWatchConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class CloudWatchConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(cloudWatchConfig.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(cloudWatchConfig.getBackTestConfiguration(), BACKTESTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -72,6 +72,28 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
+     * Create logging configuration.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     *        Represents the input of a CreateLoggingConfiguration operation.
+     * @return Result of the CreateLoggingConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateLoggingConfigurationResult createLoggingConfiguration(CreateLoggingConfigurationRequest createLoggingConfigurationRequest);
+
+    /**
+     * <p>
      * Create a rule group namespace.
      * </p>
      * 
@@ -152,6 +174,30 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
+     * Delete logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     *        Represents the input of a DeleteLoggingConfiguration operation.
+     * @return Result of the DeleteLoggingConfiguration operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
+
+    /**
+     * <p>
      * Delete a rule groups namespace.
      * </p>
      * 
@@ -225,6 +271,28 @@ public interface AmazonPrometheus {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeAlertManagerDefinitionResult describeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest describeAlertManagerDefinitionRequest);
+
+    /**
+     * <p>
+     * Describes logging configuration.
+     * </p>
+     * 
+     * @param describeLoggingConfigurationRequest
+     *        Represents the input of a DescribeLoggingConfiguration operation.
+     * @return Result of the DescribeLoggingConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.DescribeLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLoggingConfigurationResult describeLoggingConfiguration(DescribeLoggingConfigurationRequest describeLoggingConfigurationRequest);
 
     /**
      * <p>
@@ -444,6 +512,30 @@ public interface AmazonPrometheus {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Update logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     *        Represents the input of an UpdateLoggingConfiguration operation.
+     * @return Result of the UpdateLoggingConfiguration operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateLoggingConfigurationResult updateLoggingConfiguration(UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest);
 
     /**
      * <p>

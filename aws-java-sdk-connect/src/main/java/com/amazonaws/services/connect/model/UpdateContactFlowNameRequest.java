@@ -33,19 +33,19 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
     private String instanceId;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      */
     private String description;
@@ -92,11 +92,11 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -105,10 +105,10 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -117,11 +117,11 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      */
 
     public void setName(String name) {
@@ -145,10 +145,10 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
-     * @return The name of the contact flow.
+     * @return The name of the flow.
      */
 
     public String getName() {
@@ -157,11 +157,11 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the contact flow.
+     * The name of the flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        The name of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      */
 
     public void setDescription(String description) {
@@ -185,10 +185,10 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
-     * @return The description of the contact flow.
+     * @return The description of the flow.
      */
 
     public String getDescription() {
@@ -197,11 +197,11 @@ public class UpdateContactFlowNameRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The description of the contact flow.
+     * The description of the flow.
      * </p>
      * 
      * @param description
-     *        The description of the contact flow.
+     *        The description of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

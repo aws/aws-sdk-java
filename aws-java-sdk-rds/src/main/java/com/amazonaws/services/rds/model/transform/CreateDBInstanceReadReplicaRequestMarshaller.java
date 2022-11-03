@@ -237,6 +237,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("NetworkType", StringUtils.fromString(createDBInstanceReadReplicaRequest.getNetworkType()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getStorageThroughput()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
         }

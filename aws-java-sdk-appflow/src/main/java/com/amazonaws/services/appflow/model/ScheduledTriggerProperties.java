@@ -45,20 +45,28 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     private String dataPullMode;
     /**
      * <p>
-     * Specifies the scheduled start time for a schedule-triggered flow.
+     * The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      * </p>
      */
     private java.util.Date scheduleStartTime;
     /**
      * <p>
-     * Specifies the scheduled end time for a schedule-triggered flow.
+     * The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      * </p>
      */
     private java.util.Date scheduleEndTime;
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     * <code>America/New_York</code>.
+     * Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     * <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow
+     * interprets the timestamps that you specify to schedule the flow.
+     * </p>
+     * <p>
+     * If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset
+     * in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are
+     * <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      * </p>
      */
     private String timezone;
@@ -74,6 +82,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.Date firstExecutionFrom;
+    /**
+     * <p>
+     * Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     * </p>
+     */
+    private Integer flowErrorDeactivationThreshold;
 
     /**
      * <p>
@@ -190,11 +204,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the scheduled start time for a schedule-triggered flow.
+     * The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      * </p>
      * 
      * @param scheduleStartTime
-     *        Specifies the scheduled start time for a schedule-triggered flow.
+     *        The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO
+     *        8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      */
 
     public void setScheduleStartTime(java.util.Date scheduleStartTime) {
@@ -203,10 +219,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the scheduled start time for a schedule-triggered flow.
+     * The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      * </p>
      * 
-     * @return Specifies the scheduled start time for a schedule-triggered flow.
+     * @return The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO
+     *         8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      */
 
     public java.util.Date getScheduleStartTime() {
@@ -215,11 +233,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the scheduled start time for a schedule-triggered flow.
+     * The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      * </p>
      * 
      * @param scheduleStartTime
-     *        Specifies the scheduled start time for a schedule-triggered flow.
+     *        The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO
+     *        8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +250,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the scheduled end time for a schedule-triggered flow.
+     * The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      * </p>
      * 
      * @param scheduleEndTime
-     *        Specifies the scheduled end time for a schedule-triggered flow.
+     *        The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     *        standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      */
 
     public void setScheduleEndTime(java.util.Date scheduleEndTime) {
@@ -243,10 +265,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the scheduled end time for a schedule-triggered flow.
+     * The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      * </p>
      * 
-     * @return Specifies the scheduled end time for a schedule-triggered flow.
+     * @return The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     *         standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      */
 
     public java.util.Date getScheduleEndTime() {
@@ -255,11 +279,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the scheduled end time for a schedule-triggered flow.
+     * The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     * standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      * </p>
      * 
      * @param scheduleEndTime
-     *        Specifies the scheduled end time for a schedule-triggered flow.
+     *        The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601
+     *        standard, such as <code>2022-04-27T13:00:00-07:00</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,13 +296,24 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     * <code>America/New_York</code>.
+     * Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     * <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow
+     * interprets the timestamps that you specify to schedule the flow.
+     * </p>
+     * <p>
+     * If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset
+     * in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are
+     * <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      * </p>
      * 
      * @param timezone
-     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     *        <code>America/New_York</code>.
+     *        Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     *        <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon
+     *        AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+     *        <p>
+     *        If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC
+     *        offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are
+     *        <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      */
 
     public void setTimezone(String timezone) {
@@ -285,12 +322,23 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     * <code>America/New_York</code>.
+     * Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     * <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow
+     * interprets the timestamps that you specify to schedule the flow.
+     * </p>
+     * <p>
+     * If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset
+     * in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are
+     * <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      * </p>
      * 
-     * @return Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     *         <code>America/New_York</code>.
+     * @return Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     *         <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon
+     *         AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+     *         <p>
+     *         If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC
+     *         offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone
+     *         are <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      */
 
     public String getTimezone() {
@@ -299,13 +347,24 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     * <code>America/New_York</code>.
+     * Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     * <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow
+     * interprets the timestamps that you specify to schedule the flow.
+     * </p>
+     * <p>
+     * If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset
+     * in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are
+     * <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      * </p>
      * 
      * @param timezone
-     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
-     *        <code>America/New_York</code>.
+     *        Specifies the time zone used when referring to the dates and times of a scheduled flow, such as
+     *        <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon
+     *        AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+     *        <p>
+     *        If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC
+     *        offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are
+     *        <code>-04:00</code> EDT and <code>-05:00 EST</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,6 +454,46 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     * </p>
+     * 
+     * @param flowErrorDeactivationThreshold
+     *        Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     */
+
+    public void setFlowErrorDeactivationThreshold(Integer flowErrorDeactivationThreshold) {
+        this.flowErrorDeactivationThreshold = flowErrorDeactivationThreshold;
+    }
+
+    /**
+     * <p>
+     * Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     * </p>
+     * 
+     * @return Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     */
+
+    public Integer getFlowErrorDeactivationThreshold() {
+        return this.flowErrorDeactivationThreshold;
+    }
+
+    /**
+     * <p>
+     * Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     * </p>
+     * 
+     * @param flowErrorDeactivationThreshold
+     *        Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledTriggerProperties withFlowErrorDeactivationThreshold(Integer flowErrorDeactivationThreshold) {
+        setFlowErrorDeactivationThreshold(flowErrorDeactivationThreshold);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -419,7 +518,9 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
         if (getScheduleOffset() != null)
             sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
         if (getFirstExecutionFrom() != null)
-            sb.append("FirstExecutionFrom: ").append(getFirstExecutionFrom());
+            sb.append("FirstExecutionFrom: ").append(getFirstExecutionFrom()).append(",");
+        if (getFlowErrorDeactivationThreshold() != null)
+            sb.append("FlowErrorDeactivationThreshold: ").append(getFlowErrorDeactivationThreshold());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +563,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getFirstExecutionFrom() != null && other.getFirstExecutionFrom().equals(this.getFirstExecutionFrom()) == false)
             return false;
+        if (other.getFlowErrorDeactivationThreshold() == null ^ this.getFlowErrorDeactivationThreshold() == null)
+            return false;
+        if (other.getFlowErrorDeactivationThreshold() != null
+                && other.getFlowErrorDeactivationThreshold().equals(this.getFlowErrorDeactivationThreshold()) == false)
+            return false;
         return true;
     }
 
@@ -477,6 +583,7 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
         hashCode = prime * hashCode + ((getFirstExecutionFrom() == null) ? 0 : getFirstExecutionFrom().hashCode());
+        hashCode = prime * hashCode + ((getFlowErrorDeactivationThreshold() == null) ? 0 : getFlowErrorDeactivationThreshold().hashCode());
         return hashCode;
     }
 

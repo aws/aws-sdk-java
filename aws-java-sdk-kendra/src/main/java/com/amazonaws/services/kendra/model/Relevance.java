@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match
- * the field, the results are given a boost in the response based on these tuning parameters.
+ * Provides information for tuning the relevance of a field in a search. When a query includes terms that match the
+ * field, the results are given a boost in the response based on these tuning parameters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Relevance" target="_top">AWS API

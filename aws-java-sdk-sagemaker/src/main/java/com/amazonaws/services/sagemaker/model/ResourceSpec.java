@@ -46,8 +46,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     * <code>system</code> value, but support all other values for available instance types.
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.
+     * </p>
+     * <p>
+     * For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     * KernelGateway apps also support all other values for available instance types.
      * </p>
      * </note>
      */
@@ -145,16 +148,22 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     * <code>system</code> value, but support all other values for available instance types.
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.
+     * </p>
+     * <p>
+     * For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     * KernelGateway apps also support all other values for available instance types.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type that the image version runs on.</p> <note>
      *        <p>
-     *        JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     *        <code>system</code> value, but support all other values for available instance types.
+     *        <b>JupyterServer apps</b> only support the <code>system</code> value.
+     *        </p>
+     *        <p>
+     *        For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     *        KernelGateway apps also support all other values for available instance types.
      *        </p>
      * @see AppInstanceType
      */
@@ -169,15 +178,21 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     * <code>system</code> value, but support all other values for available instance types.
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.
+     * </p>
+     * <p>
+     * For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     * KernelGateway apps also support all other values for available instance types.
      * </p>
      * </note>
      * 
      * @return The instance type that the image version runs on.</p> <note>
      *         <p>
-     *         JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     *         <code>system</code> value, but support all other values for available instance types.
+     *         <b>JupyterServer apps</b> only support the <code>system</code> value.
+     *         </p>
+     *         <p>
+     *         For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     *         KernelGateway apps also support all other values for available instance types.
      *         </p>
      * @see AppInstanceType
      */
@@ -192,16 +207,22 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     * <code>system</code> value, but support all other values for available instance types.
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.
+     * </p>
+     * <p>
+     * For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     * KernelGateway apps also support all other values for available instance types.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type that the image version runs on.</p> <note>
      *        <p>
-     *        JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     *        <code>system</code> value, but support all other values for available instance types.
+     *        <b>JupyterServer apps</b> only support the <code>system</code> value.
+     *        </p>
+     *        <p>
+     *        For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     *        KernelGateway apps also support all other values for available instance types.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceType
@@ -218,16 +239,22 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     * <code>system</code> value, but support all other values for available instance types.
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.
+     * </p>
+     * <p>
+     * For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     * KernelGateway apps also support all other values for available instance types.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type that the image version runs on.</p> <note>
      *        <p>
-     *        JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
-     *        <code>system</code> value, but support all other values for available instance types.
+     *        <b>JupyterServer apps</b> only support the <code>system</code> value.
+     *        </p>
+     *        <p>
+     *        For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+     *        KernelGateway apps also support all other values for available instance types.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceType

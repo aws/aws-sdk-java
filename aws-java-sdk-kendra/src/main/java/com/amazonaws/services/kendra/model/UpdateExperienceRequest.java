@@ -33,34 +33,34 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     private String id;
     /**
      * <p>
-     * The name of your Amazon Kendra experience you want to update.
+     * A new name for your Amazon Kendra experience.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to update.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      */
     private String indexId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * Configuration information for your Amazon Kendra you want to update.
+     * Configuration information you want to update for your Amazon Kendra experience.
      * </p>
      */
     private ExperienceConfiguration configuration;
     /**
      * <p>
-     * The description of your Amazon Kendra experience you want to update.
+     * A new description for your Amazon Kendra experience.
      * </p>
      */
     private String description;
@@ -107,11 +107,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of your Amazon Kendra experience you want to update.
+     * A new name for your Amazon Kendra experience.
      * </p>
      * 
      * @param name
-     *        The name of your Amazon Kendra experience you want to update.
+     *        A new name for your Amazon Kendra experience.
      */
 
     public void setName(String name) {
@@ -120,10 +120,10 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of your Amazon Kendra experience you want to update.
+     * A new name for your Amazon Kendra experience.
      * </p>
      * 
-     * @return The name of your Amazon Kendra experience you want to update.
+     * @return A new name for your Amazon Kendra experience.
      */
 
     public String getName() {
@@ -132,11 +132,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of your Amazon Kendra experience you want to update.
+     * A new name for your Amazon Kendra experience.
      * </p>
      * 
      * @param name
-     *        The name of your Amazon Kendra experience you want to update.
+     *        A new name for your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to update.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for your Amazon Kendra experience you want to update.
+     *        The identifier of the index for your Amazon Kendra experience.
      */
 
     public void setIndexId(String indexId) {
@@ -160,10 +160,10 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to update.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
-     * @return The identifier of the index for your Amazon Kendra experience you want to update.
+     * @return The identifier of the index for your Amazon Kendra experience.
      */
 
     public String getIndexId() {
@@ -172,11 +172,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to update.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for your Amazon Kendra experience you want to update.
+     *        The identifier of the index for your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,15 +188,15 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *        stores your user and group information. For more information, see <a
+     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *        your user and group information. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      */
 
@@ -207,14 +207,14 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *         <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *         stores your user and group information. For more information, see <a
+     *         <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *         your user and group information. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      */
 
@@ -225,15 +225,15 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API,
-     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that
-     *        stores your user and group information. For more information, see <a
+     *        <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores
+     *        your user and group information. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -245,11 +245,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information for your Amazon Kendra you want to update.
+     * Configuration information you want to update for your Amazon Kendra experience.
      * </p>
      * 
      * @param configuration
-     *        Configuration information for your Amazon Kendra you want to update.
+     *        Configuration information you want to update for your Amazon Kendra experience.
      */
 
     public void setConfiguration(ExperienceConfiguration configuration) {
@@ -258,10 +258,10 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information for your Amazon Kendra you want to update.
+     * Configuration information you want to update for your Amazon Kendra experience.
      * </p>
      * 
-     * @return Configuration information for your Amazon Kendra you want to update.
+     * @return Configuration information you want to update for your Amazon Kendra experience.
      */
 
     public ExperienceConfiguration getConfiguration() {
@@ -270,11 +270,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Configuration information for your Amazon Kendra you want to update.
+     * Configuration information you want to update for your Amazon Kendra experience.
      * </p>
      * 
      * @param configuration
-     *        Configuration information for your Amazon Kendra you want to update.
+     *        Configuration information you want to update for your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +285,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The description of your Amazon Kendra experience you want to update.
+     * A new description for your Amazon Kendra experience.
      * </p>
      * 
      * @param description
-     *        The description of your Amazon Kendra experience you want to update.
+     *        A new description for your Amazon Kendra experience.
      */
 
     public void setDescription(String description) {
@@ -298,10 +298,10 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The description of your Amazon Kendra experience you want to update.
+     * A new description for your Amazon Kendra experience.
      * </p>
      * 
-     * @return The description of your Amazon Kendra experience you want to update.
+     * @return A new description for your Amazon Kendra experience.
      */
 
     public String getDescription() {
@@ -310,11 +310,11 @@ public class UpdateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The description of your Amazon Kendra experience you want to update.
+     * A new description for your Amazon Kendra experience.
      * </p>
      * 
      * @param description
-     *        The description of your Amazon Kendra experience you want to update.
+     *        A new description for your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

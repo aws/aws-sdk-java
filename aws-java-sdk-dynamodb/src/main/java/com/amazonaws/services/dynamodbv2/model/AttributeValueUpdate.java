@@ -145,8 +145,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number set; no other data types can be specified.
+     * <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     * attribute value. The only data types allowed are number, number set, string set or binary set.
      * </p>
      * </li>
      * </ul>
@@ -267,9 +267,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *        for the attribute value. The only data types allowed are number and number set; no other data types can be
-     *        specified.
+     *        <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *        attribute value. The only data types allowed are number, number set, string set or binary set.
      *        </p>
      *        </li>
      */
@@ -385,9 +384,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *        for the attribute value. The only data types allowed are number and number set; no other data types can be
-     *        specified.
+     *        <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *        attribute value. The only data types allowed are number, number set, string set or binary set.
      *        </p>
      *        </li>
      */
@@ -577,8 +575,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number set; no other data types can be specified.
+     * <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     * attribute value. The only data types allowed are number, number set, string set or binary set.
      * </p>
      * </li>
      * </ul>
@@ -676,9 +674,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *        for the attribute value. The only data types allowed are number and number set; no other data types can be
-     *        specified.
+     *        <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *        attribute value. The only data types allowed are number, number set, string set or binary set.
      *        </p>
      *        </li>
      * @see AttributeAction
@@ -778,8 +775,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number set; no other data types can be specified.
+     * <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     * attribute value. The only data types allowed are number, number set, string set or binary set.
      * </p>
      * </li>
      * </ul>
@@ -876,9 +873,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *         for the attribute value. The only data types allowed are number and number set; no other data types can
-     *         be specified.
+     *         <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *         attribute value. The only data types allowed are number, number set, string set or binary set.
      *         </p>
      *         </li>
      * @see AttributeAction
@@ -978,8 +974,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number set; no other data types can be specified.
+     * <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     * attribute value. The only data types allowed are number, number set, string set or binary set.
      * </p>
      * </li>
      * </ul>
@@ -1077,9 +1073,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *        for the attribute value. The only data types allowed are number and number set; no other data types can be
-     *        specified.
+     *        <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *        attribute value. The only data types allowed are number, number set, string set or binary set.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1181,8 +1176,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number set; no other data types can be specified.
+     * <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     * attribute value. The only data types allowed are number, number set, string set or binary set.
      * </p>
      * </li>
      * </ul>
@@ -1280,9 +1275,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *        for the attribute value. The only data types allowed are number and number set; no other data types can be
-     *        specified.
+     *        <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *        attribute value. The only data types allowed are number, number set, string set or binary set.
      *        </p>
      *        </li>
      * @see AttributeAction
@@ -1382,8 +1376,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number set; no other data types can be specified.
+     * <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     * attribute value. The only data types allowed are number, number set, string set or binary set.
      * </p>
      * </li>
      * </ul>
@@ -1481,9 +1475,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers)
-     *        for the attribute value. The only data types allowed are number and number set; no other data types can be
-     *        specified.
+     *        <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the
+     *        attribute value. The only data types allowed are number, number set, string set or binary set.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

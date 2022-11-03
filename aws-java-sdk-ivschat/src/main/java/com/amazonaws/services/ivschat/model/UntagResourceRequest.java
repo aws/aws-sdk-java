@@ -33,7 +33,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceArn;
     /**
      * <p>
-     * Array of tags to be removed.
+     * Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
      * </p>
      */
     private java.util.List<String> tagKeys;
@@ -80,10 +82,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Array of tags to be removed.
+     * Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
      * </p>
      * 
-     * @return Array of tags to be removed.
+     * @return Array of tags to be removed. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *         details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *         Chat has no constraints beyond what is documented there.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +99,16 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Array of tags to be removed.
+     * Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
      * </p>
      * 
      * @param tagKeys
-     *        Array of tags to be removed.
+     *        Array of tags to be removed. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +122,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Array of tags to be removed.
+     * Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +133,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        Array of tags to be removed.
+     *        Array of tags to be removed. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +152,16 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Array of tags to be removed.
+     * Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
      * </p>
      * 
      * @param tagKeys
-     *        Array of tags to be removed.
+     *        Array of tags to be removed. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

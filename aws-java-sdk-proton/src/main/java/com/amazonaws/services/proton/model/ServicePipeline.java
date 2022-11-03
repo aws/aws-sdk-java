@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The service pipeline detail data.
+ * Detailed data of an Proton service instance pipeline resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServicePipeline" target="_top">AWS API

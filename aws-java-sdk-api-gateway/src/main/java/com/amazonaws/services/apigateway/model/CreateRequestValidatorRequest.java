@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+ * Creates a RequestValidator of a given RestApi.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the to-be-created <a>RequestValidator</a>.
+     * The name of the to-be-created RequestValidator.
      * </p>
      */
     private String name;
@@ -53,11 +53,11 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -66,10 +66,10 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -78,11 +78,11 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the to-be-created <a>RequestValidator</a>.
+     * The name of the to-be-created RequestValidator.
      * </p>
      * 
      * @param name
-     *        The name of the to-be-created <a>RequestValidator</a>.
+     *        The name of the to-be-created RequestValidator.
      */
 
     public void setName(String name) {
@@ -106,10 +106,10 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the to-be-created <a>RequestValidator</a>.
+     * The name of the to-be-created RequestValidator.
      * </p>
      * 
-     * @return The name of the to-be-created <a>RequestValidator</a>.
+     * @return The name of the to-be-created RequestValidator.
      */
 
     public String getName() {
@@ -118,11 +118,11 @@ public class CreateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the to-be-created <a>RequestValidator</a>.
+     * The name of the to-be-created RequestValidator.
      * </p>
      * 
      * @param name
-     *        The name of the to-be-created <a>RequestValidator</a>.
+     *        The name of the to-be-created RequestValidator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,12 @@ public class EventNotificationItemConfigurations implements Serializable, Clonea
      * </p>
      */
     private ConnectionStatusEventConfiguration connectionStatus;
+    /**
+     * <p>
+     * Message delivery status event configuration for an event configuration item.
+     * </p>
+     */
+    private MessageDeliveryStatusEventConfiguration messageDeliveryStatus;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class EventNotificationItemConfigurations implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * Message delivery status event configuration for an event configuration item.
+     * </p>
+     * 
+     * @param messageDeliveryStatus
+     *        Message delivery status event configuration for an event configuration item.
+     */
+
+    public void setMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration messageDeliveryStatus) {
+        this.messageDeliveryStatus = messageDeliveryStatus;
+    }
+
+    /**
+     * <p>
+     * Message delivery status event configuration for an event configuration item.
+     * </p>
+     * 
+     * @return Message delivery status event configuration for an event configuration item.
+     */
+
+    public MessageDeliveryStatusEventConfiguration getMessageDeliveryStatus() {
+        return this.messageDeliveryStatus;
+    }
+
+    /**
+     * <p>
+     * Message delivery status event configuration for an event configuration item.
+     * </p>
+     * 
+     * @param messageDeliveryStatus
+     *        Message delivery status event configuration for an event configuration item.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventNotificationItemConfigurations withMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration messageDeliveryStatus) {
+        setMessageDeliveryStatus(messageDeliveryStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class EventNotificationItemConfigurations implements Serializable, Clonea
         if (getJoin() != null)
             sb.append("Join: ").append(getJoin()).append(",");
         if (getConnectionStatus() != null)
-            sb.append("ConnectionStatus: ").append(getConnectionStatus());
+            sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
+        if (getMessageDeliveryStatus() != null)
+            sb.append("MessageDeliveryStatus: ").append(getMessageDeliveryStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class EventNotificationItemConfigurations implements Serializable, Clonea
             return false;
         if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
             return false;
+        if (other.getMessageDeliveryStatus() == null ^ this.getMessageDeliveryStatus() == null)
+            return false;
+        if (other.getMessageDeliveryStatus() != null && other.getMessageDeliveryStatus().equals(this.getMessageDeliveryStatus()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class EventNotificationItemConfigurations implements Serializable, Clonea
         hashCode = prime * hashCode + ((getProximity() == null) ? 0 : getProximity().hashCode());
         hashCode = prime * hashCode + ((getJoin() == null) ? 0 : getJoin().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getMessageDeliveryStatus() == null) ? 0 : getMessageDeliveryStatus().hashCode());
         return hashCode;
     }
 

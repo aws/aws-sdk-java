@@ -35,8 +35,7 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The logo URL. This is the link where users can download the logo image. The only supported image format is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      */
     private String logoUrl;
@@ -92,20 +91,22 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      */
     private java.util.Map<String, String> loginMessage;
 
     /**
      * <p>
-     * The logo URL. This is the link where users can download the logo image. The only supported image format is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * 
      * @param logoUrl
-     *        The logo URL. This is the link where users can download the logo image. The only supported image format is
-     *        <code>.png</code>.
+     *        The logo. The only image format accepted is a binary data object that is converted from a
+     *        <code>.png</code> file.
      */
 
     public void setLogoUrl(String logoUrl) {
@@ -114,12 +115,11 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The logo URL. This is the link where users can download the logo image. The only supported image format is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * 
-     * @return The logo URL. This is the link where users can download the logo image. The only supported image format
-     *         is <code>.png</code>.
+     * @return The logo. The only image format accepted is a binary data object that is converted from a
+     *         <code>.png</code> file.
      */
 
     public String getLogoUrl() {
@@ -128,13 +128,12 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The logo URL. This is the link where users can download the logo image. The only supported image format is
-     * <code>.png</code>.
+     * The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * 
      * @param logoUrl
-     *        The logo URL. This is the link where users can download the logo image. The only supported image format is
-     *        <code>.png</code>.
+     *        The logo. The only image format accepted is a binary data object that is converted from a
+     *        <code>.png</code> file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,11 +439,17 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @return The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *         localized message for that locale. The only key supported is <code>en_US</code>.
+     *         localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *         include the following:
+     *         <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *         .
      */
 
     public java.util.Map<String, String> getLoginMessage() {
@@ -454,12 +459,18 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @param loginMessage
      *        The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *        localized message for that locale. The only key supported is <code>en_US</code>.
+     *        localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *        include the following:
+     *        <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *        .
      */
 
     public void setLoginMessage(java.util.Map<String, String> loginMessage) {
@@ -469,12 +480,18 @@ public class DefaultClientBrandingAttributes implements Serializable, Cloneable,
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @param loginMessage
      *        The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *        localized message for that locale. The only key supported is <code>en_US</code>.
+     *        localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *        include the following:
+     *        <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

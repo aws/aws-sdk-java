@@ -48,6 +48,10 @@ public class PutAccessControlRuleRequestMarshaller {
             .marshallLocationName("NotUserIds").build();
     private static final MarshallingInfo<String> ORGANIZATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
+    private static final MarshallingInfo<List> IMPERSONATIONROLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImpersonationRoleIds").build();
+    private static final MarshallingInfo<List> NOTIMPERSONATIONROLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotImpersonationRoleIds").build();
 
     private static final PutAccessControlRuleRequestMarshaller instance = new PutAccessControlRuleRequestMarshaller();
 
@@ -75,6 +79,8 @@ public class PutAccessControlRuleRequestMarshaller {
             protocolMarshaller.marshall(putAccessControlRuleRequest.getUserIds(), USERIDS_BINDING);
             protocolMarshaller.marshall(putAccessControlRuleRequest.getNotUserIds(), NOTUSERIDS_BINDING);
             protocolMarshaller.marshall(putAccessControlRuleRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
+            protocolMarshaller.marshall(putAccessControlRuleRequest.getImpersonationRoleIds(), IMPERSONATIONROLEIDS_BINDING);
+            protocolMarshaller.marshall(putAccessControlRuleRequest.getNotImpersonationRoleIds(), NOTIMPERSONATIONROLEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -53,6 +53,12 @@ public class AssetCompositeModel implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.List<AssetProperty> properties;
+    /**
+     * <p>
+     * The ID of the asset composite model.
+     * </p>
+     */
+    private String id;
 
     /**
      * <p>
@@ -245,6 +251,46 @@ public class AssetCompositeModel implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of the asset composite model.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the asset composite model.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID of the asset composite model.
+     * </p>
+     * 
+     * @return The ID of the asset composite model.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of the asset composite model.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the asset composite model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetCompositeModel withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -263,7 +309,9 @@ public class AssetCompositeModel implements Serializable, Cloneable, StructuredP
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: ").append(getProperties());
+            sb.append("Properties: ").append(getProperties()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }
@@ -294,6 +342,10 @@ public class AssetCompositeModel implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
             return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
         return true;
     }
 
@@ -306,6 +358,7 @@ public class AssetCompositeModel implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 

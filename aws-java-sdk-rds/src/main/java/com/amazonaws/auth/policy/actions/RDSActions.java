@@ -201,6 +201,8 @@ public enum RDSActions implements Action {
     FailoverGlobalCluster("rds:FailoverGlobalCluster"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("rds:ListTagsForResource"),
+    /** Action for the ModifyActivityStream operation. */
+    ModifyActivityStream("rds:ModifyActivityStream"),
     /** Action for the ModifyCertificates operation. */
     ModifyCertificates("rds:ModifyCertificates"),
     /** Action for the ModifyCurrentDBClusterCapacity operation. */
@@ -295,6 +297,8 @@ public enum RDSActions implements Action {
     StopDBInstance("rds:StopDBInstance"),
     /** Action for the StopDBInstanceAutomatedBackupsReplication operation. */
     StopDBInstanceAutomatedBackupsReplication("rds:StopDBInstanceAutomatedBackupsReplication"),
+    /** Action for the SwitchoverReadReplica operation. */
+    SwitchoverReadReplica("rds:SwitchoverReadReplica"),
 
     ;
 

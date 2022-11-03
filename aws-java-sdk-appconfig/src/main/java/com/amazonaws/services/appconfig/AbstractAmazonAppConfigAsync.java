@@ -80,6 +80,32 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExtensionResult> createExtensionAsync(CreateExtensionRequest request) {
+
+        return createExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtensionResult> createExtensionAsync(CreateExtensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExtensionRequest, CreateExtensionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtensionAssociationResult> createExtensionAssociationAsync(CreateExtensionAssociationRequest request) {
+
+        return createExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtensionAssociationResult> createExtensionAssociationAsync(CreateExtensionAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExtensionAssociationRequest, CreateExtensionAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
             CreateHostedConfigurationVersionRequest request) {
 
@@ -142,6 +168,32 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     @Override
     public java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentRequest, DeleteEnvironmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionResult> deleteExtensionAsync(DeleteExtensionRequest request) {
+
+        return deleteExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionResult> deleteExtensionAsync(DeleteExtensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteExtensionRequest, DeleteExtensionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionAssociationResult> deleteExtensionAssociationAsync(DeleteExtensionAssociationRequest request) {
+
+        return deleteExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExtensionAssociationResult> deleteExtensionAssociationAsync(DeleteExtensionAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteExtensionAssociationRequest, DeleteExtensionAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -242,6 +294,32 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetExtensionResult> getExtensionAsync(GetExtensionRequest request) {
+
+        return getExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExtensionResult> getExtensionAsync(GetExtensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExtensionRequest, GetExtensionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExtensionAssociationResult> getExtensionAssociationAsync(GetExtensionAssociationRequest request) {
+
+        return getExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExtensionAssociationResult> getExtensionAssociationAsync(GetExtensionAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExtensionAssociationRequest, GetExtensionAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request) {
 
         return getHostedConfigurationVersionAsync(request, null);
@@ -315,6 +393,32 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     @Override
     public java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionAssociationsResult> listExtensionAssociationsAsync(ListExtensionAssociationsRequest request) {
+
+        return listExtensionAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionAssociationsResult> listExtensionAssociationsAsync(ListExtensionAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExtensionAssociationsRequest, ListExtensionAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionsResult> listExtensionsAsync(ListExtensionsRequest request) {
+
+        return listExtensionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensionsResult> listExtensionsAsync(ListExtensionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExtensionsRequest, ListExtensionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -447,6 +551,32 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     @Override
     public java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionResult> updateExtensionAsync(UpdateExtensionRequest request) {
+
+        return updateExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionResult> updateExtensionAsync(UpdateExtensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateExtensionRequest, UpdateExtensionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionAssociationResult> updateExtensionAssociationAsync(UpdateExtensionAssociationRequest request) {
+
+        return updateExtensionAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExtensionAssociationResult> updateExtensionAssociationAsync(UpdateExtensionAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateExtensionAssociationRequest, UpdateExtensionAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -36,6 +36,12 @@ public class CreateLocationEfsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2Config").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> ACCESSPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPointArn").build();
+    private static final MarshallingInfo<String> FILESYSTEMACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemAccessRoleArn").build();
+    private static final MarshallingInfo<String> INTRANSITENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InTransitEncryption").build();
 
     private static final CreateLocationEfsRequestMarshaller instance = new CreateLocationEfsRequestMarshaller();
 
@@ -57,6 +63,9 @@ public class CreateLocationEfsRequestMarshaller {
             protocolMarshaller.marshall(createLocationEfsRequest.getEfsFilesystemArn(), EFSFILESYSTEMARN_BINDING);
             protocolMarshaller.marshall(createLocationEfsRequest.getEc2Config(), EC2CONFIG_BINDING);
             protocolMarshaller.marshall(createLocationEfsRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createLocationEfsRequest.getAccessPointArn(), ACCESSPOINTARN_BINDING);
+            protocolMarshaller.marshall(createLocationEfsRequest.getFileSystemAccessRoleArn(), FILESYSTEMACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(createLocationEfsRequest.getInTransitEncryption(), INTRANSITENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

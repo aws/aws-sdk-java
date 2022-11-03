@@ -24,7 +24,8 @@ public enum CrawlState {
     CANCELLING("CANCELLING"),
     CANCELLED("CANCELLED"),
     SUCCEEDED("SUCCEEDED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    ERROR("ERROR");
 
     private String value;
 

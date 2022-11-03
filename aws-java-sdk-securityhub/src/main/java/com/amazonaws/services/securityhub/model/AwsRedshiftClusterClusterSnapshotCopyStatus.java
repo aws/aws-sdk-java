@@ -41,10 +41,10 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * source region.
      * </p>
      * <p>
-     * If the value is -1, then the manual snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      */
     private Integer manualSnapshotRetentionPeriod;
@@ -111,20 +111,20 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * source region.
      * </p>
      * <p>
-     * If the value is -1, then the manual snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The number of days that manual snapshots are retained in the destination region after they are copied from
      *        a source region.</p>
      *        <p>
-     *        If the value is -1, then the manual snapshot is retained indefinitely.
+     *        If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      *        </p>
      *        <p>
-     *        Valid values: Either -1 or an integer between 1 and 3,653
+     *        Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      */
 
     public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
@@ -137,19 +137,19 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * source region.
      * </p>
      * <p>
-     * If the value is -1, then the manual snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
      * @return The number of days that manual snapshots are retained in the destination region after they are copied
      *         from a source region.</p>
      *         <p>
-     *         If the value is -1, then the manual snapshot is retained indefinitely.
+     *         If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      *         </p>
      *         <p>
-     *         Valid values: Either -1 or an integer between 1 and 3,653
+     *         Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      */
 
     public Integer getManualSnapshotRetentionPeriod() {
@@ -162,20 +162,20 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * source region.
      * </p>
      * <p>
-     * If the value is -1, then the manual snapshot is retained indefinitely.
+     * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      * </p>
      * <p>
-     * Valid values: Either -1 or an integer between 1 and 3,653
+     * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The number of days that manual snapshots are retained in the destination region after they are copied from
      *        a source region.</p>
      *        <p>
-     *        If the value is -1, then the manual snapshot is retained indefinitely.
+     *        If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      *        </p>
      *        <p>
-     *        Valid values: Either -1 or an integer between 1 and 3,653
+     *        Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

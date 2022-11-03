@@ -33,6 +33,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
     }
 
     @Override
+    public AddEndpointsResult addEndpoints(AddEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdvertiseByoipCidrResult advertiseByoipCidr(AdvertiseByoipCidrRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +214,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
 
     @Override
     public RemoveCustomRoutingEndpointsResult removeCustomRoutingEndpoints(RemoveCustomRoutingEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveEndpointsResult removeEndpoints(RemoveEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

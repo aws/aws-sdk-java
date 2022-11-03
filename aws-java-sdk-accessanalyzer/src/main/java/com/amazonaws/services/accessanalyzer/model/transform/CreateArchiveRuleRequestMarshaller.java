@@ -33,13 +33,13 @@ public class CreateArchiveRuleRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("analyzerName").build();
+    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ruleName").build();
+    private static final MarshallingInfo<Map> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filter").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<Map> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("filter").build();
-    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("ruleName").build();
 
     private static final CreateArchiveRuleRequestMarshaller instance = new CreateArchiveRuleRequestMarshaller();
 
@@ -58,9 +58,9 @@ public class CreateArchiveRuleRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createArchiveRuleRequest.getAnalyzerName(), ANALYZERNAME_BINDING);
-            protocolMarshaller.marshall(createArchiveRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createArchiveRuleRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(createArchiveRuleRequest.getRuleName(), RULENAME_BINDING);
+            protocolMarshaller.marshall(createArchiveRuleRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(createArchiveRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

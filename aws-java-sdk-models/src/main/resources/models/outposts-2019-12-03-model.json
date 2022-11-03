@@ -28,7 +28,7 @@
         {"shape":"NotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p> Cancels an order for an Outpost. </p>"
+      "documentation":"<p>Cancels the specified order for an Outpost.</p>"
     },
     "CreateOrder":{
       "name":"CreateOrder",
@@ -64,7 +64,7 @@
         {"shape":"InternalServerException"},
         {"shape":"ServiceQuotaExceededException"}
       ],
-      "documentation":"<p>Creates an Outpost.</p> <p>You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>"
+      "documentation":"<p>Creates an Outpost.</p> <p>You can specify either an Availability one or an AZ ID.</p>"
     },
     "CreateSite":{
       "name":"CreateSite",
@@ -98,7 +98,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Deletes the Outpost.</p>"
+      "documentation":"<p>Deletes the specified Outpost.</p>"
     },
     "DeleteSite":{
       "name":"DeleteSite",
@@ -115,7 +115,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Deletes the site.</p>"
+      "documentation":"<p>Deletes the specified site.</p>"
     },
     "GetCatalogItem":{
       "name":"GetCatalogItem",
@@ -130,7 +130,23 @@
         {"shape":"NotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Gets information about a catalog item.</p>"
+      "documentation":"<p>Gets information about the specified catalog item.</p>"
+    },
+    "GetConnection":{
+      "name":"GetConnection",
+      "http":{
+        "method":"GET",
+        "requestUri":"/connections/{ConnectionId}"
+      },
+      "input":{"shape":"GetConnectionRequest"},
+      "output":{"shape":"GetConnectionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Gets information about the specified connection. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html\"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html\"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>"
     },
     "GetOrder":{
       "name":"GetOrder",
@@ -145,7 +161,7 @@
         {"shape":"NotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Gets an order.</p>"
+      "documentation":"<p>Gets information about the specified order.</p>"
     },
     "GetOutpost":{
       "name":"GetOutpost",
@@ -193,7 +209,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p> Gets information about the specified Outpost site. </p>"
+      "documentation":"<p>Gets information about the specified Outpost site.</p>"
     },
     "GetSiteAddress":{
       "name":"GetSiteAddress",
@@ -209,7 +225,7 @@
         {"shape":"NotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p> Gets the site address. </p>"
+      "documentation":"<p> Gets the site address of the specified site. </p>"
     },
     "ListAssets":{
       "name":"ListAssets",
@@ -225,7 +241,7 @@
         {"shape":"NotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon Web Services Outposts, you can filter your request by host ID to return a list of hardware assets that allocate resources for Dedicated Hosts. </p>"
+      "documentation":"<p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
     },
     "ListCatalogItems":{
       "name":"ListCatalogItems",
@@ -240,7 +256,7 @@
         {"shape":"NotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Lists the items in the catalog. Add filters to your request to return a more specific list of results. Use filters to match an item class, storage option, or EC2 family. </p> <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>"
+      "documentation":"<p>Lists the items in the catalog.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
     },
     "ListOrders":{
       "name":"ListOrders",
@@ -256,7 +272,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Lists the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a more specific list of results. </p>"
+      "documentation":"<p>Lists the Outpost orders for your Amazon Web Services account.</p>"
     },
     "ListOutposts":{
       "name":"ListOutposts",
@@ -271,7 +287,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Lists the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>"
+      "documentation":"<p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
     },
     "ListSites":{
       "name":"ListSites",
@@ -286,7 +302,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Lists the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to return a more specific list of results. Use filters to match site city, country code, or state/region of the operating address. </p> <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>"
+      "documentation":"<p>Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -302,6 +318,22 @@
         {"shape":"NotFoundException"}
       ],
       "documentation":"<p>Lists the tags for the specified resource.</p>"
+    },
+    "StartConnection":{
+      "name":"StartConnection",
+      "http":{
+        "method":"POST",
+        "requestUri":"/connections"
+      },
+      "input":{"shape":"StartConnectionRequest"},
+      "output":{"shape":"StartConnectionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Starts the connection required for Outpost server installation. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html\"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html\"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -365,7 +397,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p> Updates the site. </p>"
+      "documentation":"<p>Updates the specified site.</p>"
     },
     "UpdateSiteAddress":{
       "name":"UpdateSiteAddress",
@@ -382,7 +414,7 @@
         {"shape":"ConflictException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p> Updates the site address. </p> <p> To update a site address with an order <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order. </p> <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated. </p>"
+      "documentation":"<p>Updates the address of the specified site.</p> <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p> <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>"
     },
     "UpdateSiteRackPhysicalProperties":{
       "name":"UpdateSiteRackPhysicalProperties",
@@ -530,6 +562,10 @@
         "ComputeAttributes":{
           "shape":"ComputeAttributes",
           "documentation":"<p> Information about compute hardware assets. </p>"
+        },
+        "AssetLocation":{
+          "shape":"AssetLocation",
+          "documentation":"<p> The position of an asset in a rack. </p>"
         }
       },
       "documentation":"<p> Information about hardware assets. </p>"
@@ -537,6 +573,23 @@
     "AssetListDefinition":{
       "type":"list",
       "member":{"shape":"AssetInfo"}
+    },
+    "AssetLocation":{
+      "type":"structure",
+      "members":{
+        "RackElevation":{
+          "shape":"RackElevation",
+          "documentation":"<p> The position of an asset in a rack measured in rack units. </p>"
+        }
+      },
+      "documentation":"<p> Information about the position of the asset in a rack. </p>"
+    },
+    "AssetState":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "RETIRING"
+      ]
     },
     "AssetType":{
       "type":"string",
@@ -568,13 +621,23 @@
       "max":5,
       "min":1
     },
+    "CIDR":{
+      "type":"string",
+      "max":18,
+      "min":9,
+      "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}/[0-9]{1,2}$"
+    },
+    "CIDRList":{
+      "type":"list",
+      "member":{"shape":"CIDR"}
+    },
     "CancelOrderInput":{
       "type":"structure",
       "required":["OrderId"],
       "members":{
         "OrderId":{
           "shape":"OrderId",
-          "documentation":"<p> The ID of the order to cancel. </p>",
+          "documentation":"<p> The ID of the order. </p>",
           "location":"uri",
           "locationName":"OrderId"
         }
@@ -659,12 +722,24 @@
       "type":"list",
       "member":{"shape":"City"}
     },
+    "ComputeAssetState":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "ISOLATED",
+        "RETIRING"
+      ]
+    },
     "ComputeAttributes":{
       "type":"structure",
       "members":{
         "HostId":{
           "shape":"HostId",
-          "documentation":"<p> The host ID of any Dedicated Hosts on the asset. </p>"
+          "documentation":"<p> The host ID of the Dedicated Host on the asset. </p>"
+        },
+        "State":{
+          "shape":"ComputeAssetState",
+          "documentation":"<p>The state.</p> <ul> <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> </ul>"
         }
       },
       "documentation":"<p> Information about compute hardware assets. </p>"
@@ -685,6 +760,42 @@
       "documentation":"<p>Updating or deleting this resource can cause an inconsistent state.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
+    },
+    "ConnectionDetails":{
+      "type":"structure",
+      "members":{
+        "ClientPublicKey":{
+          "shape":"WireGuardPublicKey",
+          "documentation":"<p> The public key of the client. </p>"
+        },
+        "ServerPublicKey":{
+          "shape":"WireGuardPublicKey",
+          "documentation":"<p> The public key of the server. </p>"
+        },
+        "ServerEndpoint":{
+          "shape":"ServerEndpoint",
+          "documentation":"<p> The endpoint for the server. </p>"
+        },
+        "ClientTunnelAddress":{
+          "shape":"CIDR",
+          "documentation":"<p> The client tunnel address. </p>"
+        },
+        "ServerTunnelAddress":{
+          "shape":"CIDR",
+          "documentation":"<p> The server tunnel address. </p>"
+        },
+        "AllowedIps":{
+          "shape":"CIDRList",
+          "documentation":"<p> The allowed IP addresses. </p>"
+        }
+      },
+      "documentation":"<p> Information about a connection. </p>"
+    },
+    "ConnectionId":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9+/=]{1,1024}$"
     },
     "ContactName":{
       "type":"string",
@@ -726,11 +837,11 @@
         },
         "PaymentOption":{
           "shape":"PaymentOption",
-          "documentation":"<p>The payment option for the order.</p>"
+          "documentation":"<p>The payment option.</p>"
         },
         "PaymentTerm":{
           "shape":"PaymentTerm",
-          "documentation":"<p>The payment terms for the order.</p>"
+          "documentation":"<p>The payment terms.</p>"
         }
       }
     },
@@ -842,6 +953,12 @@
       "members":{
       }
     },
+    "DeviceSerialNumber":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^(\\w+)$"
+    },
     "DistrictOrCounty":{
       "type":"string",
       "max":60,
@@ -911,6 +1028,31 @@
         "CatalogItem":{
           "shape":"CatalogItem",
           "documentation":"<p>Information about this catalog item.</p>"
+        }
+      }
+    },
+    "GetConnectionRequest":{
+      "type":"structure",
+      "required":["ConnectionId"],
+      "members":{
+        "ConnectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p> The ID of the connection. </p>",
+          "location":"uri",
+          "locationName":"ConnectionId"
+        }
+      }
+    },
+    "GetConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "ConnectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p> The ID of the connection. </p>"
+        },
+        "ConnectionDetails":{
+          "shape":"ConnectionDetails",
+          "documentation":"<p> Information about the connection. </p>"
         }
       }
     },
@@ -999,7 +1141,7 @@
         },
         "AddressType":{
           "shape":"AddressType",
-          "documentation":"<p> The type of the address you request. </p>",
+          "documentation":"<p>The type of the address you request. </p>",
           "location":"querystring",
           "locationName":"AddressType"
         }
@@ -1011,7 +1153,7 @@
         "SiteId":{"shape":"SiteId"},
         "AddressType":{
           "shape":"AddressType",
-          "documentation":"<p> The type of the address you receive. </p>"
+          "documentation":"<p>The type of the address you receive. </p>"
         },
         "Address":{
           "shape":"Address",
@@ -1104,9 +1246,35 @@
         "Status":{
           "shape":"LineItemStatus",
           "documentation":"<p>The status of the line item.</p>"
+        },
+        "ShipmentInformation":{
+          "shape":"ShipmentInformation",
+          "documentation":"<p> Information about a line item shipment. </p>"
+        },
+        "AssetInformationList":{
+          "shape":"LineItemAssetInformationList",
+          "documentation":"<p> Information about assets. </p>"
         }
       },
       "documentation":"<p>Information about a line item.</p>"
+    },
+    "LineItemAssetInformation":{
+      "type":"structure",
+      "members":{
+        "AssetId":{
+          "shape":"AssetId",
+          "documentation":"<p> The ID of the asset. </p>"
+        },
+        "MacAddressList":{
+          "shape":"MacAddressList",
+          "documentation":"<p> The MAC addresses of the asset. </p>"
+        }
+      },
+      "documentation":"<p> Information about a line item asset. </p>"
+    },
+    "LineItemAssetInformationList":{
+      "type":"list",
+      "member":{"shape":"LineItemAssetInformation"}
     },
     "LineItemId":{
       "type":"string",
@@ -1171,7 +1339,7 @@
         },
         "HostIdFilter":{
           "shape":"HostIdList",
-          "documentation":"<p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by the host ID of a Dedicated Host.</p>",
           "location":"querystring",
           "locationName":"HostIdFilter"
         },
@@ -1184,6 +1352,12 @@
           "shape":"Token",
           "location":"querystring",
           "locationName":"NextToken"
+        },
+        "StatusFilter":{
+          "shape":"StatusList",
+          "documentation":"<p>Filters the results by state.</p>",
+          "location":"querystring",
+          "locationName":"StatusFilter"
         }
       }
     },
@@ -1192,7 +1366,7 @@
       "members":{
         "Assets":{
           "shape":"AssetListDefinition",
-          "documentation":"<p> Information about hardware assets. </p>"
+          "documentation":"<p>Information about the hardware assets.</p>"
         },
         "NextToken":{"shape":"Token"}
       }
@@ -1212,19 +1386,19 @@
         },
         "ItemClassFilter":{
           "shape":"CatalogItemClassList",
-          "documentation":"<p> A filter for the class of items in the catalog. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by item class.</p>",
           "location":"querystring",
           "locationName":"ItemClassFilter"
         },
         "SupportedStorageFilter":{
           "shape":"SupportedStorageList",
-          "documentation":"<p> A filter for the storage options of items in the catalog. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by storage option.</p>",
           "location":"querystring",
           "locationName":"SupportedStorageFilter"
         },
         "EC2FamilyFilter":{
           "shape":"EC2FamilyList",
-          "documentation":"<p> A filter for EC2 family options for items in the catalog. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by EC2 family (for example, M5).</p>",
           "location":"querystring",
           "locationName":"EC2FamilyFilter"
         }
@@ -1286,19 +1460,19 @@
         },
         "LifeCycleStatusFilter":{
           "shape":"LifeCycleStatusList",
-          "documentation":"<p> A filter for the lifecycle status of the Outpost. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by the lifecycle status.</p>",
           "location":"querystring",
           "locationName":"LifeCycleStatusFilter"
         },
         "AvailabilityZoneFilter":{
           "shape":"AvailabilityZoneList",
-          "documentation":"<p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>",
           "location":"querystring",
           "locationName":"AvailabilityZoneFilter"
         },
         "AvailabilityZoneIdFilter":{
           "shape":"AvailabilityZoneIdList",
-          "documentation":"<p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>",
           "location":"querystring",
           "locationName":"AvailabilityZoneIdFilter"
         }
@@ -1326,19 +1500,19 @@
         },
         "OperatingAddressCountryCodeFilter":{
           "shape":"CountryCodeList",
-          "documentation":"<p> A filter for the country code of the Outpost site. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by country code.</p>",
           "location":"querystring",
           "locationName":"OperatingAddressCountryCodeFilter"
         },
         "OperatingAddressStateOrRegionFilter":{
           "shape":"StateOrRegionList",
-          "documentation":"<p> A filter for the state/region of the Outpost site. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by state or region.</p>",
           "location":"querystring",
           "locationName":"OperatingAddressStateOrRegionFilter"
         },
         "OperatingAddressCityFilter":{
           "shape":"CityList",
-          "documentation":"<p> A filter for the city of the Outpost site. </p> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "documentation":"<p>Filters the results by city.</p>",
           "location":"querystring",
           "locationName":"OperatingAddressCityFilter"
         }
@@ -1372,6 +1546,16 @@
         }
       }
     },
+    "MacAddress":{
+      "type":"string",
+      "max":17,
+      "min":17,
+      "pattern":"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+    },
+    "MacAddressList":{
+      "type":"list",
+      "member":{"shape":"MacAddress"}
+    },
     "MaxResults1000":{
       "type":"integer",
       "documentation":"<p>The maximum page size.</p>",
@@ -1395,6 +1579,11 @@
       "max":180,
       "min":0,
       "pattern":"^\\S[\\S ]*$"
+    },
+    "NetworkInterfaceDeviceIndex":{
+      "type":"integer",
+      "max":1,
+      "min":0
     },
     "NotFoundException":{
       "type":"structure",
@@ -1436,7 +1625,7 @@
         },
         "Status":{
           "shape":"OrderStatus",
-          "documentation":"<p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> </ul> <note> <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> </note>"
+          "documentation":"<p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> </ul> <note> <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> </note>"
         },
         "LineItems":{
           "shape":"LineItemListDefinition",
@@ -1503,11 +1692,11 @@
         },
         "OrderSubmissionDate":{
           "shape":"ISO8601Timestamp",
-          "documentation":"<p> Submission date for the order. </p>"
+          "documentation":"<p> The submission date for the order. </p>"
         },
         "OrderFulfilledDate":{
           "shape":"ISO8601Timestamp",
-          "documentation":"<p> Fulfilment date for the order. </p>"
+          "documentation":"<p> The fulfilment date for the order. </p>"
         }
       },
       "documentation":"<p> A summary of line items in your order. </p>"
@@ -1606,7 +1795,10 @@
     },
     "PaymentTerm":{
       "type":"string",
-      "enum":["THREE_YEARS"]
+      "enum":[
+        "THREE_YEARS",
+        "ONE_YEAR"
+      ]
     },
     "PostalCode":{
       "type":"string",
@@ -1646,6 +1838,12 @@
       ]
     },
     "Quantity":{"type":"string"},
+    "RackElevation":{
+      "type":"float",
+      "box":true,
+      "max":99,
+      "min":0
+    },
     "RackId":{
       "type":"string",
       "max":20,
@@ -1701,6 +1899,12 @@
         "ORDER"
       ]
     },
+    "ServerEndpoint":{
+      "type":"string",
+      "max":21,
+      "min":9,
+      "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}:[0-9]{1,5}$"
+    },
     "ServiceQuotaExceededException":{
       "type":"structure",
       "members":{
@@ -1709,6 +1913,29 @@
       "documentation":"<p>You have exceeded a service quota.</p>",
       "error":{"httpStatusCode":402},
       "exception":true
+    },
+    "ShipmentCarrier":{
+      "type":"string",
+      "enum":[
+        "DHL",
+        "DBS",
+        "FEDEX",
+        "UPS"
+      ]
+    },
+    "ShipmentInformation":{
+      "type":"structure",
+      "members":{
+        "ShipmentTrackingNumber":{
+          "shape":"TrackingId",
+          "documentation":"<p> The tracking number of the shipment. </p>"
+        },
+        "ShipmentCarrier":{
+          "shape":"ShipmentCarrier",
+          "documentation":"<p> The carrier of the shipment. </p>"
+        }
+      },
+      "documentation":"<p> Information about a line item shipment. </p>"
     },
     "Site":{
       "type":"structure",
@@ -1761,7 +1988,7 @@
     },
     "SiteId":{
       "type":"string",
-      "documentation":"<p> The ID of the site. </p>",
+      "documentation":"<p>The ID of the site.</p>",
       "max":255,
       "min":1,
       "pattern":"^(arn:aws([a-z-]+)?:outposts:[a-z\\d-]+:\\d{12}:site/)?(os-[a-f0-9]{17})$"
@@ -1785,6 +2012,46 @@
       "min":1,
       "pattern":"OR-[A-Z0-9]{7}"
     },
+    "StartConnectionRequest":{
+      "type":"structure",
+      "required":[
+        "DeviceSerialNumber",
+        "AssetId",
+        "ClientPublicKey",
+        "NetworkInterfaceDeviceIndex"
+      ],
+      "members":{
+        "DeviceSerialNumber":{
+          "shape":"DeviceSerialNumber",
+          "documentation":"<p> The serial number of the dongle. </p>"
+        },
+        "AssetId":{
+          "shape":"AssetId",
+          "documentation":"<p> The ID of the Outpost server. </p>"
+        },
+        "ClientPublicKey":{
+          "shape":"WireGuardPublicKey",
+          "documentation":"<p> The public key of the client. </p>"
+        },
+        "NetworkInterfaceDeviceIndex":{
+          "shape":"NetworkInterfaceDeviceIndex",
+          "documentation":"<p> The device index of the network interface on the Outpost server. </p>"
+        }
+      }
+    },
+    "StartConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "ConnectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p> The ID of the connection. </p>"
+        },
+        "UnderlayIpAddress":{
+          "shape":"UnderlayIpAddress",
+          "documentation":"<p> The underlay IP address. </p>"
+        }
+      }
+    },
     "StateOrRegion":{
       "type":"string",
       "max":50,
@@ -1794,6 +2061,12 @@
     "StateOrRegionList":{
       "type":"list",
       "member":{"shape":"StateOrRegion"}
+    },
+    "StatusList":{
+      "type":"list",
+      "member":{"shape":"AssetState"},
+      "max":2,
+      "min":1
     },
     "String":{
       "type":"string",
@@ -1878,6 +2151,18 @@
       "max":1005,
       "min":1,
       "pattern":"^(\\d+)##(\\S+)$"
+    },
+    "TrackingId":{
+      "type":"string",
+      "max":42,
+      "min":6,
+      "pattern":"^[a-zA-Z0-9]+$"
+    },
+    "UnderlayIpAddress":{
+      "type":"string",
+      "max":15,
+      "min":7,
+      "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}$"
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -1980,7 +2265,7 @@
         "Description":{"shape":"SiteDescription"},
         "Notes":{
           "shape":"SiteNotes",
-          "documentation":"<p> Notes about a site. </p>"
+          "documentation":"<p>Notes about a site.</p>"
         }
       }
     },
@@ -2002,23 +2287,23 @@
         },
         "PowerDrawKva":{
           "shape":"PowerDrawKva",
-          "documentation":"<p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>"
+          "documentation":"<p>The power draw, in kVA, available at the hardware placement position for the rack.</p>"
         },
         "PowerPhase":{
           "shape":"PowerPhase",
-          "documentation":"<p> Specify the power option that you can provide for hardware. </p> <ul> <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>"
+          "documentation":"<p>The power option that you can provide for hardware. </p> <ul> <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>"
         },
         "PowerConnector":{
           "shape":"PowerConnector",
-          "documentation":"<p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li> <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li> </ul> </li> <li> <p>Three-phase AC feed</p> <ul> <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li> <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li> </ul> </li> </ul>"
+          "documentation":"<p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li> <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li> </ul> </li> <li> <p>Three-phase AC feed</p> <ul> <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li> <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li> </ul> </li> </ul>"
         },
         "PowerFeedDrop":{
           "shape":"PowerFeedDrop",
-          "documentation":"<p> Specify whether the power feed comes above or below the rack. </p>"
+          "documentation":"<p>Indicates whether the power feed comes above or below the rack. </p>"
         },
         "UplinkGbps":{
           "shape":"UplinkGbps",
-          "documentation":"<p> Specify the uplink speed the rack should support for the connection to the Region. </p>"
+          "documentation":"<p>The uplink speed the rack should support for the connection to the Region. </p>"
         },
         "UplinkCount":{
           "shape":"UplinkCount",
@@ -2026,15 +2311,15 @@
         },
         "FiberOpticCableType":{
           "shape":"FiberOpticCableType",
-          "documentation":"<p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>"
+          "documentation":"<p>The type of fiber that you will use to attach the Outpost to your network. </p>"
         },
         "OpticalStandard":{
           "shape":"OpticalStandard",
-          "documentation":"<p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking\">Network</a> in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li> <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li> <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li> <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li> <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li> <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li> <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li> <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li> <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li> <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li> <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li> <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li> </ul>"
+          "documentation":"<p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking\">Network</a> in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li> <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li> <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li> <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li> <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li> <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li> <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li> <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li> <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li> <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li> <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li> <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li> </ul>"
         },
         "MaximumSupportedWeightLbs":{
           "shape":"MaximumSupportedWeightLbs",
-          "documentation":"<p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>"
+          "documentation":"<p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>"
         }
       }
     },
@@ -2076,6 +2361,12 @@
       "documentation":"<p>A parameter is not valid.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "WireGuardPublicKey":{
+      "type":"string",
+      "max":44,
+      "min":44,
+      "pattern":"^[a-zA-Z0-9/+]{43}=$"
     },
     "outpostListDefinition":{
       "type":"list",

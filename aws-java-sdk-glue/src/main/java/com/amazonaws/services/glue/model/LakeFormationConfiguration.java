@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies AWS Lake Formation configuration settings for the crawler.
+ * Specifies Lake Formation configuration settings for the crawler.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LakeFormationConfiguration" target="_top">AWS
@@ -30,7 +30,7 @@ public class LakeFormationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.
+     * Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      * </p>
      */
     private Boolean useLakeFormationCredentials;
@@ -43,12 +43,11 @@ public class LakeFormationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.
+     * Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      * </p>
      * 
      * @param useLakeFormationCredentials
-     *        Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role
-     *        credentials.
+     *        Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      */
 
     public void setUseLakeFormationCredentials(Boolean useLakeFormationCredentials) {
@@ -57,11 +56,10 @@ public class LakeFormationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.
+     * Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      * </p>
      * 
-     * @return Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role
-     *         credentials.
+     * @return Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      */
 
     public Boolean getUseLakeFormationCredentials() {
@@ -70,12 +68,11 @@ public class LakeFormationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.
+     * Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      * </p>
      * 
      * @param useLakeFormationCredentials
-     *        Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role
-     *        credentials.
+     *        Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +83,10 @@ public class LakeFormationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.
+     * Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      * </p>
      * 
-     * @return Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role
-     *         credentials.
+     * @return Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
      */
 
     public Boolean isUseLakeFormationCredentials() {

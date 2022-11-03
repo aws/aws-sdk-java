@@ -29,6 +29,8 @@ public class GetRelationalDatabaseBundlesRequestMarshaller {
 
     private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("pageToken").build();
+    private static final MarshallingInfo<Boolean> INCLUDEINACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeInactive").build();
 
     private static final GetRelationalDatabaseBundlesRequestMarshaller instance = new GetRelationalDatabaseBundlesRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GetRelationalDatabaseBundlesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getRelationalDatabaseBundlesRequest.getPageToken(), PAGETOKEN_BINDING);
+            protocolMarshaller.marshall(getRelationalDatabaseBundlesRequest.getIncludeInactive(), INCLUDEINACTIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

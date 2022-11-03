@@ -36,6 +36,8 @@ public class CreateRouteRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTROUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRoute").build();
     private static final MarshallingInfo<String> ENVIRONMENTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("EnvironmentIdentifier").build();
     private static final MarshallingInfo<String> ROUTETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +67,7 @@ public class CreateRouteRequestMarshaller {
         try {
             protocolMarshaller.marshall(createRouteRequest.getApplicationIdentifier(), APPLICATIONIDENTIFIER_BINDING);
             protocolMarshaller.marshall(createRouteRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createRouteRequest.getDefaultRoute(), DEFAULTROUTE_BINDING);
             protocolMarshaller.marshall(createRouteRequest.getEnvironmentIdentifier(), ENVIRONMENTIDENTIFIER_BINDING);
             protocolMarshaller.marshall(createRouteRequest.getRouteType(), ROUTETYPE_BINDING);
             protocolMarshaller.marshall(createRouteRequest.getServiceIdentifier(), SERVICEIDENTIFIER_BINDING);

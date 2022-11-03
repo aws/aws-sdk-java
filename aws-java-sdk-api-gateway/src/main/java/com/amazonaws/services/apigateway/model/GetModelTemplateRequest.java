@@ -27,24 +27,24 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the model for which to generate a template.
+     * The name of the model for which to generate a template.
      * </p>
      */
     private String modelName;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the model for which to generate a template.
+     * The name of the model for which to generate a template.
      * </p>
      * 
      * @param modelName
-     *        [Required] The name of the model for which to generate a template.
+     *        The name of the model for which to generate a template.
      */
 
     public void setModelName(String modelName) {
@@ -93,10 +93,10 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the model for which to generate a template.
+     * The name of the model for which to generate a template.
      * </p>
      * 
-     * @return [Required] The name of the model for which to generate a template.
+     * @return The name of the model for which to generate a template.
      */
 
     public String getModelName() {
@@ -105,11 +105,11 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * [Required] The name of the model for which to generate a template.
+     * The name of the model for which to generate a template.
      * </p>
      * 
      * @param modelName
-     *        [Required] The name of the model for which to generate a template.
+     *        The name of the model for which to generate a template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

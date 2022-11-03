@@ -106,6 +106,12 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private ExternalSourceSetting externalSourceSetting;
+    /**
+     * <p>
+     * Specifications for a composite slot type.
+     * </p>
+     */
+    private CompositeSlotTypeSetting compositeSlotTypeSetting;
 
     /**
      * <p>
@@ -661,6 +667,46 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifications for a composite slot type.
+     * </p>
+     * 
+     * @param compositeSlotTypeSetting
+     *        Specifications for a composite slot type.
+     */
+
+    public void setCompositeSlotTypeSetting(CompositeSlotTypeSetting compositeSlotTypeSetting) {
+        this.compositeSlotTypeSetting = compositeSlotTypeSetting;
+    }
+
+    /**
+     * <p>
+     * Specifications for a composite slot type.
+     * </p>
+     * 
+     * @return Specifications for a composite slot type.
+     */
+
+    public CompositeSlotTypeSetting getCompositeSlotTypeSetting() {
+        return this.compositeSlotTypeSetting;
+    }
+
+    /**
+     * <p>
+     * Specifications for a composite slot type.
+     * </p>
+     * 
+     * @param compositeSlotTypeSetting
+     *        Specifications for a composite slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotTypeRequest withCompositeSlotTypeSetting(CompositeSlotTypeSetting compositeSlotTypeSetting) {
+        setCompositeSlotTypeSetting(compositeSlotTypeSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -689,7 +735,9 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getLocaleId() != null)
             sb.append("LocaleId: ").append(getLocaleId()).append(",");
         if (getExternalSourceSetting() != null)
-            sb.append("ExternalSourceSetting: ").append(getExternalSourceSetting());
+            sb.append("ExternalSourceSetting: ").append(getExternalSourceSetting()).append(",");
+        if (getCompositeSlotTypeSetting() != null)
+            sb.append("CompositeSlotTypeSetting: ").append(getCompositeSlotTypeSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -740,6 +788,10 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getExternalSourceSetting() != null && other.getExternalSourceSetting().equals(this.getExternalSourceSetting()) == false)
             return false;
+        if (other.getCompositeSlotTypeSetting() == null ^ this.getCompositeSlotTypeSetting() == null)
+            return false;
+        if (other.getCompositeSlotTypeSetting() != null && other.getCompositeSlotTypeSetting().equals(this.getCompositeSlotTypeSetting()) == false)
+            return false;
         return true;
     }
 
@@ -757,6 +809,7 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getExternalSourceSetting() == null) ? 0 : getExternalSourceSetting().hashCode());
+        hashCode = prime * hashCode + ((getCompositeSlotTypeSetting() == null) ? 0 : getCompositeSlotTypeSetting().hashCode());
         return hashCode;
     }
 

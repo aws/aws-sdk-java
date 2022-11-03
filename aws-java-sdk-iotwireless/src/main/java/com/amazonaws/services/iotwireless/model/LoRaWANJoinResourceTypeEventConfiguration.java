@@ -31,18 +31,18 @@ public class LoRaWANJoinResourceTypeEventConfiguration implements Serializable, 
 
     /**
      * <p>
-     * Enum to denote whether the wireless device join event topic is enabled or disabled.
+     * Denotes whether the wireless device join event topic is enabled or disabled.
      * </p>
      */
     private String wirelessDeviceEventTopic;
 
     /**
      * <p>
-     * Enum to denote whether the wireless device join event topic is enabled or disabled.
+     * Denotes whether the wireless device join event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceEventTopic
-     *        Enum to denote whether the wireless device join event topic is enabled or disabled.
+     *        Denotes whether the wireless device join event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -52,10 +52,10 @@ public class LoRaWANJoinResourceTypeEventConfiguration implements Serializable, 
 
     /**
      * <p>
-     * Enum to denote whether the wireless device join event topic is enabled or disabled.
+     * Denotes whether the wireless device join event topic is enabled or disabled.
      * </p>
      * 
-     * @return Enum to denote whether the wireless device join event topic is enabled or disabled.
+     * @return Denotes whether the wireless device join event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -65,11 +65,11 @@ public class LoRaWANJoinResourceTypeEventConfiguration implements Serializable, 
 
     /**
      * <p>
-     * Enum to denote whether the wireless device join event topic is enabled or disabled.
+     * Denotes whether the wireless device join event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceEventTopic
-     *        Enum to denote whether the wireless device join event topic is enabled or disabled.
+     *        Denotes whether the wireless device join event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */
@@ -81,11 +81,11 @@ public class LoRaWANJoinResourceTypeEventConfiguration implements Serializable, 
 
     /**
      * <p>
-     * Enum to denote whether the wireless device join event topic is enabled or disabled.
+     * Denotes whether the wireless device join event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceEventTopic
-     *        Enum to denote whether the wireless device join event topic is enabled or disabled.
+     *        Denotes whether the wireless device join event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */

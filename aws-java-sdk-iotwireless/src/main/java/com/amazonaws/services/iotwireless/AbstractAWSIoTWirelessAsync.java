@@ -653,6 +653,32 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest request) {
+
+        return getPositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest request) {
+
+        return getPositionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(GetResourceEventConfigurationRequest request) {
 
         return getResourceEventConfigurationAsync(request, null);
@@ -919,6 +945,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(ListPositionConfigurationsRequest request) {
+
+        return listPositionConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(ListPositionConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListQueuedMessagesResult> listQueuedMessagesAsync(ListQueuedMessagesRequest request) {
 
         return listQueuedMessagesAsync(request, null);
@@ -994,6 +1033,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<ListWirelessGatewaysResult> listWirelessGatewaysAsync(ListWirelessGatewaysRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWirelessGatewaysRequest, ListWirelessGatewaysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest request) {
+
+        return putPositionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1249,6 +1301,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<UpdatePartnerAccountResult> updatePartnerAccountAsync(UpdatePartnerAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePartnerAccountRequest, UpdatePartnerAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest request) {
+
+        return updatePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

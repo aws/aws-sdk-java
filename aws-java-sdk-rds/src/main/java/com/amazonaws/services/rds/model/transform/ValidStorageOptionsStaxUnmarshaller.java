@@ -84,6 +84,27 @@ public class ValidStorageOptionsStaxUnmarshaller implements Unmarshaller<ValidSt
                     validStorageOptions.setSupportsStorageAutoscaling(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ProvisionedStorageThroughput", targetDepth)) {
+                    validStorageOptions.withProvisionedStorageThroughput(new ArrayList<Range>());
+                    continue;
+                }
+
+                if (context.testExpression("ProvisionedStorageThroughput/Range", targetDepth)) {
+                    validStorageOptions.withProvisionedStorageThroughput(RangeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StorageThroughputToIopsRatio", targetDepth)) {
+                    validStorageOptions.withStorageThroughputToIopsRatio(new ArrayList<DoubleRange>());
+                    continue;
+                }
+
+                if (context.testExpression("StorageThroughputToIopsRatio/DoubleRange", targetDepth)) {
+                    validStorageOptions.withStorageThroughputToIopsRatio(DoubleRangeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return validStorageOptions;

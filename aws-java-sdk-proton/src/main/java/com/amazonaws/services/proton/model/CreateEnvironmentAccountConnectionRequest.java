@@ -34,6 +34,23 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
     private String clientToken;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any
+     * environments running in this account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     */
+    private String componentRoleArn;
+    /**
+     * <p>
      * The name of the Proton environment that's created in the associated management account.
      * </p>
      */
@@ -60,8 +77,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -109,6 +126,109 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
 
     public CreateEnvironmentAccountConnectionRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any
+     * environments running in this account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in the associated environment account. It determines the scope of infrastructure that a
+     *        component can provision in the account.</p>
+     *        <p>
+     *        You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with
+     *        any environments running in this account.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     */
+
+    public void setComponentRoleArn(String componentRoleArn) {
+        this.componentRoleArn = componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any
+     * environments running in this account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly
+     *         defined components in the associated environment account. It determines the scope of infrastructure that
+     *         a component can provision in the account.</p>
+     *         <p>
+     *         You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with
+     *         any environments running in this account.
+     *         </p>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton User Guide</i>.
+     */
+
+    public String getComponentRoleArn() {
+        return this.componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in the associated environment account. It determines the scope of infrastructure that a component can
+     * provision in the account.
+     * </p>
+     * <p>
+     * You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any
+     * environments running in this account.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in the associated environment account. It determines the scope of infrastructure that a
+     *        component can provision in the account.</p>
+     *        <p>
+     *        You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with
+     *        any environments running in this account.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentAccountConnectionRequest withComponentRoleArn(String componentRoleArn) {
+        setComponentRoleArn(componentRoleArn);
         return this;
     }
 
@@ -262,16 +382,16 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @return An optional list of metadata items that you can associate with the Proton environment account connection.
      *         A tag is a key-value pair.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and
-     *         tagging</a> in the <i>Proton Administrator Guide</i>.
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and
+     *         tagging</a> in the <i>Proton User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -284,8 +404,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
@@ -293,8 +413,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      *        A tag is a key-value pair.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and
-     *        tagging</a> in the <i>Proton Administrator Guide</i>.
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -312,8 +432,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -326,8 +446,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      *        A tag is a key-value pair.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and
-     *        tagging</a> in the <i>Proton Administrator Guide</i>.
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,8 +467,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * is a key-value pair.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param tags
@@ -356,8 +476,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      *        A tag is a key-value pair.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and
-     *        tagging</a> in the <i>Proton Administrator Guide</i>.
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a>
+     *        in the <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,6 +500,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         sb.append("{");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getComponentRoleArn() != null)
+            sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getManagementAccountId() != null)
@@ -406,6 +528,10 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
+            return false;
+        if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
+            return false;
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
@@ -431,6 +557,7 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getManagementAccountId() == null) ? 0 : getManagementAccountId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

@@ -43,6 +43,12 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String chimeBearer;
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     */
+    private String subChannelId;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.
+     */
+
+    public void setSubChannelId(String subChannelId) {
+        this.subChannelId = subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * 
+     * @return The ID of the SubChannel in the request.
+     */
+
+    public String getSubChannelId() {
+        return this.subChannelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the SubChannel in the request.
+     * </p>
+     * 
+     * @param subChannelId
+     *        The ID of the SubChannel in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedactChannelMessageRequest withSubChannelId(String subChannelId) {
+        setSubChannelId(subChannelId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
         if (getMessageId() != null)
             sb.append("MessageId: ").append(getMessageId()).append(",");
         if (getChimeBearer() != null)
-            sb.append("ChimeBearer: ").append(getChimeBearer());
+            sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
+        if (getSubChannelId() != null)
+            sb.append("SubChannelId: ").append(getSubChannelId());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
             return false;
+        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
+            return false;
+        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
+        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateAppRequestMarshaller {
 
+    private static final MarshallingInfo<String> ASSESSMENTSCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentSchedule").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -59,6 +61,7 @@ public class CreateAppRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createAppRequest.getAssessmentSchedule(), ASSESSMENTSCHEDULE_BINDING);
             protocolMarshaller.marshall(createAppRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createAppRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createAppRequest.getName(), NAME_BINDING);

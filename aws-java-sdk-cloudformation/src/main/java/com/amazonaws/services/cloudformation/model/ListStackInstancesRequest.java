@@ -33,10 +33,10 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
     private String stackSetName;
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
-     * parameter value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
-     * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
-     * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+     * If the previous request didn't return all the remaining results, the response's <code>NextToken</code> parameter
+     * value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and
+     * assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results,
+     * the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      */
     private String nextToken;
@@ -50,7 +50,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StackInstanceFilter> filters;
@@ -137,14 +137,14 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
-     * parameter value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
-     * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
-     * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+     * If the previous request didn't return all the remaining results, the response's <code>NextToken</code> parameter
+     * value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and
+     * assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results,
+     * the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
+     *        If the previous request didn't return all the remaining results, the response's <code>NextToken</code>
      *        parameter value is set to a token. To retrieve the next set of results, call
      *        <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code>
      *        parameter. If there are no remaining results, the previous response object's <code>NextToken</code>
@@ -157,13 +157,13 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
-     * parameter value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
-     * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
-     * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+     * If the previous request didn't return all the remaining results, the response's <code>NextToken</code> parameter
+     * value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and
+     * assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results,
+     * the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
-     * @return If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
+     * @return If the previous request didn't return all the remaining results, the response's <code>NextToken</code>
      *         parameter value is set to a token. To retrieve the next set of results, call
      *         <code>ListStackInstances</code> again and assign that token to the request object's
      *         <code>NextToken</code> parameter. If there are no remaining results, the previous response object's
@@ -176,14 +176,14 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
-     * parameter value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
-     * again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining
-     * results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+     * If the previous request didn't return all the remaining results, the response's <code>NextToken</code> parameter
+     * value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and
+     * assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results,
+     * the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If the previous request didn't return all of the remaining results, the response's <code>NextToken</code>
+     *        If the previous request didn't return all the remaining results, the response's <code>NextToken</code>
      *        parameter value is set to a token. To retrieve the next set of results, call
      *        <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code>
      *        parameter. If there are no remaining results, the previous response object's <code>NextToken</code>
@@ -250,10 +250,10 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * 
-     * @return The status that stack instances are filtered by.
+     * @return The filter to apply to stack instances
      */
 
     public java.util.List<StackInstanceFilter> getFilters() {
@@ -265,11 +265,11 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * 
      * @param filters
-     *        The status that stack instances are filtered by.
+     *        The filter to apply to stack instances
      */
 
     public void setFilters(java.util.Collection<StackInstanceFilter> filters) {
@@ -283,7 +283,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -292,7 +292,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param filters
-     *        The status that stack instances are filtered by.
+     *        The filter to apply to stack instances
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +308,11 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * 
      * @param filters
-     *        The status that stack instances are filtered by.
+     *        The filter to apply to stack instances
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

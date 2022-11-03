@@ -108,6 +108,39 @@ public class AmazonForecastQueryAsyncClient extends AmazonForecastQueryClient im
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<QueryWhatIfForecastResult> queryWhatIfForecastAsync(QueryWhatIfForecastRequest request) {
+
+        return queryWhatIfForecastAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<QueryWhatIfForecastResult> queryWhatIfForecastAsync(final QueryWhatIfForecastRequest request,
+            final com.amazonaws.handlers.AsyncHandler<QueryWhatIfForecastRequest, QueryWhatIfForecastResult> asyncHandler) {
+        final QueryWhatIfForecastRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<QueryWhatIfForecastResult>() {
+            @Override
+            public QueryWhatIfForecastResult call() throws Exception {
+                QueryWhatIfForecastResult result = null;
+
+                try {
+                    result = executeQueryWhatIfForecast(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

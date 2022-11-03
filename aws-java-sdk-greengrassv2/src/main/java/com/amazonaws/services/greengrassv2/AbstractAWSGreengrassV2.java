@@ -69,6 +69,11 @@ public class AbstractAWSGreengrassV2 implements AWSGreengrassV2 {
     }
 
     @Override
+    public DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeComponentResult describeComponent(DescribeComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

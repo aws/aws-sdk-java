@@ -28,6 +28,11 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public CreateExtendedSourceServerResult createExtendedSourceServer(CreateExtendedSourceServerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReplicationConfigurationTemplateResult createReplicationConfigurationTemplate(CreateReplicationConfigurationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +114,16 @@ public class AbstractAWSdrs implements AWSdrs {
 
     @Override
     public InitializeServiceResult initializeService(InitializeServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExtensibleSourceServersResult listExtensibleSourceServers(ListExtensibleSourceServersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStagingAccountsResult listStagingAccounts(ListStagingAccountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

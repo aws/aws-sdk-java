@@ -27,7 +27,7 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      * </p>
      */
     private String accessToken;
@@ -41,11 +41,11 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      */
 
     public void setAccessToken(String accessToken) {
@@ -54,10 +54,10 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      * </p>
      * 
-     * @return The access token.
+     * @return A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      */
 
     public String getAccessToken() {
@@ -66,11 +66,11 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose software token you want to generate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

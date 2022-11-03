@@ -531,6 +531,43 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
+     * Lists the details of all attribute groups associated with a specific application. The results display in pages.
+     * </p>
+     * 
+     * @param listAttributeGroupsForApplicationRequest
+     * @return A Java Future containing the result of the ListAttributeGroupsForApplication operation returned by the
+     *         service.
+     * @sample AWSAppRegistryAsync.ListAttributeGroupsForApplication
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttributeGroupsForApplicationResult> listAttributeGroupsForApplicationAsync(
+            ListAttributeGroupsForApplicationRequest listAttributeGroupsForApplicationRequest);
+
+    /**
+     * <p>
+     * Lists the details of all attribute groups associated with a specific application. The results display in pages.
+     * </p>
+     * 
+     * @param listAttributeGroupsForApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAttributeGroupsForApplication operation returned by the
+     *         service.
+     * @sample AWSAppRegistryAsyncHandler.ListAttributeGroupsForApplication
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttributeGroupsForApplicationResult> listAttributeGroupsForApplicationAsync(
+            ListAttributeGroupsForApplicationRequest listAttributeGroupsForApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAttributeGroupsForApplicationRequest, ListAttributeGroupsForApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all of the tags on the resource.
      * </p>
      * 

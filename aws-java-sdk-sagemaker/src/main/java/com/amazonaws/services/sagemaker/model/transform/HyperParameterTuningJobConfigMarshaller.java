@@ -29,6 +29,8 @@ public class HyperParameterTuningJobConfigMarshaller {
 
     private static final MarshallingInfo<String> STRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Strategy").build();
+    private static final MarshallingInfo<StructuredPojo> STRATEGYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StrategyConfig").build();
     private static final MarshallingInfo<StructuredPojo> HYPERPARAMETERTUNINGJOBOBJECTIVE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterTuningJobObjective").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCELIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class HyperParameterTuningJobConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getStrategy(), STRATEGY_BINDING);
+            protocolMarshaller.marshall(hyperParameterTuningJobConfig.getStrategyConfig(), STRATEGYCONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getHyperParameterTuningJobObjective(), HYPERPARAMETERTUNINGJOBOBJECTIVE_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getResourceLimits(), RESOURCELIMITS_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getParameterRanges(), PARAMETERRANGES_BINDING);

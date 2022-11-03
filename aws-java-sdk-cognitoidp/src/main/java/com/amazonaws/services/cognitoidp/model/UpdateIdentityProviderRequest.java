@@ -33,25 +33,25 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
     private String userPoolId;
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      */
     private String providerName;
     /**
      * <p>
-     * The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
+     * The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      * </p>
      */
     private java.util.Map<String, String> providerDetails;
     /**
      * <p>
-     * The identity provider attribute mapping to be changed.
+     * The IdP attribute mapping to be changed.
      * </p>
      */
     private java.util.Map<String, String> attributeMapping;
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      */
     private java.util.List<String> idpIdentifiers;
@@ -98,11 +98,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      */
 
     public void setProviderName(String providerName) {
@@ -111,10 +111,10 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
-     * @return The identity provider name.
+     * @return The IdP name.
      */
 
     public String getProviderName() {
@@ -123,11 +123,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,10 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
+     * The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      * </p>
      * 
-     * @return The identity provider details to be updated, such as <code>MetadataURL</code> and
-     *         <code>MetadataFile</code>.
+     * @return The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      */
 
     public java.util.Map<String, String> getProviderDetails() {
@@ -151,12 +150,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
+     * The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      * </p>
      * 
      * @param providerDetails
-     *        The identity provider details to be updated, such as <code>MetadataURL</code> and
-     *        <code>MetadataFile</code>.
+     *        The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      */
 
     public void setProviderDetails(java.util.Map<String, String> providerDetails) {
@@ -165,12 +163,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
+     * The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      * </p>
      * 
      * @param providerDetails
-     *        The identity provider details to be updated, such as <code>MetadataURL</code> and
-     *        <code>MetadataFile</code>.
+     *        The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,10 +206,10 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider attribute mapping to be changed.
+     * The IdP attribute mapping to be changed.
      * </p>
      * 
-     * @return The identity provider attribute mapping to be changed.
+     * @return The IdP attribute mapping to be changed.
      */
 
     public java.util.Map<String, String> getAttributeMapping() {
@@ -221,11 +218,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider attribute mapping to be changed.
+     * The IdP attribute mapping to be changed.
      * </p>
      * 
      * @param attributeMapping
-     *        The identity provider attribute mapping to be changed.
+     *        The IdP attribute mapping to be changed.
      */
 
     public void setAttributeMapping(java.util.Map<String, String> attributeMapping) {
@@ -234,11 +231,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider attribute mapping to be changed.
+     * The IdP attribute mapping to be changed.
      * </p>
      * 
      * @param attributeMapping
-     *        The identity provider attribute mapping to be changed.
+     *        The IdP attribute mapping to be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,10 +274,10 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
-     * @return A list of identity provider identifiers.
+     * @return A list of IdP identifiers.
      */
 
     public java.util.List<String> getIdpIdentifiers() {
@@ -289,11 +286,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      */
 
     public void setIdpIdentifiers(java.util.Collection<String> idpIdentifiers) {
@@ -307,7 +304,7 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -316,7 +313,7 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,11 +329,11 @@ public class UpdateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

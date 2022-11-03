@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class GenerateEmbedUrlForRegisteredUserRequestMarshaller {
             .marshallLocationName("UserArn").build();
     private static final MarshallingInfo<StructuredPojo> EXPERIENCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperienceConfiguration").build();
+    private static final MarshallingInfo<List> ALLOWEDDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedDomains").build();
 
     private static final GenerateEmbedUrlForRegisteredUserRequestMarshaller instance = new GenerateEmbedUrlForRegisteredUserRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class GenerateEmbedUrlForRegisteredUserRequestMarshaller {
             protocolMarshaller.marshall(generateEmbedUrlForRegisteredUserRequest.getSessionLifetimeInMinutes(), SESSIONLIFETIMEINMINUTES_BINDING);
             protocolMarshaller.marshall(generateEmbedUrlForRegisteredUserRequest.getUserArn(), USERARN_BINDING);
             protocolMarshaller.marshall(generateEmbedUrlForRegisteredUserRequest.getExperienceConfiguration(), EXPERIENCECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(generateEmbedUrlForRegisteredUserRequest.getAllowedDomains(), ALLOWEDDOMAINS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

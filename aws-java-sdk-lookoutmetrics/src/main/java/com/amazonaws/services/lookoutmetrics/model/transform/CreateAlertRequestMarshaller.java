@@ -41,6 +41,8 @@ public class CreateAlertRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Action").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> ALERTFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlertFilters").build();
 
     private static final CreateAlertRequestMarshaller instance = new CreateAlertRequestMarshaller();
 
@@ -64,6 +66,7 @@ public class CreateAlertRequestMarshaller {
             protocolMarshaller.marshall(createAlertRequest.getAnomalyDetectorArn(), ANOMALYDETECTORARN_BINDING);
             protocolMarshaller.marshall(createAlertRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(createAlertRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAlertRequest.getAlertFilters(), ALERTFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

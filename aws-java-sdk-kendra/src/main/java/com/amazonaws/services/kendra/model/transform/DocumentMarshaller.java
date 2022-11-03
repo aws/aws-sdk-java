@@ -44,6 +44,8 @@ public class DocumentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HierarchicalAccessControlList").build();
     private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentType").build();
+    private static final MarshallingInfo<String> ACCESSCONTROLCONFIGURATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessControlConfigurationId").build();
 
     private static final DocumentMarshaller instance = new DocumentMarshaller();
 
@@ -69,6 +71,7 @@ public class DocumentMarshaller {
             protocolMarshaller.marshall(document.getAccessControlList(), ACCESSCONTROLLIST_BINDING);
             protocolMarshaller.marshall(document.getHierarchicalAccessControlList(), HIERARCHICALACCESSCONTROLLIST_BINDING);
             protocolMarshaller.marshall(document.getContentType(), CONTENTTYPE_BINDING);
+            protocolMarshaller.marshall(document.getAccessControlConfigurationId(), ACCESSCONTROLCONFIGURATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

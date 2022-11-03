@@ -48,6 +48,8 @@ public class DeleteReservationResult extends com.amazonaws.AmazonWebServiceResul
     private String offeringType;
     /** AWS region, e.g. 'us-west-2' */
     private String region;
+    /** Renewal settings for the reservation */
+    private RenewalSettings renewalSettings;
     /** Unique reservation ID, e.g. '1234567' */
     private String reservationId;
     /** Resource configuration details */
@@ -504,6 +506,40 @@ public class DeleteReservationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * Renewal settings for the reservation
+     * 
+     * @param renewalSettings
+     *        Renewal settings for the reservation
+     */
+
+    public void setRenewalSettings(RenewalSettings renewalSettings) {
+        this.renewalSettings = renewalSettings;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @return Renewal settings for the reservation
+     */
+
+    public RenewalSettings getRenewalSettings() {
+        return this.renewalSettings;
+    }
+
+    /**
+     * Renewal settings for the reservation
+     * 
+     * @param renewalSettings
+     *        Renewal settings for the reservation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteReservationResult withRenewalSettings(RenewalSettings renewalSettings) {
+        setRenewalSettings(renewalSettings);
+        return this;
+    }
+
+    /**
      * Unique reservation ID, e.g. '1234567'
      * 
      * @param reservationId
@@ -788,6 +824,8 @@ public class DeleteReservationResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
+        if (getRenewalSettings() != null)
+            sb.append("RenewalSettings: ").append(getRenewalSettings()).append(",");
         if (getReservationId() != null)
             sb.append("ReservationId: ").append(getReservationId()).append(",");
         if (getResourceSpecification() != null)
@@ -862,6 +900,10 @@ public class DeleteReservationResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
+        if (other.getRenewalSettings() == null ^ this.getRenewalSettings() == null)
+            return false;
+        if (other.getRenewalSettings() != null && other.getRenewalSettings().equals(this.getRenewalSettings()) == false)
+            return false;
         if (other.getReservationId() == null ^ this.getReservationId() == null)
             return false;
         if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false)
@@ -906,6 +948,7 @@ public class DeleteReservationResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getRenewalSettings() == null) ? 0 : getRenewalSettings().hashCode());
         hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode());
         hashCode = prime * hashCode + ((getResourceSpecification() == null) ? 0 : getResourceSpecification().hashCode());
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());

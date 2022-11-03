@@ -36,7 +36,8 @@ public class IncidentRecordSource implements Serializable, Cloneable, Structured
     private String createdBy;
     /**
      * <p>
-     * The principal the assumed the role specified of the <code>createdBy</code>.
+     * The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed
+     * the role this will be left blank.
      * </p>
      */
     private String invokedBy;
@@ -96,11 +97,13 @@ public class IncidentRecordSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The principal the assumed the role specified of the <code>createdBy</code>.
+     * The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed
+     * the role this will be left blank.
      * </p>
      * 
      * @param invokedBy
-     *        The principal the assumed the role specified of the <code>createdBy</code>.
+     *        The service principal that assumed the role specified in <code>createdBy</code>. If no service principal
+     *        assumed the role this will be left blank.
      */
 
     public void setInvokedBy(String invokedBy) {
@@ -109,10 +112,12 @@ public class IncidentRecordSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The principal the assumed the role specified of the <code>createdBy</code>.
+     * The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed
+     * the role this will be left blank.
      * </p>
      * 
-     * @return The principal the assumed the role specified of the <code>createdBy</code>.
+     * @return The service principal that assumed the role specified in <code>createdBy</code>. If no service principal
+     *         assumed the role this will be left blank.
      */
 
     public String getInvokedBy() {
@@ -121,11 +126,13 @@ public class IncidentRecordSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The principal the assumed the role specified of the <code>createdBy</code>.
+     * The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed
+     * the role this will be left blank.
      * </p>
      * 
      * @param invokedBy
-     *        The principal the assumed the role specified of the <code>createdBy</code>.
+     *        The service principal that assumed the role specified in <code>createdBy</code>. If no service principal
+     *        assumed the role this will be left blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

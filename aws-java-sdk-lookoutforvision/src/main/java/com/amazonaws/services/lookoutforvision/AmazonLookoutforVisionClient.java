@@ -941,7 +941,8 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * </p>
      * <p>
      * The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more
-     * anomalies and a confidence value for the prediction.
+     * anomalies and a confidence value for the prediction. If the model is an image segmentation model, the response
+     * also includes segmentation information for each type of anomaly found in the image.
      * </p>
      * <note>
      * <p>
@@ -951,6 +952,10 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
      * your model.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout for Vision developer
+     * guide.
+     * </p>
      * <p>
      * This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.
      * </p>
@@ -1244,7 +1249,8 @@ public class AmazonLookoutforVisionClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists the Amazon Lookout for Vision projects in your AWS account.
+     * Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS Region in which you call
+     * <code>ListProjects</code>.
      * </p>
      * <p>
      * The <code>ListProjects</code> operation is eventually consistent. Recent calls to <code>CreateProject</code> and

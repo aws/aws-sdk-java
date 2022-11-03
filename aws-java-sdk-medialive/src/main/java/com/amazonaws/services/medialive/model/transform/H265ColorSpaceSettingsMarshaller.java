@@ -29,6 +29,8 @@ public class H265ColorSpaceSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> COLORSPACEPASSTHROUGHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpacePassthroughSettings").build();
+    private static final MarshallingInfo<StructuredPojo> DOLBYVISION81SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dolbyVision81Settings").build();
     private static final MarshallingInfo<StructuredPojo> HDR10SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdr10Settings").build();
     private static final MarshallingInfo<StructuredPojo> REC601SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -53,6 +55,7 @@ public class H265ColorSpaceSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(h265ColorSpaceSettings.getColorSpacePassthroughSettings(), COLORSPACEPASSTHROUGHSETTINGS_BINDING);
+            protocolMarshaller.marshall(h265ColorSpaceSettings.getDolbyVision81Settings(), DOLBYVISION81SETTINGS_BINDING);
             protocolMarshaller.marshall(h265ColorSpaceSettings.getHdr10Settings(), HDR10SETTINGS_BINDING);
             protocolMarshaller.marshall(h265ColorSpaceSettings.getRec601Settings(), REC601SETTINGS_BINDING);
             protocolMarshaller.marshall(h265ColorSpaceSettings.getRec709Settings(), REC709SETTINGS_BINDING);

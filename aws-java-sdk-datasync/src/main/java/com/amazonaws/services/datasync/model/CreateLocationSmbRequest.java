@@ -67,7 +67,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      * </p>
      */
     private String user;
@@ -313,14 +313,14 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      * </p>
      * 
      * @param user
      *        The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
      *        <p>
      *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
-     *        metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *        metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      */
 
     public void setUser(String user) {
@@ -333,13 +333,13 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      * </p>
      * 
      * @return The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
      *         <p>
      *         For information about choosing a user name that ensures sufficient permissions to files, folders, and
-     *         metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *         metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      */
 
     public String getUser() {
@@ -352,14 +352,14 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      * </p>
      * 
      * @param user
      *        The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
      *        <p>
      *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
-     *        metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *        metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

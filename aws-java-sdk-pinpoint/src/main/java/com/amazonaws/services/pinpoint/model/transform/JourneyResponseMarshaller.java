@@ -65,6 +65,12 @@ public class JourneyResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RefreshOnSegmentUpdate").build();
     private static final MarshallingInfo<StructuredPojo> JOURNEYCHANNELSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JourneyChannelSettings").build();
+    private static final MarshallingInfo<Boolean> SENDINGSCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SendingSchedule").build();
+    private static final MarshallingInfo<StructuredPojo> OPENHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenHours").build();
+    private static final MarshallingInfo<StructuredPojo> CLOSEDDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClosedDays").build();
 
     private static final JourneyResponseMarshaller instance = new JourneyResponseMarshaller();
 
@@ -100,6 +106,9 @@ public class JourneyResponseMarshaller {
             protocolMarshaller.marshall(journeyResponse.getWaitForQuietTime(), WAITFORQUIETTIME_BINDING);
             protocolMarshaller.marshall(journeyResponse.getRefreshOnSegmentUpdate(), REFRESHONSEGMENTUPDATE_BINDING);
             protocolMarshaller.marshall(journeyResponse.getJourneyChannelSettings(), JOURNEYCHANNELSETTINGS_BINDING);
+            protocolMarshaller.marshall(journeyResponse.getSendingSchedule(), SENDINGSCHEDULE_BINDING);
+            protocolMarshaller.marshall(journeyResponse.getOpenHours(), OPENHOURS_BINDING);
+            protocolMarshaller.marshall(journeyResponse.getClosedDays(), CLOSEDDAYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

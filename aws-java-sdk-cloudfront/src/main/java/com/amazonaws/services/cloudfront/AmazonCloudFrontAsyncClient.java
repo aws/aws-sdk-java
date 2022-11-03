@@ -628,6 +628,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOriginAccessControlResult> createOriginAccessControlAsync(CreateOriginAccessControlRequest request) {
+
+        return createOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOriginAccessControlResult> createOriginAccessControlAsync(final CreateOriginAccessControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateOriginAccessControlRequest, CreateOriginAccessControlResult> asyncHandler) {
+        final CreateOriginAccessControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateOriginAccessControlResult>() {
+            @Override
+            public CreateOriginAccessControlResult call() throws Exception {
+                CreateOriginAccessControlResult result = null;
+
+                try {
+                    result = executeCreateOriginAccessControl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOriginRequestPolicyResult> createOriginRequestPolicyAsync(CreateOriginRequestPolicyRequest request) {
 
         return createOriginRequestPolicyAsync(request, null);
@@ -1082,6 +1115,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeDeleteMonitoringSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOriginAccessControlResult> deleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request) {
+
+        return deleteOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOriginAccessControlResult> deleteOriginAccessControlAsync(final DeleteOriginAccessControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOriginAccessControlRequest, DeleteOriginAccessControlResult> asyncHandler) {
+        final DeleteOriginAccessControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOriginAccessControlResult>() {
+            @Override
+            public DeleteOriginAccessControlResult call() throws Exception {
+                DeleteOriginAccessControlResult result = null;
+
+                try {
+                    result = executeDeleteOriginAccessControl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1783,6 +1849,72 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeGetMonitoringSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlResult> getOriginAccessControlAsync(GetOriginAccessControlRequest request) {
+
+        return getOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlResult> getOriginAccessControlAsync(final GetOriginAccessControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOriginAccessControlRequest, GetOriginAccessControlResult> asyncHandler) {
+        final GetOriginAccessControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOriginAccessControlResult>() {
+            @Override
+            public GetOriginAccessControlResult call() throws Exception {
+                GetOriginAccessControlResult result = null;
+
+                try {
+                    result = executeGetOriginAccessControl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlConfigResult> getOriginAccessControlConfigAsync(GetOriginAccessControlConfigRequest request) {
+
+        return getOriginAccessControlConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlConfigResult> getOriginAccessControlConfigAsync(final GetOriginAccessControlConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOriginAccessControlConfigRequest, GetOriginAccessControlConfigResult> asyncHandler) {
+        final GetOriginAccessControlConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOriginAccessControlConfigResult>() {
+            @Override
+            public GetOriginAccessControlConfigResult call() throws Exception {
+                GetOriginAccessControlConfigResult result = null;
+
+                try {
+                    result = executeGetOriginAccessControlConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2607,6 +2739,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListOriginAccessControlsResult> listOriginAccessControlsAsync(ListOriginAccessControlsRequest request) {
+
+        return listOriginAccessControlsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOriginAccessControlsResult> listOriginAccessControlsAsync(final ListOriginAccessControlsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOriginAccessControlsRequest, ListOriginAccessControlsResult> asyncHandler) {
+        final ListOriginAccessControlsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOriginAccessControlsResult>() {
+            @Override
+            public ListOriginAccessControlsResult call() throws Exception {
+                ListOriginAccessControlsResult result = null;
+
+                try {
+                    result = executeListOriginAccessControls(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOriginRequestPoliciesResult> listOriginRequestPoliciesAsync(ListOriginRequestPoliciesRequest request) {
 
         return listOriginRequestPoliciesAsync(request, null);
@@ -3158,6 +3323,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeUpdateKeyGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOriginAccessControlResult> updateOriginAccessControlAsync(UpdateOriginAccessControlRequest request) {
+
+        return updateOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOriginAccessControlResult> updateOriginAccessControlAsync(final UpdateOriginAccessControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateOriginAccessControlRequest, UpdateOriginAccessControlResult> asyncHandler) {
+        final UpdateOriginAccessControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateOriginAccessControlResult>() {
+            @Override
+            public UpdateOriginAccessControlResult call() throws Exception {
+                UpdateOriginAccessControlResult result = null;
+
+                try {
+                    result = executeUpdateOriginAccessControl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

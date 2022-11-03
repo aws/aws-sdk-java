@@ -41,6 +41,19 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
      * </p>
      */
     private Boolean active;
+    /**
+     * <p>
+     * Specifies the next step that the bot executes after playing the intent's closing response.
+     * </p>
+     */
+    private DialogState nextStep;
+    /**
+     * <p>
+     * A list of conditional branches associated with the intent's closing response. These branches are executed when
+     * the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     * </p>
+     */
+    private ConditionalSpecification conditional;
 
     /**
      * <p>
@@ -143,6 +156,92 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Specifies the next step that the bot executes after playing the intent's closing response.
+     * </p>
+     * 
+     * @param nextStep
+     *        Specifies the next step that the bot executes after playing the intent's closing response.
+     */
+
+    public void setNextStep(DialogState nextStep) {
+        this.nextStep = nextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step that the bot executes after playing the intent's closing response.
+     * </p>
+     * 
+     * @return Specifies the next step that the bot executes after playing the intent's closing response.
+     */
+
+    public DialogState getNextStep() {
+        return this.nextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies the next step that the bot executes after playing the intent's closing response.
+     * </p>
+     * 
+     * @param nextStep
+     *        Specifies the next step that the bot executes after playing the intent's closing response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IntentClosingSetting withNextStep(DialogState nextStep) {
+        setNextStep(nextStep);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches associated with the intent's closing response. These branches are executed when
+     * the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     * </p>
+     * 
+     * @param conditional
+     *        A list of conditional branches associated with the intent's closing response. These branches are executed
+     *        when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     */
+
+    public void setConditional(ConditionalSpecification conditional) {
+        this.conditional = conditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches associated with the intent's closing response. These branches are executed when
+     * the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     * </p>
+     * 
+     * @return A list of conditional branches associated with the intent's closing response. These branches are executed
+     *         when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     */
+
+    public ConditionalSpecification getConditional() {
+        return this.conditional;
+    }
+
+    /**
+     * <p>
+     * A list of conditional branches associated with the intent's closing response. These branches are executed when
+     * the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     * </p>
+     * 
+     * @param conditional
+     *        A list of conditional branches associated with the intent's closing response. These branches are executed
+     *        when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IntentClosingSetting withConditional(ConditionalSpecification conditional) {
+        setConditional(conditional);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -157,7 +256,11 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
         if (getClosingResponse() != null)
             sb.append("ClosingResponse: ").append(getClosingResponse()).append(",");
         if (getActive() != null)
-            sb.append("Active: ").append(getActive());
+            sb.append("Active: ").append(getActive()).append(",");
+        if (getNextStep() != null)
+            sb.append("NextStep: ").append(getNextStep()).append(",");
+        if (getConditional() != null)
+            sb.append("Conditional: ").append(getConditional());
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +283,14 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
             return false;
         if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
             return false;
+        if (other.getNextStep() == null ^ this.getNextStep() == null)
+            return false;
+        if (other.getNextStep() != null && other.getNextStep().equals(this.getNextStep()) == false)
+            return false;
+        if (other.getConditional() == null ^ this.getConditional() == null)
+            return false;
+        if (other.getConditional() != null && other.getConditional().equals(this.getConditional()) == false)
+            return false;
         return true;
     }
 
@@ -190,6 +301,8 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getClosingResponse() == null) ? 0 : getClosingResponse().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
+        hashCode = prime * hashCode + ((getNextStep() == null) ? 0 : getNextStep().hashCode());
+        hashCode = prime * hashCode + ((getConditional() == null) ? 0 : getConditional().hashCode());
         return hashCode;
     }
 

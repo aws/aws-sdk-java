@@ -104,6 +104,10 @@ public class MicrosoftSQLServerSettingsJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     microsoftSQLServerSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TrimSpaceInChar", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setTrimSpaceInChar(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

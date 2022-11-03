@@ -26,18 +26,18 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IAM inline policy that is attached to the permission set.
+     * The inline policy that is attached to the permission set.
      * </p>
      */
     private String inlinePolicy;
 
     /**
      * <p>
-     * The IAM inline policy that is attached to the permission set.
+     * The inline policy that is attached to the permission set.
      * </p>
      * 
      * @param inlinePolicy
-     *        The IAM inline policy that is attached to the permission set.
+     *        The inline policy that is attached to the permission set.
      */
 
     public void setInlinePolicy(String inlinePolicy) {
@@ -46,10 +46,10 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IAM inline policy that is attached to the permission set.
+     * The inline policy that is attached to the permission set.
      * </p>
      * 
-     * @return The IAM inline policy that is attached to the permission set.
+     * @return The inline policy that is attached to the permission set.
      */
 
     public String getInlinePolicy() {
@@ -58,11 +58,11 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IAM inline policy that is attached to the permission set.
+     * The inline policy that is attached to the permission set.
      * </p>
      * 
      * @param inlinePolicy
-     *        The IAM inline policy that is attached to the permission set.
+     *        The inline policy that is attached to the permission set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +84,7 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInlinePolicy() != null)
-            sb.append("InlinePolicy: ").append("***Sensitive Data Redacted***");
+            sb.append("InlinePolicy: ").append(getInlinePolicy());
         sb.append("}");
         return sb.toString();
     }

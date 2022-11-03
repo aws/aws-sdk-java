@@ -92,6 +92,18 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * </p>
      */
     private CertificateValidity validity;
+    /**
+     * <p>
+     * The mode of the CA.
+     * </p>
+     * <p>
+     * All the device certificates that are registered using this CA will be registered in the same mode as the CA. For
+     * more information about certificate mode for device certificates, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a>.
+     * </p>
+     */
+    private String certificateMode;
 
     /**
      * <p>
@@ -610,6 +622,134 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The mode of the CA.
+     * </p>
+     * <p>
+     * All the device certificates that are registered using this CA will be registered in the same mode as the CA. For
+     * more information about certificate mode for device certificates, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a>.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the CA. </p>
+     *        <p>
+     *        All the device certificates that are registered using this CA will be registered in the same mode as the
+     *        CA. For more information about certificate mode for device certificates, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     *        >certificate mode</a>.
+     * @see CertificateMode
+     */
+
+    public void setCertificateMode(String certificateMode) {
+        this.certificateMode = certificateMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the CA.
+     * </p>
+     * <p>
+     * All the device certificates that are registered using this CA will be registered in the same mode as the CA. For
+     * more information about certificate mode for device certificates, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a>.
+     * </p>
+     * 
+     * @return The mode of the CA. </p>
+     *         <p>
+     *         All the device certificates that are registered using this CA will be registered in the same mode as the
+     *         CA. For more information about certificate mode for device certificates, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     *         >certificate mode</a>.
+     * @see CertificateMode
+     */
+
+    public String getCertificateMode() {
+        return this.certificateMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the CA.
+     * </p>
+     * <p>
+     * All the device certificates that are registered using this CA will be registered in the same mode as the CA. For
+     * more information about certificate mode for device certificates, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a>.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the CA. </p>
+     *        <p>
+     *        All the device certificates that are registered using this CA will be registered in the same mode as the
+     *        CA. For more information about certificate mode for device certificates, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     *        >certificate mode</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateMode
+     */
+
+    public CACertificateDescription withCertificateMode(String certificateMode) {
+        setCertificateMode(certificateMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the CA.
+     * </p>
+     * <p>
+     * All the device certificates that are registered using this CA will be registered in the same mode as the CA. For
+     * more information about certificate mode for device certificates, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a>.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the CA. </p>
+     *        <p>
+     *        All the device certificates that are registered using this CA will be registered in the same mode as the
+     *        CA. For more information about certificate mode for device certificates, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     *        >certificate mode</a>.
+     * @see CertificateMode
+     */
+
+    public void setCertificateMode(CertificateMode certificateMode) {
+        withCertificateMode(certificateMode);
+    }
+
+    /**
+     * <p>
+     * The mode of the CA.
+     * </p>
+     * <p>
+     * All the device certificates that are registered using this CA will be registered in the same mode as the CA. For
+     * more information about certificate mode for device certificates, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a>.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the CA. </p>
+     *        <p>
+     *        All the device certificates that are registered using this CA will be registered in the same mode as the
+     *        CA. For more information about certificate mode for device certificates, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     *        >certificate mode</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateMode
+     */
+
+    public CACertificateDescription withCertificateMode(CertificateMode certificateMode) {
+        this.certificateMode = certificateMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -642,7 +782,9 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
         if (getGenerationId() != null)
             sb.append("GenerationId: ").append(getGenerationId()).append(",");
         if (getValidity() != null)
-            sb.append("Validity: ").append(getValidity());
+            sb.append("Validity: ").append(getValidity()).append(",");
+        if (getCertificateMode() != null)
+            sb.append("CertificateMode: ").append(getCertificateMode());
         sb.append("}");
         return sb.toString();
     }
@@ -701,6 +843,10 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
             return false;
         if (other.getValidity() != null && other.getValidity().equals(this.getValidity()) == false)
             return false;
+        if (other.getCertificateMode() == null ^ this.getCertificateMode() == null)
+            return false;
+        if (other.getCertificateMode() != null && other.getCertificateMode().equals(this.getCertificateMode()) == false)
+            return false;
         return true;
     }
 
@@ -720,6 +866,7 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getCustomerVersion() == null) ? 0 : getCustomerVersion().hashCode());
         hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
         hashCode = prime * hashCode + ((getValidity() == null) ? 0 : getValidity().hashCode());
+        hashCode = prime * hashCode + ((getCertificateMode() == null) ? 0 : getCertificateMode().hashCode());
         return hashCode;
     }
 

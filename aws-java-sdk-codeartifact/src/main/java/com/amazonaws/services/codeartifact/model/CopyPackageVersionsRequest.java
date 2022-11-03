@@ -33,13 +33,14 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
     /**
      * <p>
-     * The name of the repository that contains the package versions to copy.
+     * The name of the repository that contains the package versions to be copied.
      * </p>
      */
     private String sourceRepository;
@@ -51,46 +52,31 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String destinationRepository;
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package versions to be copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package versions to be copied. The package version component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying
+     * Maven package versions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -98,13 +84,13 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String namespace;
     /**
      * <p>
-     * The name of the package that is copied.
+     * The name of the package that contains the versions to be copied.
      * </p>
      */
     private String packageValue;
     /**
      * <p>
-     * The versions of the package to copy.
+     * The versions of the package to be copied.
      * </p>
      * <note>
      * <p>
@@ -186,11 +172,13 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -199,11 +187,12 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -212,11 +201,13 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +218,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository that contains the package versions to copy.
+     * The name of the repository that contains the package versions to be copied.
      * </p>
      * 
      * @param sourceRepository
-     *        The name of the repository that contains the package versions to copy.
+     *        The name of the repository that contains the package versions to be copied.
      */
 
     public void setSourceRepository(String sourceRepository) {
@@ -240,10 +231,10 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository that contains the package versions to copy.
+     * The name of the repository that contains the package versions to be copied.
      * </p>
      * 
-     * @return The name of the repository that contains the package versions to copy.
+     * @return The name of the repository that contains the package versions to be copied.
      */
 
     public String getSourceRepository() {
@@ -252,11 +243,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository that contains the package versions to copy.
+     * The name of the repository that contains the package versions to be copied.
      * </p>
      * 
      * @param sourceRepository
-     *        The name of the repository that contains the package versions to copy.
+     *        The name of the repository that contains the package versions to be copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,45 +298,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package versions to be copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that is copied. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package versions to be copied.
      * @see PackageFormat
      */
 
@@ -355,44 +312,10 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package versions to be copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package that is copied. The valid package types are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>: A Node Package Manager (npm) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>: A Python Package Index (PyPI) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *         file.
-     *         </p>
-     *         </li>
+     * @return The format of the package versions to be copied.
      * @see PackageFormat
      */
 
@@ -402,45 +325,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package versions to be copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that is copied. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package versions to be copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -452,45 +341,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package versions to be copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that is copied. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package versions to be copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -502,44 +357,48 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package versions to be copied. The package version component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying
+     * Maven package versions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        The namespace of the package versions to be copied. The package version component that specifies its
+     *        namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when
+     *        copying Maven package versions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        The namespace of an npm package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *        formats do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -550,43 +409,47 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package versions to be copied. The package version component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying
+     * Maven package versions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *         example: </p>
+     * @return The namespace of the package versions to be copied. The package version component that specifies its
+     *         namespace depends on its type. For example:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The namespace of a Maven package is its <code>groupId</code>.
+     *         The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when
+     *         copying Maven package versions.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package is its <code>scope</code>.
+     *         The namespace of an npm package version is its <code>scope</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *         formats do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -597,44 +460,48 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The namespace of the package. The package component that specifies its namespace depends on its type. For
-     * example:
+     * The namespace of the package versions to be copied. The package version component that specifies its namespace
+     * depends on its type. For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying
+     * Maven package versions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package. The package component that specifies its namespace depends on its type. For
-     *        example: </p>
+     *        The namespace of the package versions to be copied. The package version component that specifies its
+     *        namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when
+     *        copying Maven package versions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        The namespace of an npm package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *        formats do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -647,11 +514,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the package that is copied.
+     * The name of the package that contains the versions to be copied.
      * </p>
      * 
      * @param packageValue
-     *        The name of the package that is copied.
+     *        The name of the package that contains the versions to be copied.
      */
 
     public void setPackage(String packageValue) {
@@ -660,10 +527,10 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the package that is copied.
+     * The name of the package that contains the versions to be copied.
      * </p>
      * 
-     * @return The name of the package that is copied.
+     * @return The name of the package that contains the versions to be copied.
      */
 
     public String getPackage() {
@@ -672,11 +539,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the package that is copied.
+     * The name of the package that contains the versions to be copied.
      * </p>
      * 
      * @param packageValue
-     *        The name of the package that is copied.
+     *        The name of the package that contains the versions to be copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,7 +554,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The versions of the package to copy.
+     * The versions of the package to be copied.
      * </p>
      * <note>
      * <p>
@@ -695,7 +562,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </note>
      * 
-     * @return The versions of the package to copy. </p> <note>
+     * @return The versions of the package to be copied. </p> <note>
      *         <p>
      *         You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      *         </p>
@@ -707,7 +574,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The versions of the package to copy.
+     * The versions of the package to be copied.
      * </p>
      * <note>
      * <p>
@@ -716,7 +583,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param versions
-     *        The versions of the package to copy. </p> <note>
+     *        The versions of the package to be copied. </p> <note>
      *        <p>
      *        You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      *        </p>
@@ -733,7 +600,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The versions of the package to copy.
+     * The versions of the package to be copied.
      * </p>
      * <note>
      * <p>
@@ -747,7 +614,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param versions
-     *        The versions of the package to copy. </p> <note>
+     *        The versions of the package to be copied. </p> <note>
      *        <p>
      *        You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      *        </p>
@@ -766,7 +633,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The versions of the package to copy.
+     * The versions of the package to be copied.
      * </p>
      * <note>
      * <p>
@@ -775,7 +642,7 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param versions
-     *        The versions of the package to copy. </p> <note>
+     *        The versions of the package to be copied. </p> <note>
      *        <p>
      *        You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      *        </p>

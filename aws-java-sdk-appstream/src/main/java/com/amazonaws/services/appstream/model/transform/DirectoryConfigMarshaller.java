@@ -36,6 +36,8 @@ public class DirectoryConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccountCredentials").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATEBASEDAUTHPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateBasedAuthProperties").build();
 
     private static final DirectoryConfigMarshaller instance = new DirectoryConfigMarshaller();
 
@@ -57,6 +59,7 @@ public class DirectoryConfigMarshaller {
             protocolMarshaller.marshall(directoryConfig.getOrganizationalUnitDistinguishedNames(), ORGANIZATIONALUNITDISTINGUISHEDNAMES_BINDING);
             protocolMarshaller.marshall(directoryConfig.getServiceAccountCredentials(), SERVICEACCOUNTCREDENTIALS_BINDING);
             protocolMarshaller.marshall(directoryConfig.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(directoryConfig.getCertificateBasedAuthProperties(), CERTIFICATEBASEDAUTHPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

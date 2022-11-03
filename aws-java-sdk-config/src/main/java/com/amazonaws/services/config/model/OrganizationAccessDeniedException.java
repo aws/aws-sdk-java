@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * </ul>
  * <p>
  * For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an
- * exception if APIs are called from member accounts. All APIs must be called from organization master account.
+ * exception if APIs are called from member accounts. All APIs must be called from organization management account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -32,6 +32,8 @@ public class GrpcRouteMatchMarshaller {
             .marshallLocationName("metadata").build();
     private static final MarshallingInfo<String> METHODNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("methodName").build();
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("port").build();
     private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
 
@@ -53,6 +55,7 @@ public class GrpcRouteMatchMarshaller {
         try {
             protocolMarshaller.marshall(grpcRouteMatch.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(grpcRouteMatch.getMethodName(), METHODNAME_BINDING);
+            protocolMarshaller.marshall(grpcRouteMatch.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(grpcRouteMatch.getServiceName(), SERVICENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

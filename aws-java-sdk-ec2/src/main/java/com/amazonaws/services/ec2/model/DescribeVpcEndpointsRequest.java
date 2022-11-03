@@ -41,6 +41,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
@@ -181,6 +186,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
@@ -225,6 +235,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * 
      * @return One or more filters.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>service-name</code> - The name of the service.
@@ -283,6 +298,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
@@ -328,6 +348,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>service-name</code> - The name of the service.
@@ -388,6 +413,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
@@ -438,6 +468,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>service-name</code> - The name of the service.
@@ -500,6 +535,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
@@ -545,6 +585,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>service-name</code> - The name of the service.

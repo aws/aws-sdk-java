@@ -24,7 +24,8 @@ public enum ConfigRecommendationOptimizationType {
     LeastChange("LeastChange"),
     BestAZRecovery("BestAZRecovery"),
     LeastErrors("LeastErrors"),
-    BestAttainable("BestAttainable");
+    BestAttainable("BestAttainable"),
+    BestRegionRecovery("BestRegionRecovery");
 
     private String value;
 

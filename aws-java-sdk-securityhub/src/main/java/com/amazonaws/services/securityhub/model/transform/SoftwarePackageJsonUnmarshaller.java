@@ -76,6 +76,14 @@ public class SoftwarePackageJsonUnmarshaller implements Unmarshaller<SoftwarePac
                     context.nextToken();
                     softwarePackage.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FixedInVersion", targetDepth)) {
+                    context.nextToken();
+                    softwarePackage.setFixedInVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Remediation", targetDepth)) {
+                    context.nextToken();
+                    softwarePackage.setRemediation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

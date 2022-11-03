@@ -48,18 +48,18 @@ public class ArchiveRuleSummaryJsonUnmarshaller implements Unmarshaller<ArchiveR
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("ruleName", targetDepth)) {
                     context.nextToken();
-                    archiveRuleSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    archiveRuleSummary.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filter", targetDepth)) {
                     context.nextToken();
                     archiveRuleSummary.setFilter(new MapUnmarshaller<String, Criterion>(context.getUnmarshaller(String.class), CriterionJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("ruleName", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    archiveRuleSummary.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
+                    archiveRuleSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

@@ -48,6 +48,10 @@ public class VirtualGatewayFileAccessLogJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("format", targetDepth)) {
+                    context.nextToken();
+                    virtualGatewayFileAccessLog.setFormat(LoggingFormatJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("path", targetDepth)) {
                     context.nextToken();
                     virtualGatewayFileAccessLog.setPath(context.getUnmarshaller(String.class).unmarshall(context));

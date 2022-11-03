@@ -56,6 +56,70 @@ public class DescribeUserResultJsonUnmarshaller implements Unmarshaller<Describe
                     context.nextToken();
                     describeUserResult.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalIds", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setExternalIds(new ListUnmarshaller<ExternalId>(ExternalIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setName(NameJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NickName", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setNickName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProfileUrl", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setProfileUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Emails", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setEmails(new ListUnmarshaller<Email>(EmailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Addresses", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setAddresses(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PhoneNumbers", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setPhoneNumbers(new ListUnmarshaller<PhoneNumber>(PhoneNumberJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("UserType", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Title", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredLanguage", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setPreferredLanguage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Locale", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Timezone", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IdentityStoreId", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

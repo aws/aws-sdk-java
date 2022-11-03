@@ -27,7 +27,7 @@ import com.amazonaws.services.location.model.*;
  * </p>
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+ * "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -164,6 +164,11 @@ public interface AmazonLocation {
      * <p>
      * Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of
      * a <code>DevicePositionUpdate</code>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a
+     * <code>Tracker</code> associated with the <code>DeviceID</code>.
      * </p>
      * </note>
      * 
@@ -316,7 +321,12 @@ public interface AmazonLocation {
      * additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or
      * <code>TruckModeOptions</code> if traveling by <code>Truck</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination
+     * must be within 40km.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param calculateRouteRequest
@@ -1045,6 +1055,53 @@ public interface AmazonLocation {
      *      Documentation</a>
      */
     GetMapTileResult getMapTile(GetMapTileRequest getMapTileRequest);
+
+    /**
+     * <p>
+     * Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.
+     * </p>
+     * <note>
+     * <p>
+     * A PlaceId is valid only if all of the following are the same in the original search request and the call to
+     * <code>GetPlace</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data provider specified in the place index resource
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param getPlaceRequest
+     * @return Result of the GetPlace operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.GetPlace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPlaceResult getPlace(GetPlaceRequest getPlaceRequest);
 
     /**
      * <p>

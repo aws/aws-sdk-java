@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container object for the session details associated with a workflow.
+ * A container object for the session details that are associated with a workflow.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ServiceMetadata" target="_top">AWS API

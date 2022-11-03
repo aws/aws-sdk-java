@@ -51,8 +51,7 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
     private String imageId;
     /**
      * <p>
-     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist.
      * </p>
      */
     private ExportTaskS3LocationRequest s3ExportLocation;
@@ -251,13 +250,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     *        permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     *        The Amazon S3 bucket for the destination image. The destination bucket must exist.
      */
 
     public void setS3ExportLocation(ExportTaskS3LocationRequest s3ExportLocation) {
@@ -266,12 +263,10 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist.
      * </p>
      * 
-     * @return Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     *         permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     * @return The Amazon S3 bucket for the destination image. The destination bucket must exist.
      */
 
     public ExportTaskS3LocationRequest getS3ExportLocation() {
@@ -280,13 +275,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     * permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
-     *        permissions to the Amazon Web Services account vm-import-export@amazon.com.
+     *        The Amazon S3 bucket for the destination image. The destination bucket must exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

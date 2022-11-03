@@ -48,13 +48,13 @@ public class GetGeneratedPolicyResultJsonUnmarshaller implements Unmarshaller<Ge
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("generatedPolicyResult", targetDepth)) {
-                    context.nextToken();
-                    getGeneratedPolicyResult.setGeneratedPolicyResult(GeneratedPolicyResultJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("jobDetails", targetDepth)) {
                     context.nextToken();
                     getGeneratedPolicyResult.setJobDetails(JobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("generatedPolicyResult", targetDepth)) {
+                    context.nextToken();
+                    getGeneratedPolicyResult.setGeneratedPolicyResult(GeneratedPolicyResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

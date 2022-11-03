@@ -56,6 +56,22 @@ public class ReferenceSummaryJsonUnmarshaller implements Unmarshaller<ReferenceS
                     context.nextToken();
                     referenceSummary.setAttachment(AttachmentReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("String", targetDepth)) {
+                    context.nextToken();
+                    referenceSummary.setString(StringReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Number", targetDepth)) {
+                    context.nextToken();
+                    referenceSummary.setNumber(NumberReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Date", targetDepth)) {
+                    context.nextToken();
+                    referenceSummary.setDate(DateReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Email", targetDepth)) {
+                    context.nextToken();
+                    referenceSummary.setEmail(EmailReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

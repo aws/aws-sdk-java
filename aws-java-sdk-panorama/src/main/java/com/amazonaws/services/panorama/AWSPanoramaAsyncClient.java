@@ -1078,6 +1078,41 @@ public class AWSPanoramaAsyncClient extends AWSPanoramaClient implements AWSPano
     }
 
     @Override
+    public java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest request) {
+
+        return signalApplicationInstanceNodeInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            final SignalApplicationInstanceNodeInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SignalApplicationInstanceNodeInstancesRequest, SignalApplicationInstanceNodeInstancesResult> asyncHandler) {
+        final SignalApplicationInstanceNodeInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SignalApplicationInstanceNodeInstancesResult>() {
+            @Override
+            public SignalApplicationInstanceNodeInstancesResult call() throws Exception {
+                SignalApplicationInstanceNodeInstancesResult result = null;
+
+                try {
+                    result = executeSignalApplicationInstanceNodeInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

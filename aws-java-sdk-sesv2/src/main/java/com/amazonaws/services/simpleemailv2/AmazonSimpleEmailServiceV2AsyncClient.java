@@ -82,6 +82,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(BatchGetMetricDataRequest request) {
+
+        return batchGetMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(final BatchGetMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetMetricDataRequest, BatchGetMetricDataResult> asyncHandler) {
+        final BatchGetMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetMetricDataResult>() {
+            @Override
+            public BatchGetMetricDataResult call() throws Exception {
+                BatchGetMetricDataResult result = null;
+
+                try {
+                    result = executeBatchGetMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(CreateConfigurationSetRequest request) {
 
         return createConfigurationSetAsync(request, null);
@@ -1052,6 +1085,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<GetDedicatedIpPoolResult> getDedicatedIpPoolAsync(GetDedicatedIpPoolRequest request) {
+
+        return getDedicatedIpPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDedicatedIpPoolResult> getDedicatedIpPoolAsync(final GetDedicatedIpPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDedicatedIpPoolRequest, GetDedicatedIpPoolResult> asyncHandler) {
+        final GetDedicatedIpPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDedicatedIpPoolResult>() {
+            @Override
+            public GetDedicatedIpPoolResult call() throws Exception {
+                GetDedicatedIpPoolResult result = null;
+
+                try {
+                    result = executeGetDedicatedIpPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDedicatedIpsResult> getDedicatedIpsAsync(GetDedicatedIpsRequest request) {
 
         return getDedicatedIpsAsync(request, null);
@@ -1721,6 +1787,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest request) {
+
+        return listRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(final ListRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRecommendationsRequest, ListRecommendationsResult> asyncHandler) {
+        final ListRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRecommendationsResult>() {
+            @Override
+            public ListRecommendationsResult call() throws Exception {
+                ListRecommendationsResult result = null;
+
+                try {
+                    result = executeListRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request) {
 
         return listSuppressedDestinationsAsync(request, null);
@@ -1923,6 +2022,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<PutAccountVdmAttributesResult> putAccountVdmAttributesAsync(PutAccountVdmAttributesRequest request) {
+
+        return putAccountVdmAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountVdmAttributesResult> putAccountVdmAttributesAsync(final PutAccountVdmAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountVdmAttributesRequest, PutAccountVdmAttributesResult> asyncHandler) {
+        final PutAccountVdmAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountVdmAttributesResult>() {
+            @Override
+            public PutAccountVdmAttributesResult call() throws Exception {
+                PutAccountVdmAttributesResult result = null;
+
+                try {
+                    result = executePutAccountVdmAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutConfigurationSetDeliveryOptionsResult> putConfigurationSetDeliveryOptionsAsync(
             PutConfigurationSetDeliveryOptionsRequest request) {
 
@@ -2082,6 +2214,40 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executePutConfigurationSetTrackingOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetVdmOptionsResult> putConfigurationSetVdmOptionsAsync(PutConfigurationSetVdmOptionsRequest request) {
+
+        return putConfigurationSetVdmOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetVdmOptionsResult> putConfigurationSetVdmOptionsAsync(
+            final PutConfigurationSetVdmOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutConfigurationSetVdmOptionsRequest, PutConfigurationSetVdmOptionsResult> asyncHandler) {
+        final PutConfigurationSetVdmOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutConfigurationSetVdmOptionsResult>() {
+            @Override
+            public PutConfigurationSetVdmOptionsResult call() throws Exception {
+                PutConfigurationSetVdmOptionsResult result = null;
+
+                try {
+                    result = executePutConfigurationSetVdmOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

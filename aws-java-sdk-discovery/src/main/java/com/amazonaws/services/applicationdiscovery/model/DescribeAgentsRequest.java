@@ -23,7 +23,7 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your AWS user account.
+     * information about all agents/Connectors associated with your Amazon Web Services user account.
      * </p>
      */
     private java.util.List<String> agentIds;
@@ -54,11 +54,11 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your AWS user account.
+     * information about all agents/Connectors associated with your Amazon Web Services user account.
      * </p>
      * 
      * @return The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *         information about all agents/Connectors associated with your AWS user account.
+     *         information about all agents/Connectors associated with your Amazon Web Services user account.
      */
 
     public java.util.List<String> getAgentIds() {
@@ -68,12 +68,12 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your AWS user account.
+     * information about all agents/Connectors associated with your Amazon Web Services user account.
      * </p>
      * 
      * @param agentIds
      *        The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *        information about all agents/Connectors associated with your AWS user account.
+     *        information about all agents/Connectors associated with your Amazon Web Services user account.
      */
 
     public void setAgentIds(java.util.Collection<String> agentIds) {
@@ -88,7 +88,7 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your AWS user account.
+     * information about all agents/Connectors associated with your Amazon Web Services user account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -98,7 +98,7 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param agentIds
      *        The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *        information about all agents/Connectors associated with your AWS user account.
+     *        information about all agents/Connectors associated with your Amazon Web Services user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,12 +115,12 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your AWS user account.
+     * information about all agents/Connectors associated with your Amazon Web Services user account.
      * </p>
      * 
      * @param agentIds
      *        The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *        information about all agents/Connectors associated with your AWS user account.
+     *        information about all agents/Connectors associated with your Amazon Web Services user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

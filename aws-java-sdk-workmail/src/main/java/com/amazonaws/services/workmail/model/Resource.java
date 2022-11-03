@@ -60,13 +60,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * The date indicating when the resource was enabled for Amazon WorkMail use.
+     * The date indicating when the resource was enabled for WorkMail use.
      * </p>
      */
     private java.util.Date enabledDate;
     /**
      * <p>
-     * The date indicating when the resource was disabled from Amazon WorkMail use.
+     * The date indicating when the resource was disabled from WorkMail use.
      * </p>
      */
     private java.util.Date disabledDate;
@@ -311,11 +311,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the resource was enabled for Amazon WorkMail use.
+     * The date indicating when the resource was enabled for WorkMail use.
      * </p>
      * 
      * @param enabledDate
-     *        The date indicating when the resource was enabled for Amazon WorkMail use.
+     *        The date indicating when the resource was enabled for WorkMail use.
      */
 
     public void setEnabledDate(java.util.Date enabledDate) {
@@ -324,10 +324,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the resource was enabled for Amazon WorkMail use.
+     * The date indicating when the resource was enabled for WorkMail use.
      * </p>
      * 
-     * @return The date indicating when the resource was enabled for Amazon WorkMail use.
+     * @return The date indicating when the resource was enabled for WorkMail use.
      */
 
     public java.util.Date getEnabledDate() {
@@ -336,11 +336,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the resource was enabled for Amazon WorkMail use.
+     * The date indicating when the resource was enabled for WorkMail use.
      * </p>
      * 
      * @param enabledDate
-     *        The date indicating when the resource was enabled for Amazon WorkMail use.
+     *        The date indicating when the resource was enabled for WorkMail use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,11 +351,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the resource was disabled from Amazon WorkMail use.
+     * The date indicating when the resource was disabled from WorkMail use.
      * </p>
      * 
      * @param disabledDate
-     *        The date indicating when the resource was disabled from Amazon WorkMail use.
+     *        The date indicating when the resource was disabled from WorkMail use.
      */
 
     public void setDisabledDate(java.util.Date disabledDate) {
@@ -364,10 +364,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the resource was disabled from Amazon WorkMail use.
+     * The date indicating when the resource was disabled from WorkMail use.
      * </p>
      * 
-     * @return The date indicating when the resource was disabled from Amazon WorkMail use.
+     * @return The date indicating when the resource was disabled from WorkMail use.
      */
 
     public java.util.Date getDisabledDate() {
@@ -376,11 +376,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the resource was disabled from Amazon WorkMail use.
+     * The date indicating when the resource was disabled from WorkMail use.
      * </p>
      * 
      * @param disabledDate
-     *        The date indicating when the resource was disabled from Amazon WorkMail use.
+     *        The date indicating when the resource was disabled from WorkMail use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

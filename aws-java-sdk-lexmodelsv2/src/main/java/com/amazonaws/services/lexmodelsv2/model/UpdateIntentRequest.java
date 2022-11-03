@@ -124,6 +124,8 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String localeId;
+    /** <p/> */
+    private InitialResponseSetting initialResponseSetting;
 
     /**
      * <p>
@@ -904,6 +906,38 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p/>
+     * 
+     * @param initialResponseSetting
+     */
+
+    public void setInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
+        this.initialResponseSetting = initialResponseSetting;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public InitialResponseSetting getInitialResponseSetting() {
+        return this.initialResponseSetting;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param initialResponseSetting
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIntentRequest withInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
+        setInitialResponseSetting(initialResponseSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -946,7 +980,9 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getBotVersion() != null)
             sb.append("BotVersion: ").append(getBotVersion()).append(",");
         if (getLocaleId() != null)
-            sb.append("LocaleId: ").append(getLocaleId());
+            sb.append("LocaleId: ").append(getLocaleId()).append(",");
+        if (getInitialResponseSetting() != null)
+            sb.append("InitialResponseSetting: ").append(getInitialResponseSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -1025,6 +1061,10 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getLocaleId() != null && other.getLocaleId().equals(this.getLocaleId()) == false)
             return false;
+        if (other.getInitialResponseSetting() == null ^ this.getInitialResponseSetting() == null)
+            return false;
+        if (other.getInitialResponseSetting() != null && other.getInitialResponseSetting().equals(this.getInitialResponseSetting()) == false)
+            return false;
         return true;
     }
 
@@ -1049,6 +1089,7 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getBotId() == null) ? 0 : getBotId().hashCode());
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
+        hashCode = prime * hashCode + ((getInitialResponseSetting() == null) ? 0 : getInitialResponseSetting().hashCode());
         return hashCode;
     }
 

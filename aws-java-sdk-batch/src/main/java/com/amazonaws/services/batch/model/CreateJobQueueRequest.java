@@ -50,7 +50,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share
      * scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example
-     * is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      */
     private String schedulingPolicyArn;
@@ -238,7 +238,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share
      * scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example
-     * is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
@@ -247,7 +247,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't
      *        remove the fair share scheduling policy. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An
-     *        example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *        example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      */
 
     public void setSchedulingPolicyArn(String schedulingPolicyArn) {
@@ -261,7 +261,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share
      * scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example
-     * is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the
@@ -269,7 +269,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't
      *         remove the fair share scheduling policy. The format is
      *         <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An
-     *         example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *         example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      */
 
     public String getSchedulingPolicyArn() {
@@ -283,7 +283,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share
      * scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example
-     * is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     * is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
@@ -292,7 +292,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't
      *        remove the fair share scheduling policy. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An
-     *        example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+     *        example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

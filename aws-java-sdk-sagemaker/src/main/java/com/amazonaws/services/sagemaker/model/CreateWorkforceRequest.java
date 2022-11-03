@@ -61,6 +61,12 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Use this parameter to configure a workforce using VPC.
+     * </p>
+     */
+    private WorkforceVpcConfigRequest workforceVpcConfig;
 
     /**
      * <p>
@@ -335,6 +341,46 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Use this parameter to configure a workforce using VPC.
+     * </p>
+     * 
+     * @param workforceVpcConfig
+     *        Use this parameter to configure a workforce using VPC.
+     */
+
+    public void setWorkforceVpcConfig(WorkforceVpcConfigRequest workforceVpcConfig) {
+        this.workforceVpcConfig = workforceVpcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to configure a workforce using VPC.
+     * </p>
+     * 
+     * @return Use this parameter to configure a workforce using VPC.
+     */
+
+    public WorkforceVpcConfigRequest getWorkforceVpcConfig() {
+        return this.workforceVpcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to configure a workforce using VPC.
+     * </p>
+     * 
+     * @param workforceVpcConfig
+     *        Use this parameter to configure a workforce using VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkforceRequest withWorkforceVpcConfig(WorkforceVpcConfigRequest workforceVpcConfig) {
+        setWorkforceVpcConfig(workforceVpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +401,9 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
         if (getWorkforceName() != null)
             sb.append("WorkforceName: ").append(getWorkforceName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getWorkforceVpcConfig() != null)
+            sb.append("WorkforceVpcConfig: ").append(getWorkforceVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +438,10 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWorkforceVpcConfig() == null ^ this.getWorkforceVpcConfig() == null)
+            return false;
+        if (other.getWorkforceVpcConfig() != null && other.getWorkforceVpcConfig().equals(this.getWorkforceVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -403,6 +455,7 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getSourceIpConfig() == null) ? 0 : getSourceIpConfig().hashCode());
         hashCode = prime * hashCode + ((getWorkforceName() == null) ? 0 : getWorkforceName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWorkforceVpcConfig() == null) ? 0 : getWorkforceVpcConfig().hashCode());
         return hashCode;
     }
 

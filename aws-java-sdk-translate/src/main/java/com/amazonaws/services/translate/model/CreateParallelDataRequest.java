@@ -53,6 +53,14 @@ public class CreateParallelDataRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -253,6 +261,92 @@ public class CreateParallelDataRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @return Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource.
+     *         Each tag key for the resource must be unique. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateParallelDataRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateParallelDataRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -273,7 +367,9 @@ public class CreateParallelDataRequest extends com.amazonaws.AmazonWebServiceReq
         if (getEncryptionKey() != null)
             sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -308,6 +404,10 @@ public class CreateParallelDataRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -321,6 +421,7 @@ public class CreateParallelDataRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getParallelDataConfig() == null) ? 0 : getParallelDataConfig().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

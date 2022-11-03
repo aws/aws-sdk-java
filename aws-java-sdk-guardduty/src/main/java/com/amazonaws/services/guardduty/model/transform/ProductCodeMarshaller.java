@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ProductCodeMarshaller {
 
     private static final MarshallingInfo<String> CODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("code").build();
+            .marshallLocationName("productCodeId").build();
     private static final MarshallingInfo<String> PRODUCTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("productType").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("productCodeType").build();
 
     private static final ProductCodeMarshaller instance = new ProductCodeMarshaller();
 

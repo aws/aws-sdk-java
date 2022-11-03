@@ -70,8 +70,11 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
-     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption
+     * at rest in the member. This parameter is inherited by any nodes that this member creates. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Use one of the following options to specify this parameter:
@@ -79,17 +82,19 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create,
+     * own, and manage.
      * </p>
      * <p>
      * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * The following is an example of a KMS key ARN:
@@ -369,8 +374,11 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
-     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption
+     * at rest in the member. This parameter is inherited by any nodes that this member creates. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Use one of the following options to specify this parameter:
@@ -378,17 +386,19 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create,
+     * own, and manage.
      * </p>
      * <p>
      * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * The following is an example of a KMS key ARN:
@@ -398,26 +408,30 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use
-     *        for encryption at rest in the member. This parameter is inherited by any nodes that this member
-     *        creates.</p>
+     *        The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for
+     *        encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     *        >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
      *        <p>
      *        Use one of the following options to specify this parameter:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     *        <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web
+     *        Services on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     *        <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you
+     *        create, own, and manage.
      *        </p>
      *        <p>
      *        Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     *        asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        The following is an example of a KMS key ARN:
@@ -432,8 +446,11 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
-     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption
+     * at rest in the member. This parameter is inherited by any nodes that this member creates. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Use one of the following options to specify this parameter:
@@ -441,17 +458,19 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create,
+     * own, and manage.
      * </p>
      * <p>
      * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * The following is an example of a KMS key ARN:
@@ -460,26 +479,30 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use
-     *         for encryption at rest in the member. This parameter is inherited by any nodes that this member
-     *         creates.</p>
+     * @return The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for
+     *         encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     *         >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
      *         <p>
      *         Use one of the following options to specify this parameter:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     *         <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web
+     *         Services on your behalf.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     *         <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you
+     *         create, own, and manage.
      *         </p>
      *         <p>
      *         Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *         and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      *         </p>
      *         <p>
      *         The following is an example of a KMS key ARN:
@@ -494,8 +517,11 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
-     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption
+     * at rest in the member. This parameter is inherited by any nodes that this member creates. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     * >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * <p>
      * Use one of the following options to specify this parameter:
@@ -503,17 +529,19 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create,
+     * own, and manage.
      * </p>
      * <p>
      * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * The following is an example of a KMS key ARN:
@@ -523,26 +551,30 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use
-     *        for encryption at rest in the member. This parameter is inherited by any nodes that this member
-     *        creates.</p>
+     *        The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for
+     *        encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html"
+     *        >Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
      *        <p>
      *        Use one of the following options to specify this parameter:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     *        <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web
+     *        Services on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     *        <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you
+     *        create, own, and manage.
      *        </p>
      *        <p>
      *        Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     *        asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        The following is an example of a KMS key ARN:

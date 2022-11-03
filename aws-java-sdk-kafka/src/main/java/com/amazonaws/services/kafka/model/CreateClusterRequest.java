@@ -88,6 +88,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     */
+    private String storageMode;
 
     /**
      * <p>
@@ -633,6 +639,73 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @param storageMode
+     *        <p>
+     *        This controls storage mode for supported storage tiers.
+     *        </p>
+     * @see StorageMode
+     */
+
+    public void setStorageMode(String storageMode) {
+        this.storageMode = storageMode;
+    }
+
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @return <p>
+     *         This controls storage mode for supported storage tiers.
+     *         </p>
+     * @see StorageMode
+     */
+
+    public String getStorageMode() {
+        return this.storageMode;
+    }
+
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @param storageMode
+     *        <p>
+     *        This controls storage mode for supported storage tiers.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageMode
+     */
+
+    public CreateClusterRequest withStorageMode(String storageMode) {
+        setStorageMode(storageMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This controls storage mode for supported storage tiers.
+     * </p>
+     * 
+     * @param storageMode
+     *        <p>
+     *        This controls storage mode for supported storage tiers.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageMode
+     */
+
+    public CreateClusterRequest withStorageMode(StorageMode storageMode) {
+        this.storageMode = storageMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -665,7 +738,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getNumberOfBrokerNodes() != null)
             sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getStorageMode() != null)
+            sb.append("StorageMode: ").append(getStorageMode());
         sb.append("}");
         return sb.toString();
     }
@@ -724,6 +799,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getStorageMode() == null ^ this.getStorageMode() == null)
+            return false;
+        if (other.getStorageMode() != null && other.getStorageMode().equals(this.getStorageMode()) == false)
+            return false;
         return true;
     }
 
@@ -743,6 +822,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLoggingInfo() == null) ? 0 : getLoggingInfo().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getStorageMode() == null) ? 0 : getStorageMode().hashCode());
         return hashCode;
     }
 

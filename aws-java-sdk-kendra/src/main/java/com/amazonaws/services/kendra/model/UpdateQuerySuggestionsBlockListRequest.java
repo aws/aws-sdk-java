@@ -27,25 +27,25 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the index for a block list.
+     * The identifier of the index for the block list.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The unique identifier of a block list.
+     * The identifier of the block list you want to update.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of a block list.
+     * A new name for the block list.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description for a block list.
+     * A new description for the block list.
      * </p>
      */
     private String description;
@@ -73,11 +73,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the index for a block list.
+     * The identifier of the index for the block list.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for a block list.
+     *        The identifier of the index for the block list.
      */
 
     public void setIndexId(String indexId) {
@@ -86,10 +86,10 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the index for a block list.
+     * The identifier of the index for the block list.
      * </p>
      * 
-     * @return The identifier of the index for a block list.
+     * @return The identifier of the index for the block list.
      */
 
     public String getIndexId() {
@@ -98,11 +98,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the index for a block list.
+     * The identifier of the index for the block list.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for a block list.
+     *        The identifier of the index for the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a block list.
+     * The identifier of the block list you want to update.
      * </p>
      * 
      * @param id
-     *        The unique identifier of a block list.
+     *        The identifier of the block list you want to update.
      */
 
     public void setId(String id) {
@@ -126,10 +126,10 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a block list.
+     * The identifier of the block list you want to update.
      * </p>
      * 
-     * @return The unique identifier of a block list.
+     * @return The identifier of the block list you want to update.
      */
 
     public String getId() {
@@ -138,11 +138,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a block list.
+     * The identifier of the block list you want to update.
      * </p>
      * 
      * @param id
-     *        The unique identifier of a block list.
+     *        The identifier of the block list you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of a block list.
+     * A new name for the block list.
      * </p>
      * 
      * @param name
-     *        The name of a block list.
+     *        A new name for the block list.
      */
 
     public void setName(String name) {
@@ -166,10 +166,10 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of a block list.
+     * A new name for the block list.
      * </p>
      * 
-     * @return The name of a block list.
+     * @return A new name for the block list.
      */
 
     public String getName() {
@@ -178,11 +178,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of a block list.
+     * A new name for the block list.
      * </p>
      * 
      * @param name
-     *        The name of a block list.
+     *        A new name for the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The description for a block list.
+     * A new description for the block list.
      * </p>
      * 
      * @param description
-     *        The description for a block list.
+     *        A new description for the block list.
      */
 
     public void setDescription(String description) {
@@ -206,10 +206,10 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The description for a block list.
+     * A new description for the block list.
      * </p>
      * 
-     * @return The description for a block list.
+     * @return A new description for the block list.
      */
 
     public String getDescription() {
@@ -218,11 +218,11 @@ public class UpdateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The description for a block list.
+     * A new description for the block list.
      * </p>
      * 
      * @param description
-     *        The description for a block list.
+     *        A new description for the block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,7 +31,7 @@ public class ListNotificationRulesResult extends com.amazonaws.AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     * The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * </p>
      */
     private java.util.List<NotificationRuleSummary> notificationRules;
@@ -78,10 +78,10 @@ public class ListNotificationRulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     * The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * </p>
      * 
-     * @return The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     * @return The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      */
 
     public java.util.List<NotificationRuleSummary> getNotificationRules() {
@@ -90,11 +90,11 @@ public class ListNotificationRulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     * The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * </p>
      * 
      * @param notificationRules
-     *        The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     *        The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      */
 
     public void setNotificationRules(java.util.Collection<NotificationRuleSummary> notificationRules) {
@@ -108,7 +108,7 @@ public class ListNotificationRulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     * The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class ListNotificationRulesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param notificationRules
-     *        The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     *        The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class ListNotificationRulesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     * The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * </p>
      * 
      * @param notificationRules
-     *        The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.
+     *        The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -77,9 +77,6 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.forecast.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.forecast.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -89,11 +86,14 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.forecast.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.forecast.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.forecast.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.forecast.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.forecast.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.forecast.model.AmazonForecastException.class));
 
     public static AmazonForecastClientBuilder builder() {
@@ -175,7 +175,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
-     * <code>ForecastHorizon</code> - The number of time steps being forecasted.
+     * <code>ForecastHorizon</code> - The number of time-steps that the model predicts. The forecast horizon is also
+     * called the prediction length.
      * </p>
      * </li>
      * </ul>
@@ -294,10 +295,12 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * </ul>
      * <p>
      * After creating a dataset, you import your training data into it and add the dataset to a dataset group. You use
-     * the dataset group to create a predictor. For more information, see <a>howitworks-datasets-groups</a>.
+     * the dataset group to create a predictor. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.
      * </p>
      * <p>
-     * To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+     * To get a list of all your datasets, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a> operation.
      * </p>
      * <p>
      * For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
@@ -305,8 +308,9 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import training data. Use the
-     * <a>DescribeDataset</a> operation to get the status.
+     * The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import training data. Use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation to
+     * get the status.
      * </p>
      * </note>
      * 
@@ -370,19 +374,25 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Creates a dataset group, which holds a collection of related datasets. You can add datasets to the dataset group
-     * when you create the dataset group, or later by using the <a>UpdateDatasetGroup</a> operation.
+     * when you create the dataset group, or later by using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.
      * </p>
      * <p>
      * After creating a dataset group and adding datasets, you use the dataset group when you create a predictor. For
-     * more information, see <a>howitworks-datasets-groups</a>.
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.
      * </p>
      * <p>
-     * To get a list of all your datasets groups, use the <a>ListDatasetGroups</a> operation.
+     * To get a list of all your datasets groups, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a> operation.
      * </p>
      * <note>
      * <p>
      * The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can use the dataset group to
-     * create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.
+     * create a predictor. To get the status, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+     * operation.
      * </p>
      * </note>
      * 
@@ -454,16 +464,18 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * to import the data to.
      * </p>
      * <p>
-     * You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that
-     * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in
-     * an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.
+     * You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
+     * object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+     * the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more
+     * information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up
+     * permissions</a>.
      * </p>
      * <p>
-     * The training data must be in CSV format. The delimiter must be a comma (,).
+     * The training data must be in CSV or Parquet format. The delimiter must be a comma (,).
      * </p>
      * <p>
-     * You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter
-     * two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
+     * You can specify the path to a specific file, the S3 bucket, or to a folder in the S3 bucket. For the latter two
+     * cases, Amazon Forecast imports all files up to the limit of 10,000 files.
      * </p>
      * <p>
      * Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training
@@ -471,8 +483,9 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * want to model off of, and not just the new data collected since the previous import.
      * </p>
      * <p>
-     * To get a list of all your dataset import jobs, filtered by specified criteria, use the
-     * <a>ListDatasetImportJobs</a> operation.
+     * To get a list of all your dataset import jobs, filtered by specified criteria, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+     * operation.
      * </p>
      * 
      * @param createDatasetImportJobRequest
@@ -855,6 +868,12 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * Use the <a>DescribeForecast</a> operation to get the status.
      * </p>
      * </note>
+     * <p>
+     * By default, a forecast includes predictions for every item (<code>item_id</code>) in the dataset group that was
+     * used to train the predictor. However, you can use the <code>TimeSeriesSelector</code> object to generate a
+     * forecast on a subset of time series. Forecast creation is skipped for any time series that you specify that are
+     * not in the input dataset. The forecast export file will not contain these time series or their forecasted values.
+     * </p>
      * 
      * @param createForecastRequest
      * @return Result of the CreateForecast operation returned by the service.
@@ -999,6 +1018,74 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<CreateForecastExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateForecastExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how
+     * your predictor's performance changes over time. For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.
+     * </p>
+     * 
+     * @param createMonitorRequest
+     * @return Result of the CreateMonitor operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceAlreadyExistsException
+     *         There is already a resource with this name. Try again with a different name.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @sample AmazonForecast.CreateMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateMonitorResult createMonitor(CreateMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMonitor(request);
+    }
+
+    @SdkInternalApi
+    final CreateMonitorResult executeCreateMonitor(CreateMonitorRequest createMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMonitorRequest> request = null;
+        Response<CreateMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMonitorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1156,7 +1243,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Exports backtest forecasts and accuracy metrics generated by the <a>CreateAutoPredictor</a> or
-     * <a>CreatePredictor</a> operations. Two folders containing CSV files are exported to your specified S3 bucket.
+     * <a>CreatePredictor</a> operations. Two folders containing CSV or Parquet files are exported to your specified S3
+     * bucket.
      * </p>
      * <p>
      * The export file names will match the following conventions:
@@ -1245,14 +1333,263 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a> operation. You can only delete
-     * datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-     * <a>DescribeDataset</a> operation.
+     * What-if analysis is a scenario modeling technique where you make a hypothetical change to a time series and
+     * compare the forecasts generated by these changes against the baseline, unchanged time series. It is important to
+     * remember that the purpose of a what-if analysis is to understand how a forecast can change given different
+     * modifications to the baseline time series.
+     * </p>
+     * <p>
+     * For example, imagine you are a clothing retailer who is considering an end of season sale to clear space for new
+     * styles. After creating a baseline forecast, you can use a what-if analysis to investigate how different sales
+     * tactics might affect your goals. You could create a scenario where everything is given a 25% markdown and another
+     * where everything is given a fixed dollar markdown. You can create a scenario where the sale lasts for 1 week and
+     * another where the sale lasts for 1 month. Your what-if analysis enables you to compare many different scenarios
+     * against each other.
+     * </p>
+     * <p>
+     * Note that a what-if analysis is meant to display what the forecasting model has learned and how it will behave in
+     * the scenarios that you are evaluating. Do not blindly use the results of the what-if analysis to make business
+     * decisions. For instance, forecasts might not be accurate for novel scenarios where there is no reference
+     * available to determine whether a forecast is good.
+     * </p>
+     * <p>
+     * The <a>TimeSeriesSelector</a> object defines the items that you want in the what-if analysis.
+     * </p>
+     * 
+     * @param createWhatIfAnalysisRequest
+     * @return Result of the CreateWhatIfAnalysis operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceAlreadyExistsException
+     *         There is already a resource with this name. Try again with a different name.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @sample AmazonForecast.CreateWhatIfAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateWhatIfAnalysisResult createWhatIfAnalysis(CreateWhatIfAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWhatIfAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final CreateWhatIfAnalysisResult executeCreateWhatIfAnalysis(CreateWhatIfAnalysisRequest createWhatIfAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWhatIfAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWhatIfAnalysisRequest> request = null;
+        Response<CreateWhatIfAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWhatIfAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWhatIfAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWhatIfAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWhatIfAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWhatIfAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if
+     * forecast incorporates either a replacement dataset or a set of transformations to the original dataset.
+     * </p>
+     * 
+     * @param createWhatIfForecastRequest
+     * @return Result of the CreateWhatIfForecast operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceAlreadyExistsException
+     *         There is already a resource with this name. Try again with a different name.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @sample AmazonForecast.CreateWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecast" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateWhatIfForecastResult createWhatIfForecast(CreateWhatIfForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWhatIfForecast(request);
+    }
+
+    @SdkInternalApi
+    final CreateWhatIfForecastResult executeCreateWhatIfForecast(CreateWhatIfForecastRequest createWhatIfForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWhatIfForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWhatIfForecastRequest> request = null;
+        Response<CreateWhatIfForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWhatIfForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWhatIfForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWhatIfForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWhatIfForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWhatIfForecastResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Exports a forecast created by the <a>CreateWhatIfForecast</a> operation to your Amazon Simple Storage Service
+     * (Amazon S3) bucket. The forecast file name will match the following conventions:
+     * </p>
+     * <p>
+     * <code>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</code>
+     * </p>
+     * <p>
+     * The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+     * </p>
+     * <p>
+     * You must specify a <a>DataDestination</a> object that includes an AWS Identity and Access Management (IAM) role
+     * that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * <a>aws-forecast-iam-roles</a>.
+     * </p>
+     * <p>
+     * For more information, see <a>howitworks-forecast</a>.
+     * </p>
+     * <p>
+     * To get a list of all your what-if forecast export jobs, use the <a>ListWhatIfForecastExports</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
+     * in your Amazon S3 bucket. To get the status, use the <a>DescribeWhatIfForecastExport</a> operation.
+     * </p>
+     * </note>
+     * 
+     * @param createWhatIfForecastExportRequest
+     * @return Result of the CreateWhatIfForecastExport operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceAlreadyExistsException
+     *         There is already a resource with this name. Try again with a different name.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @sample AmazonForecast.CreateWhatIfForecastExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecastExport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateWhatIfForecastExportResult createWhatIfForecastExport(CreateWhatIfForecastExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWhatIfForecastExport(request);
+    }
+
+    @SdkInternalApi
+    final CreateWhatIfForecastExportResult executeCreateWhatIfForecastExport(CreateWhatIfForecastExportRequest createWhatIfForecastExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWhatIfForecastExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWhatIfForecastExportRequest> request = null;
+        Response<CreateWhatIfForecastExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWhatIfForecastExportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createWhatIfForecastExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWhatIfForecastExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWhatIfForecastExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateWhatIfForecastExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon Forecast dataset that was created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation. You can
+     * only delete datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status
+     * use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+     * operation.
      * </p>
      * <note>
      * <p>
      * Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update
-     * the dataset group, use the operation, omitting the deleted dataset's ARN.
+     * the dataset group, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation, omitting the deleted dataset's ARN.
      * </p>
      * </note>
      * 
@@ -1315,9 +1652,12 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation. You can only delete dataset groups
-     * that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the
-     * status, use the <a>DescribeDatasetGroup</a> operation.
+     * Deletes a dataset group created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>,
+     * <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+     * operation.
      * </p>
      * <p>
      * This operation deletes only the dataset group, not the datasets in the group.
@@ -1382,9 +1722,12 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a dataset import job created using the <a>CreateDatasetImportJob</a> operation. You can delete only
-     * dataset import jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status,
-     * use the <a>DescribeDatasetImportJob</a> operation.
+     * Deletes a dataset import job created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code> or
+     * <code>CREATE_FAILED</code>. To get the status, use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html"
+     * >DescribeDatasetImportJob</a> operation.
      * </p>
      * 
      * @param deleteDatasetImportJobRequest
@@ -1711,6 +2054,69 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes a monitor resource. You can only delete a monitor resource with a status of <code>ACTIVE</code>,
+     * <code>ACTIVE_STOPPED</code>, <code>CREATE_FAILED</code>, or <code>CREATE_STOPPED</code>.
+     * </p>
+     * 
+     * @param deleteMonitorRequest
+     * @return Result of the DeleteMonitor operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteMonitorResult deleteMonitor(DeleteMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMonitor(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMonitorResult executeDeleteMonitor(DeleteMonitorRequest deleteMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMonitorRequest> request = null;
+        Response<DeleteMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a predictor created using the <a>DescribePredictor</a> or <a>CreatePredictor</a> operations. You can
      * delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status,
      * use the <a>DescribePredictor</a> operation.
@@ -1937,6 +2343,207 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes a what-if analysis created using the <a>CreateWhatIfAnalysis</a> operation. You can delete only what-if
+     * analyses that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the
+     * <a>DescribeWhatIfAnalysis</a> operation.
+     * </p>
+     * <p>
+     * You can't delete a what-if analysis while any of its forecasts are being exported.
+     * </p>
+     * 
+     * @param deleteWhatIfAnalysisRequest
+     * @return Result of the DeleteWhatIfAnalysis operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteWhatIfAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteWhatIfAnalysisResult deleteWhatIfAnalysis(DeleteWhatIfAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWhatIfAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWhatIfAnalysisResult executeDeleteWhatIfAnalysis(DeleteWhatIfAnalysisRequest deleteWhatIfAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWhatIfAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWhatIfAnalysisRequest> request = null;
+        Response<DeleteWhatIfAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWhatIfAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWhatIfAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWhatIfAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWhatIfAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWhatIfAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a what-if forecast created using the <a>CreateWhatIfForecast</a> operation. You can delete only what-if
+     * forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the
+     * <a>DescribeWhatIfForecast</a> operation.
+     * </p>
+     * <p>
+     * You can't delete a what-if forecast while it is being exported. After a what-if forecast is deleted, you can no
+     * longer query the what-if analysis.
+     * </p>
+     * 
+     * @param deleteWhatIfForecastRequest
+     * @return Result of the DeleteWhatIfForecast operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecast" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteWhatIfForecastResult deleteWhatIfForecast(DeleteWhatIfForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWhatIfForecast(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWhatIfForecastResult executeDeleteWhatIfForecast(DeleteWhatIfForecastRequest deleteWhatIfForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWhatIfForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWhatIfForecastRequest> request = null;
+        Response<DeleteWhatIfForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWhatIfForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWhatIfForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWhatIfForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWhatIfForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWhatIfForecastResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a what-if forecast export created using the <a>CreateWhatIfForecastExport</a> operation. You can delete
+     * only what-if forecast exports that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the
+     * status, use the <a>DescribeWhatIfForecastExport</a> operation.
+     * </p>
+     * 
+     * @param deleteWhatIfForecastExportRequest
+     * @return Result of the DeleteWhatIfForecastExport operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteWhatIfForecastExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecastExport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteWhatIfForecastExportResult deleteWhatIfForecastExport(DeleteWhatIfForecastExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWhatIfForecastExport(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWhatIfForecastExportResult executeDeleteWhatIfForecastExport(DeleteWhatIfForecastExportRequest deleteWhatIfForecastExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWhatIfForecastExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWhatIfForecastExportRequest> request = null;
+        Response<DeleteWhatIfForecastExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWhatIfForecastExportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteWhatIfForecastExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWhatIfForecastExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWhatIfForecastExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteWhatIfForecastExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a predictor created using the CreateAutoPredictor operation.
      * </p>
      * 
@@ -1998,7 +2605,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
+     * Describes an Amazon Forecast dataset created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      * </p>
      * <p>
      * In addition to listing the parameters specified in the <code>CreateDataset</code> request, this operation
@@ -2079,7 +2687,9 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Describes a dataset group created using the <a>CreateDatasetGroup</a> operation.
+     * Describes a dataset group created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation.
      * </p>
      * <p>
      * In addition to listing the parameters provided in the <code>CreateDatasetGroup</code> request, this operation
@@ -2165,7 +2775,9 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Describes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
+     * Describes a dataset import job created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation.
      * </p>
      * <p>
      * In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code> request, this operation
@@ -2564,6 +3176,104 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * <p>
+     * Describes a monitor resource. In addition to listing the properties provided in the <a>CreateMonitor</a> request,
+     * this operation lists the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Baseline</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastEvaluationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastEvaluationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModificationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Message</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeMonitorRequest
+     * @return Result of the DescribeMonitor operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.DescribeMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeMonitorResult describeMonitor(DescribeMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMonitor(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMonitorResult executeDescribeMonitor(DescribeMonitorRequest describeMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMonitorRequest> request = null;
+        Response<DescribeMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <note>
      * <p>
      * This operation is only valid for legacy predictors created with CreatePredictor. If you are not using a legacy
@@ -2756,6 +3466,268 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes the what-if analysis created using the <a>CreateWhatIfAnalysis</a> operation.
+     * </p>
+     * <p>
+     * In addition to listing the properties provided in the <code>CreateWhatIfAnalysis</code> request, this operation
+     * lists the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CreationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModificationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Message</code> - If an error occurred, information about the error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeWhatIfAnalysisRequest
+     * @return Result of the DescribeWhatIfAnalysis operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.DescribeWhatIfAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWhatIfAnalysisResult describeWhatIfAnalysis(DescribeWhatIfAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWhatIfAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWhatIfAnalysisResult executeDescribeWhatIfAnalysis(DescribeWhatIfAnalysisRequest describeWhatIfAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWhatIfAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWhatIfAnalysisRequest> request = null;
+        Response<DescribeWhatIfAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWhatIfAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWhatIfAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWhatIfAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWhatIfAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWhatIfAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the what-if forecast created using the <a>CreateWhatIfForecast</a> operation.
+     * </p>
+     * <p>
+     * In addition to listing the properties provided in the <code>CreateWhatIfForecast</code> request, this operation
+     * lists the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CreationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModificationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Message</code> - If an error occurred, information about the error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeWhatIfForecastRequest
+     * @return Result of the DescribeWhatIfForecast operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.DescribeWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecast"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWhatIfForecastResult describeWhatIfForecast(DescribeWhatIfForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWhatIfForecast(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWhatIfForecastResult executeDescribeWhatIfForecast(DescribeWhatIfForecastRequest describeWhatIfForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWhatIfForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWhatIfForecastRequest> request = null;
+        Response<DescribeWhatIfForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWhatIfForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWhatIfForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWhatIfForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWhatIfForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWhatIfForecastResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the what-if forecast export created using the <a>CreateWhatIfForecastExport</a> operation.
+     * </p>
+     * <p>
+     * In addition to listing the properties provided in the <code>CreateWhatIfForecastExport</code> request, this
+     * operation lists the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CreationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModificationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Message</code> - If an error occurred, information about the error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeWhatIfForecastExportRequest
+     * @return Result of the DescribeWhatIfForecastExport operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.DescribeWhatIfForecastExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecastExport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWhatIfForecastExportResult describeWhatIfForecastExport(DescribeWhatIfForecastExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWhatIfForecastExport(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWhatIfForecastExportResult executeDescribeWhatIfForecastExport(DescribeWhatIfForecastExportRequest describeWhatIfForecastExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWhatIfForecastExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWhatIfForecastExportRequest> request = null;
+        Response<DescribeWhatIfForecastExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWhatIfForecastExportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeWhatIfForecastExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWhatIfForecastExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWhatIfForecastExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWhatIfForecastExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a> operation. Use
      * metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast.
      * For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
@@ -2839,9 +3811,12 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns a list of dataset groups created using the <a>CreateDatasetGroup</a> operation. For each dataset group,
-     * this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve
-     * the complete set of properties by using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.
+     * Returns a list of dataset groups created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+     * operation. For each dataset group, this operation returns a summary of its properties, including its Amazon
+     * Resource Name (ARN). You can retrieve the complete set of properties by using the dataset group ARN with the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+     * operation.
      * </p>
      * 
      * @param listDatasetGroupsRequest
@@ -2898,10 +3873,13 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns a list of dataset import jobs created using the <a>CreateDatasetImportJob</a> operation. For each import
-     * job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can
-     * retrieve the complete set of properties by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You
-     * can filter the list by providing an array of <a>Filter</a> objects.
+     * Returns a list of dataset import jobs created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource
+     * Name (ARN). You can retrieve the complete set of properties by using the ARN with the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html"
+     * >DescribeDatasetImportJob</a> operation. You can filter the list by providing an array of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a> objects.
      * </p>
      * 
      * @param listDatasetImportJobsRequest
@@ -2962,9 +3940,11 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns a list of datasets created using the <a>CreateDataset</a> operation. For each dataset, a summary of its
-     * properties, including its Amazon Resource Name (ARN), is returned. To retrieve the complete set of properties,
-     * use the ARN with the <a>DescribeDataset</a> operation.
+     * Returns a list of datasets created using the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation. For
+     * each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is returned. To retrieve the
+     * complete set of properties, use the ARN with the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation.
      * </p>
      * 
      * @param listDatasetsRequest
@@ -3282,6 +4262,139 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns a list of the monitoring evaluation results and predictor events collected by the monitor resource during
+     * different windows of time.
+     * </p>
+     * <p>
+     * For information about monitoring see <a>predictor-monitoring</a>. For more information about retrieving
+     * monitoring results see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring
+     * Results</a>.
+     * </p>
+     * 
+     * @param listMonitorEvaluationsRequest
+     * @return Result of the ListMonitorEvaluations operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.ListMonitorEvaluations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMonitorEvaluationsResult listMonitorEvaluations(ListMonitorEvaluationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMonitorEvaluations(request);
+    }
+
+    @SdkInternalApi
+    final ListMonitorEvaluationsResult executeListMonitorEvaluations(ListMonitorEvaluationsRequest listMonitorEvaluationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMonitorEvaluationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMonitorEvaluationsRequest> request = null;
+        Response<ListMonitorEvaluationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMonitorEvaluationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMonitorEvaluationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitorEvaluations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMonitorEvaluationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMonitorEvaluationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of monitors created with the <a>CreateMonitor</a> operation and <a>CreateAutoPredictor</a>
+     * operation. For each monitor resource, this operation returns of a summary of its properties, including its Amazon
+     * Resource Name (ARN). You can retrieve a complete set of properties of a monitor resource by specify the monitor's
+     * ARN in the <a>DescribeMonitor</a> operation.
+     * </p>
+     * 
+     * @param listMonitorsRequest
+     * @return Result of the ListMonitors operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListMonitorsResult listMonitors(ListMonitorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMonitors(request);
+    }
+
+    @SdkInternalApi
+    final ListMonitorsResult executeListMonitors(ListMonitorsRequest listMonitorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMonitorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMonitorsRequest> request = null;
+        Response<ListMonitorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMonitorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMonitorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMonitorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMonitorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of predictor backtest export jobs created using the <a>CreatePredictorBacktestExportJob</a>
      * operation. This operation returns a summary for each backtest export job. You can filter the list using an array
      * of <a>Filter</a> objects.
@@ -3464,6 +4577,261 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of what-if analyses created using the <a>CreateWhatIfAnalysis</a> operation. For each what-if
+     * analysis, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can
+     * retrieve the complete set of properties by using the what-if analysis ARN with the <a>DescribeWhatIfAnalysis</a>
+     * operation.
+     * </p>
+     * 
+     * @param listWhatIfAnalysesRequest
+     * @return Result of the ListWhatIfAnalyses operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListWhatIfAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListWhatIfAnalysesResult listWhatIfAnalyses(ListWhatIfAnalysesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWhatIfAnalyses(request);
+    }
+
+    @SdkInternalApi
+    final ListWhatIfAnalysesResult executeListWhatIfAnalyses(ListWhatIfAnalysesRequest listWhatIfAnalysesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWhatIfAnalysesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWhatIfAnalysesRequest> request = null;
+        Response<ListWhatIfAnalysesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWhatIfAnalysesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWhatIfAnalysesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWhatIfAnalyses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWhatIfAnalysesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWhatIfAnalysesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of what-if forecast exports created using the <a>CreateWhatIfForecastExport</a> operation. For
+     * each what-if forecast export, this operation returns a summary of its properties, including its Amazon Resource
+     * Name (ARN). You can retrieve the complete set of properties by using the what-if forecast export ARN with the
+     * <a>DescribeWhatIfForecastExport</a> operation.
+     * </p>
+     * 
+     * @param listWhatIfForecastExportsRequest
+     * @return Result of the ListWhatIfForecastExports operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListWhatIfForecastExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWhatIfForecastExportsResult listWhatIfForecastExports(ListWhatIfForecastExportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWhatIfForecastExports(request);
+    }
+
+    @SdkInternalApi
+    final ListWhatIfForecastExportsResult executeListWhatIfForecastExports(ListWhatIfForecastExportsRequest listWhatIfForecastExportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWhatIfForecastExportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWhatIfForecastExportsRequest> request = null;
+        Response<ListWhatIfForecastExportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWhatIfForecastExportsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWhatIfForecastExportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWhatIfForecastExports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWhatIfForecastExportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWhatIfForecastExportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of what-if forecasts created using the <a>CreateWhatIfForecast</a> operation. For each what-if
+     * forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can
+     * retrieve the complete set of properties by using the what-if forecast ARN with the <a>DescribeWhatIfForecast</a>
+     * operation.
+     * </p>
+     * 
+     * @param listWhatIfForecastsRequest
+     * @return Result of the ListWhatIfForecasts operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListWhatIfForecasts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListWhatIfForecastsResult listWhatIfForecasts(ListWhatIfForecastsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWhatIfForecasts(request);
+    }
+
+    @SdkInternalApi
+    final ListWhatIfForecastsResult executeListWhatIfForecasts(ListWhatIfForecastsRequest listWhatIfForecastsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWhatIfForecastsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWhatIfForecastsRequest> request = null;
+        Response<ListWhatIfForecastsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWhatIfForecastsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWhatIfForecastsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWhatIfForecasts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWhatIfForecastsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWhatIfForecastsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Resumes a stopped monitor resource.
+     * </p>
+     * 
+     * @param resumeResourceRequest
+     * @return Result of the ResumeResource operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.ResumeResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResumeResourceResult resumeResource(ResumeResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeResumeResource(request);
+    }
+
+    @SdkInternalApi
+    final ResumeResourceResult executeResumeResource(ResumeResourceRequest resumeResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resumeResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResumeResourceRequest> request = null;
+        Response<ResumeResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResumeResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResumeResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResumeResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3711,7 +5079,9 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * <note>
      * <p>
      * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to
-     * create a predictor. Use the <a>DescribeDatasetGroup</a> operation to get the status.
+     * create a predictor. Use the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+     * operation to get the status.
      * </p>
      * </note>
      * 

@@ -152,6 +152,16 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("eksProperties", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setEksProperties(EksPropertiesDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("eksAttempts", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setEksAttempts(new ListUnmarshaller<EksAttemptDetail>(EksAttemptDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

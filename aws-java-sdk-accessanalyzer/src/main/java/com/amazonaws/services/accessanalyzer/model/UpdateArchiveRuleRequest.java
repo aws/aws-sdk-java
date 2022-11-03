@@ -36,10 +36,10 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     private String analyzerName;
     /**
      * <p>
-     * A client token.
+     * The name of the rule to update.
      * </p>
      */
-    private String clientToken;
+    private String ruleName;
     /**
      * <p>
      * A filter to match for the rules to update. Only rules that match the filter are updated.
@@ -48,10 +48,10 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, Criterion> filter;
     /**
      * <p>
-     * The name of the rule to update.
+     * A client token.
      * </p>
      */
-    private String ruleName;
+    private String clientToken;
 
     /**
      * <p>
@@ -95,41 +95,41 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A client token.
+     * The name of the rule to update.
      * </p>
      * 
-     * @param clientToken
-     *        A client token.
+     * @param ruleName
+     *        The name of the rule to update.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
     }
 
     /**
      * <p>
-     * A client token.
+     * The name of the rule to update.
      * </p>
      * 
-     * @return A client token.
+     * @return The name of the rule to update.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getRuleName() {
+        return this.ruleName;
     }
 
     /**
      * <p>
-     * A client token.
+     * The name of the rule to update.
      * </p>
      * 
-     * @param clientToken
-     *        A client token.
+     * @param ruleName
+     *        The name of the rule to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateArchiveRuleRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public UpdateArchiveRuleRequest withRuleName(String ruleName) {
+        setRuleName(ruleName);
         return this;
     }
 
@@ -203,41 +203,41 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule to update.
+     * A client token.
      * </p>
      * 
-     * @param ruleName
-     *        The name of the rule to update.
+     * @param clientToken
+     *        A client token.
      */
 
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The name of the rule to update.
+     * A client token.
      * </p>
      * 
-     * @return The name of the rule to update.
+     * @return A client token.
      */
 
-    public String getRuleName() {
-        return this.ruleName;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The name of the rule to update.
+     * A client token.
      * </p>
      * 
-     * @param ruleName
-     *        The name of the rule to update.
+     * @param clientToken
+     *        A client token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateArchiveRuleRequest withRuleName(String ruleName) {
-        setRuleName(ruleName);
+    public UpdateArchiveRuleRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -255,12 +255,12 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getAnalyzerName() != null)
             sb.append("AnalyzerName: ").append(getAnalyzerName()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getRuleName() != null)
+            sb.append("RuleName: ").append(getRuleName()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
-        if (getRuleName() != null)
-            sb.append("RuleName: ").append(getRuleName());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -279,17 +279,17 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAnalyzerName() != null && other.getAnalyzerName().equals(this.getAnalyzerName()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
             return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
-        if (other.getRuleName() == null ^ this.getRuleName() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -300,9 +300,9 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerName() == null) ? 0 : getAnalyzerName().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

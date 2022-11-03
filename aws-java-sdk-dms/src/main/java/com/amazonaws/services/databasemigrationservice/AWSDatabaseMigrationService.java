@@ -246,6 +246,29 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Creates a Fleet Advisor collector using the specified parameters.
+     * </p>
+     * 
+     * @param createFleetAdvisorCollectorRequest
+     * @return Result of the CreateFleetAdvisorCollector operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @sample AWSDatabaseMigrationService.CreateFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFleetAdvisorCollectorResult createFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest createFleetAdvisorCollectorRequest);
+
+    /**
+     * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
@@ -416,6 +439,40 @@ public interface AWSDatabaseMigrationService {
      *      API Documentation</a>
      */
     DeleteEventSubscriptionResult deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorCollectorRequest
+     * @return Result of the DeleteFleetAdvisorCollector operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws CollectorNotFoundException
+     *         The specified collector doesn't exist.
+     * @sample AWSDatabaseMigrationService.DeleteFleetAdvisorCollector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFleetAdvisorCollectorResult deleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest deleteFleetAdvisorCollectorRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Fleet Advisor collector databases.
+     * </p>
+     * 
+     * @param deleteFleetAdvisorDatabasesRequest
+     * @return Result of the DeleteFleetAdvisorDatabases operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidOperationException
+     *         The action or operation requested isn't valid.
+     * @sample AWSDatabaseMigrationService.DeleteFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFleetAdvisorDatabasesResult deleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest);
 
     /**
      * <p>
@@ -681,6 +738,82 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the Fleet Advisor collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorCollectorsRequest
+     * @return Result of the DescribeFleetAdvisorCollectors operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorCollectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFleetAdvisorCollectorsResult describeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest describeFleetAdvisorCollectorsRequest);
+
+    /**
+     * <p>
+     * Returns a list of Fleet Advisor databases in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorDatabasesRequest
+     * @return Result of the DescribeFleetAdvisorDatabases operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFleetAdvisorDatabasesResult describeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest describeFleetAdvisorDatabasesRequest);
+
+    /**
+     * <p>
+     * Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorLsaAnalysisRequest
+     * @return Result of the DescribeFleetAdvisorLsaAnalysis operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFleetAdvisorLsaAnalysisResult describeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest describeFleetAdvisorLsaAnalysisRequest);
+
+    /**
+     * <p>
+     * Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemaObjectSummaryRequest
+     * @return Result of the DescribeFleetAdvisorSchemaObjectSummary operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorSchemaObjectSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFleetAdvisorSchemaObjectSummaryResult describeFleetAdvisorSchemaObjectSummary(
+            DescribeFleetAdvisorSchemaObjectSummaryRequest describeFleetAdvisorSchemaObjectSummaryRequest);
+
+    /**
+     * <p>
+     * Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+     * </p>
+     * 
+     * @param describeFleetAdvisorSchemasRequest
+     * @return Result of the DescribeFleetAdvisorSchemas operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeFleetAdvisorSchemas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFleetAdvisorSchemasResult describeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest describeFleetAdvisorSchemasRequest);
 
     /**
      * <p>
@@ -1192,6 +1325,23 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+     * </p>
+     * 
+     * @param runFleetAdvisorLsaAnalysisRequest
+     * @return Result of the RunFleetAdvisorLsaAnalysis operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.RunFleetAdvisorLsaAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RunFleetAdvisorLsaAnalysisResult runFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest runFleetAdvisorLsaAnalysisRequest);
+
+    /**
+     * <p>
      * Starts the replication task.
      * </p>
      * <p>
@@ -1336,6 +1486,35 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     TestConnectionResult testConnection(TestConnectionRequest testConnectionRequest);
+
+    /**
+     * <p>
+     * Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon
+     * EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+     * versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation
+     * raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration
+     * regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier
+     * than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.
+     * </p>
+     * <p>
+     * To call this operation, make sure that you have certain permissions added to your user account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge"
+     * >Migrating event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database Migration Service
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param updateSubscriptionsToEventBridgeRequest
+     * @return Result of the UpdateSubscriptionsToEventBridge operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.UpdateSubscriptionsToEventBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSubscriptionsToEventBridgeResult updateSubscriptionsToEventBridge(UpdateSubscriptionsToEventBridgeRequest updateSubscriptionsToEventBridgeRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -24,7 +24,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For more information about load balancer TLS security policies, see <a href=
  * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy"
- * >Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.
+ * >Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer
+ * Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsPolicy" target="_top">AWS
@@ -36,29 +37,6 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The name of the TLS security policy.
-     * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a
-     * href
-     * ="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer
-     * </a> action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     * >UpdateLoadBalancerAttribute</a> action.
      * </p>
      */
     private String name;
@@ -78,26 +56,6 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The protocols used in a given TLS security policy.
      * </p>
-     * <p>
-     * The following protocols are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.2</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<String> protocols;
     /**
@@ -114,53 +72,9 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The name of the TLS security policy.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a
-     * href
-     * ="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer
-     * </a> action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     * >UpdateLoadBalancerAttribute</a> action.
-     * </p>
      * 
      * @param name
-     *        The name of the TLS security policy.</p>
-     *        <p>
-     *        The following TLS security policy names are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>TLS-2016-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TLS-FS-Res-1-2-2019-08</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the
-     *        <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">
-     *        CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a
-     *        href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     *        >UpdateLoadBalancerAttribute</a> action.
+     *        The name of the TLS security policy.
      */
 
     public void setName(String name) {
@@ -171,52 +85,8 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The name of the TLS security policy.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a
-     * href
-     * ="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer
-     * </a> action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     * >UpdateLoadBalancerAttribute</a> action.
-     * </p>
      * 
-     * @return The name of the TLS security policy.</p>
-     *         <p>
-     *         The following TLS security policy names are possible:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>TLS-2016-08</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>TLS-FS-Res-1-2-2019-08</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in
-     *         the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">
-     *         CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a
-     *         href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     *         >UpdateLoadBalancerAttribute</a> action.
+     * @return The name of the TLS security policy.
      */
 
     public String getName() {
@@ -227,53 +97,9 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The name of the TLS security policy.
      * </p>
-     * <p>
-     * The following TLS security policy names are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>TLS-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a
-     * href
-     * ="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer
-     * </a> action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     * >UpdateLoadBalancerAttribute</a> action.
-     * </p>
      * 
      * @param name
-     *        The name of the TLS security policy.</p>
-     *        <p>
-     *        The following TLS security policy names are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>TLS-2016-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TLS-FS-Res-1-2-2019-08</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the
-     *        <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">
-     *        CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a
-     *        href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html"
-     *        >UpdateLoadBalancerAttribute</a> action.
+     *        The name of the TLS security policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,47 +204,8 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The protocols used in a given TLS security policy.
      * </p>
-     * <p>
-     * The following protocols are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.2</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The protocols used in a given TLS security policy.</p>
-     *         <p>
-     *         The following protocols are possible:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Protocol-TLSv1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Protocol-TLSv1.1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Protocol-TLSv1.2</code>
-     *         </p>
-     *         </li>
+     * @return The protocols used in a given TLS security policy.
      */
 
     public java.util.List<String> getProtocols() {
@@ -429,48 +216,9 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The protocols used in a given TLS security policy.
      * </p>
-     * <p>
-     * The following protocols are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.2</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param protocols
-     *        The protocols used in a given TLS security policy.</p>
-     *        <p>
-     *        The following protocols are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1.1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1.2</code>
-     *        </p>
-     *        </li>
+     *        The protocols used in a given TLS security policy.
      */
 
     public void setProtocols(java.util.Collection<String> protocols) {
@@ -487,52 +235,13 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * The protocols used in a given TLS security policy.
      * </p>
      * <p>
-     * The following protocols are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.2</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param protocols
-     *        The protocols used in a given TLS security policy.</p>
-     *        <p>
-     *        The following protocols are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1.1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1.2</code>
-     *        </p>
-     *        </li>
+     *        The protocols used in a given TLS security policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -550,48 +259,9 @@ public class LoadBalancerTlsPolicy implements Serializable, Cloneable, Structure
      * <p>
      * The protocols used in a given TLS security policy.
      * </p>
-     * <p>
-     * The following protocols are possible:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Protocol-TLSv1.2</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param protocols
-     *        The protocols used in a given TLS security policy.</p>
-     *        <p>
-     *        The following protocols are possible:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1.1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Protocol-TLSv1.2</code>
-     *        </p>
-     *        </li>
+     *        The protocols used in a given TLS security policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

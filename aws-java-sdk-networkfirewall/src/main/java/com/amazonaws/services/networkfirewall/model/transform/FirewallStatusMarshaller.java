@@ -35,6 +35,8 @@ public class FirewallStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSyncStateSummary").build();
     private static final MarshallingInfo<Map> SYNCSTATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SyncStates").build();
+    private static final MarshallingInfo<StructuredPojo> CAPACITYUSAGESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityUsageSummary").build();
 
     private static final FirewallStatusMarshaller instance = new FirewallStatusMarshaller();
 
@@ -55,6 +57,7 @@ public class FirewallStatusMarshaller {
             protocolMarshaller.marshall(firewallStatus.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(firewallStatus.getConfigurationSyncStateSummary(), CONFIGURATIONSYNCSTATESUMMARY_BINDING);
             protocolMarshaller.marshall(firewallStatus.getSyncStates(), SYNCSTATES_BINDING);
+            protocolMarshaller.marshall(firewallStatus.getCapacityUsageSummary(), CAPACITYUSAGESUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

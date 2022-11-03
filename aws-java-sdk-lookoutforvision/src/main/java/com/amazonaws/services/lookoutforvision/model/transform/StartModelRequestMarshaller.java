@@ -38,6 +38,8 @@ public class StartModelRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-Client-Token")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Integer> MAXINFERENCEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxInferenceUnits").build();
 
     private static final StartModelRequestMarshaller instance = new StartModelRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class StartModelRequestMarshaller {
             protocolMarshaller.marshall(startModelRequest.getModelVersion(), MODELVERSION_BINDING);
             protocolMarshaller.marshall(startModelRequest.getMinInferenceUnits(), MININFERENCEUNITS_BINDING);
             protocolMarshaller.marshall(startModelRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(startModelRequest.getMaxInferenceUnits(), MAXINFERENCEUNITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

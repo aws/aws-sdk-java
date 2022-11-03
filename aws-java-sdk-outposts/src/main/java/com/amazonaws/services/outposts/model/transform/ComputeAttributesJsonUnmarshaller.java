@@ -52,6 +52,10 @@ public class ComputeAttributesJsonUnmarshaller implements Unmarshaller<ComputeAt
                     context.nextToken();
                     computeAttributes.setHostId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("State", targetDepth)) {
+                    context.nextToken();
+                    computeAttributes.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

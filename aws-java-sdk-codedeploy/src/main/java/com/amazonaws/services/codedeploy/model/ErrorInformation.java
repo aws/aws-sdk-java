@@ -31,9 +31,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in
+     * the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -96,7 +95,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more
-     * AWS services.
+     * Amazon Web Services services.
      * </p>
      * </li>
      * <li>
@@ -123,9 +122,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in
+     * the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -188,7 +186,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more
-     * AWS services.
+     * Amazon Web Services services.
      * </p>
      * </li>
      * <li>
@@ -206,9 +204,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     *        User Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     *        Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -270,7 +268,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one
-     *        or more AWS services.
+     *        or more Amazon Web Services services.
      *        </p>
      *        </li>
      *        <li>
@@ -294,9 +292,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in
+     * the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -359,7 +356,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more
-     * AWS services.
+     * Amazon Web Services services.
      * </p>
      * </li>
      * <li>
@@ -376,9 +373,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @return For more information, see <a
-     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *         CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     *         User Guide</a>.</p>
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for
+     *         CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     *         Guide</a>.</p>
      *         <p>
      *         The error code:
      *         </p>
@@ -440,7 +437,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one
-     *         or more AWS services.
+     *         or more Amazon Web Services services.
      *         </p>
      *         </li>
      *         <li>
@@ -464,9 +461,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in
+     * the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -529,7 +525,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more
-     * AWS services.
+     * Amazon Web Services services.
      * </p>
      * </li>
      * <li>
@@ -547,9 +543,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     *        User Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     *        Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -611,7 +607,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one
-     *        or more AWS services.
+     *        or more Amazon Web Services services.
      *        </p>
      *        </li>
      *        <li>
@@ -637,9 +633,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in
+     * the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -702,7 +697,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more
-     * AWS services.
+     * Amazon Web Services services.
      * </p>
      * </li>
      * <li>
@@ -720,9 +715,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     *        User Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     *        Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -784,7 +779,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one
-     *        or more AWS services.
+     *        or more Amazon Web Services services.
      *        </p>
      *        </li>
      *        <li>
@@ -808,9 +803,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in
+     * the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -873,7 +867,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more
-     * AWS services.
+     * Amazon Web Services services.
      * </p>
      * </li>
      * <li>
@@ -891,9 +885,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     *        User Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     *        Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -955,7 +949,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one
-     *        or more AWS services.
+     *        or more Amazon Web Services services.
      *        </p>
      *        </li>
      *        <li>

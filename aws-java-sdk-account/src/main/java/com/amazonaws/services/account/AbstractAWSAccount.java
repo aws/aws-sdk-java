@@ -38,7 +38,17 @@ public class AbstractAWSAccount implements AWSAccount {
     }
 
     @Override
+    public GetContactInformationResult getContactInformation(GetContactInformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAlternateContactResult putAlternateContact(PutAlternateContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutContactInformationResult putContactInformation(PutContactInformationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

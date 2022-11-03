@@ -31,6 +31,10 @@ public class IntentClosingSettingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("closingResponse").build();
     private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("active").build();
+    private static final MarshallingInfo<StructuredPojo> NEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextStep").build();
+    private static final MarshallingInfo<StructuredPojo> CONDITIONAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conditional").build();
 
     private static final IntentClosingSettingMarshaller instance = new IntentClosingSettingMarshaller();
 
@@ -50,6 +54,8 @@ public class IntentClosingSettingMarshaller {
         try {
             protocolMarshaller.marshall(intentClosingSetting.getClosingResponse(), CLOSINGRESPONSE_BINDING);
             protocolMarshaller.marshall(intentClosingSetting.getActive(), ACTIVE_BINDING);
+            protocolMarshaller.marshall(intentClosingSetting.getNextStep(), NEXTSTEP_BINDING);
+            protocolMarshaller.marshall(intentClosingSetting.getConditional(), CONDITIONAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

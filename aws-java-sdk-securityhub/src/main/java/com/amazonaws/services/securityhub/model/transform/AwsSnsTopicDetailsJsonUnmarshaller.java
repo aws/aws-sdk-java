@@ -66,6 +66,34 @@ public class AwsSnsTopicDetailsJsonUnmarshaller implements Unmarshaller<AwsSnsTo
                     context.nextToken();
                     awsSnsTopicDetails.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SqsSuccessFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setSqsSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SqsFailureFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setSqsFailureFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ApplicationSuccessFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setApplicationSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FirehoseSuccessFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setFirehoseSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FirehoseFailureFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setFirehoseFailureFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HttpSuccessFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setHttpSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HttpFailureFeedbackRoleArn", targetDepth)) {
+                    context.nextToken();
+                    awsSnsTopicDetails.setHttpFailureFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

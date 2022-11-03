@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests API Gateway to get information about a <a>Deployment</a> resource.
+ * Requests API Gateway to get information about a Deployment resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,19 +27,19 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     * The identifier of the Deployment resource to get information about.
      * </p>
      */
     private String deploymentId;
     /**
      * <p>
-     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
      * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
      * platform-dependent libraries might use a different format for the list. Currently, this request supports only
@@ -52,11 +52,11 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -65,10 +65,10 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -77,11 +77,11 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     * The identifier of the Deployment resource to get information about.
      * </p>
      * 
      * @param deploymentId
-     *        [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     *        The identifier of the Deployment resource to get information about.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -105,10 +105,10 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     * The identifier of the Deployment resource to get information about.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     * @return The identifier of the Deployment resource to get information about.
      */
 
     public String getDeploymentId() {
@@ -117,11 +117,11 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     * The identifier of the Deployment resource to get information about.
      * </p>
      * 
      * @param deploymentId
-     *        [Required] The identifier of the <a>Deployment</a> resource to get information about.
+     *        The identifier of the Deployment resource to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,7 +132,7 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
      * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
      * platform-dependent libraries might use a different format for the list. Currently, this request supports only
@@ -141,8 +141,8 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
      * </p>
      * 
-     * @return A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
-     *         in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     * @return A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
+     *         response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
      *         strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
      *         SDK and other platform-dependent libraries might use a different format for the list. Currently, this
      *         request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be
@@ -156,7 +156,7 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
      * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
      * platform-dependent libraries might use a different format for the list. Currently, this request supports only
@@ -166,8 +166,8 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param embed
-     *        A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
-     *        in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *        A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
+     *        response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
      *        strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
      *        SDK and other platform-dependent libraries might use a different format for the list. Currently, this
      *        request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a
@@ -186,7 +186,7 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
      * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
      * platform-dependent libraries might use a different format for the list. Currently, this request supports only
@@ -201,8 +201,8 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param embed
-     *        A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
-     *        in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *        A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
+     *        response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
      *        strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
      *        SDK and other platform-dependent libraries might use a different format for the list. Currently, this
      *        request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a
@@ -223,7 +223,7 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
      * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
      * platform-dependent libraries might use a different format for the list. Currently, this request supports only
@@ -233,8 +233,8 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param embed
-     *        A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
-     *        in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *        A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the
+     *        response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
      *        strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
      *        SDK and other platform-dependent libraries might use a different format for the list. Currently, this
      *        request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a

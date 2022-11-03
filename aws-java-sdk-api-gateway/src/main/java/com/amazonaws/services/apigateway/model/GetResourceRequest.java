@@ -27,22 +27,22 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier for the <a>Resource</a> resource.
+     * The identifier for the Resource resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
-     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
-     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
-     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * A query parameter to retrieve the specified resources embedded in the returned Resource representation in the
+     * response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded Method resources this way. The query parameter value must be a
+     * single-valued list and contain the <code>"methods"</code> string. For example,
      * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * </p>
      */
@@ -50,11 +50,11 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -63,10 +63,10 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -75,11 +75,11 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier for the <a>Resource</a> resource.
+     * The identifier for the Resource resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The identifier for the <a>Resource</a> resource.
+     *        The identifier for the Resource resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -103,10 +103,10 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier for the <a>Resource</a> resource.
+     * The identifier for the Resource resource.
      * </p>
      * 
-     * @return [Required] The identifier for the <a>Resource</a> resource.
+     * @return The identifier for the Resource resource.
      */
 
     public String getResourceId() {
@@ -115,11 +115,11 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier for the <a>Resource</a> resource.
+     * The identifier for the Resource resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The identifier for the <a>Resource</a> resource.
+     *        The identifier for the Resource resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,18 +130,18 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
-     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
-     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
-     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * A query parameter to retrieve the specified resources embedded in the returned Resource representation in the
+     * response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded Method resources this way. The query parameter value must be a
+     * single-valued list and contain the <code>"methods"</code> string. For example,
      * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * </p>
      * 
-     * @return A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
-     *         representation in the response. This <code>embed</code> parameter value is a list of comma-separated
-     *         strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
-     *         The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
-     *         example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * @return A query parameter to retrieve the specified resources embedded in the returned Resource representation in
+     *         the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently,
+     *         the request supports only retrieval of the embedded Method resources this way. The query parameter value
+     *         must be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *         <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      */
 
     public java.util.List<String> getEmbed() {
@@ -150,19 +150,19 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
-     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
-     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
-     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * A query parameter to retrieve the specified resources embedded in the returned Resource representation in the
+     * response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded Method resources this way. The query parameter value must be a
+     * single-valued list and contain the <code>"methods"</code> string. For example,
      * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * </p>
      * 
      * @param embed
-     *        A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
-     *        representation in the response. This <code>embed</code> parameter value is a list of comma-separated
-     *        strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
-     *        The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
-     *        example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     *        A query parameter to retrieve the specified resources embedded in the returned Resource representation in
+     *        the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     *        request supports only retrieval of the embedded Method resources this way. The query parameter value must
+     *        be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      */
 
     public void setEmbed(java.util.Collection<String> embed) {
@@ -176,10 +176,10 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
-     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
-     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
-     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * A query parameter to retrieve the specified resources embedded in the returned Resource representation in the
+     * response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded Method resources this way. The query parameter value must be a
+     * single-valued list and contain the <code>"methods"</code> string. For example,
      * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * </p>
      * <p>
@@ -189,11 +189,11 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param embed
-     *        A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
-     *        representation in the response. This <code>embed</code> parameter value is a list of comma-separated
-     *        strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
-     *        The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
-     *        example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     *        A query parameter to retrieve the specified resources embedded in the returned Resource representation in
+     *        the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     *        request supports only retrieval of the embedded Method resources this way. The query parameter value must
+     *        be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,19 +209,19 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
-     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
-     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
-     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * A query parameter to retrieve the specified resources embedded in the returned Resource representation in the
+     * response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded Method resources this way. The query parameter value must be a
+     * single-valued list and contain the <code>"methods"</code> string. For example,
      * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * </p>
      * 
      * @param embed
-     *        A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
-     *        representation in the response. This <code>embed</code> parameter value is a list of comma-separated
-     *        strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
-     *        The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
-     *        example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     *        A query parameter to retrieve the specified resources embedded in the returned Resource representation in
+     *        the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     *        request supports only retrieval of the embedded Method resources this way. The query parameter value must
+     *        be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

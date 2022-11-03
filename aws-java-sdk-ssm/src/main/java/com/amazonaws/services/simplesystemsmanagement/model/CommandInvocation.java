@@ -145,6 +145,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * the system. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      */
     private String statusDetails;
@@ -616,6 +622,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * the system. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusDetails
@@ -681,6 +693,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
      *        canceled by the system. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delayed: The system attempted to send the command to the managed node but wasn't successful. The system
+     *        retries again.
      *        </p>
      *        </li>
      */
@@ -755,6 +773,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * the system. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A detailed status of the command execution for each invocation (each managed node targeted by the
@@ -819,6 +843,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *         <p>
      *         Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
      *         canceled by the system. This is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Delayed: The system attempted to send the command to the managed node but wasn't successful. The system
+     *         retries again.
      *         </p>
      *         </li>
      */
@@ -893,6 +923,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * the system. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusDetails
@@ -958,6 +994,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
      *        canceled by the system. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delayed: The system attempted to send the command to the managed node but wasn't successful. The system
+     *        retries again.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

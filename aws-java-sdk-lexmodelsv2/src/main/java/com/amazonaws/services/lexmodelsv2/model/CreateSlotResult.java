@@ -95,6 +95,12 @@ public class CreateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private MultipleValuesSetting multipleValuesSetting;
+    /**
+     * <p>
+     * Specifications for the constituent sub slots and the expression for the composite slot.
+     * </p>
+     */
+    private SubSlotSetting subSlotSetting;
 
     /**
      * <p>
@@ -580,6 +586,46 @@ public class CreateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Specifications for the constituent sub slots and the expression for the composite slot.
+     * </p>
+     * 
+     * @param subSlotSetting
+     *        Specifications for the constituent sub slots and the expression for the composite slot.
+     */
+
+    public void setSubSlotSetting(SubSlotSetting subSlotSetting) {
+        this.subSlotSetting = subSlotSetting;
+    }
+
+    /**
+     * <p>
+     * Specifications for the constituent sub slots and the expression for the composite slot.
+     * </p>
+     * 
+     * @return Specifications for the constituent sub slots and the expression for the composite slot.
+     */
+
+    public SubSlotSetting getSubSlotSetting() {
+        return this.subSlotSetting;
+    }
+
+    /**
+     * <p>
+     * Specifications for the constituent sub slots and the expression for the composite slot.
+     * </p>
+     * 
+     * @param subSlotSetting
+     *        Specifications for the constituent sub slots and the expression for the composite slot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotResult withSubSlotSetting(SubSlotSetting subSlotSetting) {
+        setSubSlotSetting(subSlotSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -614,7 +660,9 @@ public class CreateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getMultipleValuesSetting() != null)
-            sb.append("MultipleValuesSetting: ").append(getMultipleValuesSetting());
+            sb.append("MultipleValuesSetting: ").append(getMultipleValuesSetting()).append(",");
+        if (getSubSlotSetting() != null)
+            sb.append("SubSlotSetting: ").append(getSubSlotSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -677,6 +725,10 @@ public class CreateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getMultipleValuesSetting() != null && other.getMultipleValuesSetting().equals(this.getMultipleValuesSetting()) == false)
             return false;
+        if (other.getSubSlotSetting() == null ^ this.getSubSlotSetting() == null)
+            return false;
+        if (other.getSubSlotSetting() != null && other.getSubSlotSetting().equals(this.getSubSlotSetting()) == false)
+            return false;
         return true;
     }
 
@@ -697,6 +749,7 @@ public class CreateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getIntentId() == null) ? 0 : getIntentId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getMultipleValuesSetting() == null) ? 0 : getMultipleValuesSetting().hashCode());
+        hashCode = prime * hashCode + ((getSubSlotSetting() == null) ? 0 : getSubSlotSetting().hashCode());
         return hashCode;
     }
 

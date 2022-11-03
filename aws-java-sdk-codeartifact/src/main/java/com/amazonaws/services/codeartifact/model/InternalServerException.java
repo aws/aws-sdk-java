@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+ * The operation did not succeed because of an error that occurred inside CodeArtifact.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

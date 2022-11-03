@@ -639,6 +639,26 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String datePartitionTimezone;
+    /**
+     * <p>
+     * Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The
+     * default value is <code>false</code>.
+     * </p>
+     */
+    private Boolean addTrailingPaddingCharacter;
+    /**
+     * <p>
+     * To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting.
+     * </p>
+     * <p>
+     * Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p>
+     * <p>
+     * When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner
+     * against the specified parameter.
+     * </p>
+     */
+    private String expectedBucketOwner;
 
     /**
      * <p>
@@ -5533,6 +5553,148 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @param addTrailingPaddingCharacter
+     *        Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data.
+     *        The default value is <code>false</code>.
+     */
+
+    public void setAddTrailingPaddingCharacter(Boolean addTrailingPaddingCharacter) {
+        this.addTrailingPaddingCharacter = addTrailingPaddingCharacter;
+    }
+
+    /**
+     * <p>
+     * Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string
+     *         data. The default value is <code>false</code>.
+     */
+
+    public Boolean getAddTrailingPaddingCharacter() {
+        return this.addTrailingPaddingCharacter;
+    }
+
+    /**
+     * <p>
+     * Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @param addTrailingPaddingCharacter
+     *        Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data.
+     *        The default value is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withAddTrailingPaddingCharacter(Boolean addTrailingPaddingCharacter) {
+        setAddTrailingPaddingCharacter(addTrailingPaddingCharacter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string
+     *         data. The default value is <code>false</code>.
+     */
+
+    public Boolean isAddTrailingPaddingCharacter() {
+        return this.addTrailingPaddingCharacter;
+    }
+
+    /**
+     * <p>
+     * To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting.
+     * </p>
+     * <p>
+     * Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p>
+     * <p>
+     * When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner
+     * against the specified parameter.
+     * </p>
+     * 
+     * @param expectedBucketOwner
+     *        To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint
+     *        setting. </p>
+     *        <p>
+     *        Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     *        </p>
+     *        <p>
+     *        When you make a request to test a connection or perform a migration, S3 checks the account ID of the
+     *        bucket owner against the specified parameter.
+     */
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+    }
+
+    /**
+     * <p>
+     * To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting.
+     * </p>
+     * <p>
+     * Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p>
+     * <p>
+     * When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner
+     * against the specified parameter.
+     * </p>
+     * 
+     * @return To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint
+     *         setting. </p>
+     *         <p>
+     *         Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     *         </p>
+     *         <p>
+     *         When you make a request to test a connection or perform a migration, S3 checks the account ID of the
+     *         bucket owner against the specified parameter.
+     */
+
+    public String getExpectedBucketOwner() {
+        return this.expectedBucketOwner;
+    }
+
+    /**
+     * <p>
+     * To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting.
+     * </p>
+     * <p>
+     * Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p>
+     * <p>
+     * When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner
+     * against the specified parameter.
+     * </p>
+     * 
+     * @param expectedBucketOwner
+     *        To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint
+     *        setting. </p>
+     *        <p>
+     *        Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     *        </p>
+     *        <p>
+     *        When you make a request to test a connection or perform a migration, S3 checks the account ID of the
+     *        bucket owner against the specified parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withExpectedBucketOwner(String expectedBucketOwner) {
+        setExpectedBucketOwner(expectedBucketOwner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5619,7 +5781,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getRfc4180() != null)
             sb.append("Rfc4180: ").append(getRfc4180()).append(",");
         if (getDatePartitionTimezone() != null)
-            sb.append("DatePartitionTimezone: ").append(getDatePartitionTimezone());
+            sb.append("DatePartitionTimezone: ").append(getDatePartitionTimezone()).append(",");
+        if (getAddTrailingPaddingCharacter() != null)
+            sb.append("AddTrailingPaddingCharacter: ").append(getAddTrailingPaddingCharacter()).append(",");
+        if (getExpectedBucketOwner() != null)
+            sb.append("ExpectedBucketOwner: ").append(getExpectedBucketOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -5788,6 +5954,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDatePartitionTimezone() != null && other.getDatePartitionTimezone().equals(this.getDatePartitionTimezone()) == false)
             return false;
+        if (other.getAddTrailingPaddingCharacter() == null ^ this.getAddTrailingPaddingCharacter() == null)
+            return false;
+        if (other.getAddTrailingPaddingCharacter() != null && other.getAddTrailingPaddingCharacter().equals(this.getAddTrailingPaddingCharacter()) == false)
+            return false;
+        if (other.getExpectedBucketOwner() == null ^ this.getExpectedBucketOwner() == null)
+            return false;
+        if (other.getExpectedBucketOwner() != null && other.getExpectedBucketOwner().equals(this.getExpectedBucketOwner()) == false)
+            return false;
         return true;
     }
 
@@ -5834,6 +6008,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaxFileSize() == null) ? 0 : getMaxFileSize().hashCode());
         hashCode = prime * hashCode + ((getRfc4180() == null) ? 0 : getRfc4180().hashCode());
         hashCode = prime * hashCode + ((getDatePartitionTimezone() == null) ? 0 : getDatePartitionTimezone().hashCode());
+        hashCode = prime * hashCode + ((getAddTrailingPaddingCharacter() == null) ? 0 : getAddTrailingPaddingCharacter().hashCode());
+        hashCode = prime * hashCode + ((getExpectedBucketOwner() == null) ? 0 : getExpectedBucketOwner().hashCode());
         return hashCode;
     }
 

@@ -25,7 +25,7 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Defines the level of access on an Amazon Web Services account.
+     * Defines the level of access on an AWS account.
      * </p>
      */
     private java.util.List<String> permissionSets;
@@ -39,10 +39,10 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Defines the level of access on an Amazon Web Services account.
+     * Defines the level of access on an AWS account.
      * </p>
      * 
-     * @return Defines the level of access on an Amazon Web Services account.
+     * @return Defines the level of access on an AWS account.
      */
 
     public java.util.List<String> getPermissionSets() {
@@ -51,11 +51,11 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Defines the level of access on an Amazon Web Services account.
+     * Defines the level of access on an AWS account.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access on an Amazon Web Services account.
+     *        Defines the level of access on an AWS account.
      */
 
     public void setPermissionSets(java.util.Collection<String> permissionSets) {
@@ -69,7 +69,7 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Defines the level of access on an Amazon Web Services account.
+     * Defines the level of access on an AWS account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access on an Amazon Web Services account.
+     *        Defines the level of access on an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Defines the level of access on an Amazon Web Services account.
+     * Defines the level of access on an AWS account.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access on an Amazon Web Services account.
+     *        Defines the level of access on an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

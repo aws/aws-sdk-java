@@ -39,7 +39,10 @@ public class ImportPlaybackKeyPairRequest extends com.amazonaws.AmazonWebService
     private String publicKeyMaterial;
     /**
      * <p>
-     * Any tags provided with the request are added to the playback key pair tags.
+     * Any tags provided with the request are added to the playback key pair tags. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -126,10 +129,17 @@ public class ImportPlaybackKeyPairRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any tags provided with the request are added to the playback key pair tags.
+     * Any tags provided with the request are added to the playback key pair tags. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
-     * @return Any tags provided with the request are added to the playback key pair tags.
+     * @return Any tags provided with the request are added to the playback key pair tags. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a> for more information, including restrictions that apply to tags and
+     *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *         documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -138,11 +148,18 @@ public class ImportPlaybackKeyPairRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any tags provided with the request are added to the playback key pair tags.
+     * Any tags provided with the request are added to the playback key pair tags. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Any tags provided with the request are added to the playback key pair tags.
+     *        Any tags provided with the request are added to the playback key pair tags. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -151,11 +168,18 @@ public class ImportPlaybackKeyPairRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any tags provided with the request are added to the playback key pair tags.
+     * Any tags provided with the request are added to the playback key pair tags. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Any tags provided with the request are added to the playback key pair tags.
+     *        Any tags provided with the request are added to the playback key pair tags. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

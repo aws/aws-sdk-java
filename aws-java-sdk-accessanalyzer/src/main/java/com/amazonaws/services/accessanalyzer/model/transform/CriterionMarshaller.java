@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CriterionMarshaller {
 
-    private static final MarshallingInfo<List> CONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("contains").build();
     private static final MarshallingInfo<List> EQ_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eq").build();
-    private static final MarshallingInfo<Boolean> EXISTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("exists").build();
     private static final MarshallingInfo<List> NEQ_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("neq").build();
+    private static final MarshallingInfo<List> CONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("contains").build();
+    private static final MarshallingInfo<Boolean> EXISTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("exists").build();
 
     private static final CriterionMarshaller instance = new CriterionMarshaller();
 
@@ -53,10 +53,10 @@ public class CriterionMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(criterion.getContains(), CONTAINS_BINDING);
             protocolMarshaller.marshall(criterion.getEq(), EQ_BINDING);
-            protocolMarshaller.marshall(criterion.getExists(), EXISTS_BINDING);
             protocolMarshaller.marshall(criterion.getNeq(), NEQ_BINDING);
+            protocolMarshaller.marshall(criterion.getContains(), CONTAINS_BINDING);
+            protocolMarshaller.marshall(criterion.getExists(), EXISTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

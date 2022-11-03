@@ -30,16 +30,40 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The ID of the finding.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     */
+    private java.util.Map<String, String> principal;
+    /**
+     * <p>
      * The action in the analyzed policy statement that an external principal has permission to use.
      * </p>
      */
     private java.util.List<String> action;
     /**
      * <p>
-     * The time at which the resource-based policy that generated the finding was analyzed.
+     * The resource that the external principal has access to.
      * </p>
      */
-    private java.util.Date analyzedAt;
+    private String resource;
+    /**
+     * <p>
+     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * </p>
+     */
+    private Boolean isPublic;
+    /**
+     * <p>
+     * The type of the resource that the external principal has access to.
+     * </p>
+     */
+    private String resourceType;
     /**
      * <p>
      * The condition in the analyzed policy statement that resulted in a finding.
@@ -54,53 +78,16 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The error that resulted in an Error finding.
+     * The time at which the resource-based policy that generated the finding was analyzed.
      * </p>
      */
-    private String error;
+    private java.util.Date analyzedAt;
     /**
      * <p>
-     * The ID of the finding.
+     * The time at which the finding was most recently updated.
      * </p>
      */
-    private String id;
-    /**
-     * <p>
-     * Indicates whether the finding reports a resource that has a policy that allows public access.
-     * </p>
-     */
-    private Boolean isPublic;
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     */
-    private java.util.Map<String, String> principal;
-    /**
-     * <p>
-     * The resource that the external principal has access to.
-     * </p>
-     */
-    private String resource;
-    /**
-     * <p>
-     * The Amazon Web Services account ID that owns the resource.
-     * </p>
-     */
-    private String resourceOwnerAccount;
-    /**
-     * <p>
-     * The type of the resource that the external principal has access to.
-     * </p>
-     */
-    private String resourceType;
-    /**
-     * <p>
-     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
-     * for Amazon S3 bucket findings.
-     * </p>
-     */
-    private java.util.List<FindingSource> sources;
+    private java.util.Date updatedAt;
     /**
      * <p>
      * The status of the finding.
@@ -109,10 +96,131 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The time at which the finding was most recently updated.
+     * The Amazon Web Services account ID that owns the resource.
      * </p>
      */
-    private java.util.Date updatedAt;
+    private String resourceOwnerAccount;
+    /**
+     * <p>
+     * The error that resulted in an Error finding.
+     * </p>
+     */
+    private String error;
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     */
+    private java.util.List<FindingSource> sources;
+
+    /**
+     * <p>
+     * The ID of the finding.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the finding.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID of the finding.
+     * </p>
+     * 
+     * @return The ID of the finding.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of the finding.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSummary withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     * 
+     * @return The external principal that has access to a resource within the zone of trust.
+     */
+
+    public java.util.Map<String, String> getPrincipal() {
+        return principal;
+    }
+
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     * 
+     * @param principal
+     *        The external principal that has access to a resource within the zone of trust.
+     */
+
+    public void setPrincipal(java.util.Map<String, String> principal) {
+        this.principal = principal;
+    }
+
+    /**
+     * <p>
+     * The external principal that has access to a resource within the zone of trust.
+     * </p>
+     * 
+     * @param principal
+     *        The external principal that has access to a resource within the zone of trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSummary withPrincipal(java.util.Map<String, String> principal) {
+        setPrincipal(principal);
+        return this;
+    }
+
+    /**
+     * Add a single Principal entry
+     *
+     * @see FindingSummary#withPrincipal
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSummary addPrincipalEntry(String key, String value) {
+        if (null == this.principal) {
+            this.principal = new java.util.HashMap<String, String>();
+        }
+        if (this.principal.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.principal.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Principal.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSummary clearPrincipalEntries() {
+        this.principal = null;
+        return this;
+    }
 
     /**
      * <p>
@@ -186,41 +294,152 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the resource-based policy that generated the finding was analyzed.
+     * The resource that the external principal has access to.
      * </p>
      * 
-     * @param analyzedAt
-     *        The time at which the resource-based policy that generated the finding was analyzed.
+     * @param resource
+     *        The resource that the external principal has access to.
      */
 
-    public void setAnalyzedAt(java.util.Date analyzedAt) {
-        this.analyzedAt = analyzedAt;
+    public void setResource(String resource) {
+        this.resource = resource;
     }
 
     /**
      * <p>
-     * The time at which the resource-based policy that generated the finding was analyzed.
+     * The resource that the external principal has access to.
      * </p>
      * 
-     * @return The time at which the resource-based policy that generated the finding was analyzed.
+     * @return The resource that the external principal has access to.
      */
 
-    public java.util.Date getAnalyzedAt() {
-        return this.analyzedAt;
+    public String getResource() {
+        return this.resource;
     }
 
     /**
      * <p>
-     * The time at which the resource-based policy that generated the finding was analyzed.
+     * The resource that the external principal has access to.
      * </p>
      * 
-     * @param analyzedAt
-     *        The time at which the resource-based policy that generated the finding was analyzed.
+     * @param resource
+     *        The resource that the external principal has access to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FindingSummary withAnalyzedAt(java.util.Date analyzedAt) {
-        setAnalyzedAt(analyzedAt);
+    public FindingSummary withResource(String resource) {
+        setResource(resource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * </p>
+     * 
+     * @param isPublic
+     *        Indicates whether the finding reports a resource that has a policy that allows public access.
+     */
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * </p>
+     * 
+     * @return Indicates whether the finding reports a resource that has a policy that allows public access.
+     */
+
+    public Boolean getIsPublic() {
+        return this.isPublic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * </p>
+     * 
+     * @param isPublic
+     *        Indicates whether the finding reports a resource that has a policy that allows public access.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSummary withIsPublic(Boolean isPublic) {
+        setIsPublic(isPublic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * </p>
+     * 
+     * @return Indicates whether the finding reports a resource that has a policy that allows public access.
+     */
+
+    public Boolean isPublic() {
+        return this.isPublic;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that the external principal has access to.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that the external principal has access to.
+     * @see ResourceType
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that the external principal has access to.
+     * </p>
+     * 
+     * @return The type of the resource that the external principal has access to.
+     * @see ResourceType
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that the external principal has access to.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that the external principal has access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public FindingSummary withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the resource that the external principal has access to.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of the resource that the external principal has access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public FindingSummary withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -334,241 +553,140 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error that resulted in an Error finding.
+     * The time at which the resource-based policy that generated the finding was analyzed.
      * </p>
      * 
-     * @param error
-     *        The error that resulted in an Error finding.
+     * @param analyzedAt
+     *        The time at which the resource-based policy that generated the finding was analyzed.
      */
 
-    public void setError(String error) {
-        this.error = error;
+    public void setAnalyzedAt(java.util.Date analyzedAt) {
+        this.analyzedAt = analyzedAt;
     }
 
     /**
      * <p>
-     * The error that resulted in an Error finding.
+     * The time at which the resource-based policy that generated the finding was analyzed.
      * </p>
      * 
-     * @return The error that resulted in an Error finding.
+     * @return The time at which the resource-based policy that generated the finding was analyzed.
      */
 
-    public String getError() {
-        return this.error;
+    public java.util.Date getAnalyzedAt() {
+        return this.analyzedAt;
     }
 
     /**
      * <p>
-     * The error that resulted in an Error finding.
+     * The time at which the resource-based policy that generated the finding was analyzed.
      * </p>
      * 
-     * @param error
-     *        The error that resulted in an Error finding.
+     * @param analyzedAt
+     *        The time at which the resource-based policy that generated the finding was analyzed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FindingSummary withError(String error) {
-        setError(error);
+    public FindingSummary withAnalyzedAt(java.util.Date analyzedAt) {
+        setAnalyzedAt(analyzedAt);
         return this;
     }
 
     /**
      * <p>
-     * The ID of the finding.
+     * The time at which the finding was most recently updated.
      * </p>
      * 
-     * @param id
-     *        The ID of the finding.
+     * @param updatedAt
+     *        The time at which the finding was most recently updated.
      */
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     /**
      * <p>
-     * The ID of the finding.
+     * The time at which the finding was most recently updated.
      * </p>
      * 
-     * @return The ID of the finding.
+     * @return The time at which the finding was most recently updated.
      */
 
-    public String getId() {
-        return this.id;
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
     }
 
     /**
      * <p>
-     * The ID of the finding.
+     * The time at which the finding was most recently updated.
      * </p>
      * 
-     * @param id
-     *        The ID of the finding.
+     * @param updatedAt
+     *        The time at which the finding was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FindingSummary withId(String id) {
-        setId(id);
+    public FindingSummary withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * The status of the finding.
      * </p>
      * 
-     * @param isPublic
-     *        Indicates whether the finding reports a resource that has a policy that allows public access.
+     * @param status
+     *        The status of the finding.
+     * @see FindingStatus
      */
 
-    public void setIsPublic(Boolean isPublic) {
-        this.isPublic = isPublic;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     /**
      * <p>
-     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * The status of the finding.
      * </p>
      * 
-     * @return Indicates whether the finding reports a resource that has a policy that allows public access.
+     * @return The status of the finding.
+     * @see FindingStatus
      */
 
-    public Boolean getIsPublic() {
-        return this.isPublic;
+    public String getStatus() {
+        return this.status;
     }
 
     /**
      * <p>
-     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * The status of the finding.
      * </p>
      * 
-     * @param isPublic
-     *        Indicates whether the finding reports a resource that has a policy that allows public access.
+     * @param status
+     *        The status of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingStatus
      */
 
-    public FindingSummary withIsPublic(Boolean isPublic) {
-        setIsPublic(isPublic);
+    public FindingSummary withStatus(String status) {
+        setStatus(status);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the finding reports a resource that has a policy that allows public access.
+     * The status of the finding.
      * </p>
      * 
-     * @return Indicates whether the finding reports a resource that has a policy that allows public access.
-     */
-
-    public Boolean isPublic() {
-        return this.isPublic;
-    }
-
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     * 
-     * @return The external principal that has access to a resource within the zone of trust.
-     */
-
-    public java.util.Map<String, String> getPrincipal() {
-        return principal;
-    }
-
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     * 
-     * @param principal
-     *        The external principal that has access to a resource within the zone of trust.
-     */
-
-    public void setPrincipal(java.util.Map<String, String> principal) {
-        this.principal = principal;
-    }
-
-    /**
-     * <p>
-     * The external principal that has access to a resource within the zone of trust.
-     * </p>
-     * 
-     * @param principal
-     *        The external principal that has access to a resource within the zone of trust.
+     * @param status
+     *        The status of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingStatus
      */
 
-    public FindingSummary withPrincipal(java.util.Map<String, String> principal) {
-        setPrincipal(principal);
-        return this;
-    }
-
-    /**
-     * Add a single Principal entry
-     *
-     * @see FindingSummary#withPrincipal
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FindingSummary addPrincipalEntry(String key, String value) {
-        if (null == this.principal) {
-            this.principal = new java.util.HashMap<String, String>();
-        }
-        if (this.principal.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.principal.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Principal.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FindingSummary clearPrincipalEntries() {
-        this.principal = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The resource that the external principal has access to.
-     * </p>
-     * 
-     * @param resource
-     *        The resource that the external principal has access to.
-     */
-
-    public void setResource(String resource) {
-        this.resource = resource;
-    }
-
-    /**
-     * <p>
-     * The resource that the external principal has access to.
-     * </p>
-     * 
-     * @return The resource that the external principal has access to.
-     */
-
-    public String getResource() {
-        return this.resource;
-    }
-
-    /**
-     * <p>
-     * The resource that the external principal has access to.
-     * </p>
-     * 
-     * @param resource
-     *        The resource that the external principal has access to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FindingSummary withResource(String resource) {
-        setResource(resource);
+    public FindingSummary withStatus(FindingStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -614,60 +732,41 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource that the external principal has access to.
+     * The error that resulted in an Error finding.
      * </p>
      * 
-     * @param resourceType
-     *        The type of the resource that the external principal has access to.
-     * @see ResourceType
+     * @param error
+     *        The error that resulted in an Error finding.
      */
 
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
+    public void setError(String error) {
+        this.error = error;
     }
 
     /**
      * <p>
-     * The type of the resource that the external principal has access to.
+     * The error that resulted in an Error finding.
      * </p>
      * 
-     * @return The type of the resource that the external principal has access to.
-     * @see ResourceType
+     * @return The error that resulted in an Error finding.
      */
 
-    public String getResourceType() {
-        return this.resourceType;
+    public String getError() {
+        return this.error;
     }
 
     /**
      * <p>
-     * The type of the resource that the external principal has access to.
+     * The error that resulted in an Error finding.
      * </p>
      * 
-     * @param resourceType
-     *        The type of the resource that the external principal has access to.
+     * @param error
+     *        The error that resulted in an Error finding.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
      */
 
-    public FindingSummary withResourceType(String resourceType) {
-        setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the resource that the external principal has access to.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of the resource that the external principal has access to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public FindingSummary withResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+    public FindingSummary withError(String error) {
+        setError(error);
         return this;
     }
 
@@ -750,105 +849,6 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The status of the finding.
-     * </p>
-     * 
-     * @param status
-     *        The status of the finding.
-     * @see FindingStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status of the finding.
-     * </p>
-     * 
-     * @return The status of the finding.
-     * @see FindingStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status of the finding.
-     * </p>
-     * 
-     * @param status
-     *        The status of the finding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FindingStatus
-     */
-
-    public FindingSummary withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of the finding.
-     * </p>
-     * 
-     * @param status
-     *        The status of the finding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FindingStatus
-     */
-
-    public FindingSummary withStatus(FindingStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time at which the finding was most recently updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The time at which the finding was most recently updated.
-     */
-
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the finding was most recently updated.
-     * </p>
-     * 
-     * @return The time at which the finding was most recently updated.
-     */
-
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    /**
-     * <p>
-     * The time at which the finding was most recently updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The time at which the finding was most recently updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FindingSummary withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -860,34 +860,34 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getPrincipal() != null)
+            sb.append("Principal: ").append(getPrincipal()).append(",");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
-        if (getAnalyzedAt() != null)
-            sb.append("AnalyzedAt: ").append(getAnalyzedAt()).append(",");
+        if (getResource() != null)
+            sb.append("Resource: ").append(getResource()).append(",");
+        if (getIsPublic() != null)
+            sb.append("IsPublic: ").append(getIsPublic()).append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getCondition() != null)
             sb.append("Condition: ").append(getCondition()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
-        if (getIsPublic() != null)
-            sb.append("IsPublic: ").append(getIsPublic()).append(",");
-        if (getPrincipal() != null)
-            sb.append("Principal: ").append(getPrincipal()).append(",");
-        if (getResource() != null)
-            sb.append("Resource: ").append(getResource()).append(",");
-        if (getResourceOwnerAccount() != null)
-            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
-        if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType()).append(",");
-        if (getSources() != null)
-            sb.append("Sources: ").append(getSources()).append(",");
+        if (getAnalyzedAt() != null)
+            sb.append("AnalyzedAt: ").append(getAnalyzedAt()).append(",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -902,13 +902,29 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FindingSummary == false)
             return false;
         FindingSummary other = (FindingSummary) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getPrincipal() == null ^ this.getPrincipal() == null)
+            return false;
+        if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
+            return false;
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
-        if (other.getAnalyzedAt() == null ^ this.getAnalyzedAt() == null)
+        if (other.getResource() == null ^ this.getResource() == null)
             return false;
-        if (other.getAnalyzedAt() != null && other.getAnalyzedAt().equals(this.getAnalyzedAt()) == false)
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
+            return false;
+        if (other.getIsPublic() == null ^ this.getIsPublic() == null)
+            return false;
+        if (other.getIsPublic() != null && other.getIsPublic().equals(this.getIsPublic()) == false)
+            return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getCondition() == null ^ this.getCondition() == null)
             return false;
@@ -918,45 +934,29 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
-        if (other.getError() == null ^ this.getError() == null)
+        if (other.getAnalyzedAt() == null ^ this.getAnalyzedAt() == null)
             return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+        if (other.getAnalyzedAt() != null && other.getAnalyzedAt().equals(this.getAnalyzedAt()) == false)
             return false;
-        if (other.getId() == null ^ this.getId() == null)
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getIsPublic() == null ^ this.getIsPublic() == null)
-            return false;
-        if (other.getIsPublic() != null && other.getIsPublic().equals(this.getIsPublic()) == false)
-            return false;
-        if (other.getPrincipal() == null ^ this.getPrincipal() == null)
-            return false;
-        if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
-            return false;
-        if (other.getResource() == null ^ this.getResource() == null)
-            return false;
-        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
-            return false;
-        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
-            return false;
-        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
-            return false;
-        if (other.getResourceType() == null ^ this.getResourceType() == null)
-            return false;
-        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
-            return false;
-        if (other.getSources() == null ^ this.getSources() == null)
-            return false;
-        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
             return false;
-        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         return true;
     }
@@ -966,20 +966,20 @@ public class FindingSummary implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime * hashCode + ((getAnalyzedAt() == null) ? 0 : getAnalyzedAt().hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
-        hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
-        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
-        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
-        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
-        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedAt() == null) ? 0 : getAnalyzedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

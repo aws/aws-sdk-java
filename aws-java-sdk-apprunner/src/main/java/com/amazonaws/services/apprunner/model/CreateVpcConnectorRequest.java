@@ -36,6 +36,11 @@ public class CreateVpcConnectorRequest extends com.amazonaws.AmazonWebServiceReq
      * A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC.
      * Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.
      * </p>
+     * <note>
+     * <p>
+     * App Runner currently only provides support for IPv4.
+     * </p>
+     * </note>
      */
     private java.util.List<String> subnets;
     /**
@@ -98,10 +103,18 @@ public class CreateVpcConnectorRequest extends com.amazonaws.AmazonWebServiceReq
      * A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC.
      * Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.
      * </p>
+     * <note>
+     * <p>
+     * App Runner currently only provides support for IPv4.
+     * </p>
+     * </note>
      * 
      * @return A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon
      *         VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets
-     *         you specify.
+     *         you specify.</p> <note>
+     *         <p>
+     *         App Runner currently only provides support for IPv4.
+     *         </p>
      */
 
     public java.util.List<String> getSubnets() {
@@ -113,11 +126,19 @@ public class CreateVpcConnectorRequest extends com.amazonaws.AmazonWebServiceReq
      * A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC.
      * Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.
      * </p>
+     * <note>
+     * <p>
+     * App Runner currently only provides support for IPv4.
+     * </p>
+     * </note>
      * 
      * @param subnets
      *        A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon
      *        VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets
-     *        you specify.
+     *        you specify.</p> <note>
+     *        <p>
+     *        App Runner currently only provides support for IPv4.
+     *        </p>
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -134,6 +155,11 @@ public class CreateVpcConnectorRequest extends com.amazonaws.AmazonWebServiceReq
      * A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC.
      * Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.
      * </p>
+     * <note>
+     * <p>
+     * App Runner currently only provides support for IPv4.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
@@ -143,7 +169,10 @@ public class CreateVpcConnectorRequest extends com.amazonaws.AmazonWebServiceReq
      * @param subnets
      *        A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon
      *        VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets
-     *        you specify.
+     *        you specify.</p> <note>
+     *        <p>
+     *        App Runner currently only provides support for IPv4.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +191,19 @@ public class CreateVpcConnectorRequest extends com.amazonaws.AmazonWebServiceReq
      * A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC.
      * Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.
      * </p>
+     * <note>
+     * <p>
+     * App Runner currently only provides support for IPv4.
+     * </p>
+     * </note>
      * 
      * @param subnets
      *        A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon
      *        VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets
-     *        you specify.
+     *        you specify.</p> <note>
+     *        <p>
+     *        App Runner currently only provides support for IPv4.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

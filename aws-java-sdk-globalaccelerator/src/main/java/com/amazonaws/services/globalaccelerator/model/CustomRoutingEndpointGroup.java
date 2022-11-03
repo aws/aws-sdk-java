@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type for the endpoint group for a custom routing accelerator. An AWS Region can have only one endpoint
- * group for a specific listener.
+ * A complex type for the endpoint group for a custom routing accelerator. An Amazon Web Services Region can have only
+ * one endpoint group for a specific listener.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingEndpointGroup"
@@ -37,7 +37,7 @@ public class CustomRoutingEndpointGroup implements Serializable, Cloneable, Stru
     private String endpointGroupArn;
     /**
      * <p>
-     * The AWS Region where the endpoint group is located.
+     * The Amazon Web Services Region where the endpoint group is located.
      * </p>
      */
     private String endpointGroupRegion;
@@ -98,11 +98,11 @@ public class CustomRoutingEndpointGroup implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region where the endpoint group is located.
+     * The Amazon Web Services Region where the endpoint group is located.
      * </p>
      * 
      * @param endpointGroupRegion
-     *        The AWS Region where the endpoint group is located.
+     *        The Amazon Web Services Region where the endpoint group is located.
      */
 
     public void setEndpointGroupRegion(String endpointGroupRegion) {
@@ -111,10 +111,10 @@ public class CustomRoutingEndpointGroup implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region where the endpoint group is located.
+     * The Amazon Web Services Region where the endpoint group is located.
      * </p>
      * 
-     * @return The AWS Region where the endpoint group is located.
+     * @return The Amazon Web Services Region where the endpoint group is located.
      */
 
     public String getEndpointGroupRegion() {
@@ -123,11 +123,11 @@ public class CustomRoutingEndpointGroup implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region where the endpoint group is located.
+     * The Amazon Web Services Region where the endpoint group is located.
      * </p>
      * 
      * @param endpointGroupRegion
-     *        The AWS Region where the endpoint group is located.
+     *        The Amazon Web Services Region where the endpoint group is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

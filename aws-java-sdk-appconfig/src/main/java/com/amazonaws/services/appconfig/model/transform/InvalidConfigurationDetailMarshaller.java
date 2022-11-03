@@ -35,6 +35,8 @@ public class InvalidConfigurationDetailMarshaller {
             .marshallLocationName("Reason").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Value").build();
 
     private static final InvalidConfigurationDetailMarshaller instance = new InvalidConfigurationDetailMarshaller();
 
@@ -56,6 +58,7 @@ public class InvalidConfigurationDetailMarshaller {
             protocolMarshaller.marshall(invalidConfigurationDetail.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(invalidConfigurationDetail.getReason(), REASON_BINDING);
             protocolMarshaller.marshall(invalidConfigurationDetail.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(invalidConfigurationDetail.getValue(), VALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

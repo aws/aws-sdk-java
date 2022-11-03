@@ -48,8 +48,35 @@ public class AwsEc2VolumeAttachment implements Serializable, Cloneable, Structur
     private String instanceId;
     /**
      * <p>
-     * The attachment state of the volume.
+     * The attachment state of the volume. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>attaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attached</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>busy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detached</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
 
@@ -187,11 +214,64 @@ public class AwsEc2VolumeAttachment implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The attachment state of the volume.
+     * The attachment state of the volume. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>attaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attached</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>busy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detached</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The attachment state of the volume.
+     *        The attachment state of the volume. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>attaching</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>attached</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>busy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>detaching</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>detached</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -200,10 +280,63 @@ public class AwsEc2VolumeAttachment implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The attachment state of the volume.
+     * The attachment state of the volume. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>attaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attached</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>busy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detached</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The attachment state of the volume.
+     * @return The attachment state of the volume. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>attaching</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>attached</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>busy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>detaching</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>detached</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -212,11 +345,64 @@ public class AwsEc2VolumeAttachment implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The attachment state of the volume.
+     * The attachment state of the volume. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>attaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attached</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>busy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detaching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>detached</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The attachment state of the volume.
+     *        The attachment state of the volume. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>attaching</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>attached</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>busy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>detaching</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>detached</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

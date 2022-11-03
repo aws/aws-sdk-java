@@ -35,8 +35,25 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that
      * variation during this step.
      * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     * </pre>
      */
     private java.util.Map<String, Long> groupWeights;
+    /**
+     * <p>
+     * Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a
+     * portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in
+     * Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as
+     * age.
+     * </p>
+     * <p>
+     * This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that
+     * you have already created, and defines the traffic split for that segment.
+     * </p>
+     */
+    private java.util.List<SegmentOverride> segmentOverrides;
     /**
      * <p>
      * The date and time that this step of the launch starts.
@@ -51,9 +68,15 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * variation during this step.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     * </pre>
+     * 
      * @return The traffic allocation percentages among the feature variations during one step of a launch. This is a
      *         set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to
-     *         allocate to that variation during this step.
+     *         allocate to that variation during this step.</p>
+     * 
+     * <pre><code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
      */
 
     public java.util.Map<String, Long> getGroupWeights() {
@@ -67,10 +90,16 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * variation during this step.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     * </pre>
+     * 
      * @param groupWeights
      *        The traffic allocation percentages among the feature variations during one step of a launch. This is a set
      *        of key-value pairs. The keys are variation names. The values represent the percentage of traffic to
-     *        allocate to that variation during this step.
+     *        allocate to that variation during this step.</p>
+     * 
+     * <pre><code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
      */
 
     public void setGroupWeights(java.util.Map<String, Long> groupWeights) {
@@ -84,10 +113,17 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * variation during this step.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     * </pre>
+     * 
      * @param groupWeights
      *        The traffic allocation percentages among the feature variations during one step of a launch. This is a set
      *        of key-value pairs. The keys are variation names. The values represent the percentage of traffic to
-     *        allocate to that variation during this step.
+     *        allocate to that variation during this step.</p>
+     * 
+     *        <pre>
+     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,6 +157,128 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
 
     public ScheduledSplitConfig clearGroupWeightsEntries() {
         this.groupWeights = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a
+     * portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in
+     * Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as
+     * age.
+     * </p>
+     * <p>
+     * This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that
+     * you have already created, and defines the traffic split for that segment.
+     * </p>
+     * 
+     * @return Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A
+     *         segment is a portion of your audience that share one or more characteristics. Examples could be Chrome
+     *         browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your
+     *         application collects, such as age.</p>
+     *         <p>
+     *         This parameter is an array of up to six segment override objects. Each of these objects specifies a
+     *         segment that you have already created, and defines the traffic split for that segment.
+     */
+
+    public java.util.List<SegmentOverride> getSegmentOverrides() {
+        return segmentOverrides;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a
+     * portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in
+     * Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as
+     * age.
+     * </p>
+     * <p>
+     * This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that
+     * you have already created, and defines the traffic split for that segment.
+     * </p>
+     * 
+     * @param segmentOverrides
+     *        Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment
+     *        is a portion of your audience that share one or more characteristics. Examples could be Chrome browser
+     *        users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your
+     *        application collects, such as age.</p>
+     *        <p>
+     *        This parameter is an array of up to six segment override objects. Each of these objects specifies a
+     *        segment that you have already created, and defines the traffic split for that segment.
+     */
+
+    public void setSegmentOverrides(java.util.Collection<SegmentOverride> segmentOverrides) {
+        if (segmentOverrides == null) {
+            this.segmentOverrides = null;
+            return;
+        }
+
+        this.segmentOverrides = new java.util.ArrayList<SegmentOverride>(segmentOverrides);
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a
+     * portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in
+     * Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as
+     * age.
+     * </p>
+     * <p>
+     * This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that
+     * you have already created, and defines the traffic split for that segment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSegmentOverrides(java.util.Collection)} or {@link #withSegmentOverrides(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param segmentOverrides
+     *        Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment
+     *        is a portion of your audience that share one or more characteristics. Examples could be Chrome browser
+     *        users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your
+     *        application collects, such as age.</p>
+     *        <p>
+     *        This parameter is an array of up to six segment override objects. Each of these objects specifies a
+     *        segment that you have already created, and defines the traffic split for that segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledSplitConfig withSegmentOverrides(SegmentOverride... segmentOverrides) {
+        if (this.segmentOverrides == null) {
+            setSegmentOverrides(new java.util.ArrayList<SegmentOverride>(segmentOverrides.length));
+        }
+        for (SegmentOverride ele : segmentOverrides) {
+            this.segmentOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a
+     * portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in
+     * Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as
+     * age.
+     * </p>
+     * <p>
+     * This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that
+     * you have already created, and defines the traffic split for that segment.
+     * </p>
+     * 
+     * @param segmentOverrides
+     *        Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment
+     *        is a portion of your audience that share one or more characteristics. Examples could be Chrome browser
+     *        users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your
+     *        application collects, such as age.</p>
+     *        <p>
+     *        This parameter is an array of up to six segment override objects. Each of these objects specifies a
+     *        segment that you have already created, and defines the traffic split for that segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledSplitConfig withSegmentOverrides(java.util.Collection<SegmentOverride> segmentOverrides) {
+        setSegmentOverrides(segmentOverrides);
         return this;
     }
 
@@ -178,6 +336,8 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getGroupWeights() != null)
             sb.append("GroupWeights: ").append(getGroupWeights()).append(",");
+        if (getSegmentOverrides() != null)
+            sb.append("SegmentOverrides: ").append(getSegmentOverrides()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime());
         sb.append("}");
@@ -198,6 +358,10 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
             return false;
         if (other.getGroupWeights() != null && other.getGroupWeights().equals(this.getGroupWeights()) == false)
             return false;
+        if (other.getSegmentOverrides() == null ^ this.getSegmentOverrides() == null)
+            return false;
+        if (other.getSegmentOverrides() != null && other.getSegmentOverrides().equals(this.getSegmentOverrides()) == false)
+            return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
@@ -211,6 +375,7 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGroupWeights() == null) ? 0 : getGroupWeights().hashCode());
+        hashCode = prime * hashCode + ((getSegmentOverrides() == null) ? 0 : getSegmentOverrides().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         return hashCode;
     }

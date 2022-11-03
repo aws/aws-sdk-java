@@ -47,6 +47,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -60,7 +67,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -217,6 +226,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -230,7 +246,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -256,6 +274,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @return The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *         <important>
+     *         <p>
+     *         When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *         allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *         application. It should only be granted to trusted users.
+     *         </p>
+     *         </important>
      *         <ul>
      *         <li>
      *         <p>
@@ -269,7 +294,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *         <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *         privileged permission that allows users to grant themselves or others access to any functionality in the
+     *         application. It should only be granted to trusted users.
      *         </p>
      *         </li>
      *         <li>
@@ -303,6 +330,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -316,7 +350,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -343,6 +379,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param applicationPermissions
      *        The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -356,7 +399,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -395,6 +440,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -408,7 +460,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -440,6 +494,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param applicationPermissions
      *        The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -453,7 +514,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -494,6 +557,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -507,7 +577,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -534,6 +606,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param applicationPermissions
      *        The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -547,7 +626,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>
@@ -583,6 +664,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The permissions that are granted to a specific group for accessing the FinSpace application.
      * </p>
+     * <important>
+     * <p>
+     * When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows
+     * users to grant themselves or others access to any functionality in their FinSpace environment's application. It
+     * should only be granted to trusted users.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -596,7 +684,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged
+     * permission that allows users to grant themselves or others access to any functionality in the application. It
+     * should only be granted to trusted users.
      * </p>
      * </li>
      * <li>
@@ -623,6 +713,13 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param applicationPermissions
      *        The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+     *        <important>
+     *        <p>
+     *        When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+     *        allows users to grant themselves or others access to any functionality in their FinSpace environment's
+     *        application. It should only be granted to trusted users.
+     *        </p>
+     *        </important>
      *        <ul>
      *        <li>
      *        <p>
@@ -636,7 +733,9 @@ public class UpdatePermissionGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.
+     *        <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a
+     *        privileged permission that allows users to grant themselves or others access to any functionality in the
+     *        application. It should only be granted to trusted users.
      *        </p>
      *        </li>
      *        <li>

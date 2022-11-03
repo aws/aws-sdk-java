@@ -48,7 +48,7 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The name of the portfolio to which the user was assigned.
+     * The name of the portfolio that contains the product.
      * </p>
      */
     private String name;
@@ -235,11 +235,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the portfolio to which the user was assigned.
+     * The name of the portfolio that contains the product.
      * </p>
      * 
      * @param name
-     *        The name of the portfolio to which the user was assigned.
+     *        The name of the portfolio that contains the product.
      */
 
     public void setName(String name) {
@@ -248,10 +248,10 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the portfolio to which the user was assigned.
+     * The name of the portfolio that contains the product.
      * </p>
      * 
-     * @return The name of the portfolio to which the user was assigned.
+     * @return The name of the portfolio that contains the product.
      */
 
     public String getName() {
@@ -260,11 +260,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the portfolio to which the user was assigned.
+     * The name of the portfolio that contains the product.
      * </p>
      * 
      * @param name
-     *        The name of the portfolio to which the user was assigned.
+     *        The name of the portfolio that contains the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,36 +27,50 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Schedule.
      * </p>
      */
     private String channelName;
     /**
      * <p>
-     * The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     * The duration in minutes of the channel schedule.
      * </p>
      */
     private String durationMinutes;
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of channel schedules that you want MediaTailor to return in response to the current request.
+     * If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     * <code>NextToken</code> to get the second and subsequent pages of results.
+     * </p>
+     * <p>
+     * For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     * </p>
+     * <p>
+     * For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
+     * specify that value for <code>NextToken</code> in the request.
+     * </p>
+     * <p>
+     * If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to
+     * get.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Schedule.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel associated with this Channel Schedule.
      */
 
     public void setChannelName(String channelName) {
@@ -65,10 +79,10 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Schedule.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel associated with this Channel Schedule.
      */
 
     public String getChannelName() {
@@ -77,11 +91,11 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel associated with this Channel Schedule.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel associated with this Channel Schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +106,11 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     * The duration in minutes of the channel schedule.
      * </p>
      * 
      * @param durationMinutes
-     *        The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     *        The duration in minutes of the channel schedule.
      */
 
     public void setDurationMinutes(String durationMinutes) {
@@ -105,10 +119,10 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     * The duration in minutes of the channel schedule.
      * </p>
      * 
-     * @return The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     * @return The duration in minutes of the channel schedule.
      */
 
     public String getDurationMinutes() {
@@ -117,11 +131,11 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     * The duration in minutes of the channel schedule.
      * </p>
      * 
      * @param durationMinutes
-     *        The schedule duration in minutes. The maximum duration is 4320 minutes (three days).
+     *        The duration in minutes of the channel schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +146,15 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of channel schedules that you want MediaTailor to return in response to the current request.
+     * If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Upper bound on number of records to return. The maximum number of results is 100.
+     *        The maximum number of channel schedules that you want MediaTailor to return in response to the current
+     *        request. If there are more than <code>MaxResults</code> channel schedules, use the value of
+     *        <code>NextToken</code> in the response to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -145,10 +163,14 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of channel schedules that you want MediaTailor to return in response to the current request.
+     * If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      * 
-     * @return Upper bound on number of records to return. The maximum number of results is 100.
+     * @return The maximum number of channel schedules that you want MediaTailor to return in response to the current
+     *         request. If there are more than <code>MaxResults</code> channel schedules, use the value of
+     *         <code>NextToken</code> in the response to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -157,11 +179,15 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of channel schedules that you want MediaTailor to return in response to the current request.
+     * If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Upper bound on number of records to return. The maximum number of results is 100.
+     *        The maximum number of channel schedules that you want MediaTailor to return in response to the current
+     *        request. If there are more than <code>MaxResults</code> channel schedules, use the value of
+     *        <code>NextToken</code> in the response to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +198,34 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     * <code>NextToken</code> to get the second and subsequent pages of results.
+     * </p>
+     * <p>
+     * For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     * </p>
+     * <p>
+     * For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
+     * specify that value for <code>NextToken</code> in the request.
+     * </p>
+     * <p>
+     * If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to
+     * get.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     *        <code>NextToken</code> to get the second and subsequent pages of results.</p>
+     *        <p>
+     *        For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     *        </p>
+     *        <p>
+     *        For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response
+     *        and specify that value for <code>NextToken</code> in the request.
+     *        </p>
+     *        <p>
+     *        If the previous response didn't include a <code>NextToken</code> element, there are no more channel
+     *        schedules to get.
      */
 
     public void setNextToken(String nextToken) {
@@ -185,10 +234,33 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     * <code>NextToken</code> to get the second and subsequent pages of results.
+     * </p>
+     * <p>
+     * For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     * </p>
+     * <p>
+     * For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
+     * specify that value for <code>NextToken</code> in the request.
+     * </p>
+     * <p>
+     * If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to
+     * get.
      * </p>
      * 
-     * @return Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * @return (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     *         <code>NextToken</code> to get the second and subsequent pages of results.</p>
+     *         <p>
+     *         For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     *         </p>
+     *         <p>
+     *         For the second and subsequent requests, get the value of <code>NextToken</code> from the previous
+     *         response and specify that value for <code>NextToken</code> in the request.
+     *         </p>
+     *         <p>
+     *         If the previous response didn't include a <code>NextToken</code> element, there are no more channel
+     *         schedules to get.
      */
 
     public String getNextToken() {
@@ -197,11 +269,34 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     * <code>NextToken</code> to get the second and subsequent pages of results.
+     * </p>
+     * <p>
+     * For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     * </p>
+     * <p>
+     * For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
+     * specify that value for <code>NextToken</code> in the request.
+     * </p>
+     * <p>
+     * If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to
+     * get.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        (Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use
+     *        <code>NextToken</code> to get the second and subsequent pages of results.</p>
+     *        <p>
+     *        For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+     *        </p>
+     *        <p>
+     *        For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response
+     *        and specify that value for <code>NextToken</code> in the request.
+     *        </p>
+     *        <p>
+     *        If the previous response didn't include a <code>NextToken</code> element, there are no more channel
+     *        schedules to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

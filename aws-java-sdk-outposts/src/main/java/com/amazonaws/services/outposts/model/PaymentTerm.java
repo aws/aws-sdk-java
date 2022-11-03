@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PaymentTerm {
 
-    THREE_YEARS("THREE_YEARS");
+    THREE_YEARS("THREE_YEARS"),
+    ONE_YEAR("ONE_YEAR");
 
     private String value;
 

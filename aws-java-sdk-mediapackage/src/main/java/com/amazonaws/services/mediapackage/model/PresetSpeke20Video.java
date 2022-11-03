@@ -20,7 +20,16 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PresetSpeke20Video {
 
-    PRESETVIDEO1("PRESET-VIDEO-1");
+    PRESETVIDEO1("PRESET-VIDEO-1"),
+    PRESETVIDEO2("PRESET-VIDEO-2"),
+    PRESETVIDEO3("PRESET-VIDEO-3"),
+    PRESETVIDEO4("PRESET-VIDEO-4"),
+    PRESETVIDEO5("PRESET-VIDEO-5"),
+    PRESETVIDEO6("PRESET-VIDEO-6"),
+    PRESETVIDEO7("PRESET-VIDEO-7"),
+    PRESETVIDEO8("PRESET-VIDEO-8"),
+    SHARED("SHARED"),
+    UNENCRYPTED("UNENCRYPTED");
 
     private String value;
 

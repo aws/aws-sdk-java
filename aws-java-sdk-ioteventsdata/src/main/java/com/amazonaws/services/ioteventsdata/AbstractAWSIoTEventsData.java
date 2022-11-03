@@ -33,6 +33,11 @@ public class AbstractAWSIoTEventsData implements AWSIoTEventsData {
     }
 
     @Override
+    public BatchDeleteDetectorResult batchDeleteDetector(BatchDeleteDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDisableAlarmResult batchDisableAlarm(BatchDisableAlarmRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

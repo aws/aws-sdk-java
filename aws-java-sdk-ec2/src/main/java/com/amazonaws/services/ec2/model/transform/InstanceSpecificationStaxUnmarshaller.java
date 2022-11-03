@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -52,6 +54,17 @@ public class InstanceSpecificationStaxUnmarshaller implements Unmarshaller<Insta
                     instanceSpecification.setExcludeBootVolume(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ExcludeDataVolumeId", targetDepth)) {
+                    instanceSpecification.withExcludeDataVolumeIds(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ExcludeDataVolumeId/VolumeId", targetDepth)) {
+                    instanceSpecification.withExcludeDataVolumeIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceSpecification;

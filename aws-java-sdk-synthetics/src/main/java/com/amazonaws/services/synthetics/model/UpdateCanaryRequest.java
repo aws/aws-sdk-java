@@ -107,6 +107,11 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A structure that contains the timeout value that is used for each individual run of the canary.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      */
     private CanaryRunConfigInput runConfig;
     /**
@@ -650,9 +655,19 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A structure that contains the timeout value that is used for each individual run of the canary.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      * 
      * @param runConfig
-     *        A structure that contains the timeout value that is used for each individual run of the canary.
+     *        A structure that contains the timeout value that is used for each individual run of the canary.</p>
+     *        <important>
+     *        <p>
+     *        The environment variables keys and values are not encrypted. Do not store sensitive information in this
+     *        field.
+     *        </p>
      */
 
     public void setRunConfig(CanaryRunConfigInput runConfig) {
@@ -663,8 +678,18 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A structure that contains the timeout value that is used for each individual run of the canary.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      * 
-     * @return A structure that contains the timeout value that is used for each individual run of the canary.
+     * @return A structure that contains the timeout value that is used for each individual run of the canary.</p>
+     *         <important>
+     *         <p>
+     *         The environment variables keys and values are not encrypted. Do not store sensitive information in this
+     *         field.
+     *         </p>
      */
 
     public CanaryRunConfigInput getRunConfig() {
@@ -675,9 +700,19 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A structure that contains the timeout value that is used for each individual run of the canary.
      * </p>
+     * <important>
+     * <p>
+     * The environment variables keys and values are not encrypted. Do not store sensitive information in this field.
+     * </p>
+     * </important>
      * 
      * @param runConfig
-     *        A structure that contains the timeout value that is used for each individual run of the canary.
+     *        A structure that contains the timeout value that is used for each individual run of the canary.</p>
+     *        <important>
+     *        <p>
+     *        The environment variables keys and values are not encrypted. Do not store sensitive information in this
+     *        field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

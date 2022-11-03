@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotdeviceadvisor.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class TestCaseRunMarshaller {
             .marshallLocationName("warnings").build();
     private static final MarshallingInfo<String> FAILURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("failure").build();
+    private static final MarshallingInfo<List> TESTSCENARIOS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("testScenarios").build();
 
     private static final TestCaseRunMarshaller instance = new TestCaseRunMarshaller();
 
@@ -71,6 +74,7 @@ public class TestCaseRunMarshaller {
             protocolMarshaller.marshall(testCaseRun.getLogUrl(), LOGURL_BINDING);
             protocolMarshaller.marshall(testCaseRun.getWarnings(), WARNINGS_BINDING);
             protocolMarshaller.marshall(testCaseRun.getFailure(), FAILURE_BINDING);
+            protocolMarshaller.marshall(testCaseRun.getTestScenarios(), TESTSCENARIOS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

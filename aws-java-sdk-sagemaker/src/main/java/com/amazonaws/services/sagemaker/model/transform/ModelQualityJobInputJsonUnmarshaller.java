@@ -52,6 +52,10 @@ public class ModelQualityJobInputJsonUnmarshaller implements Unmarshaller<ModelQ
                     context.nextToken();
                     modelQualityJobInput.setEndpointInput(EndpointInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BatchTransformInput", targetDepth)) {
+                    context.nextToken();
+                    modelQualityJobInput.setBatchTransformInput(BatchTransformInputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("GroundTruthS3Input", targetDepth)) {
                     context.nextToken();
                     modelQualityJobInput.setGroundTruthS3Input(MonitoringGroundTruthS3InputJsonUnmarshaller.getInstance().unmarshall(context));

@@ -52,6 +52,10 @@ public class EnvironmentAccountConnectionSummaryJsonUnmarshaller implements Unma
                     context.nextToken();
                     environmentAccountConnectionSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("componentRoleArn", targetDepth)) {
+                    context.nextToken();
+                    environmentAccountConnectionSummary.setComponentRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("environmentAccountId", targetDepth)) {
                     context.nextToken();
                     environmentAccountConnectionSummary.setEnvironmentAccountId(context.getUnmarshaller(String.class).unmarshall(context));

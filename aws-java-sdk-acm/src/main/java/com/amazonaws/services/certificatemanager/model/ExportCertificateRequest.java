@@ -36,8 +36,16 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String certificateArn;
     /**
      * <p>
-     * Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key,
-     * you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     * Passphrase to associate with the encrypted exported private key.
+     * </p>
+     * <note>
+     * <p>
+     * When creating your passphrase, you can use any ASCII character except #, $, or %.
+     * </p>
+     * </note>
+     * <p>
+     * If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL
+     * command to decrypt a private key. After entering the command, you are prompted for the passphrase.
      * </p>
      * <p>
      * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
@@ -102,8 +110,16 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key,
-     * you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     * Passphrase to associate with the encrypted exported private key.
+     * </p>
+     * <note>
+     * <p>
+     * When creating your passphrase, you can use any ASCII character except #, $, or %.
+     * </p>
+     * </note>
+     * <p>
+     * If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL
+     * command to decrypt a private key. After entering the command, you are prompted for the passphrase.
      * </p>
      * <p>
      * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
@@ -120,8 +136,14 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param passphrase
-     *        Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private
-     *        key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     *        Passphrase to associate with the encrypted exported private key. </p> <note>
+     *        <p>
+     *        When creating your passphrase, you can use any ASCII character except #, $, or %.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you want to later decrypt the private key, you must have the passphrase. You can use the following
+     *        OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.
      *        </p>
      *        <p>
      *        <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
@@ -133,8 +155,16 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key,
-     * you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     * Passphrase to associate with the encrypted exported private key.
+     * </p>
+     * <note>
+     * <p>
+     * When creating your passphrase, you can use any ASCII character except #, $, or %.
+     * </p>
+     * </note>
+     * <p>
+     * If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL
+     * command to decrypt a private key. After entering the command, you are prompted for the passphrase.
      * </p>
      * <p>
      * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
@@ -147,8 +177,15 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * {@code position}.
      * </p>
      * 
-     * @return Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private
-     *         key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     * @return Passphrase to associate with the encrypted exported private key. </p> <note>
+     *         <p>
+     *         When creating your passphrase, you can use any ASCII character except #, $, or %.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If you want to later decrypt the private key, you must have the passphrase. You can use the following
+     *         OpenSSL command to decrypt a private key. After entering the command, you are prompted for the
+     *         passphrase.
      *         </p>
      *         <p>
      *         <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
@@ -160,8 +197,16 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key,
-     * you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     * Passphrase to associate with the encrypted exported private key.
+     * </p>
+     * <note>
+     * <p>
+     * When creating your passphrase, you can use any ASCII character except #, $, or %.
+     * </p>
+     * </note>
+     * <p>
+     * If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL
+     * command to decrypt a private key. After entering the command, you are prompted for the passphrase.
      * </p>
      * <p>
      * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
@@ -178,8 +223,14 @@ public class ExportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param passphrase
-     *        Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private
-     *        key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key:
+     *        Passphrase to associate with the encrypted exported private key. </p> <note>
+     *        <p>
+     *        When creating your passphrase, you can use any ASCII character except #, $, or %.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you want to later decrypt the private key, you must have the passphrase. You can use the following
+     *        OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.
      *        </p>
      *        <p>
      *        <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>

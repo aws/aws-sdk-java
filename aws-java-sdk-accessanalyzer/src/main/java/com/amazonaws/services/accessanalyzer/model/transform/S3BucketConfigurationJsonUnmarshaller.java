@@ -48,10 +48,9 @@ public class S3BucketConfigurationJsonUnmarshaller implements Unmarshaller<S3Buc
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("accessPoints", targetDepth)) {
+                if (context.testExpression("bucketPolicy", targetDepth)) {
                     context.nextToken();
-                    s3BucketConfiguration.setAccessPoints(new MapUnmarshaller<String, S3AccessPointConfiguration>(context.getUnmarshaller(String.class),
-                            S3AccessPointConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3BucketConfiguration.setBucketPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketAclGrants", targetDepth)) {
                     context.nextToken();
@@ -60,13 +59,14 @@ public class S3BucketConfigurationJsonUnmarshaller implements Unmarshaller<S3Buc
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("bucketPolicy", targetDepth)) {
-                    context.nextToken();
-                    s3BucketConfiguration.setBucketPolicy(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("bucketPublicAccessBlock", targetDepth)) {
                     context.nextToken();
                     s3BucketConfiguration.setBucketPublicAccessBlock(S3PublicAccessBlockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("accessPoints", targetDepth)) {
+                    context.nextToken();
+                    s3BucketConfiguration.setAccessPoints(new MapUnmarshaller<String, S3AccessPointConfiguration>(context.getUnmarshaller(String.class),
+                            S3AccessPointConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

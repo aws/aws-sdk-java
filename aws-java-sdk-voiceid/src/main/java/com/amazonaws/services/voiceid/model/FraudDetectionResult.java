@@ -66,13 +66,15 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     * Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     * Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.
      * </p>
      */
     private java.util.List<String> reasons;
     /**
      * <p>
-     * Details about each risk analyzed for this speaker.
+     * Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     * VoiceSpoofingRisk details.
      * </p>
      */
     private FraudRiskDetails riskDetails;
@@ -325,12 +327,13 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     * Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     * Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.
      * </p>
      * 
      * @return The reason speaker was flagged by the fraud detection system. This is only be populated if fraud
-     *         detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
-     *         <code>KNOWN_FRAUDSTER</code>.
+     *         detection Decision is <code>HIGH_RISK</code>, and the following possible values:
+     *         <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.
      * @see FraudDetectionReason
      */
 
@@ -341,12 +344,14 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     * Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     * Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.
      * </p>
      * 
      * @param reasons
      *        The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     *        Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     *        Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     *        <code>VOICE_SPOOFING</code>.
      * @see FraudDetectionReason
      */
 
@@ -362,7 +367,8 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     * Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     * Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,7 +378,8 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
      * 
      * @param reasons
      *        The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     *        Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     *        Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     *        <code>VOICE_SPOOFING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FraudDetectionReason
      */
@@ -390,12 +397,14 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     * Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     * Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.
      * </p>
      * 
      * @param reasons
      *        The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     *        Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     *        Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     *        <code>VOICE_SPOOFING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FraudDetectionReason
      */
@@ -408,12 +417,14 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     * Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     * Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.
      * </p>
      * 
      * @param reasons
      *        The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection
-     *        Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.
+     *        Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and
+     *        <code>VOICE_SPOOFING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FraudDetectionReason
      */
@@ -433,11 +444,13 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Details about each risk analyzed for this speaker.
+     * Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     * VoiceSpoofingRisk details.
      * </p>
      * 
      * @param riskDetails
-     *        Details about each risk analyzed for this speaker.
+     *        Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     *        VoiceSpoofingRisk details.
      */
 
     public void setRiskDetails(FraudRiskDetails riskDetails) {
@@ -446,10 +459,12 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Details about each risk analyzed for this speaker.
+     * Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     * VoiceSpoofingRisk details.
      * </p>
      * 
-     * @return Details about each risk analyzed for this speaker.
+     * @return Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     *         VoiceSpoofingRisk details.
      */
 
     public FraudRiskDetails getRiskDetails() {
@@ -458,11 +473,13 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Details about each risk analyzed for this speaker.
+     * Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     * VoiceSpoofingRisk details.
      * </p>
      * 
      * @param riskDetails
-     *        Details about each risk analyzed for this speaker.
+     *        Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and
+     *        VoiceSpoofingRisk details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

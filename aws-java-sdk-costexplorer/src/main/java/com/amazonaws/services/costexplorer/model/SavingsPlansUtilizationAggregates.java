@@ -37,8 +37,8 @@ public class SavingsPlansUtilizationAggregates implements Serializable, Cloneabl
     private SavingsPlansUtilization utilization;
     /**
      * <p>
-     * The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as
-     * the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
+     * The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and
+     * also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
      * </p>
      */
     private SavingsPlansSavings savings;
@@ -98,14 +98,14 @@ public class SavingsPlansUtilizationAggregates implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as
-     * the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
+     * The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and
+     * also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
      * </p>
      * 
      * @param savings
-     *        The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as
-     *        well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization
-     *        rate.
+     *        The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings
+     *        Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the
+     *        utilization rate.
      */
 
     public void setSavings(SavingsPlansSavings savings) {
@@ -114,13 +114,13 @@ public class SavingsPlansUtilizationAggregates implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as
-     * the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
+     * The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and
+     * also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
      * </p>
      * 
-     * @return The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as
-     *         well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization
-     *         rate.
+     * @return The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings
+     *         Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the
+     *         utilization rate.
      */
 
     public SavingsPlansSavings getSavings() {
@@ -129,14 +129,14 @@ public class SavingsPlansUtilizationAggregates implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as
-     * the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
+     * The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and
+     * also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.
      * </p>
      * 
      * @param savings
-     *        The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as
-     *        well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization
-     *        rate.
+     *        The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings
+     *        Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the
+     *        utilization rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

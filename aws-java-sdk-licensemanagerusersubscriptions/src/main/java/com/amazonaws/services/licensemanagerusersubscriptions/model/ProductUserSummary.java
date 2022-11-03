@@ -1,0 +1,508 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.licensemanagerusersubscriptions.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The summary of the user-based subscription products for a user.
+ * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ProductUserSummary"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ProductUserSummary implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The domain name of the user.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * An object that specifies details for the identity provider.
+     * </p>
+     */
+    private IdentityProvider identityProvider;
+    /**
+     * <p>
+     * The name of the user-based subscription product.
+     * </p>
+     */
+    private String product;
+    /**
+     * <p>
+     * The status of a product for a user.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The status message for a product for a user.
+     * </p>
+     */
+    private String statusMessage;
+    /**
+     * <p>
+     * The end date of a subscription.
+     * </p>
+     */
+    private String subscriptionEndDate;
+    /**
+     * <p>
+     * The start date of a subscription.
+     * </p>
+     */
+    private String subscriptionStartDate;
+    /**
+     * <p>
+     * The user name from the identity provider of the user.
+     * </p>
+     */
+    private String username;
+
+    /**
+     * <p>
+     * The domain name of the user.
+     * </p>
+     * 
+     * @param domain
+     *        The domain name of the user.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * The domain name of the user.
+     * </p>
+     * 
+     * @return The domain name of the user.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * The domain name of the user.
+     * </p>
+     * 
+     * @param domain
+     *        The domain name of the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that specifies details for the identity provider.
+     * </p>
+     * 
+     * @param identityProvider
+     *        An object that specifies details for the identity provider.
+     */
+
+    public void setIdentityProvider(IdentityProvider identityProvider) {
+        this.identityProvider = identityProvider;
+    }
+
+    /**
+     * <p>
+     * An object that specifies details for the identity provider.
+     * </p>
+     * 
+     * @return An object that specifies details for the identity provider.
+     */
+
+    public IdentityProvider getIdentityProvider() {
+        return this.identityProvider;
+    }
+
+    /**
+     * <p>
+     * An object that specifies details for the identity provider.
+     * </p>
+     * 
+     * @param identityProvider
+     *        An object that specifies details for the identity provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withIdentityProvider(IdentityProvider identityProvider) {
+        setIdentityProvider(identityProvider);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the user-based subscription product.
+     * </p>
+     * 
+     * @param product
+     *        The name of the user-based subscription product.
+     */
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    /**
+     * <p>
+     * The name of the user-based subscription product.
+     * </p>
+     * 
+     * @return The name of the user-based subscription product.
+     */
+
+    public String getProduct() {
+        return this.product;
+    }
+
+    /**
+     * <p>
+     * The name of the user-based subscription product.
+     * </p>
+     * 
+     * @param product
+     *        The name of the user-based subscription product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withProduct(String product) {
+        setProduct(product);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of a product for a user.
+     * </p>
+     * 
+     * @param status
+     *        The status of a product for a user.
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of a product for a user.
+     * </p>
+     * 
+     * @return The status of a product for a user.
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of a product for a user.
+     * </p>
+     * 
+     * @param status
+     *        The status of a product for a user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status message for a product for a user.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The status message for a product for a user.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message for a product for a user.
+     * </p>
+     * 
+     * @return The status message for a product for a user.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message for a product for a user.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The status message for a product for a user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The end date of a subscription.
+     * </p>
+     * 
+     * @param subscriptionEndDate
+     *        The end date of a subscription.
+     */
+
+    public void setSubscriptionEndDate(String subscriptionEndDate) {
+        this.subscriptionEndDate = subscriptionEndDate;
+    }
+
+    /**
+     * <p>
+     * The end date of a subscription.
+     * </p>
+     * 
+     * @return The end date of a subscription.
+     */
+
+    public String getSubscriptionEndDate() {
+        return this.subscriptionEndDate;
+    }
+
+    /**
+     * <p>
+     * The end date of a subscription.
+     * </p>
+     * 
+     * @param subscriptionEndDate
+     *        The end date of a subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withSubscriptionEndDate(String subscriptionEndDate) {
+        setSubscriptionEndDate(subscriptionEndDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The start date of a subscription.
+     * </p>
+     * 
+     * @param subscriptionStartDate
+     *        The start date of a subscription.
+     */
+
+    public void setSubscriptionStartDate(String subscriptionStartDate) {
+        this.subscriptionStartDate = subscriptionStartDate;
+    }
+
+    /**
+     * <p>
+     * The start date of a subscription.
+     * </p>
+     * 
+     * @return The start date of a subscription.
+     */
+
+    public String getSubscriptionStartDate() {
+        return this.subscriptionStartDate;
+    }
+
+    /**
+     * <p>
+     * The start date of a subscription.
+     * </p>
+     * 
+     * @param subscriptionStartDate
+     *        The start date of a subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withSubscriptionStartDate(String subscriptionStartDate) {
+        setSubscriptionStartDate(subscriptionStartDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user name from the identity provider of the user.
+     * </p>
+     * 
+     * @param username
+     *        The user name from the identity provider of the user.
+     */
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
+     * <p>
+     * The user name from the identity provider of the user.
+     * </p>
+     * 
+     * @return The user name from the identity provider of the user.
+     */
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    /**
+     * <p>
+     * The user name from the identity provider of the user.
+     * </p>
+     * 
+     * @param username
+     *        The user name from the identity provider of the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductUserSummary withUsername(String username) {
+        setUsername(username);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getIdentityProvider() != null)
+            sb.append("IdentityProvider: ").append(getIdentityProvider()).append(",");
+        if (getProduct() != null)
+            sb.append("Product: ").append(getProduct()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getSubscriptionEndDate() != null)
+            sb.append("SubscriptionEndDate: ").append(getSubscriptionEndDate()).append(",");
+        if (getSubscriptionStartDate() != null)
+            sb.append("SubscriptionStartDate: ").append(getSubscriptionStartDate()).append(",");
+        if (getUsername() != null)
+            sb.append("Username: ").append(getUsername());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ProductUserSummary == false)
+            return false;
+        ProductUserSummary other = (ProductUserSummary) obj;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
+        if (other.getIdentityProvider() == null ^ this.getIdentityProvider() == null)
+            return false;
+        if (other.getIdentityProvider() != null && other.getIdentityProvider().equals(this.getIdentityProvider()) == false)
+            return false;
+        if (other.getProduct() == null ^ this.getProduct() == null)
+            return false;
+        if (other.getProduct() != null && other.getProduct().equals(this.getProduct()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getSubscriptionEndDate() == null ^ this.getSubscriptionEndDate() == null)
+            return false;
+        if (other.getSubscriptionEndDate() != null && other.getSubscriptionEndDate().equals(this.getSubscriptionEndDate()) == false)
+            return false;
+        if (other.getSubscriptionStartDate() == null ^ this.getSubscriptionStartDate() == null)
+            return false;
+        if (other.getSubscriptionStartDate() != null && other.getSubscriptionStartDate().equals(this.getSubscriptionStartDate()) == false)
+            return false;
+        if (other.getUsername() == null ^ this.getUsername() == null)
+            return false;
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getIdentityProvider() == null) ? 0 : getIdentityProvider().hashCode());
+        hashCode = prime * hashCode + ((getProduct() == null) ? 0 : getProduct().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionEndDate() == null) ? 0 : getSubscriptionEndDate().hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionStartDate() == null) ? 0 : getSubscriptionStartDate().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ProductUserSummary clone() {
+        try {
+            return (ProductUserSummary) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.licensemanagerusersubscriptions.model.transform.ProductUserSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

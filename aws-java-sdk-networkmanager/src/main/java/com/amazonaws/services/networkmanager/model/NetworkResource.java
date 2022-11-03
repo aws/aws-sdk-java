@@ -36,7 +36,7 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
     private String registeredGatewayArn;
     /**
      * <p>
-     * a core network ID.
+     * The ID of a core network.
      * </p>
      */
     private String coreNetworkId;
@@ -218,11 +218,11 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * a core network ID.
+     * The ID of a core network.
      * </p>
      * 
      * @param coreNetworkId
-     *        a core network ID.
+     *        The ID of a core network.
      */
 
     public void setCoreNetworkId(String coreNetworkId) {
@@ -231,10 +231,10 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * a core network ID.
+     * The ID of a core network.
      * </p>
      * 
-     * @return a core network ID.
+     * @return The ID of a core network.
      */
 
     public String getCoreNetworkId() {
@@ -243,11 +243,11 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * a core network ID.
+     * The ID of a core network.
      * </p>
      * 
      * @param coreNetworkId
-     *        a core network ID.
+     *        The ID of a core network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

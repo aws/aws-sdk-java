@@ -54,8 +54,35 @@ public class AwsDynamoDbTableReplica implements Serializable, Cloneable, Structu
     private String regionName;
     /**
      * <p>
-     * The current status of the replica.
+     * The current status of the replica. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String replicaStatus;
     /**
@@ -257,11 +284,64 @@ public class AwsDynamoDbTableReplica implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current status of the replica.
+     * The current status of the replica. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param replicaStatus
-     *        The current status of the replica.
+     *        The current status of the replica. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      */
 
     public void setReplicaStatus(String replicaStatus) {
@@ -270,10 +350,63 @@ public class AwsDynamoDbTableReplica implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current status of the replica.
+     * The current status of the replica. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current status of the replica.
+     * @return The current status of the replica. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATION_FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code>
+     *         </p>
+     *         </li>
      */
 
     public String getReplicaStatus() {
@@ -282,11 +415,64 @@ public class AwsDynamoDbTableReplica implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current status of the replica.
+     * The current status of the replica. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param replicaStatus
-     *        The current status of the replica.
+     *        The current status of the replica. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

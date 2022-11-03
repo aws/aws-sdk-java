@@ -31,6 +31,12 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String queryStatement;
+    /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivers the query results.
+     * </p>
+     */
+    private String deliveryS3Uri;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivers the query results.
+     * </p>
+     * 
+     * @param deliveryS3Uri
+     *        The URI for the S3 bucket where CloudTrail delivers the query results.
+     */
+
+    public void setDeliveryS3Uri(String deliveryS3Uri) {
+        this.deliveryS3Uri = deliveryS3Uri;
+    }
+
+    /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivers the query results.
+     * </p>
+     * 
+     * @return The URI for the S3 bucket where CloudTrail delivers the query results.
+     */
+
+    public String getDeliveryS3Uri() {
+        return this.deliveryS3Uri;
+    }
+
+    /**
+     * <p>
+     * The URI for the S3 bucket where CloudTrail delivers the query results.
+     * </p>
+     * 
+     * @param deliveryS3Uri
+     *        The URI for the S3 bucket where CloudTrail delivers the query results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryRequest withDeliveryS3Uri(String deliveryS3Uri) {
+        setDeliveryS3Uri(deliveryS3Uri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueryStatement() != null)
-            sb.append("QueryStatement: ").append(getQueryStatement());
+            sb.append("QueryStatement: ").append(getQueryStatement()).append(",");
+        if (getDeliveryS3Uri() != null)
+            sb.append("DeliveryS3Uri: ").append(getDeliveryS3Uri());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getQueryStatement() != null && other.getQueryStatement().equals(this.getQueryStatement()) == false)
             return false;
+        if (other.getDeliveryS3Uri() == null ^ this.getDeliveryS3Uri() == null)
+            return false;
+        if (other.getDeliveryS3Uri() != null && other.getDeliveryS3Uri().equals(this.getDeliveryS3Uri()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getQueryStatement() == null) ? 0 : getQueryStatement().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryS3Uri() == null) ? 0 : getDeliveryS3Uri().hashCode());
         return hashCode;
     }
 

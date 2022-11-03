@@ -22,7 +22,8 @@ public enum UtcTiming {
 
     NONE("NONE"),
     HTTPHEAD("HTTP-HEAD"),
-    HTTPISO("HTTP-ISO");
+    HTTPISO("HTTP-ISO"),
+    HTTPXSDATE("HTTP-XSDATE");
 
     private String value;
 

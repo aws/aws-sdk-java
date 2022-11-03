@@ -58,6 +58,12 @@ public class DataSourceConfigurationsResult implements Serializable, Cloneable, 
      * </p>
      */
     private KubernetesConfigurationResult kubernetes;
+    /**
+     * <p>
+     * Describes the configuration of Malware Protection data sources.
+     * </p>
+     */
+    private MalwareProtectionConfigurationResult malwareProtection;
 
     /**
      * <p>
@@ -260,6 +266,46 @@ public class DataSourceConfigurationsResult implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Describes the configuration of Malware Protection data sources.
+     * </p>
+     * 
+     * @param malwareProtection
+     *        Describes the configuration of Malware Protection data sources.
+     */
+
+    public void setMalwareProtection(MalwareProtectionConfigurationResult malwareProtection) {
+        this.malwareProtection = malwareProtection;
+    }
+
+    /**
+     * <p>
+     * Describes the configuration of Malware Protection data sources.
+     * </p>
+     * 
+     * @return Describes the configuration of Malware Protection data sources.
+     */
+
+    public MalwareProtectionConfigurationResult getMalwareProtection() {
+        return this.malwareProtection;
+    }
+
+    /**
+     * <p>
+     * Describes the configuration of Malware Protection data sources.
+     * </p>
+     * 
+     * @param malwareProtection
+     *        Describes the configuration of Malware Protection data sources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfigurationsResult withMalwareProtection(MalwareProtectionConfigurationResult malwareProtection) {
+        setMalwareProtection(malwareProtection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +326,9 @@ public class DataSourceConfigurationsResult implements Serializable, Cloneable, 
         if (getS3Logs() != null)
             sb.append("S3Logs: ").append(getS3Logs()).append(",");
         if (getKubernetes() != null)
-            sb.append("Kubernetes: ").append(getKubernetes());
+            sb.append("Kubernetes: ").append(getKubernetes()).append(",");
+        if (getMalwareProtection() != null)
+            sb.append("MalwareProtection: ").append(getMalwareProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +363,10 @@ public class DataSourceConfigurationsResult implements Serializable, Cloneable, 
             return false;
         if (other.getKubernetes() != null && other.getKubernetes().equals(this.getKubernetes()) == false)
             return false;
+        if (other.getMalwareProtection() == null ^ this.getMalwareProtection() == null)
+            return false;
+        if (other.getMalwareProtection() != null && other.getMalwareProtection().equals(this.getMalwareProtection()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class DataSourceConfigurationsResult implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getFlowLogs() == null) ? 0 : getFlowLogs().hashCode());
         hashCode = prime * hashCode + ((getS3Logs() == null) ? 0 : getS3Logs().hashCode());
         hashCode = prime * hashCode + ((getKubernetes() == null) ? 0 : getKubernetes().hashCode());
+        hashCode = prime * hashCode + ((getMalwareProtection() == null) ? 0 : getMalwareProtection().hashCode());
         return hashCode;
     }
 

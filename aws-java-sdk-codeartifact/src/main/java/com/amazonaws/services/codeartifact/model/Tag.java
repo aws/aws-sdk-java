@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag is a key-value pair that can be used to manage, search for, or filter resources in AWS CodeArtifact.
+ * A tag is a key-value pair that can be used to manage, search for, or filter resources in CodeArtifact.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/Tag" target="_top">AWS API

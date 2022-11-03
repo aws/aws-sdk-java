@@ -27,6 +27,27 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side
+     * evaluation allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href
+     * ="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature
+     * </a> operation. This mitigates the latency and availability risks that come with an API call. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     * > Client-side evaluation - powered by AppConfig.</a>
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application and environment that will
+     * be used as for client-side evaluation.
+     * </p>
+     * <p>
+     * To create a project that uses client-side evaluation, you must have the
+     * <code>evidently:ExportProjectAsConfiguration</code> permission.
+     * </p>
+     */
+    private ProjectAppConfigResourceConfig appConfigResource;
+    /**
+     * <p>
      * A structure that contains information about where Evidently is to store evaluation events for longer term
      * storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them
      * to produce metrics and other experiment results that you can view.
@@ -63,6 +84,131 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </pre>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side
+     * evaluation allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href
+     * ="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature
+     * </a> operation. This mitigates the latency and availability risks that come with an API call. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     * > Client-side evaluation - powered by AppConfig.</a>
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application and environment that will
+     * be used as for client-side evaluation.
+     * </p>
+     * <p>
+     * To create a project that uses client-side evaluation, you must have the
+     * <code>evidently:ExportProjectAsConfiguration</code> permission.
+     * </p>
+     * 
+     * @param appConfigResource
+     *        Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side
+     *        evaluation allows your application to assign variations to user sessions locally instead of by calling the
+     *        <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">
+     *        EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API
+     *        call. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     *        > Client-side evaluation - powered by AppConfig.</a> </p>
+     *        <p>
+     *        This parameter is a structure that contains information about the AppConfig application and environment
+     *        that will be used as for client-side evaluation.
+     *        </p>
+     *        <p>
+     *        To create a project that uses client-side evaluation, you must have the
+     *        <code>evidently:ExportProjectAsConfiguration</code> permission.
+     */
+
+    public void setAppConfigResource(ProjectAppConfigResourceConfig appConfigResource) {
+        this.appConfigResource = appConfigResource;
+    }
+
+    /**
+     * <p>
+     * Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side
+     * evaluation allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href
+     * ="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature
+     * </a> operation. This mitigates the latency and availability risks that come with an API call. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     * > Client-side evaluation - powered by AppConfig.</a>
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application and environment that will
+     * be used as for client-side evaluation.
+     * </p>
+     * <p>
+     * To create a project that uses client-side evaluation, you must have the
+     * <code>evidently:ExportProjectAsConfiguration</code> permission.
+     * </p>
+     * 
+     * @return Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>.
+     *         Client-side evaluation allows your application to assign variations to user sessions locally instead of
+     *         by calling the <a
+     *         href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     *         >EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API
+     *         call. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     *         > Client-side evaluation - powered by AppConfig.</a> </p>
+     *         <p>
+     *         This parameter is a structure that contains information about the AppConfig application and environment
+     *         that will be used as for client-side evaluation.
+     *         </p>
+     *         <p>
+     *         To create a project that uses client-side evaluation, you must have the
+     *         <code>evidently:ExportProjectAsConfiguration</code> permission.
+     */
+
+    public ProjectAppConfigResourceConfig getAppConfigResource() {
+        return this.appConfigResource;
+    }
+
+    /**
+     * <p>
+     * Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side
+     * evaluation allows your application to assign variations to user sessions locally instead of by calling the <a
+     * href
+     * ="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature
+     * </a> operation. This mitigates the latency and availability risks that come with an API call. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     * > Client-side evaluation - powered by AppConfig.</a>
+     * </p>
+     * <p>
+     * This parameter is a structure that contains information about the AppConfig application and environment that will
+     * be used as for client-side evaluation.
+     * </p>
+     * <p>
+     * To create a project that uses client-side evaluation, you must have the
+     * <code>evidently:ExportProjectAsConfiguration</code> permission.
+     * </p>
+     * 
+     * @param appConfigResource
+     *        Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side
+     *        evaluation allows your application to assign variations to user sessions locally instead of by calling the
+     *        <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">
+     *        EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API
+     *        call. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"
+     *        > Client-side evaluation - powered by AppConfig.</a> </p>
+     *        <p>
+     *        This parameter is a structure that contains information about the AppConfig application and environment
+     *        that will be used as for client-side evaluation.
+     *        </p>
+     *        <p>
+     *        To create a project that uses client-side evaluation, you must have the
+     *        <code>evidently:ExportProjectAsConfiguration</code> permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withAppConfigResource(ProjectAppConfigResourceConfig appConfigResource) {
+        setAppConfigResource(appConfigResource);
+        return this;
+    }
 
     /**
      * <p>
@@ -343,6 +489,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAppConfigResource() != null)
+            sb.append("AppConfigResource: ").append(getAppConfigResource()).append(",");
         if (getDataDelivery() != null)
             sb.append("DataDelivery: ").append(getDataDelivery()).append(",");
         if (getDescription() != null)
@@ -365,6 +513,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof CreateProjectRequest == false)
             return false;
         CreateProjectRequest other = (CreateProjectRequest) obj;
+        if (other.getAppConfigResource() == null ^ this.getAppConfigResource() == null)
+            return false;
+        if (other.getAppConfigResource() != null && other.getAppConfigResource().equals(this.getAppConfigResource()) == false)
+            return false;
         if (other.getDataDelivery() == null ^ this.getDataDelivery() == null)
             return false;
         if (other.getDataDelivery() != null && other.getDataDelivery().equals(this.getDataDelivery()) == false)
@@ -389,6 +541,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAppConfigResource() == null) ? 0 : getAppConfigResource().hashCode());
         hashCode = prime * hashCode + ((getDataDelivery() == null) ? 0 : getDataDelivery().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+ * This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the
+ * operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

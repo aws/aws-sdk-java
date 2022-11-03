@@ -31,6 +31,8 @@ public class CreateAttendeeRequestMarshaller {
             .marshallLocationName("MeetingId").build();
     private static final MarshallingInfo<String> EXTERNALUSERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalUserId").build();
+    private static final MarshallingInfo<StructuredPojo> CAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Capabilities").build();
 
     private static final CreateAttendeeRequestMarshaller instance = new CreateAttendeeRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CreateAttendeeRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAttendeeRequest.getMeetingId(), MEETINGID_BINDING);
             protocolMarshaller.marshall(createAttendeeRequest.getExternalUserId(), EXTERNALUSERID_BINDING);
+            protocolMarshaller.marshall(createAttendeeRequest.getCapabilities(), CAPABILITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

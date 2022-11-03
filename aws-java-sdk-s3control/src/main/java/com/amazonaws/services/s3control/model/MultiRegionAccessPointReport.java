@@ -54,7 +54,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      * The current status of the Multi-Region Access Point.
      * </p>
      * <p>
-     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating
+     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating
      * and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry
      * creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status
      * of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region
@@ -238,7 +238,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      * The current status of the Multi-Region Access Point.
      * </p>
      * <p>
-     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating
+     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating
      * and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry
      * creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status
      * of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region
@@ -249,7 +249,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      *        The current status of the Multi-Region Access Point.</p>
      *        <p>
      *        <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is
-     *        propogating and being completed. If a Multi-Region Access Point has a status of
+     *        propagating and being completed. If a Multi-Region Access Point has a status of
      *        <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access
      *        Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a
      *        delete request to finish the deletion of the Multi-Region Access Point.
@@ -265,7 +265,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      * The current status of the Multi-Region Access Point.
      * </p>
      * <p>
-     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating
+     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating
      * and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry
      * creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status
      * of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region
@@ -275,7 +275,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      * @return The current status of the Multi-Region Access Point.</p>
      *         <p>
      *         <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is
-     *         propogating and being completed. If a Multi-Region Access Point has a status of
+     *         propagating and being completed. If a Multi-Region Access Point has a status of
      *         <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region
      *         Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can
      *         retry a delete request to finish the deletion of the Multi-Region Access Point.
@@ -291,7 +291,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      * The current status of the Multi-Region Access Point.
      * </p>
      * <p>
-     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating
+     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating
      * and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry
      * creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status
      * of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region
@@ -302,7 +302,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      *        The current status of the Multi-Region Access Point.</p>
      *        <p>
      *        <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is
-     *        propogating and being completed. If a Multi-Region Access Point has a status of
+     *        propagating and being completed. If a Multi-Region Access Point has a status of
      *        <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access
      *        Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a
      *        delete request to finish the deletion of the Multi-Region Access Point.
@@ -320,7 +320,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      * The current status of the Multi-Region Access Point.
      * </p>
      * <p>
-     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating
+     * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating
      * and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry
      * creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status
      * of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region
@@ -331,7 +331,7 @@ public class MultiRegionAccessPointReport implements Serializable, Cloneable {
      *        The current status of the Multi-Region Access Point.</p>
      *        <p>
      *        <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is
-     *        propogating and being completed. If a Multi-Region Access Point has a status of
+     *        propagating and being completed. If a Multi-Region Access Point has a status of
      *        <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access
      *        Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a
      *        delete request to finish the deletion of the Multi-Region Access Point.

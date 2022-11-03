@@ -31,13 +31,19 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     /**
      * <p>
      * Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job
-     * it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it
-     * to <code>Random</code>. For information about search strategies, see <a
+     * it launches. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.
      * </p>
      */
     private String strategy;
+    /**
+     * <p>
+     * The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if
+     * <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.
+     * </p>
+     */
+    private HyperParameterTuningJobStrategyConfig strategyConfig;
     /**
      * <p>
      * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
@@ -59,8 +65,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     private ParameterRanges parameterRanges;
     /**
      * <p>
-     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be
-     * one of the following values (the default value is <code>OFF</code>):
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the
+     * <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter
+     * can take on one of the following values (the default value is <code>OFF</code>):
      * </p>
      * <dl>
      * <dt>OFF</dt>
@@ -91,16 +99,14 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     /**
      * <p>
      * Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job
-     * it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it
-     * to <code>Random</code>. For information about search strategies, see <a
+     * it launches. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @param strategy
      *        Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the
-     *        training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To
-     *        randomly search, set it to <code>Random</code>. For information about search strategies, see <a
+     *        training job it launches. For information about search strategies, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      *        Hyperparameter Tuning Works</a>.
      * @see HyperParameterTuningJobStrategyType
@@ -113,15 +119,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     /**
      * <p>
      * Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job
-     * it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it
-     * to <code>Random</code>. For information about search strategies, see <a
+     * it launches. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @return Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the
-     *         training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To
-     *         randomly search, set it to <code>Random</code>. For information about search strategies, see <a
+     *         training job it launches. For information about search strategies, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      *         Hyperparameter Tuning Works</a>.
      * @see HyperParameterTuningJobStrategyType
@@ -134,16 +138,14 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     /**
      * <p>
      * Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job
-     * it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it
-     * to <code>Random</code>. For information about search strategies, see <a
+     * it launches. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @param strategy
      *        Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the
-     *        training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To
-     *        randomly search, set it to <code>Random</code>. For information about search strategies, see <a
+     *        training job it launches. For information about search strategies, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      *        Hyperparameter Tuning Works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -158,16 +160,14 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     /**
      * <p>
      * Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job
-     * it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it
-     * to <code>Random</code>. For information about search strategies, see <a
+     * it launches. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @param strategy
      *        Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the
-     *        training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To
-     *        randomly search, set it to <code>Random</code>. For information about search strategies, see <a
+     *        training job it launches. For information about search strategies, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      *        Hyperparameter Tuning Works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -176,6 +176,53 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     public HyperParameterTuningJobConfig withStrategy(HyperParameterTuningJobStrategyType strategy) {
         this.strategy = strategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if
+     * <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.
+     * </p>
+     * 
+     * @param strategyConfig
+     *        The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided
+     *        only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.
+     */
+
+    public void setStrategyConfig(HyperParameterTuningJobStrategyConfig strategyConfig) {
+        this.strategyConfig = strategyConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if
+     * <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.
+     * </p>
+     * 
+     * @return The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided
+     *         only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>
+     *         .
+     */
+
+    public HyperParameterTuningJobStrategyConfig getStrategyConfig() {
+        return this.strategyConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if
+     * <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.
+     * </p>
+     * 
+     * @param strategyConfig
+     *        The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided
+     *        only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTuningJobConfig withStrategyConfig(HyperParameterTuningJobStrategyConfig strategyConfig) {
+        setStrategyConfig(strategyConfig);
         return this;
     }
 
@@ -313,8 +360,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be
-     * one of the following values (the default value is <code>OFF</code>):
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the
+     * <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter
+     * can take on one of the following values (the default value is <code>OFF</code>):
      * </p>
      * <dl>
      * <dt>OFF</dt>
@@ -335,8 +384,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * </dl>
      * 
      * @param trainingJobEarlyStoppingType
-     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This
-     *        can be one of the following values (the default value is <code>OFF</code>):</p>
+     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job.
+     *        Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     *        <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This
+     *        parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
      *        <dl>
      *        <dt>OFF</dt>
      *        <dd>
@@ -362,8 +413,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be
-     * one of the following values (the default value is <code>OFF</code>):
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the
+     * <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter
+     * can take on one of the following values (the default value is <code>OFF</code>):
      * </p>
      * <dl>
      * <dt>OFF</dt>
@@ -383,8 +436,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * </dd>
      * </dl>
      * 
-     * @return Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This
-     *         can be one of the following values (the default value is <code>OFF</code>):</p>
+     * @return Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job.
+     *         Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     *         <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This
+     *         parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
      *         <dl>
      *         <dt>OFF</dt>
      *         <dd>
@@ -410,8 +465,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be
-     * one of the following values (the default value is <code>OFF</code>):
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the
+     * <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter
+     * can take on one of the following values (the default value is <code>OFF</code>):
      * </p>
      * <dl>
      * <dt>OFF</dt>
@@ -432,8 +489,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * </dl>
      * 
      * @param trainingJobEarlyStoppingType
-     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This
-     *        can be one of the following values (the default value is <code>OFF</code>):</p>
+     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job.
+     *        Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     *        <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This
+     *        parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
      *        <dl>
      *        <dt>OFF</dt>
      *        <dd>
@@ -461,8 +520,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be
-     * one of the following values (the default value is <code>OFF</code>):
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the
+     * <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter
+     * can take on one of the following values (the default value is <code>OFF</code>):
      * </p>
      * <dl>
      * <dt>OFF</dt>
@@ -483,8 +544,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * </dl>
      * 
      * @param trainingJobEarlyStoppingType
-     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This
-     *        can be one of the following values (the default value is <code>OFF</code>):</p>
+     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job.
+     *        Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism,
+     *        <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This
+     *        parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
      *        <dl>
      *        <dt>OFF</dt>
      *        <dd>
@@ -564,6 +627,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         sb.append("{");
         if (getStrategy() != null)
             sb.append("Strategy: ").append(getStrategy()).append(",");
+        if (getStrategyConfig() != null)
+            sb.append("StrategyConfig: ").append(getStrategyConfig()).append(",");
         if (getHyperParameterTuningJobObjective() != null)
             sb.append("HyperParameterTuningJobObjective: ").append(getHyperParameterTuningJobObjective()).append(",");
         if (getResourceLimits() != null)
@@ -591,6 +656,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         if (other.getStrategy() == null ^ this.getStrategy() == null)
             return false;
         if (other.getStrategy() != null && other.getStrategy().equals(this.getStrategy()) == false)
+            return false;
+        if (other.getStrategyConfig() == null ^ this.getStrategyConfig() == null)
+            return false;
+        if (other.getStrategyConfig() != null && other.getStrategyConfig().equals(this.getStrategyConfig()) == false)
             return false;
         if (other.getHyperParameterTuningJobObjective() == null ^ this.getHyperParameterTuningJobObjective() == null)
             return false;
@@ -622,6 +691,7 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStrategy() == null) ? 0 : getStrategy().hashCode());
+        hashCode = prime * hashCode + ((getStrategyConfig() == null) ? 0 : getStrategyConfig().hashCode());
         hashCode = prime * hashCode + ((getHyperParameterTuningJobObjective() == null) ? 0 : getHyperParameterTuningJobObjective().hashCode());
         hashCode = prime * hashCode + ((getResourceLimits() == null) ? 0 : getResourceLimits().hashCode());
         hashCode = prime * hashCode + ((getParameterRanges() == null) ? 0 : getParameterRanges().hashCode());

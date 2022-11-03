@@ -28,28 +28,28 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AnalyzedResourceMarshaller {
 
-    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("actions").build();
-    private static final MarshallingInfo<java.util.Date> ANALYZEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzedAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("error").build();
-    private static final MarshallingInfo<Boolean> ISPUBLIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isPublic").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
-    private static final MarshallingInfo<String> RESOURCEOWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> ANALYZEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Boolean> ISPUBLIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isPublic").build();
+    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("actions").build();
     private static final MarshallingInfo<List> SHAREDVIA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sharedVia").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
-    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> RESOURCEOWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
+    private static final MarshallingInfo<String> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("error").build();
 
     private static final AnalyzedResourceMarshaller instance = new AnalyzedResourceMarshaller();
 
@@ -67,17 +67,17 @@ public class AnalyzedResourceMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(analyzedResource.getActions(), ACTIONS_BINDING);
-            protocolMarshaller.marshall(analyzedResource.getAnalyzedAt(), ANALYZEDAT_BINDING);
-            protocolMarshaller.marshall(analyzedResource.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(analyzedResource.getError(), ERROR_BINDING);
-            protocolMarshaller.marshall(analyzedResource.getIsPublic(), ISPUBLIC_BINDING);
             protocolMarshaller.marshall(analyzedResource.getResourceArn(), RESOURCEARN_BINDING);
-            protocolMarshaller.marshall(analyzedResource.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(analyzedResource.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getAnalyzedAt(), ANALYZEDAT_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getIsPublic(), ISPUBLIC_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(analyzedResource.getSharedVia(), SHAREDVIA_BINDING);
             protocolMarshaller.marshall(analyzedResource.getStatus(), STATUS_BINDING);
-            protocolMarshaller.marshall(analyzedResource.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getError(), ERROR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

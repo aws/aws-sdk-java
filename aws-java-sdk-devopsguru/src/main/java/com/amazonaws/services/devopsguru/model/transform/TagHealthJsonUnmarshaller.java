@@ -60,6 +60,10 @@ public class TagHealthJsonUnmarshaller implements Unmarshaller<TagHealth, JsonUn
                     context.nextToken();
                     tagHealth.setInsight(InsightHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AnalyzedResourceCount", targetDepth)) {
+                    context.nextToken();
+                    tagHealth.setAnalyzedResourceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

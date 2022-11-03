@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a frequently asked questions and answer contained in an index.
+ * Summary information for frequently asked questions and answers included in an index.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FaqSummary" target="_top">AWS API

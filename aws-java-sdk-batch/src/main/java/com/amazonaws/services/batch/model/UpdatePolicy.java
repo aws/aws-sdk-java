@@ -39,7 +39,7 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
     private Boolean terminateJobsOnUpdate;
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      */
@@ -107,12 +107,12 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      * 
      * @param jobExecutionTimeoutMinutes
-     *        Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default
+     *        Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default
      *        value is 30.
      */
 
@@ -122,11 +122,11 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      * 
-     * @return Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The
+     * @return Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The
      *         default value is 30.
      */
 
@@ -136,12 +136,12 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      * 
      * @param jobExecutionTimeoutMinutes
-     *        Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default
+     *        Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default
      *        value is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,10 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The base URL of the host or path of the segment delivery server that you're using to serve segments. This is
- * typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the
- * protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as
- * /some/path*.
+ * The segment delivery configuration settings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SegmentDeliveryConfiguration"
@@ -35,8 +32,8 @@ public class SegmentDeliveryConfiguration implements Serializable, Cloneable, St
      * <p>
      * The base URL of the host or path of the segment delivery server that you're using to serve segments. This is
      * typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include
-     * the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as
-     * /some/path*.
+     * the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative
+     * path, such as <code>/some/path*</code>.
      * </p>
      */
     private String baseUrl;
@@ -51,15 +48,15 @@ public class SegmentDeliveryConfiguration implements Serializable, Cloneable, St
      * <p>
      * The base URL of the host or path of the segment delivery server that you're using to serve segments. This is
      * typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include
-     * the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as
-     * /some/path*.
+     * the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative
+     * path, such as <code>/some/path*</code>.
      * </p>
      * 
      * @param baseUrl
      *        The base URL of the host or path of the segment delivery server that you're using to serve segments. This
      *        is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL
-     *        include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative
-     *        path, such as /some/path*.
+     *        include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify
+     *        the relative path, such as <code>/some/path*</code>.
      */
 
     public void setBaseUrl(String baseUrl) {
@@ -70,14 +67,14 @@ public class SegmentDeliveryConfiguration implements Serializable, Cloneable, St
      * <p>
      * The base URL of the host or path of the segment delivery server that you're using to serve segments. This is
      * typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include
-     * the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as
-     * /some/path*.
+     * the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative
+     * path, such as <code>/some/path*</code>.
      * </p>
      * 
      * @return The base URL of the host or path of the segment delivery server that you're using to serve segments. This
      *         is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute
-     *         URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the
-     *         relative path, such as /some/path*.
+     *         URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL
+     *         specify the relative path, such as <code>/some/path*</code>.
      */
 
     public String getBaseUrl() {
@@ -88,15 +85,15 @@ public class SegmentDeliveryConfiguration implements Serializable, Cloneable, St
      * <p>
      * The base URL of the host or path of the segment delivery server that you're using to serve segments. This is
      * typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include
-     * the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as
-     * /some/path*.
+     * the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative
+     * path, such as <code>/some/path*</code>.
      * </p>
      * 
      * @param baseUrl
      *        The base URL of the host or path of the segment delivery server that you're using to serve segments. This
      *        is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL
-     *        include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative
-     *        path, such as /some/path*.
+     *        include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify
+     *        the relative path, such as <code>/some/path*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

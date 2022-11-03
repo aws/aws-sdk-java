@@ -31,7 +31,7 @@ public class DescribeThesaurusResult extends com.amazonaws.AmazonWebServiceResul
     private String id;
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      */
     private String indexId;
@@ -148,11 +148,11 @@ public class DescribeThesaurusResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to describe.
+     *        The identifier of the index for the thesaurus.
      */
 
     public void setIndexId(String indexId) {
@@ -161,10 +161,10 @@ public class DescribeThesaurusResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
-     * @return The identifier of the index associated with the thesaurus to describe.
+     * @return The identifier of the index for the thesaurus.
      */
 
     public String getIndexId() {
@@ -173,11 +173,11 @@ public class DescribeThesaurusResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to describe.
+     *        The identifier of the index for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

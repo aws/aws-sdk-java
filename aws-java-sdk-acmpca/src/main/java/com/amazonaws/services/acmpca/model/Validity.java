@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit
  * date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in
  * days, months, or years. For more information, see <a
- * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
+ * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
  * </p>
  * <p>
  * ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the

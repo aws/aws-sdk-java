@@ -77,6 +77,13 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private RemoteAccountDetails remoteAccountDetails;
+    /**
+     * <p>
+     * The details of the Amazon Web Services account that made the API call. This field identifies the resources that
+     * were affected by this API call.
+     * </p>
+     */
+    private java.util.Map<String, String> affectedResources;
 
     /**
      * <p>
@@ -405,6 +412,80 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The details of the Amazon Web Services account that made the API call. This field identifies the resources that
+     * were affected by this API call.
+     * </p>
+     * 
+     * @return The details of the Amazon Web Services account that made the API call. This field identifies the
+     *         resources that were affected by this API call.
+     */
+
+    public java.util.Map<String, String> getAffectedResources() {
+        return affectedResources;
+    }
+
+    /**
+     * <p>
+     * The details of the Amazon Web Services account that made the API call. This field identifies the resources that
+     * were affected by this API call.
+     * </p>
+     * 
+     * @param affectedResources
+     *        The details of the Amazon Web Services account that made the API call. This field identifies the resources
+     *        that were affected by this API call.
+     */
+
+    public void setAffectedResources(java.util.Map<String, String> affectedResources) {
+        this.affectedResources = affectedResources;
+    }
+
+    /**
+     * <p>
+     * The details of the Amazon Web Services account that made the API call. This field identifies the resources that
+     * were affected by this API call.
+     * </p>
+     * 
+     * @param affectedResources
+     *        The details of the Amazon Web Services account that made the API call. This field identifies the resources
+     *        that were affected by this API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsApiCallAction withAffectedResources(java.util.Map<String, String> affectedResources) {
+        setAffectedResources(affectedResources);
+        return this;
+    }
+
+    /**
+     * Add a single AffectedResources entry
+     *
+     * @see AwsApiCallAction#withAffectedResources
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsApiCallAction addAffectedResourcesEntry(String key, String value) {
+        if (null == this.affectedResources) {
+            this.affectedResources = new java.util.HashMap<String, String>();
+        }
+        if (this.affectedResources.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.affectedResources.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AffectedResources.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsApiCallAction clearAffectedResourcesEntries() {
+        this.affectedResources = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -431,7 +512,9 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
         if (getServiceName() != null)
             sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getRemoteAccountDetails() != null)
-            sb.append("RemoteAccountDetails: ").append(getRemoteAccountDetails());
+            sb.append("RemoteAccountDetails: ").append(getRemoteAccountDetails()).append(",");
+        if (getAffectedResources() != null)
+            sb.append("AffectedResources: ").append(getAffectedResources());
         sb.append("}");
         return sb.toString();
     }
@@ -478,6 +561,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRemoteAccountDetails() != null && other.getRemoteAccountDetails().equals(this.getRemoteAccountDetails()) == false)
             return false;
+        if (other.getAffectedResources() == null ^ this.getAffectedResources() == null)
+            return false;
+        if (other.getAffectedResources() != null && other.getAffectedResources().equals(this.getAffectedResources()) == false)
+            return false;
         return true;
     }
 
@@ -494,6 +581,7 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getRemoteIpDetails() == null) ? 0 : getRemoteIpDetails().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getRemoteAccountDetails() == null) ? 0 : getRemoteAccountDetails().hashCode());
+        hashCode = prime * hashCode + ((getAffectedResources() == null) ? 0 : getAffectedResources().hashCode());
         return hashCode;
     }
 

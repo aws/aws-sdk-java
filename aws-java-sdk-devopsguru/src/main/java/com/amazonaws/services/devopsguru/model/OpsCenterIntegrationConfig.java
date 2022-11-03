@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager
- * OpsCenter for each created insight.
+ * OpsCenter for each created insight. You can use this to update the configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/OpsCenterIntegrationConfig"

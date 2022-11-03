@@ -284,6 +284,9 @@
         "name" : "ApSoutheast2",
         "value" : "ap-southeast-2"
       }, {
+        "name" : "ApSoutheast3",
+        "value" : "ap-southeast-3"
+      }, {
         "name" : "ApNortheast1",
         "value" : "ap-northeast-1"
       }, {
@@ -313,6 +316,12 @@
       }, {
         "name" : "EuSouth1",
         "value" : "eu-south-1"
+      }, {
+        "name" : "EuSouth2",
+        "value" : "eu-south-2"
+      }, {
+        "name" : "MeCentral1",
+        "value" : "me-central-1"
       }, {
         "name" : "MeSouth1",
         "value" : "me-south-1"

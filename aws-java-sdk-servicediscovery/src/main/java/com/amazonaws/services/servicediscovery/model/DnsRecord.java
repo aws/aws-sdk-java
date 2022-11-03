@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you
+ * A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you
  * register an instance.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
@@ -62,7 +62,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
+     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
      * <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
@@ -77,19 +77,19 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>A</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
      * </dd>
      * <dt>AAAA</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
      * </dd>
      * <dt>CNAME</dt>
      * <dd>
      * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -117,7 +117,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>SRV</dt>
      * <dd>
      * <p>
-     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
      * following values:
      * </p>
      * <p>
@@ -201,7 +201,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
+     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
      * alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -213,7 +213,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
@@ -244,7 +244,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
+     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
      * <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
@@ -259,19 +259,19 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>A</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
      * </dd>
      * <dt>AAAA</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
      * </dd>
      * <dt>CNAME</dt>
      * <dd>
      * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -299,7 +299,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>SRV</dt>
      * <dd>
      * <p>
-     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
      * following values:
      * </p>
      * <p>
@@ -377,7 +377,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param type
-     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *        queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *        <ul>
      *        <li>
@@ -407,7 +407,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *        If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
      *        <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        <p>
@@ -422,20 +422,20 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <dt>A</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *        </p>
      *        </dd>
      *        <dt>AAAA</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv6 format, such as
+     *        Route 53 returns the IP address of the resource in IPv6 format, such as
      *        2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *        </p>
      *        </dd>
      *        <dt>CNAME</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -463,7 +463,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <dt>SRV</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
      *        the following values:
      *        </p>
      *        <p>
@@ -550,7 +550,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
@@ -581,7 +581,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
+     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
      * <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
@@ -596,19 +596,19 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>A</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
      * </dd>
      * <dt>AAAA</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
      * </dd>
      * <dt>CNAME</dt>
      * <dd>
      * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -636,7 +636,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>SRV</dt>
      * <dd>
      * <p>
-     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
      * following values:
      * </p>
      * <p>
@@ -713,7 +713,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </dd>
      * </dl>
      * 
-     * @return The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     * @return The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *         queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *         <ul>
      *         <li>
@@ -743,7 +743,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *         If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
      *         <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *         </p>
      *         <p>
@@ -758,20 +758,20 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         <dt>A</dt>
      *         <dd>
      *         <p>
-     *         Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     *         Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *         </p>
      *         </dd>
      *         <dt>AAAA</dt>
      *         <dd>
      *         <p>
-     *         Route 53 returns the IP address of the resource in IPv6 format, such as
+     *         Route 53 returns the IP address of the resource in IPv6 format, such as
      *         2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *         </p>
      *         </dd>
      *         <dt>CNAME</dt>
      *         <dd>
      *         <p>
-     *         Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *         Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -799,7 +799,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         <dt>SRV</dt>
      *         <dd>
      *         <p>
-     *         Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *         Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
      *         the following values:
      *         </p>
      *         <p>
@@ -886,7 +886,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
@@ -917,7 +917,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
+     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
      * <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
@@ -932,19 +932,19 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>A</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
      * </dd>
      * <dt>AAAA</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
      * </dd>
      * <dt>CNAME</dt>
      * <dd>
      * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -972,7 +972,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>SRV</dt>
      * <dd>
      * <p>
-     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
      * following values:
      * </p>
      * <p>
@@ -1050,7 +1050,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param type
-     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *        queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *        <ul>
      *        <li>
@@ -1080,7 +1080,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *        If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
      *        <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        <p>
@@ -1095,20 +1095,20 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <dt>A</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *        </p>
      *        </dd>
      *        <dt>AAAA</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv6 format, such as
+     *        Route 53 returns the IP address of the resource in IPv6 format, such as
      *        2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *        </p>
      *        </dd>
      *        <dt>CNAME</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -1136,7 +1136,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <dt>SRV</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
      *        the following values:
      *        </p>
      *        <p>
@@ -1225,7 +1225,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
@@ -1256,7 +1256,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
+     * If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
      * <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
@@ -1271,19 +1271,19 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>A</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
      * </dd>
      * <dt>AAAA</dt>
      * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
      * </dd>
      * <dt>CNAME</dt>
      * <dd>
      * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -1311,7 +1311,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <dt>SRV</dt>
      * <dd>
      * <p>
-     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
      * following values:
      * </p>
      * <p>
@@ -1389,7 +1389,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param type
-     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *        queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *        <ul>
      *        <li>
@@ -1419,7 +1419,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *        If you want Cloud Map to create a Route 53 alias record when you register an instance, specify
      *        <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        <p>
@@ -1434,20 +1434,20 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <dt>A</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *        </p>
      *        </dd>
      *        <dt>AAAA</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv6 format, such as
+     *        Route 53 returns the IP address of the resource in IPv6 format, such as
      *        2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *        </p>
      *        </dd>
      *        <dt>CNAME</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -1475,7 +1475,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <dt>SRV</dt>
      *        <dd>
      *        <p>
-     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
      *        the following values:
      *        </p>
      *        <p>
@@ -1568,7 +1568,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
+     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
      * alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -1580,7 +1580,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
      *        <note>
      *        <p>
-     *        Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that
+     *        Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that
      *        an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you
      *        submit a <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
@@ -1599,7 +1599,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
+     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
      * alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -1610,7 +1610,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * @return The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
      *         <note>
      *         <p>
-     *         Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that
+     *         Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that
      *         an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you
      *         submit a <a
      *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
@@ -1629,7 +1629,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
+     * Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an
      * alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -1641,7 +1641,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
      *        <note>
      *        <p>
-     *        Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that
+     *        Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that
      *        an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you
      *        submit a <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>

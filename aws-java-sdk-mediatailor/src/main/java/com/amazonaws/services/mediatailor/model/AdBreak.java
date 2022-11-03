@@ -30,7 +30,7 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     * The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * </p>
      */
     private String messageType;
@@ -49,19 +49,33 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
     private SlateSource slate;
     /**
      * <p>
-     * This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     * splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     * This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using
+     * <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      * </p>
      */
     private SpliceInsertMessage spliceInsertMessage;
+    /**
+     * <p>
+     * Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.
+     * </p>
+     * <p>
+     * Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     * <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad
+     * break.
+     * </p>
+     * <p>
+     * See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     * </p>
+     */
+    private TimeSignalMessage timeSignalMessage;
 
     /**
      * <p>
-     * The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     * The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * </p>
      * 
      * @param messageType
-     *        The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     *        The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * @see MessageType
      */
 
@@ -71,10 +85,10 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     * The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * </p>
      * 
-     * @return The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     * @return The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * @see MessageType
      */
 
@@ -84,11 +98,11 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     * The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * </p>
      * 
      * @param messageType
-     *        The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     *        The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -100,11 +114,11 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     * The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * </p>
      * 
      * @param messageType
-     *        The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+     *        The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -202,13 +216,13 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     * splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     * This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using
+     * <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      * </p>
      * 
      * @param spliceInsertMessage
-     *        This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     *        splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     *        This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information
+     *        about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      */
 
     public void setSpliceInsertMessage(SpliceInsertMessage spliceInsertMessage) {
@@ -217,12 +231,12 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     * splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     * This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using
+     * <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      * </p>
      * 
-     * @return This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     *         splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     * @return This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information
+     *         about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      */
 
     public SpliceInsertMessage getSpliceInsertMessage() {
@@ -231,18 +245,103 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     * splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     * This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using
+     * <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      * </p>
      * 
      * @param spliceInsertMessage
-     *        This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using
-     *        splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+     *        This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information
+     *        about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdBreak withSpliceInsertMessage(SpliceInsertMessage spliceInsertMessage) {
         setSpliceInsertMessage(spliceInsertMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.
+     * </p>
+     * <p>
+     * Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     * <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad
+     * break.
+     * </p>
+     * <p>
+     * See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     * </p>
+     * 
+     * @param timeSignalMessage
+     *        Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
+     *        <p>
+     *        Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     *        <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the
+     *        ad break.
+     *        </p>
+     *        <p>
+     *        See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     */
+
+    public void setTimeSignalMessage(TimeSignalMessage timeSignalMessage) {
+        this.timeSignalMessage = timeSignalMessage;
+    }
+
+    /**
+     * <p>
+     * Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.
+     * </p>
+     * <p>
+     * Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     * <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad
+     * break.
+     * </p>
+     * <p>
+     * See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     * </p>
+     * 
+     * @return Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
+     *         <p>
+     *         Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     *         <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about
+     *         the ad break.
+     *         </p>
+     *         <p>
+     *         See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     */
+
+    public TimeSignalMessage getTimeSignalMessage() {
+        return this.timeSignalMessage;
+    }
+
+    /**
+     * <p>
+     * Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.
+     * </p>
+     * <p>
+     * Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     * <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad
+     * break.
+     * </p>
+     * <p>
+     * See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     * </p>
+     * 
+     * @param timeSignalMessage
+     *        Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
+     *        <p>
+     *        Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a
+     *        <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the
+     *        ad break.
+     *        </p>
+     *        <p>
+     *        See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdBreak withTimeSignalMessage(TimeSignalMessage timeSignalMessage) {
+        setTimeSignalMessage(timeSignalMessage);
         return this;
     }
 
@@ -265,7 +364,9 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
         if (getSlate() != null)
             sb.append("Slate: ").append(getSlate()).append(",");
         if (getSpliceInsertMessage() != null)
-            sb.append("SpliceInsertMessage: ").append(getSpliceInsertMessage());
+            sb.append("SpliceInsertMessage: ").append(getSpliceInsertMessage()).append(",");
+        if (getTimeSignalMessage() != null)
+            sb.append("TimeSignalMessage: ").append(getTimeSignalMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +397,10 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSpliceInsertMessage() != null && other.getSpliceInsertMessage().equals(this.getSpliceInsertMessage()) == false)
             return false;
+        if (other.getTimeSignalMessage() == null ^ this.getTimeSignalMessage() == null)
+            return false;
+        if (other.getTimeSignalMessage() != null && other.getTimeSignalMessage().equals(this.getTimeSignalMessage()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +413,7 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOffsetMillis() == null) ? 0 : getOffsetMillis().hashCode());
         hashCode = prime * hashCode + ((getSlate() == null) ? 0 : getSlate().hashCode());
         hashCode = prime * hashCode + ((getSpliceInsertMessage() == null) ? 0 : getSpliceInsertMessage().hashCode());
+        hashCode = prime * hashCode + ((getTimeSignalMessage() == null) ? 0 : getTimeSignalMessage().hashCode());
         return hashCode;
     }
 

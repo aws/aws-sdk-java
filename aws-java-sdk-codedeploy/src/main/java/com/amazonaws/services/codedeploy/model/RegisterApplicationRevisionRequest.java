@@ -30,7 +30,7 @@ public class RegisterApplicationRevisionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      */
     private String applicationName;
@@ -49,11 +49,11 @@ public class RegisterApplicationRevisionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -62,10 +62,10 @@ public class RegisterApplicationRevisionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * @return The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      */
 
     public String getApplicationName() {
@@ -74,11 +74,11 @@ public class RegisterApplicationRevisionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

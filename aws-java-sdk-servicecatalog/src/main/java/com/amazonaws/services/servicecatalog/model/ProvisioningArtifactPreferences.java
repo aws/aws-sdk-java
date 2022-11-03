@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For more information on maximum concurrent accounts and failure tolerance, see <a
  * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
- * >Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.
+ * >Stack set operation options</a> in the <i>CloudFormation User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactPreferences"
@@ -36,8 +36,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts
+     * can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
      * </p>
      * <p>
@@ -47,8 +47,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
     private java.util.List<String> stackSetAccounts;
     /**
      * <p>
-     * One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
+     * One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can
+     * be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      * <code>UpdateProvisioningPreferences$StackSetRegions</code>.
      * </p>
      * <p>
@@ -59,16 +59,16 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts
+     * can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * 
-     * @return One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be
-     *         scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * @return One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These
+     *         accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      *         <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -80,8 +80,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts
+     * can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
      * </p>
      * <p>
@@ -89,8 +89,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be
-     *        scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
+     *        One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These
+     *        accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      *        <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -107,8 +107,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts
+     * can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
      * </p>
      * <p>
@@ -121,8 +121,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be
-     *        scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
+     *        One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These
+     *        accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      *        <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -141,8 +141,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts
+     * can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
      * </p>
      * <p>
@@ -150,8 +150,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be
-     *        scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
+     *        One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These
+     *        accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
      *        <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -165,16 +165,16 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
+     * One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can
+     * be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      * <code>UpdateProvisioningPreferences$StackSetRegions</code>.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * 
-     * @return One or more AWS Regions where stack instances are deployed from the stack set. These regions can be
-     *         scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
+     * @return One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These
+     *         Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      *         <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -186,8 +186,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
+     * One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can
+     * be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      * <code>UpdateProvisioningPreferences$StackSetRegions</code>.
      * </p>
      * <p>
@@ -195,8 +195,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
      * </p>
      * 
      * @param stackSetRegions
-     *        One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped
-     *        in <code>ProvisioningPreferences$StackSetRegions</code> and
+     *        One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These
+     *        Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      *        <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -213,8 +213,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
+     * One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can
+     * be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      * <code>UpdateProvisioningPreferences$StackSetRegions</code>.
      * </p>
      * <p>
@@ -227,8 +227,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
      * </p>
      * 
      * @param stackSetRegions
-     *        One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped
-     *        in <code>ProvisioningPreferences$StackSetRegions</code> and
+     *        One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These
+     *        Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      *        <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -247,8 +247,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
 
     /**
      * <p>
-     * One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
+     * One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can
+     * be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      * <code>UpdateProvisioningPreferences$StackSetRegions</code>.
      * </p>
      * <p>
@@ -256,8 +256,8 @@ public class ProvisioningArtifactPreferences implements Serializable, Cloneable,
      * </p>
      * 
      * @param stackSetRegions
-     *        One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped
-     *        in <code>ProvisioningPreferences$StackSetRegions</code> and
+     *        One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These
+     *        Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
      *        <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.

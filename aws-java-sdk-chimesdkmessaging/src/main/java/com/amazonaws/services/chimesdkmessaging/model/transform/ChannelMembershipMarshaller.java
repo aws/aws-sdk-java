@@ -39,6 +39,8 @@ public class ChannelMembershipMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SUBCHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubChannelId").build();
 
     private static final ChannelMembershipMarshaller instance = new ChannelMembershipMarshaller();
 
@@ -62,6 +64,7 @@ public class ChannelMembershipMarshaller {
             protocolMarshaller.marshall(channelMembership.getChannelArn(), CHANNELARN_BINDING);
             protocolMarshaller.marshall(channelMembership.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(channelMembership.getLastUpdatedTimestamp(), LASTUPDATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(channelMembership.getSubChannelId(), SUBCHANNELID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

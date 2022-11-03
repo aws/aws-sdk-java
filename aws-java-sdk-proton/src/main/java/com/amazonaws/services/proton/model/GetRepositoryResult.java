@@ -25,18 +25,18 @@ public class GetRepositoryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The repository detail data that's returned by Proton.
+     * The repository link's detail data that's returned by Proton.
      * </p>
      */
     private Repository repository;
 
     /**
      * <p>
-     * The repository detail data that's returned by Proton.
+     * The repository link's detail data that's returned by Proton.
      * </p>
      * 
      * @param repository
-     *        The repository detail data that's returned by Proton.
+     *        The repository link's detail data that's returned by Proton.
      */
 
     public void setRepository(Repository repository) {
@@ -45,10 +45,10 @@ public class GetRepositoryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The repository detail data that's returned by Proton.
+     * The repository link's detail data that's returned by Proton.
      * </p>
      * 
-     * @return The repository detail data that's returned by Proton.
+     * @return The repository link's detail data that's returned by Proton.
      */
 
     public Repository getRepository() {
@@ -57,11 +57,11 @@ public class GetRepositoryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The repository detail data that's returned by Proton.
+     * The repository link's detail data that's returned by Proton.
      * </p>
      * 
      * @param repository
-     *        The repository detail data that's returned by Proton.
+     *        The repository link's detail data that's returned by Proton.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

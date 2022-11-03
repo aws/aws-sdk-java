@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For
+ * The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For
  * EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
  * </p>
  */

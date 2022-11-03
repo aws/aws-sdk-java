@@ -50,6 +50,8 @@ public class SendChannelMessageRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PushNotification").build();
     private static final MarshallingInfo<Map> MESSAGEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageAttributes").build();
+    private static final MarshallingInfo<String> SUBCHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubChannelId").build();
 
     private static final SendChannelMessageRequestMarshaller instance = new SendChannelMessageRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class SendChannelMessageRequestMarshaller {
             protocolMarshaller.marshall(sendChannelMessageRequest.getChimeBearer(), CHIMEBEARER_BINDING);
             protocolMarshaller.marshall(sendChannelMessageRequest.getPushNotification(), PUSHNOTIFICATION_BINDING);
             protocolMarshaller.marshall(sendChannelMessageRequest.getMessageAttributes(), MESSAGEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(sendChannelMessageRequest.getSubChannelId(), SUBCHANNELID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

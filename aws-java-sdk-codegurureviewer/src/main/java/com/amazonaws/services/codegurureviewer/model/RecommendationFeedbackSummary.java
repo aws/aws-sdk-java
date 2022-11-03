@@ -210,7 +210,7 @@ public class RecommendationFeedbackSummary implements Serializable, Cloneable, S
      * </p>
      * 
      * @param userId
-     *        The ID of the user that gave the feedback. </p>
+     *        The ID of the user that gave the feedback.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=
@@ -233,7 +233,7 @@ public class RecommendationFeedbackSummary implements Serializable, Cloneable, S
      * > Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
      * </p>
      * 
-     * @return The ID of the user that gave the feedback. </p>
+     * @return The ID of the user that gave the feedback.</p>
      *         <p>
      *         The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *         an Amazon Resource Name (ARN). For more information, see <a href=
@@ -257,7 +257,7 @@ public class RecommendationFeedbackSummary implements Serializable, Cloneable, S
      * </p>
      * 
      * @param userId
-     *        The ID of the user that gave the feedback. </p>
+     *        The ID of the user that gave the feedback.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=

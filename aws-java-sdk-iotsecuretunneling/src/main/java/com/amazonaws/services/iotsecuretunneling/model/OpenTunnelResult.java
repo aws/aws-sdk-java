@@ -31,20 +31,19 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String tunnelId;
     /**
      * <p>
-     * The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name for the tunnel.
      * </p>
      */
     private String tunnelArn;
     /**
      * <p>
-     * The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the source local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      */
     private String sourceAccessToken;
     /**
      * <p>
-     * The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      */
     private String destinationAccessToken;
@@ -91,13 +90,11 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name for the tunnel.
      * </p>
      * 
      * @param tunnelArn
-     *        The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     *        <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     *        The Amazon Resource Name for the tunnel.
      */
 
     public void setTunnelArn(String tunnelArn) {
@@ -106,12 +103,10 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name for the tunnel.
      * </p>
      * 
-     * @return The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     *         <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * @return The Amazon Resource Name for the tunnel.
      */
 
     public String getTunnelArn() {
@@ -120,13 +115,11 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     * The Amazon Resource Name for the tunnel.
      * </p>
      * 
      * @param tunnelArn
-     *        The Amazon Resource Name for the tunnel. The tunnel ARN format is
-     *        <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
+     *        The Amazon Resource Name for the tunnel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +130,11 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the source local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      * 
      * @param sourceAccessToken
-     *        The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     *        The access token the source local proxy uses to connect to IoT Secure Tunneling.
      */
 
     public void setSourceAccessToken(String sourceAccessToken) {
@@ -150,10 +143,10 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the source local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      * 
-     * @return The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     * @return The access token the source local proxy uses to connect to IoT Secure Tunneling.
      */
 
     public String getSourceAccessToken() {
@@ -162,11 +155,11 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the source local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      * 
      * @param sourceAccessToken
-     *        The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+     *        The access token the source local proxy uses to connect to IoT Secure Tunneling.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +170,11 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      * 
      * @param destinationAccessToken
-     *        The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     *        The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      */
 
     public void setDestinationAccessToken(String destinationAccessToken) {
@@ -190,10 +183,10 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      * 
-     * @return The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     * @return The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      */
 
     public String getDestinationAccessToken() {
@@ -202,11 +195,11 @@ public class OpenTunnelResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     * The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      * </p>
      * 
      * @param destinationAccessToken
-     *        The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+     *        The access token the destination local proxy uses to connect to IoT Secure Tunneling.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

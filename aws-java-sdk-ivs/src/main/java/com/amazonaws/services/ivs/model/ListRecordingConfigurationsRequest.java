@@ -27,7 +27,7 @@ public class ListRecordingConfigurationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Maximum number of recording configurations to return. Default: 50.
+     * Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      */
     private Integer maxResults;
@@ -41,11 +41,12 @@ public class ListRecordingConfigurationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Maximum number of recording configurations to return. Default: 50.
+     * Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of recording configurations to return. Default: 50.
+     *        Maximum number of recording configurations to return. Default: your service quota or 100, whichever is
+     *        smaller.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -54,10 +55,11 @@ public class ListRecordingConfigurationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Maximum number of recording configurations to return. Default: 50.
+     * Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      * 
-     * @return Maximum number of recording configurations to return. Default: 50.
+     * @return Maximum number of recording configurations to return. Default: your service quota or 100, whichever is
+     *         smaller.
      */
 
     public Integer getMaxResults() {
@@ -66,11 +68,12 @@ public class ListRecordingConfigurationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Maximum number of recording configurations to return. Default: 50.
+     * Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of recording configurations to return. Default: 50.
+     *        Maximum number of recording configurations to return. Default: your service quota or 100, whichever is
+     *        smaller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

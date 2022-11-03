@@ -56,6 +56,12 @@ public class Lens implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String shareInvitationId;
+    /**
+     * <p>
+     * The tags assigned to the lens.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -270,6 +276,74 @@ public class Lens implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tags assigned to the lens.
+     * </p>
+     * 
+     * @return The tags assigned to the lens.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the lens.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the lens.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the lens.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the lens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lens withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Lens#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lens addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lens clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -292,7 +366,9 @@ public class Lens implements Serializable, Cloneable, StructuredPojo {
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getShareInvitationId() != null)
-            sb.append("ShareInvitationId: ").append(getShareInvitationId());
+            sb.append("ShareInvitationId: ").append(getShareInvitationId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +407,10 @@ public class Lens implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getShareInvitationId() != null && other.getShareInvitationId().equals(this.getShareInvitationId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +425,7 @@ public class Lens implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getShareInvitationId() == null) ? 0 : getShareInvitationId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

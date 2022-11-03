@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SubstringMarshaller {
 
-    private static final MarshallingInfo<Integer> LENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("length").build();
     private static final MarshallingInfo<Integer> START_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("start").build();
+    private static final MarshallingInfo<Integer> LENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("length").build();
 
     private static final SubstringMarshaller instance = new SubstringMarshaller();
 
@@ -48,8 +48,8 @@ public class SubstringMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(substring.getLength(), LENGTH_BINDING);
             protocolMarshaller.marshall(substring.getStart(), START_BINDING);
+            protocolMarshaller.marshall(substring.getLength(), LENGTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

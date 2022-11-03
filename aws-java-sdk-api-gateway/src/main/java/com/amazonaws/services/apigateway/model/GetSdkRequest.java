@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.
+ * Request a new generated client SDK for a RestApi and Stage.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,21 +27,20 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> that the SDK will use.
+     * The name of the Stage that the SDK will use.
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     * <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are
-     * supported.
+     * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      */
     private String sdkType;
@@ -59,11 +58,11 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -72,10 +71,10 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -84,11 +83,11 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +98,11 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> that the SDK will use.
+     * The name of the Stage that the SDK will use.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name of the <a>Stage</a> that the SDK will use.
+     *        The name of the Stage that the SDK will use.
      */
 
     public void setStageName(String stageName) {
@@ -112,10 +111,10 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> that the SDK will use.
+     * The name of the Stage that the SDK will use.
      * </p>
      * 
-     * @return [Required] The name of the <a>Stage</a> that the SDK will use.
+     * @return The name of the Stage that the SDK will use.
      */
 
     public String getStageName() {
@@ -124,11 +123,11 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The name of the <a>Stage</a> that the SDK will use.
+     * The name of the Stage that the SDK will use.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name of the <a>Stage</a> that the SDK will use.
+     *        The name of the Stage that the SDK will use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,13 +138,12 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     * <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are
-     * supported.
+     * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      * 
      * @param sdkType
-     *        [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
+     *        The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
      *        <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and
      *        <code>ruby</code> are supported.
      */
@@ -156,12 +154,11 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     * <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are
-     * supported.
+     * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      * 
-     * @return [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
+     * @return The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
      *         <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and
      *         <code>ruby</code> are supported.
      */
@@ -172,13 +169,12 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     * <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are
-     * supported.
+     * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      * 
      * @param sdkType
-     *        [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
+     *        The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
      *        <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and
      *        <code>ruby</code> are supported.
      * @return Returns a reference to this object so that method calls can be chained together.

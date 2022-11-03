@@ -52,6 +52,8 @@ public class PackageVersionDescriptionMarshaller {
             .marshallLocationName("revision").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<StructuredPojo> ORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("origin").build();
 
     private static final PackageVersionDescriptionMarshaller instance = new PackageVersionDescriptionMarshaller();
 
@@ -81,6 +83,7 @@ public class PackageVersionDescriptionMarshaller {
             protocolMarshaller.marshall(packageVersionDescription.getLicenses(), LICENSES_BINDING);
             protocolMarshaller.marshall(packageVersionDescription.getRevision(), REVISION_BINDING);
             protocolMarshaller.marshall(packageVersionDescription.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(packageVersionDescription.getOrigin(), ORIGIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

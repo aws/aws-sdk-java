@@ -1119,6 +1119,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<GetBucketVersioningResult> getBucketVersioningAsync(GetBucketVersioningRequest request) {
+
+        return getBucketVersioningAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketVersioningResult> getBucketVersioningAsync(final GetBucketVersioningRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketVersioningRequest, GetBucketVersioningResult> asyncHandler) {
+        final GetBucketVersioningRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketVersioningResult>() {
+            @Override
+            public GetBucketVersioningResult call() throws Exception {
+                GetBucketVersioningResult result = null;
+
+                try {
+                    result = executeGetBucketVersioning(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(GetJobTaggingRequest request) {
 
         return getJobTaggingAsync(request, null);
@@ -1745,6 +1778,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executePutBucketTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketVersioningResult> putBucketVersioningAsync(PutBucketVersioningRequest request) {
+
+        return putBucketVersioningAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketVersioningResult> putBucketVersioningAsync(final PutBucketVersioningRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBucketVersioningRequest, PutBucketVersioningResult> asyncHandler) {
+        final PutBucketVersioningRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBucketVersioningResult>() {
+            @Override
+            public PutBucketVersioningResult call() throws Exception {
+                PutBucketVersioningResult result = null;
+
+                try {
+                    result = executePutBucketVersioning(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

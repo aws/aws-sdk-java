@@ -183,6 +183,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetBucketVersioningResult getBucketVersioning(GetBucketVersioningRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetJobTaggingResult getJobTagging(GetJobTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -274,6 +279,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public PutBucketTaggingResult putBucketTagging(PutBucketTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBucketVersioningResult putBucketVersioning(PutBucketVersioningRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

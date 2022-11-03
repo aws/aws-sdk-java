@@ -144,6 +144,10 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
             request.addParameter("Value", StringUtils.fromString(modifyInstanceAttributeRequest.getValue()));
         }
 
+        if (modifyInstanceAttributeRequest.getDisableApiStop() != null) {
+            request.addParameter("DisableApiStop.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.getDisableApiStop()));
+        }
+
         return request;
     }
 

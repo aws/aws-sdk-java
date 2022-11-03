@@ -56,7 +56,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate session stickiness or
+     * <code>false</code> to deactivate session stickiness.
      * </p>
      * </li>
      * <li>
@@ -69,14 +70,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection
+     * or <code>false</code> to deactivate HTTP to HTTPS redirection.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     * <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     * <code>TLS version 1.2</code>.
+     * <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     * >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      * </p>
      * </li>
      * </ul>
@@ -201,7 +207,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate session stickiness or
+     * <code>false</code> to deactivate session stickiness.
      * </p>
      * </li>
      * <li>
@@ -214,14 +221,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection
+     * or <code>false</code> to deactivate HTTP to HTTPS redirection.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     * <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     * <code>TLS version 1.2</code>.
+     * <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     * >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      * </p>
      * </li>
      * </ul>
@@ -243,7 +255,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter,
-     *        then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     *        then the <code>attributeValue</code> request parameter must be <code>true</code> to activate session
+     *        stickiness or <code>false</code> to deactivate session stickiness.
      *        </p>
      *        </li>
      *        <li>
@@ -256,14 +269,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter,
-     *        then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     *        then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS
+     *        redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     *        <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     *        <code>TLS version 1.2</code>.
+     *        <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     *        </p>
+     *        <p>
+     *        Use the <a href=
+     *        "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     *        >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      *        </p>
      *        </li>
      */
@@ -291,7 +309,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate session stickiness or
+     * <code>false</code> to deactivate session stickiness.
      * </p>
      * </li>
      * <li>
@@ -304,14 +323,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection
+     * or <code>false</code> to deactivate HTTP to HTTPS redirection.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     * <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     * <code>TLS version 1.2</code>.
+     * <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     * >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      * </p>
      * </li>
      * </ul>
@@ -332,8 +356,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
-     *         parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> or
-     *         <code>false</code>.
+     *         parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate
+     *         session stickiness or <code>false</code> to deactivate session stickiness.
      *         </p>
      *         </li>
      *         <li>
@@ -346,14 +370,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter,
-     *         then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     *         then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to
+     *         HTTPS redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     *         <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     *         <code>TLS version 1.2</code>.
+     *         <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     *         </p>
+     *         <p>
+     *         Use the <a href=
+     *         "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     *         >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      *         </p>
      *         </li>
      */
@@ -381,7 +410,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate session stickiness or
+     * <code>false</code> to deactivate session stickiness.
      * </p>
      * </li>
      * <li>
@@ -394,14 +424,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then
-     * the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     * the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection
+     * or <code>false</code> to deactivate HTTP to HTTPS redirection.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     * <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     * <code>TLS version 1.2</code>.
+     * <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     * >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      * </p>
      * </li>
      * </ul>
@@ -423,7 +458,8 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter,
-     *        then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     *        then the <code>attributeValue</code> request parameter must be <code>true</code> to activate session
+     *        stickiness or <code>false</code> to deactivate session stickiness.
      *        </p>
      *        </li>
      *        <li>
@@ -436,14 +472,19 @@ public class UpdateLoadBalancerAttributeRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter,
-     *        then the <code>attributeValue</code> request parameter must be <code>true</code> or <code>false</code>.
+     *        then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS
+     *        redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the
-     *        <code>attributeValue</code> request parameter must be <code>TLS version 1.0, 1.1, and 1.2</code> or
-     *        <code>TLS version 1.2</code>.
+     *        <code>attributeValue</code> request parameter must be the name of the TLS policy.
+     *        </p>
+     *        <p>
+     *        Use the <a href=
+     *        "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+     *        >GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

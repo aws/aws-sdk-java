@@ -79,8 +79,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     private String documentURI;
     /**
      * <p>
-     * An array of document attributes for the document that the query result maps to. For example, the document author
-     * (Author) or the source URI (SourceUri) of the document.
+     * An array of document attributes assigned to a document in the search results. For example, the document author (
+     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      */
     private java.util.List<DocumentAttribute> documentAttributes;
@@ -449,12 +449,12 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes for the document that the query result maps to. For example, the document author
-     * (Author) or the source URI (SourceUri) of the document.
+     * An array of document attributes assigned to a document in the search results. For example, the document author (
+     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * 
-     * @return An array of document attributes for the document that the query result maps to. For example, the document
-     *         author (Author) or the source URI (SourceUri) of the document.
+     * @return An array of document attributes assigned to a document in the search results. For example, the document
+     *         author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      */
 
     public java.util.List<DocumentAttribute> getDocumentAttributes() {
@@ -463,13 +463,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes for the document that the query result maps to. For example, the document author
-     * (Author) or the source URI (SourceUri) of the document.
+     * An array of document attributes assigned to a document in the search results. For example, the document author (
+     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * 
      * @param documentAttributes
-     *        An array of document attributes for the document that the query result maps to. For example, the document
-     *        author (Author) or the source URI (SourceUri) of the document.
+     *        An array of document attributes assigned to a document in the search results. For example, the document
+     *        author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      */
 
     public void setDocumentAttributes(java.util.Collection<DocumentAttribute> documentAttributes) {
@@ -483,8 +483,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes for the document that the query result maps to. For example, the document author
-     * (Author) or the source URI (SourceUri) of the document.
+     * An array of document attributes assigned to a document in the search results. For example, the document author (
+     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -493,8 +493,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param documentAttributes
-     *        An array of document attributes for the document that the query result maps to. For example, the document
-     *        author (Author) or the source URI (SourceUri) of the document.
+     *        An array of document attributes assigned to a document in the search results. For example, the document
+     *        author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,13 +510,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes for the document that the query result maps to. For example, the document author
-     * (Author) or the source URI (SourceUri) of the document.
+     * An array of document attributes assigned to a document in the search results. For example, the document author (
+     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * 
      * @param documentAttributes
-     *        An array of document attributes for the document that the query result maps to. For example, the document
-     *        author (Author) or the source URI (SourceUri) of the document.
+     *        An array of document attributes assigned to a document in the search results. For example, the document
+     *        author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

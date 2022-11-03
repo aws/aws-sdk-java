@@ -38,6 +38,8 @@ public class LoRaWANGatewayMarshaller {
             .marshallLocationName("NetIdFilters").build();
     private static final MarshallingInfo<List> SUBBANDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubBands").build();
+    private static final MarshallingInfo<StructuredPojo> BEACONING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Beaconing").build();
 
     private static final LoRaWANGatewayMarshaller instance = new LoRaWANGatewayMarshaller();
 
@@ -60,6 +62,7 @@ public class LoRaWANGatewayMarshaller {
             protocolMarshaller.marshall(loRaWANGateway.getJoinEuiFilters(), JOINEUIFILTERS_BINDING);
             protocolMarshaller.marshall(loRaWANGateway.getNetIdFilters(), NETIDFILTERS_BINDING);
             protocolMarshaller.marshall(loRaWANGateway.getSubBands(), SUBBANDS_BINDING);
+            protocolMarshaller.marshall(loRaWANGateway.getBeaconing(), BEACONING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

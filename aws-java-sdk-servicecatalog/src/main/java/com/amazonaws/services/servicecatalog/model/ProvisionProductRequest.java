@@ -88,8 +88,8 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
     private String pathName;
     /**
      * <p>
-     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
-     * updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account
+     * and cannot be updated after the product is provisioned.
      * </p>
      */
     private String provisionedProductName;
@@ -517,13 +517,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
-     * updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account
+     * and cannot be updated after the product is provisioned.
      * </p>
      * 
      * @param provisionedProductName
-     *        A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot
-     *        be updated after the product is provisioned.
+     *        A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services
+     *        account and cannot be updated after the product is provisioned.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -532,12 +532,12 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
-     * updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account
+     * and cannot be updated after the product is provisioned.
      * </p>
      * 
-     * @return A user-friendly name for the provisioned product. This value must be unique for the AWS account and
-     *         cannot be updated after the product is provisioned.
+     * @return A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services
+     *         account and cannot be updated after the product is provisioned.
      */
 
     public String getProvisionedProductName() {
@@ -546,13 +546,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
-     * updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account
+     * and cannot be updated after the product is provisioned.
      * </p>
      * 
      * @param provisionedProductName
-     *        A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot
-     *        be updated after the product is provisioned.
+     *        A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services
+     *        account and cannot be updated after the product is provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -439,11 +439,45 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Creates a new WorkSpace image from an existing WorkSpace.
+     * </p>
+     * 
+     * @param createWorkspaceImageRequest
+     * @return Result of the CreateWorkspaceImage operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.CreateWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateWorkspaceImageResult createWorkspaceImage(CreateWorkspaceImageRequest createWorkspaceImageRequest);
+
+    /**
+     * <p>
      * Creates one or more WorkSpaces.
      * </p>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
+     * to be allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param createWorkspacesRequest
      * @return Result of the CreateWorkspaces operation returned by the service.
@@ -1083,6 +1117,8 @@ public interface AmazonWorkspaces {
      *         One or more parameter values are not valid.
      * @throws ResourceLimitExceededException
      *         Your resource limits have been exceeded.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws AccessDeniedException
      *         The user is not authorized to access a resource.
      * @sample AmazonWorkspaces.ImportClientBranding
@@ -1093,9 +1129,9 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an
-     * already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For
-     * more information about creating BYOL images, see <a
+     * Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016 BYOL image into Amazon
+     * WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account,
+     * and you must own the image. For more information about creating BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
@@ -1228,6 +1264,28 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access
+     * URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.
+     * </p>
+     * 
+     * @param modifySamlPropertiesRequest
+     * @return Result of the ModifySamlProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.ModifySamlProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifySamlPropertiesResult modifySamlProperties(ModifySamlPropertiesRequest modifySamlPropertiesRequest);
+
+    /**
+     * <p>
      * Modifies the self-service WorkSpace management capabilities for your users. For more information, see <a href=
      * "https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html"
      * >Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.
@@ -1294,6 +1352,13 @@ public interface AmazonWorkspaces {
      * and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
      * Modify a WorkSpace</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
+     * to be allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param modifyWorkspacePropertiesRequest
      * @return Result of the ModifyWorkspaceProperties operation returned by the service.

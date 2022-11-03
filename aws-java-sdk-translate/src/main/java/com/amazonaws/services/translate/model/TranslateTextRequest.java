@@ -42,7 +42,8 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a>what-is-languages</a>.
+     * Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
@@ -50,6 +51,12 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
      * determine the source language.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports
+     * Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.
+     * </p>
+     * </note>
      */
     private String sourceLanguageCode;
     /**
@@ -61,7 +68,8 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String targetLanguageCode;
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      */
     private TranslationSettings settings;
@@ -197,7 +205,8 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a>what-is-languages</a>.
+     * Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
@@ -205,15 +214,29 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
      * determine the source language.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports
+     * Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.
+     * </p>
+     * </note>
      * 
      * @param sourceLanguageCode
      *        The language code for the language of the source text. The language must be a language supported by Amazon
-     *        Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
+     *        Translate. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
      *        <p>
      *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
      *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
      *        href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
      *        determine the source language.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that
+     *        supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not
+     *        supported.
+     *        </p>
      */
 
     public void setSourceLanguageCode(String sourceLanguageCode) {
@@ -223,7 +246,8 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a>what-is-languages</a>.
+     * Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
@@ -231,14 +255,29 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
      * determine the source language.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports
+     * Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.
+     * </p>
+     * </note>
      * 
      * @return The language code for the language of the source text. The language must be a language supported by
-     *         Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
+     *         Amazon Translate. For a list of language codes, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     *         languages</a>.</p>
      *         <p>
      *         To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
      *         the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
      *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a>
      *         to determine the source language.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that
+     *         supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not
+     *         supported.
+     *         </p>
      */
 
     public String getSourceLanguageCode() {
@@ -248,7 +287,8 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a>what-is-languages</a>.
+     * Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
@@ -256,15 +296,29 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
      * determine the source language.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports
+     * Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.
+     * </p>
+     * </note>
      * 
      * @param sourceLanguageCode
      *        The language code for the language of the source text. The language must be a language supported by Amazon
-     *        Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
+     *        Translate. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
      *        <p>
      *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
      *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
      *        href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
      *        determine the source language.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that
+     *        supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not
+     *        supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,11 +375,13 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to mask profane words and phrases.
+     *        Settings to configure your translation output, including the option to set the formality level of the
+     *        output text and the option to mask profane words and phrases.
      */
 
     public void setSettings(TranslationSettings settings) {
@@ -334,10 +390,12 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      * 
-     * @return Settings to configure your translation output, including the option to mask profane words and phrases.
+     * @return Settings to configure your translation output, including the option to set the formality level of the
+     *         output text and the option to mask profane words and phrases.
      */
 
     public TranslationSettings getSettings() {
@@ -346,11 +404,13 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to mask profane words and phrases.
+     *        Settings to configure your translation output, including the option to set the formality level of the
+     *        output text and the option to mask profane words and phrases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

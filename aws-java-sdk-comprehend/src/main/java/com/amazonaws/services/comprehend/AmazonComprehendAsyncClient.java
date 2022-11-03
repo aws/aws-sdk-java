@@ -243,6 +243,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDetectTargetedSentimentResult> batchDetectTargetedSentimentAsync(BatchDetectTargetedSentimentRequest request) {
+
+        return batchDetectTargetedSentimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectTargetedSentimentResult> batchDetectTargetedSentimentAsync(final BatchDetectTargetedSentimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDetectTargetedSentimentRequest, BatchDetectTargetedSentimentResult> asyncHandler) {
+        final BatchDetectTargetedSentimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDetectTargetedSentimentResult>() {
+            @Override
+            public BatchDetectTargetedSentimentResult call() throws Exception {
+                BatchDetectTargetedSentimentResult result = null;
+
+                try {
+                    result = executeBatchDetectTargetedSentiment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ClassifyDocumentResult> classifyDocumentAsync(ClassifyDocumentRequest request) {
 
         return classifyDocumentAsync(request, null);
@@ -1161,6 +1194,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeDetectSyntax(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectTargetedSentimentResult> detectTargetedSentimentAsync(DetectTargetedSentimentRequest request) {
+
+        return detectTargetedSentimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectTargetedSentimentResult> detectTargetedSentimentAsync(final DetectTargetedSentimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectTargetedSentimentRequest, DetectTargetedSentimentResult> asyncHandler) {
+        final DetectTargetedSentimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectTargetedSentimentResult>() {
+            @Override
+            public DetectTargetedSentimentResult call() throws Exception {
+                DetectTargetedSentimentResult result = null;
+
+                try {
+                    result = executeDetectTargetedSentiment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

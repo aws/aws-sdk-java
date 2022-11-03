@@ -42,9 +42,13 @@ import com.amazonaws.services.detective.model.*;
  * <p>
  * Detective is also integrated with Organizations. The organization management account designates the Detective
  * administrator account for the organization. That account becomes the administrator account for the organization
- * behavior graph. The Detective administrator account can enable any organization account as a member account in the
- * organization behavior graph. The organization accounts do not receive invitations. The Detective administrator
- * account can also invite other accounts to the organization behavior graph.
+ * behavior graph. The Detective administrator account is also the delegated administrator account for Detective in
+ * Organizations.
+ * </p>
+ * <p>
+ * The Detective administrator account can enable any organization account as a member account in the organization
+ * behavior graph. The organization accounts do not receive invitations. The Detective administrator account can also
+ * invite other accounts to the organization behavior graph.
  * </p>
  * <p>
  * Every behavior graph is specific to a Region. You can only use the API to manage behavior graphs that belong to the
@@ -184,6 +188,76 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      */
     java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest acceptInvitationRequest,
             com.amazonaws.handlers.AsyncHandler<AcceptInvitationRequest, AcceptInvitationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets data source package information for the behavior graph.
+     * </p>
+     * 
+     * @param batchGetGraphMemberDatasourcesRequest
+     * @return A Java Future containing the result of the BatchGetGraphMemberDatasources operation returned by the
+     *         service.
+     * @sample AmazonDetectiveAsync.BatchGetGraphMemberDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetGraphMemberDatasourcesResult> batchGetGraphMemberDatasourcesAsync(
+            BatchGetGraphMemberDatasourcesRequest batchGetGraphMemberDatasourcesRequest);
+
+    /**
+     * <p>
+     * Gets data source package information for the behavior graph.
+     * </p>
+     * 
+     * @param batchGetGraphMemberDatasourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetGraphMemberDatasources operation returned by the
+     *         service.
+     * @sample AmazonDetectiveAsyncHandler.BatchGetGraphMemberDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetGraphMemberDatasourcesResult> batchGetGraphMemberDatasourcesAsync(
+            BatchGetGraphMemberDatasourcesRequest batchGetGraphMemberDatasourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetGraphMemberDatasourcesRequest, BatchGetGraphMemberDatasourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information on the data source package history for an account.
+     * </p>
+     * 
+     * @param batchGetMembershipDatasourcesRequest
+     * @return A Java Future containing the result of the BatchGetMembershipDatasources operation returned by the
+     *         service.
+     * @sample AmazonDetectiveAsync.BatchGetMembershipDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetMembershipDatasourcesResult> batchGetMembershipDatasourcesAsync(
+            BatchGetMembershipDatasourcesRequest batchGetMembershipDatasourcesRequest);
+
+    /**
+     * <p>
+     * Gets information on the data source package history for an account.
+     * </p>
+     * 
+     * @param batchGetMembershipDatasourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetMembershipDatasources operation returned by the
+     *         service.
+     * @sample AmazonDetectiveAsyncHandler.BatchGetMembershipDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetMembershipDatasourcesResult> batchGetMembershipDatasourcesAsync(
+            BatchGetMembershipDatasourcesRequest batchGetMembershipDatasourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetMembershipDatasourcesRequest, BatchGetMembershipDatasourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -504,12 +578,19 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Removes the Detective administrator account for the organization in the current Region. Deletes the behavior
-     * graph for that account.
+     * Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.
      * </p>
      * <p>
-     * Can only be called by the organization management account. Before you can select a different Detective
-     * administrator account, you must remove the Detective administrator account in all Regions.
+     * Can only be called by the organization management account.
+     * </p>
+     * <p>
+     * Removing the Detective administrator account does not affect the delegated administrator account for Detective in
+     * Organizations.
+     * </p>
+     * <p>
+     * To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated
+     * administrator account also removes the Detective administrator account in all Regions, except for Regions where
+     * the Detective administrator account is the organization management account.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -524,12 +605,19 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Removes the Detective administrator account for the organization in the current Region. Deletes the behavior
-     * graph for that account.
+     * Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.
      * </p>
      * <p>
-     * Can only be called by the organization management account. Before you can select a different Detective
-     * administrator account, you must remove the Detective administrator account in all Regions.
+     * Can only be called by the organization management account.
+     * </p>
+     * <p>
+     * Removing the Detective administrator account does not affect the delegated administrator account for Detective in
+     * Organizations.
+     * </p>
+     * <p>
+     * To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated
+     * administrator account also removes the Detective administrator account in all Regions, except for Regions where
+     * the Detective administrator account is the organization management account.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -602,8 +690,14 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      * Can only be called by the organization management account.
      * </p>
      * <p>
-     * The Detective administrator account for an organization must be the same in all Regions. If you already
-     * designated a Detective administrator account in another Region, then you must designate the same account.
+     * If the organization has a delegated administrator account in Organizations, then the Detective administrator
+     * account must be either the delegated administrator account or the organization management account.
+     * </p>
+     * <p>
+     * If the organization does not have a delegated administrator account in Organizations, then you can choose any
+     * account in the organization. If you choose an account other than the organization management account, Detective
+     * calls Organizations to make that account the delegated administrator account for Detective. The organization
+     * management account cannot be the delegated administrator account.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -628,8 +722,14 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      * Can only be called by the organization management account.
      * </p>
      * <p>
-     * The Detective administrator account for an organization must be the same in all Regions. If you already
-     * designated a Detective administrator account in another Region, then you must designate the same account.
+     * If the organization has a delegated administrator account in Organizations, then the Detective administrator
+     * account must be either the delegated administrator account or the organization management account.
+     * </p>
+     * <p>
+     * If the organization does not have a delegated administrator account in Organizations, then you can choose any
+     * account in the organization. If you choose an account other than the organization management account, Detective
+     * calls Organizations to make that account the delegated administrator account for Detective. The organization
+     * management account cannot be the delegated administrator account.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -677,6 +777,37 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      */
     java.util.concurrent.Future<GetMembersResult> getMembersAsync(GetMembersRequest getMembersRequest,
             com.amazonaws.handlers.AsyncHandler<GetMembersRequest, GetMembersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists data source packages in the behavior graph.
+     * </p>
+     * 
+     * @param listDatasourcePackagesRequest
+     * @return A Java Future containing the result of the ListDatasourcePackages operation returned by the service.
+     * @sample AmazonDetectiveAsync.ListDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatasourcePackagesResult> listDatasourcePackagesAsync(ListDatasourcePackagesRequest listDatasourcePackagesRequest);
+
+    /**
+     * <p>
+     * Lists data source packages in the behavior graph.
+     * </p>
+     * 
+     * @param listDatasourcePackagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDatasourcePackages operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.ListDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatasourcePackagesResult> listDatasourcePackagesAsync(ListDatasourcePackagesRequest listDatasourcePackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDatasourcePackagesRequest, ListDatasourcePackagesResult> asyncHandler);
 
     /**
      * <p>
@@ -1044,6 +1175,37 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a data source packages for the behavior graph.
+     * </p>
+     * 
+     * @param updateDatasourcePackagesRequest
+     * @return A Java Future containing the result of the UpdateDatasourcePackages operation returned by the service.
+     * @sample AmazonDetectiveAsync.UpdateDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest updateDatasourcePackagesRequest);
+
+    /**
+     * <p>
+     * Starts a data source packages for the behavior graph.
+     * </p>
+     * 
+     * @param updateDatasourcePackagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDatasourcePackages operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.UpdateDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest updateDatasourcePackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDatasourcePackagesRequest, UpdateDatasourcePackagesResult> asyncHandler);
 
     /**
      * <p>

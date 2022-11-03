@@ -73,6 +73,115 @@ public interface AmazonChimeSDKMeetingsAsync extends AmazonChimeSDKMeetings {
 
     /**
      * <p>
+     * Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+     * table.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchUpdateAttendeeCapabilitiesExceptRequest
+     * @return A Java Future containing the result of the BatchUpdateAttendeeCapabilitiesExcept operation returned by
+     *         the service.
+     * @sample AmazonChimeSDKMeetingsAsync.BatchUpdateAttendeeCapabilitiesExcept
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateAttendeeCapabilitiesExceptResult> batchUpdateAttendeeCapabilitiesExceptAsync(
+            BatchUpdateAttendeeCapabilitiesExceptRequest batchUpdateAttendeeCapabilitiesExceptRequest);
+
+    /**
+     * <p>
+     * Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+     * table.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchUpdateAttendeeCapabilitiesExceptRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdateAttendeeCapabilitiesExcept operation returned by
+     *         the service.
+     * @sample AmazonChimeSDKMeetingsAsyncHandler.BatchUpdateAttendeeCapabilitiesExcept
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateAttendeeCapabilitiesExceptResult> batchUpdateAttendeeCapabilitiesExceptAsync(
+            BatchUpdateAttendeeCapabilitiesExceptRequest batchUpdateAttendeeCapabilitiesExceptRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateAttendeeCapabilitiesExceptRequest, BatchUpdateAttendeeCapabilitiesExceptResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
@@ -371,6 +480,37 @@ public interface AmazonChimeSDKMeetingsAsync extends AmazonChimeSDKMeetings {
 
     /**
      * <p>
+     * Returns a list of the tags available for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of the tags available for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts transcription for the specified <code>meetingId</code>.
      * </p>
      * 
@@ -432,5 +572,232 @@ public interface AmazonChimeSDKMeetingsAsync extends AmazonChimeSDKMeetings {
      */
     java.util.concurrent.Future<StopMeetingTranscriptionResult> stopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest stopMeetingTranscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<StopMeetingTranscriptionRequest, StopMeetingTranscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * The resource that supports tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * The resource that supports tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that
+     * key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were
+     * already removed. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to
+     * as well as permissions for removing tags. For more information, see the documentation for the service whose
+     * resource you want to untag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can only tag resources that are located in the specified AWS Region for the calling AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the
+     * remove tags permission defined by the service that created the resource. For example, to remove the tags from an
+     * Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following
+     * permissions:
+     * </p>
+     * <p>
+     * <code>tag:UntagResource</code>
+     * </p>
+     * <p>
+     * <code>ChimeSDKMeetings:DeleteTags</code>
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that
+     * key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were
+     * already removed. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to
+     * as well as permissions for removing tags. For more information, see the documentation for the service whose
+     * resource you want to untag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can only tag resources that are located in the specified AWS Region for the calling AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the
+     * remove tags permission defined by the service that created the resource. For example, to remove the tags from an
+     * Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following
+     * permissions:
+     * </p>
+     * <p>
+     * <code>tag:UntagResource</code>
+     * </p>
+     * <p>
+     * <code>ChimeSDKMeetings:DeleteTags</code>
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * The capabilties that you want to update.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateAttendeeCapabilitiesRequest
+     * @return A Java Future containing the result of the UpdateAttendeeCapabilities operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsync.UpdateAttendeeCapabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAttendeeCapabilitiesResult> updateAttendeeCapabilitiesAsync(
+            UpdateAttendeeCapabilitiesRequest updateAttendeeCapabilitiesRequest);
+
+    /**
+     * <p>
+     * The capabilties that you want to update.
+     * </p>
+     * <note>
+     * <p>
+     * You use the capabilities with a set of values that control what the capabilities can do, such as
+     * <code>SendReceive</code> data. For more information about those values, see .
+     * </p>
+     * </note>
+     * <p>
+     * When using capabilities, be aware of these corner cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
+     * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
+     * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
+     * However, you can set your <code>video</code> capability to receive and you set your <code>content</code>
+     * capability to not receive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to
+     * <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will
+     * flow from the attendee to the other meeting participants.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
+     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
+     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * client and the Amazon Chime back-end server.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateAttendeeCapabilitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAttendeeCapabilities operation returned by the service.
+     * @sample AmazonChimeSDKMeetingsAsyncHandler.UpdateAttendeeCapabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAttendeeCapabilitiesResult> updateAttendeeCapabilitiesAsync(
+            UpdateAttendeeCapabilitiesRequest updateAttendeeCapabilitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAttendeeCapabilitiesRequest, UpdateAttendeeCapabilitiesResult> asyncHandler);
 
 }

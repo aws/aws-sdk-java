@@ -45,9 +45,15 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
     private Boolean dedicatedMasterEnabled;
     /**
      * <p>
-     * The hardware configuration of the computer that hosts the dedicated master node. For example,
+     * The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      * <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code>
      * must be <code>true</code>.
+     * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
      * </p>
      */
     private String dedicatedMasterType;
@@ -60,6 +66,12 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
     /**
      * <p>
      * The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
+     * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
      * </p>
      */
     private String instanceType;
@@ -186,15 +198,26 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
 
     /**
      * <p>
-     * The hardware configuration of the computer that hosts the dedicated master node. For example,
+     * The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      * <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code>
      * must be <code>true</code>.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param dedicatedMasterType
-     *        The hardware configuration of the computer that hosts the dedicated master node. For example,
+     *        The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      *        <code>m3.medium.elasticsearch</code>. If this attribute is specified, then
-     *        <code>DedicatedMasterEnabled</code> must be <code>true</code>.
+     *        <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+     *        <p>
+     *        For a list of valid values, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *        >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *        Guide</i>.
      */
 
     public void setDedicatedMasterType(String dedicatedMasterType) {
@@ -203,14 +226,25 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
 
     /**
      * <p>
-     * The hardware configuration of the computer that hosts the dedicated master node. For example,
+     * The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      * <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code>
      * must be <code>true</code>.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
-     * @return The hardware configuration of the computer that hosts the dedicated master node. For example,
+     * @return The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      *         <code>m3.medium.elasticsearch</code>. If this attribute is specified, then
-     *         <code>DedicatedMasterEnabled</code> must be <code>true</code>.
+     *         <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+     *         <p>
+     *         For a list of valid values, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *         >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *         Guide</i>.
      */
 
     public String getDedicatedMasterType() {
@@ -219,15 +253,26 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
 
     /**
      * <p>
-     * The hardware configuration of the computer that hosts the dedicated master node. For example,
+     * The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      * <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code>
      * must be <code>true</code>.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param dedicatedMasterType
-     *        The hardware configuration of the computer that hosts the dedicated master node. For example,
+     *        The hardware configuration of the computer that hosts the dedicated master node. A sample value is
      *        <code>m3.medium.elasticsearch</code>. If this attribute is specified, then
-     *        <code>DedicatedMasterEnabled</code> must be <code>true</code>.
+     *        <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+     *        <p>
+     *        For a list of valid values, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *        >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,9 +325,20 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
      * <p>
      * The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param instanceType
-     *        The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
+     *        The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+     *        <p>
+     *        For a list of valid values, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *        >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *        Guide</i>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -293,8 +349,19 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
      * <p>
      * The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
-     * @return The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
+     * @return The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+     *         <p>
+     *         For a list of valid values, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *         >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *         Guide</i>.
      */
 
     public String getInstanceType() {
@@ -305,9 +372,20 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetails implements 
      * <p>
      * The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param instanceType
-     *        The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
+     *        The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+     *        <p>
+     *        For a list of valid values, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *        >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

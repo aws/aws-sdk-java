@@ -714,6 +714,39 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon
+     * SNS topic.
+     * </p>
+     * 
+     * @param getDataProtectionPolicyRequest
+     * @return A Java Future containing the result of the GetDataProtectionPolicy operation returned by the service.
+     * @sample AmazonSNSAsync.GetDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest getDataProtectionPolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon
+     * SNS topic.
+     * </p>
+     * 
+     * @param getDataProtectionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataProtectionPolicy operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.GetDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest getDataProtectionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataProtectionPolicyRequest, GetDataProtectionPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
      * (Firebase Cloud Messaging) and APNS. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
@@ -1741,6 +1774,37 @@ public interface AmazonSNSAsync extends AmazonSNS {
      */
     java.util.concurrent.Future<PublishBatchResult> publishBatchAsync(PublishBatchRequest publishBatchRequest,
             com.amazonaws.handlers.AsyncHandler<PublishBatchRequest, PublishBatchResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates an inline policy document that is stored in the specified Amazon SNS topic.
+     * </p>
+     * 
+     * @param putDataProtectionPolicyRequest
+     * @return A Java Future containing the result of the PutDataProtectionPolicy operation returned by the service.
+     * @sample AmazonSNSAsync.PutDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest putDataProtectionPolicyRequest);
+
+    /**
+     * <p>
+     * Adds or updates an inline policy document that is stored in the specified Amazon SNS topic.
+     * </p>
+     * 
+     * @param putDataProtectionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDataProtectionPolicy operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.PutDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest putDataProtectionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDataProtectionPolicyRequest, PutDataProtectionPolicyResult> asyncHandler);
 
     /**
      * <p>

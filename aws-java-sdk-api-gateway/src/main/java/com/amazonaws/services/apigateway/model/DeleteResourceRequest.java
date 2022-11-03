@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to delete a <a>Resource</a>.
+ * Request to delete a Resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier of the <a>Resource</a> resource.
+     * The identifier of the Resource resource.
      * </p>
      */
     private String resourceId;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Resource</a> resource.
+     * The identifier of the Resource resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The identifier of the <a>Resource</a> resource.
+     *        The identifier of the Resource resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -93,10 +93,10 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Resource</a> resource.
+     * The identifier of the Resource resource.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>Resource</a> resource.
+     * @return The identifier of the Resource resource.
      */
 
     public String getResourceId() {
@@ -105,11 +105,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Required] The identifier of the <a>Resource</a> resource.
+     * The identifier of the Resource resource.
      * </p>
      * 
      * @param resourceId
-     *        [Required] The identifier of the <a>Resource</a> resource.
+     *        The identifier of the Resource resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

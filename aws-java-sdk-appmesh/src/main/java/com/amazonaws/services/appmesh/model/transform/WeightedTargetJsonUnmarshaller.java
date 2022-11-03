@@ -48,6 +48,10 @@ public class WeightedTargetJsonUnmarshaller implements Unmarshaller<WeightedTarg
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("port", targetDepth)) {
+                    context.nextToken();
+                    weightedTarget.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualNode", targetDepth)) {
                     context.nextToken();
                     weightedTarget.setVirtualNode(context.getUnmarshaller(String.class).unmarshall(context));

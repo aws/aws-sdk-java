@@ -27,35 +27,47 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the canary that you're adding tags to.
+     * The ARN of the canary or group that you're adding tags to.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The list of key-value pairs to associate with the canary.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The ARN of the canary that you're adding tags to.
+     * The ARN of the canary or group that you're adding tags to.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      * 
      * @param resourceArn
-     *        The ARN of the canary that you're adding tags to.</p>
+     *        The ARN of the canary or group that you're adding tags to.</p>
      *        <p>
      *        The ARN format of a canary is
      *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     *        </p>
+     *        <p>
+     *        The ARN format of a group is
+     *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -64,17 +76,25 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the canary that you're adding tags to.
+     * The ARN of the canary or group that you're adding tags to.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      * 
-     * @return The ARN of the canary that you're adding tags to.</p>
+     * @return The ARN of the canary or group that you're adding tags to.</p>
      *         <p>
      *         The ARN format of a canary is
      *         <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     *         </p>
+     *         <p>
+     *         The ARN format of a group is
+     *         <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      */
 
     public String getResourceArn() {
@@ -83,18 +103,26 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the canary that you're adding tags to.
+     * The ARN of the canary or group that you're adding tags to.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      * 
      * @param resourceArn
-     *        The ARN of the canary that you're adding tags to.</p>
+     *        The ARN of the canary or group that you're adding tags to.</p>
      *        <p>
      *        The ARN format of a canary is
      *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     *        </p>
+     *        <p>
+     *        The ARN format of a group is
+     *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,10 +133,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the canary.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * 
-     * @return The list of key-value pairs to associate with the canary.
+     * @return The list of key-value pairs to associate with the resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -117,11 +145,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the canary.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the canary.
+     *        The list of key-value pairs to associate with the resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -130,11 +158,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the canary.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the canary.
+     *        The list of key-value pairs to associate with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

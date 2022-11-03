@@ -28,7 +28,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
@@ -65,19 +65,19 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
-     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
-     * resources without content.
+     * DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.
      * </p>
      */
     private String locationStatus;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -86,10 +86,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -98,11 +98,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,14 +347,14 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
-     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
-     * resources without content.
+     * DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.
      * </p>
      * 
      * @param locationStatus
      *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
-     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
-     *        <a>DocumentationPart</a> resources without content.
+     *        retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart
+     *        resources without content.
      * @see LocationStatusType
      */
 
@@ -365,13 +365,13 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
-     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
-     * resources without content.
+     * DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.
      * </p>
      * 
      * @return The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
-     *         retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
-     *         <a>DocumentationPart</a> resources without content.
+     *         retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart
+     *         resources without content.
      * @see LocationStatusType
      */
 
@@ -382,14 +382,14 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
-     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
-     * resources without content.
+     * DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.
      * </p>
      * 
      * @param locationStatus
      *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
-     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
-     *        <a>DocumentationPart</a> resources without content.
+     *        retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart
+     *        resources without content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationStatusType
      */
@@ -402,14 +402,14 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
-     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
-     * resources without content.
+     * DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.
      * </p>
      * 
      * @param locationStatus
      *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
-     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
-     *        <a>DocumentationPart</a> resources without content.
+     *        retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart
+     *        resources without content.
      * @see LocationStatusType
      */
 
@@ -420,14 +420,14 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
-     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
-     * resources without content.
+     * DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.
      * </p>
      * 
      * @param locationStatus
      *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
-     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
-     *        <a>DocumentationPart</a> resources without content.
+     *        retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart
+     *        resources without content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationStatusType
      */

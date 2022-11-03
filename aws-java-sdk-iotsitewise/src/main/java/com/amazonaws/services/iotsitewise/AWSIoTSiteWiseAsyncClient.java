@@ -451,6 +451,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest request) {
+
+        return createBulkImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(final CreateBulkImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBulkImportJobRequest, CreateBulkImportJobResult> asyncHandler) {
+        final CreateBulkImportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBulkImportJobResult>() {
+            @Override
+            public CreateBulkImportJobResult call() throws Exception {
+                CreateBulkImportJobResult result = null;
+
+                try {
+                    result = executeCreateBulkImportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDashboardResult> createDashboardAsync(CreateDashboardRequest request) {
 
         return createDashboardAsync(request, null);
@@ -963,6 +996,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeDescribeAssetProperty(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBulkImportJobResult> describeBulkImportJobAsync(DescribeBulkImportJobRequest request) {
+
+        return describeBulkImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBulkImportJobResult> describeBulkImportJobAsync(final DescribeBulkImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBulkImportJobRequest, DescribeBulkImportJobResult> asyncHandler) {
+        final DescribeBulkImportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBulkImportJobResult>() {
+            @Override
+            public DescribeBulkImportJobResult call() throws Exception {
+                DescribeBulkImportJobResult result = null;
+
+                try {
+                    result = executeDescribeBulkImportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1515,6 +1581,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest request) {
+
+        return listAssetModelPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(final ListAssetModelPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssetModelPropertiesRequest, ListAssetModelPropertiesResult> asyncHandler) {
+        final ListAssetModelPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssetModelPropertiesResult>() {
+            @Override
+            public ListAssetModelPropertiesResult call() throws Exception {
+                ListAssetModelPropertiesResult result = null;
+
+                try {
+                    result = executeListAssetModelProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request) {
 
         return listAssetModelsAsync(request, null);
@@ -1532,6 +1631,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListAssetModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest request) {
+
+        return listAssetPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(final ListAssetPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssetPropertiesRequest, ListAssetPropertiesResult> asyncHandler) {
+        final ListAssetPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssetPropertiesResult>() {
+            @Override
+            public ListAssetPropertiesResult call() throws Exception {
+                ListAssetPropertiesResult result = null;
+
+                try {
+                    result = executeListAssetProperties(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1631,6 +1763,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListAssociatedAssets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest request) {
+
+        return listBulkImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(final ListBulkImportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBulkImportJobsRequest, ListBulkImportJobsResult> asyncHandler) {
+        final ListBulkImportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBulkImportJobsResult>() {
+            @Override
+            public ListBulkImportJobsResult call() throws Exception {
+                ListBulkImportJobsResult result = null;
+
+                try {
+                    result = executeListBulkImportJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

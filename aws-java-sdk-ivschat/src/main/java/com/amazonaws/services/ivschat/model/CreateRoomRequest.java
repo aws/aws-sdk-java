@@ -34,7 +34,7 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maximumMessageLength;
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      */
     private Integer maximumMessageRatePerSecond;
@@ -52,7 +52,10 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String name;
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -105,11 +108,11 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        Maximum number of messages per second that a client can send to the room. Default: 10.
+     *        Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      */
 
     public void setMaximumMessageRatePerSecond(Integer maximumMessageRatePerSecond) {
@@ -118,10 +121,10 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      * 
-     * @return Maximum number of messages per second that a client can send to the room. Default: 10.
+     * @return Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      */
 
     public Integer getMaximumMessageRatePerSecond() {
@@ -130,11 +133,11 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        Maximum number of messages per second that a client can send to the room. Default: 10.
+     *        Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,10 +228,16 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @return Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     *         See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>
+     *         for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     *         IVS Chat has no constraints beyond what is documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -237,11 +246,17 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
      *        Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     *        See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -250,11 +265,17 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
+     * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+     * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
      *        Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     *        See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
+     *        Chat has no constraints beyond what is documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

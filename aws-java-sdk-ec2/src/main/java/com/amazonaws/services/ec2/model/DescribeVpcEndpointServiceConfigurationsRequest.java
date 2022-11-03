@@ -55,6 +55,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -182,6 +187,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -212,6 +222,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *         <p>
      *         <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
      *         <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -260,6 +275,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -291,6 +311,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *        <p>
      *        <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
      *        <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -341,6 +366,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -377,6 +407,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *        <p>
      *        <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
      *        <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -429,6 +464,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -460,6 +500,11 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *        <p>
      *        <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
      *        <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
      *        </p>
      *        </li>
      *        <li>

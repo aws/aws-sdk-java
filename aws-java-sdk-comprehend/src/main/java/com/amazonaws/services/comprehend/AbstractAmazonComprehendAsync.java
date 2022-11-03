@@ -93,6 +93,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDetectTargetedSentimentResult> batchDetectTargetedSentimentAsync(BatchDetectTargetedSentimentRequest request) {
+
+        return batchDetectTargetedSentimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectTargetedSentimentResult> batchDetectTargetedSentimentAsync(BatchDetectTargetedSentimentRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDetectTargetedSentimentRequest, BatchDetectTargetedSentimentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ClassifyDocumentResult> classifyDocumentAsync(ClassifyDocumentRequest request) {
 
         return classifyDocumentAsync(request, null);
@@ -460,6 +473,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<DetectSyntaxResult> detectSyntaxAsync(DetectSyntaxRequest request,
             com.amazonaws.handlers.AsyncHandler<DetectSyntaxRequest, DetectSyntaxResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectTargetedSentimentResult> detectTargetedSentimentAsync(DetectTargetedSentimentRequest request) {
+
+        return detectTargetedSentimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectTargetedSentimentResult> detectTargetedSentimentAsync(DetectTargetedSentimentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectTargetedSentimentRequest, DetectTargetedSentimentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

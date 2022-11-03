@@ -28,8 +28,16 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances.
+     * The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      */
     private String maxPrice;
     /**
@@ -40,16 +48,31 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
     private String spotInstanceType;
     /**
      * <p>
-     * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * Deprecated.
      * </p>
      */
     private Integer blockDurationMinutes;
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent
+     * requests.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: 7 days from the current date
      * </p>
      */
     private java.util.Date validUntil;
@@ -62,11 +85,25 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances.
+     * The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxPrice
-     *        The maximum hourly price you're willing to pay for the Spot Instances.
+     *        The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this
+     *        parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *        pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      */
 
     public void setMaxPrice(String maxPrice) {
@@ -75,10 +112,24 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances.
+     * The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
-     * @return The maximum hourly price you're willing to pay for the Spot Instances.
+     * @return The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this
+     *         parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *         pay the current Spot price.</p> <important>
+     *         <p>
+     *         If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do
+     *         not specify this parameter.
+     *         </p>
      */
 
     public String getMaxPrice() {
@@ -87,11 +138,25 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum hourly price you're willing to pay for the Spot Instances.
+     * The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter
+     * because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxPrice
-     *        The maximum hourly price you're willing to pay for the Spot Instances.
+     *        The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this
+     *        parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *        pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +226,11 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * Deprecated.
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     *        multiple of 60 (60, 120, 180, 240, 300, or 360).
+     *        Deprecated.
      */
 
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
@@ -176,12 +239,10 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * Deprecated.
      * </p>
      * 
-     * @return The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be
-     *         a multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * @return Deprecated.
      */
 
     public Integer getBlockDurationMinutes() {
@@ -190,13 +251,11 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * Deprecated.
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     *        multiple of 60 (60, 120, 180, 240, 300, or 360).
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,16 +266,46 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent
+     * requests.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: 7 days from the current date
      * </p>
      * 
      * @param validUntil
-     *        The end date of the request. For a one-time request, the request remains active until all instances
-     *        launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *        until it is canceled or this date and time is reached. The default end date is 7 days from the current
-     *        date.
+     *        The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for
+     *        persistent requests.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all
+     *        instances launch or you cancel the request.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: 7 days from the current date
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -225,15 +314,45 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent
+     * requests.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: 7 days from the current date
      * </p>
      * 
-     * @return The end date of the request. For a one-time request, the request remains active until all instances
-     *         launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *         until it is canceled or this date and time is reached. The default end date is 7 days from the current
-     *         date.
+     * @return The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for
+     *         persistent requests.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *         reached. Otherwise, the request remains active until you cancel it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all
+     *         instances launch or you cancel the request.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: 7 days from the current date
      */
 
     public java.util.Date getValidUntil() {
@@ -242,16 +361,46 @@ public class LaunchTemplateSpotMarketOptionsRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent
+     * requests.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: 7 days from the current date
      * </p>
      * 
      * @param validUntil
-     *        The end date of the request. For a one-time request, the request remains active until all instances
-     *        launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *        until it is canceled or this date and time is reached. The default end date is 7 days from the current
-     *        date.
+     *        The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for
+     *        persistent requests.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all
+     *        instances launch or you cancel the request.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: 7 days from the current date
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

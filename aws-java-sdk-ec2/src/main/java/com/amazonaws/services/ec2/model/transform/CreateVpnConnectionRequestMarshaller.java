@@ -249,6 +249,29 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                         request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".StartupAction",
                                 StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getStartupAction()));
                     }
+
+                    VpnTunnelLogOptionsSpecification logOptions = vpnConnectionOptionsSpecificationTunnelOptionsListValue.getLogOptions();
+                    if (logOptions != null) {
+
+                        CloudWatchLogOptionsSpecification cloudWatchLogOptions = logOptions.getCloudWatchLogOptions();
+                        if (cloudWatchLogOptions != null) {
+
+                            if (cloudWatchLogOptions.getLogEnabled() != null) {
+                                request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".LogOptions.CloudWatchLogOptions.LogEnabled",
+                                        StringUtils.fromBoolean(cloudWatchLogOptions.getLogEnabled()));
+                            }
+
+                            if (cloudWatchLogOptions.getLogGroupArn() != null) {
+                                request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".LogOptions.CloudWatchLogOptions.LogGroupArn",
+                                        StringUtils.fromString(cloudWatchLogOptions.getLogGroupArn()));
+                            }
+
+                            if (cloudWatchLogOptions.getLogOutputFormat() != null) {
+                                request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".LogOptions.CloudWatchLogOptions.LogOutputFormat",
+                                        StringUtils.fromString(cloudWatchLogOptions.getLogOutputFormat()));
+                            }
+                        }
+                    }
                     tunnelOptionsListIndex++;
                 }
             }
@@ -267,6 +290,14 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
 
             if (options.getRemoteIpv6NetworkCidr() != null) {
                 request.addParameter("Options.RemoteIpv6NetworkCidr", StringUtils.fromString(options.getRemoteIpv6NetworkCidr()));
+            }
+
+            if (options.getOutsideIpAddressType() != null) {
+                request.addParameter("Options.OutsideIpAddressType", StringUtils.fromString(options.getOutsideIpAddressType()));
+            }
+
+            if (options.getTransportTransitGatewayAttachmentId() != null) {
+                request.addParameter("Options.TransportTransitGatewayAttachmentId", StringUtils.fromString(options.getTransportTransitGatewayAttachmentId()));
             }
         }
 

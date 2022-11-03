@@ -33,6 +33,8 @@ public class TagHealthMarshaller {
             .marshallLocationName("TagValue").build();
     private static final MarshallingInfo<StructuredPojo> INSIGHT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Insight").build();
+    private static final MarshallingInfo<Long> ANALYZEDRESOURCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyzedResourceCount").build();
 
     private static final TagHealthMarshaller instance = new TagHealthMarshaller();
 
@@ -53,6 +55,7 @@ public class TagHealthMarshaller {
             protocolMarshaller.marshall(tagHealth.getAppBoundaryKey(), APPBOUNDARYKEY_BINDING);
             protocolMarshaller.marshall(tagHealth.getTagValue(), TAGVALUE_BINDING);
             protocolMarshaller.marshall(tagHealth.getInsight(), INSIGHT_BINDING);
+            protocolMarshaller.marshall(tagHealth.getAnalyzedResourceCount(), ANALYZEDRESOURCECOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

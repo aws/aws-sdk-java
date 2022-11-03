@@ -53,17 +53,16 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     private String portalDescription;
     /**
      * <p>
-     * The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     * SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate
-     * users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
+     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
      * </p>
      */
     private String portalClientId;
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      */
     private String portalStartUrl;
@@ -308,15 +307,13 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     * SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate
-     * users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
+     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
      * </p>
      * 
      * @param portalClientId
-     *        The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     *        SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to
-     *        authenticate users.
+     *        The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
+     *        includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
      */
 
     public void setPortalClientId(String portalClientId) {
@@ -325,13 +322,12 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     * SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate
-     * users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
+     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
      * </p>
      * 
-     * @return The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     *         SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to
+     * @return The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT
+     *         SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to
      *         authenticate users.
      */
 
@@ -341,15 +337,13 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     * SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate
-     * users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
+     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
      * </p>
      * 
      * @param portalClientId
-     *        The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT
-     *        SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to
-     *        authenticate users.
+     *        The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
+     *        includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,15 +354,15 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
-     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
-     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
-     *        SiteWise console to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity
+     *        Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise
+     *        console to get a URL that you can use to access the portal.
      */
 
     public void setPortalStartUrl(String portalStartUrl) {
@@ -377,14 +371,14 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
-     * @return The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
-     *         Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
-     *         SiteWise console to get a URL that you can use to access the portal.
+     * @return The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity
+     *         Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise
+     *         console to get a URL that you can use to access the portal.
      */
 
     public String getPortalStartUrl() {
@@ -393,15 +387,15 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
-     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
-     * a URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center
+     * for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
-     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
-     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
-     *        SiteWise console to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity
+     *        Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise
+     *        console to get a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

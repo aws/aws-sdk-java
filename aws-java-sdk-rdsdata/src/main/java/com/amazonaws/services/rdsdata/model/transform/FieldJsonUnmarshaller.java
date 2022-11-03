@@ -48,33 +48,33 @@ public class FieldJsonUnmarshaller implements Unmarshaller<Field, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arrayValue", targetDepth)) {
+                if (context.testExpression("isNull", targetDepth)) {
                     context.nextToken();
-                    field.setArrayValue(ArrayValueJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("blobValue", targetDepth)) {
-                    context.nextToken();
-                    field.setBlobValue(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                    field.setIsNull(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("booleanValue", targetDepth)) {
                     context.nextToken();
                     field.setBooleanValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("doubleValue", targetDepth)) {
-                    context.nextToken();
-                    field.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
-                }
-                if (context.testExpression("isNull", targetDepth)) {
-                    context.nextToken();
-                    field.setIsNull(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("longValue", targetDepth)) {
                     context.nextToken();
                     field.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("doubleValue", targetDepth)) {
+                    context.nextToken();
+                    field.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("stringValue", targetDepth)) {
                     context.nextToken();
                     field.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("blobValue", targetDepth)) {
+                    context.nextToken();
+                    field.setBlobValue(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (context.testExpression("arrayValue", targetDepth)) {
+                    context.nextToken();
+                    field.setArrayValue(ArrayValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

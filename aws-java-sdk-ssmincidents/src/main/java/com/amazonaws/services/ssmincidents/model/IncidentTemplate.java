@@ -42,6 +42,13 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
     private Integer impact;
     /**
      * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident.
+     * </p>
+     */
+    private java.util.Map<String, String> incidentTags;
+    /**
+     * <p>
      * The Amazon SNS targets that are notified when updates are made to an incident.
      * </p>
      */
@@ -137,6 +144,80 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
 
     public IncidentTemplate withImpact(Integer impact) {
         setImpact(impact);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident.
+     * </p>
+     * 
+     * @return Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident
+     *         Manager assigns the tags specified in the template to the incident.
+     */
+
+    public java.util.Map<String, String> getIncidentTags() {
+        return incidentTags;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident.
+     * </p>
+     * 
+     * @param incidentTags
+     *        Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     *        assigns the tags specified in the template to the incident.
+     */
+
+    public void setIncidentTags(java.util.Map<String, String> incidentTags) {
+        this.incidentTags = incidentTags;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     * assigns the tags specified in the template to the incident.
+     * </p>
+     * 
+     * @param incidentTags
+     *        Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager
+     *        assigns the tags specified in the template to the incident.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IncidentTemplate withIncidentTags(java.util.Map<String, String> incidentTags) {
+        setIncidentTags(incidentTags);
+        return this;
+    }
+
+    /**
+     * Add a single IncidentTags entry
+     *
+     * @see IncidentTemplate#withIncidentTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IncidentTemplate addIncidentTagsEntry(String key, String value) {
+        if (null == this.incidentTags) {
+            this.incidentTags = new java.util.HashMap<String, String>();
+        }
+        if (this.incidentTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.incidentTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into IncidentTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IncidentTemplate clearIncidentTagsEntries() {
+        this.incidentTags = null;
         return this;
     }
 
@@ -312,6 +393,8 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
             sb.append("DedupeString: ").append(getDedupeString()).append(",");
         if (getImpact() != null)
             sb.append("Impact: ").append(getImpact()).append(",");
+        if (getIncidentTags() != null)
+            sb.append("IncidentTags: ").append(getIncidentTags()).append(",");
         if (getNotificationTargets() != null)
             sb.append("NotificationTargets: ").append(getNotificationTargets()).append(",");
         if (getSummary() != null)
@@ -340,6 +423,10 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getImpact() != null && other.getImpact().equals(this.getImpact()) == false)
             return false;
+        if (other.getIncidentTags() == null ^ this.getIncidentTags() == null)
+            return false;
+        if (other.getIncidentTags() != null && other.getIncidentTags().equals(this.getIncidentTags()) == false)
+            return false;
         if (other.getNotificationTargets() == null ^ this.getNotificationTargets() == null)
             return false;
         if (other.getNotificationTargets() != null && other.getNotificationTargets().equals(this.getNotificationTargets()) == false)
@@ -362,6 +449,7 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getDedupeString() == null) ? 0 : getDedupeString().hashCode());
         hashCode = prime * hashCode + ((getImpact() == null) ? 0 : getImpact().hashCode());
+        hashCode = prime * hashCode + ((getIncidentTags() == null) ? 0 : getIncidentTags().hashCode());
         hashCode = prime * hashCode + ((getNotificationTargets() == null) ? 0 : getNotificationTargets().hashCode());
         hashCode = prime * hashCode + ((getSummary() == null) ? 0 : getSummary().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());

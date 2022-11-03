@@ -169,6 +169,18 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
             request.addParameter("BootMode", StringUtils.fromString(registerImageRequest.getBootMode()));
         }
 
+        if (registerImageRequest.getTpmSupport() != null) {
+            request.addParameter("TpmSupport", StringUtils.fromString(registerImageRequest.getTpmSupport()));
+        }
+
+        if (registerImageRequest.getUefiData() != null) {
+            request.addParameter("UefiData", StringUtils.fromString(registerImageRequest.getUefiData()));
+        }
+
+        if (registerImageRequest.getImdsSupport() != null) {
+            request.addParameter("ImdsSupport", StringUtils.fromString(registerImageRequest.getImdsSupport()));
+        }
+
         return request;
     }
 

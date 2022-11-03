@@ -33,7 +33,7 @@ public class DescribeExperienceRequest extends com.amazonaws.AmazonWebServiceReq
     private String id;
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to get information on.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      */
     private String indexId;
@@ -80,11 +80,11 @@ public class DescribeExperienceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to get information on.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for your Amazon Kendra experience you want to get information on.
+     *        The identifier of the index for your Amazon Kendra experience.
      */
 
     public void setIndexId(String indexId) {
@@ -93,10 +93,10 @@ public class DescribeExperienceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to get information on.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
-     * @return The identifier of the index for your Amazon Kendra experience you want to get information on.
+     * @return The identifier of the index for your Amazon Kendra experience.
      */
 
     public String getIndexId() {
@@ -105,11 +105,11 @@ public class DescribeExperienceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the index for your Amazon Kendra experience you want to get information on.
+     * The identifier of the index for your Amazon Kendra experience.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index for your Amazon Kendra experience you want to get information on.
+     *        The identifier of the index for your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

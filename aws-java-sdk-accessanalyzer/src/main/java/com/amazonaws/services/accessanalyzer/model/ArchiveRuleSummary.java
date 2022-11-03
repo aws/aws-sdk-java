@@ -30,10 +30,10 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time at which the archive rule was created.
+     * The name of the archive rule.
      * </p>
      */
-    private java.util.Date createdAt;
+    private String ruleName;
     /**
      * <p>
      * A filter used to define the archive rule.
@@ -42,10 +42,10 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
     private java.util.Map<String, Criterion> filter;
     /**
      * <p>
-     * The name of the archive rule.
+     * The time at which the archive rule was created.
      * </p>
      */
-    private String ruleName;
+    private java.util.Date createdAt;
     /**
      * <p>
      * The time at which the archive rule was last updated.
@@ -55,41 +55,41 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time at which the archive rule was created.
+     * The name of the archive rule.
      * </p>
      * 
-     * @param createdAt
-     *        The time at which the archive rule was created.
+     * @param ruleName
+     *        The name of the archive rule.
      */
 
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
     }
 
     /**
      * <p>
-     * The time at which the archive rule was created.
+     * The name of the archive rule.
      * </p>
      * 
-     * @return The time at which the archive rule was created.
+     * @return The name of the archive rule.
      */
 
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
+    public String getRuleName() {
+        return this.ruleName;
     }
 
     /**
      * <p>
-     * The time at which the archive rule was created.
+     * The name of the archive rule.
      * </p>
      * 
-     * @param createdAt
-     *        The time at which the archive rule was created.
+     * @param ruleName
+     *        The name of the archive rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ArchiveRuleSummary withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
+    public ArchiveRuleSummary withRuleName(String ruleName) {
+        setRuleName(ruleName);
         return this;
     }
 
@@ -163,41 +163,41 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the archive rule.
+     * The time at which the archive rule was created.
      * </p>
      * 
-     * @param ruleName
-     *        The name of the archive rule.
+     * @param createdAt
+     *        The time at which the archive rule was created.
      */
 
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     /**
      * <p>
-     * The name of the archive rule.
+     * The time at which the archive rule was created.
      * </p>
      * 
-     * @return The name of the archive rule.
+     * @return The time at which the archive rule was created.
      */
 
-    public String getRuleName() {
-        return this.ruleName;
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
     }
 
     /**
      * <p>
-     * The name of the archive rule.
+     * The time at which the archive rule was created.
      * </p>
      * 
-     * @param ruleName
-     *        The name of the archive rule.
+     * @param createdAt
+     *        The time at which the archive rule was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ArchiveRuleSummary withRuleName(String ruleName) {
-        setRuleName(ruleName);
+    public ArchiveRuleSummary withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -253,12 +253,12 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
         if (getRuleName() != null)
             sb.append("RuleName: ").append(getRuleName()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -275,17 +275,17 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
         if (obj instanceof ArchiveRuleSummary == false)
             return false;
         ArchiveRuleSummary other = (ArchiveRuleSummary) obj;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+        if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
             return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
-        if (other.getRuleName() == null ^ this.getRuleName() == null)
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
@@ -299,9 +299,9 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

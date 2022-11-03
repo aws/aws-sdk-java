@@ -36,15 +36,18 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
     private String keyId;
     /**
      * <p>
-     * The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray
-     * might use both the old and new encryption.
+     * The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>
+     * .
+     * </p>
+     * <p>
+     * When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.
      * </p>
      */
     private String status;
     /**
      * <p>
      * The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates
-     * to use the default encryption.
+     * the default encryption.
      * </p>
      */
     private String type;
@@ -94,13 +97,19 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray
-     * might use both the old and new encryption.
+     * The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>
+     * .
+     * </p>
+     * <p>
+     * When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.
      * </p>
      * 
      * @param status
-     *        The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>,
-     *        X-Ray might use both the old and new encryption.
+     *        The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or
+     *        <code>UPDATING</code>.</p>
+     *        <p>
+     *        When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     *        encryption.
      */
 
     public void setStatus(String status) {
@@ -109,12 +118,18 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray
-     * might use both the old and new encryption.
+     * The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>
+     * .
+     * </p>
+     * <p>
+     * When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.
      * </p>
      * 
-     * @return The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>,
-     *         X-Ray might use both the old and new encryption.
+     * @return The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or
+     *         <code>UPDATING</code>.</p>
+     *         <p>
+     *         When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     *         encryption.
      */
 
     public String getStatus() {
@@ -123,13 +138,19 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray
-     * might use both the old and new encryption.
+     * The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>
+     * .
+     * </p>
+     * <p>
+     * When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.
      * </p>
      * 
      * @param status
-     *        The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>,
-     *        X-Ray might use both the old and new encryption.
+     *        The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or
+     *        <code>UPDATING</code>.</p>
+     *        <p>
+     *        When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     *        encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +162,12 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
     /**
      * <p>
      * The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates
-     * to use the default encryption.
+     * the default encryption.
      * </p>
      * 
      * @param type
      *        The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code>
-     *        indicates to use the default encryption.
+     *        indicates the default encryption.
      */
 
     public void setType(String type) {
@@ -156,11 +177,11 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
     /**
      * <p>
      * The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates
-     * to use the default encryption.
+     * the default encryption.
      * </p>
      * 
      * @return The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code>
-     *         indicates to use the default encryption.
+     *         indicates the default encryption.
      */
 
     public String getType() {
@@ -170,12 +191,12 @@ public class AwsXrayEncryptionConfigDetails implements Serializable, Cloneable, 
     /**
      * <p>
      * The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates
-     * to use the default encryption.
+     * the default encryption.
      * </p>
      * 
      * @param type
      *        The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code>
-     *        indicates to use the default encryption.
+     *        indicates the default encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,8 @@ public class MetricSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RDSSourceConfig").build();
     private static final MarshallingInfo<StructuredPojo> REDSHIFTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftSourceConfig").build();
+    private static final MarshallingInfo<StructuredPojo> ATHENASOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AthenaSourceConfig").build();
 
     private static final MetricSourceMarshaller instance = new MetricSourceMarshaller();
 
@@ -59,6 +61,7 @@ public class MetricSourceMarshaller {
             protocolMarshaller.marshall(metricSource.getCloudWatchConfig(), CLOUDWATCHCONFIG_BINDING);
             protocolMarshaller.marshall(metricSource.getRDSSourceConfig(), RDSSOURCECONFIG_BINDING);
             protocolMarshaller.marshall(metricSource.getRedshiftSourceConfig(), REDSHIFTSOURCECONFIG_BINDING);
+            protocolMarshaller.marshall(metricSource.getAthenaSourceConfig(), ATHENASOURCECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

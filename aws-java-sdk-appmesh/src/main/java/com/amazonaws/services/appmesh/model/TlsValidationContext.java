@@ -30,7 +30,12 @@ public class TlsValidationContext implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.
+     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you
+     * don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN
+     * on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the
+     * certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration.
+     * Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the
+     * service discovery name.
      * </p>
      */
     private SubjectAlternativeNames subjectAlternativeNames;
@@ -44,11 +49,21 @@ public class TlsValidationContext implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.
+     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you
+     * don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN
+     * on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the
+     * certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration.
+     * Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the
+     * service discovery name.
      * </p>
      * 
      * @param subjectAlternativeNames
      *        A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.
+     *        If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't
+     *        verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh
+     *        endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint
+     *        service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set
+     *        the SAN since the name doesn't match the service discovery name.
      */
 
     public void setSubjectAlternativeNames(SubjectAlternativeNames subjectAlternativeNames) {
@@ -57,11 +72,20 @@ public class TlsValidationContext implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.
+     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you
+     * don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN
+     * on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the
+     * certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration.
+     * Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the
+     * service discovery name.
      * </p>
      * 
      * @return A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation
-     *         context.
+     *         context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node
+     *         doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i>
+     *         mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh
+     *         endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you
+     *         must set the SAN since the name doesn't match the service discovery name.
      */
 
     public SubjectAlternativeNames getSubjectAlternativeNames() {
@@ -70,11 +94,21 @@ public class TlsValidationContext implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.
+     * A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you
+     * don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN
+     * on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the
+     * certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration.
+     * Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the
+     * service discovery name.
      * </p>
      * 
      * @param subjectAlternativeNames
      *        A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.
+     *        If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't
+     *        verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh
+     *        endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint
+     *        service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set
+     *        the SAN since the name doesn't match the service discovery name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

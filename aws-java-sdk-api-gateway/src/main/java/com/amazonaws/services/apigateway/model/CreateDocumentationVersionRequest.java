@@ -27,13 +27,13 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The version identifier of the new snapshot.
+     * The version identifier of the new snapshot.
      * </p>
      */
     private String documentationVersion;
@@ -52,11 +52,11 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -65,10 +65,10 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -77,11 +77,11 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The version identifier of the new snapshot.
+     * The version identifier of the new snapshot.
      * </p>
      * 
      * @param documentationVersion
-     *        [Required] The version identifier of the new snapshot.
+     *        The version identifier of the new snapshot.
      */
 
     public void setDocumentationVersion(String documentationVersion) {
@@ -105,10 +105,10 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The version identifier of the new snapshot.
+     * The version identifier of the new snapshot.
      * </p>
      * 
-     * @return [Required] The version identifier of the new snapshot.
+     * @return The version identifier of the new snapshot.
      */
 
     public String getDocumentationVersion() {
@@ -117,11 +117,11 @@ public class CreateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * [Required] The version identifier of the new snapshot.
+     * The version identifier of the new snapshot.
      * </p>
      * 
      * @param documentationVersion
-     *        [Required] The version identifier of the new snapshot.
+     *        The version identifier of the new snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

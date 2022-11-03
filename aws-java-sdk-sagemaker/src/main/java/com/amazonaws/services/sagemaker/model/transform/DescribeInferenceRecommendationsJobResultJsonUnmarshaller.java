@@ -105,6 +105,13 @@ public class DescribeInferenceRecommendationsJobResultJsonUnmarshaller implement
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("EndpointPerformances", targetDepth)) {
+                    context.nextToken();
+                    describeInferenceRecommendationsJobResult.setEndpointPerformances(new ListUnmarshaller<EndpointPerformance>(
+                            EndpointPerformanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

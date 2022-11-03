@@ -59,7 +59,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -157,7 +157,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -201,8 +201,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     *         <code>_.:/=+-</code>
+     *         Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *         <code>_.:/=+@-</code>
      *         </p>
      *         </li>
      *         <li>
@@ -254,7 +254,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -299,7 +299,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     *        Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *        <code>_.:/=+@-</code>
      *        </p>
      *        </li>
      *        <li>
@@ -355,7 +356,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -405,7 +406,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     *        Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *        <code>_.:/=+@-</code>
      *        </p>
      *        </li>
      *        <li>
@@ -463,7 +465,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -508,7 +510,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     *        Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *        <code>_.:/=+@-</code>
      *        </p>
      *        </li>
      *        <li>

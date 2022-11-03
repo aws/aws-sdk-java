@@ -68,7 +68,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On-demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     * specified.)
      * </p>
      * </li>
      * <li>
@@ -313,7 +314,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On-demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     * specified.)
      * </p>
      * </li>
      * <li>
@@ -336,7 +338,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>USER</code> - On-demand backup created by you.
+     *        <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     *        specified.)
      *        </p>
      *        </li>
      *        <li>
@@ -366,7 +369,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On-demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     * specified.)
      * </p>
      * </li>
      * <li>
@@ -388,7 +392,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>USER</code> - On-demand backup created by you.
+     *         <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     *         specified.)
      *         </p>
      *         </li>
      *         <li>
@@ -418,7 +423,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On-demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     * specified.)
      * </p>
      * </li>
      * <li>
@@ -441,7 +447,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>USER</code> - On-demand backup created by you.
+     *        <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     *        specified.)
      *        </p>
      *        </li>
      *        <li>
@@ -473,7 +480,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On-demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     * specified.)
      * </p>
      * </li>
      * <li>
@@ -496,7 +504,8 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>USER</code> - On-demand backup created by you.
+     *        <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are
+     *        specified.)
      *        </p>
      *        </li>
      *        <li>

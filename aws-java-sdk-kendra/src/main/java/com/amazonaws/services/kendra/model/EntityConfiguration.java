@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the configuration information for users or groups in your Amazon Web Services SSO identity source to grant
+ * Provides the configuration information for users or groups in your IAM Identity Center identity source to grant
  * access your Amazon Kendra experience.
  * </p>
  * 
@@ -31,8 +31,8 @@ public class EntityConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      */
     private String entityId;
@@ -45,12 +45,12 @@ public class EntityConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     *        The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *        could be an email.
      */
 
@@ -60,11 +60,11 @@ public class EntityConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
-     * @return The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     * @return The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *         could be an email.
      */
 
@@ -74,12 +74,12 @@ public class EntityConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could
-     * be an email.
+     * The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an
+     * email.
      * </p>
      * 
      * @param entityId
-     *        The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID
+     *        The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID
      *        could be an email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

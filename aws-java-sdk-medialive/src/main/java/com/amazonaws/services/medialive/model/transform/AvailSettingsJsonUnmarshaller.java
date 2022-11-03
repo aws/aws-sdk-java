@@ -48,6 +48,10 @@ public class AvailSettingsJsonUnmarshaller implements Unmarshaller<AvailSettings
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("esam", targetDepth)) {
+                    context.nextToken();
+                    availSettings.setEsam(EsamJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("scte35SpliceInsert", targetDepth)) {
                     context.nextToken();
                     availSettings.setScte35SpliceInsert(Scte35SpliceInsertJsonUnmarshaller.getInstance().unmarshall(context));

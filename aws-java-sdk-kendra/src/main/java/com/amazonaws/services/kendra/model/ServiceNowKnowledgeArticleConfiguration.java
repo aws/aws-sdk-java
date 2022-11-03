@@ -30,7 +30,7 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * <code>TRUE</code> to index attachments to knowledge articles.
      * </p>
      */
     private Boolean crawlAttachments;
@@ -94,11 +94,11 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * <code>TRUE</code> to index attachments to knowledge articles.
      * </p>
      * 
      * @param crawlAttachments
-     *        Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     *        <code>TRUE</code> to index attachments to knowledge articles.
      */
 
     public void setCrawlAttachments(Boolean crawlAttachments) {
@@ -107,10 +107,10 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * <code>TRUE</code> to index attachments to knowledge articles.
      * </p>
      * 
-     * @return Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * @return <code>TRUE</code> to index attachments to knowledge articles.
      */
 
     public Boolean getCrawlAttachments() {
@@ -119,11 +119,11 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * <code>TRUE</code> to index attachments to knowledge articles.
      * </p>
      * 
      * @param crawlAttachments
-     *        Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     *        <code>TRUE</code> to index attachments to knowledge articles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,10 +134,10 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * <code>TRUE</code> to index attachments to knowledge articles.
      * </p>
      * 
-     * @return Indicates whether Amazon Kendra should index attachments to knowledge articles.
+     * @return <code>TRUE</code> to index attachments to knowledge articles.
      */
 
     public Boolean isCrawlAttachments() {

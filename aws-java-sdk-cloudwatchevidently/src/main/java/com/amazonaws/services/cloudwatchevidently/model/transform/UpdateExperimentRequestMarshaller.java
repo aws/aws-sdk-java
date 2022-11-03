@@ -40,8 +40,12 @@ public class UpdateExperimentRequestMarshaller {
             .marshallLocationName("project").build();
     private static final MarshallingInfo<String> RANDOMIZATIONSALT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("randomizationSalt").build();
+    private static final MarshallingInfo<Boolean> REMOVESEGMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeSegment").build();
     private static final MarshallingInfo<Long> SAMPLINGRATE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("samplingRate").build();
+    private static final MarshallingInfo<String> SEGMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("segment").build();
     private static final MarshallingInfo<List> TREATMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("treatments").build();
 
@@ -67,7 +71,9 @@ public class UpdateExperimentRequestMarshaller {
             protocolMarshaller.marshall(updateExperimentRequest.getOnlineAbConfig(), ONLINEABCONFIG_BINDING);
             protocolMarshaller.marshall(updateExperimentRequest.getProject(), PROJECT_BINDING);
             protocolMarshaller.marshall(updateExperimentRequest.getRandomizationSalt(), RANDOMIZATIONSALT_BINDING);
+            protocolMarshaller.marshall(updateExperimentRequest.getRemoveSegment(), REMOVESEGMENT_BINDING);
             protocolMarshaller.marshall(updateExperimentRequest.getSamplingRate(), SAMPLINGRATE_BINDING);
+            protocolMarshaller.marshall(updateExperimentRequest.getSegment(), SEGMENT_BINDING);
             protocolMarshaller.marshall(updateExperimentRequest.getTreatments(), TREATMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

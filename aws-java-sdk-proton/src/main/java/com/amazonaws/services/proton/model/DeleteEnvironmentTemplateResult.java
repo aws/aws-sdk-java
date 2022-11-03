@@ -25,18 +25,18 @@ public class DeleteEnvironmentTemplateResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the environment template being deleted.
      * </p>
      */
     private EnvironmentTemplate environmentTemplate;
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the environment template being deleted.
      * </p>
      * 
      * @param environmentTemplate
-     *        The environment template detail data that's returned by Proton.
+     *        The detailed data of the environment template being deleted.
      */
 
     public void setEnvironmentTemplate(EnvironmentTemplate environmentTemplate) {
@@ -45,10 +45,10 @@ public class DeleteEnvironmentTemplateResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the environment template being deleted.
      * </p>
      * 
-     * @return The environment template detail data that's returned by Proton.
+     * @return The detailed data of the environment template being deleted.
      */
 
     public EnvironmentTemplate getEnvironmentTemplate() {
@@ -57,11 +57,11 @@ public class DeleteEnvironmentTemplateResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The environment template detail data that's returned by Proton.
+     * The detailed data of the environment template being deleted.
      * </p>
      * 
      * @param environmentTemplate
-     *        The environment template detail data that's returned by Proton.
+     *        The detailed data of the environment template being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

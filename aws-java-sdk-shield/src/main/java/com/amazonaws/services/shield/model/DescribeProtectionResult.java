@@ -25,18 +25,18 @@ public class DescribeProtectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The <a>Protection</a> object that is described.
+     * The <a>Protection</a> that you requested.
      * </p>
      */
     private Protection protection;
 
     /**
      * <p>
-     * The <a>Protection</a> object that is described.
+     * The <a>Protection</a> that you requested.
      * </p>
      * 
      * @param protection
-     *        The <a>Protection</a> object that is described.
+     *        The <a>Protection</a> that you requested.
      */
 
     public void setProtection(Protection protection) {
@@ -45,10 +45,10 @@ public class DescribeProtectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The <a>Protection</a> object that is described.
+     * The <a>Protection</a> that you requested.
      * </p>
      * 
-     * @return The <a>Protection</a> object that is described.
+     * @return The <a>Protection</a> that you requested.
      */
 
     public Protection getProtection() {
@@ -57,11 +57,11 @@ public class DescribeProtectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The <a>Protection</a> object that is described.
+     * The <a>Protection</a> that you requested.
      * </p>
      * 
      * @param protection
-     *        The <a>Protection</a> object that is described.
+     *        The <a>Protection</a> that you requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

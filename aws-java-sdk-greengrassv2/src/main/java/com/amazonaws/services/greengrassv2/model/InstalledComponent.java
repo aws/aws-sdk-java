@@ -48,7 +48,8 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
     private String lifecycleState;
     /**
      * <p>
-     * The details about the lifecycle state of the component.
+     * A detailed response about the lifecycle state of the component that explains the reason why a component has an
+     * error or is broken.
      * </p>
      */
     private String lifecycleStateDetails;
@@ -58,6 +59,48 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean isRoot;
+    /**
+     * <p>
+     * The status of how current the data is.
+     * </p>
+     * <p>
+     * This response is based off of component state changes. The status reflects component disruptions and deployments.
+     * If a component only sees a configuration update during a deployment, it might not undergo a state change and this
+     * status would not be updated.
+     * </p>
+     */
+    private java.util.Date lastStatusChangeTimestamp;
+    /**
+     * <p>
+     * The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services
+     * Cloud.
+     * </p>
+     * <p>
+     * A component does not need to see a state change for this field to update.
+     * </p>
+     */
+    private java.util.Date lastReportedTimestamp;
+    /**
+     * <p>
+     * The most recent deployment source that brought the component to the Greengrass core device. For a thing group
+     * deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it
+     * will be <code>LOCAL</code>.
+     * </p>
+     */
+    private String lastInstallationSource;
+    /**
+     * <p>
+     * The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is
+     * in a broken state.
+     * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response.
+     * This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note>
+     */
+    private java.util.List<String> lifecycleStatusCodes;
 
     /**
      * <p>
@@ -200,11 +243,13 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The details about the lifecycle state of the component.
+     * A detailed response about the lifecycle state of the component that explains the reason why a component has an
+     * error or is broken.
      * </p>
      * 
      * @param lifecycleStateDetails
-     *        The details about the lifecycle state of the component.
+     *        A detailed response about the lifecycle state of the component that explains the reason why a component
+     *        has an error or is broken.
      */
 
     public void setLifecycleStateDetails(String lifecycleStateDetails) {
@@ -213,10 +258,12 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The details about the lifecycle state of the component.
+     * A detailed response about the lifecycle state of the component that explains the reason why a component has an
+     * error or is broken.
      * </p>
      * 
-     * @return The details about the lifecycle state of the component.
+     * @return A detailed response about the lifecycle state of the component that explains the reason why a component
+     *         has an error or is broken.
      */
 
     public String getLifecycleStateDetails() {
@@ -225,11 +272,13 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The details about the lifecycle state of the component.
+     * A detailed response about the lifecycle state of the component that explains the reason why a component has an
+     * error or is broken.
      * </p>
      * 
      * @param lifecycleStateDetails
-     *        The details about the lifecycle state of the component.
+     *        A detailed response about the lifecycle state of the component that explains the reason why a component
+     *        has an error or is broken.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,6 +340,304 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The status of how current the data is.
+     * </p>
+     * <p>
+     * This response is based off of component state changes. The status reflects component disruptions and deployments.
+     * If a component only sees a configuration update during a deployment, it might not undergo a state change and this
+     * status would not be updated.
+     * </p>
+     * 
+     * @param lastStatusChangeTimestamp
+     *        The status of how current the data is.</p>
+     *        <p>
+     *        This response is based off of component state changes. The status reflects component disruptions and
+     *        deployments. If a component only sees a configuration update during a deployment, it might not undergo a
+     *        state change and this status would not be updated.
+     */
+
+    public void setLastStatusChangeTimestamp(java.util.Date lastStatusChangeTimestamp) {
+        this.lastStatusChangeTimestamp = lastStatusChangeTimestamp;
+    }
+
+    /**
+     * <p>
+     * The status of how current the data is.
+     * </p>
+     * <p>
+     * This response is based off of component state changes. The status reflects component disruptions and deployments.
+     * If a component only sees a configuration update during a deployment, it might not undergo a state change and this
+     * status would not be updated.
+     * </p>
+     * 
+     * @return The status of how current the data is.</p>
+     *         <p>
+     *         This response is based off of component state changes. The status reflects component disruptions and
+     *         deployments. If a component only sees a configuration update during a deployment, it might not undergo a
+     *         state change and this status would not be updated.
+     */
+
+    public java.util.Date getLastStatusChangeTimestamp() {
+        return this.lastStatusChangeTimestamp;
+    }
+
+    /**
+     * <p>
+     * The status of how current the data is.
+     * </p>
+     * <p>
+     * This response is based off of component state changes. The status reflects component disruptions and deployments.
+     * If a component only sees a configuration update during a deployment, it might not undergo a state change and this
+     * status would not be updated.
+     * </p>
+     * 
+     * @param lastStatusChangeTimestamp
+     *        The status of how current the data is.</p>
+     *        <p>
+     *        This response is based off of component state changes. The status reflects component disruptions and
+     *        deployments. If a component only sees a configuration update during a deployment, it might not undergo a
+     *        state change and this status would not be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstalledComponent withLastStatusChangeTimestamp(java.util.Date lastStatusChangeTimestamp) {
+        setLastStatusChangeTimestamp(lastStatusChangeTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services
+     * Cloud.
+     * </p>
+     * <p>
+     * A component does not need to see a state change for this field to update.
+     * </p>
+     * 
+     * @param lastReportedTimestamp
+     *        The last time the Greengrass core device sent a message containing a certain component to the Amazon Web
+     *        Services Cloud.</p>
+     *        <p>
+     *        A component does not need to see a state change for this field to update.
+     */
+
+    public void setLastReportedTimestamp(java.util.Date lastReportedTimestamp) {
+        this.lastReportedTimestamp = lastReportedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services
+     * Cloud.
+     * </p>
+     * <p>
+     * A component does not need to see a state change for this field to update.
+     * </p>
+     * 
+     * @return The last time the Greengrass core device sent a message containing a certain component to the Amazon Web
+     *         Services Cloud.</p>
+     *         <p>
+     *         A component does not need to see a state change for this field to update.
+     */
+
+    public java.util.Date getLastReportedTimestamp() {
+        return this.lastReportedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services
+     * Cloud.
+     * </p>
+     * <p>
+     * A component does not need to see a state change for this field to update.
+     * </p>
+     * 
+     * @param lastReportedTimestamp
+     *        The last time the Greengrass core device sent a message containing a certain component to the Amazon Web
+     *        Services Cloud.</p>
+     *        <p>
+     *        A component does not need to see a state change for this field to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstalledComponent withLastReportedTimestamp(java.util.Date lastReportedTimestamp) {
+        setLastReportedTimestamp(lastReportedTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The most recent deployment source that brought the component to the Greengrass core device. For a thing group
+     * deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it
+     * will be <code>LOCAL</code>.
+     * </p>
+     * 
+     * @param lastInstallationSource
+     *        The most recent deployment source that brought the component to the Greengrass core device. For a thing
+     *        group deployment or thing deployment, the source will be the The ID of the deployment. and for local
+     *        deployments it will be <code>LOCAL</code>.
+     */
+
+    public void setLastInstallationSource(String lastInstallationSource) {
+        this.lastInstallationSource = lastInstallationSource;
+    }
+
+    /**
+     * <p>
+     * The most recent deployment source that brought the component to the Greengrass core device. For a thing group
+     * deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it
+     * will be <code>LOCAL</code>.
+     * </p>
+     * 
+     * @return The most recent deployment source that brought the component to the Greengrass core device. For a thing
+     *         group deployment or thing deployment, the source will be the The ID of the deployment. and for local
+     *         deployments it will be <code>LOCAL</code>.
+     */
+
+    public String getLastInstallationSource() {
+        return this.lastInstallationSource;
+    }
+
+    /**
+     * <p>
+     * The most recent deployment source that brought the component to the Greengrass core device. For a thing group
+     * deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it
+     * will be <code>LOCAL</code>.
+     * </p>
+     * 
+     * @param lastInstallationSource
+     *        The most recent deployment source that brought the component to the Greengrass core device. For a thing
+     *        group deployment or thing deployment, the source will be the The ID of the deployment. and for local
+     *        deployments it will be <code>LOCAL</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstalledComponent withLastInstallationSource(String lastInstallationSource) {
+        setLastInstallationSource(lastInstallationSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is
+     * in a broken state.
+     * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response.
+     * This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note>
+     * 
+     * @return The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an
+     *         error or is in a broken state.</p> <note>
+     *         <p>
+     *         Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code>
+     *         response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *         </p>
+     */
+
+    public java.util.List<String> getLifecycleStatusCodes() {
+        return lifecycleStatusCodes;
+    }
+
+    /**
+     * <p>
+     * The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is
+     * in a broken state.
+     * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response.
+     * This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note>
+     * 
+     * @param lifecycleStatusCodes
+     *        The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an
+     *        error or is in a broken state.</p> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     */
+
+    public void setLifecycleStatusCodes(java.util.Collection<String> lifecycleStatusCodes) {
+        if (lifecycleStatusCodes == null) {
+            this.lifecycleStatusCodes = null;
+            return;
+        }
+
+        this.lifecycleStatusCodes = new java.util.ArrayList<String>(lifecycleStatusCodes);
+    }
+
+    /**
+     * <p>
+     * The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is
+     * in a broken state.
+     * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response.
+     * This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLifecycleStatusCodes(java.util.Collection)} or {@link #withLifecycleStatusCodes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param lifecycleStatusCodes
+     *        The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an
+     *        error or is in a broken state.</p> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstalledComponent withLifecycleStatusCodes(String... lifecycleStatusCodes) {
+        if (this.lifecycleStatusCodes == null) {
+            setLifecycleStatusCodes(new java.util.ArrayList<String>(lifecycleStatusCodes.length));
+        }
+        for (String ele : lifecycleStatusCodes) {
+            this.lifecycleStatusCodes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is
+     * in a broken state.
+     * </p>
+     * <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response.
+     * This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note>
+     * 
+     * @param lifecycleStatusCodes
+     *        The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an
+     *        error or is in a broken state.</p> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstalledComponent withLifecycleStatusCodes(java.util.Collection<String> lifecycleStatusCodes) {
+        setLifecycleStatusCodes(lifecycleStatusCodes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -311,7 +658,15 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
         if (getLifecycleStateDetails() != null)
             sb.append("LifecycleStateDetails: ").append(getLifecycleStateDetails()).append(",");
         if (getIsRoot() != null)
-            sb.append("IsRoot: ").append(getIsRoot());
+            sb.append("IsRoot: ").append(getIsRoot()).append(",");
+        if (getLastStatusChangeTimestamp() != null)
+            sb.append("LastStatusChangeTimestamp: ").append(getLastStatusChangeTimestamp()).append(",");
+        if (getLastReportedTimestamp() != null)
+            sb.append("LastReportedTimestamp: ").append(getLastReportedTimestamp()).append(",");
+        if (getLastInstallationSource() != null)
+            sb.append("LastInstallationSource: ").append(getLastInstallationSource()).append(",");
+        if (getLifecycleStatusCodes() != null)
+            sb.append("LifecycleStatusCodes: ").append(getLifecycleStatusCodes());
         sb.append("}");
         return sb.toString();
     }
@@ -346,6 +701,22 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getIsRoot() != null && other.getIsRoot().equals(this.getIsRoot()) == false)
             return false;
+        if (other.getLastStatusChangeTimestamp() == null ^ this.getLastStatusChangeTimestamp() == null)
+            return false;
+        if (other.getLastStatusChangeTimestamp() != null && other.getLastStatusChangeTimestamp().equals(this.getLastStatusChangeTimestamp()) == false)
+            return false;
+        if (other.getLastReportedTimestamp() == null ^ this.getLastReportedTimestamp() == null)
+            return false;
+        if (other.getLastReportedTimestamp() != null && other.getLastReportedTimestamp().equals(this.getLastReportedTimestamp()) == false)
+            return false;
+        if (other.getLastInstallationSource() == null ^ this.getLastInstallationSource() == null)
+            return false;
+        if (other.getLastInstallationSource() != null && other.getLastInstallationSource().equals(this.getLastInstallationSource()) == false)
+            return false;
+        if (other.getLifecycleStatusCodes() == null ^ this.getLifecycleStatusCodes() == null)
+            return false;
+        if (other.getLifecycleStatusCodes() != null && other.getLifecycleStatusCodes().equals(this.getLifecycleStatusCodes()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +730,10 @@ public class InstalledComponent implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getLifecycleState() == null) ? 0 : getLifecycleState().hashCode());
         hashCode = prime * hashCode + ((getLifecycleStateDetails() == null) ? 0 : getLifecycleStateDetails().hashCode());
         hashCode = prime * hashCode + ((getIsRoot() == null) ? 0 : getIsRoot().hashCode());
+        hashCode = prime * hashCode + ((getLastStatusChangeTimestamp() == null) ? 0 : getLastStatusChangeTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastReportedTimestamp() == null) ? 0 : getLastReportedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastInstallationSource() == null) ? 0 : getLastInstallationSource().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleStatusCodes() == null) ? 0 : getLifecycleStatusCodes().hashCode());
         return hashCode;
     }
 

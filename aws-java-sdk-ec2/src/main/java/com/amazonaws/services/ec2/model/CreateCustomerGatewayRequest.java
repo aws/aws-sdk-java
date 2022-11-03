@@ -39,7 +39,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     private Integer bgpAsn;
     /**
      * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static.
      * </p>
      */
     private String publicIp;
@@ -70,6 +71,12 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * </p>
      */
     private String deviceName;
+    /**
+     * <p>
+     * IPv4 address for the customer gateway device's outside interface. The address must be static.
+     * </p>
+     */
+    private String ipAddress;
 
     /**
      * Default constructor for CreateCustomerGatewayRequest object. Callers should use the setter or fluent setter
@@ -85,7 +92,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @param type
      *        The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
      * @param publicIp
-     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     *        <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's
+     *        outside interface. The address must be static.
      * @param bgpAsn
      *        For devices that support BGP, the customer gateway's BGP ASN.</p>
      *        <p>
@@ -104,7 +112,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @param type
      *        The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
      * @param publicIp
-     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     *        <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's
+     *        outside interface. The address must be static.
      * @param bgpAsn
      *        For devices that support BGP, the customer gateway's BGP ASN.</p>
      *        <p>
@@ -173,11 +182,13 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static.
      * </p>
      * 
      * @param publicIp
-     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     *        <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's
+     *        outside interface. The address must be static.
      */
 
     public void setPublicIp(String publicIp) {
@@ -186,11 +197,12 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static.
      * </p>
      * 
-     * @return The Internet-routable IP address for the customer gateway's outside interface. The address must be
-     *         static.
+     * @return <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's
+     *         outside interface. The address must be static.
      */
 
     public String getPublicIp() {
@@ -199,11 +211,13 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static.
      * </p>
      * 
      * @param publicIp
-     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     *        <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's
+     *        outside interface. The address must be static.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,6 +468,46 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * IPv4 address for the customer gateway device's outside interface. The address must be static.
+     * </p>
+     * 
+     * @param ipAddress
+     *        IPv4 address for the customer gateway device's outside interface. The address must be static.
+     */
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    /**
+     * <p>
+     * IPv4 address for the customer gateway device's outside interface. The address must be static.
+     * </p>
+     * 
+     * @return IPv4 address for the customer gateway device's outside interface. The address must be static.
+     */
+
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
+
+    /**
+     * <p>
+     * IPv4 address for the customer gateway device's outside interface. The address must be static.
+     * </p>
+     * 
+     * @param ipAddress
+     *        IPv4 address for the customer gateway device's outside interface. The address must be static.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomerGatewayRequest withIpAddress(String ipAddress) {
+        setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -487,7 +541,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getDeviceName() != null)
-            sb.append("DeviceName: ").append(getDeviceName());
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getIpAddress() != null)
+            sb.append("IpAddress: ").append(getIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -526,6 +582,10 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
+        if (other.getIpAddress() == null ^ this.getIpAddress() == null)
+            return false;
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
+            return false;
         return true;
     }
 
@@ -540,6 +600,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         return hashCode;
     }
 

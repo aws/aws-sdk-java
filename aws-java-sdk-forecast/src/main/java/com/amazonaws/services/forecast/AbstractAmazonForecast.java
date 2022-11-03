@@ -68,12 +68,32 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public CreateMonitorResult createMonitor(CreateMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePredictorResult createPredictor(CreatePredictorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreatePredictorBacktestExportJobResult createPredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWhatIfAnalysisResult createWhatIfAnalysis(CreateWhatIfAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWhatIfForecastResult createWhatIfForecast(CreateWhatIfForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWhatIfForecastExportResult createWhatIfForecastExport(CreateWhatIfForecastExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,6 +133,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public DeleteMonitorResult deleteMonitor(DeleteMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePredictorResult deletePredictor(DeletePredictorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +149,21 @@ public class AbstractAmazonForecast implements AmazonForecast {
 
     @Override
     public DeleteResourceTreeResult deleteResourceTree(DeleteResourceTreeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWhatIfAnalysisResult deleteWhatIfAnalysis(DeleteWhatIfAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWhatIfForecastResult deleteWhatIfForecast(DeleteWhatIfForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWhatIfForecastExportResult deleteWhatIfForecastExport(DeleteWhatIfForecastExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,12 +208,32 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public DescribeMonitorResult describeMonitor(DescribeMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePredictorResult describePredictor(DescribePredictorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribePredictorBacktestExportJobResult describePredictorBacktestExportJob(DescribePredictorBacktestExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWhatIfAnalysisResult describeWhatIfAnalysis(DescribeWhatIfAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWhatIfForecastResult describeWhatIfForecast(DescribeWhatIfForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWhatIfForecastExportResult describeWhatIfForecastExport(DescribeWhatIfForecastExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -218,6 +278,16 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public ListMonitorEvaluationsResult listMonitorEvaluations(ListMonitorEvaluationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMonitorsResult listMonitors(ListMonitorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPredictorBacktestExportJobsResult listPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +299,26 @@ public class AbstractAmazonForecast implements AmazonForecast {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWhatIfAnalysesResult listWhatIfAnalyses(ListWhatIfAnalysesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWhatIfForecastExportsResult listWhatIfForecastExports(ListWhatIfForecastExportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWhatIfForecastsResult listWhatIfForecasts(ListWhatIfForecastsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResumeResourceResult resumeResource(ResumeResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

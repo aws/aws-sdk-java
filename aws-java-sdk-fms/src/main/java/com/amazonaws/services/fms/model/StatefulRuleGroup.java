@@ -40,6 +40,28 @@ public class StatefulRuleGroup implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String resourceId;
+    /**
+     * <p>
+     * An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall
+     * firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule
+     * order in the stateful engine options settings.
+     * </p>
+     * <p>
+     * Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within each policy. For information about
+     * </p>
+     * <p>
+     * You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups
+     * later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     * </p>
+     */
+    private Integer priority;
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     */
+    private NetworkFirewallStatefulRuleGroupOverride override;
 
     /**
      * <p>
@@ -122,6 +144,146 @@ public class StatefulRuleGroup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall
+     * firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule
+     * order in the stateful engine options settings.
+     * </p>
+     * <p>
+     * Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within each policy. For information about
+     * </p>
+     * <p>
+     * You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups
+     * later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     * </p>
+     * 
+     * @param priority
+     *        An integer setting that indicates the order in which to run the stateful rule groups in a single Network
+     *        Firewall firewall policy. This setting only applies to firewall policies that specify the
+     *        <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+     *        <p>
+     *        Network Firewall evalutes each stateful rule group against a packet starting with the group that has the
+     *        lowest priority setting. You must ensure that the priority settings are unique within each policy. For
+     *        information about
+     *        </p>
+     *        <p>
+     *        You can change the priority settings of your rule groups at any time. To make it easier to insert rule
+     *        groups later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall
+     * firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule
+     * order in the stateful engine options settings.
+     * </p>
+     * <p>
+     * Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within each policy. For information about
+     * </p>
+     * <p>
+     * You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups
+     * later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     * </p>
+     * 
+     * @return An integer setting that indicates the order in which to run the stateful rule groups in a single Network
+     *         Firewall firewall policy. This setting only applies to firewall policies that specify the
+     *         <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+     *         <p>
+     *         Network Firewall evalutes each stateful rule group against a packet starting with the group that has the
+     *         lowest priority setting. You must ensure that the priority settings are unique within each policy. For
+     *         information about
+     *         </p>
+     *         <p>
+     *         You can change the priority settings of your rule groups at any time. To make it easier to insert rule
+     *         groups later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall
+     * firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule
+     * order in the stateful engine options settings.
+     * </p>
+     * <p>
+     * Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within each policy. For information about
+     * </p>
+     * <p>
+     * You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups
+     * later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     * </p>
+     * 
+     * @param priority
+     *        An integer setting that indicates the order in which to run the stateful rule groups in a single Network
+     *        Firewall firewall policy. This setting only applies to firewall policies that specify the
+     *        <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+     *        <p>
+     *        Network Firewall evalutes each stateful rule group against a packet starting with the group that has the
+     *        lowest priority setting. You must ensure that the priority settings are unique within each policy. For
+     *        information about
+     *        </p>
+     *        <p>
+     *        You can change the priority settings of your rule groups at any time. To make it easier to insert rule
+     *        groups later, number them so there's a wide range in between, for example use 100, 200, and so on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatefulRuleGroup withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     * 
+     * @param override
+     *        The action that allows the policy owner to override the behavior of the rule group within a policy.
+     */
+
+    public void setOverride(NetworkFirewallStatefulRuleGroupOverride override) {
+        this.override = override;
+    }
+
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     * 
+     * @return The action that allows the policy owner to override the behavior of the rule group within a policy.
+     */
+
+    public NetworkFirewallStatefulRuleGroupOverride getOverride() {
+        return this.override;
+    }
+
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     * 
+     * @param override
+     *        The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatefulRuleGroup withOverride(NetworkFirewallStatefulRuleGroupOverride override) {
+        setOverride(override);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +298,11 @@ public class StatefulRuleGroup implements Serializable, Cloneable, StructuredPoj
         if (getRuleGroupName() != null)
             sb.append("RuleGroupName: ").append(getRuleGroupName()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: ").append(getResourceId());
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
+        if (getOverride() != null)
+            sb.append("Override: ").append(getOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +325,14 @@ public class StatefulRuleGroup implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
+        if (other.getOverride() == null ^ this.getOverride() == null)
+            return false;
+        if (other.getOverride() != null && other.getOverride().equals(this.getOverride()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +343,8 @@ public class StatefulRuleGroup implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getRuleGroupName() == null) ? 0 : getRuleGroupName().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
+        hashCode = prime * hashCode + ((getOverride() == null) ? 0 : getOverride().hashCode());
         return hashCode;
     }
 

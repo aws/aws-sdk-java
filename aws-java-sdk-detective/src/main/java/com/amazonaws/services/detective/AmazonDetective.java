@@ -43,9 +43,13 @@ import com.amazonaws.services.detective.model.*;
  * <p>
  * Detective is also integrated with Organizations. The organization management account designates the Detective
  * administrator account for the organization. That account becomes the administrator account for the organization
- * behavior graph. The Detective administrator account can enable any organization account as a member account in the
- * organization behavior graph. The organization accounts do not receive invitations. The Detective administrator
- * account can also invite other accounts to the organization behavior graph.
+ * behavior graph. The Detective administrator account is also the delegated administrator account for Detective in
+ * Organizations.
+ * </p>
+ * <p>
+ * The Detective administrator account can enable any organization account as a member account in the organization
+ * behavior graph. The organization accounts do not receive invitations. The Detective administrator account can also
+ * invite other accounts to the organization behavior graph.
  * </p>
  * <p>
  * Every behavior graph is specific to a Region. You can only use the API to manage behavior graphs that belong to the
@@ -176,6 +180,44 @@ public interface AmazonDetective {
      *      Documentation</a>
      */
     AcceptInvitationResult acceptInvitation(AcceptInvitationRequest acceptInvitationRequest);
+
+    /**
+     * <p>
+     * Gets data source package information for the behavior graph.
+     * </p>
+     * 
+     * @param batchGetGraphMemberDatasourcesRequest
+     * @return Result of the BatchGetGraphMemberDatasources operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.BatchGetGraphMemberDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetGraphMemberDatasourcesResult batchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest batchGetGraphMemberDatasourcesRequest);
+
+    /**
+     * <p>
+     * Gets information on the data source package history for an account.
+     * </p>
+     * 
+     * @param batchGetMembershipDatasourcesRequest
+     * @return Result of the BatchGetMembershipDatasources operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.BatchGetMembershipDatasources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetMembershipDatasourcesResult batchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest batchGetMembershipDatasourcesRequest);
 
     /**
      * <p>
@@ -393,12 +435,19 @@ public interface AmazonDetective {
 
     /**
      * <p>
-     * Removes the Detective administrator account for the organization in the current Region. Deletes the behavior
-     * graph for that account.
+     * Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.
      * </p>
      * <p>
-     * Can only be called by the organization management account. Before you can select a different Detective
-     * administrator account, you must remove the Detective administrator account in all Regions.
+     * Can only be called by the organization management account.
+     * </p>
+     * <p>
+     * Removing the Detective administrator account does not affect the delegated administrator account for Detective in
+     * Organizations.
+     * </p>
+     * <p>
+     * To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated
+     * administrator account also removes the Detective administrator account in all Regions, except for Regions where
+     * the Detective administrator account is the organization management account.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -454,8 +503,14 @@ public interface AmazonDetective {
      * Can only be called by the organization management account.
      * </p>
      * <p>
-     * The Detective administrator account for an organization must be the same in all Regions. If you already
-     * designated a Detective administrator account in another Region, then you must designate the same account.
+     * If the organization has a delegated administrator account in Organizations, then the Detective administrator
+     * account must be either the delegated administrator account or the organization management account.
+     * </p>
+     * <p>
+     * If the organization does not have a delegated administrator account in Organizations, then you can choose any
+     * account in the organization. If you choose an account other than the organization management account, Detective
+     * calls Organizations to make that account the delegated administrator account for Detective. The organization
+     * management account cannot be the delegated administrator account.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -490,6 +545,25 @@ public interface AmazonDetective {
      *      Documentation</a>
      */
     GetMembersResult getMembers(GetMembersRequest getMembersRequest);
+
+    /**
+     * <p>
+     * Lists data source packages in the behavior graph.
+     * </p>
+     * 
+     * @param listDatasourcePackagesRequest
+     * @return Result of the ListDatasourcePackages operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.ListDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDatasourcePackagesResult listDatasourcePackages(ListDatasourcePackagesRequest listDatasourcePackagesRequest);
 
     /**
      * <p>
@@ -723,6 +797,45 @@ public interface AmazonDetective {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Starts a data source packages for the behavior graph.
+     * </p>
+     * 
+     * @param updateDatasourcePackagesRequest
+     * @return Result of the UpdateDatasourcePackages operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ServiceQuotaExceededException
+     *         This request cannot be completed for one of the following reasons.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
+     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Detective is unable to verify the data rate for the member account. This is usually because the member
+     *         account is not enrolled in Amazon GuardDuty.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.UpdateDatasourcePackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDatasourcePackagesResult updateDatasourcePackages(UpdateDatasourcePackagesRequest updateDatasourcePackagesRequest);
 
     /**
      * <p>

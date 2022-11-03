@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to delete the <a>BasePathMapping</a> resource.
+ * A request to delete the BasePathMapping resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     * The domain name of the BasePathMapping resource to delete.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * [Required] The base path name of the <a>BasePathMapping</a> resource to delete.
+     * The base path name of the BasePathMapping resource to delete.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
@@ -43,11 +43,11 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     * The domain name of the BasePathMapping resource to delete.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     *        The domain name of the BasePathMapping resource to delete.
      */
 
     public void setDomainName(String domainName) {
@@ -56,10 +56,10 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     * The domain name of the BasePathMapping resource to delete.
      * </p>
      * 
-     * @return [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     * @return The domain name of the BasePathMapping resource to delete.
      */
 
     public String getDomainName() {
@@ -68,11 +68,11 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     * The domain name of the BasePathMapping resource to delete.
      * </p>
      * 
      * @param domainName
-     *        [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
+     *        The domain name of the BasePathMapping resource to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,14 +83,14 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The base path name of the <a>BasePathMapping</a> resource to delete.
+     * The base path name of the BasePathMapping resource to delete.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
      * @param basePath
-     *        [Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     *        The base path name of the BasePathMapping resource to delete.</p>
      *        <p>
      *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
@@ -101,13 +101,13 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The base path name of the <a>BasePathMapping</a> resource to delete.
+     * The base path name of the BasePathMapping resource to delete.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
-     * @return [Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * @return The base path name of the BasePathMapping resource to delete.</p>
      *         <p>
      *         To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
@@ -118,14 +118,14 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The base path name of the <a>BasePathMapping</a> resource to delete.
+     * The base path name of the BasePathMapping resource to delete.
      * </p>
      * <p>
      * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
      * @param basePath
-     *        [Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     *        The base path name of the BasePathMapping resource to delete.</p>
      *        <p>
      *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

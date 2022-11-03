@@ -25,36 +25,41 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the vocabulary filter.
+     * The name of the custom vocabulary filter you requested information about.
      * </p>
      */
     private String vocabularyFilterName;
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code you selected for your vocabulary filter.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The date and time that the contents of the vocabulary filter were updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     * The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the vocabulary
+     * filter.
      * </p>
      */
     private String downloadUri;
 
     /**
      * <p>
-     * The name of the vocabulary filter.
+     * The name of the custom vocabulary filter you requested information about.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter.
+     *        The name of the custom vocabulary filter you requested information about.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -63,10 +68,10 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the vocabulary filter.
+     * The name of the custom vocabulary filter you requested information about.
      * </p>
      * 
-     * @return The name of the vocabulary filter.
+     * @return The name of the custom vocabulary filter you requested information about.
      */
 
     public String getVocabularyFilterName() {
@@ -75,11 +80,11 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the vocabulary filter.
+     * The name of the custom vocabulary filter you requested information about.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter.
+     *        The name of the custom vocabulary filter you requested information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +95,11 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code you selected for your vocabulary filter.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter.
+     *        The language code you selected for your vocabulary filter.
      * @see LanguageCode
      */
 
@@ -104,10 +109,10 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code you selected for your vocabulary filter.
      * </p>
      * 
-     * @return The language code of the words in the vocabulary filter.
+     * @return The language code you selected for your vocabulary filter.
      * @see LanguageCode
      */
 
@@ -117,11 +122,11 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code you selected for your vocabulary filter.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter.
+     *        The language code you selected for your vocabulary filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -133,11 +138,11 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The language code of the words in the vocabulary filter.
+     * The language code you selected for your vocabulary filter.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the words in the vocabulary filter.
+     *        The language code you selected for your vocabulary filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -149,11 +154,18 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time that the contents of the vocabulary filter were updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the contents of the vocabulary filter were updated.
+     *        The date and time the specified vocabulary filter was last modified.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -162,10 +174,17 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time that the contents of the vocabulary filter were updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time that the contents of the vocabulary filter were updated.
+     * @return The date and time the specified vocabulary filter was last modified.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -174,11 +193,18 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time that the contents of the vocabulary filter were updated.
+     * The date and time the specified vocabulary filter was last modified.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the contents of the vocabulary filter were updated.
+     *        The date and time the specified vocabulary filter was last modified.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +215,13 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     * The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the vocabulary
+     * filter.
      * </p>
      * 
      * @param downloadUri
-     *        The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     *        The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the
+     *        vocabulary filter.
      */
 
     public void setDownloadUri(String downloadUri) {
@@ -202,10 +230,12 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     * The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the vocabulary
+     * filter.
      * </p>
      * 
-     * @return The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     * @return The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the
+     *         vocabulary filter.
      */
 
     public String getDownloadUri() {
@@ -214,11 +244,13 @@ public class GetVocabularyFilterResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     * The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the vocabulary
+     * filter.
      * </p>
      * 
      * @param downloadUri
-     *        The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.
+     *        The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the
+     *        vocabulary filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

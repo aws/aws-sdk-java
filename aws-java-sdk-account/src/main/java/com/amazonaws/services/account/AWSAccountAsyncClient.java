@@ -140,6 +140,39 @@ public class AWSAccountAsyncClient extends AWSAccountClient implements AWSAccoun
     }
 
     @Override
+    public java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(GetContactInformationRequest request) {
+
+        return getContactInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(final GetContactInformationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactInformationRequest, GetContactInformationResult> asyncHandler) {
+        final GetContactInformationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactInformationResult>() {
+            @Override
+            public GetContactInformationResult call() throws Exception {
+                GetContactInformationResult result = null;
+
+                try {
+                    result = executeGetContactInformation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAlternateContactResult> putAlternateContactAsync(PutAlternateContactRequest request) {
 
         return putAlternateContactAsync(request, null);
@@ -157,6 +190,39 @@ public class AWSAccountAsyncClient extends AWSAccountClient implements AWSAccoun
 
                 try {
                     result = executePutAlternateContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContactInformationResult> putContactInformationAsync(PutContactInformationRequest request) {
+
+        return putContactInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContactInformationResult> putContactInformationAsync(final PutContactInformationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutContactInformationRequest, PutContactInformationResult> asyncHandler) {
+        final PutContactInformationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutContactInformationResult>() {
+            @Override
+            public PutContactInformationResult call() throws Exception {
+                PutContactInformationResult result = null;
+
+                try {
+                    result = executePutContactInformation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * An error that occurred with the job request.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/JobError" target="_top">AWS API
  *      Documentation</a>
@@ -26,7 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobError implements Serializable, Cloneable, StructuredPojo {
 
-    /** The code for the job error. */
+    /**
+     * <p>
+     * The code for the job error.
+     * </p>
+     */
     private String code;
     /**
      * <p>
@@ -40,17 +46,35 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String limitName;
-    /** The value of the exceeded limit. */
+    /**
+     * <p>
+     * The value of the exceeded limit.
+     * </p>
+     */
     private Double limitValue;
-    /** The message related to the job error. */
+    /**
+     * <p>
+     * The message related to the job error.
+     * </p>
+     */
     private String message;
-    /** The unique identifier for the resource related to the error. */
+    /**
+     * <p>
+     * The unique identifier for the resource related to the error.
+     * </p>
+     */
     private String resourceId;
-    /** The type of resource related to the error. */
+    /**
+     * <p>
+     * The type of resource related to the error.
+     * </p>
+     */
     private String resourceType;
 
     /**
+     * <p>
      * The code for the job error.
+     * </p>
      * 
      * @param code
      *        The code for the job error.
@@ -62,7 +86,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The code for the job error.
+     * </p>
      * 
      * @return The code for the job error.
      * @see Code
@@ -73,7 +99,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The code for the job error.
+     * </p>
      * 
      * @param code
      *        The code for the job error.
@@ -87,7 +115,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The code for the job error.
+     * </p>
      * 
      * @param code
      *        The code for the job error.
@@ -200,7 +230,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The value of the exceeded limit.
+     * </p>
      * 
      * @param limitValue
      *        The value of the exceeded limit.
@@ -211,7 +243,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The value of the exceeded limit.
+     * </p>
      * 
      * @return The value of the exceeded limit.
      */
@@ -221,7 +255,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The value of the exceeded limit.
+     * </p>
      * 
      * @param limitValue
      *        The value of the exceeded limit.
@@ -234,7 +270,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The message related to the job error.
+     * </p>
      * 
      * @param message
      *        The message related to the job error.
@@ -245,7 +283,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The message related to the job error.
+     * </p>
      * 
      * @return The message related to the job error.
      */
@@ -255,7 +295,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The message related to the job error.
+     * </p>
      * 
      * @param message
      *        The message related to the job error.
@@ -268,7 +310,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The unique identifier for the resource related to the error.
+     * </p>
      * 
      * @param resourceId
      *        The unique identifier for the resource related to the error.
@@ -279,7 +323,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The unique identifier for the resource related to the error.
+     * </p>
      * 
      * @return The unique identifier for the resource related to the error.
      */
@@ -289,7 +335,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The unique identifier for the resource related to the error.
+     * </p>
      * 
      * @param resourceId
      *        The unique identifier for the resource related to the error.
@@ -302,7 +350,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of resource related to the error.
+     * </p>
      * 
      * @param resourceType
      *        The type of resource related to the error.
@@ -314,7 +364,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of resource related to the error.
+     * </p>
      * 
      * @return The type of resource related to the error.
      * @see JobErrorResourceTypes
@@ -325,7 +377,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of resource related to the error.
+     * </p>
      * 
      * @param resourceType
      *        The type of resource related to the error.
@@ -339,7 +393,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of resource related to the error.
+     * </p>
      * 
      * @param resourceType
      *        The type of resource related to the error.

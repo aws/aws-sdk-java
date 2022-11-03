@@ -38,12 +38,13 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      */
@@ -68,6 +69,13 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private InsightHealth insight;
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     */
+    private Long analyzedResourceCount;
 
     /**
      * <p>
@@ -78,12 +86,13 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * 
@@ -94,10 +103,11 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *        the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *        <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *        <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *        example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *        <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *        <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *        create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create
+     *        a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *        <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *        different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *        <code>Devops-Guru-production-application/RDS</code> or
      *        <code>Devops-Guru-production-application/containers</code>.
      *        </p>
@@ -116,12 +126,13 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * 
@@ -131,10 +142,11 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *         the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *         <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *         <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *         example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *         <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *         <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *         create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you
+     *         create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *         <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *         different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *         <code>Devops-Guru-production-application/RDS</code> or
      *         <code>Devops-Guru-production-application/containers</code>.
      *         </p>
@@ -153,12 +165,13 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * 
@@ -169,10 +182,11 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *        the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *        <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *        <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *        example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *        <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *        <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *        create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create
+     *        a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *        <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *        different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *        <code>Devops-Guru-production-application/RDS</code> or
      *        <code>Devops-Guru-production-application/containers</code>.
      *        </p>
@@ -313,6 +327,52 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *        Services tag.
+     */
+
+    public void setAnalyzedResourceCount(Long analyzedResourceCount) {
+        this.analyzedResourceCount = analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     * 
+     * @return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *         Services tag.
+     */
+
+    public Long getAnalyzedResourceCount() {
+        return this.analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *        Services tag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TagHealth withAnalyzedResourceCount(Long analyzedResourceCount) {
+        setAnalyzedResourceCount(analyzedResourceCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -329,7 +389,9 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
         if (getTagValue() != null)
             sb.append("TagValue: ").append(getTagValue()).append(",");
         if (getInsight() != null)
-            sb.append("Insight: ").append(getInsight());
+            sb.append("Insight: ").append(getInsight()).append(",");
+        if (getAnalyzedResourceCount() != null)
+            sb.append("AnalyzedResourceCount: ").append(getAnalyzedResourceCount());
         sb.append("}");
         return sb.toString();
     }
@@ -356,6 +418,10 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInsight() != null && other.getInsight().equals(this.getInsight()) == false)
             return false;
+        if (other.getAnalyzedResourceCount() == null ^ this.getAnalyzedResourceCount() == null)
+            return false;
+        if (other.getAnalyzedResourceCount() != null && other.getAnalyzedResourceCount().equals(this.getAnalyzedResourceCount()) == false)
+            return false;
         return true;
     }
 
@@ -367,6 +433,7 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAppBoundaryKey() == null) ? 0 : getAppBoundaryKey().hashCode());
         hashCode = prime * hashCode + ((getTagValue() == null) ? 0 : getTagValue().hashCode());
         hashCode = prime * hashCode + ((getInsight() == null) ? 0 : getInsight().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedResourceCount() == null) ? 0 : getAnalyzedResourceCount().hashCode());
         return hashCode;
     }
 

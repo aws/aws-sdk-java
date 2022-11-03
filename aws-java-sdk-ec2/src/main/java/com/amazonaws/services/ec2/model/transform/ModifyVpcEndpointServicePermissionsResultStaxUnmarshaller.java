@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -43,6 +45,16 @@ public class ModifyVpcEndpointServicePermissionsResultStaxUnmarshaller implement
                 return modifyVpcEndpointServicePermissionsResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("addedPrincipalSet", targetDepth)) {
+                    modifyVpcEndpointServicePermissionsResult.withAddedPrincipals(new ArrayList<AddedPrincipal>());
+                    continue;
+                }
+
+                if (context.testExpression("addedPrincipalSet/item", targetDepth)) {
+                    modifyVpcEndpointServicePermissionsResult.withAddedPrincipals(AddedPrincipalStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
 
                 if (context.testExpression("return", targetDepth)) {
                     modifyVpcEndpointServicePermissionsResult.setReturnValue(BooleanStaxUnmarshaller.getInstance().unmarshall(context));

@@ -33,8 +33,8 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      */
     private String domainOwner;
@@ -46,25 +46,8 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
     private String repository;
     /**
      * <p>
-     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
+     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
 
@@ -110,13 +93,13 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain that contains the repository. It does
-     *        not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain that contains the
+     *        repository. It does not include dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -125,12 +108,12 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain that contains the repository. It does
-     *         not include dashes or spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain that contains the
+     *         repository. It does not include dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -139,13 +122,13 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain that contains the repository. It does
-     *        not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain that contains the
+     *        repository. It does not include dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,45 +179,11 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
+     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * @see PackageFormat
      */
 
@@ -244,44 +193,10 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
+     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * @see PackageFormat
      */
 
@@ -291,45 +206,11 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
+     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -341,45 +222,11 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
+     * Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

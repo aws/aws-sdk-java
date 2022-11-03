@@ -78,6 +78,15 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.finspacedata.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.finspacedata.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.finspacedata.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.finspacedata.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -87,17 +96,8 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.finspacedata.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.finspacedata.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.finspacedata.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.finspacedata.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.finspacedata.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.finspacedata.model.AWSFinSpaceDataException.class));
 
     public static AWSFinSpaceDataClientBuilder builder() {
@@ -144,6 +144,75 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/finspacedata/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/finspacedata/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
+     * </p>
+     * 
+     * @param associateUserToPermissionGroupRequest
+     * @return Result of the AssociateUserToPermissionGroup operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         The request conflicts with an existing resource.
+     * @sample AWSFinSpaceData.AssociateUserToPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateUserToPermissionGroupResult associateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateUserToPermissionGroup(request);
+    }
+
+    @SdkInternalApi
+    final AssociateUserToPermissionGroupResult executeAssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest associateUserToPermissionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateUserToPermissionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateUserToPermissionGroupRequest> request = null;
+        Response<AssociateUserToPermissionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateUserToPermissionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateUserToPermissionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "finspace data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateUserToPermissionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateUserToPermissionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateUserToPermissionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -698,6 +767,76 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Removes a user account from a permission group.
+     * </p>
+     * 
+     * @param disassociateUserFromPermissionGroupRequest
+     * @return Result of the DisassociateUserFromPermissionGroup operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         The request conflicts with an existing resource.
+     * @sample AWSFinSpaceData.DisassociateUserFromPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateUserFromPermissionGroupResult disassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateUserFromPermissionGroup(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateUserFromPermissionGroupResult executeDisassociateUserFromPermissionGroup(
+            DisassociateUserFromPermissionGroupRequest disassociateUserFromPermissionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateUserFromPermissionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateUserFromPermissionGroupRequest> request = null;
+        Response<DisassociateUserFromPermissionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateUserFromPermissionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateUserFromPermissionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "finspace data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateUserFromPermissionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateUserFromPermissionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateUserFromPermissionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Allows the specified user to access the FinSpace web application and API.
      * </p>
      * 
@@ -957,6 +1096,152 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDatasetResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDatasetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the credentials to access the external Dataview from an S3 location. To call this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must retrieve the programmatic credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must be a member of a FinSpace user group, where the dataset that you want to access has
+     * <code>Read Dataset Data</code> permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getExternalDataViewAccessDetailsRequest
+     * @return Result of the GetExternalDataViewAccessDetails operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSFinSpaceData.GetExternalDataViewAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetExternalDataViewAccessDetailsResult getExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExternalDataViewAccessDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetExternalDataViewAccessDetailsResult executeGetExternalDataViewAccessDetails(
+            GetExternalDataViewAccessDetailsRequest getExternalDataViewAccessDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExternalDataViewAccessDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExternalDataViewAccessDetailsRequest> request = null;
+        Response<GetExternalDataViewAccessDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExternalDataViewAccessDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getExternalDataViewAccessDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "finspace data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExternalDataViewAccessDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExternalDataViewAccessDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetExternalDataViewAccessDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the details of a specific permission group.
+     * </p>
+     * 
+     * @param getPermissionGroupRequest
+     * @return Result of the GetPermissionGroup operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AWSFinSpaceData.GetPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetPermissionGroupResult getPermissionGroup(GetPermissionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPermissionGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetPermissionGroupResult executeGetPermissionGroup(GetPermissionGroupRequest getPermissionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPermissionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPermissionGroupRequest> request = null;
+        Response<GetPermissionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPermissionGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPermissionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "finspace data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPermissionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPermissionGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1428,6 +1713,73 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists all the permission groups that are associated with a specific user account.
+     * </p>
+     * 
+     * @param listPermissionGroupsByUserRequest
+     * @return Result of the ListPermissionGroupsByUser operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AWSFinSpaceData.ListPermissionGroupsByUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPermissionGroupsByUserResult listPermissionGroupsByUser(ListPermissionGroupsByUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPermissionGroupsByUser(request);
+    }
+
+    @SdkInternalApi
+    final ListPermissionGroupsByUserResult executeListPermissionGroupsByUser(ListPermissionGroupsByUserRequest listPermissionGroupsByUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPermissionGroupsByUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPermissionGroupsByUserRequest> request = null;
+        Response<ListPermissionGroupsByUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPermissionGroupsByUserRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPermissionGroupsByUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "finspace data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissionGroupsByUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPermissionGroupsByUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPermissionGroupsByUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all available user accounts in FinSpace.
      * </p>
      * 
@@ -1479,6 +1831,73 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists details of all the users in a specific permission group.
+     * </p>
+     * 
+     * @param listUsersByPermissionGroupRequest
+     * @return Result of the ListUsersByPermissionGroup operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AWSFinSpaceData.ListUsersByPermissionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListUsersByPermissionGroupResult listUsersByPermissionGroup(ListUsersByPermissionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUsersByPermissionGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListUsersByPermissionGroupResult executeListUsersByPermissionGroup(ListUsersByPermissionGroupRequest listUsersByPermissionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUsersByPermissionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUsersByPermissionGroupRequest> request = null;
+        Response<ListUsersByPermissionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUsersByPermissionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listUsersByPermissionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "finspace data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsersByPermissionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUsersByPermissionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListUsersByPermissionGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

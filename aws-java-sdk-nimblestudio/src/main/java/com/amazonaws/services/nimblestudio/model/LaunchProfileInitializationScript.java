@@ -30,10 +30,24 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
 
     /**
      * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     */
+    private String runtimeRoleArn;
+    /**
+     * <p>
      * The initialization script.
      * </p>
      */
     private String script;
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     */
+    private String secureInitializationRoleArn;
     /**
      * <p>
      * The unique identifier for a studio component resource.
@@ -46,6 +60,52 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
      * </p>
      */
     private String studioComponentName;
+
+    /**
+     * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     * 
+     * @param runtimeRoleArn
+     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
+     *        anytime while the instance is running.
+     */
+
+    public void setRuntimeRoleArn(String runtimeRoleArn) {
+        this.runtimeRoleArn = runtimeRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     * 
+     * @return An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
+     *         anytime while the instance is running.
+     */
+
+    public String getRuntimeRoleArn() {
+        return this.runtimeRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
+     * while the instance is running.
+     * </p>
+     * 
+     * @param runtimeRoleArn
+     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
+     *        anytime while the instance is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchProfileInitializationScript withRuntimeRoleArn(String runtimeRoleArn) {
+        setRuntimeRoleArn(runtimeRoleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +144,52 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
 
     public LaunchProfileInitializationScript withScript(String script) {
         setScript(script);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     * 
+     * @param secureInitializationRoleArn
+     *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     *        component access to AWS resources when the system initialization script runs.
+     */
+
+    public void setSecureInitializationRoleArn(String secureInitializationRoleArn) {
+        this.secureInitializationRoleArn = secureInitializationRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     * 
+     * @return An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     *         component access to AWS resources when the system initialization script runs.
+     */
+
+    public String getSecureInitializationRoleArn() {
+        return this.secureInitializationRoleArn;
+    }
+
+    /**
+     * <p>
+     * An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     * component access to AWS resources when the system initialization script runs.
+     * </p>
+     * 
+     * @param secureInitializationRoleArn
+     *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
+     *        component access to AWS resources when the system initialization script runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchProfileInitializationScript withSecureInitializationRoleArn(String secureInitializationRoleArn) {
+        setSecureInitializationRoleArn(secureInitializationRoleArn);
         return this;
     }
 
@@ -179,8 +285,12 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRuntimeRoleArn() != null)
+            sb.append("RuntimeRoleArn: ").append(getRuntimeRoleArn()).append(",");
         if (getScript() != null)
             sb.append("Script: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSecureInitializationRoleArn() != null)
+            sb.append("SecureInitializationRoleArn: ").append(getSecureInitializationRoleArn()).append(",");
         if (getStudioComponentId() != null)
             sb.append("StudioComponentId: ").append(getStudioComponentId()).append(",");
         if (getStudioComponentName() != null)
@@ -199,9 +309,17 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
         if (obj instanceof LaunchProfileInitializationScript == false)
             return false;
         LaunchProfileInitializationScript other = (LaunchProfileInitializationScript) obj;
+        if (other.getRuntimeRoleArn() == null ^ this.getRuntimeRoleArn() == null)
+            return false;
+        if (other.getRuntimeRoleArn() != null && other.getRuntimeRoleArn().equals(this.getRuntimeRoleArn()) == false)
+            return false;
         if (other.getScript() == null ^ this.getScript() == null)
             return false;
         if (other.getScript() != null && other.getScript().equals(this.getScript()) == false)
+            return false;
+        if (other.getSecureInitializationRoleArn() == null ^ this.getSecureInitializationRoleArn() == null)
+            return false;
+        if (other.getSecureInitializationRoleArn() != null && other.getSecureInitializationRoleArn().equals(this.getSecureInitializationRoleArn()) == false)
             return false;
         if (other.getStudioComponentId() == null ^ this.getStudioComponentId() == null)
             return false;
@@ -219,7 +337,9 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRuntimeRoleArn() == null) ? 0 : getRuntimeRoleArn().hashCode());
         hashCode = prime * hashCode + ((getScript() == null) ? 0 : getScript().hashCode());
+        hashCode = prime * hashCode + ((getSecureInitializationRoleArn() == null) ? 0 : getSecureInitializationRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStudioComponentId() == null) ? 0 : getStudioComponentId().hashCode());
         hashCode = prime * hashCode + ((getStudioComponentName() == null) ? 0 : getStudioComponentName().hashCode());
         return hashCode;

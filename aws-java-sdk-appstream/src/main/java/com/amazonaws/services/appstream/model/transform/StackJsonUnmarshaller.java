@@ -110,6 +110,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("StreamingExperienceSettings", targetDepth)) {
+                    context.nextToken();
+                    stack.setStreamingExperienceSettings(StreamingExperienceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

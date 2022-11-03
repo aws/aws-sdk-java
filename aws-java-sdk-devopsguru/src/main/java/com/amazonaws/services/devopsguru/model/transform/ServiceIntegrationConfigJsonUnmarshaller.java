@@ -52,6 +52,10 @@ public class ServiceIntegrationConfigJsonUnmarshaller implements Unmarshaller<Se
                     context.nextToken();
                     serviceIntegrationConfig.setOpsCenter(OpsCenterIntegrationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LogsAnomalyDetection", targetDepth)) {
+                    context.nextToken();
+                    serviceIntegrationConfig.setLogsAnomalyDetection(LogsAnomalyDetectionIntegrationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

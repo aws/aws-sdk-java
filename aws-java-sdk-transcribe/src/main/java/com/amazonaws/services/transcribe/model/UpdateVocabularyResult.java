@@ -25,37 +25,41 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the vocabulary that was updated.
+     * The name of the updated custom vocabulary.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code you selected for your custom vocabulary.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The date and time that the vocabulary was updated.
+     * The date and time the specified vocabulary was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code>
-     * the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
 
     /**
      * <p>
-     * The name of the vocabulary that was updated.
+     * The name of the updated custom vocabulary.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary that was updated.
+     *        The name of the updated custom vocabulary.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -64,10 +68,10 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the vocabulary that was updated.
+     * The name of the updated custom vocabulary.
      * </p>
      * 
-     * @return The name of the vocabulary that was updated.
+     * @return The name of the updated custom vocabulary.
      */
 
     public String getVocabularyName() {
@@ -76,11 +80,11 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the vocabulary that was updated.
+     * The name of the updated custom vocabulary.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary that was updated.
+     *        The name of the updated custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +95,11 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code you selected for your custom vocabulary.
      * @see LanguageCode
      */
 
@@ -105,10 +109,10 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
-     * @return The language code of the vocabulary entries.
+     * @return The language code you selected for your custom vocabulary.
      * @see LanguageCode
      */
 
@@ -118,11 +122,11 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code you selected for your custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -134,11 +138,11 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code you selected for your custom vocabulary.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code you selected for your custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -150,11 +154,18 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date and time that the vocabulary was updated.
+     * The date and time the specified vocabulary was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the vocabulary was updated.
+     *        The date and time the specified vocabulary was last updated.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -163,10 +174,17 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date and time that the vocabulary was updated.
+     * The date and time the specified vocabulary was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time that the vocabulary was updated.
+     * @return The date and time the specified vocabulary was last updated.</p>
+     *         <p>
+     *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -175,11 +193,18 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date and time that the vocabulary was updated.
+     * The date and time the specified vocabulary was last updated.
+     * </p>
+     * <p>
+     * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the vocabulary was updated.
+     *        The date and time the specified vocabulary was last updated.</p>
+     *        <p>
+     *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,13 +215,13 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code>
-     * the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
-     *        <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -206,12 +231,12 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code>
-     * the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
-     * @return The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
-     *         <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     * @return The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *         vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -221,13 +246,13 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code>
-     * the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
-     *        <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -239,13 +264,13 @@ public class UpdateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code>
-     * the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
+     * a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
-     *        <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */

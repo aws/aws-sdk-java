@@ -60,6 +60,10 @@ public class SendChannelMessageResultJsonUnmarshaller implements Unmarshaller<Se
                     context.nextToken();
                     sendChannelMessageResult.setStatus(ChannelMessageStatusStructureJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SubChannelId", targetDepth)) {
+                    context.nextToken();
+                    sendChannelMessageResult.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

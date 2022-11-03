@@ -25,8 +25,8 @@ public class ListMailDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization,
-     * along with the information about whether the domain is or isn't the default.
+     * The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along
+     * with the information about whether the domain is or isn't the default.
      * </p>
      */
     private java.util.List<MailDomainSummary> mailDomains;
@@ -40,12 +40,12 @@ public class ListMailDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization,
-     * along with the information about whether the domain is or isn't the default.
+     * The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along
+     * with the information about whether the domain is or isn't the default.
      * </p>
      * 
-     * @return The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail
-     *         organization, along with the information about whether the domain is or isn't the default.
+     * @return The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization,
+     *         along with the information about whether the domain is or isn't the default.
      */
 
     public java.util.List<MailDomainSummary> getMailDomains() {
@@ -54,13 +54,13 @@ public class ListMailDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization,
-     * along with the information about whether the domain is or isn't the default.
+     * The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along
+     * with the information about whether the domain is or isn't the default.
      * </p>
      * 
      * @param mailDomains
-     *        The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail
-     *        organization, along with the information about whether the domain is or isn't the default.
+     *        The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization,
+     *        along with the information about whether the domain is or isn't the default.
      */
 
     public void setMailDomains(java.util.Collection<MailDomainSummary> mailDomains) {
@@ -74,8 +74,8 @@ public class ListMailDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization,
-     * along with the information about whether the domain is or isn't the default.
+     * The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along
+     * with the information about whether the domain is or isn't the default.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +84,8 @@ public class ListMailDomainsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param mailDomains
-     *        The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail
-     *        organization, along with the information about whether the domain is or isn't the default.
+     *        The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization,
+     *        along with the information about whether the domain is or isn't the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListMailDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization,
-     * along with the information about whether the domain is or isn't the default.
+     * The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along
+     * with the information about whether the domain is or isn't the default.
      * </p>
      * 
      * @param mailDomains
-     *        The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail
-     *        organization, along with the information about whether the domain is or isn't the default.
+     *        The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization,
+     *        along with the information about whether the domain is or isn't the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

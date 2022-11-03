@@ -58,7 +58,7 @@ public class HumanLoopSummaryJsonUnmarshaller implements Unmarshaller<HumanLoopS
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    humanLoopSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    humanLoopSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();

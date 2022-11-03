@@ -50,6 +50,13 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the standard metric.
      * </p>
+     * <note>
+     * <p>
+     * For definitions of the standard metrics, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.
+     * </p>
+     * </note>
      */
     private String standardMetricName;
 
@@ -215,9 +222,21 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the standard metric.
      * </p>
+     * <note>
+     * <p>
+     * For definitions of the standard metrics, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.
+     * </p>
+     * </note>
      * 
      * @param standardMetricName
-     *        The name of the standard metric.
+     *        The name of the standard metric. </p> <note>
+     *        <p>
+     *        For definitions of the standard metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"
+     *        > <code>Autopilot candidate metrics</code> </a>.
+     *        </p>
      * @see AutoMLMetricExtendedEnum
      */
 
@@ -229,8 +248,20 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the standard metric.
      * </p>
+     * <note>
+     * <p>
+     * For definitions of the standard metrics, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.
+     * </p>
+     * </note>
      * 
-     * @return The name of the standard metric.
+     * @return The name of the standard metric. </p> <note>
+     *         <p>
+     *         For definitions of the standard metrics, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"
+     *         > <code>Autopilot candidate metrics</code> </a>.
+     *         </p>
      * @see AutoMLMetricExtendedEnum
      */
 
@@ -242,9 +273,21 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the standard metric.
      * </p>
+     * <note>
+     * <p>
+     * For definitions of the standard metrics, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.
+     * </p>
+     * </note>
      * 
      * @param standardMetricName
-     *        The name of the standard metric.
+     *        The name of the standard metric. </p> <note>
+     *        <p>
+     *        For definitions of the standard metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"
+     *        > <code>Autopilot candidate metrics</code> </a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLMetricExtendedEnum
      */
@@ -258,9 +301,21 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the standard metric.
      * </p>
+     * <note>
+     * <p>
+     * For definitions of the standard metrics, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.
+     * </p>
+     * </note>
      * 
      * @param standardMetricName
-     *        The name of the standard metric.
+     *        The name of the standard metric. </p> <note>
+     *        <p>
+     *        For definitions of the standard metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"
+     *        > <code>Autopilot candidate metrics</code> </a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLMetricExtendedEnum
      */

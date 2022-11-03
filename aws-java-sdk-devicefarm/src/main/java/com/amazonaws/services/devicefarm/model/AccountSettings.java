@@ -80,7 +80,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      */
     private Boolean skipAppResign;
@@ -474,7 +474,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
@@ -482,7 +482,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information about how Device Farm re-signs your apps, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      */
 
@@ -497,14 +497,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information about how Device Farm re-signs your apps, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
 
@@ -519,7 +519,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
@@ -527,7 +527,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      *        devices, Device Farm always signs your apps again.</p>
      *        <p>
      *        For more information about how Device Farm re-signs your apps, see <a
-     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -544,14 +544,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about how Device Farm re-signs your apps, see <a
-     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
      *         devices, Device Farm always signs your apps again.</p>
      *         <p>
      *         For more information about how Device Farm re-signs your apps, see <a
-     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
 

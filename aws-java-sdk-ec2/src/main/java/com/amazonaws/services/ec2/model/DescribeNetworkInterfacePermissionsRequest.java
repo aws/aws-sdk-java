@@ -30,7 +30,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * One or more network interface permission IDs.
+     * The network interface permission IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkInterfacePermissionIds;
@@ -85,10 +85,10 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * One or more network interface permission IDs.
+     * The network interface permission IDs.
      * </p>
      * 
-     * @return One or more network interface permission IDs.
+     * @return The network interface permission IDs.
      */
 
     public java.util.List<String> getNetworkInterfacePermissionIds() {
@@ -100,11 +100,11 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * One or more network interface permission IDs.
+     * The network interface permission IDs.
      * </p>
      * 
      * @param networkInterfacePermissionIds
-     *        One or more network interface permission IDs.
+     *        The network interface permission IDs.
      */
 
     public void setNetworkInterfacePermissionIds(java.util.Collection<String> networkInterfacePermissionIds) {
@@ -118,7 +118,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * One or more network interface permission IDs.
+     * The network interface permission IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      * </p>
      * 
      * @param networkInterfacePermissionIds
-     *        One or more network interface permission IDs.
+     *        The network interface permission IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * One or more network interface permission IDs.
+     * The network interface permission IDs.
      * </p>
      * 
      * @param networkInterfacePermissionIds
-     *        One or more network interface permission IDs.
+     *        The network interface permission IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

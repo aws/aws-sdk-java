@@ -48,6 +48,10 @@ public class GatewayRouteTargetJsonUnmarshaller implements Unmarshaller<GatewayR
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("port", targetDepth)) {
+                    context.nextToken();
+                    gatewayRouteTarget.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualService", targetDepth)) {
                     context.nextToken();
                     gatewayRouteTarget.setVirtualService(GatewayRouteVirtualServiceJsonUnmarshaller.getInstance().unmarshall(context));

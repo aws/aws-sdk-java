@@ -52,6 +52,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("assessmentSchedule", targetDepth)) {
+                    context.nextToken();
+                    app.setAssessmentSchedule(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("complianceStatus", targetDepth)) {
                     context.nextToken();
                     app.setComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));

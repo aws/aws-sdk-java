@@ -48,15 +48,32 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    findingSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("principal", targetDepth)) {
+                    context.nextToken();
+                    findingSummary.setPrincipal(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("action", targetDepth)) {
                     context.nextToken();
                     findingSummary.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("analyzedAt", targetDepth)) {
+                if (context.testExpression("resource", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    findingSummary.setResource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("isPublic", targetDepth)) {
+                    context.nextToken();
+                    findingSummary.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceType", targetDepth)) {
+                    context.nextToken();
+                    findingSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
                     context.nextToken();
@@ -67,48 +84,31 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                     context.nextToken();
                     findingSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("error", targetDepth)) {
+                if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setError(context.getUnmarshaller(String.class).unmarshall(context));
+                    findingSummary.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
+                if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                    findingSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("isPublic", targetDepth)) {
+                if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("principal", targetDepth)) {
-                    context.nextToken();
-                    findingSummary.setPrincipal(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("resource", targetDepth)) {
-                    context.nextToken();
-                    findingSummary.setResource(context.getUnmarshaller(String.class).unmarshall(context));
+                    findingSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceOwnerAccount", targetDepth)) {
                     context.nextToken();
                     findingSummary.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("resourceType", targetDepth)) {
+                if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                    findingSummary.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
                     findingSummary.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    findingSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("updatedAt", targetDepth)) {
-                    context.nextToken();
-                    findingSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

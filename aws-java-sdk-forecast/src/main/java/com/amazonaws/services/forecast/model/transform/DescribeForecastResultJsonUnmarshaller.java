@@ -90,6 +90,10 @@ public class DescribeForecastResultJsonUnmarshaller implements Unmarshaller<Desc
                     context.nextToken();
                     describeForecastResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("TimeSeriesSelector", targetDepth)) {
+                    context.nextToken();
+                    describeForecastResult.setTimeSeriesSelector(TimeSeriesSelectorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

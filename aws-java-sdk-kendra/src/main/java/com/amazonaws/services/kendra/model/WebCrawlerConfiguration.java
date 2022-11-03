@@ -133,13 +133,13 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
      * Configuration information required to connect to websites using authentication.
      * </p>
      * <p>
-     * You can connect to websites using basic authentication of user name and password.
+     * You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your
+     * authentication credentials.
      * </p>
      * <p>
      * You must provide the website host name and port number. For example, the host name of
-     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to
-     * store your authentication credentials.
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      * </p>
      */
     private AuthenticationConfiguration authenticationConfiguration;
@@ -851,25 +851,25 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
      * Configuration information required to connect to websites using authentication.
      * </p>
      * <p>
-     * You can connect to websites using basic authentication of user name and password.
+     * You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your
+     * authentication credentials.
      * </p>
      * <p>
      * You must provide the website host name and port number. For example, the host name of
-     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to
-     * store your authentication credentials.
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      * </p>
      * 
      * @param authenticationConfiguration
      *        Configuration information required to connect to websites using authentication.</p>
      *        <p>
-     *        You can connect to websites using basic authentication of user name and password.
+     *        You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store
+     *        your authentication credentials.
      *        </p>
      *        <p>
      *        You must provide the website host name and port number. For example, the host name of
-     *        https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You
-     *        use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     *        Manager</a> to store your authentication credentials.
+     *        https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      */
 
     public void setAuthenticationConfiguration(AuthenticationConfiguration authenticationConfiguration) {
@@ -881,24 +881,24 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
      * Configuration information required to connect to websites using authentication.
      * </p>
      * <p>
-     * You can connect to websites using basic authentication of user name and password.
+     * You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your
+     * authentication credentials.
      * </p>
      * <p>
      * You must provide the website host name and port number. For example, the host name of
-     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to
-     * store your authentication credentials.
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      * </p>
      * 
      * @return Configuration information required to connect to websites using authentication.</p>
      *         <p>
-     *         You can connect to websites using basic authentication of user name and password.
+     *         You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to
+     *         store your authentication credentials.
      *         </p>
      *         <p>
      *         You must provide the website host name and port number. For example, the host name of
-     *         https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You
-     *         use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     *         Manager</a> to store your authentication credentials.
+     *         https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      */
 
     public AuthenticationConfiguration getAuthenticationConfiguration() {
@@ -910,25 +910,25 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
      * Configuration information required to connect to websites using authentication.
      * </p>
      * <p>
-     * You can connect to websites using basic authentication of user name and password.
+     * You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your
+     * authentication credentials.
      * </p>
      * <p>
      * You must provide the website host name and port number. For example, the host name of
-     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to
-     * store your authentication credentials.
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      * </p>
      * 
      * @param authenticationConfiguration
      *        Configuration information required to connect to websites using authentication.</p>
      *        <p>
-     *        You can connect to websites using basic authentication of user name and password.
+     *        You can connect to websites using basic authentication of user name and password. You use a secret in <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store
+     *        your authentication credentials.
      *        </p>
      *        <p>
      *        You must provide the website host name and port number. For example, the host name of
-     *        https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You
-     *        use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     *        Manager</a> to store your authentication credentials.
+     *        https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

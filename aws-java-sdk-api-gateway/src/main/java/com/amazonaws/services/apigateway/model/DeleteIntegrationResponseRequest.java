@@ -27,36 +27,36 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's resource identifier.
+     * Specifies a delete integration response request's resource identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's HTTP method.
+     * Specifies a delete integration response request's HTTP method.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's status code.
+     * Specifies a delete integration response request's status code.
      * </p>
      */
     private String statusCode;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -65,10 +65,10 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -77,11 +77,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's resource identifier.
+     * Specifies a delete integration response request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        [Required] Specifies a delete integration response request's resource identifier.
+     *        Specifies a delete integration response request's resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -105,10 +105,10 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's resource identifier.
+     * Specifies a delete integration response request's resource identifier.
      * </p>
      * 
-     * @return [Required] Specifies a delete integration response request's resource identifier.
+     * @return Specifies a delete integration response request's resource identifier.
      */
 
     public String getResourceId() {
@@ -117,11 +117,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's resource identifier.
+     * Specifies a delete integration response request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        [Required] Specifies a delete integration response request's resource identifier.
+     *        Specifies a delete integration response request's resource identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's HTTP method.
+     * Specifies a delete integration response request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] Specifies a delete integration response request's HTTP method.
+     *        Specifies a delete integration response request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -145,10 +145,10 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's HTTP method.
+     * Specifies a delete integration response request's HTTP method.
      * </p>
      * 
-     * @return [Required] Specifies a delete integration response request's HTTP method.
+     * @return Specifies a delete integration response request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -157,11 +157,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's HTTP method.
+     * Specifies a delete integration response request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        [Required] Specifies a delete integration response request's HTTP method.
+     *        Specifies a delete integration response request's HTTP method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's status code.
+     * Specifies a delete integration response request's status code.
      * </p>
      * 
      * @param statusCode
-     *        [Required] Specifies a delete integration response request's status code.
+     *        Specifies a delete integration response request's status code.
      */
 
     public void setStatusCode(String statusCode) {
@@ -185,10 +185,10 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's status code.
+     * Specifies a delete integration response request's status code.
      * </p>
      * 
-     * @return [Required] Specifies a delete integration response request's status code.
+     * @return Specifies a delete integration response request's status code.
      */
 
     public String getStatusCode() {
@@ -197,11 +197,11 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * [Required] Specifies a delete integration response request's status code.
+     * Specifies a delete integration response request's status code.
      * </p>
      * 
      * @param statusCode
-     *        [Required] Specifies a delete integration response request's status code.
+     *        Specifies a delete integration response request's status code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,8 +50,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or
-     * Single-AZ file system deployment</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     * deployment type</a>.
      * </p>
      */
     private String deploymentType;
@@ -177,8 +177,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or
-     * Single-AZ file system deployment</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     * deployment type</a>.
      * </p>
      * 
      * @param deploymentType
@@ -198,8 +198,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        </ul>
      *        <p>
      *        For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ
-     *        or Single-AZ file system deployment</a>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     *        deployment type</a>.
      * @see OntapDeploymentType
      */
 
@@ -226,8 +226,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or
-     * Single-AZ file system deployment</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     * deployment type</a>.
      * </p>
      * 
      * @return Specifies the FSx for ONTAP file system deployment type to use in creating the file system. </p>
@@ -246,8 +246,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *         </ul>
      *         <p>
      *         For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ
-     *         or Single-AZ file system deployment</a>.
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     *         deployment type</a>.
      * @see OntapDeploymentType
      */
 
@@ -274,8 +274,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or
-     * Single-AZ file system deployment</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     * deployment type</a>.
      * </p>
      * 
      * @param deploymentType
@@ -295,8 +295,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        </ul>
      *        <p>
      *        For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ
-     *        or Single-AZ file system deployment</a>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     *        deployment type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OntapDeploymentType
      */
@@ -325,8 +325,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or
-     * Single-AZ file system deployment</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     * deployment type</a>.
      * </p>
      * 
      * @param deploymentType
@@ -346,8 +346,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        </ul>
      *        <p>
      *        For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ
-     *        or Single-AZ file system deployment</a>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system
+     *        deployment type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OntapDeploymentType
      */

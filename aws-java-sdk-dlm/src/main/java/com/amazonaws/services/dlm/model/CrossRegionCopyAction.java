@@ -19,8 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a rule for copying shared snapshots across Regions.
+ * <b>[Event-based policies only]</b> Specifies a cross-Region copy action for event-based policies.
  * </p>
+ * <note>
+ * <p>
+ * To specify a cross-Region copy rule for snapshot and AMI policies, use <a>CrossRegionCopyRule</a>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyAction" target="_top">AWS API
  *      Documentation</a>

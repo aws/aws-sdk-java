@@ -34,8 +34,12 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
     private String instanceId;
     /**
      * <p>
-     * The ID of the snapshot from which to restore the replacement root volume. If you want to restore the volume to
-     * the initial launch state, omit this parameter.
+     * The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a
+     * snapshot that you previously created from the original root volume.
+     * </p>
+     * <p>
+     * If you want to restore the replacement root volume to the initial launch state, or if you want to restore the
+     * replacement root volume from an AMI, omit this parameter.
      * </p>
      */
     private String snapshotId;
@@ -54,6 +58,25 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
+     * The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing
+     * information, architecture type, and virtualization type as that of the instance.
+     * </p>
+     * <p>
+     * If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.
+     * </p>
+     */
+    private String imageId;
+    /**
+     * <p>
+     * Indicates whether to automatically delete the original root volume after the root volume replacement task
+     * completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root
+     * volume after the replacement task completes, you must manually delete it when you no longer need it.
+     * </p>
+     */
+    private Boolean deleteReplacedRootVolume;
 
     /**
      * <p>
@@ -97,13 +120,20 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the snapshot from which to restore the replacement root volume. If you want to restore the volume to
-     * the initial launch state, omit this parameter.
+     * The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a
+     * snapshot that you previously created from the original root volume.
+     * </p>
+     * <p>
+     * If you want to restore the replacement root volume to the initial launch state, or if you want to restore the
+     * replacement root volume from an AMI, omit this parameter.
      * </p>
      * 
      * @param snapshotId
-     *        The ID of the snapshot from which to restore the replacement root volume. If you want to restore the
-     *        volume to the initial launch state, omit this parameter.
+     *        The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a
+     *        snapshot that you previously created from the original root volume.</p>
+     *        <p>
+     *        If you want to restore the replacement root volume to the initial launch state, or if you want to restore
+     *        the replacement root volume from an AMI, omit this parameter.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -112,12 +142,19 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the snapshot from which to restore the replacement root volume. If you want to restore the volume to
-     * the initial launch state, omit this parameter.
+     * The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a
+     * snapshot that you previously created from the original root volume.
+     * </p>
+     * <p>
+     * If you want to restore the replacement root volume to the initial launch state, or if you want to restore the
+     * replacement root volume from an AMI, omit this parameter.
      * </p>
      * 
-     * @return The ID of the snapshot from which to restore the replacement root volume. If you want to restore the
-     *         volume to the initial launch state, omit this parameter.
+     * @return The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be
+     *         a snapshot that you previously created from the original root volume.</p>
+     *         <p>
+     *         If you want to restore the replacement root volume to the initial launch state, or if you want to restore
+     *         the replacement root volume from an AMI, omit this parameter.
      */
 
     public String getSnapshotId() {
@@ -126,13 +163,20 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the snapshot from which to restore the replacement root volume. If you want to restore the volume to
-     * the initial launch state, omit this parameter.
+     * The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a
+     * snapshot that you previously created from the original root volume.
+     * </p>
+     * <p>
+     * If you want to restore the replacement root volume to the initial launch state, or if you want to restore the
+     * replacement root volume from an AMI, omit this parameter.
      * </p>
      * 
      * @param snapshotId
-     *        The ID of the snapshot from which to restore the replacement root volume. If you want to restore the
-     *        volume to the initial launch state, omit this parameter.
+     *        The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a
+     *        snapshot that you previously created from the original root volume.</p>
+     *        <p>
+     *        If you want to restore the replacement root volume to the initial launch state, or if you want to restore
+     *        the replacement root volume from an AMI, omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,6 +320,145 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing
+     * information, architecture type, and virtualization type as that of the instance.
+     * </p>
+     * <p>
+     * If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code,
+     *        billing information, architecture type, and virtualization type as that of the instance.</p>
+     *        <p>
+     *        If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to
+     *        its launch state, omit this parameter.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing
+     * information, architecture type, and virtualization type as that of the instance.
+     * </p>
+     * <p>
+     * If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.
+     * </p>
+     * 
+     * @return The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code,
+     *         billing information, architecture type, and virtualization type as that of the instance.</p>
+     *         <p>
+     *         If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to
+     *         its launch state, omit this parameter.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing
+     * information, architecture type, and virtualization type as that of the instance.
+     * </p>
+     * <p>
+     * If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code,
+     *        billing information, architecture type, and virtualization type as that of the instance.</p>
+     *        <p>
+     *        If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to
+     *        its launch state, omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplaceRootVolumeTaskRequest withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to automatically delete the original root volume after the root volume replacement task
+     * completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root
+     * volume after the replacement task completes, you must manually delete it when you no longer need it.
+     * </p>
+     * 
+     * @param deleteReplacedRootVolume
+     *        Indicates whether to automatically delete the original root volume after the root volume replacement task
+     *        completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the
+     *        original root volume after the replacement task completes, you must manually delete it when you no longer
+     *        need it.
+     */
+
+    public void setDeleteReplacedRootVolume(Boolean deleteReplacedRootVolume) {
+        this.deleteReplacedRootVolume = deleteReplacedRootVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to automatically delete the original root volume after the root volume replacement task
+     * completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root
+     * volume after the replacement task completes, you must manually delete it when you no longer need it.
+     * </p>
+     * 
+     * @return Indicates whether to automatically delete the original root volume after the root volume replacement task
+     *         completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the
+     *         original root volume after the replacement task completes, you must manually delete it when you no longer
+     *         need it.
+     */
+
+    public Boolean getDeleteReplacedRootVolume() {
+        return this.deleteReplacedRootVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to automatically delete the original root volume after the root volume replacement task
+     * completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root
+     * volume after the replacement task completes, you must manually delete it when you no longer need it.
+     * </p>
+     * 
+     * @param deleteReplacedRootVolume
+     *        Indicates whether to automatically delete the original root volume after the root volume replacement task
+     *        completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the
+     *        original root volume after the replacement task completes, you must manually delete it when you no longer
+     *        need it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplaceRootVolumeTaskRequest withDeleteReplacedRootVolume(Boolean deleteReplacedRootVolume) {
+        setDeleteReplacedRootVolume(deleteReplacedRootVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to automatically delete the original root volume after the root volume replacement task
+     * completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root
+     * volume after the replacement task completes, you must manually delete it when you no longer need it.
+     * </p>
+     * 
+     * @return Indicates whether to automatically delete the original root volume after the root volume replacement task
+     *         completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the
+     *         original root volume after the replacement task completes, you must manually delete it when you no longer
+     *         need it.
+     */
+
+    public Boolean isDeleteReplacedRootVolume() {
+        return this.deleteReplacedRootVolume;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -305,7 +488,11 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
+        if (getDeleteReplacedRootVolume() != null)
+            sb.append("DeleteReplacedRootVolume: ").append(getDeleteReplacedRootVolume());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +523,14 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getDeleteReplacedRootVolume() == null ^ this.getDeleteReplacedRootVolume() == null)
+            return false;
+        if (other.getDeleteReplacedRootVolume() != null && other.getDeleteReplacedRootVolume().equals(this.getDeleteReplacedRootVolume()) == false)
+            return false;
         return true;
     }
 
@@ -348,6 +543,8 @@ public class CreateReplaceRootVolumeTaskRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getDeleteReplacedRootVolume() == null) ? 0 : getDeleteReplacedRootVolume().hashCode());
         return hashCode;
     }
 

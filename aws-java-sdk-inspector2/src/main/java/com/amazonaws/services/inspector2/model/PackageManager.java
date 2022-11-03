@@ -31,7 +31,11 @@ public enum PackageManager {
     GOBINARY("GOBINARY"),
     GOMOD("GOMOD"),
     JAR("JAR"),
-    OS("OS");
+    OS("OS"),
+    PIP("PIP"),
+    PYTHONPKG("PYTHONPKG"),
+    NODEPKG("NODEPKG"),
+    POM("POM");
 
     private String value;
 

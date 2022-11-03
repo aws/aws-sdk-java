@@ -30,8 +30,8 @@ public class ValidationError implements Serializable, Cloneable {
     /**
      * <p>
      * The error code that indicates why the parameter or parameter combination is not valid. For more information about
-     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * Codes</a>.
+     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+     * codes</a>.
      * </p>
      */
     private String code;
@@ -39,7 +39,7 @@ public class ValidationError implements Serializable, Cloneable {
      * <p>
      * The error message that describes why the parameter or parameter combination is not valid. For more information
      * about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      * </p>
      */
     private String message;
@@ -47,14 +47,14 @@ public class ValidationError implements Serializable, Cloneable {
     /**
      * <p>
      * The error code that indicates why the parameter or parameter combination is not valid. For more information about
-     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * Codes</a>.
+     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+     * codes</a>.
      * </p>
      * 
      * @param code
      *        The error code that indicates why the parameter or parameter combination is not valid. For more
      *        information about error codes, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      */
 
     public void setCode(String code) {
@@ -64,13 +64,13 @@ public class ValidationError implements Serializable, Cloneable {
     /**
      * <p>
      * The error code that indicates why the parameter or parameter combination is not valid. For more information about
-     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * Codes</a>.
+     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+     * codes</a>.
      * </p>
      * 
      * @return The error code that indicates why the parameter or parameter combination is not valid. For more
      *         information about error codes, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      */
 
     public String getCode() {
@@ -80,14 +80,14 @@ public class ValidationError implements Serializable, Cloneable {
     /**
      * <p>
      * The error code that indicates why the parameter or parameter combination is not valid. For more information about
-     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * Codes</a>.
+     * error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+     * codes</a>.
      * </p>
      * 
      * @param code
      *        The error code that indicates why the parameter or parameter combination is not valid. For more
      *        information about error codes, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class ValidationError implements Serializable, Cloneable {
      * <p>
      * The error message that describes why the parameter or parameter combination is not valid. For more information
      * about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      * </p>
      * 
      * @param message
      *        The error message that describes why the parameter or parameter combination is not valid. For more
      *        information about error messages, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      */
 
     public void setMessage(String message) {
@@ -117,12 +117,12 @@ public class ValidationError implements Serializable, Cloneable {
      * <p>
      * The error message that describes why the parameter or parameter combination is not valid. For more information
      * about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      * </p>
      * 
      * @return The error message that describes why the parameter or parameter combination is not valid. For more
      *         information about error messages, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      */
 
     public String getMessage() {
@@ -133,13 +133,13 @@ public class ValidationError implements Serializable, Cloneable {
      * <p>
      * The error message that describes why the parameter or parameter combination is not valid. For more information
      * about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      * </p>
      * 
      * @param message
      *        The error message that describes why the parameter or parameter combination is not valid. For more
      *        information about error messages, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

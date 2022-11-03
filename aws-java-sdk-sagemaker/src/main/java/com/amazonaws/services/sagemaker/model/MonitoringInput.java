@@ -34,6 +34,12 @@ public class MonitoringInput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private EndpointInput endpointInput;
+    /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     */
+    private BatchTransformInput batchTransformInput;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class MonitoringInput implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     * 
+     * @param batchTransformInput
+     *        Input object for the batch transform job.
+     */
+
+    public void setBatchTransformInput(BatchTransformInput batchTransformInput) {
+        this.batchTransformInput = batchTransformInput;
+    }
+
+    /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     * 
+     * @return Input object for the batch transform job.
+     */
+
+    public BatchTransformInput getBatchTransformInput() {
+        return this.batchTransformInput;
+    }
+
+    /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     * 
+     * @param batchTransformInput
+     *        Input object for the batch transform job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringInput withBatchTransformInput(BatchTransformInput batchTransformInput) {
+        setBatchTransformInput(batchTransformInput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class MonitoringInput implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointInput() != null)
-            sb.append("EndpointInput: ").append(getEndpointInput());
+            sb.append("EndpointInput: ").append(getEndpointInput()).append(",");
+        if (getBatchTransformInput() != null)
+            sb.append("BatchTransformInput: ").append(getBatchTransformInput());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class MonitoringInput implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getEndpointInput() != null && other.getEndpointInput().equals(this.getEndpointInput()) == false)
             return false;
+        if (other.getBatchTransformInput() == null ^ this.getBatchTransformInput() == null)
+            return false;
+        if (other.getBatchTransformInput() != null && other.getBatchTransformInput().equals(this.getBatchTransformInput()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class MonitoringInput implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndpointInput() == null) ? 0 : getEndpointInput().hashCode());
+        hashCode = prime * hashCode + ((getBatchTransformInput() == null) ? 0 : getBatchTransformInput().hashCode());
         return hashCode;
     }
 

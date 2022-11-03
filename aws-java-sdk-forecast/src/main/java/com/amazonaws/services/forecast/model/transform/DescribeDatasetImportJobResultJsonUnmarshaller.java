@@ -109,6 +109,10 @@ public class DescribeDatasetImportJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeDatasetImportJobResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("Format", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

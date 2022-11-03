@@ -1160,6 +1160,11 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -1210,6 +1215,8 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      *         Could not find the specified resource.
      * @throws LimitExceededException
      *         The limit on the number of requests per second has been exceeded.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
      * @throws TooManyTagsException
      *         You have exceeded the maximum number of tags you can apply to this resource.
      * @sample AmazonPersonalize.CreateRecommender
@@ -2972,6 +2979,11 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
+     * STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * DELETE PENDING &gt; DELETE IN_PROGRESS
      * </p>
      * </li>
@@ -2979,6 +2991,9 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      * <p>
      * When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the <code>failureReason</code>
      * key, which describes why.
+     * </p>
+     * <p>
+     * The <code>modelMetrics</code> key is null when the recommender is being created or deleted.
      * </p>
      * <p>
      * For more information on recommenders, see <a

@@ -27,7 +27,7 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      * </p>
      */
     private String accessToken;
@@ -54,11 +54,11 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      */
 
     public void setAccessToken(String accessToken) {
@@ -67,10 +67,10 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      * </p>
      * 
-     * @return The access token.
+     * @return A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      */
 
     public String getAccessToken() {
@@ -79,11 +79,11 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access token.
+     * A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      * </p>
      * 
      * @param accessToken
-     *        The access token.
+     *        A valid access token that Amazon Cognito issued to the user whose software token you want to verify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

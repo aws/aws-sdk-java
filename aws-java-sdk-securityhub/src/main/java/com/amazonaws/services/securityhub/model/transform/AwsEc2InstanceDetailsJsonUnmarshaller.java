@@ -95,6 +95,14 @@ public class AwsEc2InstanceDetailsJsonUnmarshaller implements Unmarshaller<AwsEc
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("VirtualizationType", targetDepth)) {
+                    context.nextToken();
+                    awsEc2InstanceDetails.setVirtualizationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MetadataOptions", targetDepth)) {
+                    context.nextToken();
+                    awsEc2InstanceDetails.setMetadataOptions(AwsEc2InstanceMetadataOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

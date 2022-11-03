@@ -54,6 +54,13 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
     private String generatedSpeakerId;
     /**
      * <p>
+     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * This timestamp is accurate to one hour.
+     * </p>
+     */
+    private java.util.Date lastAccessedAt;
+    /**
+     * <p>
      * The current status of the speaker.
      * </p>
      */
@@ -227,6 +234,52 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * This timestamp is accurate to one hour.
+     * </p>
+     * 
+     * @param lastAccessedAt
+     *        The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful
+     *        authentication. This timestamp is accurate to one hour.
+     */
+
+    public void setLastAccessedAt(java.util.Date lastAccessedAt) {
+        this.lastAccessedAt = lastAccessedAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * This timestamp is accurate to one hour.
+     * </p>
+     * 
+     * @return The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful
+     *         authentication. This timestamp is accurate to one hour.
+     */
+
+    public java.util.Date getLastAccessedAt() {
+        return this.lastAccessedAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * This timestamp is accurate to one hour.
+     * </p>
+     * 
+     * @param lastAccessedAt
+     *        The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful
+     *        authentication. This timestamp is accurate to one hour.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Speaker withLastAccessedAt(java.util.Date lastAccessedAt) {
+        setLastAccessedAt(lastAccessedAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the speaker.
      * </p>
      * 
@@ -344,6 +397,8 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getGeneratedSpeakerId() != null)
             sb.append("GeneratedSpeakerId: ").append(getGeneratedSpeakerId()).append(",");
+        if (getLastAccessedAt() != null)
+            sb.append("LastAccessedAt: ").append(getLastAccessedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getUpdatedAt() != null)
@@ -378,6 +433,10 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGeneratedSpeakerId() != null && other.getGeneratedSpeakerId().equals(this.getGeneratedSpeakerId()) == false)
             return false;
+        if (other.getLastAccessedAt() == null ^ this.getLastAccessedAt() == null)
+            return false;
+        if (other.getLastAccessedAt() != null && other.getLastAccessedAt().equals(this.getLastAccessedAt()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -398,6 +457,7 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomerSpeakerId() == null) ? 0 : getCustomerSpeakerId().hashCode());
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getGeneratedSpeakerId() == null) ? 0 : getGeneratedSpeakerId().hashCode());
+        hashCode = prime * hashCode + ((getLastAccessedAt() == null) ? 0 : getLastAccessedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;

@@ -935,6 +935,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Retrieves information about the configurable settings for the specified directory.
+     * </p>
+     * 
+     * @param describeSettingsRequest
+     * @return Result of the DescribeSettings operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @sample AWSDirectoryService.DescribeSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeSettingsResult describeSettings(DescribeSettingsRequest describeSettingsRequest);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -1027,6 +1052,31 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     DescribeTrustsResult describeTrusts(DescribeTrustsRequest describeTrustsRequest);
+
+    /**
+     * <p>
+     * Describes the updates of a directory for a particular update type.
+     * </p>
+     * 
+     * @param describeUpdateDirectoryRequest
+     * @return Result of the DescribeUpdateDirectory operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @sample AWSDirectoryService.DescribeUpdateDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeUpdateDirectoryResult describeUpdateDirectory(DescribeUpdateDirectoryRequest describeUpdateDirectoryRequest);
 
     /**
      * <p>
@@ -1752,6 +1802,38 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Updates the directory for a particular update type.
+     * </p>
+     * 
+     * @param updateDirectorySetupRequest
+     * @return Result of the UpdateDirectorySetup operation returned by the service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryInDesiredStateException
+     *         The directory is already updated to desired update type settings.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws SnapshotLimitExceededException
+     *         The maximum number of manual snapshots for the directory has been reached. You can use the
+     *         <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @sample AWSDirectoryService.UpdateDirectorySetup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateDirectorySetupResult updateDirectorySetup(UpdateDirectorySetupRequest updateDirectorySetupRequest);
+
+    /**
+     * <p>
      * Adds or removes domain controllers to or from the directory. Based on the difference between current value and
      * new value (provided through this API call), domain controllers will be added or removed. It may take up to 45
      * minutes for any new domain controllers to become fully active once the requested number of domain controllers is
@@ -1803,6 +1885,35 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     UpdateRadiusResult updateRadius(UpdateRadiusRequest updateRadiusRequest);
+
+    /**
+     * <p>
+     * Updates the configurable settings for the specified directory.
+     * </p>
+     * 
+     * @param updateSettingsRequest
+     * @return Result of the UpdateSettings operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws IncompatibleSettingsException
+     *         The specified directory setting is not compatible with other settings.
+     * @throws UnsupportedSettingsException
+     *         The specified directory setting is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @sample AWSDirectoryService.UpdateSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSettingsResult updateSettings(UpdateSettingsRequest updateSettingsRequest);
 
     /**
      * <p>

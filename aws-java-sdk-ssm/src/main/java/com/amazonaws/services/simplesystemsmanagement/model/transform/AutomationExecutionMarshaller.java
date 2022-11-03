@@ -79,6 +79,10 @@ public class AutomationExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
     private static final MarshallingInfo<StructuredPojo> PROGRESSCOUNTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProgressCounters").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlarmConfiguration").build();
+    private static final MarshallingInfo<List> TRIGGEREDALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredAlarms").build();
     private static final MarshallingInfo<String> AUTOMATIONSUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationSubtype").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -133,6 +137,8 @@ public class AutomationExecutionMarshaller {
             protocolMarshaller.marshall(automationExecution.getTarget(), TARGET_BINDING);
             protocolMarshaller.marshall(automationExecution.getTargetLocations(), TARGETLOCATIONS_BINDING);
             protocolMarshaller.marshall(automationExecution.getProgressCounters(), PROGRESSCOUNTERS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(automationExecution.getTriggeredAlarms(), TRIGGEREDALARMS_BINDING);
             protocolMarshaller.marshall(automationExecution.getAutomationSubtype(), AUTOMATIONSUBTYPE_BINDING);
             protocolMarshaller.marshall(automationExecution.getScheduledTime(), SCHEDULEDTIME_BINDING);
             protocolMarshaller.marshall(automationExecution.getRunbooks(), RUNBOOKS_BINDING);

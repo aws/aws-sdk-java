@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise,
- * null.
+ * Information about a reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AttachmentReference" target="_top">AWS API
@@ -37,13 +36,13 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * Contains the location path of the attachment reference.
+     * The location path of the attachment reference.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * Status of an attachment reference type.
+     * Status of the attachment reference type.
      * </p>
      */
     private String status;
@@ -90,11 +89,11 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contains the location path of the attachment reference.
+     * The location path of the attachment reference.
      * </p>
      * 
      * @param value
-     *        Contains the location path of the attachment reference.
+     *        The location path of the attachment reference.
      */
 
     public void setValue(String value) {
@@ -103,10 +102,10 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contains the location path of the attachment reference.
+     * The location path of the attachment reference.
      * </p>
      * 
-     * @return Contains the location path of the attachment reference.
+     * @return The location path of the attachment reference.
      */
 
     public String getValue() {
@@ -115,11 +114,11 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contains the location path of the attachment reference.
+     * The location path of the attachment reference.
      * </p>
      * 
      * @param value
-     *        Contains the location path of the attachment reference.
+     *        The location path of the attachment reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +129,11 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Status of an attachment reference type.
+     * Status of the attachment reference type.
      * </p>
      * 
      * @param status
-     *        Status of an attachment reference type.
+     *        Status of the attachment reference type.
      * @see ReferenceStatus
      */
 
@@ -144,10 +143,10 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Status of an attachment reference type.
+     * Status of the attachment reference type.
      * </p>
      * 
-     * @return Status of an attachment reference type.
+     * @return Status of the attachment reference type.
      * @see ReferenceStatus
      */
 
@@ -157,11 +156,11 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Status of an attachment reference type.
+     * Status of the attachment reference type.
      * </p>
      * 
      * @param status
-     *        Status of an attachment reference type.
+     *        Status of the attachment reference type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReferenceStatus
      */
@@ -173,11 +172,11 @@ public class AttachmentReference implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Status of an attachment reference type.
+     * Status of the attachment reference type.
      * </p>
      * 
      * @param status
-     *        Status of an attachment reference type.
+     *        Status of the attachment reference type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReferenceStatus
      */

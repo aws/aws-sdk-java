@@ -29,6 +29,8 @@ public class LabelsInputConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> S3INPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3InputConfiguration").build();
+    private static final MarshallingInfo<String> LABELGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelGroupName").build();
 
     private static final LabelsInputConfigurationMarshaller instance = new LabelsInputConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class LabelsInputConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(labelsInputConfiguration.getS3InputConfiguration(), S3INPUTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(labelsInputConfiguration.getLabelGroupName(), LABELGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

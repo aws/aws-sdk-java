@@ -66,6 +66,10 @@ public class DirectoryConfigJsonUnmarshaller implements Unmarshaller<DirectoryCo
                     context.nextToken();
                     directoryConfig.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CertificateBasedAuthProperties", targetDepth)) {
+                    context.nextToken();
+                    directoryConfig.setCertificateBasedAuthProperties(CertificateBasedAuthPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

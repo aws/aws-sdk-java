@@ -34,6 +34,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
     }
 
     @Override
+    public CreateLoggingConfigurationResult createLoggingConfiguration(CreateLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRuleGroupsNamespaceResult createRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +54,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
     }
 
     @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRuleGroupsNamespaceResult deleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -60,6 +70,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
 
     @Override
     public DescribeAlertManagerDefinitionResult describeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLoggingConfigurationResult describeLoggingConfiguration(DescribeLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,6 +120,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLoggingConfigurationResult updateLoggingConfiguration(UpdateLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

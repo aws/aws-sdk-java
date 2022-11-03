@@ -45,8 +45,7 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     private Boolean monitor;
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      */
     private String tier;
@@ -62,7 +61,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String componentConfiguration;
-
+    /**
+     * <p>
+     * Automatically configures the component by applying the recommended configurations.
+     * </p>
+     */
     private Boolean autoConfigEnabled;
 
     /**
@@ -199,13 +202,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
      * @param tier
-     *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        The tier of the application component.
      * @see Tier
      */
 
@@ -215,12 +216,10 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
-     * @return The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *         <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * @return The tier of the application component.
      * @see Tier
      */
 
@@ -230,13 +229,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
      * @param tier
-     *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        The tier of the application component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tier
      */
@@ -248,13 +245,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * The tier of the application component.
      * </p>
      * 
      * @param tier
-     *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        The tier of the application component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tier
      */
@@ -344,7 +339,12 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Automatically configures the component by applying the recommended configurations.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Automatically configures the component by applying the recommended configurations.
      */
 
     public void setAutoConfigEnabled(Boolean autoConfigEnabled) {
@@ -352,7 +352,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * Automatically configures the component by applying the recommended configurations.
+     * </p>
+     * 
+     * @return Automatically configures the component by applying the recommended configurations.
      */
 
     public Boolean getAutoConfigEnabled() {
@@ -360,7 +364,12 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Automatically configures the component by applying the recommended configurations.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Automatically configures the component by applying the recommended configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,7 +379,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * Automatically configures the component by applying the recommended configurations.
+     * </p>
+     * 
+     * @return Automatically configures the component by applying the recommended configurations.
      */
 
     public Boolean isAutoConfigEnabled() {

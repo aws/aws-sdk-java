@@ -26,7 +26,7 @@ public class GetSavingsPlansPurchaseRecommendationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information regarding this specific recommendation set.
+     * Information that regards this specific recommendation set.
      * </p>
      */
     private SavingsPlansPurchaseRecommendationMetadata metadata;
@@ -46,11 +46,11 @@ public class GetSavingsPlansPurchaseRecommendationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information regarding this specific recommendation set.
+     * Information that regards this specific recommendation set.
      * </p>
      * 
      * @param metadata
-     *        Information regarding this specific recommendation set.
+     *        Information that regards this specific recommendation set.
      */
 
     public void setMetadata(SavingsPlansPurchaseRecommendationMetadata metadata) {
@@ -59,10 +59,10 @@ public class GetSavingsPlansPurchaseRecommendationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information regarding this specific recommendation set.
+     * Information that regards this specific recommendation set.
      * </p>
      * 
-     * @return Information regarding this specific recommendation set.
+     * @return Information that regards this specific recommendation set.
      */
 
     public SavingsPlansPurchaseRecommendationMetadata getMetadata() {
@@ -71,11 +71,11 @@ public class GetSavingsPlansPurchaseRecommendationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information regarding this specific recommendation set.
+     * Information that regards this specific recommendation set.
      * </p>
      * 
      * @param metadata
-     *        Information regarding this specific recommendation set.
+     *        Information that regards this specific recommendation set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

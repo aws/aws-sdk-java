@@ -210,6 +210,12 @@ public class DBCluster implements Serializable, Cloneable {
     private java.util.List<DBClusterRole> associatedRoles;
     /**
      * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     */
+    private String cloneGroupId;
+    /**
+     * <p>
      * Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      */
@@ -1613,6 +1619,46 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     * 
+     * @param cloneGroupId
+     *        Identifies the clone group to which the DB cluster is associated.
+     */
+
+    public void setCloneGroupId(String cloneGroupId) {
+        this.cloneGroupId = cloneGroupId;
+    }
+
+    /**
+     * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     * 
+     * @return Identifies the clone group to which the DB cluster is associated.
+     */
+
+    public String getCloneGroupId() {
+        return this.cloneGroupId;
+    }
+
+    /**
+     * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     * 
+     * @param cloneGroupId
+     *        Identifies the clone group to which the DB cluster is associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCloneGroupId(String cloneGroupId) {
+        setCloneGroupId(cloneGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
@@ -1857,6 +1903,8 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("DBClusterArn: ").append(getDBClusterArn()).append(",");
         if (getAssociatedRoles() != null)
             sb.append("AssociatedRoles: ").append(getAssociatedRoles()).append(",");
+        if (getCloneGroupId() != null)
+            sb.append("CloneGroupId: ").append(getCloneGroupId()).append(",");
         if (getClusterCreateTime() != null)
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
@@ -1989,6 +2037,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getAssociatedRoles() != null && other.getAssociatedRoles().equals(this.getAssociatedRoles()) == false)
             return false;
+        if (other.getCloneGroupId() == null ^ this.getCloneGroupId() == null)
+            return false;
+        if (other.getCloneGroupId() != null && other.getCloneGroupId().equals(this.getCloneGroupId()) == false)
+            return false;
         if (other.getClusterCreateTime() == null ^ this.getClusterCreateTime() == null)
             return false;
         if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
@@ -2037,6 +2089,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDbClusterResourceId() == null) ? 0 : getDbClusterResourceId().hashCode());
         hashCode = prime * hashCode + ((getDBClusterArn() == null) ? 0 : getDBClusterArn().hashCode());
         hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
+        hashCode = prime * hashCode + ((getCloneGroupId() == null) ? 0 : getCloneGroupId().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());

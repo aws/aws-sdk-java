@@ -36,7 +36,7 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
     private String id;
     /**
      * <p>
-     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     * The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      * </p>
      */
     private Identity identity;
@@ -108,11 +108,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     * The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      * </p>
      * 
      * @param identity
-     *        The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     *        The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      */
 
     public void setIdentity(Identity identity) {
@@ -121,10 +121,10 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     * The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      * </p>
      * 
-     * @return The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     * @return The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      */
 
     public Identity getIdentity() {
@@ -133,11 +133,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     * The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      * </p>
      * 
      * @param identity
-     *        The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
+     *        The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

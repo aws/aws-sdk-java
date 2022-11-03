@@ -49,6 +49,8 @@ public class PortalMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<String> TRUSTSTOREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trustStoreArn").build();
+    private static final MarshallingInfo<String> USERACCESSLOGGINGSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAccessLoggingSettingsArn").build();
     private static final MarshallingInfo<String> USERSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userSettingsArn").build();
 
@@ -79,6 +81,7 @@ public class PortalMarshaller {
             protocolMarshaller.marshall(portal.getRendererType(), RENDERERTYPE_BINDING);
             protocolMarshaller.marshall(portal.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(portal.getTrustStoreArn(), TRUSTSTOREARN_BINDING);
+            protocolMarshaller.marshall(portal.getUserAccessLoggingSettingsArn(), USERACCESSLOGGINGSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portal.getUserSettingsArn(), USERSETTINGSARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -37,7 +37,7 @@ public class UserQuickConnectConfig implements Serializable, Cloneable, Structur
     private String userId;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
@@ -84,11 +84,11 @@ public class UserQuickConnectConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -97,10 +97,10 @@ public class UserQuickConnectConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -109,11 +109,11 @@ public class UserQuickConnectConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

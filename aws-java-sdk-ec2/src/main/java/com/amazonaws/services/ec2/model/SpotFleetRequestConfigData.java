@@ -28,26 +28,33 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot
-     * Fleet request.
+     * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
+     * specified by the Spot Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot Instance
-     * pools with the lowest price. This is the default allocation strategy.
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
-     * If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot Instance
-     * pools that you specify.
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances from
-     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
-     * instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority
-     * for each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     * can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
-     * a best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported
-     * only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-     * to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     * <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type by using
+     * the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
+     * a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>,
+     * the same priority is applied when fulfilling On-Demand capacity.
+     * </p>
+     * <p>
+     * Default: <code>lowestPrice</code>
      * </p>
      */
     private String allocationStrategy;
@@ -126,9 +133,16 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig> launchTemplateConfigs;
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
-     * price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      */
     private String spotPrice;
     /**
@@ -265,10 +279,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     * information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     * <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     * (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -277,49 +290,64 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot
-     * Fleet request.
+     * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
+     * specified by the Spot Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot Instance
-     * pools with the lowest price. This is the default allocation strategy.
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
-     * If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot Instance
-     * pools that you specify.
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances from
-     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
-     * instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority
-     * for each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     * can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
-     * a best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported
-     * only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-     * to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     * <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type by using
+     * the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
+     * a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>,
+     * the same priority is applied when fulfilling On-Demand capacity.
+     * </p>
+     * <p>
+     * Default: <code>lowestPrice</code>
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
-     *        the Spot Fleet request.</p>
+     *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
+     *        pools specified by the Spot Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot
-     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot
-     *        Instance pools that you specify.
+     *        <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you
+     *        specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances
-     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
-     *        certain instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     *        Set a priority for each instance type by using the <code>Priority</code> parameter for
-     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
-     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
-     *        for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses a
-     *        launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to
-     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     *        <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
+     *        chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance
+     *        type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign
+     *        the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a
+     *        best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is
+     *        supported only if your Spot Fleet uses a launch template. Note that if the
+     *        <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, the same priority is applied
+     *        when fulfilling On-Demand capacity.
+     *        </p>
+     *        <p>
+     *        Default: <code>lowestPrice</code>
      * @see AllocationStrategy
      */
 
@@ -329,48 +357,63 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot
-     * Fleet request.
+     * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
+     * specified by the Spot Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot Instance
-     * pools with the lowest price. This is the default allocation strategy.
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
-     * If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot Instance
-     * pools that you specify.
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances from
-     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
-     * instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority
-     * for each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     * can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
-     * a best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported
-     * only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-     * to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     * <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type by using
+     * the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
+     * a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>,
+     * the same priority is applied when fulfilling On-Demand capacity.
+     * </p>
+     * <p>
+     * Default: <code>lowestPrice</code>
      * </p>
      * 
-     * @return Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
-     *         the Spot Fleet request.</p>
+     * @return The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
+     *         pools specified by the Spot Fleet launch configuration. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     *         strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot
-     *         Instance pools with the lowest price. This is the default allocation strategy.
+     *         <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that
+     *         has available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come
+     *         from the next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling
+     *         your desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest
+     *         pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *         </p>
      *         <p>
-     *         If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot
-     *         Instance pools that you specify.
+     *         <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you
+     *         specify.
      *         </p>
      *         <p>
-     *         If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances
-     *         from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
-     *         certain instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     *         Set a priority for each instance type by using the <code>Priority</code> parameter for
-     *         <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
-     *         <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
-     *         for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses a
-     *         launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to
-     *         <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     *         <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools
+     *         with optimal capacity for the number of instances that are launching. To give certain instance types a
+     *         higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each
+     *         instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
+     *         can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
+     *         priorities on a best-effort basis, but optimizes for capacity first.
+     *         <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses a launch template.
+     *         Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, the same
+     *         priority is applied when fulfilling On-Demand capacity.
+     *         </p>
+     *         <p>
+     *         Default: <code>lowestPrice</code>
      * @see AllocationStrategy
      */
 
@@ -380,49 +423,64 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot
-     * Fleet request.
+     * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
+     * specified by the Spot Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot Instance
-     * pools with the lowest price. This is the default allocation strategy.
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
-     * If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot Instance
-     * pools that you specify.
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances from
-     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
-     * instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority
-     * for each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     * can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
-     * a best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported
-     * only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-     * to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     * <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type by using
+     * the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
+     * a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>,
+     * the same priority is applied when fulfilling On-Demand capacity.
+     * </p>
+     * <p>
+     * Default: <code>lowestPrice</code>
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
-     *        the Spot Fleet request.</p>
+     *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
+     *        pools specified by the Spot Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot
-     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot
-     *        Instance pools that you specify.
+     *        <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you
+     *        specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances
-     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
-     *        certain instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     *        Set a priority for each instance type by using the <code>Priority</code> parameter for
-     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
-     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
-     *        for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses a
-     *        launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to
-     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     *        <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
+     *        chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance
+     *        type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign
+     *        the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a
+     *        best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is
+     *        supported only if your Spot Fleet uses a launch template. Note that if the
+     *        <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, the same priority is applied
+     *        when fulfilling On-Demand capacity.
+     *        </p>
+     *        <p>
+     *        Default: <code>lowestPrice</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllocationStrategy
      */
@@ -434,49 +492,64 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot
-     * Fleet request.
+     * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
+     * specified by the Spot Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot Instance
-     * pools with the lowest price. This is the default allocation strategy.
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
-     * If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot Instance
-     * pools that you specify.
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances from
-     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
-     * instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority
-     * for each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     * can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
-     * a best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported
-     * only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-     * to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     * <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type by using
+     * the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
+     * a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>,
+     * the same priority is applied when fulfilling On-Demand capacity.
+     * </p>
+     * <p>
+     * Default: <code>lowestPrice</code>
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
-     *        the Spot Fleet request.</p>
+     *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
+     *        pools specified by the Spot Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot
-     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot
-     *        Instance pools that you specify.
+     *        <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you
+     *        specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances
-     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
-     *        certain instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     *        Set a priority for each instance type by using the <code>Priority</code> parameter for
-     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
-     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
-     *        for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses a
-     *        launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to
-     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     *        <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
+     *        chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance
+     *        type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign
+     *        the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a
+     *        best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is
+     *        supported only if your Spot Fleet uses a launch template. Note that if the
+     *        <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, the same priority is applied
+     *        when fulfilling On-Demand capacity.
+     *        </p>
+     *        <p>
+     *        Default: <code>lowestPrice</code>
      * @see AllocationStrategy
      */
 
@@ -486,49 +559,64 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot
-     * Fleet request.
+     * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
+     * specified by the Spot Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot Instance
-     * pools with the lowest price. This is the default allocation strategy.
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
-     * If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot Instance
-     * pools that you specify.
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances from
-     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
-     * instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority
-     * for each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     * can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
-     * a best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported
-     * only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-     * to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     * <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type by using
+     * the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
+     * a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>,
+     * the same priority is applied when fulfilling On-Demand capacity.
+     * </p>
+     * <p>
+     * Default: <code>lowestPrice</code>
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
-     *        the Spot Fleet request.</p>
+     *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
+     *        pools specified by the Spot Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the Spot
-     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances from all the Spot
-     *        Instance pools that you specify.
+     *        <code>diversified</code> - Spot Fleet launches instances from all of the Spot Instance pools that you
+     *        specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet launches instances
-     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
-     *        certain instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     *        Set a priority for each instance type by using the <code>Priority</code> parameter for
-     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
-     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
-     *        for capacity first. <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses a
-     *        launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set to
-     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
+     *        <code>capacityOptimized</code> (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
+     *        chance of launching first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance
+     *        type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign
+     *        the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a
+     *        best-effort basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code> is
+     *        supported only if your Spot Fleet uses a launch template. Note that if the
+     *        <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, the same priority is applied
+     *        when fulfilling On-Demand capacity.
+     *        </p>
+     *        <p>
+     *        Default: <code>lowestPrice</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllocationStrategy
      */
@@ -1180,13 +1268,25 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
-     * price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      * 
      * @param spotPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
-     *        On-Demand price.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using
+     *        this parameter because it can lead to increased interruptions. If you do not specify this parameter, you
+     *        will pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -1195,12 +1295,24 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
-     * price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      * 
-     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
-     *         On-Demand price.
+     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend
+     *         using this parameter because it can lead to increased interruptions. If you do not specify this
+     *         parameter, you will pay the current Spot price.</p> <important>
+     *         <p>
+     *         If you specify a maximum price, your instances will be interrupted more frequently than if you do not
+     *         specify this parameter.
+     *         </p>
      */
 
     public String getSpotPrice() {
@@ -1209,13 +1321,25 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
-     * price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify
+     * this parameter.
+     * </p>
+     * </important>
      * 
      * @param spotPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
-     *        On-Demand price.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using
+     *        this parameter because it can lead to increased interruptions. If you do not specify this parameter, you
+     *        will pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2205,10 +2329,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     * information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     * <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     * (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -2217,12 +2340,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request
      *         fails. To tag instances at launch, specify the tags in the <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *         >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     *         <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>).
-     *         For information about tagging after launch, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
-     *         Resources</a>.
+     *         >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     *         <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     *         (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch,
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     *         Your Resources</a>.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -2238,10 +2360,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     * information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     * <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     * (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -2251,11 +2372,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at
      *        launch, specify the tags in the <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     *        <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     *        information about tagging after launch, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     *        <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     *        (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      */
 
@@ -2274,10 +2394,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     * information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     * <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     * (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -2292,11 +2411,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at
      *        launch, specify the tags in the <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     *        <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     *        information about tagging after launch, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     *        <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     *        (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2317,10 +2435,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     * information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     * <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     * (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -2330,11 +2447,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at
      *        launch, specify the tags in the <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     *        <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
-     *        information about tagging after launch, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+     *        <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code>
+     *        (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

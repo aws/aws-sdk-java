@@ -25,13 +25,14 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access configuration for the source location.
+     * Access configuration parameters. Configures the type of authentication used to access content from your source
+     * location.
      * </p>
      */
     private AccessConfiguration accessConfiguration;
     /**
      * <p>
-     * The ARN of the source location.
+     * The Amazon Resource Name (ARN) associated with the source location.
      * </p>
      */
     private String arn;
@@ -43,13 +44,13 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date creationTime;
     /**
      * <p>
-     * The default segment delivery configuration settings.
+     * The optional configuration for the host server that serves segments.
      * </p>
      */
     private DefaultSegmentDeliveryConfiguration defaultSegmentDeliveryConfiguration;
     /**
      * <p>
-     * The HTTP package configuration settings for the source location.
+     * The HTTP configuration for the source location.
      * </p>
      */
     private HttpConfiguration httpConfiguration;
@@ -61,7 +62,9 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * A list of the segment delivery configurations associated with this resource.
+     * The segment delivery configurations for the source location. For information about MediaTailor configurations,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     * in AWS Elemental MediaTailor</a>.
      * </p>
      */
     private java.util.List<SegmentDeliveryConfiguration> segmentDeliveryConfigurations;
@@ -73,18 +76,23 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
     private String sourceLocationName;
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The access configuration for the source location.
+     * Access configuration parameters. Configures the type of authentication used to access content from your source
+     * location.
      * </p>
      * 
      * @param accessConfiguration
-     *        The access configuration for the source location.
+     *        Access configuration parameters. Configures the type of authentication used to access content from your
+     *        source location.
      */
 
     public void setAccessConfiguration(AccessConfiguration accessConfiguration) {
@@ -93,10 +101,12 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access configuration for the source location.
+     * Access configuration parameters. Configures the type of authentication used to access content from your source
+     * location.
      * </p>
      * 
-     * @return The access configuration for the source location.
+     * @return Access configuration parameters. Configures the type of authentication used to access content from your
+     *         source location.
      */
 
     public AccessConfiguration getAccessConfiguration() {
@@ -105,11 +115,13 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The access configuration for the source location.
+     * Access configuration parameters. Configures the type of authentication used to access content from your source
+     * location.
      * </p>
      * 
      * @param accessConfiguration
-     *        The access configuration for the source location.
+     *        Access configuration parameters. Configures the type of authentication used to access content from your
+     *        source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +132,11 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the source location.
+     * The Amazon Resource Name (ARN) associated with the source location.
      * </p>
      * 
      * @param arn
-     *        The ARN of the source location.
+     *        The Amazon Resource Name (ARN) associated with the source location.
      */
 
     public void setArn(String arn) {
@@ -133,10 +145,10 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the source location.
+     * The Amazon Resource Name (ARN) associated with the source location.
      * </p>
      * 
-     * @return The ARN of the source location.
+     * @return The Amazon Resource Name (ARN) associated with the source location.
      */
 
     public String getArn() {
@@ -145,11 +157,11 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the source location.
+     * The Amazon Resource Name (ARN) associated with the source location.
      * </p>
      * 
      * @param arn
-     *        The ARN of the source location.
+     *        The Amazon Resource Name (ARN) associated with the source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +212,11 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The default segment delivery configuration settings.
+     * The optional configuration for the host server that serves segments.
      * </p>
      * 
      * @param defaultSegmentDeliveryConfiguration
-     *        The default segment delivery configuration settings.
+     *        The optional configuration for the host server that serves segments.
      */
 
     public void setDefaultSegmentDeliveryConfiguration(DefaultSegmentDeliveryConfiguration defaultSegmentDeliveryConfiguration) {
@@ -213,10 +225,10 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The default segment delivery configuration settings.
+     * The optional configuration for the host server that serves segments.
      * </p>
      * 
-     * @return The default segment delivery configuration settings.
+     * @return The optional configuration for the host server that serves segments.
      */
 
     public DefaultSegmentDeliveryConfiguration getDefaultSegmentDeliveryConfiguration() {
@@ -225,11 +237,11 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The default segment delivery configuration settings.
+     * The optional configuration for the host server that serves segments.
      * </p>
      * 
      * @param defaultSegmentDeliveryConfiguration
-     *        The default segment delivery configuration settings.
+     *        The optional configuration for the host server that serves segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +252,11 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The HTTP package configuration settings for the source location.
+     * The HTTP configuration for the source location.
      * </p>
      * 
      * @param httpConfiguration
-     *        The HTTP package configuration settings for the source location.
+     *        The HTTP configuration for the source location.
      */
 
     public void setHttpConfiguration(HttpConfiguration httpConfiguration) {
@@ -253,10 +265,10 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The HTTP package configuration settings for the source location.
+     * The HTTP configuration for the source location.
      * </p>
      * 
-     * @return The HTTP package configuration settings for the source location.
+     * @return The HTTP configuration for the source location.
      */
 
     public HttpConfiguration getHttpConfiguration() {
@@ -265,11 +277,11 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The HTTP package configuration settings for the source location.
+     * The HTTP configuration for the source location.
      * </p>
      * 
      * @param httpConfiguration
-     *        The HTTP package configuration settings for the source location.
+     *        The HTTP configuration for the source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,10 +332,15 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the segment delivery configurations associated with this resource.
+     * The segment delivery configurations for the source location. For information about MediaTailor configurations,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     * in AWS Elemental MediaTailor</a>.
      * </p>
      * 
-     * @return A list of the segment delivery configurations associated with this resource.
+     * @return The segment delivery configurations for the source location. For information about MediaTailor
+     *         configurations, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     *         in AWS Elemental MediaTailor</a>.
      */
 
     public java.util.List<SegmentDeliveryConfiguration> getSegmentDeliveryConfigurations() {
@@ -332,11 +349,16 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the segment delivery configurations associated with this resource.
+     * The segment delivery configurations for the source location. For information about MediaTailor configurations,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     * in AWS Elemental MediaTailor</a>.
      * </p>
      * 
      * @param segmentDeliveryConfigurations
-     *        A list of the segment delivery configurations associated with this resource.
+     *        The segment delivery configurations for the source location. For information about MediaTailor
+     *        configurations, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     *        in AWS Elemental MediaTailor</a>.
      */
 
     public void setSegmentDeliveryConfigurations(java.util.Collection<SegmentDeliveryConfiguration> segmentDeliveryConfigurations) {
@@ -350,7 +372,9 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the segment delivery configurations associated with this resource.
+     * The segment delivery configurations for the source location. For information about MediaTailor configurations,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     * in AWS Elemental MediaTailor</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -359,7 +383,10 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param segmentDeliveryConfigurations
-     *        A list of the segment delivery configurations associated with this resource.
+     *        The segment delivery configurations for the source location. For information about MediaTailor
+     *        configurations, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     *        in AWS Elemental MediaTailor</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +402,16 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the segment delivery configurations associated with this resource.
+     * The segment delivery configurations for the source location. For information about MediaTailor configurations,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     * in AWS Elemental MediaTailor</a>.
      * </p>
      * 
      * @param segmentDeliveryConfigurations
-     *        A list of the segment delivery configurations associated with this resource.
+     *        The segment delivery configurations for the source location. For information about MediaTailor
+     *        configurations, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations
+     *        in AWS Elemental MediaTailor</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,10 +462,16 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the source location.
+     * @return The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -442,11 +480,17 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the source location.
+     *        The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -455,11 +499,17 @@ public class UpdateSourceLocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags assigned to the source location.
+     * The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources
+     * to help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the source location.
+     *        The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

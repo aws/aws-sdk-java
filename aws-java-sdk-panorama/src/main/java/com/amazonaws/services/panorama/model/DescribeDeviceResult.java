@@ -67,6 +67,12 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
     private String description;
     /**
      * <p>
+     * A device's aggregated status. Including the device's connection status, provisioning status, and lease status.
+     * </p>
+     */
+    private String deviceAggregatedStatus;
+    /**
+     * <p>
      * The device's connection status.
      * </p>
      */
@@ -83,6 +89,12 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String latestAlternateSoftware;
+    /**
+     * <p>
+     * A device's latest job. Includes the target image version, and the job status.
+     * </p>
+     */
+    private LatestDeviceJob latestDeviceJob;
     /**
      * <p>
      * The latest software version available for the device.
@@ -463,6 +475,69 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * A device's aggregated status. Including the device's connection status, provisioning status, and lease status.
+     * </p>
+     * 
+     * @param deviceAggregatedStatus
+     *        A device's aggregated status. Including the device's connection status, provisioning status, and lease
+     *        status.
+     * @see DeviceAggregatedStatus
+     */
+
+    public void setDeviceAggregatedStatus(String deviceAggregatedStatus) {
+        this.deviceAggregatedStatus = deviceAggregatedStatus;
+    }
+
+    /**
+     * <p>
+     * A device's aggregated status. Including the device's connection status, provisioning status, and lease status.
+     * </p>
+     * 
+     * @return A device's aggregated status. Including the device's connection status, provisioning status, and lease
+     *         status.
+     * @see DeviceAggregatedStatus
+     */
+
+    public String getDeviceAggregatedStatus() {
+        return this.deviceAggregatedStatus;
+    }
+
+    /**
+     * <p>
+     * A device's aggregated status. Including the device's connection status, provisioning status, and lease status.
+     * </p>
+     * 
+     * @param deviceAggregatedStatus
+     *        A device's aggregated status. Including the device's connection status, provisioning status, and lease
+     *        status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceAggregatedStatus
+     */
+
+    public DescribeDeviceResult withDeviceAggregatedStatus(String deviceAggregatedStatus) {
+        setDeviceAggregatedStatus(deviceAggregatedStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A device's aggregated status. Including the device's connection status, provisioning status, and lease status.
+     * </p>
+     * 
+     * @param deviceAggregatedStatus
+     *        A device's aggregated status. Including the device's connection status, provisioning status, and lease
+     *        status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceAggregatedStatus
+     */
+
+    public DescribeDeviceResult withDeviceAggregatedStatus(DeviceAggregatedStatus deviceAggregatedStatus) {
+        this.deviceAggregatedStatus = deviceAggregatedStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The device's connection status.
      * </p>
      * 
@@ -597,6 +672,46 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public DescribeDeviceResult withLatestAlternateSoftware(String latestAlternateSoftware) {
         setLatestAlternateSoftware(latestAlternateSoftware);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A device's latest job. Includes the target image version, and the job status.
+     * </p>
+     * 
+     * @param latestDeviceJob
+     *        A device's latest job. Includes the target image version, and the job status.
+     */
+
+    public void setLatestDeviceJob(LatestDeviceJob latestDeviceJob) {
+        this.latestDeviceJob = latestDeviceJob;
+    }
+
+    /**
+     * <p>
+     * A device's latest job. Includes the target image version, and the job status.
+     * </p>
+     * 
+     * @return A device's latest job. Includes the target image version, and the job status.
+     */
+
+    public LatestDeviceJob getLatestDeviceJob() {
+        return this.latestDeviceJob;
+    }
+
+    /**
+     * <p>
+     * A device's latest job. Includes the target image version, and the job status.
+     * </p>
+     * 
+     * @param latestDeviceJob
+     *        A device's latest job. Includes the target image version, and the job status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDeviceResult withLatestDeviceJob(LatestDeviceJob latestDeviceJob) {
+        setLatestDeviceJob(latestDeviceJob);
         return this;
     }
 
@@ -1012,12 +1127,16 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("CurrentSoftware: ").append(getCurrentSoftware()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getDeviceAggregatedStatus() != null)
+            sb.append("DeviceAggregatedStatus: ").append(getDeviceAggregatedStatus()).append(",");
         if (getDeviceConnectionStatus() != null)
             sb.append("DeviceConnectionStatus: ").append(getDeviceConnectionStatus()).append(",");
         if (getDeviceId() != null)
             sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getLatestAlternateSoftware() != null)
             sb.append("LatestAlternateSoftware: ").append(getLatestAlternateSoftware()).append(",");
+        if (getLatestDeviceJob() != null)
+            sb.append("LatestDeviceJob: ").append(getLatestDeviceJob()).append(",");
         if (getLatestSoftware() != null)
             sb.append("LatestSoftware: ").append(getLatestSoftware()).append(",");
         if (getLeaseExpirationTime() != null)
@@ -1076,6 +1195,10 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getDeviceAggregatedStatus() == null ^ this.getDeviceAggregatedStatus() == null)
+            return false;
+        if (other.getDeviceAggregatedStatus() != null && other.getDeviceAggregatedStatus().equals(this.getDeviceAggregatedStatus()) == false)
+            return false;
         if (other.getDeviceConnectionStatus() == null ^ this.getDeviceConnectionStatus() == null)
             return false;
         if (other.getDeviceConnectionStatus() != null && other.getDeviceConnectionStatus().equals(this.getDeviceConnectionStatus()) == false)
@@ -1087,6 +1210,10 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getLatestAlternateSoftware() == null ^ this.getLatestAlternateSoftware() == null)
             return false;
         if (other.getLatestAlternateSoftware() != null && other.getLatestAlternateSoftware().equals(this.getLatestAlternateSoftware()) == false)
+            return false;
+        if (other.getLatestDeviceJob() == null ^ this.getLatestDeviceJob() == null)
+            return false;
+        if (other.getLatestDeviceJob() != null && other.getLatestDeviceJob().equals(this.getLatestDeviceJob()) == false)
             return false;
         if (other.getLatestSoftware() == null ^ this.getLatestSoftware() == null)
             return false;
@@ -1135,9 +1262,11 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getCurrentNetworkingStatus() == null) ? 0 : getCurrentNetworkingStatus().hashCode());
         hashCode = prime * hashCode + ((getCurrentSoftware() == null) ? 0 : getCurrentSoftware().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDeviceAggregatedStatus() == null) ? 0 : getDeviceAggregatedStatus().hashCode());
         hashCode = prime * hashCode + ((getDeviceConnectionStatus() == null) ? 0 : getDeviceConnectionStatus().hashCode());
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getLatestAlternateSoftware() == null) ? 0 : getLatestAlternateSoftware().hashCode());
+        hashCode = prime * hashCode + ((getLatestDeviceJob() == null) ? 0 : getLatestDeviceJob().hashCode());
         hashCode = prime * hashCode + ((getLatestSoftware() == null) ? 0 : getLatestSoftware().hashCode());
         hashCode = prime * hashCode + ((getLeaseExpirationTime() == null) ? 0 : getLeaseExpirationTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

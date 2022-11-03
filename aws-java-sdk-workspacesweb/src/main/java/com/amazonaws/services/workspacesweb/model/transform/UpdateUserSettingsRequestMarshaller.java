@@ -34,8 +34,12 @@ public class UpdateUserSettingsRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
+    private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> DOWNLOADALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("downloadAllowed").build();
+    private static final MarshallingInfo<Integer> IDLEDISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("idleDisconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> PASTEALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pasteAllowed").build();
     private static final MarshallingInfo<String> PRINTALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,7 +67,9 @@ public class UpdateUserSettingsRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateUserSettingsRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getCopyAllowed(), COPYALLOWED_BINDING);
+            protocolMarshaller.marshall(updateUserSettingsRequest.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);
+            protocolMarshaller.marshall(updateUserSettingsRequest.getIdleDisconnectTimeoutInMinutes(), IDLEDISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getPasteAllowed(), PASTEALLOWED_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getPrintAllowed(), PRINTALLOWED_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getUploadAllowed(), UPLOADALLOWED_BINDING);

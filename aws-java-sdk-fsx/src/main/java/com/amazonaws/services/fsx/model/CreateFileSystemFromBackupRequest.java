@@ -125,6 +125,19 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private CreateFileSystemOpenZFSConfiguration openZFSConfiguration;
+    /**
+     * <p>
+     * Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB).
+     * Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or
+     * greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter,
+     * the default is the backup's <code>StorageCapacity</code> value.
+     * </p>
+     * <p>
+     * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * </p>
+     */
+    private Integer storageCapacity;
 
     /**
      * @param backupId
@@ -965,6 +978,91 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB).
+     * Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or
+     * greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter,
+     * the default is the backup's <code>StorageCapacity</code> value.
+     * </p>
+     * <p>
+     * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes
+     *        (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must
+     *        be equal to or greater than the backup's storage capacity value. If you don't use the
+     *        <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code>
+     *        value.</p>
+     *        <p>
+     *        If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     *        <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad
+     *        Request.
+     */
+
+    public void setStorageCapacity(Integer storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
+    /**
+     * <p>
+     * Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB).
+     * Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or
+     * greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter,
+     * the default is the backup's <code>StorageCapacity</code> value.
+     * </p>
+     * <p>
+     * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * </p>
+     * 
+     * @return Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes
+     *         (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must
+     *         be equal to or greater than the backup's storage capacity value. If you don't use the
+     *         <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code>
+     *         value.</p>
+     *         <p>
+     *         If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     *         <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad
+     *         Request.
+     */
+
+    public Integer getStorageCapacity() {
+        return this.storageCapacity;
+    }
+
+    /**
+     * <p>
+     * Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB).
+     * Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or
+     * greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter,
+     * the default is the backup's <code>StorageCapacity</code> value.
+     * </p>
+     * <p>
+     * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes
+     *        (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must
+     *        be equal to or greater than the backup's storage capacity value. If you don't use the
+     *        <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code>
+     *        value.</p>
+     *        <p>
+     *        If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
+     *        <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad
+     *        Request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemFromBackupRequest withStorageCapacity(Integer storageCapacity) {
+        setStorageCapacity(storageCapacity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -997,7 +1095,9 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         if (getFileSystemTypeVersion() != null)
             sb.append("FileSystemTypeVersion: ").append(getFileSystemTypeVersion()).append(",");
         if (getOpenZFSConfiguration() != null)
-            sb.append("OpenZFSConfiguration: ").append(getOpenZFSConfiguration());
+            sb.append("OpenZFSConfiguration: ").append(getOpenZFSConfiguration()).append(",");
+        if (getStorageCapacity() != null)
+            sb.append("StorageCapacity: ").append(getStorageCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -1056,6 +1156,10 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getOpenZFSConfiguration() != null && other.getOpenZFSConfiguration().equals(this.getOpenZFSConfiguration()) == false)
             return false;
+        if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
+            return false;
+        if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -1075,6 +1179,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getFileSystemTypeVersion() == null) ? 0 : getFileSystemTypeVersion().hashCode());
         hashCode = prime * hashCode + ((getOpenZFSConfiguration() == null) ? 0 : getOpenZFSConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
         return hashCode;
     }
 

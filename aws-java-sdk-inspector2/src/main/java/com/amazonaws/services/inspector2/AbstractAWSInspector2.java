@@ -93,6 +93,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public GetConfigurationResult getConfiguration(GetConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDelegatedAdminAccountResult getDelegatedAdminAccount(GetDelegatedAdminAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +169,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConfigurationResult updateConfiguration(UpdateConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -446,6 +446,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetPlaceResult> getPlaceAsync(GetPlaceRequest request) {
+
+        return getPlaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaceResult> getPlaceAsync(GetPlaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPlaceRequest, GetPlaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(ListDevicePositionsRequest request) {
 
         return listDevicePositionsAsync(request, null);

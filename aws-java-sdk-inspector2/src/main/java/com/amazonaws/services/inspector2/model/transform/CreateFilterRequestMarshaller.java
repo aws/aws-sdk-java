@@ -37,6 +37,8 @@ public class CreateFilterRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterCriteria").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -60,6 +62,7 @@ public class CreateFilterRequestMarshaller {
             protocolMarshaller.marshall(createFilterRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getFilterCriteria(), FILTERCRITERIA_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createFilterRequest.getReason(), REASON_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

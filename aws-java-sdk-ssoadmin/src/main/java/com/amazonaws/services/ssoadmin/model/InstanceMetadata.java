@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the SSO instance.
+ * Provides information about the IAM Identity Center instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/InstanceMetadata" target="_top">AWS API
@@ -30,30 +30,30 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String instanceArn;
     /**
      * <p>
-     * The identifier of the identity store that is connected to the SSO instance.
+     * The identifier of the identity store that is connected to the IAM Identity Center instance.
      * </p>
      */
     private String identityStoreId;
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *        see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -62,14 +62,14 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *         see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -78,15 +78,15 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *        see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the identity store that is connected to the SSO instance.
+     * The identifier of the identity store that is connected to the IAM Identity Center instance.
      * </p>
      * 
      * @param identityStoreId
-     *        The identifier of the identity store that is connected to the SSO instance.
+     *        The identifier of the identity store that is connected to the IAM Identity Center instance.
      */
 
     public void setIdentityStoreId(String identityStoreId) {
@@ -110,10 +110,10 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the identity store that is connected to the SSO instance.
+     * The identifier of the identity store that is connected to the IAM Identity Center instance.
      * </p>
      * 
-     * @return The identifier of the identity store that is connected to the SSO instance.
+     * @return The identifier of the identity store that is connected to the IAM Identity Center instance.
      */
 
     public String getIdentityStoreId() {
@@ -122,11 +122,11 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the identity store that is connected to the SSO instance.
+     * The identifier of the identity store that is connected to the IAM Identity Center instance.
      * </p>
      * 
      * @param identityStoreId
-     *        The identifier of the identity store that is connected to the SSO instance.
+     *        The identifier of the identity store that is connected to the IAM Identity Center instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

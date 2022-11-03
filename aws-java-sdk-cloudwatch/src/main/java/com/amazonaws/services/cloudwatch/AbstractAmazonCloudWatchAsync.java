@@ -347,6 +347,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInsightRulesResult> listManagedInsightRulesAsync(ListManagedInsightRulesRequest request) {
+
+        return listManagedInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedInsightRulesResult> listManagedInsightRulesAsync(ListManagedInsightRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListManagedInsightRulesRequest, ListManagedInsightRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMetricStreamsResult> listMetricStreamsAsync(ListMetricStreamsRequest request) {
 
         return listMetricStreamsAsync(request, null);
@@ -456,6 +469,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<PutInsightRuleResult> putInsightRuleAsync(PutInsightRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<PutInsightRuleRequest, PutInsightRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutManagedInsightRulesResult> putManagedInsightRulesAsync(PutManagedInsightRulesRequest request) {
+
+        return putManagedInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutManagedInsightRulesResult> putManagedInsightRulesAsync(PutManagedInsightRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutManagedInsightRulesRequest, PutManagedInsightRulesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

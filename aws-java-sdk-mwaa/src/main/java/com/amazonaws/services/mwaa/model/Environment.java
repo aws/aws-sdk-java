@@ -38,7 +38,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> airflowConfigurationOptions;
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and
+     * <code>2.2.2</code>.
      * </p>
      */
     private String airflowVersion;
@@ -354,11 +355,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and
+     * <code>2.2.2</code>.
      * </p>
      * 
      * @param airflowVersion
-     *        The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     *        The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
+     *        and <code>2.2.2</code>.
      */
 
     public void setAirflowVersion(String airflowVersion) {
@@ -367,10 +370,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and
+     * <code>2.2.2</code>.
      * </p>
      * 
-     * @return The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * @return The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
+     *         and <code>2.2.2</code>.
      */
 
     public String getAirflowVersion() {
@@ -379,11 +384,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and
+     * <code>2.2.2</code>.
      * </p>
      * 
      * @param airflowVersion
-     *        The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
+     *        The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
+     *        and <code>2.2.2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2036,7 +2043,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAirflowConfigurationOptions() != null)
-            sb.append("AirflowConfigurationOptions: ").append(getAirflowConfigurationOptions()).append(",");
+            sb.append("AirflowConfigurationOptions: ").append("***Sensitive Data Redacted***").append(",");
         if (getAirflowVersion() != null)
             sb.append("AirflowVersion: ").append(getAirflowVersion()).append(",");
         if (getArn() != null)

@@ -41,6 +41,12 @@ public class ServiceHealth implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ServiceInsightHealth insight;
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     * </p>
+     */
+    private Long analyzedResourceCount;
 
     /**
      * <p>
@@ -148,6 +154,46 @@ public class ServiceHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     */
+
+    public void setAnalyzedResourceCount(Long analyzedResourceCount) {
+        this.analyzedResourceCount = analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     * </p>
+     * 
+     * @return Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     */
+
+    public Long getAnalyzedResourceCount() {
+        return this.analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceHealth withAnalyzedResourceCount(Long analyzedResourceCount) {
+        setAnalyzedResourceCount(analyzedResourceCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -162,7 +208,9 @@ public class ServiceHealth implements Serializable, Cloneable, StructuredPojo {
         if (getServiceName() != null)
             sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getInsight() != null)
-            sb.append("Insight: ").append(getInsight());
+            sb.append("Insight: ").append(getInsight()).append(",");
+        if (getAnalyzedResourceCount() != null)
+            sb.append("AnalyzedResourceCount: ").append(getAnalyzedResourceCount());
         sb.append("}");
         return sb.toString();
     }
@@ -185,6 +233,10 @@ public class ServiceHealth implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInsight() != null && other.getInsight().equals(this.getInsight()) == false)
             return false;
+        if (other.getAnalyzedResourceCount() == null ^ this.getAnalyzedResourceCount() == null)
+            return false;
+        if (other.getAnalyzedResourceCount() != null && other.getAnalyzedResourceCount().equals(this.getAnalyzedResourceCount()) == false)
+            return false;
         return true;
     }
 
@@ -195,6 +247,7 @@ public class ServiceHealth implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getInsight() == null) ? 0 : getInsight().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedResourceCount() == null) ? 0 : getAnalyzedResourceCount().hashCode());
         return hashCode;
     }
 

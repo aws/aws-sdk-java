@@ -52,6 +52,18 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Information about a line item shipment.
+     * </p>
+     */
+    private ShipmentInformation shipmentInformation;
+    /**
+     * <p>
+     * Information about assets.
+     * </p>
+     */
+    private java.util.List<LineItemAssetInformation> assetInformationList;
 
     /**
      * <p>
@@ -233,6 +245,116 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about a line item shipment.
+     * </p>
+     * 
+     * @param shipmentInformation
+     *        Information about a line item shipment.
+     */
+
+    public void setShipmentInformation(ShipmentInformation shipmentInformation) {
+        this.shipmentInformation = shipmentInformation;
+    }
+
+    /**
+     * <p>
+     * Information about a line item shipment.
+     * </p>
+     * 
+     * @return Information about a line item shipment.
+     */
+
+    public ShipmentInformation getShipmentInformation() {
+        return this.shipmentInformation;
+    }
+
+    /**
+     * <p>
+     * Information about a line item shipment.
+     * </p>
+     * 
+     * @param shipmentInformation
+     *        Information about a line item shipment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LineItem withShipmentInformation(ShipmentInformation shipmentInformation) {
+        setShipmentInformation(shipmentInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about assets.
+     * </p>
+     * 
+     * @return Information about assets.
+     */
+
+    public java.util.List<LineItemAssetInformation> getAssetInformationList() {
+        return assetInformationList;
+    }
+
+    /**
+     * <p>
+     * Information about assets.
+     * </p>
+     * 
+     * @param assetInformationList
+     *        Information about assets.
+     */
+
+    public void setAssetInformationList(java.util.Collection<LineItemAssetInformation> assetInformationList) {
+        if (assetInformationList == null) {
+            this.assetInformationList = null;
+            return;
+        }
+
+        this.assetInformationList = new java.util.ArrayList<LineItemAssetInformation>(assetInformationList);
+    }
+
+    /**
+     * <p>
+     * Information about assets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetInformationList(java.util.Collection)} or {@link #withAssetInformationList(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param assetInformationList
+     *        Information about assets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LineItem withAssetInformationList(LineItemAssetInformation... assetInformationList) {
+        if (this.assetInformationList == null) {
+            setAssetInformationList(new java.util.ArrayList<LineItemAssetInformation>(assetInformationList.length));
+        }
+        for (LineItemAssetInformation ele : assetInformationList) {
+            this.assetInformationList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about assets.
+     * </p>
+     * 
+     * @param assetInformationList
+     *        Information about assets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LineItem withAssetInformationList(java.util.Collection<LineItemAssetInformation> assetInformationList) {
+        setAssetInformationList(assetInformationList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +373,11 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
         if (getQuantity() != null)
             sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getShipmentInformation() != null)
+            sb.append("ShipmentInformation: ").append(getShipmentInformation()).append(",");
+        if (getAssetInformationList() != null)
+            sb.append("AssetInformationList: ").append(getAssetInformationList());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +408,14 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getShipmentInformation() == null ^ this.getShipmentInformation() == null)
+            return false;
+        if (other.getShipmentInformation() != null && other.getShipmentInformation().equals(this.getShipmentInformation()) == false)
+            return false;
+        if (other.getAssetInformationList() == null ^ this.getAssetInformationList() == null)
+            return false;
+        if (other.getAssetInformationList() != null && other.getAssetInformationList().equals(this.getAssetInformationList()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +428,8 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLineItemId() == null) ? 0 : getLineItemId().hashCode());
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getShipmentInformation() == null) ? 0 : getShipmentInformation().hashCode());
+        hashCode = prime * hashCode + ((getAssetInformationList() == null) ? 0 : getAssetInformationList().hashCode());
         return hashCode;
     }
 

@@ -78,6 +78,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      */
     private String targetSelection;
     /**
@@ -138,8 +144,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private JobExecutionsRetryConfig jobExecutionsRetryConfig;
     /**
      * <p>
-     * Parameters of a managed template that you can specify to create the job document.
+     * Parameters of an Amazon Web Services managed template that you can specify to create the job document.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> documentParameters;
 
@@ -511,12 +523,23 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group.</p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @see TargetSelection
      */
 
@@ -531,11 +554,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *         specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *         when a change is detected in a target. For example, a job will run on a thing when the thing is added to
-     *         a target group, even after the job was completed by all things originally in the group.
+     *         a target group, even after the job was completed by all things originally in the group.</p> <note>
+     *         <p>
+     *         We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *         using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *         created.
+     *         </p>
      * @see TargetSelection
      */
 
@@ -550,12 +584,23 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group.</p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -572,12 +617,23 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * detected in a target. For example, a job will run on a thing when the thing is added to a target group, even
      * after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-     *        target group, even after the job was completed by all things originally in the group.
+     *        target group, even after the job was completed by all things originally in the group.</p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -981,10 +1037,21 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Parameters of a managed template that you can specify to create the job document.
+     * Parameters of an Amazon Web Services managed template that you can specify to create the job document.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
-     * @return Parameters of a managed template that you can specify to create the job document.
+     * @return Parameters of an Amazon Web Services managed template that you can specify to create the job
+     *         document.</p> <note>
+     *         <p>
+     *         <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *         templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *         </p>
      */
 
     public java.util.Map<String, String> getDocumentParameters() {
@@ -993,11 +1060,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Parameters of a managed template that you can specify to create the job document.
+     * Parameters of an Amazon Web Services managed template that you can specify to create the job document.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
-     *        Parameters of a managed template that you can specify to create the job document.
+     *        Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p>
+     *        <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      */
 
     public void setDocumentParameters(java.util.Map<String, String> documentParameters) {
@@ -1006,11 +1084,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Parameters of a managed template that you can specify to create the job document.
+     * Parameters of an Amazon Web Services managed template that you can specify to create the job document.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
-     *        Parameters of a managed template that you can specify to create the job document.
+     *        Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p>
+     *        <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

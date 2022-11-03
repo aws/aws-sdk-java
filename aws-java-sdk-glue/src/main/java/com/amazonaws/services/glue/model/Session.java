@@ -89,7 +89,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private Double progress;
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
+     * The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      * </p>
      */
@@ -102,8 +102,8 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private String securityConfiguration;
     /**
      * <p>
-     * The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must
-     * be greater than 2.0.
+     * The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be
+     * greater than 2.0.
      * </p>
      */
     private String glueVersion;
@@ -557,12 +557,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
+     * The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      * </p>
      * 
      * @param maxCapacity
-     *        The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a
+     *        The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a
      *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      */
 
@@ -572,11 +572,11 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
+     * The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      * </p>
      * 
-     * @return The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a
+     * @return The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a
      *         relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      */
 
@@ -586,12 +586,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
+     * The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      * </p>
      * 
      * @param maxCapacity
-     *        The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a
+     *        The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a
      *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -643,13 +643,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must
-     * be greater than 2.0.
+     * The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be
+     * greater than 2.0.
      * </p>
      * 
      * @param glueVersion
-     *        The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The
-     *        GlueVersion must be greater than 2.0.
+     *        The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion
+     *        must be greater than 2.0.
      */
 
     public void setGlueVersion(String glueVersion) {
@@ -658,12 +658,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must
-     * be greater than 2.0.
+     * The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be
+     * greater than 2.0.
      * </p>
      * 
-     * @return The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The
-     *         GlueVersion must be greater than 2.0.
+     * @return The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion
+     *         must be greater than 2.0.
      */
 
     public String getGlueVersion() {
@@ -672,13 +672,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must
-     * be greater than 2.0.
+     * The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be
+     * greater than 2.0.
      * </p>
      * 
      * @param glueVersion
-     *        The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The
-     *        GlueVersion must be greater than 2.0.
+     *        The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion
+     *        must be greater than 2.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

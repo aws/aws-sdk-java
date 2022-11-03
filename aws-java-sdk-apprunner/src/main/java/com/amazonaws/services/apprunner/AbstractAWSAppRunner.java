@@ -58,6 +58,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
     }
 
     @Override
+    public CreateVpcIngressConnectionResult createVpcIngressConnection(CreateVpcIngressConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAutoScalingConfigurationResult deleteAutoScalingConfiguration(DeleteAutoScalingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,6 +88,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
     }
 
     @Override
+    public DeleteVpcIngressConnectionResult deleteVpcIngressConnection(DeleteVpcIngressConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAutoScalingConfigurationResult describeAutoScalingConfiguration(DescribeAutoScalingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +114,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
 
     @Override
     public DescribeVpcConnectorResult describeVpcConnector(DescribeVpcConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVpcIngressConnectionResult describeVpcIngressConnection(DescribeVpcIngressConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,6 +163,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
     }
 
     @Override
+    public ListVpcIngressConnectionsResult listVpcIngressConnections(ListVpcIngressConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PauseServiceResult pauseService(PauseServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +194,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
 
     @Override
     public UpdateServiceResult updateService(UpdateServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVpcIngressConnectionResult updateVpcIngressConnection(UpdateVpcIngressConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

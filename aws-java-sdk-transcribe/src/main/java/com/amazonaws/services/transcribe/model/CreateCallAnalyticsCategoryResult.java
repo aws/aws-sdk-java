@@ -25,31 +25,18 @@ public class CreateCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If your audio matches one of your categories, this field contains data on that category and its associated rules.
-     * This parameter shows which category is flagged (<code>CategoryName</code>) along with metadata for the rules that
-     * match your audio. Metadata includes the rule filter (such as <code>InterruptionFilter</code>,
-     * <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
-     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a match.
+     * Provides you with the properties of your new category, including its associated rules.
      * </p>
      */
     private CategoryProperties categoryProperties;
 
     /**
      * <p>
-     * If your audio matches one of your categories, this field contains data on that category and its associated rules.
-     * This parameter shows which category is flagged (<code>CategoryName</code>) along with metadata for the rules that
-     * match your audio. Metadata includes the rule filter (such as <code>InterruptionFilter</code>,
-     * <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
-     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a match.
+     * Provides you with the properties of your new category, including its associated rules.
      * </p>
      * 
      * @param categoryProperties
-     *        If your audio matches one of your categories, this field contains data on that category and its associated
-     *        rules. This parameter shows which category is flagged (<code>CategoryName</code>) along with metadata for
-     *        the rules that match your audio. Metadata includes the rule filter (such as
-     *        <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and
-     *        <code>TranscriptFilter</code>) and where in your audio (<code>StartTime</code> and <code>EndTime</code>)
-     *        the rule has a match.
+     *        Provides you with the properties of your new category, including its associated rules.
      */
 
     public void setCategoryProperties(CategoryProperties categoryProperties) {
@@ -58,19 +45,10 @@ public class CreateCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If your audio matches one of your categories, this field contains data on that category and its associated rules.
-     * This parameter shows which category is flagged (<code>CategoryName</code>) along with metadata for the rules that
-     * match your audio. Metadata includes the rule filter (such as <code>InterruptionFilter</code>,
-     * <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
-     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a match.
+     * Provides you with the properties of your new category, including its associated rules.
      * </p>
      * 
-     * @return If your audio matches one of your categories, this field contains data on that category and its
-     *         associated rules. This parameter shows which category is flagged (<code>CategoryName</code>) along with
-     *         metadata for the rules that match your audio. Metadata includes the rule filter (such as
-     *         <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and
-     *         <code>TranscriptFilter</code>) and where in your audio (<code>StartTime</code> and <code>EndTime</code>)
-     *         the rule has a match.
+     * @return Provides you with the properties of your new category, including its associated rules.
      */
 
     public CategoryProperties getCategoryProperties() {
@@ -79,20 +57,11 @@ public class CreateCallAnalyticsCategoryResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If your audio matches one of your categories, this field contains data on that category and its associated rules.
-     * This parameter shows which category is flagged (<code>CategoryName</code>) along with metadata for the rules that
-     * match your audio. Metadata includes the rule filter (such as <code>InterruptionFilter</code>,
-     * <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
-     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a match.
+     * Provides you with the properties of your new category, including its associated rules.
      * </p>
      * 
      * @param categoryProperties
-     *        If your audio matches one of your categories, this field contains data on that category and its associated
-     *        rules. This parameter shows which category is flagged (<code>CategoryName</code>) along with metadata for
-     *        the rules that match your audio. Metadata includes the rule filter (such as
-     *        <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>, <code>SentimentFilter</code>, and
-     *        <code>TranscriptFilter</code>) and where in your audio (<code>StartTime</code> and <code>EndTime</code>)
-     *        the rule has a match.
+     *        Provides you with the properties of your new category, including its associated rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -80,12 +80,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      */
@@ -328,12 +329,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * 
@@ -371,10 +373,11 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      *         <p>
      *         The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *         the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *         <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *         <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *         example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *         <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *         <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *         create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you
+     *         create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *         <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *         different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *         <code>Devops-Guru-production-application/RDS</code> or
      *         <code>Devops-Guru-production-application/containers</code>.
      *         </p>
@@ -419,12 +422,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * 
@@ -463,10 +467,11 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      *        <p>
      *        The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *        the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *        <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *        <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *        example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *        <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *        <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *        create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create
+     *        a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *        <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *        different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *        <code>Devops-Guru-production-application/RDS</code> or
      *        <code>Devops-Guru-production-application/containers</code>.
      *        </p>
@@ -516,12 +521,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * <p>
@@ -565,10 +571,11 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      *        <p>
      *        The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *        the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *        <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *        <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *        example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *        <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *        <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *        create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create
+     *        a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *        <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *        different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *        <code>Devops-Guru-production-application/RDS</code> or
      *        <code>Devops-Guru-production-application/containers</code>.
      *        </p>
@@ -620,12 +627,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      * <important>
      * <p>
      * The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters
-     * don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-     * and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application
-     * might be <code>Devops-Guru-production-application/RDS</code> or
-     * <code>Devops-Guru-production-application/containers</code>.
+     * prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i>
+     * can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works
+     * with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and
+     * these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>
+     * .
      * </p>
      * </important>
      * 
@@ -664,10 +672,11 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
      *        <p>
      *        The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with
      *        the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     *        <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While
-     *        <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For
-     *        example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-     *        <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be
+     *        <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you
+     *        create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create
+     *        a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named
+     *        <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two
+     *        different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be
      *        <code>Devops-Guru-production-application/RDS</code> or
      *        <code>Devops-Guru-production-application/containers</code>.
      *        </p>

@@ -103,6 +103,24 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
      * </p>
      */
     private String vpcPeeringConnectionId;
+    /**
+     * <p>
+     * The state. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * active
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * blackhole
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String state;
 
     /**
      * <p>
@@ -604,6 +622,115 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The state. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * active
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * blackhole
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param state
+     *        The state. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        active
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        blackhole
+     *        </p>
+     *        </li>
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * active
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * blackhole
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The state. The following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         active
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         blackhole
+     *         </p>
+     *         </li>
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * active
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * blackhole
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param state
+     *        The state. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        active
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        blackhole
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalysisRouteTableRoute withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -634,7 +761,9 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -689,6 +818,10 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
             return false;
         if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         return true;
     }
 
@@ -707,6 +840,7 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

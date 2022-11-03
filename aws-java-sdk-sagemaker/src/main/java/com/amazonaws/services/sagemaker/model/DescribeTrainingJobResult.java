@@ -424,6 +424,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.Map<String, String> environment;
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     */
+    private WarmPoolStatus warmPoolStatus;
 
     /**
      * <p>
@@ -3713,6 +3719,46 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     */
+
+    public void setWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        this.warmPoolStatus = warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @return The status of the warm pool associated with the training job.
+     */
+
+    public WarmPoolStatus getWarmPoolStatus() {
+        return this.warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        setWarmPoolStatus(warmPoolStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3803,7 +3849,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getRetryStrategy() != null)
             sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: ").append(getEnvironment());
+            sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getWarmPoolStatus() != null)
+            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -3980,6 +4028,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
+        if (other.getWarmPoolStatus() == null ^ this.getWarmPoolStatus() == null)
+            return false;
+        if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
+            return false;
         return true;
     }
 
@@ -4028,6 +4080,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
         return hashCode;
     }
 

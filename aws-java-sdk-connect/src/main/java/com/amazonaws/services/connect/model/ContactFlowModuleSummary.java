@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains summary information about a contact flow.
+ * Contains summary information about a flow.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowModuleSummary" target="_top">AWS
@@ -30,36 +30,36 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      */
     private String state;
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      */
 
     public void setId(String id) {
@@ -68,10 +68,10 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
-     * @return The identifier of the contact flow module.
+     * @return The identifier of the flow module.
      */
 
     public String getId() {
@@ -80,11 +80,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The identifier of the contact flow module.
+     * The identifier of the flow module.
      * </p>
      * 
      * @param id
-     *        The identifier of the contact flow module.
+     *        The identifier of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow module.
+     *        The Amazon Resource Name (ARN) of the flow module.
      */
 
     public void setArn(String arn) {
@@ -108,10 +108,10 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the contact flow module.
+     * @return The Amazon Resource Name (ARN) of the flow module.
      */
 
     public String getArn() {
@@ -120,11 +120,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact flow module.
+     * The Amazon Resource Name (ARN) of the flow module.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the contact flow module.
+     *        The Amazon Resource Name (ARN) of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      */
 
     public void setName(String name) {
@@ -148,10 +148,10 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
-     * @return The name of the contact flow module.
+     * @return The name of the flow module.
      */
 
     public String getName() {
@@ -160,11 +160,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the contact flow module.
+     * The name of the flow module.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow module.
+     *        The name of the flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
      * @param state
-     *        The type of contact flow module.
+     *        The type of flow module.
      * @see ContactFlowModuleState
      */
 
@@ -189,10 +189,10 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
-     * @return The type of contact flow module.
+     * @return The type of flow module.
      * @see ContactFlowModuleState
      */
 
@@ -202,11 +202,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
      * @param state
-     *        The type of contact flow module.
+     *        The type of flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */
@@ -218,11 +218,11 @@ public class ContactFlowModuleSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of contact flow module.
+     * The type of flow module.
      * </p>
      * 
      * @param state
-     *        The type of contact flow module.
+     *        The type of flow module.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactFlowModuleState
      */

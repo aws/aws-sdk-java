@@ -27,13 +27,13 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new target group to assign to the proxy.
+     * The name of the target group to modify.
      * </p>
      */
     private String targetGroupName;
     /**
      * <p>
-     * The name of the new proxy to which to assign the target group.
+     * The name of the proxy.
      * </p>
      */
     private String dBProxyName;
@@ -53,11 +53,11 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new target group to assign to the proxy.
+     * The name of the target group to modify.
      * </p>
      * 
      * @param targetGroupName
-     *        The name of the new target group to assign to the proxy.
+     *        The name of the target group to modify.
      */
 
     public void setTargetGroupName(String targetGroupName) {
@@ -66,10 +66,10 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new target group to assign to the proxy.
+     * The name of the target group to modify.
      * </p>
      * 
-     * @return The name of the new target group to assign to the proxy.
+     * @return The name of the target group to modify.
      */
 
     public String getTargetGroupName() {
@@ -78,11 +78,11 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new target group to assign to the proxy.
+     * The name of the target group to modify.
      * </p>
      * 
      * @param targetGroupName
-     *        The name of the new target group to assign to the proxy.
+     *        The name of the target group to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new proxy to which to assign the target group.
+     * The name of the proxy.
      * </p>
      * 
      * @param dBProxyName
-     *        The name of the new proxy to which to assign the target group.
+     *        The name of the proxy.
      */
 
     public void setDBProxyName(String dBProxyName) {
@@ -106,10 +106,10 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new proxy to which to assign the target group.
+     * The name of the proxy.
      * </p>
      * 
-     * @return The name of the new proxy to which to assign the target group.
+     * @return The name of the proxy.
      */
 
     public String getDBProxyName() {
@@ -118,11 +118,11 @@ public class ModifyDBProxyTargetGroupRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the new proxy to which to assign the target group.
+     * The name of the proxy.
      * </p>
      * 
      * @param dBProxyName
-     *        The name of the new proxy to which to assign the target group.
+     *        The name of the proxy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

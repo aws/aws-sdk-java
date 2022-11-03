@@ -1978,6 +1978,56 @@
       ],
       "documentation": "Purchase an offering and create a reservation."
     },
+    "RebootInputDevice": {
+      "name": "RebootInputDevice",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/reboot",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RebootInputDeviceRequest"
+      },
+      "output": {
+        "shape": "RebootInputDeviceResponse",
+        "documentation": "Your reboot request has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Reboot operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to reboot input device."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on reboot device calls to the input device service."
+        }
+      ],
+      "documentation": "Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of sending the command. When the reboot is complete, the device\u2019s connection status will change to connected."
+    },
     "RejectInputDeviceTransfer": {
       "name": "RejectInputDeviceTransfer",
       "http": {
@@ -2081,6 +2131,56 @@
         }
       ],
       "documentation": "Starts an existing channel"
+    },
+    "StartInputDeviceMaintenanceWindow": {
+      "name": "StartInputDeviceMaintenanceWindow",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/startInputDeviceMaintenanceWindow",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StartInputDeviceMaintenanceWindowRequest"
+      },
+      "output": {
+        "shape": "StartInputDeviceMaintenanceWindowResponse",
+        "documentation": "Your start maintenance window request has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Start maintenance window operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to start a maintenance window for this input device."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on start maintenance window calls to the input device service."
+        }
+      ],
+      "documentation": "Start a maintenance window for the specified input device. Starting a maintenance window will give the device up to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming when the software is fully installed. Devices automatically install updates while they are powered on and their MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop MediaLive channels that use the device. The device must remain powered on and connected to the internet for the duration of the maintenance."
     },
     "StartMultiplex": {
       "name": "StartMultiplex",
@@ -2913,6 +3013,14 @@
       },
       "documentation": "Placeholder documentation for AccessDenied"
     },
+    "AccessibilityType": {
+      "type": "string",
+      "documentation": "Accessibility Type",
+      "enum": [
+        "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES",
+        "IMPLEMENTS_ACCESSIBILITY_FEATURES"
+      ]
+    },
     "AfdSignaling": {
       "type": "string",
       "documentation": "Afd Signaling",
@@ -3067,6 +3175,10 @@
           "shape": "Ac3Settings",
           "locationName": "ac3Settings"
         },
+        "Eac3AtmosSettings": {
+          "shape": "Eac3AtmosSettings",
+          "locationName": "eac3AtmosSettings"
+        },
         "Eac3Settings": {
           "shape": "Eac3Settings",
           "locationName": "eac3Settings"
@@ -3130,7 +3242,7 @@
           "documentation": "Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input."
         },
         "Name": {
-          "shape": "__string",
+          "shape": "__stringMax255",
           "locationName": "name",
           "documentation": "The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event."
         },
@@ -3492,6 +3604,10 @@
     "AvailSettings": {
       "type": "structure",
       "members": {
+        "Esam": {
+          "shape": "Esam",
+          "locationName": "esam"
+        },
         "Scte35SpliceInsert": {
           "shape": "Scte35SpliceInsert",
           "locationName": "scte35SpliceInsert"
@@ -4124,6 +4240,11 @@
     "CaptionDescription": {
       "type": "structure",
       "members": {
+        "Accessibility": {
+          "shape": "AccessibilityType",
+          "locationName": "accessibility",
+          "documentation": "Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds."
+        },
         "CaptionSelectorName": {
           "shape": "__string",
           "locationName": "captionSelectorName",
@@ -5581,6 +5702,11 @@
           "locationName": "region",
           "documentation": "AWS region, e.g. 'us-west-2'"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "ReservationId": {
           "shape": "__string",
           "locationName": "reservationId",
@@ -6332,6 +6458,11 @@
           "locationName": "region",
           "documentation": "AWS region, e.g. 'us-west-2'"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "ReservationId": {
           "shape": "__string",
           "locationName": "reservationId",
@@ -6419,8 +6550,15 @@
       "documentation": "The status of software on the input device.",
       "enum": [
         "UP_TO_DATE",
-        "NOT_UP_TO_DATE"
+        "NOT_UP_TO_DATE",
+        "UPDATING"
       ]
+    },
+    "DolbyVision81Settings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Dolby Vision Profile 8.1 Settings"
     },
     "DvbNitSettings": {
       "type": "structure",
@@ -6671,6 +6809,80 @@
         }
       },
       "documentation": "DVB Time and Date Table (SDT)"
+    },
+    "Eac3AtmosCodingMode": {
+      "type": "string",
+      "documentation": "Eac3 Atmos Coding Mode",
+      "enum": [
+        "CODING_MODE_5_1_4",
+        "CODING_MODE_7_1_4",
+        "CODING_MODE_9_1_6"
+      ]
+    },
+    "Eac3AtmosDrcLine": {
+      "type": "string",
+      "documentation": "Eac3 Atmos Drc Line",
+      "enum": [
+        "FILM_LIGHT",
+        "FILM_STANDARD",
+        "MUSIC_LIGHT",
+        "MUSIC_STANDARD",
+        "NONE",
+        "SPEECH"
+      ]
+    },
+    "Eac3AtmosDrcRf": {
+      "type": "string",
+      "documentation": "Eac3 Atmos Drc Rf",
+      "enum": [
+        "FILM_LIGHT",
+        "FILM_STANDARD",
+        "MUSIC_LIGHT",
+        "MUSIC_STANDARD",
+        "NONE",
+        "SPEECH"
+      ]
+    },
+    "Eac3AtmosSettings": {
+      "type": "structure",
+      "members": {
+        "Bitrate": {
+          "shape": "__double",
+          "locationName": "bitrate",
+          "documentation": "Average bitrate in bits/second. Valid bitrates depend on the coding mode.\n//  * @affectsRightSizing true"
+        },
+        "CodingMode": {
+          "shape": "Eac3AtmosCodingMode",
+          "locationName": "codingMode",
+          "documentation": "Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels."
+        },
+        "Dialnorm": {
+          "shape": "__integerMin1Max31",
+          "locationName": "dialnorm",
+          "documentation": "Sets the dialnorm for the output. Default 23."
+        },
+        "DrcLine": {
+          "shape": "Eac3AtmosDrcLine",
+          "locationName": "drcLine",
+          "documentation": "Sets the Dolby dynamic range compression profile."
+        },
+        "DrcRf": {
+          "shape": "Eac3AtmosDrcRf",
+          "locationName": "drcRf",
+          "documentation": "Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels."
+        },
+        "HeightTrim": {
+          "shape": "__double",
+          "locationName": "heightTrim",
+          "documentation": "Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels."
+        },
+        "SurroundTrim": {
+          "shape": "__double",
+          "locationName": "surroundTrim",
+          "documentation": "Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels."
+        }
+      },
+      "documentation": "Eac3 Atmos Settings"
     },
     "Eac3AttenuationControl": {
       "type": "string",
@@ -7075,6 +7287,46 @@
         "AudioDescriptions",
         "OutputGroups",
         "TimecodeConfig"
+      ]
+    },
+    "Esam": {
+      "type": "structure",
+      "members": {
+        "AcquisitionPointId": {
+          "shape": "__stringMax256",
+          "locationName": "acquisitionPointId",
+          "documentation": "Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS."
+        },
+        "AdAvailOffset": {
+          "shape": "__integerMinNegative1000Max1000",
+          "locationName": "adAvailOffset",
+          "documentation": "When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages."
+        },
+        "PasswordParam": {
+          "shape": "__string",
+          "locationName": "passwordParam",
+          "documentation": "Password if credentials are required to access the POIS endpoint.  This is a reference to an AWS parameter store name from which the password can be retrieved.  AWS Parameter store format: \"ssm://<parameter name>\""
+        },
+        "PoisEndpoint": {
+          "shape": "__string",
+          "locationName": "poisEndpoint",
+          "documentation": "The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read."
+        },
+        "Username": {
+          "shape": "__string",
+          "locationName": "username",
+          "documentation": "Username if credentials are required to access the POIS endpoint.  This can be either a plaintext username, or a reference to an AWS parameter store name from which the username can be retrieved.  AWS Parameter store format: \"ssm://<parameter name>\""
+        },
+        "ZoneIdentity": {
+          "shape": "__stringMax256",
+          "locationName": "zoneIdentity",
+          "documentation": "Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS."
+        }
+      },
+      "documentation": "Settings for the Esam",
+      "required": [
+        "AcquisitionPointId",
+        "PoisEndpoint"
       ]
     },
     "FailoverCondition": {
@@ -7907,6 +8159,10 @@
         "ColorSpacePassthroughSettings": {
           "shape": "ColorSpacePassthroughSettings",
           "locationName": "colorSpacePassthroughSettings"
+        },
+        "DolbyVision81Settings": {
+          "shape": "DolbyVision81Settings",
+          "locationName": "dolbyVision81Settings"
         },
         "Hdr10Settings": {
           "shape": "Hdr10Settings",
@@ -9575,7 +9831,7 @@
           "documentation": "key used to extract the password from EC2 Parameter store"
         },
         "Uri": {
-          "shape": "__string",
+          "shape": "__stringMax2048",
           "locationName": "uri",
           "documentation": "Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: \"rtmp://fmsserver/live\"."
         },
@@ -12668,6 +12924,11 @@
           "locationName": "name",
           "documentation": "Name for the new reservation"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
@@ -12708,6 +12969,11 @@
           "location": "uri",
           "locationName": "offeringId",
           "documentation": "Offering to purchase, e.g. '87654321'"
+        },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
         },
         "RequestId": {
           "shape": "__string",
@@ -12757,6 +13023,51 @@
       "members": {
       },
       "documentation": "Raw Settings"
+    },
+    "RebootInputDevice": {
+      "type": "structure",
+      "members": {
+        "Force": {
+          "shape": "RebootInputDeviceForce",
+          "locationName": "force",
+          "documentation": "Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes."
+        }
+      },
+      "documentation": "Placeholder documentation for RebootInputDevice"
+    },
+    "RebootInputDeviceForce": {
+      "type": "string",
+      "documentation": "Whether or not to force reboot the input device.",
+      "enum": [
+        "NO",
+        "YES"
+      ]
+    },
+    "RebootInputDeviceRequest": {
+      "type": "structure",
+      "members": {
+        "Force": {
+          "shape": "RebootInputDeviceForce",
+          "locationName": "force",
+          "documentation": "Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes."
+        },
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to reboot. For example, hd-123456789abcdef."
+        }
+      },
+      "documentation": "A request to reboot an AWS Elemental device.",
+      "required": [
+        "InputDeviceId"
+      ]
+    },
+    "RebootInputDeviceResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for RebootInputDeviceResponse"
     },
     "Rec601Settings": {
       "type": "structure",
@@ -12814,6 +13125,22 @@
       "required": [
         "ChannelMappings"
       ]
+    },
+    "RenewalSettings": {
+      "type": "structure",
+      "members": {
+        "AutomaticRenewal": {
+          "shape": "ReservationAutomaticRenewal",
+          "locationName": "automaticRenewal",
+          "documentation": "Automatic renewal status for the reservation"
+        },
+        "RenewalCount": {
+          "shape": "__integerMin1",
+          "locationName": "renewalCount",
+          "documentation": "Count for the reservation renewal"
+        }
+      },
+      "documentation": "The Renewal settings for Reservations"
     },
     "Reservation": {
       "type": "structure",
@@ -12878,6 +13205,11 @@
           "locationName": "region",
           "documentation": "AWS region, e.g. 'us-west-2'"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "ReservationId": {
           "shape": "__string",
           "locationName": "reservationId",
@@ -12910,6 +13242,15 @@
         }
       },
       "documentation": "Reserved resources available to use"
+    },
+    "ReservationAutomaticRenewal": {
+      "type": "string",
+      "documentation": "Automatic Renewal Status for Reservation",
+      "enum": [
+        "DISABLED",
+        "ENABLED",
+        "UNAVAILABLE"
+      ]
     },
     "ReservationCodec": {
       "type": "string",
@@ -13236,6 +13577,11 @@
           "locationName": "pauseStateSettings",
           "documentation": "Action to pause or unpause one or both channel pipelines"
         },
+        "Scte35InputSettings": {
+          "shape": "Scte35InputScheduleActionSettings",
+          "locationName": "scte35InputSettings",
+          "documentation": "Action to specify scte35 input"
+        },
         "Scte35ReturnToNetworkSettings": {
           "shape": "Scte35ReturnToNetworkScheduleActionSettings",
           "locationName": "scte35ReturnToNetworkSettings",
@@ -13466,6 +13812,33 @@
         "RESTRICT_GROUP0",
         "RESTRICT_GROUP1",
         "RESTRICT_GROUP2"
+      ]
+    },
+    "Scte35InputMode": {
+      "type": "string",
+      "documentation": "Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.",
+      "enum": [
+        "FIXED",
+        "FOLLOW_ACTIVE"
+      ]
+    },
+    "Scte35InputScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "InputAttachmentNameReference": {
+          "shape": "__string",
+          "locationName": "inputAttachmentNameReference",
+          "documentation": "In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)\""
+        },
+        "Mode": {
+          "shape": "Scte35InputMode",
+          "locationName": "mode",
+          "documentation": "Whether the SCTE-35 input should be the active input or a fixed input."
+        }
+      },
+      "documentation": "Settings for the \"scte35 input\" action",
+      "required": [
+        "Mode"
       ]
     },
     "Scte35NoRegionalBlackoutFlag": {
@@ -13868,6 +14241,27 @@
         }
       },
       "documentation": "Placeholder documentation for StartChannelResponse"
+    },
+    "StartInputDeviceMaintenanceWindowRequest": {
+      "type": "structure",
+      "members": {
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef."
+        }
+      },
+      "required": [
+        "InputDeviceId"
+      ],
+      "documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowRequest"
+    },
+    "StartInputDeviceMaintenanceWindowResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowResponse"
     },
     "StartMultiplexRequest": {
       "type": "structure",
@@ -15162,6 +15556,11 @@
           "shape": "__string",
           "locationName": "name",
           "documentation": "Name of the reservation"
+        },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
         }
       },
       "documentation": "UpdateReservation request"
@@ -15173,6 +15572,11 @@
           "shape": "__string",
           "locationName": "name",
           "documentation": "Name of the reservation"
+        },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
         },
         "ReservationId": {
           "shape": "__string",
@@ -16227,6 +16631,16 @@
       "type": "string",
       "max": 1000,
       "documentation": "Placeholder documentation for __stringMax1000"
+    },
+    "__stringMax2048": {
+      "type": "string",
+      "max": 2048,
+      "documentation": "Placeholder documentation for __stringMax2048"
+    },
+    "__stringMax255": {
+      "type": "string",
+      "max": 255,
+      "documentation": "Placeholder documentation for __stringMax255"
     },
     "__stringMax256": {
       "type": "string",

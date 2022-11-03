@@ -77,6 +77,14 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
      */
     private String resourceCountByStatus;
 
+    private AlarmConfiguration alarmConfiguration;
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the association.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AlarmStateInformation> triggeredAlarms;
+
     /**
      * <p>
      * The association ID.
@@ -398,6 +406,105 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
     }
 
     /**
+     * @param alarmConfiguration
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * @param alarmConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationExecution withAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the association.
+     * </p>
+     * 
+     * @return The CloudWatch alarms that were invoked by the association.
+     */
+
+    public java.util.List<AlarmStateInformation> getTriggeredAlarms() {
+        if (triggeredAlarms == null) {
+            triggeredAlarms = new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>();
+        }
+        return triggeredAlarms;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the association.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarms that were invoked by the association.
+     */
+
+    public void setTriggeredAlarms(java.util.Collection<AlarmStateInformation> triggeredAlarms) {
+        if (triggeredAlarms == null) {
+            this.triggeredAlarms = null;
+            return;
+        }
+
+        this.triggeredAlarms = new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>(triggeredAlarms);
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the association.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTriggeredAlarms(java.util.Collection)} or {@link #withTriggeredAlarms(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarms that were invoked by the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationExecution withTriggeredAlarms(AlarmStateInformation... triggeredAlarms) {
+        if (this.triggeredAlarms == null) {
+            setTriggeredAlarms(new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>(triggeredAlarms.length));
+        }
+        for (AlarmStateInformation ele : triggeredAlarms) {
+            this.triggeredAlarms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the association.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarms that were invoked by the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationExecution withTriggeredAlarms(java.util.Collection<AlarmStateInformation> triggeredAlarms) {
+        setTriggeredAlarms(triggeredAlarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -424,7 +531,11 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
         if (getLastExecutionDate() != null)
             sb.append("LastExecutionDate: ").append(getLastExecutionDate()).append(",");
         if (getResourceCountByStatus() != null)
-            sb.append("ResourceCountByStatus: ").append(getResourceCountByStatus());
+            sb.append("ResourceCountByStatus: ").append(getResourceCountByStatus()).append(",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: ").append(getAlarmConfiguration()).append(",");
+        if (getTriggeredAlarms() != null)
+            sb.append("TriggeredAlarms: ").append(getTriggeredAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -471,6 +582,14 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
             return false;
         if (other.getResourceCountByStatus() != null && other.getResourceCountByStatus().equals(this.getResourceCountByStatus()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null && other.getAlarmConfiguration().equals(this.getAlarmConfiguration()) == false)
+            return false;
+        if (other.getTriggeredAlarms() == null ^ this.getTriggeredAlarms() == null)
+            return false;
+        if (other.getTriggeredAlarms() != null && other.getTriggeredAlarms().equals(this.getTriggeredAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +606,8 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastExecutionDate() == null) ? 0 : getLastExecutionDate().hashCode());
         hashCode = prime * hashCode + ((getResourceCountByStatus() == null) ? 0 : getResourceCountByStatus().hashCode());
+        hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTriggeredAlarms() == null) ? 0 : getTriggeredAlarms().hashCode());
         return hashCode;
     }
 

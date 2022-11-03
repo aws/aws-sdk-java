@@ -43,7 +43,7 @@ public class ListedExecution implements Serializable, Cloneable, StructuredPojo 
     private FileLocation initialFileLocation;
     /**
      * <p>
-     * A container object for the session details associated with a workflow.
+     * A container object for the session details that are associated with a workflow.
      * </p>
      */
     private ServiceMetadata serviceMetadata;
@@ -146,11 +146,11 @@ public class ListedExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A container object for the session details associated with a workflow.
+     * A container object for the session details that are associated with a workflow.
      * </p>
      * 
      * @param serviceMetadata
-     *        A container object for the session details associated with a workflow.
+     *        A container object for the session details that are associated with a workflow.
      */
 
     public void setServiceMetadata(ServiceMetadata serviceMetadata) {
@@ -159,10 +159,10 @@ public class ListedExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A container object for the session details associated with a workflow.
+     * A container object for the session details that are associated with a workflow.
      * </p>
      * 
-     * @return A container object for the session details associated with a workflow.
+     * @return A container object for the session details that are associated with a workflow.
      */
 
     public ServiceMetadata getServiceMetadata() {
@@ -171,11 +171,11 @@ public class ListedExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A container object for the session details associated with a workflow.
+     * A container object for the session details that are associated with a workflow.
      * </p>
      * 
      * @param serviceMetadata
-     *        A container object for the session details associated with a workflow.
+     *        A container object for the session details that are associated with a workflow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

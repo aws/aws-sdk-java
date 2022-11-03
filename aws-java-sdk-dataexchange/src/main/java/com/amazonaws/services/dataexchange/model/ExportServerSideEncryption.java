@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key
- * is only necessary if you chose the KMS encryption. type.
+ * is only necessary if you chose the KMS encryption type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ExportServerSideEncryption"

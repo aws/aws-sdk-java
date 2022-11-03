@@ -56,6 +56,10 @@ public class AppInstanceUserMembershipSummaryJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     appInstanceUserMembershipSummary.setReadMarkerTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("SubChannelId", targetDepth)) {
+                    context.nextToken();
+                    appInstanceUserMembershipSummary.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

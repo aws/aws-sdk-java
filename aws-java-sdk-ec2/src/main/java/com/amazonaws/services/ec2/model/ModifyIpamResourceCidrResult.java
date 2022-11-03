@@ -23,10 +23,20 @@ import com.amazonaws.AmazonWebServiceResult;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyIpamResourceCidrResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CIDR of the resource.
+     * </p>
+     */
     private IpamResourceCidr ipamResourceCidr;
 
     /**
+     * <p>
+     * The CIDR of the resource.
+     * </p>
+     * 
      * @param ipamResourceCidr
+     *        The CIDR of the resource.
      */
 
     public void setIpamResourceCidr(IpamResourceCidr ipamResourceCidr) {
@@ -34,7 +44,11 @@ public class ModifyIpamResourceCidrResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The CIDR of the resource.
+     * </p>
+     * 
+     * @return The CIDR of the resource.
      */
 
     public IpamResourceCidr getIpamResourceCidr() {
@@ -42,7 +56,12 @@ public class ModifyIpamResourceCidrResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The CIDR of the resource.
+     * </p>
+     * 
      * @param ipamResourceCidr
+     *        The CIDR of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

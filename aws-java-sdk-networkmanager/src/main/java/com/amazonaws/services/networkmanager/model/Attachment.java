@@ -30,7 +30,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A core network ID.
+     * The ID of a core network.
      * </p>
      */
     private String coreNetworkId;
@@ -115,11 +115,11 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A core network ID.
+     * The ID of a core network.
      * </p>
      * 
      * @param coreNetworkId
-     *        A core network ID.
+     *        The ID of a core network.
      */
 
     public void setCoreNetworkId(String coreNetworkId) {
@@ -128,10 +128,10 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A core network ID.
+     * The ID of a core network.
      * </p>
      * 
-     * @return A core network ID.
+     * @return The ID of a core network.
      */
 
     public String getCoreNetworkId() {
@@ -140,11 +140,11 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A core network ID.
+     * The ID of a core network.
      * </p>
      * 
      * @param coreNetworkId
-     *        A core network ID.
+     *        The ID of a core network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

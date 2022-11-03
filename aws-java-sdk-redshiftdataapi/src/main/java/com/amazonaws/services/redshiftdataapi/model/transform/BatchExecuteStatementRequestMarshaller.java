@@ -42,6 +42,8 @@ public class BatchExecuteStatementRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementName").build();
     private static final MarshallingInfo<Boolean> WITHEVENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WithEvent").build();
+    private static final MarshallingInfo<String> WORKGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkgroupName").build();
 
     private static final BatchExecuteStatementRequestMarshaller instance = new BatchExecuteStatementRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class BatchExecuteStatementRequestMarshaller {
             protocolMarshaller.marshall(batchExecuteStatementRequest.getSqls(), SQLS_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getStatementName(), STATEMENTNAME_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getWithEvent(), WITHEVENT_BINDING);
+            protocolMarshaller.marshall(batchExecuteStatementRequest.getWorkgroupName(), WORKGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

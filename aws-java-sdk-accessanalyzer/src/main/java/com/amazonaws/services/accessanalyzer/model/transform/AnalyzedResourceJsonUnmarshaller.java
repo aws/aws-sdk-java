@@ -48,39 +48,35 @@ public class AnalyzedResourceJsonUnmarshaller implements Unmarshaller<AnalyzedRe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("actions", targetDepth)) {
+                if (context.testExpression("resourceArn", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
+                    analyzedResource.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("analyzedAt", targetDepth)) {
+                if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    analyzedResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     analyzedResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("error", targetDepth)) {
+                if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setError(context.getUnmarshaller(String.class).unmarshall(context));
+                    analyzedResource.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("updatedAt", targetDepth)) {
+                    context.nextToken();
+                    analyzedResource.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("isPublic", targetDepth)) {
                     context.nextToken();
                     analyzedResource.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("resourceArn", targetDepth)) {
+                if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("resourceOwnerAccount", targetDepth)) {
-                    context.nextToken();
-                    analyzedResource.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("resourceType", targetDepth)) {
-                    context.nextToken();
-                    analyzedResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                    analyzedResource.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sharedVia", targetDepth)) {
                     context.nextToken();
@@ -92,9 +88,13 @@ public class AnalyzedResourceJsonUnmarshaller implements Unmarshaller<AnalyzedRe
                     context.nextToken();
                     analyzedResource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("updatedAt", targetDepth)) {
+                if (context.testExpression("resourceOwnerAccount", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    analyzedResource.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("error", targetDepth)) {
+                    context.nextToken();
+                    analyzedResource.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

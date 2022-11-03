@@ -35,6 +35,8 @@ public class AssetInfoMarshaller {
             .marshallLocationName("AssetType").build();
     private static final MarshallingInfo<StructuredPojo> COMPUTEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeAttributes").build();
+    private static final MarshallingInfo<StructuredPojo> ASSETLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssetLocation").build();
 
     private static final AssetInfoMarshaller instance = new AssetInfoMarshaller();
 
@@ -56,6 +58,7 @@ public class AssetInfoMarshaller {
             protocolMarshaller.marshall(assetInfo.getRackId(), RACKID_BINDING);
             protocolMarshaller.marshall(assetInfo.getAssetType(), ASSETTYPE_BINDING);
             protocolMarshaller.marshall(assetInfo.getComputeAttributes(), COMPUTEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(assetInfo.getAssetLocation(), ASSETLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

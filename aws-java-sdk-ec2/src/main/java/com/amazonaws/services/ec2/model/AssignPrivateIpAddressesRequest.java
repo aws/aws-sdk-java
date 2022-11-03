@@ -43,8 +43,8 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     private String networkInterfaceId;
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
-     * specify this parameter when also specifying a number of secondary IP addresses.
+     * The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify
+     * this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
      * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
@@ -175,15 +175,15 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
-     * specify this parameter when also specifying a number of secondary IP addresses.
+     * The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify
+     * this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
      * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * 
-     * @return One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
-     *         can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+     * @return The IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     *         specify this parameter when also specifying a number of secondary IP addresses.</p>
      *         <p>
      *         If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
      *         range.
@@ -198,16 +198,16 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
-     * specify this parameter when also specifying a number of secondary IP addresses.
+     * The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify
+     * this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
      * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
-     *        can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+     *        The IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     *        specify this parameter when also specifying a number of secondary IP addresses.</p>
      *        <p>
      *        If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
      *        range.
@@ -224,8 +224,8 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
-     * specify this parameter when also specifying a number of secondary IP addresses.
+     * The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify
+     * this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
      * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
@@ -237,8 +237,8 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
-     *        can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+     *        The IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     *        specify this parameter when also specifying a number of secondary IP addresses.</p>
      *        <p>
      *        If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
      *        range.
@@ -257,16 +257,16 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
-     * specify this parameter when also specifying a number of secondary IP addresses.
+     * The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify
+     * this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
      * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
-     *        can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+     *        The IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     *        specify this parameter when also specifying a number of secondary IP addresses.</p>
      *        <p>
      *        If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
      *        range.

@@ -31,19 +31,20 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The relative path to the URL for this VOD source. This is combined with
-     * SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     * <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      * </p>
      */
     private String path;
     /**
      * <p>
-     * The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     * The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      * </p>
      */
     private String sourceGroup;
     /**
      * <p>
-     * The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     * The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     * <code>DASH</code>.
      * </p>
      */
     private String type;
@@ -51,12 +52,12 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The relative path to the URL for this VOD source. This is combined with
-     * SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     * <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      * </p>
      * 
      * @param path
      *        The relative path to the URL for this VOD source. This is combined with
-     *        SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     *        <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      */
 
     public void setPath(String path) {
@@ -66,11 +67,11 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The relative path to the URL for this VOD source. This is combined with
-     * SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     * <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      * </p>
      * 
      * @return The relative path to the URL for this VOD source. This is combined with
-     *         SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     *         <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      */
 
     public String getPath() {
@@ -80,12 +81,12 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The relative path to the URL for this VOD source. This is combined with
-     * SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     * <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      * </p>
      * 
      * @param path
      *        The relative path to the URL for this VOD source. This is combined with
-     *        SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.
+     *        <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +97,11 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     * The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      * </p>
      * 
      * @param sourceGroup
-     *        The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     *        The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      */
 
     public void setSourceGroup(String sourceGroup) {
@@ -109,10 +110,10 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     * The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      * </p>
      * 
-     * @return The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     * @return The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      */
 
     public String getSourceGroup() {
@@ -121,11 +122,11 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     * The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      * </p>
      * 
      * @param sourceGroup
-     *        The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+     *        The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +137,13 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     * The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     * <code>DASH</code>.
      * </p>
      * 
      * @param type
-     *        The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     *        The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     *        <code>DASH</code>.
      * @see Type
      */
 
@@ -150,10 +153,12 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     * The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     * <code>DASH</code>.
      * </p>
      * 
-     * @return The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     * @return The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     *         <code>DASH</code>.
      * @see Type
      */
 
@@ -163,11 +168,13 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     * The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     * <code>DASH</code>.
      * </p>
      * 
      * @param type
-     *        The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     *        The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     *        <code>DASH</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -179,11 +186,13 @@ public class HttpPackageConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     * The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     * <code>DASH</code>.
      * </p>
      * 
      * @param type
-     *        The streaming protocol for this package configuration. Supported values are HLS and DASH.
+     *        The streaming protocol for this package configuration. Supported values are <code>HLS</code> and
+     *        <code>DASH</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

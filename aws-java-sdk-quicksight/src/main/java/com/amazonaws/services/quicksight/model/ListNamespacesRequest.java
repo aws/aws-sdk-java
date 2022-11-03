@@ -33,7 +33,11 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String awsAccountId;
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the
+     * response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To
+     * receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next
+     * page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an
+     * expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.
      * </p>
      */
     private String nextToken;
@@ -89,11 +93,20 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the
+     * response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To
+     * receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next
+     * page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an
+     * expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token that can be used in a subsequent request.
+     *        A unique pagination token that can be used in a subsequent request. You will receive a pagination token in
+     *        the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be
+     *        returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token
+     *        to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a
+     *        <code>ListNamespaces</code> API call with an expired token, you will receive a
+     *        <code>HTTP 400 InvalidNextTokenException</code> error.
      */
 
     public void setNextToken(String nextToken) {
@@ -102,10 +115,19 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the
+     * response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To
+     * receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next
+     * page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an
+     * expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.
      * </p>
      * 
-     * @return A pagination token that can be used in a subsequent request.
+     * @return A unique pagination token that can be used in a subsequent request. You will receive a pagination token
+     *         in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be
+     *         returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token
+     *         to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a
+     *         <code>ListNamespaces</code> API call with an expired token, you will receive a
+     *         <code>HTTP 400 InvalidNextTokenException</code> error.
      */
 
     public String getNextToken() {
@@ -114,11 +136,20 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent request.
+     * A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the
+     * response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To
+     * receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next
+     * page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an
+     * expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token that can be used in a subsequent request.
+     *        A unique pagination token that can be used in a subsequent request. You will receive a pagination token in
+     *        the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be
+     *        returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token
+     *        to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a
+     *        <code>ListNamespaces</code> API call with an expired token, you will receive a
+     *        <code>HTTP 400 InvalidNextTokenException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

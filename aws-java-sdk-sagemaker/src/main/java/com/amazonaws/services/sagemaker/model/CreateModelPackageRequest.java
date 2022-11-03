@@ -155,7 +155,13 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification.
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
      * </p>
      */
     private String task;
@@ -1111,12 +1117,23 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification.
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
      * </p>
      * 
      * @param task
      *        The machine learning task your model package accomplishes. Common machine learning tasks include object
-     *        detection and image classification.
+     *        detection and image classification. The following tasks are supported by Inference Recommender:
+     *        <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     *        <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     *        <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+     *        <p>
+     *        Specify "OTHER" if none of the tasks listed fit your use case.
      */
 
     public void setTask(String task) {
@@ -1126,11 +1143,22 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification.
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
      * </p>
      * 
      * @return The machine learning task your model package accomplishes. Common machine learning tasks include object
-     *         detection and image classification.
+     *         detection and image classification. The following tasks are supported by Inference Recommender:
+     *         <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     *         <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     *         <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+     *         <p>
+     *         Specify "OTHER" if none of the tasks listed fit your use case.
      */
 
     public String getTask() {
@@ -1140,12 +1168,23 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification.
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
      * </p>
      * 
      * @param task
      *        The machine learning task your model package accomplishes. Common machine learning tasks include object
-     *        detection and image classification.
+     *        detection and image classification. The following tasks are supported by Inference Recommender:
+     *        <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     *        <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     *        <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+     *        <p>
+     *        Specify "OTHER" if none of the tasks listed fit your use case.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

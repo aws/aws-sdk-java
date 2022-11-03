@@ -51,7 +51,14 @@ public class GetEventPredictionMetadataRequest extends com.amazonaws.AmazonWebSe
     private String detectorVersionId;
     /**
      * <p>
-     * The timestamp that defines when the prediction was generated.
+     * The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601
+     * standard in UTC.
+     * </p>
+     * <p>
+     * We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">
+     * ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide
+     * an accurate prediction timestamp value.
      * </p>
      */
     private String predictionTimestamp;
@@ -218,11 +225,24 @@ public class GetEventPredictionMetadataRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The timestamp that defines when the prediction was generated.
+     * The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601
+     * standard in UTC.
+     * </p>
+     * <p>
+     * We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">
+     * ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide
+     * an accurate prediction timestamp value.
      * </p>
      * 
      * @param predictionTimestamp
-     *        The timestamp that defines when the prediction was generated.
+     *        The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO
+     *        8601 standard in UTC.</p>
+     *        <p>
+     *        We recommend calling <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html"
+     *        >ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to
+     *        provide an accurate prediction timestamp value.
      */
 
     public void setPredictionTimestamp(String predictionTimestamp) {
@@ -231,10 +251,23 @@ public class GetEventPredictionMetadataRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The timestamp that defines when the prediction was generated.
+     * The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601
+     * standard in UTC.
+     * </p>
+     * <p>
+     * We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">
+     * ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide
+     * an accurate prediction timestamp value.
      * </p>
      * 
-     * @return The timestamp that defines when the prediction was generated.
+     * @return The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO
+     *         8601 standard in UTC.</p>
+     *         <p>
+     *         We recommend calling <a
+     *         href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html"
+     *         >ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to
+     *         provide an accurate prediction timestamp value.
      */
 
     public String getPredictionTimestamp() {
@@ -243,11 +276,24 @@ public class GetEventPredictionMetadataRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The timestamp that defines when the prediction was generated.
+     * The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601
+     * standard in UTC.
+     * </p>
+     * <p>
+     * We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">
+     * ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide
+     * an accurate prediction timestamp value.
      * </p>
      * 
      * @param predictionTimestamp
-     *        The timestamp that defines when the prediction was generated.
+     *        The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO
+     *        8601 standard in UTC.</p>
+     *        <p>
+     *        We recommend calling <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html"
+     *        >ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to
+     *        provide an accurate prediction timestamp value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

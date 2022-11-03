@@ -28,18 +28,18 @@ public class CreateLocationEfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     *        The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      */
 
     public void setLocationArn(String locationArn) {
@@ -48,10 +48,10 @@ public class CreateLocationEfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     * @return The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      */
 
     public String getLocationArn() {
@@ -60,11 +60,11 @@ public class CreateLocationEfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     * The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the Amazon EFS file system location that is created.
+     *        The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

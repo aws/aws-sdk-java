@@ -47,8 +47,45 @@ public class AwsWafRateBasedRuleMatchPredicate implements Serializable, Cloneabl
     private Boolean negated;
     /**
      * <p>
-     * The type of predicate.
+     * The type of predicate. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ByteMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GeoMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IPMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RegexMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SqlInjectionMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XssMatch</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
 
@@ -178,11 +215,84 @@ public class AwsWafRateBasedRuleMatchPredicate implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of predicate.
+     * The type of predicate. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ByteMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GeoMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IPMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RegexMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SqlInjectionMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XssMatch</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of predicate.
+     *        The type of predicate. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ByteMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GeoMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IPMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RegexMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SizeConstraint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SqlInjectionMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XssMatch</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -191,10 +301,83 @@ public class AwsWafRateBasedRuleMatchPredicate implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of predicate.
+     * The type of predicate. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ByteMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GeoMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IPMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RegexMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SqlInjectionMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XssMatch</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of predicate.
+     * @return The type of predicate. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ByteMatch</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GeoMatch</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IPMatch</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RegexMatch</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SizeConstraint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SqlInjectionMatch</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>XssMatch</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -203,11 +386,84 @@ public class AwsWafRateBasedRuleMatchPredicate implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of predicate.
+     * The type of predicate. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ByteMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GeoMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IPMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RegexMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SqlInjectionMatch</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XssMatch</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of predicate.
+     *        The type of predicate. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ByteMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GeoMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IPMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RegexMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SizeConstraint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SqlInjectionMatch</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XssMatch</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

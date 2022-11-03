@@ -36,6 +36,8 @@ public class CreateExplainabilityExportRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Destination").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Format").build();
 
     private static final CreateExplainabilityExportRequestMarshaller instance = new CreateExplainabilityExportRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateExplainabilityExportRequestMarshaller {
             protocolMarshaller.marshall(createExplainabilityExportRequest.getExplainabilityArn(), EXPLAINABILITYARN_BINDING);
             protocolMarshaller.marshall(createExplainabilityExportRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(createExplainabilityExportRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createExplainabilityExportRequest.getFormat(), FORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

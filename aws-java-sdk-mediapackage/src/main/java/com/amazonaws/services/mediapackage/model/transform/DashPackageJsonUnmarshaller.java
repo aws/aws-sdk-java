@@ -62,6 +62,10 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                     context.nextToken();
                     dashPackage.setEncryption(DashEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("includeIframeOnlyStream", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setIncludeIframeOnlyStream(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("manifestLayout", targetDepth)) {
                     context.nextToken();
                     dashPackage.setManifestLayout(context.getUnmarshaller(String.class).unmarshall(context));

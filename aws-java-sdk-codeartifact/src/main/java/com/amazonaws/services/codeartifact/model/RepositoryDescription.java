@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of a repository stored in AWS CodeArtifact. A CodeArtifact repository contains a set of package versions,
+ * The details of a repository stored in CodeArtifact. A CodeArtifact repository contains a set of package versions,
  * each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any
  * supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the
  * <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories
- * per AWS account.
+ * per Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/RepositoryDescription" target="_top">AWS
@@ -40,7 +40,7 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     private String name;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that manages the repository.
+     * The 12-digit account number of the Amazon Web Services account that manages the repository.
      * </p>
      */
     private String administratorAccount;
@@ -52,8 +52,8 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     private String domainName;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      */
     private String domainOwner;
@@ -72,7 +72,7 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
@@ -127,11 +127,11 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that manages the repository.
+     * The 12-digit account number of the Amazon Web Services account that manages the repository.
      * </p>
      * 
      * @param administratorAccount
-     *        The 12-digit account number of the AWS account that manages the repository.
+     *        The 12-digit account number of the Amazon Web Services account that manages the repository.
      */
 
     public void setAdministratorAccount(String administratorAccount) {
@@ -140,10 +140,10 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that manages the repository.
+     * The 12-digit account number of the Amazon Web Services account that manages the repository.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that manages the repository.
+     * @return The 12-digit account number of the Amazon Web Services account that manages the repository.
      */
 
     public String getAdministratorAccount() {
@@ -152,11 +152,11 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that manages the repository.
+     * The 12-digit account number of the Amazon Web Services account that manages the repository.
      * </p>
      * 
      * @param administratorAccount
-     *        The 12-digit account number of the AWS account that manages the repository.
+     *        The 12-digit account number of the Amazon Web Services account that manages the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,13 +207,13 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain that contains the repository. It does
-     *        not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain that contains the
+     *        repository. It does not include dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -222,12 +222,12 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain that contains the repository. It does
-     *         not include dashes or spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain that contains the
+     *         repository. It does not include dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -236,13 +236,13 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not
-     * include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository.
+     * It does not include dashes or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain that contains the repository. It does
-     *        not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain that contains the
+     *        repository. It does not include dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,14 +334,14 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
      * 
      * @return A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *         in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *         For more information, see <a
+     *         in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *         more information, see <a
      *         href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *         repositories</a>.
      */
@@ -353,15 +353,15 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
      * 
      * @param upstreams
      *        A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *        in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *        For more information, see <a
+     *        in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *        repositories</a>.
      */
@@ -378,7 +378,7 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
@@ -390,8 +390,8 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
      * 
      * @param upstreams
      *        A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *        in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *        For more information, see <a
+     *        in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *        repositories</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -410,15 +410,15 @@ public class RepositoryDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * A list of upstream repositories to associate with the repository. The order of the upstream repositories in the
-     * list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+     * list determines their priority order when CodeArtifact looks for a requested package version. For more
      * information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
      * upstream repositories</a>.
      * </p>
      * 
      * @param upstreams
      *        A list of upstream repositories to associate with the repository. The order of the upstream repositories
-     *        in the list determines their priority order when AWS CodeArtifact looks for a requested package version.
-     *        For more information, see <a
+     *        in the list determines their priority order when CodeArtifact looks for a requested package version. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream
      *        repositories</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

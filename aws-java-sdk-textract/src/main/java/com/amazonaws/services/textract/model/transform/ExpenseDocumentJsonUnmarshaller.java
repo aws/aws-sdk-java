@@ -64,6 +64,12 @@ public class ExpenseDocumentJsonUnmarshaller implements Unmarshaller<ExpenseDocu
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Blocks", targetDepth)) {
+                    context.nextToken();
+                    expenseDocument.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

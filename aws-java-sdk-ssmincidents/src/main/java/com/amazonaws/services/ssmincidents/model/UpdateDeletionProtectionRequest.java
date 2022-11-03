@@ -27,30 +27,30 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication set you're updating.
+     * The Amazon Resource Name (ARN) of the replication set to update.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that the operation is called only once with the specified details.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * Details if deletion protection is enabled or disabled in your account.
+     * Specifies if deletion protection is turned on or off in your account.
      * </p>
      */
     private Boolean deletionProtected;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication set you're updating.
+     * The Amazon Resource Name (ARN) of the replication set to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the replication set you're updating.
+     *        The Amazon Resource Name (ARN) of the replication set to update.
      */
 
     public void setArn(String arn) {
@@ -59,10 +59,10 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication set you're updating.
+     * The Amazon Resource Name (ARN) of the replication set to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the replication set you're updating.
+     * @return The Amazon Resource Name (ARN) of the replication set to update.
      */
 
     public String getArn() {
@@ -71,11 +71,11 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication set you're updating.
+     * The Amazon Resource Name (ARN) of the replication set to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the replication set you're updating.
+     *        The Amazon Resource Name (ARN) of the replication set to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that the operation is called only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token ensuring that the operation is called only once with the specified details.
+     *        A token that ensures that the operation is called only once with the specified details.
      */
 
     public void setClientToken(String clientToken) {
@@ -99,10 +99,10 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that the operation is called only once with the specified details.
      * </p>
      * 
-     * @return A token ensuring that the operation is called only once with the specified details.
+     * @return A token that ensures that the operation is called only once with the specified details.
      */
 
     public String getClientToken() {
@@ -111,11 +111,11 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that the operation is called only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token ensuring that the operation is called only once with the specified details.
+     *        A token that ensures that the operation is called only once with the specified details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details if deletion protection is enabled or disabled in your account.
+     * Specifies if deletion protection is turned on or off in your account.
      * </p>
      * 
      * @param deletionProtected
-     *        Details if deletion protection is enabled or disabled in your account.
+     *        Specifies if deletion protection is turned on or off in your account.
      */
 
     public void setDeletionProtected(Boolean deletionProtected) {
@@ -139,10 +139,10 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details if deletion protection is enabled or disabled in your account.
+     * Specifies if deletion protection is turned on or off in your account.
      * </p>
      * 
-     * @return Details if deletion protection is enabled or disabled in your account.
+     * @return Specifies if deletion protection is turned on or off in your account.
      */
 
     public Boolean getDeletionProtected() {
@@ -151,11 +151,11 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details if deletion protection is enabled or disabled in your account.
+     * Specifies if deletion protection is turned on or off in your account.
      * </p>
      * 
      * @param deletionProtected
-     *        Details if deletion protection is enabled or disabled in your account.
+     *        Specifies if deletion protection is turned on or off in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +166,10 @@ public class UpdateDeletionProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details if deletion protection is enabled or disabled in your account.
+     * Specifies if deletion protection is turned on or off in your account.
      * </p>
      * 
-     * @return Details if deletion protection is enabled or disabled in your account.
+     * @return Specifies if deletion protection is turned on or off in your account.
      */
 
     public Boolean isDeletionProtected() {

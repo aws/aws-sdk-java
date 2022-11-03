@@ -66,6 +66,12 @@ public class S3DataSourceJsonUnmarshaller implements Unmarshaller<S3DataSource, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("InstanceGroupNames", targetDepth)) {
+                    context.nextToken();
+                    s3DataSource.setInstanceGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

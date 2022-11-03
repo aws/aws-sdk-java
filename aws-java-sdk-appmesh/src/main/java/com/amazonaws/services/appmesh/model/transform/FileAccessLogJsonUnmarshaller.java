@@ -48,6 +48,10 @@ public class FileAccessLogJsonUnmarshaller implements Unmarshaller<FileAccessLog
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("format", targetDepth)) {
+                    context.nextToken();
+                    fileAccessLog.setFormat(LoggingFormatJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("path", targetDepth)) {
                     context.nextToken();
                     fileAccessLog.setPath(context.getUnmarshaller(String.class).unmarshall(context));

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class PutDestinationRequestMarshaller {
             .marshallLocationName("targetArn").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PutDestinationRequestMarshaller instance = new PutDestinationRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class PutDestinationRequestMarshaller {
             protocolMarshaller.marshall(putDestinationRequest.getDestinationName(), DESTINATIONNAME_BINDING);
             protocolMarshaller.marshall(putDestinationRequest.getTargetArn(), TARGETARN_BINDING);
             protocolMarshaller.marshall(putDestinationRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(putDestinationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

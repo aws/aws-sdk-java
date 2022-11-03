@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3
- * bucket. The data repository association configuration object is returned in the response of the following operations:
+ * bucket or an Amazon File Cache resource to an Amazon S3 bucket or an NFS file system. The data repository association
+ * configuration object is returned in the response of the following operations:
  * </p>
  * <ul>
  * <li>
@@ -40,7 +41,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.
+ * Data repository associations are supported only for an Amazon FSx for Lustre file system with the
+ * <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryAssociation" target="_top">AWS API
@@ -66,8 +68,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is
-     * being created. The data repository is unavailable.
+     * <code>CREATING</code> - The data repository association between the file system or cache and the data repository
+     * is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -77,8 +79,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically
-     * export updates to the S3 bucket until the data repository association configuration is corrected.
+     * <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     * corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      * </p>
      * </li>
      * <li>
@@ -104,11 +106,12 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
     private DataRepositoryFailureDetails failureDetails;
     /**
      * <p>
-     * A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory
-     * (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading
-     * forward slash in the name is required. Two data repository associations cannot have overlapping file system
-     * paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot
-     * link another data repository with file system path <code>/ns1/ns2</code>.
+     * A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>
+     * ) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     * <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
+     * associations cannot have overlapping file system paths. For example, if a data repository is associated with file
+     * system path <code>/ns1/</code>, then you cannot link another data repository with file system path
+     * <code>/ns1/ns2</code>.
      * </p>
      * <p>
      * This path specifies where in your file system files will be exported from or imported to. This file system
@@ -116,19 +119,52 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      */
     private String fileSystemPath;
     /**
      * <p>
-     * The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or
-     * prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository
-     * files will be imported from or exported to.
+     * The path to the data repository that will be linked to the cache or file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be
+     * in one of two formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export
+     * directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can
+     * therefore link a single NFS Export to a single data repository association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS
+     * file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories
+     * specified with the <code>DataRepositorySubdirectories</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     * <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String dataRepositoryPath;
     /**
@@ -136,13 +172,19 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * A boolean flag indicating whether an import data repository task to import metadata should run after the data
      * repository association is created. The task runs if this flag is set to <code>true</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache
+     * resource.
+     * </p>
+     * </note>
      */
     private Boolean batchImportMetaDataOnCreate;
     /**
      * <p>
      * For files imported from a data repository, this value determines the stripe count and maximum amount of data per
      * file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped
-     * across is limited by the total number of disks that make up the file system.
+     * across is limited by the total number of disks that make up the file system or cache.
      * </p>
      * <p>
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
@@ -152,10 +194,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
     private Integer importedFileChunkSize;
     /**
      * <p>
-     * The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     * repository association. The configuration defines which file events (new, changed, or deleted files or
-     * directories) are automatically imported from the linked data repository to the file system or automatically
-     * exported from the file system to the data repository.
+     * The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data
+     * repository association.
      * </p>
      */
     private S3DataRepositoryConfiguration s3;
@@ -163,6 +203,52 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
     private java.util.List<Tag> tags;
 
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The globally unique ID of the Amazon File Cache resource.
+     * </p>
+     */
+    private String fileCacheId;
+    /**
+     * <p>
+     * A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     * subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
+     * The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache
+     * paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link
+     * another data repository with cache path <code>/ns1/ns2</code>.
+     * </p>
+     * <p>
+     * This path specifies the directory in your cache where files will be exported from. This cache directory can be
+     * linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.
+     * </p>
+     * <note>
+     * <p>
+     * The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is
+     * specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     * </p>
+     * <p>
+     * The cache path cannot be set to root (/) for an S3 DRA.
+     * </p>
+     * </note>
+     */
+    private String fileCachePath;
+    /**
+     * <p>
+     * For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the
+     * subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>.
+     * To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
+     * system. The NFS file system domain name in effect is the root of the subdirectories. Note that
+     * <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+     * </p>
+     */
+    private java.util.List<String> dataRepositorySubdirectories;
+    /**
+     * <p>
+     * The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository
+     * association.
+     * </p>
+     */
+    private NFSDataRepositoryConfiguration nFS;
 
     /**
      * <p>
@@ -263,8 +349,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is
-     * being created. The data repository is unavailable.
+     * <code>CREATING</code> - The data repository association between the file system or cache and the data repository
+     * is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -274,8 +360,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically
-     * export updates to the S3 bucket until the data repository association configuration is corrected.
+     * <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     * corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      * </p>
      * </li>
      * <li>
@@ -301,7 +387,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The data repository association between the FSx file system and the S3 data
+     *        <code>CREATING</code> - The data repository association between the file system or cache and the data
      *        repository is being created. The data repository is unavailable.
      *        </p>
      *        </li>
@@ -312,9 +398,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or
-     *        automatically export updates to the S3 bucket until the data repository association configuration is
-     *        corrected.
+     *        <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     *        corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      *        </p>
      *        </li>
      *        <li>
@@ -347,8 +432,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is
-     * being created. The data repository is unavailable.
+     * <code>CREATING</code> - The data repository association between the file system or cache and the data repository
+     * is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -358,8 +443,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically
-     * export updates to the S3 bucket until the data repository association configuration is corrected.
+     * <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     * corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      * </p>
      * </li>
      * <li>
@@ -384,7 +469,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - The data repository association between the FSx file system and the S3 data
+     *         <code>CREATING</code> - The data repository association between the file system or cache and the data
      *         repository is being created. The data repository is unavailable.
      *         </p>
      *         </li>
@@ -395,9 +480,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or
-     *         automatically export updates to the S3 bucket until the data repository association configuration is
-     *         corrected.
+     *         <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     *         corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      *         </p>
      *         </li>
      *         <li>
@@ -430,8 +514,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is
-     * being created. The data repository is unavailable.
+     * <code>CREATING</code> - The data repository association between the file system or cache and the data repository
+     * is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -441,8 +525,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically
-     * export updates to the S3 bucket until the data repository association configuration is corrected.
+     * <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     * corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      * </p>
      * </li>
      * <li>
@@ -468,7 +552,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The data repository association between the FSx file system and the S3 data
+     *        <code>CREATING</code> - The data repository association between the file system or cache and the data
      *        repository is being created. The data repository is unavailable.
      *        </p>
      *        </li>
@@ -479,9 +563,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or
-     *        automatically export updates to the S3 bucket until the data repository association configuration is
-     *        corrected.
+     *        <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     *        corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      *        </p>
      *        </li>
      *        <li>
@@ -516,8 +599,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is
-     * being created. The data repository is unavailable.
+     * <code>CREATING</code> - The data repository association between the file system or cache and the data repository
+     * is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -527,8 +610,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically
-     * export updates to the S3 bucket until the data repository association configuration is corrected.
+     * <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     * corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      * </p>
      * </li>
      * <li>
@@ -554,7 +637,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The data repository association between the FSx file system and the S3 data
+     *        <code>CREATING</code> - The data repository association between the file system or cache and the data
      *        repository is being created. The data repository is unavailable.
      *        </p>
      *        </li>
@@ -565,9 +648,8 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or
-     *        automatically export updates to the S3 bucket until the data repository association configuration is
-     *        corrected.
+     *        <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is
+     *        corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).
      *        </p>
      *        </li>
      *        <li>
@@ -623,11 +705,12 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory
-     * (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading
-     * forward slash in the name is required. Two data repository associations cannot have overlapping file system
-     * paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot
-     * link another data repository with file system path <code>/ns1/ns2</code>.
+     * A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>
+     * ) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     * <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
+     * associations cannot have overlapping file system paths. For example, if a data repository is associated with file
+     * system path <code>/ns1/</code>, then you cannot link another data repository with file system path
+     * <code>/ns1/ns2</code>.
      * </p>
      * <p>
      * This path specifies where in your file system files will be exported from or imported to. This file system
@@ -635,15 +718,15 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      * 
      * @param fileSystemPath
-     *        A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or
-     *        subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     *        A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as
+     *        <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
      *        <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
      *        associations cannot have overlapping file system paths. For example, if a data repository is associated
      *        with file system path <code>/ns1/</code>, then you cannot link another data repository with file system
@@ -655,7 +738,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        </p>
      *        <note>
      *        <p>
-     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data
+     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
      *        repository to the file system. You can only specify "/" as the file system path for the first data
      *        repository associated with a file system.
      *        </p>
@@ -667,11 +750,12 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory
-     * (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading
-     * forward slash in the name is required. Two data repository associations cannot have overlapping file system
-     * paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot
-     * link another data repository with file system path <code>/ns1/ns2</code>.
+     * A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>
+     * ) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     * <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
+     * associations cannot have overlapping file system paths. For example, if a data repository is associated with file
+     * system path <code>/ns1/</code>, then you cannot link another data repository with file system path
+     * <code>/ns1/ns2</code>.
      * </p>
      * <p>
      * This path specifies where in your file system files will be exported from or imported to. This file system
@@ -679,14 +763,14 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      * 
-     * @return A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or
-     *         subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     * @return A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as
+     *         <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
      *         <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
      *         associations cannot have overlapping file system paths. For example, if a data repository is associated
      *         with file system path <code>/ns1/</code>, then you cannot link another data repository with file system
@@ -698,7 +782,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *         </p>
      *         <note>
      *         <p>
-     *         If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data
+     *         If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
      *         repository to the file system. You can only specify "/" as the file system path for the first data
      *         repository associated with a file system.
      *         </p>
@@ -710,11 +794,12 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory
-     * (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading
-     * forward slash in the name is required. Two data repository associations cannot have overlapping file system
-     * paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot
-     * link another data repository with file system path <code>/ns1/ns2</code>.
+     * A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>
+     * ) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     * <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
+     * associations cannot have overlapping file system paths. For example, if a data repository is associated with file
+     * system path <code>/ns1/</code>, then you cannot link another data repository with file system path
+     * <code>/ns1/ns2</code>.
      * </p>
      * <p>
      * This path specifies where in your file system files will be exported from or imported to. This file system
@@ -722,15 +807,15 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      * 
      * @param fileSystemPath
-     *        A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or
-     *        subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     *        A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as
+     *        <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
      *        <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository
      *        associations cannot have overlapping file system paths. For example, if a data repository is associated
      *        with file system path <code>/ns1/</code>, then you cannot link another data repository with file system
@@ -742,7 +827,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      *        </p>
      *        <note>
      *        <p>
-     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data
+     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
      *        repository to the file system. You can only specify "/" as the file system path for the first data
      *        repository associated with a file system.
      *        </p>
@@ -756,15 +841,81 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or
-     * prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository
-     * files will be imported from or exported to.
+     * The path to the data repository that will be linked to the cache or file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be
+     * in one of two formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export
+     * directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can
+     * therefore link a single NFS Export to a single data repository association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS
+     * file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories
+     * specified with the <code>DataRepositorySubdirectories</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     * <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param dataRepositoryPath
-     *        The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3
-     *        bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3
-     *        data repository files will be imported from or exported to.
+     *        The path to the data repository that will be linked to the cache or file system.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path
+     *        can be in one of two formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export
+     *        directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You
+     *        can therefore link a single NFS Export to a single data repository association.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of
+     *        the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the
+     *        subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon File Cache, the path can be an S3 bucket or prefix in the format
+     *        <code>s3://myBucket/myPrefix/</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     *        <code>s3://myBucket/myPrefix/</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setDataRepositoryPath(String dataRepositoryPath) {
@@ -773,14 +924,81 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or
-     * prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository
-     * files will be imported from or exported to.
+     * The path to the data repository that will be linked to the cache or file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be
+     * in one of two formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export
+     * directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can
+     * therefore link a single NFS Export to a single data repository association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS
+     * file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories
+     * specified with the <code>DataRepositorySubdirectories</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     * <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3
-     *         bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3
-     *         data repository files will be imported from or exported to.
+     * @return The path to the data repository that will be linked to the cache or file system.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path
+     *         can be in one of two formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS
+     *         Export directory (or one of its subdirectories) in the format
+     *         <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single
+     *         data repository association.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of
+     *         the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the
+     *         subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon File Cache, the path can be an S3 bucket or prefix in the format
+     *         <code>s3://myBucket/myPrefix/</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     *         <code>s3://myBucket/myPrefix/</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getDataRepositoryPath() {
@@ -789,15 +1007,81 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or
-     * prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository
-     * files will be imported from or exported to.
+     * The path to the data repository that will be linked to the cache or file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be
+     * in one of two formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export
+     * directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can
+     * therefore link a single NFS Export to a single data repository association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS
+     * file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories
+     * specified with the <code>DataRepositorySubdirectories</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     * <code>s3://myBucket/myPrefix/</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param dataRepositoryPath
-     *        The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3
-     *        bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3
-     *        data repository files will be imported from or exported to.
+     *        The path to the data repository that will be linked to the cache or file system.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path
+     *        can be in one of two formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export
+     *        directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You
+     *        can therefore link a single NFS Export to a single data repository association.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of
+     *        the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the
+     *        subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon File Cache, the path can be an S3 bucket or prefix in the format
+     *        <code>s3://myBucket/myPrefix/</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format
+     *        <code>s3://myBucket/myPrefix/</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -811,10 +1095,20 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * A boolean flag indicating whether an import data repository task to import metadata should run after the data
      * repository association is created. The task runs if this flag is set to <code>true</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache
+     * resource.
+     * </p>
+     * </note>
      * 
      * @param batchImportMetaDataOnCreate
      *        A boolean flag indicating whether an import data repository task to import metadata should run after the
-     *        data repository association is created. The task runs if this flag is set to <code>true</code>.
+     *        data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
+     *        <p>
+     *        <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File
+     *        Cache resource.
+     *        </p>
      */
 
     public void setBatchImportMetaDataOnCreate(Boolean batchImportMetaDataOnCreate) {
@@ -826,9 +1120,20 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * A boolean flag indicating whether an import data repository task to import metadata should run after the data
      * repository association is created. The task runs if this flag is set to <code>true</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache
+     * resource.
+     * </p>
+     * </note>
      * 
      * @return A boolean flag indicating whether an import data repository task to import metadata should run after the
-     *         data repository association is created. The task runs if this flag is set to <code>true</code>.
+     *         data repository association is created. The task runs if this flag is set to <code>true</code>.</p>
+     *         <note>
+     *         <p>
+     *         <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File
+     *         Cache resource.
+     *         </p>
      */
 
     public Boolean getBatchImportMetaDataOnCreate() {
@@ -840,10 +1145,20 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * A boolean flag indicating whether an import data repository task to import metadata should run after the data
      * repository association is created. The task runs if this flag is set to <code>true</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache
+     * resource.
+     * </p>
+     * </note>
      * 
      * @param batchImportMetaDataOnCreate
      *        A boolean flag indicating whether an import data repository task to import metadata should run after the
-     *        data repository association is created. The task runs if this flag is set to <code>true</code>.
+     *        data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
+     *        <p>
+     *        <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File
+     *        Cache resource.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -857,9 +1172,20 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * A boolean flag indicating whether an import data repository task to import metadata should run after the data
      * repository association is created. The task runs if this flag is set to <code>true</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache
+     * resource.
+     * </p>
+     * </note>
      * 
      * @return A boolean flag indicating whether an import data repository task to import metadata should run after the
-     *         data repository association is created. The task runs if this flag is set to <code>true</code>.
+     *         data repository association is created. The task runs if this flag is set to <code>true</code>.</p>
+     *         <note>
+     *         <p>
+     *         <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File
+     *         Cache resource.
+     *         </p>
      */
 
     public Boolean isBatchImportMetaDataOnCreate() {
@@ -870,7 +1196,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <p>
      * For files imported from a data repository, this value determines the stripe count and maximum amount of data per
      * file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped
-     * across is limited by the total number of disks that make up the file system.
+     * across is limited by the total number of disks that make up the file system or cache.
      * </p>
      * <p>
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
@@ -880,7 +1206,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * @param importedFileChunkSize
      *        For files imported from a data repository, this value determines the stripe count and maximum amount of
      *        data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file
-     *        can be striped across is limited by the total number of disks that make up the file system.</p>
+     *        can be striped across is limited by the total number of disks that make up the file system or cache.</p>
      *        <p>
      *        The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects
      *        have a maximum size of 5 TB.
@@ -894,7 +1220,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <p>
      * For files imported from a data repository, this value determines the stripe count and maximum amount of data per
      * file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped
-     * across is limited by the total number of disks that make up the file system.
+     * across is limited by the total number of disks that make up the file system or cache.
      * </p>
      * <p>
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
@@ -903,7 +1229,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * 
      * @return For files imported from a data repository, this value determines the stripe count and maximum amount of
      *         data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file
-     *         can be striped across is limited by the total number of disks that make up the file system.</p>
+     *         can be striped across is limited by the total number of disks that make up the file system or cache.</p>
      *         <p>
      *         The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3
      *         objects have a maximum size of 5 TB.
@@ -917,7 +1243,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * <p>
      * For files imported from a data repository, this value determines the stripe count and maximum amount of data per
      * file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped
-     * across is limited by the total number of disks that make up the file system.
+     * across is limited by the total number of disks that make up the file system or cache.
      * </p>
      * <p>
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
@@ -927,7 +1253,7 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
      * @param importedFileChunkSize
      *        For files imported from a data repository, this value determines the stripe count and maximum amount of
      *        data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file
-     *        can be striped across is limited by the total number of disks that make up the file system.</p>
+     *        can be striped across is limited by the total number of disks that make up the file system or cache.</p>
      *        <p>
      *        The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects
      *        have a maximum size of 5 TB.
@@ -941,17 +1267,13 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     * repository association. The configuration defines which file events (new, changed, or deleted files or
-     * directories) are automatically imported from the linked data repository to the file system or automatically
-     * exported from the file system to the data repository.
+     * The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data
+     * repository association.
      * </p>
      * 
      * @param s3
-     *        The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     *        repository association. The configuration defines which file events (new, changed, or deleted files or
-     *        directories) are automatically imported from the linked data repository to the file system or
-     *        automatically exported from the file system to the data repository.
+     *        The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a
+     *        data repository association.
      */
 
     public void setS3(S3DataRepositoryConfiguration s3) {
@@ -960,16 +1282,12 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     * repository association. The configuration defines which file events (new, changed, or deleted files or
-     * directories) are automatically imported from the linked data repository to the file system or automatically
-     * exported from the file system to the data repository.
+     * The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data
+     * repository association.
      * </p>
      * 
-     * @return The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     *         repository association. The configuration defines which file events (new, changed, or deleted files or
-     *         directories) are automatically imported from the linked data repository to the file system or
-     *         automatically exported from the file system to the data repository.
+     * @return The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a
+     *         data repository association.
      */
 
     public S3DataRepositoryConfiguration getS3() {
@@ -978,17 +1296,13 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     * repository association. The configuration defines which file events (new, changed, or deleted files or
-     * directories) are automatically imported from the linked data repository to the file system or automatically
-     * exported from the file system to the data repository.
+     * The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data
+     * repository association.
      * </p>
      * 
      * @param s3
-     *        The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data
-     *        repository association. The configuration defines which file events (new, changed, or deleted files or
-     *        directories) are automatically imported from the linked data repository to the file system or
-     *        automatically exported from the file system to the data repository.
+     *        The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a
+     *        data repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1076,6 +1390,343 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The globally unique ID of the Amazon File Cache resource.
+     * </p>
+     * 
+     * @param fileCacheId
+     *        The globally unique ID of the Amazon File Cache resource.
+     */
+
+    public void setFileCacheId(String fileCacheId) {
+        this.fileCacheId = fileCacheId;
+    }
+
+    /**
+     * <p>
+     * The globally unique ID of the Amazon File Cache resource.
+     * </p>
+     * 
+     * @return The globally unique ID of the Amazon File Cache resource.
+     */
+
+    public String getFileCacheId() {
+        return this.fileCacheId;
+    }
+
+    /**
+     * <p>
+     * The globally unique ID of the Amazon File Cache resource.
+     * </p>
+     * 
+     * @param fileCacheId
+     *        The globally unique ID of the Amazon File Cache resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryAssociation withFileCacheId(String fileCacheId) {
+        setFileCacheId(fileCacheId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     * subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
+     * The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache
+     * paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link
+     * another data repository with cache path <code>/ns1/ns2</code>.
+     * </p>
+     * <p>
+     * This path specifies the directory in your cache where files will be exported from. This cache directory can be
+     * linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.
+     * </p>
+     * <note>
+     * <p>
+     * The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is
+     * specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     * </p>
+     * <p>
+     * The cache path cannot be set to root (/) for an S3 DRA.
+     * </p>
+     * </note>
+     * 
+     * @param fileCachePath
+     *        A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     *        subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     *        <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository
+     *        associations cannot have overlapping cache paths. For example, if a data repository is associated with
+     *        cache path <code>/ns1/</code>, then you cannot link another data repository with cache path
+     *        <code>/ns1/ns2</code>.</p>
+     *        <p>
+     *        This path specifies the directory in your cache where files will be exported from. This cache directory
+     *        can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the
+     *        directory.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is
+     *        specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     *        </p>
+     *        <p>
+     *        The cache path cannot be set to root (/) for an S3 DRA.
+     *        </p>
+     */
+
+    public void setFileCachePath(String fileCachePath) {
+        this.fileCachePath = fileCachePath;
+    }
+
+    /**
+     * <p>
+     * A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     * subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
+     * The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache
+     * paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link
+     * another data repository with cache path <code>/ns1/ns2</code>.
+     * </p>
+     * <p>
+     * This path specifies the directory in your cache where files will be exported from. This cache directory can be
+     * linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.
+     * </p>
+     * <note>
+     * <p>
+     * The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is
+     * specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     * </p>
+     * <p>
+     * The cache path cannot be set to root (/) for an S3 DRA.
+     * </p>
+     * </note>
+     * 
+     * @return A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     *         subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     *         <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository
+     *         associations cannot have overlapping cache paths. For example, if a data repository is associated with
+     *         cache path <code>/ns1/</code>, then you cannot link another data repository with cache path
+     *         <code>/ns1/ns2</code>.</p>
+     *         <p>
+     *         This path specifies the directory in your cache where files will be exported from. This cache directory
+     *         can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the
+     *         directory.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code>
+     *         is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     *         </p>
+     *         <p>
+     *         The cache path cannot be set to root (/) for an S3 DRA.
+     *         </p>
+     */
+
+    public String getFileCachePath() {
+        return this.fileCachePath;
+    }
+
+    /**
+     * <p>
+     * A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     * subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
+     * The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache
+     * paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link
+     * another data repository with cache path <code>/ns1/ns2</code>.
+     * </p>
+     * <p>
+     * This path specifies the directory in your cache where files will be exported from. This cache directory can be
+     * linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.
+     * </p>
+     * <note>
+     * <p>
+     * The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is
+     * specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     * </p>
+     * <p>
+     * The cache path cannot be set to root (/) for an S3 DRA.
+     * </p>
+     * </note>
+     * 
+     * @param fileCachePath
+     *        A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or
+     *        subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with
+     *        <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository
+     *        associations cannot have overlapping cache paths. For example, if a data repository is associated with
+     *        cache path <code>/ns1/</code>, then you cannot link another data repository with cache path
+     *        <code>/ns1/ns2</code>.</p>
+     *        <p>
+     *        This path specifies the directory in your cache where files will be exported from. This cache directory
+     *        can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the
+     *        directory.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is
+     *        specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.
+     *        </p>
+     *        <p>
+     *        The cache path cannot be set to root (/) for an S3 DRA.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryAssociation withFileCachePath(String fileCachePath) {
+        setFileCachePath(fileCachePath);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the
+     * subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>.
+     * To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
+     * system. The NFS file system domain name in effect is the root of the subdirectories. Note that
+     * <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+     * </p>
+     * 
+     * @return For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association.
+     *         All the subdirectories must be on a single NFS file system. The Export paths are in the format
+     *         <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as
+     *         the domain name of the NFS file system. The NFS file system domain name in effect is the root of the
+     *         subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data
+     *         repositories.
+     */
+
+    public java.util.List<String> getDataRepositorySubdirectories() {
+        return dataRepositorySubdirectories;
+    }
+
+    /**
+     * <p>
+     * For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the
+     * subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>.
+     * To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
+     * system. The NFS file system domain name in effect is the root of the subdirectories. Note that
+     * <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+     * </p>
+     * 
+     * @param dataRepositorySubdirectories
+     *        For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association.
+     *        All the subdirectories must be on a single NFS file system. The Export paths are in the format
+     *        <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as
+     *        the domain name of the NFS file system. The NFS file system domain name in effect is the root of the
+     *        subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data
+     *        repositories.
+     */
+
+    public void setDataRepositorySubdirectories(java.util.Collection<String> dataRepositorySubdirectories) {
+        if (dataRepositorySubdirectories == null) {
+            this.dataRepositorySubdirectories = null;
+            return;
+        }
+
+        this.dataRepositorySubdirectories = new java.util.ArrayList<String>(dataRepositorySubdirectories);
+    }
+
+    /**
+     * <p>
+     * For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the
+     * subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>.
+     * To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
+     * system. The NFS file system domain name in effect is the root of the subdirectories. Note that
+     * <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataRepositorySubdirectories(java.util.Collection)} or
+     * {@link #withDataRepositorySubdirectories(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param dataRepositorySubdirectories
+     *        For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association.
+     *        All the subdirectories must be on a single NFS file system. The Export paths are in the format
+     *        <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as
+     *        the domain name of the NFS file system. The NFS file system domain name in effect is the root of the
+     *        subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data
+     *        repositories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryAssociation withDataRepositorySubdirectories(String... dataRepositorySubdirectories) {
+        if (this.dataRepositorySubdirectories == null) {
+            setDataRepositorySubdirectories(new java.util.ArrayList<String>(dataRepositorySubdirectories.length));
+        }
+        for (String ele : dataRepositorySubdirectories) {
+            this.dataRepositorySubdirectories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the
+     * subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>.
+     * To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
+     * system. The NFS file system domain name in effect is the root of the subdirectories. Note that
+     * <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+     * </p>
+     * 
+     * @param dataRepositorySubdirectories
+     *        For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association.
+     *        All the subdirectories must be on a single NFS file system. The Export paths are in the format
+     *        <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as
+     *        the domain name of the NFS file system. The NFS file system domain name in effect is the root of the
+     *        subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data
+     *        repositories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryAssociation withDataRepositorySubdirectories(java.util.Collection<String> dataRepositorySubdirectories) {
+        setDataRepositorySubdirectories(dataRepositorySubdirectories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository
+     * association.
+     * </p>
+     * 
+     * @param nFS
+     *        The configuration for an NFS data repository linked to an Amazon File Cache resource with a data
+     *        repository association.
+     */
+
+    public void setNFS(NFSDataRepositoryConfiguration nFS) {
+        this.nFS = nFS;
+    }
+
+    /**
+     * <p>
+     * The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository
+     * association.
+     * </p>
+     * 
+     * @return The configuration for an NFS data repository linked to an Amazon File Cache resource with a data
+     *         repository association.
+     */
+
+    public NFSDataRepositoryConfiguration getNFS() {
+        return this.nFS;
+    }
+
+    /**
+     * <p>
+     * The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository
+     * association.
+     * </p>
+     * 
+     * @param nFS
+     *        The configuration for an NFS data repository linked to an Amazon File Cache resource with a data
+     *        repository association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryAssociation withNFS(NFSDataRepositoryConfiguration nFS) {
+        setNFS(nFS);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1110,7 +1761,15 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getFileCacheId() != null)
+            sb.append("FileCacheId: ").append(getFileCacheId()).append(",");
+        if (getFileCachePath() != null)
+            sb.append("FileCachePath: ").append(getFileCachePath()).append(",");
+        if (getDataRepositorySubdirectories() != null)
+            sb.append("DataRepositorySubdirectories: ").append(getDataRepositorySubdirectories()).append(",");
+        if (getNFS() != null)
+            sb.append("NFS: ").append(getNFS());
         sb.append("}");
         return sb.toString();
     }
@@ -1173,6 +1832,22 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getFileCacheId() == null ^ this.getFileCacheId() == null)
+            return false;
+        if (other.getFileCacheId() != null && other.getFileCacheId().equals(this.getFileCacheId()) == false)
+            return false;
+        if (other.getFileCachePath() == null ^ this.getFileCachePath() == null)
+            return false;
+        if (other.getFileCachePath() != null && other.getFileCachePath().equals(this.getFileCachePath()) == false)
+            return false;
+        if (other.getDataRepositorySubdirectories() == null ^ this.getDataRepositorySubdirectories() == null)
+            return false;
+        if (other.getDataRepositorySubdirectories() != null && other.getDataRepositorySubdirectories().equals(this.getDataRepositorySubdirectories()) == false)
+            return false;
+        if (other.getNFS() == null ^ this.getNFS() == null)
+            return false;
+        if (other.getNFS() != null && other.getNFS().equals(this.getNFS()) == false)
+            return false;
         return true;
     }
 
@@ -1193,6 +1868,10 @@ public class DataRepositoryAssociation implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getS3() == null) ? 0 : getS3().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getFileCacheId() == null) ? 0 : getFileCacheId().hashCode());
+        hashCode = prime * hashCode + ((getFileCachePath() == null) ? 0 : getFileCachePath().hashCode());
+        hashCode = prime * hashCode + ((getDataRepositorySubdirectories() == null) ? 0 : getDataRepositorySubdirectories().hashCode());
+        hashCode = prime * hashCode + ((getNFS() == null) ? 0 : getNFS().hashCode());
         return hashCode;
     }
 

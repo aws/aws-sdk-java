@@ -31,15 +31,15 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more Amazon Web Services accounts that will have access to the provisioned product.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
-     * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
-     * operation.
+     * The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code>
+     * constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     * <code>DescribeProvisioningParameters</code> operation.
      * </p>
      * <p>
      * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
@@ -48,26 +48,26 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
     private java.util.List<String> stackSetAccounts;
     /**
      * <p>
-     * One or more AWS Regions where the provisioned product will be available.
+     * One or more Amazon Web Services Regions where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the
-     * list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
+     * The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the
+     * list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * </p>
      */
     private java.util.List<String> stackSetRegions;
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the
-     * operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation
+     * in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -83,12 +83,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
     private Integer stackSetFailureToleranceCount;
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops
-     * the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the
+     * operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation
+     * in any subsequent Regions.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
      * next whole number.
      * </p>
      * <p>
@@ -124,9 +124,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * The maximum percentage of accounts in which to perform this operation at one time.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
-     * next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
+     * next whole number. This is true except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.
      * </p>
      * <p>
      * Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -143,8 +143,8 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
     private Integer stackSetMaxConcurrencyPercentage;
     /**
      * <p>
-     * Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
-     * provisioned product. The default value is <code>UPDATE</code> if nothing is specified.
+     * Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned
+     * product. The default value is <code>UPDATE</code> if nothing is specified.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -154,7 +154,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * <dd>
      * <p>
      * Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new
-     * stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed,
+     * stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed,
      * they will be ignored.
      * </p>
      * </dd>
@@ -176,28 +176,28 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more Amazon Web Services accounts that will have access to the provisioned product.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
-     * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
-     * operation.
+     * The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code>
+     * constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     * <code>DescribeProvisioningParameters</code> operation.
      * </p>
      * <p>
      * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
      * </p>
      * 
-     * @return One or more AWS accounts that will have access to the provisioned product.</p>
+     * @return One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *         </p>
      *         <p>
-     *         The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *         To get the list of accounts in the <code>STACKSET</code> constraint, use the
-     *         <code>DescribeProvisioningParameters</code> operation.
+     *         The Amazon Web Services accounts specified should be within the list of accounts in the
+     *         <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint,
+     *         use the <code>DescribeProvisioningParameters</code> operation.
      *         </p>
      *         <p>
      *         If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
@@ -209,29 +209,29 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more Amazon Web Services accounts that will have access to the provisioned product.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
-     * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
-     * operation.
+     * The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code>
+     * constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     * <code>DescribeProvisioningParameters</code> operation.
      * </p>
      * <p>
      * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts that will have access to the provisioned product.</p>
+     *        One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *        To get the list of accounts in the <code>STACKSET</code> constraint, use the
-     *        <code>DescribeProvisioningParameters</code> operation.
+     *        The Amazon Web Services accounts specified should be within the list of accounts in the
+     *        <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
+     *        the <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
      *        If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
@@ -248,15 +248,15 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more Amazon Web Services accounts that will have access to the provisioned product.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
-     * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
-     * operation.
+     * The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code>
+     * constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     * <code>DescribeProvisioningParameters</code> operation.
      * </p>
      * <p>
      * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
@@ -268,14 +268,14 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts that will have access to the provisioned product.</p>
+     *        One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *        To get the list of accounts in the <code>STACKSET</code> constraint, use the
-     *        <code>DescribeProvisioningParameters</code> operation.
+     *        The Amazon Web Services accounts specified should be within the list of accounts in the
+     *        <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
+     *        the <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
      *        If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
@@ -294,29 +294,29 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more Amazon Web Services accounts that will have access to the provisioned product.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
-     * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
-     * operation.
+     * The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code>
+     * constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     * <code>DescribeProvisioningParameters</code> operation.
      * </p>
      * <p>
      * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts that will have access to the provisioned product.</p>
+     *        One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *        To get the list of accounts in the <code>STACKSET</code> constraint, use the
-     *        <code>DescribeProvisioningParameters</code> operation.
+     *        The Amazon Web Services accounts specified should be within the list of accounts in the
+     *        <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
+     *        the <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
      *        If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
@@ -330,31 +330,31 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS Regions where the provisioned product will be available.
+     * One or more Amazon Web Services Regions where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the
-     * list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
+     * The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the
+     * list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * </p>
      * 
-     * @return One or more AWS Regions where the provisioned product will be available.</p>
+     * @return One or more Amazon Web Services Regions where the provisioned product will be available.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *         </p>
      *         <p>
-     *         The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To
-     *         get the list of regions in the <code>STACKSET</code> constraint, use the
+     *         The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To
+     *         get the list of Regions in the <code>STACKSET</code> constraint, use the
      *         <code>DescribeProvisioningParameters</code> operation.
      *         </p>
      *         <p>
-     *         If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     *         If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      */
 
     public java.util.List<String> getStackSetRegions() {
@@ -363,32 +363,32 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS Regions where the provisioned product will be available.
+     * One or more Amazon Web Services Regions where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the
-     * list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
+     * The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the
+     * list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * </p>
      * 
      * @param stackSetRegions
-     *        One or more AWS Regions where the provisioned product will be available.</p>
+     *        One or more Amazon Web Services Regions where the provisioned product will be available.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To
-     *        get the list of regions in the <code>STACKSET</code> constraint, use the
+     *        The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To
+     *        get the list of Regions in the <code>STACKSET</code> constraint, use the
      *        <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
-     *        If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     *        If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      */
 
     public void setStackSetRegions(java.util.Collection<String> stackSetRegions) {
@@ -402,18 +402,18 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS Regions where the provisioned product will be available.
+     * One or more Amazon Web Services Regions where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the
-     * list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
+     * The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the
+     * list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -422,17 +422,17 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </p>
      * 
      * @param stackSetRegions
-     *        One or more AWS Regions where the provisioned product will be available.</p>
+     *        One or more Amazon Web Services Regions where the provisioned product will be available.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To
-     *        get the list of regions in the <code>STACKSET</code> constraint, use the
+     *        The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To
+     *        get the list of Regions in the <code>STACKSET</code> constraint, use the
      *        <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
-     *        If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     *        If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,32 +448,32 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * One or more AWS Regions where the provisioned product will be available.
+     * One or more Amazon Web Services Regions where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the
-     * list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
+     * The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the
+     * list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * </p>
      * 
      * @param stackSetRegions
-     *        One or more AWS Regions where the provisioned product will be available.</p>
+     *        One or more Amazon Web Services Regions where the provisioned product will be available.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To
-     *        get the list of regions in the <code>STACKSET</code> constraint, use the
+     *        The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To
+     *        get the list of Regions in the <code>STACKSET</code> constraint, use the
      *        <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
-     *        If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.
+     *        If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,9 +484,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the
-     * operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation
+     * in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -500,9 +500,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </p>
      * 
      * @param stackSetFailureToleranceCount
-     *        The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the
-     *        operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     *        operation in any subsequent regions.</p>
+     *        The number of accounts, per Region, for which this operation can fail before Service Catalog stops the
+     *        operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the
+     *        operation in any subsequent Regions.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
@@ -520,9 +520,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the
-     * operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation
+     * in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -535,9 +535,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * The default value is <code>0</code> if no value is specified.
      * </p>
      * 
-     * @return The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops
-     *         the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't
-     *         attempt the operation in any subsequent regions.</p>
+     * @return The number of accounts, per Region, for which this operation can fail before Service Catalog stops the
+     *         operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the
+     *         operation in any subsequent Regions.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *         </p>
@@ -555,9 +555,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the
-     * operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation
+     * in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -571,9 +571,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </p>
      * 
      * @param stackSetFailureToleranceCount
-     *        The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the
-     *        operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     *        operation in any subsequent regions.</p>
+     *        The number of accounts, per Region, for which this operation can fail before Service Catalog stops the
+     *        operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the
+     *        operation in any subsequent Regions.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
@@ -593,12 +593,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops
-     * the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the
+     * operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation
+     * in any subsequent Regions.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
      * next whole number.
      * </p>
      * <p>
@@ -610,12 +610,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </p>
      * 
      * @param stackSetFailureTolerancePercentage
-     *        The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog
-     *        stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't
-     *        attempt the operation in any subsequent regions.</p>
+     *        The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog
+     *        stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't
+     *        attempt the operation in any subsequent Regions.</p>
      *        <p>
-     *        When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down
-     *        to the next whole number.
+     *        When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to
+     *        the next whole number.
      *        </p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -631,12 +631,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops
-     * the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the
+     * operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation
+     * in any subsequent Regions.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
      * next whole number.
      * </p>
      * <p>
@@ -647,12 +647,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * <code>StackSetFailureTolerancePercentage</code>, but not both.
      * </p>
      * 
-     * @return The percentage of accounts, per region, for which this stack operation can fail before AWS Service
-     *         Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog
-     *         doesn't attempt the operation in any subsequent regions.</p>
+     * @return The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog
+     *         stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't
+     *         attempt the operation in any subsequent Regions.</p>
      *         <p>
-     *         When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds
-     *         down to the next whole number.
+     *         When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to
+     *         the next whole number.
      *         </p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -668,12 +668,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops
-     * the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the
+     * operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation
+     * in any subsequent Regions.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
      * next whole number.
      * </p>
      * <p>
@@ -685,12 +685,12 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </p>
      * 
      * @param stackSetFailureTolerancePercentage
-     *        The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog
-     *        stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't
-     *        attempt the operation in any subsequent regions.</p>
+     *        The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog
+     *        stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't
+     *        attempt the operation in any subsequent Regions.</p>
      *        <p>
-     *        When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down
-     *        to the next whole number.
+     *        When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to
+     *        the next whole number.
      *        </p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -829,9 +829,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * The maximum percentage of accounts in which to perform this operation at one time.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
-     * next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
+     * next whole number. This is true except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.
      * </p>
      * <p>
      * Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -848,9 +848,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * @param stackSetMaxConcurrencyPercentage
      *        The maximum percentage of accounts in which to perform this operation at one time.</p>
      *        <p>
-     *        When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down
-     *        to the next whole number. This is true except in cases where rounding down would result is zero. In this
-     *        case, AWS Service Catalog sets the number as <code>1</code> instead.
+     *        When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to
+     *        the next whole number. This is true except in cases where rounding down would result is zero. In this
+     *        case, Service Catalog sets the number as <code>1</code> instead.
      *        </p>
      *        <p>
      *        Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -874,9 +874,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * The maximum percentage of accounts in which to perform this operation at one time.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
-     * next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
+     * next whole number. This is true except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.
      * </p>
      * <p>
      * Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -892,9 +892,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * 
      * @return The maximum percentage of accounts in which to perform this operation at one time.</p>
      *         <p>
-     *         When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds
-     *         down to the next whole number. This is true except in cases where rounding down would result is zero. In
-     *         this case, AWS Service Catalog sets the number as <code>1</code> instead.
+     *         When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to
+     *         the next whole number. This is true except in cases where rounding down would result is zero. In this
+     *         case, Service Catalog sets the number as <code>1</code> instead.
      *         </p>
      *         <p>
      *         Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -918,9 +918,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * The maximum percentage of accounts in which to perform this operation at one time.
      * </p>
      * <p>
-     * When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the
-     * next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.
+     * When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the
+     * next whole number. This is true except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.
      * </p>
      * <p>
      * Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -937,9 +937,9 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * @param stackSetMaxConcurrencyPercentage
      *        The maximum percentage of accounts in which to perform this operation at one time.</p>
      *        <p>
-     *        When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down
-     *        to the next whole number. This is true except in cases where rounding down would result is zero. In this
-     *        case, AWS Service Catalog sets the number as <code>1</code> instead.
+     *        When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to
+     *        the next whole number. This is true except in cases where rounding down would result is zero. In this
+     *        case, Service Catalog sets the number as <code>1</code> instead.
      *        </p>
      *        <p>
      *        Note that this setting lets you specify the maximum for operations. For large deployments, under certain
@@ -962,8 +962,8 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
-     * provisioned product. The default value is <code>UPDATE</code> if nothing is specified.
+     * Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned
+     * product. The default value is <code>UPDATE</code> if nothing is specified.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -973,7 +973,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * <dd>
      * <p>
      * Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new
-     * stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed,
+     * stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed,
      * they will be ignored.
      * </p>
      * </dd>
@@ -992,7 +992,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </dl>
      * 
      * @param stackSetOperationType
-     *        Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
+     *        Determines what action Service Catalog performs to a stack set or a stack instance represented by the
      *        provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1002,7 +1002,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      *        <dd>
      *        <p>
      *        Creates a new stack instance in the stack set represented by the provisioned product. In this case, only
-     *        new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID
+     *        new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID
      *        are passed, they will be ignored.
      *        </p>
      *        </dd>
@@ -1027,8 +1027,8 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
-     * provisioned product. The default value is <code>UPDATE</code> if nothing is specified.
+     * Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned
+     * product. The default value is <code>UPDATE</code> if nothing is specified.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1038,7 +1038,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * <dd>
      * <p>
      * Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new
-     * stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed,
+     * stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed,
      * they will be ignored.
      * </p>
      * </dd>
@@ -1056,7 +1056,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </dd>
      * </dl>
      * 
-     * @return Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
+     * @return Determines what action Service Catalog performs to a stack set or a stack instance represented by the
      *         provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1066,7 +1066,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      *         <dd>
      *         <p>
      *         Creates a new stack instance in the stack set represented by the provisioned product. In this case, only
-     *         new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID
+     *         new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID
      *         are passed, they will be ignored.
      *         </p>
      *         </dd>
@@ -1091,8 +1091,8 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
-     * provisioned product. The default value is <code>UPDATE</code> if nothing is specified.
+     * Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned
+     * product. The default value is <code>UPDATE</code> if nothing is specified.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1102,7 +1102,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * <dd>
      * <p>
      * Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new
-     * stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed,
+     * stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed,
      * they will be ignored.
      * </p>
      * </dd>
@@ -1121,7 +1121,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </dl>
      * 
      * @param stackSetOperationType
-     *        Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
+     *        Determines what action Service Catalog performs to a stack set or a stack instance represented by the
      *        provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1131,7 +1131,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      *        <dd>
      *        <p>
      *        Creates a new stack instance in the stack set represented by the provisioned product. In this case, only
-     *        new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID
+     *        new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID
      *        are passed, they will be ignored.
      *        </p>
      *        </dd>
@@ -1158,8 +1158,8 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
-     * provisioned product. The default value is <code>UPDATE</code> if nothing is specified.
+     * Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned
+     * product. The default value is <code>UPDATE</code> if nothing is specified.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1169,7 +1169,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * <dd>
      * <p>
      * Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new
-     * stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed,
+     * stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed,
      * they will be ignored.
      * </p>
      * </dd>
@@ -1188,7 +1188,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      * </dl>
      * 
      * @param stackSetOperationType
-     *        Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the
+     *        Determines what action Service Catalog performs to a stack set or a stack instance represented by the
      *        provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
@@ -1198,7 +1198,7 @@ public class UpdateProvisioningPreferences implements Serializable, Cloneable, S
      *        <dd>
      *        <p>
      *        Creates a new stack instance in the stack set represented by the provisioned product. In this case, only
-     *        new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID
+     *        new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID
      *        are passed, they will be ignored.
      *        </p>
      *        </dd>

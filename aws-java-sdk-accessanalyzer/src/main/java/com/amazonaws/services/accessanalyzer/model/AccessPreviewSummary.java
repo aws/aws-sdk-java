@@ -30,6 +30,12 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The unique ID for the access preview.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
      * The ARN of the analyzer used to generate the access preview.
      * </p>
      */
@@ -40,12 +46,6 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date createdAt;
-    /**
-     * <p>
-     * The unique ID for the access preview.
-     * </p>
-     */
-    private String id;
     /**
      * <p>
      * The status of the access preview.
@@ -72,6 +72,46 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
     private String status;
 
     private AccessPreviewStatusReason statusReason;
+
+    /**
+     * <p>
+     * The unique ID for the access preview.
+     * </p>
+     * 
+     * @param id
+     *        The unique ID for the access preview.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The unique ID for the access preview.
+     * </p>
+     * 
+     * @return The unique ID for the access preview.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The unique ID for the access preview.
+     * </p>
+     * 
+     * @param id
+     *        The unique ID for the access preview.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPreviewSummary withId(String id) {
+        setId(id);
+        return this;
+    }
 
     /**
      * <p>
@@ -150,46 +190,6 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
 
     public AccessPreviewSummary withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The unique ID for the access preview.
-     * </p>
-     * 
-     * @param id
-     *        The unique ID for the access preview.
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * The unique ID for the access preview.
-     * </p>
-     * 
-     * @return The unique ID for the access preview.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * The unique ID for the access preview.
-     * </p>
-     * 
-     * @param id
-     *        The unique ID for the access preview.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccessPreviewSummary withId(String id) {
-        setId(id);
         return this;
     }
 
@@ -430,12 +430,12 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getAnalyzerArn() != null)
             sb.append("AnalyzerArn: ").append(getAnalyzerArn()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
@@ -454,6 +454,10 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
         if (obj instanceof AccessPreviewSummary == false)
             return false;
         AccessPreviewSummary other = (AccessPreviewSummary) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
         if (other.getAnalyzerArn() == null ^ this.getAnalyzerArn() == null)
             return false;
         if (other.getAnalyzerArn() != null && other.getAnalyzerArn().equals(this.getAnalyzerArn()) == false)
@@ -461,10 +465,6 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -482,9 +482,9 @@ public class AccessPreviewSummary implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getAnalyzerArn() == null) ? 0 : getAnalyzerArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         return hashCode;

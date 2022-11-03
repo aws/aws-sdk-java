@@ -28,31 +28,32 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      */
     private String usagePlanId;
     /**
      * <p>
-     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
-     * to the remaining quota.
+     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
+     * remaining quota.
      * </p>
      */
     private String keyId;
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        [Required] The Id of the usage plan associated with the usage data.
+     *        The Id of the usage plan associated with the usage data.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -61,10 +62,10 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      * 
-     * @return [Required] The Id of the usage plan associated with the usage data.
+     * @return The Id of the usage plan associated with the usage data.
      */
 
     public String getUsagePlanId() {
@@ -73,11 +74,11 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        [Required] The Id of the usage plan associated with the usage data.
+     *        The Id of the usage plan associated with the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +89,13 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
-     * to the remaining quota.
+     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
+     * remaining quota.
      * </p>
      * 
      * @param keyId
-     *        [Required] The identifier of the API key associated with the usage plan in which a temporary extension is
-     *        granted to the remaining quota.
+     *        The identifier of the API key associated with the usage plan in which a temporary extension is granted to
+     *        the remaining quota.
      */
 
     public void setKeyId(String keyId) {
@@ -103,12 +104,12 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
-     * to the remaining quota.
+     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
+     * remaining quota.
      * </p>
      * 
-     * @return [Required] The identifier of the API key associated with the usage plan in which a temporary extension is
-     *         granted to the remaining quota.
+     * @return The identifier of the API key associated with the usage plan in which a temporary extension is granted to
+     *         the remaining quota.
      */
 
     public String getKeyId() {
@@ -117,13 +118,13 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
-     * to the remaining quota.
+     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
+     * remaining quota.
      * </p>
      * 
      * @param keyId
-     *        [Required] The identifier of the API key associated with the usage plan in which a temporary extension is
-     *        granted to the remaining quota.
+     *        The identifier of the API key associated with the usage plan in which a temporary extension is granted to
+     *        the remaining quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +135,12 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -147,12 +149,13 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -166,7 +169,8 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,8 +179,8 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,12 +196,13 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

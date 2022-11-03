@@ -27,7 +27,8 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value indicating whether to include inactive results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your
+     * request.
      * </p>
      */
     private Boolean includeInactive;
@@ -44,11 +45,13 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value indicating whether to include inactive results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your
+     * request.
      * </p>
      * 
      * @param includeInactive
-     *        A Boolean value indicating whether to include inactive results in your request.
+     *        A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of
+     *        your request.
      */
 
     public void setIncludeInactive(Boolean includeInactive) {
@@ -57,10 +60,12 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value indicating whether to include inactive results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your
+     * request.
      * </p>
      * 
-     * @return A Boolean value indicating whether to include inactive results in your request.
+     * @return A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of
+     *         your request.
      */
 
     public Boolean getIncludeInactive() {
@@ -69,11 +74,13 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value indicating whether to include inactive results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your
+     * request.
      * </p>
      * 
      * @param includeInactive
-     *        A Boolean value indicating whether to include inactive results in your request.
+     *        A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of
+     *        your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +91,12 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value indicating whether to include inactive results in your request.
+     * A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your
+     * request.
      * </p>
      * 
-     * @return A Boolean value indicating whether to include inactive results in your request.
+     * @return A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of
+     *         your request.
      */
 
     public Boolean isIncludeInactive() {

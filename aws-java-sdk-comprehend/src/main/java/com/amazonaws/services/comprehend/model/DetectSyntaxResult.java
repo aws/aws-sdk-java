@@ -27,7 +27,9 @@ public class DetectSyntaxResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * A collection of syntax tokens describing the text. For each token, the response provides the text, the token
      * type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is
-     * correct. For a list of token types, see <a>how-syntax</a>.
+     * correct. For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      */
     private java.util.List<SyntaxToken> syntaxTokens;
@@ -36,12 +38,16 @@ public class DetectSyntaxResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * A collection of syntax tokens describing the text. For each token, the response provides the text, the token
      * type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is
-     * correct. For a list of token types, see <a>how-syntax</a>.
+     * correct. For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * 
      * @return A collection of syntax tokens describing the text. For each token, the response provides the text, the
      *         token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that
-     *         the token is correct. For a list of token types, see <a>how-syntax</a>.
+     *         the token is correct. For a list of token types, see <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *         Developer Guide.
      */
 
     public java.util.List<SyntaxToken> getSyntaxTokens() {
@@ -52,13 +58,17 @@ public class DetectSyntaxResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * A collection of syntax tokens describing the text. For each token, the response provides the text, the token
      * type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is
-     * correct. For a list of token types, see <a>how-syntax</a>.
+     * correct. For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * 
      * @param syntaxTokens
      *        A collection of syntax tokens describing the text. For each token, the response provides the text, the
      *        token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that
-     *        the token is correct. For a list of token types, see <a>how-syntax</a>.
+     *        the token is correct. For a list of token types, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *        Developer Guide.
      */
 
     public void setSyntaxTokens(java.util.Collection<SyntaxToken> syntaxTokens) {
@@ -74,7 +84,9 @@ public class DetectSyntaxResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * A collection of syntax tokens describing the text. For each token, the response provides the text, the token
      * type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is
-     * correct. For a list of token types, see <a>how-syntax</a>.
+     * correct. For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +97,9 @@ public class DetectSyntaxResult extends com.amazonaws.AmazonWebServiceResult<com
      * @param syntaxTokens
      *        A collection of syntax tokens describing the text. For each token, the response provides the text, the
      *        token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that
-     *        the token is correct. For a list of token types, see <a>how-syntax</a>.
+     *        the token is correct. For a list of token types, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,13 +117,17 @@ public class DetectSyntaxResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * A collection of syntax tokens describing the text. For each token, the response provides the text, the token
      * type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is
-     * correct. For a list of token types, see <a>how-syntax</a>.
+     * correct. For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer
+     * Guide.
      * </p>
      * 
      * @param syntaxTokens
      *        A collection of syntax tokens describing the text. For each token, the response provides the text, the
      *        token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that
-     *        the token is correct. For a list of token types, see <a>how-syntax</a>.
+     *        the token is correct. For a list of token types, see <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -174,6 +174,12 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The serverless workgroup name.
+     * </p>
+     */
+    private String workgroupName;
 
     /**
      * <p>
@@ -1317,6 +1323,46 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The serverless workgroup name.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name.
+     */
+
+    public void setWorkgroupName(String workgroupName) {
+        this.workgroupName = workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name.
+     * </p>
+     * 
+     * @return The serverless workgroup name.
+     */
+
+    public String getWorkgroupName() {
+        return this.workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStatementResult withWorkgroupName(String workgroupName) {
+        setWorkgroupName(workgroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1363,7 +1409,9 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
         if (getSubStatements() != null)
             sb.append("SubStatements: ").append(getSubStatements()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getWorkgroupName() != null)
+            sb.append("WorkgroupName: ").append(getWorkgroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -1450,6 +1498,10 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getWorkgroupName() == null ^ this.getWorkgroupName() == null)
+            return false;
+        if (other.getWorkgroupName() != null && other.getWorkgroupName().equals(this.getWorkgroupName()) == false)
+            return false;
         return true;
     }
 
@@ -1476,6 +1528,7 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getSubStatements() == null) ? 0 : getSubStatements().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());
         return hashCode;
     }
 

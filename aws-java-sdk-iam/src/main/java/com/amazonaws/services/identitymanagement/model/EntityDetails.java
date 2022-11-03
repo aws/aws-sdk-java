@@ -45,7 +45,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private java.util.Date lastAuthenticated;
@@ -99,7 +99,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticated
@@ -109,7 +109,7 @@ public class EntityDetails implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAuthenticated(java.util.Date lastAuthenticated) {
@@ -125,7 +125,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
@@ -134,7 +134,7 @@ public class EntityDetails implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public java.util.Date getLastAuthenticated() {
@@ -150,7 +150,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticated
@@ -160,7 +160,7 @@ public class EntityDetails implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

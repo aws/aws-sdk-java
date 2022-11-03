@@ -33,6 +33,8 @@ public class StageDeploymentDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentAction").build();
     private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentId").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentResult").build();
     private static final MarshallingInfo<String> DEPLOYMENTSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentState").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,6 +61,7 @@ public class StageDeploymentDetailsMarshaller {
             protocolMarshaller.marshall(stageDeploymentDetails.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(stageDeploymentDetails.getDeploymentAction(), DEPLOYMENTACTION_BINDING);
             protocolMarshaller.marshall(stageDeploymentDetails.getDeploymentId(), DEPLOYMENTID_BINDING);
+            protocolMarshaller.marshall(stageDeploymentDetails.getDeploymentResult(), DEPLOYMENTRESULT_BINDING);
             protocolMarshaller.marshall(stageDeploymentDetails.getDeploymentState(), DEPLOYMENTSTATE_BINDING);
             protocolMarshaller.marshall(stageDeploymentDetails.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(stageDeploymentDetails.getSnapshotId(), SNAPSHOTID_BINDING);

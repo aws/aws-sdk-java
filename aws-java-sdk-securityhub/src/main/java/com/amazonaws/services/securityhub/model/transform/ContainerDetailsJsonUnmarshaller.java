@@ -48,6 +48,10 @@ public class ContainerDetailsJsonUnmarshaller implements Unmarshaller<ContainerD
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ContainerRuntime", targetDepth)) {
+                    context.nextToken();
+                    containerDetails.setContainerRuntime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     containerDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,16 @@ public class ContainerDetailsJsonUnmarshaller implements Unmarshaller<ContainerD
                 if (context.testExpression("LaunchedAt", targetDepth)) {
                     context.nextToken();
                     containerDetails.setLaunchedAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeMounts", targetDepth)) {
+                    context.nextToken();
+                    containerDetails.setVolumeMounts(new ListUnmarshaller<VolumeMount>(VolumeMountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Privileged", targetDepth)) {
+                    context.nextToken();
+                    containerDetails.setPrivileged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -96,6 +96,18 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
+        if (createVpcEndpointRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(createVpcEndpointRequest.getIpAddressType()));
+        }
+
+        DnsOptionsSpecification dnsOptions = createVpcEndpointRequest.getDnsOptions();
+        if (dnsOptions != null) {
+
+            if (dnsOptions.getDnsRecordIpType() != null) {
+                request.addParameter("DnsOptions.DnsRecordIpType", StringUtils.fromString(dnsOptions.getDnsRecordIpType()));
+            }
+        }
+
         if (createVpcEndpointRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointRequest.getClientToken()));
         }

@@ -304,6 +304,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("NetworkType", StringUtils.fromString(modifyDBInstanceRequest.getNetworkType()));
         }
 
+        if (modifyDBInstanceRequest.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(modifyDBInstanceRequest.getStorageThroughput()));
+        }
+
         return request;
     }
 

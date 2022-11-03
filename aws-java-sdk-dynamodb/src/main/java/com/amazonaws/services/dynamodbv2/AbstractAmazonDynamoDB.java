@@ -156,6 +156,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeImportResult describeImport(DescribeImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeKinesisStreamingDestinationResult describeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -226,6 +231,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public ImportTableResult importTable(ImportTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListBackupsResult listBackups(ListBackupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -242,6 +252,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public ListGlobalTablesResult listGlobalTables(ListGlobalTablesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

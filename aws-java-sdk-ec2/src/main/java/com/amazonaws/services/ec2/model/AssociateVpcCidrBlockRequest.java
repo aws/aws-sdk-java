@@ -76,32 +76,34 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      */
     private String ipv4IpamPoolId;
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      */
     private Integer ipv4NetmaskLength;
     /**
      * <p>
      * Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      */
     private String ipv6IpamPoolId;
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      */
     private Integer ipv6NetmaskLength;
@@ -426,14 +428,15 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4IpamPoolId
      *        Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP
-     *        Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        Address Manager (IPAM), see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv4IpamPoolId(String ipv4IpamPoolId) {
@@ -443,12 +446,13 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @return Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP
-     *         Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         Address Manager (IPAM), see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
      *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
@@ -459,14 +463,15 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4IpamPoolId
      *        Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP
-     *        Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        Address Manager (IPAM), see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,14 +483,16 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4NetmaskLength
      *        The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv4NetmaskLength(Integer ipv4NetmaskLength) {
@@ -495,13 +502,15 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @return The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager
-     *         (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *         IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         (IPAM) pool. For more information about IPAM, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public Integer getIpv4NetmaskLength() {
@@ -511,14 +520,16 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv4NetmaskLength
      *        The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,14 +541,15 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6IpamPoolId
      *        Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP
-     *        Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        Address Manager (IPAM), see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv6IpamPoolId(String ipv6IpamPoolId) {
@@ -547,12 +559,13 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @return Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP
-     *         Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         Address Manager (IPAM), see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
      *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
@@ -563,14 +576,15 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address
-     * Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM
-     * User Guide</i>.
+     * Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
+     * in the <i>Amazon VPC IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6IpamPoolId
      *        Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP
-     *        Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
-     *        <i>Amazon VPC IPAM User Guide</i>.
+     *        Address Manager (IPAM), see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,14 +596,16 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6NetmaskLength
      *        The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      */
 
     public void setIpv6NetmaskLength(Integer ipv6NetmaskLength) {
@@ -599,13 +615,15 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @return The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager
-     *         (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *         IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *         (IPAM) pool. For more information about IPAM, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
      */
 
     public Integer getIpv6NetmaskLength() {
@@ -615,14 +633,16 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM)
-     * pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>.
+     * pool. For more information about IPAM, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC
+     * IPAM User Guide</i>.
      * </p>
      * 
      * @param ipv6NetmaskLength
      *        The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager
-     *        (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-     *        IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     *        (IPAM) pool. For more information about IPAM, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     *        VPC IPAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

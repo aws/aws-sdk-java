@@ -240,6 +240,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      */
     private String dataTiering;
+    /**
+     * <p>
+     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
+     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * </p>
+     */
+    private Boolean autoMinorVersionUpgrade;
 
     /**
      * <p>
@@ -2002,6 +2009,66 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
+     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * </p>
+     * 
+     * @param autoMinorVersionUpgrade
+     *         If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *        the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     */
+
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
+     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * </p>
+     * 
+     * @return  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *         the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     */
+
+    public Boolean getAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
+     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * </p>
+     * 
+     * @param autoMinorVersionUpgrade
+     *         If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *        the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        setAutoMinorVersionUpgrade(autoMinorVersionUpgrade);
+        return this;
+    }
+
+    /**
+     * <p>
+     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
+     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * </p>
+     * 
+     * @return  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *         the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     */
+
+    public Boolean isAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2064,7 +2131,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (getReplicationGroupCreateTime() != null)
             sb.append("ReplicationGroupCreateTime: ").append(getReplicationGroupCreateTime()).append(",");
         if (getDataTiering() != null)
-            sb.append("DataTiering: ").append(getDataTiering());
+            sb.append("DataTiering: ").append(getDataTiering()).append(",");
+        if (getAutoMinorVersionUpgrade() != null)
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade());
         sb.append("}");
         return sb.toString();
     }
@@ -2183,6 +2252,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getDataTiering() != null && other.getDataTiering().equals(this.getDataTiering()) == false)
             return false;
+        if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
+            return false;
+        if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
+            return false;
         return true;
     }
 
@@ -2217,6 +2290,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         hashCode = prime * hashCode + ((getReplicationGroupCreateTime() == null) ? 0 : getReplicationGroupCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDataTiering() == null) ? 0 : getDataTiering().hashCode());
+        hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         return hashCode;
     }
 

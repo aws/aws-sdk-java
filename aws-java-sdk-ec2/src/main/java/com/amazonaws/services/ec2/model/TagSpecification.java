@@ -19,6 +19,13 @@ import javax.annotation.Generated;
  * <p>
  * The tags to apply to a resource when the resource is being created.
  * </p>
+ * <note>
+ * <p>
+ * The <code>Valid Values</code> lists all the resource types that can be tagged. However, the action you're using might
+ * not support tagging all of these resource types. If you try to tag a resource type that is unsupported for the action
+ * you're using, you'll get an error.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TagSpecification" target="_top">AWS API
  *      Documentation</a>

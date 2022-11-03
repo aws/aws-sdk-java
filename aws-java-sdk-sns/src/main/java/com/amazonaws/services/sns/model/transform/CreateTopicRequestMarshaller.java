@@ -76,6 +76,10 @@ public class CreateTopicRequestMarshaller implements Marshaller<Request<CreateTo
             }
         }
 
+        if (createTopicRequest.getDataProtectionPolicy() != null) {
+            request.addParameter("DataProtectionPolicy", StringUtils.fromString(createTopicRequest.getDataProtectionPolicy()));
+        }
+
         return request;
     }
 

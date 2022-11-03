@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeSourceLocationRequestMarshaller {
 
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sourceLocationName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("SourceLocationName").build();
 
     private static final DescribeSourceLocationRequestMarshaller instance = new DescribeSourceLocationRequestMarshaller();
 

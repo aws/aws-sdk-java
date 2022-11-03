@@ -39,21 +39,30 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
     private String inferenceSchedulerName;
     /**
      * <p>
-     * A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if
-     * you select an offset delay time of five minutes, inference will not begin on the data until the first data
-     * measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will
-     * wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket.
-     * The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when
-     * uploading new data.
+     * The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is
+     * set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler
+     * will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional
+     * five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload
+     * data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      */
     private Long dataDelayOffsetInMinutes;
     /**
      * <p>
-     * How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time
-     * between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
+     * How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of
+     * time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
      * real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout
-     * for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.
+     * for Equipment runs inference on your data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      */
     private String dataUploadFrequency;
@@ -179,21 +188,29 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if
-     * you select an offset delay time of five minutes, inference will not begin on the data until the first data
-     * measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will
-     * wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket.
-     * The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when
-     * uploading new data.
+     * The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is
+     * set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler
+     * will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional
+     * five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload
+     * data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
      * @param dataDelayOffsetInMinutes
-     *        A period of time (in minutes) by which inference on the data is delayed after the data starts. For
-     *        instance, if you select an offset delay time of five minutes, inference will not begin on the data until
-     *        the first data measurement after the five minute mark. For example, if five minutes is selected, the
-     *        inference scheduler will wake up at the configured frequency with the additional five minute delay time to
-     *        check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to
-     *        stop and restart the scheduler when uploading new data.
+     *        The interval (in minutes) of planned delay at the start of each inference segment. For example, if
+     *        inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The
+     *        inference scheduler will wake up at the configured interval (which, without a delay configured, would be
+     *        09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay
+     *        provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart
+     *        the scheduler when uploading new data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *        >Understanding the inference process</a>.
      */
 
     public void setDataDelayOffsetInMinutes(Long dataDelayOffsetInMinutes) {
@@ -202,20 +219,28 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if
-     * you select an offset delay time of five minutes, inference will not begin on the data until the first data
-     * measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will
-     * wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket.
-     * The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when
-     * uploading new data.
+     * The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is
+     * set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler
+     * will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional
+     * five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload
+     * data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
-     * @return A period of time (in minutes) by which inference on the data is delayed after the data starts. For
-     *         instance, if you select an offset delay time of five minutes, inference will not begin on the data until
-     *         the first data measurement after the five minute mark. For example, if five minutes is selected, the
-     *         inference scheduler will wake up at the configured frequency with the additional five minute delay time
-     *         to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need
-     *         to stop and restart the scheduler when uploading new data.
+     * @return The interval (in minutes) of planned delay at the start of each inference segment. For example, if
+     *         inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The
+     *         inference scheduler will wake up at the configured interval (which, without a delay configured, would be
+     *         09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay
+     *         provides a buffer for you to upload data at the same frequency, so that you don't have to stop and
+     *         restart the scheduler when uploading new data.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *         >Understanding the inference process</a>.
      */
 
     public Long getDataDelayOffsetInMinutes() {
@@ -224,21 +249,29 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if
-     * you select an offset delay time of five minutes, inference will not begin on the data until the first data
-     * measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will
-     * wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket.
-     * The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when
-     * uploading new data.
+     * The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is
+     * set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler
+     * will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional
+     * five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload
+     * data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
      * @param dataDelayOffsetInMinutes
-     *        A period of time (in minutes) by which inference on the data is delayed after the data starts. For
-     *        instance, if you select an offset delay time of five minutes, inference will not begin on the data until
-     *        the first data measurement after the five minute mark. For example, if five minutes is selected, the
-     *        inference scheduler will wake up at the configured frequency with the additional five minute delay time to
-     *        check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to
-     *        stop and restart the scheduler when uploading new data.
+     *        The interval (in minutes) of planned delay at the start of each inference segment. For example, if
+     *        inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The
+     *        inference scheduler will wake up at the configured interval (which, without a delay configured, would be
+     *        09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay
+     *        provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart
+     *        the scheduler when uploading new data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *        >Understanding the inference process</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,18 +282,26 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time
-     * between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
+     * How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of
+     * time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
      * real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout
-     * for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.
+     * for Equipment runs inference on your data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
      * @param dataUploadFrequency
-     *        How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of
-     *        time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload
-     *        the real-time data to the source bucket once every 5 minutes. This frequency also determines how often
-     *        Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once
-     *        every 5 minutes.
+     *        How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the
+     *        length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment
+     *        will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines
+     *        how often Amazon Lookout for Equipment runs inference on your data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *        >Understanding the inference process</a>.
      * @see DataUploadFrequency
      */
 
@@ -270,17 +311,25 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time
-     * between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
+     * How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of
+     * time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
      * real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout
-     * for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.
+     * for Equipment runs inference on your data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
-     * @return How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of
-     *         time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will
-     *         upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how
-     *         often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts
-     *         once every 5 minutes.
+     * @return How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the
+     *         length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment
+     *         will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines
+     *         how often Amazon Lookout for Equipment runs inference on your data.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *         >Understanding the inference process</a>.
      * @see DataUploadFrequency
      */
 
@@ -290,18 +339,26 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time
-     * between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
+     * How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of
+     * time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
      * real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout
-     * for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.
+     * for Equipment runs inference on your data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
      * @param dataUploadFrequency
-     *        How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of
-     *        time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload
-     *        the real-time data to the source bucket once every 5 minutes. This frequency also determines how often
-     *        Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once
-     *        every 5 minutes.
+     *        How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the
+     *        length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment
+     *        will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines
+     *        how often Amazon Lookout for Equipment runs inference on your data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *        >Understanding the inference process</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataUploadFrequency
      */
@@ -313,18 +370,26 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time
-     * between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
+     * How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of
+     * time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the
      * real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout
-     * for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.
+     * for Equipment runs inference on your data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     * >Understanding the inference process</a>.
      * </p>
      * 
      * @param dataUploadFrequency
-     *        How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of
-     *        time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload
-     *        the real-time data to the source bucket once every 5 minutes. This frequency also determines how often
-     *        Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once
-     *        every 5 minutes.
+     *        How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the
+     *        length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment
+     *        will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines
+     *        how often Amazon Lookout for Equipment runs inference on your data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html"
+     *        >Understanding the inference process</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataUploadFrequency
      */

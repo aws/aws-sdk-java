@@ -48,13 +48,13 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
     private ExportRevisionsToS3RequestDetails exportRevisionsToS3;
     /**
      * <p>
-     * Details about the import from signed URL request.
+     * Details about the import from Amazon S3 request.
      * </p>
      */
     private ImportAssetFromSignedUrlRequestDetails importAssetFromSignedUrl;
     /**
      * <p>
-     * Details about the import from Amazon S3 request.
+     * Information about the import asset from API Gateway API request.
      * </p>
      */
     private ImportAssetsFromS3RequestDetails importAssetsFromS3;
@@ -66,7 +66,7 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
     private ImportAssetsFromRedshiftDataSharesRequestDetails importAssetsFromRedshiftDataShares;
     /**
      * <p>
-     * Information about the import asset from API Gateway API request.
+     * Details about the import from signed URL request.
      * </p>
      */
     private ImportAssetFromApiGatewayApiRequestDetails importAssetFromApiGatewayApi;
@@ -193,55 +193,15 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the import from signed URL request.
+     * Details about the import from Amazon S3 request.
      * </p>
      * 
      * @param importAssetFromSignedUrl
-     *        Details about the import from signed URL request.
+     *        Details about the import from Amazon S3 request.
      */
 
     public void setImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails importAssetFromSignedUrl) {
         this.importAssetFromSignedUrl = importAssetFromSignedUrl;
-    }
-
-    /**
-     * <p>
-     * Details about the import from signed URL request.
-     * </p>
-     * 
-     * @return Details about the import from signed URL request.
-     */
-
-    public ImportAssetFromSignedUrlRequestDetails getImportAssetFromSignedUrl() {
-        return this.importAssetFromSignedUrl;
-    }
-
-    /**
-     * <p>
-     * Details about the import from signed URL request.
-     * </p>
-     * 
-     * @param importAssetFromSignedUrl
-     *        Details about the import from signed URL request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RequestDetails withImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails importAssetFromSignedUrl) {
-        setImportAssetFromSignedUrl(importAssetFromSignedUrl);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Details about the import from Amazon S3 request.
-     * </p>
-     * 
-     * @param importAssetsFromS3
-     *        Details about the import from Amazon S3 request.
-     */
-
-    public void setImportAssetsFromS3(ImportAssetsFromS3RequestDetails importAssetsFromS3) {
-        this.importAssetsFromS3 = importAssetsFromS3;
     }
 
     /**
@@ -252,8 +212,8 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
      * @return Details about the import from Amazon S3 request.
      */
 
-    public ImportAssetsFromS3RequestDetails getImportAssetsFromS3() {
-        return this.importAssetsFromS3;
+    public ImportAssetFromSignedUrlRequestDetails getImportAssetFromSignedUrl() {
+        return this.importAssetFromSignedUrl;
     }
 
     /**
@@ -261,8 +221,48 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
      * Details about the import from Amazon S3 request.
      * </p>
      * 
-     * @param importAssetsFromS3
+     * @param importAssetFromSignedUrl
      *        Details about the import from Amazon S3 request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestDetails withImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails importAssetFromSignedUrl) {
+        setImportAssetFromSignedUrl(importAssetFromSignedUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the import asset from API Gateway API request.
+     * </p>
+     * 
+     * @param importAssetsFromS3
+     *        Information about the import asset from API Gateway API request.
+     */
+
+    public void setImportAssetsFromS3(ImportAssetsFromS3RequestDetails importAssetsFromS3) {
+        this.importAssetsFromS3 = importAssetsFromS3;
+    }
+
+    /**
+     * <p>
+     * Information about the import asset from API Gateway API request.
+     * </p>
+     * 
+     * @return Information about the import asset from API Gateway API request.
+     */
+
+    public ImportAssetsFromS3RequestDetails getImportAssetsFromS3() {
+        return this.importAssetsFromS3;
+    }
+
+    /**
+     * <p>
+     * Information about the import asset from API Gateway API request.
+     * </p>
+     * 
+     * @param importAssetsFromS3
+     *        Information about the import asset from API Gateway API request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the import asset from API Gateway API request.
+     * Details about the import from signed URL request.
      * </p>
      * 
      * @param importAssetFromApiGatewayApi
-     *        Information about the import asset from API Gateway API request.
+     *        Details about the import from signed URL request.
      */
 
     public void setImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails importAssetFromApiGatewayApi) {
@@ -326,10 +326,10 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the import asset from API Gateway API request.
+     * Details about the import from signed URL request.
      * </p>
      * 
-     * @return Information about the import asset from API Gateway API request.
+     * @return Details about the import from signed URL request.
      */
 
     public ImportAssetFromApiGatewayApiRequestDetails getImportAssetFromApiGatewayApi() {
@@ -338,11 +338,11 @@ public class RequestDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the import asset from API Gateway API request.
+     * Details about the import from signed URL request.
      * </p>
      * 
      * @param importAssetFromApiGatewayApi
-     *        Information about the import asset from API Gateway API request.
+     *        Details about the import from signed URL request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

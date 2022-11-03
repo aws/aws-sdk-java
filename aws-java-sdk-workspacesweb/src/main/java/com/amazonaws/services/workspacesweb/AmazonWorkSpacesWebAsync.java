@@ -131,6 +131,43 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Associates a user access logging settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the AssociateUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.AssociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateUserAccessLoggingSettingsResult> associateUserAccessLoggingSettingsAsync(
+            AssociateUserAccessLoggingSettingsRequest associateUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Associates a user access logging settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.AssociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateUserAccessLoggingSettingsResult> associateUserAccessLoggingSettingsAsync(
+            AssociateUserAccessLoggingSettingsRequest associateUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateUserAccessLoggingSettingsRequest, AssociateUserAccessLoggingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a user settings resource with a web portal.
      * </p>
      * 
@@ -327,6 +364,41 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Creates a user access logging settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the CreateUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.CreateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserAccessLoggingSettingsResult> createUserAccessLoggingSettingsAsync(
+            CreateUserAccessLoggingSettingsRequest createUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Creates a user access logging settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.CreateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserAccessLoggingSettingsResult> createUserAccessLoggingSettingsAsync(
+            CreateUserAccessLoggingSettingsRequest createUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUserAccessLoggingSettingsRequest, CreateUserAccessLoggingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a user settings resource that can be associated with a web portal. Once associated with a web portal,
      * user settings control how users can transfer data between a streaming session and the their local devices.
      * </p>
@@ -515,6 +587,41 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Deletes user access logging settings.
+     * </p>
+     * 
+     * @param deleteUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the DeleteUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.DeleteUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserAccessLoggingSettingsResult> deleteUserAccessLoggingSettingsAsync(
+            DeleteUserAccessLoggingSettingsRequest deleteUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Deletes user access logging settings.
+     * </p>
+     * 
+     * @param deleteUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.DeleteUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserAccessLoggingSettingsResult> deleteUserAccessLoggingSettingsAsync(
+            DeleteUserAccessLoggingSettingsRequest deleteUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserAccessLoggingSettingsRequest, DeleteUserAccessLoggingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes user settings.
      * </p>
      * 
@@ -640,6 +747,43 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<DisassociateTrustStoreResult> disassociateTrustStoreAsync(DisassociateTrustStoreRequest disassociateTrustStoreRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateTrustStoreRequest, DisassociateTrustStoreResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates user access logging settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the DisassociateUserAccessLoggingSettings operation returned by
+     *         the service.
+     * @sample AmazonWorkSpacesWebAsync.DisassociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateUserAccessLoggingSettingsResult> disassociateUserAccessLoggingSettingsAsync(
+            DisassociateUserAccessLoggingSettingsRequest disassociateUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Disassociates user access logging settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateUserAccessLoggingSettings operation returned by
+     *         the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.DisassociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateUserAccessLoggingSettingsResult> disassociateUserAccessLoggingSettingsAsync(
+            DisassociateUserAccessLoggingSettingsRequest disassociateUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateUserAccessLoggingSettingsRequest, DisassociateUserAccessLoggingSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -895,6 +1039,41 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Gets user access logging settings.
+     * </p>
+     * 
+     * @param getUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the GetUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.GetUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUserAccessLoggingSettingsResult> getUserAccessLoggingSettingsAsync(
+            GetUserAccessLoggingSettingsRequest getUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Gets user access logging settings.
+     * </p>
+     * 
+     * @param getUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.GetUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUserAccessLoggingSettingsResult> getUserAccessLoggingSettingsAsync(
+            GetUserAccessLoggingSettingsRequest getUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUserAccessLoggingSettingsRequest, GetUserAccessLoggingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets user settings.
      * </p>
      * 
@@ -1145,6 +1324,41 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Retrieves a list of user access logging settings.
+     * </p>
+     * 
+     * @param listUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the ListUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.ListUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUserAccessLoggingSettingsResult> listUserAccessLoggingSettingsAsync(
+            ListUserAccessLoggingSettingsRequest listUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of user access logging settings.
+     * </p>
+     * 
+     * @param listUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.ListUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUserAccessLoggingSettingsResult> listUserAccessLoggingSettingsAsync(
+            ListUserAccessLoggingSettingsRequest listUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUserAccessLoggingSettingsRequest, ListUserAccessLoggingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of user settings.
      * </p>
      * 
@@ -1390,6 +1604,41 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<UpdateTrustStoreResult> updateTrustStoreAsync(UpdateTrustStoreRequest updateTrustStoreRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTrustStoreRequest, UpdateTrustStoreResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the user access logging settings.
+     * </p>
+     * 
+     * @param updateUserAccessLoggingSettingsRequest
+     * @return A Java Future containing the result of the UpdateUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.UpdateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserAccessLoggingSettingsResult> updateUserAccessLoggingSettingsAsync(
+            UpdateUserAccessLoggingSettingsRequest updateUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
+     * Updates the user access logging settings.
+     * </p>
+     * 
+     * @param updateUserAccessLoggingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUserAccessLoggingSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.UpdateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserAccessLoggingSettingsResult> updateUserAccessLoggingSettingsAsync(
+            UpdateUserAccessLoggingSettingsRequest updateUserAccessLoggingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserAccessLoggingSettingsRequest, UpdateUserAccessLoggingSettingsResult> asyncHandler);
 
     /**
      * <p>

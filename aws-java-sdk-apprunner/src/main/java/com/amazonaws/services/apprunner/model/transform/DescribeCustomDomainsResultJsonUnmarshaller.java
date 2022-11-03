@@ -62,6 +62,12 @@ public class DescribeCustomDomainsResultJsonUnmarshaller implements Unmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("VpcDNSTargets", targetDepth)) {
+                    context.nextToken();
+                    describeCustomDomainsResult.setVpcDNSTargets(new ListUnmarshaller<VpcDNSTarget>(VpcDNSTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
                     describeCustomDomainsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));

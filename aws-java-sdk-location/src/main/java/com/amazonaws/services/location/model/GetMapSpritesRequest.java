@@ -42,7 +42,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For the JSON document contain image offsets. Use the following ﬁle names:
+     * For the JSON document containing image offsets. Use the following ﬁle names:
      * </p>
      * <ul>
      * <li>
@@ -82,7 +82,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For the JSON document contain image offsets. Use the following ﬁle names:
+     * For the JSON document containing image offsets. Use the following ﬁle names:
      * </p>
      * <ul>
      * <li>
@@ -112,7 +112,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        </ul>
      *        <p>
-     *        For the JSON document contain image offsets. Use the following ﬁle names:
+     *        For the JSON document containing image offsets. Use the following ﬁle names:
      *        </p>
      *        <ul>
      *        <li>
@@ -148,7 +148,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For the JSON document contain image offsets. Use the following ﬁle names:
+     * For the JSON document containing image offsets. Use the following ﬁle names:
      * </p>
      * <ul>
      * <li>
@@ -177,7 +177,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         </ul>
      *         <p>
-     *         For the JSON document contain image offsets. Use the following ﬁle names:
+     *         For the JSON document containing image offsets. Use the following ﬁle names:
      *         </p>
      *         <ul>
      *         <li>
@@ -213,7 +213,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For the JSON document contain image offsets. Use the following ﬁle names:
+     * For the JSON document containing image offsets. Use the following ﬁle names:
      * </p>
      * <ul>
      * <li>
@@ -243,7 +243,7 @@ public class GetMapSpritesRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        </ul>
      *        <p>
-     *        For the JSON document contain image offsets. Use the following ﬁle names:
+     *        For the JSON document containing image offsets. Use the following ﬁle names:
      *        </p>
      *        <ul>
      *        <li>

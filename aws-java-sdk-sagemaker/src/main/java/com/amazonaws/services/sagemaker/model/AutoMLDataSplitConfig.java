@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This structure specifies how to split the data into train and test datasets. The validation and training datasets
- * must contain the same headers. The validation dataset must be less than 2 GB in size.
+ * This structure specifies how to split the data into train and validation datasets. The validation and training
+ * datasets must contain the same headers. The validation dataset must be less than 2 GB in size.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSplitConfig" target="_top">AWS
@@ -32,8 +32,8 @@ public class AutoMLDataSplitConfig implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for
-     * validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be
-     * less than 0.5.
+     * validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting
+     * this value to be less than 0.5.
      * </p>
      */
     private Float validationFraction;
@@ -41,14 +41,14 @@ public class AutoMLDataSplitConfig implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for
-     * validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be
-     * less than 0.5.
+     * validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting
+     * this value to be less than 0.5.
      * </p>
      * 
      * @param validationFraction
      *        The validation fraction (optional) is a float that specifies the portion of the training dataset to be
-     *        used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this
-     *        value to be less than 0.5.
+     *        used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We
+     *        recommend setting this value to be less than 0.5.
      */
 
     public void setValidationFraction(Float validationFraction) {
@@ -58,13 +58,13 @@ public class AutoMLDataSplitConfig implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for
-     * validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be
-     * less than 0.5.
+     * validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting
+     * this value to be less than 0.5.
      * </p>
      * 
      * @return The validation fraction (optional) is a float that specifies the portion of the training dataset to be
-     *         used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting
-     *         this value to be less than 0.5.
+     *         used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We
+     *         recommend setting this value to be less than 0.5.
      */
 
     public Float getValidationFraction() {
@@ -74,14 +74,14 @@ public class AutoMLDataSplitConfig implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for
-     * validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this value to be
-     * less than 0.5.
+     * validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting
+     * this value to be less than 0.5.
      * </p>
      * 
      * @param validationFraction
      *        The validation fraction (optional) is a float that specifies the portion of the training dataset to be
-     *        used for validation. The default value is 0.2, and values can range from 0 to 1. We recommend setting this
-     *        value to be less than 0.5.
+     *        used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We
+     *        recommend setting this value to be less than 0.5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

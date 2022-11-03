@@ -72,6 +72,12 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
     private String release;
     /**
      * <p>
+     * The code to run in your environment to update packages with a fix available.
+     * </p>
+     */
+    private String remediation;
+    /**
+     * <p>
      * The source layer hash of the vulnerable package.
      * </p>
      */
@@ -384,6 +390,46 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The code to run in your environment to update packages with a fix available.
+     * </p>
+     * 
+     * @param remediation
+     *        The code to run in your environment to update packages with a fix available.
+     */
+
+    public void setRemediation(String remediation) {
+        this.remediation = remediation;
+    }
+
+    /**
+     * <p>
+     * The code to run in your environment to update packages with a fix available.
+     * </p>
+     * 
+     * @return The code to run in your environment to update packages with a fix available.
+     */
+
+    public String getRemediation() {
+        return this.remediation;
+    }
+
+    /**
+     * <p>
+     * The code to run in your environment to update packages with a fix available.
+     * </p>
+     * 
+     * @param remediation
+     *        The code to run in your environment to update packages with a fix available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VulnerablePackage withRemediation(String remediation) {
+        setRemediation(remediation);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source layer hash of the vulnerable package.
      * </p>
      * 
@@ -488,6 +534,8 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
             sb.append("PackageManager: ").append(getPackageManager()).append(",");
         if (getRelease() != null)
             sb.append("Release: ").append(getRelease()).append(",");
+        if (getRemediation() != null)
+            sb.append("Remediation: ").append(getRemediation()).append(",");
         if (getSourceLayerHash() != null)
             sb.append("SourceLayerHash: ").append(getSourceLayerHash()).append(",");
         if (getVersion() != null)
@@ -534,6 +582,10 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRelease() != null && other.getRelease().equals(this.getRelease()) == false)
             return false;
+        if (other.getRemediation() == null ^ this.getRemediation() == null)
+            return false;
+        if (other.getRemediation() != null && other.getRemediation().equals(this.getRemediation()) == false)
+            return false;
         if (other.getSourceLayerHash() == null ^ this.getSourceLayerHash() == null)
             return false;
         if (other.getSourceLayerHash() != null && other.getSourceLayerHash().equals(this.getSourceLayerHash()) == false)
@@ -557,6 +609,7 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPackageManager() == null) ? 0 : getPackageManager().hashCode());
         hashCode = prime * hashCode + ((getRelease() == null) ? 0 : getRelease().hashCode());
+        hashCode = prime * hashCode + ((getRemediation() == null) ? 0 : getRemediation().hashCode());
         hashCode = prime * hashCode + ((getSourceLayerHash() == null) ? 0 : getSourceLayerHash().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;

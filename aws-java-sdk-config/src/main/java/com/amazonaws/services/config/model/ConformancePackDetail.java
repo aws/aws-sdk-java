@@ -77,16 +77,23 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
     private com.amazonaws.internal.SdkInternalList<ConformancePackInputParameter> conformancePackInputParameters;
     /**
      * <p>
-     * Last time when conformation pack update was requested.
+     * The last time a conformation pack update was requested.
      * </p>
      */
     private java.util.Date lastUpdateRequestedTime;
     /**
      * <p>
-     * Amazon Web Services service that created the conformance pack.
+     * The Amazon Web Services service that created the conformance pack.
      * </p>
      */
     private String createdBy;
+    /**
+     * <p>
+     * An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     * document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     * </p>
+     */
+    private TemplateSSMDocumentDetails templateSSMDocumentDetails;
 
     /**
      * <p>
@@ -411,11 +418,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Last time when conformation pack update was requested.
+     * The last time a conformation pack update was requested.
      * </p>
      * 
      * @param lastUpdateRequestedTime
-     *        Last time when conformation pack update was requested.
+     *        The last time a conformation pack update was requested.
      */
 
     public void setLastUpdateRequestedTime(java.util.Date lastUpdateRequestedTime) {
@@ -424,10 +431,10 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Last time when conformation pack update was requested.
+     * The last time a conformation pack update was requested.
      * </p>
      * 
-     * @return Last time when conformation pack update was requested.
+     * @return The last time a conformation pack update was requested.
      */
 
     public java.util.Date getLastUpdateRequestedTime() {
@@ -436,11 +443,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Last time when conformation pack update was requested.
+     * The last time a conformation pack update was requested.
      * </p>
      * 
      * @param lastUpdateRequestedTime
-     *        Last time when conformation pack update was requested.
+     *        The last time a conformation pack update was requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,11 +458,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon Web Services service that created the conformance pack.
+     * The Amazon Web Services service that created the conformance pack.
      * </p>
      * 
      * @param createdBy
-     *        Amazon Web Services service that created the conformance pack.
+     *        The Amazon Web Services service that created the conformance pack.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -464,10 +471,10 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon Web Services service that created the conformance pack.
+     * The Amazon Web Services service that created the conformance pack.
      * </p>
      * 
-     * @return Amazon Web Services service that created the conformance pack.
+     * @return The Amazon Web Services service that created the conformance pack.
      */
 
     public String getCreatedBy() {
@@ -476,16 +483,62 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon Web Services service that created the conformance pack.
+     * The Amazon Web Services service that created the conformance pack.
      * </p>
      * 
      * @param createdBy
-     *        Amazon Web Services service that created the conformance pack.
+     *        The Amazon Web Services service that created the conformance pack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConformancePackDetail withCreatedBy(String createdBy) {
         setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     * document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     * </p>
+     * 
+     * @param templateSSMDocumentDetails
+     *        An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     *        document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     */
+
+    public void setTemplateSSMDocumentDetails(TemplateSSMDocumentDetails templateSSMDocumentDetails) {
+        this.templateSSMDocumentDetails = templateSSMDocumentDetails;
+    }
+
+    /**
+     * <p>
+     * An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     * document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     * </p>
+     * 
+     * @return An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     *         document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     */
+
+    public TemplateSSMDocumentDetails getTemplateSSMDocumentDetails() {
+        return this.templateSSMDocumentDetails;
+    }
+
+    /**
+     * <p>
+     * An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     * document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     * </p>
+     * 
+     * @param templateSSMDocumentDetails
+     *        An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager
+     *        document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConformancePackDetail withTemplateSSMDocumentDetails(TemplateSSMDocumentDetails templateSSMDocumentDetails) {
+        setTemplateSSMDocumentDetails(templateSSMDocumentDetails);
         return this;
     }
 
@@ -516,7 +569,9 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
         if (getLastUpdateRequestedTime() != null)
             sb.append("LastUpdateRequestedTime: ").append(getLastUpdateRequestedTime()).append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy());
+            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+        if (getTemplateSSMDocumentDetails() != null)
+            sb.append("TemplateSSMDocumentDetails: ").append(getTemplateSSMDocumentDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +619,10 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
             return false;
+        if (other.getTemplateSSMDocumentDetails() == null ^ this.getTemplateSSMDocumentDetails() == null)
+            return false;
+        if (other.getTemplateSSMDocumentDetails() != null && other.getTemplateSSMDocumentDetails().equals(this.getTemplateSSMDocumentDetails()) == false)
+            return false;
         return true;
     }
 
@@ -580,6 +639,7 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getConformancePackInputParameters() == null) ? 0 : getConformancePackInputParameters().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateRequestedTime() == null) ? 0 : getLastUpdateRequestedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
+        hashCode = prime * hashCode + ((getTemplateSSMDocumentDetails() == null) ? 0 : getTemplateSSMDocumentDetails().hashCode());
         return hashCode;
     }
 

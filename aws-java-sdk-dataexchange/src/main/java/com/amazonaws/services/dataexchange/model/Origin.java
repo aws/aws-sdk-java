@@ -15,11 +15,7 @@ package com.amazonaws.services.dataexchange.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for
- * subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set.
- * Subscribers can access that copy of the data set as an entitled data set.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Origin {

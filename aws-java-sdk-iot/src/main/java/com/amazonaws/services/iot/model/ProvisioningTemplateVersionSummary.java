@@ -27,30 +27,30 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      */
     private Integer versionId;
     /**
      * <p>
-     * The date when the fleet provisioning template version was created
+     * The date when the provisioning template version was created
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      */
     private Boolean isDefaultVersion;
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      * 
      * @param versionId
-     *        The ID of the fleet privisioning template version.
+     *        The ID of the fleet provisioning template version.
      */
 
     public void setVersionId(Integer versionId) {
@@ -59,10 +59,10 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      * 
-     * @return The ID of the fleet privisioning template version.
+     * @return The ID of the fleet provisioning template version.
      */
 
     public Integer getVersionId() {
@@ -71,11 +71,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      * 
      * @param versionId
-     *        The ID of the fleet privisioning template version.
+     *        The ID of the fleet provisioning template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The date when the fleet provisioning template version was created
+     * The date when the provisioning template version was created
      * </p>
      * 
      * @param creationDate
-     *        The date when the fleet provisioning template version was created
+     *        The date when the provisioning template version was created
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -99,10 +99,10 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The date when the fleet provisioning template version was created
+     * The date when the provisioning template version was created
      * </p>
      * 
-     * @return The date when the fleet provisioning template version was created
+     * @return The date when the provisioning template version was created
      */
 
     public java.util.Date getCreationDate() {
@@ -111,11 +111,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The date when the fleet provisioning template version was created
+     * The date when the provisioning template version was created
      * </p>
      * 
      * @param creationDate
-     *        The date when the fleet provisioning template version was created
+     *        The date when the provisioning template version was created
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
      * @param isDefaultVersion
-     *        True if the fleet provisioning template version is the default version, otherwise false.
+     *        True if the provisioning template version is the default version, otherwise false.
      */
 
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
@@ -139,10 +139,10 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
-     * @return True if the fleet provisioning template version is the default version, otherwise false.
+     * @return True if the provisioning template version is the default version, otherwise false.
      */
 
     public Boolean getIsDefaultVersion() {
@@ -151,11 +151,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
      * @param isDefaultVersion
-     *        True if the fleet provisioning template version is the default version, otherwise false.
+     *        True if the provisioning template version is the default version, otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +166,10 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * True if the fleet provisioning template version is the default version, otherwise false.
+     * True if the provisioning template version is the default version, otherwise false.
      * </p>
      * 
-     * @return True if the fleet provisioning template version is the default version, otherwise false.
+     * @return True if the provisioning template version is the default version, otherwise false.
      */
 
     public Boolean isDefaultVersion() {

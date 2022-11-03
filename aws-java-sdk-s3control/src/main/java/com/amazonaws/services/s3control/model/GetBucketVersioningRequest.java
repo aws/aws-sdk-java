@@ -1,0 +1,177 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.s3control.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketVersioning" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetBucketVersioningRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the S3 on Outposts bucket.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
+     * The S3 on Outposts bucket to return the versioning state for.
+     * </p>
+     */
+    private String bucket;
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the S3 on Outposts bucket.
+     * </p>
+     * 
+     * @param accountId
+     *        The Amazon Web Services account ID of the S3 on Outposts bucket.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the S3 on Outposts bucket.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID of the S3 on Outposts bucket.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the S3 on Outposts bucket.
+     * </p>
+     * 
+     * @param accountId
+     *        The Amazon Web Services account ID of the S3 on Outposts bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBucketVersioningRequest withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The S3 on Outposts bucket to return the versioning state for.
+     * </p>
+     * 
+     * @param bucket
+     *        The S3 on Outposts bucket to return the versioning state for.
+     */
+
+    public void setBucket(String bucket) {
+        this.bucket = bucket;
+    }
+
+    /**
+     * <p>
+     * The S3 on Outposts bucket to return the versioning state for.
+     * </p>
+     * 
+     * @return The S3 on Outposts bucket to return the versioning state for.
+     */
+
+    public String getBucket() {
+        return this.bucket;
+    }
+
+    /**
+     * <p>
+     * The S3 on Outposts bucket to return the versioning state for.
+     * </p>
+     * 
+     * @param bucket
+     *        The S3 on Outposts bucket to return the versioning state for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBucketVersioningRequest withBucket(String bucket) {
+        setBucket(bucket);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getBucket() != null)
+            sb.append("Bucket: ").append(getBucket());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetBucketVersioningRequest == false)
+            return false;
+        GetBucketVersioningRequest other = (GetBucketVersioningRequest) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getBucket() == null ^ this.getBucket() == null)
+            return false;
+        if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GetBucketVersioningRequest clone() {
+        return (GetBucketVersioningRequest) super.clone();
+    }
+
+}

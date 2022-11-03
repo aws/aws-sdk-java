@@ -244,6 +244,10 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                         xmlWriter.endElement();
                                     }
                                 }
+
+                                if (originsItemsListValue.getOriginAccessControlId() != null) {
+                                    xmlWriter.startElement("OriginAccessControlId").value(originsItemsListValue.getOriginAccessControlId()).endElement();
+                                }
                                 xmlWriter.endElement();
                             }
                             xmlWriter.endElement();

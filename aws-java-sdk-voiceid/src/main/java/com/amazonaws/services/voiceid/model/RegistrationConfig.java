@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration definining the action to take when a duplicate fraudster is detected, and the similarity threshold
- * to use for detecting a duplicate fraudster during a batch fraudster registration job.
+ * The configuration defining the action to take when a duplicate fraudster is detected, and the similarity threshold to
+ * use for detecting a duplicate fraudster during a batch fraudster registration job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/RegistrationConfig" target="_top">AWS API

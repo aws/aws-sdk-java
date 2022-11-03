@@ -48,6 +48,10 @@ public class GeofenceGeometryJsonUnmarshaller implements Unmarshaller<GeofenceGe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Circle", targetDepth)) {
+                    context.nextToken();
+                    geofenceGeometry.setCircle(CircleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Polygon", targetDepth)) {
                     context.nextToken();
                     geofenceGeometry.setPolygon(new ListUnmarshaller<java.util.List<java.util.List<Double>>>(new ListUnmarshaller<java.util.List<Double>>(

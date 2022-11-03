@@ -36,6 +36,12 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
     private Integer seq;
 
     private String messageType;
+    /**
+     * <p>
+     * The duration of time in seconds for which you want to retry sending the ACK.
+     * </p>
+     */
+    private Integer ackModeRetryDurationSecs;
 
     /**
      * <p>
@@ -118,6 +124,46 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The duration of time in seconds for which you want to retry sending the ACK.
+     * </p>
+     * 
+     * @param ackModeRetryDurationSecs
+     *        The duration of time in seconds for which you want to retry sending the ACK.
+     */
+
+    public void setAckModeRetryDurationSecs(Integer ackModeRetryDurationSecs) {
+        this.ackModeRetryDurationSecs = ackModeRetryDurationSecs;
+    }
+
+    /**
+     * <p>
+     * The duration of time in seconds for which you want to retry sending the ACK.
+     * </p>
+     * 
+     * @return The duration of time in seconds for which you want to retry sending the ACK.
+     */
+
+    public Integer getAckModeRetryDurationSecs() {
+        return this.ackModeRetryDurationSecs;
+    }
+
+    /**
+     * <p>
+     * The duration of time in seconds for which you want to retry sending the ACK.
+     * </p>
+     * 
+     * @param ackModeRetryDurationSecs
+     *        The duration of time in seconds for which you want to retry sending the ACK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkSendDataToDevice withAckModeRetryDurationSecs(Integer ackModeRetryDurationSecs) {
+        setAckModeRetryDurationSecs(ackModeRetryDurationSecs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -132,7 +178,9 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
         if (getSeq() != null)
             sb.append("Seq: ").append(getSeq()).append(",");
         if (getMessageType() != null)
-            sb.append("MessageType: ").append(getMessageType());
+            sb.append("MessageType: ").append(getMessageType()).append(",");
+        if (getAckModeRetryDurationSecs() != null)
+            sb.append("AckModeRetryDurationSecs: ").append(getAckModeRetryDurationSecs());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +203,10 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
             return false;
         if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
             return false;
+        if (other.getAckModeRetryDurationSecs() == null ^ this.getAckModeRetryDurationSecs() == null)
+            return false;
+        if (other.getAckModeRetryDurationSecs() != null && other.getAckModeRetryDurationSecs().equals(this.getAckModeRetryDurationSecs()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +217,7 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getSeq() == null) ? 0 : getSeq().hashCode());
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
+        hashCode = prime * hashCode + ((getAckModeRetryDurationSecs() == null) ? 0 : getAckModeRetryDurationSecs().hashCode());
         return hashCode;
     }
 

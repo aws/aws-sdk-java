@@ -38,6 +38,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateAccountSubscriptionResult createAccountSubscription(CreateAccountSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAnalysisResult createAnalysis(CreateAnalysisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +209,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountSubscriptionResult describeAccountSubscription(DescribeAccountSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -574,6 +584,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UpdateIpRestrictionResult updateIpRestriction(UpdateIpRestrictionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePublicSharingSettingsResult updatePublicSharingSettings(UpdatePublicSharingSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

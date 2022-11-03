@@ -20,7 +20,6 @@ import java.security.SecureRandom;
 
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.s3.AmazonS3EncryptionV2;
 import com.amazonaws.services.s3.internal.crypto.CryptoRuntime;
 
 /**
@@ -306,7 +305,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         boolean preferBC = (cryptoMode == CryptoMode.AuthenticatedEncryption)
                            || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
 
-        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider);
+        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider)
+                || CryptoRuntime.preferDefaultSecurityProvider();
 
         if (preferBC && !haveOverride) {
             if (!CryptoRuntime.isBouncyCastleAvailable()) {

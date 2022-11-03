@@ -67,6 +67,20 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * Contains list of scanned and skipped EBS volumes with details.
+     * </p>
+     */
+    private EbsVolumeDetails ebsVolumeDetails;
+    /**
+     * <p>
+     * Contains information about the details of the ECS Cluster.
+     * </p>
+     */
+    private EcsClusterDetails ecsClusterDetails;
+
+    private Container containerDetails;
 
     /**
      * <p>
@@ -351,6 +365,112 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains list of scanned and skipped EBS volumes with details.
+     * </p>
+     * 
+     * @param ebsVolumeDetails
+     *        Contains list of scanned and skipped EBS volumes with details.
+     */
+
+    public void setEbsVolumeDetails(EbsVolumeDetails ebsVolumeDetails) {
+        this.ebsVolumeDetails = ebsVolumeDetails;
+    }
+
+    /**
+     * <p>
+     * Contains list of scanned and skipped EBS volumes with details.
+     * </p>
+     * 
+     * @return Contains list of scanned and skipped EBS volumes with details.
+     */
+
+    public EbsVolumeDetails getEbsVolumeDetails() {
+        return this.ebsVolumeDetails;
+    }
+
+    /**
+     * <p>
+     * Contains list of scanned and skipped EBS volumes with details.
+     * </p>
+     * 
+     * @param ebsVolumeDetails
+     *        Contains list of scanned and skipped EBS volumes with details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withEbsVolumeDetails(EbsVolumeDetails ebsVolumeDetails) {
+        setEbsVolumeDetails(ebsVolumeDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the details of the ECS Cluster.
+     * </p>
+     * 
+     * @param ecsClusterDetails
+     *        Contains information about the details of the ECS Cluster.
+     */
+
+    public void setEcsClusterDetails(EcsClusterDetails ecsClusterDetails) {
+        this.ecsClusterDetails = ecsClusterDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the details of the ECS Cluster.
+     * </p>
+     * 
+     * @return Contains information about the details of the ECS Cluster.
+     */
+
+    public EcsClusterDetails getEcsClusterDetails() {
+        return this.ecsClusterDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the details of the ECS Cluster.
+     * </p>
+     * 
+     * @param ecsClusterDetails
+     *        Contains information about the details of the ECS Cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withEcsClusterDetails(EcsClusterDetails ecsClusterDetails) {
+        setEcsClusterDetails(ecsClusterDetails);
+        return this;
+    }
+
+    /**
+     * @param containerDetails
+     */
+
+    public void setContainerDetails(Container containerDetails) {
+        this.containerDetails = containerDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public Container getContainerDetails() {
+        return this.containerDetails;
+    }
+
+    /**
+     * @param containerDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withContainerDetails(Container containerDetails) {
+        setContainerDetails(containerDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -373,7 +493,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         if (getKubernetesDetails() != null)
             sb.append("KubernetesDetails: ").append(getKubernetesDetails()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType());
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getEbsVolumeDetails() != null)
+            sb.append("EbsVolumeDetails: ").append(getEbsVolumeDetails()).append(",");
+        if (getEcsClusterDetails() != null)
+            sb.append("EcsClusterDetails: ").append(getEcsClusterDetails()).append(",");
+        if (getContainerDetails() != null)
+            sb.append("ContainerDetails: ").append(getContainerDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -412,6 +538,18 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getEbsVolumeDetails() == null ^ this.getEbsVolumeDetails() == null)
+            return false;
+        if (other.getEbsVolumeDetails() != null && other.getEbsVolumeDetails().equals(this.getEbsVolumeDetails()) == false)
+            return false;
+        if (other.getEcsClusterDetails() == null ^ this.getEcsClusterDetails() == null)
+            return false;
+        if (other.getEcsClusterDetails() != null && other.getEcsClusterDetails().equals(this.getEcsClusterDetails()) == false)
+            return false;
+        if (other.getContainerDetails() == null ^ this.getContainerDetails() == null)
+            return false;
+        if (other.getContainerDetails() != null && other.getContainerDetails().equals(this.getContainerDetails()) == false)
+            return false;
         return true;
     }
 
@@ -426,6 +564,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEksClusterDetails() == null) ? 0 : getEksClusterDetails().hashCode());
         hashCode = prime * hashCode + ((getKubernetesDetails() == null) ? 0 : getKubernetesDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getEbsVolumeDetails() == null) ? 0 : getEbsVolumeDetails().hashCode());
+        hashCode = prime * hashCode + ((getEcsClusterDetails() == null) ? 0 : getEcsClusterDetails().hashCode());
+        hashCode = prime * hashCode + ((getContainerDetails() == null) ? 0 : getContainerDetails().hashCode());
         return hashCode;
     }
 

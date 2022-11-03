@@ -28,19 +28,18 @@ public class CreateLocationObjectStorageResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the ARN of the object storage system location that you create.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the ARN of the object storage system location that you create.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *        location.
+     *        Specifies the ARN of the object storage system location that you create.
      */
 
     public void setLocationArn(String locationArn) {
@@ -49,11 +48,10 @@ public class CreateLocationObjectStorageResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the ARN of the object storage system location that you create.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *         location.
+     * @return Specifies the ARN of the object storage system location that you create.
      */
 
     public String getLocationArn() {
@@ -62,12 +60,11 @@ public class CreateLocationObjectStorageResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * Specifies the ARN of the object storage system location that you create.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *        location.
+     *        Specifies the ARN of the object storage system location that you create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

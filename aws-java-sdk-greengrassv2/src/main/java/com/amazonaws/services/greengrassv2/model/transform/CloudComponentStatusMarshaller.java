@@ -35,6 +35,10 @@ public class CloudComponentStatusMarshaller {
             .marshallLocationName("message").build();
     private static final MarshallingInfo<Map> ERRORS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("errors").build();
+    private static final MarshallingInfo<String> VENDORGUIDANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vendorGuidance").build();
+    private static final MarshallingInfo<String> VENDORGUIDANCEMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vendorGuidanceMessage").build();
 
     private static final CloudComponentStatusMarshaller instance = new CloudComponentStatusMarshaller();
 
@@ -55,6 +59,8 @@ public class CloudComponentStatusMarshaller {
             protocolMarshaller.marshall(cloudComponentStatus.getComponentState(), COMPONENTSTATE_BINDING);
             protocolMarshaller.marshall(cloudComponentStatus.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(cloudComponentStatus.getErrors(), ERRORS_BINDING);
+            protocolMarshaller.marshall(cloudComponentStatus.getVendorGuidance(), VENDORGUIDANCE_BINDING);
+            protocolMarshaller.marshall(cloudComponentStatus.getVendorGuidanceMessage(), VENDORGUIDANCEMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

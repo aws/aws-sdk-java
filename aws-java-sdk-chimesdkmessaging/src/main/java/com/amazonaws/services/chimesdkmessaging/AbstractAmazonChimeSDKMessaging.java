@@ -204,6 +204,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
     }
 
     @Override
+    public ListSubChannelsResult listSubChannels(ListSubChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -215,6 +220,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
 
     @Override
     public RedactChannelMessageResult redactChannelMessage(RedactChannelMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchChannelsResult searchChannels(SearchChannelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -48,6 +48,10 @@ public class GetExperimentResultsResultJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("details", targetDepth)) {
+                    context.nextToken();
+                    getExperimentResultsResult.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("reports", targetDepth)) {
                     context.nextToken();
                     getExperimentResultsResult.setReports(new ListUnmarshaller<ExperimentReport>(ExperimentReportJsonUnmarshaller.getInstance())

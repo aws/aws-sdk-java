@@ -108,6 +108,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                     context.nextToken();
                     h265Settings.setGopSizeUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hrdBufferFinalFillPercentage", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setHrdBufferFinalFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("hrdBufferInitialFillPercentage", targetDepth)) {
                     context.nextToken();
                     h265Settings.setHrdBufferInitialFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));

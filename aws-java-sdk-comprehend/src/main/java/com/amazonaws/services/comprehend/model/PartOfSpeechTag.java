@@ -21,7 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the
  * part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can
- * identify, see <a>how-syntax</a>.
+ * identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend
+ * Developer Guide.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PartOfSpeechTag" target="_top">AWS API

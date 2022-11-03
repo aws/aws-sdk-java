@@ -30,6 +30,13 @@ public class VirtualGatewayFileAccessLog implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     * <code>text_format</code>.
+     * </p>
+     */
+    private LoggingFormat format;
+    /**
+     * <p>
      * The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out
      * and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs
      * to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's
@@ -37,6 +44,52 @@ public class VirtualGatewayFileAccessLog implements Serializable, Cloneable, Str
      * </p>
      */
     private String path;
+
+    /**
+     * <p>
+     * The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     * <code>text_format</code>.
+     * </p>
+     * 
+     * @param format
+     *        The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     *        <code>text_format</code>.
+     */
+
+    public void setFormat(LoggingFormat format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     * <code>text_format</code>.
+     * </p>
+     * 
+     * @return The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     *         <code>text_format</code>.
+     */
+
+    public LoggingFormat getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     * <code>text_format</code>.
+     * </p>
+     * 
+     * @param format
+     *        The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or
+     *        <code>text_format</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualGatewayFileAccessLog withFormat(LoggingFormat format) {
+        setFormat(format);
+        return this;
+    }
 
     /**
      * <p>
@@ -108,6 +161,8 @@ public class VirtualGatewayFileAccessLog implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getPath() != null)
             sb.append("Path: ").append(getPath());
         sb.append("}");
@@ -124,6 +179,10 @@ public class VirtualGatewayFileAccessLog implements Serializable, Cloneable, Str
         if (obj instanceof VirtualGatewayFileAccessLog == false)
             return false;
         VirtualGatewayFileAccessLog other = (VirtualGatewayFileAccessLog) obj;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
         if (other.getPath() == null ^ this.getPath() == null)
             return false;
         if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
@@ -136,6 +195,7 @@ public class VirtualGatewayFileAccessLog implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         return hashCode;
     }

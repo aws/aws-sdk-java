@@ -45,6 +45,8 @@ public class ProvisionedRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingInfo").build();
     private static final MarshallingInfo<Integer> NUMBEROFBROKERNODES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfBrokerNodes").build();
+    private static final MarshallingInfo<String> STORAGEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageMode").build();
 
     private static final ProvisionedRequestMarshaller instance = new ProvisionedRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class ProvisionedRequestMarshaller {
             protocolMarshaller.marshall(provisionedRequest.getKafkaVersion(), KAFKAVERSION_BINDING);
             protocolMarshaller.marshall(provisionedRequest.getLoggingInfo(), LOGGINGINFO_BINDING);
             protocolMarshaller.marshall(provisionedRequest.getNumberOfBrokerNodes(), NUMBEROFBROKERNODES_BINDING);
+            protocolMarshaller.marshall(provisionedRequest.getStorageMode(), STORAGEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

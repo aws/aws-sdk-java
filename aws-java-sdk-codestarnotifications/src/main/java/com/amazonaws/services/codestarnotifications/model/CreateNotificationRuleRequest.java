@@ -27,7 +27,7 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     * The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
      * </p>
      */
     private String name;
@@ -41,21 +41,23 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources
-     * include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
+     * include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      * </p>
      */
     private String resource;
     /**
      * <p>
-     * A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     * A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     * associate with the notification rule.
      * </p>
      */
     private java.util.List<Target> targets;
     /**
      * <p>
-     * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
-     * CodeStar Notifications and/or the service for the resource for which the notification is created.
+     * The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the
+     * contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental
+     * information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification
+     * is created.
      * </p>
      */
     private String detailType;
@@ -67,33 +69,34 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     * A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     * notifications aren't sent for the notification rule.
+     * The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     * <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     * The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
      * </p>
      * 
      * @param name
-     *        The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     *        The name for the notification rule. Notification rule names must be unique in your Amazon Web Services
+     *        account.
      */
 
     public void setName(String name) {
@@ -102,10 +105,11 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     * The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
      * </p>
      * 
-     * @return The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     * @return The name for the notification rule. Notification rule names must be unique in your Amazon Web Services
+     *         account.
      */
 
     public String getName() {
@@ -114,11 +118,12 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     * The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
      * </p>
      * 
      * @param name
-     *        The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+     *        The name for the notification rule. Notification rule names must be unique in your Amazon Web Services
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,13 +213,12 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources
-     * include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
+     * include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      * </p>
      * 
      * @param resource
      *        The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported
-     *        resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS
-     *        CodeBuild.
+     *        resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      */
 
     public void setResource(String resource) {
@@ -224,12 +228,11 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources
-     * include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
+     * include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported
-     *         resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in
-     *         AWS CodeBuild.
+     *         resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      */
 
     public String getResource() {
@@ -239,13 +242,12 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources
-     * include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
+     * include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      * </p>
      * 
      * @param resource
      *        The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported
-     *        resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS
-     *        CodeBuild.
+     *        resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,10 +258,12 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     * A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     * associate with the notification rule.
      * </p>
      * 
-     * @return A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     * @return A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients
+     *         to associate with the notification rule.
      */
 
     public java.util.List<Target> getTargets() {
@@ -268,11 +272,13 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     * A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     * associate with the notification rule.
      * </p>
      * 
      * @param targets
-     *        A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     *        A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     *        associate with the notification rule.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -286,7 +292,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     * A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     * associate with the notification rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -295,7 +302,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param targets
-     *        A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     *        A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     *        associate with the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,11 +319,13 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     * A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     * associate with the notification rule.
      * </p>
      * 
      * @param targets
-     *        A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+     *        A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to
+     *        associate with the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,16 +336,17 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
-     * CodeStar Notifications and/or the service for the resource for which the notification is created.
+     * The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the
+     * contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental
+     * information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification
+     * is created.
      * </p>
      * 
      * @param detailType
-     *        The level of detail to include in the notifications for this resource. BASIC will include only the
-     *        contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
-     *        created.
+     *        The level of detail to include in the notifications for this resource. <code>BASIC</code> will include
+     *        only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any
+     *        supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for
+     *        which the notification is created.
      * @see DetailType
      */
 
@@ -345,15 +356,16 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
-     * CodeStar Notifications and/or the service for the resource for which the notification is created.
+     * The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the
+     * contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental
+     * information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification
+     * is created.
      * </p>
      * 
-     * @return The level of detail to include in the notifications for this resource. BASIC will include only the
-     *         contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental
-     *         information provided by AWS CodeStar Notifications and/or the service for the resource for which the
-     *         notification is created.
+     * @return The level of detail to include in the notifications for this resource. <code>BASIC</code> will include
+     *         only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include
+     *         any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource
+     *         for which the notification is created.
      * @see DetailType
      */
 
@@ -363,16 +375,17 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
-     * CodeStar Notifications and/or the service for the resource for which the notification is created.
+     * The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the
+     * contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental
+     * information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification
+     * is created.
      * </p>
      * 
      * @param detailType
-     *        The level of detail to include in the notifications for this resource. BASIC will include only the
-     *        contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
-     *        created.
+     *        The level of detail to include in the notifications for this resource. <code>BASIC</code> will include
+     *        only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any
+     *        supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for
+     *        which the notification is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetailType
      */
@@ -384,16 +397,17 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The level of detail to include in the notifications for this resource. BASIC will include only the contents of
-     * the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS
-     * CodeStar Notifications and/or the service for the resource for which the notification is created.
+     * The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the
+     * contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental
+     * information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification
+     * is created.
      * </p>
      * 
      * @param detailType
-     *        The level of detail to include in the notifications for this resource. BASIC will include only the
-     *        contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-     *        provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is
-     *        created.
+     *        The level of detail to include in the notifications for this resource. <code>BASIC</code> will include
+     *        only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any
+     *        supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for
+     *        which the notification is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetailType
      */
@@ -411,8 +425,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      * 
@@ -421,8 +435,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      *        be repeated with a changed parameter. If a request with the same parameters is received and a token is
      *        included, the request returns information about the initial request that used that token.</p> <note>
      *        <p>
-     *        The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is
-     *        created for you.
+     *        The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services
+     *        SDK, an idempotency token is created for you.
      *        </p>
      */
 
@@ -438,8 +452,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      * 
@@ -447,8 +461,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      *         be repeated with a changed parameter. If a request with the same parameters is received and a token is
      *         included, the request returns information about the initial request that used that token.</p> <note>
      *         <p>
-     *         The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is
-     *         created for you.
+     *         The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services
+     *         SDK, an idempotency token is created for you.
      *         </p>
      */
 
@@ -464,8 +478,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      * 
@@ -474,8 +488,8 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
      *        be repeated with a changed parameter. If a request with the same parameters is received and a token is
      *        included, the request returns information about the initial request that used that token.</p> <note>
      *        <p>
-     *        The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is
-     *        created for you.
+     *        The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services
+     *        SDK, an idempotency token is created for you.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -487,10 +501,10 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     * A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      * </p>
      * 
-     * @return A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     * @return A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      */
 
     public java.util.Map<String, String> getTags() {
@@ -499,11 +513,11 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     * A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      * </p>
      * 
      * @param tags
-     *        A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     *        A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -512,11 +526,11 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     * A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      * </p>
      * 
      * @param tags
-     *        A list of tags to apply to this notification rule. Key names cannot start with "aws".
+     *        A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -555,13 +569,13 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     * notifications aren't sent for the notification rule.
+     * The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     * <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * </p>
      * 
      * @param status
-     *        The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     *        notifications aren't sent for the notification rule.
+     *        The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     *        <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * @see NotificationRuleStatus
      */
 
@@ -571,12 +585,12 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     * notifications aren't sent for the notification rule.
+     * The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     * <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * </p>
      * 
-     * @return The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     *         notifications aren't sent for the notification rule.
+     * @return The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     *         <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * @see NotificationRuleStatus
      */
 
@@ -586,13 +600,13 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     * notifications aren't sent for the notification rule.
+     * The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     * <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * </p>
      * 
      * @param status
-     *        The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     *        notifications aren't sent for the notification rule.
+     *        The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     *        <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationRuleStatus
      */
@@ -604,13 +618,13 @@ public class CreateNotificationRuleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     * notifications aren't sent for the notification rule.
+     * The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     * <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * </p>
      * 
      * @param status
-     *        The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED,
-     *        notifications aren't sent for the notification rule.
+     *        The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to
+     *        <code>DISABLED</code>, notifications aren't sent for the notification rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationRuleStatus
      */

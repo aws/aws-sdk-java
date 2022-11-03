@@ -28,7 +28,8 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String indexName;
     /**
      * <p>
-     * The search query string.
+     * The search query string. For more information about the search query syntax, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      * </p>
      */
     private String queryString;
@@ -93,11 +94,13 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The search query string.
+     * The search query string. For more information about the search query syntax, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      * </p>
      * 
      * @param queryString
-     *        The search query string.
+     *        The search query string. For more information about the search query syntax, see <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      */
 
     public void setQueryString(String queryString) {
@@ -106,10 +109,12 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The search query string.
+     * The search query string. For more information about the search query syntax, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      * </p>
      * 
-     * @return The search query string.
+     * @return The search query string. For more information about the search query syntax, see <a
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      */
 
     public String getQueryString() {
@@ -118,11 +123,13 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The search query string.
+     * The search query string. For more information about the search query syntax, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      * </p>
      * 
      * @param queryString
-     *        The search query string.
+     *        The search query string. For more information about the search query syntax, see <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry
- * your operation.
+ * The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then
+ * retry your operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -19,8 +19,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that enables you to configure your category to be applied to call analytics jobs where either the customer
- * or agent was interrupted.
+ * Flag the presence or absence of periods of silence in your Call Analytics transcription output.
+ * </p>
+ * <p>
+ * Rules using <code>NonTalkTimeFilter</code> are designed to match:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The presence of silence at specified periods throughout the call
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The presence of speech at specified periods throughout the call
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * See <a href=
+ * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
+ * >Rule criteria</a> for usage examples.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/NonTalkTimeFilter" target="_top">AWS API
@@ -31,41 +50,41 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The duration of the period when neither the customer nor agent was talking.
+     * Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a
+     * silent period that lasts 30000 milliseconds.
      * </p>
      */
     private Long threshold;
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when no one is talking. For example, you
-     * could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You could also
-     * specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period
+     * of silence. See for more detail.
      * </p>
      */
     private AbsoluteTimeRange absoluteTimeRange;
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was silence. For example, you
-     * can specify the first half of the call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation can vary between calls, you can
-     * apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for a
+     * period of silence. See for more detail.
      * </p>
      */
     private RelativeTimeRange relativeTimeRange;
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period when people were talking.
+     * Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      * </p>
      */
     private Boolean negate;
 
     /**
      * <p>
-     * The duration of the period when neither the customer nor agent was talking.
+     * Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a
+     * silent period that lasts 30000 milliseconds.
      * </p>
      * 
      * @param threshold
-     *        The duration of the period when neither the customer nor agent was talking.
+     *        Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can
+     *        flag a silent period that lasts 30000 milliseconds.
      */
 
     public void setThreshold(Long threshold) {
@@ -74,10 +93,12 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The duration of the period when neither the customer nor agent was talking.
+     * Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a
+     * silent period that lasts 30000 milliseconds.
      * </p>
      * 
-     * @return The duration of the period when neither the customer nor agent was talking.
+     * @return Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can
+     *         flag a silent period that lasts 30000 milliseconds.
      */
 
     public Long getThreshold() {
@@ -86,11 +107,13 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The duration of the period when neither the customer nor agent was talking.
+     * Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a
+     * silent period that lasts 30000 milliseconds.
      * </p>
      * 
      * @param threshold
-     *        The duration of the period when neither the customer nor agent was talking.
+     *        Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can
+     *        flag a silent period that lasts 30000 milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,15 +124,13 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when no one is talking. For example, you
-     * could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You could also
-     * specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period
+     * of silence. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        An object you can use to specify a time range (in milliseconds) for when no one is talking. For example,
-     *        you could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You
-     *        could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a
+     *        period of silence. See for more detail.
      */
 
     public void setAbsoluteTimeRange(AbsoluteTimeRange absoluteTimeRange) {
@@ -118,14 +139,12 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when no one is talking. For example, you
-     * could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You could also
-     * specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period
+     * of silence. See for more detail.
      * </p>
      * 
-     * @return An object you can use to specify a time range (in milliseconds) for when no one is talking. For example,
-     *         you could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You
-     *         could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * @return Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a
+     *         period of silence. See for more detail.
      */
 
     public AbsoluteTimeRange getAbsoluteTimeRange() {
@@ -134,15 +153,13 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object you can use to specify a time range (in milliseconds) for when no one is talking. For example, you
-     * could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You could also
-     * specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period
+     * of silence. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        An object you can use to specify a time range (in milliseconds) for when no one is talking. For example,
-     *        you could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You
-     *        could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
+     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a
+     *        period of silence. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,17 +170,13 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was silence. For example, you
-     * can specify the first half of the call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation can vary between calls, you can
-     * apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for a
+     * period of silence. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        An object that allows percentages to specify the proportion of the call where there was silence. For
-     *        example, you can specify the first half of the call. You can also specify the period of time between
-     *        halfway through to three-quarters of the way through the call. Because the length of conversation can vary
-     *        between calls, you can apply relative time ranges across all calls.
+     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
+     *        a period of silence. See for more detail.
      */
 
     public void setRelativeTimeRange(RelativeTimeRange relativeTimeRange) {
@@ -172,16 +185,12 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was silence. For example, you
-     * can specify the first half of the call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation can vary between calls, you can
-     * apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for a
+     * period of silence. See for more detail.
      * </p>
      * 
-     * @return An object that allows percentages to specify the proportion of the call where there was silence. For
-     *         example, you can specify the first half of the call. You can also specify the period of time between
-     *         halfway through to three-quarters of the way through the call. Because the length of conversation can
-     *         vary between calls, you can apply relative time ranges across all calls.
+     * @return Allows you to specify a time range (in percentage) in your media file, during which you want to search
+     *         for a period of silence. See for more detail.
      */
 
     public RelativeTimeRange getRelativeTimeRange() {
@@ -190,17 +199,13 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object that allows percentages to specify the proportion of the call where there was silence. For example, you
-     * can specify the first half of the call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation can vary between calls, you can
-     * apply relative time ranges across all calls.
+     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for a
+     * period of silence. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        An object that allows percentages to specify the proportion of the call where there was silence. For
-     *        example, you can specify the first half of the call. You can also specify the period of time between
-     *        halfway through to three-quarters of the way through the call. Because the length of conversation can vary
-     *        between calls, you can apply relative time ranges across all calls.
+     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
+     *        a period of silence. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +216,11 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period when people were talking.
+     * Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to look for a time period when people were talking.
+     *        Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      */
 
     public void setNegate(Boolean negate) {
@@ -224,10 +229,10 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period when people were talking.
+     * Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to look for a time period when people were talking.
+     * @return Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      */
 
     public Boolean getNegate() {
@@ -236,11 +241,11 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period when people were talking.
+     * Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to look for a time period when people were talking.
+     *        Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +256,10 @@ public class NonTalkTimeFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to look for a time period when people were talking.
+     * Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to look for a time period when people were talking.
+     * @return Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence
      */
 
     public Boolean isNegate() {

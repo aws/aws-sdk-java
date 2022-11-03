@@ -45,12 +45,12 @@ import com.amazonaws.services.wafv2.model.*;
  * </note>
  * <p>
  * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon
- * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. WAF also lets
- * you control access to your content. Based on conditions that you specify, such as the IP addresses that requests
- * originate from or the values of query strings, the Amazon API Gateway REST API, CloudFront distribution, the
- * Application Load Balancer, or the AppSync GraphQL API responds to requests either with the requested content or with
- * an HTTP 403 status code (Forbidden). You also can configure CloudFront to return a custom error page when a request
- * is blocked.
+ * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+ * Cognito user pool. WAF also lets you control access to your content. Based on conditions that you specify, such as
+ * the IP addresses that requests originate from or the values of query strings, the Amazon API Gateway REST API,
+ * CloudFront distribution, the Application Load Balancer, the AppSync GraphQL API, or the Amazon Cognito user pool
+ * responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You also can
+ * configure CloudFront to return a custom error page when a request is blocked.
  * </p>
  * <p>
  * This API guide is for developers who need detailed information about WAF API actions, data types, and errors. For
@@ -65,7 +65,7 @@ import com.amazonaws.services.wafv2.model.*;
  * <li>
  * <p>
  * For regional applications, you can use any of the endpoints in the list. A regional application can be an Application
- * Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+ * Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
  * </p>
  * </li>
  * <li>
@@ -118,7 +118,8 @@ public interface AWSWAFV2 {
     /**
      * <p>
      * Associates a web ACL with a regional application resource, to protect the resource. A regional application can be
-     * an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito
+     * user pool.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate
@@ -169,10 +170,14 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.AssociateWebACL
@@ -225,7 +230,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFLimitsExceededException
      *         WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more
@@ -235,8 +242,10 @@ public interface AWSWAFV2 {
      *         WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the
      *         resource, and try again.
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFSubscriptionNotFoundException
      *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
      *         yet.
@@ -244,6 +253,8 @@ public interface AWSWAFV2 {
      *         The operation failed because the specified version for the managed rule group has expired. You can
      *         retrieve the available versions for the managed rule group by calling
      *         <a>ListAvailableManagedRuleGroupVersions</a>.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.CheckCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity" target="_top">AWS API
      *      Documentation</a>
@@ -302,8 +313,7 @@ public interface AWSWAFV2 {
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.CreateIPSet
@@ -363,8 +373,7 @@ public interface AWSWAFV2 {
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.CreateRegexPatternSet
@@ -427,18 +436,21 @@ public interface AWSWAFV2 {
      *         information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      *         quotas</a> in the <i>WAF Developer Guide</i>.
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
      *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
      *         yet.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.CreateRuleGroup
@@ -457,7 +469,8 @@ public interface AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.
+     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool.
      * </p>
      * 
      * @param createWebACLRequest
@@ -506,15 +519,18 @@ public interface AWSWAFV2 {
      *         WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the
      *         resource, and try again.
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
      *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
      *         yet.
@@ -533,6 +549,10 @@ public interface AWSWAFV2 {
      *         Alternately, you can suppress this warning by adding the following tag to the resource that you provide
      *         to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:
      *         <code>true</code>).
+     * @throws WAFExpiredManagedRuleGroupVersionException
+     *         The operation failed because the specified version for the managed rule group has expired. You can
+     *         retrieve the available versions for the managed rule group by calling
+     *         <a>ListAvailableManagedRuleGroupVersions</a>.
      * @sample AWSWAFV2.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -578,7 +598,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
@@ -627,23 +649,20 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteIPSet
@@ -663,7 +682,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
@@ -712,7 +733,9 @@ public interface AWSWAFV2 {
      * @param deletePermissionPolicyRequest
      * @return Result of the DeletePermissionPolicy operation returned by the service.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInternalErrorException
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
@@ -783,23 +806,20 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteRegexPatternSet
@@ -844,23 +864,20 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteRuleGroup
@@ -955,23 +972,20 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteWebACL
@@ -1019,7 +1033,9 @@ public interface AWSWAFV2 {
      *         WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the
      *         resource, and try again.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @throws WAFExpiredManagedRuleGroupVersionException
@@ -1036,7 +1052,7 @@ public interface AWSWAFV2 {
      * <p>
      * Disassociates the specified regional application resource from any existing web ACL association. A resource can
      * have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon
-     * API Gateway REST API, or an AppSync GraphQL API.
+     * API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
@@ -1077,7 +1093,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.DisassociateWebACL
@@ -1092,8 +1110,7 @@ public interface AWSWAFV2 {
      * </p>
      * <p>
      * The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish
-     * and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-     * For more information, see <a
+     * and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -1104,7 +1121,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidParameterException
      *         The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
      *         <ul>
@@ -1174,7 +1193,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetIPSet
@@ -1194,7 +1215,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidParameterException
      *         The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
      *         <ul>
@@ -1275,7 +1298,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetManagedRuleSet
@@ -1290,8 +1315,7 @@ public interface AWSWAFV2 {
      * </p>
      * <p>
      * The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish
-     * and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-     * For more information, see <a
+     * and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -1302,7 +1326,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidParameterException
      *         The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
      *         <ul>
@@ -1347,7 +1373,9 @@ public interface AWSWAFV2 {
      * @param getPermissionPolicyRequest
      * @return Result of the GetPermissionPolicy operation returned by the service.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInternalErrorException
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
@@ -1431,7 +1459,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetRateBasedStatementManagedKeys
@@ -1476,7 +1506,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetRegexPatternSet
@@ -1521,7 +1553,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetRuleGroup
@@ -1546,7 +1580,9 @@ public interface AWSWAFV2 {
      * @param getSampledRequestsRequest
      * @return Result of the GetSampledRequests operation returned by the service.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInternalErrorException
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
@@ -1617,7 +1653,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetWebACL
@@ -1637,7 +1675,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidParameterException
      *         The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
      *         <ul>
@@ -1664,8 +1704,10 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.GetWebACLForResource
@@ -1710,7 +1752,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.ListAvailableManagedRuleGroupVersions
@@ -1911,8 +1955,7 @@ public interface AWSWAFV2 {
      * </p>
      * <p>
      * The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish
-     * and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-     * For more information, see <a
+     * and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -2011,7 +2054,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidParameterException
      *         The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
      *         <ul>
@@ -2131,12 +2176,13 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.ListTagsForResource
@@ -2243,7 +2289,9 @@ public interface AWSWAFV2 {
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
@@ -2356,7 +2404,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
@@ -2400,7 +2450,9 @@ public interface AWSWAFV2 {
      * @param putPermissionPolicyRequest
      * @return Result of the PutPermissionPolicy operation returned by the service.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInternalErrorException
      *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
      *         request.
@@ -2521,12 +2573,13 @@ public interface AWSWAFV2 {
      *         information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      *         quotas</a> in the <i>WAF Developer Guide</i>.
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.TagResource
@@ -2574,12 +2627,13 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
-     *         WAF couldn’t perform your tagging operation because of an internal error. Retry
-     *         ybjectNoteWebRequestComponentour request.
+     *         WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.UntagResource
@@ -2641,7 +2695,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFDuplicateItemException
      *         WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an
      *         existing one.
@@ -2665,7 +2721,7 @@ public interface AWSWAFV2 {
     /**
      * <p>
      * Updates the expiration information for your managed rule set. Use this to initiate the expiration of a managed
-     * rule group version. After you initiate expiration for a version, WAF excludes it from the reponse to
+     * rule group version. After you initiate expiration for a version, WAF excludes it from the response to
      * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group.
      * </p>
      * <note>
@@ -2711,7 +2767,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFOptimisticLockException
      *         WAF couldn’t save your changes because you tried to update or delete a resource that has changed since
      *         you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and
@@ -2779,7 +2837,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFDuplicateItemException
      *         WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an
      *         existing one.
@@ -2859,7 +2919,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFDuplicateItemException
      *         WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an
      *         existing one.
@@ -2873,8 +2935,10 @@ public interface AWSWAFV2 {
      *         information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      *         quotas</a> in the <i>WAF Developer Guide</i>.
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFSubscriptionNotFoundException
      *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
      *         yet.
@@ -2901,7 +2965,7 @@ public interface AWSWAFV2 {
 
     /**
      * <p>
-     * Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continous coverage to the resources
+     * Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continuous coverage to the resources
      * that you have associated with the web ACL.
      * </p>
      * <p>
@@ -2927,7 +2991,8 @@ public interface AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.
+     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -2961,7 +3026,9 @@ public interface AWSWAFV2 {
      *         </p>
      *         </li>
      * @throws WAFNonexistentItemException
-     *         WAF couldn’t perform the operation because your resource doesn’t exist.
+     *         WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate.
      * @throws WAFDuplicateItemException
      *         WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an
      *         existing one.
@@ -2978,8 +3045,10 @@ public interface AWSWAFV2 {
      *         WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the
      *         resource, and try again.
      * @throws WAFUnavailableEntityException
-     *         WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are
-     *         specifying in your request parameters and then retry the operation.
+     *         WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource
+     *         that you're using in this operation, you might just need to wait a few minutes. It can take from a few
+     *         seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in
+     *         your request parameters and then retry the operation.
      * @throws WAFSubscriptionNotFoundException
      *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
      *         yet.

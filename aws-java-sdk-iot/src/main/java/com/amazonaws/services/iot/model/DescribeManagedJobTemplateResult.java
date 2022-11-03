@@ -53,6 +53,12 @@ public class DescribeManagedJobTemplateResult extends com.amazonaws.AmazonWebSer
      * A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed
      * template.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      */
     private java.util.List<DocumentParameter> documentParameters;
     /**
@@ -297,9 +303,19 @@ public class DescribeManagedJobTemplateResult extends com.amazonaws.AmazonWebSer
      * A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed
      * template.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @return A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a
-     *         managed template.
+     *         managed template.</p> <note>
+     *         <p>
+     *         <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *         templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *         </p>
      */
 
     public java.util.List<DocumentParameter> getDocumentParameters() {
@@ -311,10 +327,20 @@ public class DescribeManagedJobTemplateResult extends com.amazonaws.AmazonWebSer
      * A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed
      * template.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
      *        A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a
-     *        managed template.
+     *        managed template.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      */
 
     public void setDocumentParameters(java.util.Collection<DocumentParameter> documentParameters) {
@@ -331,6 +357,12 @@ public class DescribeManagedJobTemplateResult extends com.amazonaws.AmazonWebSer
      * A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed
      * template.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDocumentParameters(java.util.Collection)} or {@link #withDocumentParameters(java.util.Collection)} if
@@ -339,7 +371,11 @@ public class DescribeManagedJobTemplateResult extends com.amazonaws.AmazonWebSer
      * 
      * @param documentParameters
      *        A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a
-     *        managed template.
+     *        managed template.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,10 +394,20 @@ public class DescribeManagedJobTemplateResult extends com.amazonaws.AmazonWebSer
      * A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed
      * template.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
      *        A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a
-     *        managed template.
+     *        managed template.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -82,6 +82,11 @@ public class FleetLaunchTemplateOverridesStaxUnmarshaller implements Unmarshalle
                     fleetLaunchTemplateOverrides.setInstanceRequirements(InstanceRequirementsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("imageId", targetDepth)) {
+                    fleetLaunchTemplateOverrides.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return fleetLaunchTemplateOverrides;

@@ -43,6 +43,17 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ServiceAccountCredentials serviceAccountCredentials;
+    /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when
+     * certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain
+     * password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     * <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to
+     * log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
+     * </p>
+     */
+    private CertificateBasedAuthProperties certificateBasedAuthProperties;
 
     /**
      * <p>
@@ -196,6 +207,79 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when
+     * certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain
+     * password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     * <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to
+     * log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
+     * </p>
+     * 
+     * @param certificateBasedAuthProperties
+     *        The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     *        identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when
+     *        certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain
+     *        password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     *        <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow
+     *        users to log in using their AD domain password. Users will be disconnected to re-authenticate using
+     *        certificates.
+     */
+
+    public void setCertificateBasedAuthProperties(CertificateBasedAuthProperties certificateBasedAuthProperties) {
+        this.certificateBasedAuthProperties = certificateBasedAuthProperties;
+    }
+
+    /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when
+     * certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain
+     * password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     * <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to
+     * log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
+     * </p>
+     * 
+     * @return The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP)
+     *         user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default
+     *         when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD
+     *         domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     *         <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow
+     *         users to log in using their AD domain password. Users will be disconnected to re-authenticate using
+     *         certificates.
+     */
+
+    public CertificateBasedAuthProperties getCertificateBasedAuthProperties() {
+        return this.certificateBasedAuthProperties;
+    }
+
+    /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when
+     * certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain
+     * password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     * <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to
+     * log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
+     * </p>
+     * 
+     * @param certificateBasedAuthProperties
+     *        The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     *        identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when
+     *        certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain
+     *        password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen.
+     *        <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow
+     *        users to log in using their AD domain password. Users will be disconnected to re-authenticate using
+     *        certificates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDirectoryConfigRequest withCertificateBasedAuthProperties(CertificateBasedAuthProperties certificateBasedAuthProperties) {
+        setCertificateBasedAuthProperties(certificateBasedAuthProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +296,9 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
         if (getOrganizationalUnitDistinguishedNames() != null)
             sb.append("OrganizationalUnitDistinguishedNames: ").append(getOrganizationalUnitDistinguishedNames()).append(",");
         if (getServiceAccountCredentials() != null)
-            sb.append("ServiceAccountCredentials: ").append(getServiceAccountCredentials());
+            sb.append("ServiceAccountCredentials: ").append(getServiceAccountCredentials()).append(",");
+        if (getCertificateBasedAuthProperties() != null)
+            sb.append("CertificateBasedAuthProperties: ").append(getCertificateBasedAuthProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +326,11 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getServiceAccountCredentials() != null && other.getServiceAccountCredentials().equals(this.getServiceAccountCredentials()) == false)
             return false;
+        if (other.getCertificateBasedAuthProperties() == null ^ this.getCertificateBasedAuthProperties() == null)
+            return false;
+        if (other.getCertificateBasedAuthProperties() != null
+                && other.getCertificateBasedAuthProperties().equals(this.getCertificateBasedAuthProperties()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +342,7 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDirectoryName() == null) ? 0 : getDirectoryName().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitDistinguishedNames() == null) ? 0 : getOrganizationalUnitDistinguishedNames().hashCode());
         hashCode = prime * hashCode + ((getServiceAccountCredentials() == null) ? 0 : getServiceAccountCredentials().hashCode());
+        hashCode = prime * hashCode + ((getCertificateBasedAuthProperties() == null) ? 0 : getCertificateBasedAuthProperties().hashCode());
         return hashCode;
     }
 

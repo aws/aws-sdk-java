@@ -25,13 +25,13 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The name of the quota that was exceeded.
+     * The name of the limit that was reached.
      * </p>
      */
     private String limitName;
     /**
      * <p>
-     * The maximum value for the service-specific limit.
+     * The value of the exceeded limit.
      * </p>
      */
     private Double limitValue;
@@ -48,11 +48,11 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The name of the quota that was exceeded.
+     * The name of the limit that was reached.
      * </p>
      * 
      * @param limitName
-     *        The name of the quota that was exceeded.
+     *        The name of the limit that was reached.
      * @see LimitName
      */
 
@@ -63,10 +63,10 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The name of the quota that was exceeded.
+     * The name of the limit that was reached.
      * </p>
      * 
-     * @return The name of the quota that was exceeded.
+     * @return The name of the limit that was reached.
      * @see LimitName
      */
 
@@ -77,11 +77,11 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The name of the quota that was exceeded.
+     * The name of the limit that was reached.
      * </p>
      * 
      * @param limitName
-     *        The name of the quota that was exceeded.
+     *        The name of the limit that was reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LimitName
      */
@@ -93,11 +93,11 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The name of the quota that was exceeded.
+     * The name of the limit that was reached.
      * </p>
      * 
      * @param limitName
-     *        The name of the quota that was exceeded.
+     *        The name of the limit that was reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LimitName
      */
@@ -109,11 +109,11 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The maximum value for the service-specific limit.
+     * The value of the exceeded limit.
      * </p>
      * 
      * @param limitValue
-     *        The maximum value for the service-specific limit.
+     *        The value of the exceeded limit.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("LimitValue")
@@ -123,10 +123,10 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The maximum value for the service-specific limit.
+     * The value of the exceeded limit.
      * </p>
      * 
-     * @return The maximum value for the service-specific limit.
+     * @return The value of the exceeded limit.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("LimitValue")
@@ -136,11 +136,11 @@ public class ServiceLimitExceededException extends com.amazonaws.services.dataex
 
     /**
      * <p>
-     * The maximum value for the service-specific limit.
+     * The value of the exceeded limit.
      * </p>
      * 
      * @param limitValue
-     *        The maximum value for the service-specific limit.
+     *        The value of the exceeded limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

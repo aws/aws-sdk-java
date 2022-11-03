@@ -28,7 +28,7 @@ public class DescribeCanariesLastRunRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A token that indicates that there is more data available. You can use this token in a subsequent
-     * <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     * <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -61,12 +61,12 @@ public class DescribeCanariesLastRunRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A token that indicates that there is more data available. You can use this token in a subsequent
-     * <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     * <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
      *        A token that indicates that there is more data available. You can use this token in a subsequent
-     *        <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     *        <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -76,11 +76,11 @@ public class DescribeCanariesLastRunRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A token that indicates that there is more data available. You can use this token in a subsequent
-     * <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     * <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      * </p>
      * 
      * @return A token that indicates that there is more data available. You can use this token in a subsequent
-     *         <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     *         <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -90,12 +90,12 @@ public class DescribeCanariesLastRunRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A token that indicates that there is more data available. You can use this token in a subsequent
-     * <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     * <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
      *        A token that indicates that there is more data available. You can use this token in a subsequent
-     *        <code>DescribeCanaries</code> operation to retrieve the next set of results.
+     *        <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -98,6 +98,10 @@ public class PackageVersionDescriptionJsonUnmarshaller implements Unmarshaller<P
                     context.nextToken();
                     packageVersionDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("origin", targetDepth)) {
+                    context.nextToken();
+                    packageVersionDescription.setOrigin(PackageVersionOriginJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

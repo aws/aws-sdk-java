@@ -26,7 +26,7 @@ import com.amazonaws.services.location.model.*;
  * </p>
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+ * "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -190,6 +190,11 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of
      * a <code>DevicePositionUpdate</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a
+     * <code>Tracker</code> associated with the <code>DeviceID</code>.
+     * </p>
      * </note>
      * 
      * @param batchEvaluateGeofencesRequest
@@ -230,6 +235,11 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of
      * a <code>DevicePositionUpdate</code>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a
+     * <code>Tracker</code> associated with the <code>DeviceID</code>.
      * </p>
      * </note>
      * 
@@ -422,7 +432,12 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or
      * <code>TruckModeOptions</code> if traveling by <code>Truck</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination
+     * must be within 40km.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param calculateRouteRequest
@@ -468,7 +483,12 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or
      * <code>TruckModeOptions</code> if traveling by <code>Truck</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination
+     * must be within 40km.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param calculateRouteRequest
@@ -1495,6 +1515,83 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<GetMapTileResult> getMapTileAsync(GetMapTileRequest getMapTileRequest,
             com.amazonaws.handlers.AsyncHandler<GetMapTileRequest, GetMapTileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.
+     * </p>
+     * <note>
+     * <p>
+     * A PlaceId is valid only if all of the following are the same in the original search request and the call to
+     * <code>GetPlace</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data provider specified in the place index resource
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param getPlaceRequest
+     * @return A Java Future containing the result of the GetPlace operation returned by the service.
+     * @sample AmazonLocationAsync.GetPlace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPlaceResult> getPlaceAsync(GetPlaceRequest getPlaceRequest);
+
+    /**
+     * <p>
+     * Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.
+     * </p>
+     * <note>
+     * <p>
+     * A PlaceId is valid only if all of the following are the same in the original search request and the call to
+     * <code>GetPlace</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data provider specified in the place index resource
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param getPlaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPlace operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.GetPlace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPlaceResult> getPlaceAsync(GetPlaceRequest getPlaceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPlaceRequest, GetPlaceResult> asyncHandler);
 
     /**
      * <p>

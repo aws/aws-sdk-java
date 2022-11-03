@@ -33,20 +33,19 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
     private String userPoolId;
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      */
     private String providerName;
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      */
     private String providerType;
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -162,28 +161,42 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -194,12 +207,12 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
      * <p>
-     * IDPSignout (optional)
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -209,13 +222,13 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
     private java.util.Map<String, String> providerDetails;
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      */
     private java.util.Map<String, String> attributeMapping;
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      */
     private java.util.List<String> idpIdentifiers;
@@ -262,11 +275,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      */
 
     public void setProviderName(String providerName) {
@@ -275,10 +288,10 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
-     * @return The identity provider name.
+     * @return The IdP name.
      */
 
     public String getProviderName() {
@@ -287,11 +300,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider name.
+     * The IdP name.
      * </p>
      * 
      * @param providerName
-     *        The identity provider name.
+     *        The IdP name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,11 +315,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -316,10 +329,10 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
-     * @return The identity provider type.
+     * @return The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -329,11 +342,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderTypeType
      */
@@ -345,11 +358,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @see IdentityProviderTypeType
      */
 
@@ -359,11 +372,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider type.
+     * The IdP type.
      * </p>
      * 
      * @param providerType
-     *        The identity provider type.
+     *        The IdP type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderTypeType
      */
@@ -375,8 +388,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -492,28 +504,42 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -524,20 +550,19 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
      * <p>
-     * IDPSignout (optional)
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * 
-     * @return The identity provider details. The following list describes the provider detail keys for each identity
-     *         provider type.</p>
+     * @return The IdP details. The following list describes the provider detail keys for each IdP type.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -652,28 +677,43 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         The following keys are only present if Amazon Cognito didn't discover them at the
+     *         <code>oidc_issuer</code> URL.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         authorize_url
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         token_url
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         attributes_url
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *         jwks_uri
      *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
-     *         attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *         Amazon Cognito sets the value of the following keys automatically. They are read-only.
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         attributes_url_add_attributes
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         </ul>
      *         </li>
@@ -684,12 +724,12 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         MetadataFile OR MetadataURL
+     *         MetadataFile or MetadataURL
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         IDPSignout (optional)
+     *         IDPSignout <i>optional</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -702,8 +742,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -819,28 +858,42 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -851,12 +904,12 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
      * <p>
-     * IDPSignout (optional)
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -864,8 +917,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param providerDetails
-     *        The identity provider details. The following list describes the provider detail keys for each identity
-     *        provider type.</p>
+     *        The IdP details. The following list describes the provider detail keys for each IdP type.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -980,28 +1032,43 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code>
+     *        URL.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        authorize_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        token_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        attributes_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        jwks_uri
      *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        Amazon Cognito sets the value of the following keys automatically. They are read-only.
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        </ul>
      *        </li>
@@ -1012,12 +1079,12 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        MetadataFile OR MetadataURL
+     *        MetadataFile or MetadataURL
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignout (optional)
+     *        IDPSignout <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1030,8 +1097,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identity provider details. The following list describes the provider detail keys for each identity provider
-     * type.
+     * The IdP details. The following list describes the provider detail keys for each IdP type.
      * </p>
      * <ul>
      * <li>
@@ -1147,28 +1213,42 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * authorize_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * token_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * attributes_url
      * </p>
      * </li>
      * <li>
      * <p>
-     * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     * jwks_uri
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
-     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * Amazon Cognito sets the value of the following keys automatically. They are read-only.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * </li>
@@ -1179,12 +1259,12 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
      * <p>
-     * IDPSignout (optional)
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -1192,8 +1272,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param providerDetails
-     *        The identity provider details. The following list describes the provider detail keys for each identity
-     *        provider type.</p>
+     *        The IdP details. The following list describes the provider detail keys for each IdP type.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1308,28 +1387,43 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code>
+     *        URL.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        authorize_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        token_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        attributes_url
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
+     *        jwks_uri
      *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        Amazon Cognito sets the value of the following keys automatically. They are read-only.
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        </ul>
      *        </li>
@@ -1340,12 +1434,12 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        MetadataFile OR MetadataURL
+     *        MetadataFile or MetadataURL
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignout (optional)
+     *        IDPSignout <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1388,10 +1482,10 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      * 
-     * @return A mapping of identity provider attributes to standard and custom user pool attributes.
+     * @return A mapping of IdP attributes to standard and custom user pool attributes.
      */
 
     public java.util.Map<String, String> getAttributeMapping() {
@@ -1400,11 +1494,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      * 
      * @param attributeMapping
-     *        A mapping of identity provider attributes to standard and custom user pool attributes.
+     *        A mapping of IdP attributes to standard and custom user pool attributes.
      */
 
     public void setAttributeMapping(java.util.Map<String, String> attributeMapping) {
@@ -1413,11 +1507,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A mapping of identity provider attributes to standard and custom user pool attributes.
+     * A mapping of IdP attributes to standard and custom user pool attributes.
      * </p>
      * 
      * @param attributeMapping
-     *        A mapping of identity provider attributes to standard and custom user pool attributes.
+     *        A mapping of IdP attributes to standard and custom user pool attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1456,10 +1550,10 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
-     * @return A list of identity provider identifiers.
+     * @return A list of IdP identifiers.
      */
 
     public java.util.List<String> getIdpIdentifiers() {
@@ -1468,11 +1562,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      */
 
     public void setIdpIdentifiers(java.util.Collection<String> idpIdentifiers) {
@@ -1486,7 +1580,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1495,7 +1589,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1511,11 +1605,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of identity provider identifiers.
+     * A list of IdP identifiers.
      * </p>
      * 
      * @param idpIdentifiers
-     *        A list of identity provider identifiers.
+     *        A list of IdP identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

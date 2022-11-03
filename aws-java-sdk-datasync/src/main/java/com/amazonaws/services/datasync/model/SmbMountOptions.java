@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the mount options that are available for DataSync to access an SMB location.
+ * Specifies how DataSync can access a location using the SMB protocol.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/SmbMountOptions" target="_top">AWS API
@@ -30,24 +30,24 @@ public class SmbMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the SMB server.
+     * Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a
+     * version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB
+     * server.
      * </p>
      */
     private String version;
 
     /**
      * <p>
-     * The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the SMB server.
+     * Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a
+     * version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB
+     * server.
      * </p>
      * 
      * @param version
-     *        The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a
-     *        version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *        based on negotiation with the SMB server.
+     *        Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify
+     *        a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the
+     *        SMB server.
      * @see SmbVersion
      */
 
@@ -57,14 +57,14 @@ public class SmbMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the SMB server.
+     * Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a
+     * version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB
+     * server.
      * </p>
      * 
-     * @return The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a
-     *         version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *         based on negotiation with the SMB server.
+     * @return Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't
+     *         specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation
+     *         with the SMB server.
      * @see SmbVersion
      */
 
@@ -74,15 +74,15 @@ public class SmbMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the SMB server.
+     * Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a
+     * version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB
+     * server.
      * </p>
      * 
      * @param version
-     *        The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a
-     *        version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *        based on negotiation with the SMB server.
+     *        Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify
+     *        a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the
+     *        SMB server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmbVersion
      */
@@ -94,15 +94,15 @@ public class SmbMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the SMB server.
+     * Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a
+     * version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB
+     * server.
      * </p>
      * 
      * @param version
-     *        The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a
-     *        version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *        based on negotiation with the SMB server.
+     *        Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify
+     *        a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the
+     *        SMB server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmbVersion
      */

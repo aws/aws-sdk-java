@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GeneratedPolicyResultMarshaller {
 
-    private static final MarshallingInfo<List> GENERATEDPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedPolicies").build();
     private static final MarshallingInfo<StructuredPojo> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("properties").build();
+    private static final MarshallingInfo<List> GENERATEDPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedPolicies").build();
 
     private static final GeneratedPolicyResultMarshaller instance = new GeneratedPolicyResultMarshaller();
 
@@ -49,8 +49,8 @@ public class GeneratedPolicyResultMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(generatedPolicyResult.getGeneratedPolicies(), GENERATEDPOLICIES_BINDING);
             protocolMarshaller.marshall(generatedPolicyResult.getProperties(), PROPERTIES_BINDING);
+            protocolMarshaller.marshall(generatedPolicyResult.getGeneratedPolicies(), GENERATEDPOLICIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

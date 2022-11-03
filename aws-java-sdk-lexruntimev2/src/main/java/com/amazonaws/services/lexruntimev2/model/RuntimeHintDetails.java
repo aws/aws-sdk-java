@@ -35,6 +35,15 @@ public class RuntimeHintDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<RuntimeHintValue> runtimeHintValues;
+    /**
+     * <p>
+     * A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added
+     * for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot
+     * phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the
+     * constituent sub slot names must exist.
+     * </p>
+     */
+    private java.util.Map<String, RuntimeHintDetails> subSlotHints;
 
     /**
      * <p>
@@ -115,6 +124,92 @@ public class RuntimeHintDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added
+     * for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot
+     * phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the
+     * constituent sub slot names must exist.
+     * </p>
+     * 
+     * @return A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be
+     *         added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add
+     *         granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name,
+     *         composite slot name and the constituent sub slot names must exist.
+     */
+
+    public java.util.Map<String, RuntimeHintDetails> getSubSlotHints() {
+        return subSlotHints;
+    }
+
+    /**
+     * <p>
+     * A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added
+     * for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot
+     * phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the
+     * constituent sub slot names must exist.
+     * </p>
+     * 
+     * @param subSlotHints
+     *        A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be
+     *        added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add
+     *        granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name,
+     *        composite slot name and the constituent sub slot names must exist.
+     */
+
+    public void setSubSlotHints(java.util.Map<String, RuntimeHintDetails> subSlotHints) {
+        this.subSlotHints = subSlotHints;
+    }
+
+    /**
+     * <p>
+     * A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added
+     * for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot
+     * phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the
+     * constituent sub slot names must exist.
+     * </p>
+     * 
+     * @param subSlotHints
+     *        A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be
+     *        added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add
+     *        granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name,
+     *        composite slot name and the constituent sub slot names must exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeHintDetails withSubSlotHints(java.util.Map<String, RuntimeHintDetails> subSlotHints) {
+        setSubSlotHints(subSlotHints);
+        return this;
+    }
+
+    /**
+     * Add a single SubSlotHints entry
+     *
+     * @see RuntimeHintDetails#withSubSlotHints
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeHintDetails addSubSlotHintsEntry(String key, RuntimeHintDetails value) {
+        if (null == this.subSlotHints) {
+            this.subSlotHints = new java.util.HashMap<String, RuntimeHintDetails>();
+        }
+        if (this.subSlotHints.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.subSlotHints.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into SubSlotHints.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeHintDetails clearSubSlotHintsEntries() {
+        this.subSlotHints = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -127,7 +222,9 @@ public class RuntimeHintDetails implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuntimeHintValues() != null)
-            sb.append("RuntimeHintValues: ").append(getRuntimeHintValues());
+            sb.append("RuntimeHintValues: ").append(getRuntimeHintValues()).append(",");
+        if (getSubSlotHints() != null)
+            sb.append("SubSlotHints: ").append(getSubSlotHints());
         sb.append("}");
         return sb.toString();
     }
@@ -146,6 +243,10 @@ public class RuntimeHintDetails implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRuntimeHintValues() != null && other.getRuntimeHintValues().equals(this.getRuntimeHintValues()) == false)
             return false;
+        if (other.getSubSlotHints() == null ^ this.getSubSlotHints() == null)
+            return false;
+        if (other.getSubSlotHints() != null && other.getSubSlotHints().equals(this.getSubSlotHints()) == false)
+            return false;
         return true;
     }
 
@@ -155,6 +256,7 @@ public class RuntimeHintDetails implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRuntimeHintValues() == null) ? 0 : getRuntimeHintValues().hashCode());
+        hashCode = prime * hashCode + ((getSubSlotHints() == null) ? 0 : getSubSlotHints().hashCode());
         return hashCode;
     }
 

@@ -31,7 +31,7 @@ public class DescribeAccessResult extends com.amazonaws.AmazonWebServiceResult<c
     private String serverId;
     /**
      * <p>
-     * The external ID of the server that the access is attached to.
+     * The external identifier of the server that the access is attached to.
      * </p>
      */
     private DescribedAccess access;
@@ -78,11 +78,11 @@ public class DescribeAccessResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The external ID of the server that the access is attached to.
+     * The external identifier of the server that the access is attached to.
      * </p>
      * 
      * @param access
-     *        The external ID of the server that the access is attached to.
+     *        The external identifier of the server that the access is attached to.
      */
 
     public void setAccess(DescribedAccess access) {
@@ -91,10 +91,10 @@ public class DescribeAccessResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The external ID of the server that the access is attached to.
+     * The external identifier of the server that the access is attached to.
      * </p>
      * 
-     * @return The external ID of the server that the access is attached to.
+     * @return The external identifier of the server that the access is attached to.
      */
 
     public DescribedAccess getAccess() {
@@ -103,11 +103,11 @@ public class DescribeAccessResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The external ID of the server that the access is attached to.
+     * The external identifier of the server that the access is attached to.
      * </p>
      * 
      * @param access
-     *        The external ID of the server that the access is attached to.
+     *        The external identifier of the server that the access is attached to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

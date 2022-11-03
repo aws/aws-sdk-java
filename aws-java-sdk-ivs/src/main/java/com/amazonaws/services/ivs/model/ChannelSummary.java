@@ -63,7 +63,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     private String recordingConfigurationArn;
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -327,10 +330,17 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
-     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a> for more information, including restrictions that apply to tags and
+     *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *         documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -339,11 +349,18 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -352,11 +369,18 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

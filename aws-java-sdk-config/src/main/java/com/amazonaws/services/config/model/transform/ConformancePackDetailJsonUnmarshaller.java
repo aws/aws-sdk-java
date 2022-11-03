@@ -83,6 +83,10 @@ public class ConformancePackDetailJsonUnmarshaller implements Unmarshaller<Confo
                     context.nextToken();
                     conformancePackDetail.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TemplateSSMDocumentDetails", targetDepth)) {
+                    context.nextToken();
+                    conformancePackDetail.setTemplateSSMDocumentDetails(TemplateSSMDocumentDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

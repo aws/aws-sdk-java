@@ -26,8 +26,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible
- * value of a categorical parameter range counts against this limit.
+ * The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters
+ * for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of
+ * hyperparameters for all the ranges can't exceed the maximum number specified.
  * </p>
  * </note>
  * 

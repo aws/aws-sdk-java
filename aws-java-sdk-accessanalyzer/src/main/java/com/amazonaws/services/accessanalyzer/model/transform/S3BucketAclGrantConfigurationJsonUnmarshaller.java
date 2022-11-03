@@ -48,13 +48,13 @@ public class S3BucketAclGrantConfigurationJsonUnmarshaller implements Unmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("grantee", targetDepth)) {
-                    context.nextToken();
-                    s3BucketAclGrantConfiguration.setGrantee(AclGranteeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("permission", targetDepth)) {
                     context.nextToken();
                     s3BucketAclGrantConfiguration.setPermission(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("grantee", targetDepth)) {
+                    context.nextToken();
+                    s3BucketAclGrantConfiguration.setGrantee(AclGranteeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

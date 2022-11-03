@@ -30,7 +30,7 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether traffic is forwarded to this route’s service after the route is created.
+     * If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * </p>
      */
     private String activationState;
@@ -58,11 +58,11 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether traffic is forwarded to this route’s service after the route is created.
+     * If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * </p>
      * 
      * @param activationState
-     *        Indicates whether traffic is forwarded to this route’s service after the route is created.
+     *        If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * @see RouteActivationState
      */
 
@@ -72,10 +72,10 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether traffic is forwarded to this route’s service after the route is created.
+     * If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * </p>
      * 
-     * @return Indicates whether traffic is forwarded to this route’s service after the route is created.
+     * @return If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * @see RouteActivationState
      */
 
@@ -85,11 +85,11 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether traffic is forwarded to this route’s service after the route is created.
+     * If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * </p>
      * 
      * @param activationState
-     *        Indicates whether traffic is forwarded to this route’s service after the route is created.
+     *        If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteActivationState
      */
@@ -101,11 +101,11 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Indicates whether traffic is forwarded to this route’s service after the route is created.
+     * If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * </p>
      * 
      * @param activationState
-     *        Indicates whether traffic is forwarded to this route’s service after the route is created.
+     *        If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteActivationState
      */

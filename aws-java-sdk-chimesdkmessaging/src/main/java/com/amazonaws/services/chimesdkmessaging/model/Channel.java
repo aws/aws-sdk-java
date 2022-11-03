@@ -88,6 +88,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String channelFlowArn;
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million members.
+     * </p>
+     */
+    private ElasticChannelConfiguration elasticChannelConfiguration;
 
     /**
      * <p>
@@ -528,6 +535,52 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million members.
+     * </p>
+     * 
+     * @param elasticChannelConfiguration
+     *        The attributes required to configure and create an elastic channel. An elastic channel can support a
+     *        maximum of 1-million members.
+     */
+
+    public void setElasticChannelConfiguration(ElasticChannelConfiguration elasticChannelConfiguration) {
+        this.elasticChannelConfiguration = elasticChannelConfiguration;
+    }
+
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million members.
+     * </p>
+     * 
+     * @return The attributes required to configure and create an elastic channel. An elastic channel can support a
+     *         maximum of 1-million members.
+     */
+
+    public ElasticChannelConfiguration getElasticChannelConfiguration() {
+        return this.elasticChannelConfiguration;
+    }
+
+    /**
+     * <p>
+     * The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of
+     * 1-million members.
+     * </p>
+     * 
+     * @param elasticChannelConfiguration
+     *        The attributes required to configure and create an elastic channel. An elastic channel can support a
+     *        maximum of 1-million members.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withElasticChannelConfiguration(ElasticChannelConfiguration elasticChannelConfiguration) {
+        setElasticChannelConfiguration(elasticChannelConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -558,7 +611,9 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedTimestamp() != null)
             sb.append("LastUpdatedTimestamp: ").append(getLastUpdatedTimestamp()).append(",");
         if (getChannelFlowArn() != null)
-            sb.append("ChannelFlowArn: ").append(getChannelFlowArn());
+            sb.append("ChannelFlowArn: ").append(getChannelFlowArn()).append(",");
+        if (getElasticChannelConfiguration() != null)
+            sb.append("ElasticChannelConfiguration: ").append(getElasticChannelConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -613,6 +668,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChannelFlowArn() != null && other.getChannelFlowArn().equals(this.getChannelFlowArn()) == false)
             return false;
+        if (other.getElasticChannelConfiguration() == null ^ this.getElasticChannelConfiguration() == null)
+            return false;
+        if (other.getElasticChannelConfiguration() != null && other.getElasticChannelConfiguration().equals(this.getElasticChannelConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -631,6 +690,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastMessageTimestamp() == null) ? 0 : getLastMessageTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTimestamp() == null) ? 0 : getLastUpdatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getChannelFlowArn() == null) ? 0 : getChannelFlowArn().hashCode());
+        hashCode = prime * hashCode + ((getElasticChannelConfiguration() == null) ? 0 : getElasticChannelConfiguration().hashCode());
         return hashCode;
     }
 

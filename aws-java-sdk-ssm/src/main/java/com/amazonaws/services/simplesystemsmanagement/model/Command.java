@@ -53,8 +53,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String comment;
     /**
      * <p>
-     * If this time is reached and the command hasn't already started running, it won't run. Calculated based on the
-     * <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     * If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status
+     * <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated
+     * based on the total timeout for the overall command. For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     * >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private java.util.Date expiresAfter;
@@ -147,6 +150,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending
      * invocations. The system has canceled the command before running it on any managed node. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
      * </p>
      * </li>
      * </ul>
@@ -243,6 +252,18 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer timeoutSeconds;
+    /**
+     * <p>
+     * The details for the CloudWatch alarm applied to your command.
+     * </p>
+     */
+    private AlarmConfiguration alarmConfiguration;
+    /**
+     * <p>
+     * The CloudWatch alarm that was invoked by the command.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AlarmStateInformation> triggeredAlarms;
 
     /**
      * <p>
@@ -406,13 +427,19 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command hasn't already started running, it won't run. Calculated based on the
-     * <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     * If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status
+     * <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated
+     * based on the total timeout for the overall command. For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     * >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param expiresAfter
-     *        If this time is reached and the command hasn't already started running, it won't run. Calculated based on
-     *        the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     *        If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the
+     *        status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code>
+     *        is calculated based on the total timeout for the overall command. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     *        >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setExpiresAfter(java.util.Date expiresAfter) {
@@ -421,12 +448,19 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command hasn't already started running, it won't run. Calculated based on the
-     * <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     * If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status
+     * <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated
+     * based on the total timeout for the overall command. For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     * >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return If this time is reached and the command hasn't already started running, it won't run. Calculated based on
-     *         the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     * @return If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have
+     *         the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>.
+     *         <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     *         >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.Date getExpiresAfter() {
@@ -435,13 +469,19 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command hasn't already started running, it won't run. Calculated based on the
-     * <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     * If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status
+     * <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated
+     * based on the total timeout for the overall command. For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     * >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param expiresAfter
-     *        If this time is reached and the command hasn't already started running, it won't run. Calculated based on
-     *        the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.
+     *        If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the
+     *        status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code>
+     *        is calculated based on the total timeout for the overall command. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts"
+     *        >Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -845,6 +885,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * invocations. The system has canceled the command before running it on any managed node. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusDetails
@@ -906,6 +952,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending
      *        invocations. The system has canceled the command before running it on any managed node. This is a terminal
      *        state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delayed: The system attempted to send the command to the managed node but wasn't successful. The system
+     *        retries again.
      *        </p>
      *        </li>
      */
@@ -974,6 +1026,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * invocations. The system has canceled the command before running it on any managed node. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A detailed status of the command execution. <code>StatusDetails</code> includes more information than
@@ -1034,6 +1092,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending
      *         invocations. The system has canceled the command before running it on any managed node. This is a
      *         terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Delayed: The system attempted to send the command to the managed node but wasn't successful. The system
+     *         retries again.
      *         </p>
      *         </li>
      */
@@ -1102,6 +1166,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * invocations. The system has canceled the command before running it on any managed node. This is a terminal state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries
+     * again.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusDetails
@@ -1163,6 +1233,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending
      *        invocations. The system has canceled the command before running it on any managed node. This is a terminal
      *        state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delayed: The system attempted to send the command to the managed node but wasn't successful. The system
+     *        retries again.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1781,6 +1857,119 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The details for the CloudWatch alarm applied to your command.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        The details for the CloudWatch alarm applied to your command.
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details for the CloudWatch alarm applied to your command.
+     * </p>
+     * 
+     * @return The details for the CloudWatch alarm applied to your command.
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details for the CloudWatch alarm applied to your command.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        The details for the CloudWatch alarm applied to your command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm that was invoked by the command.
+     * </p>
+     * 
+     * @return The CloudWatch alarm that was invoked by the command.
+     */
+
+    public java.util.List<AlarmStateInformation> getTriggeredAlarms() {
+        if (triggeredAlarms == null) {
+            triggeredAlarms = new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>();
+        }
+        return triggeredAlarms;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm that was invoked by the command.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarm that was invoked by the command.
+     */
+
+    public void setTriggeredAlarms(java.util.Collection<AlarmStateInformation> triggeredAlarms) {
+        if (triggeredAlarms == null) {
+            this.triggeredAlarms = null;
+            return;
+        }
+
+        this.triggeredAlarms = new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>(triggeredAlarms);
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm that was invoked by the command.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTriggeredAlarms(java.util.Collection)} or {@link #withTriggeredAlarms(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarm that was invoked by the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withTriggeredAlarms(AlarmStateInformation... triggeredAlarms) {
+        if (this.triggeredAlarms == null) {
+            setTriggeredAlarms(new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>(triggeredAlarms.length));
+        }
+        for (AlarmStateInformation ele : triggeredAlarms) {
+            this.triggeredAlarms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarm that was invoked by the command.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarm that was invoked by the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withTriggeredAlarms(java.util.Collection<AlarmStateInformation> triggeredAlarms) {
+        setTriggeredAlarms(triggeredAlarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1839,7 +2028,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
         if (getCloudWatchOutputConfig() != null)
             sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig()).append(",");
         if (getTimeoutSeconds() != null)
-            sb.append("TimeoutSeconds: ").append(getTimeoutSeconds());
+            sb.append("TimeoutSeconds: ").append(getTimeoutSeconds()).append(",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: ").append(getAlarmConfiguration()).append(",");
+        if (getTriggeredAlarms() != null)
+            sb.append("TriggeredAlarms: ").append(getTriggeredAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -1950,6 +2143,14 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeoutSeconds() != null && other.getTimeoutSeconds().equals(this.getTimeoutSeconds()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null && other.getAlarmConfiguration().equals(this.getAlarmConfiguration()) == false)
+            return false;
+        if (other.getTriggeredAlarms() == null ^ this.getTriggeredAlarms() == null)
+            return false;
+        if (other.getTriggeredAlarms() != null && other.getTriggeredAlarms().equals(this.getTriggeredAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -1982,6 +2183,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchOutputConfig() == null) ? 0 : getCloudWatchOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getTimeoutSeconds() == null) ? 0 : getTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTriggeredAlarms() == null) ? 0 : getTriggeredAlarms().hashCode());
         return hashCode;
     }
 

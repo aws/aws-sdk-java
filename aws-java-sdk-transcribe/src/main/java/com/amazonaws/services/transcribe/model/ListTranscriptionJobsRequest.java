@@ -27,44 +27,43 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date,
-     * with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription
-     * jobs ordered by creation date.
+     * Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job
+     * first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      */
     private String jobNameContains;
     /**
      * <p>
-     * If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of jobs to return in each page of results. If there are fewer results than the value you
-     * specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of transcription jobs to return in each page of results. If there are fewer results than the
+     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date,
-     * with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription
-     * jobs ordered by creation date.
+     * Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job
+     * first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * </p>
      * 
      * @param status
-     *        When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation
-     *        date, with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all
-     *        transcription jobs ordered by creation date.
+     *        Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     *        newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * @see TranscriptionJobStatus
      */
 
@@ -74,14 +73,12 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date,
-     * with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription
-     * jobs ordered by creation date.
+     * Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job
+     * first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * </p>
      * 
-     * @return When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation
-     *         date, with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all
-     *         transcription jobs ordered by creation date.
+     * @return Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     *         newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * @see TranscriptionJobStatus
      */
 
@@ -91,15 +88,13 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date,
-     * with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription
-     * jobs ordered by creation date.
+     * Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job
+     * first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * </p>
      * 
      * @param status
-     *        When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation
-     *        date, with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all
-     *        transcription jobs ordered by creation date.
+     *        Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     *        newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -111,15 +106,13 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date,
-     * with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription
-     * jobs ordered by creation date.
+     * Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job
+     * first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * </p>
      * 
      * @param status
-     *        When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation
-     *        date, with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all
-     *        transcription jobs ordered by creation date.
+     *        Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the
+     *        newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -131,12 +124,11 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      * 
      * @param jobNameContains
-     *        When specified, the jobs returned in the list are limited to jobs whose name contains the specified
-     *        string.
+     *        Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      */
 
     public void setJobNameContains(String jobNameContains) {
@@ -145,11 +137,10 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      * 
-     * @return When specified, the jobs returned in the list are limited to jobs whose name contains the specified
-     *         string.
+     * @return Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      */
 
     public String getJobNameContains() {
@@ -158,12 +149,11 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      * </p>
      * 
      * @param jobNameContains
-     *        When specified, the jobs returned in the list are limited to jobs whose name contains the specified
-     *        string.
+     *        Returns only the transcription jobs that contain the specified string. The search is not case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,13 +164,17 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     *        <code>NextToken</code> to fetch the next set of jobs.
+     *        If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     *        <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *        results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *        copied string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -189,12 +183,16 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
-     * @return If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     *         <code>NextToken</code> to fetch the next set of jobs.
+     * @return If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     *         <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *         results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -203,13 +201,17 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     * <code>NextToken</code> to fetch the next set of jobs.
+     * If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
-     *        <code>NextToken</code> to fetch the next set of jobs.
+     *        If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed,
+     *        <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *        results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *        copied string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,14 +222,14 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of jobs to return in each page of results. If there are fewer results than the value you
-     * specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of transcription jobs to return in each page of results. If there are fewer results than the
+     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of jobs to return in each page of results. If there are fewer results than the value
-     *        you specify, only the actual results are returned. If you do not specify a value, the default of 5 is
-     *        used.
+     *        The maximum number of transcription jobs to return in each page of results. If there are fewer results
+     *        than the value you specify, only the actual results are returned. If you don't specify a value, a default
+     *        of 5 is used.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -236,13 +238,13 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of jobs to return in each page of results. If there are fewer results than the value you
-     * specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of transcription jobs to return in each page of results. If there are fewer results than the
+     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
      * </p>
      * 
-     * @return The maximum number of jobs to return in each page of results. If there are fewer results than the value
-     *         you specify, only the actual results are returned. If you do not specify a value, the default of 5 is
-     *         used.
+     * @return The maximum number of transcription jobs to return in each page of results. If there are fewer results
+     *         than the value you specify, only the actual results are returned. If you don't specify a value, a default
+     *         of 5 is used.
      */
 
     public Integer getMaxResults() {
@@ -251,14 +253,14 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of jobs to return in each page of results. If there are fewer results than the value you
-     * specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of transcription jobs to return in each page of results. If there are fewer results than the
+     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of jobs to return in each page of results. If there are fewer results than the value
-     *        you specify, only the actual results are returned. If you do not specify a value, the default of 5 is
-     *        used.
+     *        The maximum number of transcription jobs to return in each page of results. If there are fewer results
+     *        than the value you specify, only the actual results are returned. If you don't specify a value, a default
+     *        of 5 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

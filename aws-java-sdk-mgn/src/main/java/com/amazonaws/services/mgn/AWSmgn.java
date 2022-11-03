@@ -69,6 +69,25 @@ public interface AWSmgn {
      * Creates a new ReplicationConfigurationTemplate.
      * </p>
      * 
+     * @param createLaunchConfigurationTemplateRequest
+     * @return Result of the CreateLaunchConfigurationTemplate operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
+     * @sample AWSmgn.CreateLaunchConfigurationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLaunchConfigurationTemplateResult createLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest createLaunchConfigurationTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
      * @param createReplicationConfigurationTemplateRequest
      * @return Result of the CreateReplicationConfigurationTemplate operation returned by the service.
      * @throws UninitializedAccountException
@@ -102,6 +121,25 @@ public interface AWSmgn {
      *      Documentation</a>
      */
     DeleteJobResult deleteJob(DeleteJobRequest deleteJobRequest);
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
+     * @param deleteLaunchConfigurationTemplateRequest
+     * @return Result of the DeleteLaunchConfigurationTemplate operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DeleteLaunchConfigurationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLaunchConfigurationTemplateResult deleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest deleteLaunchConfigurationTemplateRequest);
 
     /**
      * <p>
@@ -198,6 +236,26 @@ public interface AWSmgn {
      *      Documentation</a>
      */
     DescribeJobsResult describeJobs(DescribeJobsRequest describeJobsRequest);
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
+     * @param describeLaunchConfigurationTemplatesRequest
+     * @return Result of the DescribeLaunchConfigurationTemplates operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.DescribeLaunchConfigurationTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLaunchConfigurationTemplatesResult describeLaunchConfigurationTemplates(
+            DescribeLaunchConfigurationTemplatesRequest describeLaunchConfigurationTemplatesRequest);
 
     /**
      * <p>
@@ -575,6 +633,27 @@ public interface AWSmgn {
      *      API Documentation</a>
      */
     UpdateLaunchConfigurationResult updateLaunchConfiguration(UpdateLaunchConfigurationRequest updateLaunchConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a new ReplicationConfigurationTemplate.
+     * </p>
+     * 
+     * @param updateLaunchConfigurationTemplateRequest
+     * @return Result of the UpdateLaunchConfigurationTemplate operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
+     * @sample AWSmgn.UpdateLaunchConfigurationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLaunchConfigurationTemplateResult updateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest updateLaunchConfigurationTemplateRequest);
 
     /**
      * <p>

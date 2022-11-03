@@ -19,11 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A custom attribute value assigned to a document.
- * </p>
- * <p>
- * For more information on how to create custom document attributes, see <a
- * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom Attributes</a>.
+ * A document attribute or metadata field. To create custom document attributes, see <a
+ * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom attributes</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttribute" target="_top">AWS API

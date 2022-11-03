@@ -34,7 +34,7 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
     private com.amazonaws.internal.SdkInternalList<String> ipv6Addresses;
     /**
      * <p>
-     * One or more IPv6 prefixes to unassign from the network interface.
+     * The IPv6 prefixes to unassign from the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ipv6Prefixes;
@@ -120,10 +120,10 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * One or more IPv6 prefixes to unassign from the network interface.
+     * The IPv6 prefixes to unassign from the network interface.
      * </p>
      * 
-     * @return One or more IPv6 prefixes to unassign from the network interface.
+     * @return The IPv6 prefixes to unassign from the network interface.
      */
 
     public java.util.List<String> getIpv6Prefixes() {
@@ -135,11 +135,11 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * One or more IPv6 prefixes to unassign from the network interface.
+     * The IPv6 prefixes to unassign from the network interface.
      * </p>
      * 
      * @param ipv6Prefixes
-     *        One or more IPv6 prefixes to unassign from the network interface.
+     *        The IPv6 prefixes to unassign from the network interface.
      */
 
     public void setIpv6Prefixes(java.util.Collection<String> ipv6Prefixes) {
@@ -153,7 +153,7 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * One or more IPv6 prefixes to unassign from the network interface.
+     * The IPv6 prefixes to unassign from the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -162,7 +162,7 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
      * </p>
      * 
      * @param ipv6Prefixes
-     *        One or more IPv6 prefixes to unassign from the network interface.
+     *        The IPv6 prefixes to unassign from the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * One or more IPv6 prefixes to unassign from the network interface.
+     * The IPv6 prefixes to unassign from the network interface.
      * </p>
      * 
      * @param ipv6Prefixes
-     *        One or more IPv6 prefixes to unassign from the network interface.
+     *        The IPv6 prefixes to unassign from the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

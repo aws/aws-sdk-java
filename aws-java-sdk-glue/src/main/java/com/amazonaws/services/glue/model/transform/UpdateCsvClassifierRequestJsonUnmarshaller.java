@@ -78,6 +78,16 @@ public class UpdateCsvClassifierRequestJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     updateCsvClassifierRequest.setAllowSingleColumn(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomDatatypeConfigured", targetDepth)) {
+                    context.nextToken();
+                    updateCsvClassifierRequest.setCustomDatatypeConfigured(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomDatatypes", targetDepth)) {
+                    context.nextToken();
+                    updateCsvClassifierRequest.setCustomDatatypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

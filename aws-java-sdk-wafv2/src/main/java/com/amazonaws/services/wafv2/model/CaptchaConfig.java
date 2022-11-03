@@ -31,21 +31,21 @@ public class CaptchaConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     * <code>CAPTCHA</code> puzzle.
+     * Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully
+     * solves a <code>CAPTCHA</code> puzzle.
      * </p>
      */
     private ImmunityTimeProperty immunityTimeProperty;
 
     /**
      * <p>
-     * Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     * <code>CAPTCHA</code> puzzle.
+     * Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully
+     * solves a <code>CAPTCHA</code> puzzle.
      * </p>
      * 
      * @param immunityTimeProperty
-     *        Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     *        <code>CAPTCHA</code> puzzle.
+     *        Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client
+     *        successfully solves a <code>CAPTCHA</code> puzzle.
      */
 
     public void setImmunityTimeProperty(ImmunityTimeProperty immunityTimeProperty) {
@@ -54,12 +54,12 @@ public class CaptchaConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     * <code>CAPTCHA</code> puzzle.
+     * Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully
+     * solves a <code>CAPTCHA</code> puzzle.
      * </p>
      * 
-     * @return Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     *         <code>CAPTCHA</code> puzzle.
+     * @return Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client
+     *         successfully solves a <code>CAPTCHA</code> puzzle.
      */
 
     public ImmunityTimeProperty getImmunityTimeProperty() {
@@ -68,13 +68,13 @@ public class CaptchaConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     * <code>CAPTCHA</code> puzzle.
+     * Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully
+     * solves a <code>CAPTCHA</code> puzzle.
      * </p>
      * 
      * @param immunityTimeProperty
-     *        Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a
-     *        <code>CAPTCHA</code> puzzle.
+     *        Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client
+     *        successfully solves a <code>CAPTCHA</code> puzzle.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

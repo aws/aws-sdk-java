@@ -27,14 +27,15 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      */
     private String channelName;
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      */
     private SlateSource fillerSlate;
@@ -49,17 +50,20 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The type of playback mode to use for this channel.
      * </p>
      * <p>
-     * LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     * <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      * </p>
      * <p>
-     * LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule
-     * stops playing, playback loops back to the first program in the schedule.
+     * <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in
+     * the schedule stops playing, playback loops back to the first program in the schedule.
      * </p>
      */
     private String playbackMode;
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -72,11 +76,11 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      */
 
     public void setChannelName(String channelName) {
@@ -85,10 +89,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel.
      */
 
     public String getChannelName() {
@@ -97,11 +101,11 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +117,14 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
      *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *        channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP
-     *        PlaybackMode.
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public void setFillerSlate(SlateSource fillerSlate) {
@@ -129,12 +134,13 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @return The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *         channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the
-     *         LOOP PlaybackMode.
+     *         channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *         for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      */
 
     public SlateSource getFillerSlate() {
@@ -144,13 +150,14 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel
-     * uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.
+     * uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.
      * </p>
      * 
      * @param fillerSlate
      *        The slate used to fill gaps between programs in the schedule. You must configure filler slate if your
-     *        channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP
-     *        PlaybackMode.
+     *        channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate
+     *        for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,21 +241,21 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The type of playback mode to use for this channel.
      * </p>
      * <p>
-     * LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     * <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      * </p>
      * <p>
-     * LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule
-     * stops playing, playback loops back to the first program in the schedule.
+     * <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in
+     * the schedule stops playing, playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
      *        The type of playback mode to use for this channel.</p>
      *        <p>
-     *        LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     *        <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      *        </p>
      *        <p>
-     *        LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the
-     *        schedule stops playing, playback loops back to the first program in the schedule.
+     *        <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last
+     *        program in the schedule stops playing, playback loops back to the first program in the schedule.
      * @see PlaybackMode
      */
 
@@ -261,20 +268,20 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The type of playback mode to use for this channel.
      * </p>
      * <p>
-     * LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     * <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      * </p>
      * <p>
-     * LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule
-     * stops playing, playback loops back to the first program in the schedule.
+     * <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in
+     * the schedule stops playing, playback loops back to the first program in the schedule.
      * </p>
      * 
      * @return The type of playback mode to use for this channel.</p>
      *         <p>
-     *         LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     *         <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      *         </p>
      *         <p>
-     *         LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the
-     *         schedule stops playing, playback loops back to the first program in the schedule.
+     *         <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last
+     *         program in the schedule stops playing, playback loops back to the first program in the schedule.
      * @see PlaybackMode
      */
 
@@ -287,21 +294,21 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The type of playback mode to use for this channel.
      * </p>
      * <p>
-     * LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     * <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      * </p>
      * <p>
-     * LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule
-     * stops playing, playback loops back to the first program in the schedule.
+     * <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in
+     * the schedule stops playing, playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
      *        The type of playback mode to use for this channel.</p>
      *        <p>
-     *        LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     *        <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      *        </p>
      *        <p>
-     *        LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the
-     *        schedule stops playing, playback loops back to the first program in the schedule.
+     *        <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last
+     *        program in the schedule stops playing, playback loops back to the first program in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlaybackMode
      */
@@ -316,21 +323,21 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The type of playback mode to use for this channel.
      * </p>
      * <p>
-     * LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     * <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      * </p>
      * <p>
-     * LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule
-     * stops playing, playback loops back to the first program in the schedule.
+     * <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in
+     * the schedule stops playing, playback loops back to the first program in the schedule.
      * </p>
      * 
      * @param playbackMode
      *        The type of playback mode to use for this channel.</p>
      *        <p>
-     *        LINEAR - The programs in the schedule play once back-to-back in the schedule.
+     *        <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.
      *        </p>
      *        <p>
-     *        LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the
-     *        schedule stops playing, playback loops back to the first program in the schedule.
+     *        <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last
+     *        program in the schedule stops playing, playback loops back to the first program in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlaybackMode
      */
@@ -342,10 +349,16 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags to assign to the channel.
+     * @return The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *         to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -354,11 +367,17 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -367,11 +386,17 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to assign to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

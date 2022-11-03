@@ -127,6 +127,12 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appconfig.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appconfig.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appconfig.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -135,12 +141,6 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PayloadTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appconfig.model.transform.PayloadTooLargeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appconfig.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appconfig.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appconfig.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
@@ -194,10 +194,10 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates an application. An application in AppConfig is a logical unit of code that provides capabilities for your
-     * customers. For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile
-     * application installed by your users, a serverless application using Amazon API Gateway and Lambda, or any system
-     * you run on behalf of others.
+     * Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This
+     * organizational construct has a relationship with some unit of executable code. For example, you could create an
+     * application called MyMobileApp to organize and manage configuration data for a mobile application installed by
+     * your users.
      * </p>
      * 
      * @param createApplicationRequest
@@ -410,12 +410,12 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates an environment. For each application, you define one or more environments. An environment is a logical
-     * deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code>
-     * environment. You can also define environments for application subcomponents such as the <code>Web</code>,
-     * <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon
-     * CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm
-     * is triggered, the system rolls back the configuration.
+     * Creates an environment. For each application, you define one or more environments. An environment is a deployment
+     * group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment.
+     * You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
+     * and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each
+     * environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system
+     * rolls back the configuration.
      * </p>
      * 
      * @param createEnvironmentRequest
@@ -464,6 +464,152 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateEnvironmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different
+     * points during the AppConfig workflow of creating or deploying a configuration.
+     * </p>
+     * <p>
+     * You can create your own extensions or use the Amazon Web Services-authored extensions provided by AppConfig. For
+     * most use-cases, to create your own extension, you must create an Lambda function to perform any computation and
+     * processing defined in the extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionRequest
+     * @return Result of the CreateExtension operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceQuotaExceededException
+     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
+     *         store. Delete one or more versions and try again.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.CreateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateExtensionResult createExtension(CreateExtensionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExtension(request);
+    }
+
+    @SdkInternalApi
+    final CreateExtensionResult executeCreateExtension(CreateExtensionRequest createExtensionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExtensionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExtensionRequest> request = null;
+        Response<CreateExtensionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createExtensionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExtension");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * When you create an extension or configure an Amazon Web Services-authored extension, you associate the extension
+     * with an AppConfig application, environment, or configuration profile. For example, you can choose to run the
+     * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services-authored extension and receive
+     * notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application.
+     * Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An
+     * extension association is a specified relationship between an extension and an AppConfig resource, such as an
+     * application or a configuration profile. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param createExtensionAssociationRequest
+     * @return Result of the CreateExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws ServiceQuotaExceededException
+     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
+     *         store. Delete one or more versions and try again.
+     * @sample AmazonAppConfig.CreateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateExtensionAssociationResult createExtensionAssociation(CreateExtensionAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExtensionAssociation(request);
+    }
+
+    @SdkInternalApi
+    final CreateExtensionAssociationResult executeCreateExtensionAssociation(CreateExtensionAssociationRequest createExtensionAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExtensionAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExtensionAssociationRequest> request = null;
+        Response<CreateExtensionAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExtensionAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createExtensionAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExtensionAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExtensionAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateExtensionAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -787,6 +933,130 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEnvironmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension.
+     * </p>
+     * 
+     * @param deleteExtensionRequest
+     * @return Result of the DeleteExtension operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.DeleteExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteExtensionResult deleteExtension(DeleteExtensionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteExtension(request);
+    }
+
+    @SdkInternalApi
+    final DeleteExtensionResult executeDeleteExtension(DeleteExtensionRequest deleteExtensionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteExtensionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteExtensionRequest> request = null;
+        Response<DeleteExtensionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteExtensionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteExtension");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an extension association. This action doesn't delete extensions defined in the association.
+     * </p>
+     * 
+     * @param deleteExtensionAssociationRequest
+     * @return Result of the DeleteExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.DeleteExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteExtensionAssociationResult deleteExtensionAssociation(DeleteExtensionAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteExtensionAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteExtensionAssociationResult executeDeleteExtensionAssociation(DeleteExtensionAssociationRequest deleteExtensionAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteExtensionAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteExtensionAssociationRequest> request = null;
+        Response<DeleteExtensionAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteExtensionAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteExtensionAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteExtensionAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteExtensionAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteExtensionAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1217,10 +1487,10 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Retrieves information about an environment. An environment is a logical deployment group of AppConfig
-     * applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code>
-     * environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch
-     * alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
+     * Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such
+     * as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each
+     * configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an
+     * environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -1269,6 +1539,133 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<GetEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEnvironmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension.
+     * </p>
+     * 
+     * @param getExtensionRequest
+     * @return Result of the GetExtension operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.GetExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetExtensionResult getExtension(GetExtensionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExtension(request);
+    }
+
+    @SdkInternalApi
+    final GetExtensionResult executeGetExtension(GetExtensionRequest getExtensionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExtensionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExtensionRequest> request = null;
+        Response<GetExtensionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExtensionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExtension");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about an AppConfig extension association. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param getExtensionAssociationRequest
+     * @return Result of the GetExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.GetExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetExtensionAssociationResult getExtensionAssociation(GetExtensionAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExtensionAssociation(request);
+    }
+
+    @SdkInternalApi
+    final GetExtensionAssociationResult executeGetExtensionAssociation(GetExtensionAssociationRequest getExtensionAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExtensionAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExtensionAssociationRequest> request = null;
+        Response<GetExtensionAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExtensionAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getExtensionAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExtensionAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExtensionAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetExtensionAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1637,6 +2034,132 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListEnvironmentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEnvironmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all AppConfig extension associations in the account. For more information about extensions and
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionAssociationsRequest
+     * @return Result of the ListExtensionAssociations operation returned by the service.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.ListExtensionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListExtensionAssociationsResult listExtensionAssociations(ListExtensionAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExtensionAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListExtensionAssociationsResult executeListExtensionAssociations(ListExtensionAssociationsRequest listExtensionAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExtensionAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExtensionAssociationsRequest> request = null;
+        Response<ListExtensionAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExtensionAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listExtensionAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExtensionAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExtensionAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListExtensionAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all custom and Amazon Web Services-authored AppConfig extensions in the account. For more information about
+     * extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param listExtensionsRequest
+     * @return Result of the ListExtensions operation returned by the service.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AmazonAppConfig.ListExtensions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExtensionsResult listExtensions(ListExtensionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExtensions(request);
+    }
+
+    @SdkInternalApi
+    final ListExtensionsResult executeListExtensions(ListExtensionsRequest listExtensionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExtensionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExtensionsRequest> request = null;
+        Response<ListExtensionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExtensionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExtensionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExtensions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExtensionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExtensionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2259,6 +2782,136 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEnvironmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an AppConfig extension. For more information about extensions, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionRequest
+     * @return Result of the UpdateExtension operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.UpdateExtension
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateExtensionResult updateExtension(UpdateExtensionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateExtension(request);
+    }
+
+    @SdkInternalApi
+    final UpdateExtensionResult executeUpdateExtension(UpdateExtensionRequest updateExtensionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateExtensionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateExtensionRequest> request = null;
+        Response<UpdateExtensionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateExtensionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateExtension");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an association. For more information about extensions and associations, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
+     * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+     * </p>
+     * 
+     * @param updateExtensionAssociationRequest
+     * @return Result of the UpdateExtensionAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.UpdateExtensionAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateExtensionAssociationResult updateExtensionAssociation(UpdateExtensionAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateExtensionAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateExtensionAssociationResult executeUpdateExtensionAssociation(UpdateExtensionAssociationRequest updateExtensionAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateExtensionAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateExtensionAssociationRequest> request = null;
+        Response<UpdateExtensionAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateExtensionAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateExtensionAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateExtensionAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateExtensionAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateExtensionAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

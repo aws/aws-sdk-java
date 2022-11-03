@@ -32,15 +32,15 @@ public class UpdateFindingsRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerArn").build();
-    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
-            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
     private static final MarshallingInfo<List> IDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ids").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final UpdateFindingsRequestMarshaller instance = new UpdateFindingsRequestMarshaller();
 
@@ -59,10 +59,10 @@ public class UpdateFindingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateFindingsRequest.getAnalyzerArn(), ANALYZERARN_BINDING);
-            protocolMarshaller.marshall(updateFindingsRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(updateFindingsRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(updateFindingsRequest.getIds(), IDS_BINDING);
             protocolMarshaller.marshall(updateFindingsRequest.getResourceArn(), RESOURCEARN_BINDING);
-            protocolMarshaller.marshall(updateFindingsRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(updateFindingsRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

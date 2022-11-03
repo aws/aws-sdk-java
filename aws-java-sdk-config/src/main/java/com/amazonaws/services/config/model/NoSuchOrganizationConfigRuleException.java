@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that
+ * The Config rule in the request is invalid. Verify that the rule is an organization Config Custom Policy rule, that
  * the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.
  * </p>
  */

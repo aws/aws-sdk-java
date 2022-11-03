@@ -39,15 +39,15 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      * </p>
      */
     private Boolean flowLogsEnabled;
     /**
      * <p>
      * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
-     * to write to the bucket.
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to
+     * write to the bucket.
      * </p>
      */
     private String flowLogsS3Bucket;
@@ -57,8 +57,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <code>FlowLogsEnabled</code> is <code>true</code>.
      * </p>
      * <p>
-     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
-     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double
+     * slash (//), like the following:
      * </p>
      * <p>
      * s3-bucket_name//AWSLogs/aws_account_id
@@ -114,7 +114,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param flowLogsEnabled
@@ -123,7 +123,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
-     *        >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     *        >Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      */
 
     public void setFlowLogsEnabled(Boolean flowLogsEnabled) {
@@ -138,7 +138,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @return Update whether flow logs are enabled. The default value is false. If the value is true,
@@ -146,7 +146,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
-     *         >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     *         >Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      */
 
     public Boolean getFlowLogsEnabled() {
@@ -161,7 +161,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param flowLogsEnabled
@@ -170,7 +170,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
-     *        >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     *        >Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +187,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @return Update whether flow logs are enabled. The default value is false. If the value is true,
@@ -195,7 +195,7 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
-     *         >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     *         >Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.
      */
 
     public Boolean isFlowLogsEnabled() {
@@ -205,13 +205,13 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
-     * to write to the bucket.
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to
+     * write to the bucket.
      * </p>
      * 
      * @param flowLogsS3Bucket
      *        The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
-     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator
      *        permission to write to the bucket.
      */
 
@@ -222,12 +222,12 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
-     * to write to the bucket.
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to
+     * write to the bucket.
      * </p>
      * 
      * @return The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
-     *         is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *         is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator
      *         permission to write to the bucket.
      */
 
@@ -238,13 +238,13 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
-     * to write to the bucket.
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to
+     * write to the bucket.
      * </p>
      * 
      * @param flowLogsS3Bucket
      *        The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
-     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator
      *        permission to write to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -260,8 +260,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <code>FlowLogsEnabled</code> is <code>true</code>.
      * </p>
      * <p>
-     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
-     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double
+     * slash (//), like the following:
      * </p>
      * <p>
      * s3-bucket_name//AWSLogs/aws_account_id
@@ -271,9 +271,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      *        Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
      *        <code>FlowLogsEnabled</code> is <code>true</code>. </p>
      *        <p>
-     *        If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash
-     *        (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like
-     *        the following:
+     *        If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a
+     *        double slash (//), like the following:
      *        </p>
      *        <p>
      *        s3-bucket_name//AWSLogs/aws_account_id
@@ -289,8 +288,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <code>FlowLogsEnabled</code> is <code>true</code>.
      * </p>
      * <p>
-     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
-     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double
+     * slash (//), like the following:
      * </p>
      * <p>
      * s3-bucket_name//AWSLogs/aws_account_id
@@ -299,9 +298,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * @return Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
      *         <code>FlowLogsEnabled</code> is <code>true</code>. </p>
      *         <p>
-     *         If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash
-     *         (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like
-     *         the following:
+     *         If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a
+     *         double slash (//), like the following:
      *         </p>
      *         <p>
      *         s3-bucket_name//AWSLogs/aws_account_id
@@ -317,8 +315,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      * <code>FlowLogsEnabled</code> is <code>true</code>.
      * </p>
      * <p>
-     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
-     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double
+     * slash (//), like the following:
      * </p>
      * <p>
      * s3-bucket_name//AWSLogs/aws_account_id
@@ -328,9 +326,8 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
      *        Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
      *        <code>FlowLogsEnabled</code> is <code>true</code>. </p>
      *        <p>
-     *        If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash
-     *        (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like
-     *        the following:
+     *        If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a
+     *        double slash (//), like the following:
      *        </p>
      *        <p>
      *        s3-bucket_name//AWSLogs/aws_account_id

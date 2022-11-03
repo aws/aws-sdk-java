@@ -82,13 +82,13 @@ public class StackSet implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the stack set.
+     * The Amazon Resource Name (ARN) of the stack set.
      * </p>
      */
     private String stackSetARN;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.
+     * The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -686,11 +686,11 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the stack set.
+     * The Amazon Resource Name (ARN) of the stack set.
      * </p>
      * 
      * @param stackSetARN
-     *        The Amazon Resource Number (ARN) of the stack set.
+     *        The Amazon Resource Name (ARN) of the stack set.
      */
 
     public void setStackSetARN(String stackSetARN) {
@@ -699,10 +699,10 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the stack set.
+     * The Amazon Resource Name (ARN) of the stack set.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the stack set.
+     * @return The Amazon Resource Name (ARN) of the stack set.
      */
 
     public String getStackSetARN() {
@@ -711,11 +711,11 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the stack set.
+     * The Amazon Resource Name (ARN) of the stack set.
      * </p>
      * 
      * @param stackSetARN
-     *        The Amazon Resource Number (ARN) of the stack set.
+     *        The Amazon Resource Name (ARN) of the stack set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -726,7 +726,7 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.
+     * The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -736,7 +736,7 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
@@ -750,7 +750,7 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.
+     * The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -759,7 +759,7 @@ public class StackSet implements Serializable, Cloneable {
      * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
      *         <p>
      *         Use customized administrator roles to control which users or groups can manage specific stack sets within
      *         the same administrator account. For more information, see <a
@@ -774,7 +774,7 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.
+     * The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.
      * </p>
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
@@ -784,7 +784,7 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param administrationRoleARN
-     *        The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+     *        The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a

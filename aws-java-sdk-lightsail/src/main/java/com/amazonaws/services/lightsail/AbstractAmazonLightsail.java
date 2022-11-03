@@ -793,6 +793,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public UpdateInstanceMetadataOptionsResult updateInstanceMetadataOptions(UpdateInstanceMetadataOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateLoadBalancerAttributeResult updateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

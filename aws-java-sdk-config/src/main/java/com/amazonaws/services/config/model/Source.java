@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or customer), the rule identifier, and the
- * events that cause the evaluation of your Amazon Web Services resources.
+ * Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code> for managed rules,
+ * <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule
+ * identifier, and the events that cause the evaluation of your Amazon Web Services resources.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Source" target="_top">AWS API
@@ -36,13 +37,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.
+     * Managed Rules</a> in the <i>Config developer guide</i>.
      * </p>
      * <p>
      * Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (
      * <code>CUSTOM_LAMBDA</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom
-     * Rules </a> in the Config developer guide.
+     * Rules </a> in the <i>Config developer guide</i>.
      * </p>
      */
     private String owner;
@@ -90,13 +91,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.
+     * Managed Rules</a> in the <i>Config developer guide</i>.
      * </p>
      * <p>
      * Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (
      * <code>CUSTOM_LAMBDA</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom
-     * Rules </a> in the Config developer guide.
+     * Rules </a> in the <i>Config developer guide</i>.
      * </p>
      * 
      * @param owner
@@ -104,13 +105,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
-     *        >Config Managed Rules</a> in the Config developer guide.
+     *        >Config Managed Rules</a> in the <i>Config developer guide</i>.
      *        </p>
      *        <p>
      *        Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
      *        Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     *        Custom Rules </a> in the Config developer guide.
+     *        Custom Rules </a> in the <i>Config developer guide</i>.
      * @see Owner
      */
 
@@ -125,13 +126,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.
+     * Managed Rules</a> in the <i>Config developer guide</i>.
      * </p>
      * <p>
      * Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (
      * <code>CUSTOM_LAMBDA</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom
-     * Rules </a> in the Config developer guide.
+     * Rules </a> in the <i>Config developer guide</i>.
      * </p>
      * 
      * @return Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
@@ -139,13 +140,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *         Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      *         href=
      *         "https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     *         Managed Rules</a> in the Config developer guide.
+     *         Managed Rules</a> in the <i>Config developer guide</i>.
      *         </p>
      *         <p>
      *         Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
      *         Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     *         Custom Rules </a> in the Config developer guide.
+     *         Custom Rules </a> in the <i>Config developer guide</i>.
      * @see Owner
      */
 
@@ -160,13 +161,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.
+     * Managed Rules</a> in the <i>Config developer guide</i>.
      * </p>
      * <p>
      * Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (
      * <code>CUSTOM_LAMBDA</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom
-     * Rules </a> in the Config developer guide.
+     * Rules </a> in the <i>Config developer guide</i>.
      * </p>
      * 
      * @param owner
@@ -174,13 +175,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
-     *        >Config Managed Rules</a> in the Config developer guide.
+     *        >Config Managed Rules</a> in the <i>Config developer guide</i>.
      *        </p>
      *        <p>
      *        Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
      *        Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     *        Custom Rules </a> in the Config developer guide.
+     *        Custom Rules </a> in the <i>Config developer guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Owner
      */
@@ -197,13 +198,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.
+     * Managed Rules</a> in the <i>Config developer guide</i>.
      * </p>
      * <p>
      * Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (
      * <code>CUSTOM_LAMBDA</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom
-     * Rules </a> in the Config developer guide.
+     * Rules </a> in the <i>Config developer guide</i>.
      * </p>
      * 
      * @param owner
@@ -211,13 +212,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
-     *        >Config Managed Rules</a> in the Config developer guide.
+     *        >Config Managed Rules</a> in the <i>Config developer guide</i>.
      *        </p>
      *        <p>
      *        Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
      *        Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     *        Custom Rules </a> in the Config developer guide.
+     *        Custom Rules </a> in the <i>Config developer guide</i>.
      * @see Owner
      */
 
@@ -232,13 +233,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.
+     * Managed Rules</a> in the <i>Config developer guide</i>.
      * </p>
      * <p>
      * Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (
      * <code>CUSTOM_LAMBDA</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom
-     * Rules </a> in the Config developer guide.
+     * Rules </a> in the <i>Config developer guide</i>.
      * </p>
      * 
      * @param owner
@@ -246,13 +247,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
-     *        >Config Managed Rules</a> in the Config developer guide.
+     *        >Config Managed Rules</a> in the <i>Config developer guide</i>.
      *        </p>
      *        <p>
      *        Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
      *        Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     *        Custom Rules </a> in the Config developer guide.
+     *        Custom Rules </a> in the <i>Config developer guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Owner
      */

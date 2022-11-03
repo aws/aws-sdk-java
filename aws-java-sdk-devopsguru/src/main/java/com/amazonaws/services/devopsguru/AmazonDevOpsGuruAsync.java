@@ -646,6 +646,37 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
 
     /**
      * <p>
+     * Returns the list of log groups that contain log anomalies.
+     * </p>
+     * 
+     * @param listAnomalousLogGroupsRequest
+     * @return A Java Future containing the result of the ListAnomalousLogGroups operation returned by the service.
+     * @sample AmazonDevOpsGuruAsync.ListAnomalousLogGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnomalousLogGroupsResult> listAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest listAnomalousLogGroupsRequest);
+
+    /**
+     * <p>
+     * Returns the list of log groups that contain log anomalies.
+     * </p>
+     * 
+     * @param listAnomalousLogGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAnomalousLogGroups operation returned by the service.
+     * @sample AmazonDevOpsGuruAsyncHandler.ListAnomalousLogGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnomalousLogGroupsResult> listAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest listAnomalousLogGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAnomalousLogGroupsRequest, ListAnomalousLogGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to
      * specify which events are returned.
      * </p>
@@ -709,6 +740,37 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
      */
     java.util.concurrent.Future<ListInsightsResult> listInsightsAsync(ListInsightsRequest listInsightsRequest,
             com.amazonaws.handlers.AsyncHandler<ListInsightsRequest, ListInsightsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of all log groups that are being monitored and tagged by DevOps Guru.
+     * </p>
+     * 
+     * @param listMonitoredResourcesRequest
+     * @return A Java Future containing the result of the ListMonitoredResources operation returned by the service.
+     * @sample AmazonDevOpsGuruAsync.ListMonitoredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMonitoredResourcesResult> listMonitoredResourcesAsync(ListMonitoredResourcesRequest listMonitoredResourcesRequest);
+
+    /**
+     * <p>
+     * Returns the list of all log groups that are being monitored and tagged by DevOps Guru.
+     * </p>
+     * 
+     * @param listMonitoredResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMonitoredResources operation returned by the service.
+     * @sample AmazonDevOpsGuruAsyncHandler.ListMonitoredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMonitoredResourcesResult> listMonitoredResourcesAsync(ListMonitoredResourcesRequest listMonitoredResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMonitoredResourcesRequest, ListMonitoredResourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -878,9 +940,9 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
     /**
      * <p>
      * Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by
-     * their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one
-     * or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (
-     * <code>REACTIVE</code> or <code>PROACTIVE</code>).
+     * their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (
+     * <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or
+     * <code>PROACTIVE</code>).
      * </p>
      * <p>
      * Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the
@@ -898,9 +960,9 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
     /**
      * <p>
      * Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by
-     * their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one
-     * or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (
-     * <code>REACTIVE</code> or <code>PROACTIVE</code>).
+     * their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (
+     * <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or
+     * <code>PROACTIVE</code>).
      * </p>
      * <p>
      * Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the

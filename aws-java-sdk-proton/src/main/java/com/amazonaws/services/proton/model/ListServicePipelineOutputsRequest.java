@@ -34,7 +34,7 @@ public class ListServicePipelineOutputsRequest extends com.amazonaws.AmazonWebSe
     private String nextToken;
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's outputs you want.
      * </p>
      */
     private String serviceName;
@@ -87,11 +87,11 @@ public class ListServicePipelineOutputsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's outputs you want.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the service whose pipeline's outputs you want.
      */
 
     public void setServiceName(String serviceName) {
@@ -100,10 +100,10 @@ public class ListServicePipelineOutputsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's outputs you want.
      * </p>
      * 
-     * @return The service name.
+     * @return The name of the service whose pipeline's outputs you want.
      */
 
     public String getServiceName() {
@@ -112,11 +112,11 @@ public class ListServicePipelineOutputsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's outputs you want.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the service whose pipeline's outputs you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

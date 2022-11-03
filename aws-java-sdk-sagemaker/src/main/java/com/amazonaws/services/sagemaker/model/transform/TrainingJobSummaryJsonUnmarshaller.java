@@ -72,6 +72,10 @@ public class TrainingJobSummaryJsonUnmarshaller implements Unmarshaller<Training
                     context.nextToken();
                     trainingJobSummary.setTrainingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("WarmPoolStatus", targetDepth)) {
+                    context.nextToken();
+                    trainingJobSummary.setWarmPoolStatus(WarmPoolStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

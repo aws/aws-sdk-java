@@ -26,9 +26,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AvailSettings implements Serializable, Cloneable, StructuredPojo {
 
+    private Esam esam;
+
     private Scte35SpliceInsert scte35SpliceInsert;
 
     private Scte35TimeSignalApos scte35TimeSignalApos;
+
+    /**
+     * @param esam
+     */
+
+    public void setEsam(Esam esam) {
+        this.esam = esam;
+    }
+
+    /**
+     * @return
+     */
+
+    public Esam getEsam() {
+        return this.esam;
+    }
+
+    /**
+     * @param esam
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailSettings withEsam(Esam esam) {
+        setEsam(esam);
+        return this;
+    }
 
     /**
      * @param scte35SpliceInsert
@@ -94,6 +122,8 @@ public class AvailSettings implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEsam() != null)
+            sb.append("Esam: ").append(getEsam()).append(",");
         if (getScte35SpliceInsert() != null)
             sb.append("Scte35SpliceInsert: ").append(getScte35SpliceInsert()).append(",");
         if (getScte35TimeSignalApos() != null)
@@ -112,6 +142,10 @@ public class AvailSettings implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AvailSettings == false)
             return false;
         AvailSettings other = (AvailSettings) obj;
+        if (other.getEsam() == null ^ this.getEsam() == null)
+            return false;
+        if (other.getEsam() != null && other.getEsam().equals(this.getEsam()) == false)
+            return false;
         if (other.getScte35SpliceInsert() == null ^ this.getScte35SpliceInsert() == null)
             return false;
         if (other.getScte35SpliceInsert() != null && other.getScte35SpliceInsert().equals(this.getScte35SpliceInsert()) == false)
@@ -128,6 +162,7 @@ public class AvailSettings implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEsam() == null) ? 0 : getEsam().hashCode());
         hashCode = prime * hashCode + ((getScte35SpliceInsert() == null) ? 0 : getScte35SpliceInsert().hashCode());
         hashCode = prime * hashCode + ((getScte35TimeSignalApos() == null) ? 0 : getScte35TimeSignalApos().hashCode());
         return hashCode;

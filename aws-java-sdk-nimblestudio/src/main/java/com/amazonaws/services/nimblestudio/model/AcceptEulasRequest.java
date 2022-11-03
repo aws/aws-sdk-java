@@ -41,7 +41,7 @@ public class AcceptEulasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> eulaIds;
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The studio ID.
      * </p>
      */
     private String studioId;
@@ -170,11 +170,11 @@ public class AcceptEulasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The studio ID.
      * </p>
      * 
      * @param studioId
-     *        A collection of EULA IDs.
+     *        The studio ID.
      */
 
     public void setStudioId(String studioId) {
@@ -183,10 +183,10 @@ public class AcceptEulasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The studio ID.
      * </p>
      * 
-     * @return A collection of EULA IDs.
+     * @return The studio ID.
      */
 
     public String getStudioId() {
@@ -195,11 +195,11 @@ public class AcceptEulasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The studio ID.
      * </p>
      * 
      * @param studioId
-     *        A collection of EULA IDs.
+     *        The studio ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

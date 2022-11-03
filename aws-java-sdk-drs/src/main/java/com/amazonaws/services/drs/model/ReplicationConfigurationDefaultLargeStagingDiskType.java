@@ -22,7 +22,8 @@ public enum ReplicationConfigurationDefaultLargeStagingDiskType {
 
     GP2("GP2"),
     GP3("GP3"),
-    ST1("ST1");
+    ST1("ST1"),
+    AUTO("AUTO");
 
     private String value;
 

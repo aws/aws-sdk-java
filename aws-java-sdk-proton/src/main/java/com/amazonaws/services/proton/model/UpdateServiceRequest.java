@@ -41,9 +41,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Lists the service instances to add and the existing service instances to remain. Omit the existing service
      * instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-     * the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a
+     * service</a> in the <i>Proton User Guide</i>.
      * </p>
      */
     private String spec;
@@ -132,18 +131,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Lists the service instances to add and the existing service instances to remain. Omit the existing service
      * instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-     * the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a
+     * service</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param spec
      *        Lists the service instances to add and the existing service instances to remain. Omit the existing service
      *        instances to delete from the list. <i>Don't</i> include edits to the existing service instances or
-     *        pipeline. For more information, see <i>Edit a service</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator
-     *        Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     *        User Guide</a>.
+     *        pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the
+     *        <i>Proton User Guide</i>.
      */
 
     public void setSpec(String spec) {
@@ -154,17 +151,15 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Lists the service instances to add and the existing service instances to remain. Omit the existing service
      * instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-     * the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a
+     * service</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @return Lists the service instances to add and the existing service instances to remain. Omit the existing
      *         service instances to delete from the list. <i>Don't</i> include edits to the existing service instances
-     *         or pipeline. For more information, see <i>Edit a service</i> in the <a
-     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator
-     *         Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     *         User Guide</a>.
+     *         or pipeline. For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the
+     *         <i>Proton User Guide</i>.
      */
 
     public String getSpec() {
@@ -175,18 +170,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Lists the service instances to add and the existing service instances to remain. Omit the existing service
      * instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-     * the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a
+     * service</a> in the <i>Proton User Guide</i>.
      * </p>
      * 
      * @param spec
      *        Lists the service instances to add and the existing service instances to remain. Omit the existing service
      *        instances to delete from the list. <i>Don't</i> include edits to the existing service instances or
-     *        pipeline. For more information, see <i>Edit a service</i> in the <a
-     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator
-     *        Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     *        User Guide</a>.
+     *        pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the
+     *        <i>Proton User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

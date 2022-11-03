@@ -55,7 +55,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      * >Management Events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -76,9 +76,9 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * configure resource logging for all data events.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     * >Data Events</a> and <a
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -219,7 +219,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      * >Management Events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -235,7 +235,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Specify if you want your event selector to include management events for your trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      *        >Management Events</a> in the <i>CloudTrail User Guide</i>.
      *        </p>
      *        <p>
@@ -257,7 +257,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      * >Management Events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -272,7 +272,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      *         >Management Events</a> in the <i>CloudTrail User Guide</i>.
      *         </p>
      *         <p>
@@ -294,7 +294,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      * >Management Events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -310,7 +310,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Specify if you want your event selector to include management events for your trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      *        >Management Events</a> in the <i>CloudTrail User Guide</i>.
      *        </p>
      *        <p>
@@ -334,7 +334,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      * >Management Events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -349,7 +349,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
      *         >Management Events</a> in the <i>CloudTrail User Guide</i>.
      *         </p>
      *         <p>
@@ -373,9 +373,9 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * configure resource logging for all data events.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     * >Data Events</a> and <a
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -386,7 +386,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         limit does not apply if you configure resource logging for all data events.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
      *         >Data Events</a> and <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      *         CloudTrail</a> in the <i>CloudTrail User Guide</i>.
@@ -407,9 +407,9 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * configure resource logging for all data events.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     * >Data Events</a> and <a
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -421,8 +421,8 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        not apply if you configure resource logging for all data events.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     *        >Data Events</a> and <a
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     *        Events</a> and <a
      *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      *        CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      */
@@ -444,9 +444,9 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * configure resource logging for all data events.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     * >Data Events</a> and <a
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -463,8 +463,8 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        not apply if you configure resource logging for all data events.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     *        >Data Events</a> and <a
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     *        Events</a> and <a
      *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      *        CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -488,9 +488,9 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * configure resource logging for all data events.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     * >Data Events</a> and <a
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -502,8 +502,8 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        not apply if you configure resource logging for all data events.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
-     *        >Data Events</a> and <a
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
+     *        Events</a> and <a
      *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
      *        CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

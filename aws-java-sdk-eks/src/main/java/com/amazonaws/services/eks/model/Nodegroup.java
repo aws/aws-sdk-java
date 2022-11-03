@@ -143,7 +143,9 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
-     * used together with tolerations to control how workloads are scheduled to your nodes.
+     * used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      */
     private java.util.List<Taint> taints;
@@ -1070,12 +1072,17 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
-     * used together with tolerations to control how workloads are scheduled to your nodes.
+     * used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * 
      * @return The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one
      *         of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes
-     *         taints can be used together with tolerations to control how workloads are scheduled to your nodes.
+     *         taints can be used together with tolerations to control how workloads are scheduled to your nodes. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints
+     *         on managed node groups</a>.
      */
 
     public java.util.List<Taint> getTaints() {
@@ -1086,13 +1093,18 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
-     * used together with tolerations to control how workloads are scheduled to your nodes.
+     * used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * 
      * @param taints
      *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      *        <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
-     *        can be used together with tolerations to control how workloads are scheduled to your nodes.
+     *        can be used together with tolerations to control how workloads are scheduled to your nodes. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints
+     *        on managed node groups</a>.
      */
 
     public void setTaints(java.util.Collection<Taint> taints) {
@@ -1108,7 +1120,9 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
-     * used together with tolerations to control how workloads are scheduled to your nodes.
+     * used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1119,7 +1133,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * @param taints
      *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      *        <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
-     *        can be used together with tolerations to control how workloads are scheduled to your nodes.
+     *        can be used together with tolerations to control how workloads are scheduled to your nodes. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints
+     *        on managed node groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1137,13 +1154,18 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
-     * used together with tolerations to control how workloads are scheduled to your nodes.
+     * used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on
+     * managed node groups</a>.
      * </p>
      * 
      * @param taints
      *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
      *        <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
-     *        can be used together with tolerations to control how workloads are scheduled to your nodes.
+     *        can be used together with tolerations to control how workloads are scheduled to your nodes. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints
+     *        on managed node groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

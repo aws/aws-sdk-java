@@ -31,7 +31,9 @@ public enum DocumentType {
     ChangeCalendar("ChangeCalendar"),
     AutomationChangeTemplate("Automation.ChangeTemplate"),
     ProblemAnalysis("ProblemAnalysis"),
-    ProblemAnalysisTemplate("ProblemAnalysisTemplate");
+    ProblemAnalysisTemplate("ProblemAnalysisTemplate"),
+    CloudFormation("CloudFormation"),
+    ConformancePackTemplate("ConformancePackTemplate");
 
     private String value;
 

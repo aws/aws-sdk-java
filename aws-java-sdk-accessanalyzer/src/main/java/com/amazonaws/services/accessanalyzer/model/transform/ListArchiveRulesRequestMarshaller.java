@@ -29,10 +29,10 @@ public class ListArchiveRulesRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("analyzerName").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListArchiveRulesRequestMarshaller instance = new ListArchiveRulesRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class ListArchiveRulesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listArchiveRulesRequest.getAnalyzerName(), ANALYZERNAME_BINDING);
-            protocolMarshaller.marshall(listArchiveRulesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listArchiveRulesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listArchiveRulesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

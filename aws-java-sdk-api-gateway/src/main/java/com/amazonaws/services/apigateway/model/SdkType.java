@@ -27,36 +27,36 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of an <a>SdkType</a> instance.
+     * The identifier of an SdkType instance.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> instance.
+     * The user-friendly name of an SdkType instance.
      * </p>
      */
     private String friendlyName;
     /**
      * <p>
-     * The description of an <a>SdkType</a>.
+     * The description of an SdkType.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A list of configuration properties of an <a>SdkType</a>.
+     * A list of configuration properties of an SdkType.
      * </p>
      */
     private java.util.List<SdkConfigurationProperty> configurationProperties;
 
     /**
      * <p>
-     * The identifier of an <a>SdkType</a> instance.
+     * The identifier of an SdkType instance.
      * </p>
      * 
      * @param id
-     *        The identifier of an <a>SdkType</a> instance.
+     *        The identifier of an SdkType instance.
      */
 
     public void setId(String id) {
@@ -65,10 +65,10 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of an <a>SdkType</a> instance.
+     * The identifier of an SdkType instance.
      * </p>
      * 
-     * @return The identifier of an <a>SdkType</a> instance.
+     * @return The identifier of an SdkType instance.
      */
 
     public String getId() {
@@ -77,11 +77,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of an <a>SdkType</a> instance.
+     * The identifier of an SdkType instance.
      * </p>
      * 
      * @param id
-     *        The identifier of an <a>SdkType</a> instance.
+     *        The identifier of an SdkType instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> instance.
+     * The user-friendly name of an SdkType instance.
      * </p>
      * 
      * @param friendlyName
-     *        The user-friendly name of an <a>SdkType</a> instance.
+     *        The user-friendly name of an SdkType instance.
      */
 
     public void setFriendlyName(String friendlyName) {
@@ -105,10 +105,10 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> instance.
+     * The user-friendly name of an SdkType instance.
      * </p>
      * 
-     * @return The user-friendly name of an <a>SdkType</a> instance.
+     * @return The user-friendly name of an SdkType instance.
      */
 
     public String getFriendlyName() {
@@ -117,11 +117,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of an <a>SdkType</a> instance.
+     * The user-friendly name of an SdkType instance.
      * </p>
      * 
      * @param friendlyName
-     *        The user-friendly name of an <a>SdkType</a> instance.
+     *        The user-friendly name of an SdkType instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of an <a>SdkType</a>.
+     * The description of an SdkType.
      * </p>
      * 
      * @param description
-     *        The description of an <a>SdkType</a>.
+     *        The description of an SdkType.
      */
 
     public void setDescription(String description) {
@@ -145,10 +145,10 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of an <a>SdkType</a>.
+     * The description of an SdkType.
      * </p>
      * 
-     * @return The description of an <a>SdkType</a>.
+     * @return The description of an SdkType.
      */
 
     public String getDescription() {
@@ -157,11 +157,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of an <a>SdkType</a>.
+     * The description of an SdkType.
      * </p>
      * 
      * @param description
-     *        The description of an <a>SdkType</a>.
+     *        The description of an SdkType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,10 +172,10 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of configuration properties of an <a>SdkType</a>.
+     * A list of configuration properties of an SdkType.
      * </p>
      * 
-     * @return A list of configuration properties of an <a>SdkType</a>.
+     * @return A list of configuration properties of an SdkType.
      */
 
     public java.util.List<SdkConfigurationProperty> getConfigurationProperties() {
@@ -184,11 +184,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of configuration properties of an <a>SdkType</a>.
+     * A list of configuration properties of an SdkType.
      * </p>
      * 
      * @param configurationProperties
-     *        A list of configuration properties of an <a>SdkType</a>.
+     *        A list of configuration properties of an SdkType.
      */
 
     public void setConfigurationProperties(java.util.Collection<SdkConfigurationProperty> configurationProperties) {
@@ -202,7 +202,7 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of configuration properties of an <a>SdkType</a>.
+     * A list of configuration properties of an SdkType.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +211,7 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param configurationProperties
-     *        A list of configuration properties of an <a>SdkType</a>.
+     *        A list of configuration properties of an SdkType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class SdkType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of configuration properties of an <a>SdkType</a>.
+     * A list of configuration properties of an SdkType.
      * </p>
      * 
      * @param configurationProperties
-     *        A list of configuration properties of an <a>SdkType</a>.
+     *        A list of configuration properties of an SdkType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

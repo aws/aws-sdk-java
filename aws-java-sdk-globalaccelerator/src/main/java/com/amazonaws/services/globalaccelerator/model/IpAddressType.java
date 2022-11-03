@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IpAddressType {
 
-    IPV4("IPV4");
+    IPV4("IPV4"),
+    DUAL_STACK("DUAL_STACK");
 
     private String value;
 

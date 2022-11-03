@@ -41,11 +41,11 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
     private Boolean copyTagsToBackups;
     /**
      * <p>
-     * A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to
-     * <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the
-     * user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
-     * specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are
-     * copied from the volume, regardless of this value.
+     * A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to
+     * <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where
+     * the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
+     * specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      */
     private Boolean copyTagsToVolumes;
@@ -194,19 +194,19 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to
-     * <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the
-     * user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
-     * specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are
-     * copied from the volume, regardless of this value.
+     * A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to
+     * <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where
+     * the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
+     * specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
      * @param copyTagsToVolumes
-     *        A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults
-     *        to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots
-     *        where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags,
-     *        only the specified tags are copied to snapshots. If you specify one or more tags when creating the
-     *        snapshot, no tags are copied from the volume, regardless of this value.
+     *        A Boolean value indicating whether tags for the file system should be copied to volumes. This value
+     *        defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied
+     *        to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or
+     *        more tags, only the specified tags are copied to volumes. If you specify one or more tags when creating
+     *        the volume, no tags are copied from the file system, regardless of this value.
      */
 
     public void setCopyTagsToVolumes(Boolean copyTagsToVolumes) {
@@ -215,18 +215,18 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to
-     * <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the
-     * user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
-     * specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are
-     * copied from the volume, regardless of this value.
+     * A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to
+     * <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where
+     * the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
+     * specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
-     * @return A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults
-     *         to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots
-     *         where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more
-     *         tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the
-     *         snapshot, no tags are copied from the volume, regardless of this value.
+     * @return A Boolean value indicating whether tags for the file system should be copied to volumes. This value
+     *         defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied
+     *         to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one
+     *         or more tags, only the specified tags are copied to volumes. If you specify one or more tags when
+     *         creating the volume, no tags are copied from the file system, regardless of this value.
      */
 
     public Boolean getCopyTagsToVolumes() {
@@ -235,19 +235,19 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to
-     * <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the
-     * user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
-     * specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are
-     * copied from the volume, regardless of this value.
+     * A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to
+     * <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where
+     * the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
+     * specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
      * @param copyTagsToVolumes
-     *        A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults
-     *        to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots
-     *        where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags,
-     *        only the specified tags are copied to snapshots. If you specify one or more tags when creating the
-     *        snapshot, no tags are copied from the volume, regardless of this value.
+     *        A Boolean value indicating whether tags for the file system should be copied to volumes. This value
+     *        defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied
+     *        to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or
+     *        more tags, only the specified tags are copied to volumes. If you specify one or more tags when creating
+     *        the volume, no tags are copied from the file system, regardless of this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,18 +258,18 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to
-     * <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the
-     * user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
-     * specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are
-     * copied from the volume, regardless of this value.
+     * A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to
+     * <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where
+     * the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the
+     * specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
-     * @return A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults
-     *         to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots
-     *         where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more
-     *         tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the
-     *         snapshot, no tags are copied from the volume, regardless of this value.
+     * @return A Boolean value indicating whether tags for the file system should be copied to volumes. This value
+     *         defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied
+     *         to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one
+     *         or more tags, only the specified tags are copied to volumes. If you specify one or more tags when
+     *         creating the volume, no tags are copied from the file system, regardless of this value.
      */
 
     public Boolean isCopyTagsToVolumes() {

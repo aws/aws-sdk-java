@@ -31,8 +31,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the
-     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
-     * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
+     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set
+     * on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
@@ -54,8 +54,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the
-     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
-     * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
+     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set
+     * on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
@@ -63,9 +63,9 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * 
      * @param accessPointId
      *        The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified
-     *        in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will
-     *        enforce the path set on the EFS access point. If an access point is used, transit encryption must be
-     *        enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
+     *        in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces
+     *        the path set on the EFS access point. If an access point is used, transit encryption must be enabled in
+     *        the <code>EFSVolumeConfiguration</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access
      *        points</a> in the <i>Amazon Elastic File System User Guide</i>.
      */
@@ -77,8 +77,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the
-     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
-     * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
+     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set
+     * on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
@@ -86,8 +86,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * 
      * @return The Amazon EFS access point ID to use. If an access point is specified, the root directory value
      *         specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code>
-     *         which will enforce the path set on the EFS access point. If an access point is used, transit encryption
-     *         must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
+     *         which enforces the path set on the EFS access point. If an access point is used, transit encryption must
+     *         be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access
      *         points</a> in the <i>Amazon Elastic File System User Guide</i>.
      */
@@ -99,8 +99,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the
-     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path
-     * set on the EFS access point. If an access point is used, transit encryption must be enabled in the
+     * <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set
+     * on the EFS access point. If an access point is used, transit encryption must be enabled in the
      * <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a>
      * in the <i>Amazon Elastic File System User Guide</i>.
@@ -108,9 +108,9 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
      * 
      * @param accessPointId
      *        The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified
-     *        in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will
-     *        enforce the path set on the EFS access point. If an access point is used, transit encryption must be
-     *        enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
+     *        in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces
+     *        the path set on the EFS access point. If an access point is used, transit encryption must be enabled in
+     *        the <code>EFSVolumeConfiguration</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access
      *        points</a> in the <i>Amazon Elastic File System User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

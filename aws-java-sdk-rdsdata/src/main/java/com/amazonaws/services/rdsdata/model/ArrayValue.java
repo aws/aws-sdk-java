@@ -30,22 +30,10 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of arrays.
-     * </p>
-     */
-    private java.util.List<ArrayValue> arrayValues;
-    /**
-     * <p>
      * An array of Boolean values.
      * </p>
      */
     private java.util.List<Boolean> booleanValues;
-    /**
-     * <p>
-     * An array of floating-point numbers.
-     * </p>
-     */
-    private java.util.List<Double> doubleValues;
     /**
      * <p>
      * An array of integers.
@@ -54,80 +42,22 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Long> longValues;
     /**
      * <p>
+     * An array of floating-point numbers.
+     * </p>
+     */
+    private java.util.List<Double> doubleValues;
+    /**
+     * <p>
      * An array of strings.
      * </p>
      */
     private java.util.List<String> stringValues;
-
     /**
      * <p>
      * An array of arrays.
      * </p>
-     * 
-     * @return An array of arrays.
      */
-
-    public java.util.List<ArrayValue> getArrayValues() {
-        return arrayValues;
-    }
-
-    /**
-     * <p>
-     * An array of arrays.
-     * </p>
-     * 
-     * @param arrayValues
-     *        An array of arrays.
-     */
-
-    public void setArrayValues(java.util.Collection<ArrayValue> arrayValues) {
-        if (arrayValues == null) {
-            this.arrayValues = null;
-            return;
-        }
-
-        this.arrayValues = new java.util.ArrayList<ArrayValue>(arrayValues);
-    }
-
-    /**
-     * <p>
-     * An array of arrays.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setArrayValues(java.util.Collection)} or {@link #withArrayValues(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param arrayValues
-     *        An array of arrays.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ArrayValue withArrayValues(ArrayValue... arrayValues) {
-        if (this.arrayValues == null) {
-            setArrayValues(new java.util.ArrayList<ArrayValue>(arrayValues.length));
-        }
-        for (ArrayValue ele : arrayValues) {
-            this.arrayValues.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * An array of arrays.
-     * </p>
-     * 
-     * @param arrayValues
-     *        An array of arrays.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ArrayValue withArrayValues(java.util.Collection<ArrayValue> arrayValues) {
-        setArrayValues(arrayValues);
-        return this;
-    }
+    private java.util.List<ArrayValue> arrayValues;
 
     /**
      * <p>
@@ -196,76 +126,6 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
 
     public ArrayValue withBooleanValues(java.util.Collection<Boolean> booleanValues) {
         setBooleanValues(booleanValues);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An array of floating-point numbers.
-     * </p>
-     * 
-     * @return An array of floating-point numbers.
-     */
-
-    public java.util.List<Double> getDoubleValues() {
-        return doubleValues;
-    }
-
-    /**
-     * <p>
-     * An array of floating-point numbers.
-     * </p>
-     * 
-     * @param doubleValues
-     *        An array of floating-point numbers.
-     */
-
-    public void setDoubleValues(java.util.Collection<Double> doubleValues) {
-        if (doubleValues == null) {
-            this.doubleValues = null;
-            return;
-        }
-
-        this.doubleValues = new java.util.ArrayList<Double>(doubleValues);
-    }
-
-    /**
-     * <p>
-     * An array of floating-point numbers.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setDoubleValues(java.util.Collection)} or {@link #withDoubleValues(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param doubleValues
-     *        An array of floating-point numbers.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ArrayValue withDoubleValues(Double... doubleValues) {
-        if (this.doubleValues == null) {
-            setDoubleValues(new java.util.ArrayList<Double>(doubleValues.length));
-        }
-        for (Double ele : doubleValues) {
-            this.doubleValues.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * An array of floating-point numbers.
-     * </p>
-     * 
-     * @param doubleValues
-     *        An array of floating-point numbers.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ArrayValue withDoubleValues(java.util.Collection<Double> doubleValues) {
-        setDoubleValues(doubleValues);
         return this;
     }
 
@@ -341,6 +201,76 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An array of floating-point numbers.
+     * </p>
+     * 
+     * @return An array of floating-point numbers.
+     */
+
+    public java.util.List<Double> getDoubleValues() {
+        return doubleValues;
+    }
+
+    /**
+     * <p>
+     * An array of floating-point numbers.
+     * </p>
+     * 
+     * @param doubleValues
+     *        An array of floating-point numbers.
+     */
+
+    public void setDoubleValues(java.util.Collection<Double> doubleValues) {
+        if (doubleValues == null) {
+            this.doubleValues = null;
+            return;
+        }
+
+        this.doubleValues = new java.util.ArrayList<Double>(doubleValues);
+    }
+
+    /**
+     * <p>
+     * An array of floating-point numbers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDoubleValues(java.util.Collection)} or {@link #withDoubleValues(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param doubleValues
+     *        An array of floating-point numbers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArrayValue withDoubleValues(Double... doubleValues) {
+        if (this.doubleValues == null) {
+            setDoubleValues(new java.util.ArrayList<Double>(doubleValues.length));
+        }
+        for (Double ele : doubleValues) {
+            this.doubleValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of floating-point numbers.
+     * </p>
+     * 
+     * @param doubleValues
+     *        An array of floating-point numbers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArrayValue withDoubleValues(java.util.Collection<Double> doubleValues) {
+        setDoubleValues(doubleValues);
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of strings.
      * </p>
      * 
@@ -410,6 +340,76 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An array of arrays.
+     * </p>
+     * 
+     * @return An array of arrays.
+     */
+
+    public java.util.List<ArrayValue> getArrayValues() {
+        return arrayValues;
+    }
+
+    /**
+     * <p>
+     * An array of arrays.
+     * </p>
+     * 
+     * @param arrayValues
+     *        An array of arrays.
+     */
+
+    public void setArrayValues(java.util.Collection<ArrayValue> arrayValues) {
+        if (arrayValues == null) {
+            this.arrayValues = null;
+            return;
+        }
+
+        this.arrayValues = new java.util.ArrayList<ArrayValue>(arrayValues);
+    }
+
+    /**
+     * <p>
+     * An array of arrays.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArrayValues(java.util.Collection)} or {@link #withArrayValues(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param arrayValues
+     *        An array of arrays.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArrayValue withArrayValues(ArrayValue... arrayValues) {
+        if (this.arrayValues == null) {
+            setArrayValues(new java.util.ArrayList<ArrayValue>(arrayValues.length));
+        }
+        for (ArrayValue ele : arrayValues) {
+            this.arrayValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of arrays.
+     * </p>
+     * 
+     * @param arrayValues
+     *        An array of arrays.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArrayValue withArrayValues(java.util.Collection<ArrayValue> arrayValues) {
+        setArrayValues(arrayValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -421,16 +421,16 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArrayValues() != null)
-            sb.append("ArrayValues: ").append(getArrayValues()).append(",");
         if (getBooleanValues() != null)
             sb.append("BooleanValues: ").append(getBooleanValues()).append(",");
-        if (getDoubleValues() != null)
-            sb.append("DoubleValues: ").append(getDoubleValues()).append(",");
         if (getLongValues() != null)
             sb.append("LongValues: ").append(getLongValues()).append(",");
+        if (getDoubleValues() != null)
+            sb.append("DoubleValues: ").append(getDoubleValues()).append(",");
         if (getStringValues() != null)
-            sb.append("StringValues: ").append(getStringValues());
+            sb.append("StringValues: ").append(getStringValues()).append(",");
+        if (getArrayValues() != null)
+            sb.append("ArrayValues: ").append(getArrayValues());
         sb.append("}");
         return sb.toString();
     }
@@ -445,25 +445,25 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ArrayValue == false)
             return false;
         ArrayValue other = (ArrayValue) obj;
-        if (other.getArrayValues() == null ^ this.getArrayValues() == null)
-            return false;
-        if (other.getArrayValues() != null && other.getArrayValues().equals(this.getArrayValues()) == false)
-            return false;
         if (other.getBooleanValues() == null ^ this.getBooleanValues() == null)
             return false;
         if (other.getBooleanValues() != null && other.getBooleanValues().equals(this.getBooleanValues()) == false)
-            return false;
-        if (other.getDoubleValues() == null ^ this.getDoubleValues() == null)
-            return false;
-        if (other.getDoubleValues() != null && other.getDoubleValues().equals(this.getDoubleValues()) == false)
             return false;
         if (other.getLongValues() == null ^ this.getLongValues() == null)
             return false;
         if (other.getLongValues() != null && other.getLongValues().equals(this.getLongValues()) == false)
             return false;
+        if (other.getDoubleValues() == null ^ this.getDoubleValues() == null)
+            return false;
+        if (other.getDoubleValues() != null && other.getDoubleValues().equals(this.getDoubleValues()) == false)
+            return false;
         if (other.getStringValues() == null ^ this.getStringValues() == null)
             return false;
         if (other.getStringValues() != null && other.getStringValues().equals(this.getStringValues()) == false)
+            return false;
+        if (other.getArrayValues() == null ^ this.getArrayValues() == null)
+            return false;
+        if (other.getArrayValues() != null && other.getArrayValues().equals(this.getArrayValues()) == false)
             return false;
         return true;
     }
@@ -473,11 +473,11 @@ public class ArrayValue implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArrayValues() == null) ? 0 : getArrayValues().hashCode());
         hashCode = prime * hashCode + ((getBooleanValues() == null) ? 0 : getBooleanValues().hashCode());
-        hashCode = prime * hashCode + ((getDoubleValues() == null) ? 0 : getDoubleValues().hashCode());
         hashCode = prime * hashCode + ((getLongValues() == null) ? 0 : getLongValues().hashCode());
+        hashCode = prime * hashCode + ((getDoubleValues() == null) ? 0 : getDoubleValues().hashCode());
         hashCode = prime * hashCode + ((getStringValues() == null) ? 0 : getStringValues().hashCode());
+        hashCode = prime * hashCode + ((getArrayValues() == null) ? 0 : getArrayValues().hashCode());
         return hashCode;
     }
 

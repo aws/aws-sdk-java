@@ -108,6 +108,15 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String inferenceId;
+    /**
+     * <p>
+     * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a href=
+     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * >EnableExplanations</a> section in the developer guide for more information.
+     * </p>
+     */
+    private String enableExplanations;
 
     /**
      * <p>
@@ -669,6 +678,64 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a href=
+     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * >EnableExplanations</a> section in the developer guide for more information.
+     * </p>
+     * 
+     * @param enableExplanations
+     *        An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     *        <code>ClarifyExplainerConfig</code> API. See the <a href=
+     *        "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     *        >EnableExplanations</a> section in the developer guide for more information.
+     */
+
+    public void setEnableExplanations(String enableExplanations) {
+        this.enableExplanations = enableExplanations;
+    }
+
+    /**
+     * <p>
+     * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a href=
+     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * >EnableExplanations</a> section in the developer guide for more information.
+     * </p>
+     * 
+     * @return An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     *         <code>ClarifyExplainerConfig</code> API. See the <a href=
+     *         "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     *         >EnableExplanations</a> section in the developer guide for more information.
+     */
+
+    public String getEnableExplanations() {
+        return this.enableExplanations;
+    }
+
+    /**
+     * <p>
+     * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a href=
+     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * >EnableExplanations</a> section in the developer guide for more information.
+     * </p>
+     * 
+     * @param enableExplanations
+     *        An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
+     *        <code>ClarifyExplainerConfig</code> API. See the <a href=
+     *        "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     *        >EnableExplanations</a> section in the developer guide for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withEnableExplanations(String enableExplanations) {
+        setEnableExplanations(enableExplanations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -697,7 +764,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTargetContainerHostname() != null)
             sb.append("TargetContainerHostname: ").append(getTargetContainerHostname()).append(",");
         if (getInferenceId() != null)
-            sb.append("InferenceId: ").append(getInferenceId());
+            sb.append("InferenceId: ").append(getInferenceId()).append(",");
+        if (getEnableExplanations() != null)
+            sb.append("EnableExplanations: ").append(getEnableExplanations());
         sb.append("}");
         return sb.toString();
     }
@@ -748,6 +817,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getInferenceId() != null && other.getInferenceId().equals(this.getInferenceId()) == false)
             return false;
+        if (other.getEnableExplanations() == null ^ this.getEnableExplanations() == null)
+            return false;
+        if (other.getEnableExplanations() != null && other.getEnableExplanations().equals(this.getEnableExplanations()) == false)
+            return false;
         return true;
     }
 
@@ -765,6 +838,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTargetVariant() == null) ? 0 : getTargetVariant().hashCode());
         hashCode = prime * hashCode + ((getTargetContainerHostname() == null) ? 0 : getTargetContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
+        hashCode = prime * hashCode + ((getEnableExplanations() == null) ? 0 : getEnableExplanations().hashCode());
         return hashCode;
     }
 

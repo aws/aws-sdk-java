@@ -124,6 +124,21 @@ public class PathComponentStaxUnmarshaller implements Unmarshaller<PathComponent
                     pathComponent.setTransitGatewayRouteTableRoute(TransitGatewayRouteTableRouteStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("explanationSet", targetDepth)) {
+                    pathComponent.withExplanations(new ArrayList<Explanation>());
+                    continue;
+                }
+
+                if (context.testExpression("explanationSet/item", targetDepth)) {
+                    pathComponent.withExplanations(ExplanationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("elasticLoadBalancerListener", targetDepth)) {
+                    pathComponent.setElasticLoadBalancerListener(AnalysisComponentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return pathComponent;

@@ -64,10 +64,22 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well as any
-     * existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     * existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      * <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.
+     * </p>
+     * <p>
+     * A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
+     * </p>
+     * <p>
+     * If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates
+     * it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use
+     * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant
+     * delay in returning the result.
      * </p>
      * <important>
      * <p>
@@ -326,10 +338,22 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well as any
-     * existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     * existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      * <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.
+     * </p>
+     * <p>
+     * A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
+     * </p>
+     * <p>
+     * If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates
+     * it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use
+     * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant
+     * delay in returning the result.
      * </p>
      * <important>
      * <p>
@@ -342,10 +366,23 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param kmsKeyId
      *        The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well
-     *        as any existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     *        as any existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      *        <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version"
-     *        >Concepts: Version</a>.</p> <important>
+     *        >Concepts: Version</a>.</p>
+     *        <p>
+     *        A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.
+     *        </p>
+     *        <p>
+     *        If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     *        <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager
+     *        creates it for you automatically. All users and roles in the Amazon Web Services account automatically
+     *        have access to use <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in
+     *        a one-time significant delay in returning the result.
+     *        </p>
+     *        <important>
      *        <p>
      *        You can only use the Amazon Web Services managed key <code>aws/secretsmanager</code> if you call this
      *        operation using credentials from the same Amazon Web Services account that owns the secret. If the secret
@@ -362,10 +399,22 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well as any
-     * existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     * existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      * <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.
+     * </p>
+     * <p>
+     * A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
+     * </p>
+     * <p>
+     * If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates
+     * it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use
+     * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant
+     * delay in returning the result.
      * </p>
      * <important>
      * <p>
@@ -377,10 +426,23 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @return The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well
-     *         as any existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     *         as any existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      *         <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version"
-     *         >Concepts: Version</a>.</p> <important>
+     *         >Concepts: Version</a>.</p>
+     *         <p>
+     *         A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.
+     *         </p>
+     *         <p>
+     *         If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     *         <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager
+     *         creates it for you automatically. All users and roles in the Amazon Web Services account automatically
+     *         have access to use <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result
+     *         in a one-time significant delay in returning the result.
+     *         </p>
+     *         <important>
      *         <p>
      *         You can only use the Amazon Web Services managed key <code>aws/secretsmanager</code> if you call this
      *         operation using credentials from the same Amazon Web Services account that owns the secret. If the secret
@@ -397,10 +459,22 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well as any
-     * existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     * existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      * <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.
+     * </p>
+     * <p>
+     * A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.
+     * </p>
+     * <p>
+     * If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager creates
+     * it for you automatically. All users and roles in the Amazon Web Services account automatically have access to use
+     * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in a one-time significant
+     * delay in returning the result.
      * </p>
      * <important>
      * <p>
@@ -413,10 +487,23 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param kmsKeyId
      *        The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well
-     *        as any existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
+     *        as any existing versions with the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or
      *        <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version"
-     *        >Concepts: Version</a>.</p> <important>
+     *        >Concepts: Version</a>.</p>
+     *        <p>
+     *        A key alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.
+     *        </p>
+     *        <p>
+     *        If you set this to an empty string, Secrets Manager uses the Amazon Web Services managed key
+     *        <code>aws/secretsmanager</code>. If this key doesn't already exist in your account, then Secrets Manager
+     *        creates it for you automatically. All users and roles in the Amazon Web Services account automatically
+     *        have access to use <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can result in
+     *        a one-time significant delay in returning the result.
+     *        </p>
+     *        <important>
      *        <p>
      *        You can only use the Amazon Web Services managed key <code>aws/secretsmanager</code> if you call this
      *        operation using credentials from the same Amazon Web Services account that owns the secret. If the secret

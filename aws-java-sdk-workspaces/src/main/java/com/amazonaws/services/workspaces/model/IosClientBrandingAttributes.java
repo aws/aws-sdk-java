@@ -36,14 +36,16 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. This is the standard-resolution display that
-     * has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     * The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal
+     * to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     * file.
      * </p>
      */
     private String logoUrl;
     /**
      * <p>
      * The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).
+     * The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -56,7 +58,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     private String logo2xUrl;
     /**
      * <p>
-     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).
+     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The
+     * only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -119,20 +122,25 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      */
     private java.util.Map<String, String> loginMessage;
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. This is the standard-resolution display that
-     * has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     * The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal
+     * to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     * file.
      * </p>
      * 
      * @param logoUrl
-     *        The logo. This is the link where users can download the logo image. This is the standard-resolution
-     *        display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     *        The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel
+     *        is equal to one point. The only image format accepted is a binary data object that is converted from a
+     *        <code>.png</code> file.
      */
 
     public void setLogoUrl(String logoUrl) {
@@ -141,12 +149,14 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. This is the standard-resolution display that
-     * has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     * The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal
+     * to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     * file.
      * </p>
      * 
-     * @return The logo. This is the link where users can download the logo image. This is the standard-resolution
-     *         display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     * @return The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel
+     *         is equal to one point. The only image format accepted is a binary data object that is converted from a
+     *         <code>.png</code> file.
      */
 
     public String getLogoUrl() {
@@ -155,13 +165,15 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The logo. This is the link where users can download the logo image. This is the standard-resolution display that
-     * has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     * The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal
+     * to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     * file.
      * </p>
      * 
      * @param logoUrl
-     *        The logo. This is the link where users can download the logo image. This is the standard-resolution
-     *        display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+     *        The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel
+     *        is equal to one point. The only image format accepted is a binary data object that is converted from a
+     *        <code>.png</code> file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,6 +185,7 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).
+     * The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -184,7 +197,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
      * 
      * @param logo2xUrl
      *        The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or
-     *        @2x).</p> <note>
+     *        @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     *        file.</p> <note>
      *        <p>
      *        For more information about iOS image size and resolution, see <a href=
      *        "https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/"
@@ -199,6 +213,7 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).
+     * The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -209,7 +224,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
      * </note>
      * 
      * @return The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or
-     *         @2x).</p> <note>
+     *         @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     *         file.</p> <note>
      *         <p>
      *         For more information about iOS image size and resolution, see <a href=
      *         "https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/"
@@ -224,6 +240,7 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).
+     * The only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -235,7 +252,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
      * 
      * @param logo2xUrl
      *        The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or
-     *        @2x).</p> <note>
+     *        @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     *        file.</p> <note>
      *        <p>
      *        For more information about iOS image size and resolution, see <a href=
      *        "https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/"
@@ -251,7 +269,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).
+     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The
+     * only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -263,7 +282,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
      * 
      * @param logo3xUrl
      *        The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or
-     *        @3x).</p> <note>
+     *        @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     *        file.</p> <note>
      *        <p>
      *        For more information about iOS image size and resolution, see <a href=
      *        "https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/"
@@ -277,7 +297,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).
+     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The
+     * only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -288,7 +309,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
      * </note>
      * 
      * @return The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or
-     *         @3x).</p> <note>
+     *         @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     *         file.</p> <note>
      *         <p>
      *         For more information about iOS image size and resolution, see <a href=
      *         "https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/"
@@ -302,7 +324,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).
+     * The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The
+     * only image format accepted is a binary data object that is converted from a <code>.png</code> file.
      * </p>
      * <note>
      * <p>
@@ -314,7 +337,8 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
      * 
      * @param logo3xUrl
      *        The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or
-     *        @3x).</p> <note>
+     *        @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code>
+     *        file.</p> <note>
      *        <p>
      *        For more information about iOS image size and resolution, see <a href=
      *        "https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/"
@@ -625,11 +649,17 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @return The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *         localized message for that locale. The only key supported is <code>en_US</code>.
+     *         localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *         include the following:
+     *         <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *         .
      */
 
     public java.util.Map<String, String> getLoginMessage() {
@@ -639,12 +669,18 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @param loginMessage
      *        The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *        localized message for that locale. The only key supported is <code>en_US</code>.
+     *        localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *        include the following:
+     *        <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *        .
      */
 
     public void setLoginMessage(java.util.Map<String, String> loginMessage) {
@@ -654,12 +690,18 @@ public class IosClientBrandingAttributes implements Serializable, Cloneable, Str
     /**
      * <p>
      * The login message. Specified as a key value pair, in which the key is a locale and the value is the localized
-     * message for that locale. The only key supported is <code>en_US</code>.
+     * message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the
+     * following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     * .
      * </p>
      * 
      * @param loginMessage
      *        The login message. Specified as a key value pair, in which the key is a locale and the value is the
-     *        localized message for that locale. The only key supported is <code>en_US</code>.
+     *        localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported
+     *        include the following:
+     *        <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

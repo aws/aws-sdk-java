@@ -65,6 +65,11 @@ public class AwsCloudFrontDistributionOriginItemJsonUnmarshaller implements Unma
                     awsCloudFrontDistributionOriginItem.setS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("CustomOriginConfig", targetDepth)) {
+                    context.nextToken();
+                    awsCloudFrontDistributionOriginItem.setCustomOriginConfig(AwsCloudFrontDistributionOriginCustomOriginConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

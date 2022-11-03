@@ -47,7 +47,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private java.util.Date lastAccessedTime;
@@ -59,7 +59,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private String lastAccessedRegion;
@@ -145,7 +145,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAccessedTime
@@ -155,7 +155,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAccessedTime(java.util.Date lastAccessedTime) {
@@ -171,7 +171,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
@@ -180,7 +180,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public java.util.Date getLastAccessedTime() {
@@ -196,7 +196,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAccessedTime
@@ -206,7 +206,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,7 +223,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAccessedRegion
@@ -232,7 +232,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAccessedRegion(String lastAccessedRegion) {
@@ -247,7 +247,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The Region from which the authenticated entity (user or role) last attempted to access the tracked
@@ -255,7 +255,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public String getLastAccessedRegion() {
@@ -270,7 +270,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAccessedRegion
@@ -279,7 +279,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a container instance host device.
+ * An object that represents a container instance host device.
  * </p>
  * <note>
  * <p>

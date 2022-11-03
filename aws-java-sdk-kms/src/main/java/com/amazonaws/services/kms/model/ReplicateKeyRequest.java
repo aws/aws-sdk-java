@@ -122,12 +122,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Guide</i> </i>.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * A key policy document can include only the following characters:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * The key policy size quota is 32 kilobytes (32768 bytes).
+     * Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
+     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>Identity and Access Management User Guide</i> </i>.
+     * </p>
      */
     private String policy;
     /**
@@ -611,12 +635,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Guide</i> </i>.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * A key policy document can include only the following characters:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * The key policy size quota is 32 kilobytes (32768 bytes).
+     * Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
+     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>Identity and Access Management User Guide</i> </i>.
+     * </p>
      * 
      * @param policy
      *        The key policy to attach to the KMS key. This parameter is optional. If you do not provide a key policy,
@@ -652,11 +700,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        User Guide</i> </i>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        A key policy document can include only the following characters:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        The key policy size quota is 32 kilobytes (32768 bytes).
+     *        Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII
+     *        character range.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>
+     *        ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
+     *        special characters
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For information about key policies, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in
+     *        the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document,
+     *        see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
+     *        Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
      */
 
     public void setPolicy(String policy) {
@@ -698,12 +771,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Guide</i> </i>.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * A key policy document can include only the following characters:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * The key policy size quota is 32 kilobytes (32768 bytes).
+     * Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
+     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>Identity and Access Management User Guide</i> </i>.
+     * </p>
      * 
      * @return The key policy to attach to the KMS key. This parameter is optional. If you do not provide a key policy,
      *         KMS attaches the <a
@@ -738,11 +835,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         User Guide</i> </i>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         A key policy document can include only the following characters:
+     *         </p>
+     *         <ul>
      *         <li>
      *         <p>
-     *         The key policy size quota is 32 kilobytes (32768 bytes).
+     *         Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII
+     *         character range.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>
+     *         ).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
+     *         special characters
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For information about key policies, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in
+     *         the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy
+     *         document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     *         JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
      */
 
     public String getPolicy() {
@@ -784,12 +906,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Guide</i> </i>.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * A key policy document can include only the following characters:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * The key policy size quota is 32 kilobytes (32768 bytes).
+     * Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
+     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
+     * the <i> <i>Identity and Access Management User Guide</i> </i>.
+     * </p>
      * 
      * @param policy
      *        The key policy to attach to the KMS key. This parameter is optional. If you do not provide a key policy,
@@ -825,11 +971,36 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        User Guide</i> </i>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        A key policy document can include only the following characters:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        The key policy size quota is 32 kilobytes (32768 bytes).
+     *        Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII
+     *        character range.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>
+     *        ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
+     *        special characters
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For information about key policies, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in
+     *        the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document,
+     *        see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
+     *        Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the properties of a custom index field.
+ * Specifies the properties, such as relevance tuning and searchability, of an index field.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentMetadataConfiguration"
@@ -42,7 +42,7 @@ public class DocumentMetadataConfiguration implements Serializable, Cloneable, S
     private String type;
     /**
      * <p>
-     * Provides manual tuning parameters to determine how the field affects the search results.
+     * Provides tuning parameters to determine how the field affects the search results.
      * </p>
      */
     private Relevance relevance;
@@ -154,11 +154,11 @@ public class DocumentMetadataConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Provides manual tuning parameters to determine how the field affects the search results.
+     * Provides tuning parameters to determine how the field affects the search results.
      * </p>
      * 
      * @param relevance
-     *        Provides manual tuning parameters to determine how the field affects the search results.
+     *        Provides tuning parameters to determine how the field affects the search results.
      */
 
     public void setRelevance(Relevance relevance) {
@@ -167,10 +167,10 @@ public class DocumentMetadataConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Provides manual tuning parameters to determine how the field affects the search results.
+     * Provides tuning parameters to determine how the field affects the search results.
      * </p>
      * 
-     * @return Provides manual tuning parameters to determine how the field affects the search results.
+     * @return Provides tuning parameters to determine how the field affects the search results.
      */
 
     public Relevance getRelevance() {
@@ -179,11 +179,11 @@ public class DocumentMetadataConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Provides manual tuning parameters to determine how the field affects the search results.
+     * Provides tuning parameters to determine how the field affects the search results.
      * </p>
      * 
      * @param relevance
-     *        Provides manual tuning parameters to determine how the field affects the search results.
+     *        Provides tuning parameters to determine how the field affects the search results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

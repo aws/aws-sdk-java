@@ -80,6 +80,10 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                     context.nextToken();
                     scheduleActionSettings.setPauseStateSettings(PauseStateScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("scte35InputSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setScte35InputSettings(Scte35InputScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("scte35ReturnToNetworkSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings.setScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettingsJsonUnmarshaller.getInstance()

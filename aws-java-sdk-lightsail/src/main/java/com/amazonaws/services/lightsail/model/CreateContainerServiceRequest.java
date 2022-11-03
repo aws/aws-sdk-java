@@ -142,6 +142,19 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private ContainerServiceDeploymentRequest deployment;
+    /**
+     * <p>
+     * An object to describe the configuration for the container service to access private container image repositories,
+     * such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     */
+    private PrivateRegistryAccessRequest privateRegistryAccess;
 
     /**
      * <p>
@@ -970,6 +983,85 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An object to describe the configuration for the container service to access private container image repositories,
+     * such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param privateRegistryAccess
+     *        An object to describe the configuration for the container service to access private container image
+     *        repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     *        >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in
+     *        the <i>Amazon Lightsail Developer Guide</i>.
+     */
+
+    public void setPrivateRegistryAccess(PrivateRegistryAccessRequest privateRegistryAccess) {
+        this.privateRegistryAccess = privateRegistryAccess;
+    }
+
+    /**
+     * <p>
+     * An object to describe the configuration for the container service to access private container image repositories,
+     * such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @return An object to describe the configuration for the container service to access private container image
+     *         repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     *         >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in
+     *         the <i>Amazon Lightsail Developer Guide</i>.
+     */
+
+    public PrivateRegistryAccessRequest getPrivateRegistryAccess() {
+        return this.privateRegistryAccess;
+    }
+
+    /**
+     * <p>
+     * An object to describe the configuration for the container service to access private container image repositories,
+     * such as Amazon Elastic Container Registry (Amazon ECR) private repositories.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     * >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param privateRegistryAccess
+     *        An object to describe the configuration for the container service to access private container image
+     *        repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access"
+     *        >Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in
+     *        the <i>Amazon Lightsail Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateContainerServiceRequest withPrivateRegistryAccess(PrivateRegistryAccessRequest privateRegistryAccess) {
+        setPrivateRegistryAccess(privateRegistryAccess);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -992,7 +1084,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
         if (getPublicDomainNames() != null)
             sb.append("PublicDomainNames: ").append(getPublicDomainNames()).append(",");
         if (getDeployment() != null)
-            sb.append("Deployment: ").append(getDeployment());
+            sb.append("Deployment: ").append(getDeployment()).append(",");
+        if (getPrivateRegistryAccess() != null)
+            sb.append("PrivateRegistryAccess: ").append(getPrivateRegistryAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -1031,6 +1125,10 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDeployment() != null && other.getDeployment().equals(this.getDeployment()) == false)
             return false;
+        if (other.getPrivateRegistryAccess() == null ^ this.getPrivateRegistryAccess() == null)
+            return false;
+        if (other.getPrivateRegistryAccess() != null && other.getPrivateRegistryAccess().equals(this.getPrivateRegistryAccess()) == false)
+            return false;
         return true;
     }
 
@@ -1045,6 +1143,7 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPublicDomainNames() == null) ? 0 : getPublicDomainNames().hashCode());
         hashCode = prime * hashCode + ((getDeployment() == null) ? 0 : getDeployment().hashCode());
+        hashCode = prime * hashCode + ((getPrivateRegistryAccess() == null) ? 0 : getPrivateRegistryAccess().hashCode());
         return hashCode;
     }
 

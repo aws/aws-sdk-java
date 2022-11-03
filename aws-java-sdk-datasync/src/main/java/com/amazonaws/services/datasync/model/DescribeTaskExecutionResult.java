@@ -56,8 +56,6 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      */
     private java.util.List<FilterRule> excludes;
     /**
@@ -65,8 +63,6 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * A list of filter rules that determines which files to include when running a task. The list should contain a
      * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
      * pipe), for example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
      * </p>
      */
     private java.util.List<FilterRule> includes;
@@ -123,6 +119,13 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private TaskExecutionResultDetail result;
+    /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code>.
+     * </p>
+     */
+    private Long bytesCompressed;
 
     /**
      * <p>
@@ -319,13 +322,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      * 
      * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
      *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *         <p>
+     *         is, a pipe), for example: <code>"/folder1|/folder2"</code>
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -338,14 +338,11 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      * 
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        a pipe), for example: <code>"/folder1|/folder2"</code>
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -364,8 +361,6 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * example: <code>"/folder1|/folder2"</code>
      * </p>
      * <p>
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExcludes(java.util.Collection)} or {@link #withExcludes(java.util.Collection)} if you want to override
      * the existing values.
@@ -374,8 +369,7 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        a pipe), for example: <code>"/folder1|/folder2"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,14 +389,11 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      * 
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        a pipe), for example: <code>"/folder1|/folder2"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,13 +408,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
      * pipe), for example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      * 
      * @return A list of filter rules that determines which files to include when running a task. The list should
      *         contain a single filter string that consists of the patterns to include. The patterns are delimited by
-     *         "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *         <p>
+     *         "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -436,14 +424,11 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
      * pipe), for example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      * 
      * @param includes
      *        A list of filter rules that determines which files to include when running a task. The list should contain
      *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        is, a pipe), for example: <code>"/folder1|/folder2"</code>
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -462,8 +447,6 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * pipe), for example: <code>"/folder1|/folder2"</code>
      * </p>
      * <p>
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIncludes(java.util.Collection)} or {@link #withIncludes(java.util.Collection)} if you want to override
      * the existing values.
@@ -472,8 +455,7 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * @param includes
      *        A list of filter rules that determines which files to include when running a task. The list should contain
      *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        is, a pipe), for example: <code>"/folder1|/folder2"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,14 +475,11 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
      * pipe), for example: <code>"/folder1|/folder2"</code>
      * </p>
-     * <p>
-     * </p>
      * 
      * @param includes
      *        A list of filter rules that determines which files to include when running a task. The list should contain
      *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        is, a pipe), for example: <code>"/folder1|/folder2"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -853,6 +832,52 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code>.
+     * </p>
+     * 
+     * @param bytesCompressed
+     *        The physical number of bytes transferred over the network after compression was applied. In most cases,
+     *        this number is less than <code>BytesTransferred</code>.
+     */
+
+    public void setBytesCompressed(Long bytesCompressed) {
+        this.bytesCompressed = bytesCompressed;
+    }
+
+    /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code>.
+     * </p>
+     * 
+     * @return The physical number of bytes transferred over the network after compression was applied. In most cases,
+     *         this number is less than <code>BytesTransferred</code>.
+     */
+
+    public Long getBytesCompressed() {
+        return this.bytesCompressed;
+    }
+
+    /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code>.
+     * </p>
+     * 
+     * @param bytesCompressed
+     *        The physical number of bytes transferred over the network after compression was applied. In most cases,
+     *        this number is less than <code>BytesTransferred</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskExecutionResult withBytesCompressed(Long bytesCompressed) {
+        setBytesCompressed(bytesCompressed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -887,7 +912,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
         if (getBytesTransferred() != null)
             sb.append("BytesTransferred: ").append(getBytesTransferred()).append(",");
         if (getResult() != null)
-            sb.append("Result: ").append(getResult());
+            sb.append("Result: ").append(getResult()).append(",");
+        if (getBytesCompressed() != null)
+            sb.append("BytesCompressed: ").append(getBytesCompressed());
         sb.append("}");
         return sb.toString();
     }
@@ -950,6 +977,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getResult() != null && other.getResult().equals(this.getResult()) == false)
             return false;
+        if (other.getBytesCompressed() == null ^ this.getBytesCompressed() == null)
+            return false;
+        if (other.getBytesCompressed() != null && other.getBytesCompressed().equals(this.getBytesCompressed()) == false)
+            return false;
         return true;
     }
 
@@ -970,6 +1001,7 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getBytesWritten() == null) ? 0 : getBytesWritten().hashCode());
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
         hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
+        hashCode = prime * hashCode + ((getBytesCompressed() == null) ? 0 : getBytesCompressed().hashCode());
         return hashCode;
     }
 

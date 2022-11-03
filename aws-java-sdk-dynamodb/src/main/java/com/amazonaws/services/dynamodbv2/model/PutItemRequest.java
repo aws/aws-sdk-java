@@ -92,6 +92,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The values returned are strongly consistent.
      * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code>
@@ -345,6 +349,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        The values returned are strongly consistent.
      *        </p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
@@ -406,6 +414,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        The values returned are strongly consistent.
+     *        </p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <note>
      *        <p>
@@ -761,6 +773,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The values returned are strongly consistent.
      * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code>
@@ -787,6 +803,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        The values returned are strongly consistent.
+     *        </p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <note>
      *        <p>
@@ -822,6 +842,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The values returned are strongly consistent.
      * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code>
@@ -847,6 +871,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </ul>
      *         <p>
      *         The values returned are strongly consistent.
+     *         </p>
+     *         <p>
+     *         There is no additional cost associated with requesting a return value aside from the small network and
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
      *         </p>
      *         <note>
      *         <p>
@@ -882,6 +910,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The values returned are strongly consistent.
      * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code>
@@ -908,6 +940,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        The values returned are strongly consistent.
+     *        </p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <note>
      *        <p>
@@ -945,6 +981,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The values returned are strongly consistent.
      * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code>
@@ -971,6 +1011,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        The values returned are strongly consistent.
+     *        </p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <note>
      *        <p>
@@ -1006,6 +1050,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The values returned are strongly consistent.
      * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
      * <note>
      * <p>
      * The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code>
@@ -1032,6 +1080,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        The values returned are strongly consistent.
+     *        </p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <note>
      *        <p>

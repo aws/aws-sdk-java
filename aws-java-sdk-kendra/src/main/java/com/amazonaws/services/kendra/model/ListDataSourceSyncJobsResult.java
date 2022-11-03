@@ -25,7 +25,7 @@ public class ListDataSourceSyncJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A history of synchronization jobs for the data source.
+     * A history of synchronization jobs for the data source connector.
      * </p>
      */
     private java.util.List<DataSourceSyncJob> history;
@@ -39,10 +39,10 @@ public class ListDataSourceSyncJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A history of synchronization jobs for the data source.
+     * A history of synchronization jobs for the data source connector.
      * </p>
      * 
-     * @return A history of synchronization jobs for the data source.
+     * @return A history of synchronization jobs for the data source connector.
      */
 
     public java.util.List<DataSourceSyncJob> getHistory() {
@@ -51,11 +51,11 @@ public class ListDataSourceSyncJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A history of synchronization jobs for the data source.
+     * A history of synchronization jobs for the data source connector.
      * </p>
      * 
      * @param history
-     *        A history of synchronization jobs for the data source.
+     *        A history of synchronization jobs for the data source connector.
      */
 
     public void setHistory(java.util.Collection<DataSourceSyncJob> history) {
@@ -69,7 +69,7 @@ public class ListDataSourceSyncJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A history of synchronization jobs for the data source.
+     * A history of synchronization jobs for the data source connector.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListDataSourceSyncJobsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param history
-     *        A history of synchronization jobs for the data source.
+     *        A history of synchronization jobs for the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListDataSourceSyncJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A history of synchronization jobs for the data source.
+     * A history of synchronization jobs for the data source connector.
      * </p>
      * 
      * @param history
-     *        A history of synchronization jobs for the data source.
+     *        A history of synchronization jobs for the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

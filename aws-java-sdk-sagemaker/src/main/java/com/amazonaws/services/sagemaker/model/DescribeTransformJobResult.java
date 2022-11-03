@@ -107,6 +107,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private TransformOutput transformOutput;
     /**
      * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     */
+    private BatchDataCaptureConfig dataCaptureConfig;
+    /**
+     * <p>
      * Describes the resources, including ML instance types and ML instance count, to use for the transform job.
      * </p>
      */
@@ -775,6 +781,46 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     * 
+     * @param dataCaptureConfig
+     *        Configuration to control how SageMaker captures inference data.
+     */
+
+    public void setDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     * 
+     * @return Configuration to control how SageMaker captures inference data.
+     */
+
+    public BatchDataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     * 
+     * @param dataCaptureConfig
+     *        Configuration to control how SageMaker captures inference data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTransformJobResult withDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Describes the resources, including ML instance types and ML instance count, to use for the transform job.
      * </p>
      * 
@@ -1119,6 +1165,8 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("TransformInput: ").append(getTransformInput()).append(",");
         if (getTransformOutput() != null)
             sb.append("TransformOutput: ").append(getTransformOutput()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getTransformResources() != null)
             sb.append("TransformResources: ").append(getTransformResources()).append(",");
         if (getCreationTime() != null)
@@ -1197,6 +1245,10 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTransformOutput() != null && other.getTransformOutput().equals(this.getTransformOutput()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getTransformResources() == null ^ this.getTransformResources() == null)
             return false;
         if (other.getTransformResources() != null && other.getTransformResources().equals(this.getTransformResources()) == false)
@@ -1249,6 +1301,7 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getTransformInput() == null) ? 0 : getTransformInput().hashCode());
         hashCode = prime * hashCode + ((getTransformOutput() == null) ? 0 : getTransformOutput().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getTransformResources() == null) ? 0 : getTransformResources().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTransformStartTime() == null) ? 0 : getTransformStartTime().hashCode());

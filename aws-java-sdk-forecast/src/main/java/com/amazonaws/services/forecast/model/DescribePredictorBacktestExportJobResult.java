@@ -117,6 +117,12 @@ public class DescribePredictorBacktestExportJobResult extends com.amazonaws.Amaz
      * </ul>
      */
     private java.util.Date lastModificationTime;
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     */
+    private String format;
 
     /**
      * <p>
@@ -713,6 +719,46 @@ public class DescribePredictorBacktestExportJobResult extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     * 
+     * @param format
+     *        The format of the exported data, CSV or PARQUET.
+     */
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     * 
+     * @return The format of the exported data, CSV or PARQUET.
+     */
+
+    public String getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * The format of the exported data, CSV or PARQUET.
+     * </p>
+     * 
+     * @param format
+     *        The format of the exported data, CSV or PARQUET.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePredictorBacktestExportJobResult withFormat(String format) {
+        setFormat(format);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -739,7 +785,9 @@ public class DescribePredictorBacktestExportJobResult extends com.amazonaws.Amaz
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModificationTime() != null)
-            sb.append("LastModificationTime: ").append(getLastModificationTime());
+            sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -788,6 +836,10 @@ public class DescribePredictorBacktestExportJobResult extends com.amazonaws.Amaz
             return false;
         if (other.getLastModificationTime() != null && other.getLastModificationTime().equals(this.getLastModificationTime()) == false)
             return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
         return true;
     }
 
@@ -804,6 +856,7 @@ public class DescribePredictorBacktestExportJobResult extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         return hashCode;
     }
 

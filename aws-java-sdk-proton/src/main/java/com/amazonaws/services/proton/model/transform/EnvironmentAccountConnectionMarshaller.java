@@ -29,6 +29,8 @@ public class EnvironmentAccountConnectionMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> COMPONENTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentRoleArn").build();
     private static final MarshallingInfo<String> ENVIRONMENTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentAccountId").build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class EnvironmentAccountConnectionMarshaller {
 
         try {
             protocolMarshaller.marshall(environmentAccountConnection.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(environmentAccountConnection.getComponentRoleArn(), COMPONENTROLEARN_BINDING);
             protocolMarshaller.marshall(environmentAccountConnection.getEnvironmentAccountId(), ENVIRONMENTACCOUNTID_BINDING);
             protocolMarshaller.marshall(environmentAccountConnection.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(environmentAccountConnection.getId(), ID_BINDING);

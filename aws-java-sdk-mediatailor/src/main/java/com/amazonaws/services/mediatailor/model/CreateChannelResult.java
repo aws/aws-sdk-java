@@ -25,13 +25,13 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) to assign to the channel.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the channel.
+     * The name to assign to the channel.
      * </p>
      */
     private String channelName;
@@ -61,36 +61,39 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The channel's output properties.
+     * The output properties to assign to the channel.
      * </p>
      */
     private java.util.List<ResponseOutputItem> outputs;
     /**
      * <p>
-     * The channel's playback mode.
+     * The playback mode to assign to the channel.
      * </p>
      */
     private String playbackMode;
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The channel's tier.
+     * The tier of the channel.
      * </p>
      */
     private String tier;
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) to assign to the channel.
      * </p>
      * 
      * @param arn
-     *        The ARN of the channel.
+     *        The Amazon Resource Name (ARN) to assign to the channel.
      */
 
     public void setArn(String arn) {
@@ -99,10 +102,10 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) to assign to the channel.
      * </p>
      * 
-     * @return The ARN of the channel.
+     * @return The Amazon Resource Name (ARN) to assign to the channel.
      */
 
     public String getArn() {
@@ -111,11 +114,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the channel.
+     * The Amazon Resource Name (ARN) to assign to the channel.
      * </p>
      * 
      * @param arn
-     *        The ARN of the channel.
+     *        The Amazon Resource Name (ARN) to assign to the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +129,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the channel.
+     * The name to assign to the channel.
      * </p>
      * 
      * @param channelName
-     *        The name of the channel.
+     *        The name to assign to the channel.
      */
 
     public void setChannelName(String channelName) {
@@ -139,10 +142,10 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the channel.
+     * The name to assign to the channel.
      * </p>
      * 
-     * @return The name of the channel.
+     * @return The name to assign to the channel.
      */
 
     public String getChannelName() {
@@ -151,11 +154,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the channel.
+     * The name to assign to the channel.
      * </p>
      * 
      * @param channelName
-     *        The name of the channel.
+     *        The name to assign to the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,10 +348,10 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's output properties.
+     * The output properties to assign to the channel.
      * </p>
      * 
-     * @return The channel's output properties.
+     * @return The output properties to assign to the channel.
      */
 
     public java.util.List<ResponseOutputItem> getOutputs() {
@@ -357,11 +360,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's output properties.
+     * The output properties to assign to the channel.
      * </p>
      * 
      * @param outputs
-     *        The channel's output properties.
+     *        The output properties to assign to the channel.
      */
 
     public void setOutputs(java.util.Collection<ResponseOutputItem> outputs) {
@@ -375,7 +378,7 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's output properties.
+     * The output properties to assign to the channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -384,7 +387,7 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param outputs
-     *        The channel's output properties.
+     *        The output properties to assign to the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,11 +403,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's output properties.
+     * The output properties to assign to the channel.
      * </p>
      * 
      * @param outputs
-     *        The channel's output properties.
+     *        The output properties to assign to the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +418,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's playback mode.
+     * The playback mode to assign to the channel.
      * </p>
      * 
      * @param playbackMode
-     *        The channel's playback mode.
+     *        The playback mode to assign to the channel.
      */
 
     public void setPlaybackMode(String playbackMode) {
@@ -428,10 +431,10 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's playback mode.
+     * The playback mode to assign to the channel.
      * </p>
      * 
-     * @return The channel's playback mode.
+     * @return The playback mode to assign to the channel.
      */
 
     public String getPlaybackMode() {
@@ -440,11 +443,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's playback mode.
+     * The playback mode to assign to the channel.
      * </p>
      * 
      * @param playbackMode
-     *        The channel's playback mode.
+     *        The playback mode to assign to the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,10 +458,16 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the channel.
+     * @return The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *         to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -467,11 +476,17 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -480,11 +495,17 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the channel.
+     *        The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,11 +544,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's tier.
+     * The tier of the channel.
      * </p>
      * 
      * @param tier
-     *        The channel's tier.
+     *        The tier of the channel.
      */
 
     public void setTier(String tier) {
@@ -536,10 +557,10 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's tier.
+     * The tier of the channel.
      * </p>
      * 
-     * @return The channel's tier.
+     * @return The tier of the channel.
      */
 
     public String getTier() {
@@ -548,11 +569,11 @@ public class CreateChannelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The channel's tier.
+     * The tier of the channel.
      * </p>
      * 
      * @param tier
-     *        The channel's tier.
+     *        The tier of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,6 +30,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
 
     private Ac3Settings ac3Settings;
 
+    private Eac3AtmosSettings eac3AtmosSettings;
+
     private Eac3Settings eac3Settings;
 
     private Mp2Settings mp2Settings;
@@ -87,6 +89,32 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
 
     public AudioCodecSettings withAc3Settings(Ac3Settings ac3Settings) {
         setAc3Settings(ac3Settings);
+        return this;
+    }
+
+    /**
+     * @param eac3AtmosSettings
+     */
+
+    public void setEac3AtmosSettings(Eac3AtmosSettings eac3AtmosSettings) {
+        this.eac3AtmosSettings = eac3AtmosSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public Eac3AtmosSettings getEac3AtmosSettings() {
+        return this.eac3AtmosSettings;
+    }
+
+    /**
+     * @param eac3AtmosSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withEac3AtmosSettings(Eac3AtmosSettings eac3AtmosSettings) {
+        setEac3AtmosSettings(eac3AtmosSettings);
         return this;
     }
 
@@ -210,6 +238,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             sb.append("AacSettings: ").append(getAacSettings()).append(",");
         if (getAc3Settings() != null)
             sb.append("Ac3Settings: ").append(getAc3Settings()).append(",");
+        if (getEac3AtmosSettings() != null)
+            sb.append("Eac3AtmosSettings: ").append(getEac3AtmosSettings()).append(",");
         if (getEac3Settings() != null)
             sb.append("Eac3Settings: ").append(getEac3Settings()).append(",");
         if (getMp2Settings() != null)
@@ -240,6 +270,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAc3Settings() != null && other.getAc3Settings().equals(this.getAc3Settings()) == false)
             return false;
+        if (other.getEac3AtmosSettings() == null ^ this.getEac3AtmosSettings() == null)
+            return false;
+        if (other.getEac3AtmosSettings() != null && other.getEac3AtmosSettings().equals(this.getEac3AtmosSettings()) == false)
+            return false;
         if (other.getEac3Settings() == null ^ this.getEac3Settings() == null)
             return false;
         if (other.getEac3Settings() != null && other.getEac3Settings().equals(this.getEac3Settings()) == false)
@@ -266,6 +300,7 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getAacSettings() == null) ? 0 : getAacSettings().hashCode());
         hashCode = prime * hashCode + ((getAc3Settings() == null) ? 0 : getAc3Settings().hashCode());
+        hashCode = prime * hashCode + ((getEac3AtmosSettings() == null) ? 0 : getEac3AtmosSettings().hashCode());
         hashCode = prime * hashCode + ((getEac3Settings() == null) ? 0 : getEac3Settings().hashCode());
         hashCode = prime * hashCode + ((getMp2Settings() == null) ? 0 : getMp2Settings().hashCode());
         hashCode = prime * hashCode + ((getPassThroughSettings() == null) ? 0 : getPassThroughSettings().hashCode());

@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
- * your Amazon Web Services and on-premises networks that are built around transit gateways.
+ * Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit
+ * Gateway network across Amazon Web Services accounts, Regions, and on-premises locations.
  * </p>
  */
 @ThreadSafe
@@ -540,6 +540,74 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTransitGatewayPeeringResult> createTransitGatewayPeeringAsync(CreateTransitGatewayPeeringRequest request) {
+
+        return createTransitGatewayPeeringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayPeeringResult> createTransitGatewayPeeringAsync(final CreateTransitGatewayPeeringRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayPeeringRequest, CreateTransitGatewayPeeringResult> asyncHandler) {
+        final CreateTransitGatewayPeeringRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTransitGatewayPeeringResult>() {
+            @Override
+            public CreateTransitGatewayPeeringResult call() throws Exception {
+                CreateTransitGatewayPeeringResult result = null;
+
+                try {
+                    result = executeCreateTransitGatewayPeering(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayRouteTableAttachmentResult> createTransitGatewayRouteTableAttachmentAsync(
+            CreateTransitGatewayRouteTableAttachmentRequest request) {
+
+        return createTransitGatewayRouteTableAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayRouteTableAttachmentResult> createTransitGatewayRouteTableAttachmentAsync(
+            final CreateTransitGatewayRouteTableAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayRouteTableAttachmentRequest, CreateTransitGatewayRouteTableAttachmentResult> asyncHandler) {
+        final CreateTransitGatewayRouteTableAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTransitGatewayRouteTableAttachmentResult>() {
+            @Override
+            public CreateTransitGatewayRouteTableAttachmentResult call() throws Exception {
+                CreateTransitGatewayRouteTableAttachmentResult result = null;
+
+                try {
+                    result = executeCreateTransitGatewayRouteTableAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(CreateVpcAttachmentRequest request) {
 
         return createVpcAttachmentAsync(request, null);
@@ -822,6 +890,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeDeleteLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePeeringResult> deletePeeringAsync(DeletePeeringRequest request) {
+
+        return deletePeeringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePeeringResult> deletePeeringAsync(final DeletePeeringRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePeeringRequest, DeletePeeringResult> asyncHandler) {
+        final DeletePeeringRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePeeringResult>() {
+            @Override
+            public DeletePeeringResult call() throws Exception {
+                DeletePeeringResult result = null;
+
+                try {
+                    result = executeDeletePeering(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1286,6 +1387,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeGetCoreNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkChangeEventsResult> getCoreNetworkChangeEventsAsync(GetCoreNetworkChangeEventsRequest request) {
+
+        return getCoreNetworkChangeEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkChangeEventsResult> getCoreNetworkChangeEventsAsync(final GetCoreNetworkChangeEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCoreNetworkChangeEventsRequest, GetCoreNetworkChangeEventsResult> asyncHandler) {
+        final GetCoreNetworkChangeEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCoreNetworkChangeEventsResult>() {
+            @Override
+            public GetCoreNetworkChangeEventsResult call() throws Exception {
+                GetCoreNetworkChangeEventsResult result = null;
+
+                try {
+                    result = executeGetCoreNetworkChangeEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1835,6 +1969,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetTransitGatewayPeeringResult> getTransitGatewayPeeringAsync(GetTransitGatewayPeeringRequest request) {
+
+        return getTransitGatewayPeeringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayPeeringResult> getTransitGatewayPeeringAsync(final GetTransitGatewayPeeringRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTransitGatewayPeeringRequest, GetTransitGatewayPeeringResult> asyncHandler) {
+        final GetTransitGatewayPeeringRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTransitGatewayPeeringResult>() {
+            @Override
+            public GetTransitGatewayPeeringResult call() throws Exception {
+                GetTransitGatewayPeeringResult result = null;
+
+                try {
+                    result = executeGetTransitGatewayPeering(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTransitGatewayRegistrationsResult> getTransitGatewayRegistrationsAsync(GetTransitGatewayRegistrationsRequest request) {
 
         return getTransitGatewayRegistrationsAsync(request, null);
@@ -1853,6 +2020,41 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeGetTransitGatewayRegistrations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayRouteTableAttachmentResult> getTransitGatewayRouteTableAttachmentAsync(
+            GetTransitGatewayRouteTableAttachmentRequest request) {
+
+        return getTransitGatewayRouteTableAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayRouteTableAttachmentResult> getTransitGatewayRouteTableAttachmentAsync(
+            final GetTransitGatewayRouteTableAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTransitGatewayRouteTableAttachmentRequest, GetTransitGatewayRouteTableAttachmentResult> asyncHandler) {
+        final GetTransitGatewayRouteTableAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTransitGatewayRouteTableAttachmentResult>() {
+            @Override
+            public GetTransitGatewayRouteTableAttachmentResult call() throws Exception {
+                GetTransitGatewayRouteTableAttachmentResult result = null;
+
+                try {
+                    result = executeGetTransitGatewayRouteTableAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2019,6 +2221,74 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeListCoreNetworks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            ListOrganizationServiceAccessStatusRequest request) {
+
+        return listOrganizationServiceAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            final ListOrganizationServiceAccessStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOrganizationServiceAccessStatusRequest, ListOrganizationServiceAccessStatusResult> asyncHandler) {
+        final ListOrganizationServiceAccessStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOrganizationServiceAccessStatusResult>() {
+            @Override
+            public ListOrganizationServiceAccessStatusResult call() throws Exception {
+                ListOrganizationServiceAccessStatusResult result = null;
+
+                try {
+                    result = executeListOrganizationServiceAccessStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPeeringsResult> listPeeringsAsync(ListPeeringsRequest request) {
+
+        return listPeeringsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPeeringsResult> listPeeringsAsync(final ListPeeringsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPeeringsRequest, ListPeeringsResult> asyncHandler) {
+        final ListPeeringsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPeeringsResult>() {
+            @Override
+            public ListPeeringsResult call() throws Exception {
+                ListPeeringsResult result = null;
+
+                try {
+                    result = executeListPeerings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2219,6 +2489,41 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeRestoreCoreNetworkPolicyVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            StartOrganizationServiceAccessUpdateRequest request) {
+
+        return startOrganizationServiceAccessUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            final StartOrganizationServiceAccessUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartOrganizationServiceAccessUpdateRequest, StartOrganizationServiceAccessUpdateResult> asyncHandler) {
+        final StartOrganizationServiceAccessUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartOrganizationServiceAccessUpdateResult>() {
+            @Override
+            public StartOrganizationServiceAccessUpdateResult call() throws Exception {
+                StartOrganizationServiceAccessUpdateResult result = null;
+
+                try {
+                    result = executeStartOrganizationServiceAccessUpdate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

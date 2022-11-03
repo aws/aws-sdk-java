@@ -82,6 +82,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -1512,7 +1513,9 @@ public class TransferManager {
 
     private boolean leavesRoot(File localBaseDirectory, String key) {
         try {
-            return !new File(localBaseDirectory, key).getCanonicalPath().startsWith(localBaseDirectory.getCanonicalPath());
+            Path targetPath = new File(localBaseDirectory, key).getCanonicalFile().toPath();
+            Path rootPath = localBaseDirectory.getCanonicalFile().toPath();
+            return !targetPath.startsWith(rootPath);
         } catch (IOException e) {
             throw new RuntimeException("Unable to canonicalize paths",  e);
         }

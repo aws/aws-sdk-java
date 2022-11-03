@@ -139,6 +139,11 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     instanceAttribute.setUserData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("disableApiStop/value", targetDepth)) {
+                    instanceAttribute.setDisableApiStop(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceAttribute;

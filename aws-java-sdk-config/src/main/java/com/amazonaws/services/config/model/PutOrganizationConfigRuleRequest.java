@@ -33,13 +33,18 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     private String organizationConfigRuleName;
     /**
      * <p>
-     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata
+     * such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      */
     private OrganizationManagedRuleMetadata organizationManagedRuleMetadata;
     /**
      * <p>
-     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata
+     * such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger
+     * types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      */
     private OrganizationCustomRuleMetadata organizationCustomRuleMetadata;
@@ -51,10 +56,11 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     private com.amazonaws.internal.SdkInternalList<String> excludedAccounts;
     /**
      * <p>
-     * An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the
-     * runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as
-     * resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config
-     * to evaluate Amazon Web Services resources against a rule.
+     * An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     * organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have
+     * debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services
+     * resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.
      * </p>
      */
     private OrganizationCustomPolicyRuleMetadata organizationCustomPolicyRuleMetadata;
@@ -101,11 +107,16 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata
+     * such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      * 
      * @param organizationManagedRuleMetadata
-     *        An <code>OrganizationManagedRuleMetadata</code> object.
+     *        An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule
+     *        metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It
+     *        also provides the frequency with which you want Config to run evaluations for the rule if the trigger type
+     *        is periodic.
      */
 
     public void setOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadata organizationManagedRuleMetadata) {
@@ -114,10 +125,15 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata
+     * such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      * 
-     * @return An <code>OrganizationManagedRuleMetadata</code> object.
+     * @return An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule
+     *         metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It
+     *         also provides the frequency with which you want Config to run evaluations for the rule if the trigger
+     *         type is periodic.
      */
 
     public OrganizationManagedRuleMetadata getOrganizationManagedRuleMetadata() {
@@ -126,11 +142,16 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata
+     * such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      * 
      * @param organizationManagedRuleMetadata
-     *        An <code>OrganizationManagedRuleMetadata</code> object.
+     *        An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule
+     *        metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It
+     *        also provides the frequency with which you want Config to run evaluations for the rule if the trigger type
+     *        is periodic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +162,18 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata
+     * such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger
+     * types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      * 
      * @param organizationCustomRuleMetadata
-     *        An <code>OrganizationCustomRuleMetadata</code> object.
+     *        An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule
+     *        metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and
+     *        organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a
+     *        rule. It also provides the frequency with which you want Config to run evaluations for the rule if the
+     *        trigger type is periodic.
      */
 
     public void setOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadata organizationCustomRuleMetadata) {
@@ -154,10 +182,17 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata
+     * such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger
+     * types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      * 
-     * @return An <code>OrganizationCustomRuleMetadata</code> object.
+     * @return An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule
+     *         metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and
+     *         organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a
+     *         rule. It also provides the frequency with which you want Config to run evaluations for the rule if the
+     *         trigger type is periodic.
      */
 
     public OrganizationCustomRuleMetadata getOrganizationCustomRuleMetadata() {
@@ -166,11 +201,18 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata
+     * such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger
+     * types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the
+     * frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
      * </p>
      * 
      * @param organizationCustomRuleMetadata
-     *        An <code>OrganizationCustomRuleMetadata</code> object.
+     *        An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule
+     *        metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and
+     *        organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a
+     *        rule. It also provides the frequency with which you want Config to run evaluations for the rule if the
+     *        trigger type is periodic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,17 +296,19 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the
-     * runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as
-     * resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config
-     * to evaluate Amazon Web Services resources against a rule.
+     * An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     * organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have
+     * debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services
+     * resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.
      * </p>
      * 
      * @param organizationCustomPolicyRuleMetadata
-     *        An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes
-     *        the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such
-     *        as resource type, resource ID of Amazon Web Services resource, and organization trigger types that
-     *        initiate Config to evaluate Amazon Web Services resources against a rule.
+     *        An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     *        organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts
+     *        have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon
+     *        Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services
+     *        resources against a rule.
      */
 
     public void setOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadata organizationCustomPolicyRuleMetadata) {
@@ -273,16 +317,18 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the
-     * runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as
-     * resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config
-     * to evaluate Amazon Web Services resources against a rule.
+     * An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     * organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have
+     * debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services
+     * resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.
      * </p>
      * 
-     * @return An object that specifies metadata for your organization's Config Custom Policy rule. The metadata
-     *         includes the runtime system in use, which accounts have debug logging enabled, and other custom rule
-     *         metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger
-     *         types that initiate Config to evaluate Amazon Web Services resources against a rule.
+     * @return An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     *         organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts
+     *         have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon
+     *         Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web
+     *         Services resources against a rule.
      */
 
     public OrganizationCustomPolicyRuleMetadata getOrganizationCustomPolicyRuleMetadata() {
@@ -291,17 +337,19 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the
-     * runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as
-     * resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config
-     * to evaluate Amazon Web Services resources against a rule.
+     * An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     * organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have
+     * debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services
+     * resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.
      * </p>
      * 
      * @param organizationCustomPolicyRuleMetadata
-     *        An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes
-     *        the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such
-     *        as resource type, resource ID of Amazon Web Services resource, and organization trigger types that
-     *        initiate Config to evaluate Amazon Web Services resources against a rule.
+     *        An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your
+     *        organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts
+     *        have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon
+     *        Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services
+     *        resources against a rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

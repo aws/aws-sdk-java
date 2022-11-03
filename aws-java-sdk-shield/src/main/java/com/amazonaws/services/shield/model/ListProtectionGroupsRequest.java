@@ -57,6 +57,15 @@ public class ListProtectionGroupsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its
+     * name and you can retrieve all protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that
+     * exactly match all of the search criteria that you provide.
+     * </p>
+     */
+    private InclusionProtectionGroupFilters inclusionFilters;
 
     /**
      * <p>
@@ -256,6 +265,64 @@ public class ListProtectionGroupsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its
+     * name and you can retrieve all protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that
+     * exactly match all of the search criteria that you provide.
+     * </p>
+     * 
+     * @param inclusionFilters
+     *        Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group
+     *        by its name and you can retrieve all protection groups that are configured with specific pattern or
+     *        aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the
+     *        protection groups that exactly match all of the search criteria that you provide.
+     */
+
+    public void setInclusionFilters(InclusionProtectionGroupFilters inclusionFilters) {
+        this.inclusionFilters = inclusionFilters;
+    }
+
+    /**
+     * <p>
+     * Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its
+     * name and you can retrieve all protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that
+     * exactly match all of the search criteria that you provide.
+     * </p>
+     * 
+     * @return Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group
+     *         by its name and you can retrieve all protection groups that are configured with specific pattern or
+     *         aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the
+     *         protection groups that exactly match all of the search criteria that you provide.
+     */
+
+    public InclusionProtectionGroupFilters getInclusionFilters() {
+        return this.inclusionFilters;
+    }
+
+    /**
+     * <p>
+     * Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its
+     * name and you can retrieve all protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that
+     * exactly match all of the search criteria that you provide.
+     * </p>
+     * 
+     * @param inclusionFilters
+     *        Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group
+     *        by its name and you can retrieve all protection groups that are configured with specific pattern or
+     *        aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the
+     *        protection groups that exactly match all of the search criteria that you provide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListProtectionGroupsRequest withInclusionFilters(InclusionProtectionGroupFilters inclusionFilters) {
+        setInclusionFilters(inclusionFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -270,7 +337,9 @@ public class ListProtectionGroupsRequest extends com.amazonaws.AmazonWebServiceR
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getInclusionFilters() != null)
+            sb.append("InclusionFilters: ").append(getInclusionFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +362,10 @@ public class ListProtectionGroupsRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getInclusionFilters() == null ^ this.getInclusionFilters() == null)
+            return false;
+        if (other.getInclusionFilters() != null && other.getInclusionFilters().equals(this.getInclusionFilters()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +376,7 @@ public class ListProtectionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getInclusionFilters() == null) ? 0 : getInclusionFilters().hashCode());
         return hashCode;
     }
 

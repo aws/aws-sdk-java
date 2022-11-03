@@ -63726,6 +63726,102 @@
       }, {
         "name" : "M5a24xlarge",
         "value" : "m5a.24xlarge"
+      }, {
+        "name" : "C5dLarge",
+        "value" : "c5d.large"
+      }, {
+        "name" : "C5dXlarge",
+        "value" : "c5d.xlarge"
+      }, {
+        "name" : "C5d2xlarge",
+        "value" : "c5d.2xlarge"
+      }, {
+        "name" : "C5d4xlarge",
+        "value" : "c5d.4xlarge"
+      }, {
+        "name" : "C5d9xlarge",
+        "value" : "c5d.9xlarge"
+      }, {
+        "name" : "C5d12xlarge",
+        "value" : "c5d.12xlarge"
+      }, {
+        "name" : "C5d18xlarge",
+        "value" : "c5d.18xlarge"
+      }, {
+        "name" : "C5d24xlarge",
+        "value" : "c5d.24xlarge"
+      }, {
+        "name" : "C6aLarge",
+        "value" : "c6a.large"
+      }, {
+        "name" : "C6aXlarge",
+        "value" : "c6a.xlarge"
+      }, {
+        "name" : "C6a2xlarge",
+        "value" : "c6a.2xlarge"
+      }, {
+        "name" : "C6a4xlarge",
+        "value" : "c6a.4xlarge"
+      }, {
+        "name" : "C6a8xlarge",
+        "value" : "c6a.8xlarge"
+      }, {
+        "name" : "C6a12xlarge",
+        "value" : "c6a.12xlarge"
+      }, {
+        "name" : "C6a16xlarge",
+        "value" : "c6a.16xlarge"
+      }, {
+        "name" : "C6a24xlarge",
+        "value" : "c6a.24xlarge"
+      }, {
+        "name" : "C6iLarge",
+        "value" : "c6i.large"
+      }, {
+        "name" : "C6iXlarge",
+        "value" : "c6i.xlarge"
+      }, {
+        "name" : "C6i2xlarge",
+        "value" : "c6i.2xlarge"
+      }, {
+        "name" : "C6i4xlarge",
+        "value" : "c6i.4xlarge"
+      }, {
+        "name" : "C6i8xlarge",
+        "value" : "c6i.8xlarge"
+      }, {
+        "name" : "C6i12xlarge",
+        "value" : "c6i.12xlarge"
+      }, {
+        "name" : "C6i16xlarge",
+        "value" : "c6i.16xlarge"
+      }, {
+        "name" : "C6i24xlarge",
+        "value" : "c6i.24xlarge"
+      }, {
+        "name" : "R5dLarge",
+        "value" : "r5d.large"
+      }, {
+        "name" : "R5dXlarge",
+        "value" : "r5d.xlarge"
+      }, {
+        "name" : "R5d2xlarge",
+        "value" : "r5d.2xlarge"
+      }, {
+        "name" : "R5d4xlarge",
+        "value" : "r5d.4xlarge"
+      }, {
+        "name" : "R5d8xlarge",
+        "value" : "r5d.8xlarge"
+      }, {
+        "name" : "R5d12xlarge",
+        "value" : "r5d.12xlarge"
+      }, {
+        "name" : "R5d16xlarge",
+        "value" : "r5d.16xlarge"
+      }, {
+        "name" : "R5d24xlarge",
+        "value" : "r5d.24xlarge"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.gamelift.enum.EC2InstanceType",

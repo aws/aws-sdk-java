@@ -33,6 +33,16 @@ public class AbstractAmazonDetective implements AmazonDetective {
     }
 
     @Override
+    public BatchGetGraphMemberDatasourcesResult batchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetMembershipDatasourcesResult batchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateGraphResult createGraph(CreateGraphRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,6 +88,11 @@ public class AbstractAmazonDetective implements AmazonDetective {
     }
 
     @Override
+    public ListDatasourcePackagesResult listDatasourcePackages(ListDatasourcePackagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListGraphsResult listGraphs(ListGraphsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,11 @@ public class AbstractAmazonDetective implements AmazonDetective {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDatasourcePackagesResult updateDatasourcePackages(UpdateDatasourcePackagesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -2025,6 +2025,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateInstanceMetadataOptionsResult> updateInstanceMetadataOptionsAsync(UpdateInstanceMetadataOptionsRequest request) {
+
+        return updateInstanceMetadataOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceMetadataOptionsResult> updateInstanceMetadataOptionsAsync(UpdateInstanceMetadataOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceMetadataOptionsRequest, UpdateInstanceMetadataOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLoadBalancerAttributeResult> updateLoadBalancerAttributeAsync(UpdateLoadBalancerAttributeRequest request) {
 
         return updateLoadBalancerAttributeAsync(request, null);

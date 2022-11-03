@@ -30,24 +30,25 @@ public class IcmpTypeCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.
      * </p>
      */
     private Integer code;
     /**
      * <p>
-     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.
      * </p>
      */
     private Integer type;
 
     /**
      * <p>
-     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.
      * </p>
      * 
      * @param code
-     *        The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     *        The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>
+     *        .
      */
 
     public void setCode(Integer code) {
@@ -56,10 +57,11 @@ public class IcmpTypeCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.
      * </p>
      * 
-     * @return The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     * @return The ICMP code for which to deny or allow access. To deny or allow all codes, use the value
+     *         <code>-1</code>.
      */
 
     public Integer getCode() {
@@ -68,11 +70,12 @@ public class IcmpTypeCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     * The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.
      * </p>
      * 
      * @param code
-     *        The ICMP code for which to deny or allow access. To deny or allow all codes, use the value -1.
+     *        The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +86,12 @@ public class IcmpTypeCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.
      * </p>
      * 
      * @param type
-     *        The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     *        The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>
+     *        .
      */
 
     public void setType(Integer type) {
@@ -96,10 +100,11 @@ public class IcmpTypeCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.
      * </p>
      * 
-     * @return The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     * @return The ICMP type for which to deny or allow access. To deny or allow all types, use the value
+     *         <code>-1</code>.
      */
 
     public Integer getType() {
@@ -108,11 +113,12 @@ public class IcmpTypeCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     * The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.
      * </p>
      * 
      * @param type
-     *        The ICMP type for which to deny or allow access. To deny or allow all types, use the value -1.
+     *        The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

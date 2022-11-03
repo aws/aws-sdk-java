@@ -144,6 +144,12 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private PendingDeploymentSummary pendingDeploymentSummary;
+    /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     */
+    private ExplainerConfig explainerConfig;
 
     /**
      * <p>
@@ -1079,6 +1085,46 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     * 
+     * @param explainerConfig
+     *        The configuration parameters for an explainer.
+     */
+
+    public void setExplainerConfig(ExplainerConfig explainerConfig) {
+        this.explainerConfig = explainerConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     * 
+     * @return The configuration parameters for an explainer.
+     */
+
+    public ExplainerConfig getExplainerConfig() {
+        return this.explainerConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for an explainer.
+     * </p>
+     * 
+     * @param explainerConfig
+     *        The configuration parameters for an explainer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointResult withExplainerConfig(ExplainerConfig explainerConfig) {
+        setExplainerConfig(explainerConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1113,7 +1159,9 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         if (getAsyncInferenceConfig() != null)
             sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
         if (getPendingDeploymentSummary() != null)
-            sb.append("PendingDeploymentSummary: ").append(getPendingDeploymentSummary());
+            sb.append("PendingDeploymentSummary: ").append(getPendingDeploymentSummary()).append(",");
+        if (getExplainerConfig() != null)
+            sb.append("ExplainerConfig: ").append(getExplainerConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1176,6 +1224,10 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getPendingDeploymentSummary() != null && other.getPendingDeploymentSummary().equals(this.getPendingDeploymentSummary()) == false)
             return false;
+        if (other.getExplainerConfig() == null ^ this.getExplainerConfig() == null)
+            return false;
+        if (other.getExplainerConfig() != null && other.getExplainerConfig().equals(this.getExplainerConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1196,6 +1248,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getLastDeploymentConfig() == null) ? 0 : getLastDeploymentConfig().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
         hashCode = prime * hashCode + ((getPendingDeploymentSummary() == null) ? 0 : getPendingDeploymentSummary().hashCode());
+        hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
         return hashCode;
     }
 

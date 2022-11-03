@@ -47,10 +47,16 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
     private Integer volumeSize;
     /**
      * <p>
-     * Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     * Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      * </p>
      */
     private Integer iops;
+    /**
+     * <p>
+     * Specifies the Throughput for GP3 EBS volume (SSD).
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * <p>
@@ -219,11 +225,11 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     * Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      * </p>
      * 
      * @param iops
-     *        Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     *        Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      */
 
     public void setIops(Integer iops) {
@@ -232,10 +238,10 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     * Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      * </p>
      * 
-     * @return Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     * @return Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      */
 
     public Integer getIops() {
@@ -244,16 +250,56 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     * Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      * </p>
      * 
      * @param iops
-     *        Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+     *        Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EBSOptions withIops(Integer iops) {
         setIops(iops);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Throughput for GP3 EBS volume (SSD).
+     * </p>
+     * 
+     * @param throughput
+     *        Specifies the Throughput for GP3 EBS volume (SSD).
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the Throughput for GP3 EBS volume (SSD).
+     * </p>
+     * 
+     * @return Specifies the Throughput for GP3 EBS volume (SSD).
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the Throughput for GP3 EBS volume (SSD).
+     * </p>
+     * 
+     * @param throughput
+     *        Specifies the Throughput for GP3 EBS volume (SSD).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EBSOptions withThroughput(Integer throughput) {
+        setThroughput(throughput);
         return this;
     }
 
@@ -276,7 +322,9 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
         if (getVolumeSize() != null)
             sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
         if (getIops() != null)
-            sb.append("Iops: ").append(getIops());
+            sb.append("Iops: ").append(getIops()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -307,6 +355,10 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -319,6 +371,7 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

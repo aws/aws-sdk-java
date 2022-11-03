@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -98,12 +98,12 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "RequestTokenNotFoundException",
-        "documentation" : "<p>A resource operation with the specified request token can't be found.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>The resource is currently being modified by another operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestTokenNotFoundException",
+        "documentation" : "<p>A resource operation with the specified request token can't be found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -139,80 +139,80 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "ConcurrentOperationException",
-        "documentation" : "<p>Another resource operation is currently being performed on this resource.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ClientTokenConflictException",
-        "documentation" : "<p>The specified client token has already been used in another resource request.</p> <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "UnsupportedActionException",
-        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "TypeNotFoundException",
-        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource with the name requested already exists.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "GeneralServiceException",
-        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "HandlerInternalFailureException",
         "documentation" : "<p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidCredentialsException",
-        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "InvalidRequestException",
-        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NetworkFailureException",
-        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NotStabilizedException",
-        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "exceptionName" : "GeneralServiceException",
+        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotUpdatableException",
         "documentation" : "<p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ResourceConflictException",
-        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "exceptionName" : "TypeNotFoundException",
+        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceInternalErrorException",
-        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "exceptionName" : "ConcurrentOperationException",
+        "documentation" : "<p>Another resource operation is currently being performed on this resource.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceLimitExceededException",
-        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PrivateTypeException",
         "documentation" : "<p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NetworkFailureException",
+        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedActionException",
+        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotStabilizedException",
+        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceInternalErrorException",
+        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "HandlerFailureException",
         "documentation" : "<p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLimitExceededException",
+        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidCredentialsException",
+        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ClientTokenConflictException",
+        "documentation" : "<p>The specified client token has already been used in another resource request.</p> <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -248,80 +248,80 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "ConcurrentOperationException",
-        "documentation" : "<p>Another resource operation is currently being performed on this resource.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ClientTokenConflictException",
-        "documentation" : "<p>The specified client token has already been used in another resource request.</p> <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "UnsupportedActionException",
-        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "TypeNotFoundException",
-        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource with the name requested already exists.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "GeneralServiceException",
-        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "HandlerInternalFailureException",
         "documentation" : "<p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidCredentialsException",
-        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "InvalidRequestException",
-        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NetworkFailureException",
-        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NotStabilizedException",
-        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "exceptionName" : "GeneralServiceException",
+        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotUpdatableException",
         "documentation" : "<p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ResourceConflictException",
-        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "exceptionName" : "TypeNotFoundException",
+        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceInternalErrorException",
-        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "exceptionName" : "ConcurrentOperationException",
+        "documentation" : "<p>Another resource operation is currently being performed on this resource.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceLimitExceededException",
-        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PrivateTypeException",
         "documentation" : "<p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NetworkFailureException",
+        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedActionException",
+        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotStabilizedException",
+        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceInternalErrorException",
+        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "HandlerFailureException",
         "documentation" : "<p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLimitExceededException",
+        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidCredentialsException",
+        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ClientTokenConflictException",
+        "documentation" : "<p>The specified client token has already been used in another resource request.</p> <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -357,72 +357,72 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "UnsupportedActionException",
-        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "TypeNotFoundException",
-        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource with the name requested already exists.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "GeneralServiceException",
-        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "HandlerInternalFailureException",
         "documentation" : "<p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidCredentialsException",
-        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "InvalidRequestException",
-        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NetworkFailureException",
-        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NotStabilizedException",
-        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "exceptionName" : "GeneralServiceException",
+        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotUpdatableException",
         "documentation" : "<p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ResourceConflictException",
-        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "exceptionName" : "TypeNotFoundException",
+        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceInternalErrorException",
-        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ServiceLimitExceededException",
-        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PrivateTypeException",
         "documentation" : "<p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NetworkFailureException",
+        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedActionException",
+        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotStabilizedException",
+        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceInternalErrorException",
+        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "HandlerFailureException",
         "documentation" : "<p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLimitExceededException",
+        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidCredentialsException",
+        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -528,72 +528,72 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "UnsupportedActionException",
-        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "TypeNotFoundException",
-        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource with the name requested already exists.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "GeneralServiceException",
-        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "HandlerInternalFailureException",
         "documentation" : "<p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidCredentialsException",
-        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "InvalidRequestException",
-        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NetworkFailureException",
-        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NotStabilizedException",
-        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "exceptionName" : "GeneralServiceException",
+        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotUpdatableException",
         "documentation" : "<p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ResourceConflictException",
-        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "exceptionName" : "TypeNotFoundException",
+        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceInternalErrorException",
-        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ServiceLimitExceededException",
-        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PrivateTypeException",
         "documentation" : "<p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NetworkFailureException",
+        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedActionException",
+        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotStabilizedException",
+        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceInternalErrorException",
+        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "HandlerFailureException",
         "documentation" : "<p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLimitExceededException",
+        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidCredentialsException",
+        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -629,80 +629,80 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "ConcurrentOperationException",
-        "documentation" : "<p>Another resource operation is currently being performed on this resource.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ClientTokenConflictException",
-        "documentation" : "<p>The specified client token has already been used in another resource request.</p> <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "UnsupportedActionException",
-        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "TypeNotFoundException",
-        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource with the name requested already exists.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "GeneralServiceException",
-        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "HandlerInternalFailureException",
         "documentation" : "<p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidCredentialsException",
-        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "InvalidRequestException",
-        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NetworkFailureException",
-        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NotStabilizedException",
-        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "exceptionName" : "GeneralServiceException",
+        "documentation" : "<p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotUpdatableException",
         "documentation" : "<p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ResourceConflictException",
-        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "exceptionName" : "TypeNotFoundException",
+        "documentation" : "<p>The specified extension doesn't exist in the CloudFormation registry.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceInternalErrorException",
-        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "exceptionName" : "ConcurrentOperationException",
+        "documentation" : "<p>Another resource operation is currently being performed on this resource.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ServiceLimitExceededException",
-        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PrivateTypeException",
         "documentation" : "<p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>A resource with the specified identifier can't be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NetworkFailureException",
+        "documentation" : "<p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedActionException",
+        "documentation" : "<p>The specified resource doesn't support this resource operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotStabilizedException",
+        "documentation" : "<p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceInternalErrorException",
+        "documentation" : "<p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "HandlerFailureException",
         "documentation" : "<p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLimitExceededException",
+        "documentation" : "<p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidCredentialsException",
+        "documentation" : "<p>The resource handler has returned that the credentials provided by the user are invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ClientTokenConflictException",
+        "documentation" : "<p>The specified client token has already been used in another resource request.</p> <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1570,12 +1570,12 @@
         "c2jName" : "DesiredState",
         "c2jShape" : "Properties",
         "deprecated" : false,
-        "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>",
+        "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withDesiredState",
-        "getterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@return Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.*/",
+        "getterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@return Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>*/",
         "getterMethodName" : "getDesiredState",
         "getterModel" : {
           "returnType" : "String",
@@ -1609,7 +1609,7 @@
         "marshallingType" : "STRING",
         "name" : "DesiredState",
         "sensitive" : true,
-        "setterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.*/",
+        "setterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>*/",
         "setterMethodName" : "setDesiredState",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1624,13 +1624,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "desiredState",
           "variableType" : "String",
-          "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>",
+          "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1711,12 +1711,12 @@
           "c2jName" : "DesiredState",
           "c2jShape" : "Properties",
           "deprecated" : false,
-          "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>",
+          "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withDesiredState",
-          "getterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@return Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.*/",
+          "getterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@return Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>*/",
           "getterMethodName" : "getDesiredState",
           "getterModel" : {
             "returnType" : "String",
@@ -1750,7 +1750,7 @@
           "marshallingType" : "STRING",
           "name" : "DesiredState",
           "sensitive" : true,
-          "setterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.*/",
+          "setterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>*/",
           "setterMethodName" : "setDesiredState",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1765,13 +1765,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>\n@param desiredState Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "desiredState",
             "variableType" : "String",
-            "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON data format</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate\">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>",
+            "documentation" : "<p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note> <p>Cloud Control API currently supports JSON as a structured data format.</p> </note> <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code></pre>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

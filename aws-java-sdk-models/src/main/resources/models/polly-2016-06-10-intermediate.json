@@ -3338,6 +3338,9 @@
       }, {
         "name" : "DeAT",
         "value" : "de-AT"
+      }, {
+        "name" : "YueCN",
+        "value" : "yue-CN"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.polly.enum.LanguageCode",
@@ -15980,6 +15983,24 @@
       }, {
         "name" : "Hannah",
         "value" : "Hannah"
+      }, {
+        "name" : "Arthur",
+        "value" : "Arthur"
+      }, {
+        "name" : "Daniel",
+        "value" : "Daniel"
+      }, {
+        "name" : "Liam",
+        "value" : "Liam"
+      }, {
+        "name" : "Pedro",
+        "value" : "Pedro"
+      }, {
+        "name" : "Kajal",
+        "value" : "Kajal"
+      }, {
+        "name" : "Hiujin",
+        "value" : "Hiujin"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.polly.enum.VoiceId",

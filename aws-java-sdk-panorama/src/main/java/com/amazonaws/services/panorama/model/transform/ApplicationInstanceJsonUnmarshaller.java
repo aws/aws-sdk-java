@@ -80,6 +80,13 @@ public class ApplicationInstanceJsonUnmarshaller implements Unmarshaller<Applica
                     context.nextToken();
                     applicationInstance.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RuntimeContextStates", targetDepth)) {
+                    context.nextToken();
+                    applicationInstance.setRuntimeContextStates(new ListUnmarshaller<ReportedRuntimeContextState>(ReportedRuntimeContextStateJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     applicationInstance.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

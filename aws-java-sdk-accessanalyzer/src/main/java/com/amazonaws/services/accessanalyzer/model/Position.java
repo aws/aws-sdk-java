@@ -30,62 +30,22 @@ public class Position implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column of the position, starting from 0.
-     * </p>
-     */
-    private Integer column;
-    /**
-     * <p>
      * The line of the position, starting from 1.
      * </p>
      */
     private Integer line;
     /**
      * <p>
+     * The column of the position, starting from 0.
+     * </p>
+     */
+    private Integer column;
+    /**
+     * <p>
      * The offset within the policy that corresponds to the position, starting from 0.
      * </p>
      */
     private Integer offset;
-
-    /**
-     * <p>
-     * The column of the position, starting from 0.
-     * </p>
-     * 
-     * @param column
-     *        The column of the position, starting from 0.
-     */
-
-    public void setColumn(Integer column) {
-        this.column = column;
-    }
-
-    /**
-     * <p>
-     * The column of the position, starting from 0.
-     * </p>
-     * 
-     * @return The column of the position, starting from 0.
-     */
-
-    public Integer getColumn() {
-        return this.column;
-    }
-
-    /**
-     * <p>
-     * The column of the position, starting from 0.
-     * </p>
-     * 
-     * @param column
-     *        The column of the position, starting from 0.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Position withColumn(Integer column) {
-        setColumn(column);
-        return this;
-    }
 
     /**
      * <p>
@@ -124,6 +84,46 @@ public class Position implements Serializable, Cloneable, StructuredPojo {
 
     public Position withLine(Integer line) {
         setLine(line);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The column of the position, starting from 0.
+     * </p>
+     * 
+     * @param column
+     *        The column of the position, starting from 0.
+     */
+
+    public void setColumn(Integer column) {
+        this.column = column;
+    }
+
+    /**
+     * <p>
+     * The column of the position, starting from 0.
+     * </p>
+     * 
+     * @return The column of the position, starting from 0.
+     */
+
+    public Integer getColumn() {
+        return this.column;
+    }
+
+    /**
+     * <p>
+     * The column of the position, starting from 0.
+     * </p>
+     * 
+     * @param column
+     *        The column of the position, starting from 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Position withColumn(Integer column) {
+        setColumn(column);
         return this;
     }
 
@@ -179,10 +179,10 @@ public class Position implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getColumn() != null)
-            sb.append("Column: ").append(getColumn()).append(",");
         if (getLine() != null)
             sb.append("Line: ").append(getLine()).append(",");
+        if (getColumn() != null)
+            sb.append("Column: ").append(getColumn()).append(",");
         if (getOffset() != null)
             sb.append("Offset: ").append(getOffset());
         sb.append("}");
@@ -199,13 +199,13 @@ public class Position implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Position == false)
             return false;
         Position other = (Position) obj;
-        if (other.getColumn() == null ^ this.getColumn() == null)
-            return false;
-        if (other.getColumn() != null && other.getColumn().equals(this.getColumn()) == false)
-            return false;
         if (other.getLine() == null ^ this.getLine() == null)
             return false;
         if (other.getLine() != null && other.getLine().equals(this.getLine()) == false)
+            return false;
+        if (other.getColumn() == null ^ this.getColumn() == null)
+            return false;
+        if (other.getColumn() != null && other.getColumn().equals(this.getColumn()) == false)
             return false;
         if (other.getOffset() == null ^ this.getOffset() == null)
             return false;
@@ -219,8 +219,8 @@ public class Position implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getColumn() == null) ? 0 : getColumn().hashCode());
         hashCode = prime * hashCode + ((getLine() == null) ? 0 : getLine().hashCode());
+        hashCode = prime * hashCode + ((getColumn() == null) ? 0 : getColumn().hashCode());
         hashCode = prime * hashCode + ((getOffset() == null) ? 0 : getOffset().hashCode());
         return hashCode;
     }

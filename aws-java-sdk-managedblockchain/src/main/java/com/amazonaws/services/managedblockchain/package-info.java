@@ -22,7 +22,7 @@
  * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Because of fundamental
  * differences between the frameworks, some API actions or data types may only apply in the context of one framework and
  * not the other. For example, actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
- * and <code>DeleteMember</code> do not apply to Ethereum.
+ * and <code>DeleteMember</code> don't apply to Ethereum.
  * </p>
  * <p>
  * The description for each action indicates the framework or frameworks to which it applies. Data types and properties

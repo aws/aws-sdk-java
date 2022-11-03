@@ -87,7 +87,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createDataSetRequest
-     *        The request body for CreateDataSet.
      * @return A Java Future containing the result of the CreateDataSet operation returned by the service.
      * @sample AWSDataExchangeAsync.CreateDataSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataSet" target="_top">AWS API
@@ -101,7 +100,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createDataSetRequest
-     *        The request body for CreateDataSet.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -120,7 +118,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createEventActionRequest
-     *        The request body for CreateEventAction.
      * @return A Java Future containing the result of the CreateEventAction operation returned by the service.
      * @sample AWSDataExchangeAsync.CreateEventAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction" target="_top">AWS
@@ -134,7 +131,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createEventActionRequest
-     *        The request body for CreateEventAction.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -153,7 +149,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createJobRequest
-     *        The request body for CreateJob.
      * @return A Java Future containing the result of the CreateJob operation returned by the service.
      * @sample AWSDataExchangeAsync.CreateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateJob" target="_top">AWS API
@@ -167,7 +162,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createJobRequest
-     *        The request body for CreateJob.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -186,7 +180,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createRevisionRequest
-     *        The request body for CreateRevision.
      * @return A Java Future containing the result of the CreateRevision operation returned by the service.
      * @sample AWSDataExchangeAsync.CreateRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateRevision" target="_top">AWS
@@ -200,7 +193,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param createRevisionRequest
-     *        The request body for CreateRevision.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -686,7 +678,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param revokeRevisionRequest
-     *        The request body for RevokeRevision.
      * @return A Java Future containing the result of the RevokeRevision operation returned by the service.
      * @sample AWSDataExchangeAsync.RevokeRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision" target="_top">AWS
@@ -700,7 +691,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param revokeRevisionRequest
-     *        The request body for RevokeRevision.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -750,7 +740,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param tagResourceRequest
-     *        The request body for TagResource.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AWSDataExchangeAsync.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TagResource" target="_top">AWS API
@@ -764,7 +753,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param tagResourceRequest
-     *        The request body for TagResource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -814,7 +802,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateAssetRequest
-     *        The request body for UpdateAsset.
      * @return A Java Future containing the result of the UpdateAsset operation returned by the service.
      * @sample AWSDataExchangeAsync.UpdateAsset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateAsset" target="_top">AWS API
@@ -828,7 +815,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateAssetRequest
-     *        The request body for UpdateAsset.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -847,7 +833,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateDataSetRequest
-     *        The request body for UpdateDataSet.
      * @return A Java Future containing the result of the UpdateDataSet operation returned by the service.
      * @sample AWSDataExchangeAsync.UpdateDataSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateDataSet" target="_top">AWS API
@@ -861,7 +846,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateDataSetRequest
-     *        The request body for UpdateDataSet.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -880,7 +864,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateEventActionRequest
-     *        The request body for UpdateEventAction.
      * @return A Java Future containing the result of the UpdateEventAction operation returned by the service.
      * @sample AWSDataExchangeAsync.UpdateEventAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction" target="_top">AWS
@@ -894,7 +877,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateEventActionRequest
-     *        The request body for UpdateEventAction.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -913,7 +895,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateRevisionRequest
-     *        The request body for UpdateRevision.
      * @return A Java Future containing the result of the UpdateRevision operation returned by the service.
      * @sample AWSDataExchangeAsync.UpdateRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateRevision" target="_top">AWS
@@ -927,7 +908,6 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      * </p>
      * 
      * @param updateRevisionRequest
-     *        The request body for UpdateRevision.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

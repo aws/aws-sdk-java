@@ -37,7 +37,11 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String requestOrigin;
-
+    /**
+     * <p>
+     * A continuation token, if this is a continuation call.
+     * </p>
+     */
     private String nextToken;
 
     /**
@@ -121,7 +125,12 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A continuation token, if this is a continuation call.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if this is a continuation call.
      */
 
     public void setNextToken(String nextToken) {
@@ -129,7 +138,11 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * A continuation token, if this is a continuation call.
+     * </p>
+     * 
+     * @return A continuation token, if this is a continuation call.
      */
 
     public String getNextToken() {
@@ -137,7 +150,12 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A continuation token, if this is a continuation call.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if this is a continuation call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

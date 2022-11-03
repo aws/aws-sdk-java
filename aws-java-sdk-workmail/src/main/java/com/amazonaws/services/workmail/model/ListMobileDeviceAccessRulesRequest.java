@@ -27,18 +27,18 @@ public class ListMobileDeviceAccessRulesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list the rules.
+     * The WorkMail organization for which to list the rules.
      * </p>
      */
     private String organizationId;
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list the rules.
+     * The WorkMail organization for which to list the rules.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which to list the rules.
+     *        The WorkMail organization for which to list the rules.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -47,10 +47,10 @@ public class ListMobileDeviceAccessRulesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list the rules.
+     * The WorkMail organization for which to list the rules.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which to list the rules.
+     * @return The WorkMail organization for which to list the rules.
      */
 
     public String getOrganizationId() {
@@ -59,11 +59,11 @@ public class ListMobileDeviceAccessRulesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which to list the rules.
+     * The WorkMail organization for which to list the rules.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which to list the rules.
+     *        The WorkMail organization for which to list the rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

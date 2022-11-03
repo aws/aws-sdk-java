@@ -96,6 +96,10 @@ public class DeleteReservationResultJsonUnmarshaller implements Unmarshaller<Del
                     context.nextToken();
                     deleteReservationResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("renewalSettings", targetDepth)) {
+                    context.nextToken();
+                    deleteReservationResult.setRenewalSettings(RenewalSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("reservationId", targetDepth)) {
                     context.nextToken();
                     deleteReservationResult.setReservationId(context.getUnmarshaller(String.class).unmarshall(context));

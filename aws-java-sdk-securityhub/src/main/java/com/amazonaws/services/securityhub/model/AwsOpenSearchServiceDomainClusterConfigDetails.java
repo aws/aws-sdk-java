@@ -71,6 +71,12 @@ public class AwsOpenSearchServiceDomainClusterConfigDetails implements Serializa
      * <p>
      * The instance type for your data nodes.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      */
     private String instanceType;
     /**
@@ -383,9 +389,20 @@ public class AwsOpenSearchServiceDomainClusterConfigDetails implements Serializa
      * <p>
      * The instance type for your data nodes.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param instanceType
-     *        The instance type for your data nodes.
+     *        The instance type for your data nodes.</p>
+     *        <p>
+     *        For a list of valid values, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *        >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *        Guide</i>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -396,8 +413,19 @@ public class AwsOpenSearchServiceDomainClusterConfigDetails implements Serializa
      * <p>
      * The instance type for your data nodes.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
-     * @return The instance type for your data nodes.
+     * @return The instance type for your data nodes.</p>
+     *         <p>
+     *         For a list of valid values, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *         >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *         Guide</i>.
      */
 
     public String getInstanceType() {
@@ -408,9 +436,20 @@ public class AwsOpenSearchServiceDomainClusterConfigDetails implements Serializa
      * <p>
      * The instance type for your data nodes.
      * </p>
+     * <p>
+     * For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     * >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param instanceType
-     *        The instance type for your data nodes.
+     *        The instance type for your data nodes.</p>
+     *        <p>
+     *        For a list of valid values, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html"
+     *        >Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

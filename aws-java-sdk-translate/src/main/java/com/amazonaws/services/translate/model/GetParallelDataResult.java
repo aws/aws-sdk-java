@@ -32,7 +32,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon
-     * Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -53,7 +53,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      */
     private ParallelDataDataLocation auxiliaryDataLocation;
@@ -61,7 +61,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      */
     private ParallelDataDataLocation latestUpdateAttemptAuxiliaryDataLocation;
@@ -109,7 +109,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon
-     * Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -127,7 +127,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param dataLocation
      *        The Amazon S3 location of the most recent parallel data input file that was successfully imported into
-     *        Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *        Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p>
      *        <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -150,7 +150,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon
-     * Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -167,7 +167,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * </important>
      * 
      * @return The Amazon S3 location of the most recent parallel data input file that was successfully imported into
-     *         Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *         Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p>
      *         <important>
      *         <p>
      *         Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -190,7 +190,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon
-     * Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -208,7 +208,7 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param dataLocation
      *        The Amazon S3 location of the most recent parallel data input file that was successfully imported into
-     *        Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *        Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p>
      *        <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -234,13 +234,13 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @param auxiliaryDataLocation
      *        The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *        file. This file was created when Amazon Translate attempted to create a parallel data resource. The
-     *        location is returned as a presigned URL to that has a 30 minute expiration.
+     *        location is returned as a presigned URL to that has a 30-minute expiration.
      */
 
     public void setAuxiliaryDataLocation(ParallelDataDataLocation auxiliaryDataLocation) {
@@ -251,12 +251,12 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @return The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *         file. This file was created when Amazon Translate attempted to create a parallel data resource. The
-     *         location is returned as a presigned URL to that has a 30 minute expiration.
+     *         location is returned as a presigned URL to that has a 30-minute expiration.
      */
 
     public ParallelDataDataLocation getAuxiliaryDataLocation() {
@@ -267,13 +267,13 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @param auxiliaryDataLocation
      *        The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *        file. This file was created when Amazon Translate attempted to create a parallel data resource. The
-     *        location is returned as a presigned URL to that has a 30 minute expiration.
+     *        location is returned as a presigned URL to that has a 30-minute expiration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,13 +286,13 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @param latestUpdateAttemptAuxiliaryDataLocation
      *        The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *        file. This file was created when Amazon Translate attempted to update a parallel data resource. The
-     *        location is returned as a presigned URL to that has a 30 minute expiration.
+     *        location is returned as a presigned URL to that has a 30-minute expiration.
      */
 
     public void setLatestUpdateAttemptAuxiliaryDataLocation(ParallelDataDataLocation latestUpdateAttemptAuxiliaryDataLocation) {
@@ -303,12 +303,12 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @return The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *         file. This file was created when Amazon Translate attempted to update a parallel data resource. The
-     *         location is returned as a presigned URL to that has a 30 minute expiration.
+     *         location is returned as a presigned URL to that has a 30-minute expiration.
      */
 
     public ParallelDataDataLocation getLatestUpdateAttemptAuxiliaryDataLocation() {
@@ -319,13 +319,13 @@ public class GetParallelDataResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as
-     * a presigned URL to that has a 30 minute expiration.
+     * a presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @param latestUpdateAttemptAuxiliaryDataLocation
      *        The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *        file. This file was created when Amazon Translate attempted to update a parallel data resource. The
-     *        location is returned as a presigned URL to that has a 30 minute expiration.
+     *        location is returned as a presigned URL to that has a 30-minute expiration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

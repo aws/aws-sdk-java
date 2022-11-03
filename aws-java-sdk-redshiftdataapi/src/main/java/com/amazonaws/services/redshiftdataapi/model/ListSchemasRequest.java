@@ -83,6 +83,13 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String secretArn;
+    /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     */
+    private String workgroupName;
 
     /**
      * <p>
@@ -468,6 +475,52 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     *        authenticating using either Secrets Manager or temporary credentials.
+     */
+
+    public void setWorkgroupName(String workgroupName) {
+        this.workgroupName = workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     * 
+     * @return The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     *         authenticating using either Secrets Manager or temporary credentials.
+     */
+
+    public String getWorkgroupName() {
+        return this.workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     *        authenticating using either Secrets Manager or temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSchemasRequest withWorkgroupName(String workgroupName) {
+        setWorkgroupName(workgroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -494,7 +547,9 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getSchemaPattern() != null)
             sb.append("SchemaPattern: ").append(getSchemaPattern()).append(",");
         if (getSecretArn() != null)
-            sb.append("SecretArn: ").append(getSecretArn());
+            sb.append("SecretArn: ").append(getSecretArn()).append(",");
+        if (getWorkgroupName() != null)
+            sb.append("WorkgroupName: ").append(getWorkgroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -541,6 +596,10 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
             return false;
+        if (other.getWorkgroupName() == null ^ this.getWorkgroupName() == null)
+            return false;
+        if (other.getWorkgroupName() != null && other.getWorkgroupName().equals(this.getWorkgroupName()) == false)
+            return false;
         return true;
     }
 
@@ -557,6 +616,7 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSchemaPattern() == null) ? 0 : getSchemaPattern().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());
         return hashCode;
     }
 

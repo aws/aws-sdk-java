@@ -28,7 +28,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The ID of the endpoint.
      * </p>
      */
     private String vpcEndpointId;
@@ -52,7 +52,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private String serviceName;
     /**
      * <p>
-     * The state of the VPC endpoint.
+     * The state of the endpoint.
      * </p>
      */
     private String state;
@@ -70,7 +70,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
     /**
      * <p>
-     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * (Interface endpoint) The subnets for the endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
@@ -82,13 +82,25 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<SecurityGroupIdentifier> groups;
     /**
      * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     */
+    private DnsOptions dnsOptions;
+    /**
+     * <p>
      * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
      * </p>
      */
     private Boolean privateDnsEnabled;
     /**
      * <p>
-     * Indicates whether the VPC endpoint is being managed by its service.
+     * Indicates whether the endpoint is being managed by its service.
      * </p>
      */
     private Boolean requesterManaged;
@@ -106,36 +118,36 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DnsEntry> dnsEntries;
     /**
      * <p>
-     * The date and time that the VPC endpoint was created.
+     * The date and time that the endpoint was created.
      * </p>
      */
     private java.util.Date creationTimestamp;
     /**
      * <p>
-     * Any tags assigned to the VPC endpoint.
+     * Any tags assigned to the endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The ID of the Amazon Web Services account that owns the VPC endpoint.
+     * The ID of the Amazon Web Services account that owns the endpoint.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The last error that occurred for VPC endpoint.
+     * The last error that occurred for endpoint.
      * </p>
      */
     private LastError lastError;
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The ID of the endpoint.
      * </p>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint.
+     *        The ID of the endpoint.
      */
 
     public void setVpcEndpointId(String vpcEndpointId) {
@@ -144,10 +156,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The ID of the endpoint.
      * </p>
      * 
-     * @return The ID of the VPC endpoint.
+     * @return The ID of the endpoint.
      */
 
     public String getVpcEndpointId() {
@@ -156,11 +168,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The ID of the endpoint.
      * </p>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint.
+     *        The ID of the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +336,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC endpoint.
+     * The state of the endpoint.
      * </p>
      * 
      * @param state
-     *        The state of the VPC endpoint.
+     *        The state of the endpoint.
      * @see State
      */
 
@@ -338,10 +350,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC endpoint.
+     * The state of the endpoint.
      * </p>
      * 
-     * @return The state of the VPC endpoint.
+     * @return The state of the endpoint.
      * @see State
      */
 
@@ -351,11 +363,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC endpoint.
+     * The state of the endpoint.
      * </p>
      * 
      * @param state
-     *        The state of the VPC endpoint.
+     *        The state of the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see State
      */
@@ -367,11 +379,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC endpoint.
+     * The state of the endpoint.
      * </p>
      * 
      * @param state
-     *        The state of the VPC endpoint.
+     *        The state of the endpoint.
      * @see State
      */
 
@@ -381,11 +393,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC endpoint.
+     * The state of the endpoint.
      * </p>
      * 
      * @param state
-     *        The state of the VPC endpoint.
+     *        The state of the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see State
      */
@@ -510,10 +522,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * (Interface endpoint) The subnets for the endpoint.
      * </p>
      * 
-     * @return (Interface endpoint) One or more subnets in which the endpoint is located.
+     * @return (Interface endpoint) The subnets for the endpoint.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -525,11 +537,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * (Interface endpoint) The subnets for the endpoint.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) One or more subnets in which the endpoint is located.
+     *        (Interface endpoint) The subnets for the endpoint.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -543,7 +555,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * (Interface endpoint) The subnets for the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -552,7 +564,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) One or more subnets in which the endpoint is located.
+     *        (Interface endpoint) The subnets for the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,11 +580,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * (Interface endpoint) The subnets for the endpoint.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) One or more subnets in which the endpoint is located.
+     *        (Interface endpoint) The subnets for the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -657,6 +669,119 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @return The IP address type for the endpoint.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public VpcEndpoint withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(IpAddressType ipAddressType) {
+        withIpAddressType(ipAddressType);
+    }
+
+    /**
+     * <p>
+     * The IP address type for the endpoint.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public VpcEndpoint withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     * 
+     * @param dnsOptions
+     *        The DNS options for the endpoint.
+     */
+
+    public void setDnsOptions(DnsOptions dnsOptions) {
+        this.dnsOptions = dnsOptions;
+    }
+
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     * 
+     * @return The DNS options for the endpoint.
+     */
+
+    public DnsOptions getDnsOptions() {
+        return this.dnsOptions;
+    }
+
+    /**
+     * <p>
+     * The DNS options for the endpoint.
+     * </p>
+     * 
+     * @param dnsOptions
+     *        The DNS options for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withDnsOptions(DnsOptions dnsOptions) {
+        setDnsOptions(dnsOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
      * </p>
      * 
@@ -709,11 +834,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC endpoint is being managed by its service.
+     * Indicates whether the endpoint is being managed by its service.
      * </p>
      * 
      * @param requesterManaged
-     *        Indicates whether the VPC endpoint is being managed by its service.
+     *        Indicates whether the endpoint is being managed by its service.
      */
 
     public void setRequesterManaged(Boolean requesterManaged) {
@@ -722,10 +847,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC endpoint is being managed by its service.
+     * Indicates whether the endpoint is being managed by its service.
      * </p>
      * 
-     * @return Indicates whether the VPC endpoint is being managed by its service.
+     * @return Indicates whether the endpoint is being managed by its service.
      */
 
     public Boolean getRequesterManaged() {
@@ -734,11 +859,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC endpoint is being managed by its service.
+     * Indicates whether the endpoint is being managed by its service.
      * </p>
      * 
      * @param requesterManaged
-     *        Indicates whether the VPC endpoint is being managed by its service.
+     *        Indicates whether the endpoint is being managed by its service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -749,10 +874,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC endpoint is being managed by its service.
+     * Indicates whether the endpoint is being managed by its service.
      * </p>
      * 
-     * @return Indicates whether the VPC endpoint is being managed by its service.
+     * @return Indicates whether the endpoint is being managed by its service.
      */
 
     public Boolean isRequesterManaged() {
@@ -907,11 +1032,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the VPC endpoint was created.
+     * The date and time that the endpoint was created.
      * </p>
      * 
      * @param creationTimestamp
-     *        The date and time that the VPC endpoint was created.
+     *        The date and time that the endpoint was created.
      */
 
     public void setCreationTimestamp(java.util.Date creationTimestamp) {
@@ -920,10 +1045,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the VPC endpoint was created.
+     * The date and time that the endpoint was created.
      * </p>
      * 
-     * @return The date and time that the VPC endpoint was created.
+     * @return The date and time that the endpoint was created.
      */
 
     public java.util.Date getCreationTimestamp() {
@@ -932,11 +1057,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the VPC endpoint was created.
+     * The date and time that the endpoint was created.
      * </p>
      * 
      * @param creationTimestamp
-     *        The date and time that the VPC endpoint was created.
+     *        The date and time that the endpoint was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -947,10 +1072,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the VPC endpoint.
+     * Any tags assigned to the endpoint.
      * </p>
      * 
-     * @return Any tags assigned to the VPC endpoint.
+     * @return Any tags assigned to the endpoint.
      */
 
     public java.util.List<Tag> getTags() {
@@ -962,11 +1087,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the VPC endpoint.
+     * Any tags assigned to the endpoint.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the VPC endpoint.
+     *        Any tags assigned to the endpoint.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -980,7 +1105,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the VPC endpoint.
+     * Any tags assigned to the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -989,7 +1114,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the VPC endpoint.
+     *        Any tags assigned to the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1005,11 +1130,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the VPC endpoint.
+     * Any tags assigned to the endpoint.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the VPC endpoint.
+     *        Any tags assigned to the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1020,11 +1145,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that owns the VPC endpoint.
+     * The ID of the Amazon Web Services account that owns the endpoint.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the Amazon Web Services account that owns the VPC endpoint.
+     *        The ID of the Amazon Web Services account that owns the endpoint.
      */
 
     public void setOwnerId(String ownerId) {
@@ -1033,10 +1158,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that owns the VPC endpoint.
+     * The ID of the Amazon Web Services account that owns the endpoint.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services account that owns the VPC endpoint.
+     * @return The ID of the Amazon Web Services account that owns the endpoint.
      */
 
     public String getOwnerId() {
@@ -1045,11 +1170,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that owns the VPC endpoint.
+     * The ID of the Amazon Web Services account that owns the endpoint.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the Amazon Web Services account that owns the VPC endpoint.
+     *        The ID of the Amazon Web Services account that owns the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1060,11 +1185,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last error that occurred for VPC endpoint.
+     * The last error that occurred for endpoint.
      * </p>
      * 
      * @param lastError
-     *        The last error that occurred for VPC endpoint.
+     *        The last error that occurred for endpoint.
      */
 
     public void setLastError(LastError lastError) {
@@ -1073,10 +1198,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last error that occurred for VPC endpoint.
+     * The last error that occurred for endpoint.
      * </p>
      * 
-     * @return The last error that occurred for VPC endpoint.
+     * @return The last error that occurred for endpoint.
      */
 
     public LastError getLastError() {
@@ -1085,11 +1210,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last error that occurred for VPC endpoint.
+     * The last error that occurred for endpoint.
      * </p>
      * 
      * @param lastError
-     *        The last error that occurred for VPC endpoint.
+     *        The last error that occurred for endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1128,6 +1253,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getGroups() != null)
             sb.append("Groups: ").append(getGroups()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getDnsOptions() != null)
+            sb.append("DnsOptions: ").append(getDnsOptions()).append(",");
         if (getPrivateDnsEnabled() != null)
             sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled()).append(",");
         if (getRequesterManaged() != null)
@@ -1194,6 +1323,14 @@ public class VpcEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
+        if (other.getDnsOptions() == null ^ this.getDnsOptions() == null)
+            return false;
+        if (other.getDnsOptions() != null && other.getDnsOptions().equals(this.getDnsOptions()) == false)
+            return false;
         if (other.getPrivateDnsEnabled() == null ^ this.getPrivateDnsEnabled() == null)
             return false;
         if (other.getPrivateDnsEnabled() != null && other.getPrivateDnsEnabled().equals(this.getPrivateDnsEnabled()) == false)
@@ -1243,6 +1380,8 @@ public class VpcEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getDnsOptions() == null) ? 0 : getDnsOptions().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterManaged() == null) ? 0 : getRequesterManaged().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());

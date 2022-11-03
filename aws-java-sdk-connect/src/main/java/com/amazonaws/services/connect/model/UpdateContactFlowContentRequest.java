@@ -33,13 +33,13 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
     private String instanceId;
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      */
     private String contactFlowId;
     /**
      * <p>
-     * The JSON string that represents contact flow’s content. For an example, see <a
+     * The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
      * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
@@ -88,11 +88,11 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -101,10 +101,10 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
-     * @return The identifier of the contact flow.
+     * @return The identifier of the flow.
      */
 
     public String getContactFlowId() {
@@ -113,11 +113,11 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the contact flow.
+     * The identifier of the flow.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow.
+     *        The identifier of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,13 +128,13 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The JSON string that represents contact flow’s content. For an example, see <a
+     * The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
      * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param content
-     *        The JSON string that represents contact flow’s content. For an example, see <a
+     *        The JSON string that represents flow's content. For an example, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
      *        flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      */
@@ -145,12 +145,12 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The JSON string that represents contact flow’s content. For an example, see <a
+     * The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
      * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
-     * @return The JSON string that represents contact flow’s content. For an example, see <a
+     * @return The JSON string that represents flow's content. For an example, see <a
      *         href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
      *         flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      */
@@ -161,13 +161,13 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The JSON string that represents contact flow’s content. For an example, see <a
+     * The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
      * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param content
-     *        The JSON string that represents contact flow’s content. For an example, see <a
+     *        The JSON string that represents flow's content. For an example, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
      *        flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -27,16 +27,15 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String instanceArn;
     /**
      * <p>
-     * TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     * 123456789012).
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      */
     private String targetId;
@@ -60,25 +59,25 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
     private String principalType;
     /**
      * <p>
-     * An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For
-     * example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services
-     * SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO
-     * Identity Store API Reference</a>.
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
      * </p>
      */
     private String principalId;
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *        see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -87,14 +86,14 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *         see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -103,15 +102,15 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param instanceArn
-     *        The ARN of the SSO instance under which the operation will be executed. For more information about ARNs,
-     *        see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
-     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,13 +121,11 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     * 123456789012).
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     *        123456789012).
+     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      */
 
     public void setTargetId(String targetId) {
@@ -137,12 +134,10 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     * 123456789012).
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
-     * @return TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     *         123456789012).
+     * @return TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      */
 
     public String getTargetId() {
@@ -151,13 +146,11 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     * 123456789012).
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example,
-     *        123456789012).
+     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,17 +319,17 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For
-     * example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services
-     * SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO
-     * Identity Store API Reference</a>.
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
      * </p>
      * 
      * @param principalId
-     *        An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs
-     *        (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web
-     *        Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     *        Services SSO Identity Store API Reference</a>.
+     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *        Identity Store API Reference</a>.
      */
 
     public void setPrincipalId(String principalId) {
@@ -345,16 +338,16 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For
-     * example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services
-     * SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO
-     * Identity Store API Reference</a>.
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
      * </p>
      * 
-     * @return An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs
-     *         (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon
-     *         Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon
-     *         Web Services SSO Identity Store API Reference</a>.
+     * @return An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *         example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *         Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *         Identity Store API Reference</a>.
      */
 
     public String getPrincipalId() {
@@ -363,17 +356,17 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For
-     * example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services
-     * SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO
-     * Identity Store API Reference</a>.
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
      * </p>
      * 
      * @param principalId
-     *        An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs
-     *        (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web
-     *        Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     *        Services SSO Identity Store API Reference</a>.
+     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *        Identity Store API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

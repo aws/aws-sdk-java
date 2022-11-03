@@ -27,31 +27,31 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The location of the targeted API entity of the to-be-created documentation part.
+     * The location of the targeted API entity of the to-be-created documentation part.
      * </p>
      */
     private DocumentationPartLocation location;
     /**
      * <p>
-     * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only
+     * OpenAPI-compliant key-value pairs can be exported and, hence, published.
      * </p>
      */
     private String properties;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -60,10 +60,10 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -72,11 +72,11 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The location of the targeted API entity of the to-be-created documentation part.
+     * The location of the targeted API entity of the to-be-created documentation part.
      * </p>
      * 
      * @param location
-     *        [Required] The location of the targeted API entity of the to-be-created documentation part.
+     *        The location of the targeted API entity of the to-be-created documentation part.
      */
 
     public void setLocation(DocumentationPartLocation location) {
@@ -100,10 +100,10 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The location of the targeted API entity of the to-be-created documentation part.
+     * The location of the targeted API entity of the to-be-created documentation part.
      * </p>
      * 
-     * @return [Required] The location of the targeted API entity of the to-be-created documentation part.
+     * @return The location of the targeted API entity of the to-be-created documentation part.
      */
 
     public DocumentationPartLocation getLocation() {
@@ -112,11 +112,11 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The location of the targeted API entity of the to-be-created documentation part.
+     * The location of the targeted API entity of the to-be-created documentation part.
      * </p>
      * 
      * @param location
-     *        [Required] The location of the targeted API entity of the to-be-created documentation part.
+     *        The location of the targeted API entity of the to-be-created documentation part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +127,13 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only
+     * OpenAPI-compliant key-value pairs can be exported and, hence, published.
      * </p>
      * 
      * @param properties
-     *        [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     *        API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     *        The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific,
+     *        but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
      */
 
     public void setProperties(String properties) {
@@ -142,12 +142,12 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only
+     * OpenAPI-compliant key-value pairs can be exported and, hence, published.
      * </p>
      * 
-     * @return [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     *         API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * @return The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific,
+     *         but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
      */
 
     public String getProperties() {
@@ -156,13 +156,13 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only
+     * OpenAPI-compliant key-value pairs can be exported and, hence, published.
      * </p>
      * 
      * @param properties
-     *        [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     *        API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     *        The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific,
+     *        but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

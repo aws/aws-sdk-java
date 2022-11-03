@@ -15,7 +15,7 @@ package com.amazonaws.services.dataexchange.model;
 import javax.annotation.Generated;
 
 /**
- * The types of resource which the job error can apply to.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobErrorResourceTypes {

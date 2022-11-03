@@ -77,6 +77,13 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean withEvent;
+    /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     */
+    private String workgroupName;
 
     /**
      * <p>
@@ -469,6 +476,52 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     *        authenticating using either Secrets Manager or temporary credentials.
+     */
+
+    public void setWorkgroupName(String workgroupName) {
+        this.workgroupName = workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     * 
+     * @return The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     *         authenticating using either Secrets Manager or temporary credentials.
+     */
+
+    public String getWorkgroupName() {
+        return this.workgroupName;
+    }
+
+    /**
+     * <p>
+     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     * authenticating using either Secrets Manager or temporary credentials.
+     * </p>
+     * 
+     * @param workgroupName
+     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
+     *        authenticating using either Secrets Manager or temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteStatementRequest withWorkgroupName(String workgroupName) {
+        setWorkgroupName(workgroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -495,7 +548,9 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         if (getStatementName() != null)
             sb.append("StatementName: ").append(getStatementName()).append(",");
         if (getWithEvent() != null)
-            sb.append("WithEvent: ").append(getWithEvent());
+            sb.append("WithEvent: ").append(getWithEvent()).append(",");
+        if (getWorkgroupName() != null)
+            sb.append("WorkgroupName: ").append(getWorkgroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +597,10 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getWithEvent() != null && other.getWithEvent().equals(this.getWithEvent()) == false)
             return false;
+        if (other.getWorkgroupName() == null ^ this.getWorkgroupName() == null)
+            return false;
+        if (other.getWorkgroupName() != null && other.getWorkgroupName().equals(this.getWorkgroupName()) == false)
+            return false;
         return true;
     }
 
@@ -558,6 +617,7 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getSql() == null) ? 0 : getSql().hashCode());
         hashCode = prime * hashCode + ((getStatementName() == null) ? 0 : getStatementName().hashCode());
         hashCode = prime * hashCode + ((getWithEvent() == null) ? 0 : getWithEvent().hashCode());
+        hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());
         return hashCode;
     }
 

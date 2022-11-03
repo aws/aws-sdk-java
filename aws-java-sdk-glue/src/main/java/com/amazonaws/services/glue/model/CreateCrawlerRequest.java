@@ -97,7 +97,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private LineageConfiguration lineageConfiguration;
-
+    /**
+     * <p>
+     * Specifies Lake Formation configuration settings for the crawler.
+     * </p>
+     */
     private LakeFormationConfiguration lakeFormationConfiguration;
     /**
      * <p>
@@ -638,7 +642,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies Lake Formation configuration settings for the crawler.
+     * </p>
+     * 
      * @param lakeFormationConfiguration
+     *        Specifies Lake Formation configuration settings for the crawler.
      */
 
     public void setLakeFormationConfiguration(LakeFormationConfiguration lakeFormationConfiguration) {
@@ -646,7 +655,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies Lake Formation configuration settings for the crawler.
+     * </p>
+     * 
+     * @return Specifies Lake Formation configuration settings for the crawler.
      */
 
     public LakeFormationConfiguration getLakeFormationConfiguration() {
@@ -654,7 +667,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies Lake Formation configuration settings for the crawler.
+     * </p>
+     * 
      * @param lakeFormationConfiguration
+     *        Specifies Lake Formation configuration settings for the crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

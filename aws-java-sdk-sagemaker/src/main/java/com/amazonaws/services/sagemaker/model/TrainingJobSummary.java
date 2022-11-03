@@ -65,6 +65,12 @@ public class TrainingJobSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String trainingJobStatus;
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     */
+    private WarmPoolStatus warmPoolStatus;
 
     /**
      * <p>
@@ -332,6 +338,46 @@ public class TrainingJobSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     */
+
+    public void setWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        this.warmPoolStatus = warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @return The status of the warm pool associated with the training job.
+     */
+
+    public WarmPoolStatus getWarmPoolStatus() {
+        return this.warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJobSummary withWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        setWarmPoolStatus(warmPoolStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -354,7 +400,9 @@ public class TrainingJobSummary implements Serializable, Cloneable, StructuredPo
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getTrainingJobStatus() != null)
-            sb.append("TrainingJobStatus: ").append(getTrainingJobStatus());
+            sb.append("TrainingJobStatus: ").append(getTrainingJobStatus()).append(",");
+        if (getWarmPoolStatus() != null)
+            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +441,10 @@ public class TrainingJobSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getTrainingJobStatus() != null && other.getTrainingJobStatus().equals(this.getTrainingJobStatus()) == false)
             return false;
+        if (other.getWarmPoolStatus() == null ^ this.getWarmPoolStatus() == null)
+            return false;
+        if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +459,7 @@ public class TrainingJobSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getTrainingEndTime() == null) ? 0 : getTrainingEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobStatus() == null) ? 0 : getTrainingJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
         return hashCode;
     }
 

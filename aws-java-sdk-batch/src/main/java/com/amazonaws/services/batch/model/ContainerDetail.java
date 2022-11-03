@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the details of a container that's part of a job.
+ * An object that represents the details of a container that's part of a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerDetail" target="_top">AWS API
@@ -69,7 +69,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> command;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the job upon execution.
+     * The Amazon Resource Name (ARN) that's associated with the job when run.
      * </p>
      */
     private String jobRoleArn;
@@ -83,7 +83,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String executionRoleArn;
     /**
      * <p>
-     * A list of volumes associated with the job.
+     * A list of volumes that are associated with the job.
      * </p>
      */
     private java.util.List<Volume> volumes;
@@ -93,8 +93,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      */
@@ -132,12 +132,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When this parameter is true, the container is given elevated permissions on the host container instance (similar
-     * to the <code>root</code> user). The default value is false.
+     * to the <code>root</code> user). The default value is <code>false</code>.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
-     * specified as false.
+     * specified as <code>false</code>.
      * </p>
      * </note>
      */
@@ -159,7 +159,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private Integer exitCode;
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      */
@@ -179,8 +179,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String taskArn;
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     * jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      */
@@ -198,7 +198,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String instanceType;
     /**
      * <p>
-     * The network interfaces associated with the job.
+     * The network interfaces that are associated with the job.
      * </p>
      */
     private java.util.List<NetworkInterface> networkInterfaces;
@@ -241,7 +241,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -558,11 +558,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the job upon execution.
+     * The Amazon Resource Name (ARN) that's associated with the job when run.
      * </p>
      * 
      * @param jobRoleArn
-     *        The Amazon Resource Name (ARN) associated with the job upon execution.
+     *        The Amazon Resource Name (ARN) that's associated with the job when run.
      */
 
     public void setJobRoleArn(String jobRoleArn) {
@@ -571,10 +571,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the job upon execution.
+     * The Amazon Resource Name (ARN) that's associated with the job when run.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) associated with the job upon execution.
+     * @return The Amazon Resource Name (ARN) that's associated with the job when run.
      */
 
     public String getJobRoleArn() {
@@ -583,11 +583,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the job upon execution.
+     * The Amazon Resource Name (ARN) that's associated with the job when run.
      * </p>
      * 
      * @param jobRoleArn
-     *        The Amazon Resource Name (ARN) associated with the job upon execution.
+     *        The Amazon Resource Name (ARN) that's associated with the job when run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,10 +650,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of volumes associated with the job.
+     * A list of volumes that are associated with the job.
      * </p>
      * 
-     * @return A list of volumes associated with the job.
+     * @return A list of volumes that are associated with the job.
      */
 
     public java.util.List<Volume> getVolumes() {
@@ -662,11 +662,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of volumes associated with the job.
+     * A list of volumes that are associated with the job.
      * </p>
      * 
      * @param volumes
-     *        A list of volumes associated with the job.
+     *        A list of volumes that are associated with the job.
      */
 
     public void setVolumes(java.util.Collection<Volume> volumes) {
@@ -680,7 +680,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of volumes associated with the job.
+     * A list of volumes that are associated with the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -689,7 +689,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param volumes
-     *        A list of volumes associated with the job.
+     *        A list of volumes that are associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -705,11 +705,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of volumes associated with the job.
+     * A list of volumes that are associated with the job.
      * </p>
      * 
      * @param volumes
-     *        A list of volumes associated with the job.
+     *        A list of volumes that are associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -724,15 +724,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
      * @return The environment variables to pass to a container.</p> <note>
      *         <p>
-     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *         variables that are set by the Batch service.
+     *         Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *         variables that Batch sets.
      *         </p>
      */
 
@@ -746,16 +746,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
      * @param environment
      *        The environment variables to pass to a container.</p> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      */
 
@@ -774,8 +774,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * <p>
@@ -787,8 +787,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * @param environment
      *        The environment variables to pass to a container.</p> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -809,16 +809,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the Batch service.
+     * Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     * variables that Batch sets.
      * </p>
      * </note>
      * 
      * @param environment
      *        The environment variables to pass to a container.</p> <note>
      *        <p>
-     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the Batch service.
+     *        Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for
+     *        variables that Batch sets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1119,21 +1119,21 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When this parameter is true, the container is given elevated permissions on the host container instance (similar
-     * to the <code>root</code> user). The default value is false.
+     * to the <code>root</code> user). The default value is <code>false</code>.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
-     * specified as false.
+     * specified as <code>false</code>.
      * </p>
      * </note>
      * 
      * @param privileged
      *        When this parameter is true, the container is given elevated permissions on the host container instance
-     *        (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *        (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
-     *        or specified as false.
+     *        or specified as <code>false</code>.
      *        </p>
      */
 
@@ -1144,20 +1144,20 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When this parameter is true, the container is given elevated permissions on the host container instance (similar
-     * to the <code>root</code> user). The default value is false.
+     * to the <code>root</code> user). The default value is <code>false</code>.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
-     * specified as false.
+     * specified as <code>false</code>.
      * </p>
      * </note>
      * 
      * @return When this parameter is true, the container is given elevated permissions on the host container instance
-     *         (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *         (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
-     *         or specified as false.
+     *         or specified as <code>false</code>.
      *         </p>
      */
 
@@ -1168,21 +1168,21 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When this parameter is true, the container is given elevated permissions on the host container instance (similar
-     * to the <code>root</code> user). The default value is false.
+     * to the <code>root</code> user). The default value is <code>false</code>.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
-     * specified as false.
+     * specified as <code>false</code>.
      * </p>
      * </note>
      * 
      * @param privileged
      *        When this parameter is true, the container is given elevated permissions on the host container instance
-     *        (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *        (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
-     *        or specified as false.
+     *        or specified as <code>false</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1195,20 +1195,20 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When this parameter is true, the container is given elevated permissions on the host container instance (similar
-     * to the <code>root</code> user). The default value is false.
+     * to the <code>root</code> user). The default value is <code>false</code>.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
-     * specified as false.
+     * specified as <code>false</code>.
      * </p>
      * </note>
      * 
      * @return When this parameter is true, the container is given elevated permissions on the host container instance
-     *         (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *         (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
-     *         or specified as false.
+     *         or specified as <code>false</code>.
      *         </p>
      */
 
@@ -1316,13 +1316,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional details about a running or
-     *        stopped container.
+     *        A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *        container.
      */
 
     public void setReason(String reason) {
@@ -1331,12 +1331,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
-     * @return A short (255 max characters) human-readable string to provide additional details about a running or
-     *         stopped container.
+     * @return A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *         container.
      */
 
     public String getReason() {
@@ -1345,13 +1345,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional details about a running or
-     *        stopped container.
+     *        A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *        container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1448,15 +1448,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     * jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
-     *        <code>RUNNING</code> status.
+     *        The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for
+     *        Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they
+     *        reach the <code>RUNNING</code> status.
      */
 
     public void setLogStreamName(String logStreamName) {
@@ -1465,14 +1465,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     * jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
-     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     *         <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
-     *         <code>RUNNING</code> status.
+     * @return The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for
+     *         Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they
+     *         reach the <code>RUNNING</code> status.
      */
 
     public String getLogStreamName() {
@@ -1481,15 +1481,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     * jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
-     *        <code>RUNNING</code> status.
+     *        The name of the Amazon CloudWatch Logs log stream that's associated with the container. The log group for
+     *        Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they
+     *        reach the <code>RUNNING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1564,10 +1564,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interfaces associated with the job.
+     * The network interfaces that are associated with the job.
      * </p>
      * 
-     * @return The network interfaces associated with the job.
+     * @return The network interfaces that are associated with the job.
      */
 
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
@@ -1576,11 +1576,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interfaces associated with the job.
+     * The network interfaces that are associated with the job.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces associated with the job.
+     *        The network interfaces that are associated with the job.
      */
 
     public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
@@ -1594,7 +1594,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interfaces associated with the job.
+     * The network interfaces that are associated with the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1603,7 +1603,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces associated with the job.
+     *        The network interfaces that are associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1619,11 +1619,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interfaces associated with the job.
+     * The network interfaces that are associated with the job.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces associated with the job.
+     *        The network interfaces that are associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1776,7 +1776,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -1813,7 +1813,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      *        </p>
      *        <note>
@@ -1856,7 +1856,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -1892,7 +1892,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         </note>
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *         check the Docker Remote API version on your container instance, log into your container instance and run
+     *         check the Docker Remote API version on your container instance, log in to your container instance and run
      *         the following command: <code>sudo docker version | grep "Server API version"</code>
      *         </p>
      *         <note>
@@ -1935,7 +1935,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -1972,7 +1972,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      *        </p>
      *        <note>

@@ -31,21 +31,73 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
-     * an unexpected event by Amazon Cognito advanced security.
+     * The source IP address of your user's device.
+     * </p>
+     */
+    private String ipAddress;
+    /**
+     * <p>
+     * Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection
+     * library. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     * >Adding user device and session data to API requests</a>.
      * </p>
      */
     private String encodedData;
 
     /**
      * <p>
-     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
-     * an unexpected event by Amazon Cognito advanced security.
+     * The source IP address of your user's device.
+     * </p>
+     * 
+     * @param ipAddress
+     *        The source IP address of your user's device.
+     */
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    /**
+     * <p>
+     * The source IP address of your user's device.
+     * </p>
+     * 
+     * @return The source IP address of your user's device.
+     */
+
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
+
+    /**
+     * <p>
+     * The source IP address of your user's device.
+     * </p>
+     * 
+     * @param ipAddress
+     *        The source IP address of your user's device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserContextDataType withIpAddress(String ipAddress) {
+        setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection
+     * library. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     * >Adding user device and session data to API requests</a>.
      * </p>
      * 
      * @param encodedData
-     *        Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the
-     *        risk of an unexpected event by Amazon Cognito advanced security.
+     *        Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection
+     *        library. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     *        >Adding user device and session data to API requests</a>.
      */
 
     public void setEncodedData(String encodedData) {
@@ -54,12 +106,16 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
-     * an unexpected event by Amazon Cognito advanced security.
+     * Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection
+     * library. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     * >Adding user device and session data to API requests</a>.
      * </p>
      * 
-     * @return Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the
-     *         risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Encoded device-fingerprint details that your app collected with the Amazon Cognito context data
+     *         collection library. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     *         >Adding user device and session data to API requests</a>.
      */
 
     public String getEncodedData() {
@@ -68,13 +124,17 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
-     * an unexpected event by Amazon Cognito advanced security.
+     * Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection
+     * library. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     * >Adding user device and session data to API requests</a>.
      * </p>
      * 
      * @param encodedData
-     *        Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the
-     *        risk of an unexpected event by Amazon Cognito advanced security.
+     *        Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection
+     *        library. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint"
+     *        >Adding user device and session data to API requests</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,6 +155,8 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getIpAddress() != null)
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getEncodedData() != null)
             sb.append("EncodedData: ").append(getEncodedData());
         sb.append("}");
@@ -111,6 +173,10 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
         if (obj instanceof UserContextDataType == false)
             return false;
         UserContextDataType other = (UserContextDataType) obj;
+        if (other.getIpAddress() == null ^ this.getIpAddress() == null)
+            return false;
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
+            return false;
         if (other.getEncodedData() == null ^ this.getEncodedData() == null)
             return false;
         if (other.getEncodedData() != null && other.getEncodedData().equals(this.getEncodedData()) == false)
@@ -123,6 +189,7 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getEncodedData() == null) ? 0 : getEncodedData().hashCode());
         return hashCode;
     }

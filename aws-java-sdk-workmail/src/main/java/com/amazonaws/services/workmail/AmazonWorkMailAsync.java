@@ -26,10 +26,10 @@ import com.amazonaws.services.workmail.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and
- * mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or
- * other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory
- * and control both the keys that encrypt your data and the location in which your data is stored.
+ * WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile
+ * email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or other
+ * native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory and
+ * control both the keys that encrypt your data and the location in which your data is stored.
  * </p>
  * <p>
  * The WorkMail API is designed for the following scenarios:
@@ -141,6 +141,39 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token
+     * you can use to make impersonated calls.
+     * </p>
+     * 
+     * @param assumeImpersonationRoleRequest
+     * @return A Java Future containing the result of the AssumeImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsync.AssumeImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssumeImpersonationRoleResult> assumeImpersonationRoleAsync(AssumeImpersonationRoleRequest assumeImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token
+     * you can use to make impersonated calls.
+     * </p>
+     * 
+     * @param assumeImpersonationRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssumeImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.AssumeImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssumeImpersonationRoleResult> assumeImpersonationRoleAsync(AssumeImpersonationRoleRequest assumeImpersonationRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<AssumeImpersonationRoleRequest, AssumeImpersonationRoleResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels a mailbox export job.
      * </p>
      * <note>
@@ -182,7 +215,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
+     * Adds an alias to the set of a given member (user or group) of WorkMail.
      * </p>
      * 
      * @param createAliasRequest
@@ -195,7 +228,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
+     * Adds an alias to the set of a given member (user or group) of WorkMail.
      * </p>
      * 
      * @param createAliasRequest
@@ -213,7 +246,42 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param createAvailabilityConfigurationRequest
+     * @return A Java Future containing the result of the CreateAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.CreateAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAvailabilityConfigurationResult> createAvailabilityConfigurationAsync(
+            CreateAvailabilityConfigurationRequest createAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param createAvailabilityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.CreateAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAvailabilityConfigurationResult> createAvailabilityConfigurationAsync(
+            CreateAvailabilityConfigurationRequest createAvailabilityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAvailabilityConfigurationRequest, CreateAvailabilityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a group that can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createGroupRequest
@@ -226,7 +294,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates a group that can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createGroupRequest
@@ -244,7 +312,48 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * Creates an impersonation role for the given WorkMail organization.
+     * </p>
+     * <p>
+     * <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if
+     * the original request completes successfully, any subsequent retries also complete successfully without performing
+     * any further actions.
+     * </p>
+     * 
+     * @param createImpersonationRoleRequest
+     * @return A Java Future containing the result of the CreateImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsync.CreateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImpersonationRoleResult> createImpersonationRoleAsync(CreateImpersonationRoleRequest createImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Creates an impersonation role for the given WorkMail organization.
+     * </p>
+     * <p>
+     * <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if
+     * the original request completes successfully, any subsequent retries also complete successfully without performing
+     * any further actions.
+     * </p>
+     * 
+     * @param createImpersonationRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.CreateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImpersonationRoleResult> createImpersonationRoleAsync(CreateImpersonationRoleRequest createImpersonationRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateImpersonationRoleRequest, CreateImpersonationRoleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param createMobileDeviceAccessRuleRequest
@@ -259,7 +368,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * Creates a new mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param createMobileDeviceAccessRuleRequest
@@ -279,24 +388,23 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
-     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
-     * alias must match the directory alias. If you choose not to associate an existing directory with your
-     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service
+     * directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias
+     * must match the directory alias. If you choose not to associate an existing directory with your organization, then
+     * we create a new WorkMail directory for you. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * You can associate multiple email domains with an organization, then choose your default email domain from the
      * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
      * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
      * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
-     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * default domain</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
-     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
-     * master key for you.
+     * Optionally, you can use a customer managed key from AWS Key Management Service (AWS KMS) to encrypt email for
+     * your organization. If you don't associate an AWS KMS key, WorkMail creates a default, AWS managed key for you.
      * </p>
      * 
      * @param createOrganizationRequest
@@ -309,24 +417,23 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
-     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
-     * alias must match the directory alias. If you choose not to associate an existing directory with your
-     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service
+     * directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias
+     * must match the directory alias. If you choose not to associate an existing directory with your organization, then
+     * we create a new WorkMail directory for you. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * You can associate multiple email domains with an organization, then choose your default email domain from the
      * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
      * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
      * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
-     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * default domain</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
-     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
-     * master key for you.
+     * Optionally, you can use a customer managed key from AWS Key Management Service (AWS KMS) to encrypt email for
+     * your organization. If you don't associate an AWS KMS key, WorkMail creates a default, AWS managed key for you.
      * </p>
      * 
      * @param createOrganizationRequest
@@ -344,7 +451,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail resource.
+     * Creates a new WorkMail resource.
      * </p>
      * 
      * @param createResourceRequest
@@ -357,7 +464,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail resource.
+     * Creates a new WorkMail resource.
      * </p>
      * 
      * @param createResourceRequest
@@ -375,7 +482,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createUserRequest
@@ -388,7 +495,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createUserRequest
@@ -480,6 +587,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param deleteAvailabilityConfigurationRequest
+     * @return A Java Future containing the result of the DeleteAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.DeleteAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAvailabilityConfigurationResult> deleteAvailabilityConfigurationAsync(
+            DeleteAvailabilityConfigurationRequest deleteAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param deleteAvailabilityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAvailabilityConfigurationResult> deleteAvailabilityConfigurationAsync(
+            DeleteAvailabilityConfigurationRequest deleteAvailabilityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAvailabilityConfigurationRequest, DeleteAvailabilityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the email monitoring configuration for a specified organization.
      * </p>
      * 
@@ -515,7 +657,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a group from Amazon WorkMail.
+     * Deletes a group from WorkMail.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -528,7 +670,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a group from Amazon WorkMail.
+     * Deletes a group from WorkMail.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -543,6 +685,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param deleteImpersonationRoleRequest
+     * @return A Java Future containing the result of the DeleteImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsync.DeleteImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImpersonationRoleResult> deleteImpersonationRoleAsync(DeleteImpersonationRoleRequest deleteImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Deletes an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param deleteImpersonationRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImpersonationRoleResult> deleteImpersonationRoleAsync(DeleteImpersonationRoleRequest deleteImpersonationRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteImpersonationRoleRequest, DeleteImpersonationRoleResult> asyncHandler);
 
     /**
      * <p>
@@ -624,7 +797,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * Deletes a mobile device access rule for the specified WorkMail organization.
      * </p>
      * <note>
      * <p>
@@ -645,7 +818,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * Deletes a mobile device access rule for the specified WorkMail organization.
      * </p>
      * <note>
      * <p>
@@ -671,10 +844,10 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
-     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail as part of the
+     * organization. You can choose whether to delete the associated directory. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -687,10 +860,10 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
-     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail as part of the
+     * organization. You can choose whether to delete the associated directory. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -770,8 +943,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
-     * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
+     * Deletes a user from WorkMail and all subsequent systems. Before you can delete a user, the user state must be
+     * <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
      * <p>
      * Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are
@@ -788,8 +961,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
-     * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
+     * Deletes a user from WorkMail and all subsequent systems. Before you can delete a user, the user state must be
+     * <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
      * <p>
      * Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are
@@ -811,7 +984,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and
+     * Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and
      * schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The
      * functionality in the console is <i>Disable</i>.
      * </p>
@@ -826,7 +999,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and
+     * Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and
      * schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The
      * functionality in the console is <i>Disable</i>.
      * </p>
@@ -846,9 +1019,9 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing
-     * WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address
-     * used by WorkMail entities before you remove the domain.
+     * Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail
+     * use. SES keeps the domain because other applications may use it. You must first remove any email address used by
+     * WorkMail entities before you remove the domain.
      * </p>
      * 
      * @param deregisterMailDomainRequest
@@ -861,9 +1034,9 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing
-     * WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address
-     * used by WorkMail entities before you remove the domain.
+     * Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail
+     * use. SES keeps the domain because other applications may use it. You must first remove any email address used by
+     * WorkMail entities before you remove the domain.
      * </p>
      * 
      * @param deregisterMailDomainRequest
@@ -1175,7 +1348,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     /**
      * <p>
      * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
-     * protocol action, or user ID.
+     * protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role
+     * ID. Impersonation role ID can only be used with Action EWS.
      * </p>
      * 
      * @param getAccessControlEffectRequest
@@ -1189,7 +1363,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     /**
      * <p>
      * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
-     * protocol action, or user ID.
+     * protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role
+     * ID. Impersonation role ID can only be used with Action EWS.
      * </p>
      * 
      * @param getAccessControlEffectRequest
@@ -1237,6 +1412,70 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(
             GetDefaultRetentionPolicyRequest getDefaultRetentionPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetDefaultRetentionPolicyRequest, GetDefaultRetentionPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the impersonation role details for the given WorkMail organization.
+     * </p>
+     * 
+     * @param getImpersonationRoleRequest
+     * @return A Java Future containing the result of the GetImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetImpersonationRoleResult> getImpersonationRoleAsync(GetImpersonationRoleRequest getImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Gets the impersonation role details for the given WorkMail organization.
+     * </p>
+     * 
+     * @param getImpersonationRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetImpersonationRoleResult> getImpersonationRoleAsync(GetImpersonationRoleRequest getImpersonationRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<GetImpersonationRoleRequest, GetImpersonationRoleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tests whether the given impersonation role can impersonate a target user.
+     * </p>
+     * 
+     * @param getImpersonationRoleEffectRequest
+     * @return A Java Future containing the result of the GetImpersonationRoleEffect operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetImpersonationRoleEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetImpersonationRoleEffectResult> getImpersonationRoleEffectAsync(
+            GetImpersonationRoleEffectRequest getImpersonationRoleEffectRequest);
+
+    /**
+     * <p>
+     * Tests whether the given impersonation role can impersonate a target user.
+     * </p>
+     * 
+     * @param getImpersonationRoleEffectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetImpersonationRoleEffect operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetImpersonationRoleEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetImpersonationRoleEffectResult> getImpersonationRoleEffectAsync(
+            GetImpersonationRoleEffectRequest getImpersonationRoleEffectRequest,
+            com.amazonaws.handlers.AsyncHandler<GetImpersonationRoleEffectRequest, GetImpersonationRoleEffectResult> asyncHandler);
 
     /**
      * <p>
@@ -1305,8 +1544,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     /**
      * <p>
      * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
-     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
-     * organization for a particular user's attributes.
+     * this method to test the effects of the current set of mobile device access rules for the WorkMail organization
+     * for a particular user's attributes.
      * </p>
      * 
      * @param getMobileDeviceAccessEffectRequest
@@ -1321,8 +1560,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     /**
      * <p>
      * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
-     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
-     * organization for a particular user's attributes.
+     * this method to test the effects of the current set of mobile device access rules for the WorkMail organization
+     * for a particular user's attributes.
      * </p>
      * 
      * @param getMobileDeviceAccessEffectRequest
@@ -1438,6 +1677,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listAvailabilityConfigurationsRequest
+     * @return A Java Future containing the result of the ListAvailabilityConfigurations operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.ListAvailabilityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAvailabilityConfigurationsResult> listAvailabilityConfigurationsAsync(
+            ListAvailabilityConfigurationsRequest listAvailabilityConfigurationsRequest);
+
+    /**
+     * <p>
+     * List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listAvailabilityConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAvailabilityConfigurations operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.ListAvailabilityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAvailabilityConfigurationsResult> listAvailabilityConfigurationsAsync(
+            ListAvailabilityConfigurationsRequest listAvailabilityConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAvailabilityConfigurationsRequest, ListAvailabilityConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an overview of the members of a group. Users and groups can be members of a group.
      * </p>
      * 
@@ -1500,7 +1774,38 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the mail domains in a given Amazon WorkMail organization.
+     * Lists all the impersonation roles for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listImpersonationRolesRequest
+     * @return A Java Future containing the result of the ListImpersonationRoles operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListImpersonationRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImpersonationRolesResult> listImpersonationRolesAsync(ListImpersonationRolesRequest listImpersonationRolesRequest);
+
+    /**
+     * <p>
+     * Lists all the impersonation roles for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listImpersonationRolesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImpersonationRoles operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListImpersonationRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImpersonationRolesResult> listImpersonationRolesAsync(ListImpersonationRolesRequest listImpersonationRolesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImpersonationRolesRequest, ListImpersonationRolesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the mail domains in a given WorkMail organization.
      * </p>
      * 
      * @param listMailDomainsRequest
@@ -1513,7 +1818,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the mail domains in a given Amazon WorkMail organization.
+     * Lists the mail domains in a given WorkMail organization.
      * </p>
      * 
      * @param listMailDomainsRequest
@@ -1628,7 +1933,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * Lists the mobile device access rules for the specified WorkMail organization.
      * </p>
      * 
      * @param listMobileDeviceAccessRulesRequest
@@ -1642,7 +1947,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * Lists the mobile device access rules for the specified WorkMail organization.
      * </p>
      * 
      * @param listMobileDeviceAccessRulesRequest
@@ -1756,7 +2061,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * Lists the tags applied to an WorkMail organization resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1769,7 +2074,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * Lists the tags applied to an WorkMail organization resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1819,8 +2124,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     /**
      * <p>
      * Adds a new access control rule for the specified organization. The rule allows or denies access to the
-     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
-     * same name as an existing rule replaces the older rule.
+     * organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a
+     * new rule with the same name as an existing rule replaces the older rule.
      * </p>
      * 
      * @param putAccessControlRuleRequest
@@ -1834,8 +2139,8 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
     /**
      * <p>
      * Adds a new access control rule for the specified organization. The rule allows or denies access to the
-     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
-     * same name as an existing rule replaces the older rule.
+     * organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a
+     * new rule with the same name as an existing rule replaces the older rule.
      * </p>
      * 
      * @param putAccessControlRuleRequest
@@ -2016,9 +2321,9 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES
-     * for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use
-     * the specified domain for sending your users' emails.
+     * Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for
+     * this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the
+     * specified domain for sending your users' emails.
      * </p>
      * 
      * @param registerMailDomainRequest
@@ -2031,9 +2336,9 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES
-     * for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use
-     * the specified domain for sending your users' emails.
+     * Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for
+     * this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the
+     * specified domain for sending your users' emails.
      * </p>
      * 
      * @param registerMailDomainRequest
@@ -2051,7 +2356,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
+     * Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
      * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
@@ -2072,7 +2377,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
+     * Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
      * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
@@ -2132,7 +2437,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
      * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
-     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param startMailboxExportJobRequest
@@ -2148,7 +2453,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
      * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
-     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param startMailboxExportJobRequest
@@ -2166,7 +2471,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * Applies the specified tags to the specified WorkMailorganization resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2179,7 +2484,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * Applies the specified tags to the specified WorkMailorganization resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2197,7 +2502,62 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided
+     * credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked
+     * and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done
+     * without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.
+     * </p>
+     * <note>
+     * <p>
+     * The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>)
+     * or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration
+     * stored under the <code>DomainName</code> will be tested.
+     * </p>
+     * </note>
+     * 
+     * @param testAvailabilityConfigurationRequest
+     * @return A Java Future containing the result of the TestAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.TestAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TestAvailabilityConfigurationResult> testAvailabilityConfigurationAsync(
+            TestAvailabilityConfigurationRequest testAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
+     * Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided
+     * credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked
+     * and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done
+     * without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.
+     * </p>
+     * <note>
+     * <p>
+     * The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>)
+     * or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration
+     * stored under the <code>DomainName</code> will be tested.
+     * </p>
+     * </note>
+     * 
+     * @param testAvailabilityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.TestAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TestAvailabilityConfigurationResult> testAvailabilityConfigurationAsync(
+            TestAvailabilityConfigurationRequest testAvailabilityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<TestAvailabilityConfigurationRequest, TestAvailabilityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified WorkMail organization resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2210,7 +2570,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * Untags the specified tags from the specified WorkMail organization resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2225,6 +2585,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param updateAvailabilityConfigurationRequest
+     * @return A Java Future containing the result of the UpdateAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.UpdateAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAvailabilityConfigurationResult> updateAvailabilityConfigurationAsync(
+            UpdateAvailabilityConfigurationRequest updateAvailabilityConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.
+     * </p>
+     * 
+     * @param updateAvailabilityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAvailabilityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateAvailabilityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAvailabilityConfigurationResult> updateAvailabilityConfigurationAsync(
+            UpdateAvailabilityConfigurationRequest updateAvailabilityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAvailabilityConfigurationRequest, UpdateAvailabilityConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -2261,6 +2656,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Updates an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param updateImpersonationRoleRequest
+     * @return A Java Future containing the result of the UpdateImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsync.UpdateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest updateImpersonationRoleRequest);
+
+    /**
+     * <p>
+     * Updates an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param updateImpersonationRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateImpersonationRole operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest updateImpersonationRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateImpersonationRoleRequest, UpdateImpersonationRoleResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a user's current mailbox quota for a specified organization and user.
      * </p>
      * 
@@ -2292,7 +2718,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * Updates a mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param updateMobileDeviceAccessRuleRequest
@@ -2307,7 +2733,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
-     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * Updates a mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param updateMobileDeviceAccessRuleRequest

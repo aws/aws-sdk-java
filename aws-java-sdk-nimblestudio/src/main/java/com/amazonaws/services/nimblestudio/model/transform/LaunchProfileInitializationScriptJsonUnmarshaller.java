@@ -48,9 +48,17 @@ public class LaunchProfileInitializationScriptJsonUnmarshaller implements Unmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("runtimeRoleArn", targetDepth)) {
+                    context.nextToken();
+                    launchProfileInitializationScript.setRuntimeRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("script", targetDepth)) {
                     context.nextToken();
                     launchProfileInitializationScript.setScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("secureInitializationRoleArn", targetDepth)) {
+                    context.nextToken();
+                    launchProfileInitializationScript.setSecureInitializationRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioComponentId", targetDepth)) {
                     context.nextToken();

@@ -79,6 +79,10 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDeviceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeviceAggregatedStatus", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setDeviceAggregatedStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DeviceConnectionStatus", targetDepth)) {
                     context.nextToken();
                     describeDeviceResult.setDeviceConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -90,6 +94,10 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("LatestAlternateSoftware", targetDepth)) {
                     context.nextToken();
                     describeDeviceResult.setLatestAlternateSoftware(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestDeviceJob", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setLatestDeviceJob(LatestDeviceJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LatestSoftware", targetDepth)) {
                     context.nextToken();

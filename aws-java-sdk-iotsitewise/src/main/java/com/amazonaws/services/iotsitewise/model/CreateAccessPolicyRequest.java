@@ -27,8 +27,8 @@ public class CreateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or
-     * an IAM user.
+     * The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM
+     * user.
      * </p>
      */
     private Identity accessPolicyIdentity;
@@ -63,13 +63,13 @@ public class CreateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or
-     * an IAM user.
+     * The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM
+     * user.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO
-     *        group, or an IAM user.
+     *        The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or
+     *        an IAM user.
      */
 
     public void setAccessPolicyIdentity(Identity accessPolicyIdentity) {
@@ -78,12 +78,12 @@ public class CreateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or
-     * an IAM user.
+     * The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM
+     * user.
      * </p>
      * 
-     * @return The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO
-     *         group, or an IAM user.
+     * @return The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or
+     *         an IAM user.
      */
 
     public Identity getAccessPolicyIdentity() {
@@ -92,13 +92,13 @@ public class CreateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or
-     * an IAM user.
+     * The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM
+     * user.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO
-     *        group, or an IAM user.
+     *        The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or
+     *        an IAM user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

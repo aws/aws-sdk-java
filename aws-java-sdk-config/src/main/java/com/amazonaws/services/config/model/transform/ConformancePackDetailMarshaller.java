@@ -44,6 +44,8 @@ public class ConformancePackDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateRequestedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CreatedBy").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPLATESSMDOCUMENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateSSMDocumentDetails").build();
 
     private static final ConformancePackDetailMarshaller instance = new ConformancePackDetailMarshaller();
 
@@ -69,6 +71,7 @@ public class ConformancePackDetailMarshaller {
             protocolMarshaller.marshall(conformancePackDetail.getConformancePackInputParameters(), CONFORMANCEPACKINPUTPARAMETERS_BINDING);
             protocolMarshaller.marshall(conformancePackDetail.getLastUpdateRequestedTime(), LASTUPDATEREQUESTEDTIME_BINDING);
             protocolMarshaller.marshall(conformancePackDetail.getCreatedBy(), CREATEDBY_BINDING);
+            protocolMarshaller.marshall(conformancePackDetail.getTemplateSSMDocumentDetails(), TEMPLATESSMDOCUMENTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

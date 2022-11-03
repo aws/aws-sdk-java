@@ -40,9 +40,9 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      */
@@ -128,9 +128,9 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      * 
@@ -148,7 +148,7 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      *        </p>
      *        <note>
      *        <p>
-     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data
+     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
      *        repository to the file system. You can only specify "/" as the file system path for the first data
      *        repository associated with a file system.
      *        </p>
@@ -172,9 +172,9 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      * 
@@ -191,7 +191,7 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      *         </p>
      *         <note>
      *         <p>
-     *         If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data
+     *         If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
      *         repository to the file system. You can only specify "/" as the file system path for the first data
      *         repository associated with a file system.
      *         </p>
@@ -215,9 +215,9 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      * </p>
      * <note>
      * <p>
-     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository
-     * to the file system. You can only specify "/" as the file system path for the first data repository associated
-     * with a file system.
+     * If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
+     * repository to the file system. You can only specify "/" as the file system path for the first data repository
+     * associated with a file system.
      * </p>
      * </note>
      * 
@@ -235,7 +235,7 @@ public class CreateDataRepositoryAssociationRequest extends com.amazonaws.Amazon
      *        </p>
      *        <note>
      *        <p>
-     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data
+     *        If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data
      *        repository to the file system. You can only specify "/" as the file system path for the first data
      *        repository associated with a file system.
      *        </p>

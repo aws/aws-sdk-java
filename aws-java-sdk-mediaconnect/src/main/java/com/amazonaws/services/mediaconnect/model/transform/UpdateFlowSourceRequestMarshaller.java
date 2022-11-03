@@ -56,6 +56,10 @@ public class UpdateFlowSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("senderIpAddress").build();
     private static final MarshallingInfo<String> SOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("sourceArn").build();
+    private static final MarshallingInfo<String> SOURCELISTENERADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceListenerAddress").build();
+    private static final MarshallingInfo<Integer> SOURCELISTENERPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceListenerPort").build();
     private static final MarshallingInfo<String> STREAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("streamId").build();
     private static final MarshallingInfo<String> VPCINTERFACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -93,6 +97,8 @@ public class UpdateFlowSourceRequestMarshaller {
             protocolMarshaller.marshall(updateFlowSourceRequest.getSenderControlPort(), SENDERCONTROLPORT_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getSenderIpAddress(), SENDERIPADDRESS_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getSourceArn(), SOURCEARN_BINDING);
+            protocolMarshaller.marshall(updateFlowSourceRequest.getSourceListenerAddress(), SOURCELISTENERADDRESS_BINDING);
+            protocolMarshaller.marshall(updateFlowSourceRequest.getSourceListenerPort(), SOURCELISTENERPORT_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getStreamId(), STREAMID_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getVpcInterfaceName(), VPCINTERFACENAME_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getWhitelistCidr(), WHITELISTCIDR_BINDING);

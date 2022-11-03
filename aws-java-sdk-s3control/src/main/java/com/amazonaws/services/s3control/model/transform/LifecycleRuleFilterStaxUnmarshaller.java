@@ -57,6 +57,16 @@ public class LifecycleRuleFilterStaxUnmarshaller implements Unmarshaller<Lifecyc
                     lifecycleRuleFilter.setAnd(LifecycleRuleAndOperatorStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ObjectSizeGreaterThan", targetDepth)) {
+                    lifecycleRuleFilter.setObjectSizeGreaterThan(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ObjectSizeLessThan", targetDepth)) {
+                    lifecycleRuleFilter.setObjectSizeLessThan(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return lifecycleRuleFilter;

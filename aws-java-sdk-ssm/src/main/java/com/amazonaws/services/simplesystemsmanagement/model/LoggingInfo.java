@@ -39,7 +39,7 @@ public class LoggingInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an S3 bucket where execution logs are stored .
+     * The name of an S3 bucket where execution logs are stored.
      * </p>
      */
     private String s3BucketName;
@@ -58,11 +58,11 @@ public class LoggingInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an S3 bucket where execution logs are stored .
+     * The name of an S3 bucket where execution logs are stored.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of an S3 bucket where execution logs are stored .
+     *        The name of an S3 bucket where execution logs are stored.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -71,10 +71,10 @@ public class LoggingInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an S3 bucket where execution logs are stored .
+     * The name of an S3 bucket where execution logs are stored.
      * </p>
      * 
-     * @return The name of an S3 bucket where execution logs are stored .
+     * @return The name of an S3 bucket where execution logs are stored.
      */
 
     public String getS3BucketName() {
@@ -83,11 +83,11 @@ public class LoggingInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an S3 bucket where execution logs are stored .
+     * The name of an S3 bucket where execution logs are stored.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of an S3 bucket where execution logs are stored .
+     *        The name of an S3 bucket where execution logs are stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

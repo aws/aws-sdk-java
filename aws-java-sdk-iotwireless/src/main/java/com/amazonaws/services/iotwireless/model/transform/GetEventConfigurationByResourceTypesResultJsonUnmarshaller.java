@@ -68,6 +68,11 @@ public class GetEventConfigurationByResourceTypesResultJsonUnmarshaller implemen
                     getEventConfigurationByResourceTypesResult.setConnectionStatus(ConnectionStatusResourceTypeEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("MessageDeliveryStatus", targetDepth)) {
+                    context.nextToken();
+                    getEventConfigurationByResourceTypesResult.setMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

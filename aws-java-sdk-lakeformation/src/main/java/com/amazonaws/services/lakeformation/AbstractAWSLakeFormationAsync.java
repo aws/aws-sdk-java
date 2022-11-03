@@ -41,6 +41,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     }
 
     @Override
+    public java.util.concurrent.Future<AssumeDecoratedRoleWithSAMLResult> assumeDecoratedRoleWithSAMLAsync(AssumeDecoratedRoleWithSAMLRequest request) {
+
+        return assumeDecoratedRoleWithSAMLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssumeDecoratedRoleWithSAMLResult> assumeDecoratedRoleWithSAMLAsync(AssumeDecoratedRoleWithSAMLRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssumeDecoratedRoleWithSAMLRequest, AssumeDecoratedRoleWithSAMLResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGrantPermissionsResult> batchGrantPermissionsAsync(BatchGrantPermissionsRequest request) {
 
         return batchGrantPermissionsAsync(request, null);

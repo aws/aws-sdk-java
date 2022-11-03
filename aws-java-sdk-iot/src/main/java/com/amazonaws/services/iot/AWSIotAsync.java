@@ -289,7 +289,8 @@ public interface AWSIotAsync extends AWSIot {
      * Attaches the specified policy to the specified principal (certificate or other credential).
      * </p>
      * <p>
-     * <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>AttachPolicy</a> instead.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -310,7 +311,8 @@ public interface AWSIotAsync extends AWSIot {
      * Attaches the specified policy to the specified principal (certificate or other credential).
      * </p>
      * <p>
-     * <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>AttachPolicy</a> instead.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -1542,7 +1544,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a fleet provisioning template.
+     * Creates a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -1559,7 +1561,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a fleet provisioning template.
+     * Creates a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -1581,7 +1583,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a new version of a fleet provisioning template.
+     * Creates a new version of a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -1599,7 +1601,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a new version of a fleet provisioning template.
+     * Creates a new version of a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -2755,7 +2757,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes a fleet provisioning template.
+     * Deletes a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -2772,7 +2774,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes a fleet provisioning template.
+     * Deletes a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -2794,7 +2796,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes a fleet provisioning template version.
+     * Deletes a provisioning template version.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -2812,7 +2814,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes a fleet provisioning template version.
+     * Deletes a provisioning template version.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4144,7 +4146,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns information about a fleet provisioning template.
+     * Returns information about a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4162,7 +4164,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns information about a fleet provisioning template.
+     * Returns information about a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4185,7 +4187,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns information about a fleet provisioning template version.
+     * Returns information about a provisioning template version.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4203,7 +4205,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns information about a fleet provisioning template version.
+     * Returns information about a provisioning template version.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4581,11 +4583,10 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Removes the specified policy from the specified certificate.
      * </p>
-     * <note>
      * <p>
-     * This action is deprecated. Please use <a>DetachPolicy</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>DetachPolicy</a> instead.
      * </p>
-     * </note>
      * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
@@ -4604,11 +4605,10 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Removes the specified policy from the specified certificate.
      * </p>
-     * <note>
      * <p>
-     * This action is deprecated. Please use <a>DetachPolicy</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>DetachPolicy</a> instead.
      * </p>
-     * </note>
      * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
@@ -6532,7 +6532,8 @@ public interface AWSIotAsync extends AWSIot {
      * Lists the principals associated with the specified policy.
      * </p>
      * <p>
-     * <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>ListTargetsForPolicy</a> instead.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6553,7 +6554,8 @@ public interface AWSIotAsync extends AWSIot {
      * Lists the principals associated with the specified policy.
      * </p>
      * <p>
-     * <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>ListTargetsForPolicy</a> instead.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6621,7 +6623,8 @@ public interface AWSIotAsync extends AWSIot {
      * >AmazonCognito Identity format</a>.
      * </p>
      * <p>
-     * <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>ListAttachedPolicies</a> instead.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6645,7 +6648,8 @@ public interface AWSIotAsync extends AWSIot {
      * >AmazonCognito Identity format</a>.
      * </p>
      * <p>
-     * <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+     * <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add
+     * enhancements. Use <a>ListAttachedPolicies</a> instead.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6709,7 +6713,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * A list of fleet provisioning template versions.
+     * A list of provisioning template versions.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6727,7 +6731,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * A list of fleet provisioning template versions.
+     * A list of provisioning template versions.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6750,7 +6754,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists the fleet provisioning templates in your Amazon Web Services account.
+     * Lists the provisioning templates in your Amazon Web Services account.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6767,7 +6771,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists the fleet provisioning templates in your Amazon Web Services account.
+     * Lists the provisioning templates in your Amazon Web Services account.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -7647,11 +7651,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Registers a CA certificate with IoT. This CA certificate can then be used to sign device certificates, which can
-     * be then registered with IoT. You can register up to 10 CA certificates per Amazon Web Services account that have
-     * the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates.
-     * If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your
-     * device certificates with the <a>RegisterCertificate</a> action.
+     * Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to the number of CA certificates
+     * you can register in your Amazon Web Services account. You can register up to 10 CA certificates with the same
+     * <code>CA subject field</code> per Amazon Web Services account.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -7668,11 +7670,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Registers a CA certificate with IoT. This CA certificate can then be used to sign device certificates, which can
-     * be then registered with IoT. You can register up to 10 CA certificates per Amazon Web Services account that have
-     * the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates.
-     * If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your
-     * device certificates with the <a>RegisterCertificate</a> action.
+     * Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to the number of CA certificates
+     * you can register in your Amazon Web Services account. You can register up to 10 CA certificates with the same
+     * <code>CA subject field</code> per Amazon Web Services account.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -7694,7 +7694,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Registers a device certificate with IoT. If you have more than one CA certificate that has the same subject
+     * Registers a device certificate with IoT in the same <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a> as the signing CA. If you have more than one CA certificate that has the same subject
      * field, you must specify the CA certificate that was used to sign the device certificate being registered.
      * </p>
      * <p>
@@ -7712,7 +7714,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Registers a device certificate with IoT. If you have more than one CA certificate that has the same subject
+     * Registers a device certificate with IoT in the same <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"
+     * >certificate mode</a> as the signing CA. If you have more than one CA certificate that has the same subject
      * field, you must specify the CA certificate that was used to sign the device certificate being registered.
      * </p>
      * <p>
@@ -9246,7 +9250,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Updates a fleet provisioning template.
+     * Updates a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -9263,7 +9267,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Updates a fleet provisioning template.
+     * Updates a provisioning template.
      * </p>
      * <p>
      * Requires permission to access the <a href=

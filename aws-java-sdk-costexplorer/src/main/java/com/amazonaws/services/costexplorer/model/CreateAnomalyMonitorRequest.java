@@ -35,7 +35,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.
+     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using
+     * IAM policies.
      * </p>
      * <p>
      * Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions
@@ -60,7 +61,7 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -126,7 +127,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.
+     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using
+     * IAM policies.
      * </p>
      * <p>
      * Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions
@@ -151,7 +153,7 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -173,8 +175,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return An optional list of tags to associate with the specified <a
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     *         <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM
-     *         policies.</p>
+     *         <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your
+     *         <code>monitor</code> using IAM policies.</p>
      *         <p>
      *         Each tag consists of a key and a value, and each key must be unique for the resource. The following
      *         restrictions apply to resource tags:
@@ -198,8 +200,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     *         <code>_.:/=+-</code>
+     *         Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *         <code>_.:/=+@-</code>
      *         </p>
      *         </li>
      *         <li>
@@ -228,7 +230,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.
+     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using
+     * IAM policies.
      * </p>
      * <p>
      * Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions
@@ -253,7 +256,7 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -276,8 +279,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * @param resourceTags
      *        An optional list of tags to associate with the specified <a
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     *        <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM
-     *        policies.</p>
+     *        <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code>
+     *        using IAM policies.</p>
      *        <p>
      *        Each tag consists of a key and a value, and each key must be unique for the resource. The following
      *        restrictions apply to resource tags:
@@ -301,7 +304,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     *        Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *        <code>_.:/=+@-</code>
      *        </p>
      *        </li>
      *        <li>
@@ -334,7 +338,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.
+     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using
+     * IAM policies.
      * </p>
      * <p>
      * Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions
@@ -359,7 +364,7 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -387,8 +392,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * @param resourceTags
      *        An optional list of tags to associate with the specified <a
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     *        <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM
-     *        policies.</p>
+     *        <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code>
+     *        using IAM policies.</p>
      *        <p>
      *        Each tag consists of a key and a value, and each key must be unique for the resource. The following
      *        restrictions apply to resource tags:
@@ -412,7 +417,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     *        Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *        <code>_.:/=+@-</code>
      *        </p>
      *        </li>
      *        <li>
@@ -447,7 +453,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.
+     * <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using
+     * IAM policies.
      * </p>
      * <p>
      * Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions
@@ -472,7 +479,7 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     * Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code>
      * </p>
      * </li>
      * <li>
@@ -495,8 +502,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      * @param resourceTags
      *        An optional list of tags to associate with the specified <a
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-     *        <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM
-     *        policies.</p>
+     *        <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code>
+     *        using IAM policies.</p>
      *        <p>
      *        Each tag consists of a key and a value, and each key must be unique for the resource. The following
      *        restrictions apply to resource tags:
@@ -520,7 +527,8 @@ public class CreateAnomalyMonitorRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
+     *        Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+     *        <code>_.:/=+@-</code>
      *        </p>
      *        </li>
      *        <li>

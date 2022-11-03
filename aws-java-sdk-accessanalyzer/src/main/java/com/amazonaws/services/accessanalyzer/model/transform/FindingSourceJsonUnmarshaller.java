@@ -48,13 +48,13 @@ public class FindingSourceJsonUnmarshaller implements Unmarshaller<FindingSource
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("detail", targetDepth)) {
-                    context.nextToken();
-                    findingSource.setDetail(FindingSourceDetailJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     findingSource.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("detail", targetDepth)) {
+                    context.nextToken();
+                    findingSource.setDetail(FindingSourceDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

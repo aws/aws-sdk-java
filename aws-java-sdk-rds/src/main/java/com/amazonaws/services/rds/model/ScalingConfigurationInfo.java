@@ -33,7 +33,7 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      */
     private Integer minCapacity;
@@ -84,11 +84,11 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * 
      * @param minCapacity
-     *        The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     *        The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -97,10 +97,10 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * 
-     * @return The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     * @return The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      */
 
     public Integer getMinCapacity() {
@@ -109,11 +109,11 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * 
      * @param minCapacity
-     *        The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.
+     *        The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

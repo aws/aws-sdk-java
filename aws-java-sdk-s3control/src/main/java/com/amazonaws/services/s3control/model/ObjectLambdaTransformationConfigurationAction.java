@@ -20,7 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ObjectLambdaTransformationConfigurationAction {
 
-    GetObject("GetObject");
+    GetObject("GetObject"),
+    HeadObject("HeadObject"),
+    ListObjects("ListObjects"),
+    ListObjectsV2("ListObjectsV2");
 
     private String value;
 

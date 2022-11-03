@@ -43,6 +43,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public AssociateUserAccessLoggingSettingsResult associateUserAccessLoggingSettings(AssociateUserAccessLoggingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateUserSettingsResult associateUserSettings(AssociateUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public CreateTrustStoreResult createTrustStore(CreateTrustStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateUserAccessLoggingSettingsResult createUserAccessLoggingSettings(CreateUserAccessLoggingSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +113,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public DeleteUserAccessLoggingSettingsResult deleteUserAccessLoggingSettings(DeleteUserAccessLoggingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteUserSettingsResult deleteUserSettings(DeleteUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public DisassociateTrustStoreResult disassociateTrustStore(DisassociateTrustStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateUserAccessLoggingSettingsResult disassociateUserAccessLoggingSettings(DisassociateUserAccessLoggingSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +183,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public GetUserAccessLoggingSettingsResult getUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserSettingsResult getUserSettings(GetUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -203,6 +228,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public ListUserAccessLoggingSettingsResult listUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUserSettingsResult listUserSettings(ListUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -239,6 +269,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public UpdateTrustStoreResult updateTrustStore(UpdateTrustStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUserAccessLoggingSettingsResult updateUserAccessLoggingSettings(UpdateUserAccessLoggingSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

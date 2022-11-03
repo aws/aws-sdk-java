@@ -144,7 +144,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of Snow Family Devices to use for this job.
+     * The type of Snow Family devices to use for this job.
      * </p>
      * <note>
      * <p>
@@ -1186,7 +1186,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this job.
+     * The type of Snow Family devices to use for this job.
      * </p>
      * <note>
      * <p>
@@ -1210,7 +1210,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this job. </p> <note>
+     *        The type of Snow Family devices to use for this job. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.
@@ -1240,7 +1240,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this job.
+     * The type of Snow Family devices to use for this job.
      * </p>
      * <note>
      * <p>
@@ -1263,7 +1263,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
-     * @return The type of Snow Family Devices to use for this job. </p> <note>
+     * @return The type of Snow Family devices to use for this job. </p> <note>
      *         <p>
      *         For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *         type.
@@ -1293,7 +1293,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this job.
+     * The type of Snow Family devices to use for this job.
      * </p>
      * <note>
      * <p>
@@ -1317,7 +1317,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this job. </p> <note>
+     *        The type of Snow Family devices to use for this job. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.
@@ -1349,7 +1349,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this job.
+     * The type of Snow Family devices to use for this job.
      * </p>
      * <note>
      * <p>
@@ -1373,7 +1373,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this job. </p> <note>
+     *        The type of Snow Family devices to use for this job. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.
@@ -1403,7 +1403,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of Snow Family Devices to use for this job.
+     * The type of Snow Family devices to use for this job.
      * </p>
      * <note>
      * <p>
@@ -1427,7 +1427,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of Snow Family Devices to use for this job. </p> <note>
+     *        The type of Snow Family devices to use for this job. </p> <note>
      *        <p>
      *        For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device
      *        type.

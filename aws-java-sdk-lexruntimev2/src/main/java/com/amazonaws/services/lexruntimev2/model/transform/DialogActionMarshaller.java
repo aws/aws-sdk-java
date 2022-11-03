@@ -33,6 +33,8 @@ public class DialogActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("slotToElicit").build();
     private static final MarshallingInfo<String> SLOTELICITATIONSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("slotElicitationStyle").build();
+    private static final MarshallingInfo<StructuredPojo> SUBSLOTTOELICIT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subSlotToElicit").build();
 
     private static final DialogActionMarshaller instance = new DialogActionMarshaller();
 
@@ -53,6 +55,7 @@ public class DialogActionMarshaller {
             protocolMarshaller.marshall(dialogAction.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(dialogAction.getSlotToElicit(), SLOTTOELICIT_BINDING);
             protocolMarshaller.marshall(dialogAction.getSlotElicitationStyle(), SLOTELICITATIONSTYLE_BINDING);
+            protocolMarshaller.marshall(dialogAction.getSubSlotToElicit(), SUBSLOTTOELICIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

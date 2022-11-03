@@ -36,7 +36,7 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String type;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the extension.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
@@ -156,14 +156,14 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the extension.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Number (ARN) of the extension.</p>
+     *        The Amazon Resource Name (ARN) of the extension.</p>
      *        <p>
      *        Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      */
@@ -174,13 +174,13 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the extension.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the extension.</p>
+     * @return The Amazon Resource Name (ARN) of the extension.</p>
      *         <p>
      *         Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      */
@@ -191,14 +191,14 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the extension.
+     * The Amazon Resource Name (ARN) of the extension.
      * </p>
      * <p>
      * Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Number (ARN) of the extension.</p>
+     *        The Amazon Resource Name (ARN) of the extension.</p>
      *        <p>
      *        Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

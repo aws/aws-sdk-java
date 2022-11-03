@@ -403,6 +403,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public ListConformancePackComplianceScoresResult listConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

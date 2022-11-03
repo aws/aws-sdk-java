@@ -30,9 +30,10 @@ public class IpSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The types of IP addresses included in this IP set.
+     * IpFamily is deprecated and has been replaced by IpAddressFamily.
      * </p>
      */
+    @Deprecated
     private String ipFamily;
     /**
      * <p>
@@ -40,42 +41,48 @@ public class IpSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> ipAddresses;
-
     /**
      * <p>
      * The types of IP addresses included in this IP set.
      * </p>
+     */
+    private String ipAddressFamily;
+
+    /**
+     * <p>
+     * IpFamily is deprecated and has been replaced by IpAddressFamily.
+     * </p>
      * 
      * @param ipFamily
-     *        The types of IP addresses included in this IP set.
+     *        IpFamily is deprecated and has been replaced by IpAddressFamily.
      */
-
+    @Deprecated
     public void setIpFamily(String ipFamily) {
         this.ipFamily = ipFamily;
     }
 
     /**
      * <p>
-     * The types of IP addresses included in this IP set.
+     * IpFamily is deprecated and has been replaced by IpAddressFamily.
      * </p>
      * 
-     * @return The types of IP addresses included in this IP set.
+     * @return IpFamily is deprecated and has been replaced by IpAddressFamily.
      */
-
+    @Deprecated
     public String getIpFamily() {
         return this.ipFamily;
     }
 
     /**
      * <p>
-     * The types of IP addresses included in this IP set.
+     * IpFamily is deprecated and has been replaced by IpAddressFamily.
      * </p>
      * 
      * @param ipFamily
-     *        The types of IP addresses included in this IP set.
+     *        IpFamily is deprecated and has been replaced by IpAddressFamily.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public IpSet withIpFamily(String ipFamily) {
         setIpFamily(ipFamily);
         return this;
@@ -153,6 +160,65 @@ public class IpSet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The types of IP addresses included in this IP set.
+     * </p>
+     * 
+     * @param ipAddressFamily
+     *        The types of IP addresses included in this IP set.
+     * @see IpAddressFamily
+     */
+
+    public void setIpAddressFamily(String ipAddressFamily) {
+        this.ipAddressFamily = ipAddressFamily;
+    }
+
+    /**
+     * <p>
+     * The types of IP addresses included in this IP set.
+     * </p>
+     * 
+     * @return The types of IP addresses included in this IP set.
+     * @see IpAddressFamily
+     */
+
+    public String getIpAddressFamily() {
+        return this.ipAddressFamily;
+    }
+
+    /**
+     * <p>
+     * The types of IP addresses included in this IP set.
+     * </p>
+     * 
+     * @param ipAddressFamily
+     *        The types of IP addresses included in this IP set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressFamily
+     */
+
+    public IpSet withIpAddressFamily(String ipAddressFamily) {
+        setIpAddressFamily(ipAddressFamily);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The types of IP addresses included in this IP set.
+     * </p>
+     * 
+     * @param ipAddressFamily
+     *        The types of IP addresses included in this IP set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressFamily
+     */
+
+    public IpSet withIpAddressFamily(IpAddressFamily ipAddressFamily) {
+        this.ipAddressFamily = ipAddressFamily.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -167,7 +233,9 @@ public class IpSet implements Serializable, Cloneable, StructuredPojo {
         if (getIpFamily() != null)
             sb.append("IpFamily: ").append(getIpFamily()).append(",");
         if (getIpAddresses() != null)
-            sb.append("IpAddresses: ").append(getIpAddresses());
+            sb.append("IpAddresses: ").append(getIpAddresses()).append(",");
+        if (getIpAddressFamily() != null)
+            sb.append("IpAddressFamily: ").append(getIpAddressFamily());
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +258,10 @@ public class IpSet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpAddresses() != null && other.getIpAddresses().equals(this.getIpAddresses()) == false)
             return false;
+        if (other.getIpAddressFamily() == null ^ this.getIpAddressFamily() == null)
+            return false;
+        if (other.getIpAddressFamily() != null && other.getIpAddressFamily().equals(this.getIpAddressFamily()) == false)
+            return false;
         return true;
     }
 
@@ -200,6 +272,7 @@ public class IpSet implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getIpFamily() == null) ? 0 : getIpFamily().hashCode());
         hashCode = prime * hashCode + ((getIpAddresses() == null) ? 0 : getIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressFamily() == null) ? 0 : getIpAddressFamily().hashCode());
         return hashCode;
     }
 

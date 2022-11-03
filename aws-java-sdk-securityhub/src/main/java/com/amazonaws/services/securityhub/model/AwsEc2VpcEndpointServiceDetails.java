@@ -85,8 +85,35 @@ public class AwsEc2VpcEndpointServiceDetails implements Serializable, Cloneable,
     private String serviceName;
     /**
      * <p>
-     * The current state of the service.
+     * The current state of the service. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String serviceState;
     /**
@@ -610,11 +637,64 @@ public class AwsEc2VpcEndpointServiceDetails implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The current state of the service.
+     * The current state of the service. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param serviceState
-     *        The current state of the service.
+     *        The current state of the service. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>
+     *        </p>
+     *        </li>
      */
 
     public void setServiceState(String serviceState) {
@@ -623,10 +703,63 @@ public class AwsEc2VpcEndpointServiceDetails implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The current state of the service.
+     * The current state of the service. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current state of the service.
+     * @return The current state of the service. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Deleted</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Deleting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Pending</code>
+     *         </p>
+     *         </li>
      */
 
     public String getServiceState() {
@@ -635,11 +768,64 @@ public class AwsEc2VpcEndpointServiceDetails implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The current state of the service.
+     * The current state of the service. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param serviceState
-     *        The current state of the service.
+     *        The current state of the service. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

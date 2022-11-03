@@ -36,6 +36,8 @@ public class CreateForecastExportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Destination").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Format").build();
 
     private static final CreateForecastExportJobRequestMarshaller instance = new CreateForecastExportJobRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateForecastExportJobRequestMarshaller {
             protocolMarshaller.marshall(createForecastExportJobRequest.getForecastArn(), FORECASTARN_BINDING);
             protocolMarshaller.marshall(createForecastExportJobRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(createForecastExportJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createForecastExportJobRequest.getFormat(), FORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -33,6 +33,11 @@ public class AbstractAmazonChimeSDKMeetings implements AmazonChimeSDKMeetings {
     }
 
     @Override
+    public BatchUpdateAttendeeCapabilitiesExceptResult batchUpdateAttendeeCapabilitiesExcept(BatchUpdateAttendeeCapabilitiesExceptRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAttendeeResult createAttendee(CreateAttendeeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,12 +78,32 @@ public class AbstractAmazonChimeSDKMeetings implements AmazonChimeSDKMeetings {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartMeetingTranscriptionResult startMeetingTranscription(StartMeetingTranscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StopMeetingTranscriptionResult stopMeetingTranscription(StopMeetingTranscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAttendeeCapabilitiesResult updateAttendeeCapabilities(UpdateAttendeeCapabilitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -45,6 +45,10 @@ public class RoutingProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultOutboundQueueId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Long> NUMBEROFASSOCIATEDQUEUES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfAssociatedQueues").build();
+    private static final MarshallingInfo<Long> NUMBEROFASSOCIATEDUSERS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfAssociatedUsers").build();
 
     private static final RoutingProfileMarshaller instance = new RoutingProfileMarshaller();
 
@@ -70,6 +74,8 @@ public class RoutingProfileMarshaller {
             protocolMarshaller.marshall(routingProfile.getMediaConcurrencies(), MEDIACONCURRENCIES_BINDING);
             protocolMarshaller.marshall(routingProfile.getDefaultOutboundQueueId(), DEFAULTOUTBOUNDQUEUEID_BINDING);
             protocolMarshaller.marshall(routingProfile.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(routingProfile.getNumberOfAssociatedQueues(), NUMBEROFASSOCIATEDQUEUES_BINDING);
+            protocolMarshaller.marshall(routingProfile.getNumberOfAssociatedUsers(), NUMBEROFASSOCIATEDUSERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -81,6 +81,12 @@ public class AssetSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<AssetHierarchy> hierarchies;
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -462,6 +468,46 @@ public class AssetSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @param description
+     *        A description for the asset.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @return A description for the asset.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @param description
+     *        A description for the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetSummary withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -488,7 +534,9 @@ public class AssetSummary implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getHierarchies() != null)
-            sb.append("Hierarchies: ").append(getHierarchies());
+            sb.append("Hierarchies: ").append(getHierarchies()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +583,10 @@ public class AssetSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHierarchies() != null && other.getHierarchies().equals(this.getHierarchies()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +603,7 @@ public class AssetSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getHierarchies() == null) ? 0 : getHierarchies().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

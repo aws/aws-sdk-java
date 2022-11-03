@@ -20,8 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a filter to apply to the list of returned targets. You can filter by target type, address, or
- * status. For example, to filter results to notification rules that have active Amazon SNS topics as targets, you could
- * specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of ACTIVE.
+ * status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could
+ * specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of
+ * <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargetsFilter"
@@ -38,8 +39,8 @@ public class ListTargetsFilter implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i>
-     * for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     * The value of the attribute you want to use to filter the returned targets. For example, if you specify
+     * <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
      * </p>
      */
     private String value;
@@ -105,13 +106,14 @@ public class ListTargetsFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i>
-     * for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     * The value of the attribute you want to use to filter the returned targets. For example, if you specify
+     * <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
      * </p>
      * 
      * @param value
      *        The value of the attribute you want to use to filter the returned targets. For example, if you specify
-     *        <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     *        <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the
+     *        value.
      */
 
     public void setValue(String value) {
@@ -120,12 +122,13 @@ public class ListTargetsFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i>
-     * for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     * The value of the attribute you want to use to filter the returned targets. For example, if you specify
+     * <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
      * </p>
      * 
      * @return The value of the attribute you want to use to filter the returned targets. For example, if you specify
-     *         <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     *         <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the
+     *         value.
      */
 
     public String getValue() {
@@ -134,13 +137,14 @@ public class ListTargetsFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i>
-     * for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     * The value of the attribute you want to use to filter the returned targets. For example, if you specify
+     * <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
      * </p>
      * 
      * @param value
      *        The value of the attribute you want to use to filter the returned targets. For example, if you specify
-     *        <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.
+     *        <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

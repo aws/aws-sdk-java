@@ -25,18 +25,18 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the requested environment.
      * </p>
      */
     private Environment environment;
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the requested environment.
      * </p>
      * 
      * @param environment
-     *        The environment detail data that's returned by Proton.
+     *        The detailed data of the requested environment.
      */
 
     public void setEnvironment(Environment environment) {
@@ -45,10 +45,10 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the requested environment.
      * </p>
      * 
-     * @return The environment detail data that's returned by Proton.
+     * @return The detailed data of the requested environment.
      */
 
     public Environment getEnvironment() {
@@ -57,11 +57,11 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The environment detail data that's returned by Proton.
+     * The detailed data of the requested environment.
      * </p>
      * 
      * @param environment
-     *        The environment detail data that's returned by Proton.
+     *        The detailed data of the requested environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

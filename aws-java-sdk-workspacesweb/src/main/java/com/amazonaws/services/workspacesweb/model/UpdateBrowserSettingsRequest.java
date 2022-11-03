@@ -216,7 +216,7 @@ public class UpdateBrowserSettingsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBrowserPolicy() != null)
-            sb.append("BrowserPolicy: ").append(getBrowserPolicy()).append(",");
+            sb.append("BrowserPolicy: ").append("***Sensitive Data Redacted***").append(",");
         if (getBrowserSettingsArn() != null)
             sb.append("BrowserSettingsArn: ").append(getBrowserSettingsArn()).append(",");
         if (getClientToken() != null)

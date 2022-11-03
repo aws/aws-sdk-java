@@ -39,8 +39,8 @@ public class DisassociatePersonasFromEntitiesRequest extends com.amazonaws.Amazo
     private String indexId;
     /**
      * <p>
-     * The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could
-     * be user emails.
+     * The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be
+     * user emails.
      * </p>
      */
     private java.util.List<String> entityIds;
@@ -127,11 +127,11 @@ public class DisassociatePersonasFromEntitiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could
-     * be user emails.
+     * The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be
+     * user emails.
      * </p>
      * 
-     * @return The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs
+     * @return The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs
      *         could be user emails.
      */
 
@@ -141,12 +141,12 @@ public class DisassociatePersonasFromEntitiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could
-     * be user emails.
+     * The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be
+     * user emails.
      * </p>
      * 
      * @param entityIds
-     *        The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs
+     *        The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs
      *        could be user emails.
      */
 
@@ -161,8 +161,8 @@ public class DisassociatePersonasFromEntitiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could
-     * be user emails.
+     * The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be
+     * user emails.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +171,7 @@ public class DisassociatePersonasFromEntitiesRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param entityIds
-     *        The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs
+     *        The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs
      *        could be user emails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -188,12 +188,12 @@ public class DisassociatePersonasFromEntitiesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could
-     * be user emails.
+     * The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be
+     * user emails.
      * </p>
      * 
      * @param entityIds
-     *        The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs
+     *        The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs
      *        could be user emails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

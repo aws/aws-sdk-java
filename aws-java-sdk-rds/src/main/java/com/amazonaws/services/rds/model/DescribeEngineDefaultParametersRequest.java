@@ -71,6 +71,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql14</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb10.2</code>
      * </p>
      * </li>
@@ -102,6 +112,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>mysql8.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-21</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-21</code>
      * </p>
      * </li>
      * <li>
@@ -315,6 +355,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
+     *        <code>aurora-postgresql14</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>mariadb10.2</code>
      *        </p>
      *        </li>
@@ -346,6 +396,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>mysql8.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-cdb-21</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-cdb-21</code>
      *        </p>
      *        </li>
      *        <li>
@@ -523,6 +603,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql14</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb10.2</code>
      * </p>
      * </li>
@@ -554,6 +644,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>mysql8.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-21</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-21</code>
      * </p>
      * </li>
      * <li>
@@ -726,6 +846,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
+     *        <code>aurora-postgresql14</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>mariadb10.2</code>
      *        </p>
      *        </li>
@@ -757,6 +887,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>mysql8.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-cdb-21</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-cdb-21</code>
      *        </p>
      *        </li>
      *        <li>
@@ -935,6 +1095,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql14</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb10.2</code>
      * </p>
      * </li>
@@ -966,6 +1136,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>mysql8.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-21</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-21</code>
      * </p>
      * </li>
      * <li>
@@ -1137,6 +1337,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
+     *         <code>aurora-postgresql14</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>mariadb10.2</code>
      *         </p>
      *         </li>
@@ -1168,6 +1378,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         <code>mysql8.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-ee-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-ee-cdb-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-ee-cdb-21</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se2-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se2-cdb-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se2-cdb-21</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1346,6 +1586,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql14</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb10.2</code>
      * </p>
      * </li>
@@ -1377,6 +1627,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>mysql8.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee-cdb-21</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2-cdb-21</code>
      * </p>
      * </li>
      * <li>
@@ -1549,6 +1829,16 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
+     *        <code>aurora-postgresql14</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>mariadb10.2</code>
      *        </p>
      *        </li>
@@ -1580,6 +1870,36 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>mysql8.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee-cdb-21</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2-cdb-21</code>
      *        </p>
      *        </li>
      *        <li>

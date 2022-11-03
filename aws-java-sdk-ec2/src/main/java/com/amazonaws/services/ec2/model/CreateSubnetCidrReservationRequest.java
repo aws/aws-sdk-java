@@ -28,12 +28,6 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to assign to the subnet CIDR reservation.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
-    /**
-     * <p>
      * The ID of the subnet.
      * </p>
      */
@@ -74,79 +68,12 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
      * </p>
      */
     private String description;
-
     /**
      * <p>
      * The tags to assign to the subnet CIDR reservation.
      * </p>
-     * 
-     * @return The tags to assign to the subnet CIDR reservation.
      */
-
-    public java.util.List<TagSpecification> getTagSpecifications() {
-        if (tagSpecifications == null) {
-            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
-        }
-        return tagSpecifications;
-    }
-
-    /**
-     * <p>
-     * The tags to assign to the subnet CIDR reservation.
-     * </p>
-     * 
-     * @param tagSpecifications
-     *        The tags to assign to the subnet CIDR reservation.
-     */
-
-    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
-        if (tagSpecifications == null) {
-            this.tagSpecifications = null;
-            return;
-        }
-
-        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
-    }
-
-    /**
-     * <p>
-     * The tags to assign to the subnet CIDR reservation.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
-     * you want to override the existing values.
-     * </p>
-     * 
-     * @param tagSpecifications
-     *        The tags to assign to the subnet CIDR reservation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSubnetCidrReservationRequest withTagSpecifications(TagSpecification... tagSpecifications) {
-        if (this.tagSpecifications == null) {
-            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
-        }
-        for (TagSpecification ele : tagSpecifications) {
-            this.tagSpecifications.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The tags to assign to the subnet CIDR reservation.
-     * </p>
-     * 
-     * @param tagSpecifications
-     *        The tags to assign to the subnet CIDR reservation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSubnetCidrReservationRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
-        setTagSpecifications(tagSpecifications);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -468,6 +395,79 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The tags to assign to the subnet CIDR reservation.
+     * </p>
+     * 
+     * @return The tags to assign to the subnet CIDR reservation.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet CIDR reservation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the subnet CIDR reservation.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet CIDR reservation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the subnet CIDR reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetCidrReservationRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet CIDR reservation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the subnet CIDR reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetCidrReservationRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -490,8 +490,6 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getCidr() != null)
@@ -499,7 +497,9 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
         if (getReservationType() != null)
             sb.append("ReservationType: ").append(getReservationType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -514,10 +514,6 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
         if (obj instanceof CreateSubnetCidrReservationRequest == false)
             return false;
         CreateSubnetCidrReservationRequest other = (CreateSubnetCidrReservationRequest) obj;
-        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
-            return false;
-        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
-            return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
@@ -534,6 +530,10 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -542,11 +542,11 @@ public class CreateSubnetCidrReservationRequest extends AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getCidr() == null) ? 0 : getCidr().hashCode());
         hashCode = prime * hashCode + ((getReservationType() == null) ? 0 : getReservationType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

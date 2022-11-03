@@ -27,24 +27,27 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN of the resource for which tags are to be added or updated.
+     * ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * ARN of the resource for which tags are to be added or updated.
+     * ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource for which tags are to be added or updated.
+     *        ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +56,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN of the resource for which tags are to be added or updated.
+     * ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      * </p>
      * 
-     * @return ARN of the resource for which tags are to be added or updated.
+     * @return ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      */
 
     public String getResourceArn() {
@@ -65,11 +68,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN of the resource for which tags are to be added or updated.
+     * ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource for which tags are to be added or updated.
+     *        ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +83,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
-     * @return Array of tags to be added or updated.
+     * @return Array of tags to be added or updated. See <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a> for more information, including restrictions that apply to tags and
+     *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *         documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +102,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of tags to be added or updated.
+     *        Array of tags to be added or updated. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +122,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated.
+     * Array of tags to be added or updated. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     * IVS has no service-specific constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Array of tags to be added or updated.
+     *        Array of tags to be added or updated. See <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a> for more information, including restrictions that apply to tags and
+     *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
+     *        documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about alarms associated with the deployment group.
+ * Information about alarms associated with a deployment or deployment group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AlarmConfiguration" target="_top">AWS API
@@ -56,7 +56,7 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
     private Boolean ignorePollAlarmFailure;
     /**
      * <p>
-     * A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.
+     * A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Alarm> alarms;
@@ -279,11 +279,10 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.
+     * A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * </p>
      * 
-     * @return A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment
-     *         group.
+     * @return A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      */
 
     public java.util.List<Alarm> getAlarms() {
@@ -295,12 +294,11 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.
+     * A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * </p>
      * 
      * @param alarms
-     *        A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment
-     *        group.
+     *        A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      */
 
     public void setAlarms(java.util.Collection<Alarm> alarms) {
@@ -314,7 +312,7 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.
+     * A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -323,8 +321,7 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param alarms
-     *        A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment
-     *        group.
+     *        A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,12 +337,11 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.
+     * A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * </p>
      * 
      * @param alarms
-     *        A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment
-     *        group.
+     *        A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

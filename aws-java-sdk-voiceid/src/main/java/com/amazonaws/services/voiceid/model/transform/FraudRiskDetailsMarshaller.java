@@ -29,6 +29,8 @@ public class FraudRiskDetailsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> KNOWNFRAUDSTERRISK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KnownFraudsterRisk").build();
+    private static final MarshallingInfo<StructuredPojo> VOICESPOOFINGRISK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VoiceSpoofingRisk").build();
 
     private static final FraudRiskDetailsMarshaller instance = new FraudRiskDetailsMarshaller();
 
@@ -47,6 +49,7 @@ public class FraudRiskDetailsMarshaller {
 
         try {
             protocolMarshaller.marshall(fraudRiskDetails.getKnownFraudsterRisk(), KNOWNFRAUDSTERRISK_BINDING);
+            protocolMarshaller.marshall(fraudRiskDetails.getVoiceSpoofingRisk(), VOICESPOOFINGRISK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -34,6 +34,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for CloudWatch Container Insights for your clusters is affected.
      * </p>
+     * <p>
+     * Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     * <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     * >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
      */
     private String name;
     /**
@@ -53,6 +60,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for CloudWatch Container Insights for your clusters is affected.
      * </p>
+     * <p>
+     * Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     * <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     * >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
      * 
      * @param name
      *        The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
@@ -61,7 +75,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *        Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *        setting for CloudWatch Container Insights for your clusters is affected.
+     *        setting for CloudWatch Container Insights for your clusters is affected.</p>
+     *        <p>
+     *        Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     *        <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt
+     *        in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     *        >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @see SettingName
      */
 
@@ -78,6 +98,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for CloudWatch Container Insights for your clusters is affected.
      * </p>
+     * <p>
+     * Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     * <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     * >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
      * 
      * @return The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
      *         specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
@@ -85,7 +112,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *         <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *         container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *         Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *         setting for CloudWatch Container Insights for your clusters is affected.
+     *         setting for CloudWatch Container Insights for your clusters is affected.</p>
+     *         <p>
+     *         Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     *         <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the
+     *         opt in timeline, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     *         >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @see SettingName
      */
 
@@ -102,6 +135,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for CloudWatch Container Insights for your clusters is affected.
      * </p>
+     * <p>
+     * Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     * <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     * >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
      * 
      * @param name
      *        The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
@@ -110,7 +150,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *        Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *        setting for CloudWatch Container Insights for your clusters is affected.
+     *        setting for CloudWatch Container Insights for your clusters is affected.</p>
+     *        <p>
+     *        Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     *        <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt
+     *        in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     *        >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -129,6 +175,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for CloudWatch Container Insights for your clusters is affected.
      * </p>
+     * <p>
+     * Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     * <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     * >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
      * 
      * @param name
      *        The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
@@ -137,7 +190,13 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *        Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *        setting for CloudWatch Container Insights for your clusters is affected.
+     *        setting for CloudWatch Container Insights for your clusters is affected.</p>
+     *        <p>
+     *        Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to
+     *        <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt
+     *        in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline"
+     *        >Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */

@@ -29,10 +29,16 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
-     * specified by the EC2 Fleet.
+     * specified by the EC2 Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest price.
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
      * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
@@ -117,18 +123,32 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     private Integer minTargetCapacity;
     /**
      * <p>
-     * The maximum amount per hour for Spot Instances that you're willing to pay.
+     * The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      */
     private String maxTotalPrice;
 
     /**
      * <p>
      * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
-     * specified by the EC2 Fleet.
+     * specified by the EC2 Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest price.
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
      * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
@@ -149,10 +169,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * 
      * @param allocationStrategy
      *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
-     *        pools specified by the EC2 Fleet.</p>
+     *        pools specified by the EC2 Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest
-     *        price.
+     *        <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
      *        <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
@@ -181,10 +206,16 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
-     * specified by the EC2 Fleet.
+     * specified by the EC2 Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest price.
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
      * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
@@ -204,10 +235,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @return The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
-     *         pools specified by the EC2 Fleet.</p>
+     *         pools specified by the EC2 Fleet launch configuration. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     *         strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
-     *         <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest
-     *         price.
+     *         <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that
+     *         has available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come
+     *         from the next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling
+     *         your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest
+     *         pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *         </p>
      *         <p>
      *         <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
@@ -236,10 +272,16 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
-     * specified by the EC2 Fleet.
+     * specified by the EC2 Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest price.
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
      * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
@@ -260,10 +302,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * 
      * @param allocationStrategy
      *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
-     *        pools specified by the EC2 Fleet.</p>
+     *        pools specified by the EC2 Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest
-     *        price.
+     *        <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
      *        <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
@@ -294,10 +341,16 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools
-     * specified by the EC2 Fleet.
+     * specified by the EC2 Fleet launch configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest price.
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
+     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your desired capacity is met, you might receive Spot Instances from several pools.
      * </p>
      * <p>
      * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
@@ -318,10 +371,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * 
      * @param allocationStrategy
      *        The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance
-     *        pools specified by the EC2 Fleet.</p>
+     *        pools specified by the EC2 Fleet launch configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools with the lowest
-     *        price.
+     *        <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
+     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
+     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
+     *        desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool.
+     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
      *        </p>
      *        <p>
      *        <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
@@ -797,11 +855,25 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum amount per hour for Spot Instances that you're willing to pay.
+     * The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxTotalPrice
-     *        The maximum amount per hour for Spot Instances that you're willing to pay.
+     *        The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     *        parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *        pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      */
 
     public void setMaxTotalPrice(String maxTotalPrice) {
@@ -810,10 +882,24 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum amount per hour for Spot Instances that you're willing to pay.
+     * The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
-     * @return The maximum amount per hour for Spot Instances that you're willing to pay.
+     * @return The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     *         parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *         pay the current Spot price.</p> <important>
+     *         <p>
+     *         If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do
+     *         not specify this parameter.
+     *         </p>
      */
 
     public String getMaxTotalPrice() {
@@ -822,11 +908,25 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum amount per hour for Spot Instances that you're willing to pay.
+     * The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     * parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.
      * </p>
+     * <important>
+     * <p>
+     * If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     * specify this parameter.
+     * </p>
+     * </important>
      * 
      * @param maxTotalPrice
-     *        The maximum amount per hour for Spot Instances that you're willing to pay.
+     *        The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this
+     *        parameter because it can lead to increased interruptions. If you do not specify this parameter, you will
+     *        pay the current Spot price.</p> <important>
+     *        <p>
+     *        If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not
+     *        specify this parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

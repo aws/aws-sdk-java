@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+ * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsProperties" target="_top">AWS API
@@ -30,7 +30,7 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      * </p>
      */
     private String hostedZoneId;
@@ -43,11 +43,11 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     *        The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -56,10 +56,10 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      * </p>
      * 
-     * @return The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     * @return The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      */
 
     public String getHostedZoneId() {
@@ -68,11 +68,11 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+     *        The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

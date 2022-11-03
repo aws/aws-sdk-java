@@ -27,9 +27,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be
-     * unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name
-     * because it is publicly discoverable.
+     * The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon
+     * Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive
+     * information in a domain name because it is publicly discoverable.
      * </p>
      */
     private String domain;
@@ -40,15 +40,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code>
      * permissions on the encryption key that is used. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     * >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API
-     * Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management
+     * Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
      * CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      */
@@ -62,15 +62,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be
-     * unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name
-     * because it is publicly discoverable.
+     * The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon
+     * Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive
+     * information in a domain name because it is publicly discoverable.
      * </p>
      * 
      * @param domain
-     *        The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must
-     *        be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a
-     *        domain name because it is publicly discoverable.
+     *        The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same
+     *        Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not
+     *        use sensitive information in a domain name because it is publicly discoverable.
      */
 
     public void setDomain(String domain) {
@@ -79,14 +79,14 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be
-     * unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name
-     * because it is publicly discoverable.
+     * The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon
+     * Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive
+     * information in a domain name because it is publicly discoverable.
      * </p>
      * 
-     * @return The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must
-     *         be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a
-     *         domain name because it is publicly discoverable.
+     * @return The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same
+     *         Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do
+     *         not use sensitive information in a domain name because it is publicly discoverable.
      */
 
     public String getDomain() {
@@ -95,15 +95,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be
-     * unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name
-     * because it is publicly discoverable.
+     * The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon
+     * Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive
+     * information in a domain name because it is publicly discoverable.
      * </p>
      * 
      * @param domain
-     *        The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must
-     *        be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a
-     *        domain name because it is publicly discoverable.
+     *        The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same
+     *        Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not
+     *        use sensitive information in a domain name because it is publicly discoverable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,15 +119,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code>
      * permissions on the encryption key that is used. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     * >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API
-     * Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management
+     * Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
      * CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * 
@@ -138,14 +138,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a
      *        href
      *        ="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     *        >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS
-     *        API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
+     *        >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key
+     *        Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
+     *        </p> <important>
      *        <p>
      *        CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     *        asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      *        </p>
      */
 
@@ -160,15 +161,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code>
      * permissions on the encryption key that is used. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     * >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API
-     * Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management
+     * Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
      * CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * 
@@ -178,14 +179,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a
      *         href=
      *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     *         >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS
-     *         API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
+     *         >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key
+     *         Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
+     *         </p> <important>
      *         <p>
      *         CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *         and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      *         </p>
      */
 
@@ -200,15 +202,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code>
      * permissions on the encryption key that is used. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     * >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API
-     * Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management
+     * Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
      * CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * 
@@ -219,14 +221,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a
      *        href
      *        ="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax"
-     *        >DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS
-     *        API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
+     *        >DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key
+     *        Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>.
+     *        </p> <important>
      *        <p>
      *        CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     *        asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

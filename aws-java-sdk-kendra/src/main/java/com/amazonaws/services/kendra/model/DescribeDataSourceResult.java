@@ -25,58 +25,66 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The name that you gave the data source when it was created.
+     * The name for the data source connector.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of the data source.
+     * The type of the data source. For example, <code>SHAREPOINT</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Describes how the data source is configured. The specific information in the description depends on the data
-     * source provider.
+     * Configuration details for the data source connector. This shows how the data source is configured. The
+     * configuration options for a data source depend on the data source provider.
      * </p>
      */
     private DataSourceConfiguration configuration;
     /**
      * <p>
-     * The Unix timestamp of when the data source was created.
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     */
+    private DataSourceVpcConfiguration vpcConfiguration;
+    /**
+     * <p>
+     * The Unix timestamp of when the data source connector was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix timestamp of when the data source was last updated.
+     * The Unix timestamp of when the data source connector was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
     /**
      * <p>
-     * The description of the data source.
+     * The description for the data source connector.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.
-     * When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data
-     * source failed.
+     * The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready
+     * to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the
+     * data source failed.
      * </p>
      */
     private String status;
@@ -88,7 +96,7 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
     private String schedule;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     * The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.
      * </p>
      */
     private String roleArn;
@@ -124,11 +132,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
      * @param id
-     *        The identifier of the data source.
+     *        The identifier of the data source connector.
      */
 
     public void setId(String id) {
@@ -137,10 +145,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
-     * @return The identifier of the data source.
+     * @return The identifier of the data source connector.
      */
 
     public String getId() {
@@ -149,11 +157,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
      * @param id
-     *        The identifier of the data source.
+     *        The identifier of the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +172,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with the data source connector.
      */
 
     public void setIndexId(String indexId) {
@@ -177,10 +185,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
-     * @return The identifier of the index that contains the data source.
+     * @return The identifier of the index used with the data source connector.
      */
 
     public String getIndexId() {
@@ -189,11 +197,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +212,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name that you gave the data source when it was created.
+     * The name for the data source connector.
      * </p>
      * 
      * @param name
-     *        The name that you gave the data source when it was created.
+     *        The name for the data source connector.
      */
 
     public void setName(String name) {
@@ -217,10 +225,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name that you gave the data source when it was created.
+     * The name for the data source connector.
      * </p>
      * 
-     * @return The name that you gave the data source when it was created.
+     * @return The name for the data source connector.
      */
 
     public String getName() {
@@ -229,11 +237,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name that you gave the data source when it was created.
+     * The name for the data source connector.
      * </p>
      * 
      * @param name
-     *        The name that you gave the data source when it was created.
+     *        The name for the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,11 +252,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The type of the data source.
+     * The type of the data source. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
      * @param type
-     *        The type of the data source.
+     *        The type of the data source. For example, <code>SHAREPOINT</code>.
      * @see DataSourceType
      */
 
@@ -258,10 +266,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The type of the data source.
+     * The type of the data source. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
-     * @return The type of the data source.
+     * @return The type of the data source. For example, <code>SHAREPOINT</code>.
      * @see DataSourceType
      */
 
@@ -271,11 +279,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The type of the data source.
+     * The type of the data source. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
      * @param type
-     *        The type of the data source.
+     *        The type of the data source. For example, <code>SHAREPOINT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -287,11 +295,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The type of the data source.
+     * The type of the data source. For example, <code>SHAREPOINT</code>.
      * </p>
      * 
      * @param type
-     *        The type of the data source.
+     *        The type of the data source. For example, <code>SHAREPOINT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -303,13 +311,13 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Describes how the data source is configured. The specific information in the description depends on the data
-     * source provider.
+     * Configuration details for the data source connector. This shows how the data source is configured. The
+     * configuration options for a data source depend on the data source provider.
      * </p>
      * 
      * @param configuration
-     *        Describes how the data source is configured. The specific information in the description depends on the
-     *        data source provider.
+     *        Configuration details for the data source connector. This shows how the data source is configured. The
+     *        configuration options for a data source depend on the data source provider.
      */
 
     public void setConfiguration(DataSourceConfiguration configuration) {
@@ -318,12 +326,12 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Describes how the data source is configured. The specific information in the description depends on the data
-     * source provider.
+     * Configuration details for the data source connector. This shows how the data source is configured. The
+     * configuration options for a data source depend on the data source provider.
      * </p>
      * 
-     * @return Describes how the data source is configured. The specific information in the description depends on the
-     *         data source provider.
+     * @return Configuration details for the data source connector. This shows how the data source is configured. The
+     *         configuration options for a data source depend on the data source provider.
      */
 
     public DataSourceConfiguration getConfiguration() {
@@ -332,13 +340,13 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Describes how the data source is configured. The specific information in the description depends on the data
-     * source provider.
+     * Configuration details for the data source connector. This shows how the data source is configured. The
+     * configuration options for a data source depend on the data source provider.
      * </p>
      * 
      * @param configuration
-     *        Describes how the data source is configured. The specific information in the description depends on the
-     *        data source provider.
+     *        Configuration details for the data source connector. This shows how the data source is configured. The
+     *        configuration options for a data source depend on the data source provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,11 +357,63 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source was created.
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     *        a VPC</a>.
+     */
+
+    public void setVpcConfiguration(DataSourceVpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @return Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.
+     */
+
+    public DataSourceVpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a
+     * VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     *        a VPC</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataSourceResult withVpcConfiguration(DataSourceVpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp of when the data source connector was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp of when the data source was created.
+     *        The Unix timestamp of when the data source connector was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -362,10 +422,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source was created.
+     * The Unix timestamp of when the data source connector was created.
      * </p>
      * 
-     * @return The Unix timestamp of when the data source was created.
+     * @return The Unix timestamp of when the data source connector was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -374,11 +434,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source was created.
+     * The Unix timestamp of when the data source connector was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp of when the data source was created.
+     *        The Unix timestamp of when the data source connector was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +449,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source was last updated.
+     * The Unix timestamp of when the data source connector was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp of when the data source was last updated.
+     *        The Unix timestamp of when the data source connector was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -402,10 +462,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source was last updated.
+     * The Unix timestamp of when the data source connector was last updated.
      * </p>
      * 
-     * @return The Unix timestamp of when the data source was last updated.
+     * @return The Unix timestamp of when the data source connector was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -414,11 +474,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source was last updated.
+     * The Unix timestamp of when the data source connector was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp of when the data source was last updated.
+     *        The Unix timestamp of when the data source connector was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,11 +489,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The description of the data source.
+     * The description for the data source connector.
      * </p>
      * 
      * @param description
-     *        The description of the data source.
+     *        The description for the data source connector.
      */
 
     public void setDescription(String description) {
@@ -442,10 +502,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The description of the data source.
+     * The description for the data source connector.
      * </p>
      * 
-     * @return The description of the data source.
+     * @return The description for the data source connector.
      */
 
     public String getDescription() {
@@ -454,11 +514,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The description of the data source.
+     * The description for the data source connector.
      * </p>
      * 
      * @param description
-     *        The description of the data source.
+     *        The description for the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,15 +529,15 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.
-     * When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data
-     * source failed.
+     * The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready
+     * to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the
+     * data source failed.
      * </p>
      * 
      * @param status
-     *        The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to
-     *        use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that
-     *        the data source failed.
+     *        The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is
+     *        ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the
+     *        reason that the data source failed.
      * @see DataSourceStatus
      */
 
@@ -487,14 +547,14 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.
-     * When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data
-     * source failed.
+     * The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready
+     * to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the
+     * data source failed.
      * </p>
      * 
-     * @return The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to
-     *         use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that
-     *         the data source failed.
+     * @return The current status of the data source connector. When the status is <code>ACTIVE</code> the data source
+     *         is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the
+     *         reason that the data source failed.
      * @see DataSourceStatus
      */
 
@@ -504,15 +564,15 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.
-     * When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data
-     * source failed.
+     * The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready
+     * to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the
+     * data source failed.
      * </p>
      * 
      * @param status
-     *        The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to
-     *        use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that
-     *        the data source failed.
+     *        The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is
+     *        ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the
+     *        reason that the data source failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceStatus
      */
@@ -524,15 +584,15 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.
-     * When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data
-     * source failed.
+     * The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready
+     * to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the
+     * data source failed.
      * </p>
      * 
      * @param status
-     *        The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to
-     *        use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that
-     *        the data source failed.
+     *        The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is
+     *        ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the
+     *        reason that the data source failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceStatus
      */
@@ -584,11 +644,12 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     * The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     *        The Amazon Resource Name (ARN) of the role with permission to access the data source and required
+     *        resources.
      */
 
     public void setRoleArn(String roleArn) {
@@ -597,10 +658,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     * The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     * @return The Amazon Resource Name (ARN) of the role with permission to access the data source and required
+     *         resources.
      */
 
     public String getRoleArn() {
@@ -609,11 +671,12 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     * The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.
+     *        The Amazon Resource Name (ARN) of the role with permission to access the data source and required
+     *        resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,6 +890,8 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("Type: ").append(getType()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
@@ -879,6 +944,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -929,6 +998,7 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

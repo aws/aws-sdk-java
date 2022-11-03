@@ -61,7 +61,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private String region;
@@ -74,7 +74,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private String entityPath;
@@ -88,14 +88,14 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      */
     private java.util.Date lastAuthenticatedTime;
     /**
      * <p>
      * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
-     * access the service in the reporting period.
+     * access the service in the tracking period.
      * </p>
      */
     private Integer totalAuthenticatedEntities;
@@ -245,7 +245,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param region
@@ -254,7 +254,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        This field is null if no principals in the reported Organizations entity attempted to access the service
      *        within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setRegion(String region) {
@@ -269,7 +269,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The Region where the last service access attempt occurred.</p>
@@ -277,7 +277,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *         This field is null if no principals in the reported Organizations entity attempted to access the service
      *         within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public String getRegion() {
@@ -292,7 +292,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param region
@@ -301,7 +301,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        This field is null if no principals in the reported Organizations entity attempted to access the service
      *        within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,7 +319,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param entityPath
@@ -330,7 +330,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations
      *        entity attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setEntityPath(String entityPath) {
@@ -346,7 +346,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The path of the Organizations entity (root, organizational unit, or account) from which an authenticated
@@ -356,7 +356,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *         This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations
      *         entity attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public String getEntityPath() {
@@ -372,7 +372,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param entityPath
@@ -383,7 +383,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations
      *        entity attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,7 +402,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticatedTime
@@ -413,7 +413,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        This field is null if no principals in the reported Organizations entity attempted to access the service
      *        within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      */
 
     public void setLastAuthenticatedTime(java.util.Date lastAuthenticatedTime) {
@@ -430,7 +430,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
@@ -440,7 +440,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *         This field is null if no principals in the reported Organizations entity attempted to access the service
      *         within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *         >reporting period</a>.
+     *         >tracking period</a>.
      */
 
     public java.util.Date getLastAuthenticatedTime() {
@@ -457,7 +457,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * This field is null if no principals in the reported Organizations entity attempted to access the service within
      * the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     * >reporting period</a>.
+     * >tracking period</a>.
      * </p>
      * 
      * @param lastAuthenticatedTime
@@ -468,7 +468,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        This field is null if no principals in the reported Organizations entity attempted to access the service
      *        within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
-     *        >reporting period</a>.
+     *        >tracking period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -480,12 +480,12 @@ public class AccessDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
-     * access the service in the reporting period.
+     * access the service in the tracking period.
      * </p>
      * 
      * @param totalAuthenticatedEntities
      *        The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted
-     *        to access the service in the reporting period.
+     *        to access the service in the tracking period.
      */
 
     public void setTotalAuthenticatedEntities(Integer totalAuthenticatedEntities) {
@@ -495,11 +495,11 @@ public class AccessDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
-     * access the service in the reporting period.
+     * access the service in the tracking period.
      * </p>
      * 
      * @return The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that
-     *         attempted to access the service in the reporting period.
+     *         attempted to access the service in the tracking period.
      */
 
     public Integer getTotalAuthenticatedEntities() {
@@ -509,12 +509,12 @@ public class AccessDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
-     * access the service in the reporting period.
+     * access the service in the tracking period.
      * </p>
      * 
      * @param totalAuthenticatedEntities
      *        The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted
-     *        to access the service in the reporting period.
+     *        to access the service in the tracking period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

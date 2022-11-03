@@ -21,10 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents the base path that callers of the API must provide as part of the URL after the domain name.
  * </p>
- * <div class="remarks">A custom domain name plus a <code>BasePathMapping</code> specification identifies a deployed
- * <a>RestApi</a> in a given stage of the owner <a>Account</a>.</div> <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain
- * Names</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BasePathMapping implements Serializable, Cloneable, StructuredPojo {
@@ -37,7 +33,7 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
     private String basePath;
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
@@ -90,11 +86,11 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -103,10 +99,10 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -115,11 +111,11 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

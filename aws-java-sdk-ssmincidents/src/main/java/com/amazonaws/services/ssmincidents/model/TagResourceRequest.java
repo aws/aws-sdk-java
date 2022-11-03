@@ -33,7 +33,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * A list of tags that you are adding to the response plan.
+     * A list of tags to add to the response plan.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of tags that you are adding to the response plan.
+     * A list of tags to add to the response plan.
      * </p>
      * 
-     * @return A list of tags that you are adding to the response plan.
+     * @return A list of tags to add to the response plan.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of tags that you are adding to the response plan.
+     * A list of tags to add to the response plan.
      * </p>
      * 
      * @param tags
-     *        A list of tags that you are adding to the response plan.
+     *        A list of tags to add to the response plan.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +105,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of tags that you are adding to the response plan.
+     * A list of tags to add to the response plan.
      * </p>
      * 
      * @param tags
-     *        A list of tags that you are adding to the response plan.
+     *        A list of tags to add to the response plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

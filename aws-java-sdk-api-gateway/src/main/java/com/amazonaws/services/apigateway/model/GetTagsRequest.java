@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Gets the <a>Tags</a> collection for a given resource.
+ * Gets the Tags collection for a given resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged.
+     * The ARN of a resource that can be tagged.
      * </p>
      */
     private String resourceArn;
@@ -47,11 +47,11 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged.
+     * The ARN of a resource that can be tagged.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged.
+     *        The ARN of a resource that can be tagged.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -60,10 +60,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged.
+     * The ARN of a resource that can be tagged.
      * </p>
      * 
-     * @return [Required] The ARN of a resource that can be tagged.
+     * @return The ARN of a resource that can be tagged.
      */
 
     public String getResourceArn() {
@@ -72,11 +72,11 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged.
+     * The ARN of a resource that can be tagged.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged.
+     *        The ARN of a resource that can be tagged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,12 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
     private String prefixListId;
     /**
      * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     */
+    private String transitGatewayRouteTableAnnouncementId;
+    /**
+     * <p>
      * The attachments.
      * </p>
      */
@@ -134,6 +140,46 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
 
     public TransitGatewayRoute withPrefixListId(String prefixListId) {
         setPrefixListId(prefixListId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @param transitGatewayRouteTableAnnouncementId
+     *        The ID of the transit gateway route table announcement.
+     */
+
+    public void setTransitGatewayRouteTableAnnouncementId(String transitGatewayRouteTableAnnouncementId) {
+        this.transitGatewayRouteTableAnnouncementId = transitGatewayRouteTableAnnouncementId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @return The ID of the transit gateway route table announcement.
+     */
+
+    public String getTransitGatewayRouteTableAnnouncementId() {
+        return this.transitGatewayRouteTableAnnouncementId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway route table announcement.
+     * </p>
+     * 
+     * @param transitGatewayRouteTableAnnouncementId
+     *        The ID of the transit gateway route table announcement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayRoute withTransitGatewayRouteTableAnnouncementId(String transitGatewayRouteTableAnnouncementId) {
+        setTransitGatewayRouteTableAnnouncementId(transitGatewayRouteTableAnnouncementId);
         return this;
     }
 
@@ -344,6 +390,8 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
             sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getPrefixListId() != null)
             sb.append("PrefixListId: ").append(getPrefixListId()).append(",");
+        if (getTransitGatewayRouteTableAnnouncementId() != null)
+            sb.append("TransitGatewayRouteTableAnnouncementId: ").append(getTransitGatewayRouteTableAnnouncementId()).append(",");
         if (getTransitGatewayAttachments() != null)
             sb.append("TransitGatewayAttachments: ").append(getTransitGatewayAttachments()).append(",");
         if (getType() != null)
@@ -372,6 +420,11 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
             return false;
         if (other.getPrefixListId() != null && other.getPrefixListId().equals(this.getPrefixListId()) == false)
             return false;
+        if (other.getTransitGatewayRouteTableAnnouncementId() == null ^ this.getTransitGatewayRouteTableAnnouncementId() == null)
+            return false;
+        if (other.getTransitGatewayRouteTableAnnouncementId() != null
+                && other.getTransitGatewayRouteTableAnnouncementId().equals(this.getTransitGatewayRouteTableAnnouncementId()) == false)
+            return false;
         if (other.getTransitGatewayAttachments() == null ^ this.getTransitGatewayAttachments() == null)
             return false;
         if (other.getTransitGatewayAttachments() != null && other.getTransitGatewayAttachments().equals(this.getTransitGatewayAttachments()) == false)
@@ -394,6 +447,7 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getPrefixListId() == null) ? 0 : getPrefixListId().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayRouteTableAnnouncementId() == null) ? 0 : getTransitGatewayRouteTableAnnouncementId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayAttachments() == null) ? 0 : getTransitGatewayAttachments().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

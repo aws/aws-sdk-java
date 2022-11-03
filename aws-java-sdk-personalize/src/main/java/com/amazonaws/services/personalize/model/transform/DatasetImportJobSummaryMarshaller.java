@@ -39,6 +39,8 @@ public class DatasetImportJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
+    private static final MarshallingInfo<String> IMPORTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("importMode").build();
 
     private static final DatasetImportJobSummaryMarshaller instance = new DatasetImportJobSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class DatasetImportJobSummaryMarshaller {
             protocolMarshaller.marshall(datasetImportJobSummary.getCreationDateTime(), CREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(datasetImportJobSummary.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(datasetImportJobSummary.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(datasetImportJobSummary.getImportMode(), IMPORTMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

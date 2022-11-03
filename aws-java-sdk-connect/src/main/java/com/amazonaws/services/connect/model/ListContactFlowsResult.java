@@ -25,7 +25,7 @@ public class ListContactFlowsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the contact flows.
+     * Information about the flows.
      * </p>
      */
     private java.util.List<ContactFlowSummary> contactFlowSummaryList;
@@ -38,10 +38,10 @@ public class ListContactFlowsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the contact flows.
+     * Information about the flows.
      * </p>
      * 
-     * @return Information about the contact flows.
+     * @return Information about the flows.
      */
 
     public java.util.List<ContactFlowSummary> getContactFlowSummaryList() {
@@ -50,11 +50,11 @@ public class ListContactFlowsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the contact flows.
+     * Information about the flows.
      * </p>
      * 
      * @param contactFlowSummaryList
-     *        Information about the contact flows.
+     *        Information about the flows.
      */
 
     public void setContactFlowSummaryList(java.util.Collection<ContactFlowSummary> contactFlowSummaryList) {
@@ -68,7 +68,7 @@ public class ListContactFlowsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the contact flows.
+     * Information about the flows.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListContactFlowsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param contactFlowSummaryList
-     *        Information about the contact flows.
+     *        Information about the flows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListContactFlowsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the contact flows.
+     * Information about the flows.
      * </p>
      * 
      * @param contactFlowSummaryList
-     *        Information about the contact flows.
+     *        Information about the flows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

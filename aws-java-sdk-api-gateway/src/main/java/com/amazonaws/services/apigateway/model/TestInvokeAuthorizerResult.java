@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the response of the test invoke request for a custom <a>Authorizer</a>
+ * Represents the response of the test invoke request for a custom Authorizer
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,22 +43,26 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     private Long latency;
     /**
      * <p>
-     * The principal identity returned by the <a>Authorizer</a>
+     * The principal identity returned by the Authorizer
      * </p>
      */
     private String principalId;
     /**
      * <p>
-     * The JSON policy document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the Authorizer
      * </p>
      */
     private String policy;
-
+    /**
+     * <p>
+     * The authorization response.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> authorization;
     /**
      * <p>
-     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
-     * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
+     * The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     * configured for the API.
      * </p>
      */
     private java.util.Map<String, String> claims;
@@ -185,11 +189,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The principal identity returned by the <a>Authorizer</a>
+     * The principal identity returned by the Authorizer
      * </p>
      * 
      * @param principalId
-     *        The principal identity returned by the <a>Authorizer</a>
+     *        The principal identity returned by the Authorizer
      */
 
     public void setPrincipalId(String principalId) {
@@ -198,10 +202,10 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The principal identity returned by the <a>Authorizer</a>
+     * The principal identity returned by the Authorizer
      * </p>
      * 
-     * @return The principal identity returned by the <a>Authorizer</a>
+     * @return The principal identity returned by the Authorizer
      */
 
     public String getPrincipalId() {
@@ -210,11 +214,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The principal identity returned by the <a>Authorizer</a>
+     * The principal identity returned by the Authorizer
      * </p>
      * 
      * @param principalId
-     *        The principal identity returned by the <a>Authorizer</a>
+     *        The principal identity returned by the Authorizer
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +229,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON policy document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the Authorizer
      * </p>
      * 
      * @param policy
-     *        The JSON policy document returned by the <a>Authorizer</a>
+     *        The JSON policy document returned by the Authorizer
      */
 
     public void setPolicy(String policy) {
@@ -238,10 +242,10 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON policy document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the Authorizer
      * </p>
      * 
-     * @return The JSON policy document returned by the <a>Authorizer</a>
+     * @return The JSON policy document returned by the Authorizer
      */
 
     public String getPolicy() {
@@ -250,11 +254,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON policy document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the Authorizer
      * </p>
      * 
      * @param policy
-     *        The JSON policy document returned by the <a>Authorizer</a>
+     *        The JSON policy document returned by the Authorizer
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,7 +268,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The authorization response.
+     * </p>
+     * 
+     * @return The authorization response.
      */
 
     public java.util.Map<String, java.util.List<String>> getAuthorization() {
@@ -272,7 +280,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The authorization response.
+     * </p>
+     * 
      * @param authorization
+     *        The authorization response.
      */
 
     public void setAuthorization(java.util.Map<String, java.util.List<String>> authorization) {
@@ -280,7 +293,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The authorization response.
+     * </p>
+     * 
      * @param authorization
+     *        The authorization response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,13 +337,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
-     * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
+     * The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     * configured for the API.
      * </p>
      * 
-     * @return The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
-     *         claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
-     *         the API.
+     * @return The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     *         configured for the API.
      */
 
     public java.util.Map<String, String> getClaims() {
@@ -334,14 +351,13 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
-     * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
+     * The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     * configured for the API.
      * </p>
      * 
      * @param claims
-     *        The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
-     *        claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
-     *        the API.
+     *        The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     *        configured for the API.
      */
 
     public void setClaims(java.util.Map<String, String> claims) {
@@ -350,14 +366,13 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
-     * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
+     * The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     * configured for the API.
      * </p>
      * 
      * @param claims
-     *        The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
-     *        claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
-     *        the API.
+     *        The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool
+     *        configured for the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

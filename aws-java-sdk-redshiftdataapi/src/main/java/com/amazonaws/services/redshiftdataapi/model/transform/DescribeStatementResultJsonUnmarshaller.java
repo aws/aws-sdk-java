@@ -124,6 +124,10 @@ public class DescribeStatementResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeStatementResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("WorkgroupName", targetDepth)) {
+                    context.nextToken();
+                    describeStatementResult.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -40,8 +40,8 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
     private Boolean cloudWatchMetricsEnabled;
     /**
      * <p>
-     * A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     * <code>GetObject-PartNumber</code>.
+     * A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     * <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * </p>
      */
     private java.util.List<String> allowedFeatures;
@@ -146,12 +146,12 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     * <code>GetObject-PartNumber</code>.
+     * A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     * <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * </p>
      * 
-     * @return A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     *         <code>GetObject-PartNumber</code>.
+     * @return A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     *         <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * @see ObjectLambdaAllowedFeature
      */
 
@@ -161,13 +161,13 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     * <code>GetObject-PartNumber</code>.
+     * A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     * <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * </p>
      * 
      * @param allowedFeatures
-     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     *        <code>GetObject-PartNumber</code>.
+     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     *        <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * @see ObjectLambdaAllowedFeature
      */
 
@@ -182,8 +182,8 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     * <code>GetObject-PartNumber</code>.
+     * A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     * <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -192,8 +192,8 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param allowedFeatures
-     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     *        <code>GetObject-PartNumber</code>.
+     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     *        <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectLambdaAllowedFeature
      */
@@ -210,13 +210,13 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     * <code>GetObject-PartNumber</code>.
+     * A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     * <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * </p>
      * 
      * @param allowedFeatures
-     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     *        <code>GetObject-PartNumber</code>.
+     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     *        <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectLambdaAllowedFeature
      */
@@ -228,13 +228,13 @@ public class ObjectLambdaConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     * <code>GetObject-PartNumber</code>.
+     * A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     * <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * </p>
      * 
      * @param allowedFeatures
-     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-     *        <code>GetObject-PartNumber</code>.
+     *        A container for allowed features. Valid inputs are <code>GetObject-Range</code>,
+     *        <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectLambdaAllowedFeature
      */

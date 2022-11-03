@@ -44,6 +44,8 @@ public class UserSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RStudioServerProAppSettings").build();
     private static final MarshallingInfo<StructuredPojo> RSESSIONAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RSessionAppSettings").build();
+    private static final MarshallingInfo<StructuredPojo> CANVASAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CanvasAppSettings").build();
 
     private static final UserSettingsMarshaller instance = new UserSettingsMarshaller();
 
@@ -69,6 +71,7 @@ public class UserSettingsMarshaller {
             protocolMarshaller.marshall(userSettings.getTensorBoardAppSettings(), TENSORBOARDAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getRStudioServerProAppSettings(), RSTUDIOSERVERPROAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getRSessionAppSettings(), RSESSIONAPPSETTINGS_BINDING);
+            protocolMarshaller.marshall(userSettings.getCanvasAppSettings(), CANVASAPPSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

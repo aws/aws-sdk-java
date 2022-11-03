@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the encryption settings for shared snapshots that are copied across Regions.
+ * <b>[Event-based policies only]</b> Specifies the encryption settings for cross-Region snapshot copies created by
+ * event-based policies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EncryptionConfiguration" target="_top">AWS API

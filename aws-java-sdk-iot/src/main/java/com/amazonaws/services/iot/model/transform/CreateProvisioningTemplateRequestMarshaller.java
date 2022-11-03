@@ -42,6 +42,8 @@ public class CreateProvisioningTemplateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preProvisioningHook").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final CreateProvisioningTemplateRequestMarshaller instance = new CreateProvisioningTemplateRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateProvisioningTemplateRequestMarshaller {
             protocolMarshaller.marshall(createProvisioningTemplateRequest.getProvisioningRoleArn(), PROVISIONINGROLEARN_BINDING);
             protocolMarshaller.marshall(createProvisioningTemplateRequest.getPreProvisioningHook(), PREPROVISIONINGHOOK_BINDING);
             protocolMarshaller.marshall(createProvisioningTemplateRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createProvisioningTemplateRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

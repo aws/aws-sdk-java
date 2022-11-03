@@ -322,6 +322,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCidrCollectionResult> changeCidrCollectionAsync(ChangeCidrCollectionRequest request) {
+
+        return changeCidrCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCidrCollectionResult> changeCidrCollectionAsync(final ChangeCidrCollectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ChangeCidrCollectionRequest, ChangeCidrCollectionResult> asyncHandler) {
+        final ChangeCidrCollectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ChangeCidrCollectionResult>() {
+            @Override
+            public ChangeCidrCollectionResult call() throws Exception {
+                ChangeCidrCollectionResult result = null;
+
+                try {
+                    result = executeChangeCidrCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeResourceRecordSetsResult> changeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request) {
 
         return changeResourceRecordSetsAsync(request, null);
@@ -372,6 +405,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeChangeTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCidrCollectionResult> createCidrCollectionAsync(CreateCidrCollectionRequest request) {
+
+        return createCidrCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCidrCollectionResult> createCidrCollectionAsync(final CreateCidrCollectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCidrCollectionRequest, CreateCidrCollectionResult> asyncHandler) {
+        final CreateCidrCollectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCidrCollectionResult>() {
+            @Override
+            public CreateCidrCollectionResult call() throws Exception {
+                CreateCidrCollectionResult result = null;
+
+                try {
+                    result = executeCreateCidrCollection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -704,6 +770,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeDeactivateKeySigningKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCidrCollectionResult> deleteCidrCollectionAsync(DeleteCidrCollectionRequest request) {
+
+        return deleteCidrCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCidrCollectionResult> deleteCidrCollectionAsync(final DeleteCidrCollectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCidrCollectionRequest, DeleteCidrCollectionResult> asyncHandler) {
+        final DeleteCidrCollectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCidrCollectionResult>() {
+            @Override
+            public DeleteCidrCollectionResult call() throws Exception {
+                DeleteCidrCollectionResult result = null;
+
+                try {
+                    result = executeDeleteCidrCollection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1797,6 +1896,105 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler) {
 
         return getTrafficPolicyInstanceCountAsync(new GetTrafficPolicyInstanceCountRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrBlocksResult> listCidrBlocksAsync(ListCidrBlocksRequest request) {
+
+        return listCidrBlocksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrBlocksResult> listCidrBlocksAsync(final ListCidrBlocksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCidrBlocksRequest, ListCidrBlocksResult> asyncHandler) {
+        final ListCidrBlocksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCidrBlocksResult>() {
+            @Override
+            public ListCidrBlocksResult call() throws Exception {
+                ListCidrBlocksResult result = null;
+
+                try {
+                    result = executeListCidrBlocks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrCollectionsResult> listCidrCollectionsAsync(ListCidrCollectionsRequest request) {
+
+        return listCidrCollectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrCollectionsResult> listCidrCollectionsAsync(final ListCidrCollectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCidrCollectionsRequest, ListCidrCollectionsResult> asyncHandler) {
+        final ListCidrCollectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCidrCollectionsResult>() {
+            @Override
+            public ListCidrCollectionsResult call() throws Exception {
+                ListCidrCollectionsResult result = null;
+
+                try {
+                    result = executeListCidrCollections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrLocationsResult> listCidrLocationsAsync(ListCidrLocationsRequest request) {
+
+        return listCidrLocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCidrLocationsResult> listCidrLocationsAsync(final ListCidrLocationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCidrLocationsRequest, ListCidrLocationsResult> asyncHandler) {
+        final ListCidrLocationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCidrLocationsResult>() {
+            @Override
+            public ListCidrLocationsResult call() throws Exception {
+                ListCidrLocationsResult result = null;
+
+                try {
+                    result = executeListCidrLocations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

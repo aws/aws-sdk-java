@@ -24,7 +24,11 @@ public class ServiceFailureException extends com.amazonaws.services.chimesdkmeet
     private static final long serialVersionUID = 1L;
 
     private String code;
-
+    /**
+     * <p>
+     * The ID of the failed request.
+     * </p>
+     */
     private String requestId;
 
     /**
@@ -66,7 +70,12 @@ public class ServiceFailureException extends com.amazonaws.services.chimesdkmeet
     }
 
     /**
+     * <p>
+     * The ID of the failed request.
+     * </p>
+     * 
      * @param requestId
+     *        The ID of the failed request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -75,7 +84,11 @@ public class ServiceFailureException extends com.amazonaws.services.chimesdkmeet
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the failed request.
+     * </p>
+     * 
+     * @return The ID of the failed request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -84,7 +97,12 @@ public class ServiceFailureException extends com.amazonaws.services.chimesdkmeet
     }
 
     /**
+     * <p>
+     * The ID of the failed request.
+     * </p>
+     * 
      * @param requestId
+     *        The ID of the failed request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

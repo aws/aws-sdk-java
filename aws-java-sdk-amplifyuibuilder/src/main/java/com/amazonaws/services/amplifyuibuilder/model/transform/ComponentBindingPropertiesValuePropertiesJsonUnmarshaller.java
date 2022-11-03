@@ -75,6 +75,10 @@ public class ComponentBindingPropertiesValuePropertiesJsonUnmarshaller implement
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("slotName", targetDepth)) {
+                    context.nextToken();
+                    componentBindingPropertiesValueProperties.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("userAttribute", targetDepth)) {
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));

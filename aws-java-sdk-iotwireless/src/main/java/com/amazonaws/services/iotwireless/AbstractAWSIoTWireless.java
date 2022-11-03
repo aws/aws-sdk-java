@@ -254,6 +254,16 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public GetPositionResult getPosition(GetPositionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourceEventConfigurationResult getResourceEventConfiguration(GetResourceEventConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -354,6 +364,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListQueuedMessagesResult listQueuedMessages(ListQueuedMessagesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -380,6 +395,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public ListWirelessGatewaysResult listWirelessGateways(ListWirelessGatewaysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -477,6 +497,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public UpdatePartnerAccountResult updatePartnerAccount(UpdatePartnerAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePositionResult updatePosition(UpdatePositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

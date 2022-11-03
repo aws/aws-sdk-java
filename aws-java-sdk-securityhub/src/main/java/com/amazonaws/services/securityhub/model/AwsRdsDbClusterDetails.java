@@ -84,8 +84,25 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
     private Boolean multiAz;
     /**
      * <p>
-     * The name of the database engine to use for this DB cluster.
+     * The name of the database engine to use for this DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engine;
     /**
@@ -193,8 +210,35 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
     private java.util.List<String> enabledCloudWatchLogsExports;
     /**
      * <p>
-     * The database engine mode of the DB cluster.
+     * The database engine mode of the DB cluster.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engineMode;
     /**
@@ -211,8 +255,30 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
     private Boolean httpEndpointEnabled;
     /**
      * <p>
-     * The status of the database activity stream.
+     * The status of the database activity stream. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>started</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>starting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String activityStreamStatus;
     /**
@@ -706,11 +772,44 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the database engine to use for this DB cluster.
+     * The name of the database engine to use for this DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The name of the database engine to use for this DB cluster.
+     *        The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngine(String engine) {
@@ -719,10 +818,43 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the database engine to use for this DB cluster.
+     * The name of the database engine to use for this DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the database engine to use for this DB cluster.
+     * @return The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>aurora</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>aurora-mysql</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>aurora-postgresql</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngine() {
@@ -731,11 +863,44 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the database engine to use for this DB cluster.
+     * The name of the database engine to use for this DB cluster. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The name of the database engine to use for this DB cluster.
+     *        The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1543,11 +1708,64 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The database engine mode of the DB cluster.
+     * The database engine mode of the DB cluster.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineMode
-     *        The database engine mode of the DB cluster.
+     *        The database engine mode of the DB cluster.Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>global</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multimaster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>parallelquery</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisioned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>serverless</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngineMode(String engineMode) {
@@ -1556,10 +1774,63 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The database engine mode of the DB cluster.
+     * The database engine mode of the DB cluster.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The database engine mode of the DB cluster.
+     * @return The database engine mode of the DB cluster.Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>global</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>multimaster</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>parallelquery</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>provisioned</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>serverless</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngineMode() {
@@ -1568,11 +1839,64 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The database engine mode of the DB cluster.
+     * The database engine mode of the DB cluster.Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineMode
-     *        The database engine mode of the DB cluster.
+     *        The database engine mode of the DB cluster.Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>global</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multimaster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>parallelquery</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisioned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>serverless</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1687,11 +2011,54 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the database activity stream.
+     * The status of the database activity stream. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>started</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>starting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param activityStreamStatus
-     *        The status of the database activity stream.
+     *        The status of the database activity stream. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>started</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>starting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopped</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopping</code>
+     *        </p>
+     *        </li>
      */
 
     public void setActivityStreamStatus(String activityStreamStatus) {
@@ -1700,10 +2067,53 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the database activity stream.
+     * The status of the database activity stream. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>started</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>starting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the database activity stream.
+     * @return The status of the database activity stream. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>started</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>starting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stopped</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stopping</code>
+     *         </p>
+     *         </li>
      */
 
     public String getActivityStreamStatus() {
@@ -1712,11 +2122,54 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the database activity stream.
+     * The status of the database activity stream. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>started</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>starting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param activityStreamStatus
-     *        The status of the database activity stream.
+     *        The status of the database activity stream. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>started</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>starting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopped</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopping</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

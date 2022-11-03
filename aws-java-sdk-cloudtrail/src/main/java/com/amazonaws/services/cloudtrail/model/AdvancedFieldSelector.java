@@ -37,9 +37,9 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
-     * <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
-     * <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
-     * <code>false</code> logs only <code>write</code> events.
+     * <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code>
+     * events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only
+     * <code>write</code> events.
      * </p>
      * </li>
      * <li>
@@ -311,9 +311,9 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
-     * <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
-     * <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
-     * <code>false</code> logs only <code>write</code> events.
+     * <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code>
+     * events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only
+     * <code>write</code> events.
      * </p>
      * </li>
      * <li>
@@ -539,7 +539,7 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *        <li>
      *        <p>
      *        <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-     *        or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
+     *        or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and
      *        <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
      *        <code>false</code> logs only <code>write</code> events.
      *        </p>
@@ -772,9 +772,9 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
-     * <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
-     * <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
-     * <code>false</code> logs only <code>write</code> events.
+     * <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code>
+     * events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only
+     * <code>write</code> events.
      * </p>
      * </li>
      * <li>
@@ -999,7 +999,7 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *         <li>
      *         <p>
      *         <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-     *         or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
+     *         or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and
      *         <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
      *         <code>false</code> logs only <code>write</code> events.
      *         </p>
@@ -1232,9 +1232,9 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      * <li>
      * <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or
-     * <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
-     * <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
-     * <code>false</code> logs only <code>write</code> events.
+     * <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code>
+     * events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only
+     * <code>write</code> events.
      * </p>
      * </li>
      * <li>
@@ -1460,7 +1460,7 @@ public class AdvancedFieldSelector implements Serializable, Cloneable, Structure
      *        <li>
      *        <p>
      *        <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-     *        or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and
+     *        or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and
      *        <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of
      *        <code>false</code> logs only <code>write</code> events.
      *        </p>

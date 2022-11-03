@@ -1343,9 +1343,9 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
         if (getIdentityProviderArn() != null)
             sb.append("IdentityProviderArn: ").append(getIdentityProviderArn()).append(",");
         if (getIdentityProviderDetails() != null)
-            sb.append("IdentityProviderDetails: ").append(getIdentityProviderDetails()).append(",");
+            sb.append("IdentityProviderDetails: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdentityProviderName() != null)
-            sb.append("IdentityProviderName: ").append(getIdentityProviderName()).append(",");
+            sb.append("IdentityProviderName: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdentityProviderType() != null)
             sb.append("IdentityProviderType: ").append(getIdentityProviderType());
         sb.append("}");

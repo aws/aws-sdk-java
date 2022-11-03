@@ -25,33 +25,34 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     * <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the operation to return the
-     * next page of analytics categories.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of objects containing information about analytics categories.
+     * Provides detailed information about your Call Analytics categories, including all the rules associated with each
+     * category.
      * </p>
      */
     private java.util.List<CategoryProperties> categories;
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     * <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the operation to return the
-     * next page of analytics categories.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     *        <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon
-     *        Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the operation
-     *        to return the next page of analytics categories.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -60,16 +61,16 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     * <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the operation to return the
-     * next page of analytics categories.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
-     * @return The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     *         <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon
-     *         Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     *         operation to return the next page of analytics categories.
+     * @return If <code>NextToken</code> is present in your response, it indicates that not all results are displayed.
+     *         To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in
+     *         your results output, then run your request again including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -78,17 +79,17 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     * <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the operation to return the
-     * next page of analytics categories.
+     * If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view
+     * the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results
+     * output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat
+     * as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        The operation returns a page of jobs at a time. The maximum size of the list is set by the
-     *        <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon
-     *        Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the operation
-     *        to return the next page of analytics categories.
+     *        If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To
+     *        view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your
+     *        results output, then run your request again including <code>NextToken</code> with the value of the copied
+     *        string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,10 +100,12 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of objects containing information about analytics categories.
+     * Provides detailed information about your Call Analytics categories, including all the rules associated with each
+     * category.
      * </p>
      * 
-     * @return A list of objects containing information about analytics categories.
+     * @return Provides detailed information about your Call Analytics categories, including all the rules associated
+     *         with each category.
      */
 
     public java.util.List<CategoryProperties> getCategories() {
@@ -111,11 +114,13 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of objects containing information about analytics categories.
+     * Provides detailed information about your Call Analytics categories, including all the rules associated with each
+     * category.
      * </p>
      * 
      * @param categories
-     *        A list of objects containing information about analytics categories.
+     *        Provides detailed information about your Call Analytics categories, including all the rules associated
+     *        with each category.
      */
 
     public void setCategories(java.util.Collection<CategoryProperties> categories) {
@@ -129,7 +134,8 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of objects containing information about analytics categories.
+     * Provides detailed information about your Call Analytics categories, including all the rules associated with each
+     * category.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +144,8 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param categories
-     *        A list of objects containing information about analytics categories.
+     *        Provides detailed information about your Call Analytics categories, including all the rules associated
+     *        with each category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +161,13 @@ public class ListCallAnalyticsCategoriesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of objects containing information about analytics categories.
+     * Provides detailed information about your Call Analytics categories, including all the rules associated with each
+     * category.
      * </p>
      * 
      * @param categories
-     *        A list of objects containing information about analytics categories.
+     *        Provides detailed information about your Call Analytics categories, including all the rules associated
+     *        with each category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

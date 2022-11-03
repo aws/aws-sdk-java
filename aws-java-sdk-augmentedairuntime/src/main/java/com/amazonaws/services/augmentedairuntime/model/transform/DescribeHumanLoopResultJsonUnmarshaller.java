@@ -50,7 +50,7 @@ public class DescribeHumanLoopResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeHumanLoopResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    describeHumanLoopResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();

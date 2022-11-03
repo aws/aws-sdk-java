@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda
- * deployments, the revision is the same as the AppSpec file.
+ * A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the
+ * revision is the same as the AppSpec file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RawString" target="_top">AWS API

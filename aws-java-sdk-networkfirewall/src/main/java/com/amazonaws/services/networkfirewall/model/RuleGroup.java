@@ -48,6 +48,12 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     private RuleVariables ruleVariables;
     /**
      * <p>
+     * The list of a rule group's reference sets.
+     * </p>
+     */
+    private ReferenceSets referenceSets;
+    /**
+     * <p>
      * The stateful rules or stateless rules for the rule group.
      * </p>
      */
@@ -103,6 +109,46 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     public RuleGroup withRuleVariables(RuleVariables ruleVariables) {
         setRuleVariables(ruleVariables);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of a rule group's reference sets.
+     * </p>
+     * 
+     * @param referenceSets
+     *        The list of a rule group's reference sets.
+     */
+
+    public void setReferenceSets(ReferenceSets referenceSets) {
+        this.referenceSets = referenceSets;
+    }
+
+    /**
+     * <p>
+     * The list of a rule group's reference sets.
+     * </p>
+     * 
+     * @return The list of a rule group's reference sets.
+     */
+
+    public ReferenceSets getReferenceSets() {
+        return this.referenceSets;
+    }
+
+    /**
+     * <p>
+     * The list of a rule group's reference sets.
+     * </p>
+     * 
+     * @param referenceSets
+     *        The list of a rule group's reference sets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withReferenceSets(ReferenceSets referenceSets) {
+        setReferenceSets(referenceSets);
         return this;
     }
 
@@ -206,6 +252,8 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getRuleVariables() != null)
             sb.append("RuleVariables: ").append(getRuleVariables()).append(",");
+        if (getReferenceSets() != null)
+            sb.append("ReferenceSets: ").append(getReferenceSets()).append(",");
         if (getRulesSource() != null)
             sb.append("RulesSource: ").append(getRulesSource()).append(",");
         if (getStatefulRuleOptions() != null)
@@ -228,6 +276,10 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRuleVariables() != null && other.getRuleVariables().equals(this.getRuleVariables()) == false)
             return false;
+        if (other.getReferenceSets() == null ^ this.getReferenceSets() == null)
+            return false;
+        if (other.getReferenceSets() != null && other.getReferenceSets().equals(this.getReferenceSets()) == false)
+            return false;
         if (other.getRulesSource() == null ^ this.getRulesSource() == null)
             return false;
         if (other.getRulesSource() != null && other.getRulesSource().equals(this.getRulesSource()) == false)
@@ -245,6 +297,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRuleVariables() == null) ? 0 : getRuleVariables().hashCode());
+        hashCode = prime * hashCode + ((getReferenceSets() == null) ? 0 : getReferenceSets().hashCode());
         hashCode = prime * hashCode + ((getRulesSource() == null) ? 0 : getRulesSource().hashCode());
         hashCode = prime * hashCode + ((getStatefulRuleOptions() == null) ? 0 : getStatefulRuleOptions().hashCode());
         return hashCode;

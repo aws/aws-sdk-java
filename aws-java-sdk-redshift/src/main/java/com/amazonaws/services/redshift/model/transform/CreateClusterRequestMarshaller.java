@@ -218,6 +218,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("DefaultIamRoleArn", StringUtils.fromString(createClusterRequest.getDefaultIamRoleArn()));
         }
 
+        if (createClusterRequest.getLoadSampleData() != null) {
+            request.addParameter("LoadSampleData", StringUtils.fromString(createClusterRequest.getLoadSampleData()));
+        }
+
         return request;
     }
 

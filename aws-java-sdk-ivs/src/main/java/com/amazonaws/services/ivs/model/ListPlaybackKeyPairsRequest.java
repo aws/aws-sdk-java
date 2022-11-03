@@ -27,27 +27,24 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-     * Default: 50.
+     * Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Maximum number of key pairs to return.
+     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-     * Default: 50.
+     * Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      * 
      * @param maxResults
-     *        The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *        field. Default: 50.
+     *        Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -56,12 +53,10 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-     * Default: 50.
+     * Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      * 
-     * @return The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *         field. Default: 50.
+     * @return Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      */
 
     public Integer getMaxResults() {
@@ -70,13 +65,11 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-     * Default: 50.
+     * Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      * </p>
      * 
      * @param maxResults
-     *        The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *        field. Default: 50.
+     *        Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +80,12 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of key pairs to return.
+     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
      * @param nextToken
-     *        Maximum number of key pairs to return.
+     *        The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     *        field.
      */
 
     public void setNextToken(String nextToken) {
@@ -100,10 +94,11 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of key pairs to return.
+     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
-     * @return Maximum number of key pairs to return.
+     * @return The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     *         field.
      */
 
     public String getNextToken() {
@@ -112,11 +107,12 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of key pairs to return.
+     * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
      * @param nextToken
-     *        Maximum number of key pairs to return.
+     *        The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -261,6 +261,10 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
      * provides clear recommendations about which variations perform better.
      * </p>
      * <p>
+     * You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in
+     * the experiment, such as using only user sessions from a certain location or who use a certain internet browser.
+     * </p>
+     * <p>
      * Don't use this operation to update an existing experiment. Instead, use <a
      * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html"
      * >UpdateExperiment</a>.
@@ -548,6 +552,80 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Use this operation to define a <i>segment</i> of your audience. A segment is a portion of your audience that
+     * share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser
+     * users in Europe who also fit other criteria that your application collects, such as age.
+     * </p>
+     * <p>
+     * Using a segment in an experiment limits that experiment to evaluate only the users who match the segment
+     * criteria. Using one or more segments in a launch allows you to define different traffic splits for the different
+     * audience segments.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt; Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;, which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt; operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param createSegmentRequest
+     * @return Result of the CreateSegment operation returned by the service.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.CreateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSegmentResult createSegment(CreateSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSegment(request);
+    }
+
+    @SdkInternalApi
+    final CreateSegmentResult executeCreateSegment(CreateSegmentRequest createSegmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSegmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSegmentRequest> request = null;
+        Response<CreateSegmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSegmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Evidently");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSegment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSegmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSegmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an Evidently experiment. The feature used for the experiment is not deleted.
      * </p>
      * <p>
@@ -822,6 +900,72 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Deletes a segment. You can't delete a segment that is being used in a launch or experiment, even if that launch
+     * or experiment is not currently running.
+     * </p>
+     * 
+     * @param deleteSegmentRequest
+     * @return Result of the DeleteSegment operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.DeleteSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSegmentResult deleteSegment(DeleteSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSegment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSegmentResult executeDeleteSegment(DeleteSegmentRequest deleteSegmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSegmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSegmentRequest> request = null;
+        Response<DeleteSegmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSegmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Evidently");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSegment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSegmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSegmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This operation assigns a feature variation to one given user session. You pass in an <code>entityID</code> that
      * represents the user. Evidently then checks the evaluation rules and assigns the variation.
      * </p>
@@ -829,20 +973,10 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
      * The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an
      * override rule, the user is served the variation specified by that rule.
      * </p>
-     * <p>
-     * Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of
-     * this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch,
-     * the variation they are served depends on the allocation of the various feature variations used for the launch.
-     * </p>
-     * <p>
-     * If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be
-     * assigned to a variation in the experiment. The chance of this depends on the percentage of users that are
-     * allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on
-     * the allocation of the various feature variations used for the experiment.
-     * </p>
-     * <p>
-     * If the user is not assigned to a launch or experiment, they are served the default variation.
-     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;If there is a current launch with this feature that uses segment overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt; &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt; values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param evaluateFeatureRequest
      * @return Result of the EvaluateFeature operation returned by the service.
@@ -979,7 +1113,15 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Retrieves the results of a running or completed experiment.
+     * Retrieves the results of a running or completed experiment. No results are available until there have been 100
+     * events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the
+     * statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment.
+     * Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during
+     * the experiment do not find statistical significance.
+     * </p>
+     * <p>
+     * Experiment results are available up to 63 days after the start of the experiment. They are not available after
+     * that because of CloudWatch data retention policies.
      * </p>
      * 
      * @param getExperimentResultsRequest
@@ -1242,6 +1384,69 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Returns information about the specified segment. Specify the segment you want to view by specifying its ARN.
+     * </p>
+     * 
+     * @param getSegmentRequest
+     * @return Result of the GetSegment operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.GetSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSegmentResult getSegment(GetSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegment(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentResult executeGetSegment(GetSegmentRequest getSegmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSegmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSegmentRequest> request = null;
+        Response<GetSegmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Evidently");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSegment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSegmentResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSegmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns configuration details about all the experiments in the specified project.
      * </p>
      * 
@@ -1476,6 +1681,131 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProjectsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this operation to find which experiments or launches are using a specified segment.
+     * </p>
+     * 
+     * @param listSegmentReferencesRequest
+     * @return Result of the ListSegmentReferences operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.ListSegmentReferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSegmentReferencesResult listSegmentReferences(ListSegmentReferencesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSegmentReferences(request);
+    }
+
+    @SdkInternalApi
+    final ListSegmentReferencesResult executeListSegmentReferences(ListSegmentReferencesRequest listSegmentReferencesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSegmentReferencesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSegmentReferencesRequest> request = null;
+        Response<ListSegmentReferencesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSegmentReferencesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSegmentReferencesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Evidently");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSegmentReferences");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSegmentReferencesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListSegmentReferencesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of audience segments that you have created in your account in this Region.
+     * </p>
+     * 
+     * @param listSegmentsRequest
+     * @return Result of the ListSegments operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.ListSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSegmentsResult listSegments(ListSegmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSegments(request);
+    }
+
+    @SdkInternalApi
+    final ListSegmentsResult executeListSegments(ListSegmentsRequest listSegmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSegmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSegmentsRequest> request = null;
+        Response<ListSegmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSegmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSegmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Evidently");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSegments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSegmentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSegmentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1975,6 +2305,70 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Use this operation to test a rules pattern that you plan to use to create an audience segment. For more
+     * information about segments, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html"
+     * >CreateSegment</a>.
+     * </p>
+     * 
+     * @param testSegmentPatternRequest
+     * @return Result of the TestSegmentPattern operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonCloudWatchEvidently.TestSegmentPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TestSegmentPatternResult testSegmentPattern(TestSegmentPatternRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestSegmentPattern(request);
+    }
+
+    @SdkInternalApi
+    final TestSegmentPatternResult executeTestSegmentPattern(TestSegmentPatternRequest testSegmentPatternRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testSegmentPatternRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestSegmentPatternRequest> request = null;
+        Response<TestSegmentPatternResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestSegmentPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testSegmentPatternRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Evidently");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestSegmentPattern");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TestSegmentPatternResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestSegmentPatternResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes one or more tags from the specified resource.
      * </p>
      * 
@@ -2260,6 +2654,8 @@ public class AmazonCloudWatchEvidentlyClient extends AmazonWebServiceClient impl
      * @return Result of the UpdateProject operation returned by the service.
      * @throws ValidationException
      *         The value of a parameter in the request caused an error.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
      * @throws ServiceQuotaExceededException
      *         The request would cause a service quota to be exceeded.
      * @throws ResourceNotFoundException

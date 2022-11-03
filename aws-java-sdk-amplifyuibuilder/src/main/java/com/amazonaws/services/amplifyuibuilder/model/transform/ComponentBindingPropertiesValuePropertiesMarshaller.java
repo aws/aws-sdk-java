@@ -40,6 +40,8 @@ public class ComponentBindingPropertiesValuePropertiesMarshaller {
             .marshallLocationName("model").build();
     private static final MarshallingInfo<List> PREDICATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("predicates").build();
+    private static final MarshallingInfo<String> SLOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("slotName").build();
     private static final MarshallingInfo<String> USERATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAttribute").build();
 
@@ -65,6 +67,7 @@ public class ComponentBindingPropertiesValuePropertiesMarshaller {
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getModel(), MODEL_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getPredicates(), PREDICATES_BINDING);
+            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getSlotName(), SLOTNAME_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getUserAttribute(), USERATTRIBUTE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

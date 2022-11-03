@@ -278,7 +278,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be
      * using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp
      * Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
-     * image</a> in the AWS App Mesh User Guide.
+     * image</a> in the App Mesh User Guide.
      * </p>
      * 
      * @param createVirtualNodeRequest
@@ -323,7 +323,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be
      * using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp
      * Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
-     * image</a> in the AWS App Mesh User Guide.
+     * image</a> in the App Mesh User Guide.
      * </p>
      * 
      * @param createVirtualNodeRequest

@@ -69,6 +69,12 @@ public class SourceServer implements Serializable, Cloneable, StructuredPojo {
     private String sourceServerID;
     /**
      * <p>
+     * The staging area of the source server.
+     * </p>
+     */
+    private StagingArea stagingArea;
+    /**
+     * <p>
      * The tags associated with the Source Server.
      * </p>
      */
@@ -375,6 +381,46 @@ public class SourceServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The staging area of the source server.
+     * </p>
+     * 
+     * @param stagingArea
+     *        The staging area of the source server.
+     */
+
+    public void setStagingArea(StagingArea stagingArea) {
+        this.stagingArea = stagingArea;
+    }
+
+    /**
+     * <p>
+     * The staging area of the source server.
+     * </p>
+     * 
+     * @return The staging area of the source server.
+     */
+
+    public StagingArea getStagingArea() {
+        return this.stagingArea;
+    }
+
+    /**
+     * <p>
+     * The staging area of the source server.
+     * </p>
+     * 
+     * @param stagingArea
+     *        The staging area of the source server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceServer withStagingArea(StagingArea stagingArea) {
+        setStagingArea(stagingArea);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags associated with the Source Server.
      * </p>
      * 
@@ -467,6 +513,8 @@ public class SourceServer implements Serializable, Cloneable, StructuredPojo {
             sb.append("SourceProperties: ").append(getSourceProperties()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID()).append(",");
+        if (getStagingArea() != null)
+            sb.append("StagingArea: ").append(getStagingArea()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append("***Sensitive Data Redacted***");
         sb.append("}");
@@ -511,6 +559,10 @@ public class SourceServer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSourceServerID() != null && other.getSourceServerID().equals(this.getSourceServerID()) == false)
             return false;
+        if (other.getStagingArea() == null ^ this.getStagingArea() == null)
+            return false;
+        if (other.getStagingArea() != null && other.getStagingArea().equals(this.getStagingArea()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -530,6 +582,7 @@ public class SourceServer implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRecoveryInstanceId() == null) ? 0 : getRecoveryInstanceId().hashCode());
         hashCode = prime * hashCode + ((getSourceProperties() == null) ? 0 : getSourceProperties().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
+        hashCode = prime * hashCode + ((getStagingArea() == null) ? 0 : getStagingArea().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

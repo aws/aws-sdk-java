@@ -48,13 +48,13 @@ public class PositionJsonUnmarshaller implements Unmarshaller<Position, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("column", targetDepth)) {
-                    context.nextToken();
-                    position.setColumn(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("line", targetDepth)) {
                     context.nextToken();
                     position.setLine(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("column", targetDepth)) {
+                    context.nextToken();
+                    position.setColumn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("offset", targetDepth)) {
                     context.nextToken();

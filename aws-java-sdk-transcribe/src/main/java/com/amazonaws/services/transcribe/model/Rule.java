@@ -19,7 +19,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A condition in the call between the customer and the agent that you want to filter for.
+ * A rule is a set of criteria you can specify to flag an attribute in your Call Analytics output. Rules define a Call
+ * Analytics category.
+ * </p>
+ * <p>
+ * Rules can include these parameters: , , , and . To learn more about these parameters, refer to <a href=
+ * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
+ * >Rule criteria</a>.
+ * </p>
+ * <p>
+ * To learn more about Call Analytics categories, see <a
+ * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+ * categories</a>.
+ * </p>
+ * <p>
+ * To learn more about Call Analytics, see <a
+ * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio with Call
+ * Analytics</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Rule" target="_top">AWS API
@@ -30,37 +46,42 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition for a time period when neither the customer nor the agent was talking.
+     * Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      */
     private NonTalkTimeFilter nonTalkTimeFilter;
     /**
      * <p>
-     * A condition for a time period when either the customer or agent was interrupting the other person.
+     * Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      */
     private InterruptionFilter interruptionFilter;
     /**
      * <p>
-     * A condition that catches particular words or phrases based on a exact match. For example, if you set the phrase
-     * "I want to speak to the manager", only that exact phrase will be returned.
+     * Flag the presence or absence of specific words or phrases in your Call Analytics transcription output. Refer to
+     * for more detail.
      * </p>
      */
     private TranscriptFilter transcriptFilter;
     /**
      * <p>
-     * A condition that is applied to a particular customer sentiment.
+     * Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to for
+     * more detail.
      * </p>
      */
     private SentimentFilter sentimentFilter;
 
     /**
      * <p>
-     * A condition for a time period when neither the customer nor the agent was talking.
+     * Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      * 
      * @param nonTalkTimeFilter
-     *        A condition for a time period when neither the customer nor the agent was talking.
+     *        Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to
+     *        for more detail.
      */
 
     public void setNonTalkTimeFilter(NonTalkTimeFilter nonTalkTimeFilter) {
@@ -69,10 +90,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition for a time period when neither the customer nor the agent was talking.
+     * Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      * 
-     * @return A condition for a time period when neither the customer nor the agent was talking.
+     * @return Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to
+     *         for more detail.
      */
 
     public NonTalkTimeFilter getNonTalkTimeFilter() {
@@ -81,11 +104,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition for a time period when neither the customer nor the agent was talking.
+     * Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      * 
      * @param nonTalkTimeFilter
-     *        A condition for a time period when neither the customer nor the agent was talking.
+     *        Flag the presence or absence of periods of silence in your Call Analytics transcription output. Refer to
+     *        for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +121,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition for a time period when either the customer or agent was interrupting the other person.
+     * Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      * 
      * @param interruptionFilter
-     *        A condition for a time period when either the customer or agent was interrupting the other person.
+     *        Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for
+     *        more detail.
      */
 
     public void setInterruptionFilter(InterruptionFilter interruptionFilter) {
@@ -109,10 +136,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition for a time period when either the customer or agent was interrupting the other person.
+     * Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      * 
-     * @return A condition for a time period when either the customer or agent was interrupting the other person.
+     * @return Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for
+     *         more detail.
      */
 
     public InterruptionFilter getInterruptionFilter() {
@@ -121,11 +150,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition for a time period when either the customer or agent was interrupting the other person.
+     * Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for more
+     * detail.
      * </p>
      * 
      * @param interruptionFilter
-     *        A condition for a time period when either the customer or agent was interrupting the other person.
+     *        Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for
+     *        more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +167,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that catches particular words or phrases based on a exact match. For example, if you set the phrase
-     * "I want to speak to the manager", only that exact phrase will be returned.
+     * Flag the presence or absence of specific words or phrases in your Call Analytics transcription output. Refer to
+     * for more detail.
      * </p>
      * 
      * @param transcriptFilter
-     *        A condition that catches particular words or phrases based on a exact match. For example, if you set the
-     *        phrase "I want to speak to the manager", only that exact phrase will be returned.
+     *        Flag the presence or absence of specific words or phrases in your Call Analytics transcription output.
+     *        Refer to for more detail.
      */
 
     public void setTranscriptFilter(TranscriptFilter transcriptFilter) {
@@ -151,12 +182,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that catches particular words or phrases based on a exact match. For example, if you set the phrase
-     * "I want to speak to the manager", only that exact phrase will be returned.
+     * Flag the presence or absence of specific words or phrases in your Call Analytics transcription output. Refer to
+     * for more detail.
      * </p>
      * 
-     * @return A condition that catches particular words or phrases based on a exact match. For example, if you set the
-     *         phrase "I want to speak to the manager", only that exact phrase will be returned.
+     * @return Flag the presence or absence of specific words or phrases in your Call Analytics transcription output.
+     *         Refer to for more detail.
      */
 
     public TranscriptFilter getTranscriptFilter() {
@@ -165,13 +196,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that catches particular words or phrases based on a exact match. For example, if you set the phrase
-     * "I want to speak to the manager", only that exact phrase will be returned.
+     * Flag the presence or absence of specific words or phrases in your Call Analytics transcription output. Refer to
+     * for more detail.
      * </p>
      * 
      * @param transcriptFilter
-     *        A condition that catches particular words or phrases based on a exact match. For example, if you set the
-     *        phrase "I want to speak to the manager", only that exact phrase will be returned.
+     *        Flag the presence or absence of specific words or phrases in your Call Analytics transcription output.
+     *        Refer to for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +213,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that is applied to a particular customer sentiment.
+     * Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to for
+     * more detail.
      * </p>
      * 
      * @param sentimentFilter
-     *        A condition that is applied to a particular customer sentiment.
+     *        Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to
+     *        for more detail.
      */
 
     public void setSentimentFilter(SentimentFilter sentimentFilter) {
@@ -195,10 +228,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that is applied to a particular customer sentiment.
+     * Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to for
+     * more detail.
      * </p>
      * 
-     * @return A condition that is applied to a particular customer sentiment.
+     * @return Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to
+     *         for more detail.
      */
 
     public SentimentFilter getSentimentFilter() {
@@ -207,11 +242,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that is applied to a particular customer sentiment.
+     * Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to for
+     * more detail.
      * </p>
      * 
      * @param sentimentFilter
-     *        A condition that is applied to a particular customer sentiment.
+     *        Flag the presence or absence of specific sentiments in your Call Analytics transcription output. Refer to
+     *        for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

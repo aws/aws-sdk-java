@@ -30,10 +30,10 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The value that you want to search the filter values for.
      * </p>
      * <p>
-     * If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost
-     * Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     * <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match
-     * the <code>SearchString</code> pattern.
+     * If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category
+     * names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>,
+     * <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.
      * </p>
      */
     private String searchString;
@@ -45,10 +45,10 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
     private Expression filter;
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you sort the data by.
      * </p>
      * <p>
-     * The key represents cost and usage metrics. The following values are supported:
+     * The key represents the cost and usage metrics. The following values are supported:
      * </p>
      * <ul>
      * <li>
@@ -88,31 +88,33 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key
+     * values aren't supported.
      * </p>
      */
     private java.util.List<SortDefinition> sortBy;
     /**
      * <p>
-     * This field is only used when <code>SortBy</code> is provided in the request.
+     * This field is only used when the <code>SortBy</code> value is provided in the request.
      * </p>
      * <p>
-     * The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified
-     * with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.
+     * The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with
+     * the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.
      * </p>
      * <p>
-     * For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
-     * prior call in your next request.
+     * previous call in your next request.
      * </p>
      */
     private String nextPageToken;
@@ -122,19 +124,19 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The value that you want to search the filter values for.
      * </p>
      * <p>
-     * If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost
-     * Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     * <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match
-     * the <code>SearchString</code> pattern.
+     * If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category
+     * names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>,
+     * <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.
      * </p>
      * 
      * @param searchString
      *        The value that you want to search the filter values for.</p>
      *        <p>
-     *        If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter
-     *        Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     *        <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that
-     *        match the <code>SearchString</code> pattern.
+     *        If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost
+     *        Category names that match the <code>SearchString</code> pattern. If you specify a
+     *        <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match
+     *        the <code>SearchString</code> pattern.
      */
 
     public void setSearchString(String searchString) {
@@ -146,17 +148,17 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The value that you want to search the filter values for.
      * </p>
      * <p>
-     * If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost
-     * Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     * <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match
-     * the <code>SearchString</code> pattern.
+     * If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category
+     * names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>,
+     * <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.
      * </p>
      * 
      * @return The value that you want to search the filter values for.</p>
      *         <p>
-     *         If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter
-     *         Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     *         <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that
+     *         If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost
+     *         Category names that match the <code>SearchString</code> pattern. If you specify a
+     *         <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that
      *         match the <code>SearchString</code> pattern.
      */
 
@@ -169,19 +171,19 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The value that you want to search the filter values for.
      * </p>
      * <p>
-     * If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost
-     * Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     * <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match
-     * the <code>SearchString</code> pattern.
+     * If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category
+     * names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>,
+     * <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.
      * </p>
      * 
      * @param searchString
      *        The value that you want to search the filter values for.</p>
      *        <p>
-     *        If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter
-     *        Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a
-     *        <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that
-     *        match the <code>SearchString</code> pattern.
+     *        If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost
+     *        Category names that match the <code>SearchString</code> pattern. If you specify a
+     *        <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match
+     *        the <code>SearchString</code> pattern.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,10 +272,10 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you sort the data by.
      * </p>
      * <p>
-     * The key represents cost and usage metrics. The following values are supported:
+     * The key represents the cost and usage metrics. The following values are supported:
      * </p>
      * <ul>
      * <li>
@@ -313,15 +315,17 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key
+     * values aren't supported.
      * </p>
      * 
-     * @return The value by which you want to sort the data.</p>
+     * @return The value that you sort the data by.</p>
      *         <p>
-     *         The key represents cost and usage metrics. The following values are supported:
+     *         The key represents the cost and usage metrics. The following values are supported:
      *         </p>
      *         <ul>
      *         <li>
@@ -361,11 +365,12 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         </ul>
      *         <p>
-     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *         The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     *         <code>DESCENDING</code>.
      *         </p>
      *         <p>
-     *         When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
-     *         supported.
+     *         When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code>
+     *         key values aren't supported.
      */
 
     public java.util.List<SortDefinition> getSortBy() {
@@ -374,10 +379,10 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you sort the data by.
      * </p>
      * <p>
-     * The key represents cost and usage metrics. The following values are supported:
+     * The key represents the cost and usage metrics. The following values are supported:
      * </p>
      * <ul>
      * <li>
@@ -417,16 +422,18 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key
+     * values aren't supported.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you sort the data by.</p>
      *        <p>
-     *        The key represents cost and usage metrics. The following values are supported:
+     *        The key represents the cost and usage metrics. The following values are supported:
      *        </p>
      *        <ul>
      *        <li>
@@ -466,11 +473,12 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     *        <code>DESCENDING</code>.
      *        </p>
      *        <p>
-     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
-     *        supported.
+     *        When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code>
+     *        key values aren't supported.
      */
 
     public void setSortBy(java.util.Collection<SortDefinition> sortBy) {
@@ -484,10 +492,10 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you sort the data by.
      * </p>
      * <p>
-     * The key represents cost and usage metrics. The following values are supported:
+     * The key represents the cost and usage metrics. The following values are supported:
      * </p>
      * <ul>
      * <li>
@@ -527,10 +535,12 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key
+     * values aren't supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -539,9 +549,9 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you sort the data by.</p>
      *        <p>
-     *        The key represents cost and usage metrics. The following values are supported:
+     *        The key represents the cost and usage metrics. The following values are supported:
      *        </p>
      *        <ul>
      *        <li>
@@ -581,11 +591,12 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     *        <code>DESCENDING</code>.
      *        </p>
      *        <p>
-     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
-     *        supported.
+     *        When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code>
+     *        key values aren't supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,10 +612,10 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The value by which you want to sort the data.
+     * The value that you sort the data by.
      * </p>
      * <p>
-     * The key represents cost and usage metrics. The following values are supported:
+     * The key represents the cost and usage metrics. The following values are supported:
      * </p>
      * <ul>
      * <li>
@@ -644,16 +655,18 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.
      * </p>
      * <p>
-     * When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key
+     * values aren't supported.
      * </p>
      * 
      * @param sortBy
-     *        The value by which you want to sort the data.</p>
+     *        The value that you sort the data by.</p>
      *        <p>
-     *        The key represents cost and usage metrics. The following values are supported:
+     *        The key represents the cost and usage metrics. The following values are supported:
      *        </p>
      *        <ul>
      *        <li>
@@ -693,11 +706,12 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     *        <code>DESCENDING</code>.
      *        </p>
      *        <p>
-     *        When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
-     *        supported.
+     *        When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code>
+     *        key values aren't supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,25 +722,25 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This field is only used when <code>SortBy</code> is provided in the request.
+     * This field is only used when the <code>SortBy</code> value is provided in the request.
      * </p>
      * <p>
-     * The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified
-     * with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.
+     * The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with
+     * the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.
      * </p>
      * <p>
-     * For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      * </p>
      * 
      * @param maxResults
-     *        This field is only used when <code>SortBy</code> is provided in the request.</p>
+     *        This field is only used when the <code>SortBy</code> value is provided in the request.</p>
      *        <p>
-     *        The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not
-     *        specified with <code>SortBy</code>, the request will return 1000 results as the default value for this
-     *        parameter.
+     *        The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't
+     *        specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for
+     *        this parameter.
      *        </p>
      *        <p>
-     *        For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     *        For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -735,24 +749,24 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This field is only used when <code>SortBy</code> is provided in the request.
+     * This field is only used when the <code>SortBy</code> value is provided in the request.
      * </p>
      * <p>
-     * The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified
-     * with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.
+     * The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with
+     * the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.
      * </p>
      * <p>
-     * For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      * </p>
      * 
-     * @return This field is only used when <code>SortBy</code> is provided in the request.</p>
+     * @return This field is only used when the <code>SortBy</code> value is provided in the request.</p>
      *         <p>
-     *         The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not
-     *         specified with <code>SortBy</code>, the request will return 1000 results as the default value for this
-     *         parameter.
+     *         The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't
+     *         specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for
+     *         this parameter.
      *         </p>
      *         <p>
-     *         For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     *         For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      */
 
     public Integer getMaxResults() {
@@ -761,25 +775,25 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This field is only used when <code>SortBy</code> is provided in the request.
+     * This field is only used when the <code>SortBy</code> value is provided in the request.
      * </p>
      * <p>
-     * The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified
-     * with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.
+     * The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with
+     * the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.
      * </p>
      * <p>
-     * For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     * For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      * </p>
      * 
      * @param maxResults
-     *        This field is only used when <code>SortBy</code> is provided in the request.</p>
+     *        This field is only used when the <code>SortBy</code> value is provided in the request.</p>
      *        <p>
-     *        The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not
-     *        specified with <code>SortBy</code>, the request will return 1000 results as the default value for this
-     *        parameter.
+     *        The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't
+     *        specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for
+     *        this parameter.
      *        </p>
      *        <p>
-     *        For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+     *        For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -790,15 +804,15 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
-     * prior call in your next request.
+     * previous call in your next request.
      * </p>
      * 
      * @param nextPageToken
-     *        If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *        If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services
      *        returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the
-     *        NextPageToken from the prior call in your next request.
+     *        NextPageToken from the previous call in your next request.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -807,14 +821,14 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
-     * prior call in your next request.
+     * previous call in your next request.
      * </p>
      * 
-     * @return If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     * @return If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services
      *         returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the
-     *         NextPageToken from the prior call in your next request.
+     *         NextPageToken from the previous call in your next request.
      */
 
     public String getNextPageToken() {
@@ -823,15 +837,15 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a
      * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
-     * prior call in your next request.
+     * previous call in your next request.
      * </p>
      * 
      * @param nextPageToken
-     *        If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *        If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services
      *        returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the
-     *        NextPageToken from the prior call in your next request.
+     *        NextPageToken from the previous call in your next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

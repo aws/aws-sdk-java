@@ -30,8 +30,8 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the
-     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     * <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
@@ -156,16 +156,23 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * </p>
      */
     private LustreLogConfiguration logConfiguration;
+    /**
+     * <p>
+     * The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     * restricts root-level access from clients that try to access your file system as a root user.
+     * </p>
+     */
+    private LustreRootSquashConfiguration rootSquashConfiguration;
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the
-     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     * <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is
-     *        the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     *        <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -174,12 +181,12 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the
-     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     * <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
-     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d
-     *         is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     *         <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -188,13 +195,13 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is the
-     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     * <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, d is
-     *        the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here,
+     *        <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1147,6 +1154,52 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     * restricts root-level access from clients that try to access your file system as a root user.
+     * </p>
+     * 
+     * @param rootSquashConfiguration
+     *        The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     *        restricts root-level access from clients that try to access your file system as a root user.
+     */
+
+    public void setRootSquashConfiguration(LustreRootSquashConfiguration rootSquashConfiguration) {
+        this.rootSquashConfiguration = rootSquashConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     * restricts root-level access from clients that try to access your file system as a root user.
+     * </p>
+     * 
+     * @return The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     *         restricts root-level access from clients that try to access your file system as a root user.
+     */
+
+    public LustreRootSquashConfiguration getRootSquashConfiguration() {
+        return this.rootSquashConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     * restricts root-level access from clients that try to access your file system as a root user.
+     * </p>
+     * 
+     * @param rootSquashConfiguration
+     *        The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash
+     *        restricts root-level access from clients that try to access your file system as a root user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withRootSquashConfiguration(LustreRootSquashConfiguration rootSquashConfiguration) {
+        setRootSquashConfiguration(rootSquashConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1179,7 +1232,9 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         if (getDataCompressionType() != null)
             sb.append("DataCompressionType: ").append(getDataCompressionType()).append(",");
         if (getLogConfiguration() != null)
-            sb.append("LogConfiguration: ").append(getLogConfiguration());
+            sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
+        if (getRootSquashConfiguration() != null)
+            sb.append("RootSquashConfiguration: ").append(getRootSquashConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1239,6 +1294,10 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getLogConfiguration() != null && other.getLogConfiguration().equals(this.getLogConfiguration()) == false)
             return false;
+        if (other.getRootSquashConfiguration() == null ^ this.getRootSquashConfiguration() == null)
+            return false;
+        if (other.getRootSquashConfiguration() != null && other.getRootSquashConfiguration().equals(this.getRootSquashConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1258,6 +1317,7 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getDriveCacheType() == null) ? 0 : getDriveCacheType().hashCode());
         hashCode = prime * hashCode + ((getDataCompressionType() == null) ? 0 : getDataCompressionType().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRootSquashConfiguration() == null) ? 0 : getRootSquashConfiguration().hashCode());
         return hashCode;
     }
 

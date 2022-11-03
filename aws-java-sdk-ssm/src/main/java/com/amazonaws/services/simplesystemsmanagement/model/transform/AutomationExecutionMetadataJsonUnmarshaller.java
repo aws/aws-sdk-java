@@ -148,6 +148,17 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     automationExecutionMetadata.setAutomationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(AlarmStateInformationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("AutomationSubtype", targetDepth)) {
                     context.nextToken();
                     automationExecutionMetadata.setAutomationSubtype(context.getUnmarshaller(String.class).unmarshall(context));

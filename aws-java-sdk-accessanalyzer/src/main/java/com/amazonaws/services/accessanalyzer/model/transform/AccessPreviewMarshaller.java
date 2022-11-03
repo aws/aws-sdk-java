@@ -29,14 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AccessPreviewMarshaller {
 
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> ANALYZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerArn").build();
     private static final MarshallingInfo<Map> CONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("configurations").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<StructuredPojo> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,10 +58,10 @@ public class AccessPreviewMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(accessPreview.getId(), ID_BINDING);
             protocolMarshaller.marshall(accessPreview.getAnalyzerArn(), ANALYZERARN_BINDING);
             protocolMarshaller.marshall(accessPreview.getConfigurations(), CONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(accessPreview.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(accessPreview.getId(), ID_BINDING);
             protocolMarshaller.marshall(accessPreview.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(accessPreview.getStatusReason(), STATUSREASON_BINDING);
         } catch (Exception e) {

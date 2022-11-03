@@ -59,7 +59,7 @@ public class AwsEc2VpnConnectionVgwTelemetryDetails implements Serializable, Clo
     private String outsideIpAddress;
     /**
      * <p>
-     * The status of the VPN tunnel.
+     * The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      * </p>
      */
     private String status;
@@ -259,11 +259,11 @@ public class AwsEc2VpnConnectionVgwTelemetryDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The status of the VPN tunnel.
+     * The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      * </p>
      * 
      * @param status
-     *        The status of the VPN tunnel.
+     *        The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      */
 
     public void setStatus(String status) {
@@ -272,10 +272,10 @@ public class AwsEc2VpnConnectionVgwTelemetryDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The status of the VPN tunnel.
+     * The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      * </p>
      * 
-     * @return The status of the VPN tunnel.
+     * @return The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      */
 
     public String getStatus() {
@@ -284,11 +284,11 @@ public class AwsEc2VpnConnectionVgwTelemetryDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The status of the VPN tunnel.
+     * The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      * </p>
      * 
      * @param status
-     *        The status of the VPN tunnel.
+     *        The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,6 +96,14 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
                     context.nextToken();
                     place.setTimeZone(TimeZoneJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UnitNumber", targetDepth)) {
+                    context.nextToken();
+                    place.setUnitNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UnitType", targetDepth)) {
+                    context.nextToken();
+                    place.setUnitType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

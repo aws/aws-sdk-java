@@ -116,7 +116,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Secret> secretOptions;
@@ -549,12 +549,12 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The secrets to pass to the log configuration. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *         >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         >Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public java.util.List<Secret> getSecretOptions() {
@@ -568,13 +568,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setSecretOptions(java.util.Collection<Secret> secretOptions) {
@@ -590,7 +590,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -601,7 +601,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,13 +619,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        >Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

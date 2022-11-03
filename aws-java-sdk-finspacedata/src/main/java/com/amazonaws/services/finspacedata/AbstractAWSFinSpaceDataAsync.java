@@ -28,6 +28,19 @@ public class AbstractAWSFinSpaceDataAsync extends AbstractAWSFinSpaceData implem
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request) {
+
+        return associateUserToPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateUserToPermissionGroupRequest, AssociateUserToPermissionGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateChangesetResult> createChangesetAsync(CreateChangesetRequest request) {
 
         return createChangesetAsync(request, null);
@@ -132,6 +145,21 @@ public class AbstractAWSFinSpaceDataAsync extends AbstractAWSFinSpaceData implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
+            DisassociateUserFromPermissionGroupRequest request) {
+
+        return disassociateUserFromPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
+            DisassociateUserFromPermissionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateUserFromPermissionGroupRequest, DisassociateUserFromPermissionGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest request) {
 
         return enableUserAsync(request, null);
@@ -179,6 +207,34 @@ public class AbstractAWSFinSpaceDataAsync extends AbstractAWSFinSpaceData implem
     @Override
     public java.util.concurrent.Future<GetDatasetResult> getDatasetAsync(GetDatasetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDatasetRequest, GetDatasetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
+            GetExternalDataViewAccessDetailsRequest request) {
+
+        return getExternalDataViewAccessDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
+            GetExternalDataViewAccessDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExternalDataViewAccessDetailsRequest, GetExternalDataViewAccessDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(GetPermissionGroupRequest request) {
+
+        return getPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(GetPermissionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionGroupRequest, GetPermissionGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -277,6 +333,19 @@ public class AbstractAWSFinSpaceDataAsync extends AbstractAWSFinSpaceData implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request) {
+
+        return listPermissionGroupsByUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionGroupsByUserRequest, ListPermissionGroupsByUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request) {
 
         return listUsersAsync(request, null);
@@ -285,6 +354,19 @@ public class AbstractAWSFinSpaceDataAsync extends AbstractAWSFinSpaceData implem
     @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request) {
+
+        return listUsersByPermissionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListUsersByPermissionGroupRequest, ListUsersByPermissionGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

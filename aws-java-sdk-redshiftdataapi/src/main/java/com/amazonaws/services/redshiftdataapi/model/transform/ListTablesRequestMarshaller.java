@@ -45,6 +45,8 @@ public class ListTablesRequestMarshaller {
             .marshallLocationName("SecretArn").build();
     private static final MarshallingInfo<String> TABLEPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TablePattern").build();
+    private static final MarshallingInfo<String> WORKGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkgroupName").build();
 
     private static final ListTablesRequestMarshaller instance = new ListTablesRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class ListTablesRequestMarshaller {
             protocolMarshaller.marshall(listTablesRequest.getSchemaPattern(), SCHEMAPATTERN_BINDING);
             protocolMarshaller.marshall(listTablesRequest.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(listTablesRequest.getTablePattern(), TABLEPATTERN_BINDING);
+            protocolMarshaller.marshall(listTablesRequest.getWorkgroupName(), WORKGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

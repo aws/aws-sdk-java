@@ -170,6 +170,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("CopyTagsToSnapshot", targetDepth)) {
+                    dBInstance.setCopyTagsToSnapshot(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PromotionTier", targetDepth)) {
                     dBInstance.setPromotionTier(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The version of a service template detail data.
+ * Detailed data of an Proton service template version resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServiceTemplateVersion" target="_top">AWS API
@@ -94,6 +94,18 @@ public class ServiceTemplateVersion implements Serializable, Cloneable, Structur
      * </p>
      */
     private String statusMessage;
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     */
+    private java.util.List<String> supportedComponentSources;
     /**
      * <p>
      * The name of the version of a service template.
@@ -592,6 +604,159 @@ public class ServiceTemplateVersion implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @return An array of supported component sources. Components with supported sources can be attached to service
+     *         instances based on this service template version.</p>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton User Guide</i>.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public java.util.List<String> getSupportedComponentSources() {
+        return supportedComponentSources;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public void setSupportedComponentSources(java.util.Collection<String> supportedComponentSources) {
+        if (supportedComponentSources == null) {
+            this.supportedComponentSources = null;
+            return;
+        }
+
+        this.supportedComponentSources = new java.util.ArrayList<String>(supportedComponentSources);
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedComponentSources(java.util.Collection)} or
+     * {@link #withSupportedComponentSources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public ServiceTemplateVersion withSupportedComponentSources(String... supportedComponentSources) {
+        if (this.supportedComponentSources == null) {
+            setSupportedComponentSources(new java.util.ArrayList<String>(supportedComponentSources.length));
+        }
+        for (String ele : supportedComponentSources) {
+            this.supportedComponentSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public ServiceTemplateVersion withSupportedComponentSources(java.util.Collection<String> supportedComponentSources) {
+        setSupportedComponentSources(supportedComponentSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of supported component sources. Components with supported sources can be attached to service instances
+     * based on this service template version.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param supportedComponentSources
+     *        An array of supported component sources. Components with supported sources can be attached to service
+     *        instances based on this service template version.</p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the
+     *        <i>Proton User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceTemplateSupportedComponentSourceType
+     */
+
+    public ServiceTemplateVersion withSupportedComponentSources(ServiceTemplateSupportedComponentSourceType... supportedComponentSources) {
+        java.util.ArrayList<String> supportedComponentSourcesCopy = new java.util.ArrayList<String>(supportedComponentSources.length);
+        for (ServiceTemplateSupportedComponentSourceType value : supportedComponentSources) {
+            supportedComponentSourcesCopy.add(value.toString());
+        }
+        if (getSupportedComponentSources() == null) {
+            setSupportedComponentSources(supportedComponentSourcesCopy);
+        } else {
+            getSupportedComponentSources().addAll(supportedComponentSourcesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the version of a service template.
      * </p>
      * 
@@ -664,6 +829,8 @@ public class ServiceTemplateVersion implements Serializable, Cloneable, Structur
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSupportedComponentSources() != null)
+            sb.append("SupportedComponentSources: ").append(getSupportedComponentSources()).append(",");
         if (getTemplateName() != null)
             sb.append("TemplateName: ").append(getTemplateName());
         sb.append("}");
@@ -725,6 +892,10 @@ public class ServiceTemplateVersion implements Serializable, Cloneable, Structur
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getSupportedComponentSources() == null ^ this.getSupportedComponentSources() == null)
+            return false;
+        if (other.getSupportedComponentSources() != null && other.getSupportedComponentSources().equals(this.getSupportedComponentSources()) == false)
+            return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
         if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
@@ -748,6 +919,7 @@ public class ServiceTemplateVersion implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getSupportedComponentSources() == null) ? 0 : getSupportedComponentSources().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         return hashCode;
     }

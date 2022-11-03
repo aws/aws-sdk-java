@@ -66,6 +66,10 @@ public class InstanceGroupModifyConfigJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     instanceGroupModifyConfig.setShrinkPolicy(ShrinkPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ReconfigurationType", targetDepth)) {
+                    context.nextToken();
+                    instanceGroupModifyConfig.setReconfigurationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
                     instanceGroupModifyConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())

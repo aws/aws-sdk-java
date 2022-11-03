@@ -45,7 +45,7 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * <p>
      * The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      * interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data.
-     * Client subnets can't be in Availability Zone us-east-1e.
+     * Client subnets can't occupy the Availability Zone with ID use use1-az3.
      * </p>
      */
     private java.util.List<String> clientSubnets;
@@ -196,13 +196,13 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * <p>
      * The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      * interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data.
-     * Client subnets can't be in Availability Zone us-east-1e.
+     * Client subnets can't occupy the Availability Zone with ID use use1-az3.
      * </p>
      * 
      * @return <p>
      *         The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *         interfaces inside these subnets. Client applications use elastic network interfaces to produce and
-     *         consume data. Client subnets can't be in Availability Zone us-east-1e.
+     *         consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.
      *         </p>
      */
 
@@ -214,14 +214,14 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * <p>
      * The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      * interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data.
-     * Client subnets can't be in Availability Zone us-east-1e.
+     * Client subnets can't occupy the Availability Zone with ID use use1-az3.
      * </p>
      * 
      * @param clientSubnets
      *        <p>
      *        The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *        interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume
-     *        data. Client subnets can't be in Availability Zone us-east-1e.
+     *        data. Client subnets can't occupy the Availability Zone with ID use use1-az3.
      *        </p>
      */
 
@@ -238,7 +238,7 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * <p>
      * The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      * interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data.
-     * Client subnets can't be in Availability Zone us-east-1e.
+     * Client subnets can't occupy the Availability Zone with ID use use1-az3.
      * </p>
      * 
      * <p>
@@ -251,7 +251,7 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      *        <p>
      *        The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *        interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume
-     *        data. Client subnets can't be in Availability Zone us-east-1e.
+     *        data. Client subnets can't occupy the Availability Zone with ID use use1-az3.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -270,14 +270,14 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * <p>
      * The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      * interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data.
-     * Client subnets can't be in Availability Zone us-east-1e.
+     * Client subnets can't occupy the Availability Zone with ID use use1-az3.
      * </p>
      * 
      * @param clientSubnets
      *        <p>
      *        The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *        interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume
-     *        data. Client subnets can't be in Availability Zone us-east-1e.
+     *        data. Client subnets can't occupy the Availability Zone with ID use use1-az3.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

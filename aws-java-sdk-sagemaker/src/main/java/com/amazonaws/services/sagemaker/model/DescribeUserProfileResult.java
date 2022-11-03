@@ -73,13 +73,13 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
     private String failureReason;
     /**
      * <p>
-     * The SSO user identifier.
+     * The IAM Identity Center user identifier.
      * </p>
      */
     private String singleSignOnUserIdentifier;
     /**
      * <p>
-     * The SSO user value.
+     * The IAM Identity Center user value.
      * </p>
      */
     private String singleSignOnUserValue;
@@ -431,11 +431,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SSO user identifier.
+     * The IAM Identity Center user identifier.
      * </p>
      * 
      * @param singleSignOnUserIdentifier
-     *        The SSO user identifier.
+     *        The IAM Identity Center user identifier.
      */
 
     public void setSingleSignOnUserIdentifier(String singleSignOnUserIdentifier) {
@@ -444,10 +444,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SSO user identifier.
+     * The IAM Identity Center user identifier.
      * </p>
      * 
-     * @return The SSO user identifier.
+     * @return The IAM Identity Center user identifier.
      */
 
     public String getSingleSignOnUserIdentifier() {
@@ -456,11 +456,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SSO user identifier.
+     * The IAM Identity Center user identifier.
      * </p>
      * 
      * @param singleSignOnUserIdentifier
-     *        The SSO user identifier.
+     *        The IAM Identity Center user identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,11 +471,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SSO user value.
+     * The IAM Identity Center user value.
      * </p>
      * 
      * @param singleSignOnUserValue
-     *        The SSO user value.
+     *        The IAM Identity Center user value.
      */
 
     public void setSingleSignOnUserValue(String singleSignOnUserValue) {
@@ -484,10 +484,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SSO user value.
+     * The IAM Identity Center user value.
      * </p>
      * 
-     * @return The SSO user value.
+     * @return The IAM Identity Center user value.
      */
 
     public String getSingleSignOnUserValue() {
@@ -496,11 +496,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SSO user value.
+     * The IAM Identity Center user value.
      * </p>
      * 
      * @param singleSignOnUserValue
-     *        The SSO user value.
+     *        The IAM Identity Center user value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

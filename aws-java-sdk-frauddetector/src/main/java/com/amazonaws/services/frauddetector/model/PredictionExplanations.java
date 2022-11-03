@@ -35,6 +35,18 @@ public class PredictionExplanations implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.List<VariableImpactExplanation> variableImpactExplanations;
+    /**
+     * <p>
+     * The details of the aggregated variables impact on the prediction score.
+     * </p>
+     * <p>
+     * Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     * calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might
+     * calculate the number of times an user has logged in using the same IP address. In this case, event variables used
+     * to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * </p>
+     */
+    private java.util.List<AggregatedVariablesImpactExplanation> aggregatedVariablesImpactExplanations;
 
     /**
      * <p>
@@ -107,6 +119,123 @@ public class PredictionExplanations implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The details of the aggregated variables impact on the prediction score.
+     * </p>
+     * <p>
+     * Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     * calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might
+     * calculate the number of times an user has logged in using the same IP address. In this case, event variables used
+     * to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * </p>
+     * 
+     * @return The details of the aggregated variables impact on the prediction score. </p>
+     *         <p>
+     *         Account Takeover Insights (ATI) model uses event variables from the login data you provide to
+     *         continuously calculate a set of variables (aggregated variables) based on historical events. For example,
+     *         your ATI model might calculate the number of times an user has logged in using the same IP address. In
+     *         this case, event variables used to derive the aggregated variables are <code>IP address</code> and
+     *         <code>user</code>.
+     */
+
+    public java.util.List<AggregatedVariablesImpactExplanation> getAggregatedVariablesImpactExplanations() {
+        return aggregatedVariablesImpactExplanations;
+    }
+
+    /**
+     * <p>
+     * The details of the aggregated variables impact on the prediction score.
+     * </p>
+     * <p>
+     * Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     * calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might
+     * calculate the number of times an user has logged in using the same IP address. In this case, event variables used
+     * to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * </p>
+     * 
+     * @param aggregatedVariablesImpactExplanations
+     *        The details of the aggregated variables impact on the prediction score. </p>
+     *        <p>
+     *        Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     *        calculate a set of variables (aggregated variables) based on historical events. For example, your ATI
+     *        model might calculate the number of times an user has logged in using the same IP address. In this case,
+     *        event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     */
+
+    public void setAggregatedVariablesImpactExplanations(java.util.Collection<AggregatedVariablesImpactExplanation> aggregatedVariablesImpactExplanations) {
+        if (aggregatedVariablesImpactExplanations == null) {
+            this.aggregatedVariablesImpactExplanations = null;
+            return;
+        }
+
+        this.aggregatedVariablesImpactExplanations = new java.util.ArrayList<AggregatedVariablesImpactExplanation>(aggregatedVariablesImpactExplanations);
+    }
+
+    /**
+     * <p>
+     * The details of the aggregated variables impact on the prediction score.
+     * </p>
+     * <p>
+     * Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     * calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might
+     * calculate the number of times an user has logged in using the same IP address. In this case, event variables used
+     * to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAggregatedVariablesImpactExplanations(java.util.Collection)} or
+     * {@link #withAggregatedVariablesImpactExplanations(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param aggregatedVariablesImpactExplanations
+     *        The details of the aggregated variables impact on the prediction score. </p>
+     *        <p>
+     *        Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     *        calculate a set of variables (aggregated variables) based on historical events. For example, your ATI
+     *        model might calculate the number of times an user has logged in using the same IP address. In this case,
+     *        event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PredictionExplanations withAggregatedVariablesImpactExplanations(AggregatedVariablesImpactExplanation... aggregatedVariablesImpactExplanations) {
+        if (this.aggregatedVariablesImpactExplanations == null) {
+            setAggregatedVariablesImpactExplanations(new java.util.ArrayList<AggregatedVariablesImpactExplanation>(aggregatedVariablesImpactExplanations.length));
+        }
+        for (AggregatedVariablesImpactExplanation ele : aggregatedVariablesImpactExplanations) {
+            this.aggregatedVariablesImpactExplanations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the aggregated variables impact on the prediction score.
+     * </p>
+     * <p>
+     * Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     * calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might
+     * calculate the number of times an user has logged in using the same IP address. In this case, event variables used
+     * to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * </p>
+     * 
+     * @param aggregatedVariablesImpactExplanations
+     *        The details of the aggregated variables impact on the prediction score. </p>
+     *        <p>
+     *        Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously
+     *        calculate a set of variables (aggregated variables) based on historical events. For example, your ATI
+     *        model might calculate the number of times an user has logged in using the same IP address. In this case,
+     *        event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PredictionExplanations withAggregatedVariablesImpactExplanations(
+            java.util.Collection<AggregatedVariablesImpactExplanation> aggregatedVariablesImpactExplanations) {
+        setAggregatedVariablesImpactExplanations(aggregatedVariablesImpactExplanations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -119,7 +248,9 @@ public class PredictionExplanations implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVariableImpactExplanations() != null)
-            sb.append("VariableImpactExplanations: ").append(getVariableImpactExplanations());
+            sb.append("VariableImpactExplanations: ").append(getVariableImpactExplanations()).append(",");
+        if (getAggregatedVariablesImpactExplanations() != null)
+            sb.append("AggregatedVariablesImpactExplanations: ").append(getAggregatedVariablesImpactExplanations());
         sb.append("}");
         return sb.toString();
     }
@@ -138,6 +269,11 @@ public class PredictionExplanations implements Serializable, Cloneable, Structur
             return false;
         if (other.getVariableImpactExplanations() != null && other.getVariableImpactExplanations().equals(this.getVariableImpactExplanations()) == false)
             return false;
+        if (other.getAggregatedVariablesImpactExplanations() == null ^ this.getAggregatedVariablesImpactExplanations() == null)
+            return false;
+        if (other.getAggregatedVariablesImpactExplanations() != null
+                && other.getAggregatedVariablesImpactExplanations().equals(this.getAggregatedVariablesImpactExplanations()) == false)
+            return false;
         return true;
     }
 
@@ -147,6 +283,7 @@ public class PredictionExplanations implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVariableImpactExplanations() == null) ? 0 : getVariableImpactExplanations().hashCode());
+        hashCode = prime * hashCode + ((getAggregatedVariablesImpactExplanations() == null) ? 0 : getAggregatedVariablesImpactExplanations().hashCode());
         return hashCode;
     }
 

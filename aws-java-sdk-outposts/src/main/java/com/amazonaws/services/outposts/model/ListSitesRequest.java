@@ -30,31 +30,19 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer maxResults;
     /**
      * <p>
-     * A filter for the country code of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by country code.
      * </p>
      */
     private java.util.List<String> operatingAddressCountryCodeFilter;
     /**
      * <p>
-     * A filter for the state/region of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by state or region.
      * </p>
      */
     private java.util.List<String> operatingAddressStateOrRegionFilter;
     /**
      * <p>
-     * A filter for the city of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by city.
      * </p>
      */
     private java.util.List<String> operatingAddressCityFilter;
@@ -113,17 +101,10 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the country code of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by country code.
      * </p>
      * 
-     * @return A filter for the country code of the Outpost site. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by country code.
      */
 
     public java.util.List<String> getOperatingAddressCountryCodeFilter() {
@@ -132,18 +113,11 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the country code of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by country code.
      * </p>
      * 
      * @param operatingAddressCountryCodeFilter
-     *        A filter for the country code of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by country code.
      */
 
     public void setOperatingAddressCountryCodeFilter(java.util.Collection<String> operatingAddressCountryCodeFilter) {
@@ -157,11 +131,7 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the country code of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by country code.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -170,10 +140,7 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param operatingAddressCountryCodeFilter
-     *        A filter for the country code of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by country code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,18 +156,11 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the country code of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by country code.
      * </p>
      * 
      * @param operatingAddressCountryCodeFilter
-     *        A filter for the country code of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by country code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,17 +171,10 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the state/region of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by state or region.
      * </p>
      * 
-     * @return A filter for the state/region of the Outpost site. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by state or region.
      */
 
     public java.util.List<String> getOperatingAddressStateOrRegionFilter() {
@@ -230,18 +183,11 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the state/region of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by state or region.
      * </p>
      * 
      * @param operatingAddressStateOrRegionFilter
-     *        A filter for the state/region of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by state or region.
      */
 
     public void setOperatingAddressStateOrRegionFilter(java.util.Collection<String> operatingAddressStateOrRegionFilter) {
@@ -255,11 +201,7 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the state/region of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by state or region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -269,10 +211,7 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param operatingAddressStateOrRegionFilter
-     *        A filter for the state/region of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by state or region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,18 +227,11 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the state/region of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by state or region.
      * </p>
      * 
      * @param operatingAddressStateOrRegionFilter
-     *        A filter for the state/region of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by state or region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,17 +242,10 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the city of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by city.
      * </p>
      * 
-     * @return A filter for the city of the Outpost site. </p>
-     *         <p>
-     *         Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *         an <code>OR</code>, and the request returns all results that match any of the specified values.
+     * @return Filters the results by city.
      */
 
     public java.util.List<String> getOperatingAddressCityFilter() {
@@ -329,18 +254,11 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the city of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by city.
      * </p>
      * 
      * @param operatingAddressCityFilter
-     *        A filter for the city of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by city.
      */
 
     public void setOperatingAddressCityFilter(java.util.Collection<String> operatingAddressCityFilter) {
@@ -354,11 +272,7 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the city of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by city.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -367,10 +281,7 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param operatingAddressCityFilter
-     *        A filter for the city of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by city.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,18 +297,11 @@ public class ListSitesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A filter for the city of the Outpost site.
-     * </p>
-     * <p>
-     * Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an
-     * <code>OR</code>, and the request returns all results that match any of the specified values.
+     * Filters the results by city.
      * </p>
      * 
      * @param operatingAddressCityFilter
-     *        A filter for the city of the Outpost site. </p>
-     *        <p>
-     *        Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with
-     *        an <code>OR</code>, and the request returns all results that match any of the specified values.
+     *        Filters the results by city.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

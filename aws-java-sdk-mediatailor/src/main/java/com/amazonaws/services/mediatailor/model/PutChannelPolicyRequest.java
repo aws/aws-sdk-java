@@ -27,7 +27,7 @@ public class PutChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The channel name associated with this Channel Policy.
      * </p>
      */
     private String channelName;
@@ -40,11 +40,11 @@ public class PutChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The channel name associated with this Channel Policy.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The channel name associated with this Channel Policy.
      */
 
     public void setChannelName(String channelName) {
@@ -53,10 +53,10 @@ public class PutChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The channel name associated with this Channel Policy.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The channel name associated with this Channel Policy.
      */
 
     public String getChannelName() {
@@ -65,11 +65,11 @@ public class PutChannelPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The channel name associated with this Channel Policy.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The channel name associated with this Channel Policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

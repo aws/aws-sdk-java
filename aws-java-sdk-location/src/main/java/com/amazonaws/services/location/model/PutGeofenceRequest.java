@@ -39,13 +39,13 @@ public class PutGeofenceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String geofenceId;
     /**
      * <p>
-     * Contains the polygon details to specify the position of the geofence.
+     * Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both
+     * will return a validation error.
      * </p>
      * <note>
      * <p>
-     * Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.
+     * Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.
      * </p>
      * </note>
      */
@@ -133,22 +133,23 @@ public class PutGeofenceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains the polygon details to specify the position of the geofence.
+     * Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both
+     * will return a validation error.
      * </p>
      * <note>
      * <p>
-     * Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.
+     * Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.
      * </p>
      * </note>
      * 
      * @param geometry
-     *        Contains the polygon details to specify the position of the geofence.</p> <note>
+     *        Contains the details to specify the position of the geofence. Can be either a polygon or a circle.
+     *        Including both will return a validation error.</p> <note>
      *        <p>
      *        Each <a
-     *        href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"
-     *        >geofence polygon</a> can have a maximum of 1,000 vertices.
+     *        href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     *        geofence polygon</a> can have a maximum of 1,000 vertices.
      *        </p>
      */
 
@@ -158,21 +159,22 @@ public class PutGeofenceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains the polygon details to specify the position of the geofence.
+     * Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both
+     * will return a validation error.
      * </p>
      * <note>
      * <p>
-     * Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.
+     * Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.
      * </p>
      * </note>
      * 
-     * @return Contains the polygon details to specify the position of the geofence.</p> <note>
+     * @return Contains the details to specify the position of the geofence. Can be either a polygon or a circle.
+     *         Including both will return a validation error.</p> <note>
      *         <p>
      *         Each <a
-     *         href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"
-     *         >geofence polygon</a> can have a maximum of 1,000 vertices.
+     *         href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     *         geofence polygon</a> can have a maximum of 1,000 vertices.
      *         </p>
      */
 
@@ -182,22 +184,23 @@ public class PutGeofenceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains the polygon details to specify the position of the geofence.
+     * Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both
+     * will return a validation error.
      * </p>
      * <note>
      * <p>
-     * Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.
+     * Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.
      * </p>
      * </note>
      * 
      * @param geometry
-     *        Contains the polygon details to specify the position of the geofence.</p> <note>
+     *        Contains the details to specify the position of the geofence. Can be either a polygon or a circle.
+     *        Including both will return a validation error.</p> <note>
      *        <p>
      *        Each <a
-     *        href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"
-     *        >geofence polygon</a> can have a maximum of 1,000 vertices.
+     *        href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     *        geofence polygon</a> can have a maximum of 1,000 vertices.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

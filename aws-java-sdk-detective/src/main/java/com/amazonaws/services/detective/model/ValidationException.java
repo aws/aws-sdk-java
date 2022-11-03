@@ -24,6 +24,19 @@ public class ValidationException extends com.amazonaws.services.detective.model.
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * The error code associated with the validation failure.
+     * </p>
+     */
+    private String errorCode;
+    /**
+     * <p>
+     * An explanation of why validation failed.
+     * </p>
+     */
+    private String errorCodeReason;
+
+    /**
      * Constructs a new ValidationException with the specified error message.
      *
      * @param message
@@ -31,6 +44,109 @@ public class ValidationException extends com.amazonaws.services.detective.model.
      */
     public ValidationException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The error code associated with the validation failure.
+     * </p>
+     * 
+     * @param errorCode
+     *        The error code associated with the validation failure.
+     * @see ErrorCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * <p>
+     * The error code associated with the validation failure.
+     * </p>
+     * 
+     * @return The error code associated with the validation failure.
+     * @see ErrorCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * <p>
+     * The error code associated with the validation failure.
+     * </p>
+     * 
+     * @param errorCode
+     *        The error code associated with the validation failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ErrorCode
+     */
+
+    public ValidationException withErrorCode(String errorCode) {
+        setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The error code associated with the validation failure.
+     * </p>
+     * 
+     * @param errorCode
+     *        The error code associated with the validation failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ErrorCode
+     */
+
+    public ValidationException withErrorCode(ErrorCode errorCode) {
+        this.errorCode = errorCode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * An explanation of why validation failed.
+     * </p>
+     * 
+     * @param errorCodeReason
+     *        An explanation of why validation failed.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCodeReason")
+    public void setErrorCodeReason(String errorCodeReason) {
+        this.errorCodeReason = errorCodeReason;
+    }
+
+    /**
+     * <p>
+     * An explanation of why validation failed.
+     * </p>
+     * 
+     * @return An explanation of why validation failed.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCodeReason")
+    public String getErrorCodeReason() {
+        return this.errorCodeReason;
+    }
+
+    /**
+     * <p>
+     * An explanation of why validation failed.
+     * </p>
+     * 
+     * @param errorCodeReason
+     *        An explanation of why validation failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidationException withErrorCodeReason(String errorCodeReason) {
+        setErrorCodeReason(errorCodeReason);
+        return this;
     }
 
 }

@@ -44,7 +44,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by
-     * adding them to a permissions group.
+     * adding them to a permission group.
      * </p>
      * </li>
      * </ul>
@@ -149,7 +149,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by
-     * adding them to a permissions group.
+     * adding them to a permission group.
      * </p>
      * </li>
      * </ul>
@@ -165,7 +165,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions
-     *        by adding them to a permissions group.
+     *        by adding them to a permission group.
      *        </p>
      *        </li>
      * @see UserType
@@ -188,7 +188,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by
-     * adding them to a permissions group.
+     * adding them to a permission group.
      * </p>
      * </li>
      * </ul>
@@ -203,7 +203,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions
-     *         by adding them to a permissions group.
+     *         by adding them to a permission group.
      *         </p>
      *         </li>
      * @see UserType
@@ -226,7 +226,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by
-     * adding them to a permissions group.
+     * adding them to a permission group.
      * </p>
      * </li>
      * </ul>
@@ -242,7 +242,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions
-     *        by adding them to a permissions group.
+     *        by adding them to a permission group.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -267,7 +267,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by
-     * adding them to a permissions group.
+     * adding them to a permission group.
      * </p>
      * </li>
      * </ul>
@@ -283,7 +283,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions
-     *        by adding them to a permissions group.
+     *        by adding them to a permission group.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

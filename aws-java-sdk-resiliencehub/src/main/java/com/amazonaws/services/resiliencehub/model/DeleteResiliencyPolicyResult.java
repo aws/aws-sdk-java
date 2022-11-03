@@ -26,9 +26,9 @@ public class DeleteResiliencyPolicyResult extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
@@ -36,14 +36,14 @@ public class DeleteResiliencyPolicyResult extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
-     *        <code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      *        (ARNs)</a> in the <i>AWS General Reference</i>.
@@ -56,13 +56,13 @@ public class DeleteResiliencyPolicyResult extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
-     *         <code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *         <code>policy-id</code>. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      *         (ARNs)</a> in the <i>AWS General Reference</i>.
@@ -75,14 +75,14 @@ public class DeleteResiliencyPolicyResult extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
-     * :dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information
-     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
-     *        <code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      *        (ARNs)</a> in the <i>AWS General Reference</i>.

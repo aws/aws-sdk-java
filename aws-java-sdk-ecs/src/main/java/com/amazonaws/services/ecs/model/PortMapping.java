@@ -80,11 +80,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
      * ephemeral port range.
      * </p>
-     * <note>
-     * <p>
-     * The default ephemeral port range from 49153 through 65535 is always used for Docker versions before 1.6.0.
-     * </p>
-     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
@@ -224,11 +219,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
      * ephemeral port range.
      * </p>
-     * <note>
-     * <p>
-     * The default ephemeral port range from 49153 through 65535 is always used for Docker versions before 1.6.0.
-     * </p>
-     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
@@ -257,11 +247,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
      *        outside of the ephemeral port range.
      *        </p>
-     *        <note>
-     *        <p>
-     *        The default ephemeral port range from 49153 through 65535 is always used for Docker versions before 1.6.0.
-     *        </p>
-     *        </note>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
      *        agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved
@@ -296,11 +281,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
      * ephemeral port range.
      * </p>
-     * <note>
-     * <p>
-     * The default ephemeral port range from 49153 through 65535 is always used for Docker versions before 1.6.0.
-     * </p>
-     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
@@ -329,12 +309,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *         ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
      *         outside of the ephemeral port range.
      *         </p>
-     *         <note>
-     *         <p>
-     *         The default ephemeral port range from 49153 through 65535 is always used for Docker versions before
-     *         1.6.0.
-     *         </p>
-     *         </note>
      *         <p>
      *         The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
      *         agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved
@@ -369,11 +343,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
      * ephemeral port range.
      * </p>
-     * <note>
-     * <p>
-     * The default ephemeral port range from 49153 through 65535 is always used for Docker versions before 1.6.0.
-     * </p>
-     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
@@ -402,11 +371,6 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
      *        outside of the ephemeral port range.
      *        </p>
-     *        <note>
-     *        <p>
-     *        The default ephemeral port range from 49153 through 65535 is always used for Docker versions before 1.6.0.
-     *        </p>
-     *        </note>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
      *        agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved

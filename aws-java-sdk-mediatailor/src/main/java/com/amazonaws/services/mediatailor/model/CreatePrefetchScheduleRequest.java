@@ -35,13 +35,13 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
     private PrefetchConsumption consumption;
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name to assign to the schedule request.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name to assign to the playback configuration.
      * </p>
      */
     private String playbackConfigurationName;
@@ -55,9 +55,9 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
-     * playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact
-     * match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback
-     * configuration, regardless of StreamId.
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      */
     private String streamId;
@@ -119,11 +119,11 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name to assign to the schedule request.
      * </p>
      * 
      * @param name
-     *        The identifier for the playback configuration.
+     *        The name to assign to the schedule request.
      */
 
     public void setName(String name) {
@@ -132,10 +132,10 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name to assign to the schedule request.
      * </p>
      * 
-     * @return The identifier for the playback configuration.
+     * @return The name to assign to the schedule request.
      */
 
     public String getName() {
@@ -144,11 +144,11 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name to assign to the schedule request.
      * </p>
      * 
      * @param name
-     *        The identifier for the playback configuration.
+     *        The name to assign to the schedule request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +159,11 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name to assign to the playback configuration.
      * </p>
      * 
      * @param playbackConfigurationName
-     *        The name of the playback configuration.
+     *        The name to assign to the playback configuration.
      */
 
     public void setPlaybackConfigurationName(String playbackConfigurationName) {
@@ -172,10 +172,10 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name to assign to the playback configuration.
      * </p>
      * 
-     * @return The name of the playback configuration.
+     * @return The name to assign to the playback configuration.
      */
 
     public String getPlaybackConfigurationName() {
@@ -184,11 +184,11 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the playback configuration.
+     * The name to assign to the playback configuration.
      * </p>
      * 
      * @param playbackConfigurationName
-     *        The name of the playback configuration.
+     *        The name to assign to the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,16 +246,16 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
-     * playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact
-     * match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback
-     * configuration, regardless of StreamId.
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      * 
      * @param streamId
      *        An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
-     *        playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with
-     *        an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the
-     *        playback configuration, regardless of StreamId.
+     *        playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     *        schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the
+     *        prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
      */
 
     public void setStreamId(String streamId) {
@@ -265,15 +265,15 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
-     * playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact
-     * match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback
-     * configuration, regardless of StreamId.
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      * 
      * @return An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the
-     *         same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules
-     *         with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for
-     *         the playback configuration, regardless of StreamId.
+     *         same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the
+     *         prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns
+     *         all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
      */
 
     public String getStreamId() {
@@ -283,16 +283,16 @@ public class CreatePrefetchScheduleRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
-     * playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact
-     * match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback
-     * configuration, regardless of StreamId.
+     * playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules
+     * with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules
+     * for the playback configuration, regardless of <code>StreamId</code>.
      * </p>
      * 
      * @param streamId
      *        An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same
-     *        playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with
-     *        an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the
-     *        playback configuration, regardless of StreamId.
+     *        playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     *        schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the
+     *        prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

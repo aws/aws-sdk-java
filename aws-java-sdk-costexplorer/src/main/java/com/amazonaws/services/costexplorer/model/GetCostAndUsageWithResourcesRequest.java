@@ -84,8 +84,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the
      * units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the
      * results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-     * <code>UsageType</code> or <code>UsageTypeGroups</code>.
+     * example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+     * or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
      * <p>
@@ -417,8 +417,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the
      * units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the
      * results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-     * <code>UsageType</code> or <code>UsageTypeGroups</code>.
+     * example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+     * or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
      * <p>
@@ -438,8 +438,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *         If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *         taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of
      *         Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *         in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
-     *         metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
+     *         in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *         filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *         </p>
      *         </note>
      *         <p>
@@ -466,8 +466,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the
      * units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the
      * results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-     * <code>UsageType</code> or <code>UsageTypeGroups</code>.
+     * example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+     * or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
      * <p>
@@ -488,7 +488,7 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *        taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of
      *        Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *        in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *        in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics,
      *        filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *        </p>
      *        </note>
@@ -521,8 +521,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the
      * units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the
      * results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-     * <code>UsageType</code> or <code>UsageTypeGroups</code>.
+     * example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+     * or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
      * <p>
@@ -548,7 +548,7 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *        taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of
      *        Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *        in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *        in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics,
      *        filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *        </p>
      *        </note>
@@ -583,8 +583,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the
      * units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the
      * results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-     * <code>UsageType</code> or <code>UsageTypeGroups</code>.
+     * example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+     * or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
      * <p>
@@ -605,7 +605,7 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *        taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of
      *        Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *        in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *        in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics,
      *        filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *        </p>
      *        </note>

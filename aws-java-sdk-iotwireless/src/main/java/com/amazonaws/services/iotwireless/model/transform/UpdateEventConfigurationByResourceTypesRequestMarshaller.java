@@ -35,6 +35,8 @@ public class UpdateEventConfigurationByResourceTypesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Join").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
+    private static final MarshallingInfo<StructuredPojo> MESSAGEDELIVERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageDeliveryStatus").build();
 
     private static final UpdateEventConfigurationByResourceTypesRequestMarshaller instance = new UpdateEventConfigurationByResourceTypesRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateEventConfigurationByResourceTypesRequestMarshaller {
             protocolMarshaller.marshall(updateEventConfigurationByResourceTypesRequest.getProximity(), PROXIMITY_BINDING);
             protocolMarshaller.marshall(updateEventConfigurationByResourceTypesRequest.getJoin(), JOIN_BINDING);
             protocolMarshaller.marshall(updateEventConfigurationByResourceTypesRequest.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(updateEventConfigurationByResourceTypesRequest.getMessageDeliveryStatus(), MESSAGEDELIVERYSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

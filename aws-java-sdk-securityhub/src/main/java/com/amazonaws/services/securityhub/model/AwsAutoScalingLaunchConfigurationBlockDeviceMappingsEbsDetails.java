@@ -95,8 +95,40 @@ public class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails impl
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type.
+     * The volume type. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String volumeType;
 
@@ -521,11 +553,74 @@ public class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails impl
 
     /**
      * <p>
-     * The volume type.
+     * The volume type. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param volumeType
-     *        The volume type.
+     *        The volume type. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sc1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>
+     *        </p>
+     *        </li>
      */
 
     public void setVolumeType(String volumeType) {
@@ -534,10 +629,73 @@ public class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails impl
 
     /**
      * <p>
-     * The volume type.
+     * The volume type. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The volume type.
+     * @return The volume type. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>gp2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>gp3</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sc1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>st1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>
+     *         </p>
+     *         </li>
      */
 
     public String getVolumeType() {
@@ -546,11 +704,74 @@ public class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails impl
 
     /**
      * <p>
-     * The volume type.
+     * The volume type. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param volumeType
-     *        The volume type.
+     *        The volume type. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sc1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

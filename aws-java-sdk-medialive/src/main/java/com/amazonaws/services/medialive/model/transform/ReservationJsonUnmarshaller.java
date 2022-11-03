@@ -96,6 +96,10 @@ public class ReservationJsonUnmarshaller implements Unmarshaller<Reservation, Js
                     context.nextToken();
                     reservation.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("renewalSettings", targetDepth)) {
+                    context.nextToken();
+                    reservation.setRenewalSettings(RenewalSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("reservationId", targetDepth)) {
                     context.nextToken();
                     reservation.setReservationId(context.getUnmarshaller(String.class).unmarshall(context));

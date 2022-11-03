@@ -46,6 +46,12 @@ public class DescribeCustomDomainsResult extends com.amazonaws.AmazonWebServiceR
     private java.util.List<CustomDomain> customDomains;
     /**
      * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     */
+    private java.util.List<VpcDNSTarget> vpcDNSTargets;
+    /**
+     * <p>
      * The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated
      * request.
      * </p>
@@ -224,6 +230,76 @@ public class DescribeCustomDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * 
+     * @return DNS Target records for the custom domains of this Amazon VPC.
+     */
+
+    public java.util.List<VpcDNSTarget> getVpcDNSTargets() {
+        return vpcDNSTargets;
+    }
+
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * 
+     * @param vpcDNSTargets
+     *        DNS Target records for the custom domains of this Amazon VPC.
+     */
+
+    public void setVpcDNSTargets(java.util.Collection<VpcDNSTarget> vpcDNSTargets) {
+        if (vpcDNSTargets == null) {
+            this.vpcDNSTargets = null;
+            return;
+        }
+
+        this.vpcDNSTargets = new java.util.ArrayList<VpcDNSTarget>(vpcDNSTargets);
+    }
+
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcDNSTargets(java.util.Collection)} or {@link #withVpcDNSTargets(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param vpcDNSTargets
+     *        DNS Target records for the custom domains of this Amazon VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCustomDomainsResult withVpcDNSTargets(VpcDNSTarget... vpcDNSTargets) {
+        if (this.vpcDNSTargets == null) {
+            setVpcDNSTargets(new java.util.ArrayList<VpcDNSTarget>(vpcDNSTargets.length));
+        }
+        for (VpcDNSTarget ele : vpcDNSTargets) {
+            this.vpcDNSTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * DNS Target records for the custom domains of this Amazon VPC.
+     * </p>
+     * 
+     * @param vpcDNSTargets
+     *        DNS Target records for the custom domains of this Amazon VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCustomDomainsResult withVpcDNSTargets(java.util.Collection<VpcDNSTarget> vpcDNSTargets) {
+        setVpcDNSTargets(vpcDNSTargets);
+        return this;
+    }
+
+    /**
+     * <p>
      * The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated
      * request.
      * </p>
@@ -286,6 +362,8 @@ public class DescribeCustomDomainsResult extends com.amazonaws.AmazonWebServiceR
             sb.append("ServiceArn: ").append(getServiceArn()).append(",");
         if (getCustomDomains() != null)
             sb.append("CustomDomains: ").append(getCustomDomains()).append(",");
+        if (getVpcDNSTargets() != null)
+            sb.append("VpcDNSTargets: ").append(getVpcDNSTargets()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -314,6 +392,10 @@ public class DescribeCustomDomainsResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getCustomDomains() != null && other.getCustomDomains().equals(this.getCustomDomains()) == false)
             return false;
+        if (other.getVpcDNSTargets() == null ^ this.getVpcDNSTargets() == null)
+            return false;
+        if (other.getVpcDNSTargets() != null && other.getVpcDNSTargets().equals(this.getVpcDNSTargets()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -329,6 +411,7 @@ public class DescribeCustomDomainsResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDNSTarget() == null) ? 0 : getDNSTarget().hashCode());
         hashCode = prime * hashCode + ((getServiceArn() == null) ? 0 : getServiceArn().hashCode());
         hashCode = prime * hashCode + ((getCustomDomains() == null) ? 0 : getCustomDomains().hashCode());
+        hashCode = prime * hashCode + ((getVpcDNSTargets() == null) ? 0 : getVpcDNSTargets().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

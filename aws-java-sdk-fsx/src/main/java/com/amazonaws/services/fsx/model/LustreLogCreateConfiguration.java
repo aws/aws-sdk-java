@@ -19,28 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. Lustre logging
- * writes the enabled logging events for your file system to Amazon CloudWatch Logs.
+ * The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. An Amazon File
+ * Cache is created with Lustre logging enabled by default, with a setting of <code>WARN_ERROR</code> for the logging
+ * events. which can't be changed.
  * </p>
  * <p>
- * Error and warning events can be logged from the following data repository operations:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Automatic export
- * </p>
- * </li>
- * <li>
- * <p>
- * Data repository tasks
- * </p>
- * </li>
- * </ul>
- * <p>
- * To learn more about Lustre logging, see <a
- * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging to Amazon CloudWatch
- * Logs</a>.
+ * Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreLogCreateConfiguration" target="_top">AWS
@@ -99,7 +83,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      * <li>
      * <p>
      * If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon
+     * File Cache).
      * </p>
      * </li>
      * <li>
@@ -371,7 +356,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      * <li>
      * <p>
      * If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon
+     * File Cache).
      * </p>
      * </li>
      * <li>
@@ -408,7 +394,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      *        <li>
      *        <p>
      *        If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     *        <code>/aws/fsx/lustre</code> log group.
+     *        <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for
+     *        Amazon File Cache).
      *        </p>
      *        </li>
      *        <li>
@@ -451,7 +438,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      * <li>
      * <p>
      * If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon
+     * File Cache).
      * </p>
      * </li>
      * <li>
@@ -487,7 +475,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      *         <li>
      *         <p>
      *         If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     *         <code>/aws/fsx/lustre</code> log group.
+     *         <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code>
+     *         (for Amazon File Cache).
      *         </p>
      *         </li>
      *         <li>
@@ -530,7 +519,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      * <li>
      * <p>
      * If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon
+     * File Cache).
      * </p>
      * </li>
      * <li>
@@ -567,7 +557,8 @@ public class LustreLogCreateConfiguration implements Serializable, Cloneable, St
      *        <li>
      *        <p>
      *        If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     *        <code>/aws/fsx/lustre</code> log group.
+     *        <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for
+     *        Amazon File Cache).
      *        </p>
      *        </li>
      *        <li>

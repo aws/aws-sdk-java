@@ -258,6 +258,72 @@ public class AWSBackupGatewayAsyncClient extends AWSBackupGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest request) {
+
+        return getGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(final GetGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler) {
+        final GetGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGatewayResult>() {
+            @Override
+            public GetGatewayResult call() throws Exception {
+                GetGatewayResult result = null;
+
+                try {
+                    result = executeGetGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVirtualMachineResult> getVirtualMachineAsync(GetVirtualMachineRequest request) {
+
+        return getVirtualMachineAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVirtualMachineResult> getVirtualMachineAsync(final GetVirtualMachineRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVirtualMachineRequest, GetVirtualMachineResult> asyncHandler) {
+        final GetVirtualMachineRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVirtualMachineResult>() {
+            @Override
+            public GetVirtualMachineResult call() throws Exception {
+                GetVirtualMachineResult result = null;
+
+                try {
+                    result = executeGetVirtualMachine(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportHypervisorConfigurationResult> importHypervisorConfigurationAsync(ImportHypervisorConfigurationRequest request) {
 
         return importHypervisorConfigurationAsync(request, null);
@@ -573,6 +639,39 @@ public class AWSBackupGatewayAsyncClient extends AWSBackupGatewayClient implemen
 
                 try {
                     result = executeUpdateGatewayInformation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request) {
+
+        return updateGatewaySoftwareNowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(final UpdateGatewaySoftwareNowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResult> asyncHandler) {
+        final UpdateGatewaySoftwareNowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGatewaySoftwareNowResult>() {
+            @Override
+            public UpdateGatewaySoftwareNowResult call() throws Exception {
+                UpdateGatewaySoftwareNowResult result = null;
+
+                try {
+                    result = executeUpdateGatewaySoftwareNow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

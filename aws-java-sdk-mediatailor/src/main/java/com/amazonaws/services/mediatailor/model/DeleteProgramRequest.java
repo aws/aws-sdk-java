@@ -27,24 +27,24 @@ public class DeleteProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      */
     private String channelName;
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the program.
      * </p>
      */
     private String programName;
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      */
 
     public void setChannelName(String channelName) {
@@ -53,10 +53,10 @@ public class DeleteProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel.
      */
 
     public String getChannelName() {
@@ -65,11 +65,11 @@ public class DeleteProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the program.
      * </p>
      * 
      * @param programName
-     *        The identifier for the program you are working on.
+     *        The name of the program.
      */
 
     public void setProgramName(String programName) {
@@ -93,10 +93,10 @@ public class DeleteProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the program.
      * </p>
      * 
-     * @return The identifier for the program you are working on.
+     * @return The name of the program.
      */
 
     public String getProgramName() {
@@ -105,11 +105,11 @@ public class DeleteProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the program you are working on.
+     * The name of the program.
      * </p>
      * 
      * @param programName
-     *        The identifier for the program you are working on.
+     *        The name of the program.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

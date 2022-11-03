@@ -19,9 +19,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time
- * interval.
+ * <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies, or for
+ * AMIs created by AMI policies.
  * </p>
+ * <note>
+ * <p>
+ * For snapshot policies that have an <a>ArchiveRule</a>, this retention rule applies to standard tier retention. When
+ * the retention threshold is met, snapshots are moved from the standard to the archive tier.
+ * </p>
+ * <p>
+ * For snapshot policies that do not have an <b>ArchiveRule</b>, snapshots are permanently deleted when this retention
+ * threshold is met.
+ * </p>
+ * </note>
+ * <p>
+ * You can retain snapshots based on either a count or a time interval.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>Count-based retention</b>
+ * </p>
+ * <p>
+ * You must specify <b>Count</b>. If you specify an <a>ArchiveRule</a> for the schedule, then you can specify a
+ * retention count of <code>0</code> to archive snapshots immediately after creation. If you specify a
+ * <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention count of
+ * <code>1</code> or more.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Age-based retention</b>
+ * </p>
+ * <p>
+ * You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <a>ArchiveRule</a> for the schedule, then
+ * you can specify a retention interval of <code>0</code> days to archive snapshots immediately after creation. If you
+ * specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a
+ * retention interval of <code>1</code> day or more.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/RetainRule" target="_top">AWS API
  *      Documentation</a>
@@ -31,7 +68,9 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of snapshots to retain for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a
+     * maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained
+     * snapshot is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      */
     private Integer count;
@@ -44,18 +83,25 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
     private Integer interval;
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months,
+     * it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      */
     private String intervalUnit;
 
     /**
      * <p>
-     * The number of snapshots to retain for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a
+     * maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained
+     * snapshot is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
      * @param count
-     *        The number of snapshots to retain for each volume, up to a maximum of 1000.
+     *        The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to
+     *        retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the
+     *        oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an
+     *        <a>ArchiveRule</a>.
      */
 
     public void setCount(Integer count) {
@@ -64,10 +110,15 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of snapshots to retain for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a
+     * maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained
+     * snapshot is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
-     * @return The number of snapshots to retain for each volume, up to a maximum of 1000.
+     * @return The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to
+     *         retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the
+     *         oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an
+     *         <a>ArchiveRule</a>.
      */
 
     public Integer getCount() {
@@ -76,11 +127,16 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of snapshots to retain for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a
+     * maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained
+     * snapshot is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
      * @param count
-     *        The number of snapshots to retain for each volume, up to a maximum of 1000.
+     *        The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to
+     *        retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the
+     *        oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an
+     *        <a>ArchiveRule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +193,15 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months,
+     * it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time for time-based retention.
+     *        The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     *        <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
+     *        months, it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * @see RetentionIntervalUnitValues
      */
 
@@ -151,10 +211,14 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months,
+     * it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
-     * @return The unit of time for time-based retention.
+     * @return The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     *         <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
+     *         months, it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * @see RetentionIntervalUnitValues
      */
 
@@ -164,11 +228,15 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months,
+     * it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time for time-based retention.
+     *        The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     *        <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
+     *        months, it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionIntervalUnitValues
      */
@@ -180,11 +248,15 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time for time-based retention.
+     * The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months,
+     * it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * </p>
      * 
      * @param intervalUnit
-     *        The unit of time for time-based retention.
+     *        The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify
+     *        <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
+     *        months, it is deleted, or it is moved to the archive tier if you have specified an <a>ArchiveRule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionIntervalUnitValues
      */

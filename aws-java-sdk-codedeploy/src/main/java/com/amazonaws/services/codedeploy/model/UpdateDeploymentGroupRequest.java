@@ -69,9 +69,23 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
-     * To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
-     * group names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroups;
     /**
@@ -84,7 +98,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     * CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
@@ -102,16 +116,16 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      */
     private String outdatedInstancesStrategy;
@@ -136,7 +150,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private LoadBalancerInfo loadBalancerInfo;
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2
      * instances identified by all the tag groups.
      * </p>
      */
@@ -482,13 +496,41 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
-     * To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
-     * group names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change
-     *         them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any
-     *         Auto Scaling group names.
+     *         them.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     *         CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *         >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     *         "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getAutoScalingGroups() {
@@ -501,14 +543,42 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
-     * To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
-     * group names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change
-     *        them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any
-     *        Auto Scaling group names.
+     *        them.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     *        CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *        >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     *        "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     *        </p>
+     *        </li>
      */
 
     public void setAutoScalingGroups(java.util.Collection<String> autoScalingGroups) {
@@ -523,9 +593,23 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
-     * To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
-     * group names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAutoScalingGroups(java.util.Collection)} or {@link #withAutoScalingGroups(java.util.Collection)} if
@@ -534,8 +618,22 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change
-     *        them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any
-     *        Auto Scaling group names.
+     *        them.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     *        CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *        >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     *        "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,14 +650,42 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
-     * To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
-     * group names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change
-     *        them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any
-     *        Auto Scaling group names.
+     *        them.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
+     *        CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
+     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *        >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+     *        "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,12 +738,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     * CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @return Information about triggers to change when the deployment group is updated. For examples, see <a
      *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in
-     *         a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *         a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
@@ -631,13 +757,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     * CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is updated. For examples, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     *        CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public void setTriggerConfigurations(java.util.Collection<TriggerConfig> triggerConfigurations) {
@@ -653,7 +779,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     * CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -664,7 +790,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is updated. For examples, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     *        CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -682,13 +808,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     * CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is updated. For examples, see <a
      *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-     *        CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+     *        CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -782,29 +908,29 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
      * @param outdatedInstancesStrategy
-     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *        application revision.</p>
+     *        Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *        deployed application revision.</p>
      *        <p>
      *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *        instances.
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *        EC2 instances.
      *        </p>
      *        <p>
      *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *        EC2 instances. This may result in instances having different revisions.
+     *        Amazon EC2 instances. This may result in instances having different revisions.
      * @see OutdatedInstancesStrategy
      */
 
@@ -814,28 +940,28 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
-     * @return Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *         application revision.</p>
+     * @return Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *         deployed application revision.</p>
      *         <p>
      *         If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *         'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *         instances.
+     *         'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *         EC2 instances.
      *         </p>
      *         <p>
      *         If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *         EC2 instances. This may result in instances having different revisions.
+     *         Amazon EC2 instances. This may result in instances having different revisions.
      * @see OutdatedInstancesStrategy
      */
 
@@ -845,29 +971,29 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
      * @param outdatedInstancesStrategy
-     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *        application revision.</p>
+     *        Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *        deployed application revision.</p>
      *        <p>
      *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *        instances.
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *        EC2 instances.
      *        </p>
      *        <p>
      *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *        EC2 instances. This may result in instances having different revisions.
+     *        Amazon EC2 instances. This may result in instances having different revisions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutdatedInstancesStrategy
      */
@@ -879,29 +1005,29 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed
      * application revision.
      * </p>
      * <p>
      * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
-     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
      * </p>
      * <p>
-     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
-     * instances. This may result in instances having different revisions.
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon
+     * EC2 instances. This may result in instances having different revisions.
      * </p>
      * 
      * @param outdatedInstancesStrategy
-     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
-     *        application revision.</p>
+     *        Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the
+     *        deployed application revision.</p>
      *        <p>
      *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
-     *        instances.
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon
+     *        EC2 instances.
      *        </p>
      *        <p>
      *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     *        EC2 instances. This may result in instances having different revisions.
+     *        Amazon EC2 instances. This may result in instances having different revisions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutdatedInstancesStrategy
      */
@@ -1039,13 +1165,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2
      * instances identified by all the tag groups.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
-     *        instances identified by all the tag groups.
+     *        Information about groups of tags applied to on-premises instances. The deployment group includes only
+     *        Amazon EC2 instances identified by all the tag groups.
      */
 
     public void setEc2TagSet(EC2TagSet ec2TagSet) {
@@ -1054,12 +1180,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2
      * instances identified by all the tag groups.
      * </p>
      * 
-     * @return Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
-     *         instances identified by all the tag groups.
+     * @return Information about groups of tags applied to on-premises instances. The deployment group includes only
+     *         Amazon EC2 instances identified by all the tag groups.
      */
 
     public EC2TagSet getEc2TagSet() {
@@ -1068,13 +1194,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2
      * instances identified by all the tag groups.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
-     *        instances identified by all the tag groups.
+     *        Information about groups of tags applied to on-premises instances. The deployment group includes only
+     *        Amazon EC2 instances identified by all the tag groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

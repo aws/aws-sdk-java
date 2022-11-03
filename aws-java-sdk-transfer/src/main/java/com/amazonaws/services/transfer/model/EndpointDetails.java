@@ -68,7 +68,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The identifier of the VPC endpoint.
      * </p>
      * <note>
      * <p>
@@ -83,7 +83,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
     private String vpcEndpointId;
     /**
      * <p>
-     * The VPC ID of the VPC in which a server's endpoint will be hosted.
+     * The VPC identifier of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
@@ -331,7 +331,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The identifier of the VPC endpoint.
      * </p>
      * <note>
      * <p>
@@ -344,7 +344,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint.</p> <note>
+     *        The identifier of the VPC endpoint.</p> <note>
      *        <p>
      *        This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      *        </p>
@@ -360,7 +360,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The identifier of the VPC endpoint.
      * </p>
      * <note>
      * <p>
@@ -372,7 +372,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The ID of the VPC endpoint.</p> <note>
+     * @return The identifier of the VPC endpoint.</p> <note>
      *         <p>
      *         This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      *         </p>
@@ -388,7 +388,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The identifier of the VPC endpoint.
      * </p>
      * <note>
      * <p>
@@ -401,7 +401,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint.</p> <note>
+     *        The identifier of the VPC endpoint.</p> <note>
      *        <p>
      *        This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      *        </p>
@@ -419,7 +419,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the VPC in which a server's endpoint will be hosted.
+     * The VPC identifier of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
@@ -428,7 +428,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param vpcId
-     *        The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+     *        The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
      *        <p>
      *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
@@ -440,7 +440,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the VPC in which a server's endpoint will be hosted.
+     * The VPC identifier of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
@@ -448,7 +448,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+     * @return The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
      *         <p>
      *         This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *         </p>
@@ -460,7 +460,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the VPC in which a server's endpoint will be hosted.
+     * The VPC identifier of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
@@ -469,7 +469,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param vpcId
-     *        The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
+     *        The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
      *        <p>
      *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>

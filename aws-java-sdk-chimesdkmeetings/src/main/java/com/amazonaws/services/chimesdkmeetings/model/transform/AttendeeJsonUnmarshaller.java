@@ -60,6 +60,10 @@ public class AttendeeJsonUnmarshaller implements Unmarshaller<Attendee, JsonUnma
                     context.nextToken();
                     attendee.setJoinToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Capabilities", targetDepth)) {
+                    context.nextToken();
+                    attendee.setCapabilities(AttendeeCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

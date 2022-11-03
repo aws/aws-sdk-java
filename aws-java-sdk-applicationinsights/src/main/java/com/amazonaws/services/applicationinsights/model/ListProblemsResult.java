@@ -36,7 +36,11 @@ public class ListProblemsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String nextToken;
-
+    /**
+     * <p>
+     * The name of the resource group.
+     * </p>
+     */
     private String resourceGroupName;
 
     /**
@@ -156,7 +160,12 @@ public class ListProblemsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The name of the resource group.
+     * </p>
+     * 
      * @param resourceGroupName
+     *        The name of the resource group.
      */
 
     public void setResourceGroupName(String resourceGroupName) {
@@ -164,7 +173,11 @@ public class ListProblemsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the resource group.
+     * </p>
+     * 
+     * @return The name of the resource group.
      */
 
     public String getResourceGroupName() {
@@ -172,7 +185,12 @@ public class ListProblemsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The name of the resource group.
+     * </p>
+     * 
      * @param resourceGroupName
+     *        The name of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

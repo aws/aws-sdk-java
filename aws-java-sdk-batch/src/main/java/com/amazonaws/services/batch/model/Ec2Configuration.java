@@ -37,8 +37,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
-     * isn't specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. The supported values are different for
+     * <code>ECS</code> and <code>EKS</code> resources.
+     * </p>
+     * <dl>
+     * <dt>ECS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an
      * update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the
@@ -49,14 +55,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all non-GPU instance families.
+     * 2</a>: Default for all non-GPU instance families.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
-     * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
+     * 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
      * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
@@ -64,9 +70,38 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     * Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * <dt>EKS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux
+     * AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an
+     * <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS
+     * optimized AMI for that image type that Batch supports is used.
+     * </p>
+     * <dl>
+     * <dt>EKS_AL2</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for
+     * all non-GPU instance families.
+     * </p>
+     * </dd>
+     * <dt>EKS_AL2_NVIDIA</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     * (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and
+     * can be used for all non Amazon Web Services Graviton-based instance types.
+     * </p>
+     * </dd>
+     * </dl>
      * </dd>
      * </dl>
      */
@@ -88,11 +123,24 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * </note>
      */
     private String imageIdOverride;
+    /**
+     * <p>
+     * The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch
+     * supports is used.
+     * </p>
+     */
+    private String imageKubernetesVersion;
 
     /**
      * <p>
-     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
-     * isn't specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. The supported values are different for
+     * <code>ECS</code> and <code>EKS</code> resources.
+     * </p>
+     * <dl>
+     * <dt>ECS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an
      * update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the
@@ -103,14 +151,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all non-GPU instance families.
+     * 2</a>: Default for all non-GPU instance families.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
-     * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
+     * 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
      * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
@@ -118,32 +166,67 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     * Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
+     * </dd>
+     * <dt>EKS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux
+     * AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an
+     * <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS
+     * optimized AMI for that image type that Batch supports is used.
+     * </p>
+     * <dl>
+     * <dt>EKS_AL2</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for
+     * all non-GPU instance families.
+     * </p>
+     * </dd>
+     * <dt>EKS_AL2_NVIDIA</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     * (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and
+     * can be used for all non Amazon Web Services Graviton-based instance types.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
      * 
      * @param imageType
-     *        The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
-     *        parameter isn't specified, then a recent <a
+     *        The image type to match with the instance type to select an AMI. The supported values are different for
+     *        <code>ECS</code> and <code>EKS</code> resources.</p>
+     *        <dl>
+     *        <dt>ECS</dt>
+     *        <dd>
+     *        <p>
+     *        If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      *        ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in
      *        an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified,
-     *        then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+     *        then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.
+     *        </p>
      *        <dl>
      *        <dt>ECS_AL2</dt>
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     *        Linux 2</a>− Default for all non-GPU instance families.
+     *        Linux 2</a>: Default for all non-GPU instance families.
      *        </p>
      *        </dd>
      *        <dt>ECS_AL2_NVIDIA</dt>
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
-     *        Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
+     *        Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
      *        and can be used for all non Amazon Web Services Graviton-based instance types.
      *        </p>
      *        </dd>
@@ -151,9 +234,38 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *        Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     *        Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
+     *        <dt>EKS</dt>
+     *        <dd>
+     *        <p>
+     *        If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon
+     *        Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither
+     *        an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon
+     *        EKS optimized AMI for that image type that Batch supports is used.
+     *        </p>
+     *        <dl>
+     *        <dt>EKS_AL2</dt>
+     *        <dd>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>:
+     *        Default for all non-GPU instance families.
+     *        </p>
+     *        </dd>
+     *        <dt>EKS_AL2_NVIDIA</dt>
+     *        <dd>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     *        (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>
+     *        ) and can be used for all non Amazon Web Services Graviton-based instance types.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        </dd>
      */
 
@@ -163,8 +275,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
-     * isn't specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. The supported values are different for
+     * <code>ECS</code> and <code>EKS</code> resources.
+     * </p>
+     * <dl>
+     * <dt>ECS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an
      * update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the
@@ -175,14 +293,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all non-GPU instance families.
+     * 2</a>: Default for all non-GPU instance families.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
-     * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
+     * 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
      * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
@@ -190,25 +308,60 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     * Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
+     * </dd>
+     * <dt>EKS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux
+     * AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an
+     * <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS
+     * optimized AMI for that image type that Batch supports is used.
+     * </p>
+     * <dl>
+     * <dt>EKS_AL2</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for
+     * all non-GPU instance families.
+     * </p>
+     * </dd>
+     * <dt>EKS_AL2_NVIDIA</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     * (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and
+     * can be used for all non Amazon Web Services Graviton-based instance types.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
      * 
-     * @return The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
-     *         parameter isn't specified, then a recent <a
+     * @return The image type to match with the instance type to select an AMI. The supported values are different for
+     *         <code>ECS</code> and <code>EKS</code> resources.</p>
+     *         <dl>
+     *         <dt>ECS</dt>
+     *         <dd>
+     *         <p>
+     *         If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      *         ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in
      *         an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified,
-     *         then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+     *         then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.
+     *         </p>
      *         <dl>
      *         <dt>ECS_AL2</dt>
      *         <dd>
      *         <p>
      *         <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     *         Linux 2</a>− Default for all non-GPU instance families.
+     *         Linux 2</a>: Default for all non-GPU instance families.
      *         </p>
      *         </dd>
      *         <dt>ECS_AL2_NVIDIA</dt>
@@ -216,17 +369,46 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
-     *         Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
-     *         and can be used for all non Amazon Web Services Graviton-based instance types.
+     *         Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>
+     *         ) and can be used for all non Amazon Web Services Graviton-based instance types.
      *         </p>
      *         </dd>
      *         <dt>ECS_AL1</dt>
      *         <dd>
      *         <p>
      *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *         Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     *         Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      *         href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *         </p>
+     *         </dd>
+     *         </dl>
+     *         </dd>
+     *         <dt>EKS</dt>
+     *         <dd>
+     *         <p>
+     *         If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized
+     *         Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but
+     *         neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the
+     *         latest Amazon EKS optimized AMI for that image type that Batch supports is used.
+     *         </p>
+     *         <dl>
+     *         <dt>EKS_AL2</dt>
+     *         <dd>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>:
+     *         Default for all non-GPU instance families.
+     *         </p>
+     *         </dd>
+     *         <dt>EKS_AL2_NVIDIA</dt>
+     *         <dd>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     *         (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and
+     *         <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.
+     *         </p>
+     *         </dd>
+     *         </dl>
      *         </dd>
      */
 
@@ -236,8 +418,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
-     * isn't specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. The supported values are different for
+     * <code>ECS</code> and <code>EKS</code> resources.
+     * </p>
+     * <dl>
+     * <dt>ECS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an
      * update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the
@@ -248,14 +436,14 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all non-GPU instance families.
+     * 2</a>: Default for all non-GPU instance families.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
-     * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
+     * 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
      * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
@@ -263,32 +451,67 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     * Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
+     * </dd>
+     * <dt>EKS</dt>
+     * <dd>
+     * <p>
+     * If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux
+     * AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an
+     * <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS
+     * optimized AMI for that image type that Batch supports is used.
+     * </p>
+     * <dl>
+     * <dt>EKS_AL2</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for
+     * all non-GPU instance families.
+     * </p>
+     * </dd>
+     * <dt>EKS_AL2_NVIDIA</dt>
+     * <dd>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     * (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and
+     * can be used for all non Amazon Web Services Graviton-based instance types.
+     * </p>
+     * </dd>
+     * </dl>
+     * </dd>
+     * </dl>
      * 
      * @param imageType
-     *        The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
-     *        parameter isn't specified, then a recent <a
+     *        The image type to match with the instance type to select an AMI. The supported values are different for
+     *        <code>ECS</code> and <code>EKS</code> resources.</p>
+     *        <dl>
+     *        <dt>ECS</dt>
+     *        <dd>
+     *        <p>
+     *        If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      *        ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in
      *        an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified,
-     *        then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+     *        then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.
+     *        </p>
      *        <dl>
      *        <dt>ECS_AL2</dt>
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     *        Linux 2</a>− Default for all non-GPU instance families.
+     *        Linux 2</a>: Default for all non-GPU instance families.
      *        </p>
      *        </dd>
      *        <dt>ECS_AL2_NVIDIA</dt>
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
-     *        Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
+     *        Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
      *        and can be used for all non Amazon Web Services Graviton-based instance types.
      *        </p>
      *        </dd>
@@ -296,9 +519,38 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *        Linux</a>. Amazon Linux is reaching the end-of-life of standard support. For more information, see <a
+     *        Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a
      *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
+     *        </dd>
+     *        </dl>
+     *        </dd>
+     *        <dt>EKS</dt>
+     *        <dd>
+     *        <p>
+     *        If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon
+     *        Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither
+     *        an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon
+     *        EKS optimized AMI for that image type that Batch supports is used.
+     *        </p>
+     *        <dl>
+     *        <dt>EKS_AL2</dt>
+     *        <dd>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>:
+     *        Default for all non-GPU instance families.
+     *        </p>
+     *        </dd>
+     *        <dt>EKS_AL2_NVIDIA</dt>
+     *        <dd>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2
+     *        (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>
+     *        ) and can be used for all non Amazon Web Services Graviton-based instance types.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -412,6 +664,52 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch
+     * supports is used.
+     * </p>
+     * 
+     * @param imageKubernetesVersion
+     *        The Kubernetes version for the compute environment. If you don't specify a value, the latest version that
+     *        Batch supports is used.
+     */
+
+    public void setImageKubernetesVersion(String imageKubernetesVersion) {
+        this.imageKubernetesVersion = imageKubernetesVersion;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch
+     * supports is used.
+     * </p>
+     * 
+     * @return The Kubernetes version for the compute environment. If you don't specify a value, the latest version that
+     *         Batch supports is used.
+     */
+
+    public String getImageKubernetesVersion() {
+        return this.imageKubernetesVersion;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch
+     * supports is used.
+     * </p>
+     * 
+     * @param imageKubernetesVersion
+     *        The Kubernetes version for the compute environment. If you don't specify a value, the latest version that
+     *        Batch supports is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ec2Configuration withImageKubernetesVersion(String imageKubernetesVersion) {
+        setImageKubernetesVersion(imageKubernetesVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -426,7 +724,9 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
         if (getImageType() != null)
             sb.append("ImageType: ").append(getImageType()).append(",");
         if (getImageIdOverride() != null)
-            sb.append("ImageIdOverride: ").append(getImageIdOverride());
+            sb.append("ImageIdOverride: ").append(getImageIdOverride()).append(",");
+        if (getImageKubernetesVersion() != null)
+            sb.append("ImageKubernetesVersion: ").append(getImageKubernetesVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -449,6 +749,10 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getImageIdOverride() != null && other.getImageIdOverride().equals(this.getImageIdOverride()) == false)
             return false;
+        if (other.getImageKubernetesVersion() == null ^ this.getImageKubernetesVersion() == null)
+            return false;
+        if (other.getImageKubernetesVersion() != null && other.getImageKubernetesVersion().equals(this.getImageKubernetesVersion()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +763,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getImageType() == null) ? 0 : getImageType().hashCode());
         hashCode = prime * hashCode + ((getImageIdOverride() == null) ? 0 : getImageIdOverride().hashCode());
+        hashCode = prime * hashCode + ((getImageKubernetesVersion() == null) ? 0 : getImageKubernetesVersion().hashCode());
         return hashCode;
     }
 

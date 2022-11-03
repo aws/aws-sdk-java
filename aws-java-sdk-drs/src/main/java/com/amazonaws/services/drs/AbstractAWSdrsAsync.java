@@ -27,6 +27,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(CreateExtendedSourceServerRequest request) {
+
+        return createExtendedSourceServerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(CreateExtendedSourceServerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExtendedSourceServerRequest, CreateExtendedSourceServerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationConfigurationTemplateResult> createReplicationConfigurationTemplateAsync(
             CreateReplicationConfigurationTemplateRequest request) {
 
@@ -251,6 +264,32 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<InitializeServiceResult> initializeServiceAsync(InitializeServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<InitializeServiceRequest, InitializeServiceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensibleSourceServersResult> listExtensibleSourceServersAsync(ListExtensibleSourceServersRequest request) {
+
+        return listExtensibleSourceServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExtensibleSourceServersResult> listExtensibleSourceServersAsync(ListExtensibleSourceServersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExtensibleSourceServersRequest, ListExtensibleSourceServersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest request) {
+
+        return listStagingAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStagingAccountsRequest, ListStagingAccountsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

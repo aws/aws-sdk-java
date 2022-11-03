@@ -29,57 +29,60 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     * The ARN of the object storage system location.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The URL of the source self-managed object storage server location that was described.
+     * The URL of the object storage system location.
      * </p>
      */
     private String locationUri;
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      */
     private String accessKey;
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     * The port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      */
     private Integer serverPort;
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      */
     private String serverProtocol;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * The ARNs of the DataSync agents that can securely connect with your location.
      * </p>
      */
     private java.util.List<String> agentArns;
     /**
      * <p>
-     * The time that the self-managed object storage server agent was created.
+     * The time that the location was created.
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     */
+    private java.nio.ByteBuffer serverCertificate;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     * The ARN of the object storage system location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     *        The ARN of the object storage system location.
      */
 
     public void setLocationArn(String locationArn) {
@@ -88,10 +91,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     * The ARN of the object storage system location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     * @return The ARN of the object storage system location.
      */
 
     public String getLocationArn() {
@@ -100,11 +103,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     * The ARN of the object storage system location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.
+     *        The ARN of the object storage system location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,11 +118,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the source self-managed object storage server location that was described.
+     * The URL of the object storage system location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source self-managed object storage server location that was described.
+     *        The URL of the object storage system location.
      */
 
     public void setLocationUri(String locationUri) {
@@ -128,10 +131,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the source self-managed object storage server location that was described.
+     * The URL of the object storage system location.
      * </p>
      * 
-     * @return The URL of the source self-managed object storage server location that was described.
+     * @return The URL of the object storage system location.
      */
 
     public String getLocationUri() {
@@ -140,11 +143,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the source self-managed object storage server location that was described.
+     * The URL of the object storage system location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source self-managed object storage server location that was described.
+     *        The URL of the object storage system location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,15 +158,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      * 
      * @param accessKey
-     *        Optional. The access key is used if credentials are required to access the self-managed object storage
-     *        server. If your object storage requires a user name and password to authenticate, use
-     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     *        The access key (for example, a user name) required to authenticate with the object storage system.
      */
 
     public void setAccessKey(String accessKey) {
@@ -172,14 +171,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      * 
-     * @return Optional. The access key is used if credentials are required to access the self-managed object storage
-     *         server. If your object storage requires a user name and password to authenticate, use
-     *         <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     * @return The access key (for example, a user name) required to authenticate with the object storage system.
      */
 
     public String getAccessKey() {
@@ -188,15 +183,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
-     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      * 
      * @param accessKey
-     *        Optional. The access key is used if credentials are required to access the self-managed object storage
-     *        server. If your object storage requires a user name and password to authenticate, use
-     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
+     *        The access key (for example, a user name) required to authenticate with the object storage system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,13 +198,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     * The port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      * 
      * @param serverPort
-     *        The port that your self-managed object storage server accepts inbound network traffic on. The server port
-     *        is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     *        The port that your object storage server accepts inbound network traffic on (for example, port 443).
      */
 
     public void setServerPort(Integer serverPort) {
@@ -222,12 +211,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     * The port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      * 
-     * @return The port that your self-managed object storage server accepts inbound network traffic on. The server port
-     *         is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     * @return The port that your object storage server accepts inbound network traffic on (for example, port 443).
      */
 
     public Integer getServerPort() {
@@ -236,13 +223,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The port that your self-managed object storage server accepts inbound network traffic on. The server port is set
-     * by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     * The port that your object storage server accepts inbound network traffic on (for example, port 443).
      * </p>
      * 
      * @param serverPort
-     *        The port that your self-managed object storage server accepts inbound network traffic on. The server port
-     *        is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+     *        The port that your object storage server accepts inbound network traffic on (for example, port 443).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,11 +238,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     *        The protocol that your object storage system uses to communicate.
      * @see ObjectStorageServerProtocol
      */
 
@@ -267,10 +252,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
-     * @return The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     * @return The protocol that your object storage system uses to communicate.
      * @see ObjectStorageServerProtocol
      */
 
@@ -280,11 +265,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     *        The protocol that your object storage system uses to communicate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectStorageServerProtocol
      */
@@ -296,11 +281,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.
+     *        The protocol that your object storage system uses to communicate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectStorageServerProtocol
      */
@@ -312,11 +297,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * The ARNs of the DataSync agents that can securely connect with your location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *         location.
+     * @return The ARNs of the DataSync agents that can securely connect with your location.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -325,12 +309,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * The ARNs of the DataSync agents that can securely connect with your location.
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *        location.
+     *        The ARNs of the DataSync agents that can securely connect with your location.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -344,7 +327,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * The ARNs of the DataSync agents that can securely connect with your location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -353,8 +336,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *        location.
+     *        The ARNs of the DataSync agents that can securely connect with your location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,12 +352,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.
+     * The ARNs of the DataSync agents that can securely connect with your location.
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server
-     *        location.
+     *        The ARNs of the DataSync agents that can securely connect with your location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,11 +367,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time that the self-managed object storage server agent was created.
+     * The time that the location was created.
      * </p>
      * 
      * @param creationTime
-     *        The time that the self-managed object storage server agent was created.
+     *        The time that the location was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -399,10 +380,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time that the self-managed object storage server agent was created.
+     * The time that the location was created.
      * </p>
      * 
-     * @return The time that the self-managed object storage server agent was created.
+     * @return The time that the location was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -411,16 +392,83 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time that the self-managed object storage server agent was created.
+     * The time that the location was created.
      * </p>
      * 
      * @param creationTime
-     *        The time that the self-managed object storage server agent was created.
+     *        The time that the location was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLocationObjectStorageResult withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     */
+
+    public void setServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        this.serverCertificate = serverCertificate;
+    }
+
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
+     * </p>
+     * 
+     * @return The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     */
+
+    public java.nio.ByteBuffer getServerCertificate() {
+        return this.serverCertificate;
+    }
+
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLocationObjectStorageResult withServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        setServerCertificate(serverCertificate);
         return this;
     }
 
@@ -449,7 +497,9 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
         if (getAgentArns() != null)
             sb.append("AgentArns: ").append(getAgentArns()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getServerCertificate() != null)
+            sb.append("ServerCertificate: ").append(getServerCertificate());
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +542,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getServerCertificate() == null ^ this.getServerCertificate() == null)
+            return false;
+        if (other.getServerCertificate() != null && other.getServerCertificate().equals(this.getServerCertificate()) == false)
+            return false;
         return true;
     }
 
@@ -507,6 +561,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getServerProtocol() == null) ? 0 : getServerProtocol().hashCode());
         hashCode = prime * hashCode + ((getAgentArns() == null) ? 0 : getAgentArns().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getServerCertificate() == null) ? 0 : getServerCertificate().hashCode());
         return hashCode;
     }
 

@@ -36,8 +36,8 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     private Integer maxCandidates;
     /**
      * <p>
-     * The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.
+     * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the action.
      * </p>
      */
     private Integer maxRuntimePerTrainingJobInSeconds;
@@ -96,13 +96,13 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.
+     * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the action.
      * </p>
      * 
      * @param maxRuntimePerTrainingJobInSeconds
-     *        The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning
-     *        job. For more information, see the used by the action.
+     *        The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
+     *        run as part of a hyperparameter tuning job. For more information, see the used by the action.
      */
 
     public void setMaxRuntimePerTrainingJobInSeconds(Integer maxRuntimePerTrainingJobInSeconds) {
@@ -111,12 +111,12 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.
+     * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the action.
      * </p>
      * 
-     * @return The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning
-     *         job. For more information, see the used by the action.
+     * @return The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
+     *         run as part of a hyperparameter tuning job. For more information, see the used by the action.
      */
 
     public Integer getMaxRuntimePerTrainingJobInSeconds() {
@@ -125,13 +125,13 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.
+     * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the action.
      * </p>
      * 
      * @param maxRuntimePerTrainingJobInSeconds
-     *        The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning
-     *        job. For more information, see the used by the action.
+     *        The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
+     *        run as part of a hyperparameter tuning job. For more information, see the used by the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

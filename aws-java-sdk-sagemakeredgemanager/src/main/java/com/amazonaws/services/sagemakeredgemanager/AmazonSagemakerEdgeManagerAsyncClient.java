@@ -76,6 +76,39 @@ public class AmazonSagemakerEdgeManagerAsyncClient extends AmazonSagemakerEdgeMa
     }
 
     @Override
+    public java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(GetDeploymentsRequest request) {
+
+        return getDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(final GetDeploymentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeploymentsRequest, GetDeploymentsResult> asyncHandler) {
+        final GetDeploymentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeploymentsResult>() {
+            @Override
+            public GetDeploymentsResult call() throws Exception {
+                GetDeploymentsResult result = null;
+
+                try {
+                    result = executeGetDeployments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDeviceRegistrationResult> getDeviceRegistrationAsync(GetDeviceRegistrationRequest request) {
 
         return getDeviceRegistrationAsync(request, null);

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The filter specified for the operation is invalid. Specify a different filter.
+ * The filter specified for the operation is not valid. Specify a different filter.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

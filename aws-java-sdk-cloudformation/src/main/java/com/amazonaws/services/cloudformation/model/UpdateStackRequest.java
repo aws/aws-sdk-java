@@ -77,7 +77,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      */
     private String stackPolicyDuringUpdateBody;
@@ -89,7 +89,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      */
     private String stackPolicyDuringUpdateURL;
@@ -140,8 +140,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -626,7 +626,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      * 
      * @param stackPolicyDuringUpdateBody
@@ -635,7 +635,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        both.</p>
      *        <p>
      *        If you want to update protected resources, specify a temporary overriding stack policy during this update.
-     *        If you do not specify a stack policy, the current policy that is associated with the stack will be used.
+     *        If you don't specify a stack policy, the current policy that is associated with the stack will be used.
      */
 
     public void setStackPolicyDuringUpdateBody(String stackPolicyDuringUpdateBody) {
@@ -649,7 +649,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      * 
      * @return Structure containing the temporary overriding stack policy body. You can specify either the
@@ -657,8 +657,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         not both.</p>
      *         <p>
      *         If you want to update protected resources, specify a temporary overriding stack policy during this
-     *         update. If you do not specify a stack policy, the current policy that is associated with the stack will
-     *         be used.
+     *         update. If you don't specify a stack policy, the current policy that is associated with the stack will be
+     *         used.
      */
 
     public String getStackPolicyDuringUpdateBody() {
@@ -672,7 +672,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      * 
      * @param stackPolicyDuringUpdateBody
@@ -681,7 +681,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        both.</p>
      *        <p>
      *        If you want to update protected resources, specify a temporary overriding stack policy during this update.
-     *        If you do not specify a stack policy, the current policy that is associated with the stack will be used.
+     *        If you don't specify a stack policy, the current policy that is associated with the stack will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,7 +698,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      * 
      * @param stackPolicyDuringUpdateURL
@@ -708,7 +708,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        both.</p>
      *        <p>
      *        If you want to update protected resources, specify a temporary overriding stack policy during this update.
-     *        If you do not specify a stack policy, the current policy that is associated with the stack will be used.
+     *        If you don't specify a stack policy, the current policy that is associated with the stack will be used.
      */
 
     public void setStackPolicyDuringUpdateURL(String stackPolicyDuringUpdateURL) {
@@ -723,7 +723,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      * 
      * @return Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max
@@ -732,8 +732,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         not both.</p>
      *         <p>
      *         If you want to update protected resources, specify a temporary overriding stack policy during this
-     *         update. If you do not specify a stack policy, the current policy that is associated with the stack will
-     *         be used.
+     *         update. If you don't specify a stack policy, the current policy that is associated with the stack will be
+     *         used.
      */
 
     public String getStackPolicyDuringUpdateURL() {
@@ -748,7 +748,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If you want to update protected resources, specify a temporary overriding stack policy during this update. If you
-     * do not specify a stack policy, the current policy that is associated with the stack will be used.
+     * don't specify a stack policy, the current policy that is associated with the stack will be used.
      * </p>
      * 
      * @param stackPolicyDuringUpdateURL
@@ -758,7 +758,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        both.</p>
      *        <p>
      *        If you want to update protected resources, specify a temporary overriding stack policy during this update.
-     *        If you do not specify a stack policy, the current policy that is associated with the stack will be used.
+     *        If you don't specify a stack policy, the current policy that is associated with the stack will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -902,8 +902,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1029,7 +1029,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         <p>
-     *         If your stack template contains these resources, we recommend that you review all permissions associated
+     *         If your stack template contains these resources, we suggest that you review all permissions associated
      *         with them and edit their permissions if necessary.
      *         </p>
      *         <ul>
@@ -1170,8 +1170,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1298,7 +1298,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1441,8 +1441,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1574,7 +1574,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1719,8 +1719,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -1847,7 +1847,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>
@@ -1987,8 +1987,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions associated with
-     * them and edit their permissions if necessary.
+     * If your stack template contains these resources, we suggest that you review all permissions associated with them
+     * and edit their permissions if necessary.
      * </p>
      * <ul>
      * <li>
@@ -2115,7 +2115,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        If your stack template contains these resources, we suggest that you review all permissions associated
      *        with them and edit their permissions if necessary.
      *        </p>
      *        <ul>

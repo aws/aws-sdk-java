@@ -45,6 +45,8 @@ public class DescribeTableRequestMarshaller {
             .marshallLocationName("SecretArn").build();
     private static final MarshallingInfo<String> TABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Table").build();
+    private static final MarshallingInfo<String> WORKGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkgroupName").build();
 
     private static final DescribeTableRequestMarshaller instance = new DescribeTableRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class DescribeTableRequestMarshaller {
             protocolMarshaller.marshall(describeTableRequest.getSchema(), SCHEMA_BINDING);
             protocolMarshaller.marshall(describeTableRequest.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(describeTableRequest.getTable(), TABLE_BINDING);
+            protocolMarshaller.marshall(describeTableRequest.getWorkgroupName(), WORKGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

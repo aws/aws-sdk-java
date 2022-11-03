@@ -31,11 +31,11 @@ public class ApplyArchiveRuleRequestMarshaller {
 
     private static final MarshallingInfo<String> ANALYZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analyzerArn").build();
+    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ruleName").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("ruleName").build();
 
     private static final ApplyArchiveRuleRequestMarshaller instance = new ApplyArchiveRuleRequestMarshaller();
 
@@ -54,8 +54,8 @@ public class ApplyArchiveRuleRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(applyArchiveRuleRequest.getAnalyzerArn(), ANALYZERARN_BINDING);
-            protocolMarshaller.marshall(applyArchiveRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(applyArchiveRuleRequest.getRuleName(), RULENAME_BINDING);
+            protocolMarshaller.marshall(applyArchiveRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

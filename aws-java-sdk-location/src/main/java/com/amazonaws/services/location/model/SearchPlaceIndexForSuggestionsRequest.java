@@ -96,12 +96,21 @@ public class SearchPlaceIndexForSuggestionsRequest extends com.amazonaws.AmazonW
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.
      * </p>
      * <p>
-     * This setting affects the languages used in the results. It does not change which results are returned. If the
-     * language is not specified, or not supported for a particular result, the partner automatically chooses a language
-     * for the result.
+     * This setting affects the languages used in the results. If no language is specified, or not supported for a
+     * particular result, the partner automatically chooses a language for the result.
      * </p>
      * <p>
-     * Used only when the partner selected is Here.
+     * For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the
+     * <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as
+     * <code>Athens, Greece</code>.
+     * </p>
+     * <p>
+     * If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more
+     * likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     * </p>
+     * <p>
+     * If the data provider does not have a value for Greek, the result will be in a language that the provider does
+     * support.
      * </p>
      */
     private String language;
@@ -697,12 +706,21 @@ public class SearchPlaceIndexForSuggestionsRequest extends com.amazonaws.AmazonW
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.
      * </p>
      * <p>
-     * This setting affects the languages used in the results. It does not change which results are returned. If the
-     * language is not specified, or not supported for a particular result, the partner automatically chooses a language
-     * for the result.
+     * This setting affects the languages used in the results. If no language is specified, or not supported for a
+     * particular result, the partner automatically chooses a language for the result.
      * </p>
      * <p>
-     * Used only when the partner selected is Here.
+     * For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the
+     * <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as
+     * <code>Athens, Greece</code>.
+     * </p>
+     * <p>
+     * If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more
+     * likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     * </p>
+     * <p>
+     * If the data provider does not have a value for Greek, the result will be in a language that the provider does
+     * support.
      * </p>
      * 
      * @param language
@@ -710,12 +728,21 @@ public class SearchPlaceIndexForSuggestionsRequest extends com.amazonaws.AmazonW
      *        href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for
      *        English.</p>
      *        <p>
-     *        This setting affects the languages used in the results. It does not change which results are returned. If
-     *        the language is not specified, or not supported for a particular result, the partner automatically chooses
-     *        a language for the result.
+     *        This setting affects the languages used in the results. If no language is specified, or not supported for
+     *        a particular result, the partner automatically chooses a language for the result.
      *        </p>
      *        <p>
-     *        Used only when the partner selected is Here.
+     *        For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions
+     *        with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be
+     *        returned as <code>Athens, Greece</code>.
+     *        </p>
+     *        <p>
+     *        If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will
+     *        more likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     *        </p>
+     *        <p>
+     *        If the data provider does not have a value for Greek, the result will be in a language that the provider
+     *        does support.
      */
 
     public void setLanguage(String language) {
@@ -728,24 +755,42 @@ public class SearchPlaceIndexForSuggestionsRequest extends com.amazonaws.AmazonW
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.
      * </p>
      * <p>
-     * This setting affects the languages used in the results. It does not change which results are returned. If the
-     * language is not specified, or not supported for a particular result, the partner automatically chooses a language
-     * for the result.
+     * This setting affects the languages used in the results. If no language is specified, or not supported for a
+     * particular result, the partner automatically chooses a language for the result.
      * </p>
      * <p>
-     * Used only when the partner selected is Here.
+     * For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the
+     * <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as
+     * <code>Athens, Greece</code>.
+     * </p>
+     * <p>
+     * If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more
+     * likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     * </p>
+     * <p>
+     * If the data provider does not have a value for Greek, the result will be in a language that the provider does
+     * support.
      * </p>
      * 
      * @return The preferred language used to return results. The value must be a valid <a
      *         href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for
      *         English.</p>
      *         <p>
-     *         This setting affects the languages used in the results. It does not change which results are returned. If
-     *         the language is not specified, or not supported for a particular result, the partner automatically
-     *         chooses a language for the result.
+     *         This setting affects the languages used in the results. If no language is specified, or not supported for
+     *         a particular result, the partner automatically chooses a language for the result.
      *         </p>
      *         <p>
-     *         Used only when the partner selected is Here.
+     *         For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions
+     *         with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be
+     *         returned as <code>Athens, Greece</code>.
+     *         </p>
+     *         <p>
+     *         If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will
+     *         more likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     *         </p>
+     *         <p>
+     *         If the data provider does not have a value for Greek, the result will be in a language that the provider
+     *         does support.
      */
 
     public String getLanguage() {
@@ -758,12 +803,21 @@ public class SearchPlaceIndexForSuggestionsRequest extends com.amazonaws.AmazonW
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.
      * </p>
      * <p>
-     * This setting affects the languages used in the results. It does not change which results are returned. If the
-     * language is not specified, or not supported for a particular result, the partner automatically chooses a language
-     * for the result.
+     * This setting affects the languages used in the results. If no language is specified, or not supported for a
+     * particular result, the partner automatically chooses a language for the result.
      * </p>
      * <p>
-     * Used only when the partner selected is Here.
+     * For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the
+     * <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as
+     * <code>Athens, Greece</code>.
+     * </p>
+     * <p>
+     * If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more
+     * likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     * </p>
+     * <p>
+     * If the data provider does not have a value for Greek, the result will be in a language that the provider does
+     * support.
      * </p>
      * 
      * @param language
@@ -771,12 +825,21 @@ public class SearchPlaceIndexForSuggestionsRequest extends com.amazonaws.AmazonW
      *        href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for
      *        English.</p>
      *        <p>
-     *        This setting affects the languages used in the results. It does not change which results are returned. If
-     *        the language is not specified, or not supported for a particular result, the partner automatically chooses
-     *        a language for the result.
+     *        This setting affects the languages used in the results. If no language is specified, or not supported for
+     *        a particular result, the partner automatically chooses a language for the result.
      *        </p>
      *        <p>
-     *        Used only when the partner selected is Here.
+     *        For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions
+     *        with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be
+     *        returned as <code>Athens, Greece</code>.
+     *        </p>
+     *        <p>
+     *        If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will
+     *        more likely be returned as <code>Αθήνα, Ελλάδα</code>.
+     *        </p>
+     *        <p>
+     *        If the data provider does not have a value for Greek, the result will be in a language that the provider
+     *        does support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

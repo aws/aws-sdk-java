@@ -41,6 +41,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     }
 
     @Override
+    public java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest request) {
+
+        return addEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddEndpointsRequest, AddEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AdvertiseByoipCidrResult> advertiseByoipCidrAsync(AdvertiseByoipCidrRequest request) {
 
         return advertiseByoipCidrAsync(request, null);
@@ -518,6 +531,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     @Override
     public java.util.concurrent.Future<RemoveCustomRoutingEndpointsResult> removeCustomRoutingEndpointsAsync(RemoveCustomRoutingEndpointsRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveCustomRoutingEndpointsRequest, RemoveCustomRoutingEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest request) {
+
+        return removeEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveEndpointsRequest, RemoveEndpointsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

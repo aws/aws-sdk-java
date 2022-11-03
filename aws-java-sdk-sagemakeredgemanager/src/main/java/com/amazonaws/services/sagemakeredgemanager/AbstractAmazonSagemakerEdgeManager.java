@@ -28,6 +28,11 @@ public class AbstractAmazonSagemakerEdgeManager implements AmazonSagemakerEdgeMa
     }
 
     @Override
+    public GetDeploymentsResult getDeployments(GetDeploymentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDeviceRegistrationResult getDeviceRegistration(GetDeviceRegistrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -33,7 +33,7 @@ public class GetIdentityProviderByIdentifierRequest extends com.amazonaws.Amazon
     private String userPoolId;
     /**
      * <p>
-     * The identity provider ID.
+     * The IdP identifier.
      * </p>
      */
     private String idpIdentifier;
@@ -80,11 +80,11 @@ public class GetIdentityProviderByIdentifierRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identity provider ID.
+     * The IdP identifier.
      * </p>
      * 
      * @param idpIdentifier
-     *        The identity provider ID.
+     *        The IdP identifier.
      */
 
     public void setIdpIdentifier(String idpIdentifier) {
@@ -93,10 +93,10 @@ public class GetIdentityProviderByIdentifierRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identity provider ID.
+     * The IdP identifier.
      * </p>
      * 
-     * @return The identity provider ID.
+     * @return The IdP identifier.
      */
 
     public String getIdpIdentifier() {
@@ -105,11 +105,11 @@ public class GetIdentityProviderByIdentifierRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identity provider ID.
+     * The IdP identifier.
      * </p>
      * 
      * @param idpIdentifier
-     *        The identity provider ID.
+     *        The IdP identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

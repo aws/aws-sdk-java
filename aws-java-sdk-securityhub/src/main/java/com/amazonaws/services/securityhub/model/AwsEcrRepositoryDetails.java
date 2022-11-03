@@ -42,7 +42,7 @@ public class AwsEcrRepositoryDetails implements Serializable, Cloneable, Structu
     private AwsEcrRepositoryImageScanningConfigurationDetails imageScanningConfiguration;
     /**
      * <p>
-     * The tag mutability setting for the repository.
+     * The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.
      * </p>
      */
     private String imageTagMutability;
@@ -147,11 +147,12 @@ public class AwsEcrRepositoryDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The tag mutability setting for the repository.
+     * The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.
      * </p>
      * 
      * @param imageTagMutability
-     *        The tag mutability setting for the repository.
+     *        The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or
+     *        <code>MUTABLE</code>.
      */
 
     public void setImageTagMutability(String imageTagMutability) {
@@ -160,10 +161,11 @@ public class AwsEcrRepositoryDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The tag mutability setting for the repository.
+     * The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.
      * </p>
      * 
-     * @return The tag mutability setting for the repository.
+     * @return The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or
+     *         <code>MUTABLE</code>.
      */
 
     public String getImageTagMutability() {
@@ -172,11 +174,12 @@ public class AwsEcrRepositoryDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The tag mutability setting for the repository.
+     * The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.
      * </p>
      * 
      * @param imageTagMutability
-     *        The tag mutability setting for the repository.
+     *        The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or
+     *        <code>MUTABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

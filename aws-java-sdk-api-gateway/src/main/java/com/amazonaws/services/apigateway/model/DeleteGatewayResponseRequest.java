@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and
- * resets it with the default settings.
+ * Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with
+ * the default settings.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,27 +28,24 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required]
-     * <p>
-     * The response type of the associated <a>GatewayResponse</a>.
-     * </p>
+     * The response type of the associated GatewayResponse.
      * </p>
      */
     private String responseType;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -57,10 +54,10 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -69,11 +66,11 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,17 +81,11 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required]
-     * <p>
-     * The response type of the associated <a>GatewayResponse</a>.
-     * </p>
+     * The response type of the associated GatewayResponse.
      * </p>
      * 
      * @param responseType
-     *        [Required]
-     *        <p>
-     *        The response type of the associated <a>GatewayResponse</a>.
-     *        </p>
+     *        The response type of the associated GatewayResponse.
      * @see GatewayResponseType
      */
 
@@ -104,16 +95,10 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required]
-     * <p>
-     * The response type of the associated <a>GatewayResponse</a>.
-     * </p>
+     * The response type of the associated GatewayResponse.
      * </p>
      * 
-     * @return [Required]
-     *         <p>
-     *         The response type of the associated <a>GatewayResponse</a>.
-     *         </p>
+     * @return The response type of the associated GatewayResponse.
      * @see GatewayResponseType
      */
 
@@ -123,17 +108,11 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required]
-     * <p>
-     * The response type of the associated <a>GatewayResponse</a>.
-     * </p>
+     * The response type of the associated GatewayResponse.
      * </p>
      * 
      * @param responseType
-     *        [Required]
-     *        <p>
-     *        The response type of the associated <a>GatewayResponse</a>.
-     *        </p>
+     *        The response type of the associated GatewayResponse.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType
      */
@@ -145,17 +124,11 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required]
-     * <p>
-     * The response type of the associated <a>GatewayResponse</a>.
-     * </p>
+     * The response type of the associated GatewayResponse.
      * </p>
      * 
      * @param responseType
-     *        [Required]
-     *        <p>
-     *        The response type of the associated <a>GatewayResponse</a>.
-     *        </p>
+     *        The response type of the associated GatewayResponse.
      * @see GatewayResponseType
      */
 
@@ -165,17 +138,11 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required]
-     * <p>
-     * The response type of the associated <a>GatewayResponse</a>.
-     * </p>
+     * The response type of the associated GatewayResponse.
      * </p>
      * 
      * @param responseType
-     *        [Required]
-     *        <p>
-     *        The response type of the associated <a>GatewayResponse</a>.
-     *        </p>
+     *        The response type of the associated GatewayResponse.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType
      */

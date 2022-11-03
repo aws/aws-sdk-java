@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DeviceUpdateStatus {
 
     UP_TO_DATE("UP_TO_DATE"),
-    NOT_UP_TO_DATE("NOT_UP_TO_DATE");
+    NOT_UP_TO_DATE("NOT_UP_TO_DATE"),
+    UPDATING("UPDATING");
 
     private String value;
 

@@ -56,7 +56,7 @@ public class DeleteProvisionedProductPlanRequest extends com.amazonaws.AmazonWeb
     private String planId;
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      */
@@ -243,13 +243,13 @@ public class DeleteProvisionedProductPlanRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *        delete the underlying resources.
+     *        If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *        the underlying resources.
      */
 
     public void setIgnoreErrors(Boolean ignoreErrors) {
@@ -258,12 +258,12 @@ public class DeleteProvisionedProductPlanRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
-     * @return If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *         delete the underlying resources.
+     * @return If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *         the underlying resources.
      */
 
     public Boolean getIgnoreErrors() {
@@ -272,13 +272,13 @@ public class DeleteProvisionedProductPlanRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *        delete the underlying resources.
+     *        If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *        the underlying resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,12 +289,12 @@ public class DeleteProvisionedProductPlanRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
-     * @return If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *         delete the underlying resources.
+     * @return If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *         the underlying resources.
      */
 
     public Boolean isIgnoreErrors() {

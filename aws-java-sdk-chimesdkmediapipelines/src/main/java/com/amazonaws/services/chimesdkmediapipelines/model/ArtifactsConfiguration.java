@@ -46,6 +46,12 @@ public class ArtifactsConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private ContentArtifactsConfiguration content;
+    /**
+     * <p>
+     * Enables video compositing.
+     * </p>
+     */
+    private CompositedVideoArtifactsConfiguration compositedVideo;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class ArtifactsConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Enables video compositing.
+     * </p>
+     * 
+     * @param compositedVideo
+     *        Enables video compositing.
+     */
+
+    public void setCompositedVideo(CompositedVideoArtifactsConfiguration compositedVideo) {
+        this.compositedVideo = compositedVideo;
+    }
+
+    /**
+     * <p>
+     * Enables video compositing.
+     * </p>
+     * 
+     * @return Enables video compositing.
+     */
+
+    public CompositedVideoArtifactsConfiguration getCompositedVideo() {
+        return this.compositedVideo;
+    }
+
+    /**
+     * <p>
+     * Enables video compositing.
+     * </p>
+     * 
+     * @param compositedVideo
+     *        Enables video compositing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArtifactsConfiguration withCompositedVideo(CompositedVideoArtifactsConfiguration compositedVideo) {
+        setCompositedVideo(compositedVideo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class ArtifactsConfiguration implements Serializable, Cloneable, Structur
         if (getVideo() != null)
             sb.append("Video: ").append(getVideo()).append(",");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent());
+            sb.append("Content: ").append(getContent()).append(",");
+        if (getCompositedVideo() != null)
+            sb.append("CompositedVideo: ").append(getCompositedVideo());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class ArtifactsConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getCompositedVideo() == null ^ this.getCompositedVideo() == null)
+            return false;
+        if (other.getCompositedVideo() != null && other.getCompositedVideo().equals(this.getCompositedVideo()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class ArtifactsConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getAudio() == null) ? 0 : getAudio().hashCode());
         hashCode = prime * hashCode + ((getVideo() == null) ? 0 : getVideo().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getCompositedVideo() == null) ? 0 : getCompositedVideo().hashCode());
         return hashCode;
     }
 

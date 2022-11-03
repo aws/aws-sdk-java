@@ -71,6 +71,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobExecutionsRetryConfig").build();
     private static final MarshallingInfo<Map> DOCUMENTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentParameters").build();
+    private static final MarshallingInfo<Boolean> ISCONCURRENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isConcurrent").build();
 
     private static final JobMarshaller instance = new JobMarshaller();
 
@@ -109,6 +111,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getJobTemplateArn(), JOBTEMPLATEARN_BINDING);
             protocolMarshaller.marshall(job.getJobExecutionsRetryConfig(), JOBEXECUTIONSRETRYCONFIG_BINDING);
             protocolMarshaller.marshall(job.getDocumentParameters(), DOCUMENTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(job.getIsConcurrent(), ISCONCURRENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

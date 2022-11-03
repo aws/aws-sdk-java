@@ -26,7 +26,9 @@ public enum AcceleratorName {
     T4("t4"),
     M60("m60"),
     RadeonProV520("radeon-pro-v520"),
-    Vu9p("vu9p");
+    Vu9p("vu9p"),
+    Inferentia("inferentia"),
+    K520("k520");
 
     private String value;
 

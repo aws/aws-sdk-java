@@ -68,6 +68,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String senderIpAddress;
     /** The ARN of the source that you want to update. */
     private String sourceArn;
+    /** Source IP or domain name for SRT-caller protocol. */
+    private String sourceListenerAddress;
+    /** Source port for SRT-caller protocol. */
+    private Integer sourceListenerPort;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
     /** The name of the VPC interface to use for this source. */
@@ -637,6 +641,74 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * Source IP or domain name for SRT-caller protocol.
+     * 
+     * @param sourceListenerAddress
+     *        Source IP or domain name for SRT-caller protocol.
+     */
+
+    public void setSourceListenerAddress(String sourceListenerAddress) {
+        this.sourceListenerAddress = sourceListenerAddress;
+    }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     * 
+     * @return Source IP or domain name for SRT-caller protocol.
+     */
+
+    public String getSourceListenerAddress() {
+        return this.sourceListenerAddress;
+    }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     * 
+     * @param sourceListenerAddress
+     *        Source IP or domain name for SRT-caller protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withSourceListenerAddress(String sourceListenerAddress) {
+        setSourceListenerAddress(sourceListenerAddress);
+        return this;
+    }
+
+    /**
+     * Source port for SRT-caller protocol.
+     * 
+     * @param sourceListenerPort
+     *        Source port for SRT-caller protocol.
+     */
+
+    public void setSourceListenerPort(Integer sourceListenerPort) {
+        this.sourceListenerPort = sourceListenerPort;
+    }
+
+    /**
+     * Source port for SRT-caller protocol.
+     * 
+     * @return Source port for SRT-caller protocol.
+     */
+
+    public Integer getSourceListenerPort() {
+        return this.sourceListenerPort;
+    }
+
+    /**
+     * Source port for SRT-caller protocol.
+     * 
+     * @param sourceListenerPort
+     *        Source port for SRT-caller protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withSourceListenerPort(Integer sourceListenerPort) {
+        setSourceListenerPort(sourceListenerPort);
+        return this;
+    }
+
+    /**
      * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
      * 
      * @param streamId
@@ -784,6 +856,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("SenderIpAddress: ").append(getSenderIpAddress()).append(",");
         if (getSourceArn() != null)
             sb.append("SourceArn: ").append(getSourceArn()).append(",");
+        if (getSourceListenerAddress() != null)
+            sb.append("SourceListenerAddress: ").append(getSourceListenerAddress()).append(",");
+        if (getSourceListenerPort() != null)
+            sb.append("SourceListenerPort: ").append(getSourceListenerPort()).append(",");
         if (getStreamId() != null)
             sb.append("StreamId: ").append(getStreamId()).append(",");
         if (getVpcInterfaceName() != null)
@@ -861,6 +937,14 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false)
             return false;
+        if (other.getSourceListenerAddress() == null ^ this.getSourceListenerAddress() == null)
+            return false;
+        if (other.getSourceListenerAddress() != null && other.getSourceListenerAddress().equals(this.getSourceListenerAddress()) == false)
+            return false;
+        if (other.getSourceListenerPort() == null ^ this.getSourceListenerPort() == null)
+            return false;
+        if (other.getSourceListenerPort() != null && other.getSourceListenerPort().equals(this.getSourceListenerPort()) == false)
+            return false;
         if (other.getStreamId() == null ^ this.getStreamId() == null)
             return false;
         if (other.getStreamId() != null && other.getStreamId().equals(this.getStreamId()) == false)
@@ -895,6 +979,8 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getSenderControlPort() == null) ? 0 : getSenderControlPort().hashCode());
         hashCode = prime * hashCode + ((getSenderIpAddress() == null) ? 0 : getSenderIpAddress().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceListenerAddress() == null) ? 0 : getSourceListenerAddress().hashCode());
+        hashCode = prime * hashCode + ((getSourceListenerPort() == null) ? 0 : getSourceListenerPort().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());
         hashCode = prime * hashCode + ((getVpcInterfaceName() == null) ? 0 : getVpcInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getWhitelistCidr() == null) ? 0 : getWhitelistCidr().hashCode());

@@ -30,6 +30,8 @@ public class WorkflowDetailsMarshaller {
 
     private static final MarshallingInfo<List> ONUPLOAD_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("OnUpload").build();
+    private static final MarshallingInfo<List> ONPARTIALUPLOAD_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnPartialUpload").build();
 
     private static final WorkflowDetailsMarshaller instance = new WorkflowDetailsMarshaller();
 
@@ -48,6 +50,7 @@ public class WorkflowDetailsMarshaller {
 
         try {
             protocolMarshaller.marshall(workflowDetails.getOnUpload(), ONUPLOAD_BINDING);
+            protocolMarshaller.marshall(workflowDetails.getOnPartialUpload(), ONPARTIALUPLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

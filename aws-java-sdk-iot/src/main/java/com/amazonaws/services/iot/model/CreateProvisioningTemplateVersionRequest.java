@@ -22,13 +22,13 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      */
     private String templateBody;
@@ -41,11 +41,11 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      */
 
     public void setTemplateName(String templateName) {
@@ -54,10 +54,10 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
-     * @return The name of the fleet provisioning template.
+     * @return The name of the provisioning template.
      */
 
     public String getTemplateName() {
@@ -66,11 +66,11 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the fleet provisioning template.
+     * The name of the provisioning template.
      * </p>
      * 
      * @param templateName
-     *        The name of the fleet provisioning template.
+     *        The name of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      * 
      * @param templateBody
-     *        The JSON formatted contents of the fleet provisioning template.
+     *        The JSON formatted contents of the provisioning template.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -94,10 +94,10 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      * 
-     * @return The JSON formatted contents of the fleet provisioning template.
+     * @return The JSON formatted contents of the provisioning template.
      */
 
     public String getTemplateBody() {
@@ -106,11 +106,11 @@ public class CreateProvisioningTemplateVersionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The JSON formatted contents of the fleet provisioning template.
+     * The JSON formatted contents of the provisioning template.
      * </p>
      * 
      * @param templateBody
-     *        The JSON formatted contents of the fleet provisioning template.
+     *        The JSON formatted contents of the provisioning template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

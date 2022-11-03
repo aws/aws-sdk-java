@@ -64,6 +64,14 @@ public class ResolvedComponentVersionJsonUnmarshaller implements Unmarshaller<Re
                     context.nextToken();
                     resolvedComponentVersion.setRecipe(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
+                if (context.testExpression("vendorGuidance", targetDepth)) {
+                    context.nextToken();
+                    resolvedComponentVersion.setVendorGuidance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("message", targetDepth)) {
+                    context.nextToken();
+                    resolvedComponentVersion.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -88,6 +88,13 @@ public class DescribeApplicationInstanceResultJsonUnmarshaller implements Unmars
                     context.nextToken();
                     describeApplicationInstanceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RuntimeContextStates", targetDepth)) {
+                    context.nextToken();
+                    describeApplicationInstanceResult.setRuntimeContextStates(new ListUnmarshaller<ReportedRuntimeContextState>(
+                            ReportedRuntimeContextStateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("RuntimeRoleArn", targetDepth)) {
                     context.nextToken();
                     describeApplicationInstanceResult.setRuntimeRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

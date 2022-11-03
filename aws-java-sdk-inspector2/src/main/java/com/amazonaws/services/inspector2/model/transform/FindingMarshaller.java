@@ -36,6 +36,8 @@ public class FindingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingArn").build();
     private static final MarshallingInfo<java.util.Date> FIRSTOBSERVEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstObservedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> FIXAVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fixAvailable").build();
     private static final MarshallingInfo<Double> INSPECTORSCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inspectorScore").build();
     private static final MarshallingInfo<StructuredPojo> INSPECTORSCOREDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -81,6 +83,7 @@ public class FindingMarshaller {
             protocolMarshaller.marshall(finding.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(finding.getFindingArn(), FINDINGARN_BINDING);
             protocolMarshaller.marshall(finding.getFirstObservedAt(), FIRSTOBSERVEDAT_BINDING);
+            protocolMarshaller.marshall(finding.getFixAvailable(), FIXAVAILABLE_BINDING);
             protocolMarshaller.marshall(finding.getInspectorScore(), INSPECTORSCORE_BINDING);
             protocolMarshaller.marshall(finding.getInspectorScoreDetails(), INSPECTORSCOREDETAILS_BINDING);
             protocolMarshaller.marshall(finding.getLastObservedAt(), LASTOBSERVEDAT_BINDING);

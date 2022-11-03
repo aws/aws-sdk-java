@@ -28,6 +28,10 @@ public class SearchPlaceIndexForTextResult extends com.amazonaws.AmazonWebServic
      * A list of Places matching the input text. Each result contains additional information about the specific point of
      * interest.
      * </p>
+     * <p>
+     * Not all response properties are included with all responses. Some properties may only be returned by specific
+     * data partners.
+     * </p>
      */
     private java.util.List<SearchForTextResult> results;
     /**
@@ -44,9 +48,16 @@ public class SearchPlaceIndexForTextResult extends com.amazonaws.AmazonWebServic
      * A list of Places matching the input text. Each result contains additional information about the specific point of
      * interest.
      * </p>
+     * <p>
+     * Not all response properties are included with all responses. Some properties may only be returned by specific
+     * data partners.
+     * </p>
      * 
      * @return A list of Places matching the input text. Each result contains additional information about the specific
-     *         point of interest.
+     *         point of interest. </p>
+     *         <p>
+     *         Not all response properties are included with all responses. Some properties may only be returned by
+     *         specific data partners.
      */
 
     public java.util.List<SearchForTextResult> getResults() {
@@ -58,10 +69,17 @@ public class SearchPlaceIndexForTextResult extends com.amazonaws.AmazonWebServic
      * A list of Places matching the input text. Each result contains additional information about the specific point of
      * interest.
      * </p>
+     * <p>
+     * Not all response properties are included with all responses. Some properties may only be returned by specific
+     * data partners.
+     * </p>
      * 
      * @param results
      *        A list of Places matching the input text. Each result contains additional information about the specific
-     *        point of interest.
+     *        point of interest. </p>
+     *        <p>
+     *        Not all response properties are included with all responses. Some properties may only be returned by
+     *        specific data partners.
      */
 
     public void setResults(java.util.Collection<SearchForTextResult> results) {
@@ -79,6 +97,10 @@ public class SearchPlaceIndexForTextResult extends com.amazonaws.AmazonWebServic
      * interest.
      * </p>
      * <p>
+     * Not all response properties are included with all responses. Some properties may only be returned by specific
+     * data partners.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResults(java.util.Collection)} or {@link #withResults(java.util.Collection)} if you want to override
      * the existing values.
@@ -86,7 +108,10 @@ public class SearchPlaceIndexForTextResult extends com.amazonaws.AmazonWebServic
      * 
      * @param results
      *        A list of Places matching the input text. Each result contains additional information about the specific
-     *        point of interest.
+     *        point of interest. </p>
+     *        <p>
+     *        Not all response properties are included with all responses. Some properties may only be returned by
+     *        specific data partners.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,10 +130,17 @@ public class SearchPlaceIndexForTextResult extends com.amazonaws.AmazonWebServic
      * A list of Places matching the input text. Each result contains additional information about the specific point of
      * interest.
      * </p>
+     * <p>
+     * Not all response properties are included with all responses. Some properties may only be returned by specific
+     * data partners.
+     * </p>
      * 
      * @param results
      *        A list of Places matching the input text. Each result contains additional information about the specific
-     *        point of interest.
+     *        point of interest. </p>
+     *        <p>
+     *        Not all response properties are included with all responses. Some properties may only be returned by
+     *        specific data partners.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

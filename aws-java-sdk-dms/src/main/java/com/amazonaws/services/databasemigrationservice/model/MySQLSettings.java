@@ -71,7 +71,9 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer eventsPollInterval;
     /**
      * <p>
-     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you
+     * specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter
+     * of the <code>Endpoint</code> object.
      * </p>
      * <p>
      * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
@@ -437,15 +439,18 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you
+     * specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter
+     * of the <code>Endpoint</code> object.
      * </p>
      * <p>
      * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * </p>
      * 
      * @param targetDbType
-     *        Specifies where to migrate source tables on the target, either to a single database or multiple
-     *        databases.</p>
+     *        Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     *        If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the
+     *        <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
      *        <p>
      *        Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * @see TargetDbType
@@ -457,14 +462,17 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you
+     * specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter
+     * of the <code>Endpoint</code> object.
      * </p>
      * <p>
      * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * </p>
      * 
      * @return Specifies where to migrate source tables on the target, either to a single database or multiple
-     *         databases.</p>
+     *         databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the
+     *         <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
      *         <p>
      *         Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * @see TargetDbType
@@ -476,15 +484,18 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you
+     * specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter
+     * of the <code>Endpoint</code> object.
      * </p>
      * <p>
      * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * </p>
      * 
      * @param targetDbType
-     *        Specifies where to migrate source tables on the target, either to a single database or multiple
-     *        databases.</p>
+     *        Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     *        If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the
+     *        <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
      *        <p>
      *        Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -498,15 +509,18 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you
+     * specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter
+     * of the <code>Endpoint</code> object.
      * </p>
      * <p>
      * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * </p>
      * 
      * @param targetDbType
-     *        Specifies where to migrate source tables on the target, either to a single database or multiple
-     *        databases.</p>
+     *        Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     *        If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the
+     *        <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
      *        <p>
      *        Example: <code>targetDbType=MULTIPLE_DATABASES</code>
      * @return Returns a reference to this object so that method calls can be chained together.

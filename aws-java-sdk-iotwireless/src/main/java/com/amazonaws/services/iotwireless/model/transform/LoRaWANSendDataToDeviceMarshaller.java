@@ -29,6 +29,8 @@ public class LoRaWANSendDataToDeviceMarshaller {
 
     private static final MarshallingInfo<Integer> FPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FPort").build();
+    private static final MarshallingInfo<StructuredPojo> PARTICIPATINGGATEWAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParticipatingGateways").build();
 
     private static final LoRaWANSendDataToDeviceMarshaller instance = new LoRaWANSendDataToDeviceMarshaller();
 
@@ -47,6 +49,7 @@ public class LoRaWANSendDataToDeviceMarshaller {
 
         try {
             protocolMarshaller.marshall(loRaWANSendDataToDevice.getFPort(), FPORT_BINDING);
+            protocolMarshaller.marshall(loRaWANSendDataToDevice.getParticipatingGateways(), PARTICIPATINGGATEWAYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

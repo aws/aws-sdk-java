@@ -75,6 +75,22 @@ public class AmazonRDSWaiters {
     }
 
     /**
+     * Builds a DBClusterDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeDBClustersRequest> dBClusterDeleted() {
+
+        return new WaiterBuilder<DescribeDBClustersRequest, DescribeDBClustersResult>()
+                .withSdkFunction(new DescribeDBClustersFunction(client))
+                .withAcceptors(new DBClusterDeleted.IsTrueMatcher(), new DBClusterDeleted.IsDBClusterNotFoundFaultMatcher(),
+                        new DBClusterDeleted.IsCreatingMatcher(), new DBClusterDeleted.IsModifyingMatcher(), new DBClusterDeleted.IsRebootingMatcher(),
+                        new DBClusterDeleted.IsResettingmastercredentialsMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a DBSnapshotDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -118,6 +134,22 @@ public class AmazonRDSWaiters {
                 .withAcceptors(new DBClusterSnapshotDeleted.IsTrueMatcher(), new DBClusterSnapshotDeleted.IsDBClusterSnapshotNotFoundFaultMatcher(),
                         new DBClusterSnapshotDeleted.IsCreatingMatcher(), new DBClusterSnapshotDeleted.IsModifyingMatcher(),
                         new DBClusterSnapshotDeleted.IsRebootingMatcher(), new DBClusterSnapshotDeleted.IsResettingmastercredentialsMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a DBClusterAvailable waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeDBClustersRequest> dBClusterAvailable() {
+
+        return new WaiterBuilder<DescribeDBClustersRequest, DescribeDBClustersResult>()
+                .withSdkFunction(new DescribeDBClustersFunction(client))
+                .withAcceptors(new DBClusterAvailable.IsAvailableMatcher(), new DBClusterAvailable.IsDeletedMatcher(),
+                        new DBClusterAvailable.IsDeletingMatcher(), new DBClusterAvailable.IsFailedMatcher(),
+                        new DBClusterAvailable.IsIncompatiblerestoreMatcher(), new DBClusterAvailable.IsIncompatibleparametersMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

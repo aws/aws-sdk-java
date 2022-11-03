@@ -30,7 +30,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The access tokens for the request to list devices.
+     * A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      * </p>
      */
     private String accessToken;
@@ -49,11 +49,11 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The access tokens for the request to list devices.
+     * A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      * </p>
      * 
      * @param accessToken
-     *        The access tokens for the request to list devices.
+     *        A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      */
 
     public void setAccessToken(String accessToken) {
@@ -62,10 +62,10 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The access tokens for the request to list devices.
+     * A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      * </p>
      * 
-     * @return The access tokens for the request to list devices.
+     * @return A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      */
 
     public String getAccessToken() {
@@ -74,11 +74,11 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The access tokens for the request to list devices.
+     * A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      * </p>
      * 
      * @param accessToken
-     *        The access tokens for the request to list devices.
+     *        A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

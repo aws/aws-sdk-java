@@ -54,9 +54,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </ul>
  * <p>
  * In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet
- * both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule
- * action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not
- * affected by this rule.
+ * the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the
+ * rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards
+ * the rate limit and are not affected by this rule.
  * </p>
  * <p>
  * You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a

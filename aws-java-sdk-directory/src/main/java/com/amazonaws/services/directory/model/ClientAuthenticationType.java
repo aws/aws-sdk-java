@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ClientAuthenticationType {
 
-    SmartCard("SmartCard");
+    SmartCard("SmartCard"),
+    SmartCardOrPassword("SmartCardOrPassword");
 
     private String value;
 

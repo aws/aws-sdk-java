@@ -289,6 +289,10 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBInstanceFromS3Request.getNetworkType()));
         }
 
+        if (restoreDBInstanceFromS3Request.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(restoreDBInstanceFromS3Request.getStorageThroughput()));
+        }
+
         return request;
     }
 

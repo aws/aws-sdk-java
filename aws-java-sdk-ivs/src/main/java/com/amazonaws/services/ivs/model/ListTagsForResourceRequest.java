@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource to be retrieved.
+     * The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN of the resource to be retrieved.
+     * The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource to be retrieved.
+     *        The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource to be retrieved.
+     * The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      * </p>
      * 
-     * @return The ARN of the resource to be retrieved.
+     * @return The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource to be retrieved.
+     * The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource to be retrieved.
+     *        The ARN of the resource to be retrieved. The ARN must be URL-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

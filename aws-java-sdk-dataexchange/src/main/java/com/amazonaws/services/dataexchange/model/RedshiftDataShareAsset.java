@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * The Amazon Redshift datashare asset.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RedshiftDataShareAsset"
  *      target="_top">AWS API Documentation</a>
@@ -26,11 +28,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RedshiftDataShareAsset implements Serializable, Cloneable, StructuredPojo {
 
-    /** The Amazon Resource Name (ARN) of the datashare asset. */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the datashare asset.
+     * </p>
+     */
     private String arn;
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the datashare asset.
+     * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the datashare asset.
@@ -41,7 +49,9 @@ public class RedshiftDataShareAsset implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the datashare asset.
+     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the datashare asset.
      */
@@ -51,7 +61,9 @@ public class RedshiftDataShareAsset implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the datashare asset.
+     * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the datashare asset.

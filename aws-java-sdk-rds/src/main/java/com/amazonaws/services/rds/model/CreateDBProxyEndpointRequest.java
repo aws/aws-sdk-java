@@ -54,7 +54,8 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>.
+     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.
      * </p>
      */
     private String targetRole;
@@ -306,12 +307,14 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>.
+     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.
      * </p>
      * 
      * @param targetRole
      *        A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *        The default is <code>READ_WRITE</code>.
+     *        The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
+     *        support is <code>READ_WRITE</code>.
      * @see DBProxyEndpointTargetRole
      */
 
@@ -322,11 +325,13 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>.
+     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.
      * </p>
      * 
      * @return A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *         The default is <code>READ_WRITE</code>.
+     *         The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
+     *         support is <code>READ_WRITE</code>.
      * @see DBProxyEndpointTargetRole
      */
 
@@ -337,12 +342,14 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>.
+     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.
      * </p>
      * 
      * @param targetRole
      *        A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *        The default is <code>READ_WRITE</code>.
+     *        The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
+     *        support is <code>READ_WRITE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DBProxyEndpointTargetRole
      */
@@ -355,12 +362,14 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>.
+     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.
      * </p>
      * 
      * @param targetRole
      *        A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *        The default is <code>READ_WRITE</code>.
+     *        The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
+     *        support is <code>READ_WRITE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DBProxyEndpointTargetRole
      */

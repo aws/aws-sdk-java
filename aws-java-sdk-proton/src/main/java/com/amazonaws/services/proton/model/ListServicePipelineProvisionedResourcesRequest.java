@@ -34,7 +34,7 @@ public class ListServicePipelineProvisionedResourcesRequest extends com.amazonaw
     private String nextToken;
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's provisioned resources you want.
      * </p>
      */
     private String serviceName;
@@ -87,11 +87,11 @@ public class ListServicePipelineProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's provisioned resources you want.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the service whose pipeline's provisioned resources you want.
      */
 
     public void setServiceName(String serviceName) {
@@ -100,10 +100,10 @@ public class ListServicePipelineProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's provisioned resources you want.
      * </p>
      * 
-     * @return The service name.
+     * @return The name of the service whose pipeline's provisioned resources you want.
      */
 
     public String getServiceName() {
@@ -112,11 +112,11 @@ public class ListServicePipelineProvisionedResourcesRequest extends com.amazonaw
 
     /**
      * <p>
-     * The service name.
+     * The name of the service whose pipeline's provisioned resources you want.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the service whose pipeline's provisioned resources you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

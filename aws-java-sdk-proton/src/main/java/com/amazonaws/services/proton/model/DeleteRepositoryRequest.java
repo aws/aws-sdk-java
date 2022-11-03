@@ -27,7 +27,7 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the repository.
+     * The repository name.
      * </p>
      */
     private String name;
@@ -40,11 +40,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the repository.
+     * The repository name.
      * </p>
      * 
      * @param name
-     *        The name of the repository.
+     *        The repository name.
      */
 
     public void setName(String name) {
@@ -53,10 +53,10 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the repository.
+     * The repository name.
      * </p>
      * 
-     * @return The name of the repository.
+     * @return The repository name.
      */
 
     public String getName() {
@@ -65,11 +65,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the repository.
+     * The repository name.
      * </p>
      * 
      * @param name
-     *        The name of the repository.
+     *        The repository name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

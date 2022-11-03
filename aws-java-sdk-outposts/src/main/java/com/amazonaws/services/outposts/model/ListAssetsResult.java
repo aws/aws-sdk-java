@@ -25,7 +25,7 @@ public class ListAssetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about hardware assets.
+     * Information about the hardware assets.
      * </p>
      */
     private java.util.List<AssetInfo> assets;
@@ -34,10 +34,10 @@ public class ListAssetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about hardware assets.
+     * Information about the hardware assets.
      * </p>
      * 
-     * @return Information about hardware assets.
+     * @return Information about the hardware assets.
      */
 
     public java.util.List<AssetInfo> getAssets() {
@@ -46,11 +46,11 @@ public class ListAssetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about hardware assets.
+     * Information about the hardware assets.
      * </p>
      * 
      * @param assets
-     *        Information about hardware assets.
+     *        Information about the hardware assets.
      */
 
     public void setAssets(java.util.Collection<AssetInfo> assets) {
@@ -64,7 +64,7 @@ public class ListAssetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about hardware assets.
+     * Information about the hardware assets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class ListAssetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param assets
-     *        Information about hardware assets.
+     *        Information about the hardware assets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ListAssetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about hardware assets.
+     * Information about the hardware assets.
      * </p>
      * 
      * @param assets
-     *        Information about hardware assets.
+     *        Information about the hardware assets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

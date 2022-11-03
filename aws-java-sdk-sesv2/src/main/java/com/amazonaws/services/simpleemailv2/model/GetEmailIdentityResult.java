@@ -87,6 +87,41 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String configurationSetName;
+    /**
+     * <p>
+     * The verification status of the identity. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the
+     * identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code> – The verification process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> – The verification process failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification
+     * status of the identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String verificationStatus;
 
     /**
      * <p>
@@ -614,6 +649,293 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The verification status of the identity. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the
+     * identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code> – The verification process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> – The verification process failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification
+     * status of the identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param verificationStatus
+     *        The verification status of the identity. The status can be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to
+     *        verify the identity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUCCESS</code> – The verification process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> – The verification process failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the
+     *        verification status of the identity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     *        </p>
+     *        </li>
+     * @see VerificationStatus
+     */
+
+    public void setVerificationStatus(String verificationStatus) {
+        this.verificationStatus = verificationStatus;
+    }
+
+    /**
+     * <p>
+     * The verification status of the identity. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the
+     * identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code> – The verification process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> – The verification process failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification
+     * status of the identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The verification status of the identity. The status can be one of the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to
+     *         verify the identity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SUCCESS</code> – The verification process completed successfully.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> – The verification process failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the
+     *         verification status of the identity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     *         </p>
+     *         </li>
+     * @see VerificationStatus
+     */
+
+    public String getVerificationStatus() {
+        return this.verificationStatus;
+    }
+
+    /**
+     * <p>
+     * The verification status of the identity. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the
+     * identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code> – The verification process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> – The verification process failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification
+     * status of the identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param verificationStatus
+     *        The verification status of the identity. The status can be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to
+     *        verify the identity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUCCESS</code> – The verification process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> – The verification process failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the
+     *        verification status of the identity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VerificationStatus
+     */
+
+    public GetEmailIdentityResult withVerificationStatus(String verificationStatus) {
+        setVerificationStatus(verificationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The verification status of the identity. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the
+     * identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUCCESS</code> – The verification process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> – The verification process failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification
+     * status of the identity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param verificationStatus
+     *        The verification status of the identity. The status can be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to
+     *        verify the identity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUCCESS</code> – The verification process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> – The verification process failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the
+     *        verification status of the identity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VerificationStatus
+     */
+
+    public GetEmailIdentityResult withVerificationStatus(VerificationStatus verificationStatus) {
+        this.verificationStatus = verificationStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +962,9 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
+        if (getVerificationStatus() != null)
+            sb.append("VerificationStatus: ").append(getVerificationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -687,6 +1011,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
             return false;
+        if (other.getVerificationStatus() == null ^ this.getVerificationStatus() == null)
+            return false;
+        if (other.getVerificationStatus() != null && other.getVerificationStatus().equals(this.getVerificationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -703,6 +1031,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
+        hashCode = prime * hashCode + ((getVerificationStatus() == null) ? 0 : getVerificationStatus().hashCode());
         return hashCode;
     }
 

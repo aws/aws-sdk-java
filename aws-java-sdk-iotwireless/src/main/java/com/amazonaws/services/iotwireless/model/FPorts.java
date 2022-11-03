@@ -33,6 +33,12 @@ public class FPorts implements Serializable, Cloneable, StructuredPojo {
     private Integer multicast;
 
     private Integer clockSync;
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     */
+    private Positioning positioning;
 
     /**
      * @param fuota
@@ -113,6 +119,46 @@ public class FPorts implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     */
+
+    public void setPositioning(Positioning positioning) {
+        this.positioning = positioning;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @return FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     */
+
+    public Positioning getPositioning() {
+        return this.positioning;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FPorts withPositioning(Positioning positioning) {
+        setPositioning(positioning);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -129,7 +175,9 @@ public class FPorts implements Serializable, Cloneable, StructuredPojo {
         if (getMulticast() != null)
             sb.append("Multicast: ").append(getMulticast()).append(",");
         if (getClockSync() != null)
-            sb.append("ClockSync: ").append(getClockSync());
+            sb.append("ClockSync: ").append(getClockSync()).append(",");
+        if (getPositioning() != null)
+            sb.append("Positioning: ").append(getPositioning());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class FPorts implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClockSync() != null && other.getClockSync().equals(this.getClockSync()) == false)
             return false;
+        if (other.getPositioning() == null ^ this.getPositioning() == null)
+            return false;
+        if (other.getPositioning() != null && other.getPositioning().equals(this.getPositioning()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +219,7 @@ public class FPorts implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFuota() == null) ? 0 : getFuota().hashCode());
         hashCode = prime * hashCode + ((getMulticast() == null) ? 0 : getMulticast().hashCode());
         hashCode = prime * hashCode + ((getClockSync() == null) ? 0 : getClockSync().hashCode());
+        hashCode = prime * hashCode + ((getPositioning() == null) ? 0 : getPositioning().hashCode());
         return hashCode;
     }
 

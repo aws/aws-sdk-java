@@ -39,27 +39,24 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     private String scheduledActionName;
     /**
      * <p>
-     * This parameter is no longer used.
+     * This property is no longer used.
      * </p>
      */
     private java.util.Date time;
     /**
      * <p>
      * The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for
-     * example, <code>"2019-06-01T00:00:00Z"</code>).
+     * example, <code>"2021-06-01T00:00:00Z"</code>).
      * </p>
      * <p>
      * If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at
      * this time, and then performs the action based on the specified recurrence.
      * </p>
-     * <p>
-     * If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
-     * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The date and time for the recurring schedule to end, in UTC.
+     * The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
      * </p>
      */
     private java.util.Date endTime;
@@ -96,6 +93,12 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
      * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
      * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     * <code>DesiredCapacity</code>.
+     * </p>
+     * </note>
      */
     private Integer desiredCapacity;
     /**
@@ -193,11 +196,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * This parameter is no longer used.
+     * This property is no longer used.
      * </p>
      * 
      * @param time
-     *        This parameter is no longer used.
+     *        This property is no longer used.
      */
 
     public void setTime(java.util.Date time) {
@@ -206,10 +209,10 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * This parameter is no longer used.
+     * This property is no longer used.
      * </p>
      * 
-     * @return This parameter is no longer used.
+     * @return This property is no longer used.
      */
 
     public java.util.Date getTime() {
@@ -218,11 +221,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * This parameter is no longer used.
+     * This property is no longer used.
      * </p>
      * 
      * @param time
-     *        This parameter is no longer used.
+     *        This property is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,25 +237,19 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for
-     * example, <code>"2019-06-01T00:00:00Z"</code>).
+     * example, <code>"2021-06-01T00:00:00Z"</code>).
      * </p>
      * <p>
      * If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at
      * this time, and then performs the action based on the specified recurrence.
      * </p>
-     * <p>
-     * If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
-     * </p>
      * 
      * @param startTime
      *        The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes
-     *        (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+     *        (for example, <code>"2021-06-01T00:00:00Z"</code>).</p>
      *        <p>
      *        If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the
      *        action at this time, and then performs the action based on the specified recurrence.
-     *        </p>
-     *        <p>
-     *        If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -262,24 +259,18 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for
-     * example, <code>"2019-06-01T00:00:00Z"</code>).
+     * example, <code>"2021-06-01T00:00:00Z"</code>).
      * </p>
      * <p>
      * If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at
      * this time, and then performs the action based on the specified recurrence.
      * </p>
-     * <p>
-     * If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
-     * </p>
      * 
      * @return The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes
-     *         (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+     *         (for example, <code>"2021-06-01T00:00:00Z"</code>).</p>
      *         <p>
      *         If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the
      *         action at this time, and then performs the action based on the specified recurrence.
-     *         </p>
-     *         <p>
-     *         If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
      */
 
     public java.util.Date getStartTime() {
@@ -289,25 +280,19 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for
-     * example, <code>"2019-06-01T00:00:00Z"</code>).
+     * example, <code>"2021-06-01T00:00:00Z"</code>).
      * </p>
      * <p>
      * If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at
      * this time, and then performs the action based on the specified recurrence.
      * </p>
-     * <p>
-     * If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
-     * </p>
      * 
      * @param startTime
      *        The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes
-     *        (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+     *        (for example, <code>"2021-06-01T00:00:00Z"</code>).</p>
      *        <p>
      *        If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the
      *        action at this time, and then performs the action based on the specified recurrence.
-     *        </p>
-     *        <p>
-     *        If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,11 +303,12 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time for the recurring schedule to end, in UTC.
+     * The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
      * </p>
      * 
      * @param endTime
-     *        The date and time for the recurring schedule to end, in UTC.
+     *        The date and time for the recurring schedule to end, in UTC. For example,
+     *        <code>"2021-06-01T00:00:00Z"</code>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -331,10 +317,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time for the recurring schedule to end, in UTC.
+     * The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
      * </p>
      * 
-     * @return The date and time for the recurring schedule to end, in UTC.
+     * @return The date and time for the recurring schedule to end, in UTC. For example,
+     *         <code>"2021-06-01T00:00:00Z"</code>.
      */
 
     public java.util.Date getEndTime() {
@@ -343,11 +330,12 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time for the recurring schedule to end, in UTC.
+     * The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
      * </p>
      * 
      * @param endTime
-     *        The date and time for the recurring schedule to end, in UTC.
+     *        The date and time for the recurring schedule to end, in UTC. For example,
+     *        <code>"2021-06-01T00:00:00Z"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -538,11 +526,21 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
      * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
      * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     * <code>DesiredCapacity</code>.
+     * </p>
+     * </note>
      * 
      * @param desiredCapacity
      *        The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and
      *        the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling
-     *        conditions.
+     *        conditions. </p> <note>
+     *        <p>
+     *        You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     *        <code>DesiredCapacity</code>.
+     *        </p>
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -554,10 +552,20 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
      * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
      * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     * <code>DesiredCapacity</code>.
+     * </p>
+     * </note>
      * 
      * @return The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs
      *         and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling
-     *         conditions.
+     *         conditions. </p> <note>
+     *         <p>
+     *         You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     *         <code>DesiredCapacity</code>.
+     *         </p>
      */
 
     public Integer getDesiredCapacity() {
@@ -569,11 +577,21 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
      * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
      * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
+     * <note>
+     * <p>
+     * You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     * <code>DesiredCapacity</code>.
+     * </p>
+     * </note>
      * 
      * @param desiredCapacity
      *        The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and
      *        the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling
-     *        conditions.
+     *        conditions. </p> <note>
+     *        <p>
+     *        You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or
+     *        <code>DesiredCapacity</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

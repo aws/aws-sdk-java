@@ -54,6 +54,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccountSubscriptionResult> createAccountSubscriptionAsync(CreateAccountSubscriptionRequest request) {
+
+        return createAccountSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccountSubscriptionResult> createAccountSubscriptionAsync(CreateAccountSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccountSubscriptionRequest, CreateAccountSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(CreateAnalysisRequest request) {
 
         return createAnalysisAsync(request, null);
@@ -491,6 +504,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountSubscriptionResult> describeAccountSubscriptionAsync(DescribeAccountSubscriptionRequest request) {
+
+        return describeAccountSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountSubscriptionResult> describeAccountSubscriptionAsync(DescribeAccountSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountSubscriptionRequest, DescribeAccountSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1463,6 +1489,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<UpdateIpRestrictionResult> updateIpRestrictionAsync(UpdateIpRestrictionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIpRestrictionRequest, UpdateIpRestrictionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request) {
+
+        return updatePublicSharingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

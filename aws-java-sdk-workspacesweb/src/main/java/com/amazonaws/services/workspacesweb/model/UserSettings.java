@@ -43,10 +43,23 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private String copyAllowed;
     /**
      * <p>
+     * The amount of time that a streaming session remains active after users disconnect.
+     * </p>
+     */
+    private Integer disconnectTimeoutInMinutes;
+    /**
+     * <p>
      * Specifies whether the user can download files from the streaming session to the local device.
      * </p>
      */
     private String downloadAllowed;
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the disconnect timeout interval begins.
+     * </p>
+     */
+    private Integer idleDisconnectTimeoutInMinutes;
     /**
      * <p>
      * Specifies whether the user can paste text from the local device to the streaming session.
@@ -203,6 +216,46 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The amount of time that a streaming session remains active after users disconnect.
+     * </p>
+     * 
+     * @param disconnectTimeoutInMinutes
+     *        The amount of time that a streaming session remains active after users disconnect.
+     */
+
+    public void setDisconnectTimeoutInMinutes(Integer disconnectTimeoutInMinutes) {
+        this.disconnectTimeoutInMinutes = disconnectTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The amount of time that a streaming session remains active after users disconnect.
+     * </p>
+     * 
+     * @return The amount of time that a streaming session remains active after users disconnect.
+     */
+
+    public Integer getDisconnectTimeoutInMinutes() {
+        return this.disconnectTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The amount of time that a streaming session remains active after users disconnect.
+     * </p>
+     * 
+     * @param disconnectTimeoutInMinutes
+     *        The amount of time that a streaming session remains active after users disconnect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withDisconnectTimeoutInMinutes(Integer disconnectTimeoutInMinutes) {
+        setDisconnectTimeoutInMinutes(disconnectTimeoutInMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether the user can download files from the streaming session to the local device.
      * </p>
      * 
@@ -257,6 +310,52 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     public UserSettings withDownloadAllowed(EnabledType downloadAllowed) {
         this.downloadAllowed = downloadAllowed.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the disconnect timeout interval begins.
+     * </p>
+     * 
+     * @param idleDisconnectTimeoutInMinutes
+     *        The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *        session and the disconnect timeout interval begins.
+     */
+
+    public void setIdleDisconnectTimeoutInMinutes(Integer idleDisconnectTimeoutInMinutes) {
+        this.idleDisconnectTimeoutInMinutes = idleDisconnectTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the disconnect timeout interval begins.
+     * </p>
+     * 
+     * @return The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *         session and the disconnect timeout interval begins.
+     */
+
+    public Integer getIdleDisconnectTimeoutInMinutes() {
+        return this.idleDisconnectTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the disconnect timeout interval begins.
+     * </p>
+     * 
+     * @param idleDisconnectTimeoutInMinutes
+     *        The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *        session and the disconnect timeout interval begins.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withIdleDisconnectTimeoutInMinutes(Integer idleDisconnectTimeoutInMinutes) {
+        setIdleDisconnectTimeoutInMinutes(idleDisconnectTimeoutInMinutes);
         return this;
     }
 
@@ -493,8 +592,12 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("AssociatedPortalArns: ").append(getAssociatedPortalArns()).append(",");
         if (getCopyAllowed() != null)
             sb.append("CopyAllowed: ").append(getCopyAllowed()).append(",");
+        if (getDisconnectTimeoutInMinutes() != null)
+            sb.append("DisconnectTimeoutInMinutes: ").append(getDisconnectTimeoutInMinutes()).append(",");
         if (getDownloadAllowed() != null)
             sb.append("DownloadAllowed: ").append(getDownloadAllowed()).append(",");
+        if (getIdleDisconnectTimeoutInMinutes() != null)
+            sb.append("IdleDisconnectTimeoutInMinutes: ").append(getIdleDisconnectTimeoutInMinutes()).append(",");
         if (getPasteAllowed() != null)
             sb.append("PasteAllowed: ").append(getPasteAllowed()).append(",");
         if (getPrintAllowed() != null)
@@ -525,9 +628,18 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCopyAllowed() != null && other.getCopyAllowed().equals(this.getCopyAllowed()) == false)
             return false;
+        if (other.getDisconnectTimeoutInMinutes() == null ^ this.getDisconnectTimeoutInMinutes() == null)
+            return false;
+        if (other.getDisconnectTimeoutInMinutes() != null && other.getDisconnectTimeoutInMinutes().equals(this.getDisconnectTimeoutInMinutes()) == false)
+            return false;
         if (other.getDownloadAllowed() == null ^ this.getDownloadAllowed() == null)
             return false;
         if (other.getDownloadAllowed() != null && other.getDownloadAllowed().equals(this.getDownloadAllowed()) == false)
+            return false;
+        if (other.getIdleDisconnectTimeoutInMinutes() == null ^ this.getIdleDisconnectTimeoutInMinutes() == null)
+            return false;
+        if (other.getIdleDisconnectTimeoutInMinutes() != null
+                && other.getIdleDisconnectTimeoutInMinutes().equals(this.getIdleDisconnectTimeoutInMinutes()) == false)
             return false;
         if (other.getPasteAllowed() == null ^ this.getPasteAllowed() == null)
             return false;
@@ -555,7 +667,9 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAssociatedPortalArns() == null) ? 0 : getAssociatedPortalArns().hashCode());
         hashCode = prime * hashCode + ((getCopyAllowed() == null) ? 0 : getCopyAllowed().hashCode());
+        hashCode = prime * hashCode + ((getDisconnectTimeoutInMinutes() == null) ? 0 : getDisconnectTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDownloadAllowed() == null) ? 0 : getDownloadAllowed().hashCode());
+        hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInMinutes() == null) ? 0 : getIdleDisconnectTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getPasteAllowed() == null) ? 0 : getPasteAllowed().hashCode());
         hashCode = prime * hashCode + ((getPrintAllowed() == null) ? 0 : getPrintAllowed().hashCode());
         hashCode = prime * hashCode + ((getUploadAllowed() == null) ? 0 : getUploadAllowed().hashCode());

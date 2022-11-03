@@ -53,6 +53,12 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> gatewayLoadBalancerArns;
     /**
      * <p>
+     * The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedIpAddressTypes;
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to ensure idempotency</a>.
@@ -314,6 +320,79 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
+     * The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * </p>
+     * 
+     * @return The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     */
+
+    public java.util.List<String> getSupportedIpAddressTypes() {
+        if (supportedIpAddressTypes == null) {
+            supportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedIpAddressTypes;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     */
+
+    public void setSupportedIpAddressTypes(java.util.Collection<String> supportedIpAddressTypes) {
+        if (supportedIpAddressTypes == null) {
+            this.supportedIpAddressTypes = null;
+            return;
+        }
+
+        this.supportedIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedIpAddressTypes);
+    }
+
+    /**
+     * <p>
+     * The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedIpAddressTypes(java.util.Collection)} or
+     * {@link #withSupportedIpAddressTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointServiceConfigurationRequest withSupportedIpAddressTypes(String... supportedIpAddressTypes) {
+        if (this.supportedIpAddressTypes == null) {
+            setSupportedIpAddressTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedIpAddressTypes.length));
+        }
+        for (String ele : supportedIpAddressTypes) {
+            this.supportedIpAddressTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * </p>
+     * 
+     * @param supportedIpAddressTypes
+     *        The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointServiceConfigurationRequest withSupportedIpAddressTypes(java.util.Collection<String> supportedIpAddressTypes) {
+        setSupportedIpAddressTypes(supportedIpAddressTypes);
+        return this;
+    }
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to ensure idempotency</a>.
@@ -471,6 +550,8 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
         if (getGatewayLoadBalancerArns() != null)
             sb.append("GatewayLoadBalancerArns: ").append(getGatewayLoadBalancerArns()).append(",");
+        if (getSupportedIpAddressTypes() != null)
+            sb.append("SupportedIpAddressTypes: ").append(getSupportedIpAddressTypes()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTagSpecifications() != null)
@@ -505,6 +586,10 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
             return false;
         if (other.getGatewayLoadBalancerArns() != null && other.getGatewayLoadBalancerArns().equals(this.getGatewayLoadBalancerArns()) == false)
             return false;
+        if (other.getSupportedIpAddressTypes() == null ^ this.getSupportedIpAddressTypes() == null)
+            return false;
+        if (other.getSupportedIpAddressTypes() != null && other.getSupportedIpAddressTypes().equals(this.getSupportedIpAddressTypes()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -525,6 +610,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getGatewayLoadBalancerArns() == null) ? 0 : getGatewayLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getSupportedIpAddressTypes() == null) ? 0 : getSupportedIpAddressTypes().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;

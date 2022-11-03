@@ -33,6 +33,8 @@ public class FPortsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Multicast").build();
     private static final MarshallingInfo<Integer> CLOCKSYNC_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClockSync").build();
+    private static final MarshallingInfo<StructuredPojo> POSITIONING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Positioning").build();
 
     private static final FPortsMarshaller instance = new FPortsMarshaller();
 
@@ -53,6 +55,7 @@ public class FPortsMarshaller {
             protocolMarshaller.marshall(fPorts.getFuota(), FUOTA_BINDING);
             protocolMarshaller.marshall(fPorts.getMulticast(), MULTICAST_BINDING);
             protocolMarshaller.marshall(fPorts.getClockSync(), CLOCKSYNC_BINDING);
+            protocolMarshaller.marshall(fPorts.getPositioning(), POSITIONING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

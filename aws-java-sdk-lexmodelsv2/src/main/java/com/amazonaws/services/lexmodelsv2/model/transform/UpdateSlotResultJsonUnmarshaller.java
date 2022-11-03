@@ -100,6 +100,10 @@ public class UpdateSlotResultJsonUnmarshaller implements Unmarshaller<UpdateSlot
                     context.nextToken();
                     updateSlotResult.setMultipleValuesSetting(MultipleValuesSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("subSlotSetting", targetDepth)) {
+                    context.nextToken();
+                    updateSlotResult.setSubSlotSetting(SubSlotSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

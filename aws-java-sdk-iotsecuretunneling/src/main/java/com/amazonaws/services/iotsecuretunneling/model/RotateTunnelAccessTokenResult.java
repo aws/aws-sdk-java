@@ -1,0 +1,232 @@
+/*
+ * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotsecuretunneling.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RotateTunnelAccessTokenResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Resource Name for the tunnel.
+     * </p>
+     */
+    private String tunnelArn;
+    /**
+     * <p>
+     * The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     */
+    private String sourceAccessToken;
+    /**
+     * <p>
+     * The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     */
+    private String destinationAccessToken;
+
+    /**
+     * <p>
+     * The Amazon Resource Name for the tunnel.
+     * </p>
+     * 
+     * @param tunnelArn
+     *        The Amazon Resource Name for the tunnel.
+     */
+
+    public void setTunnelArn(String tunnelArn) {
+        this.tunnelArn = tunnelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name for the tunnel.
+     * </p>
+     * 
+     * @return The Amazon Resource Name for the tunnel.
+     */
+
+    public String getTunnelArn() {
+        return this.tunnelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name for the tunnel.
+     * </p>
+     * 
+     * @param tunnelArn
+     *        The Amazon Resource Name for the tunnel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RotateTunnelAccessTokenResult withTunnelArn(String tunnelArn) {
+        setTunnelArn(tunnelArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     * 
+     * @param sourceAccessToken
+     *        The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     */
+
+    public void setSourceAccessToken(String sourceAccessToken) {
+        this.sourceAccessToken = sourceAccessToken;
+    }
+
+    /**
+     * <p>
+     * The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     * 
+     * @return The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     */
+
+    public String getSourceAccessToken() {
+        return this.sourceAccessToken;
+    }
+
+    /**
+     * <p>
+     * The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     * 
+     * @param sourceAccessToken
+     *        The client access token that the source local proxy uses to connect to IoT Secure Tunneling.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RotateTunnelAccessTokenResult withSourceAccessToken(String sourceAccessToken) {
+        setSourceAccessToken(sourceAccessToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     * 
+     * @param destinationAccessToken
+     *        The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     */
+
+    public void setDestinationAccessToken(String destinationAccessToken) {
+        this.destinationAccessToken = destinationAccessToken;
+    }
+
+    /**
+     * <p>
+     * The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     * 
+     * @return The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     */
+
+    public String getDestinationAccessToken() {
+        return this.destinationAccessToken;
+    }
+
+    /**
+     * <p>
+     * The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     * </p>
+     * 
+     * @param destinationAccessToken
+     *        The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RotateTunnelAccessTokenResult withDestinationAccessToken(String destinationAccessToken) {
+        setDestinationAccessToken(destinationAccessToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getTunnelArn() != null)
+            sb.append("TunnelArn: ").append(getTunnelArn()).append(",");
+        if (getSourceAccessToken() != null)
+            sb.append("SourceAccessToken: ").append("***Sensitive Data Redacted***").append(",");
+        if (getDestinationAccessToken() != null)
+            sb.append("DestinationAccessToken: ").append("***Sensitive Data Redacted***");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RotateTunnelAccessTokenResult == false)
+            return false;
+        RotateTunnelAccessTokenResult other = (RotateTunnelAccessTokenResult) obj;
+        if (other.getTunnelArn() == null ^ this.getTunnelArn() == null)
+            return false;
+        if (other.getTunnelArn() != null && other.getTunnelArn().equals(this.getTunnelArn()) == false)
+            return false;
+        if (other.getSourceAccessToken() == null ^ this.getSourceAccessToken() == null)
+            return false;
+        if (other.getSourceAccessToken() != null && other.getSourceAccessToken().equals(this.getSourceAccessToken()) == false)
+            return false;
+        if (other.getDestinationAccessToken() == null ^ this.getDestinationAccessToken() == null)
+            return false;
+        if (other.getDestinationAccessToken() != null && other.getDestinationAccessToken().equals(this.getDestinationAccessToken()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getTunnelArn() == null) ? 0 : getTunnelArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceAccessToken() == null) ? 0 : getSourceAccessToken().hashCode());
+        hashCode = prime * hashCode + ((getDestinationAccessToken() == null) ? 0 : getDestinationAccessToken().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RotateTunnelAccessTokenResult clone() {
+        try {
+            return (RotateTunnelAccessTokenResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

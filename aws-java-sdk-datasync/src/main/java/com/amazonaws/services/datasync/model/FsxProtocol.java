@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the protocol that DataSync uses to access your Amazon FSx for OpenZFS file system.
+ * Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocol" target="_top">AWS API
@@ -30,19 +30,28 @@ public class FsxProtocol implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.
+     * Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS
+     * file system or FSx for ONTAP file system's storage virtual machine (SVM).
      * </p>
      */
     private FsxProtocolNfs nFS;
+    /**
+     * <p>
+     * Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP
+     * file system's SVM.
+     * </p>
+     */
+    private FsxProtocolSmb sMB;
 
     /**
      * <p>
-     * Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.
+     * Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS
+     * file system or FSx for ONTAP file system's storage virtual machine (SVM).
      * </p>
      * 
      * @param nFS
-     *        Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file
-     *        system.
+     *        Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for
+     *        OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).
      */
 
     public void setNFS(FsxProtocolNfs nFS) {
@@ -51,11 +60,12 @@ public class FsxProtocol implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.
+     * Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS
+     * file system or FSx for ONTAP file system's storage virtual machine (SVM).
      * </p>
      * 
-     * @return Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file
-     *         system.
+     * @return Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for
+     *         OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).
      */
 
     public FsxProtocolNfs getNFS() {
@@ -64,17 +74,64 @@ public class FsxProtocol implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.
+     * Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS
+     * file system or FSx for ONTAP file system's storage virtual machine (SVM).
      * </p>
      * 
      * @param nFS
-     *        Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file
-     *        system.
+     *        Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for
+     *        OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FsxProtocol withNFS(FsxProtocolNfs nFS) {
         setNFS(nFS);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP
+     * file system's SVM.
+     * </p>
+     * 
+     * @param sMB
+     *        Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for
+     *        ONTAP file system's SVM.
+     */
+
+    public void setSMB(FsxProtocolSmb sMB) {
+        this.sMB = sMB;
+    }
+
+    /**
+     * <p>
+     * Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP
+     * file system's SVM.
+     * </p>
+     * 
+     * @return Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for
+     *         ONTAP file system's SVM.
+     */
+
+    public FsxProtocolSmb getSMB() {
+        return this.sMB;
+    }
+
+    /**
+     * <p>
+     * Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP
+     * file system's SVM.
+     * </p>
+     * 
+     * @param sMB
+     *        Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for
+     *        ONTAP file system's SVM.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FsxProtocol withSMB(FsxProtocolSmb sMB) {
+        setSMB(sMB);
         return this;
     }
 
@@ -91,7 +148,9 @@ public class FsxProtocol implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNFS() != null)
-            sb.append("NFS: ").append(getNFS());
+            sb.append("NFS: ").append(getNFS()).append(",");
+        if (getSMB() != null)
+            sb.append("SMB: ").append(getSMB());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +169,10 @@ public class FsxProtocol implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNFS() != null && other.getNFS().equals(this.getNFS()) == false)
             return false;
+        if (other.getSMB() == null ^ this.getSMB() == null)
+            return false;
+        if (other.getSMB() != null && other.getSMB().equals(this.getSMB()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +182,7 @@ public class FsxProtocol implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNFS() == null) ? 0 : getNFS().hashCode());
+        hashCode = prime * hashCode + ((getSMB() == null) ? 0 : getSMB().hashCode());
         return hashCode;
     }
 

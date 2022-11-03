@@ -25,56 +25,16 @@ public class ListPolicyGenerationsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token used for pagination of results returned.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * A <code>PolicyGeneration</code> object that contains details about the generated policy.
      * </p>
      */
     private java.util.List<PolicyGeneration> policyGenerations;
-
     /**
      * <p>
      * A token used for pagination of results returned.
      * </p>
-     * 
-     * @param nextToken
-     *        A token used for pagination of results returned.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A token used for pagination of results returned.
-     * </p>
-     * 
-     * @return A token used for pagination of results returned.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A token used for pagination of results returned.
-     * </p>
-     * 
-     * @param nextToken
-     *        A token used for pagination of results returned.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPolicyGenerationsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -147,6 +107,46 @@ public class ListPolicyGenerationsResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * A token used for pagination of results returned.
+     * </p>
+     * 
+     * @param nextToken
+     *        A token used for pagination of results returned.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A token used for pagination of results returned.
+     * </p>
+     * 
+     * @return A token used for pagination of results returned.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A token used for pagination of results returned.
+     * </p>
+     * 
+     * @param nextToken
+     *        A token used for pagination of results returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPolicyGenerationsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListPolicyGenerationsResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getPolicyGenerations() != null)
-            sb.append("PolicyGenerations: ").append(getPolicyGenerations());
+            sb.append("PolicyGenerations: ").append(getPolicyGenerations()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListPolicyGenerationsResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof ListPolicyGenerationsResult == false)
             return false;
         ListPolicyGenerationsResult other = (ListPolicyGenerationsResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getPolicyGenerations() == null ^ this.getPolicyGenerations() == null)
             return false;
         if (other.getPolicyGenerations() != null && other.getPolicyGenerations().equals(this.getPolicyGenerations()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListPolicyGenerationsResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getPolicyGenerations() == null) ? 0 : getPolicyGenerations().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

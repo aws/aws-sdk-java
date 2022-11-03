@@ -54,6 +54,11 @@ public class RuntimeHintDetailsJsonUnmarshaller implements Unmarshaller<RuntimeH
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("subSlotHints", targetDepth)) {
+                    context.nextToken();
+                    runtimeHintDetails.setSubSlotHints(new MapUnmarshaller<String, RuntimeHintDetails>(context.getUnmarshaller(String.class),
+                            RuntimeHintDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

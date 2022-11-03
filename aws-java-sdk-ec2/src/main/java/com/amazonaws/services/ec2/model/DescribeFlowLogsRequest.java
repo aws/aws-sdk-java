@@ -37,8 +37,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     * <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code>
+     * | <code>s3</code> | <code>kinesis-data-firehose</code>).
      * </p>
      * </li>
      * <li>
@@ -113,8 +113,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     * <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code>
+     * | <code>s3</code> | <code>kinesis-data-firehose</code>).
      * </p>
      * </li>
      * <li>
@@ -163,8 +163,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>log-destination-type</code> - The type of destination to which the flow log publishes data.
-     *         Possible destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     *         <code>log-destination-type</code> - The type of destination for the flow log data (
+     *         <code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -223,8 +223,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     * <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code>
+     * | <code>s3</code> | <code>kinesis-data-firehose</code>).
      * </p>
      * </li>
      * <li>
@@ -274,8 +274,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     *        destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     *        <code>log-destination-type</code> - The type of destination for the flow log data (
+     *        <code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -336,8 +336,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     * <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code>
+     * | <code>s3</code> | <code>kinesis-data-firehose</code>).
      * </p>
      * </li>
      * <li>
@@ -392,8 +392,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     *        destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     *        <code>log-destination-type</code> - The type of destination for the flow log data (
+     *        <code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -456,8 +456,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     * <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code>
+     * | <code>s3</code> | <code>kinesis-data-firehose</code>).
      * </p>
      * </li>
      * <li>
@@ -507,8 +507,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     *        destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
+     *        <code>log-destination-type</code> - The type of destination for the flow log data (
+     *        <code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).
      *        </p>
      *        </li>
      *        <li>

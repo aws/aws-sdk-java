@@ -92,8 +92,8 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
     private String estimatedMonthlySavingsAmount;
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
-     * selected time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected
+     * time period and the Savings Plans you own.
      * </p>
      */
     private String estimatedOnDemandCostWithCurrentCommitment;
@@ -518,13 +518,13 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
-     * selected time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected
+     * time period and the Savings Plans you own.
      * </p>
      * 
      * @param estimatedOnDemandCostWithCurrentCommitment
-     *        The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of
-     *        the selected time period and the Savings Plans you own.
+     *        The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the
+     *        selected time period and the Savings Plans you own.
      */
 
     public void setEstimatedOnDemandCostWithCurrentCommitment(String estimatedOnDemandCostWithCurrentCommitment) {
@@ -533,12 +533,12 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
-     * selected time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected
+     * time period and the Savings Plans you own.
      * </p>
      * 
-     * @return The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of
-     *         the selected time period and the Savings Plans you own.
+     * @return The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the
+     *         selected time period and the Savings Plans you own.
      */
 
     public String getEstimatedOnDemandCostWithCurrentCommitment() {
@@ -547,13 +547,13 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
-     * selected time period and the Savings Plans you own.
+     * The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected
+     * time period and the Savings Plans you own.
      * </p>
      * 
      * @param estimatedOnDemandCostWithCurrentCommitment
-     *        The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of
-     *        the selected time period and the Savings Plans you own.
+     *        The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the
+     *        selected time period and the Savings Plans you own.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

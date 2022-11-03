@@ -50,6 +50,15 @@ public interface AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param deleteAlternateContactRequest
      * @return Result of the DeleteAlternateContact operation returned by the service.
@@ -78,6 +87,15 @@ public interface AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param getAlternateContactRequest
      * @return Result of the GetAlternateContact operation returned by the service.
@@ -99,6 +117,34 @@ public interface AWSAccount {
 
     /**
      * <p>
+     * Retrieves the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param getContactInformationRequest
+     * @return Result of the GetContactInformation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation failed because it specified a resource that can't be found.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.GetContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetContactInformationResult getContactInformation(GetContactInformationRequest getContactInformationRequest);
+
+    /**
+     * <p>
      * Modifies the specified alternate contact attached to an Amazon Web Services account.
      * </p>
      * <p>
@@ -106,6 +152,15 @@ public interface AWSAccount {
      * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating
      * the alternate contacts</a>.
      * </p>
+     * <note>
+     * <p>
+     * Before you can update the alternate contact information for an Amazon Web Services account that is managed by
+     * Organizations, you must first enable integration between Amazon Web Services Account Management and
+     * Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling trusted
+     * access for Amazon Web Services Account Management</a>.
+     * </p>
+     * </note>
      * 
      * @param putAlternateContactRequest
      * @return Result of the PutAlternateContact operation returned by the service.
@@ -122,6 +177,32 @@ public interface AWSAccount {
      *      API Documentation</a>
      */
     PutAlternateContactResult putAlternateContact(PutAlternateContactRequest putAlternateContactRequest);
+
+    /**
+     * <p>
+     * Updates the primary contact information of an Amazon Web Services account.
+     * </p>
+     * <p>
+     * For complete details about how to use the primary contact operations, see <a
+     * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary
+     * and alternate contact information</a>.
+     * </p>
+     * 
+     * @param putContactInformationRequest
+     * @return Result of the PutContactInformation operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.PutContactInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutContactInformationResult putContactInformation(PutContactInformationRequest putContactInformationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

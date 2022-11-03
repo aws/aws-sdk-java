@@ -146,6 +146,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAllowListResult> createAllowListAsync(CreateAllowListRequest request) {
+
+        return createAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAllowListResult> createAllowListAsync(final CreateAllowListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAllowListRequest, CreateAllowListResult> asyncHandler) {
+        final CreateAllowListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAllowListResult>() {
+            @Override
+            public CreateAllowListResult call() throws Exception {
+                CreateAllowListResult result = null;
+
+                try {
+                    result = executeCreateAllowList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClassificationJobResult> createClassificationJobAsync(CreateClassificationJobRequest request) {
 
         return createClassificationJobAsync(request, null);
@@ -361,6 +394,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeDeclineInvitations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAllowListResult> deleteAllowListAsync(DeleteAllowListRequest request) {
+
+        return deleteAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAllowListResult> deleteAllowListAsync(final DeleteAllowListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAllowListRequest, DeleteAllowListResult> asyncHandler) {
+        final DeleteAllowListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAllowListResult>() {
+            @Override
+            public DeleteAllowListResult call() throws Exception {
+                DeleteAllowListResult result = null;
+
+                try {
+                    result = executeDeleteAllowList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -880,6 +946,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetAllowListResult> getAllowListAsync(GetAllowListRequest request) {
+
+        return getAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAllowListResult> getAllowListAsync(final GetAllowListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAllowListRequest, GetAllowListResult> asyncHandler) {
+        final GetAllowListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAllowListResult>() {
+            @Override
+            public GetAllowListResult call() throws Exception {
+                GetAllowListResult result = null;
+
+                try {
+                    result = executeGetAllowList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBucketStatisticsResult> getBucketStatisticsAsync(GetBucketStatisticsRequest request) {
 
         return getBucketStatisticsAsync(request, null);
@@ -1247,6 +1346,107 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetRevealConfigurationResult> getRevealConfigurationAsync(GetRevealConfigurationRequest request) {
+
+        return getRevealConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRevealConfigurationResult> getRevealConfigurationAsync(final GetRevealConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRevealConfigurationRequest, GetRevealConfigurationResult> asyncHandler) {
+        final GetRevealConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRevealConfigurationResult>() {
+            @Override
+            public GetRevealConfigurationResult call() throws Exception {
+                GetRevealConfigurationResult result = null;
+
+                try {
+                    result = executeGetRevealConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesResult> getSensitiveDataOccurrencesAsync(GetSensitiveDataOccurrencesRequest request) {
+
+        return getSensitiveDataOccurrencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesResult> getSensitiveDataOccurrencesAsync(final GetSensitiveDataOccurrencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSensitiveDataOccurrencesRequest, GetSensitiveDataOccurrencesResult> asyncHandler) {
+        final GetSensitiveDataOccurrencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSensitiveDataOccurrencesResult>() {
+            @Override
+            public GetSensitiveDataOccurrencesResult call() throws Exception {
+                GetSensitiveDataOccurrencesResult result = null;
+
+                try {
+                    result = executeGetSensitiveDataOccurrences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesAvailabilityResult> getSensitiveDataOccurrencesAvailabilityAsync(
+            GetSensitiveDataOccurrencesAvailabilityRequest request) {
+
+        return getSensitiveDataOccurrencesAvailabilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitiveDataOccurrencesAvailabilityResult> getSensitiveDataOccurrencesAvailabilityAsync(
+            final GetSensitiveDataOccurrencesAvailabilityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSensitiveDataOccurrencesAvailabilityRequest, GetSensitiveDataOccurrencesAvailabilityResult> asyncHandler) {
+        final GetSensitiveDataOccurrencesAvailabilityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSensitiveDataOccurrencesAvailabilityResult>() {
+            @Override
+            public GetSensitiveDataOccurrencesAvailabilityResult call() throws Exception {
+                GetSensitiveDataOccurrencesAvailabilityResult result = null;
+
+                try {
+                    result = executeGetSensitiveDataOccurrencesAvailability(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUsageStatisticsResult> getUsageStatisticsAsync(GetUsageStatisticsRequest request) {
 
         return getUsageStatisticsAsync(request, null);
@@ -1297,6 +1497,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeGetUsageTotals(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowListsResult> listAllowListsAsync(ListAllowListsRequest request) {
+
+        return listAllowListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowListsResult> listAllowListsAsync(final ListAllowListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAllowListsRequest, ListAllowListsResult> asyncHandler) {
+        final ListAllowListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAllowListsResult>() {
+            @Override
+            public ListAllowListsResult call() throws Exception {
+                ListAllowListsResult result = null;
+
+                try {
+                    result = executeListAllowLists(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1813,6 +2046,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAllowListResult> updateAllowListAsync(UpdateAllowListRequest request) {
+
+        return updateAllowListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAllowListResult> updateAllowListAsync(final UpdateAllowListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAllowListRequest, UpdateAllowListResult> asyncHandler) {
+        final UpdateAllowListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAllowListResult>() {
+            @Override
+            public UpdateAllowListResult call() throws Exception {
+                UpdateAllowListResult result = null;
+
+                try {
+                    result = executeUpdateAllowList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClassificationJobResult> updateClassificationJobAsync(UpdateClassificationJobRequest request) {
 
         return updateClassificationJobAsync(request, null);
@@ -1964,6 +2230,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeUpdateOrganizationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRevealConfigurationResult> updateRevealConfigurationAsync(UpdateRevealConfigurationRequest request) {
+
+        return updateRevealConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRevealConfigurationResult> updateRevealConfigurationAsync(final UpdateRevealConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRevealConfigurationRequest, UpdateRevealConfigurationResult> asyncHandler) {
+        final UpdateRevealConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRevealConfigurationResult>() {
+            @Override
+            public UpdateRevealConfigurationResult call() throws Exception {
+                UpdateRevealConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateRevealConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

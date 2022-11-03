@@ -33,6 +33,10 @@ public class UserIdentityInfoMarshaller {
             .marshallLocationName("LastName").build();
     private static final MarshallingInfo<String> EMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Email").build();
+    private static final MarshallingInfo<String> SECONDARYEMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryEmail").build();
+    private static final MarshallingInfo<String> MOBILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Mobile").build();
 
     private static final UserIdentityInfoMarshaller instance = new UserIdentityInfoMarshaller();
 
@@ -53,6 +57,8 @@ public class UserIdentityInfoMarshaller {
             protocolMarshaller.marshall(userIdentityInfo.getFirstName(), FIRSTNAME_BINDING);
             protocolMarshaller.marshall(userIdentityInfo.getLastName(), LASTNAME_BINDING);
             protocolMarshaller.marshall(userIdentityInfo.getEmail(), EMAIL_BINDING);
+            protocolMarshaller.marshall(userIdentityInfo.getSecondaryEmail(), SECONDARYEMAIL_BINDING);
+            protocolMarshaller.marshall(userIdentityInfo.getMobile(), MOBILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

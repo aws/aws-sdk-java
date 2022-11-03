@@ -41,6 +41,8 @@ public class ScheduledTriggerPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleOffset").build();
     private static final MarshallingInfo<java.util.Date> FIRSTEXECUTIONFROM_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstExecutionFrom").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Integer> FLOWERRORDEACTIVATIONTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("flowErrorDeactivationThreshold").build();
 
     private static final ScheduledTriggerPropertiesMarshaller instance = new ScheduledTriggerPropertiesMarshaller();
 
@@ -65,6 +67,7 @@ public class ScheduledTriggerPropertiesMarshaller {
             protocolMarshaller.marshall(scheduledTriggerProperties.getTimezone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(scheduledTriggerProperties.getScheduleOffset(), SCHEDULEOFFSET_BINDING);
             protocolMarshaller.marshall(scheduledTriggerProperties.getFirstExecutionFrom(), FIRSTEXECUTIONFROM_BINDING);
+            protocolMarshaller.marshall(scheduledTriggerProperties.getFlowErrorDeactivationThreshold(), FLOWERRORDEACTIVATIONTHRESHOLD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

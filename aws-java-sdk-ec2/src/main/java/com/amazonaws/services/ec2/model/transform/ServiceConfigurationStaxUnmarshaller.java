@@ -110,6 +110,16 @@ public class ServiceConfigurationStaxUnmarshaller implements Unmarshaller<Servic
                     continue;
                 }
 
+                if (context.testExpression("supportedIpAddressTypeSet", targetDepth)) {
+                    serviceConfiguration.withSupportedIpAddressTypes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("supportedIpAddressTypeSet/item", targetDepth)) {
+                    serviceConfiguration.withSupportedIpAddressTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("baseEndpointDnsNameSet", targetDepth)) {
                     serviceConfiguration.withBaseEndpointDnsNames(new ArrayList<String>());
                     continue;

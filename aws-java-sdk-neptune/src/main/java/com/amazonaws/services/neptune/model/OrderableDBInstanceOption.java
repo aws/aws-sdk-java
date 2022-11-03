@@ -149,6 +149,13 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Double maxIopsPerGib;
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with a specific combination of other DB
+     * engine attributes.
+     * </p>
+     */
+    private Boolean supportsGlobalDatabases;
 
     /**
      * <p>
@@ -1077,6 +1084,66 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with a specific combination of other DB
+     * engine attributes.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Neptune global databases with a specific combination of other
+     *        DB engine attributes.
+     */
+
+    public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        this.supportsGlobalDatabases = supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with a specific combination of other DB
+     * engine attributes.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Neptune global databases with a specific combination of other
+     *         DB engine attributes.
+     */
+
+    public Boolean getSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with a specific combination of other DB
+     * engine attributes.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Neptune global databases with a specific combination of other
+     *        DB engine attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        setSupportsGlobalDatabases(supportsGlobalDatabases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with a specific combination of other DB
+     * engine attributes.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Neptune global databases with a specific combination of other
+     *         DB engine attributes.
+     */
+
+    public Boolean isSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1127,7 +1194,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getMinIopsPerGib() != null)
             sb.append("MinIopsPerGib: ").append(getMinIopsPerGib()).append(",");
         if (getMaxIopsPerGib() != null)
-            sb.append("MaxIopsPerGib: ").append(getMaxIopsPerGib());
+            sb.append("MaxIopsPerGib: ").append(getMaxIopsPerGib()).append(",");
+        if (getSupportsGlobalDatabases() != null)
+            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
         sb.append("}");
         return sb.toString();
     }
@@ -1223,6 +1292,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getMaxIopsPerGib() != null && other.getMaxIopsPerGib().equals(this.getMaxIopsPerGib()) == false)
             return false;
+        if (other.getSupportsGlobalDatabases() == null ^ this.getSupportsGlobalDatabases() == null)
+            return false;
+        if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
+            return false;
         return true;
     }
 
@@ -1251,6 +1324,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxIopsPerDbInstance() == null) ? 0 : getMaxIopsPerDbInstance().hashCode());
         hashCode = prime * hashCode + ((getMinIopsPerGib() == null) ? 0 : getMinIopsPerGib().hashCode());
         hashCode = prime * hashCode + ((getMaxIopsPerGib() == null) ? 0 : getMaxIopsPerGib().hashCode());
+        hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         return hashCode;
     }
 

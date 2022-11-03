@@ -48,6 +48,12 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Long resourceHours;
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     * </p>
+     */
+    private Long analyzedResourceCount;
 
     /**
      * <p>
@@ -219,6 +225,46 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     */
+
+    public void setAnalyzedResourceCount(Long analyzedResourceCount) {
+        this.analyzedResourceCount = analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     * </p>
+     * 
+     * @return Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     */
+
+    public Long getAnalyzedResourceCount() {
+        return this.analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAccountHealthResult withAnalyzedResourceCount(Long analyzedResourceCount) {
+        setAnalyzedResourceCount(analyzedResourceCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -237,7 +283,9 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
         if (getMetricsAnalyzed() != null)
             sb.append("MetricsAnalyzed: ").append(getMetricsAnalyzed()).append(",");
         if (getResourceHours() != null)
-            sb.append("ResourceHours: ").append(getResourceHours());
+            sb.append("ResourceHours: ").append(getResourceHours()).append(",");
+        if (getAnalyzedResourceCount() != null)
+            sb.append("AnalyzedResourceCount: ").append(getAnalyzedResourceCount());
         sb.append("}");
         return sb.toString();
     }
@@ -268,6 +316,10 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getResourceHours() != null && other.getResourceHours().equals(this.getResourceHours()) == false)
             return false;
+        if (other.getAnalyzedResourceCount() == null ^ this.getAnalyzedResourceCount() == null)
+            return false;
+        if (other.getAnalyzedResourceCount() != null && other.getAnalyzedResourceCount().equals(this.getAnalyzedResourceCount()) == false)
+            return false;
         return true;
     }
 
@@ -280,6 +332,7 @@ public class DescribeAccountHealthResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getOpenProactiveInsights() == null) ? 0 : getOpenProactiveInsights().hashCode());
         hashCode = prime * hashCode + ((getMetricsAnalyzed() == null) ? 0 : getMetricsAnalyzed().hashCode());
         hashCode = prime * hashCode + ((getResourceHours() == null) ? 0 : getResourceHours().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedResourceCount() == null) ? 0 : getAnalyzedResourceCount().hashCode());
         return hashCode;
     }
 

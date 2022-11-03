@@ -107,6 +107,41 @@ public class AWSmgnAsyncClient extends AWSmgnClient implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLaunchConfigurationTemplateResult> createLaunchConfigurationTemplateAsync(
+            CreateLaunchConfigurationTemplateRequest request) {
+
+        return createLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLaunchConfigurationTemplateResult> createLaunchConfigurationTemplateAsync(
+            final CreateLaunchConfigurationTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationTemplateRequest, CreateLaunchConfigurationTemplateResult> asyncHandler) {
+        final CreateLaunchConfigurationTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLaunchConfigurationTemplateResult>() {
+            @Override
+            public CreateLaunchConfigurationTemplateResult call() throws Exception {
+                CreateLaunchConfigurationTemplateResult result = null;
+
+                try {
+                    result = executeCreateLaunchConfigurationTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationConfigurationTemplateResult> createReplicationConfigurationTemplateAsync(
             CreateReplicationConfigurationTemplateRequest request) {
 
@@ -159,6 +194,41 @@ public class AWSmgnAsyncClient extends AWSmgnClient implements AWSmgnAsync {
 
                 try {
                     result = executeDeleteJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchConfigurationTemplateResult> deleteLaunchConfigurationTemplateAsync(
+            DeleteLaunchConfigurationTemplateRequest request) {
+
+        return deleteLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchConfigurationTemplateResult> deleteLaunchConfigurationTemplateAsync(
+            final DeleteLaunchConfigurationTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationTemplateRequest, DeleteLaunchConfigurationTemplateResult> asyncHandler) {
+        final DeleteLaunchConfigurationTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLaunchConfigurationTemplateResult>() {
+            @Override
+            public DeleteLaunchConfigurationTemplateResult call() throws Exception {
+                DeleteLaunchConfigurationTemplateResult result = null;
+
+                try {
+                    result = executeDeleteLaunchConfigurationTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -326,6 +396,41 @@ public class AWSmgnAsyncClient extends AWSmgnClient implements AWSmgnAsync {
 
                 try {
                     result = executeDescribeJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLaunchConfigurationTemplatesResult> describeLaunchConfigurationTemplatesAsync(
+            DescribeLaunchConfigurationTemplatesRequest request) {
+
+        return describeLaunchConfigurationTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLaunchConfigurationTemplatesResult> describeLaunchConfigurationTemplatesAsync(
+            final DescribeLaunchConfigurationTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLaunchConfigurationTemplatesRequest, DescribeLaunchConfigurationTemplatesResult> asyncHandler) {
+        final DescribeLaunchConfigurationTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLaunchConfigurationTemplatesResult>() {
+            @Override
+            public DescribeLaunchConfigurationTemplatesResult call() throws Exception {
+                DescribeLaunchConfigurationTemplatesResult result = null;
+
+                try {
+                    result = executeDescribeLaunchConfigurationTemplates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -922,6 +1027,41 @@ public class AWSmgnAsyncClient extends AWSmgnClient implements AWSmgnAsync {
 
                 try {
                     result = executeUpdateLaunchConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLaunchConfigurationTemplateResult> updateLaunchConfigurationTemplateAsync(
+            UpdateLaunchConfigurationTemplateRequest request) {
+
+        return updateLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLaunchConfigurationTemplateResult> updateLaunchConfigurationTemplateAsync(
+            final UpdateLaunchConfigurationTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLaunchConfigurationTemplateRequest, UpdateLaunchConfigurationTemplateResult> asyncHandler) {
+        final UpdateLaunchConfigurationTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLaunchConfigurationTemplateResult>() {
+            @Override
+            public UpdateLaunchConfigurationTemplateResult call() throws Exception {
+                UpdateLaunchConfigurationTemplateResult result = null;
+
+                try {
+                    result = executeUpdateLaunchConfigurationTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

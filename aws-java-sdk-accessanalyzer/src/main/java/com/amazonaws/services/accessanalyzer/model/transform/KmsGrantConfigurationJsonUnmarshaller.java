@@ -48,27 +48,27 @@ public class KmsGrantConfigurationJsonUnmarshaller implements Unmarshaller<KmsGr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("constraints", targetDepth)) {
-                    context.nextToken();
-                    kmsGrantConfiguration.setConstraints(KmsGrantConstraintsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("granteePrincipal", targetDepth)) {
-                    context.nextToken();
-                    kmsGrantConfiguration.setGranteePrincipal(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("issuingAccount", targetDepth)) {
-                    context.nextToken();
-                    kmsGrantConfiguration.setIssuingAccount(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("operations", targetDepth)) {
                     context.nextToken();
                     kmsGrantConfiguration.setOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("granteePrincipal", targetDepth)) {
+                    context.nextToken();
+                    kmsGrantConfiguration.setGranteePrincipal(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("retiringPrincipal", targetDepth)) {
                     context.nextToken();
                     kmsGrantConfiguration.setRetiringPrincipal(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("constraints", targetDepth)) {
+                    context.nextToken();
+                    kmsGrantConfiguration.setConstraints(KmsGrantConstraintsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("issuingAccount", targetDepth)) {
+                    context.nextToken();
+                    kmsGrantConfiguration.setIssuingAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

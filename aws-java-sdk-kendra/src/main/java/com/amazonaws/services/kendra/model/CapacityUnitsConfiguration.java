@@ -32,7 +32,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      * </p>
      */
     private Integer storageCapacityUnits;
@@ -44,6 +44,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * <p>
      * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * You can add up to 100 extra capacity units.
      * </p>
      * <p>
      * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
@@ -58,12 +59,12 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      * </p>
      * 
      * @param storageCapacityUnits
      *        The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space
-     *        or 100,000 documents, whichever is reached first.
+     *        or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      */
 
     public void setStorageCapacityUnits(Integer storageCapacityUnits) {
@@ -73,11 +74,11 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      * </p>
      * 
      * @return The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space
-     *         or 100,000 documents, whichever is reached first.
+     *         or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      */
 
     public Integer getStorageCapacityUnits() {
@@ -87,12 +88,12 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      * </p>
      * 
      * @param storageCapacityUnits
      *        The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space
-     *        or 100,000 documents, whichever is reached first.
+     *        or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,6 +110,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * <p>
      * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * You can add up to 100 extra capacity units.
      * </p>
      * <p>
      * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
@@ -124,7 +126,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      *        capacity.</p>
      *        <p>
      *        A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries
-     *        per day.
+     *        per day. You can add up to 100 extra capacity units.
      *        </p>
      *        <p>
      *        <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or
@@ -147,6 +149,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * <p>
      * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * You can add up to 100 extra capacity units.
      * </p>
      * <p>
      * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
@@ -161,7 +164,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      *         capacity.</p>
      *         <p>
      *         A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries
-     *         per day.
+     *         per day. You can add up to 100 extra capacity units.
      *         </p>
      *         <p>
      *         <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or
@@ -184,6 +187,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * <p>
      * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * You can add up to 100 extra capacity units.
      * </p>
      * <p>
      * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
@@ -199,7 +203,7 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      *        capacity.</p>
      *        <p>
      *        A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries
-     *        per day.
+     *        per day. You can add up to 100 extra capacity units.
      *        </p>
      *        <p>
      *        <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or

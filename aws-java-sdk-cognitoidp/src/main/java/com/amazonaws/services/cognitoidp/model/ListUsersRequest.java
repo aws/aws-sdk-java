@@ -141,7 +141,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For
+     * You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For
      * an advanced search, use a client-side filter with the <code>--query</code> parameter of the
      * <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list
      * of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each
@@ -456,7 +456,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For
+     * You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For
      * an advanced search, use a client-side filter with the <code>--query</code> parameter of the
      * <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list
      * of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each
@@ -564,7 +564,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <note>
      *        <p>
-     *        You can also list users with a client-side filter. The server-side filter matches no more than 1
+     *        You can also list users with a client-side filter. The server-side filter matches no more than one
      *        attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the
      *        <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a
      *        paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat
@@ -677,7 +677,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For
+     * You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For
      * an advanced search, use a client-side filter with the <code>--query</code> parameter of the
      * <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list
      * of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each
@@ -784,7 +784,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      *         <note>
      *         <p>
-     *         You can also list users with a client-side filter. The server-side filter matches no more than 1
+     *         You can also list users with a client-side filter. The server-side filter matches no more than one
      *         attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of
      *         the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a
      *         paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat
@@ -897,7 +897,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * You can also list users with a client-side filter. The server-side filter matches no more than 1 attribute. For
+     * You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For
      * an advanced search, use a client-side filter with the <code>--query</code> parameter of the
      * <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list
      * of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each
@@ -1005,7 +1005,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <note>
      *        <p>
-     *        You can also list users with a client-side filter. The server-side filter matches no more than 1
+     *        You can also list users with a client-side filter. The server-side filter matches no more than one
      *        attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the
      *        <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a
      *        paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat

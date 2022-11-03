@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the details of a container that's part of a job attempt.
+ * An object that represents the details of a container that's part of a job attempt.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/AttemptContainerDetail" target="_top">AWS API
@@ -43,20 +43,20 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
     private String taskArn;
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered a failure.
+     * The exit code for the job attempt. A non-zero exit code is considered failed.
      * </p>
      */
     private Integer exitCode;
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      */
     private String reason;
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     * The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
@@ -64,7 +64,7 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
     private String logStreamName;
     /**
      * <p>
-     * The network interfaces associated with the job attempt.
+     * The network interfaces that are associated with the job attempt.
      * </p>
      */
     private java.util.List<NetworkInterface> networkInterfaces;
@@ -157,11 +157,11 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered a failure.
+     * The exit code for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered a failure.
+     *        The exit code for the job attempt. A non-zero exit code is considered failed.
      */
 
     public void setExitCode(Integer exitCode) {
@@ -170,10 +170,10 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered a failure.
+     * The exit code for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
-     * @return The exit code for the job attempt. A non-zero exit code is considered a failure.
+     * @return The exit code for the job attempt. A non-zero exit code is considered failed.
      */
 
     public Integer getExitCode() {
@@ -182,11 +182,11 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered a failure.
+     * The exit code for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered a failure.
+     *        The exit code for the job attempt. A non-zero exit code is considered failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +197,13 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional details about a running or
-     *        stopped container.
+     *        A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *        container.
      */
 
     public void setReason(String reason) {
@@ -212,12 +212,12 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
-     * @return A short (255 max characters) human-readable string to provide additional details about a running or
-     *         stopped container.
+     * @return A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *         container.
      */
 
     public String getReason() {
@@ -226,13 +226,13 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional details about a running or
-     *        stopped container.
+     *        A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *        container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,14 +243,14 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     * The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     *        jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      *        <code>RUNNING</code> status.
      */
 
@@ -260,14 +260,14 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     * The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
-     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     *         <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
-     *         <code>RUNNING</code> status.
+     * @return The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     *         jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach
+     *         the <code>RUNNING</code> status.
      */
 
     public String getLogStreamName() {
@@ -276,14 +276,14 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     * The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
-     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch
+     *        jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      *        <code>RUNNING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -295,10 +295,10 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network interfaces associated with the job attempt.
+     * The network interfaces that are associated with the job attempt.
      * </p>
      * 
-     * @return The network interfaces associated with the job attempt.
+     * @return The network interfaces that are associated with the job attempt.
      */
 
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
@@ -307,11 +307,11 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network interfaces associated with the job attempt.
+     * The network interfaces that are associated with the job attempt.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces associated with the job attempt.
+     *        The network interfaces that are associated with the job attempt.
      */
 
     public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
@@ -325,7 +325,7 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network interfaces associated with the job attempt.
+     * The network interfaces that are associated with the job attempt.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -334,7 +334,7 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces associated with the job attempt.
+     *        The network interfaces that are associated with the job attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,11 +350,11 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network interfaces associated with the job attempt.
+     * The network interfaces that are associated with the job attempt.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces associated with the job attempt.
+     *        The network interfaces that are associated with the job attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

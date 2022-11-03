@@ -149,7 +149,7 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
     private String crawlerSecurityConfiguration;
     /**
      * <p>
-     * Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role
+     * Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role
      * credentials.
      * </p>
      */
@@ -996,12 +996,12 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role
+     * Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role
      * credentials.
      * </p>
      * 
      * @param lakeFormationConfiguration
-     *        Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM
+     *        Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM
      *        role credentials.
      */
 
@@ -1011,12 +1011,12 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role
+     * Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role
      * credentials.
      * </p>
      * 
-     * @return Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the
-     *         IAM role credentials.
+     * @return Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM
+     *         role credentials.
      */
 
     public LakeFormationConfiguration getLakeFormationConfiguration() {
@@ -1025,12 +1025,12 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role
+     * Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role
      * credentials.
      * </p>
      * 
      * @param lakeFormationConfiguration
-     *        Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM
+     *        Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM
      *        role credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

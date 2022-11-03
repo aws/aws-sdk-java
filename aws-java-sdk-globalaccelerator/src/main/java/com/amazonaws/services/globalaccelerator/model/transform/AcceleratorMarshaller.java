@@ -46,6 +46,10 @@ public class AcceleratorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> DUALSTACKDNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DualStackDnsName").build();
+    private static final MarshallingInfo<List> EVENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Events").build();
 
     private static final AcceleratorMarshaller instance = new AcceleratorMarshaller();
 
@@ -72,6 +76,8 @@ public class AcceleratorMarshaller {
             protocolMarshaller.marshall(accelerator.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(accelerator.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(accelerator.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(accelerator.getDualStackDnsName(), DUALSTACKDNSNAME_BINDING);
+            protocolMarshaller.marshall(accelerator.getEvents(), EVENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

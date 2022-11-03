@@ -60,6 +60,8 @@ public interface AWSIoTSiteWise {
      * @throws InvalidRequestException
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
@@ -353,8 +355,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -478,6 +480,57 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import
+     * job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * information about how to configure storage settings, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
+     * >PutStorageConfiguration</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createBulkImportJobRequest
+     * @return Result of the CreateBulkImportJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.CreateBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateBulkImportJobResult createBulkImportJob(CreateBulkImportJobRequest createBulkImportJobRequest);
+
+    /**
+     * <p>
      * Creates a dashboard in an IoT SiteWise Monitor project.
      * </p>
      * 
@@ -553,8 +606,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -1028,6 +1081,35 @@ public interface AWSIoTSiteWise {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeAssetPropertyResult describeAssetProperty(DescribeAssetPropertyRequest describeAssetPropertyRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a bulk import job request. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk
+     * import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * 
+     * @param describeBulkImportJobRequest
+     * @return Result of the DescribeBulkImportJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeBulkImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBulkImportJobResult describeBulkImportJob(DescribeBulkImportJobRequest describeBulkImportJobRequest);
 
     /**
      * <p>
@@ -1585,8 +1667,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1608,6 +1690,34 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     ListAccessPoliciesResult listAccessPolicies(ListAccessPoliciesRequest listAccessPoliciesRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @return Result of the ListAssetModelProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetModelPropertiesResult listAssetModelProperties(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest);
 
     /**
      * <p>
@@ -1633,6 +1743,34 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     ListAssetModelsResult listAssetModels(ListAssetModelsRequest listAssetModelsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @return Result of the ListAssetProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetPropertiesResult listAssetProperties(ListAssetPropertiesRequest listAssetPropertiesRequest);
 
     /**
      * <p>
@@ -1750,6 +1888,35 @@ public interface AWSIoTSiteWise {
      *      target="_top">AWS API Documentation</a>
      */
     ListAssociatedAssetsResult listAssociatedAssets(ListAssociatedAssetsRequest listAssociatedAssetsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of bulk import job requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs
+     * (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param listBulkImportJobsRequest
+     * @return Result of the ListBulkImportJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListBulkImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListBulkImportJobsResult listBulkImportJobs(ListBulkImportJobsRequest listBulkImportJobsRequest);
 
     /**
      * <p>

@@ -143,8 +143,45 @@ public class AwsDynamoDbTableDetails implements Serializable, Cloneable, Structu
     private Long tableSizeBytes;
     /**
      * <p>
-     * The current status of the table.
+     * The current status of the table. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String tableStatus;
 
@@ -1047,11 +1084,84 @@ public class AwsDynamoDbTableDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current status of the table.
+     * The current status of the table. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param tableStatus
-     *        The current status of the table.
+     *        The current status of the table. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      */
 
     public void setTableStatus(String tableStatus) {
@@ -1060,10 +1170,83 @@ public class AwsDynamoDbTableDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current status of the table.
+     * The current status of the table. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current status of the table.
+     * @return The current status of the table. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ARCHIVED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ARCHIVING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code>
+     *         </p>
+     *         </li>
      */
 
     public String getTableStatus() {
@@ -1072,11 +1255,84 @@ public class AwsDynamoDbTableDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The current status of the table.
+     * The current status of the table. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param tableStatus
-     *        The current status of the table.
+     *        The current status of the table. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

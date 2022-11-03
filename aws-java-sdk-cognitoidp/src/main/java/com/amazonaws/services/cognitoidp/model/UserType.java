@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The user type.
+ * A user profile in a Amazon Cognito user pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType" target="_top">AWS API
@@ -71,6 +71,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
      * </p>
      * </li>
      * <li>
@@ -364,6 +369,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ARCHIVED - User is no longer active.
      * </p>
      * </li>
@@ -397,6 +407,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
      *        </p>
      *        </li>
      *        <li>
@@ -445,6 +460,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ARCHIVED - User is no longer active.
      * </p>
      * </li>
@@ -477,6 +497,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         CONFIRMED - User has been confirmed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXTERNAL_PROVIDER - User signed in with a third-party IdP.
      *         </p>
      *         </li>
      *         <li>
@@ -525,6 +550,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ARCHIVED - User is no longer active.
      * </p>
      * </li>
@@ -558,6 +588,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
      *        </p>
      *        </li>
      *        <li>
@@ -608,6 +643,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ARCHIVED - User is no longer active.
      * </p>
      * </li>
@@ -641,6 +681,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
      *        </p>
      *        </li>
      *        <li>
@@ -689,6 +734,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ARCHIVED - User is no longer active.
      * </p>
      * </li>
@@ -722,6 +772,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
      *        </p>
      *        </li>
      *        <li>

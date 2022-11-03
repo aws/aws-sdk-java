@@ -112,7 +112,7 @@ public class CapacityReservation implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * <i>Deprecated.</i>
      * </p>
      */
     private Boolean ephemeralStorage;
@@ -241,6 +241,12 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </p>
      */
     private String placementGroupArn;
+    /**
+     * <p>
+     * Information about instance capacity usage.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CapacityAllocation> capacityAllocations;
 
     /**
      * <p>
@@ -877,11 +883,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * <i>Deprecated.</i>
      * </p>
      * 
      * @param ephemeralStorage
-     *        Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     *        <i>Deprecated.</i>
      */
 
     public void setEphemeralStorage(Boolean ephemeralStorage) {
@@ -890,10 +896,10 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * <i>Deprecated.</i>
      * </p>
      * 
-     * @return Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * @return <i>Deprecated.</i>
      */
 
     public Boolean getEphemeralStorage() {
@@ -902,11 +908,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * <i>Deprecated.</i>
      * </p>
      * 
      * @param ephemeralStorage
-     *        Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     *        <i>Deprecated.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -917,10 +923,10 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * <i>Deprecated.</i>
      * </p>
      * 
-     * @return Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
+     * @return <i>Deprecated.</i>
      */
 
     public Boolean isEphemeralStorage() {
@@ -1927,6 +1933,79 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about instance capacity usage.
+     * </p>
+     * 
+     * @return Information about instance capacity usage.
+     */
+
+    public java.util.List<CapacityAllocation> getCapacityAllocations() {
+        if (capacityAllocations == null) {
+            capacityAllocations = new com.amazonaws.internal.SdkInternalList<CapacityAllocation>();
+        }
+        return capacityAllocations;
+    }
+
+    /**
+     * <p>
+     * Information about instance capacity usage.
+     * </p>
+     * 
+     * @param capacityAllocations
+     *        Information about instance capacity usage.
+     */
+
+    public void setCapacityAllocations(java.util.Collection<CapacityAllocation> capacityAllocations) {
+        if (capacityAllocations == null) {
+            this.capacityAllocations = null;
+            return;
+        }
+
+        this.capacityAllocations = new com.amazonaws.internal.SdkInternalList<CapacityAllocation>(capacityAllocations);
+    }
+
+    /**
+     * <p>
+     * Information about instance capacity usage.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapacityAllocations(java.util.Collection)} or {@link #withCapacityAllocations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param capacityAllocations
+     *        Information about instance capacity usage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withCapacityAllocations(CapacityAllocation... capacityAllocations) {
+        if (this.capacityAllocations == null) {
+            setCapacityAllocations(new com.amazonaws.internal.SdkInternalList<CapacityAllocation>(capacityAllocations.length));
+        }
+        for (CapacityAllocation ele : capacityAllocations) {
+            this.capacityAllocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about instance capacity usage.
+     * </p>
+     * 
+     * @param capacityAllocations
+     *        Information about instance capacity usage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withCapacityAllocations(java.util.Collection<CapacityAllocation> capacityAllocations) {
+        setCapacityAllocations(capacityAllocations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1981,7 +2060,9 @@ public class CapacityReservation implements Serializable, Cloneable {
         if (getCapacityReservationFleetId() != null)
             sb.append("CapacityReservationFleetId: ").append(getCapacityReservationFleetId()).append(",");
         if (getPlacementGroupArn() != null)
-            sb.append("PlacementGroupArn: ").append(getPlacementGroupArn());
+            sb.append("PlacementGroupArn: ").append(getPlacementGroupArn()).append(",");
+        if (getCapacityAllocations() != null)
+            sb.append("CapacityAllocations: ").append(getCapacityAllocations());
         sb.append("}");
         return sb.toString();
     }
@@ -2084,6 +2165,10 @@ public class CapacityReservation implements Serializable, Cloneable {
             return false;
         if (other.getPlacementGroupArn() != null && other.getPlacementGroupArn().equals(this.getPlacementGroupArn()) == false)
             return false;
+        if (other.getCapacityAllocations() == null ^ this.getCapacityAllocations() == null)
+            return false;
+        if (other.getCapacityAllocations() != null && other.getCapacityAllocations().equals(this.getCapacityAllocations()) == false)
+            return false;
         return true;
     }
 
@@ -2114,6 +2199,7 @@ public class CapacityReservation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getCapacityReservationFleetId() == null) ? 0 : getCapacityReservationFleetId().hashCode());
         hashCode = prime * hashCode + ((getPlacementGroupArn() == null) ? 0 : getPlacementGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getCapacityAllocations() == null) ? 0 : getCapacityAllocations().hashCode());
         return hashCode;
     }
 

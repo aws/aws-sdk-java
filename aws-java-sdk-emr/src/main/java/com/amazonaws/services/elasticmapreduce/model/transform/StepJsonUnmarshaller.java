@@ -68,6 +68,10 @@ public class StepJsonUnmarshaller implements Unmarshaller<Step, JsonUnmarshaller
                     context.nextToken();
                     step.setStatus(StepStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    step.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

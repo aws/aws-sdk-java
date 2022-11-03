@@ -31,6 +31,8 @@ public class SearchForTextResultMarshaller {
             .marshallLocationName("Distance").build();
     private static final MarshallingInfo<StructuredPojo> PLACE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Place").build();
+    private static final MarshallingInfo<String> PLACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PlaceId").build();
     private static final MarshallingInfo<Double> RELEVANCE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Relevance").build();
 
@@ -52,6 +54,7 @@ public class SearchForTextResultMarshaller {
         try {
             protocolMarshaller.marshall(searchForTextResult.getDistance(), DISTANCE_BINDING);
             protocolMarshaller.marshall(searchForTextResult.getPlace(), PLACE_BINDING);
+            protocolMarshaller.marshall(searchForTextResult.getPlaceId(), PLACEID_BINDING);
             protocolMarshaller.marshall(searchForTextResult.getRelevance(), RELEVANCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

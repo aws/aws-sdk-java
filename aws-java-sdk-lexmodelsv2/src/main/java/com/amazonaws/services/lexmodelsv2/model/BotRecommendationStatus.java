@@ -26,7 +26,9 @@ public enum BotRecommendationStatus {
     Downloading("Downloading"),
     Updating("Updating"),
     Available("Available"),
-    Failed("Failed");
+    Failed("Failed"),
+    Stopping("Stopping"),
+    Stopped("Stopped");
 
     private String value;
 

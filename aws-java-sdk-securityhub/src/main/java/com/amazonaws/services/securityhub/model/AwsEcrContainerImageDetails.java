@@ -42,8 +42,25 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
     private String repositoryName;
     /**
      * <p>
-     * The architecture of the image.
+     * The architecture of the image. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arm64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>i386</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String architecture;
     /**
@@ -153,11 +170,44 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The architecture of the image.
+     * The architecture of the image. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arm64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>i386</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param architecture
-     *        The architecture of the image.
+     *        The architecture of the image. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arm64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>i386</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x86_64</code>
+     *        </p>
+     *        </li>
      */
 
     public void setArchitecture(String architecture) {
@@ -166,10 +216,43 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The architecture of the image.
+     * The architecture of the image. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arm64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>i386</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The architecture of the image.
+     * @return The architecture of the image. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arm64</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>i386</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>x86_64</code>
+     *         </p>
+     *         </li>
      */
 
     public String getArchitecture() {
@@ -178,11 +261,44 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The architecture of the image.
+     * The architecture of the image. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arm64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>i386</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param architecture
-     *        The architecture of the image.
+     *        The architecture of the image. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arm64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>i386</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x86_64</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

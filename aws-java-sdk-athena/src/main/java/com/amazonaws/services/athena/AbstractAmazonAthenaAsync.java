@@ -41,6 +41,19 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetPreparedStatementResult> batchGetPreparedStatementAsync(BatchGetPreparedStatementRequest request) {
+
+        return batchGetPreparedStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetPreparedStatementResult> batchGetPreparedStatementAsync(BatchGetPreparedStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetPreparedStatementRequest, BatchGetPreparedStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetQueryExecutionResult> batchGetQueryExecutionAsync(BatchGetQueryExecutionRequest request) {
 
         return batchGetQueryExecutionAsync(request, null);
@@ -231,6 +244,19 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     @Override
     public java.util.concurrent.Future<GetQueryResultsResult> getQueryResultsAsync(GetQueryResultsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetQueryResultsRequest, GetQueryResultsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryRuntimeStatisticsResult> getQueryRuntimeStatisticsAsync(GetQueryRuntimeStatisticsRequest request) {
+
+        return getQueryRuntimeStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryRuntimeStatisticsResult> getQueryRuntimeStatisticsAsync(GetQueryRuntimeStatisticsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetQueryRuntimeStatisticsRequest, GetQueryRuntimeStatisticsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAttackStatisticsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The time range of the attack.
+     * </p>
+     */
     private TimeRange timeRange;
     /**
      * <p>
@@ -32,7 +37,12 @@ public class DescribeAttackStatisticsResult extends com.amazonaws.AmazonWebServi
     private java.util.List<AttackStatisticsDataItem> dataItems;
 
     /**
+     * <p>
+     * The time range of the attack.
+     * </p>
+     * 
      * @param timeRange
+     *        The time range of the attack.
      */
 
     public void setTimeRange(TimeRange timeRange) {
@@ -40,7 +50,11 @@ public class DescribeAttackStatisticsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The time range of the attack.
+     * </p>
+     * 
+     * @return The time range of the attack.
      */
 
     public TimeRange getTimeRange() {
@@ -48,7 +62,12 @@ public class DescribeAttackStatisticsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The time range of the attack.
+     * </p>
+     * 
      * @param timeRange
+     *        The time range of the attack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

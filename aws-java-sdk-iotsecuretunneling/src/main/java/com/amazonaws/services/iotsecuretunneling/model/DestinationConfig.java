@@ -36,9 +36,9 @@ public class DestinationConfig implements Serializable, Cloneable, StructuredPoj
     private String thingName;
     /**
      * <p>
-     * A list of service names that identity the target application. The AWS IoT client running on the destination
-     * device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client
-     * instantiates the local proxy which uses this information to connect to the destination application.
+     * A list of service names that identify the target application. The IoT client running on the destination device
+     * reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local
+     * proxy, which uses this information to connect to the destination application.
      * </p>
      */
     private java.util.List<String> services;
@@ -85,15 +85,14 @@ public class DestinationConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of service names that identity the target application. The AWS IoT client running on the destination
-     * device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client
-     * instantiates the local proxy which uses this information to connect to the destination application.
+     * A list of service names that identify the target application. The IoT client running on the destination device
+     * reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local
+     * proxy, which uses this information to connect to the destination application.
      * </p>
      * 
-     * @return A list of service names that identity the target application. The AWS IoT client running on the
-     *         destination device reads this value and uses it to look up a port or an IP address and a port. The AWS
-     *         IoT client instantiates the local proxy which uses this information to connect to the destination
-     *         application.
+     * @return A list of service names that identify the target application. The IoT client running on the destination
+     *         device reads this value and uses it to look up a port or an IP address and a port. The IoT client
+     *         instantiates the local proxy, which uses this information to connect to the destination application.
      */
 
     public java.util.List<String> getServices() {
@@ -102,15 +101,15 @@ public class DestinationConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of service names that identity the target application. The AWS IoT client running on the destination
-     * device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client
-     * instantiates the local proxy which uses this information to connect to the destination application.
+     * A list of service names that identify the target application. The IoT client running on the destination device
+     * reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local
+     * proxy, which uses this information to connect to the destination application.
      * </p>
      * 
      * @param services
-     *        A list of service names that identity the target application. The AWS IoT client running on the
-     *        destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT
-     *        client instantiates the local proxy which uses this information to connect to the destination application.
+     *        A list of service names that identify the target application. The IoT client running on the destination
+     *        device reads this value and uses it to look up a port or an IP address and a port. The IoT client
+     *        instantiates the local proxy, which uses this information to connect to the destination application.
      */
 
     public void setServices(java.util.Collection<String> services) {
@@ -124,9 +123,9 @@ public class DestinationConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of service names that identity the target application. The AWS IoT client running on the destination
-     * device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client
-     * instantiates the local proxy which uses this information to connect to the destination application.
+     * A list of service names that identify the target application. The IoT client running on the destination device
+     * reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local
+     * proxy, which uses this information to connect to the destination application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,9 +134,9 @@ public class DestinationConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param services
-     *        A list of service names that identity the target application. The AWS IoT client running on the
-     *        destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT
-     *        client instantiates the local proxy which uses this information to connect to the destination application.
+     *        A list of service names that identify the target application. The IoT client running on the destination
+     *        device reads this value and uses it to look up a port or an IP address and a port. The IoT client
+     *        instantiates the local proxy, which uses this information to connect to the destination application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,15 +152,15 @@ public class DestinationConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of service names that identity the target application. The AWS IoT client running on the destination
-     * device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client
-     * instantiates the local proxy which uses this information to connect to the destination application.
+     * A list of service names that identify the target application. The IoT client running on the destination device
+     * reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local
+     * proxy, which uses this information to connect to the destination application.
      * </p>
      * 
      * @param services
-     *        A list of service names that identity the target application. The AWS IoT client running on the
-     *        destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT
-     *        client instantiates the local proxy which uses this information to connect to the destination application.
+     *        A list of service names that identify the target application. The IoT client running on the destination
+     *        device reads this value and uses it to look up a port or an IP address and a port. The IoT client
+     *        instantiates the local proxy, which uses this information to connect to the destination application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

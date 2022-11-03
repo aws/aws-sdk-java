@@ -27,7 +27,7 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      */
     private String usagePlanId;
@@ -39,13 +39,13 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String keyId;
     /**
      * <p>
-     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     * The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      */
     private String startDate;
     /**
      * <p>
-     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     * The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      */
     private String endDate;
@@ -64,11 +64,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        [Required] The Id of the usage plan associated with the usage data.
+     *        The Id of the usage plan associated with the usage data.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -77,10 +77,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      * 
-     * @return [Required] The Id of the usage plan associated with the usage data.
+     * @return The Id of the usage plan associated with the usage data.
      */
 
     public String getUsagePlanId() {
@@ -89,11 +89,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The Id of the usage plan associated with the usage data.
+     * The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        [Required] The Id of the usage plan associated with the usage data.
+     *        The Id of the usage plan associated with the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     * The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      * 
      * @param startDate
-     *        [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     *        The starting date (e.g., 2016-01-01) of the usage data.
      */
 
     public void setStartDate(String startDate) {
@@ -157,10 +157,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     * The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      * 
-     * @return [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     * @return The starting date (e.g., 2016-01-01) of the usage data.
      */
 
     public String getStartDate() {
@@ -169,11 +169,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     * The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      * 
      * @param startDate
-     *        [Required] The starting date (e.g., 2016-01-01) of the usage data.
+     *        The starting date (e.g., 2016-01-01) of the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     * The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      * 
      * @param endDate
-     *        [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     *        The ending date (e.g., 2016-12-31) of the usage data.
      */
 
     public void setEndDate(String endDate) {
@@ -197,10 +197,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     * The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      * 
-     * @return [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     * @return The ending date (e.g., 2016-12-31) of the usage data.
      */
 
     public String getEndDate() {
@@ -209,11 +209,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     * The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      * 
      * @param endDate
-     *        [Required] The ending date (e.g., 2016-12-31) of the usage data.
+     *        The ending date (e.g., 2016-12-31) of the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,7 +38,7 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The AWS account ID that manages the repository.
+     * The Amazon Web Services account ID that manages the repository.
      * </p>
      */
     private String administratorAccount;
@@ -50,7 +50,8 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
     private String domainName;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -109,11 +110,11 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS account ID that manages the repository.
+     * The Amazon Web Services account ID that manages the repository.
      * </p>
      * 
      * @param administratorAccount
-     *        The AWS account ID that manages the repository.
+     *        The Amazon Web Services account ID that manages the repository.
      */
 
     public void setAdministratorAccount(String administratorAccount) {
@@ -122,10 +123,10 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS account ID that manages the repository.
+     * The Amazon Web Services account ID that manages the repository.
      * </p>
      * 
-     * @return The AWS account ID that manages the repository.
+     * @return The Amazon Web Services account ID that manages the repository.
      */
 
     public String getAdministratorAccount() {
@@ -134,11 +135,11 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS account ID that manages the repository.
+     * The Amazon Web Services account ID that manages the repository.
      * </p>
      * 
      * @param administratorAccount
-     *        The AWS account ID that manages the repository.
+     *        The Amazon Web Services account ID that manages the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +190,13 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -202,11 +205,12 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -215,11 +219,13 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

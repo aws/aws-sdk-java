@@ -60,6 +60,14 @@ public class UserIdentityInfoJsonUnmarshaller implements Unmarshaller<UserIdenti
                     context.nextToken();
                     userIdentityInfo.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecondaryEmail", targetDepth)) {
+                    context.nextToken();
+                    userIdentityInfo.setSecondaryEmail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Mobile", targetDepth)) {
+                    context.nextToken();
+                    userIdentityInfo.setMobile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -30,7 +30,7 @@ public class ProposedSegmentChange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The key-value tags that changed for the segment.
+     * The list of key-value tags that changed for the segment.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -49,10 +49,10 @@ public class ProposedSegmentChange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The key-value tags that changed for the segment.
+     * The list of key-value tags that changed for the segment.
      * </p>
      * 
-     * @return The key-value tags that changed for the segment.
+     * @return The list of key-value tags that changed for the segment.
      */
 
     public java.util.List<Tag> getTags() {
@@ -61,11 +61,11 @@ public class ProposedSegmentChange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The key-value tags that changed for the segment.
+     * The list of key-value tags that changed for the segment.
      * </p>
      * 
      * @param tags
-     *        The key-value tags that changed for the segment.
+     *        The list of key-value tags that changed for the segment.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -79,7 +79,7 @@ public class ProposedSegmentChange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The key-value tags that changed for the segment.
+     * The list of key-value tags that changed for the segment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class ProposedSegmentChange implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param tags
-     *        The key-value tags that changed for the segment.
+     *        The list of key-value tags that changed for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class ProposedSegmentChange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The key-value tags that changed for the segment.
+     * The list of key-value tags that changed for the segment.
      * </p>
      * 
      * @param tags
-     *        The key-value tags that changed for the segment.
+     *        The list of key-value tags that changed for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,6 +39,8 @@ public class ListDatabasesRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SecretArn").build();
+    private static final MarshallingInfo<String> WORKGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkgroupName").build();
 
     private static final ListDatabasesRequestMarshaller instance = new ListDatabasesRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class ListDatabasesRequestMarshaller {
             protocolMarshaller.marshall(listDatabasesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listDatabasesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listDatabasesRequest.getSecretArn(), SECRETARN_BINDING);
+            protocolMarshaller.marshall(listDatabasesRequest.getWorkgroupName(), WORKGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

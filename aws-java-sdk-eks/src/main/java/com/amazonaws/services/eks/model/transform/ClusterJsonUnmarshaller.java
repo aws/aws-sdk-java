@@ -119,6 +119,18 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setConnectorConfig(ConnectorConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    cluster.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("health", targetDepth)) {
+                    context.nextToken();
+                    cluster.setHealth(ClusterHealthJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("outpostConfig", targetDepth)) {
+                    context.nextToken();
+                    cluster.setOutpostConfig(OutpostConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

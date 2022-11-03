@@ -124,6 +124,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                             new JsonErrorShapeMetadata().withErrorCode("UnrecognizedClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.logs.model.transform.UnrecognizedClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MalformedQueryException").withExceptionUnmarshaller(
                                     com.amazonaws.services.logs.model.transform.MalformedQueryExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -375,7 +378,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.AssociateKmsKey
@@ -524,7 +527,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @throws ResourceNotFoundException
@@ -636,7 +639,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.CreateLogGroup
@@ -788,7 +791,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteDestination
@@ -852,7 +855,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteLogGroup
@@ -916,7 +919,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteLogStream
@@ -979,7 +982,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteMetricFilter
@@ -1176,7 +1179,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteRetentionPolicy
@@ -1240,7 +1243,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteSubscriptionFilter
@@ -1891,7 +1894,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DisassociateKmsKey
@@ -2300,6 +2303,75 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
+     * Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support
+     * tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <important>
+     * <p>
+     * The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a> instead.
+     * </p>
+     * </important>
+     * <p>
      * Lists the tags for the specified log group.
      * </p>
      * 
@@ -2314,6 +2386,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest request) {
         request = beforeClientExecution(request);
         return executeListTagsLogGroup(request);
@@ -2385,7 +2458,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutDestination
@@ -2453,7 +2526,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutDestinationPolicy
@@ -2669,7 +2742,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws ServiceUnavailableException
@@ -2873,7 +2946,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutRetentionPolicy
@@ -2974,7 +3047,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws OperationAbortedException
-     *         Multiple requests to update the same resource were in conflict.
+     *         Multiple concurrent requests to update the same resource were in conflict.
      * @throws LimitExceededException
      *         You have reached the maximum number of resources that can be created.
      * @throws ServiceUnavailableException
@@ -3173,15 +3246,22 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     /**
+     * <important>
+     * <p>
+     * The TagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+     * instead.
+     * </p>
+     * </important>
      * <p>
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To remove tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
-     * >UntagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a>.
      * </p>
      * <p>
      * For more information about tags, see <a href=
@@ -3207,6 +3287,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public TagLogGroupResult tagLogGroup(TagLogGroupRequest request) {
         request = beforeClientExecution(request);
         return executeTagLogGroup(request);
@@ -3240,6 +3321,87 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
             HttpResponseHandler<AmazonWebServiceResponse<TagLogGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagLogGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only
+     * CloudWatch Logs resources that can be tagged are log groups and destinations.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key
+     * that is already associated with the alarm, the new tag value that you specify replaces the previous value for
+     * that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a CloudWatch Logs resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @throws TooManyTagsException
+     *         A resource can have no more than 50 tags.
+     * @sample AWSLogs.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3311,14 +3473,21 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     /**
+     * <important>
+     * <p>
+     * The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To add tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
      * </p>
      * <p>
      * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
@@ -3334,6 +3503,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UntagLogGroupResult untagLogGroup(UntagLogGroupRequest request) {
         request = beforeClientExecution(request);
         return executeUntagLogGroup(request);
@@ -3367,6 +3537,67 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagLogGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagLogGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

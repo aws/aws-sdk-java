@@ -26,18 +26,18 @@ public class DeleteEnvironmentTemplateVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the environment template version being deleted.
      * </p>
      */
     private EnvironmentTemplateVersion environmentTemplateVersion;
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the environment template version being deleted.
      * </p>
      * 
      * @param environmentTemplateVersion
-     *        The environment template version detail data that's returned by Proton.
+     *        The detailed data of the environment template version being deleted.
      */
 
     public void setEnvironmentTemplateVersion(EnvironmentTemplateVersion environmentTemplateVersion) {
@@ -46,10 +46,10 @@ public class DeleteEnvironmentTemplateVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the environment template version being deleted.
      * </p>
      * 
-     * @return The environment template version detail data that's returned by Proton.
+     * @return The detailed data of the environment template version being deleted.
      */
 
     public EnvironmentTemplateVersion getEnvironmentTemplateVersion() {
@@ -58,11 +58,11 @@ public class DeleteEnvironmentTemplateVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The environment template version detail data that's returned by Proton.
+     * The detailed data of the environment template version being deleted.
      * </p>
      * 
      * @param environmentTemplateVersion
-     *        The environment template version detail data that's returned by Proton.
+     *        The detailed data of the environment template version being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

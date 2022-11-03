@@ -28,7 +28,7 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
      * events never expire.
      * </p>
      */
@@ -41,13 +41,13 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
      * events never expire.
      * </p>
      * 
      * @return The log groups.</p>
      *         <p>
-     *         If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to
+     *         If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
      *         have its events never expire.
      */
 
@@ -63,14 +63,14 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
      * events never expire.
      * </p>
      * 
      * @param logGroups
      *        The log groups.</p>
      *        <p>
-     *        If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to
+     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
      *        have its events never expire.
      */
 
@@ -88,7 +88,7 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
      * events never expire.
      * </p>
      * <p>
@@ -100,7 +100,7 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * @param logGroups
      *        The log groups.</p>
      *        <p>
-     *        If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to
+     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
      *        have its events never expire.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -120,14 +120,14 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
      * events never expire.
      * </p>
      * 
      * @param logGroups
      *        The log groups.</p>
      *        <p>
-     *        If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to
+     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
      *        have its events never expire.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

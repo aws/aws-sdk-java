@@ -27,7 +27,7 @@ public class GetMobileDeviceAccessEffectRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization to simulate the access effect for.
+     * The WorkMail organization to simulate the access effect for.
      * </p>
      */
     private String organizationId;
@@ -58,11 +58,11 @@ public class GetMobileDeviceAccessEffectRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization to simulate the access effect for.
+     * The WorkMail organization to simulate the access effect for.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization to simulate the access effect for.
+     *        The WorkMail organization to simulate the access effect for.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -71,10 +71,10 @@ public class GetMobileDeviceAccessEffectRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization to simulate the access effect for.
+     * The WorkMail organization to simulate the access effect for.
      * </p>
      * 
-     * @return The Amazon WorkMail organization to simulate the access effect for.
+     * @return The WorkMail organization to simulate the access effect for.
      */
 
     public String getOrganizationId() {
@@ -83,11 +83,11 @@ public class GetMobileDeviceAccessEffectRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon WorkMail organization to simulate the access effect for.
+     * The WorkMail organization to simulate the access effect for.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization to simulate the access effect for.
+     *        The WorkMail organization to simulate the access effect for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

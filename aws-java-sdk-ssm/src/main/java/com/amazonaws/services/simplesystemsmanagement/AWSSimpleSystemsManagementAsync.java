@@ -26,29 +26,20 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Web Services Systems Manager is a collection of capabilities that helps you automate management tasks such as
- * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
- * securely manage the configuration of your managed nodes. A <i>managed node</i> is any Amazon Elastic Compute Cloud
- * (Amazon EC2) instance, edge device, or on-premises server or virtual machine (VM) that has been configured for
- * Systems Manager.
+ * Amazon Web Services Systems Manager is a collection of capabilities to help you manage your applications and
+ * infrastructure running in the Amazon Web Services Cloud;. Systems Manager simplifies application and resource
+ * management, shortens the time to detect and resolve operational problems, and helps you manage your Amazon Web
+ * Services resources securely at scale.
  * </p>
- * <note>
- * <p>
- * With support for IoT Greengrass core devices, the phrase <i>managed instance</i> has been changed to <i>managed
- * node</i> in most of the Systems Manager documentation. The Systems Manager console, API calls, error messages, and
- * SSM documents still use the term <i>instance</i>.
- * </p>
- * </note>
  * <p>
  * This reference is intended to be used with the <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web Services Systems Manager User
  * Guide</a>.
  * </p>
  * <p>
- * To get started, verify prerequisites and configure managed nodes. For more information, see <a
+ * To get started, verify prerequisites. For more information, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up Amazon
- * Web Services Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+ * Web Services Systems Manager</a>.
  * </p>
  * <p class="title">
  * <b>Related resources</b>
@@ -87,11 +78,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your
-     * automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags
-     * enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each
-     * tag consists of a key and an optional value, both of which you define. For example, you could define a set of
-     * tags for your account's managed nodes that helps you track each node's owner and stack level. For example:
+     * Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata that you can assign to
+     * your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines.
+     * Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
+     * Each tag consists of a key and an optional value, both of which you define. For example, you could define a set
+     * of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:
      * </p>
      * <ul>
      * <li>
@@ -150,11 +141,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your
-     * automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags
-     * enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each
-     * tag consists of a key and an optional value, both of which you define. For example, you could define a set of
-     * tags for your account's managed nodes that helps you track each node's owner and stack level. For example:
+     * Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata that you can assign to
+     * your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines.
+     * Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
+     * Each tag consists of a key and an optional value, both of which you define. For example, you could define a set
+     * of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:
      * </p>
      * <ul>
      * <li>
@@ -4363,7 +4354,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * <li>
      * <p>
-     * Severity: A patch severity. For example, <code>critical</code>.
+     * Severity: A patch severity. For example, <code>Critical</code>.
      * </p>
      * </li>
      * <li>
@@ -4460,7 +4451,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * <li>
      * <p>
-     * Severity: A patch severity. For example, <code>critical</code>.
+     * Severity: A patch severity. For example, <code>Critical</code>.
      * </p>
      * </li>
      * <li>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the elastic network interface for a multi-node parallel job node.
+ * An object that represents the elastic network interface for a multi-node parallel job node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NetworkInterface" target="_top">AWS API

@@ -60,6 +60,10 @@ public class S3OutputFormatConfigJsonUnmarshaller implements Unmarshaller<S3Outp
                     context.nextToken();
                     s3OutputFormatConfig.setAggregationConfig(AggregationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("preserveSourceDataTyping", targetDepth)) {
+                    context.nextToken();
+                    s3OutputFormatConfig.setPreserveSourceDataTyping(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

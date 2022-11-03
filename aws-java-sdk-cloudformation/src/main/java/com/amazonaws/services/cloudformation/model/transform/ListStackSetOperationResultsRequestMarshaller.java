@@ -62,6 +62,31 @@ public class ListStackSetOperationResultsRequestMarshaller implements
             request.addParameter("CallAs", StringUtils.fromString(listStackSetOperationResultsRequest.getCallAs()));
         }
 
+        if (listStackSetOperationResultsRequest.getFilters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<OperationResultFilter>) listStackSetOperationResultsRequest.getFilters()).isAutoConstruct()) {
+            request.addParameter("Filters", "");
+        }
+        if (!listStackSetOperationResultsRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OperationResultFilter>) listStackSetOperationResultsRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OperationResultFilter> filtersList = (com.amazonaws.internal.SdkInternalList<OperationResultFilter>) listStackSetOperationResultsRequest
+                    .getFilters();
+            int filtersListIndex = 1;
+
+            for (OperationResultFilter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+
+                    if (filtersListValue.getValues() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Values", StringUtils.fromString(filtersListValue.getValues()));
+                    }
+                }
+                filtersListIndex++;
+            }
+        }
+
         return request;
     }
 

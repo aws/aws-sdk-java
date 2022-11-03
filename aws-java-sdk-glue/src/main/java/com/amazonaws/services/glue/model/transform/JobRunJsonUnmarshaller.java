@@ -143,6 +143,10 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                     context.nextToken();
                     jobRun.setDPUSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("ExecutionClass", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setExecutionClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

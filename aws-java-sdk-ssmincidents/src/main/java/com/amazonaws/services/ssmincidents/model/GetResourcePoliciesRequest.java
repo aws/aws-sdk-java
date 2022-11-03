@@ -27,7 +27,7 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      */
     private Integer maxResults;
@@ -46,11 +46,11 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resource policies to display per page of results.
+     *        The maximum number of resource policies to display for each page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -59,10 +59,10 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      * 
-     * @return The maximum number of resource policies to display per page of results.
+     * @return The maximum number of resource policies to display for each page of results.
      */
 
     public Integer getMaxResults() {
@@ -71,11 +71,11 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resource policies to display per page of results.
+     *        The maximum number of resource policies to display for each page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

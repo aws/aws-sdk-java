@@ -55,6 +55,8 @@ public class AppAssessmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("policy").build();
     private static final MarshallingInfo<StructuredPojo> RESILIENCYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resiliencyScore").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCEERRORSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceErrorsDetails").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -89,6 +91,7 @@ public class AppAssessmentMarshaller {
             protocolMarshaller.marshall(appAssessment.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(appAssessment.getPolicy(), POLICY_BINDING);
             protocolMarshaller.marshall(appAssessment.getResiliencyScore(), RESILIENCYSCORE_BINDING);
+            protocolMarshaller.marshall(appAssessment.getResourceErrorsDetails(), RESOURCEERRORSDETAILS_BINDING);
             protocolMarshaller.marshall(appAssessment.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(appAssessment.getTags(), TAGS_BINDING);
         } catch (Exception e) {

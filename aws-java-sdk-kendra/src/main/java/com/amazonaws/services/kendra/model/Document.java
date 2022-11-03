@@ -32,6 +32,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      */
     private String id;
     /**
@@ -67,7 +73,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DocumentAttribute> attributes;
     /**
      * <p>
-     * Information on user and group access rights, which is used for user context filtering.
+     * Information on principals (users and/or groups) and which documents they should have access to. This is useful
+     * for user context filtering, where search results are filtered based on the user or their group access to
+     * documents.
      * </p>
      */
     private java.util.List<Principal> accessControlList;
@@ -84,14 +92,31 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String contentType;
+    /**
+     * <p>
+     * The identifier of the access control configuration that you want to apply to the document.
+     * </p>
+     */
+    private String accessControlConfigurationId;
 
     /**
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.
+     *        A unique identifier of the document in the index.</p>
+     *        <p>
+     *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
+     *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     *        vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the
+     *        same documents, or vice versa.
      */
 
     public void setId(String id) {
@@ -102,8 +127,19 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      * 
-     * @return A unique identifier of the document in the index.
+     * @return A unique identifier of the document in the index.</p>
+     *         <p>
+     *         Note, each document ID must be unique per index. You cannot create a data source to index your documents
+     *         with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     *         vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the
+     *         same documents, or vice versa.
      */
 
     public String getId() {
@@ -114,9 +150,20 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.
+     *        A unique identifier of the document in the index.</p>
+     *        <p>
+     *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
+     *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     *        vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the
+     *        same documents, or vice versa.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,10 +455,14 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on user and group access rights, which is used for user context filtering.
+     * Information on principals (users and/or groups) and which documents they should have access to. This is useful
+     * for user context filtering, where search results are filtered based on the user or their group access to
+     * documents.
      * </p>
      * 
-     * @return Information on user and group access rights, which is used for user context filtering.
+     * @return Information on principals (users and/or groups) and which documents they should have access to. This is
+     *         useful for user context filtering, where search results are filtered based on the user or their group
+     *         access to documents.
      */
 
     public java.util.List<Principal> getAccessControlList() {
@@ -420,11 +471,15 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on user and group access rights, which is used for user context filtering.
+     * Information on principals (users and/or groups) and which documents they should have access to. This is useful
+     * for user context filtering, where search results are filtered based on the user or their group access to
+     * documents.
      * </p>
      * 
      * @param accessControlList
-     *        Information on user and group access rights, which is used for user context filtering.
+     *        Information on principals (users and/or groups) and which documents they should have access to. This is
+     *        useful for user context filtering, where search results are filtered based on the user or their group
+     *        access to documents.
      */
 
     public void setAccessControlList(java.util.Collection<Principal> accessControlList) {
@@ -438,7 +493,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on user and group access rights, which is used for user context filtering.
+     * Information on principals (users and/or groups) and which documents they should have access to. This is useful
+     * for user context filtering, where search results are filtered based on the user or their group access to
+     * documents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -447,7 +504,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param accessControlList
-     *        Information on user and group access rights, which is used for user context filtering.
+     *        Information on principals (users and/or groups) and which documents they should have access to. This is
+     *        useful for user context filtering, where search results are filtered based on the user or their group
+     *        access to documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,11 +522,15 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on user and group access rights, which is used for user context filtering.
+     * Information on principals (users and/or groups) and which documents they should have access to. This is useful
+     * for user context filtering, where search results are filtered based on the user or their group access to
+     * documents.
      * </p>
      * 
      * @param accessControlList
-     *        Information on user and group access rights, which is used for user context filtering.
+     *        Information on principals (users and/or groups) and which documents they should have access to. This is
+     *        useful for user context filtering, where search results are filtered based on the user or their group
+     *        access to documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,6 +677,46 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the access control configuration that you want to apply to the document.
+     * </p>
+     * 
+     * @param accessControlConfigurationId
+     *        The identifier of the access control configuration that you want to apply to the document.
+     */
+
+    public void setAccessControlConfigurationId(String accessControlConfigurationId) {
+        this.accessControlConfigurationId = accessControlConfigurationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the access control configuration that you want to apply to the document.
+     * </p>
+     * 
+     * @return The identifier of the access control configuration that you want to apply to the document.
+     */
+
+    public String getAccessControlConfigurationId() {
+        return this.accessControlConfigurationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the access control configuration that you want to apply to the document.
+     * </p>
+     * 
+     * @param accessControlConfigurationId
+     *        The identifier of the access control configuration that you want to apply to the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Document withAccessControlConfigurationId(String accessControlConfigurationId) {
+        setAccessControlConfigurationId(accessControlConfigurationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +743,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
         if (getHierarchicalAccessControlList() != null)
             sb.append("HierarchicalAccessControlList: ").append(getHierarchicalAccessControlList()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: ").append(getContentType());
+            sb.append("ContentType: ").append(getContentType()).append(",");
+        if (getAccessControlConfigurationId() != null)
+            sb.append("AccessControlConfigurationId: ").append(getAccessControlConfigurationId());
         sb.append("}");
         return sb.toString();
     }
@@ -688,6 +793,10 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
             return false;
+        if (other.getAccessControlConfigurationId() == null ^ this.getAccessControlConfigurationId() == null)
+            return false;
+        if (other.getAccessControlConfigurationId() != null && other.getAccessControlConfigurationId().equals(this.getAccessControlConfigurationId()) == false)
+            return false;
         return true;
     }
 
@@ -704,6 +813,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccessControlList() == null) ? 0 : getAccessControlList().hashCode());
         hashCode = prime * hashCode + ((getHierarchicalAccessControlList() == null) ? 0 : getHierarchicalAccessControlList().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getAccessControlConfigurationId() == null) ? 0 : getAccessControlConfigurationId().hashCode());
         return hashCode;
     }
 

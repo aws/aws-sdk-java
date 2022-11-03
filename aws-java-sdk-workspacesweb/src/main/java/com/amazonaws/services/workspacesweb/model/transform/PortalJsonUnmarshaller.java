@@ -92,6 +92,10 @@ public class PortalJsonUnmarshaller implements Unmarshaller<Portal, JsonUnmarsha
                     context.nextToken();
                     portal.setTrustStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("userAccessLoggingSettingsArn", targetDepth)) {
+                    context.nextToken();
+                    portal.setUserAccessLoggingSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("userSettingsArn", targetDepth)) {
                     context.nextToken();
                     portal.setUserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));

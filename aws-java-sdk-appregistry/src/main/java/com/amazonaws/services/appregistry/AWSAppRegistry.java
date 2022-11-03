@@ -60,6 +60,9 @@ public interface AWSAppRegistry {
      *         The service is experiencing internal problems.
      * @throws ServiceQuotaExceededException
      *         The maximum number of resources per account has been reached.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
      * @sample AWSAppRegistry.AssociateAttributeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup"
      *      target="_top">AWS API Documentation</a>
@@ -83,6 +86,8 @@ public interface AWSAppRegistry {
      * @throws ConflictException
      *         There was a conflict when processing the request (for example, a resource with the given name already
      *         exists within the account).
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.AssociateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource"
      *      target="_top">AWS API Documentation</a>
@@ -103,6 +108,8 @@ public interface AWSAppRegistry {
      *         exists within the account).
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -204,6 +211,8 @@ public interface AWSAppRegistry {
      *         The specified resource does not exist.
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.DisassociateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource"
      *      target="_top">AWS API Documentation</a>
@@ -226,6 +235,9 @@ public interface AWSAppRegistry {
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
      * @sample AWSAppRegistry.GetApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication"
      *      target="_top">AWS API Documentation</a>
@@ -265,6 +277,9 @@ public interface AWSAppRegistry {
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
      * @sample AWSAppRegistry.GetAttributeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup"
      *      target="_top">AWS API Documentation</a>
@@ -342,6 +357,26 @@ public interface AWSAppRegistry {
      *      target="_top">AWS API Documentation</a>
      */
     ListAttributeGroupsResult listAttributeGroups(ListAttributeGroupsRequest listAttributeGroupsRequest);
+
+    /**
+     * <p>
+     * Lists the details of all attribute groups associated with a specific application. The results display in pages.
+     * </p>
+     * 
+     * @param listAttributeGroupsForApplicationRequest
+     * @return Result of the ListAttributeGroupsForApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.ListAttributeGroupsForApplication
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAttributeGroupsForApplicationResult listAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest listAttributeGroupsForApplicationRequest);
 
     /**
      * <p>
@@ -449,6 +484,8 @@ public interface AWSAppRegistry {
      *         exists within the account).
      * @throws InternalServerException
      *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

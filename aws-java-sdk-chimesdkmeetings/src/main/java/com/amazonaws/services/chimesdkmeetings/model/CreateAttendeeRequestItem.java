@@ -35,6 +35,12 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
      * </p>
      */
     private String externalUserId;
+    /**
+     * <p>
+     * A list of one or more capabilities.
+     * </p>
+     */
+    private AttendeeCapabilities capabilities;
 
     /**
      * <p>
@@ -83,6 +89,46 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * A list of one or more capabilities.
+     * </p>
+     * 
+     * @param capabilities
+     *        A list of one or more capabilities.
+     */
+
+    public void setCapabilities(AttendeeCapabilities capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    /**
+     * <p>
+     * A list of one or more capabilities.
+     * </p>
+     * 
+     * @return A list of one or more capabilities.
+     */
+
+    public AttendeeCapabilities getCapabilities() {
+        return this.capabilities;
+    }
+
+    /**
+     * <p>
+     * A list of one or more capabilities.
+     * </p>
+     * 
+     * @param capabilities
+     *        A list of one or more capabilities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAttendeeRequestItem withCapabilities(AttendeeCapabilities capabilities) {
+        setCapabilities(capabilities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +141,9 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExternalUserId() != null)
-            sb.append("ExternalUserId: ").append("***Sensitive Data Redacted***");
+            sb.append("ExternalUserId: ").append("***Sensitive Data Redacted***").append(",");
+        if (getCapabilities() != null)
+            sb.append("Capabilities: ").append(getCapabilities());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +162,10 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
             return false;
         if (other.getExternalUserId() != null && other.getExternalUserId().equals(this.getExternalUserId()) == false)
             return false;
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+            return false;
+        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +175,7 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getExternalUserId() == null) ? 0 : getExternalUserId().hashCode());
+        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         return hashCode;
     }
 

@@ -54,6 +54,19 @@ public class AbstractAWSAccountAsync extends AbstractAWSAccount implements AWSAc
     }
 
     @Override
+    public java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(GetContactInformationRequest request) {
+
+        return getContactInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(GetContactInformationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContactInformationRequest, GetContactInformationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAlternateContactResult> putAlternateContactAsync(PutAlternateContactRequest request) {
 
         return putAlternateContactAsync(request, null);
@@ -62,6 +75,19 @@ public class AbstractAWSAccountAsync extends AbstractAWSAccount implements AWSAc
     @Override
     public java.util.concurrent.Future<PutAlternateContactResult> putAlternateContactAsync(PutAlternateContactRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAlternateContactRequest, PutAlternateContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContactInformationResult> putContactInformationAsync(PutContactInformationRequest request) {
+
+        return putContactInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContactInformationResult> putContactInformationAsync(PutContactInformationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutContactInformationRequest, PutContactInformationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

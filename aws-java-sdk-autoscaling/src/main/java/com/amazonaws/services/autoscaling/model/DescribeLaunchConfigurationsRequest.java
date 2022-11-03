@@ -27,7 +27,7 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The launch configuration names. If you omit this parameter, all launch configurations are described.
+     * The launch configuration names. If you omit this property, all launch configurations are described.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 items.
@@ -50,13 +50,13 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The launch configuration names. If you omit this parameter, all launch configurations are described.
+     * The launch configuration names. If you omit this property, all launch configurations are described.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 items.
      * </p>
      * 
-     * @return The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     * @return The launch configuration names. If you omit this property, all launch configurations are described.</p>
      *         <p>
      *         Array Members: Maximum number of 50 items.
      */
@@ -70,14 +70,14 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The launch configuration names. If you omit this parameter, all launch configurations are described.
+     * The launch configuration names. If you omit this property, all launch configurations are described.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 items.
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *        The launch configuration names. If you omit this property, all launch configurations are described.</p>
      *        <p>
      *        Array Members: Maximum number of 50 items.
      */
@@ -93,7 +93,7 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The launch configuration names. If you omit this parameter, all launch configurations are described.
+     * The launch configuration names. If you omit this property, all launch configurations are described.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 items.
@@ -105,7 +105,7 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *        The launch configuration names. If you omit this property, all launch configurations are described.</p>
      *        <p>
      *        Array Members: Maximum number of 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -123,14 +123,14 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The launch configuration names. If you omit this parameter, all launch configurations are described.
+     * The launch configuration names. If you omit this property, all launch configurations are described.
      * </p>
      * <p>
      * Array Members: Maximum number of 50 items.
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *        The launch configuration names. If you omit this property, all launch configurations are described.</p>
      *        <p>
      *        Array Members: Maximum number of 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -33,13 +33,14 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
     /**
      * <p>
-     * Filter the list of repositories to only include those that are managed by the AWS account ID.
+     * Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.
      * </p>
      */
     private String administratorAccount;
@@ -106,11 +107,13 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -119,11 +122,12 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -132,11 +136,13 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +153,12 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filter the list of repositories to only include those that are managed by the AWS account ID.
+     * Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.
      * </p>
      * 
      * @param administratorAccount
-     *        Filter the list of repositories to only include those that are managed by the AWS account ID.
+     *        Filter the list of repositories to only include those that are managed by the Amazon Web Services account
+     *        ID.
      */
 
     public void setAdministratorAccount(String administratorAccount) {
@@ -160,10 +167,11 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filter the list of repositories to only include those that are managed by the AWS account ID.
+     * Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.
      * </p>
      * 
-     * @return Filter the list of repositories to only include those that are managed by the AWS account ID.
+     * @return Filter the list of repositories to only include those that are managed by the Amazon Web Services account
+     *         ID.
      */
 
     public String getAdministratorAccount() {
@@ -172,11 +180,12 @@ public class ListRepositoriesInDomainRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filter the list of repositories to only include those that are managed by the AWS account ID.
+     * Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.
      * </p>
      * 
      * @param administratorAccount
-     *        Filter the list of repositories to only include those that are managed by the AWS account ID.
+     *        Filter the list of repositories to only include those that are managed by the Amazon Web Services account
+     *        ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

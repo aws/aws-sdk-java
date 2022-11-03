@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Batch compute environment.
+ * An object that represents an Batch compute environment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentDetail" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      */
@@ -49,7 +49,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     private Integer unmanagedvCpus;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      * </p>
      */
     private String ecsClusterArn;
@@ -74,7 +74,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * <p>
      * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
      * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-     * its instances out or in automatically, based on the job queue demand.
+     * its instances out or in automatically based on the job queue demand.
      * </p>
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -92,7 +92,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     private String status;
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the compute environment.
+     * A short, human-readable string to provide additional details for the current status of the compute environment.
      * </p>
      */
     private String statusReason;
@@ -106,8 +106,8 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     private ComputeResource computeResources;
     /**
      * <p>
-     * The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services
-     * API operations on your behalf. For more information, see <a
+     * The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web
+     * Services API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
      * <i>Batch User Guide</i>.
      * </p>
@@ -122,15 +122,35 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * </p>
      */
     private UpdatePolicy updatePolicy;
+    /**
+     * <p>
+     * The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this
+     * parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     * </p>
+     */
+    private EksConfiguration eksConfiguration;
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     */
+    private String containerOrchestrationType;
+    /**
+     * <p>
+     * Unique identifier for the compute environment.
+     * </p>
+     */
+    private String uuid;
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and
      *        lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
@@ -140,11 +160,11 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     * @return The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and
      *         lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
@@ -154,12 +174,12 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase
      * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and
      *        lowercase letters, numbers, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -251,11 +271,11 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      * </p>
      * 
      * @param ecsClusterArn
-     *        The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     *        The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      */
 
     public void setEcsClusterArn(String ecsClusterArn) {
@@ -264,10 +284,10 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     * @return The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      */
 
     public String getEcsClusterArn() {
@@ -276,11 +296,11 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     * The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      * </p>
      * 
      * @param ecsClusterArn
-     *        The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.
+     *        The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,7 +478,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * <p>
      * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
      * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-     * its instances out or in automatically, based on the job queue demand.
+     * its instances out or in automatically based on the job queue demand.
      * </p>
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -473,7 +493,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        <p>
      *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
-     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        managed, then it can scale its instances out or in automatically based on the job queue demand.
      *        </p>
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -494,7 +514,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * <p>
      * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
      * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-     * its instances out or in automatically, based on the job queue demand.
+     * its instances out or in automatically based on the job queue demand.
      * </p>
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -508,7 +528,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *         <p>
      *         If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *         associated job queue on the compute resources within the environment. If the compute environment is
-     *         managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *         managed, then it can scale its instances out or in automatically based on the job queue demand.
      *         </p>
      *         <p>
      *         If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -529,7 +549,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * <p>
      * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
      * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-     * its instances out or in automatically, based on the job queue demand.
+     * its instances out or in automatically based on the job queue demand.
      * </p>
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -544,7 +564,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        <p>
      *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
-     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        managed, then it can scale its instances out or in automatically based on the job queue demand.
      *        </p>
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -567,7 +587,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * <p>
      * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
      * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-     * its instances out or in automatically, based on the job queue demand.
+     * its instances out or in automatically based on the job queue demand.
      * </p>
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -582,7 +602,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        <p>
      *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
-     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        managed, then it can scale its instances out or in automatically based on the job queue demand.
      *        </p>
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -603,7 +623,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * <p>
      * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
      * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-     * its instances out or in automatically, based on the job queue demand.
+     * its instances out or in automatically based on the job queue demand.
      * </p>
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -618,7 +638,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        <p>
      *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
-     *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
+     *        managed, then it can scale its instances out or in automatically based on the job queue demand.
      *        </p>
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
@@ -709,11 +729,11 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the compute environment.
+     * A short, human-readable string to provide additional details for the current status of the compute environment.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the compute
+     *        A short, human-readable string to provide additional details for the current status of the compute
      *        environment.
      */
 
@@ -723,10 +743,10 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the compute environment.
+     * A short, human-readable string to provide additional details for the current status of the compute environment.
      * </p>
      * 
-     * @return A short, human-readable string to provide additional details about the current status of the compute
+     * @return A short, human-readable string to provide additional details for the current status of the compute
      *         environment.
      */
 
@@ -736,11 +756,11 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A short, human-readable string to provide additional details about the current status of the compute environment.
+     * A short, human-readable string to provide additional details for the current status of the compute environment.
      * </p>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide additional details about the current status of the compute
+     *        A short, human-readable string to provide additional details for the current status of the compute
      *        environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -804,15 +824,15 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services
-     * API operations on your behalf. For more information, see <a
+     * The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web
+     * Services API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
      * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param serviceRole
-     *        The service role associated with the compute environment that allows Batch to make calls to Amazon Web
-     *        Services API operations on your behalf. For more information, see <a
+     *        The service role that's associated with the compute environment that allows Batch to make calls to Amazon
+     *        Web Services API operations on your behalf. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a>
      *        in the <i>Batch User Guide</i>.
      */
@@ -823,14 +843,14 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services
-     * API operations on your behalf. For more information, see <a
+     * The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web
+     * Services API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
      * <i>Batch User Guide</i>.
      * </p>
      * 
-     * @return The service role associated with the compute environment that allows Batch to make calls to Amazon Web
-     *         Services API operations on your behalf. For more information, see <a
+     * @return The service role that's associated with the compute environment that allows Batch to make calls to Amazon
+     *         Web Services API operations on your behalf. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
      *         role</a> in the <i>Batch User Guide</i>.
      */
@@ -841,15 +861,15 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services
-     * API operations on your behalf. For more information, see <a
+     * The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web
+     * Services API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
      * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param serviceRole
-     *        The service role associated with the compute environment that allows Batch to make calls to Amazon Web
-     *        Services API operations on your behalf. For more information, see <a
+     *        The service role that's associated with the compute environment that allows Batch to make calls to Amazon
+     *        Web Services API operations on your behalf. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a>
      *        in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -919,6 +939,175 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this
+     * parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     * </p>
+     * 
+     * @param eksConfiguration
+     *        The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify
+     *        this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     */
+
+    public void setEksConfiguration(EksConfiguration eksConfiguration) {
+        this.eksConfiguration = eksConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this
+     * parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     * </p>
+     * 
+     * @return The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify
+     *         this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     */
+
+    public EksConfiguration getEksConfiguration() {
+        return this.eksConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this
+     * parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     * </p>
+     * 
+     * @param eksConfiguration
+     *        The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify
+     *        this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeEnvironmentDetail withEksConfiguration(EksConfiguration eksConfiguration) {
+        setEksConfiguration(eksConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @see OrchestrationType
+     */
+
+    public void setContainerOrchestrationType(String containerOrchestrationType) {
+        this.containerOrchestrationType = containerOrchestrationType;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @return The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *         <code>EKS</code>.
+     * @see OrchestrationType
+     */
+
+    public String getContainerOrchestrationType() {
+        return this.containerOrchestrationType;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OrchestrationType
+     */
+
+    public ComputeEnvironmentDetail withContainerOrchestrationType(String containerOrchestrationType) {
+        setContainerOrchestrationType(containerOrchestrationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @see OrchestrationType
+     */
+
+    public void setContainerOrchestrationType(OrchestrationType containerOrchestrationType) {
+        withContainerOrchestrationType(containerOrchestrationType);
+    }
+
+    /**
+     * <p>
+     * The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     * <code>EKS</code>.
+     * </p>
+     * 
+     * @param containerOrchestrationType
+     *        The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or
+     *        <code>EKS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OrchestrationType
+     */
+
+    public ComputeEnvironmentDetail withContainerOrchestrationType(OrchestrationType containerOrchestrationType) {
+        this.containerOrchestrationType = containerOrchestrationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the compute environment.
+     * </p>
+     * 
+     * @param uuid
+     *        Unique identifier for the compute environment.
+     */
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the compute environment.
+     * </p>
+     * 
+     * @return Unique identifier for the compute environment.
+     */
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the compute environment.
+     * </p>
+     * 
+     * @param uuid
+     *        Unique identifier for the compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeEnvironmentDetail withUuid(String uuid) {
+        setUuid(uuid);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -953,7 +1142,13 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
         if (getServiceRole() != null)
             sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getUpdatePolicy() != null)
-            sb.append("UpdatePolicy: ").append(getUpdatePolicy());
+            sb.append("UpdatePolicy: ").append(getUpdatePolicy()).append(",");
+        if (getEksConfiguration() != null)
+            sb.append("EksConfiguration: ").append(getEksConfiguration()).append(",");
+        if (getContainerOrchestrationType() != null)
+            sb.append("ContainerOrchestrationType: ").append(getContainerOrchestrationType()).append(",");
+        if (getUuid() != null)
+            sb.append("Uuid: ").append(getUuid());
         sb.append("}");
         return sb.toString();
     }
@@ -1016,6 +1211,18 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
             return false;
         if (other.getUpdatePolicy() != null && other.getUpdatePolicy().equals(this.getUpdatePolicy()) == false)
             return false;
+        if (other.getEksConfiguration() == null ^ this.getEksConfiguration() == null)
+            return false;
+        if (other.getEksConfiguration() != null && other.getEksConfiguration().equals(this.getEksConfiguration()) == false)
+            return false;
+        if (other.getContainerOrchestrationType() == null ^ this.getContainerOrchestrationType() == null)
+            return false;
+        if (other.getContainerOrchestrationType() != null && other.getContainerOrchestrationType().equals(this.getContainerOrchestrationType()) == false)
+            return false;
+        if (other.getUuid() == null ^ this.getUuid() == null)
+            return false;
+        if (other.getUuid() != null && other.getUuid().equals(this.getUuid()) == false)
+            return false;
         return true;
     }
 
@@ -1036,6 +1243,9 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getComputeResources() == null) ? 0 : getComputeResources().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getUpdatePolicy() == null) ? 0 : getUpdatePolicy().hashCode());
+        hashCode = prime * hashCode + ((getEksConfiguration() == null) ? 0 : getEksConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getContainerOrchestrationType() == null) ? 0 : getContainerOrchestrationType().hashCode());
+        hashCode = prime * hashCode + ((getUuid() == null) ? 0 : getUuid().hashCode());
         return hashCode;
     }
 

@@ -33,7 +33,7 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
     private String clientToken;
     /**
      * <p>
-     * A short description of the event as a valid JSON string. There is no other schema imposed.
+     * A short description of the event.
      * </p>
      */
     private String eventData;
@@ -98,11 +98,11 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A short description of the event as a valid JSON string. There is no other schema imposed.
+     * A short description of the event.
      * </p>
      * 
      * @param eventData
-     *        A short description of the event as a valid JSON string. There is no other schema imposed.
+     *        A short description of the event.
      */
 
     public void setEventData(String eventData) {
@@ -111,10 +111,10 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A short description of the event as a valid JSON string. There is no other schema imposed.
+     * A short description of the event.
      * </p>
      * 
-     * @return A short description of the event as a valid JSON string. There is no other schema imposed.
+     * @return A short description of the event.
      */
 
     public String getEventData() {
@@ -123,11 +123,11 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A short description of the event as a valid JSON string. There is no other schema imposed.
+     * A short description of the event.
      * </p>
      * 
      * @param eventData
-     *        A short description of the event as a valid JSON string. There is no other schema imposed.
+     *        A short description of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

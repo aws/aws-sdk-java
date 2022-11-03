@@ -48,6 +48,10 @@ public class AccessPreviewSummaryJsonUnmarshaller implements Unmarshaller<Access
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    accessPreviewSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("analyzerArn", targetDepth)) {
                     context.nextToken();
                     accessPreviewSummary.setAnalyzerArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,10 +59,6 @@ public class AccessPreviewSummaryJsonUnmarshaller implements Unmarshaller<Access
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     accessPreviewSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    accessPreviewSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

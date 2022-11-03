@@ -34,6 +34,15 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
      * </p>
      */
     private RStudioServerProDomainSettingsForUpdate rStudioServerProDomainSettingsForUpdate;
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.
+     * </p>
+     */
+    private String executionRoleIdentityConfig;
 
     /**
      * <p>
@@ -76,6 +85,89 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.
+     * </p>
+     * 
+     * @param executionRoleIdentityConfig
+     *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     *        <code>InService</code> or <code>Pending</code> state.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public void setExecutionRoleIdentityConfig(String executionRoleIdentityConfig) {
+        this.executionRoleIdentityConfig = executionRoleIdentityConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.
+     * </p>
+     * 
+     * @return The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *         >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     *         <code>InService</code> or <code>Pending</code> state.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public String getExecutionRoleIdentityConfig() {
+        return this.executionRoleIdentityConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.
+     * </p>
+     * 
+     * @param executionRoleIdentityConfig
+     *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     *        <code>InService</code> or <code>Pending</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public DomainSettingsForUpdate withExecutionRoleIdentityConfig(String executionRoleIdentityConfig) {
+        setExecutionRoleIdentityConfig(executionRoleIdentityConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.
+     * </p>
+     * 
+     * @param executionRoleIdentityConfig
+     *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the
+     *        <code>InService</code> or <code>Pending</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionRoleIdentityConfig
+     */
+
+    public DomainSettingsForUpdate withExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig executionRoleIdentityConfig) {
+        this.executionRoleIdentityConfig = executionRoleIdentityConfig.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +180,9 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRStudioServerProDomainSettingsForUpdate() != null)
-            sb.append("RStudioServerProDomainSettingsForUpdate: ").append(getRStudioServerProDomainSettingsForUpdate());
+            sb.append("RStudioServerProDomainSettingsForUpdate: ").append(getRStudioServerProDomainSettingsForUpdate()).append(",");
+        if (getExecutionRoleIdentityConfig() != null)
+            sb.append("ExecutionRoleIdentityConfig: ").append(getExecutionRoleIdentityConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +202,10 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
         if (other.getRStudioServerProDomainSettingsForUpdate() != null
                 && other.getRStudioServerProDomainSettingsForUpdate().equals(this.getRStudioServerProDomainSettingsForUpdate()) == false)
             return false;
+        if (other.getExecutionRoleIdentityConfig() == null ^ this.getExecutionRoleIdentityConfig() == null)
+            return false;
+        if (other.getExecutionRoleIdentityConfig() != null && other.getExecutionRoleIdentityConfig().equals(this.getExecutionRoleIdentityConfig()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +215,7 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRStudioServerProDomainSettingsForUpdate() == null) ? 0 : getRStudioServerProDomainSettingsForUpdate().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleIdentityConfig() == null) ? 0 : getExecutionRoleIdentityConfig().hashCode());
         return hashCode;
     }
 

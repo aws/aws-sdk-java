@@ -61,6 +61,14 @@ public class CloudComponentStatusJsonUnmarshaller implements Unmarshaller<CloudC
                     cloudComponentStatus.setErrors(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("vendorGuidance", targetDepth)) {
+                    context.nextToken();
+                    cloudComponentStatus.setVendorGuidance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("vendorGuidanceMessage", targetDepth)) {
+                    context.nextToken();
+                    cloudComponentStatus.setVendorGuidanceMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

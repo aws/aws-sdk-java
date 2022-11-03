@@ -1534,6 +1534,39 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Stop an already running Bot Recommendation request.
+     * </p>
+     * 
+     * @param stopBotRecommendationRequest
+     * @return Result of the StopBotRecommendation operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.StopBotRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopBotRecommendationResult stopBotRecommendation(StopBotRecommendationRequest stopBotRecommendationRequest);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced
      * with the new value.
      * </p>

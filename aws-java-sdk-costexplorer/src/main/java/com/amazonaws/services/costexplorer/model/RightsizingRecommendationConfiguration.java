@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes.
  * You can choose to view recommendations for instances within the same instance families or across different instance
  * families. You can also choose to view your estimated savings that are associated with recommendations with
- * consideration of existing Savings Plans or RI benefits, or neither.
+ * consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationConfiguration"

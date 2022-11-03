@@ -56,6 +56,10 @@ public class Ec2ConfigurationJsonUnmarshaller implements Unmarshaller<Ec2Configu
                     context.nextToken();
                     ec2Configuration.setImageIdOverride(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("imageKubernetesVersion", targetDepth)) {
+                    context.nextToken();
+                    ec2Configuration.setImageKubernetesVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

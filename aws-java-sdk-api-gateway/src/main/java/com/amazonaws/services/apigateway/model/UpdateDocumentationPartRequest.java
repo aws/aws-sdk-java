@@ -27,30 +27,31 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier of the to-be-updated documentation part.
+     * The identifier of the to-be-updated documentation part.
      * </p>
      */
     private String documentationPartId;
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +60,10 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -71,11 +72,11 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +87,11 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The identifier of the to-be-updated documentation part.
+     * The identifier of the to-be-updated documentation part.
      * </p>
      * 
      * @param documentationPartId
-     *        [Required] The identifier of the to-be-updated documentation part.
+     *        The identifier of the to-be-updated documentation part.
      */
 
     public void setDocumentationPartId(String documentationPartId) {
@@ -99,10 +100,10 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The identifier of the to-be-updated documentation part.
+     * The identifier of the to-be-updated documentation part.
      * </p>
      * 
-     * @return [Required] The identifier of the to-be-updated documentation part.
+     * @return The identifier of the to-be-updated documentation part.
      */
 
     public String getDocumentationPartId() {
@@ -111,11 +112,11 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * [Required] The identifier of the to-be-updated documentation part.
+     * The identifier of the to-be-updated documentation part.
      * </p>
      * 
      * @param documentationPartId
-     *        [Required] The identifier of the to-be-updated documentation part.
+     *        The identifier of the to-be-updated documentation part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +127,12 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
-     * @return A list of update operations to be applied to the specified resource and in the order specified in this
-     *         list.
+     * @return For more information about supported patch operations, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -139,12 +141,13 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      */
 
     public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
@@ -158,7 +161,8 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,8 +171,8 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,12 +188,13 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of update operations to be applied to the specified resource and in the order specified in this list.
+     * For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * </p>
      * 
      * @param patchOperations
-     *        A list of update operations to be applied to the specified resource and in the order specified in this
-     *        list.
+     *        For more information about supported patch operations, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

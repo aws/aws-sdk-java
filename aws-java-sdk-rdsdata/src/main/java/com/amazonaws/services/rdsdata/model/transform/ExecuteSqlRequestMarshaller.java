@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ExecuteSqlRequestMarshaller {
 
-    private static final MarshallingInfo<String> AWSSECRETSTOREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsSecretStoreArn").build();
-    private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("database").build();
     private static final MarshallingInfo<String> DBCLUSTERORINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dbClusterOrInstanceArn").build();
-    private static final MarshallingInfo<String> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("schema").build();
+    private static final MarshallingInfo<String> AWSSECRETSTOREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsSecretStoreArn").build();
     private static final MarshallingInfo<String> SQLSTATEMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sqlStatements").build();
+    private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("database").build();
+    private static final MarshallingInfo<String> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("schema").build();
 
     private static final ExecuteSqlRequestMarshaller instance = new ExecuteSqlRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class ExecuteSqlRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(executeSqlRequest.getAwsSecretStoreArn(), AWSSECRETSTOREARN_BINDING);
-            protocolMarshaller.marshall(executeSqlRequest.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(executeSqlRequest.getDbClusterOrInstanceArn(), DBCLUSTERORINSTANCEARN_BINDING);
-            protocolMarshaller.marshall(executeSqlRequest.getSchema(), SCHEMA_BINDING);
+            protocolMarshaller.marshall(executeSqlRequest.getAwsSecretStoreArn(), AWSSECRETSTOREARN_BINDING);
             protocolMarshaller.marshall(executeSqlRequest.getSqlStatements(), SQLSTATEMENTS_BINDING);
+            protocolMarshaller.marshall(executeSqlRequest.getDatabase(), DATABASE_BINDING);
+            protocolMarshaller.marshall(executeSqlRequest.getSchema(), SCHEMA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

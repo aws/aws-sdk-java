@@ -39,6 +39,8 @@ public class UpdateContainerServiceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isDisabled").build();
     private static final MarshallingInfo<Map> PUBLICDOMAINNAMES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicDomainNames").build();
+    private static final MarshallingInfo<StructuredPojo> PRIVATEREGISTRYACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privateRegistryAccess").build();
 
     private static final UpdateContainerServiceRequestMarshaller instance = new UpdateContainerServiceRequestMarshaller();
 
@@ -61,6 +63,7 @@ public class UpdateContainerServiceRequestMarshaller {
             protocolMarshaller.marshall(updateContainerServiceRequest.getScale(), SCALE_BINDING);
             protocolMarshaller.marshall(updateContainerServiceRequest.getIsDisabled(), ISDISABLED_BINDING);
             protocolMarshaller.marshall(updateContainerServiceRequest.getPublicDomainNames(), PUBLICDOMAINNAMES_BINDING);
+            protocolMarshaller.marshall(updateContainerServiceRequest.getPrivateRegistryAccess(), PRIVATEREGISTRYACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

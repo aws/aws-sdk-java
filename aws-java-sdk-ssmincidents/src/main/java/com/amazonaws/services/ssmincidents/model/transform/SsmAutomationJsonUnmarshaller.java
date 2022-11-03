@@ -56,6 +56,11 @@ public class SsmAutomationJsonUnmarshaller implements Unmarshaller<SsmAutomation
                     context.nextToken();
                     ssmAutomation.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dynamicParameters", targetDepth)) {
+                    context.nextToken();
+                    ssmAutomation.setDynamicParameters(new MapUnmarshaller<String, DynamicSsmParameterValue>(context.getUnmarshaller(String.class),
+                            DynamicSsmParameterValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("parameters", targetDepth)) {
                     context.nextToken();
                     ssmAutomation.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),

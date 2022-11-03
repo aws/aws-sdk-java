@@ -30,7 +30,9 @@ public class EventTypeSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The system-generated ID of the event.
+     * The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     * >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      */
     private String eventTypeId;
@@ -55,11 +57,15 @@ public class EventTypeSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The system-generated ID of the event.
+     * The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     * >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * 
      * @param eventTypeId
-     *        The system-generated ID of the event.
+     *        The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     *        href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *        >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      */
 
     public void setEventTypeId(String eventTypeId) {
@@ -68,10 +74,14 @@ public class EventTypeSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The system-generated ID of the event.
+     * The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     * >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * 
-     * @return The system-generated ID of the event.
+     * @return The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     *         href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *         >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      */
 
     public String getEventTypeId() {
@@ -80,11 +90,15 @@ public class EventTypeSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The system-generated ID of the event.
+     * The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     * >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * </p>
      * 
      * @param eventTypeId
-     *        The system-generated ID of the event.
+     *        The system-generated ID of the event. For a complete list of event types and IDs, see <a
+     *        href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api"
+     *        >Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

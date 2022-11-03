@@ -48,15 +48,15 @@ public class ResultFrameJsonUnmarshaller implements Unmarshaller<ResultFrame, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("resultSetMetadata", targetDepth)) {
+                    context.nextToken();
+                    resultFrame.setResultSetMetadata(ResultSetMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("records", targetDepth)) {
                     context.nextToken();
                     resultFrame.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("resultSetMetadata", targetDepth)) {
-                    context.nextToken();
-                    resultFrame.setResultSetMetadata(ResultSetMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

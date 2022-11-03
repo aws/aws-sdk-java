@@ -88,6 +88,10 @@ public class ProvisionedJsonUnmarshaller implements Unmarshaller<Provisioned, Js
                     context.nextToken();
                     provisioned.setZookeeperConnectStringTls(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("storageMode", targetDepth)) {
+                    context.nextToken();
+                    provisioned.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

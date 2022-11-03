@@ -40,7 +40,7 @@ public class UpdateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maximumMessageLength;
     /**
      * <p>
-     * The maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      */
     private Integer maximumMessageRatePerSecond;
@@ -146,11 +146,11 @@ public class UpdateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        The maximum number of messages per second that a client can send to the room. Default: 10.
+     *        Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      */
 
     public void setMaximumMessageRatePerSecond(Integer maximumMessageRatePerSecond) {
@@ -159,10 +159,10 @@ public class UpdateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      * 
-     * @return The maximum number of messages per second that a client can send to the room. Default: 10.
+     * @return Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      */
 
     public Integer getMaximumMessageRatePerSecond() {
@@ -171,11 +171,11 @@ public class UpdateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of messages per second that a client can send to the room. Default: 10.
+     * Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        The maximum number of messages per second that a client can send to the room. Default: 10.
+     *        Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,12 @@ public class WorkloadShareSummary implements Serializable, Cloneable, Structured
     private String permissionType;
 
     private String status;
+    /**
+     * <p>
+     * Optional message to compliment the Status field.
+     * </p>
+     */
+    private String statusMessage;
 
     /**
      * @param shareId
@@ -169,6 +175,46 @@ public class WorkloadShareSummary implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Optional message to compliment the Status field.
+     * </p>
+     * 
+     * @param statusMessage
+     *        Optional message to compliment the Status field.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * Optional message to compliment the Status field.
+     * </p>
+     * 
+     * @return Optional message to compliment the Status field.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * Optional message to compliment the Status field.
+     * </p>
+     * 
+     * @param statusMessage
+     *        Optional message to compliment the Status field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkloadShareSummary withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -187,7 +233,9 @@ public class WorkloadShareSummary implements Serializable, Cloneable, Structured
         if (getPermissionType() != null)
             sb.append("PermissionType: ").append(getPermissionType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +266,10 @@ public class WorkloadShareSummary implements Serializable, Cloneable, Structured
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +282,7 @@ public class WorkloadShareSummary implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getSharedWith() == null) ? 0 : getSharedWith().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
+ * Deletes a specified RequestValidator of a given RestApi.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     * The identifier of the RequestValidator to be deleted.
      * </p>
      */
     private String requestValidatorId;
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The string identifier of the associated <a>RestApi</a>.
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     * The identifier of the RequestValidator to be deleted.
      * </p>
      * 
      * @param requestValidatorId
-     *        [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     *        The identifier of the RequestValidator to be deleted.
      */
 
     public void setRequestValidatorId(String requestValidatorId) {
@@ -93,10 +93,10 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     * The identifier of the RequestValidator to be deleted.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     * @return The identifier of the RequestValidator to be deleted.
      */
 
     public String getRequestValidatorId() {
@@ -105,11 +105,11 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     * The identifier of the RequestValidator to be deleted.
      * </p>
      * 
      * @param requestValidatorId
-     *        [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+     *        The identifier of the RequestValidator to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

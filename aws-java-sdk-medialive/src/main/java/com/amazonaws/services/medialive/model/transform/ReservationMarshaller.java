@@ -53,6 +53,8 @@ public class ReservationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringType").build();
     private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("region").build();
+    private static final MarshallingInfo<StructuredPojo> RENEWALSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("renewalSettings").build();
     private static final MarshallingInfo<String> RESERVATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reservationId").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCESPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -94,6 +96,7 @@ public class ReservationMarshaller {
             protocolMarshaller.marshall(reservation.getOfferingId(), OFFERINGID_BINDING);
             protocolMarshaller.marshall(reservation.getOfferingType(), OFFERINGTYPE_BINDING);
             protocolMarshaller.marshall(reservation.getRegion(), REGION_BINDING);
+            protocolMarshaller.marshall(reservation.getRenewalSettings(), RENEWALSETTINGS_BINDING);
             protocolMarshaller.marshall(reservation.getReservationId(), RESERVATIONID_BINDING);
             protocolMarshaller.marshall(reservation.getResourceSpecification(), RESOURCESPECIFICATION_BINDING);
             protocolMarshaller.marshall(reservation.getStart(), START_BINDING);

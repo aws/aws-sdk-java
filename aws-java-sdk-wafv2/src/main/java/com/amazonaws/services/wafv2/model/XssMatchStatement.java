@@ -19,11 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks
- * are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site
- * scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want
- * WAF to search and text transformations to use on the search area before WAF searches for character sequences that are
- * likely to be malicious strings.
+ * A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses
+ * vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web
+ * browsers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/XssMatchStatement" target="_top">AWS API
@@ -34,7 +32,7 @@ public class XssMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      */
     private FieldToMatch fieldToMatch;
@@ -50,11 +48,11 @@ public class XssMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -63,10 +61,10 @@ public class XssMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
-     * @return The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * @return The part of the web request that you want WAF to inspect.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -75,11 +73,11 @@ public class XssMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of the web request that you want WAF to inspect.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of the web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of the web request that you want WAF to inspect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

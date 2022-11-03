@@ -80,6 +80,20 @@ public class ReplaceRootVolumeTaskStaxUnmarshaller implements Unmarshaller<Repla
                     continue;
                 }
 
+                if (context.testExpression("imageId", targetDepth)) {
+                    replaceRootVolumeTask.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("snapshotId", targetDepth)) {
+                    replaceRootVolumeTask.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deleteReplacedRootVolume", targetDepth)) {
+                    replaceRootVolumeTask.setDeleteReplacedRootVolume(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replaceRootVolumeTask;

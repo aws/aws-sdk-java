@@ -47,7 +47,7 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
     private String anomalyEndDate;
     /**
      * <p>
-     * The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     * The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      * </p>
      */
     private String dimensionValue;
@@ -204,11 +204,11 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     * The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      * </p>
      * 
      * @param dimensionValue
-     *        The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     *        The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      */
 
     public void setDimensionValue(String dimensionValue) {
@@ -217,10 +217,10 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     * The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      * </p>
      * 
-     * @return The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     * @return The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      */
 
     public String getDimensionValue() {
@@ -229,11 +229,11 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     * The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      * </p>
      * 
      * @param dimensionValue
-     *        The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor).
+     *        The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

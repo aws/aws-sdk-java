@@ -57,6 +57,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * </p>
      */
     private Boolean isMajorVersionUpgrade;
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with the target engine version.
+     * </p>
+     */
+    private Boolean supportsGlobalDatabases;
 
     /**
      * <p>
@@ -291,6 +297,58 @@ public class UpgradeTarget implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with the target engine version.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Neptune global databases with the target engine version.
+     */
+
+    public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        this.supportsGlobalDatabases = supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Neptune global databases with the target engine version.
+     */
+
+    public Boolean getSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with the target engine version.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Neptune global databases with the target engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        setSupportsGlobalDatabases(supportsGlobalDatabases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Neptune global databases with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Neptune global databases with the target engine version.
+     */
+
+    public Boolean isSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -311,7 +369,9 @@ public class UpgradeTarget implements Serializable, Cloneable {
         if (getAutoUpgrade() != null)
             sb.append("AutoUpgrade: ").append(getAutoUpgrade()).append(",");
         if (getIsMajorVersionUpgrade() != null)
-            sb.append("IsMajorVersionUpgrade: ").append(getIsMajorVersionUpgrade());
+            sb.append("IsMajorVersionUpgrade: ").append(getIsMajorVersionUpgrade()).append(",");
+        if (getSupportsGlobalDatabases() != null)
+            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
         sb.append("}");
         return sb.toString();
     }
@@ -346,6 +406,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
             return false;
         if (other.getIsMajorVersionUpgrade() != null && other.getIsMajorVersionUpgrade().equals(this.getIsMajorVersionUpgrade()) == false)
             return false;
+        if (other.getSupportsGlobalDatabases() == null ^ this.getSupportsGlobalDatabases() == null)
+            return false;
+        if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +423,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAutoUpgrade() == null) ? 0 : getAutoUpgrade().hashCode());
         hashCode = prime * hashCode + ((getIsMajorVersionUpgrade() == null) ? 0 : getIsMajorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         return hashCode;
     }
 

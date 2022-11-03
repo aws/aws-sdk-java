@@ -27,6 +27,12 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * </p>
+     */
+    private java.util.List<String> allowListIds;
+    /**
+     * <p>
      * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
      * </p>
      */
@@ -162,6 +168,76 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * </p>
+     * 
+     * @return An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     */
+
+    public java.util.List<String> getAllowListIds() {
+        return allowListIds;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * </p>
+     * 
+     * @param allowListIds
+     *        An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     */
+
+    public void setAllowListIds(java.util.Collection<String> allowListIds) {
+        if (allowListIds == null) {
+            this.allowListIds = null;
+            return;
+        }
+
+        this.allowListIds = new java.util.ArrayList<String>(allowListIds);
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowListIds(java.util.Collection)} or {@link #withAllowListIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param allowListIds
+     *        An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClassificationJobRequest withAllowListIds(String... allowListIds) {
+        if (this.allowListIds == null) {
+            setAllowListIds(new java.util.ArrayList<String>(allowListIds.length));
+        }
+        for (String ele : allowListIds) {
+            this.allowListIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * </p>
+     * 
+     * @param allowListIds
+     *        An array of unique identifiers, one for each allow list for the job to use when it analyzes data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClassificationJobRequest withAllowListIds(java.util.Collection<String> allowListIds) {
+        setAllowListIds(allowListIds);
+        return this;
+    }
 
     /**
      * <p>
@@ -1283,6 +1359,8 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllowListIds() != null)
+            sb.append("AllowListIds: ").append(getAllowListIds()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getCustomDataIdentifierIds() != null)
@@ -1321,6 +1399,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
         if (obj instanceof CreateClassificationJobRequest == false)
             return false;
         CreateClassificationJobRequest other = (CreateClassificationJobRequest) obj;
+        if (other.getAllowListIds() == null ^ this.getAllowListIds() == null)
+            return false;
+        if (other.getAllowListIds() != null && other.getAllowListIds().equals(this.getAllowListIds()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -1378,6 +1460,7 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllowListIds() == null) ? 0 : getAllowListIds().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getCustomDataIdentifierIds() == null) ? 0 : getCustomDataIdentifierIds().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

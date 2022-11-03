@@ -25,7 +25,7 @@ public class ValidationException extends com.amazonaws.services.dataexchange.mod
 
     /**
      * <p>
-     * The message that informs you about what the exception was.
+     * The unique identifier for the resource that couldn't be found.
      * </p>
      */
     private String exceptionCause;
@@ -42,11 +42,11 @@ public class ValidationException extends com.amazonaws.services.dataexchange.mod
 
     /**
      * <p>
-     * The message that informs you about what the exception was.
+     * The unique identifier for the resource that couldn't be found.
      * </p>
      * 
      * @param exceptionCause
-     *        The message that informs you about what the exception was.
+     *        The unique identifier for the resource that couldn't be found.
      * @see ExceptionCause
      */
 
@@ -57,10 +57,10 @@ public class ValidationException extends com.amazonaws.services.dataexchange.mod
 
     /**
      * <p>
-     * The message that informs you about what the exception was.
+     * The unique identifier for the resource that couldn't be found.
      * </p>
      * 
-     * @return The message that informs you about what the exception was.
+     * @return The unique identifier for the resource that couldn't be found.
      * @see ExceptionCause
      */
 
@@ -71,11 +71,11 @@ public class ValidationException extends com.amazonaws.services.dataexchange.mod
 
     /**
      * <p>
-     * The message that informs you about what the exception was.
+     * The unique identifier for the resource that couldn't be found.
      * </p>
      * 
      * @param exceptionCause
-     *        The message that informs you about what the exception was.
+     *        The unique identifier for the resource that couldn't be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExceptionCause
      */
@@ -87,11 +87,11 @@ public class ValidationException extends com.amazonaws.services.dataexchange.mod
 
     /**
      * <p>
-     * The message that informs you about what the exception was.
+     * The unique identifier for the resource that couldn't be found.
      * </p>
      * 
      * @param exceptionCause
-     *        The message that informs you about what the exception was.
+     *        The unique identifier for the resource that couldn't be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExceptionCause
      */

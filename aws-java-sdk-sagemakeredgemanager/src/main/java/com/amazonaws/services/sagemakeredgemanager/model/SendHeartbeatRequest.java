@@ -55,6 +55,12 @@ public class SendHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String deviceFleetName;
+    /**
+     * <p>
+     * Returns the result of a deployment on the device.
+     * </p>
+     */
+    private DeploymentResult deploymentResult;
 
     /**
      * <p>
@@ -317,6 +323,46 @@ public class SendHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Returns the result of a deployment on the device.
+     * </p>
+     * 
+     * @param deploymentResult
+     *        Returns the result of a deployment on the device.
+     */
+
+    public void setDeploymentResult(DeploymentResult deploymentResult) {
+        this.deploymentResult = deploymentResult;
+    }
+
+    /**
+     * <p>
+     * Returns the result of a deployment on the device.
+     * </p>
+     * 
+     * @return Returns the result of a deployment on the device.
+     */
+
+    public DeploymentResult getDeploymentResult() {
+        return this.deploymentResult;
+    }
+
+    /**
+     * <p>
+     * Returns the result of a deployment on the device.
+     * </p>
+     * 
+     * @param deploymentResult
+     *        Returns the result of a deployment on the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendHeartbeatRequest withDeploymentResult(DeploymentResult deploymentResult) {
+        setDeploymentResult(deploymentResult);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -337,7 +383,9 @@ public class SendHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getDeviceFleetName() != null)
-            sb.append("DeviceFleetName: ").append(getDeviceFleetName());
+            sb.append("DeviceFleetName: ").append(getDeviceFleetName()).append(",");
+        if (getDeploymentResult() != null)
+            sb.append("DeploymentResult: ").append(getDeploymentResult());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +420,10 @@ public class SendHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDeviceFleetName() != null && other.getDeviceFleetName().equals(this.getDeviceFleetName()) == false)
             return false;
+        if (other.getDeploymentResult() == null ^ this.getDeploymentResult() == null)
+            return false;
+        if (other.getDeploymentResult() != null && other.getDeploymentResult().equals(this.getDeploymentResult()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +437,7 @@ public class SendHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getDeviceFleetName() == null) ? 0 : getDeviceFleetName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentResult() == null) ? 0 : getDeploymentResult().hashCode());
         return hashCode;
     }
 

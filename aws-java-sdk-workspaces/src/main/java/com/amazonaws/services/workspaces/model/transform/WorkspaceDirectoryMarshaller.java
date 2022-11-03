@@ -60,6 +60,8 @@ public class WorkspaceDirectoryMarshaller {
             .marshallLocationName("Tenancy").build();
     private static final MarshallingInfo<StructuredPojo> SELFSERVICEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfservicePermissions").build();
+    private static final MarshallingInfo<StructuredPojo> SAMLPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamlProperties").build();
 
     private static final WorkspaceDirectoryMarshaller instance = new WorkspaceDirectoryMarshaller();
 
@@ -93,6 +95,7 @@ public class WorkspaceDirectoryMarshaller {
             protocolMarshaller.marshall(workspaceDirectory.getWorkspaceAccessProperties(), WORKSPACEACCESSPROPERTIES_BINDING);
             protocolMarshaller.marshall(workspaceDirectory.getTenancy(), TENANCY_BINDING);
             protocolMarshaller.marshall(workspaceDirectory.getSelfservicePermissions(), SELFSERVICEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(workspaceDirectory.getSamlProperties(), SAMLPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

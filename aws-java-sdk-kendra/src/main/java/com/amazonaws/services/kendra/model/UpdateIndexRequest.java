@@ -27,19 +27,20 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to update.
+     * The identifier of the index you want to update.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the index to update.
+     * The name of the index you want to update.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     * An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs
+     * and metrics.
      * </p>
      */
     private String roleArn;
@@ -51,7 +52,8 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The document metadata you want to update.
+     * The document metadata configuration you want to update for the index. Document metadata are fields or attributes
+     * associated with your documents. For example, the company department name associated with each document.
      * </p>
      */
     private java.util.List<DocumentMetadataConfiguration> documentMetadataConfigurationUpdates;
@@ -80,8 +82,8 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String userContextPolicy;
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To
-     * configure this, see <a
+     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      * >UserGroupResolutionConfiguration</a>.
      * </p>
@@ -90,11 +92,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to update.
+     * The identifier of the index you want to update.
      * </p>
      * 
      * @param id
-     *        The identifier of the index to update.
+     *        The identifier of the index you want to update.
      */
 
     public void setId(String id) {
@@ -103,10 +105,10 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to update.
+     * The identifier of the index you want to update.
      * </p>
      * 
-     * @return The identifier of the index to update.
+     * @return The identifier of the index you want to update.
      */
 
     public String getId() {
@@ -115,11 +117,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the index to update.
+     * The identifier of the index you want to update.
      * </p>
      * 
      * @param id
-     *        The identifier of the index to update.
+     *        The identifier of the index you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +132,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the index to update.
+     * The name of the index you want to update.
      * </p>
      * 
      * @param name
-     *        The name of the index to update.
+     *        The name of the index you want to update.
      */
 
     public void setName(String name) {
@@ -143,10 +145,10 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the index to update.
+     * The name of the index you want to update.
      * </p>
      * 
-     * @return The name of the index to update.
+     * @return The name of the index you want to update.
      */
 
     public String getName() {
@@ -155,11 +157,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the index to update.
+     * The name of the index you want to update.
      * </p>
      * 
      * @param name
-     *        The name of the index to update.
+     *        The name of the index you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +172,13 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     * An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs
+     * and metrics.
      * </p>
      * 
      * @param roleArn
-     *        A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     *        An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon
+     *        CloudWatch logs and metrics.
      */
 
     public void setRoleArn(String roleArn) {
@@ -183,10 +187,12 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     * An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs
+     * and metrics.
      * </p>
      * 
-     * @return A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     * @return An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon
+     *         CloudWatch logs and metrics.
      */
 
     public String getRoleArn() {
@@ -195,11 +201,13 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     * An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs
+     * and metrics.
      * </p>
      * 
      * @param roleArn
-     *        A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.
+     *        An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon
+     *        CloudWatch logs and metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,10 +258,13 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The document metadata you want to update.
+     * The document metadata configuration you want to update for the index. Document metadata are fields or attributes
+     * associated with your documents. For example, the company department name associated with each document.
      * </p>
      * 
-     * @return The document metadata you want to update.
+     * @return The document metadata configuration you want to update for the index. Document metadata are fields or
+     *         attributes associated with your documents. For example, the company department name associated with each
+     *         document.
      */
 
     public java.util.List<DocumentMetadataConfiguration> getDocumentMetadataConfigurationUpdates() {
@@ -262,11 +273,14 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The document metadata you want to update.
+     * The document metadata configuration you want to update for the index. Document metadata are fields or attributes
+     * associated with your documents. For example, the company department name associated with each document.
      * </p>
      * 
      * @param documentMetadataConfigurationUpdates
-     *        The document metadata you want to update.
+     *        The document metadata configuration you want to update for the index. Document metadata are fields or
+     *        attributes associated with your documents. For example, the company department name associated with each
+     *        document.
      */
 
     public void setDocumentMetadataConfigurationUpdates(java.util.Collection<DocumentMetadataConfiguration> documentMetadataConfigurationUpdates) {
@@ -280,7 +294,8 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The document metadata you want to update.
+     * The document metadata configuration you want to update for the index. Document metadata are fields or attributes
+     * associated with your documents. For example, the company department name associated with each document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -290,7 +305,9 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param documentMetadataConfigurationUpdates
-     *        The document metadata you want to update.
+     *        The document metadata configuration you want to update for the index. Document metadata are fields or
+     *        attributes associated with your documents. For example, the company department name associated with each
+     *        document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +323,14 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The document metadata you want to update.
+     * The document metadata configuration you want to update for the index. Document metadata are fields or attributes
+     * associated with your documents. For example, the company department name associated with each document.
      * </p>
      * 
      * @param documentMetadataConfigurationUpdates
-     *        The document metadata you want to update.
+     *        The document metadata configuration you want to update for the index. Document metadata are fields or
+     *        attributes associated with your documents. For example, the company department name associated with each
+     *        document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,15 +537,15 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To
-     * configure this, see <a
+     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      * >UserGroupResolutionConfiguration</a>.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity
-     *        source. To configure this, see <a
+     *        Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single
+     *        Sign-On) identity source. To configure this, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      *        >UserGroupResolutionConfiguration</a>.
      */
@@ -536,14 +556,14 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To
-     * configure this, see <a
+     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      * >UserGroupResolutionConfiguration</a>.
      * </p>
      * 
-     * @return Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity
-     *         source. To configure this, see <a
+     * @return Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single
+     *         Sign-On) identity source. To configure this, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      *         >UserGroupResolutionConfiguration</a>.
      */
@@ -554,15 +574,15 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To
-     * configure this, see <a
+     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      * >UserGroupResolutionConfiguration</a>.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity
-     *        source. To configure this, see <a
+     *        Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single
+     *        Sign-On) identity source. To configure this, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      *        >UserGroupResolutionConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

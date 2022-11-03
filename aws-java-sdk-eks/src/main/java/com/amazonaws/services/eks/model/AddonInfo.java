@@ -42,7 +42,7 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * An object that represents information about available add-on versions and compatible Kubernetes versions.
+     * An object representing information about available add-on versions and compatible Kubernetes versions.
      * </p>
      */
     private java.util.List<AddonVersionInfo> addonVersions;
@@ -129,10 +129,10 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents information about available add-on versions and compatible Kubernetes versions.
+     * An object representing information about available add-on versions and compatible Kubernetes versions.
      * </p>
      * 
-     * @return An object that represents information about available add-on versions and compatible Kubernetes versions.
+     * @return An object representing information about available add-on versions and compatible Kubernetes versions.
      */
 
     public java.util.List<AddonVersionInfo> getAddonVersions() {
@@ -141,11 +141,11 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents information about available add-on versions and compatible Kubernetes versions.
+     * An object representing information about available add-on versions and compatible Kubernetes versions.
      * </p>
      * 
      * @param addonVersions
-     *        An object that represents information about available add-on versions and compatible Kubernetes versions.
+     *        An object representing information about available add-on versions and compatible Kubernetes versions.
      */
 
     public void setAddonVersions(java.util.Collection<AddonVersionInfo> addonVersions) {
@@ -159,7 +159,7 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents information about available add-on versions and compatible Kubernetes versions.
+     * An object representing information about available add-on versions and compatible Kubernetes versions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +168,7 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param addonVersions
-     *        An object that represents information about available add-on versions and compatible Kubernetes versions.
+     *        An object representing information about available add-on versions and compatible Kubernetes versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents information about available add-on versions and compatible Kubernetes versions.
+     * An object representing information about available add-on versions and compatible Kubernetes versions.
      * </p>
      * 
      * @param addonVersions
-     *        An object that represents information about available add-on versions and compatible Kubernetes versions.
+     *        An object representing information about available add-on versions and compatible Kubernetes versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

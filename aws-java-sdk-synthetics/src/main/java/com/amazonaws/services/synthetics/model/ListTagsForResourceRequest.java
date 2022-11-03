@@ -27,29 +27,41 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the canary that you want to view tags for.
+     * The ARN of the canary or group that you want to view tags for.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN of the canary that you want to view tags for.
+     * The ARN of the canary or group that you want to view tags for.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      * 
      * @param resourceArn
-     *        The ARN of the canary that you want to view tags for.</p>
+     *        The ARN of the canary or group that you want to view tags for.</p>
      *        <p>
      *        The ARN format of a canary is
      *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     *        </p>
+     *        <p>
+     *        The ARN format of a group is
+     *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -58,17 +70,25 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the canary that you want to view tags for.
+     * The ARN of the canary or group that you want to view tags for.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      * 
-     * @return The ARN of the canary that you want to view tags for.</p>
+     * @return The ARN of the canary or group that you want to view tags for.</p>
      *         <p>
      *         The ARN format of a canary is
      *         <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     *         </p>
+     *         <p>
+     *         The ARN format of a group is
+     *         <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      */
 
     public String getResourceArn() {
@@ -77,18 +97,26 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the canary that you want to view tags for.
+     * The ARN of the canary or group that you want to view tags for.
      * </p>
      * <p>
      * The ARN format of a canary is
      * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
      * </p>
+     * <p>
+     * The ARN format of a group is
+     * <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
+     * </p>
      * 
      * @param resourceArn
-     *        The ARN of the canary that you want to view tags for.</p>
+     *        The ARN of the canary or group that you want to view tags for.</p>
      *        <p>
      *        The ARN format of a canary is
      *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.
+     *        </p>
+     *        <p>
+     *        The ARN format of a group is
+     *        <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -195,6 +195,13 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String secretsManagerSecretId;
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     */
+    private Boolean trimSpaceInChar;
 
     /**
      * <p>
@@ -1332,6 +1339,66 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param trimSpaceInChar
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *        during migration. The default value is <code>true</code>.
+     */
+
+    public void setTrimSpaceInChar(Boolean trimSpaceInChar) {
+        this.trimSpaceInChar = trimSpaceInChar;
+    }
+
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *         during migration. The default value is <code>true</code>.
+     */
+
+    public Boolean getTrimSpaceInChar() {
+        return this.trimSpaceInChar;
+    }
+
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param trimSpaceInChar
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *        during migration. The default value is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withTrimSpaceInChar(Boolean trimSpaceInChar) {
+        setTrimSpaceInChar(trimSpaceInChar);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
+     * migration. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
+     *         during migration. The default value is <code>true</code>.
+     */
+
+    public Boolean isTrimSpaceInChar() {
+        return this.trimSpaceInChar;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1378,7 +1445,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
-            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
+        if (getTrimSpaceInChar() != null)
+            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar());
         sb.append("}");
         return sb.toString();
     }
@@ -1465,6 +1534,10 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
             return false;
+        if (other.getTrimSpaceInChar() == null ^ this.getTrimSpaceInChar() == null)
+            return false;
+        if (other.getTrimSpaceInChar() != null && other.getTrimSpaceInChar().equals(this.getTrimSpaceInChar()) == false)
+            return false;
         return true;
     }
 
@@ -1491,6 +1564,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getPluginName() == null) ? 0 : getPluginName().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
+        hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
         return hashCode;
     }
 

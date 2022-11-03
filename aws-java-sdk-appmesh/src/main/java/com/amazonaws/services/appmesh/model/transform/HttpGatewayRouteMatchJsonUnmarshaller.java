@@ -66,6 +66,10 @@ public class HttpGatewayRouteMatchJsonUnmarshaller implements Unmarshaller<HttpG
                     context.nextToken();
                     httpGatewayRouteMatch.setPath(HttpPathMatchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("port", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteMatch.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("prefix", targetDepth)) {
                     context.nextToken();
                     httpGatewayRouteMatch.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));

@@ -38,7 +38,7 @@ public class ExperienceConfiguration implements Serializable, Cloneable, Structu
     private ContentSourceConfiguration contentSourceConfiguration;
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      * </p>
      */
     private UserIdentityConfiguration userIdentityConfiguration;
@@ -94,11 +94,11 @@ public class ExperienceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      * </p>
      * 
      * @param userIdentityConfiguration
-     *        The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     *        The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      */
 
     public void setUserIdentityConfiguration(UserIdentityConfiguration userIdentityConfiguration) {
@@ -107,10 +107,10 @@ public class ExperienceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      * </p>
      * 
-     * @return The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     * @return The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      */
 
     public UserIdentityConfiguration getUserIdentityConfiguration() {
@@ -119,11 +119,11 @@ public class ExperienceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     * The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      * </p>
      * 
      * @param userIdentityConfiguration
-     *        The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.
+     *        The IAM Identity Center field name that contains the identifiers of your users, such as their emails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

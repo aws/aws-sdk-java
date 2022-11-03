@@ -109,8 +109,50 @@ public class AwsElasticBeanstalkEnvironmentDetails implements Serializable, Clon
     private String solutionStackName;
     /**
      * <p>
-     * The current operational status of the environment.
+     * The current operational status of the environment. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aborting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Launching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingFrom</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingTo</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -714,11 +756,94 @@ public class AwsElasticBeanstalkEnvironmentDetails implements Serializable, Clon
 
     /**
      * <p>
-     * The current operational status of the environment.
+     * The current operational status of the environment. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aborting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Launching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingFrom</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingTo</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The current operational status of the environment.
+     *        The current operational status of the environment. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aborting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Launching</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LinkingFrom</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LinkingTo</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Ready</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Updating</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -727,10 +852,93 @@ public class AwsElasticBeanstalkEnvironmentDetails implements Serializable, Clon
 
     /**
      * <p>
-     * The current operational status of the environment.
+     * The current operational status of the environment. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aborting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Launching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingFrom</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingTo</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current operational status of the environment.
+     * @return The current operational status of the environment. Valid values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Aborting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Launching</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LinkingFrom</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LinkingTo</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Ready</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Terminated</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Terminating</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Updating</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -739,11 +947,94 @@ public class AwsElasticBeanstalkEnvironmentDetails implements Serializable, Clon
 
     /**
      * <p>
-     * The current operational status of the environment.
+     * The current operational status of the environment. Valid values are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aborting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Launching</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingFrom</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LinkingTo</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The current operational status of the environment.
+     *        The current operational status of the environment. Valid values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aborting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Launching</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LinkingFrom</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LinkingTo</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Ready</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Updating</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,13 +21,13 @@ import javax.annotation.Generated;
  * with these attributes.
  * </p>
  * <p>
- * When you specify multiple parameters, you get instance types that satisfy all of the specified parameters. If you
- * specify multiple values for a parameter, you get instance types that satisfy any of the specified values.
+ * When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you
+ * specify multiple values for an attribute, you get instance types that satisfy any of the specified values.
  * </p>
  * <note>
  * <p>
- * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other parameters are optional. Any
- * unspecified optional parameter is set to its default.
+ * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any
+ * unspecified optional attribute is set to its default.
  * </p>
  * </note>
  * <p>
@@ -101,9 +101,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     private MemoryGiBPerVCpuRequest memoryGiBPerVCpu;
     /**
      * <p>
-     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
-     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * The instance types to exclude.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an
+     * instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
@@ -137,8 +140,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
+     * your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -167,8 +171,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
+     * priced above your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -312,12 +317,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Default: <code>hdd</code> and <code>sdd</code>
+     * Default: <code>hdd</code> and <code>ssd</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> localStorageTypes;
@@ -449,6 +454,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <li>
      * <p>
      * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * </ul>
@@ -961,9 +976,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
-     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * The instance types to exclude.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an
+     * instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
@@ -974,10 +992,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * Default: No excluded instance types
      * </p>
      * 
-     * @return The instance types to exclude. You can use strings with one or more wild cards, represented by an
-     *         asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are
-     *         examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>,
-     *         <code>*3*</code>.</p>
+     * @return The instance types to exclude.</p>
+     *         <p>
+     *         You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude
+     *         an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *         <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *         </p>
      *         <p>
      *         For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
      *         includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
@@ -996,9 +1016,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
-     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * The instance types to exclude.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an
+     * instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
@@ -1010,9 +1033,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param excludedInstanceTypes
-     *        The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk
-     *        (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     *        <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
+     *        The instance types to exclude.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude
+     *        an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
      *        <p>
      *        For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
      *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
@@ -1033,9 +1059,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
-     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * The instance types to exclude.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an
+     * instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
@@ -1052,9 +1081,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param excludedInstanceTypes
-     *        The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk
-     *        (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     *        <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
+     *        The instance types to exclude.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude
+     *        an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
      *        <p>
      *        For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
      *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
@@ -1077,9 +1109,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
-     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * The instance types to exclude.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an
+     * instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
@@ -1091,9 +1126,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param excludedInstanceTypes
-     *        The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk
-     *        (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
-     *        <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
+     *        The instance types to exclude.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude
+     *        an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
      *        <p>
      *        For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
      *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
@@ -1338,8 +1376,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
+     * your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -1366,9 +1405,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * 
      * @param spotMaxPricePercentageOverLowestPrice
      *        The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance,
-     *        expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes. When
-     *        Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your
-     *        threshold.</p>
+     *        expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     *        specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance
+     *        types priced above your threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
@@ -1400,8 +1439,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
+     * your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -1427,9 +1467,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @return The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance,
-     *         expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes.
-     *         When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your
-     *         threshold.</p>
+     *         expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     *         specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance
+     *         types priced above your threshold.</p>
      *         <p>
      *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *         </p>
@@ -1461,8 +1501,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2
-     * selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
+     * your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -1489,9 +1530,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * 
      * @param spotMaxPricePercentageOverLowestPrice
      *        The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance,
-     *        expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes. When
-     *        Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your
-     *        threshold.</p>
+     *        expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     *        specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance
+     *        types priced above your threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
@@ -1525,8 +1566,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
+     * priced above your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -1553,9 +1595,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * 
      * @param onDemandMaxPricePercentageOverLowestPrice
      *        The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *        Instance, expressed as a percentage above the cheapest M, C, or R instance type with your specified
-     *        attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced
-     *        above your threshold.</p>
+     *        Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type
+     *        with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes
+     *        instance types priced above your threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
@@ -1587,8 +1629,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
+     * priced above your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -1614,9 +1657,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @return The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *         Instance, expressed as a percentage above the cheapest M, C, or R instance type with your specified
-     *         attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
-     *         priced above your threshold.</p>
+     *         Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type
+     *         with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes
+     *         instance types priced above your threshold.</p>
      *         <p>
      *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *         </p>
@@ -1648,8 +1691,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.
+     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
+     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
+     * priced above your threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
@@ -1676,9 +1720,9 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * 
      * @param onDemandMaxPricePercentageOverLowestPrice
      *        The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *        Instance, expressed as a percentage above the cheapest M, C, or R instance type with your specified
-     *        attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced
-     *        above your threshold.</p>
+     *        Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type
+     *        with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes
+     *        instance types priced above your threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
@@ -2574,12 +2618,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Default: <code>hdd</code> and <code>sdd</code>
+     * Default: <code>hdd</code> and <code>ssd</code>
      * </p>
      * 
      * @return The type of local storage that is required.</p>
@@ -2591,12 +2635,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     *         For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         Default: <code>hdd</code> and <code>sdd</code>
+     *         Default: <code>hdd</code> and <code>ssd</code>
      * @see LocalStorageType
      */
 
@@ -2619,12 +2663,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Default: <code>hdd</code> and <code>sdd</code>
+     * Default: <code>hdd</code> and <code>ssd</code>
      * </p>
      * 
      * @param localStorageTypes
@@ -2637,12 +2681,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Default: <code>hdd</code> and <code>sdd</code>
+     *        Default: <code>hdd</code> and <code>ssd</code>
      * @see LocalStorageType
      */
 
@@ -2667,12 +2711,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Default: <code>hdd</code> and <code>sdd</code>
+     * Default: <code>hdd</code> and <code>ssd</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2690,12 +2734,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Default: <code>hdd</code> and <code>sdd</code>
+     *        Default: <code>hdd</code> and <code>ssd</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocalStorageType
      */
@@ -2722,12 +2766,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Default: <code>hdd</code> and <code>sdd</code>
+     * Default: <code>hdd</code> and <code>ssd</code>
      * </p>
      * 
      * @param localStorageTypes
@@ -2740,12 +2784,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Default: <code>hdd</code> and <code>sdd</code>
+     *        Default: <code>hdd</code> and <code>ssd</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocalStorageType
      */
@@ -2767,12 +2811,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     * For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Default: <code>hdd</code> and <code>sdd</code>
+     * Default: <code>hdd</code> and <code>ssd</code>
      * </p>
      * 
      * @param localStorageTypes
@@ -2785,12 +2829,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+     *        For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Default: <code>hdd</code> and <code>sdd</code>
+     *        Default: <code>hdd</code> and <code>ssd</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocalStorageType
      */
@@ -3692,6 +3736,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: Any accelerator
@@ -3732,6 +3786,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -3787,6 +3851,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: Any accelerator
@@ -3828,6 +3902,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -3885,6 +3969,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: Any accelerator
@@ -3931,6 +4025,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -3990,6 +4094,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: Any accelerator
@@ -4031,6 +4145,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -4085,6 +4209,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: Any accelerator
@@ -4126,6 +4260,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        </ul>

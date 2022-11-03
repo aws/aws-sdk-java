@@ -27,25 +27,25 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The name that should be associated with the FAQ.
+     * A name for the FAQ.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A description of the FAQ.
+     * A description for the FAQ.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The S3 location of the FAQ input data.
+     * The path to the FAQ file in S3.
      * </p>
      */
     private S3Path s3Path;
@@ -66,7 +66,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs
      * attributes in a header, and a JSON format that includes custom attributes.
      * </p>
      * <p>
@@ -98,11 +98,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the FAQ.
+     *        The identifier of the index for the FAQ.
      */
 
     public void setIndexId(String indexId) {
@@ -111,10 +111,10 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
-     * @return The identifier of the index that contains the FAQ.
+     * @return The identifier of the index for the FAQ.
      */
 
     public String getIndexId() {
@@ -123,11 +123,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the index that contains the FAQ.
+     * The identifier of the index for the FAQ.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the FAQ.
+     *        The identifier of the index for the FAQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name that should be associated with the FAQ.
+     * A name for the FAQ.
      * </p>
      * 
      * @param name
-     *        The name that should be associated with the FAQ.
+     *        A name for the FAQ.
      */
 
     public void setName(String name) {
@@ -151,10 +151,10 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name that should be associated with the FAQ.
+     * A name for the FAQ.
      * </p>
      * 
-     * @return The name that should be associated with the FAQ.
+     * @return A name for the FAQ.
      */
 
     public String getName() {
@@ -163,11 +163,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name that should be associated with the FAQ.
+     * A name for the FAQ.
      * </p>
      * 
      * @param name
-     *        The name that should be associated with the FAQ.
+     *        A name for the FAQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A description of the FAQ.
+     * A description for the FAQ.
      * </p>
      * 
      * @param description
-     *        A description of the FAQ.
+     *        A description for the FAQ.
      */
 
     public void setDescription(String description) {
@@ -191,10 +191,10 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A description of the FAQ.
+     * A description for the FAQ.
      * </p>
      * 
-     * @return A description of the FAQ.
+     * @return A description for the FAQ.
      */
 
     public String getDescription() {
@@ -203,11 +203,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A description of the FAQ.
+     * A description for the FAQ.
      * </p>
      * 
      * @param description
-     *        A description of the FAQ.
+     *        A description for the FAQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The S3 location of the FAQ input data.
+     * The path to the FAQ file in S3.
      * </p>
      * 
      * @param s3Path
-     *        The S3 location of the FAQ input data.
+     *        The path to the FAQ file in S3.
      */
 
     public void setS3Path(S3Path s3Path) {
@@ -231,10 +231,10 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The S3 location of the FAQ input data.
+     * The path to the FAQ file in S3.
      * </p>
      * 
-     * @return The S3 location of the FAQ input data.
+     * @return The path to the FAQ file in S3.
      */
 
     public S3Path getS3Path() {
@@ -243,11 +243,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The S3 location of the FAQ input data.
+     * The path to the FAQ file in S3.
      * </p>
      * 
      * @param s3Path
-     *        The S3 location of the FAQ input data.
+     *        The path to the FAQ file in S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,7 +388,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs
      * attributes in a header, and a JSON format that includes custom attributes.
      * </p>
      * <p>
@@ -401,7 +401,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param fileFormat
-     *        The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *        The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes
      *        customs attributes in a header, and a JSON format that includes custom attributes.</p>
      *        <p>
      *        The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
@@ -419,7 +419,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs
      * attributes in a header, and a JSON format that includes custom attributes.
      * </p>
      * <p>
@@ -431,7 +431,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * questions and answers</a>.
      * </p>
      * 
-     * @return The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     * @return The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes
      *         customs attributes in a header, and a JSON format that includes custom attributes.</p>
      *         <p>
      *         The format must match the format of the file stored in the S3 bucket identified in the
@@ -450,7 +450,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs
      * attributes in a header, and a JSON format that includes custom attributes.
      * </p>
      * <p>
@@ -463,7 +463,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param fileFormat
-     *        The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *        The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes
      *        customs attributes in a header, and a JSON format that includes custom attributes.</p>
      *        <p>
      *        The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
@@ -483,7 +483,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs
      * attributes in a header, and a JSON format that includes custom attributes.
      * </p>
      * <p>
@@ -496,7 +496,7 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param fileFormat
-     *        The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *        The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes
      *        customs attributes in a header, and a JSON format that includes custom attributes.</p>
      *        <p>
      *        The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>

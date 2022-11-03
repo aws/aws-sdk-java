@@ -24,6 +24,7 @@ public enum ResourceType {
     ClientVpnEndpoint("client-vpn-endpoint"),
     CustomerGateway("customer-gateway"),
     CarrierGateway("carrier-gateway"),
+    CoipPool("coip-pool"),
     DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
     EgressOnlyInternetGateway("egress-only-internet-gateway"),
@@ -79,15 +80,23 @@ public enum ResourceType {
     TransitGatewayAttachment("transit-gateway-attachment"),
     TransitGatewayConnectPeer("transit-gateway-connect-peer"),
     TransitGatewayMulticastDomain("transit-gateway-multicast-domain"),
+    TransitGatewayPolicyTable("transit-gateway-policy-table"),
     TransitGatewayRouteTable("transit-gateway-route-table"),
+    TransitGatewayRouteTableAnnouncement("transit-gateway-route-table-announcement"),
     Volume("volume"),
     Vpc("vpc"),
     VpcEndpoint("vpc-endpoint"),
+    VpcEndpointConnection("vpc-endpoint-connection"),
     VpcEndpointService("vpc-endpoint-service"),
+    VpcEndpointServicePermission("vpc-endpoint-service-permission"),
     VpcPeeringConnection("vpc-peering-connection"),
     VpnConnection("vpn-connection"),
     VpnGateway("vpn-gateway"),
-    VpcFlowLog("vpc-flow-log");
+    VpcFlowLog("vpc-flow-log"),
+    CapacityReservationFleet("capacity-reservation-fleet"),
+    TrafficMirrorFilterRule("traffic-mirror-filter-rule"),
+    VpcEndpointConnectionDeviceType("vpc-endpoint-connection-device-type"),
+    VpnConnectionDeviceType("vpn-connection-device-type");
 
     private String value;
 

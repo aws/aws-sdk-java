@@ -25,18 +25,18 @@ public class DescribeAttackResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The attack that is described.
+     * The attack that you requested.
      * </p>
      */
     private AttackDetail attack;
 
     /**
      * <p>
-     * The attack that is described.
+     * The attack that you requested.
      * </p>
      * 
      * @param attack
-     *        The attack that is described.
+     *        The attack that you requested.
      */
 
     public void setAttack(AttackDetail attack) {
@@ -45,10 +45,10 @@ public class DescribeAttackResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The attack that is described.
+     * The attack that you requested.
      * </p>
      * 
-     * @return The attack that is described.
+     * @return The attack that you requested.
      */
 
     public AttackDetail getAttack() {
@@ -57,11 +57,11 @@ public class DescribeAttackResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The attack that is described.
+     * The attack that you requested.
      * </p>
      * 
      * @param attack
-     *        The attack that is described.
+     *        The attack that you requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,6 +49,14 @@ public class AutoMerging implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ConflictResolution conflictResolution;
+    /**
+     * <p>
+     * A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching
+     * group to be merged during the auto-merge process. A higher score means higher similarity required to merge
+     * profiles.
+     * </p>
+     */
+    private Double minAllowedConfidenceScoreForMerging;
 
     /**
      * <p>
@@ -201,6 +209,58 @@ public class AutoMerging implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching
+     * group to be merged during the auto-merge process. A higher score means higher similarity required to merge
+     * profiles.
+     * </p>
+     * 
+     * @param minAllowedConfidenceScoreForMerging
+     *        A number between 0 and 1 that represents the minimum confidence score required for profiles within a
+     *        matching group to be merged during the auto-merge process. A higher score means higher similarity required
+     *        to merge profiles.
+     */
+
+    public void setMinAllowedConfidenceScoreForMerging(Double minAllowedConfidenceScoreForMerging) {
+        this.minAllowedConfidenceScoreForMerging = minAllowedConfidenceScoreForMerging;
+    }
+
+    /**
+     * <p>
+     * A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching
+     * group to be merged during the auto-merge process. A higher score means higher similarity required to merge
+     * profiles.
+     * </p>
+     * 
+     * @return A number between 0 and 1 that represents the minimum confidence score required for profiles within a
+     *         matching group to be merged during the auto-merge process. A higher score means higher similarity
+     *         required to merge profiles.
+     */
+
+    public Double getMinAllowedConfidenceScoreForMerging() {
+        return this.minAllowedConfidenceScoreForMerging;
+    }
+
+    /**
+     * <p>
+     * A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching
+     * group to be merged during the auto-merge process. A higher score means higher similarity required to merge
+     * profiles.
+     * </p>
+     * 
+     * @param minAllowedConfidenceScoreForMerging
+     *        A number between 0 and 1 that represents the minimum confidence score required for profiles within a
+     *        matching group to be merged during the auto-merge process. A higher score means higher similarity required
+     *        to merge profiles.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMerging withMinAllowedConfidenceScoreForMerging(Double minAllowedConfidenceScoreForMerging) {
+        setMinAllowedConfidenceScoreForMerging(minAllowedConfidenceScoreForMerging);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -217,7 +277,9 @@ public class AutoMerging implements Serializable, Cloneable, StructuredPojo {
         if (getConsolidation() != null)
             sb.append("Consolidation: ").append(getConsolidation()).append(",");
         if (getConflictResolution() != null)
-            sb.append("ConflictResolution: ").append(getConflictResolution());
+            sb.append("ConflictResolution: ").append(getConflictResolution()).append(",");
+        if (getMinAllowedConfidenceScoreForMerging() != null)
+            sb.append("MinAllowedConfidenceScoreForMerging: ").append(getMinAllowedConfidenceScoreForMerging());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +306,11 @@ public class AutoMerging implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConflictResolution() != null && other.getConflictResolution().equals(this.getConflictResolution()) == false)
             return false;
+        if (other.getMinAllowedConfidenceScoreForMerging() == null ^ this.getMinAllowedConfidenceScoreForMerging() == null)
+            return false;
+        if (other.getMinAllowedConfidenceScoreForMerging() != null
+                && other.getMinAllowedConfidenceScoreForMerging().equals(this.getMinAllowedConfidenceScoreForMerging()) == false)
+            return false;
         return true;
     }
 
@@ -255,6 +322,7 @@ public class AutoMerging implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getConsolidation() == null) ? 0 : getConsolidation().hashCode());
         hashCode = prime * hashCode + ((getConflictResolution() == null) ? 0 : getConflictResolution().hashCode());
+        hashCode = prime * hashCode + ((getMinAllowedConfidenceScoreForMerging() == null) ? 0 : getMinAllowedConfidenceScoreForMerging().hashCode());
         return hashCode;
     }
 

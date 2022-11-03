@@ -40,6 +40,12 @@ public class ConfigurationRecorder implements Serializable, Cloneable, Structure
      * Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the
      * account.
      * </p>
+     * <note>
+     * <p>
+     * While the API model does not require this field, the server will reject a request without a defined roleARN for
+     * the configuration recorder.
+     * </p>
+     * </note>
      */
     private String roleARN;
     /**
@@ -100,10 +106,20 @@ public class ConfigurationRecorder implements Serializable, Cloneable, Structure
      * Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the
      * account.
      * </p>
+     * <note>
+     * <p>
+     * While the API model does not require this field, the server will reject a request without a defined roleARN for
+     * the configuration recorder.
+     * </p>
+     * </note>
      * 
      * @param roleARN
      *        Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated
-     *        with the account.
+     *        with the account.</p> <note>
+     *        <p>
+     *        While the API model does not require this field, the server will reject a request without a defined
+     *        roleARN for the configuration recorder.
+     *        </p>
      */
 
     public void setRoleARN(String roleARN) {
@@ -115,9 +131,19 @@ public class ConfigurationRecorder implements Serializable, Cloneable, Structure
      * Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the
      * account.
      * </p>
+     * <note>
+     * <p>
+     * While the API model does not require this field, the server will reject a request without a defined roleARN for
+     * the configuration recorder.
+     * </p>
+     * </note>
      * 
      * @return Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated
-     *         with the account.
+     *         with the account.</p> <note>
+     *         <p>
+     *         While the API model does not require this field, the server will reject a request without a defined
+     *         roleARN for the configuration recorder.
+     *         </p>
      */
 
     public String getRoleARN() {
@@ -129,10 +155,20 @@ public class ConfigurationRecorder implements Serializable, Cloneable, Structure
      * Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the
      * account.
      * </p>
+     * <note>
+     * <p>
+     * While the API model does not require this field, the server will reject a request without a defined roleARN for
+     * the configuration recorder.
+     * </p>
+     * </note>
      * 
      * @param roleARN
      *        Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated
-     *        with the account.
+     *        with the account.</p> <note>
+     *        <p>
+     *        While the API model does not require this field, the server will reject a request without a defined
+     *        roleARN for the configuration recorder.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

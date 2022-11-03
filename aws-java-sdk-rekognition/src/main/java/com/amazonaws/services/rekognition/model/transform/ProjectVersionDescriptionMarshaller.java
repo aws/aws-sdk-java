@@ -53,6 +53,10 @@ public class ProjectVersionDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestSummary").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<Integer> MAXINFERENCEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxInferenceUnits").build();
+    private static final MarshallingInfo<String> SOURCEPROJECTVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceProjectVersionArn").build();
 
     private static final ProjectVersionDescriptionMarshaller instance = new ProjectVersionDescriptionMarshaller();
 
@@ -83,6 +87,8 @@ public class ProjectVersionDescriptionMarshaller {
             protocolMarshaller.marshall(projectVersionDescription.getEvaluationResult(), EVALUATIONRESULT_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getManifestSummary(), MANIFESTSUMMARY_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getMaxInferenceUnits(), MAXINFERENCEUNITS_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getSourceProjectVersionArn(), SOURCEPROJECTVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

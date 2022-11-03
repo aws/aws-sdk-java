@@ -1323,7 +1323,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Get the event configuration by resource types.
+     * Get the event configuration based on resource types.
      * </p>
      * 
      * @param getEventConfigurationByResourceTypesRequest
@@ -1338,7 +1338,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Get the event configuration by resource types.
+     * Get the event configuration based on resource types.
      * </p>
      * 
      * @param getEventConfigurationByResourceTypesRequest
@@ -1551,6 +1551,68 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest getPartnerAccountRequest,
             com.amazonaws.handlers.AsyncHandler<GetPartnerAccountRequest, GetPartnerAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the position information for a given resource.
+     * </p>
+     * 
+     * @param getPositionRequest
+     * @return A Java Future containing the result of the GetPosition operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetPosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest getPositionRequest);
+
+    /**
+     * <p>
+     * Get the position information for a given resource.
+     * </p>
+     * 
+     * @param getPositionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPosition operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetPosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest getPositionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get position configuration for a given resource.
+     * </p>
+     * 
+     * @param getPositionConfigurationRequest
+     * @return A Java Future containing the result of the GetPositionConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetPositionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest getPositionConfigurationRequest);
+
+    /**
+     * <p>
+     * Get position configuration for a given resource.
+     * </p>
+     * 
+     * @param getPositionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPositionConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetPositionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest getPositionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -2210,6 +2272,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * List position configurations for a given resource, such as positioning solvers.
+     * </p>
+     * 
+     * @param listPositionConfigurationsRequest
+     * @return A Java Future containing the result of the ListPositionConfigurations operation returned by the service.
+     * @sample AWSIoTWirelessAsync.ListPositionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(
+            ListPositionConfigurationsRequest listPositionConfigurationsRequest);
+
+    /**
+     * <p>
+     * List position configurations for a given resource, such as positioning solvers.
+     * </p>
+     * 
+     * @param listPositionConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPositionConfigurations operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.ListPositionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(
+            ListPositionConfigurationsRequest listPositionConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * List queued messages in the downlink queue.
      * </p>
      * 
@@ -2397,6 +2492,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<ListWirelessGatewaysResult> listWirelessGatewaysAsync(ListWirelessGatewaysRequest listWirelessGatewaysRequest,
             com.amazonaws.handlers.AsyncHandler<ListWirelessGatewaysRequest, ListWirelessGatewaysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Put position configuration for a given resource.
+     * </p>
+     * 
+     * @param putPositionConfigurationRequest
+     * @return A Java Future containing the result of the PutPositionConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsync.PutPositionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest putPositionConfigurationRequest);
+
+    /**
+     * <p>
+     * Put position configuration for a given resource.
+     * </p>
+     * 
+     * @param putPositionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutPositionConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.PutPositionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest putPositionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -2823,7 +2949,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Update the event configuration by resource types.
+     * Update the event configuration based on resource types.
      * </p>
      * 
      * @param updateEventConfigurationByResourceTypesRequest
@@ -2839,7 +2965,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Update the event configuration by resource types.
+     * Update the event configuration based on resource types.
      * </p>
      * 
      * @param updateEventConfigurationByResourceTypesRequest
@@ -3022,6 +3148,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<UpdatePartnerAccountResult> updatePartnerAccountAsync(UpdatePartnerAccountRequest updatePartnerAccountRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePartnerAccountRequest, UpdatePartnerAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the position information of a resource.
+     * </p>
+     * 
+     * @param updatePositionRequest
+     * @return A Java Future containing the result of the UpdatePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsync.UpdatePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest updatePositionRequest);
+
+    /**
+     * <p>
+     * Update the position information of a resource.
+     * </p>
+     * 
+     * @param updatePositionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdatePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest updatePositionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler);
 
     /**
      * <p>

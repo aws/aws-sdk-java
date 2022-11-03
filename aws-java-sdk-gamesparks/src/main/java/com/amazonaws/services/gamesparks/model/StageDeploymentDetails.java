@@ -48,6 +48,12 @@ public class StageDeploymentDetails implements Serializable, Cloneable, Structur
     private String deploymentId;
     /**
      * <p>
+     * The result of the deployment.
+     * </p>
+     */
+    private DeploymentResult deploymentResult;
+    /**
+     * <p>
      * The state of the deployment.
      * </p>
      */
@@ -201,6 +207,46 @@ public class StageDeploymentDetails implements Serializable, Cloneable, Structur
 
     public StageDeploymentDetails withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The result of the deployment.
+     * </p>
+     * 
+     * @param deploymentResult
+     *        The result of the deployment.
+     */
+
+    public void setDeploymentResult(DeploymentResult deploymentResult) {
+        this.deploymentResult = deploymentResult;
+    }
+
+    /**
+     * <p>
+     * The result of the deployment.
+     * </p>
+     * 
+     * @return The result of the deployment.
+     */
+
+    public DeploymentResult getDeploymentResult() {
+        return this.deploymentResult;
+    }
+
+    /**
+     * <p>
+     * The result of the deployment.
+     * </p>
+     * 
+     * @param deploymentResult
+     *        The result of the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StageDeploymentDetails withDeploymentResult(DeploymentResult deploymentResult) {
+        setDeploymentResult(deploymentResult);
         return this;
     }
 
@@ -361,6 +407,8 @@ public class StageDeploymentDetails implements Serializable, Cloneable, Structur
             sb.append("DeploymentAction: ").append(getDeploymentAction()).append(",");
         if (getDeploymentId() != null)
             sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
+        if (getDeploymentResult() != null)
+            sb.append("DeploymentResult: ").append(getDeploymentResult()).append(",");
         if (getDeploymentState() != null)
             sb.append("DeploymentState: ").append(getDeploymentState()).append(",");
         if (getLastUpdated() != null)
@@ -393,6 +441,10 @@ public class StageDeploymentDetails implements Serializable, Cloneable, Structur
             return false;
         if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
+        if (other.getDeploymentResult() == null ^ this.getDeploymentResult() == null)
+            return false;
+        if (other.getDeploymentResult() != null && other.getDeploymentResult().equals(this.getDeploymentResult()) == false)
+            return false;
         if (other.getDeploymentState() == null ^ this.getDeploymentState() == null)
             return false;
         if (other.getDeploymentState() != null && other.getDeploymentState().equals(this.getDeploymentState()) == false)
@@ -416,6 +468,7 @@ public class StageDeploymentDetails implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDeploymentAction() == null) ? 0 : getDeploymentAction().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentResult() == null) ? 0 : getDeploymentResult().hashCode());
         hashCode = prime * hashCode + ((getDeploymentState() == null) ? 0 : getDeploymentState().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());

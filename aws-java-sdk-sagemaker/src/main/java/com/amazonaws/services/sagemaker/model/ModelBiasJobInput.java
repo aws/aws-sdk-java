@@ -31,6 +31,12 @@ public class ModelBiasJobInput implements Serializable, Cloneable, StructuredPoj
     private EndpointInput endpointInput;
     /**
      * <p>
+     * Input object for the batch transform job.
+     * </p>
+     */
+    private BatchTransformInput batchTransformInput;
+    /**
+     * <p>
      * Location of ground truth labels to use in model bias job.
      * </p>
      */
@@ -59,6 +65,46 @@ public class ModelBiasJobInput implements Serializable, Cloneable, StructuredPoj
 
     public ModelBiasJobInput withEndpointInput(EndpointInput endpointInput) {
         setEndpointInput(endpointInput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     * 
+     * @param batchTransformInput
+     *        Input object for the batch transform job.
+     */
+
+    public void setBatchTransformInput(BatchTransformInput batchTransformInput) {
+        this.batchTransformInput = batchTransformInput;
+    }
+
+    /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     * 
+     * @return Input object for the batch transform job.
+     */
+
+    public BatchTransformInput getBatchTransformInput() {
+        return this.batchTransformInput;
+    }
+
+    /**
+     * <p>
+     * Input object for the batch transform job.
+     * </p>
+     * 
+     * @param batchTransformInput
+     *        Input object for the batch transform job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelBiasJobInput withBatchTransformInput(BatchTransformInput batchTransformInput) {
+        setBatchTransformInput(batchTransformInput);
         return this;
     }
 
@@ -116,6 +162,8 @@ public class ModelBiasJobInput implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getEndpointInput() != null)
             sb.append("EndpointInput: ").append(getEndpointInput()).append(",");
+        if (getBatchTransformInput() != null)
+            sb.append("BatchTransformInput: ").append(getBatchTransformInput()).append(",");
         if (getGroundTruthS3Input() != null)
             sb.append("GroundTruthS3Input: ").append(getGroundTruthS3Input());
         sb.append("}");
@@ -136,6 +184,10 @@ public class ModelBiasJobInput implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEndpointInput() != null && other.getEndpointInput().equals(this.getEndpointInput()) == false)
             return false;
+        if (other.getBatchTransformInput() == null ^ this.getBatchTransformInput() == null)
+            return false;
+        if (other.getBatchTransformInput() != null && other.getBatchTransformInput().equals(this.getBatchTransformInput()) == false)
+            return false;
         if (other.getGroundTruthS3Input() == null ^ this.getGroundTruthS3Input() == null)
             return false;
         if (other.getGroundTruthS3Input() != null && other.getGroundTruthS3Input().equals(this.getGroundTruthS3Input()) == false)
@@ -149,6 +201,7 @@ public class ModelBiasJobInput implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndpointInput() == null) ? 0 : getEndpointInput().hashCode());
+        hashCode = prime * hashCode + ((getBatchTransformInput() == null) ? 0 : getBatchTransformInput().hashCode());
         hashCode = prime * hashCode + ((getGroundTruthS3Input() == null) ? 0 : getGroundTruthS3Input().hashCode());
         return hashCode;
     }

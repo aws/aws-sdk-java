@@ -28,11 +28,13 @@ import java.util.concurrent.ExecutorService;
  * <fullname>DataSync</fullname>
  * <p>
  * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Simple Storage Service (Amazon S3) or Amazon Elastic File System (Amazon EFS).
+ * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
+ * providers and Amazon Web Services storage services.
  * </p>
  * <p>
- * This API interface reference for DataSync contains documentation for a programming interface that you can use to
- * manage DataSync.
+ * This API interface reference includes documentation for using DataSync programmatically. For complete information,
+ * see the <i> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync User
+ * Guide</a> </i>.
  * </p>
  */
 @ThreadSafe
@@ -196,6 +198,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeCreateLocationFsxLustre(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationFsxOntapResult> createLocationFsxOntapAsync(CreateLocationFsxOntapRequest request) {
+
+        return createLocationFsxOntapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationFsxOntapResult> createLocationFsxOntapAsync(final CreateLocationFsxOntapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLocationFsxOntapRequest, CreateLocationFsxOntapResult> asyncHandler) {
+        final CreateLocationFsxOntapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLocationFsxOntapResult>() {
+            @Override
+            public CreateLocationFsxOntapResult call() throws Exception {
+                CreateLocationFsxOntapResult result = null;
+
+                try {
+                    result = executeCreateLocationFsxOntap(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -658,6 +693,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeDescribeLocationFsxLustre(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationFsxOntapResult> describeLocationFsxOntapAsync(DescribeLocationFsxOntapRequest request) {
+
+        return describeLocationFsxOntapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationFsxOntapResult> describeLocationFsxOntapAsync(final DescribeLocationFsxOntapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLocationFsxOntapRequest, DescribeLocationFsxOntapResult> asyncHandler) {
+        final DescribeLocationFsxOntapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLocationFsxOntapResult>() {
+            @Override
+            public DescribeLocationFsxOntapResult call() throws Exception {
+                DescribeLocationFsxOntapResult result = null;
+
+                try {
+                    result = executeDescribeLocationFsxOntap(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -28,8 +28,7 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      */
     private String codeReviewArn;
@@ -56,14 +55,12 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @param codeReviewArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *        <code>CodeReview</code> </a> object.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -73,13 +70,12 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *         <code>CodeReview</code> </a> object.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+     *         object.
      */
 
     public String getCodeReviewArn() {
@@ -89,14 +85,12 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @param codeReviewArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *        <code>CodeReview</code> </a> object.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,7 +156,7 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * 
      * @param userId
      *        Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the
-     *        user making the request. </p>
+     *        user making the request.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=
@@ -187,7 +181,7 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @return Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the
-     *         user making the request. </p>
+     *         user making the request.</p>
      *         <p>
      *         The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *         an Amazon Resource Name (ARN). For more information, see <a href=
@@ -213,7 +207,7 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * 
      * @param userId
      *        Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the
-     *        user making the request. </p>
+     *        user making the request.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=

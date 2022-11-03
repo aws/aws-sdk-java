@@ -146,6 +146,12 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </note>
      */
     private String rootAccess;
+    /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     */
+    private InstanceMetadataServiceConfiguration instanceMetadataServiceConfiguration;
 
     /**
      * <p>
@@ -1147,6 +1153,46 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     * 
+     * @param instanceMetadataServiceConfiguration
+     *        Information on the IMDS configuration of the notebook instance
+     */
+
+    public void setInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration instanceMetadataServiceConfiguration) {
+        this.instanceMetadataServiceConfiguration = instanceMetadataServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     * 
+     * @return Information on the IMDS configuration of the notebook instance
+     */
+
+    public InstanceMetadataServiceConfiguration getInstanceMetadataServiceConfiguration() {
+        return this.instanceMetadataServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information on the IMDS configuration of the notebook instance
+     * </p>
+     * 
+     * @param instanceMetadataServiceConfiguration
+     *        Information on the IMDS configuration of the notebook instance
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration instanceMetadataServiceConfiguration) {
+        setInstanceMetadataServiceConfiguration(instanceMetadataServiceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1183,7 +1229,9 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getDisassociateAdditionalCodeRepositories() != null)
             sb.append("DisassociateAdditionalCodeRepositories: ").append(getDisassociateAdditionalCodeRepositories()).append(",");
         if (getRootAccess() != null)
-            sb.append("RootAccess: ").append(getRootAccess());
+            sb.append("RootAccess: ").append(getRootAccess()).append(",");
+        if (getInstanceMetadataServiceConfiguration() != null)
+            sb.append("InstanceMetadataServiceConfiguration: ").append(getInstanceMetadataServiceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1252,6 +1300,11 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getRootAccess() != null && other.getRootAccess().equals(this.getRootAccess()) == false)
             return false;
+        if (other.getInstanceMetadataServiceConfiguration() == null ^ this.getInstanceMetadataServiceConfiguration() == null)
+            return false;
+        if (other.getInstanceMetadataServiceConfiguration() != null
+                && other.getInstanceMetadataServiceConfiguration().equals(this.getInstanceMetadataServiceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1273,6 +1326,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDisassociateDefaultCodeRepository() == null) ? 0 : getDisassociateDefaultCodeRepository().hashCode());
         hashCode = prime * hashCode + ((getDisassociateAdditionalCodeRepositories() == null) ? 0 : getDisassociateAdditionalCodeRepositories().hashCode());
         hashCode = prime * hashCode + ((getRootAccess() == null) ? 0 : getRootAccess().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMetadataServiceConfiguration() == null) ? 0 : getInstanceMetadataServiceConfiguration().hashCode());
         return hashCode;
     }
 

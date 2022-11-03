@@ -55,6 +55,8 @@ public class MicrosoftSQLServerSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
+    private static final MarshallingInfo<Boolean> TRIMSPACEINCHAR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrimSpaceInChar").build();
 
     private static final MicrosoftSQLServerSettingsMarshaller instance = new MicrosoftSQLServerSettingsMarshaller();
 
@@ -86,6 +88,7 @@ public class MicrosoftSQLServerSettingsMarshaller {
             protocolMarshaller.marshall(microsoftSQLServerSettings.getUseThirdPartyBackupDevice(), USETHIRDPARTYBACKUPDEVICE_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getTrimSpaceInChar(), TRIMSPACEINCHAR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

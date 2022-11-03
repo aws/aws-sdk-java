@@ -27,32 +27,32 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with one or more data source connectors.
      * </p>
      */
     private String indexId;
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of data sources (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of data source
+     * connectors (<code>DataSourceSummaryItems</code>).
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of data source connectors to return.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with one or more data source connectors.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with one or more data source connectors.
      */
 
     public void setIndexId(String indexId) {
@@ -61,10 +61,10 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with one or more data source connectors.
      * </p>
      * 
-     * @return The identifier of the index that contains the data source.
+     * @return The identifier of the index used with one or more data source connectors.
      */
 
     public String getIndexId() {
@@ -73,11 +73,11 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with one or more data source connectors.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with one or more data source connectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,14 +89,14 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of data sources (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of data source
+     * connectors (<code>DataSourceSummaryItems</code>).
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
      *        pagination token in the response. You can use this pagination token to retrieve the next set of data
-     *        sources (<code>DataSourceSummaryItems</code>).
+     *        source connectors (<code>DataSourceSummaryItems</code>).
      */
 
     public void setNextToken(String nextToken) {
@@ -106,13 +106,13 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of data sources (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of data source
+     * connectors (<code>DataSourceSummaryItems</code>).
      * </p>
      * 
      * @return If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
      *         pagination token in the response. You can use this pagination token to retrieve the next set of data
-     *         sources (<code>DataSourceSummaryItems</code>).
+     *         source connectors (<code>DataSourceSummaryItems</code>).
      */
 
     public String getNextToken() {
@@ -122,14 +122,14 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of data sources (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of data source
+     * connectors (<code>DataSourceSummaryItems</code>).
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
      *        pagination token in the response. You can use this pagination token to retrieve the next set of data
-     *        sources (<code>DataSourceSummaryItems</code>).
+     *        source connectors (<code>DataSourceSummaryItems</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of data source connectors to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of data sources to return.
+     *        The maximum number of data source connectors to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -153,10 +153,10 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of data source connectors to return.
      * </p>
      * 
-     * @return The maximum number of data sources to return.
+     * @return The maximum number of data source connectors to return.
      */
 
     public Integer getMaxResults() {
@@ -165,11 +165,11 @@ public class ListDataSourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of data source connectors to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of data sources to return.
+     *        The maximum number of data source connectors to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

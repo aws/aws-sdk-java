@@ -46,8 +46,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String resourcePolicy;
     /**
      * <p>
-     * Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets
-     * Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.
+     * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
+     * use a wildcard for the principal.
      * </p>
      */
     private Boolean blockPublicPolicy;
@@ -176,14 +176,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets
-     * Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.
+     * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
+     * use a wildcard for the principal.
      * </p>
      * 
      * @param blockPublicPolicy
-     *        Specifies whether to block resource-based policies that allow broad access to the secret. By default,
-     *        Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the
-     *        principal.
+     *        Specifies whether to block resource-based policies that allow broad access to the secret, for example
+     *        those that use a wildcard for the principal.
      */
 
     public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
@@ -192,13 +191,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets
-     * Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.
+     * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
+     * use a wildcard for the principal.
      * </p>
      * 
-     * @return Specifies whether to block resource-based policies that allow broad access to the secret. By default,
-     *         Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the
-     *         principal.
+     * @return Specifies whether to block resource-based policies that allow broad access to the secret, for example
+     *         those that use a wildcard for the principal.
      */
 
     public Boolean getBlockPublicPolicy() {
@@ -207,14 +205,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets
-     * Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.
+     * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
+     * use a wildcard for the principal.
      * </p>
      * 
      * @param blockPublicPolicy
-     *        Specifies whether to block resource-based policies that allow broad access to the secret. By default,
-     *        Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the
-     *        principal.
+     *        Specifies whether to block resource-based policies that allow broad access to the secret, for example
+     *        those that use a wildcard for the principal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,13 +222,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets
-     * Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.
+     * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
+     * use a wildcard for the principal.
      * </p>
      * 
-     * @return Specifies whether to block resource-based policies that allow broad access to the secret. By default,
-     *         Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the
-     *         principal.
+     * @return Specifies whether to block resource-based policies that allow broad access to the secret, for example
+     *         those that use a wildcard for the principal.
      */
 
     public Boolean isBlockPublicPolicy() {

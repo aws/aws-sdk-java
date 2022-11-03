@@ -32,6 +32,27 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <p>
+     * A ManifestFile should have the format shown below:
+     * </p>
+     * <p>
+     * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     * </p>
+     * <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     * </p>
+     * <p>
+     * An S3Prefix should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
      */
     private String s3DataType;
     /**
@@ -45,9 +66,50 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <p>
+     * A ManifestFile should have the format shown below:
+     * </p>
+     * <p>
+     * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     * </p>
+     * <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     * </p>
+     * <p>
+     * An S3Prefix should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
      * 
      * @param s3DataType
-     *        The data type.
+     *        The data type.</p>
+     *        <p>
+     *        A ManifestFile should have the format shown below:
+     *        </p>
+     *        <p>
+     *        <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     *        </p>
+     *        <p>
+     *        <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     *        </p>
+     *        <p>
+     *        <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     *        </p>
+     *        <p>
+     *        <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     *        </p>
+     *        <p>
+     *        An S3Prefix should have the following format:
+     *        </p>
+     *        <p>
+     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
      * @see AutoMLS3DataType
      */
 
@@ -59,8 +121,49 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <p>
+     * A ManifestFile should have the format shown below:
+     * </p>
+     * <p>
+     * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     * </p>
+     * <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     * </p>
+     * <p>
+     * An S3Prefix should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
      * 
-     * @return The data type.
+     * @return The data type.</p>
+     *         <p>
+     *         A ManifestFile should have the format shown below:
+     *         </p>
+     *         <p>
+     *         <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     *         </p>
+     *         <p>
+     *         <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     *         </p>
+     *         <p>
+     *         <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     *         </p>
+     *         <p>
+     *         <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     *         </p>
+     *         <p>
+     *         An S3Prefix should have the following format:
+     *         </p>
+     *         <p>
+     *         <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
      * @see AutoMLS3DataType
      */
 
@@ -72,9 +175,50 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <p>
+     * A ManifestFile should have the format shown below:
+     * </p>
+     * <p>
+     * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     * </p>
+     * <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     * </p>
+     * <p>
+     * An S3Prefix should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
      * 
      * @param s3DataType
-     *        The data type.
+     *        The data type.</p>
+     *        <p>
+     *        A ManifestFile should have the format shown below:
+     *        </p>
+     *        <p>
+     *        <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     *        </p>
+     *        <p>
+     *        <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     *        </p>
+     *        <p>
+     *        <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     *        </p>
+     *        <p>
+     *        <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     *        </p>
+     *        <p>
+     *        An S3Prefix should have the following format:
+     *        </p>
+     *        <p>
+     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLS3DataType
      */
@@ -88,9 +232,50 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <p>
+     * A ManifestFile should have the format shown below:
+     * </p>
+     * <p>
+     * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     * </p>
+     * <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     * </p>
+     * <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     * </p>
+     * <p>
+     * An S3Prefix should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
      * 
      * @param s3DataType
-     *        The data type.
+     *        The data type.</p>
+     *        <p>
+     *        A ManifestFile should have the format shown below:
+     *        </p>
+     *        <p>
+     *        <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
+     *        </p>
+     *        <p>
+     *        <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code>
+     *        </p>
+     *        <p>
+     *        <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code>
+     *        </p>
+     *        <p>
+     *        <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
+     *        </p>
+     *        <p>
+     *        An S3Prefix should have the following format:
+     *        </p>
+     *        <p>
+     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLS3DataType
      */

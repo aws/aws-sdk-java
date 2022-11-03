@@ -92,6 +92,12 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private AssetStatus assetStatus;
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     */
+    private String assetDescription;
 
     /**
      * <p>
@@ -641,6 +647,46 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @param assetDescription
+     *        A description for the asset.
+     */
+
+    public void setAssetDescription(String assetDescription) {
+        this.assetDescription = assetDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @return A description for the asset.
+     */
+
+    public String getAssetDescription() {
+        return this.assetDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the asset.
+     * </p>
+     * 
+     * @param assetDescription
+     *        A description for the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetResult withAssetDescription(String assetDescription) {
+        setAssetDescription(assetDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -671,7 +717,9 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getAssetLastUpdateDate() != null)
             sb.append("AssetLastUpdateDate: ").append(getAssetLastUpdateDate()).append(",");
         if (getAssetStatus() != null)
-            sb.append("AssetStatus: ").append(getAssetStatus());
+            sb.append("AssetStatus: ").append(getAssetStatus()).append(",");
+        if (getAssetDescription() != null)
+            sb.append("AssetDescription: ").append(getAssetDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -726,6 +774,10 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getAssetStatus() != null && other.getAssetStatus().equals(this.getAssetStatus()) == false)
             return false;
+        if (other.getAssetDescription() == null ^ this.getAssetDescription() == null)
+            return false;
+        if (other.getAssetDescription() != null && other.getAssetDescription().equals(this.getAssetDescription()) == false)
+            return false;
         return true;
     }
 
@@ -744,6 +796,7 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getAssetCreationDate() == null) ? 0 : getAssetCreationDate().hashCode());
         hashCode = prime * hashCode + ((getAssetLastUpdateDate() == null) ? 0 : getAssetLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getAssetStatus() == null) ? 0 : getAssetStatus().hashCode());
+        hashCode = prime * hashCode + ((getAssetDescription() == null) ? 0 : getAssetDescription().hashCode());
         return hashCode;
     }
 

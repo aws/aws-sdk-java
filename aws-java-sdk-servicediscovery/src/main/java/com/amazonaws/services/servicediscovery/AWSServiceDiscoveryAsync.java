@@ -43,9 +43,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
-     * For the current quota on the number of namespaces that you can create using the same account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
-     * Map Developer Guide</i>.
+     * For the current quota on the number of namespaces that you can create using the same Amazon Web Services account,
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the
+     * <i>Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createHttpNamespaceRequest
@@ -62,9 +62,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
-     * For the current quota on the number of namespaces that you can create using the same account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
-     * Map Developer Guide</i>.
+     * For the current quota on the number of namespaces that you can create using the same Amazon Web Services account,
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the
+     * <i>Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createHttpNamespaceRequest
@@ -87,7 +87,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
      * Service instances that are registered using a private DNS namespace can be discovered using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same account, see <a
+     * can create using the same Amazon Web Services account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
      * Map Developer Guide</i>.
      * </p>
@@ -108,7 +108,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
      * Service instances that are registered using a private DNS namespace can be discovered using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same account, see <a
+     * can create using the same Amazon Web Services account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
      * Map Developer Guide</i>.
      * </p>
@@ -134,10 +134,16 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can
      * discover instances that were registered with a public DNS namespace by using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same account, see <a
+     * can create using the same Amazon Web Services account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
      * Map Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon Web Services GovCloud (US)
+     * Regions.
+     * </p>
+     * </important>
      * 
      * @param createPublicDnsNamespaceRequest
      * @return A Java Future containing the result of the CreatePublicDnsNamespace operation returned by the service.
@@ -154,10 +160,16 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can
      * discover instances that were registered with a public DNS namespace by using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same account, see <a
+     * can create using the same Amazon Web Services account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
      * Map Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon Web Services GovCloud (US)
+     * Regions.
+     * </p>
+     * </important>
      * 
      * @param createPublicDnsNamespaceRequest
      * @param asyncHandler
@@ -179,7 +191,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
      * <ul>
      * <li>
@@ -241,7 +253,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
      * <ul>
      * <li>
@@ -367,7 +379,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
      * instance.
      * </p>
      * 
@@ -381,7 +393,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
      * instance.
      * </p>
      * 
@@ -649,7 +661,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Lists summary information about the namespaces that were created by the current account.
+     * Lists summary information about the namespaces that were created by the current Amazon Web Services account.
      * </p>
      * 
      * @param listNamespacesRequest
@@ -662,7 +674,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Lists summary information about the namespaces that were created by the current account.
+     * Lists summary information about the namespaces that were created by the current Amazon Web Services account.
      * </p>
      * 
      * @param listNamespacesRequest
@@ -1012,7 +1024,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
      * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
-     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1038,7 +1050,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
      * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
-     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
      * </p>
      * <p>
      * For more information, see <a

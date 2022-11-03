@@ -27,29 +27,25 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
-     * category with the same name as a previous category you will receive a <code>ConflictException</code> error.
+     * The name of the Call Analytics category you want to update. Category names are case sensitive.
      * </p>
      */
     private String categoryName;
     /**
      * <p>
-     * The rules used for the updated analytics category. The rules that you provide in this field replace the ones that
-     * are currently being used.
+     * The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that
+     * are currently being used in the specified category.
      * </p>
      */
     private java.util.List<Rule> rules;
 
     /**
      * <p>
-     * The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
-     * category with the same name as a previous category you will receive a <code>ConflictException</code> error.
+     * The name of the Call Analytics category you want to update. Category names are case sensitive.
      * </p>
      * 
      * @param categoryName
-     *        The name of the analytics category to update. The name is case sensitive. If you try to update a call
-     *        analytics category with the same name as a previous category you will receive a
-     *        <code>ConflictException</code> error.
+     *        The name of the Call Analytics category you want to update. Category names are case sensitive.
      */
 
     public void setCategoryName(String categoryName) {
@@ -58,13 +54,10 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
-     * category with the same name as a previous category you will receive a <code>ConflictException</code> error.
+     * The name of the Call Analytics category you want to update. Category names are case sensitive.
      * </p>
      * 
-     * @return The name of the analytics category to update. The name is case sensitive. If you try to update a call
-     *         analytics category with the same name as a previous category you will receive a
-     *         <code>ConflictException</code> error.
+     * @return The name of the Call Analytics category you want to update. Category names are case sensitive.
      */
 
     public String getCategoryName() {
@@ -73,14 +66,11 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
-     * category with the same name as a previous category you will receive a <code>ConflictException</code> error.
+     * The name of the Call Analytics category you want to update. Category names are case sensitive.
      * </p>
      * 
      * @param categoryName
-     *        The name of the analytics category to update. The name is case sensitive. If you try to update a call
-     *        analytics category with the same name as a previous category you will receive a
-     *        <code>ConflictException</code> error.
+     *        The name of the Call Analytics category you want to update. Category names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,12 +81,12 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The rules used for the updated analytics category. The rules that you provide in this field replace the ones that
-     * are currently being used.
+     * The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that
+     * are currently being used in the specified category.
      * </p>
      * 
-     * @return The rules used for the updated analytics category. The rules that you provide in this field replace the
-     *         ones that are currently being used.
+     * @return The rules used for the updated Call Analytics category. The rules you provide in this field replace the
+     *         ones that are currently being used in the specified category.
      */
 
     public java.util.List<Rule> getRules() {
@@ -105,13 +95,13 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The rules used for the updated analytics category. The rules that you provide in this field replace the ones that
-     * are currently being used.
+     * The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that
+     * are currently being used in the specified category.
      * </p>
      * 
      * @param rules
-     *        The rules used for the updated analytics category. The rules that you provide in this field replace the
-     *        ones that are currently being used.
+     *        The rules used for the updated Call Analytics category. The rules you provide in this field replace the
+     *        ones that are currently being used in the specified category.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -125,8 +115,8 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The rules used for the updated analytics category. The rules that you provide in this field replace the ones that
-     * are currently being used.
+     * The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that
+     * are currently being used in the specified category.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,8 +125,8 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param rules
-     *        The rules used for the updated analytics category. The rules that you provide in this field replace the
-     *        ones that are currently being used.
+     *        The rules used for the updated Call Analytics category. The rules you provide in this field replace the
+     *        ones that are currently being used in the specified category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,13 +142,13 @@ public class UpdateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The rules used for the updated analytics category. The rules that you provide in this field replace the ones that
-     * are currently being used.
+     * The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that
+     * are currently being used in the specified category.
      * </p>
      * 
      * @param rules
-     *        The rules used for the updated analytics category. The rules that you provide in this field replace the
-     *        ones that are currently being used.
+     *        The rules used for the updated Call Analytics category. The rules you provide in this field replace the
+     *        ones that are currently being used in the specified category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

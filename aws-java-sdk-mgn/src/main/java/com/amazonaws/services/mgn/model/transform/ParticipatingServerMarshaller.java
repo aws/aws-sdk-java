@@ -29,6 +29,10 @@ public class ParticipatingServerMarshaller {
 
     private static final MarshallingInfo<String> LAUNCHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchStatus").build();
+    private static final MarshallingInfo<String> LAUNCHEDEC2INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchedEc2InstanceID").build();
+    private static final MarshallingInfo<StructuredPojo> POSTLAUNCHACTIONSSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("postLaunchActionsStatus").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerID").build();
 
@@ -49,6 +53,8 @@ public class ParticipatingServerMarshaller {
 
         try {
             protocolMarshaller.marshall(participatingServer.getLaunchStatus(), LAUNCHSTATUS_BINDING);
+            protocolMarshaller.marshall(participatingServer.getLaunchedEc2InstanceID(), LAUNCHEDEC2INSTANCEID_BINDING);
+            protocolMarshaller.marshall(participatingServer.getPostLaunchActionsStatus(), POSTLAUNCHACTIONSSTATUS_BINDING);
             protocolMarshaller.marshall(participatingServer.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

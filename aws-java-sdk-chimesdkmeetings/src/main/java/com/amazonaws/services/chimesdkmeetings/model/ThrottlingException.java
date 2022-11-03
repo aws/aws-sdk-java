@@ -24,7 +24,11 @@ public class ThrottlingException extends com.amazonaws.services.chimesdkmeetings
     private static final long serialVersionUID = 1L;
 
     private String code;
-
+    /**
+     * <p>
+     * The ID of the request that exceeded the throttling limit.
+     * </p>
+     */
     private String requestId;
 
     /**
@@ -66,7 +70,12 @@ public class ThrottlingException extends com.amazonaws.services.chimesdkmeetings
     }
 
     /**
+     * <p>
+     * The ID of the request that exceeded the throttling limit.
+     * </p>
+     * 
      * @param requestId
+     *        The ID of the request that exceeded the throttling limit.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -75,7 +84,11 @@ public class ThrottlingException extends com.amazonaws.services.chimesdkmeetings
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the request that exceeded the throttling limit.
+     * </p>
+     * 
+     * @return The ID of the request that exceeded the throttling limit.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -84,7 +97,12 @@ public class ThrottlingException extends com.amazonaws.services.chimesdkmeetings
     }
 
     /**
+     * <p>
+     * The ID of the request that exceeded the throttling limit.
+     * </p>
+     * 
      * @param requestId
+     *        The ID of the request that exceeded the throttling limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -76,6 +76,10 @@ public class RetryDataReplicationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     retryDataReplicationResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stagingArea", targetDepth)) {
+                    context.nextToken();
+                    retryDataReplicationResult.setStagingArea(StagingAreaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     retryDataReplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

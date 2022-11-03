@@ -34,6 +34,12 @@ public class SalesforceMetadata implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<String> oAuthScopes;
+    /**
+     * <p>
+     * The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.
+     * </p>
+     */
+    private java.util.List<String> dataTransferApis;
 
     /**
      * <p>
@@ -106,6 +112,109 @@ public class SalesforceMetadata implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.
+     * </p>
+     * 
+     * @return The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from
+     *         Salesforce.
+     * @see SalesforceDataTransferApi
+     */
+
+    public java.util.List<String> getDataTransferApis() {
+        return dataTransferApis;
+    }
+
+    /**
+     * <p>
+     * The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.
+     * </p>
+     * 
+     * @param dataTransferApis
+     *        The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from
+     *        Salesforce.
+     * @see SalesforceDataTransferApi
+     */
+
+    public void setDataTransferApis(java.util.Collection<String> dataTransferApis) {
+        if (dataTransferApis == null) {
+            this.dataTransferApis = null;
+            return;
+        }
+
+        this.dataTransferApis = new java.util.ArrayList<String>(dataTransferApis);
+    }
+
+    /**
+     * <p>
+     * The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataTransferApis(java.util.Collection)} or {@link #withDataTransferApis(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param dataTransferApis
+     *        The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from
+     *        Salesforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SalesforceDataTransferApi
+     */
+
+    public SalesforceMetadata withDataTransferApis(String... dataTransferApis) {
+        if (this.dataTransferApis == null) {
+            setDataTransferApis(new java.util.ArrayList<String>(dataTransferApis.length));
+        }
+        for (String ele : dataTransferApis) {
+            this.dataTransferApis.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.
+     * </p>
+     * 
+     * @param dataTransferApis
+     *        The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from
+     *        Salesforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SalesforceDataTransferApi
+     */
+
+    public SalesforceMetadata withDataTransferApis(java.util.Collection<String> dataTransferApis) {
+        setDataTransferApis(dataTransferApis);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.
+     * </p>
+     * 
+     * @param dataTransferApis
+     *        The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from
+     *        Salesforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SalesforceDataTransferApi
+     */
+
+    public SalesforceMetadata withDataTransferApis(SalesforceDataTransferApi... dataTransferApis) {
+        java.util.ArrayList<String> dataTransferApisCopy = new java.util.ArrayList<String>(dataTransferApis.length);
+        for (SalesforceDataTransferApi value : dataTransferApis) {
+            dataTransferApisCopy.add(value.toString());
+        }
+        if (getDataTransferApis() == null) {
+            setDataTransferApis(dataTransferApisCopy);
+        } else {
+            getDataTransferApis().addAll(dataTransferApisCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +227,9 @@ public class SalesforceMetadata implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOAuthScopes() != null)
-            sb.append("OAuthScopes: ").append(getOAuthScopes());
+            sb.append("OAuthScopes: ").append(getOAuthScopes()).append(",");
+        if (getDataTransferApis() != null)
+            sb.append("DataTransferApis: ").append(getDataTransferApis());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +248,10 @@ public class SalesforceMetadata implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getOAuthScopes() != null && other.getOAuthScopes().equals(this.getOAuthScopes()) == false)
             return false;
+        if (other.getDataTransferApis() == null ^ this.getDataTransferApis() == null)
+            return false;
+        if (other.getDataTransferApis() != null && other.getDataTransferApis().equals(this.getDataTransferApis()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +261,7 @@ public class SalesforceMetadata implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getOAuthScopes() == null) ? 0 : getOAuthScopes().hashCode());
+        hashCode = prime * hashCode + ((getDataTransferApis() == null) ? 0 : getDataTransferApis().hashCode());
         return hashCode;
     }
 

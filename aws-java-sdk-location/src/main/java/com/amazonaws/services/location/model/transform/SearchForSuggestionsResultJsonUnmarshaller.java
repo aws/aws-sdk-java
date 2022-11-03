@@ -48,6 +48,10 @@ public class SearchForSuggestionsResultJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("PlaceId", targetDepth)) {
+                    context.nextToken();
+                    searchForSuggestionsResult.setPlaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Text", targetDepth)) {
                     context.nextToken();
                     searchForSuggestionsResult.setText(context.getUnmarshaller(String.class).unmarshall(context));

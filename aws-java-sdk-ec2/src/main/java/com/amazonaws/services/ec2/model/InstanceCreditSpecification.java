@@ -34,8 +34,10 @@ public class InstanceCreditSpecification implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      */
     private String cpuCredits;
@@ -82,13 +84,16 @@ public class InstanceCreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>.
+     *        The credit option for CPU usage of the instance.</p>
+     *        <p>
+     *        Valid values: <code>standard</code> | <code>unlimited</code>
      */
 
     public void setCpuCredits(String cpuCredits) {
@@ -97,12 +102,15 @@ public class InstanceCreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * 
-     * @return The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     *         <code>unlimited</code>.
+     * @return The credit option for CPU usage of the instance.</p>
+     *         <p>
+     *         Valid values: <code>standard</code> | <code>unlimited</code>
      */
 
     public String getCpuCredits() {
@@ -111,13 +119,16 @@ public class InstanceCreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>.
+     * The credit option for CPU usage of the instance.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code> | <code>unlimited</code>
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>.
+     *        The credit option for CPU usage of the instance.</p>
+     *        <p>
+     *        Valid values: <code>standard</code> | <code>unlimited</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

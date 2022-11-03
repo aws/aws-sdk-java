@@ -108,6 +108,19 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVpcIngressConnectionResult> createVpcIngressConnectionAsync(CreateVpcIngressConnectionRequest request) {
+
+        return createVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcIngressConnectionResult> createVpcIngressConnectionAsync(CreateVpcIngressConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcIngressConnectionRequest, CreateVpcIngressConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAutoScalingConfigurationResult> deleteAutoScalingConfigurationAsync(DeleteAutoScalingConfigurationRequest request) {
 
         return deleteAutoScalingConfigurationAsync(request, null);
@@ -170,6 +183,19 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     @Override
     public java.util.concurrent.Future<DeleteVpcConnectorResult> deleteVpcConnectorAsync(DeleteVpcConnectorRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVpcConnectorRequest, DeleteVpcConnectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcIngressConnectionResult> deleteVpcIngressConnectionAsync(DeleteVpcIngressConnectionRequest request) {
+
+        return deleteVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcIngressConnectionResult> deleteVpcIngressConnectionAsync(DeleteVpcIngressConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcIngressConnectionRequest, DeleteVpcIngressConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -239,6 +265,19 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     @Override
     public java.util.concurrent.Future<DescribeVpcConnectorResult> describeVpcConnectorAsync(DescribeVpcConnectorRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeVpcConnectorRequest, DescribeVpcConnectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcIngressConnectionResult> describeVpcIngressConnectionAsync(DescribeVpcIngressConnectionRequest request) {
+
+        return describeVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcIngressConnectionResult> describeVpcIngressConnectionAsync(DescribeVpcIngressConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcIngressConnectionRequest, DescribeVpcIngressConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -350,6 +389,19 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListVpcIngressConnectionsResult> listVpcIngressConnectionsAsync(ListVpcIngressConnectionsRequest request) {
+
+        return listVpcIngressConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcIngressConnectionsResult> listVpcIngressConnectionsAsync(ListVpcIngressConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVpcIngressConnectionsRequest, ListVpcIngressConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PauseServiceResult> pauseServiceAsync(PauseServiceRequest request) {
 
         return pauseServiceAsync(request, null);
@@ -423,6 +475,19 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     @Override
     public java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcIngressConnectionResult> updateVpcIngressConnectionAsync(UpdateVpcIngressConnectionRequest request) {
+
+        return updateVpcIngressConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcIngressConnectionResult> updateVpcIngressConnectionAsync(UpdateVpcIngressConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVpcIngressConnectionRequest, UpdateVpcIngressConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

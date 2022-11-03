@@ -35,6 +35,8 @@ public class UpdateDataSourceRequestMarshaller {
             .marshallLocationName("IndexId").build();
     private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfiguration").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -66,6 +68,7 @@ public class UpdateDataSourceRequestMarshaller {
             protocolMarshaller.marshall(updateDataSourceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getIndexId(), INDEXID_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateDataSourceRequest.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getRoleArn(), ROLEARN_BINDING);

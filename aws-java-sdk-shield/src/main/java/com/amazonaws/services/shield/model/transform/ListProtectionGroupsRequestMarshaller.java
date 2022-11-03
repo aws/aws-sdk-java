@@ -31,6 +31,8 @@ public class ListProtectionGroupsRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<StructuredPojo> INCLUSIONFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InclusionFilters").build();
 
     private static final ListProtectionGroupsRequestMarshaller instance = new ListProtectionGroupsRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class ListProtectionGroupsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listProtectionGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listProtectionGroupsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listProtectionGroupsRequest.getInclusionFilters(), INCLUSIONFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

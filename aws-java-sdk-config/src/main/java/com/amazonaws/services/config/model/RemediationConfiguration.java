@@ -112,7 +112,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
     private String arn;
     /**
      * <p>
-     * Name of the service that owns the service linked rule, if applicable.
+     * Name of the service that owns the service-linked rule, if applicable.
      * </p>
      */
     private String createdByService;
@@ -702,11 +702,11 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the service that owns the service linked rule, if applicable.
+     * Name of the service that owns the service-linked rule, if applicable.
      * </p>
      * 
      * @param createdByService
-     *        Name of the service that owns the service linked rule, if applicable.
+     *        Name of the service that owns the service-linked rule, if applicable.
      */
 
     public void setCreatedByService(String createdByService) {
@@ -715,10 +715,10 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the service that owns the service linked rule, if applicable.
+     * Name of the service that owns the service-linked rule, if applicable.
      * </p>
      * 
-     * @return Name of the service that owns the service linked rule, if applicable.
+     * @return Name of the service that owns the service-linked rule, if applicable.
      */
 
     public String getCreatedByService() {
@@ -727,11 +727,11 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the service that owns the service linked rule, if applicable.
+     * Name of the service that owns the service-linked rule, if applicable.
      * </p>
      * 
      * @param createdByService
-     *        Name of the service that owns the service linked rule, if applicable.
+     *        Name of the service that owns the service-linked rule, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GatewayRouteTargetMarshaller {
 
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("port").build();
     private static final MarshallingInfo<StructuredPojo> VIRTUALSERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualService").build();
 
@@ -46,6 +48,7 @@ public class GatewayRouteTargetMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(gatewayRouteTarget.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(gatewayRouteTarget.getVirtualService(), VIRTUALSERVICE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to generate a <a>ClientCertificate</a> resource.
+ * A request to generate a ClientCertificate resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the <a>ClientCertificate</a>.
+     * The description of the ClientCertificate.
      * </p>
      */
     private String description;
@@ -41,11 +41,11 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the <a>ClientCertificate</a>.
+     * The description of the ClientCertificate.
      * </p>
      * 
      * @param description
-     *        The description of the <a>ClientCertificate</a>.
+     *        The description of the ClientCertificate.
      */
 
     public void setDescription(String description) {
@@ -54,10 +54,10 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the <a>ClientCertificate</a>.
+     * The description of the ClientCertificate.
      * </p>
      * 
-     * @return The description of the <a>ClientCertificate</a>.
+     * @return The description of the ClientCertificate.
      */
 
     public String getDescription() {
@@ -66,11 +66,11 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The description of the <a>ClientCertificate</a>.
+     * The description of the ClientCertificate.
      * </p>
      * 
      * @param description
-     *        The description of the <a>ClientCertificate</a>.
+     *        The description of the ClientCertificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

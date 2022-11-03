@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
+ * Settings for quality-defined variable bitrate encoding with the H.264 codec. Use these settings only when you set
  * QVBR for Rate control mode (RateControlMode).
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/H264QvbrSettings" target="_top">AWS API

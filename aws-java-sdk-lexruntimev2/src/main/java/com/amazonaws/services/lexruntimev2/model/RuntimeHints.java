@@ -27,8 +27,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Before you can use runtime hints with an existing bot, you must first rebuild the bot.
  * </p>
  * <p>
- * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to
- * improve accuracy</a>.
+ * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints
+ * to improve recognition of slot values</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RuntimeHints" target="_top">AWS API
@@ -45,7 +45,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the
      * slot within the intent. For more information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      * </p>
      * <p>
      * The intent name and slot name must exist.
@@ -61,7 +61,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the
      * slot within the intent. For more information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      * </p>
      * <p>
      * The intent name and slot name must exist.
@@ -72,7 +72,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name
      *         of the slot within the intent. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      *         </p>
      *         <p>
      *         The intent name and slot name must exist.
@@ -90,7 +90,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the
      * slot within the intent. For more information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      * </p>
      * <p>
      * The intent name and slot name must exist.
@@ -102,7 +102,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name
      *        of the slot within the intent. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      *        </p>
      *        <p>
      *        The intent name and slot name must exist.
@@ -120,7 +120,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the
      * slot within the intent. For more information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      * </p>
      * <p>
      * The intent name and slot name must exist.
@@ -132,7 +132,7 @@ public class RuntimeHints implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name
      *        of the slot within the intent. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.
      *        </p>
      *        <p>
      *        The intent name and slot name must exist.

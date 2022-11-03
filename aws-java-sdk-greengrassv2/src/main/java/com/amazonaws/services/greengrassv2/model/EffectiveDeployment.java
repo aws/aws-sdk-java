@@ -90,6 +90,13 @@ public class EffectiveDeployment implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Date modifiedTimestamp;
+    /**
+     * <p>
+     * The status details that explain why a deployment has an error. This response will be null if the deployment is in
+     * a success state.
+     * </p>
+     */
+    private EffectiveDeploymentStatusDetails statusDetails;
 
     /**
      * <p>
@@ -523,6 +530,52 @@ public class EffectiveDeployment implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The status details that explain why a deployment has an error. This response will be null if the deployment is in
+     * a success state.
+     * </p>
+     * 
+     * @param statusDetails
+     *        The status details that explain why a deployment has an error. This response will be null if the
+     *        deployment is in a success state.
+     */
+
+    public void setStatusDetails(EffectiveDeploymentStatusDetails statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * The status details that explain why a deployment has an error. This response will be null if the deployment is in
+     * a success state.
+     * </p>
+     * 
+     * @return The status details that explain why a deployment has an error. This response will be null if the
+     *         deployment is in a success state.
+     */
+
+    public EffectiveDeploymentStatusDetails getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * The status details that explain why a deployment has an error. This response will be null if the deployment is in
+     * a success state.
+     * </p>
+     * 
+     * @param statusDetails
+     *        The status details that explain why a deployment has an error. This response will be null if the
+     *        deployment is in a success state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EffectiveDeployment withStatusDetails(EffectiveDeploymentStatusDetails statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -553,7 +606,9 @@ public class EffectiveDeployment implements Serializable, Cloneable, StructuredP
         if (getCreationTimestamp() != null)
             sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getModifiedTimestamp() != null)
-            sb.append("ModifiedTimestamp: ").append(getModifiedTimestamp());
+            sb.append("ModifiedTimestamp: ").append(getModifiedTimestamp()).append(",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: ").append(getStatusDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -608,6 +663,10 @@ public class EffectiveDeployment implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getModifiedTimestamp() != null && other.getModifiedTimestamp().equals(this.getModifiedTimestamp()) == false)
             return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
         return true;
     }
 
@@ -626,6 +685,7 @@ public class EffectiveDeployment implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getModifiedTimestamp() == null) ? 0 : getModifiedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
         return hashCode;
     }
 

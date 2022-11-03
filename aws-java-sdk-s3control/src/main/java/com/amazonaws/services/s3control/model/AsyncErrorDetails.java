@@ -34,7 +34,7 @@ public class AsyncErrorDetails implements Serializable, Cloneable {
     private String code;
     /**
      * <p>
-     * A generic descritpion of the error condition in English.
+     * A generic description of the error condition in English.
      * </p>
      */
     private String message;
@@ -93,11 +93,11 @@ public class AsyncErrorDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A generic descritpion of the error condition in English.
+     * A generic description of the error condition in English.
      * </p>
      * 
      * @param message
-     *        A generic descritpion of the error condition in English.
+     *        A generic description of the error condition in English.
      */
 
     public void setMessage(String message) {
@@ -106,10 +106,10 @@ public class AsyncErrorDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A generic descritpion of the error condition in English.
+     * A generic description of the error condition in English.
      * </p>
      * 
-     * @return A generic descritpion of the error condition in English.
+     * @return A generic description of the error condition in English.
      */
 
     public String getMessage() {
@@ -118,11 +118,11 @@ public class AsyncErrorDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A generic descritpion of the error condition in English.
+     * A generic description of the error condition in English.
      * </p>
      * 
      * @param message
-     *        A generic descritpion of the error condition in English.
+     *        A generic description of the error condition in English.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

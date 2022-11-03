@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum HttpVersion {
 
     Http11("http1.1"),
-    Http2("http2");
+    Http2("http2"),
+    Http3("http3"),
+    Http2and3("http2and3");
 
     private String value;
 

@@ -48,6 +48,11 @@ public class PeeringTgwInfoStaxUnmarshaller implements Unmarshaller<PeeringTgwIn
                     continue;
                 }
 
+                if (context.testExpression("coreNetworkId", targetDepth)) {
+                    peeringTgwInfo.setCoreNetworkId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ownerId", targetDepth)) {
                     peeringTgwInfo.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

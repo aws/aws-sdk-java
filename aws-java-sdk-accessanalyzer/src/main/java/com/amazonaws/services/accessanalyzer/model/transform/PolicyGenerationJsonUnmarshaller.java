@@ -48,10 +48,6 @@ public class PolicyGenerationJsonUnmarshaller implements Unmarshaller<PolicyGene
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completedOn", targetDepth)) {
-                    context.nextToken();
-                    policyGeneration.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("jobId", targetDepth)) {
                     context.nextToken();
                     policyGeneration.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -60,13 +56,17 @@ public class PolicyGenerationJsonUnmarshaller implements Unmarshaller<PolicyGene
                     context.nextToken();
                     policyGeneration.setPrincipalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    policyGeneration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("startedOn", targetDepth)) {
                     context.nextToken();
                     policyGeneration.setStartedOn(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("completedOn", targetDepth)) {
                     context.nextToken();
-                    policyGeneration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    policyGeneration.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

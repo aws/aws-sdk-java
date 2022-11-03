@@ -31,7 +31,7 @@ public class ConfluenceAttachmentConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      * </p>
      */
     private Boolean crawlAttachments;
@@ -50,11 +50,11 @@ public class ConfluenceAttachmentConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      * </p>
      * 
      * @param crawlAttachments
-     *        Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     *        <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      */
 
     public void setCrawlAttachments(Boolean crawlAttachments) {
@@ -63,10 +63,10 @@ public class ConfluenceAttachmentConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      * </p>
      * 
-     * @return Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * @return <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      */
 
     public Boolean getCrawlAttachments() {
@@ -75,11 +75,11 @@ public class ConfluenceAttachmentConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      * </p>
      * 
      * @param crawlAttachments
-     *        Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     *        <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,10 +90,10 @@ public class ConfluenceAttachmentConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      * </p>
      * 
-     * @return Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source.
+     * @return <code>TRUE</code> to index attachments of pages and blogs in Confluence.
      */
 
     public Boolean isCrawlAttachments() {

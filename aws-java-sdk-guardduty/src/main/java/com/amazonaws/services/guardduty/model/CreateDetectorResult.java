@@ -29,6 +29,12 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String detectorId;
+    /**
+     * <p>
+     * Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     * </p>
+     */
+    private UnprocessedDataSourcesResult unprocessedDataSources;
 
     /**
      * <p>
@@ -71,6 +77,46 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     * </p>
+     * 
+     * @param unprocessedDataSources
+     *        Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     */
+
+    public void setUnprocessedDataSources(UnprocessedDataSourcesResult unprocessedDataSources) {
+        this.unprocessedDataSources = unprocessedDataSources;
+    }
+
+    /**
+     * <p>
+     * Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     * </p>
+     * 
+     * @return Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     */
+
+    public UnprocessedDataSourcesResult getUnprocessedDataSources() {
+        return this.unprocessedDataSources;
+    }
+
+    /**
+     * <p>
+     * Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     * </p>
+     * 
+     * @param unprocessedDataSources
+     *        Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorResult withUnprocessedDataSources(UnprocessedDataSourcesResult unprocessedDataSources) {
+        setUnprocessedDataSources(unprocessedDataSources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +129,9 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDetectorId() != null)
-            sb.append("DetectorId: ").append(getDetectorId());
+            sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getUnprocessedDataSources() != null)
+            sb.append("UnprocessedDataSources: ").append(getUnprocessedDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +150,10 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
             return false;
+        if (other.getUnprocessedDataSources() == null ^ this.getUnprocessedDataSources() == null)
+            return false;
+        if (other.getUnprocessedDataSources() != null && other.getUnprocessedDataSources().equals(this.getUnprocessedDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +163,7 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getUnprocessedDataSources() == null) ? 0 : getUnprocessedDataSources().hashCode());
         return hashCode;
     }
 

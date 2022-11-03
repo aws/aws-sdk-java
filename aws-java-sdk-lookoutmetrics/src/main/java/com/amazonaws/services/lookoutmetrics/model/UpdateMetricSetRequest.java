@@ -46,7 +46,7 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      */
     private Integer offset;
@@ -70,6 +70,14 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     private String metricSetFrequency;
 
     private MetricSource metricSource;
+    /**
+     * <p>
+     * Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the
+     * dimension and one of its values that you want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * </p>
+     */
+    private java.util.List<MetricSetDimensionFilter> dimensionFilterList;
 
     /**
      * <p>
@@ -224,12 +232,12 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      * 
      * @param offset
      *        After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
-     *        only supported for S3 and Redshift datasources.
+     *        only supported for S3, Redshift, Athena and datasources.
      */
 
     public void setOffset(Integer offset) {
@@ -239,11 +247,11 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      * 
      * @return After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
-     *         only supported for S3 and Redshift datasources.
+     *         only supported for S3, Redshift, Athena and datasources.
      */
 
     public Integer getOffset() {
@@ -253,12 +261,12 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
-     * supported for S3 and Redshift datasources.
+     * supported for S3, Redshift, Athena and datasources.
      * </p>
      * 
      * @param offset
      *        After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
-     *        only supported for S3 and Redshift datasources.
+     *        only supported for S3, Redshift, Athena and datasources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,6 +471,93 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the
+     * dimension and one of its values that you want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * </p>
+     * 
+     * @return Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of
+     *         the dimension and one of its values that you want to include. When multiple dimensions or values are
+     *         specified, the dimensions are joined with an AND operation and the values are joined with an OR
+     *         operation.
+     */
+
+    public java.util.List<MetricSetDimensionFilter> getDimensionFilterList() {
+        return dimensionFilterList;
+    }
+
+    /**
+     * <p>
+     * Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the
+     * dimension and one of its values that you want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * </p>
+     * 
+     * @param dimensionFilterList
+     *        Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of
+     *        the dimension and one of its values that you want to include. When multiple dimensions or values are
+     *        specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.
+     */
+
+    public void setDimensionFilterList(java.util.Collection<MetricSetDimensionFilter> dimensionFilterList) {
+        if (dimensionFilterList == null) {
+            this.dimensionFilterList = null;
+            return;
+        }
+
+        this.dimensionFilterList = new java.util.ArrayList<MetricSetDimensionFilter>(dimensionFilterList);
+    }
+
+    /**
+     * <p>
+     * Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the
+     * dimension and one of its values that you want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDimensionFilterList(java.util.Collection)} or {@link #withDimensionFilterList(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param dimensionFilterList
+     *        Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of
+     *        the dimension and one of its values that you want to include. When multiple dimensions or values are
+     *        specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMetricSetRequest withDimensionFilterList(MetricSetDimensionFilter... dimensionFilterList) {
+        if (this.dimensionFilterList == null) {
+            setDimensionFilterList(new java.util.ArrayList<MetricSetDimensionFilter>(dimensionFilterList.length));
+        }
+        for (MetricSetDimensionFilter ele : dimensionFilterList) {
+            this.dimensionFilterList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the
+     * dimension and one of its values that you want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * </p>
+     * 
+     * @param dimensionFilterList
+     *        Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of
+     *        the dimension and one of its values that you want to include. When multiple dimensions or values are
+     *        specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMetricSetRequest withDimensionFilterList(java.util.Collection<MetricSetDimensionFilter> dimensionFilterList) {
+        setDimensionFilterList(dimensionFilterList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -489,7 +584,9 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
         if (getMetricSetFrequency() != null)
             sb.append("MetricSetFrequency: ").append(getMetricSetFrequency()).append(",");
         if (getMetricSource() != null)
-            sb.append("MetricSource: ").append(getMetricSource());
+            sb.append("MetricSource: ").append(getMetricSource()).append(",");
+        if (getDimensionFilterList() != null)
+            sb.append("DimensionFilterList: ").append(getDimensionFilterList());
         sb.append("}");
         return sb.toString();
     }
@@ -536,6 +633,10 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getMetricSource() != null && other.getMetricSource().equals(this.getMetricSource()) == false)
             return false;
+        if (other.getDimensionFilterList() == null ^ this.getDimensionFilterList() == null)
+            return false;
+        if (other.getDimensionFilterList() != null && other.getDimensionFilterList().equals(this.getDimensionFilterList()) == false)
+            return false;
         return true;
     }
 
@@ -552,6 +653,7 @@ public class UpdateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDimensionList() == null) ? 0 : getDimensionList().hashCode());
         hashCode = prime * hashCode + ((getMetricSetFrequency() == null) ? 0 : getMetricSetFrequency().hashCode());
         hashCode = prime * hashCode + ((getMetricSource() == null) ? 0 : getMetricSource().hashCode());
+        hashCode = prime * hashCode + ((getDimensionFilterList() == null) ? 0 : getDimensionFilterList().hashCode());
         return hashCode;
     }
 

@@ -64,130 +64,364 @@ import com.amazonaws.services.rekognition.model.transform.*;
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CompareFaces.html">CompareFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateCollection.html">CreateCollection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteCollection.html">DeleteCollection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteFaces.html">DeleteFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeCollection.html">DescribeCollection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectFaces.html">DetectFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectLabels.html">DetectLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectModerationLabels.html">
+ * DetectModerationLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectProtectiveEquipment.html">
+ * DetectProtectiveEquipment</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectText.html">DetectText</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html">ListCollections</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_RecognizeCelebrities.html">
+ * RecognizeCelebrities</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFaces.html">SearchFaces</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Amazon Rekognition Custom Labels</b>
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html">CreateDataset</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProject.html">CreateProject</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProjectVersion.html">
+ * CreateProjectVersion</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteDataset.html">DeleteDataset</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html">DeleteProject</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html">DeleteProjectPolicy
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectVersion.html">
+ * DeleteProjectVersion</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeDataset.html">DescribeDataset</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeProjects.html">DescribeProjects</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeProjectVersions.html">
+ * DescribeProjectVersions</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectCustomLabels.html">DetectCustomLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DistributeDatasetEntries.html">
+ * DistributeDatasetEntries</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetEntries.html">ListDatasetEntries</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html">ListDatasetLabels</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html">ListProjectPolicies
+ * </a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html">PutProjectPolicy</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartProjectVersion.html">StartProjectVersion
+ * </a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopProjectVersion.html">StopProjectVersion</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateDatasetEntries.html">
+ * UpdateDatasetEntries</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Amazon Rekognition Video Stored Video</b>
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityRecognition.html">
+ * GetCelebrityRecognition</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html">
+ * GetContentModeration</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceDetection.html">GetFaceDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceSearch.html">GetFaceSearch</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetLabelDetection.html">GetLabelDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetPersonTracking.html">GetPersonTracking</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetSegmentDetection.html">GetSegmentDetection
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetTextDetection.html">GetTextDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartCelebrityRecognition.html">
+ * StartCelebrityRecognition</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html">
+ * StartContentModeration</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartFaceDetection.html">StartFaceDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartFaceSearch.html">StartFaceSearch</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartLabelDetection.html">StartLabelDetection
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartPersonTracking.html">StartPersonTracking
+ * </a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartSegmentDetection.html">
+ * StartSegmentDetection</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartTextDetection.html">StartTextDetection</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Amazon Rekognition Video Streaming Video</b>
  * </p>
  * <ul>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateStreamProcessor.html">
+ * CreateStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteStreamProcessor.html">
+ * DeleteStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeStreamProcessor.html">
+ * DescribeStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListStreamProcessors.html">
+ * ListStreamProcessors</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartStreamProcessor.html">
+ * StartStreamProcessor</a>
+ * </p>
+ * </li>
  * <li>
- * <p/></li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html">StopStreamProcessor
+ * </a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">
+ * UpdateStreamProcessor</a>
+ * </p>
+ * </li>
  * </ul>
  */
 @ThreadSafe
@@ -215,8 +449,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.MalformedPolicyDocumentExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyRevisionIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.InvalidPolicyRevisionIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
@@ -607,6 +847,108 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The
+     * source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't
+     * copy a model to another AWS service.
+     * </p>
+     * <p>
+     * To copy a model version to a different AWS account, you need to create a resource-based policy known as a
+     * <i>project policy</i>. You attach the project policy to the source project by calling <a>PutProjectPolicy</a>.
+     * The project policy gives permission to copy the model version from a trusting AWS account to a trusted account.
+     * </p>
+     * <p>
+     * For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the
+     * <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you are copying a model version to a project in the same AWS account, you don't need to create a project
+     * policy.
+     * </p>
+     * <note>
+     * <p>
+     * To copy a model, the destination project, source project, and source model version must already exist.
+     * </p>
+     * </note>
+     * <p>
+     * Copying a model version takes a while to complete. To get the current status, call <a>DescribeProjectVersions</a>
+     * and check the value of <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy operation has
+     * finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.
+     * </p>
+     * 
+     * @param copyProjectVersionRequest
+     * @return Result of the CopyProjectVersion operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceInUseException
+     *         The specified resource is already being used.
+     * @sample AmazonRekognition.CopyProjectVersion
+     */
+    @Override
+    public CopyProjectVersionResult copyProjectVersion(CopyProjectVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyProjectVersion(request);
+    }
+
+    @SdkInternalApi
+    final CopyProjectVersionResult executeCopyProjectVersion(CopyProjectVersionRequest copyProjectVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyProjectVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyProjectVersionRequest> request = null;
+        Response<CopyProjectVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyProjectVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyProjectVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyProjectVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CopyProjectVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyProjectVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a collection in an AWS Region. You can add faces to the collection using the <a>IndexFaces</a> operation.
      * </p>
      * <p>
@@ -881,7 +1223,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <note>
      * <p>
-     * You can train a modelin a project that doesn't have associated datasets by specifying manifest files in the
+     * You can train a model in a project that doesn't have associated datasets by specifying manifest files in the
      * <code>TrainingData</code> and <code>TestingData</code> fields.
      * </p>
      * <p>
@@ -1329,7 +1671,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call
-     * <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the response.
+     * <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the response. Be aware that
+     * deleting a given project will also delete any <code>ProjectPolicies</code> associated with that project.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -1388,6 +1731,78 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an existing project policy.
+     * </p>
+     * <p>
+     * To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>. To attach a project
+     * policy to a project, call <a>PutProjectPolicy</a>.
+     * </p>
+     * 
+     * @param deleteProjectPolicyRequest
+     * @return Result of the DeleteProjectPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidPolicyRevisionIdException
+     *         The supplied revision id for the project policy is invalid.
+     * @sample AmazonRekognition.DeleteProjectPolicy
+     */
+    @Override
+    public DeleteProjectPolicyResult deleteProjectPolicy(DeleteProjectPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProjectPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProjectPolicyResult executeDeleteProjectPolicy(DeleteProjectPolicyRequest deleteProjectPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProjectPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProjectPolicyRequest> request = null;
+        Response<DeleteProjectPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProjectPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProjectPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProjectPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProjectPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4084,6 +4499,78 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets a list of the project policies attached to a project.
+     * </p>
+     * <p>
+     * To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a project policy from a project,
+     * call <a>DeleteProjectPolicy</a>.
+     * </p>
+     * 
+     * @param listProjectPoliciesRequest
+     * @return Result of the ListProjectPolicies operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @sample AmazonRekognition.ListProjectPolicies
+     */
+    @Override
+    public ListProjectPoliciesResult listProjectPolicies(ListProjectPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProjectPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListProjectPoliciesResult executeListProjectPolicies(ListProjectPoliciesRequest listProjectPoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProjectPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProjectPoliciesRequest> request = null;
+        Response<ListProjectPoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProjectPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjectPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProjectPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProjectPoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>.
      * </p>
      * 
@@ -4207,6 +4694,106 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project
+     * policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in
+     * the trusted AWS account. To copy a model version you use the <a>CopyProjectVersion</a> operation.
+     * </p>
+     * <p>
+     * For more information about the format of a project policy document, see Attaching a project policy (SDK) in the
+     * <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * </p>
+     * <p>
+     * The response from <code>PutProjectPolicy</code> is a revision ID for the project policy. You can attach multiple
+     * project policies to a project. You can also update an existing project policy by specifying the policy revision
+     * ID of the existing policy.
+     * </p>
+     * <p>
+     * To remove a project policy from a project, call <a>DeleteProjectPolicy</a>. To get a list of project policies
+     * attached to a project, call <a>ListProjectPolicies</a>.
+     * </p>
+     * <p>
+     * You copy a model version by calling <a>CopyProjectVersion</a>.
+     * </p>
+     * 
+     * @param putProjectPolicyRequest
+     * @return Result of the PutProjectPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPolicyRevisionIdException
+     *         The supplied revision id for the project policy is invalid.
+     * @throws MalformedPolicyDocumentException
+     *         The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is
+     *         incorrect.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ResourceAlreadyExistsException
+     *         A resource with the specified ID already exists.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @sample AmazonRekognition.PutProjectPolicy
+     */
+    @Override
+    public PutProjectPolicyResult putProjectPolicy(PutProjectPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutProjectPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutProjectPolicyResult executePutProjectPolicy(PutProjectPolicyRequest putProjectPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putProjectPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutProjectPolicyRequest> request = null;
+        Response<PutProjectPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutProjectPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putProjectPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutProjectPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutProjectPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutProjectPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5090,6 +5677,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <a>StopProjectVersion</a>.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon
+     * Rekognition Custom Labels Guide.
+     * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
      * </p>

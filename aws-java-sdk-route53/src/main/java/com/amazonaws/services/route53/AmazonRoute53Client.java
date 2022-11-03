@@ -290,6 +290,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                     new TooManyTrafficPolicyVersionsForCurrentPolicyExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new TooManyTrafficPolicyVersionsForCurrentPolicyExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("NoSuchCidrLocationException") == null) {
+            exceptionUnmarshallersMap.put("NoSuchCidrLocationException", new NoSuchCidrLocationExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new NoSuchCidrLocationExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("IncompatibleVersion") == null) {
             exceptionUnmarshallersMap.put("IncompatibleVersion", new IncompatibleVersionExceptionUnmarshaller());
         }
@@ -342,6 +346,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("KeySigningKeyWithActiveStatusNotFound", new KeySigningKeyWithActiveStatusNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new KeySigningKeyWithActiveStatusNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("CidrCollectionInUseException") == null) {
+            exceptionUnmarshallersMap.put("CidrCollectionInUseException", new CidrCollectionInUseExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new CidrCollectionInUseExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InsufficientCloudWatchLogsResourcePolicy") == null) {
             exceptionUnmarshallersMap.put("InsufficientCloudWatchLogsResourcePolicy", new InsufficientCloudWatchLogsResourcePolicyExceptionUnmarshaller());
         }
@@ -366,10 +374,18 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("NotAuthorizedException", new NotAuthorizedExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new NotAuthorizedExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("CidrBlockInUseException") == null) {
+            exceptionUnmarshallersMap.put("CidrBlockInUseException", new CidrBlockInUseExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new CidrBlockInUseExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyTrafficPolicyInstances") == null) {
             exceptionUnmarshallersMap.put("TooManyTrafficPolicyInstances", new TooManyTrafficPolicyInstancesExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new TooManyTrafficPolicyInstancesExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("CidrCollectionVersionMismatchException") == null) {
+            exceptionUnmarshallersMap.put("CidrCollectionVersionMismatchException", new CidrCollectionVersionMismatchExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new CidrCollectionVersionMismatchExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidPaginationToken") == null) {
             exceptionUnmarshallersMap.put("InvalidPaginationToken", new InvalidPaginationTokenExceptionUnmarshaller());
         }
@@ -498,6 +514,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("ConflictingDomainExists", new ConflictingDomainExistsExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new ConflictingDomainExistsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("CidrCollectionAlreadyExistsException") == null) {
+            exceptionUnmarshallersMap.put("CidrCollectionAlreadyExistsException", new CidrCollectionAlreadyExistsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new CidrCollectionAlreadyExistsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidSigningStatus") == null) {
             exceptionUnmarshallersMap.put("InvalidSigningStatus", new InvalidSigningStatusExceptionUnmarshaller());
         }
@@ -530,6 +550,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             exceptionUnmarshallersMap.put("LimitsExceeded", new LimitsExceededExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("NoSuchCidrCollectionException") == null) {
+            exceptionUnmarshallersMap.put("NoSuchCidrCollectionException", new NoSuchCidrCollectionExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new NoSuchCidrCollectionExceptionUnmarshaller());
         defaultUnmarshaller = new StandardErrorUnmarshaller(com.amazonaws.services.route53.model.AmazonRoute53Exception.class);
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.route53.model.AmazonRoute53Exception.class));
 
@@ -704,17 +728,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         </p>
      *         </li>
      * @throws LimitsExceededException
-     *         This operation can't be completed either because the current account has reached the limit on reusable
-     *         delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that
-     *         you can associate with a private hosted zone. To get the current limit on the number of reusable
-     *         delegation sets, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html"
-     *         >GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a
-     *         private hosted zone, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
-     *         >GetHostedZoneLimit</a>. To request a higher limit, <a
-     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
-     *         Center.
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
      * @throws PriorRequestNotCompleteException
      *         If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent
      *         requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>).
@@ -758,6 +774,108 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
             StaxResponseHandler<AssociateVPCWithHostedZoneResult> responseHandler = new StaxResponseHandler<AssociateVPCWithHostedZoneResult>(
                     new AssociateVPCWithHostedZoneResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping
+     * blocks to one or multiple locations.
+     * </p>
+     * <p>
+     * A change request can update multiple locations in a collection at a time, which is helpful if you want to move
+     * one or more CIDR blocks from one location to another in one transaction, without downtime.
+     * </p>
+     * <p>
+     * <b>Limits</b>
+     * </p>
+     * <p>
+     * The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API
+     * calls.
+     * </p>
+     * <p>
+     * <b> PUT and DELETE_IF_EXISTS</b>
+     * </p>
+     * <p>
+     * Use <code>ChangeCidrCollection</code> to perform the following actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUT</code>: Create a CIDR block within the specified collection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeCidrCollectionRequest
+     * @return Result of the ChangeCidrCollection operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws CidrCollectionVersionMismatchException
+     *         The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+     *         operation.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws CidrBlockInUseException
+     *         This CIDR block is already in use.
+     * @throws LimitsExceededException
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.ChangeCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ChangeCidrCollectionResult changeCidrCollection(ChangeCidrCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeCidrCollection(request);
+    }
+
+    @SdkInternalApi
+    final ChangeCidrCollectionResult executeChangeCidrCollection(ChangeCidrCollectionRequest changeCidrCollectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(changeCidrCollectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ChangeCidrCollectionRequest> request = null;
+        Response<ChangeCidrCollectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ChangeCidrCollectionRequestMarshaller().marshall(super.beforeMarshalling(changeCidrCollectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeCidrCollection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ChangeCidrCollectionResult> responseHandler = new StaxResponseHandler<ChangeCidrCollectionResult>(
+                    new ChangeCidrCollectionResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1018,6 +1136,73 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Creates a CIDR collection in the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param createCidrCollectionRequest
+     * @return Result of the CreateCidrCollection operation returned by the service.
+     * @throws LimitsExceededException
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws CidrCollectionAlreadyExistsException
+     *         A CIDR collection with this name and a different caller reference already exists in this account.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.CreateCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateCidrCollectionResult createCidrCollection(CreateCidrCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCidrCollection(request);
+    }
+
+    @SdkInternalApi
+    final CreateCidrCollectionResult executeCreateCidrCollection(CreateCidrCollectionRequest createCidrCollectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCidrCollectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCidrCollectionRequest> request = null;
+        Response<CreateCidrCollectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCidrCollectionRequestMarshaller().marshall(super.beforeMarshalling(createCidrCollectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCidrCollection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateCidrCollectionResult> responseHandler = new StaxResponseHandler<CreateCidrCollectionResult>(
+                    new CreateCidrCollectionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new health check.
      * </p>
      * <p>
@@ -1171,7 +1356,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </important>
      * <p>
      * For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * <p>
      * Note the following:
@@ -1186,8 +1371,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone.
      * For more information about SOA and NS records, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route
-     * 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that
+     * Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * If you want to use the same name servers for multiple public hosted zones, you can optionally associate a
@@ -1196,17 +1381,17 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * <li>
      * <p>
-     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
+     * If your domain is registered with a registrar other than Route 53, you must update the name servers with your
      * registrar to make Route 53 the DNS service for the domain. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an
-     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is
      * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on
-     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
+     * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
      * <p>
@@ -1811,17 +1996,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws DelegationSetAlreadyCreatedException
      *         A delegation set with the same owner and caller reference combination has already been created.
      * @throws LimitsExceededException
-     *         This operation can't be completed either because the current account has reached the limit on reusable
-     *         delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that
-     *         you can associate with a private hosted zone. To get the current limit on the number of reusable
-     *         delegation sets, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html"
-     *         >GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a
-     *         private hosted zone, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
-     *         >GetHostedZoneLimit</a>. To request a higher limit, <a
-     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
-     *         Center.
+     *         This operation can't be completed because the current account has reached the limit on the resource you
+     *         are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
+     *         case</a> with the Amazon Web Services Support Center.
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
@@ -2294,6 +2471,72 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can
+     * be deleted.
+     * </p>
+     * 
+     * @param deleteCidrCollectionRequest
+     * @return Result of the DeleteCidrCollection operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws CidrCollectionInUseException
+     *         This CIDR collection is in use, and isn't empty.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.DeleteCidrCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCidrCollectionResult deleteCidrCollection(DeleteCidrCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCidrCollection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCidrCollectionResult executeDeleteCidrCollection(DeleteCidrCollectionRequest deleteCidrCollectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCidrCollectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCidrCollectionRequest> request = null;
+        Response<DeleteCidrCollectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCidrCollectionRequestMarshaller().marshall(super.beforeMarshalling(deleteCidrCollectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCidrCollection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteCidrCollectionResult> responseHandler = new StaxResponseHandler<DeleteCidrCollectionResult>(
+                    new DeleteCidrCollectionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a health check.
      * </p>
      * <important>
@@ -2378,7 +2621,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * If the hosted zone was created by another service, such as Cloud Map, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service"
-     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
+     * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
      * Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones
      * that were created by another service.)
      * </p>
@@ -2399,9 +2642,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a
      * free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration.
-     * If the domain is registered with Route 53, see <a
+     * If the domain is registered with Route 53, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html"
-     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
+     * >UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the
      * new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to
      * update name servers for the domain registration. For more information, perform an internet search on
      * "free DNS service."
@@ -2409,7 +2652,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the
      * hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If
-     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
+     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns
      * a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">
      * ChangeResourceRecordSets</a>.
@@ -4473,6 +4716,187 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount() {
         return getTrafficPolicyInstanceCount(new GetTrafficPolicyInstanceCountRequest());
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of location objects and their CIDR blocks.
+     * </p>
+     * 
+     * @param listCidrBlocksRequest
+     * @return Result of the ListCidrBlocks operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws NoSuchCidrLocationException
+     *         The CIDR collection location doesn't match any locations in your account.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.ListCidrBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCidrBlocksResult listCidrBlocks(ListCidrBlocksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCidrBlocks(request);
+    }
+
+    @SdkInternalApi
+    final ListCidrBlocksResult executeListCidrBlocks(ListCidrBlocksRequest listCidrBlocksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCidrBlocksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCidrBlocksRequest> request = null;
+        Response<ListCidrBlocksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCidrBlocksRequestMarshaller().marshall(super.beforeMarshalling(listCidrBlocksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCidrBlocks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListCidrBlocksResult> responseHandler = new StaxResponseHandler<ListCidrBlocksResult>(
+                    new ListCidrBlocksResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).
+     * </p>
+     * 
+     * @param listCidrCollectionsRequest
+     * @return Result of the ListCidrCollections operation returned by the service.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.ListCidrCollections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListCidrCollectionsResult listCidrCollections(ListCidrCollectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCidrCollections(request);
+    }
+
+    @SdkInternalApi
+    final ListCidrCollectionsResult executeListCidrCollections(ListCidrCollectionsRequest listCidrCollectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCidrCollectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCidrCollectionsRequest> request = null;
+        Response<ListCidrCollectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCidrCollectionsRequestMarshaller().marshall(super.beforeMarshalling(listCidrCollectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCidrCollections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListCidrCollectionsResult> responseHandler = new StaxResponseHandler<ListCidrCollectionsResult>(
+                    new ListCidrCollectionsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR
+     * blocks).
+     * </p>
+     * 
+     * @param listCidrLocationsRequest
+     * @return Result of the ListCidrLocations operation returned by the service.
+     * @throws NoSuchCidrCollectionException
+     *         The CIDR collection you specified, doesn't exist.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.ListCidrLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCidrLocationsResult listCidrLocations(ListCidrLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCidrLocations(request);
+    }
+
+    @SdkInternalApi
+    final ListCidrLocationsResult executeListCidrLocations(ListCidrLocationsRequest listCidrLocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCidrLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCidrLocationsRequest> request = null;
+        Response<ListCidrLocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCidrLocationsRequestMarshaller().marshall(super.beforeMarshalling(listCidrLocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCidrLocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListCidrLocationsResult> responseHandler = new StaxResponseHandler<ListCidrLocationsResult>(
+                    new ListCidrLocationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

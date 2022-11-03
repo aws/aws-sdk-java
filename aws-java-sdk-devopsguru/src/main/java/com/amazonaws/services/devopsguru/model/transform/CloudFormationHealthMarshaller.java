@@ -31,6 +31,8 @@ public class CloudFormationHealthMarshaller {
             .marshallLocationName("StackName").build();
     private static final MarshallingInfo<StructuredPojo> INSIGHT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Insight").build();
+    private static final MarshallingInfo<Long> ANALYZEDRESOURCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyzedResourceCount").build();
 
     private static final CloudFormationHealthMarshaller instance = new CloudFormationHealthMarshaller();
 
@@ -50,6 +52,7 @@ public class CloudFormationHealthMarshaller {
         try {
             protocolMarshaller.marshall(cloudFormationHealth.getStackName(), STACKNAME_BINDING);
             protocolMarshaller.marshall(cloudFormationHealth.getInsight(), INSIGHT_BINDING);
+            protocolMarshaller.marshall(cloudFormationHealth.getAnalyzedResourceCount(), ANALYZEDRESOURCECOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

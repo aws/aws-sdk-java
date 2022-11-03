@@ -36,6 +36,12 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
     private String appComponentName;
     /**
      * <p>
+     * A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * </p>
+     */
+    private java.util.List<String> dependsOnAlarms;
+    /**
+     * <p>
      * The description for the test recommendation.
      * </p>
      */
@@ -126,6 +132,76 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     public TestRecommendation withAppComponentName(String appComponentName) {
         setAppComponentName(appComponentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * </p>
+     * 
+     * @return A list of recommended alarms that are used in the test and must be exported before or with the test.
+     */
+
+    public java.util.List<String> getDependsOnAlarms() {
+        return dependsOnAlarms;
+    }
+
+    /**
+     * <p>
+     * A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * </p>
+     * 
+     * @param dependsOnAlarms
+     *        A list of recommended alarms that are used in the test and must be exported before or with the test.
+     */
+
+    public void setDependsOnAlarms(java.util.Collection<String> dependsOnAlarms) {
+        if (dependsOnAlarms == null) {
+            this.dependsOnAlarms = null;
+            return;
+        }
+
+        this.dependsOnAlarms = new java.util.ArrayList<String>(dependsOnAlarms);
+    }
+
+    /**
+     * <p>
+     * A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDependsOnAlarms(java.util.Collection)} or {@link #withDependsOnAlarms(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param dependsOnAlarms
+     *        A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestRecommendation withDependsOnAlarms(String... dependsOnAlarms) {
+        if (this.dependsOnAlarms == null) {
+            setDependsOnAlarms(new java.util.ArrayList<String>(dependsOnAlarms.length));
+        }
+        for (String ele : dependsOnAlarms) {
+            this.dependsOnAlarms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * </p>
+     * 
+     * @param dependsOnAlarms
+     *        A list of recommended alarms that are used in the test and must be exported before or with the test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestRecommendation withDependsOnAlarms(java.util.Collection<String> dependsOnAlarms) {
+        setDependsOnAlarms(dependsOnAlarms);
         return this;
     }
 
@@ -571,6 +647,8 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getAppComponentName() != null)
             sb.append("AppComponentName: ").append(getAppComponentName()).append(",");
+        if (getDependsOnAlarms() != null)
+            sb.append("DependsOnAlarms: ").append(getDependsOnAlarms()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getIntent() != null)
@@ -606,6 +684,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
         if (other.getAppComponentName() == null ^ this.getAppComponentName() == null)
             return false;
         if (other.getAppComponentName() != null && other.getAppComponentName().equals(this.getAppComponentName()) == false)
+            return false;
+        if (other.getDependsOnAlarms() == null ^ this.getDependsOnAlarms() == null)
+            return false;
+        if (other.getDependsOnAlarms() != null && other.getDependsOnAlarms().equals(this.getDependsOnAlarms()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -652,6 +734,7 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppComponentName() == null) ? 0 : getAppComponentName().hashCode());
+        hashCode = prime * hashCode + ((getDependsOnAlarms() == null) ? 0 : getDependsOnAlarms().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getIntent() == null) ? 0 : getIntent().hashCode());
         hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());

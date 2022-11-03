@@ -677,6 +677,51 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
 
     /**
      * <p>
+     * Creates a Neptune global database spread across multiple Amazon Regions. The global database contains a single
+     * primary cluster with read-write capability, and read-only secondary clusters that receive data from the primary
+     * cluster through high-speed replication performed by the Neptune storage subsystem.
+     * </p>
+     * <p>
+     * You can create a global database that is initially empty, and then add a primary cluster and secondary clusters
+     * to it, or you can specify an existing Neptune cluster during the create operation to become the primary cluster
+     * of the global database.
+     * </p>
+     * 
+     * @param createGlobalClusterRequest
+     * @return A Java Future containing the result of the CreateGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsync.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Creates a Neptune global database spread across multiple Amazon Regions. The global database contains a single
+     * primary cluster with read-write capability, and read-only secondary clusters that receive data from the primary
+     * cluster through high-speed replication performed by the Neptune storage subsystem.
+     * </p>
+     * <p>
+     * You can create a global database that is initially empty, and then add a primary cluster and secondary clusters
+     * to it, or you can specify an existing Neptune cluster during the create operation to become the primary cluster
+     * of the global database.
+     * </p>
+     * 
+     * @param createGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
      * The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all
      * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
@@ -994,6 +1039,37 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
      */
     java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a global database. The primary and all secondary clusters must already be detached or deleted first.
+     * </p>
+     * 
+     * @param deleteGlobalClusterRequest
+     * @return A Java Future containing the result of the DeleteGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsync.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest deleteGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Deletes a global database. The primary and all secondary clusters must already be detached or deleted first.
+     * </p>
+     * 
+     * @param deleteGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest deleteGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>
@@ -1599,6 +1675,37 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
 
     /**
      * <p>
+     * Returns information about Neptune global database clusters. This API supports pagination.
+     * </p>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return A Java Future containing the result of the DescribeGlobalClusters operation returned by the service.
+     * @sample AmazonNeptuneAsync.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest describeGlobalClustersRequest);
+
+    /**
+     * <p>
+     * Returns information about Neptune global database clusters. This API supports pagination.
+     * </p>
+     * 
+     * @param describeGlobalClustersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGlobalClusters operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest describeGlobalClustersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalClustersRequest, DescribeGlobalClustersResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of orderable DB instance options for the specified engine.
      * </p>
      * 
@@ -1754,6 +1861,63 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
      */
     java.util.concurrent.Future<DBCluster> failoverDBClusterAsync(FailoverDBClusterRequest failoverDBClusterRequest,
             com.amazonaws.handlers.AsyncHandler<FailoverDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates the failover process for a Neptune global database.
+     * </p>
+     * <p>
+     * A failover for a Neptune global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected target secondary DB cluster are switched. The selected
+     * secondary DB cluster assumes full read/write capabilities for the Neptune global database.
+     * </p>
+     * <note>
+     * <p>
+     * This action applies <b>only</b> to Neptune global databases. This action is only intended for use on healthy
+     * Neptune global databases with healthy Neptune DB clusters and no region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure the global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @return A Java Future containing the result of the FailoverGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsync.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> failoverGlobalClusterAsync(FailoverGlobalClusterRequest failoverGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Initiates the failover process for a Neptune global database.
+     * </p>
+     * <p>
+     * A failover for a Neptune global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected target secondary DB cluster are switched. The selected
+     * secondary DB cluster assumes full read/write capabilities for the Neptune global database.
+     * </p>
+     * <note>
+     * <p>
+     * This action applies <b>only</b> to Neptune global databases. This action is only intended for use on healthy
+     * Neptune global databases with healthy Neptune DB clusters and no region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure the global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the FailoverGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> failoverGlobalClusterAsync(FailoverGlobalClusterRequest failoverGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<FailoverGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>
@@ -2166,6 +2330,39 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
 
     /**
      * <p>
+     * Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration
+     * parameters by specifying these parameters and their new values in the request.
+     * </p>
+     * 
+     * @param modifyGlobalClusterRequest
+     * @return A Java Future containing the result of the ModifyGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsync.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest modifyGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration
+     * parameters by specifying these parameters and their new values in the request.
+     * </p>
+     * 
+     * @param modifyGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest modifyGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
      * Not supported.
      * </p>
      * 
@@ -2237,6 +2434,41 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
      */
     java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone
+     * cluster with read-write capability instead of being read-only, and no longer receives data from a the primary
+     * cluster.
+     * </p>
+     * 
+     * @param removeFromGlobalClusterRequest
+     * @return A Java Future containing the result of the RemoveFromGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsync.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone
+     * cluster with read-write capability instead of being read-only, and no longer receives data from a the primary
+     * cluster.
+     * </p>
+     * 
+     * @param removeFromGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveFromGlobalCluster operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveFromGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>

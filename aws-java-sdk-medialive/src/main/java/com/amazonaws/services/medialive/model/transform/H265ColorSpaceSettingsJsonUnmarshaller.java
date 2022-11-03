@@ -52,6 +52,10 @@ public class H265ColorSpaceSettingsJsonUnmarshaller implements Unmarshaller<H265
                     context.nextToken();
                     h265ColorSpaceSettings.setColorSpacePassthroughSettings(ColorSpacePassthroughSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("dolbyVision81Settings", targetDepth)) {
+                    context.nextToken();
+                    h265ColorSpaceSettings.setDolbyVision81Settings(DolbyVision81SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hdr10Settings", targetDepth)) {
                     context.nextToken();
                     h265ColorSpaceSettings.setHdr10Settings(Hdr10SettingsJsonUnmarshaller.getInstance().unmarshall(context));

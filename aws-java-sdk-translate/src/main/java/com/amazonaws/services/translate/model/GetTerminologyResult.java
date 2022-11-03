@@ -32,7 +32,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -53,7 +53,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.
+     * presigned URL to that has a 30-minute expiration.
      * </p>
      */
     private TerminologyDataLocation auxiliaryDataLocation;
@@ -101,7 +101,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -119,7 +119,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param terminologyDataLocation
      *        The Amazon S3 location of the most recent custom terminology input file that was successfully imported
-     *        into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *        into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p>
      *        <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -142,7 +142,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -159,7 +159,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * </important>
      * 
      * @return The Amazon S3 location of the most recent custom terminology input file that was successfully imported
-     *         into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *         into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p>
      *         <important>
      *         <p>
      *         Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -182,7 +182,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon S3 location of the most recent custom terminology input file that was successfully imported into
-     * Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.
+     * Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.
      * </p>
      * <important>
      * <p>
@@ -200,7 +200,7 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param terminologyDataLocation
      *        The Amazon S3 location of the most recent custom terminology input file that was successfully imported
-     *        into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p>
+     *        into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p>
      *        <important>
      *        <p>
      *        Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
@@ -226,13 +226,13 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.
+     * presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @param auxiliaryDataLocation
      *        The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *        file. This file was created when Amazon Translate attempted to create a terminology resource. The location
-     *        is returned as a presigned URL to that has a 30 minute expiration.
+     *        is returned as a presigned URL to that has a 30-minute expiration.
      */
 
     public void setAuxiliaryDataLocation(TerminologyDataLocation auxiliaryDataLocation) {
@@ -243,12 +243,12 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.
+     * presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @return The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *         file. This file was created when Amazon Translate attempted to create a terminology resource. The
-     *         location is returned as a presigned URL to that has a 30 minute expiration.
+     *         location is returned as a presigned URL to that has a 30-minute expiration.
      */
 
     public TerminologyDataLocation getAuxiliaryDataLocation() {
@@ -259,13 +259,13 @@ public class GetTerminologyResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This
      * file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.
+     * presigned URL to that has a 30-minute expiration.
      * </p>
      * 
      * @param auxiliaryDataLocation
      *        The Amazon S3 location of a file that provides any errors or warnings that were produced by your input
      *        file. This file was created when Amazon Translate attempted to create a terminology resource. The location
-     *        is returned as a presigned URL to that has a 30 minute expiration.
+     *        is returned as a presigned URL to that has a 30-minute expiration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

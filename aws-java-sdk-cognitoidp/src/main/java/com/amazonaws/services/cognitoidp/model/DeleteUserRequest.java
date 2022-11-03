@@ -30,18 +30,18 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The access token from a request to delete a user.
+     * A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      * </p>
      */
     private String accessToken;
 
     /**
      * <p>
-     * The access token from a request to delete a user.
+     * A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      * </p>
      * 
      * @param accessToken
-     *        The access token from a request to delete a user.
+     *        A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      */
 
     public void setAccessToken(String accessToken) {
@@ -50,10 +50,10 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The access token from a request to delete a user.
+     * A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      * </p>
      * 
-     * @return The access token from a request to delete a user.
+     * @return A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      */
 
     public String getAccessToken() {
@@ -62,11 +62,11 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The access token from a request to delete a user.
+     * A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      * </p>
      * 
      * @param accessToken
-     *        The access token from a request to delete a user.
+     *        A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

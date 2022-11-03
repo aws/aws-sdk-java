@@ -214,6 +214,72 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the
+     * detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in
+     * the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">
+     * ListDetectors</a> API call.
+     * </p>
+     * 
+     * @param batchDeleteDetectorRequest
+     * @return Result of the BatchDeleteDetector operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchDeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDeleteDetectorResult batchDeleteDetector(BatchDeleteDetectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteDetector(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteDetectorResult executeBatchDeleteDetector(BatchDeleteDetectorRequest batchDeleteDetectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteDetectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteDetectorRequest> request = null;
+        Response<BatchDeleteDetectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteDetectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteDetector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteDetectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeleteDetectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
      * </p>
      * 

@@ -35,6 +35,8 @@ public class ListWorkloadSharesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Status").build();
 
     private static final ListWorkloadSharesRequestMarshaller instance = new ListWorkloadSharesRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class ListWorkloadSharesRequestMarshaller {
             protocolMarshaller.marshall(listWorkloadSharesRequest.getSharedWithPrefix(), SHAREDWITHPREFIX_BINDING);
             protocolMarshaller.marshall(listWorkloadSharesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listWorkloadSharesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listWorkloadSharesRequest.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

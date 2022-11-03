@@ -39,7 +39,7 @@ public class GetMonitoringSubscriptionRequestMarshaller implements Marshaller<Re
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription";
+        String uriResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription/";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
                 getMonitoringSubscriptionRequest.getDistributionId());

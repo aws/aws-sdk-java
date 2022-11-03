@@ -326,4 +326,17 @@ public class AbstractAWSMigrationHubRefactorSpacesAsync extends AbstractAWSMigra
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest request) {
+
+        return updateRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRouteRequest, UpdateRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

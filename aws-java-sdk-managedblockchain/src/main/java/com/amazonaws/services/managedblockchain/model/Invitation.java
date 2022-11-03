@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An invitation to an AWS account to create a member and join the network.
+ * An invitation to an Amazon Web Services account to create a member and join the network.
  * </p>
  * <p>
  * Applies only to Hyperledger Fabric.
@@ -59,13 +59,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet
+     * <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      * </p>
      * </li>
      * <li>
@@ -93,7 +93,7 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String arn;
@@ -243,13 +243,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet
+     * <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      * </p>
      * </li>
      * <li>
@@ -275,13 +275,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has
-     *        not yet expired.
+     *        <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't
+     *        yet expired.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     *        <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      *        </p>
      *        </li>
      *        <li>
@@ -315,13 +315,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet
+     * <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      * </p>
      * </li>
      * <li>
@@ -346,13 +346,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has
-     *         not yet expired.
+     *         <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't
+     *         yet expired.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     *         <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      *         </p>
      *         </li>
      *         <li>
@@ -386,13 +386,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet
+     * <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      * </p>
      * </li>
      * <li>
@@ -418,13 +418,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has
-     *        not yet expired.
+     *        <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't
+     *        yet expired.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     *        <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      *        </p>
      *        </li>
      *        <li>
@@ -460,13 +460,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet
+     * <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     * <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      * </p>
      * </li>
      * <li>
@@ -492,13 +492,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has
-     *        not yet expired.
+     *        <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't
+     *        yet expired.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.
+     *        <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.
      *        </p>
      *        </li>
      *        <li>
@@ -557,13 +557,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -574,12 +574,12 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see
      *         <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getArn() {
@@ -590,13 +590,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

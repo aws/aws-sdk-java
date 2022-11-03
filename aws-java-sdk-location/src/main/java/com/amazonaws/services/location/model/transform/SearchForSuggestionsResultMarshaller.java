@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SearchForSuggestionsResultMarshaller {
 
+    private static final MarshallingInfo<String> PLACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PlaceId").build();
     private static final MarshallingInfo<String> TEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Text").build();
 
@@ -46,6 +48,7 @@ public class SearchForSuggestionsResultMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(searchForSuggestionsResult.getPlaceId(), PLACEID_BINDING);
             protocolMarshaller.marshall(searchForSuggestionsResult.getText(), TEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

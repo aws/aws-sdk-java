@@ -28,7 +28,7 @@ public class DescribeProvisioningTemplateVersionRequest extends com.amazonaws.Am
     private String templateName;
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      */
     private Integer versionId;
@@ -75,11 +75,11 @@ public class DescribeProvisioningTemplateVersionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      * 
      * @param versionId
-     *        The fleet provisioning template version ID.
+     *        The provisioning template version ID.
      */
 
     public void setVersionId(Integer versionId) {
@@ -88,10 +88,10 @@ public class DescribeProvisioningTemplateVersionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      * 
-     * @return The fleet provisioning template version ID.
+     * @return The provisioning template version ID.
      */
 
     public Integer getVersionId() {
@@ -100,11 +100,11 @@ public class DescribeProvisioningTemplateVersionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The fleet provisioning template version ID.
+     * The provisioning template version ID.
      * </p>
      * 
      * @param versionId
-     *        The fleet provisioning template version ID.
+     *        The provisioning template version ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

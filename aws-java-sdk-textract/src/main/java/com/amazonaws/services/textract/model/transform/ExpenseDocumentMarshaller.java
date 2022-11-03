@@ -34,6 +34,8 @@ public class ExpenseDocumentMarshaller {
             .marshallLocationName("SummaryFields").build();
     private static final MarshallingInfo<List> LINEITEMGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LineItemGroups").build();
+    private static final MarshallingInfo<List> BLOCKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Blocks").build();
 
     private static final ExpenseDocumentMarshaller instance = new ExpenseDocumentMarshaller();
 
@@ -54,6 +56,7 @@ public class ExpenseDocumentMarshaller {
             protocolMarshaller.marshall(expenseDocument.getExpenseIndex(), EXPENSEINDEX_BINDING);
             protocolMarshaller.marshall(expenseDocument.getSummaryFields(), SUMMARYFIELDS_BINDING);
             protocolMarshaller.marshall(expenseDocument.getLineItemGroups(), LINEITEMGROUPS_BINDING);
+            protocolMarshaller.marshall(expenseDocument.getBlocks(), BLOCKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

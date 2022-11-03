@@ -48,6 +48,10 @@ public class ConfluenceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InclusionPatterns").build();
     private static final MarshallingInfo<List> EXCLUSIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusionPatterns").build();
+    private static final MarshallingInfo<StructuredPojo> PROXYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProxyConfiguration").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
 
     private static final ConfluenceConfigurationMarshaller instance = new ConfluenceConfigurationMarshaller();
 
@@ -75,6 +79,8 @@ public class ConfluenceConfigurationMarshaller {
             protocolMarshaller.marshall(confluenceConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(confluenceConfiguration.getInclusionPatterns(), INCLUSIONPATTERNS_BINDING);
             protocolMarshaller.marshall(confluenceConfiguration.getExclusionPatterns(), EXCLUSIONPATTERNS_BINDING);
+            protocolMarshaller.marshall(confluenceConfiguration.getProxyConfiguration(), PROXYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(confluenceConfiguration.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

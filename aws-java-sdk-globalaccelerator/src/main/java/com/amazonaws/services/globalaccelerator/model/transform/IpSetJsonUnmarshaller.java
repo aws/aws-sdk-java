@@ -58,6 +58,10 @@ public class IpSetJsonUnmarshaller implements Unmarshaller<IpSet, JsonUnmarshall
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("IpAddressFamily", targetDepth)) {
+                    context.nextToken();
+                    ipSet.setIpAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

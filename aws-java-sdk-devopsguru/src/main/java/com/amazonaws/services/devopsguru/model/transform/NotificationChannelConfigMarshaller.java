@@ -29,6 +29,8 @@ public class NotificationChannelConfigMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SNS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sns").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filters").build();
 
     private static final NotificationChannelConfigMarshaller instance = new NotificationChannelConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class NotificationChannelConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(notificationChannelConfig.getSns(), SNS_BINDING);
+            protocolMarshaller.marshall(notificationChannelConfig.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

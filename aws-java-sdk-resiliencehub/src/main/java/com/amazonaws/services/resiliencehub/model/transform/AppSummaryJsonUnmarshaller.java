@@ -52,6 +52,10 @@ public class AppSummaryJsonUnmarshaller implements Unmarshaller<AppSummary, Json
                     context.nextToken();
                     appSummary.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("assessmentSchedule", targetDepth)) {
+                    context.nextToken();
+                    appSummary.setAssessmentSchedule(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("complianceStatus", targetDepth)) {
                     context.nextToken();
                     appSummary.setComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class AppSummaryJsonUnmarshaller implements Unmarshaller<AppSummary, Json
                 if (context.testExpression("resiliencyScore", targetDepth)) {
                     context.nextToken();
                     appSummary.setResiliencyScore(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    appSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

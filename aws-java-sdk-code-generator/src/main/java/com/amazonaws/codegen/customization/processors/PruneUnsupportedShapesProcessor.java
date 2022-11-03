@@ -170,6 +170,11 @@ public class PruneUnsupportedShapesProcessor implements CodegenCustomizationProc
                 String inputShape = operation.getInput().getShape();
                 if (!shapes.containsKey(inputShape)) {
                     operations.remove(operationName);
+
+                    if (operation.getOutput() != null) {
+                        shapes.remove(operation.getOutput().getShape());
+                    }
+
                     log("Pruned operation [%s] with input shape [%s]", operationName, inputShape);
                     return;
                 }
@@ -179,6 +184,11 @@ public class PruneUnsupportedShapesProcessor implements CodegenCustomizationProc
                 String outputShape = operation.getOutput().getShape();
                 if (!shapes.containsKey(outputShape)) {
                     operations.remove(operationName);
+
+                    if (operation.getInput() != null) {
+                        shapes.remove(operation.getInput().getShape());
+                    }
+
                     log("Pruned operation [%s] with output shape [%s]", operationName, outputShape);
                     return;
                 }

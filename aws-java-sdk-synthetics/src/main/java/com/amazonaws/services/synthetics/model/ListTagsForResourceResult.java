@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the canary that you specified.
+     * The list of tag keys and values associated with the resource that you specified.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The list of tag keys and values associated with the canary that you specified.
+     * The list of tag keys and values associated with the resource that you specified.
      * </p>
      * 
-     * @return The list of tag keys and values associated with the canary that you specified.
+     * @return The list of tag keys and values associated with the resource that you specified.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the canary that you specified.
+     * The list of tag keys and values associated with the resource that you specified.
      * </p>
      * 
      * @param tags
-     *        The list of tag keys and values associated with the canary that you specified.
+     *        The list of tag keys and values associated with the resource that you specified.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +57,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the canary that you specified.
+     * The list of tag keys and values associated with the resource that you specified.
      * </p>
      * 
      * @param tags
-     *        The list of tag keys and values associated with the canary that you specified.
+     *        The list of tag keys and values associated with the resource that you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

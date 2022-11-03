@@ -23,7 +23,8 @@ public enum ResourceMappingType {
     CfnStack("CfnStack"),
     Resource("Resource"),
     AppRegistryApp("AppRegistryApp"),
-    ResourceGroup("ResourceGroup");
+    ResourceGroup("ResourceGroup"),
+    Terraform("Terraform");
 
     private String value;
 

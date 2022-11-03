@@ -110,6 +110,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AssumeDecoratedRoleWithSAMLResult> assumeDecoratedRoleWithSAMLAsync(AssumeDecoratedRoleWithSAMLRequest request) {
+
+        return assumeDecoratedRoleWithSAMLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssumeDecoratedRoleWithSAMLResult> assumeDecoratedRoleWithSAMLAsync(final AssumeDecoratedRoleWithSAMLRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssumeDecoratedRoleWithSAMLRequest, AssumeDecoratedRoleWithSAMLResult> asyncHandler) {
+        final AssumeDecoratedRoleWithSAMLRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssumeDecoratedRoleWithSAMLResult>() {
+            @Override
+            public AssumeDecoratedRoleWithSAMLResult call() throws Exception {
+                AssumeDecoratedRoleWithSAMLResult result = null;
+
+                try {
+                    result = executeAssumeDecoratedRoleWithSAML(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGrantPermissionsResult> batchGrantPermissionsAsync(BatchGrantPermissionsRequest request) {
 
         return batchGrantPermissionsAsync(request, null);

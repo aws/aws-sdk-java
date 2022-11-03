@@ -66,8 +66,27 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String serviceAccountRoleArn;
     /**
      * <p>
-     * How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     * How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS
+     * default value. Conflicts are handled based on the option you choose:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field
+     * and value changes on a non-production cluster before updating the add-on on your production cluster.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resolveConflicts;
     /**
@@ -326,11 +345,49 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     * How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS
+     * default value. Conflicts are handled based on the option you choose:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field
+     * and value changes on a non-production cluster before updating the add-on on your production cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resolveConflicts
-     *        How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     *        How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon
+     *        EKS default value. Conflicts are handled based on the option you choose:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test
+     *        any field and value changes on a non-production cluster before updating the add-on on your production
+     *        cluster.
+     *        </p>
+     *        </li>
      * @see ResolveConflicts
      */
 
@@ -340,10 +397,48 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     * How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS
+     * default value. Conflicts are handled based on the option you choose:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field
+     * and value changes on a non-production cluster before updating the add-on on your production cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     * @return How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon
+     *         EKS default value. Conflicts are handled based on the option you choose:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test
+     *         any field and value changes on a non-production cluster before updating the add-on on your production
+     *         cluster.
+     *         </p>
+     *         </li>
      * @see ResolveConflicts
      */
 
@@ -353,11 +448,49 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     * How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS
+     * default value. Conflicts are handled based on the option you choose:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field
+     * and value changes on a non-production cluster before updating the add-on on your production cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resolveConflicts
-     *        How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     *        How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon
+     *        EKS default value. Conflicts are handled based on the option you choose:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test
+     *        any field and value changes on a non-production cluster before updating the add-on on your production
+     *        cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolveConflicts
      */
@@ -369,11 +502,49 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     * How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS
+     * default value. Conflicts are handled based on the option you choose:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field
+     * and value changes on a non-production cluster before updating the add-on on your production cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resolveConflicts
-     *        How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.
+     *        How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon
+     *        EKS default value. Conflicts are handled based on the option you choose:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test
+     *        any field and value changes on a non-production cluster before updating the add-on on your production
+     *        cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolveConflicts
      */

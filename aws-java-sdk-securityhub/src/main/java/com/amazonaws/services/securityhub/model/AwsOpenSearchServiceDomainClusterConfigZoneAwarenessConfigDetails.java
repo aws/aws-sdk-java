@@ -31,18 +31,21 @@ public class AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails i
 
     /**
      * <p>
-     * The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     * The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The
+     * default is <code>2</code>.
      * </p>
      */
     private Integer availabilityZoneCount;
 
     /**
      * <p>
-     * The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     * The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The
+     * default is <code>2</code>.
      * </p>
      * 
      * @param availabilityZoneCount
-     *        The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     *        The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>.
+     *        The default is <code>2</code>.
      */
 
     public void setAvailabilityZoneCount(Integer availabilityZoneCount) {
@@ -51,10 +54,12 @@ public class AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails i
 
     /**
      * <p>
-     * The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     * The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The
+     * default is <code>2</code>.
      * </p>
      * 
-     * @return The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     * @return The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>.
+     *         The default is <code>2</code>.
      */
 
     public Integer getAvailabilityZoneCount() {
@@ -63,11 +68,13 @@ public class AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails i
 
     /**
      * <p>
-     * The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     * The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The
+     * default is <code>2</code>.
      * </p>
      * 
      * @param availabilityZoneCount
-     *        The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.
+     *        The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>.
+     *        The default is <code>2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

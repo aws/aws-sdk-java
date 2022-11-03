@@ -30,39 +30,42 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      */
     private Integer manifestWindowSeconds;
     /**
      * <p>
-     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: 2
-     * seconds. Maximum value: 60 seconds.
+     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value:
+     * <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      */
     private Integer minBufferTimeSeconds;
     /**
      * <p>
      * Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.
-     * Minimum value: 2 seconds. Maximum value: 60 seconds.
+     * Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      */
     private Integer minUpdatePeriodSeconds;
     /**
      * <p>
      * Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum
-     * value: 2 seconds. Maximum value: 60 seconds.
+     * value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      */
     private Integer suggestedPresentationDelaySeconds;
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
      * @param manifestWindowSeconds
-     *        The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     *        The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *        <code>3600</code> seconds.
      */
 
     public void setManifestWindowSeconds(Integer manifestWindowSeconds) {
@@ -71,10 +74,12 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
-     * @return The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * @return The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *         <code>3600</code> seconds.
      */
 
     public Integer getManifestWindowSeconds() {
@@ -83,11 +88,13 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
      * @param manifestWindowSeconds
-     *        The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     *        The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *        <code>3600</code> seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +105,13 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: 2
-     * seconds. Maximum value: 60 seconds.
+     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value:
+     * <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @param minBufferTimeSeconds
      *        Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum
-     *        value: 2 seconds. Maximum value: 60 seconds.
+     *        value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      */
 
     public void setMinBufferTimeSeconds(Integer minBufferTimeSeconds) {
@@ -113,12 +120,12 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: 2
-     * seconds. Maximum value: 60 seconds.
+     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value:
+     * <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @return Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum
-     *         value: 2 seconds. Maximum value: 60 seconds.
+     *         value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      */
 
     public Integer getMinBufferTimeSeconds() {
@@ -127,13 +134,13 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: 2
-     * seconds. Maximum value: 60 seconds.
+     * Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value:
+     * <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @param minBufferTimeSeconds
      *        Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum
-     *        value: 2 seconds. Maximum value: 60 seconds.
+     *        value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,12 +152,12 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.
-     * Minimum value: 2 seconds. Maximum value: 60 seconds.
+     * Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @param minUpdatePeriodSeconds
      *        Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.
-     *        Minimum value: 2 seconds. Maximum value: 60 seconds.
+     *        Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      */
 
     public void setMinUpdatePeriodSeconds(Integer minUpdatePeriodSeconds) {
@@ -160,11 +167,11 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.
-     * Minimum value: 2 seconds. Maximum value: 60 seconds.
+     * Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @return Minimum amount of time (in seconds) that the player should wait before requesting updates to the
-     *         manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.
+     *         manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      */
 
     public Integer getMinUpdatePeriodSeconds() {
@@ -174,12 +181,12 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.
-     * Minimum value: 2 seconds. Maximum value: 60 seconds.
+     * Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @param minUpdatePeriodSeconds
      *        Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.
-     *        Minimum value: 2 seconds. Maximum value: 60 seconds.
+     *        Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,12 +198,12 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum
-     * value: 2 seconds. Maximum value: 60 seconds.
+     * value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @param suggestedPresentationDelaySeconds
      *        Amount of time (in seconds) that the player should be from the live point at the end of the manifest.
-     *        Minimum value: 2 seconds. Maximum value: 60 seconds.
+     *        Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      */
 
     public void setSuggestedPresentationDelaySeconds(Integer suggestedPresentationDelaySeconds) {
@@ -206,11 +213,11 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum
-     * value: 2 seconds. Maximum value: 60 seconds.
+     * value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @return Amount of time (in seconds) that the player should be from the live point at the end of the manifest.
-     *         Minimum value: 2 seconds. Maximum value: 60 seconds.
+     *         Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      */
 
     public Integer getSuggestedPresentationDelaySeconds() {
@@ -220,12 +227,12 @@ public class DashPlaylistSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum
-     * value: 2 seconds. Maximum value: 60 seconds.
+     * value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * </p>
      * 
      * @param suggestedPresentationDelaySeconds
      *        Amount of time (in seconds) that the player should be from the live point at the end of the manifest.
-     *        Minimum value: 2 seconds. Maximum value: 60 seconds.
+     *        Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

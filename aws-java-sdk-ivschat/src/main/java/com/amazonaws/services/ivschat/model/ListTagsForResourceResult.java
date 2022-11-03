@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags attached to the resource, from the request.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags attached to the resource, from the request.
      * </p>
      * 
-     * @return Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * @return Tags attached to the resource, from the request.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags attached to the resource, from the request.
      * </p>
      * 
      * @param tags
-     *        Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     *        Tags attached to the resource, from the request.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +57,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * Tags attached to the resource, from the request.
      * </p>
      * 
      * @param tags
-     *        Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     *        Tags attached to the resource, from the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -67,6 +67,12 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfWorkers").build();
     private static final MarshallingInfo<String> WORKERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkerType").build();
+    private static final MarshallingInfo<Map> CODEGENCONFIGURATIONNODES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeGenConfigurationNodes").build();
+    private static final MarshallingInfo<String> EXECUTIONCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionClass").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCECONTROLDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceControlDetails").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -103,6 +109,9 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getGlueVersion(), GLUEVERSION_BINDING);
             protocolMarshaller.marshall(createJobRequest.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
             protocolMarshaller.marshall(createJobRequest.getWorkerType(), WORKERTYPE_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getCodeGenConfigurationNodes(), CODEGENCONFIGURATIONNODES_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getExecutionClass(), EXECUTIONCLASS_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getSourceControlDetails(), SOURCECONTROLDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

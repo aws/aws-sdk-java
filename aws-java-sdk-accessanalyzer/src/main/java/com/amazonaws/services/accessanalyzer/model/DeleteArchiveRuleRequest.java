@@ -36,16 +36,16 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     private String analyzerName;
     /**
      * <p>
-     * A client token.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * The name of the rule to delete.
      * </p>
      */
     private String ruleName;
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -84,46 +84,6 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public DeleteArchiveRuleRequest withAnalyzerName(String analyzerName) {
         setAnalyzerName(analyzerName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @return A client token.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        A client token.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteArchiveRuleRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -168,6 +128,46 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        A client token.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @return A client token.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        A client token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteArchiveRuleRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,10 +181,10 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getAnalyzerName() != null)
             sb.append("AnalyzerName: ").append(getAnalyzerName()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getRuleName() != null)
-            sb.append("RuleName: ").append(getRuleName());
+            sb.append("RuleName: ").append(getRuleName()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -203,13 +203,13 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAnalyzerName() != null && other.getAnalyzerName().equals(this.getAnalyzerName()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
         if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -220,8 +220,8 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAnalyzerName() == null) ? 0 : getAnalyzerName().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

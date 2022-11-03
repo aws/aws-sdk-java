@@ -33,7 +33,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String arn;
     /**
      * <p>
-     * The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     * The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     * The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      * </p>
      * 
-     * @return The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     * @return The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     * The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      * </p>
      * 
      * @param tags
-     *        The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     *        The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +105,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     * The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      * </p>
      * 
      * @param tags
-     *        The list of tags to associate with the resource. Tag key names cannot start with "aws".
+     *        The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

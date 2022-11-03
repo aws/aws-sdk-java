@@ -36,7 +36,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that extension names adhere to the following patterns:
+     * We suggest that extension names adhere to the following patterns:
      * </p>
      * <ul>
      * <li>
@@ -47,6 +47,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      * </p>
      * </li>
      * </ul>
@@ -95,7 +100,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the extension you want to register, see <a
+     * For information about generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -122,8 +127,8 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
@@ -210,7 +215,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that extension names adhere to the following patterns:
+     * We suggest that extension names adhere to the following patterns:
      * </p>
      * <ul>
      * <li>
@@ -221,6 +226,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      * </p>
      * </li>
      * </ul>
@@ -265,7 +275,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param typeName
      *        The name of the extension being registered.</p>
      *        <p>
-     *        We recommend that extension names adhere to the following patterns:
+     *        We suggest that extension names adhere to the following patterns:
      *        </p>
      *        <ul>
      *        <li>
@@ -276,6 +286,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -326,7 +341,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that extension names adhere to the following patterns:
+     * We suggest that extension names adhere to the following patterns:
      * </p>
      * <ul>
      * <li>
@@ -337,6 +352,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      * </p>
      * </li>
      * </ul>
@@ -380,7 +400,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return The name of the extension being registered.</p>
      *         <p>
-     *         We recommend that extension names adhere to the following patterns:
+     *         We suggest that extension names adhere to the following patterns:
      *         </p>
      *         <ul>
      *         <li>
@@ -391,6 +411,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -441,7 +466,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that extension names adhere to the following patterns:
+     * We suggest that extension names adhere to the following patterns:
      * </p>
      * <ul>
      * <li>
@@ -452,6 +477,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      * </p>
      * </li>
      * </ul>
@@ -496,7 +526,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param typeName
      *        The name of the extension being registered.</p>
      *        <p>
-     *        We recommend that extension names adhere to the following patterns:
+     *        We suggest that extension names adhere to the following patterns:
      *        </p>
      *        <ul>
      *        <li>
@@ -507,6 +537,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -560,7 +595,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the extension you want to register, see <a
+     * For information about generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -578,10 +613,10 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        A URL to the S3 bucket containing the extension project package that contains the necessary files for the
      *        extension you want to register.</p>
      *        <p>
-     *        For information on generating a schema handler package for the extension you want to register, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     *        in the <i>CloudFormation CLI User Guide</i>.
+     *        For information about generating a schema handler package for the extension you want to register, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit
+     *        </a> in the <i>CloudFormation CLI User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -603,7 +638,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the extension you want to register, see <a
+     * For information about generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -620,7 +655,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return A URL to the S3 bucket containing the extension project package that contains the necessary files for the
      *         extension you want to register.</p>
      *         <p>
-     *         For information on generating a schema handler package for the extension you want to register, see <a
+     *         For information about generating a schema handler package for the extension you want to register, see <a
      *         href
      *         ="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit
      *         </a> in the <i>CloudFormation CLI User Guide</i>.
@@ -645,7 +680,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the extension you want to register, see <a
+     * For information about generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -663,10 +698,10 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        A URL to the S3 bucket containing the extension project package that contains the necessary files for the
      *        extension you want to register.</p>
      *        <p>
-     *        For information on generating a schema handler package for the extension you want to register, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     *        in the <i>CloudFormation CLI User Guide</i>.
+     *        For information about generating a schema handler package for the extension you want to register, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit
+     *        </a> in the <i>CloudFormation CLI User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -730,8 +765,8 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
@@ -750,7 +785,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For CloudFormation to assume the specified execution role, the role must contain a trust relationship with
      *        the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more
-     *        information on adding trust relationships, see <a
+     *        information about adding trust relationships, see <a
      *        href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      *        >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      *        </p>
@@ -773,8 +808,8 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
@@ -792,7 +827,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For CloudFormation to assume the specified execution role, the role must contain a trust relationship
      *         with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more
-     *         information on adding trust relationships, see <a href=
+     *         information about adding trust relationships, see <a href=
      *         "IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      *         >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      *         </p>
@@ -815,8 +850,8 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
@@ -835,7 +870,7 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For CloudFormation to assume the specified execution role, the role must contain a trust relationship with
      *        the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more
-     *        information on adding trust relationships, see <a
+     *        information about adding trust relationships, see <a
      *        href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      *        >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      *        </p>

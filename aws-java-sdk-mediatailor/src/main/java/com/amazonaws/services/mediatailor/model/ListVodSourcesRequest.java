@@ -27,30 +27,37 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source list.
      * </p>
      */
     private String sourceLocationName;
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Upper bound on number of records to return. The maximum number of results is 100.
+     *        The maximum number of VOD sources that you want MediaTailor to return in response to the current request.
+     *        If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the
+     *        response to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -59,10 +66,14 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response
+     * to get the next page of results.
      * </p>
      * 
-     * @return Upper bound on number of records to return. The maximum number of results is 100.
+     * @return The maximum number of VOD sources that you want MediaTailor to return in response to the current request.
+     *         If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in
+     *         the response to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -71,11 +82,15 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Upper bound on number of records to return. The maximum number of results is 100.
+     *        The maximum number of VOD sources that you want MediaTailor to return in response to the current request.
+     *        If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the
+     *        response to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +101,13 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -99,10 +116,12 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
-     * @return Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * @return Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *         fetch the next page of results.
      */
 
     public String getNextToken() {
@@ -111,11 +130,13 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +147,11 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source list.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location associated with this VOD Source list.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -139,10 +160,10 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source list.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location associated with this VOD Source list.
      */
 
     public String getSourceLocationName() {
@@ -151,11 +172,11 @@ public class ListVodSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source list.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location associated with this VOD Source list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

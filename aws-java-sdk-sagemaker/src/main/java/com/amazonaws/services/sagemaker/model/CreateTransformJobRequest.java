@@ -116,6 +116,12 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
     private TransformOutput transformOutput;
     /**
      * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     */
+    private BatchDataCaptureConfig dataCaptureConfig;
+    /**
+     * <p>
      * Describes the resources, including ML instance types and ML instance count, to use for the transform job.
      * </p>
      */
@@ -794,6 +800,46 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     * 
+     * @param dataCaptureConfig
+     *        Configuration to control how SageMaker captures inference data.
+     */
+
+    public void setDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     * 
+     * @return Configuration to control how SageMaker captures inference data.
+     */
+
+    public BatchDataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration to control how SageMaker captures inference data.
+     * </p>
+     * 
+     * @param dataCaptureConfig
+     *        Configuration to control how SageMaker captures inference data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTransformJobRequest withDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Describes the resources, including ML instance types and ML instance count, to use for the transform job.
      * </p>
      * 
@@ -1050,6 +1096,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("TransformInput: ").append(getTransformInput()).append(",");
         if (getTransformOutput() != null)
             sb.append("TransformOutput: ").append(getTransformOutput()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getTransformResources() != null)
             sb.append("TransformResources: ").append(getTransformResources()).append(",");
         if (getDataProcessing() != null)
@@ -1108,6 +1156,10 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTransformOutput() != null && other.getTransformOutput().equals(this.getTransformOutput()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getTransformResources() == null ^ this.getTransformResources() == null)
             return false;
         if (other.getTransformResources() != null && other.getTransformResources().equals(this.getTransformResources()) == false)
@@ -1141,6 +1193,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getTransformInput() == null) ? 0 : getTransformInput().hashCode());
         hashCode = prime * hashCode + ((getTransformOutput() == null) ? 0 : getTransformOutput().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getTransformResources() == null) ? 0 : getTransformResources().hashCode());
         hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

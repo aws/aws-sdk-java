@@ -27,9 +27,15 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document
-     * must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents.
+     * The maximum size of each document is 5 KB.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores
+     * any additional text in the input.
+     * </p>
+     * </note>
      */
     private java.util.List<String> textList;
     /**
@@ -42,12 +48,22 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document
-     * must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents.
+     * The maximum size of each document is 5 KB.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores
+     * any additional text in the input.
+     * </p>
+     * </note>
      * 
-     * @return A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each
-     *         document must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * @return A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25
+     *         documents. The maximum size of each document is 5 KB. </p> <note>
+     *         <p>
+     *         Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and
+     *         ignores any additional text in the input.
+     *         </p>
      */
 
     public java.util.List<String> getTextList() {
@@ -56,13 +72,23 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document
-     * must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents.
+     * The maximum size of each document is 5 KB.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores
+     * any additional text in the input.
+     * </p>
+     * </note>
      * 
      * @param textList
-     *        A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each
-     *        document must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25
+     *        documents. The maximum size of each document is 5 KB. </p> <note>
+     *        <p>
+     *        Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and
+     *        ignores any additional text in the input.
+     *        </p>
      */
 
     public void setTextList(java.util.Collection<String> textList) {
@@ -76,9 +102,15 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document
-     * must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents.
+     * The maximum size of each document is 5 KB.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores
+     * any additional text in the input.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTextList(java.util.Collection)} or {@link #withTextList(java.util.Collection)} if you want to override
@@ -86,8 +118,12 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param textList
-     *        A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each
-     *        document must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25
+     *        documents. The maximum size of each document is 5 KB. </p> <note>
+     *        <p>
+     *        Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and
+     *        ignores any additional text in the input.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,13 +139,23 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document
-     * must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     * A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents.
+     * The maximum size of each document is 5 KB.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores
+     * any additional text in the input.
+     * </p>
+     * </note>
      * 
      * @param textList
-     *        A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each
-     *        document must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+     *        A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25
+     *        documents. The maximum size of each document is 5 KB. </p> <note>
+     *        <p>
+     *        Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and
+     *        ignores any additional text in the input.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

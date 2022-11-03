@@ -27,6 +27,19 @@ public class StartPolicyGenerationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     * </p>
+     */
+    private PolicyGenerationDetails policyGenerationDetails;
+    /**
+     * <p>
+     * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
+     * to generate policies.
+     * </p>
+     */
+    private CloudTrailDetails cloudTrailDetails;
+    /**
+     * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency
      * ensures that an API request completes only once. With an idempotent request, if the original request completes
      * successfully, the subsequent retries with the same client token return the result from the original successful
@@ -37,19 +50,92 @@ public class StartPolicyGenerationRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String clientToken;
+
+    /**
+     * <p>
+     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     * </p>
+     * 
+     * @param policyGenerationDetails
+     *        Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     */
+
+    public void setPolicyGenerationDetails(PolicyGenerationDetails policyGenerationDetails) {
+        this.policyGenerationDetails = policyGenerationDetails;
+    }
+
+    /**
+     * <p>
+     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     * </p>
+     * 
+     * @return Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     */
+
+    public PolicyGenerationDetails getPolicyGenerationDetails() {
+        return this.policyGenerationDetails;
+    }
+
+    /**
+     * <p>
+     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     * </p>
+     * 
+     * @param policyGenerationDetails
+     *        Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartPolicyGenerationRequest withPolicyGenerationDetails(PolicyGenerationDetails policyGenerationDetails) {
+        setPolicyGenerationDetails(policyGenerationDetails);
+        return this;
+    }
+
     /**
      * <p>
      * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
      * to generate policies.
      * </p>
+     * 
+     * @param cloudTrailDetails
+     *        A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to
+     *        analyze to generate policies.
      */
-    private CloudTrailDetails cloudTrailDetails;
+
+    public void setCloudTrailDetails(CloudTrailDetails cloudTrailDetails) {
+        this.cloudTrailDetails = cloudTrailDetails;
+    }
+
     /**
      * <p>
-     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
+     * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
+     * to generate policies.
      * </p>
+     * 
+     * @return A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to
+     *         analyze to generate policies.
      */
-    private PolicyGenerationDetails policyGenerationDetails;
+
+    public CloudTrailDetails getCloudTrailDetails() {
+        return this.cloudTrailDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
+     * to generate policies.
+     * </p>
+     * 
+     * @param cloudTrailDetails
+     *        A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to
+     *        analyze to generate policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartPolicyGenerationRequest withCloudTrailDetails(CloudTrailDetails cloudTrailDetails) {
+        setCloudTrailDetails(cloudTrailDetails);
+        return this;
+    }
 
     /**
      * <p>
@@ -125,92 +211,6 @@ public class StartPolicyGenerationRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
-     * to generate policies.
-     * </p>
-     * 
-     * @param cloudTrailDetails
-     *        A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to
-     *        analyze to generate policies.
-     */
-
-    public void setCloudTrailDetails(CloudTrailDetails cloudTrailDetails) {
-        this.cloudTrailDetails = cloudTrailDetails;
-    }
-
-    /**
-     * <p>
-     * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
-     * to generate policies.
-     * </p>
-     * 
-     * @return A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to
-     *         analyze to generate policies.
-     */
-
-    public CloudTrailDetails getCloudTrailDetails() {
-        return this.cloudTrailDetails;
-    }
-
-    /**
-     * <p>
-     * A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze
-     * to generate policies.
-     * </p>
-     * 
-     * @param cloudTrailDetails
-     *        A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to
-     *        analyze to generate policies.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartPolicyGenerationRequest withCloudTrailDetails(CloudTrailDetails cloudTrailDetails) {
-        setCloudTrailDetails(cloudTrailDetails);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
-     * </p>
-     * 
-     * @param policyGenerationDetails
-     *        Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
-     */
-
-    public void setPolicyGenerationDetails(PolicyGenerationDetails policyGenerationDetails) {
-        this.policyGenerationDetails = policyGenerationDetails;
-    }
-
-    /**
-     * <p>
-     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
-     * </p>
-     * 
-     * @return Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
-     */
-
-    public PolicyGenerationDetails getPolicyGenerationDetails() {
-        return this.policyGenerationDetails;
-    }
-
-    /**
-     * <p>
-     * Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
-     * </p>
-     * 
-     * @param policyGenerationDetails
-     *        Contains the ARN of the IAM entity (user or role) for which you are generating a policy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartPolicyGenerationRequest withPolicyGenerationDetails(PolicyGenerationDetails policyGenerationDetails) {
-        setPolicyGenerationDetails(policyGenerationDetails);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -222,12 +222,12 @@ public class StartPolicyGenerationRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getPolicyGenerationDetails() != null)
+            sb.append("PolicyGenerationDetails: ").append(getPolicyGenerationDetails()).append(",");
         if (getCloudTrailDetails() != null)
             sb.append("CloudTrailDetails: ").append(getCloudTrailDetails()).append(",");
-        if (getPolicyGenerationDetails() != null)
-            sb.append("PolicyGenerationDetails: ").append(getPolicyGenerationDetails());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -242,17 +242,17 @@ public class StartPolicyGenerationRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof StartPolicyGenerationRequest == false)
             return false;
         StartPolicyGenerationRequest other = (StartPolicyGenerationRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getPolicyGenerationDetails() == null ^ this.getPolicyGenerationDetails() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getPolicyGenerationDetails() != null && other.getPolicyGenerationDetails().equals(this.getPolicyGenerationDetails()) == false)
             return false;
         if (other.getCloudTrailDetails() == null ^ this.getCloudTrailDetails() == null)
             return false;
         if (other.getCloudTrailDetails() != null && other.getCloudTrailDetails().equals(this.getCloudTrailDetails()) == false)
             return false;
-        if (other.getPolicyGenerationDetails() == null ^ this.getPolicyGenerationDetails() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getPolicyGenerationDetails() != null && other.getPolicyGenerationDetails().equals(this.getPolicyGenerationDetails()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -262,9 +262,9 @@ public class StartPolicyGenerationRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getCloudTrailDetails() == null) ? 0 : getCloudTrailDetails().hashCode());
         hashCode = prime * hashCode + ((getPolicyGenerationDetails() == null) ? 0 : getPolicyGenerationDetails().hashCode());
+        hashCode = prime * hashCode + ((getCloudTrailDetails() == null) ? 0 : getCloudTrailDetails().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

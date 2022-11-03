@@ -30,9 +30,9 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
@@ -45,10 +45,10 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
     private String appVersion;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String assessmentArn;
@@ -114,6 +114,12 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
     private ResiliencyScore resiliencyScore;
     /**
      * <p>
+     * A resource error object containing a list of errors retrieving an application's resources.
+     * </p>
+     */
+    private ResourceErrorsDetails resourceErrorsDetails;
+    /**
+     * <p>
      * The starting time for the action.
      * </p>
      */
@@ -128,17 +134,17 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param appArn
      *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *        Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setAppArn(String appArn) {
@@ -147,16 +153,16 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *         Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getAppArn() {
@@ -165,17 +171,17 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
      * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param appArn
      *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource
-     *        Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
+     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,17 +232,18 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param assessmentArn
      *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setAssessmentArn(String assessmentArn) {
@@ -245,16 +252,17 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
-     *         :dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
+     *         information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public String getAssessmentArn() {
@@ -263,17 +271,18 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:
-     * <code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param assessmentArn
      *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
-     *        :dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -769,6 +778,46 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A resource error object containing a list of errors retrieving an application's resources.
+     * </p>
+     * 
+     * @param resourceErrorsDetails
+     *        A resource error object containing a list of errors retrieving an application's resources.
+     */
+
+    public void setResourceErrorsDetails(ResourceErrorsDetails resourceErrorsDetails) {
+        this.resourceErrorsDetails = resourceErrorsDetails;
+    }
+
+    /**
+     * <p>
+     * A resource error object containing a list of errors retrieving an application's resources.
+     * </p>
+     * 
+     * @return A resource error object containing a list of errors retrieving an application's resources.
+     */
+
+    public ResourceErrorsDetails getResourceErrorsDetails() {
+        return this.resourceErrorsDetails;
+    }
+
+    /**
+     * <p>
+     * A resource error object containing a list of errors retrieving an application's resources.
+     * </p>
+     * 
+     * @param resourceErrorsDetails
+     *        A resource error object containing a list of errors retrieving an application's resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppAssessment withResourceErrorsDetails(ResourceErrorsDetails resourceErrorsDetails) {
+        setResourceErrorsDetails(resourceErrorsDetails);
+        return this;
+    }
+
+    /**
+     * <p>
      * The starting time for the action.
      * </p>
      * 
@@ -919,6 +968,8 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
             sb.append("Policy: ").append(getPolicy()).append(",");
         if (getResiliencyScore() != null)
             sb.append("ResiliencyScore: ").append(getResiliencyScore()).append(",");
+        if (getResourceErrorsDetails() != null)
+            sb.append("ResourceErrorsDetails: ").append(getResourceErrorsDetails()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getTags() != null)
@@ -989,6 +1040,10 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResiliencyScore() != null && other.getResiliencyScore().equals(this.getResiliencyScore()) == false)
             return false;
+        if (other.getResourceErrorsDetails() == null ^ this.getResourceErrorsDetails() == null)
+            return false;
+        if (other.getResourceErrorsDetails() != null && other.getResourceErrorsDetails().equals(this.getResourceErrorsDetails()) == false)
+            return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
@@ -1018,6 +1073,7 @@ public class AppAssessment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         hashCode = prime * hashCode + ((getResiliencyScore() == null) ? 0 : getResiliencyScore().hashCode());
+        hashCode = prime * hashCode + ((getResourceErrorsDetails() == null) ? 0 : getResourceErrorsDetails().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

@@ -52,6 +52,20 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer maxItems;
+    /**
+     * <p>
+     * Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     * <code>SortOrder</code>.
+     * </p>
+     */
+    private String sortBy;
+    /**
+     * <p>
+     * Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     * <code>SortBy</code>.
+     * </p>
+     */
+    private String sortOrder;
 
     /**
      * <p>
@@ -296,6 +310,140 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     * <code>SortOrder</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     *        <code>SortOrder</code>.
+     * @see SortBy
+     */
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    /**
+     * <p>
+     * Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     * <code>SortOrder</code>.
+     * </p>
+     * 
+     * @return Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     *         <code>SortOrder</code>.
+     * @see SortBy
+     */
+
+    public String getSortBy() {
+        return this.sortBy;
+    }
+
+    /**
+     * <p>
+     * Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     * <code>SortOrder</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     *        <code>SortOrder</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SortBy
+     */
+
+    public ListCertificatesRequest withSortBy(String sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     * <code>SortOrder</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify
+     *        <code>SortOrder</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SortBy
+     */
+
+    public ListCertificatesRequest withSortBy(SortBy sortBy) {
+        this.sortBy = sortBy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     * <code>SortBy</code>.
+     * </p>
+     * 
+     * @param sortOrder
+     *        Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     *        <code>SortBy</code>.
+     * @see SortOrder
+     */
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    /**
+     * <p>
+     * Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     * <code>SortBy</code>.
+     * </p>
+     * 
+     * @return Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     *         <code>SortBy</code>.
+     * @see SortOrder
+     */
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    /**
+     * <p>
+     * Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     * <code>SortBy</code>.
+     * </p>
+     * 
+     * @param sortOrder
+     *        Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     *        <code>SortBy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SortOrder
+     */
+
+    public ListCertificatesRequest withSortOrder(String sortOrder) {
+        setSortOrder(sortOrder);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     * <code>SortBy</code>.
+     * </p>
+     * 
+     * @param sortOrder
+     *        Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify
+     *        <code>SortBy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SortOrder
+     */
+
+    public ListCertificatesRequest withSortOrder(SortOrder sortOrder) {
+        this.sortOrder = sortOrder.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -314,7 +462,11 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: ").append(getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getSortOrder() != null)
+            sb.append("SortOrder: ").append(getSortOrder());
         sb.append("}");
         return sb.toString();
     }
@@ -345,6 +497,14 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
+        if (other.getSortOrder() == null ^ this.getSortOrder() == null)
+            return false;
+        if (other.getSortOrder() != null && other.getSortOrder().equals(this.getSortOrder()) == false)
+            return false;
         return true;
     }
 
@@ -357,6 +517,8 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of detail data for a registered repository.
+ * Summary data of a linked repository—a repository that has been registered with Proton.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySummary" target="_top">AWS API
@@ -30,7 +30,7 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a repository.
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      */
     private String arn;
@@ -49,11 +49,11 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a repository.
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for a repository.
+     *        The Amazon Resource Name (ARN) of the linked repository.
      */
 
     public void setArn(String arn) {
@@ -62,10 +62,10 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a repository.
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for a repository.
+     * @return The Amazon Resource Name (ARN) of the linked repository.
      */
 
     public String getArn() {
@@ -74,11 +74,11 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a repository.
+     * The Amazon Resource Name (ARN) of the linked repository.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for a repository.
+     *        The Amazon Resource Name (ARN) of the linked repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

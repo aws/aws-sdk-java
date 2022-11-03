@@ -37,7 +37,15 @@ public class ApplicationLayerAutomaticResponseConfiguration implements Serializa
      * </p>
      */
     private String status;
-
+    /**
+     * <p>
+     * Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+     * protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic
+     * application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced
+     * creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with
+     * the resource.
+     * </p>
+     */
     private ResponseAction action;
 
     /**
@@ -100,7 +108,20 @@ public class ApplicationLayerAutomaticResponseConfiguration implements Serializa
     }
 
     /**
+     * <p>
+     * Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+     * protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic
+     * application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced
+     * creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with
+     * the resource.
+     * </p>
+     * 
      * @param action
+     *        Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of
+     *        the protected resource in response to DDoS attacks. You specify this as part of the configuration for the
+     *        automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation.
+     *        Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you
+     *        have associated with the resource.
      */
 
     public void setAction(ResponseAction action) {
@@ -108,7 +129,19 @@ public class ApplicationLayerAutomaticResponseConfiguration implements Serializa
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+     * protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic
+     * application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced
+     * creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with
+     * the resource.
+     * </p>
+     * 
+     * @return Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf
+     *         of the protected resource in response to DDoS attacks. You specify this as part of the configuration for
+     *         the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation.
+     *         Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that
+     *         you have associated with the resource.
      */
 
     public ResponseAction getAction() {
@@ -116,7 +149,20 @@ public class ApplicationLayerAutomaticResponseConfiguration implements Serializa
     }
 
     /**
+     * <p>
+     * Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+     * protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic
+     * application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced
+     * creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with
+     * the resource.
+     * </p>
+     * 
      * @param action
+     *        Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of
+     *        the protected resource in response to DDoS attacks. You specify this as part of the configuration for the
+     *        automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation.
+     *        Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you
+     *        have associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

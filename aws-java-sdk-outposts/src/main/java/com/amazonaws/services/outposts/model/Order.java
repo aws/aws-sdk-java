@@ -52,8 +52,8 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.
+     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line
+     * item status.
      * </p>
      * </li>
      * <li>
@@ -197,8 +197,8 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.
+     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line
+     * item status.
      * </p>
      * </li>
      * <li>
@@ -235,7 +235,7 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see
-     *        the <code>LineItem</code> status.
+     *        the line item status.
      *        </p>
      *        </li>
      *        <li>
@@ -278,8 +278,8 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.
+     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line
+     * item status.
      * </p>
      * </li>
      * <li>
@@ -315,7 +315,7 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see
-     *         the <code>LineItem</code> status.
+     *         the line item status.
      *         </p>
      *         </li>
      *         <li>
@@ -357,8 +357,8 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.
+     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line
+     * item status.
      * </p>
      * </li>
      * <li>
@@ -395,7 +395,7 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see
-     *        the <code>LineItem</code> status.
+     *        the line item status.
      *        </p>
      *        </li>
      *        <li>
@@ -440,8 +440,8 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.
+     * <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line
+     * item status.
      * </p>
      * </li>
      * <li>
@@ -478,7 +478,7 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see
-     *        the <code>LineItem</code> status.
+     *        the line item status.
      *        </p>
      *        </li>
      *        <li>

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WeightedTargetMarshaller {
 
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("port").build();
     private static final MarshallingInfo<String> VIRTUALNODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualNode").build();
     private static final MarshallingInfo<Integer> WEIGHT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,7 @@ public class WeightedTargetMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(weightedTarget.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(weightedTarget.getVirtualNode(), VIRTUALNODE_BINDING);
             protocolMarshaller.marshall(weightedTarget.getWeight(), WEIGHT_BINDING);
         } catch (Exception e) {

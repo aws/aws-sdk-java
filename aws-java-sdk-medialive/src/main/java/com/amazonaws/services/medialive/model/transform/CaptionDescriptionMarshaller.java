@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CaptionDescriptionMarshaller {
 
+    private static final MarshallingInfo<String> ACCESSIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessibility").build();
     private static final MarshallingInfo<String> CAPTIONSELECTORNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionSelectorName").build();
     private static final MarshallingInfo<StructuredPojo> DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class CaptionDescriptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(captionDescription.getAccessibility(), ACCESSIBILITY_BINDING);
             protocolMarshaller.marshall(captionDescription.getCaptionSelectorName(), CAPTIONSELECTORNAME_BINDING);
             protocolMarshaller.marshall(captionDescription.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDescription.getLanguageCode(), LANGUAGECODE_BINDING);

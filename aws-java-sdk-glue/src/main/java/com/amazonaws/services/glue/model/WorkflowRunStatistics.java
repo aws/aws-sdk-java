@@ -64,6 +64,18 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer runningActions;
+    /**
+     * <p>
+     * Indicates the count of job runs in the ERROR state in the workflow run.
+     * </p>
+     */
+    private Integer erroredActions;
+    /**
+     * <p>
+     * Indicates the count of job runs in WAITING state in the workflow run.
+     * </p>
+     */
+    private Integer waitingActions;
 
     /**
      * <p>
@@ -306,6 +318,86 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Indicates the count of job runs in the ERROR state in the workflow run.
+     * </p>
+     * 
+     * @param erroredActions
+     *        Indicates the count of job runs in the ERROR state in the workflow run.
+     */
+
+    public void setErroredActions(Integer erroredActions) {
+        this.erroredActions = erroredActions;
+    }
+
+    /**
+     * <p>
+     * Indicates the count of job runs in the ERROR state in the workflow run.
+     * </p>
+     * 
+     * @return Indicates the count of job runs in the ERROR state in the workflow run.
+     */
+
+    public Integer getErroredActions() {
+        return this.erroredActions;
+    }
+
+    /**
+     * <p>
+     * Indicates the count of job runs in the ERROR state in the workflow run.
+     * </p>
+     * 
+     * @param erroredActions
+     *        Indicates the count of job runs in the ERROR state in the workflow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowRunStatistics withErroredActions(Integer erroredActions) {
+        setErroredActions(erroredActions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the count of job runs in WAITING state in the workflow run.
+     * </p>
+     * 
+     * @param waitingActions
+     *        Indicates the count of job runs in WAITING state in the workflow run.
+     */
+
+    public void setWaitingActions(Integer waitingActions) {
+        this.waitingActions = waitingActions;
+    }
+
+    /**
+     * <p>
+     * Indicates the count of job runs in WAITING state in the workflow run.
+     * </p>
+     * 
+     * @return Indicates the count of job runs in WAITING state in the workflow run.
+     */
+
+    public Integer getWaitingActions() {
+        return this.waitingActions;
+    }
+
+    /**
+     * <p>
+     * Indicates the count of job runs in WAITING state in the workflow run.
+     * </p>
+     * 
+     * @param waitingActions
+     *        Indicates the count of job runs in WAITING state in the workflow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowRunStatistics withWaitingActions(Integer waitingActions) {
+        setWaitingActions(waitingActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +420,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
         if (getSucceededActions() != null)
             sb.append("SucceededActions: ").append(getSucceededActions()).append(",");
         if (getRunningActions() != null)
-            sb.append("RunningActions: ").append(getRunningActions());
+            sb.append("RunningActions: ").append(getRunningActions()).append(",");
+        if (getErroredActions() != null)
+            sb.append("ErroredActions: ").append(getErroredActions()).append(",");
+        if (getWaitingActions() != null)
+            sb.append("WaitingActions: ").append(getWaitingActions());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +463,14 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
             return false;
         if (other.getRunningActions() != null && other.getRunningActions().equals(this.getRunningActions()) == false)
             return false;
+        if (other.getErroredActions() == null ^ this.getErroredActions() == null)
+            return false;
+        if (other.getErroredActions() != null && other.getErroredActions().equals(this.getErroredActions()) == false)
+            return false;
+        if (other.getWaitingActions() == null ^ this.getWaitingActions() == null)
+            return false;
+        if (other.getWaitingActions() != null && other.getWaitingActions().equals(this.getWaitingActions()) == false)
+            return false;
         return true;
     }
 
@@ -381,6 +485,8 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getStoppedActions() == null) ? 0 : getStoppedActions().hashCode());
         hashCode = prime * hashCode + ((getSucceededActions() == null) ? 0 : getSucceededActions().hashCode());
         hashCode = prime * hashCode + ((getRunningActions() == null) ? 0 : getRunningActions().hashCode());
+        hashCode = prime * hashCode + ((getErroredActions() == null) ? 0 : getErroredActions().hashCode());
+        hashCode = prime * hashCode + ((getWaitingActions() == null) ? 0 : getWaitingActions().hashCode());
         return hashCode;
     }
 

@@ -96,9 +96,11 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
-     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
-     * Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request.
+     * For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -371,9 +373,11 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
-     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
-     * Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request.
+     * For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
@@ -409,10 +413,11 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
      *        <p>
-     *        The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a>
+     *        The KMS key policy must grant permission to the IAM role that you specify in your <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
      *        request. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon
-     *        Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
+     *        Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -454,9 +459,11 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
-     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
-     * Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request.
+     * For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.
      * </p>
      * 
      * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
@@ -491,9 +498,10 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *         Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *         </p>
      *         <p>
-     *         The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a>
+     *         The KMS key policy must grant permission to the IAM role that you specify in your <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
      *         request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
      *         Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      */
 
@@ -536,9 +544,11 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
-     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
-     * Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a> request.
+     * For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
@@ -574,10 +584,11 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
      *        <p>
-     *        The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a>
+     *        The KMS key policy must grant permission to the IAM role that you specify in your <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
      *        request. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon
-     *        Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
+     *        Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

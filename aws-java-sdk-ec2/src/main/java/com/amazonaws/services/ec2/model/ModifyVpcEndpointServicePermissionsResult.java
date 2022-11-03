@@ -26,10 +26,89 @@ public class ModifyVpcEndpointServicePermissionsResult extends com.amazonaws.Ama
 
     /**
      * <p>
+     * Information about the added principals.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AddedPrincipal> addedPrincipals;
+    /**
+     * <p>
      * Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * </p>
      */
     private Boolean returnValue;
+
+    /**
+     * <p>
+     * Information about the added principals.
+     * </p>
+     * 
+     * @return Information about the added principals.
+     */
+
+    public java.util.List<AddedPrincipal> getAddedPrincipals() {
+        if (addedPrincipals == null) {
+            addedPrincipals = new com.amazonaws.internal.SdkInternalList<AddedPrincipal>();
+        }
+        return addedPrincipals;
+    }
+
+    /**
+     * <p>
+     * Information about the added principals.
+     * </p>
+     * 
+     * @param addedPrincipals
+     *        Information about the added principals.
+     */
+
+    public void setAddedPrincipals(java.util.Collection<AddedPrincipal> addedPrincipals) {
+        if (addedPrincipals == null) {
+            this.addedPrincipals = null;
+            return;
+        }
+
+        this.addedPrincipals = new com.amazonaws.internal.SdkInternalList<AddedPrincipal>(addedPrincipals);
+    }
+
+    /**
+     * <p>
+     * Information about the added principals.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddedPrincipals(java.util.Collection)} or {@link #withAddedPrincipals(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param addedPrincipals
+     *        Information about the added principals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServicePermissionsResult withAddedPrincipals(AddedPrincipal... addedPrincipals) {
+        if (this.addedPrincipals == null) {
+            setAddedPrincipals(new com.amazonaws.internal.SdkInternalList<AddedPrincipal>(addedPrincipals.length));
+        }
+        for (AddedPrincipal ele : addedPrincipals) {
+            this.addedPrincipals.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the added principals.
+     * </p>
+     * 
+     * @param addedPrincipals
+     *        Information about the added principals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServicePermissionsResult withAddedPrincipals(java.util.Collection<AddedPrincipal> addedPrincipals) {
+        setAddedPrincipals(addedPrincipals);
+        return this;
+    }
 
     /**
      * <p>
@@ -95,6 +174,8 @@ public class ModifyVpcEndpointServicePermissionsResult extends com.amazonaws.Ama
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAddedPrincipals() != null)
+            sb.append("AddedPrincipals: ").append(getAddedPrincipals()).append(",");
         if (getReturnValue() != null)
             sb.append("ReturnValue: ").append(getReturnValue());
         sb.append("}");
@@ -111,6 +192,10 @@ public class ModifyVpcEndpointServicePermissionsResult extends com.amazonaws.Ama
         if (obj instanceof ModifyVpcEndpointServicePermissionsResult == false)
             return false;
         ModifyVpcEndpointServicePermissionsResult other = (ModifyVpcEndpointServicePermissionsResult) obj;
+        if (other.getAddedPrincipals() == null ^ this.getAddedPrincipals() == null)
+            return false;
+        if (other.getAddedPrincipals() != null && other.getAddedPrincipals().equals(this.getAddedPrincipals()) == false)
+            return false;
         if (other.getReturnValue() == null ^ this.getReturnValue() == null)
             return false;
         if (other.getReturnValue() != null && other.getReturnValue().equals(this.getReturnValue()) == false)
@@ -123,6 +208,7 @@ public class ModifyVpcEndpointServicePermissionsResult extends com.amazonaws.Ama
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAddedPrincipals() == null) ? 0 : getAddedPrincipals().hashCode());
         hashCode = prime * hashCode + ((getReturnValue() == null) ? 0 : getReturnValue().hashCode());
         return hashCode;
     }

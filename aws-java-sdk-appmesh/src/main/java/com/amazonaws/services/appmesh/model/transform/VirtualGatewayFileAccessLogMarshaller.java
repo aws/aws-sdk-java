@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualGatewayFileAccessLogMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("format").build();
     private static final MarshallingInfo<String> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("path").build();
 
@@ -46,6 +48,7 @@ public class VirtualGatewayFileAccessLogMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(virtualGatewayFileAccessLog.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(virtualGatewayFileAccessLog.getPath(), PATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

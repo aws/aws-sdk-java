@@ -37,11 +37,11 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * The ID of the Outposts.
+     * The ID of the Outposts resource.
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      */
@@ -153,18 +153,18 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Outposts.
+     * The ID of the Outposts resource.
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      * 
      * @param outpostId
-     *        The ID of the Outposts.</p> <note>
+     *        The ID of the Outposts resource.</p> <note>
      *        <p>
-     *        This is required by Amazon S3 on Outposts buckets.
+     *        This ID is required by Amazon S3 on Outposts buckets.
      *        </p>
      */
 
@@ -174,17 +174,17 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Outposts.
+     * The ID of the Outposts resource.
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      * 
-     * @return The ID of the Outposts.</p> <note>
+     * @return The ID of the Outposts resource.</p> <note>
      *         <p>
-     *         This is required by Amazon S3 on Outposts buckets.
+     *         This ID is required by Amazon S3 on Outposts buckets.
      *         </p>
      */
 
@@ -194,18 +194,18 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Outposts.
+     * The ID of the Outposts resource.
      * </p>
      * <note>
      * <p>
-     * This is required by Amazon S3 on Outposts buckets.
+     * This ID is required by Amazon S3 on Outposts buckets.
      * </p>
      * </note>
      * 
      * @param outpostId
-     *        The ID of the Outposts.</p> <note>
+     *        The ID of the Outposts resource.</p> <note>
      *        <p>
-     *        This is required by Amazon S3 on Outposts buckets.
+     *        This ID is required by Amazon S3 on Outposts buckets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

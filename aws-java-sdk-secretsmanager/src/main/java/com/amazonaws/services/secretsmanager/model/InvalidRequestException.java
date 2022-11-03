@@ -33,6 +33,13 @@ import javax.annotation.Generated;
  * include such an ARN as a parameter in this call.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * The secret is managed by another service, and you must use that service to update it. For more information, see <a
+ * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by
+ * other Amazon Web Services services</a>.
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

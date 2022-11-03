@@ -31,14 +31,14 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The first day, in Unix time format, that you want to obtain deliverability data for.
+     * The first day that you want to obtain deliverability data for.
      * </p>
      */
     private java.util.Date startDate;
     /**
      * <p>
-     * The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less
-     * than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     * The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days
+     * after the value of the <code>StartDate</code> parameter.
      * </p>
      */
     private java.util.Date endDate;
@@ -67,11 +67,11 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The first day, in Unix time format, that you want to obtain deliverability data for.
+     * The first day that you want to obtain deliverability data for.
      * </p>
      * 
      * @param startDate
-     *        The first day, in Unix time format, that you want to obtain deliverability data for.
+     *        The first day that you want to obtain deliverability data for.
      */
 
     public void setStartDate(java.util.Date startDate) {
@@ -80,10 +80,10 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The first day, in Unix time format, that you want to obtain deliverability data for.
+     * The first day that you want to obtain deliverability data for.
      * </p>
      * 
-     * @return The first day, in Unix time format, that you want to obtain deliverability data for.
+     * @return The first day that you want to obtain deliverability data for.
      */
 
     public java.util.Date getStartDate() {
@@ -92,11 +92,11 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The first day, in Unix time format, that you want to obtain deliverability data for.
+     * The first day that you want to obtain deliverability data for.
      * </p>
      * 
      * @param startDate
-     *        The first day, in Unix time format, that you want to obtain deliverability data for.
+     *        The first day that you want to obtain deliverability data for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +107,13 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less
-     * than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     * The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days
+     * after the value of the <code>StartDate</code> parameter.
      * </p>
      * 
      * @param endDate
-     *        The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be
-     *        less than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     *        The last day that you want to obtain deliverability data for. This value has to be less than or equal to
+     *        30 days after the value of the <code>StartDate</code> parameter.
      */
 
     public void setEndDate(java.util.Date endDate) {
@@ -122,12 +122,12 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less
-     * than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     * The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days
+     * after the value of the <code>StartDate</code> parameter.
      * </p>
      * 
-     * @return The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be
-     *         less than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     * @return The last day that you want to obtain deliverability data for. This value has to be less than or equal to
+     *         30 days after the value of the <code>StartDate</code> parameter.
      */
 
     public java.util.Date getEndDate() {
@@ -136,13 +136,13 @@ public class ListDomainDeliverabilityCampaignsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less
-     * than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     * The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days
+     * after the value of the <code>StartDate</code> parameter.
      * </p>
      * 
      * @param endDate
-     *        The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be
-     *        less than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+     *        The last day that you want to obtain deliverability data for. This value has to be less than or equal to
+     *        30 days after the value of the <code>StartDate</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

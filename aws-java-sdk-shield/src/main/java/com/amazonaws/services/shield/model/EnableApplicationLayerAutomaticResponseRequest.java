@@ -27,7 +27,7 @@ public class EnableApplicationLayerAutomaticResponseRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The ARN (Amazon Resource Name) of the protected resource.
      * </p>
      */
     private String resourceArn;
@@ -44,11 +44,11 @@ public class EnableApplicationLayerAutomaticResponseRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The ARN (Amazon Resource Name) of the protected resource.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource.
+     *        The ARN (Amazon Resource Name) of the protected resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,10 +57,10 @@ public class EnableApplicationLayerAutomaticResponseRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The ARN (Amazon Resource Name) of the protected resource.
      * </p>
      * 
-     * @return The ARN (Amazon Resource Name) of the resource.
+     * @return The ARN (Amazon Resource Name) of the protected resource.
      */
 
     public String getResourceArn() {
@@ -69,11 +69,11 @@ public class EnableApplicationLayerAutomaticResponseRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The ARN (Amazon Resource Name) of the protected resource.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource.
+     *        The ARN (Amazon Resource Name) of the protected resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

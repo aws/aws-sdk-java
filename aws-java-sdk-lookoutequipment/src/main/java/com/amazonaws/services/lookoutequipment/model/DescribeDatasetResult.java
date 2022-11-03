@@ -37,7 +37,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private String datasetArn;
     /**
      * <p>
-     * Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     * Specifies the time the dataset was created in Lookout for Equipment.
      * </p>
      */
     private java.util.Date createdAt;
@@ -189,11 +189,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     * Specifies the time the dataset was created in Lookout for Equipment.
      * </p>
      * 
      * @param createdAt
-     *        Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     *        Specifies the time the dataset was created in Lookout for Equipment.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -202,10 +202,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     * Specifies the time the dataset was created in Lookout for Equipment.
      * </p>
      * 
-     * @return Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     * @return Specifies the time the dataset was created in Lookout for Equipment.
      */
 
     public java.util.Date getCreatedAt() {
@@ -214,11 +214,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     * Specifies the time the dataset was created in Lookout for Equipment.
      * </p>
      * 
      * @param createdAt
-     *        Specifies the time the dataset was created in Amazon Lookout for Equipment.
+     *        Specifies the time the dataset was created in Lookout for Equipment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

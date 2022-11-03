@@ -28,12 +28,32 @@ public class AbstractAWSCloudWatchRUM implements AWSCloudWatchRUM {
     }
 
     @Override
+    public BatchCreateRumMetricDefinitionsResult batchCreateRumMetricDefinitions(BatchCreateRumMetricDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDeleteRumMetricDefinitionsResult batchDeleteRumMetricDefinitions(BatchDeleteRumMetricDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetRumMetricDefinitionsResult batchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAppMonitorResult createAppMonitor(CreateAppMonitorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteAppMonitorResult deleteAppMonitor(DeleteAppMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRumMetricsDestinationResult deleteRumMetricsDestination(DeleteRumMetricsDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,12 +73,22 @@ public class AbstractAWSCloudWatchRUM implements AWSCloudWatchRUM {
     }
 
     @Override
+    public ListRumMetricsDestinationsResult listRumMetricsDestinations(ListRumMetricsDestinationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutRumEventsResult putRumEvents(PutRumEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRumMetricsDestinationResult putRumMetricsDestination(PutRumMetricsDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +104,11 @@ public class AbstractAWSCloudWatchRUM implements AWSCloudWatchRUM {
 
     @Override
     public UpdateAppMonitorResult updateAppMonitor(UpdateAppMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRumMetricDefinitionResult updateRumMetricDefinition(UpdateRumMetricDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

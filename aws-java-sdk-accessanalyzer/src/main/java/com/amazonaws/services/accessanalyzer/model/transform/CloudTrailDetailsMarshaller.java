@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CloudTrailDetailsMarshaller {
 
-    private static final MarshallingInfo<String> ACCESSROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessRole").build();
-    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<List> TRAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("trails").build();
+    private static final MarshallingInfo<String> ACCESSROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessRole").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("iso8601").build();
 
     private static final CloudTrailDetailsMarshaller instance = new CloudTrailDetailsMarshaller();
 
@@ -53,10 +53,10 @@ public class CloudTrailDetailsMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(cloudTrailDetails.getAccessRole(), ACCESSROLE_BINDING);
-            protocolMarshaller.marshall(cloudTrailDetails.getEndTime(), ENDTIME_BINDING);
-            protocolMarshaller.marshall(cloudTrailDetails.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(cloudTrailDetails.getTrails(), TRAILS_BINDING);
+            protocolMarshaller.marshall(cloudTrailDetails.getAccessRole(), ACCESSROLE_BINDING);
+            protocolMarshaller.marshall(cloudTrailDetails.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(cloudTrailDetails.getEndTime(), ENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

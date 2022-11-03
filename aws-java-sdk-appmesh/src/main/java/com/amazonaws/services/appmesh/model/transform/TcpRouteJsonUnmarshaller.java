@@ -52,6 +52,10 @@ public class TcpRouteJsonUnmarshaller implements Unmarshaller<TcpRoute, JsonUnma
                     context.nextToken();
                     tcpRoute.setAction(TcpRouteActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("match", targetDepth)) {
+                    context.nextToken();
+                    tcpRoute.setMatch(TcpRouteMatchJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("timeout", targetDepth)) {
                     context.nextToken();
                     tcpRoute.setTimeout(TcpTimeoutJsonUnmarshaller.getInstance().unmarshall(context));

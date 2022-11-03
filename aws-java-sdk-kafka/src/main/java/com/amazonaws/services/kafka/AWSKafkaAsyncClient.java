@@ -1230,6 +1230,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateStorageResult> updateStorageAsync(UpdateStorageRequest request) {
+
+        return updateStorageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStorageResult> updateStorageAsync(final UpdateStorageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStorageRequest, UpdateStorageResult> asyncHandler) {
+        final UpdateStorageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStorageResult>() {
+            @Override
+            public UpdateStorageResult call() throws Exception {
+                UpdateStorageResult result = null;
+
+                try {
+                    result = executeUpdateStorage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

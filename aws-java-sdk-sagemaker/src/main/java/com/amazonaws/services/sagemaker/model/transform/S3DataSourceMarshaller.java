@@ -36,6 +36,8 @@ public class S3DataSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DataDistributionType").build();
     private static final MarshallingInfo<List> ATTRIBUTENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeNames").build();
+    private static final MarshallingInfo<List> INSTANCEGROUPNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupNames").build();
 
     private static final S3DataSourceMarshaller instance = new S3DataSourceMarshaller();
 
@@ -57,6 +59,7 @@ public class S3DataSourceMarshaller {
             protocolMarshaller.marshall(s3DataSource.getS3Uri(), S3URI_BINDING);
             protocolMarshaller.marshall(s3DataSource.getS3DataDistributionType(), S3DATADISTRIBUTIONTYPE_BINDING);
             protocolMarshaller.marshall(s3DataSource.getAttributeNames(), ATTRIBUTENAMES_BINDING);
+            protocolMarshaller.marshall(s3DataSource.getInstanceGroupNames(), INSTANCEGROUPNAMES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

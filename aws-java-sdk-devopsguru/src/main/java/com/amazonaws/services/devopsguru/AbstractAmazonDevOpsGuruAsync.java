@@ -240,6 +240,19 @@ public class AbstractAmazonDevOpsGuruAsync extends AbstractAmazonDevOpsGuru impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnomalousLogGroupsResult> listAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest request) {
+
+        return listAnomalousLogGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnomalousLogGroupsResult> listAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAnomalousLogGroupsRequest, ListAnomalousLogGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEventsResult> listEventsAsync(ListEventsRequest request) {
 
         return listEventsAsync(request, null);
@@ -261,6 +274,19 @@ public class AbstractAmazonDevOpsGuruAsync extends AbstractAmazonDevOpsGuru impl
     @Override
     public java.util.concurrent.Future<ListInsightsResult> listInsightsAsync(ListInsightsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInsightsRequest, ListInsightsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourcesResult> listMonitoredResourcesAsync(ListMonitoredResourcesRequest request) {
+
+        return listMonitoredResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourcesResult> listMonitoredResourcesAsync(ListMonitoredResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMonitoredResourcesRequest, ListMonitoredResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

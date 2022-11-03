@@ -60,6 +60,12 @@ public class AssociateCustomDomainResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     associateCustomDomainResult.setCustomDomain(CustomDomainJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VpcDNSTargets", targetDepth)) {
+                    context.nextToken();
+                    associateCustomDomainResult.setVpcDNSTargets(new ListUnmarshaller<VpcDNSTarget>(VpcDNSTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

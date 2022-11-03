@@ -27,43 +27,49 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.
+     * If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of vocabularies to return in each page of results. If there are fewer results than the value
-     * you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified vocabulary
-     * state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     * Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation date,
+     * with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies
+     * are returned.
      * </p>
      */
     private String stateEquals;
     /**
      * <p>
-     * Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     * <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "<code>VocabularyName</code>
-     * ".
+     * Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.
      * </p>
      */
     private String nameContains;
 
     /**
      * <p>
-     * If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.
+     * If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     *        <code>NextToken</code> to fetch the next set of vocabularies.
+     *        If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     *        <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *        results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *        copied string. Repeat as needed to view all your results.
      */
 
     public void setNextToken(String nextToken) {
@@ -72,12 +78,16 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.
+     * If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
-     * @return If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     *         <code>NextToken</code> to fetch the next set of vocabularies.
+     * @return If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     *         <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *         results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *         copied string. Repeat as needed to view all your results.
      */
 
     public String getNextToken() {
@@ -86,13 +96,17 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.
+     * If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     * <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results,
+     * copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string.
+     * Repeat as needed to view all your results.
      * </p>
      * 
      * @param nextToken
-     *        If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
-     *        <code>NextToken</code> to fetch the next set of vocabularies.
+     *        If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed,
+     *        <code>NextToken</code> is displayed in the response with an associated string. To get the next page of
+     *        results, copy this string and repeat your request, including <code>NextToken</code> with the value of the
+     *        copied string. Repeat as needed to view all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,14 +117,15 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of vocabularies to return in each page of results. If there are fewer results than the value
-     * you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of vocabularies to return in each page of results. If there are fewer results than the
-     *        value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     *        is used.
+     *        The maximum number of custom medical vocabularies to return in each page of results. If there are fewer
+     *        results than the value you specify, only the actual results are returned. If you don't specify a value, a
+     *        default of 5 is used.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -119,13 +134,14 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of vocabularies to return in each page of results. If there are fewer results than the value
-     * you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      * 
-     * @return The maximum number of vocabularies to return in each page of results. If there are fewer results than the
-     *         value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     *         is used.
+     * @return The maximum number of custom medical vocabularies to return in each page of results. If there are fewer
+     *         results than the value you specify, only the actual results are returned. If you don't specify a value, a
+     *         default of 5 is used.
      */
 
     public Integer getMaxResults() {
@@ -134,14 +150,15 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of vocabularies to return in each page of results. If there are fewer results than the value
-     * you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.
+     * The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results
+     * than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of vocabularies to return in each page of results. If there are fewer results than the
-     *        value you specify, only the actual results are returned. If you do not specify a value, the default of 5
-     *        is used.
+     *        The maximum number of custom medical vocabularies to return in each page of results. If there are fewer
+     *        results than the value you specify, only the actual results are returned. If you don't specify a value, a
+     *        default of 5 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,13 +169,15 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified vocabulary
-     * state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     * Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation date,
+     * with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies
+     * are returned.
      * </p>
      * 
      * @param stateEquals
-     *        When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
-     *        vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     *        Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation
+     *        date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *        vocabularies are returned.
      * @see VocabularyState
      */
 
@@ -168,12 +187,14 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified vocabulary
-     * state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     * Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation date,
+     * with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies
+     * are returned.
      * </p>
      * 
-     * @return When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
-     *         vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     * @return Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation
+     *         date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *         vocabularies are returned.
      * @see VocabularyState
      */
 
@@ -183,13 +204,15 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified vocabulary
-     * state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     * Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation date,
+     * with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies
+     * are returned.
      * </p>
      * 
      * @param stateEquals
-     *        When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
-     *        vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     *        Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation
+     *        date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *        vocabularies are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -201,13 +224,15 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified vocabulary
-     * state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     * Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation date,
+     * with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies
+     * are returned.
      * </p>
      * 
      * @param stateEquals
-     *        When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
-     *        vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.
+     *        Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation
+     *        date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *        vocabularies are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -219,15 +244,12 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     * <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "<code>VocabularyName</code>
-     * ".
+     * Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.
      * </p>
      * 
      * @param nameContains
-     *        Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     *        <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "
-     *        <code>VocabularyName</code>".
+     *        Returns only the custom medical vocabularies that contain the specified string. The search is not case
+     *        sensitive.
      */
 
     public void setNameContains(String nameContains) {
@@ -236,14 +258,11 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     * <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "<code>VocabularyName</code>
-     * ".
+     * Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.
      * </p>
      * 
-     * @return Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     *         <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "
-     *         <code>VocabularyName</code>".
+     * @return Returns only the custom medical vocabularies that contain the specified string. The search is not case
+     *         sensitive.
      */
 
     public String getNameContains() {
@@ -252,15 +271,12 @@ public class ListMedicalVocabulariesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     * <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "<code>VocabularyName</code>
-     * ".
+     * Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.
      * </p>
      * 
      * @param nameContains
-     *        Returns vocabularies whose names contain the specified string. The search is not case sensitive.
-     *        <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "
-     *        <code>VocabularyName</code>".
+     *        Returns only the custom medical vocabularies that contain the specified string. The search is not case
+     *        sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

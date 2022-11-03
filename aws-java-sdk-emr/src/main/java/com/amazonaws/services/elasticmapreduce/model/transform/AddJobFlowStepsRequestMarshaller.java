@@ -32,6 +32,8 @@ public class AddJobFlowStepsRequestMarshaller {
             .marshallLocationName("JobFlowId").build();
     private static final MarshallingInfo<List> STEPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Steps").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
 
     private static final AddJobFlowStepsRequestMarshaller instance = new AddJobFlowStepsRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class AddJobFlowStepsRequestMarshaller {
         try {
             protocolMarshaller.marshall(addJobFlowStepsRequest.getJobFlowId(), JOBFLOWID_BINDING);
             protocolMarshaller.marshall(addJobFlowStepsRequest.getSteps(), STEPS_BINDING);
+            protocolMarshaller.marshall(addJobFlowStepsRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

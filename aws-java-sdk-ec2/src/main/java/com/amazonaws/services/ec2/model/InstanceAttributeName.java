@@ -34,7 +34,8 @@ public enum InstanceAttributeName {
     EbsOptimized("ebsOptimized"),
     SriovNetSupport("sriovNetSupport"),
     EnaSupport("enaSupport"),
-    EnclaveOptions("enclaveOptions");
+    EnclaveOptions("enclaveOptions"),
+    DisableApiStop("disableApiStop");
 
     private String value;
 

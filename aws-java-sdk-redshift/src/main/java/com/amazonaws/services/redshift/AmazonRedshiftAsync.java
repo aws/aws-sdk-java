@@ -236,7 +236,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or
      * managing entities. To authorize a datashare for a data consumer, the producer account must have the correct
-     * access privileges.
+     * access permissions.
      * </p>
      * 
      * @param authorizeDataShareRequest
@@ -251,7 +251,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or
      * managing entities. To authorize a datashare for a data consumer, the producer account must have the correct
-     * access privileges.
+     * access permissions.
      * </p>
      * 
      * @param authorizeDataShareRequest
@@ -1132,7 +1132,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * From the producer account, removes authorization from the specified datashare.
+     * From a datashare producer account, removes authorization from the specified datashare.
      * </p>
      * 
      * @param deauthorizeDataShareRequest
@@ -1145,7 +1145,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * From the producer account, removes authorization from the specified datashare.
+     * From a datashare producer account, removes authorization from the specified datashare.
      * </p>
      * 
      * @param deauthorizeDataShareRequest
@@ -3741,7 +3741,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * From a consumer account, remove association for the specified datashare.
+     * From a datashare consumer account, remove association for the specified datashare.
      * </p>
      * 
      * @param disassociateDataShareConsumerRequest
@@ -3756,7 +3756,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * From a consumer account, remove association for the specified datashare.
+     * From a datashare consumer account, remove association for the specified datashare.
      * </p>
      * 
      * @param disassociateDataShareConsumerRequest
@@ -3860,7 +3860,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include
-     * the <code>redshift:CreateClusterUser</code> privilege.
+     * the <code>redshift:CreateClusterUser</code> permission.
      * </p>
      * <p>
      * If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource
@@ -3900,7 +3900,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include
-     * the <code>redshift:CreateClusterUser</code> privilege.
+     * the <code>redshift:CreateClusterUser</code> permission.
      * </p>
      * <p>
      * If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource
@@ -3920,6 +3920,61 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<GetClusterCredentialsResult> getClusterCredentialsAsync(GetClusterCredentialsRequest getClusterCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<GetClusterCredentialsRequest, GetClusterCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift
+     * database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more
+     * information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM
+     * Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User
+     * Guide.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that
+     * allows access to all necessary actions and resources. For more information about permissions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using
+     * identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide.
+     * </p>
+     * 
+     * @param getClusterCredentialsWithIAMRequest
+     * @return A Java Future containing the result of the GetClusterCredentialsWithIAM operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.GetClusterCredentialsWithIAM
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentialsWithIAM"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetClusterCredentialsWithIAMResult> getClusterCredentialsWithIAMAsync(
+            GetClusterCredentialsWithIAMRequest getClusterCredentialsWithIAMRequest);
+
+    /**
+     * <p>
+     * Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift
+     * database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more
+     * information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM
+     * Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User
+     * Guide.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that
+     * allows access to all necessary actions and resources. For more information about permissions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using
+     * identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide.
+     * </p>
+     * 
+     * @param getClusterCredentialsWithIAMRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetClusterCredentialsWithIAM operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.GetClusterCredentialsWithIAM
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentialsWithIAM"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetClusterCredentialsWithIAMResult> getClusterCredentialsWithIAMAsync(
+            GetClusterCredentialsWithIAMRequest getClusterCredentialsWithIAMRequest,
+            com.amazonaws.handlers.AsyncHandler<GetClusterCredentialsWithIAMRequest, GetClusterCredentialsWithIAMResult> asyncHandler);
 
     /**
      * <p>
@@ -4001,7 +4056,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+     * This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift
+     * automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
      * 
      * @param modifyAquaConfigurationRequest
@@ -4014,7 +4070,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+     * This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift
+     * automatically determines whether to use AQUA (Advanced Query Accelerator).
      * </p>
      * 
      * @param modifyAquaConfigurationRequest
@@ -4700,7 +4757,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * From the consumer account, rejects the specified datashare.
+     * From a datashare consumer account, rejects the specified datashare.
      * </p>
      * 
      * @param rejectDataShareRequest
@@ -4713,7 +4770,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * From the consumer account, rejects the specified datashare.
+     * From a datashare consumer account, rejects the specified datashare.
      * </p>
      * 
      * @param rejectDataShareRequest

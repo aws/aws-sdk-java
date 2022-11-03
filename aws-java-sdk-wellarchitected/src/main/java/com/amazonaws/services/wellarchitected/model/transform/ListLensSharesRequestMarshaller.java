@@ -35,6 +35,8 @@ public class ListLensSharesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Status").build();
 
     private static final ListLensSharesRequestMarshaller instance = new ListLensSharesRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class ListLensSharesRequestMarshaller {
             protocolMarshaller.marshall(listLensSharesRequest.getSharedWithPrefix(), SHAREDWITHPREFIX_BINDING);
             protocolMarshaller.marshall(listLensSharesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listLensSharesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listLensSharesRequest.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

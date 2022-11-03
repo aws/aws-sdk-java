@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The combination of Amazon Web Services service, linked account, Region, and usage type where a cost anomaly is
- * observed.
+ * The combination of Amazon Web Service, linked account, Region, and usage type where a cost anomaly is observed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause" target="_top">AWS API Documentation</a>
@@ -30,7 +29,7 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service name that's associated with the cost anomaly.
+     * The Amazon Web Service name that's associated with the cost anomaly.
      * </p>
      */
     private String service;
@@ -55,11 +54,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service name that's associated with the cost anomaly.
+     * The Amazon Web Service name that's associated with the cost anomaly.
      * </p>
      * 
      * @param service
-     *        The Amazon Web Services service name that's associated with the cost anomaly.
+     *        The Amazon Web Service name that's associated with the cost anomaly.
      */
 
     public void setService(String service) {
@@ -68,10 +67,10 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service name that's associated with the cost anomaly.
+     * The Amazon Web Service name that's associated with the cost anomaly.
      * </p>
      * 
-     * @return The Amazon Web Services service name that's associated with the cost anomaly.
+     * @return The Amazon Web Service name that's associated with the cost anomaly.
      */
 
     public String getService() {
@@ -80,11 +79,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service name that's associated with the cost anomaly.
+     * The Amazon Web Service name that's associated with the cost anomaly.
      * </p>
      * 
      * @param service
-     *        The Amazon Web Services service name that's associated with the cost anomaly.
+     *        The Amazon Web Service name that's associated with the cost anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

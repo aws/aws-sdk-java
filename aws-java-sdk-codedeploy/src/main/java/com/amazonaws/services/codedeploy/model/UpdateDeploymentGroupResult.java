@@ -29,9 +29,9 @@ public class UpdateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group,
-     * AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
-     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-     * account.
+     * CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services
+     * account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from
+     * the Amazon Web Services account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AutoScalingGroup> hooksNotCleanedUp;
@@ -39,15 +39,15 @@ public class UpdateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group,
-     * AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
-     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-     * account.
+     * CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services
+     * account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from
+     * the Amazon Web Services account.
      * </p>
      * 
      * @return If the output contains no data, and the corresponding deployment group contained at least one Auto
-     *         Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks
-     *         from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling
-     *         lifecycle event hooks from the AWS account.
+     *         Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from
+     *         the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto
+     *         Scaling lifecycle event hooks from the Amazon Web Services account.
      */
 
     public java.util.List<AutoScalingGroup> getHooksNotCleanedUp() {
@@ -60,16 +60,16 @@ public class UpdateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group,
-     * AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
-     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-     * account.
+     * CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services
+     * account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from
+     * the Amazon Web Services account.
      * </p>
      * 
      * @param hooksNotCleanedUp
      *        If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling
-     *        group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the
-     *        AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-     *        event hooks from the AWS account.
+     *        group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the
+     *        Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling
+     *        lifecycle event hooks from the Amazon Web Services account.
      */
 
     public void setHooksNotCleanedUp(java.util.Collection<AutoScalingGroup> hooksNotCleanedUp) {
@@ -84,9 +84,9 @@ public class UpdateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group,
-     * AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
-     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-     * account.
+     * CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services
+     * account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from
+     * the Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,9 +96,9 @@ public class UpdateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @param hooksNotCleanedUp
      *        If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling
-     *        group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the
-     *        AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-     *        event hooks from the AWS account.
+     *        group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the
+     *        Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling
+     *        lifecycle event hooks from the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,16 +115,16 @@ public class UpdateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group,
-     * AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
-     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-     * account.
+     * CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services
+     * account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from
+     * the Amazon Web Services account.
      * </p>
      * 
      * @param hooksNotCleanedUp
      *        If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling
-     *        group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the
-     *        AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-     *        event hooks from the AWS account.
+     *        group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the
+     *        Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling
+     *        lifecycle event hooks from the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

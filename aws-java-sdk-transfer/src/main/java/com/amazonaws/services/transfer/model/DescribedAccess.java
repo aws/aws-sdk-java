@@ -42,9 +42,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
      * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
-     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when
+     * <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the session policy to lock down the associated access to the
@@ -55,18 +55,18 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
+     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
+     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
      * </p>
      */
     private String homeDirectoryType;
     /**
      * <p>
-     * A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes
-     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A session policy for your user so that you can use the same Identity and Access Management (IAM) role across
+     * multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you
+     * can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      */
@@ -75,20 +75,20 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     private PosixProfile posixProfile;
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
-     * should also contain a trust relationship that allows the server to access your resources when servicing your
-     * users' transfer requests.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access
+     * to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of
+     * access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or
+     * Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access
+     * your resources when servicing your users' transfer requests.
      * </p>
      */
     private String role;
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
-     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using
+     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
+     * Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -97,9 +97,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      * </p>
      * <p>
-     * The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-
+     * The regular expression used to validate this parameter is a string of characters consisting of uppercase and
+     * lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following
+     * characters: =,.@:/-
      * </p>
      */
     private String externalId;
@@ -164,9 +164,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
      * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
-     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when
+     * <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the session policy to lock down the associated access to the
@@ -178,9 +178,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *         your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *         <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
      *         <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     *         displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
-     *         role provides access to paths in <code>Target</code>. This value can only be set when
-     *         <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     *         displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access
+     *         to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to
+     *         <i>LOGICAL</i>.</p>
      *         <p>
      *         In most cases, you can use this value instead of the session policy to lock down the associated access to
      *         the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/'
@@ -196,9 +196,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
      * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
-     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when
+     * <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the session policy to lock down the associated access to the
@@ -211,9 +211,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
-     *        role provides access to paths in <code>Target</code>. This value can only be set when
-     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     *        displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access
+     *        to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to
+     *        <i>LOGICAL</i>.</p>
      *        <p>
      *        In most cases, you can use this value instead of the session policy to lock down the associated access to
      *        the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/'
@@ -234,9 +234,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
      * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
-     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when
+     * <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the session policy to lock down the associated access to the
@@ -254,9 +254,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
-     *        role provides access to paths in <code>Target</code>. This value can only be set when
-     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     *        displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access
+     *        to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to
+     *        <i>LOGICAL</i>.</p>
      *        <p>
      *        In most cases, you can use this value instead of the session policy to lock down the associated access to
      *        the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/'
@@ -279,9 +279,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
      * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
-     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when
+     * <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the session policy to lock down the associated access to the
@@ -294,9 +294,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
-     *        role provides access to paths in <code>Target</code>. This value can only be set when
-     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     *        displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access
+     *        to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to
+     *        <i>LOGICAL</i>.</p>
      *        <p>
      *        In most cases, you can use this value instead of the session policy to lock down the associated access to
      *        the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/'
@@ -311,18 +311,18 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
+     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
+     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible
-     *        to your users.
+     *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
+     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
+     *        paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     *        EFS paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -332,17 +332,17 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
+     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
+     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
      * </p>
      * 
-     * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     *         as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     *         mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
-     *         visible to your users.
+     * @return The type of landing directory (folder) that you want your users' home directory to be when they log in to
+     *         the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
+     *         paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *         provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     *         EFS paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -352,18 +352,18 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
+     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
+     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible
-     *        to your users.
+     *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
+     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
+     *        paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     *        EFS paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -375,18 +375,18 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
+     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
+     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible
-     *        to your users.
+     *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
+     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
+     *        paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     *        EFS paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -398,17 +398,17 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes
-     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A session policy for your user so that you can use the same Identity and Access Management (IAM) role across
+     * multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you
+     * can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * 
      * @param policy
-     *        A session policy for your user so that you can use the same IAM role across multiple users. This policy
-     *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
-     *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     *        <code>${Transfer:HomeBucket}</code>.
+     *        A session policy for your user so that you can use the same Identity and Access Management (IAM) role
+     *        across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket.
+     *        Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      */
 
     public void setPolicy(String policy) {
@@ -417,16 +417,16 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes
-     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A session policy for your user so that you can use the same Identity and Access Management (IAM) role across
+     * multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you
+     * can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * 
-     * @return A session policy for your user so that you can use the same IAM role across multiple users. This policy
-     *         scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
-     *         policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     *         <code>${Transfer:HomeBucket}</code>.
+     * @return A session policy for your user so that you can use the same Identity and Access Management (IAM) role
+     *         across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket.
+     *         Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+     *         <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      */
 
     public String getPolicy() {
@@ -435,17 +435,17 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes
-     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A session policy for your user so that you can use the same Identity and Access Management (IAM) role across
+     * multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you
+     * can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * 
      * @param policy
-     *        A session policy for your user so that you can use the same IAM role across multiple users. This policy
-     *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
-     *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     *        <code>${Transfer:HomeBucket}</code>.
+     *        A session policy for your user so that you can use the same Identity and Access Management (IAM) role
+     *        across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket.
+     *        Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,19 +482,19 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
-     * should also contain a trust relationship that allows the server to access your resources when servicing your
-     * users' transfer requests.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access
+     * to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of
+     * access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or
+     * Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access
+     * your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
-     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
-     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
-     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
-     *        system. The IAM role should also contain a trust relationship that allows the server to access your
-     *        resources when servicing your users' transfer requests.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users'
+     *        access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine
+     *        the level of access that you want to provide your users when transferring files into and out of your
+     *        Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that
+     *        allows the server to access your resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -503,18 +503,18 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
-     * should also contain a trust relationship that allows the server to access your resources when servicing your
-     * users' transfer requests.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access
+     * to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of
+     * access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or
+     * Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access
+     * your resources when servicing your users' transfer requests.
      * </p>
      * 
-     * @return Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
-     *         S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
-     *         want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
-     *         system. The IAM role should also contain a trust relationship that allows the server to access your
-     *         resources when servicing your users' transfer requests.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users'
+     *         access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine
+     *         the level of access that you want to provide your users when transferring files into and out of your
+     *         Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that
+     *         allows the server to access your resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -523,19 +523,19 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
-     * should also contain a trust relationship that allows the server to access your resources when servicing your
-     * users' transfer requests.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access
+     * to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of
+     * access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or
+     * Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access
+     * your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
-     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
-     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
-     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
-     *        system. The IAM role should also contain a trust relationship that allows the server to access your
-     *        resources when servicing your users' transfer requests.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users'
+     *        access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine
+     *        the level of access that you want to provide your users when transferring files into and out of your
+     *        Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that
+     *        allows the server to access your resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,9 +547,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
-     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using
+     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
+     * Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -558,16 +558,16 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      * </p>
      * <p>
-     * The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-
+     * The regular expression used to validate this parameter is a string of characters consisting of uppercase and
+     * lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following
+     * characters: =,.@:/-
      * </p>
      * 
      * @param externalId
      *        A unique identifier that is required to identify specific groups within your directory. The users of the
      *        group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *        using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
-     *        running the following command using Windows PowerShell.</p>
+     *        using Transfer Family. If you know the group name, you can view the SID values by running the following
+     *        command using Windows PowerShell.</p>
      *        <p>
      *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
@@ -575,9 +575,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *        In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      *        </p>
      *        <p>
-     *        The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *        characters: =,.@:/-
+     *        The regular expression used to validate this parameter is a string of characters consisting of uppercase
+     *        and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the
+     *        following characters: =,.@:/-
      */
 
     public void setExternalId(String externalId) {
@@ -587,9 +587,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
-     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using
+     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
+     * Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -598,15 +598,15 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      * </p>
      * <p>
-     * The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-
+     * The regular expression used to validate this parameter is a string of characters consisting of uppercase and
+     * lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following
+     * characters: =,.@:/-
      * </p>
      * 
      * @return A unique identifier that is required to identify specific groups within your directory. The users of the
      *         group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *         using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
-     *         running the following command using Windows PowerShell.</p>
+     *         using Transfer Family. If you know the group name, you can view the SID values by running the following
+     *         command using Windows PowerShell.</p>
      *         <p>
      *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *         </p>
@@ -614,9 +614,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *         In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      *         </p>
      *         <p>
-     *         The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *         characters: =,.@:/-
+     *         The regular expression used to validate this parameter is a string of characters consisting of uppercase
+     *         and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the
+     *         following characters: =,.@:/-
      */
 
     public String getExternalId() {
@@ -626,9 +626,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
-     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using
+     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
+     * Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -637,16 +637,16 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      * </p>
      * <p>
-     * The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-
+     * The regular expression used to validate this parameter is a string of characters consisting of uppercase and
+     * lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following
+     * characters: =,.@:/-
      * </p>
      * 
      * @param externalId
      *        A unique identifier that is required to identify specific groups within your directory. The users of the
      *        group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *        using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
-     *        running the following command using Windows PowerShell.</p>
+     *        using Transfer Family. If you know the group name, you can view the SID values by running the following
+     *        command using Windows PowerShell.</p>
      *        <p>
      *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
@@ -654,9 +654,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      *        In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
      *        </p>
      *        <p>
-     *        The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase
-     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *        characters: =,.@:/-
+     *        The regular expression used to validate this parameter is a string of characters consisting of uppercase
+     *        and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the
+     *        following characters: =,.@:/-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

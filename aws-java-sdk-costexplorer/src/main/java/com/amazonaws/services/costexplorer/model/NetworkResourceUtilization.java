@@ -30,36 +30,36 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network inbound throughput utilization measured in Bytes per second.
+     * The network inbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      */
     private String networkInBytesPerSecond;
     /**
      * <p>
-     * The network outbound throughput utilization measured in Bytes per second.
+     * The network outbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      */
     private String networkOutBytesPerSecond;
     /**
      * <p>
-     * The network ingress packets that are measured in packets per second.
+     * The network inbound packets that are measured in packets per second.
      * </p>
      */
     private String networkPacketsInPerSecond;
     /**
      * <p>
-     * The network outgress packets that are measured in packets per second.
+     * The network outbound packets that are measured in packets per second.
      * </p>
      */
     private String networkPacketsOutPerSecond;
 
     /**
      * <p>
-     * The network inbound throughput utilization measured in Bytes per second.
+     * The network inbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      * 
      * @param networkInBytesPerSecond
-     *        The network inbound throughput utilization measured in Bytes per second.
+     *        The network inbound throughput utilization measured in Bytes per second (Bps).
      */
 
     public void setNetworkInBytesPerSecond(String networkInBytesPerSecond) {
@@ -68,10 +68,10 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network inbound throughput utilization measured in Bytes per second.
+     * The network inbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      * 
-     * @return The network inbound throughput utilization measured in Bytes per second.
+     * @return The network inbound throughput utilization measured in Bytes per second (Bps).
      */
 
     public String getNetworkInBytesPerSecond() {
@@ -80,11 +80,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network inbound throughput utilization measured in Bytes per second.
+     * The network inbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      * 
      * @param networkInBytesPerSecond
-     *        The network inbound throughput utilization measured in Bytes per second.
+     *        The network inbound throughput utilization measured in Bytes per second (Bps).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network outbound throughput utilization measured in Bytes per second.
+     * The network outbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      * 
      * @param networkOutBytesPerSecond
-     *        The network outbound throughput utilization measured in Bytes per second.
+     *        The network outbound throughput utilization measured in Bytes per second (Bps).
      */
 
     public void setNetworkOutBytesPerSecond(String networkOutBytesPerSecond) {
@@ -108,10 +108,10 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network outbound throughput utilization measured in Bytes per second.
+     * The network outbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      * 
-     * @return The network outbound throughput utilization measured in Bytes per second.
+     * @return The network outbound throughput utilization measured in Bytes per second (Bps).
      */
 
     public String getNetworkOutBytesPerSecond() {
@@ -120,11 +120,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network outbound throughput utilization measured in Bytes per second.
+     * The network outbound throughput utilization measured in Bytes per second (Bps).
      * </p>
      * 
      * @param networkOutBytesPerSecond
-     *        The network outbound throughput utilization measured in Bytes per second.
+     *        The network outbound throughput utilization measured in Bytes per second (Bps).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network ingress packets that are measured in packets per second.
+     * The network inbound packets that are measured in packets per second.
      * </p>
      * 
      * @param networkPacketsInPerSecond
-     *        The network ingress packets that are measured in packets per second.
+     *        The network inbound packets that are measured in packets per second.
      */
 
     public void setNetworkPacketsInPerSecond(String networkPacketsInPerSecond) {
@@ -148,10 +148,10 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network ingress packets that are measured in packets per second.
+     * The network inbound packets that are measured in packets per second.
      * </p>
      * 
-     * @return The network ingress packets that are measured in packets per second.
+     * @return The network inbound packets that are measured in packets per second.
      */
 
     public String getNetworkPacketsInPerSecond() {
@@ -160,11 +160,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network ingress packets that are measured in packets per second.
+     * The network inbound packets that are measured in packets per second.
      * </p>
      * 
      * @param networkPacketsInPerSecond
-     *        The network ingress packets that are measured in packets per second.
+     *        The network inbound packets that are measured in packets per second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network outgress packets that are measured in packets per second.
+     * The network outbound packets that are measured in packets per second.
      * </p>
      * 
      * @param networkPacketsOutPerSecond
-     *        The network outgress packets that are measured in packets per second.
+     *        The network outbound packets that are measured in packets per second.
      */
 
     public void setNetworkPacketsOutPerSecond(String networkPacketsOutPerSecond) {
@@ -188,10 +188,10 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network outgress packets that are measured in packets per second.
+     * The network outbound packets that are measured in packets per second.
      * </p>
      * 
-     * @return The network outgress packets that are measured in packets per second.
+     * @return The network outbound packets that are measured in packets per second.
      */
 
     public String getNetworkPacketsOutPerSecond() {
@@ -200,11 +200,11 @@ public class NetworkResourceUtilization implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The network outgress packets that are measured in packets per second.
+     * The network outbound packets that are measured in packets per second.
      * </p>
      * 
      * @param networkPacketsOutPerSecond
-     *        The network outgress packets that are measured in packets per second.
+     *        The network outbound packets that are measured in packets per second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

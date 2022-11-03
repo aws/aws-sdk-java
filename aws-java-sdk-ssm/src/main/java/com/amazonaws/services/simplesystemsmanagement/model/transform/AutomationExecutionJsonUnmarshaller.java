@@ -167,6 +167,16 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                     context.nextToken();
                     automationExecution.setProgressCounters(ProgressCountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(AlarmStateInformationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("AutomationSubtype", targetDepth)) {
                     context.nextToken();
                     automationExecution.setAutomationSubtype(context.getUnmarshaller(String.class).unmarshall(context));

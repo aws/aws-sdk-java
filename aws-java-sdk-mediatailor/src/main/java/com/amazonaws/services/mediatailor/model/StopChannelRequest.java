@@ -27,18 +27,18 @@ public class StopChannelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      */
     private String channelName;
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      */
 
     public void setChannelName(String channelName) {
@@ -47,10 +47,10 @@ public class StopChannelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel.
      */
 
     public String getChannelName() {
@@ -59,11 +59,11 @@ public class StopChannelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

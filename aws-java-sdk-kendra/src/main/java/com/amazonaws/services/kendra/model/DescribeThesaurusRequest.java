@@ -27,24 +27,24 @@ public class DescribeThesaurusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the thesaurus to describe.
+     * The identifier of the thesaurus you want to get information on.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      */
     private String indexId;
 
     /**
      * <p>
-     * The identifier of the thesaurus to describe.
+     * The identifier of the thesaurus you want to get information on.
      * </p>
      * 
      * @param id
-     *        The identifier of the thesaurus to describe.
+     *        The identifier of the thesaurus you want to get information on.
      */
 
     public void setId(String id) {
@@ -53,10 +53,10 @@ public class DescribeThesaurusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the thesaurus to describe.
+     * The identifier of the thesaurus you want to get information on.
      * </p>
      * 
-     * @return The identifier of the thesaurus to describe.
+     * @return The identifier of the thesaurus you want to get information on.
      */
 
     public String getId() {
@@ -65,11 +65,11 @@ public class DescribeThesaurusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the thesaurus to describe.
+     * The identifier of the thesaurus you want to get information on.
      * </p>
      * 
      * @param id
-     *        The identifier of the thesaurus to describe.
+     *        The identifier of the thesaurus you want to get information on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DescribeThesaurusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to describe.
+     *        The identifier of the index for the thesaurus.
      */
 
     public void setIndexId(String indexId) {
@@ -93,10 +93,10 @@ public class DescribeThesaurusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
-     * @return The identifier of the index associated with the thesaurus to describe.
+     * @return The identifier of the index for the thesaurus.
      */
 
     public String getIndexId() {
@@ -105,11 +105,11 @@ public class DescribeThesaurusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the index associated with the thesaurus to describe.
+     * The identifier of the index for the thesaurus.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index associated with the thesaurus to describe.
+     *        The identifier of the index for the thesaurus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

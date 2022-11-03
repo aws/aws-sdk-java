@@ -60,6 +60,8 @@ public class FilterCriteriaMarshaller {
             .marshallLocationName("findingType").build();
     private static final MarshallingInfo<List> FIRSTOBSERVEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstObservedAt").build();
+    private static final MarshallingInfo<List> FIXAVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("fixAvailable").build();
     private static final MarshallingInfo<List> INSPECTORSCORE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inspectorScore").build();
     private static final MarshallingInfo<List> LASTOBSERVEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -123,6 +125,7 @@ public class FilterCriteriaMarshaller {
             protocolMarshaller.marshall(filterCriteria.getFindingStatus(), FINDINGSTATUS_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFindingType(), FINDINGTYPE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFirstObservedAt(), FIRSTOBSERVEDAT_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getFixAvailable(), FIXAVAILABLE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getInspectorScore(), INSPECTORSCORE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getLastObservedAt(), LASTOBSERVEDAT_BINDING);
             protocolMarshaller.marshall(filterCriteria.getNetworkProtocol(), NETWORKPROTOCOL_BINDING);

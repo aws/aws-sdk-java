@@ -73,7 +73,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     private String playbackMode;
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -455,10 +458,16 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the channel.
+     * @return The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources
+     *         to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -467,11 +476,17 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the channel.
+     *        The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to
+     *        help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -480,11 +495,17 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags assigned to the channel.
+     * The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the channel.
+     *        The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to
+     *        help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

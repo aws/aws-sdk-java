@@ -64,6 +64,10 @@ public class SpeakerSummaryJsonUnmarshaller implements Unmarshaller<SpeakerSumma
                     context.nextToken();
                     speakerSummary.setGeneratedSpeakerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LastAccessedAt", targetDepth)) {
+                    context.nextToken();
+                    speakerSummary.setLastAccessedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     speakerSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

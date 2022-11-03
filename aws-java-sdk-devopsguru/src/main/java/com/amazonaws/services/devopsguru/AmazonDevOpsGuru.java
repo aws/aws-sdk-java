@@ -410,6 +410,8 @@ public interface AmazonDevOpsGuru {
      *         Management</a> in the <i>IAM User Guide</i>.
      * @throws InternalServerException
      *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
      * @throws ThrottlingException
      *         The request was denied due to a request throttling.
      * @throws ValidationException
@@ -507,6 +509,32 @@ public interface AmazonDevOpsGuru {
 
     /**
      * <p>
+     * Returns the list of log groups that contain log anomalies.
+     * </p>
+     * 
+     * @param listAnomalousLogGroupsRequest
+     * @return Result of the ListAnomalousLogGroups operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
+     * @sample AmazonDevOpsGuru.ListAnomalousLogGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAnomalousLogGroupsResult listAnomalousLogGroups(ListAnomalousLogGroupsRequest listAnomalousLogGroupsRequest);
+
+    /**
+     * <p>
      * Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to
      * specify which events are returned.
      * </p>
@@ -556,6 +584,27 @@ public interface AmazonDevOpsGuru {
      *      Documentation</a>
      */
     ListInsightsResult listInsights(ListInsightsRequest listInsightsRequest);
+
+    /**
+     * <p>
+     * Returns the list of all log groups that are being monitored and tagged by DevOps Guru.
+     * </p>
+     * 
+     * @param listMonitoredResourcesRequest
+     * @return Result of the ListMonitoredResources operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
+     * @sample AmazonDevOpsGuru.ListMonitoredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMonitoredResourcesResult listMonitoredResources(ListMonitoredResourcesRequest listMonitoredResourcesRequest);
 
     /**
      * <p>
@@ -694,9 +743,9 @@ public interface AmazonDevOpsGuru {
     /**
      * <p>
      * Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by
-     * their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one
-     * or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (
-     * <code>REACTIVE</code> or <code>PROACTIVE</code>).
+     * their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (
+     * <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or
+     * <code>PROACTIVE</code>).
      * </p>
      * <p>
      * Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the

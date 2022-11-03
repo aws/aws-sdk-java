@@ -41,7 +41,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
@@ -67,7 +67,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
@@ -76,7 +76,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String classicLinkVPCId;
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
@@ -96,12 +96,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String userData;
     /**
      * <p>
-     * The instance type for the instances.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type for the instances. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String instanceType;
@@ -119,7 +116,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String ramdiskId;
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     * The block device mapping entries that define the block devices to attach to the instances at launch. By default,
+     * the block devices specified in the block device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
@@ -172,10 +170,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's
-     * instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in
-     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a
+     * default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public
+     * IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a
+     * public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more
+     * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto
+     * Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean associatePublicIpAddress;
@@ -283,13 +283,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param imageId
      *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the
      *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
@@ -300,12 +300,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in
      *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
@@ -316,13 +316,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param imageId
      *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the
      *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -495,14 +495,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
      * </p>
      * 
      * @param classicLinkVPCId
-     *        <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *        <p>
      *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
      */
@@ -513,13 +513,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
      * </p>
      * 
-     * @return <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     * @return <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *         <p>
      *         The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
      */
@@ -530,14 +530,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
      * </p>
      * 
      * @param classicLinkVPCId
-     *        <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *        <p>
      *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -550,13 +550,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      * </p>
      * 
-     * @return <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     * @return <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *         <p>
      *         The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      */
@@ -570,14 +570,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *        <p>
      *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      */
@@ -593,7 +593,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
@@ -605,7 +605,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *        <p>
      *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -623,14 +623,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i>
+     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
      * </p>
      * <p>
      * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
      *        <p>
      *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -716,20 +716,15 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type for the instances.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type for the instances. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for the instances.</p>
-     *        <p>
-     *        For information about available instance types, see <a
+     *        The instance type for the instances. For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        >Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -738,19 +733,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type for the instances.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type for the instances. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
-     * @return The instance type for the instances.</p>
-     *         <p>
-     *         For information about available instance types, see <a
+     * @return The instance type for the instances. For information about available instance types, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *         >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *         >Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getInstanceType() {
@@ -759,20 +749,15 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type for the instances.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type for the instances. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for the instances.</p>
-     *        <p>
-     *        For information about available instance types, see <a
+     *        The instance type for the instances. For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        >Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -863,12 +848,15 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     * The block device mapping entries that define the block devices to attach to the instances at launch. By default,
+     * the block devices specified in the block device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
-     * @return A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     * @return The block device mapping entries that define the block devices to attach to the instances at launch. By
+     *         default, the block devices specified in the block device mapping for the AMI are used. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      *         Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
@@ -882,13 +870,16 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     * The block device mapping entries that define the block devices to attach to the instances at launch. By default,
+     * the block devices specified in the block device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     *        The block device mapping entries that define the block devices to attach to the instances at launch. By
+     *        default, the block devices specified in the block device mapping for the AMI are used. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      *        Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
@@ -904,7 +895,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     * The block device mapping entries that define the block devices to attach to the instances at launch. By default,
+     * the block devices specified in the block device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
@@ -915,7 +907,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     *        The block device mapping entries that define the block devices to attach to the instances at launch. By
+     *        default, the block devices specified in the block device mapping for the AMI are used. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      *        Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -933,13 +927,16 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     * The block device mapping entries that define the block devices to attach to the instances at launch. By default,
+     * the block devices specified in the block device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        A block device mapping, which specifies the block devices for the instance. For more information, see <a
+     *        The block device mapping entries that define the block devices to attach to the instances at launch. By
+     *        default, the block devices specified in the block device mapping for the AMI are used. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      *        Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1257,15 +1254,20 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's
-     * instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in
-     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a
+     * default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public
+     * IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a
+     * public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more
+     * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto
+     * Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param associatePublicIpAddress
-     *        For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *        group's instances. For more information, see <a
+     *        Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched
+     *        into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to
+     *        assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the
+     *        default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4
+     *        address on the subnet. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
      *        instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
@@ -1276,14 +1278,19 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's
-     * instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in
-     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a
+     * default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public
+     * IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a
+     * public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more
+     * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto
+     * Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *         group's instances. For more information, see <a
+     * @return Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched
+     *         into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to
+     *         assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the
+     *         default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4
+     *         address on the subnet. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
      *         instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
@@ -1294,15 +1301,20 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's
-     * instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in
-     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a
+     * default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public
+     * IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a
+     * public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more
+     * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto
+     * Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param associatePublicIpAddress
-     *        For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *        group's instances. For more information, see <a
+     *        Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched
+     *        into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to
+     *        assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the
+     *        default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4
+     *        address on the subnet. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
      *        instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1315,14 +1327,19 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's
-     * instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in
-     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a
+     * default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public
+     * IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a
+     * public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more
+     * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto
+     * Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *         group's instances. For more information, see <a
+     * @return Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched
+     *         into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to
+     *         assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the
+     *         default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4
+     *         address on the subnet. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
      *         instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */

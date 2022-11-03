@@ -41,6 +41,13 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
      * </p>
      */
     private java.util.List<String> sourceServerIDs;
+    /**
+     * <p>
+     * An array of staging account IDs that extended source servers belong to. An empty array means all source servers
+     * will be shown.
+     * </p>
+     */
+    private java.util.List<String> stagingAccountIDs;
 
     /**
      * <p>
@@ -159,6 +166,84 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * An array of staging account IDs that extended source servers belong to. An empty array means all source servers
+     * will be shown.
+     * </p>
+     * 
+     * @return An array of staging account IDs that extended source servers belong to. An empty array means all source
+     *         servers will be shown.
+     */
+
+    public java.util.List<String> getStagingAccountIDs() {
+        return stagingAccountIDs;
+    }
+
+    /**
+     * <p>
+     * An array of staging account IDs that extended source servers belong to. An empty array means all source servers
+     * will be shown.
+     * </p>
+     * 
+     * @param stagingAccountIDs
+     *        An array of staging account IDs that extended source servers belong to. An empty array means all source
+     *        servers will be shown.
+     */
+
+    public void setStagingAccountIDs(java.util.Collection<String> stagingAccountIDs) {
+        if (stagingAccountIDs == null) {
+            this.stagingAccountIDs = null;
+            return;
+        }
+
+        this.stagingAccountIDs = new java.util.ArrayList<String>(stagingAccountIDs);
+    }
+
+    /**
+     * <p>
+     * An array of staging account IDs that extended source servers belong to. An empty array means all source servers
+     * will be shown.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStagingAccountIDs(java.util.Collection)} or {@link #withStagingAccountIDs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param stagingAccountIDs
+     *        An array of staging account IDs that extended source servers belong to. An empty array means all source
+     *        servers will be shown.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSourceServersRequestFilters withStagingAccountIDs(String... stagingAccountIDs) {
+        if (this.stagingAccountIDs == null) {
+            setStagingAccountIDs(new java.util.ArrayList<String>(stagingAccountIDs.length));
+        }
+        for (String ele : stagingAccountIDs) {
+            this.stagingAccountIDs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of staging account IDs that extended source servers belong to. An empty array means all source servers
+     * will be shown.
+     * </p>
+     * 
+     * @param stagingAccountIDs
+     *        An array of staging account IDs that extended source servers belong to. An empty array means all source
+     *        servers will be shown.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSourceServersRequestFilters withStagingAccountIDs(java.util.Collection<String> stagingAccountIDs) {
+        setStagingAccountIDs(stagingAccountIDs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -173,7 +258,9 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
         if (getHardwareId() != null)
             sb.append("HardwareId: ").append(getHardwareId()).append(",");
         if (getSourceServerIDs() != null)
-            sb.append("SourceServerIDs: ").append(getSourceServerIDs());
+            sb.append("SourceServerIDs: ").append(getSourceServerIDs()).append(",");
+        if (getStagingAccountIDs() != null)
+            sb.append("StagingAccountIDs: ").append(getStagingAccountIDs());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +283,10 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
             return false;
         if (other.getSourceServerIDs() != null && other.getSourceServerIDs().equals(this.getSourceServerIDs()) == false)
             return false;
+        if (other.getStagingAccountIDs() == null ^ this.getStagingAccountIDs() == null)
+            return false;
+        if (other.getStagingAccountIDs() != null && other.getStagingAccountIDs().equals(this.getStagingAccountIDs()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +297,7 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
 
         hashCode = prime * hashCode + ((getHardwareId() == null) ? 0 : getHardwareId().hashCode());
         hashCode = prime * hashCode + ((getSourceServerIDs() == null) ? 0 : getSourceServerIDs().hashCode());
+        hashCode = prime * hashCode + ((getStagingAccountIDs() == null) ? 0 : getStagingAccountIDs().hashCode());
         return hashCode;
     }
 

@@ -44,6 +44,27 @@ public class S3OutputFormatConfig implements Serializable, Cloneable, Structured
     private PrefixConfig prefixConfig;
 
     private AggregationConfig aggregationConfig;
+    /**
+     * <p>
+     * If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types
+     * in your source data when it writes the output to Amazon S3.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer
+     * or <code>1</code> in your source data is still an integer in your output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For
+     * example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean preserveSourceDataTyping;
 
     /**
      * <p>
@@ -177,6 +198,178 @@ public class S3OutputFormatConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types
+     * in your source data when it writes the output to Amazon S3.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer
+     * or <code>1</code> in your source data is still an integer in your output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For
+     * example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param preserveSourceDataTyping
+     *        If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data
+     *        types in your source data when it writes the output to Amazon S3. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an
+     *        integer or <code>1</code> in your source data is still an integer in your output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon
+     *        S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in
+     *        the output.
+     *        </p>
+     *        </li>
+     */
+
+    public void setPreserveSourceDataTyping(Boolean preserveSourceDataTyping) {
+        this.preserveSourceDataTyping = preserveSourceDataTyping;
+    }
+
+    /**
+     * <p>
+     * If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types
+     * in your source data when it writes the output to Amazon S3.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer
+     * or <code>1</code> in your source data is still an integer in your output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For
+     * example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the
+     *         data types in your source data when it writes the output to Amazon S3. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an
+     *         integer or <code>1</code> in your source data is still an integer in your output.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon
+     *         S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in
+     *         the output.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getPreserveSourceDataTyping() {
+        return this.preserveSourceDataTyping;
+    }
+
+    /**
+     * <p>
+     * If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types
+     * in your source data when it writes the output to Amazon S3.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer
+     * or <code>1</code> in your source data is still an integer in your output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For
+     * example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param preserveSourceDataTyping
+     *        If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data
+     *        types in your source data when it writes the output to Amazon S3. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an
+     *        integer or <code>1</code> in your source data is still an integer in your output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon
+     *        S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in
+     *        the output.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3OutputFormatConfig withPreserveSourceDataTyping(Boolean preserveSourceDataTyping) {
+        setPreserveSourceDataTyping(preserveSourceDataTyping);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types
+     * in your source data when it writes the output to Amazon S3.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer
+     * or <code>1</code> in your source data is still an integer in your output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For
+     * example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the
+     *         data types in your source data when it writes the output to Amazon S3. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an
+     *         integer or <code>1</code> in your source data is still an integer in your output.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon
+     *         S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in
+     *         the output.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isPreserveSourceDataTyping() {
+        return this.preserveSourceDataTyping;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -193,7 +386,9 @@ public class S3OutputFormatConfig implements Serializable, Cloneable, Structured
         if (getPrefixConfig() != null)
             sb.append("PrefixConfig: ").append(getPrefixConfig()).append(",");
         if (getAggregationConfig() != null)
-            sb.append("AggregationConfig: ").append(getAggregationConfig());
+            sb.append("AggregationConfig: ").append(getAggregationConfig()).append(",");
+        if (getPreserveSourceDataTyping() != null)
+            sb.append("PreserveSourceDataTyping: ").append(getPreserveSourceDataTyping());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +415,10 @@ public class S3OutputFormatConfig implements Serializable, Cloneable, Structured
             return false;
         if (other.getAggregationConfig() != null && other.getAggregationConfig().equals(this.getAggregationConfig()) == false)
             return false;
+        if (other.getPreserveSourceDataTyping() == null ^ this.getPreserveSourceDataTyping() == null)
+            return false;
+        if (other.getPreserveSourceDataTyping() != null && other.getPreserveSourceDataTyping().equals(this.getPreserveSourceDataTyping()) == false)
+            return false;
         return true;
     }
 
@@ -231,6 +430,7 @@ public class S3OutputFormatConfig implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getFileType() == null) ? 0 : getFileType().hashCode());
         hashCode = prime * hashCode + ((getPrefixConfig() == null) ? 0 : getPrefixConfig().hashCode());
         hashCode = prime * hashCode + ((getAggregationConfig() == null) ? 0 : getAggregationConfig().hashCode());
+        hashCode = prime * hashCode + ((getPreserveSourceDataTyping() == null) ? 0 : getPreserveSourceDataTyping().hashCode());
         return hashCode;
     }
 

@@ -46,11 +46,21 @@ import java.util.TreeMap;
 @ThreadSafe
 public class SignatureChecker {
 
-    private static final ThreadLocal<Signature> SIG_CHECKER = SdkThreadLocalsRegistry.register(new ThreadLocal<Signature>() {
+    private static final ThreadLocal<Signature> SHA1_SIG_CHECKER = SdkThreadLocalsRegistry.register(new ThreadLocal<Signature>() {
         @Override
         protected Signature initialValue() {
             try {
                 return Signature.getInstance("SHA1withRSA");
+            } catch (NoSuchAlgorithmException e) {
+                throw new SdkClientException("Could not create RSA Signature", e);
+            }
+        }
+    });
+    private static final ThreadLocal<Signature> SHA256_SIG_CHECKER = SdkThreadLocalsRegistry.register(new ThreadLocal<Signature>() {
+        @Override
+        protected Signature initialValue() {
+            try {
+                return Signature.getInstance("SHA256withRSA");
             } catch (NoSuchAlgorithmException e) {
                 throw new SdkClientException("Could not create RSA Signature", e);
             }
@@ -109,25 +119,57 @@ public class SignatureChecker {
      * @return True if the message was correctly validated, otherwise false.
      */
     public boolean verifySignature(Map<String, String> parsedMessage, PublicKey publicKey) {
-        boolean valid = false;
         String version = parsedMessage.get(SIGNATURE_VERSION);
-        if (version.equals("1")) {
-            // construct the canonical signed string
-            String type = parsedMessage.get(TYPE);
-            String signature = parsedMessage.get(SIGNATURE);
-            String signed;
-            if (type.equals(NOTIFICATION_TYPE)) {
-                signed = stringToSign(publishMessageValues(parsedMessage));
-            } else if (type.equals(SUBSCRIBE_TYPE)) {
-                signed = stringToSign(subscribeMessageValues(parsedMessage));
-            } else if (type.equals(UNSUBSCRIBE_TYPE)) {
-                signed = stringToSign(subscribeMessageValues(parsedMessage)); // no difference, for now
-            } else {
-                throw new RuntimeException("Cannot process message of type " + type);
-            }
-            valid = verifySignature(signed, signature, publicKey);
+        String type = parsedMessage.get(TYPE);
+        String signature = parsedMessage.get(SIGNATURE);
+
+        if (version == null || type == null || signature == null) {
+            throw new RuntimeException("Message cannot have null values");
         }
-        return valid;
+
+        // construct the canonical signed string
+        String signed;
+        if (type.equals(NOTIFICATION_TYPE)) {
+            signed = stringToSign(publishMessageValues(parsedMessage));
+        } else if (type.equals(SUBSCRIBE_TYPE)) {
+            signed = stringToSign(subscribeMessageValues(parsedMessage));
+        } else if (type.equals(UNSUBSCRIBE_TYPE)) {
+            signed = stringToSign(subscribeMessageValues(parsedMessage)); // no difference, for now
+        } else {
+            throw new RuntimeException("Cannot process message of type " + type);
+        }
+        return verifySignature(signed, signature, SignatureVersion.fromValue(version), publicKey);
+    }
+
+    /**
+     * Does the actual Java cryptographic verification of the signature. This
+     * method does no handling of the many rare exceptions it is required to
+     * catch.
+     *
+     * This can also be used to verify the signature from the x-amz-sns-signature http header
+     *
+     * @param message
+     *            Exact string that was signed.  In the case of the x-amz-sns-signature header the
+     *            signing string is the entire post body
+     * @param signature
+     *            Base64-encoded signature of the message
+     * @param signatureVersion
+     *            The hashing algorithm used to sign the message
+     * @return
+     */
+    public boolean verifySignature(String message, String signature, SignatureVersion signatureVersion, PublicKey publicKey) {
+        boolean result = false;
+        switch (signatureVersion) {
+            case SHA1:
+                result = verifySignature(message, signature, publicKey, SHA1_SIG_CHECKER.get());
+                break;
+            case SHA256:
+                result = verifySignature(message, signature, publicKey, SHA256_SIG_CHECKER.get());
+                break;
+            default:
+                throw new RuntimeException("Invalid SignatureVersion value");
+        }
+        return result;
     }
 
     /**
@@ -145,10 +187,13 @@ public class SignatureChecker {
      * @return
      */
     public boolean verifySignature(String message, String signature, PublicKey publicKey){
+        return verifySignature(message, signature, publicKey, SHA1_SIG_CHECKER.get());
+    }
+
+    private boolean verifySignature(String message, String signature, PublicKey publicKey, Signature sigChecker) {
         boolean result = false;
         try {
             byte[] sigbytes = Base64.decode(signature.getBytes());
-            Signature sigChecker = SIG_CHECKER.get();
             sigChecker.initVerify(publicKey);
             sigChecker.update(message.getBytes());
             result = sigChecker.verify(sigbytes);

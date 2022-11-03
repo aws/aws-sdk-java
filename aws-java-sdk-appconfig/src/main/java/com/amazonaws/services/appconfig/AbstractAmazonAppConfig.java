@@ -48,6 +48,16 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    public CreateExtensionResult createExtension(CreateExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateExtensionAssociationResult createExtensionAssociation(CreateExtensionAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateHostedConfigurationVersionResult createHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +79,16 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public DeleteEnvironmentResult deleteEnvironment(DeleteEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteExtensionResult deleteExtension(DeleteExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteExtensionAssociationResult deleteExtensionAssociation(DeleteExtensionAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,6 +129,16 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    public GetExtensionResult getExtension(GetExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExtensionAssociationResult getExtensionAssociation(GetExtensionAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetHostedConfigurationVersionResult getHostedConfigurationVersion(GetHostedConfigurationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -135,6 +165,16 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExtensionAssociationsResult listExtensionAssociations(ListExtensionAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExtensionsResult listExtensions(ListExtensionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,6 +225,16 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateExtensionResult updateExtension(UpdateExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateExtensionAssociationResult updateExtensionAssociation(UpdateExtensionAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

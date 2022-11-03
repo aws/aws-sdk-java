@@ -48,13 +48,13 @@ public class SqlStatementResultJsonUnmarshaller implements Unmarshaller<SqlState
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("numberOfRecordsUpdated", targetDepth)) {
-                    context.nextToken();
-                    sqlStatementResult.setNumberOfRecordsUpdated(context.getUnmarshaller(Long.class).unmarshall(context));
-                }
                 if (context.testExpression("resultFrame", targetDepth)) {
                     context.nextToken();
                     sqlStatementResult.setResultFrame(ResultFrameJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("numberOfRecordsUpdated", targetDepth)) {
+                    context.nextToken();
+                    sqlStatementResult.setNumberOfRecordsUpdated(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

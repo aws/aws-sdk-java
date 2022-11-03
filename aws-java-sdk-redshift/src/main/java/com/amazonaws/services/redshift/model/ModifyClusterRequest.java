@@ -161,7 +161,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1132,7 +1133,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1175,8 +1177,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /,
-     *        or @.
+     *        Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote),
+     *        <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      *        </p>
      *        </li>
      */
@@ -1226,7 +1228,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1268,8 +1271,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /,
-     *         or @.
+     *         Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote),
+     *         <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      *         </p>
      *         </li>
      */
@@ -1319,7 +1322,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.
+     * Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code>
+     * (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      * </p>
      * </li>
      * </ul>
@@ -1362,8 +1366,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /,
-     *        or @.
+     *        Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote),
+     *        <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

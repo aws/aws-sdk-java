@@ -38,14 +38,6 @@ public class KmsKeyConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
-     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
-     * Otherwise, the access preview uses the existing grants for the key.
-     * </p>
-     */
-    private java.util.List<KmsGrantConfiguration> grants;
-    /**
-     * <p>
      * Resource policy configuration for the KMS key. The only valid value for the name of the key policy is
      * <code>default</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
@@ -53,92 +45,14 @@ public class KmsKeyConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Map<String, String> keyPolicies;
-
     /**
      * <p>
      * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
      * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
      * Otherwise, the access preview uses the existing grants for the key.
      * </p>
-     * 
-     * @return A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
-     *         existing key, the access preview uses the proposed list of grant configurations in place of the existing
-     *         grants. Otherwise, the access preview uses the existing grants for the key.
      */
-
-    public java.util.List<KmsGrantConfiguration> getGrants() {
-        return grants;
-    }
-
-    /**
-     * <p>
-     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
-     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
-     * Otherwise, the access preview uses the existing grants for the key.
-     * </p>
-     * 
-     * @param grants
-     *        A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
-     *        existing key, the access preview uses the proposed list of grant configurations in place of the existing
-     *        grants. Otherwise, the access preview uses the existing grants for the key.
-     */
-
-    public void setGrants(java.util.Collection<KmsGrantConfiguration> grants) {
-        if (grants == null) {
-            this.grants = null;
-            return;
-        }
-
-        this.grants = new java.util.ArrayList<KmsGrantConfiguration>(grants);
-    }
-
-    /**
-     * <p>
-     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
-     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
-     * Otherwise, the access preview uses the existing grants for the key.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setGrants(java.util.Collection)} or {@link #withGrants(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param grants
-     *        A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
-     *        existing key, the access preview uses the proposed list of grant configurations in place of the existing
-     *        grants. Otherwise, the access preview uses the existing grants for the key.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KmsKeyConfiguration withGrants(KmsGrantConfiguration... grants) {
-        if (this.grants == null) {
-            setGrants(new java.util.ArrayList<KmsGrantConfiguration>(grants.length));
-        }
-        for (KmsGrantConfiguration ele : grants) {
-            this.grants.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
-     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
-     * Otherwise, the access preview uses the existing grants for the key.
-     * </p>
-     * 
-     * @param grants
-     *        A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
-     *        existing key, the access preview uses the proposed list of grant configurations in place of the existing
-     *        grants. Otherwise, the access preview uses the existing grants for the key.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KmsKeyConfiguration withGrants(java.util.Collection<KmsGrantConfiguration> grants) {
-        setGrants(grants);
-        return this;
-    }
+    private java.util.List<KmsGrantConfiguration> grants;
 
     /**
      * <p>
@@ -227,6 +141,92 @@ public class KmsKeyConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
+     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
+     * Otherwise, the access preview uses the existing grants for the key.
+     * </p>
+     * 
+     * @return A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
+     *         existing key, the access preview uses the proposed list of grant configurations in place of the existing
+     *         grants. Otherwise, the access preview uses the existing grants for the key.
+     */
+
+    public java.util.List<KmsGrantConfiguration> getGrants() {
+        return grants;
+    }
+
+    /**
+     * <p>
+     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
+     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
+     * Otherwise, the access preview uses the existing grants for the key.
+     * </p>
+     * 
+     * @param grants
+     *        A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
+     *        existing key, the access preview uses the proposed list of grant configurations in place of the existing
+     *        grants. Otherwise, the access preview uses the existing grants for the key.
+     */
+
+    public void setGrants(java.util.Collection<KmsGrantConfiguration> grants) {
+        if (grants == null) {
+            this.grants = null;
+            return;
+        }
+
+        this.grants = new java.util.ArrayList<KmsGrantConfiguration>(grants);
+    }
+
+    /**
+     * <p>
+     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
+     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
+     * Otherwise, the access preview uses the existing grants for the key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGrants(java.util.Collection)} or {@link #withGrants(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param grants
+     *        A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
+     *        existing key, the access preview uses the proposed list of grant configurations in place of the existing
+     *        grants. Otherwise, the access preview uses the existing grants for the key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KmsKeyConfiguration withGrants(KmsGrantConfiguration... grants) {
+        if (this.grants == null) {
+            setGrants(new java.util.ArrayList<KmsGrantConfiguration>(grants.length));
+        }
+        for (KmsGrantConfiguration ele : grants) {
+            this.grants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing
+     * key, the access preview uses the proposed list of grant configurations in place of the existing grants.
+     * Otherwise, the access preview uses the existing grants for the key.
+     * </p>
+     * 
+     * @param grants
+     *        A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an
+     *        existing key, the access preview uses the proposed list of grant configurations in place of the existing
+     *        grants. Otherwise, the access preview uses the existing grants for the key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KmsKeyConfiguration withGrants(java.util.Collection<KmsGrantConfiguration> grants) {
+        setGrants(grants);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -238,10 +238,10 @@ public class KmsKeyConfiguration implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGrants() != null)
-            sb.append("Grants: ").append(getGrants()).append(",");
         if (getKeyPolicies() != null)
-            sb.append("KeyPolicies: ").append(getKeyPolicies());
+            sb.append("KeyPolicies: ").append(getKeyPolicies()).append(",");
+        if (getGrants() != null)
+            sb.append("Grants: ").append(getGrants());
         sb.append("}");
         return sb.toString();
     }
@@ -256,13 +256,13 @@ public class KmsKeyConfiguration implements Serializable, Cloneable, StructuredP
         if (obj instanceof KmsKeyConfiguration == false)
             return false;
         KmsKeyConfiguration other = (KmsKeyConfiguration) obj;
-        if (other.getGrants() == null ^ this.getGrants() == null)
-            return false;
-        if (other.getGrants() != null && other.getGrants().equals(this.getGrants()) == false)
-            return false;
         if (other.getKeyPolicies() == null ^ this.getKeyPolicies() == null)
             return false;
         if (other.getKeyPolicies() != null && other.getKeyPolicies().equals(this.getKeyPolicies()) == false)
+            return false;
+        if (other.getGrants() == null ^ this.getGrants() == null)
+            return false;
+        if (other.getGrants() != null && other.getGrants().equals(this.getGrants()) == false)
             return false;
         return true;
     }
@@ -272,8 +272,8 @@ public class KmsKeyConfiguration implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGrants() == null) ? 0 : getGrants().hashCode());
         hashCode = prime * hashCode + ((getKeyPolicies() == null) ? 0 : getKeyPolicies().hashCode());
+        hashCode = prime * hashCode + ((getGrants() == null) ? 0 : getGrants().hashCode());
         return hashCode;
     }
 

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * The currently active data capture configuration used by your Endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfigSummary" target="_top">AWS
  *      API Documentation</a>
@@ -26,21 +28,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DataCaptureConfigSummary implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Whether data capture is enabled or disabled.
+     * </p>
+     */
     private Boolean enableCapture;
-    /** <p/> */
+    /**
+     * <p>
+     * Whether data capture is currently functional.
+     * </p>
+     */
     private String captureStatus;
-    /** <p/> */
+    /**
+     * <p>
+     * The percentage of requests being captured by your Endpoint.
+     * </p>
+     */
     private Integer currentSamplingPercentage;
-    /** <p/> */
+    /**
+     * <p>
+     * The Amazon S3 location being used to capture the data.
+     * </p>
+     */
     private String destinationS3Uri;
-    /** <p/> */
+    /**
+     * <p>
+     * The KMS key being used to encrypt the data in Amazon S3.
+     * </p>
+     */
     private String kmsKeyId;
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is enabled or disabled.
+     * </p>
      * 
      * @param enableCapture
+     *        Whether data capture is enabled or disabled.
      */
 
     public void setEnableCapture(Boolean enableCapture) {
@@ -48,9 +73,11 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is enabled or disabled.
+     * </p>
      * 
-     * @return
+     * @return Whether data capture is enabled or disabled.
      */
 
     public Boolean getEnableCapture() {
@@ -58,9 +85,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is enabled or disabled.
+     * </p>
      * 
      * @param enableCapture
+     *        Whether data capture is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,9 +100,11 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is enabled or disabled.
+     * </p>
      * 
-     * @return
+     * @return Whether data capture is enabled or disabled.
      */
 
     public Boolean isEnableCapture() {
@@ -80,9 +112,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is currently functional.
+     * </p>
      * 
      * @param captureStatus
+     *        Whether data capture is currently functional.
      * @see CaptureStatus
      */
 
@@ -91,9 +126,11 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is currently functional.
+     * </p>
      * 
-     * @return
+     * @return Whether data capture is currently functional.
      * @see CaptureStatus
      */
 
@@ -102,9 +139,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is currently functional.
+     * </p>
      * 
      * @param captureStatus
+     *        Whether data capture is currently functional.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptureStatus
      */
@@ -115,9 +155,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * Whether data capture is currently functional.
+     * </p>
      * 
      * @param captureStatus
+     *        Whether data capture is currently functional.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptureStatus
      */
@@ -128,9 +171,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of requests being captured by your Endpoint.
+     * </p>
      * 
      * @param currentSamplingPercentage
+     *        The percentage of requests being captured by your Endpoint.
      */
 
     public void setCurrentSamplingPercentage(Integer currentSamplingPercentage) {
@@ -138,9 +184,11 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of requests being captured by your Endpoint.
+     * </p>
      * 
-     * @return
+     * @return The percentage of requests being captured by your Endpoint.
      */
 
     public Integer getCurrentSamplingPercentage() {
@@ -148,9 +196,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The percentage of requests being captured by your Endpoint.
+     * </p>
      * 
      * @param currentSamplingPercentage
+     *        The percentage of requests being captured by your Endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,9 +211,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon S3 location being used to capture the data.
+     * </p>
      * 
      * @param destinationS3Uri
+     *        The Amazon S3 location being used to capture the data.
      */
 
     public void setDestinationS3Uri(String destinationS3Uri) {
@@ -170,9 +224,11 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon S3 location being used to capture the data.
+     * </p>
      * 
-     * @return
+     * @return The Amazon S3 location being used to capture the data.
      */
 
     public String getDestinationS3Uri() {
@@ -180,9 +236,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon S3 location being used to capture the data.
+     * </p>
      * 
      * @param destinationS3Uri
+     *        The Amazon S3 location being used to capture the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,9 +251,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The KMS key being used to encrypt the data in Amazon S3.
+     * </p>
      * 
      * @param kmsKeyId
+     *        The KMS key being used to encrypt the data in Amazon S3.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -202,9 +264,11 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The KMS key being used to encrypt the data in Amazon S3.
+     * </p>
      * 
-     * @return
+     * @return The KMS key being used to encrypt the data in Amazon S3.
      */
 
     public String getKmsKeyId() {
@@ -212,9 +276,12 @@ public class DataCaptureConfigSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * The KMS key being used to encrypt the data in Amazon S3.
+     * </p>
      * 
      * @param kmsKeyId
+     *        The KMS key being used to encrypt the data in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,8 @@ public class ThingIndexingConfigurationMarshaller {
             .marshallLocationName("managedFields").build();
     private static final MarshallingInfo<List> CUSTOMFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("customFields").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
 
     private static final ThingIndexingConfigurationMarshaller instance = new ThingIndexingConfigurationMarshaller();
 
@@ -63,6 +65,7 @@ public class ThingIndexingConfigurationMarshaller {
             protocolMarshaller.marshall(thingIndexingConfiguration.getNamedShadowIndexingMode(), NAMEDSHADOWINDEXINGMODE_BINDING);
             protocolMarshaller.marshall(thingIndexingConfiguration.getManagedFields(), MANAGEDFIELDS_BINDING);
             protocolMarshaller.marshall(thingIndexingConfiguration.getCustomFields(), CUSTOMFIELDS_BINDING);
+            protocolMarshaller.marshall(thingIndexingConfiguration.getFilter(), FILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

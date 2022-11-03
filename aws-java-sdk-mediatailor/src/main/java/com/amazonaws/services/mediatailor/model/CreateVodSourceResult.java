@@ -25,54 +25,57 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the VOD source.
+     * The ARN to assign to this VOD source.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The timestamp that indicates when the VOD source was created.
+     * The time the VOD source was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configuration parameters for this VOD source.
      * </p>
      */
     private java.util.List<HttpPackageConfiguration> httpPackageConfigurations;
     /**
      * <p>
-     * The last modified time of the VOD source.
+     * The time the VOD source was last modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name to assign to the source location for this VOD source.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The tags assigned to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The name of the VOD source.
+     * The name to assign to the VOD source.
      * </p>
      */
     private String vodSourceName;
 
     /**
      * <p>
-     * The ARN of the VOD source.
+     * The ARN to assign to this VOD source.
      * </p>
      * 
      * @param arn
-     *        The ARN of the VOD source.
+     *        The ARN to assign to this VOD source.
      */
 
     public void setArn(String arn) {
@@ -81,10 +84,10 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the VOD source.
+     * The ARN to assign to this VOD source.
      * </p>
      * 
-     * @return The ARN of the VOD source.
+     * @return The ARN to assign to this VOD source.
      */
 
     public String getArn() {
@@ -93,11 +96,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the VOD source.
+     * The ARN to assign to this VOD source.
      * </p>
      * 
      * @param arn
-     *        The ARN of the VOD source.
+     *        The ARN to assign to this VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +111,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The timestamp that indicates when the VOD source was created.
+     * The time the VOD source was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp that indicates when the VOD source was created.
+     *        The time the VOD source was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -121,10 +124,10 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The timestamp that indicates when the VOD source was created.
+     * The time the VOD source was created.
      * </p>
      * 
-     * @return The timestamp that indicates when the VOD source was created.
+     * @return The time the VOD source was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -133,11 +136,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The timestamp that indicates when the VOD source was created.
+     * The time the VOD source was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp that indicates when the VOD source was created.
+     *        The time the VOD source was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,10 +151,10 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configuration parameters for this VOD source.
      * </p>
      * 
-     * @return The HTTP package configurations.
+     * @return A list of HTTP package configuration parameters for this VOD source.
      */
 
     public java.util.List<HttpPackageConfiguration> getHttpPackageConfigurations() {
@@ -160,11 +163,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configuration parameters for this VOD source.
      * </p>
      * 
      * @param httpPackageConfigurations
-     *        The HTTP package configurations.
+     *        A list of HTTP package configuration parameters for this VOD source.
      */
 
     public void setHttpPackageConfigurations(java.util.Collection<HttpPackageConfiguration> httpPackageConfigurations) {
@@ -178,7 +181,7 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configuration parameters for this VOD source.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,7 +190,7 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param httpPackageConfigurations
-     *        The HTTP package configurations.
+     *        A list of HTTP package configuration parameters for this VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +206,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The HTTP package configurations.
+     * A list of HTTP package configuration parameters for this VOD source.
      * </p>
      * 
      * @param httpPackageConfigurations
-     *        The HTTP package configurations.
+     *        A list of HTTP package configuration parameters for this VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +221,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last modified time of the VOD source.
+     * The time the VOD source was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The last modified time of the VOD source.
+     *        The time the VOD source was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -231,10 +234,10 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last modified time of the VOD source.
+     * The time the VOD source was last modified.
      * </p>
      * 
-     * @return The last modified time of the VOD source.
+     * @return The time the VOD source was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -243,11 +246,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last modified time of the VOD source.
+     * The time the VOD source was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The last modified time of the VOD source.
+     *        The time the VOD source was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,11 +261,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name to assign to the source location for this VOD source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The name of the source location associated with the VOD source.
+     *        The name to assign to the source location for this VOD source.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -271,10 +274,10 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name to assign to the source location for this VOD source.
      * </p>
      * 
-     * @return The name of the source location associated with the VOD source.
+     * @return The name to assign to the source location for this VOD source.
      */
 
     public String getSourceLocationName() {
@@ -283,11 +286,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the source location associated with the VOD source.
+     * The name to assign to the source location for this VOD source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The name of the source location associated with the VOD source.
+     *        The name to assign to the source location for this VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,10 +301,16 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags assigned to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags assigned to the VOD source.
+     * @return The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon
+     *         resources to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -310,11 +319,17 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags assigned to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the VOD source.
+     *        The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -323,11 +338,17 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags assigned to the VOD source.
+     * The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to
+     * help with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the VOD source.
+     *        The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon
+     *        resources to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,11 +387,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the VOD source.
+     * The name to assign to the VOD source.
      * </p>
      * 
      * @param vodSourceName
-     *        The name of the VOD source.
+     *        The name to assign to the VOD source.
      */
 
     public void setVodSourceName(String vodSourceName) {
@@ -379,10 +400,10 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the VOD source.
+     * The name to assign to the VOD source.
      * </p>
      * 
-     * @return The name of the VOD source.
+     * @return The name to assign to the VOD source.
      */
 
     public String getVodSourceName() {
@@ -391,11 +412,11 @@ public class CreateVodSourceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the VOD source.
+     * The name to assign to the VOD source.
      * </p>
      * 
      * @param vodSourceName
-     *        The name of the VOD source.
+     *        The name to assign to the VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

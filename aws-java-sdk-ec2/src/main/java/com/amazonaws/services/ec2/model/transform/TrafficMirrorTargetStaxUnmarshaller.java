@@ -85,6 +85,10 @@ public class TrafficMirrorTargetStaxUnmarshaller implements Unmarshaller<Traffic
                     continue;
                 }
 
+                if (context.testExpression("gatewayLoadBalancerEndpointId", targetDepth)) {
+                    trafficMirrorTarget.setGatewayLoadBalancerEndpointId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return trafficMirrorTarget;

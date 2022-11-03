@@ -54,6 +54,14 @@ public class NotificationChannelConfig implements Serializable, Cloneable, Struc
      * </p>
      */
     private SnsChannelConfig sns;
+    /**
+     * <p>
+     * The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not provide
+     * filter configurations, the default configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity.
+     * </p>
+     */
+    private NotificationFilterConfig filters;
 
     /**
      * <p>
@@ -210,6 +218,58 @@ public class NotificationChannelConfig implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not provide
+     * filter configurations, the default configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity.
+     * </p>
+     * 
+     * @param filters
+     *        The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not
+     *        provide filter configurations, the default configurations are to receive notifications for all message
+     *        types of <code>High</code> or <code>Medium</code> severity.
+     */
+
+    public void setFilters(NotificationFilterConfig filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not provide
+     * filter configurations, the default configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity.
+     * </p>
+     * 
+     * @return The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not
+     *         provide filter configurations, the default configurations are to receive notifications for all message
+     *         types of <code>High</code> or <code>Medium</code> severity.
+     */
+
+    public NotificationFilterConfig getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not provide
+     * filter configurations, the default configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity.
+     * </p>
+     * 
+     * @param filters
+     *        The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not
+     *        provide filter configurations, the default configurations are to receive notifications for all message
+     *        types of <code>High</code> or <code>Medium</code> severity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotificationChannelConfig withFilters(NotificationFilterConfig filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -222,7 +282,9 @@ public class NotificationChannelConfig implements Serializable, Cloneable, Struc
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSns() != null)
-            sb.append("Sns: ").append(getSns());
+            sb.append("Sns: ").append(getSns()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +303,10 @@ public class NotificationChannelConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getSns() != null && other.getSns().equals(this.getSns()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +316,7 @@ public class NotificationChannelConfig implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSns() == null) ? 0 : getSns().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

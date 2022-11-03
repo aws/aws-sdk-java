@@ -27,7 +27,7 @@ public class UpdateMemberSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the Amazon Macie resource or account that the request applies to.
+     * The unique identifier for the Amazon Macie resource that the request applies to.
      * </p>
      */
     private String id;
@@ -41,11 +41,11 @@ public class UpdateMemberSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the Amazon Macie resource or account that the request applies to.
+     * The unique identifier for the Amazon Macie resource that the request applies to.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Amazon Macie resource or account that the request applies to.
+     *        The unique identifier for the Amazon Macie resource that the request applies to.
      */
 
     public void setId(String id) {
@@ -54,10 +54,10 @@ public class UpdateMemberSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the Amazon Macie resource or account that the request applies to.
+     * The unique identifier for the Amazon Macie resource that the request applies to.
      * </p>
      * 
-     * @return The unique identifier for the Amazon Macie resource or account that the request applies to.
+     * @return The unique identifier for the Amazon Macie resource that the request applies to.
      */
 
     public String getId() {
@@ -66,11 +66,11 @@ public class UpdateMemberSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the Amazon Macie resource or account that the request applies to.
+     * The unique identifier for the Amazon Macie resource that the request applies to.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Amazon Macie resource or account that the request applies to.
+     *        The unique identifier for the Amazon Macie resource that the request applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

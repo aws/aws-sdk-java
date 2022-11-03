@@ -53,8 +53,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     private java.util.Date timestamp;
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     * <code>Count</code>.
+     * The action that WAF applied to the request.
      * </p>
      */
     private String action;
@@ -98,6 +97,20 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private CaptchaResponse captchaResponse;
+    /**
+     * <p>
+     * The <code>Challenge</code> response for the request.
+     * </p>
+     */
+    private ChallengeResponse challengeResponse;
+    /**
+     * <p>
+     * Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that
+     * the rule group rule is configured for, and not the action that was applied to the request. The action that WAF
+     * applied is the <code>Action</code> value.
+     * </p>
+     */
+    private String overriddenAction;
 
     /**
      * <p>
@@ -239,13 +252,11 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     * <code>Count</code>.
+     * The action that WAF applied to the request.
      * </p>
      * 
      * @param action
-     *        The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     *        <code>Count</code>.
+     *        The action that WAF applied to the request.
      */
 
     public void setAction(String action) {
@@ -254,12 +265,10 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     * <code>Count</code>.
+     * The action that WAF applied to the request.
      * </p>
      * 
-     * @return The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     *         <code>Count</code>.
+     * @return The action that WAF applied to the request.
      */
 
     public String getAction() {
@@ -268,13 +277,11 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     * <code>Count</code>.
+     * The action that WAF applied to the request.
      * </p>
      * 
      * @param action
-     *        The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
-     *        <code>Count</code>.
+     *        The action that WAF applied to the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,6 +621,98 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The <code>Challenge</code> response for the request.
+     * </p>
+     * 
+     * @param challengeResponse
+     *        The <code>Challenge</code> response for the request.
+     */
+
+    public void setChallengeResponse(ChallengeResponse challengeResponse) {
+        this.challengeResponse = challengeResponse;
+    }
+
+    /**
+     * <p>
+     * The <code>Challenge</code> response for the request.
+     * </p>
+     * 
+     * @return The <code>Challenge</code> response for the request.
+     */
+
+    public ChallengeResponse getChallengeResponse() {
+        return this.challengeResponse;
+    }
+
+    /**
+     * <p>
+     * The <code>Challenge</code> response for the request.
+     * </p>
+     * 
+     * @param challengeResponse
+     *        The <code>Challenge</code> response for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withChallengeResponse(ChallengeResponse challengeResponse) {
+        setChallengeResponse(challengeResponse);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that
+     * the rule group rule is configured for, and not the action that was applied to the request. The action that WAF
+     * applied is the <code>Action</code> value.
+     * </p>
+     * 
+     * @param overriddenAction
+     *        Used only for rule group rules that have a rule action override in place in the web ACL. This is the
+     *        action that the rule group rule is configured for, and not the action that was applied to the request. The
+     *        action that WAF applied is the <code>Action</code> value.
+     */
+
+    public void setOverriddenAction(String overriddenAction) {
+        this.overriddenAction = overriddenAction;
+    }
+
+    /**
+     * <p>
+     * Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that
+     * the rule group rule is configured for, and not the action that was applied to the request. The action that WAF
+     * applied is the <code>Action</code> value.
+     * </p>
+     * 
+     * @return Used only for rule group rules that have a rule action override in place in the web ACL. This is the
+     *         action that the rule group rule is configured for, and not the action that was applied to the request.
+     *         The action that WAF applied is the <code>Action</code> value.
+     */
+
+    public String getOverriddenAction() {
+        return this.overriddenAction;
+    }
+
+    /**
+     * <p>
+     * Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that
+     * the rule group rule is configured for, and not the action that was applied to the request. The action that WAF
+     * applied is the <code>Action</code> value.
+     * </p>
+     * 
+     * @param overriddenAction
+     *        Used only for rule group rules that have a rule action override in place in the web ACL. This is the
+     *        action that the rule group rule is configured for, and not the action that was applied to the request. The
+     *        action that WAF applied is the <code>Action</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withOverriddenAction(String overriddenAction) {
+        setOverriddenAction(overriddenAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -642,7 +741,11 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
         if (getCaptchaResponse() != null)
-            sb.append("CaptchaResponse: ").append(getCaptchaResponse());
+            sb.append("CaptchaResponse: ").append(getCaptchaResponse()).append(",");
+        if (getChallengeResponse() != null)
+            sb.append("ChallengeResponse: ").append(getChallengeResponse()).append(",");
+        if (getOverriddenAction() != null)
+            sb.append("OverriddenAction: ").append(getOverriddenAction());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +796,14 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCaptchaResponse() != null && other.getCaptchaResponse().equals(this.getCaptchaResponse()) == false)
             return false;
+        if (other.getChallengeResponse() == null ^ this.getChallengeResponse() == null)
+            return false;
+        if (other.getChallengeResponse() != null && other.getChallengeResponse().equals(this.getChallengeResponse()) == false)
+            return false;
+        if (other.getOverriddenAction() == null ^ this.getOverriddenAction() == null)
+            return false;
+        if (other.getOverriddenAction() != null && other.getOverriddenAction().equals(this.getOverriddenAction()) == false)
+            return false;
         return true;
     }
 
@@ -710,6 +821,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getResponseCodeSent() == null) ? 0 : getResponseCodeSent().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         hashCode = prime * hashCode + ((getCaptchaResponse() == null) ? 0 : getCaptchaResponse().hashCode());
+        hashCode = prime * hashCode + ((getChallengeResponse() == null) ? 0 : getChallengeResponse().hashCode());
+        hashCode = prime * hashCode + ((getOverriddenAction() == null) ? 0 : getOverriddenAction().hashCode());
         return hashCode;
     }
 

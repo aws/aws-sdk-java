@@ -143,6 +143,11 @@ public class AbstractAWSMigrationHubRefactorSpaces implements AWSMigrationHubRef
     }
 
     @Override
+    public UpdateRouteResult updateRoute(UpdateRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

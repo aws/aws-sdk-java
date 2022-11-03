@@ -59,10 +59,26 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<Tag> tags;
-
+    /**
+     * <p>
+     * Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
+     * </p>
+     */
     private Boolean autoConfigEnabled;
-
+    /**
+     * <p>
+     * Configures all of the resources in the resource group by applying the recommended configurations.
+     * </p>
+     */
     private Boolean autoCreate;
+    /**
+     * <p>
+     * Application Insights can create applications based on a resource group or on an account. To create an
+     * account-based application using all of the resources in the account, set this parameter to
+     * <code>ACCOUNT_BASED</code>.
+     * </p>
+     */
+    private String groupingType;
 
     /**
      * <p>
@@ -349,7 +365,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Indicates whether Application Insights automatically configures unmonitored resources in the resource
+     *        group.
      */
 
     public void setAutoConfigEnabled(Boolean autoConfigEnabled) {
@@ -357,7 +379,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
+     * </p>
+     * 
+     * @return Indicates whether Application Insights automatically configures unmonitored resources in the resource
+     *         group.
      */
 
     public Boolean getAutoConfigEnabled() {
@@ -365,7 +392,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
+     * </p>
+     * 
      * @param autoConfigEnabled
+     *        Indicates whether Application Insights automatically configures unmonitored resources in the resource
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,7 +408,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
+     * </p>
+     * 
+     * @return Indicates whether Application Insights automatically configures unmonitored resources in the resource
+     *         group.
      */
 
     public Boolean isAutoConfigEnabled() {
@@ -383,7 +421,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Configures all of the resources in the resource group by applying the recommended configurations.
+     * </p>
+     * 
      * @param autoCreate
+     *        Configures all of the resources in the resource group by applying the recommended configurations.
      */
 
     public void setAutoCreate(Boolean autoCreate) {
@@ -391,7 +434,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Configures all of the resources in the resource group by applying the recommended configurations.
+     * </p>
+     * 
+     * @return Configures all of the resources in the resource group by applying the recommended configurations.
      */
 
     public Boolean getAutoCreate() {
@@ -399,7 +446,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Configures all of the resources in the resource group by applying the recommended configurations.
+     * </p>
+     * 
      * @param autoCreate
+     *        Configures all of the resources in the resource group by applying the recommended configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,11 +461,90 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Configures all of the resources in the resource group by applying the recommended configurations.
+     * </p>
+     * 
+     * @return Configures all of the resources in the resource group by applying the recommended configurations.
      */
 
     public Boolean isAutoCreate() {
         return this.autoCreate;
+    }
+
+    /**
+     * <p>
+     * Application Insights can create applications based on a resource group or on an account. To create an
+     * account-based application using all of the resources in the account, set this parameter to
+     * <code>ACCOUNT_BASED</code>.
+     * </p>
+     * 
+     * @param groupingType
+     *        Application Insights can create applications based on a resource group or on an account. To create an
+     *        account-based application using all of the resources in the account, set this parameter to
+     *        <code>ACCOUNT_BASED</code>.
+     * @see GroupingType
+     */
+
+    public void setGroupingType(String groupingType) {
+        this.groupingType = groupingType;
+    }
+
+    /**
+     * <p>
+     * Application Insights can create applications based on a resource group or on an account. To create an
+     * account-based application using all of the resources in the account, set this parameter to
+     * <code>ACCOUNT_BASED</code>.
+     * </p>
+     * 
+     * @return Application Insights can create applications based on a resource group or on an account. To create an
+     *         account-based application using all of the resources in the account, set this parameter to
+     *         <code>ACCOUNT_BASED</code>.
+     * @see GroupingType
+     */
+
+    public String getGroupingType() {
+        return this.groupingType;
+    }
+
+    /**
+     * <p>
+     * Application Insights can create applications based on a resource group or on an account. To create an
+     * account-based application using all of the resources in the account, set this parameter to
+     * <code>ACCOUNT_BASED</code>.
+     * </p>
+     * 
+     * @param groupingType
+     *        Application Insights can create applications based on a resource group or on an account. To create an
+     *        account-based application using all of the resources in the account, set this parameter to
+     *        <code>ACCOUNT_BASED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GroupingType
+     */
+
+    public CreateApplicationRequest withGroupingType(String groupingType) {
+        setGroupingType(groupingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Application Insights can create applications based on a resource group or on an account. To create an
+     * account-based application using all of the resources in the account, set this parameter to
+     * <code>ACCOUNT_BASED</code>.
+     * </p>
+     * 
+     * @param groupingType
+     *        Application Insights can create applications based on a resource group or on an account. To create an
+     *        account-based application using all of the resources in the account, set this parameter to
+     *        <code>ACCOUNT_BASED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GroupingType
+     */
+
+    public CreateApplicationRequest withGroupingType(GroupingType groupingType) {
+        this.groupingType = groupingType.toString();
+        return this;
     }
 
     /**
@@ -441,7 +572,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAutoConfigEnabled() != null)
             sb.append("AutoConfigEnabled: ").append(getAutoConfigEnabled()).append(",");
         if (getAutoCreate() != null)
-            sb.append("AutoCreate: ").append(getAutoCreate());
+            sb.append("AutoCreate: ").append(getAutoCreate()).append(",");
+        if (getGroupingType() != null)
+            sb.append("GroupingType: ").append(getGroupingType());
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +617,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAutoCreate() != null && other.getAutoCreate().equals(this.getAutoCreate()) == false)
             return false;
+        if (other.getGroupingType() == null ^ this.getGroupingType() == null)
+            return false;
+        if (other.getGroupingType() != null && other.getGroupingType().equals(this.getGroupingType()) == false)
+            return false;
         return true;
     }
 
@@ -499,6 +636,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAutoConfigEnabled() == null) ? 0 : getAutoConfigEnabled().hashCode());
         hashCode = prime * hashCode + ((getAutoCreate() == null) ? 0 : getAutoCreate().hashCode());
+        hashCode = prime * hashCode + ((getGroupingType() == null) ? 0 : getGroupingType().hashCode());
         return hashCode;
     }
 

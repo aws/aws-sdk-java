@@ -63,6 +63,18 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String byStatus;
+    /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date byCompleteBefore;
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date byCompleteAfter;
 
     /**
      * <p>
@@ -336,6 +348,92 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteBefore
+     *        Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setByCompleteBefore(java.util.Date byCompleteBefore) {
+        this.byCompleteBefore = byCompleteBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public java.util.Date getByCompleteBefore() {
+        return this.byCompleteBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteBefore
+     *        Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByCompleteBefore(java.util.Date byCompleteBefore) {
+        setByCompleteBefore(byCompleteBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteAfter
+     *        Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setByCompleteAfter(java.util.Date byCompleteAfter) {
+        this.byCompleteAfter = byCompleteAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public java.util.Date getByCompleteAfter() {
+        return this.byCompleteAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param byCompleteAfter
+     *        Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByCompleteAfter(java.util.Date byCompleteAfter) {
+        setByCompleteAfter(byCompleteAfter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +456,11 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getByCreatedAfter() != null)
             sb.append("ByCreatedAfter: ").append(getByCreatedAfter()).append(",");
         if (getByStatus() != null)
-            sb.append("ByStatus: ").append(getByStatus());
+            sb.append("ByStatus: ").append(getByStatus()).append(",");
+        if (getByCompleteBefore() != null)
+            sb.append("ByCompleteBefore: ").append(getByCompleteBefore()).append(",");
+        if (getByCompleteAfter() != null)
+            sb.append("ByCompleteAfter: ").append(getByCompleteAfter());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +499,14 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getByStatus() != null && other.getByStatus().equals(this.getByStatus()) == false)
             return false;
+        if (other.getByCompleteBefore() == null ^ this.getByCompleteBefore() == null)
+            return false;
+        if (other.getByCompleteBefore() != null && other.getByCompleteBefore().equals(this.getByCompleteBefore()) == false)
+            return false;
+        if (other.getByCompleteAfter() == null ^ this.getByCompleteAfter() == null)
+            return false;
+        if (other.getByCompleteAfter() != null && other.getByCompleteAfter().equals(this.getByCompleteAfter()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +521,8 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getByStatus() == null) ? 0 : getByStatus().hashCode());
+        hashCode = prime * hashCode + ((getByCompleteBefore() == null) ? 0 : getByCompleteBefore().hashCode());
+        hashCode = prime * hashCode + ((getByCompleteAfter() == null) ? 0 : getByCompleteAfter().hashCode());
         return hashCode;
     }
 

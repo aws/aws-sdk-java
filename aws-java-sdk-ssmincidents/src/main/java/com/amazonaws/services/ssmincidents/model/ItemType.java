@@ -26,7 +26,9 @@ public enum ItemType {
     PARENT("PARENT"),
     ATTACHMENT("ATTACHMENT"),
     OTHER("OTHER"),
-    AUTOMATION("AUTOMATION");
+    AUTOMATION("AUTOMATION"),
+    INVOLVED_RESOURCE("INVOLVED_RESOURCE"),
+    TASK("TASK");
 
     private String value;
 

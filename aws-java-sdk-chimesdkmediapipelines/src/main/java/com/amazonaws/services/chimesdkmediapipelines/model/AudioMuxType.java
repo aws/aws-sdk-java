@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AudioMuxType {
 
     AudioOnly("AudioOnly"),
-    AudioWithActiveSpeakerVideo("AudioWithActiveSpeakerVideo");
+    AudioWithActiveSpeakerVideo("AudioWithActiveSpeakerVideo"),
+    AudioWithCompositedVideo("AudioWithCompositedVideo");
 
     private String value;
 

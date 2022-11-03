@@ -42,8 +42,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> airflowConfigurationOptions;
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon
      * Managed Workflows for Apache Airflow (MWAA)</a>.
      * </p>
@@ -166,12 +166,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     * v2 - Accepts between 2 to 5. Defaults to 2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * v1.10.12 - Accepts 1.
+     * v1 - Accepts 1.
      * </p>
      * </li>
      * </ul>
@@ -299,17 +299,17 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon
      * Managed Workflows for Apache Airflow (MWAA)</a>.
      * </p>
      * 
      * @param airflowVersion
-     *        The Apache Airflow version for your environment. If no value is specified, defaults to the latest version.
-     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on
-     *        Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     *        The Apache Airflow version for your environment. If no value is specified, it defaults to the latest
+     *        version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more,
+     *        see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
+     *        versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
      */
 
     public void setAirflowVersion(String airflowVersion) {
@@ -318,16 +318,16 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon
      * Managed Workflows for Apache Airflow (MWAA)</a>.
      * </p>
      * 
-     * @return The Apache Airflow version for your environment. If no value is specified, defaults to the latest
-     *         version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
-     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on
-     *         Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * @return The Apache Airflow version for your environment. If no value is specified, it defaults to the latest
+     *         version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more,
+     *         see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
+     *         versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
      */
 
     public String getAirflowVersion() {
@@ -336,17 +336,17 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid
-     * values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon
      * Managed Workflows for Apache Airflow (MWAA)</a>.
      * </p>
      * 
      * @param airflowVersion
-     *        The Apache Airflow version for your environment. If no value is specified, defaults to the latest version.
-     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on
-     *        Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     *        The Apache Airflow version for your environment. If no value is specified, it defaults to the latest
+     *        version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more,
+     *        see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
+     *        versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1083,12 +1083,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     * v2 - Accepts between 2 to 5. Defaults to 2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * v1.10.12 - Accepts 1.
+     * v1 - Accepts 1.
      * </p>
      * </li>
      * </ul>
@@ -1098,12 +1098,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     *        v2 - Accepts between 2 to 5. Defaults to 2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        v1.10.12 - Accepts 1.
+     *        v1 - Accepts 1.
      *        </p>
      *        </li>
      */
@@ -1119,12 +1119,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     * v2 - Accepts between 2 to 5. Defaults to 2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * v1.10.12 - Accepts 1.
+     * v1 - Accepts 1.
      * </p>
      * </li>
      * </ul>
@@ -1133,12 +1133,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     *         v2 - Accepts between 2 to 5. Defaults to 2.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         v1.10.12 - Accepts 1.
+     *         v1 - Accepts 1.
      *         </p>
      *         </li>
      */
@@ -1154,12 +1154,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     * v2 - Accepts between 2 to 5. Defaults to 2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * v1.10.12 - Accepts 1.
+     * v1 - Accepts 1.
      * </p>
      * </li>
      * </ul>
@@ -1169,12 +1169,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+     *        v2 - Accepts between 2 to 5. Defaults to 2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        v1.10.12 - Accepts 1.
+     *        v1 - Accepts 1.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

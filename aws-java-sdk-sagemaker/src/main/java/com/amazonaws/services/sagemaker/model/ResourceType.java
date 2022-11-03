@@ -30,7 +30,9 @@ public enum ResourceType {
     Pipeline("Pipeline"),
     PipelineExecution("PipelineExecution"),
     FeatureGroup("FeatureGroup"),
-    Project("Project");
+    Project("Project"),
+    FeatureMetadata("FeatureMetadata"),
+    HyperParameterTuningJob("HyperParameterTuningJob");
 
     private String value;
 

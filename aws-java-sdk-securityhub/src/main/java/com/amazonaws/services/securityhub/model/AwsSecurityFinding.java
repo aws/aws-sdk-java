@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code>
- * format enables you to share findings between Amazon Web Services security services and third-party solutions, and
- * security standards checks.
+ * Provides a consistent format for Security Hub findings. <code>AwsSecurityFinding</code> format allows you to share
+ * findings between Amazon Web Services security services and third-party solutions.
  * </p>
  * <note>
  * <p>
@@ -267,6 +266,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private ProcessDetails process;
+    /**
+     * <p>
+     * Details about the threat detected in a security finding and the file paths that were affected by the threat.
+     * </p>
+     */
+    private java.util.List<Threat> threats;
     /**
      * <p>
      * Threat intelligence details related to a finding.
@@ -1967,6 +1972,80 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * Details about the threat detected in a security finding and the file paths that were affected by the threat.
+     * </p>
+     * 
+     * @return Details about the threat detected in a security finding and the file paths that were affected by the
+     *         threat.
+     */
+
+    public java.util.List<Threat> getThreats() {
+        return threats;
+    }
+
+    /**
+     * <p>
+     * Details about the threat detected in a security finding and the file paths that were affected by the threat.
+     * </p>
+     * 
+     * @param threats
+     *        Details about the threat detected in a security finding and the file paths that were affected by the
+     *        threat.
+     */
+
+    public void setThreats(java.util.Collection<Threat> threats) {
+        if (threats == null) {
+            this.threats = null;
+            return;
+        }
+
+        this.threats = new java.util.ArrayList<Threat>(threats);
+    }
+
+    /**
+     * <p>
+     * Details about the threat detected in a security finding and the file paths that were affected by the threat.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setThreats(java.util.Collection)} or {@link #withThreats(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param threats
+     *        Details about the threat detected in a security finding and the file paths that were affected by the
+     *        threat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withThreats(Threat... threats) {
+        if (this.threats == null) {
+            setThreats(new java.util.ArrayList<Threat>(threats.length));
+        }
+        for (Threat ele : threats) {
+            this.threats.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the threat detected in a security finding and the file paths that were affected by the threat.
+     * </p>
+     * 
+     * @param threats
+     *        Details about the threat detected in a security finding and the file paths that were affected by the
+     *        threat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withThreats(java.util.Collection<Threat> threats) {
+        setThreats(threats);
+        return this;
+    }
+
+    /**
+     * <p>
      * Threat intelligence details related to a finding.
      * </p>
      * 
@@ -2800,6 +2879,8 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             sb.append("NetworkPath: ").append(getNetworkPath()).append(",");
         if (getProcess() != null)
             sb.append("Process: ").append(getProcess()).append(",");
+        if (getThreats() != null)
+            sb.append("Threats: ").append(getThreats()).append(",");
         if (getThreatIntelIndicators() != null)
             sb.append("ThreatIntelIndicators: ").append(getThreatIntelIndicators()).append(",");
         if (getResources() != null)
@@ -2946,6 +3027,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getProcess() != null && other.getProcess().equals(this.getProcess()) == false)
             return false;
+        if (other.getThreats() == null ^ this.getThreats() == null)
+            return false;
+        if (other.getThreats() != null && other.getThreats().equals(this.getThreats()) == false)
+            return false;
         if (other.getThreatIntelIndicators() == null ^ this.getThreatIntelIndicators() == null)
             return false;
         if (other.getThreatIntelIndicators() != null && other.getThreatIntelIndicators().equals(this.getThreatIntelIndicators()) == false)
@@ -3036,6 +3121,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getNetwork() == null) ? 0 : getNetwork().hashCode());
         hashCode = prime * hashCode + ((getNetworkPath() == null) ? 0 : getNetworkPath().hashCode());
         hashCode = prime * hashCode + ((getProcess() == null) ? 0 : getProcess().hashCode());
+        hashCode = prime * hashCode + ((getThreats() == null) ? 0 : getThreats().hashCode());
         hashCode = prime * hashCode + ((getThreatIntelIndicators() == null) ? 0 : getThreatIntelIndicators().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getCompliance() == null) ? 0 : getCompliance().hashCode());

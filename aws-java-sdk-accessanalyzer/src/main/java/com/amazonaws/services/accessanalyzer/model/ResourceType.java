@@ -26,7 +26,13 @@ public enum ResourceType {
     AWSLambdaFunction("AWS::Lambda::Function"),
     AWSLambdaLayerVersion("AWS::Lambda::LayerVersion"),
     AWSKMSKey("AWS::KMS::Key"),
-    AWSSecretsManagerSecret("AWS::SecretsManager::Secret");
+    AWSSecretsManagerSecret("AWS::SecretsManager::Secret"),
+    AWSEFSFileSystem("AWS::EFS::FileSystem"),
+    AWSEC2Snapshot("AWS::EC2::Snapshot"),
+    AWSECRRepository("AWS::ECR::Repository"),
+    AWSRDSDBSnapshot("AWS::RDS::DBSnapshot"),
+    AWSRDSDBClusterSnapshot("AWS::RDS::DBClusterSnapshot"),
+    AWSSNSTopic("AWS::SNS::Topic");
 
     private String value;
 

@@ -50,13 +50,13 @@ import com.amazonaws.services.iotsecuretunneling.model.transform.*;
  * Client for accessing AWS IoT Secure Tunneling. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * <fullname>AWS IoT Secure Tunneling</fullname>
+ * <fullname>IoT Secure Tunneling</fullname>
  * <p>
- * AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
+ * IoT Secure Tunneling creates remote connections to devices deployed in the field.
  * </p>
  * <p>
- * For more information about how AWS IoT Secure Tunneling works, see <a
- * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS IoT Secure Tunneling</a>.
+ * For more information about how IoT Secure Tunneling works, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT Secure Tunneling</a>.
  * </p>
  */
 @ThreadSafe
@@ -82,11 +82,11 @@ public class AWSIoTSecureTunnelingClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsecuretunneling.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsecuretunneling.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsecuretunneling.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotsecuretunneling.model.AWSIoTSecureTunnelingException.class));
 
     public static AWSIoTSecureTunnelingClientBuilder builder() {
@@ -139,6 +139,11 @@ public class AWSIoTSecureTunnelingClient extends AmazonWebServiceClient implemen
      * <p>
      * Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close
      * the WebSocket connections between the client and proxy server so no data can be transmitted.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CloseTunnel</a> action.
      * </p>
      * 
      * @param closeTunnelRequest
@@ -196,6 +201,11 @@ public class AWSIoTSecureTunnelingClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Gets information about a tunnel identified by the unique tunnel id.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeTunnel</a> action.
      * </p>
      * 
      * @param describeTunnelRequest
@@ -309,8 +319,13 @@ public class AWSIoTSecureTunnelingClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will
-     * be listed before older tunnels.
+     * List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order,
+     * newer tunnels will be listed before older tunnels.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListTunnels</a> action.
      * </p>
      * 
      * @param listTunnelsRequest
@@ -365,8 +380,13 @@ public class AWSIoTSecureTunnelingClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure
+     * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure
      * Tunneling proxy server.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >OpenTunnel</a> action.
      * </p>
      * 
      * @param openTunnelRequest
@@ -411,6 +431,78 @@ public class AWSIoTSecureTunnelingClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<OpenTunnelResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new OpenTunnelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure
+     * tunneling to access the same tunnel.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >RotateTunnelAccessToken</a> action.
+     * </p>
+     * <note>
+     * <p>
+     * Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration is 12 hours and the
+     * tunnel has already been open for 4 hours. When you rotate the access tokens, the new tokens that are generated
+     * can only be used for the remaining 8 hours.
+     * </p>
+     * </note>
+     * 
+     * @param rotateTunnelAccessTokenRequest
+     * @return Result of the RotateTunnelAccessToken operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Thrown when an operation is attempted on a resource that does not exist.
+     * @sample AWSIoTSecureTunneling.RotateTunnelAccessToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RotateTunnelAccessTokenResult rotateTunnelAccessToken(RotateTunnelAccessTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeRotateTunnelAccessToken(request);
+    }
+
+    @SdkInternalApi
+    final RotateTunnelAccessTokenResult executeRotateTunnelAccessToken(RotateTunnelAccessTokenRequest rotateTunnelAccessTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rotateTunnelAccessTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RotateTunnelAccessTokenRequest> request = null;
+        Response<RotateTunnelAccessTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RotateTunnelAccessTokenRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rotateTunnelAccessTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSecureTunneling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateTunnelAccessToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RotateTunnelAccessTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RotateTunnelAccessTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

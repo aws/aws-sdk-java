@@ -85,6 +85,29 @@ public interface AmazonForecastQuery {
     QueryForecastResult queryForecast(QueryForecastRequest queryForecastRequest);
 
     /**
+     * <p>
+     * Retrieves a what-if forecast.
+     * </p>
+     * 
+     * @param queryWhatIfForecastRequest
+     * @return Result of the QueryWhatIfForecast operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find that resource. Check the information that you've provided and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws InvalidInputException
+     *         The value is invalid or is too long.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @sample AmazonForecastQuery.QueryWhatIfForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast"
+     *      target="_top">AWS API Documentation</a>
+     */
+    QueryWhatIfForecastResult queryWhatIfForecast(QueryWhatIfForecastRequest queryWhatIfForecastRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

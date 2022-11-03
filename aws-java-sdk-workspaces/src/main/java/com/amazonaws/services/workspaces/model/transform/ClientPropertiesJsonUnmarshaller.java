@@ -52,6 +52,10 @@ public class ClientPropertiesJsonUnmarshaller implements Unmarshaller<ClientProp
                     context.nextToken();
                     clientProperties.setReconnectEnabled(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LogUploadEnabled", targetDepth)) {
+                    context.nextToken();
+                    clientProperties.setLogUploadEnabled(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

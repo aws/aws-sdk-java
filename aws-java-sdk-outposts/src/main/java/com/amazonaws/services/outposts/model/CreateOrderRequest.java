@@ -39,13 +39,13 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<LineItemRequest> lineItems;
     /**
      * <p>
-     * The payment option for the order.
+     * The payment option.
      * </p>
      */
     private String paymentOption;
     /**
      * <p>
-     * The payment terms for the order.
+     * The payment terms.
      * </p>
      */
     private String paymentTerm;
@@ -162,11 +162,11 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment option for the order.
+     * The payment option.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option for the order.
+     *        The payment option.
      * @see PaymentOption
      */
 
@@ -176,10 +176,10 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment option for the order.
+     * The payment option.
      * </p>
      * 
-     * @return The payment option for the order.
+     * @return The payment option.
      * @see PaymentOption
      */
 
@@ -189,11 +189,11 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment option for the order.
+     * The payment option.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option for the order.
+     *        The payment option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
@@ -205,11 +205,11 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment option for the order.
+     * The payment option.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option for the order.
+     *        The payment option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
@@ -221,11 +221,11 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment terms for the order.
+     * The payment terms.
      * </p>
      * 
      * @param paymentTerm
-     *        The payment terms for the order.
+     *        The payment terms.
      * @see PaymentTerm
      */
 
@@ -235,10 +235,10 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment terms for the order.
+     * The payment terms.
      * </p>
      * 
-     * @return The payment terms for the order.
+     * @return The payment terms.
      * @see PaymentTerm
      */
 
@@ -248,11 +248,11 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment terms for the order.
+     * The payment terms.
      * </p>
      * 
      * @param paymentTerm
-     *        The payment terms for the order.
+     *        The payment terms.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentTerm
      */
@@ -264,11 +264,11 @@ public class CreateOrderRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The payment terms for the order.
+     * The payment terms.
      * </p>
      * 
      * @param paymentTerm
-     *        The payment terms for the order.
+     *        The payment terms.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentTerm
      */

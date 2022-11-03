@@ -15,7 +15,9 @@ package com.amazonaws.services.glue.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The blueprint is in an invalid state to perform a requested operation.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IllegalBlueprintStateException extends com.amazonaws.services.glue.model.AWSGlueException {

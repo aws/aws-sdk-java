@@ -27,18 +27,104 @@ public class GetWebACLForResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve.
      * </p>
+     * <p>
+     * The ARN must be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway REST API:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Cognito user pool:
+     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve.
      * </p>
+     * <p>
+     * The ARN must be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway REST API:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Cognito user pool:
+     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>
+     *        <p>
+     *        The ARN must be in one of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an Application Load Balancer:
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon API Gateway REST API:
+     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AppSync GraphQL API:
+     *        <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Cognito user pool:
+     *        <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +133,67 @@ public class GetWebACLForResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve.
      * </p>
+     * <p>
+     * The ARN must be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway REST API:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Cognito user pool:
+     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ARN (Amazon Resource Name) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>
+     *         <p>
+     *         The ARN must be in one of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For an Application Load Balancer:
+     *         <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon API Gateway REST API:
+     *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an AppSync GraphQL API:
+     *         <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon Cognito user pool:
+     *         <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public String getResourceArn() {
@@ -59,11 +202,68 @@ public class GetWebACLForResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource.
+     * The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve.
      * </p>
+     * <p>
+     * The ARN must be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway REST API:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Cognito user pool:
+     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>
+     *        <p>
+     *        The ARN must be in one of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an Application Load Balancer:
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon API Gateway REST API:
+     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AppSync GraphQL API:
+     *        <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Cognito user pool:
+     *        <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

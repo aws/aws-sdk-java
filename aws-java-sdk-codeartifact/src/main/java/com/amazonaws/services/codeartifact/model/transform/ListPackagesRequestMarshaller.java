@@ -43,6 +43,10 @@ public class ListPackagesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("max-results").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("next-token").build();
+    private static final MarshallingInfo<String> PUBLISH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("publish").build();
+    private static final MarshallingInfo<String> UPSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("upstream").build();
 
     private static final ListPackagesRequestMarshaller instance = new ListPackagesRequestMarshaller();
 
@@ -68,6 +72,8 @@ public class ListPackagesRequestMarshaller {
             protocolMarshaller.marshall(listPackagesRequest.getPackagePrefix(), PACKAGEPREFIX_BINDING);
             protocolMarshaller.marshall(listPackagesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listPackagesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listPackagesRequest.getPublish(), PUBLISH_BINDING);
+            protocolMarshaller.marshall(listPackagesRequest.getUpstream(), UPSTREAM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

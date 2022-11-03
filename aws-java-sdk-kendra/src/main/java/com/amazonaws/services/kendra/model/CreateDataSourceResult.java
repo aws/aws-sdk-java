@@ -25,18 +25,18 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique identifier for the data source.
+     * The identifier of the data source connector.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * A unique identifier for the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the data source.
+     *        The identifier of the data source connector.
      */
 
     public void setId(String id) {
@@ -45,10 +45,10 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique identifier for the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
-     * @return A unique identifier for the data source.
+     * @return The identifier of the data source connector.
      */
 
     public String getId() {
@@ -57,11 +57,11 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique identifier for the data source.
+     * The identifier of the data source connector.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the data source.
+     *        The identifier of the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,10 @@ public class ResolvedComponentVersionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentVersion").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> RECIPE_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recipe").build();
+    private static final MarshallingInfo<String> VENDORGUIDANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vendorGuidance").build();
+    private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("message").build();
 
     private static final ResolvedComponentVersionMarshaller instance = new ResolvedComponentVersionMarshaller();
 
@@ -56,6 +60,8 @@ public class ResolvedComponentVersionMarshaller {
             protocolMarshaller.marshall(resolvedComponentVersion.getComponentName(), COMPONENTNAME_BINDING);
             protocolMarshaller.marshall(resolvedComponentVersion.getComponentVersion(), COMPONENTVERSION_BINDING);
             protocolMarshaller.marshall(resolvedComponentVersion.getRecipe(), RECIPE_BINDING);
+            protocolMarshaller.marshall(resolvedComponentVersion.getVendorGuidance(), VENDORGUIDANCE_BINDING);
+            protocolMarshaller.marshall(resolvedComponentVersion.getMessage(), MESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

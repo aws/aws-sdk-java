@@ -31,7 +31,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String resourceArn;
-    /** The key tags. */
+    /**
+     * <p>
+     * The key tags.
+     * </p>
+     */
     private java.util.List<String> tagKeys;
 
     /**
@@ -75,7 +79,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The key tags.
+     * </p>
      * 
      * @return The key tags.
      */
@@ -85,7 +91,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The key tags.
+     * </p>
      * 
      * @param tagKeys
      *        The key tags.
@@ -101,7 +109,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The key tags.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
@@ -124,7 +134,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The key tags.
+     * </p>
      * 
      * @param tagKeys
      *        The key tags.

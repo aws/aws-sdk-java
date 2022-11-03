@@ -27,24 +27,24 @@ public class StopDataSourceSyncJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the data source for which to stop the synchronization jobs.
+     * The identifier of the data source connector for which to stop the synchronization jobs.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      */
     private String indexId;
 
     /**
      * <p>
-     * The identifier of the data source for which to stop the synchronization jobs.
+     * The identifier of the data source connector for which to stop the synchronization jobs.
      * </p>
      * 
      * @param id
-     *        The identifier of the data source for which to stop the synchronization jobs.
+     *        The identifier of the data source connector for which to stop the synchronization jobs.
      */
 
     public void setId(String id) {
@@ -53,10 +53,10 @@ public class StopDataSourceSyncJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the data source for which to stop the synchronization jobs.
+     * The identifier of the data source connector for which to stop the synchronization jobs.
      * </p>
      * 
-     * @return The identifier of the data source for which to stop the synchronization jobs.
+     * @return The identifier of the data source connector for which to stop the synchronization jobs.
      */
 
     public String getId() {
@@ -65,11 +65,11 @@ public class StopDataSourceSyncJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the data source for which to stop the synchronization jobs.
+     * The identifier of the data source connector for which to stop the synchronization jobs.
      * </p>
      * 
      * @param id
-     *        The identifier of the data source for which to stop the synchronization jobs.
+     *        The identifier of the data source connector for which to stop the synchronization jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class StopDataSourceSyncJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with the data source connector.
      */
 
     public void setIndexId(String indexId) {
@@ -93,10 +93,10 @@ public class StopDataSourceSyncJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
-     * @return The identifier of the index that contains the data source.
+     * @return The identifier of the index used with the data source connector.
      */
 
     public String getIndexId() {
@@ -105,11 +105,11 @@ public class StopDataSourceSyncJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the index that contains the data source.
+     * The identifier of the index used with the data source connector.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index that contains the data source.
+     *        The identifier of the index used with the data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

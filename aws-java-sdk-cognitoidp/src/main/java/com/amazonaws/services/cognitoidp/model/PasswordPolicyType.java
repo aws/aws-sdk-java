@@ -69,8 +69,8 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated
-     * <code>UnusedAccountValidityDays</code> value for that user pool.
+     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the
+     * legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      * </p>
      * </note>
      */
@@ -363,8 +363,8 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated
-     * <code>UnusedAccountValidityDays</code> value for that user pool.
+     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the
+     * legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      * </p>
      * </note>
      * 
@@ -372,8 +372,8 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      *        The number of days a temporary password is valid in the password policy. If the user doesn't sign in
      *        during this time, an administrator must reset their password.</p> <note>
      *        <p>
-     *        When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the
-     *        deprecated <code>UnusedAccountValidityDays</code> value for that user pool.
+     *        When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for
+     *        the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      *        </p>
      */
 
@@ -388,16 +388,16 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated
-     * <code>UnusedAccountValidityDays</code> value for that user pool.
+     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the
+     * legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      * </p>
      * </note>
      * 
      * @return The number of days a temporary password is valid in the password policy. If the user doesn't sign in
      *         during this time, an administrator must reset their password.</p> <note>
      *         <p>
-     *         When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the
-     *         deprecated <code>UnusedAccountValidityDays</code> value for that user pool.
+     *         When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value
+     *         for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      *         </p>
      */
 
@@ -412,8 +412,8 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the deprecated
-     * <code>UnusedAccountValidityDays</code> value for that user pool.
+     * When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the
+     * legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      * </p>
      * </note>
      * 
@@ -421,8 +421,8 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      *        The number of days a temporary password is valid in the password policy. If the user doesn't sign in
      *        during this time, an administrator must reset their password.</p> <note>
      *        <p>
-     *        When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set the
-     *        deprecated <code>UnusedAccountValidityDays</code> value for that user pool.
+     *        When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for
+     *        the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

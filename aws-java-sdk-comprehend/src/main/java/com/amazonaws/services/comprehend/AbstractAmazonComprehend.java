@@ -53,6 +53,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public BatchDetectTargetedSentimentResult batchDetectTargetedSentiment(BatchDetectTargetedSentimentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ClassifyDocumentResult classifyDocument(ClassifyDocumentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +194,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public DetectSyntaxResult detectSyntax(DetectSyntaxRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetectTargetedSentimentResult detectTargetedSentiment(DetectTargetedSentimentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

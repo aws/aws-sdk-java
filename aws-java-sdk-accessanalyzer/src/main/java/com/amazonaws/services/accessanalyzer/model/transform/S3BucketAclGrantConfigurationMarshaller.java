@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class S3BucketAclGrantConfigurationMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> GRANTEE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("grantee").build();
     private static final MarshallingInfo<String> PERMISSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permission").build();
+    private static final MarshallingInfo<StructuredPojo> GRANTEE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("grantee").build();
 
     private static final S3BucketAclGrantConfigurationMarshaller instance = new S3BucketAclGrantConfigurationMarshaller();
 
@@ -48,8 +48,8 @@ public class S3BucketAclGrantConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(s3BucketAclGrantConfiguration.getGrantee(), GRANTEE_BINDING);
             protocolMarshaller.marshall(s3BucketAclGrantConfiguration.getPermission(), PERMISSION_BINDING);
+            protocolMarshaller.marshall(s3BucketAclGrantConfiguration.getGrantee(), GRANTEE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

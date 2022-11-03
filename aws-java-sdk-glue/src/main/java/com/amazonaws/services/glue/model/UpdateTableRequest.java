@@ -58,7 +58,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String transactionId;
-
+    /**
+     * <p>
+     * The version ID at which to update the table contents.
+     * </p>
+     */
     private String versionId;
 
     /**
@@ -298,7 +302,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The version ID at which to update the table contents.
+     * </p>
+     * 
      * @param versionId
+     *        The version ID at which to update the table contents.
      */
 
     public void setVersionId(String versionId) {
@@ -306,7 +315,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The version ID at which to update the table contents.
+     * </p>
+     * 
+     * @return The version ID at which to update the table contents.
      */
 
     public String getVersionId() {
@@ -314,7 +327,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The version ID at which to update the table contents.
+     * </p>
+     * 
      * @param versionId
+     *        The version ID at which to update the table contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

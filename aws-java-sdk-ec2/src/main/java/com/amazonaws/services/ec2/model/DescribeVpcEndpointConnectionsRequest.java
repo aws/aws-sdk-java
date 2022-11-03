@@ -33,6 +33,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
@@ -79,6 +84,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
@@ -103,6 +113,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * 
      * @return One or more filters.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>service-id</code> - The ID of the service.
@@ -141,6 +156,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
@@ -166,6 +186,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>service-id</code> - The ID of the service.
@@ -206,6 +231,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
@@ -236,6 +266,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>service-id</code> - The ID of the service.
@@ -278,6 +313,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
@@ -303,6 +343,11 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>service-id</code> - The ID of the service.

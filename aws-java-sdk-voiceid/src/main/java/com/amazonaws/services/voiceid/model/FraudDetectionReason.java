@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FraudDetectionReason {
 
-    KNOWN_FRAUDSTER("KNOWN_FRAUDSTER");
+    KNOWN_FRAUDSTER("KNOWN_FRAUDSTER"),
+    VOICE_SPOOFING("VOICE_SPOOFING");
 
     private String value;
 

@@ -64,7 +64,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     * Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and
+     * periods (.).
      * </p>
      * </li>
      * <li>
@@ -282,7 +283,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     * Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and
+     * periods (.).
      * </p>
      * </li>
      * <li>
@@ -298,7 +300,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      *        <ul>
      *        <li>
      *        <p>
-     *        It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     *        Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     *        and periods (.).
      *        </p>
      *        </li>
      *        <li>
@@ -320,7 +323,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     * Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and
+     * periods (.).
      * </p>
      * </li>
      * <li>
@@ -335,7 +339,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      *         <ul>
      *         <li>
      *         <p>
-     *         It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     *         Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     *         and periods (.).
      *         </p>
      *         </li>
      *         <li>
@@ -357,7 +362,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     * Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and
+     * periods (.).
      * </p>
      * </li>
      * <li>
@@ -373,7 +379,8 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      *        <ul>
      *        <li>
      *        <p>
-     *        It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).
+     *        Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     *        and periods (.).
      *        </p>
      *        </li>
      *        <li>

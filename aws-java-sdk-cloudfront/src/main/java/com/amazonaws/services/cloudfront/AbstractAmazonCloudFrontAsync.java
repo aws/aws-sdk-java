@@ -177,6 +177,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOriginAccessControlResult> createOriginAccessControlAsync(CreateOriginAccessControlRequest request) {
+
+        return createOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOriginAccessControlResult> createOriginAccessControlAsync(CreateOriginAccessControlRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateOriginAccessControlRequest, CreateOriginAccessControlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOriginRequestPolicyResult> createOriginRequestPolicyAsync(CreateOriginRequestPolicyRequest request) {
 
         return createOriginRequestPolicyAsync(request, null);
@@ -362,6 +375,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<DeleteMonitoringSubscriptionResult> deleteMonitoringSubscriptionAsync(DeleteMonitoringSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMonitoringSubscriptionRequest, DeleteMonitoringSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOriginAccessControlResult> deleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request) {
+
+        return deleteOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOriginAccessControlResult> deleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOriginAccessControlRequest, DeleteOriginAccessControlResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -641,6 +667,32 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<GetMonitoringSubscriptionResult> getMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMonitoringSubscriptionRequest, GetMonitoringSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlResult> getOriginAccessControlAsync(GetOriginAccessControlRequest request) {
+
+        return getOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlResult> getOriginAccessControlAsync(GetOriginAccessControlRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOriginAccessControlRequest, GetOriginAccessControlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlConfigResult> getOriginAccessControlConfigAsync(GetOriginAccessControlConfigRequest request) {
+
+        return getOriginAccessControlConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginAccessControlConfigResult> getOriginAccessControlConfigAsync(GetOriginAccessControlConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOriginAccessControlConfigRequest, GetOriginAccessControlConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -972,6 +1024,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListOriginAccessControlsResult> listOriginAccessControlsAsync(ListOriginAccessControlsRequest request) {
+
+        return listOriginAccessControlsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOriginAccessControlsResult> listOriginAccessControlsAsync(ListOriginAccessControlsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOriginAccessControlsRequest, ListOriginAccessControlsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOriginRequestPoliciesResult> listOriginRequestPoliciesAsync(ListOriginRequestPoliciesRequest request) {
 
         return listOriginRequestPoliciesAsync(request, null);
@@ -1194,6 +1259,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateKeyGroupRequest, UpdateKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOriginAccessControlResult> updateOriginAccessControlAsync(UpdateOriginAccessControlRequest request) {
+
+        return updateOriginAccessControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOriginAccessControlResult> updateOriginAccessControlAsync(UpdateOriginAccessControlRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateOriginAccessControlRequest, UpdateOriginAccessControlResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

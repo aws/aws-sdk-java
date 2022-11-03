@@ -45,7 +45,7 @@ public class AssociateDataShareConsumerResult extends com.amazonaws.AmazonWebSer
     private Boolean allowPubliclyAccessibleConsumers;
     /**
      * <p>
-     * A value that specifies when the datashare has an association between a producer and data consumers.
+     * A value that specifies when the datashare has an association between producer and data consumers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DataShareAssociation> dataShareAssociations;
@@ -202,10 +202,10 @@ public class AssociateDataShareConsumerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that specifies when the datashare has an association between a producer and data consumers.
+     * A value that specifies when the datashare has an association between producer and data consumers.
      * </p>
      * 
-     * @return A value that specifies when the datashare has an association between a producer and data consumers.
+     * @return A value that specifies when the datashare has an association between producer and data consumers.
      */
 
     public java.util.List<DataShareAssociation> getDataShareAssociations() {
@@ -217,11 +217,11 @@ public class AssociateDataShareConsumerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that specifies when the datashare has an association between a producer and data consumers.
+     * A value that specifies when the datashare has an association between producer and data consumers.
      * </p>
      * 
      * @param dataShareAssociations
-     *        A value that specifies when the datashare has an association between a producer and data consumers.
+     *        A value that specifies when the datashare has an association between producer and data consumers.
      */
 
     public void setDataShareAssociations(java.util.Collection<DataShareAssociation> dataShareAssociations) {
@@ -235,7 +235,7 @@ public class AssociateDataShareConsumerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that specifies when the datashare has an association between a producer and data consumers.
+     * A value that specifies when the datashare has an association between producer and data consumers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -244,7 +244,7 @@ public class AssociateDataShareConsumerResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param dataShareAssociations
-     *        A value that specifies when the datashare has an association between a producer and data consumers.
+     *        A value that specifies when the datashare has an association between producer and data consumers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,11 +260,11 @@ public class AssociateDataShareConsumerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that specifies when the datashare has an association between a producer and data consumers.
+     * A value that specifies when the datashare has an association between producer and data consumers.
      * </p>
      * 
      * @param dataShareAssociations
-     *        A value that specifies when the datashare has an association between a producer and data consumers.
+     *        A value that specifies when the datashare has an association between producer and data consumers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,6 +42,8 @@ public class CreateConfigurationSetRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> SUPPRESSIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SuppressionOptions").build();
+    private static final MarshallingInfo<StructuredPojo> VDMOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VdmOptions").build();
 
     private static final CreateConfigurationSetRequestMarshaller instance = new CreateConfigurationSetRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateConfigurationSetRequestMarshaller {
             protocolMarshaller.marshall(createConfigurationSetRequest.getSendingOptions(), SENDINGOPTIONS_BINDING);
             protocolMarshaller.marshall(createConfigurationSetRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createConfigurationSetRequest.getSuppressionOptions(), SUPPRESSIONOPTIONS_BINDING);
+            protocolMarshaller.marshall(createConfigurationSetRequest.getVdmOptions(), VDMOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

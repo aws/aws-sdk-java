@@ -51,7 +51,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the
-     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS
+     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.
      * </p>
      * </li>
@@ -134,7 +134,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the
-     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS
+     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.
      * </p>
      * </li>
@@ -162,7 +162,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of
      *        the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the
-     *        deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up
+     *        deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up
      *        fractional instances.
      *        </p>
      *        </li>
@@ -195,7 +195,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the
-     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS
+     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.
      * </p>
      * </li>
@@ -222,7 +222,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of
      *         the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the
-     *         deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up
+     *         deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up
      *         fractional instances.
      *         </p>
      *         </li>
@@ -255,7 +255,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the
-     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS
+     * total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.
      * </p>
      * </li>
@@ -283,7 +283,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of
      *        the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the
-     *        deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up
+     *        deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up
      *        fractional instances.
      *        </p>
      *        </li>

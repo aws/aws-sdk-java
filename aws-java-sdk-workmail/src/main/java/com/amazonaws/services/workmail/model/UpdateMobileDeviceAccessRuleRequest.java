@@ -27,7 +27,7 @@ public class UpdateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be updated.
+     * The WorkMail organization under which the rule will be updated.
      * </p>
      */
     private String organizationId;
@@ -107,11 +107,11 @@ public class UpdateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be updated.
+     * The WorkMail organization under which the rule will be updated.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which the rule will be updated.
+     *        The WorkMail organization under which the rule will be updated.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -120,10 +120,10 @@ public class UpdateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be updated.
+     * The WorkMail organization under which the rule will be updated.
      * </p>
      * 
-     * @return The Amazon WorkMail organization under which the rule will be updated.
+     * @return The WorkMail organization under which the rule will be updated.
      */
 
     public String getOrganizationId() {
@@ -132,11 +132,11 @@ public class UpdateMobileDeviceAccessRuleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon WorkMail organization under which the rule will be updated.
+     * The WorkMail organization under which the rule will be updated.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization under which the rule will be updated.
+     *        The WorkMail organization under which the rule will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

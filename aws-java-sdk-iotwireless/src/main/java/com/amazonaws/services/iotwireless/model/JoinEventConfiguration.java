@@ -36,7 +36,7 @@ public class JoinEventConfiguration implements Serializable, Cloneable, Structur
     private LoRaWANJoinEventNotificationConfigurations loRaWAN;
     /**
      * <p>
-     * Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     * Denotes whether the wireless device ID join event topic is enabled or disabled.
      * </p>
      */
     private String wirelessDeviceIdEventTopic;
@@ -83,11 +83,11 @@ public class JoinEventConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     * Denotes whether the wireless device ID join event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceIdEventTopic
-     *        Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     *        Denotes whether the wireless device ID join event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -97,10 +97,10 @@ public class JoinEventConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     * Denotes whether the wireless device ID join event topic is enabled or disabled.
      * </p>
      * 
-     * @return Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     * @return Denotes whether the wireless device ID join event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -110,11 +110,11 @@ public class JoinEventConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     * Denotes whether the wireless device ID join event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceIdEventTopic
-     *        Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     *        Denotes whether the wireless device ID join event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */
@@ -126,11 +126,11 @@ public class JoinEventConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     * Denotes whether the wireless device ID join event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceIdEventTopic
-     *        Enum to denote whether the wireless device id join event topic is enabled or disabled.
+     *        Denotes whether the wireless device ID join event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */

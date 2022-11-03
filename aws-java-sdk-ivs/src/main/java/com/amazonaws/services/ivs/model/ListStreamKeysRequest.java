@@ -33,7 +33,7 @@ public class ListStreamKeysRequest extends com.amazonaws.AmazonWebServiceRequest
     private String channelArn;
     /**
      * <p>
-     * Maximum number of streamKeys to return. Default: 50.
+     * Maximum number of streamKeys to return. Default: 1.
      * </p>
      */
     private Integer maxResults;
@@ -86,11 +86,11 @@ public class ListStreamKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of streamKeys to return. Default: 50.
+     * Maximum number of streamKeys to return. Default: 1.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of streamKeys to return. Default: 50.
+     *        Maximum number of streamKeys to return. Default: 1.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -99,10 +99,10 @@ public class ListStreamKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of streamKeys to return. Default: 50.
+     * Maximum number of streamKeys to return. Default: 1.
      * </p>
      * 
-     * @return Maximum number of streamKeys to return. Default: 50.
+     * @return Maximum number of streamKeys to return. Default: 1.
      */
 
     public Integer getMaxResults() {
@@ -111,11 +111,11 @@ public class ListStreamKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of streamKeys to return. Default: 50.
+     * Maximum number of streamKeys to return. Default: 1.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of streamKeys to return. Default: 50.
+     *        Maximum number of streamKeys to return. Default: 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

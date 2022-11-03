@@ -85,7 +85,7 @@ import javax.annotation.Generated;
  * <p>
  * If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This
  * property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested
- * items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.
+ * items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.
  * </p>
  * </note>
  * <p>
@@ -99,7 +99,7 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * Code: <code>NONE</code>
+ * Code: <code>None</code>
  * </p>
  * </li>
  * <li>

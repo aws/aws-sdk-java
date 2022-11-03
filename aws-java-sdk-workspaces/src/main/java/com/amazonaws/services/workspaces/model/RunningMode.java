@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RunningMode {
 
     AUTO_STOP("AUTO_STOP"),
-    ALWAYS_ON("ALWAYS_ON");
+    ALWAYS_ON("ALWAYS_ON"),
+    MANUAL("MANUAL");
 
     private String value;
 

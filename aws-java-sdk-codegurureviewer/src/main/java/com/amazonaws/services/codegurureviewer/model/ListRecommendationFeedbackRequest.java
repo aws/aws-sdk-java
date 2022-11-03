@@ -27,9 +27,9 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
-     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      */
     private String nextToken;
@@ -42,8 +42,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      */
     private String codeReviewArn;
@@ -69,15 +68,15 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
-     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      * 
      * @param nextToken
-     *        If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a
-     *        unique pagination token for each page. Make the call again using the returned token to retrieve the next
-     *        page. Keep all other arguments unchanged.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page. Keep all other arguments unchanged.
      */
 
     public void setNextToken(String nextToken) {
@@ -86,14 +85,14 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
-     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      * 
-     * @return If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a
-     *         unique pagination token for each page. Make the call again using the returned token to retrieve the next
-     *         page. Keep all other arguments unchanged.
+     * @return If <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page. Keep all other arguments unchanged.
      */
 
     public String getNextToken() {
@@ -102,15 +101,15 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
-     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.
      * </p>
      * 
      * @param nextToken
-     *        If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a
-     *        unique pagination token for each page. Make the call again using the returned token to retrieve the next
-     *        page. Keep all other arguments unchanged.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page. Keep all other arguments unchanged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,14 +161,12 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @param codeReviewArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *        <code>CodeReview</code> </a> object.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -179,13 +176,12 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
-     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *         <code>CodeReview</code> </a> object.
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+     *         object.
      */
 
     public String getCodeReviewArn() {
@@ -195,14 +191,12 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
-     * object.
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * </p>
      * 
      * @param codeReviewArn
      *        The Amazon Resource Name (ARN) of the <a
-     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-     *        <code>CodeReview</code> </a> object.
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,7 +218,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the
-     *         recommendation feedback for a code review from that user. </p>
+     *         recommendation feedback for a code review from that user.</p>
      *         <p>
      *         The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *         an Amazon Resource Name (ARN). For more information, see <a href=
@@ -250,7 +244,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param userIds
      *        An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the
-     *        recommendation feedback for a code review from that user. </p>
+     *        recommendation feedback for a code review from that user.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=
@@ -286,7 +280,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param userIds
      *        An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the
-     *        recommendation feedback for a code review from that user. </p>
+     *        recommendation feedback for a code review from that user.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=
@@ -319,7 +313,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param userIds
      *        An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the
-     *        recommendation feedback for a code review from that user. </p>
+     *        recommendation feedback for a code review from that user.</p>
      *        <p>
      *        The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or
      *        an Amazon Resource Name (ARN). For more information, see <a href=

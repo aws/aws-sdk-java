@@ -27,7 +27,7 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the index you want to update query suggestions settings for.
+     * The identifier of the index with query suggestions you want to update.
      * </p>
      */
     private String indexId;
@@ -106,11 +106,11 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the index you want to update query suggestions settings for.
+     * The identifier of the index with query suggestions you want to update.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index you want to update query suggestions settings for.
+     *        The identifier of the index with query suggestions you want to update.
      */
 
     public void setIndexId(String indexId) {
@@ -119,10 +119,10 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the index you want to update query suggestions settings for.
+     * The identifier of the index with query suggestions you want to update.
      * </p>
      * 
-     * @return The identifier of the index you want to update query suggestions settings for.
+     * @return The identifier of the index with query suggestions you want to update.
      */
 
     public String getIndexId() {
@@ -131,11 +131,11 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the index you want to update query suggestions settings for.
+     * The identifier of the index with query suggestions you want to update.
      * </p>
      * 
      * @param indexId
-     *        The identifier of the index you want to update query suggestions settings for.
+     *        The identifier of the index with query suggestions you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

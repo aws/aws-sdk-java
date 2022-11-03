@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The representation of an Amazon WorkMail user.
+ * The representation of an WorkMail user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/User" target="_top">AWS API
@@ -66,13 +66,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String userRole;
     /**
      * <p>
-     * The date indicating when the user was enabled for Amazon WorkMail use.
+     * The date indicating when the user was enabled for WorkMail use.
      * </p>
      */
     private java.util.Date enabledDate;
     /**
      * <p>
-     * The date indicating when the user was disabled from Amazon WorkMail use.
+     * The date indicating when the user was disabled from WorkMail use.
      * </p>
      */
     private java.util.Date disabledDate;
@@ -357,11 +357,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the user was enabled for Amazon WorkMail use.
+     * The date indicating when the user was enabled for WorkMail use.
      * </p>
      * 
      * @param enabledDate
-     *        The date indicating when the user was enabled for Amazon WorkMail use.
+     *        The date indicating when the user was enabled for WorkMail use.
      */
 
     public void setEnabledDate(java.util.Date enabledDate) {
@@ -370,10 +370,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the user was enabled for Amazon WorkMail use.
+     * The date indicating when the user was enabled for WorkMail use.
      * </p>
      * 
-     * @return The date indicating when the user was enabled for Amazon WorkMail use.
+     * @return The date indicating when the user was enabled for WorkMail use.
      */
 
     public java.util.Date getEnabledDate() {
@@ -382,11 +382,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the user was enabled for Amazon WorkMail use.
+     * The date indicating when the user was enabled for WorkMail use.
      * </p>
      * 
      * @param enabledDate
-     *        The date indicating when the user was enabled for Amazon WorkMail use.
+     *        The date indicating when the user was enabled for WorkMail use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +397,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the user was disabled from Amazon WorkMail use.
+     * The date indicating when the user was disabled from WorkMail use.
      * </p>
      * 
      * @param disabledDate
-     *        The date indicating when the user was disabled from Amazon WorkMail use.
+     *        The date indicating when the user was disabled from WorkMail use.
      */
 
     public void setDisabledDate(java.util.Date disabledDate) {
@@ -410,10 +410,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the user was disabled from Amazon WorkMail use.
+     * The date indicating when the user was disabled from WorkMail use.
      * </p>
      * 
-     * @return The date indicating when the user was disabled from Amazon WorkMail use.
+     * @return The date indicating when the user was disabled from WorkMail use.
      */
 
     public java.util.Date getDisabledDate() {
@@ -422,11 +422,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date indicating when the user was disabled from Amazon WorkMail use.
+     * The date indicating when the user was disabled from WorkMail use.
      * </p>
      * 
      * @param disabledDate
-     *        The date indicating when the user was disabled from Amazon WorkMail use.
+     *        The date indicating when the user was disabled from WorkMail use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -44,6 +44,8 @@ public class AssociatedAssetsSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
     private static final MarshallingInfo<List> HIERARCHIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hierarchies").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
 
     private static final AssociatedAssetsSummaryMarshaller instance = new AssociatedAssetsSummaryMarshaller();
 
@@ -69,6 +71,7 @@ public class AssociatedAssetsSummaryMarshaller {
             protocolMarshaller.marshall(associatedAssetsSummary.getLastUpdateDate(), LASTUPDATEDATE_BINDING);
             protocolMarshaller.marshall(associatedAssetsSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(associatedAssetsSummary.getHierarchies(), HIERARCHIES_BINDING);
+            protocolMarshaller.marshall(associatedAssetsSummary.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

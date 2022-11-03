@@ -49,7 +49,7 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
     private String terminateToken;
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      */
@@ -232,13 +232,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *        delete the underlying resources.
+     *        If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *        the underlying resources.
      */
 
     public void setIgnoreErrors(Boolean ignoreErrors) {
@@ -247,12 +247,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
-     * @return If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *         delete the underlying resources.
+     * @return If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *         the underlying resources.
      */
 
     public Boolean getIgnoreErrors() {
@@ -261,13 +261,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *        delete the underlying resources.
+     *        If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *        the underlying resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,12 +278,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the
      * underlying resources.
      * </p>
      * 
-     * @return If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
-     *         delete the underlying resources.
+     * @return If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete
+     *         the underlying resources.
      */
 
     public Boolean isIgnoreErrors() {

@@ -75,7 +75,7 @@ public interface AWSPanoramaAsync extends AWSPanorama {
 
     /**
      * <p>
-     * Creates a job to run on one or more devices.
+     * Creates a job to run on one or more devices. A job can update a device's software or reboot it.
      * </p>
      * 
      * @param createJobForDevicesRequest
@@ -88,7 +88,7 @@ public interface AWSPanoramaAsync extends AWSPanorama {
 
     /**
      * <p>
-     * Creates a job to run on one or more devices.
+     * Creates a job to run on one or more devices. A job can update a device's software or reboot it.
      * </p>
      * 
      * @param createJobForDevicesRequest
@@ -1009,6 +1009,41 @@ public interface AWSPanoramaAsync extends AWSPanorama {
     java.util.concurrent.Future<RemoveApplicationInstanceResult> removeApplicationInstanceAsync(
             RemoveApplicationInstanceRequest removeApplicationInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveApplicationInstanceRequest, RemoveApplicationInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Signal camera nodes to stop or resume.
+     * </p>
+     * 
+     * @param signalApplicationInstanceNodeInstancesRequest
+     * @return A Java Future containing the result of the SignalApplicationInstanceNodeInstances operation returned by
+     *         the service.
+     * @sample AWSPanoramaAsync.SignalApplicationInstanceNodeInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest signalApplicationInstanceNodeInstancesRequest);
+
+    /**
+     * <p>
+     * Signal camera nodes to stop or resume.
+     * </p>
+     * 
+     * @param signalApplicationInstanceNodeInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SignalApplicationInstanceNodeInstances operation returned by
+     *         the service.
+     * @sample AWSPanoramaAsyncHandler.SignalApplicationInstanceNodeInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest signalApplicationInstanceNodeInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<SignalApplicationInstanceNodeInstancesRequest, SignalApplicationInstanceNodeInstancesResult> asyncHandler);
 
     /**
      * <p>

@@ -27,7 +27,7 @@ public class PutMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Identifies the Amazon WorkMail organization for which you create the override.
+     * Identifies the WorkMail organization for which you create the override.
      * </p>
      */
     private String organizationId;
@@ -76,11 +76,11 @@ public class PutMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Identifies the Amazon WorkMail organization for which you create the override.
+     * Identifies the WorkMail organization for which you create the override.
      * </p>
      * 
      * @param organizationId
-     *        Identifies the Amazon WorkMail organization for which you create the override.
+     *        Identifies the WorkMail organization for which you create the override.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -89,10 +89,10 @@ public class PutMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Identifies the Amazon WorkMail organization for which you create the override.
+     * Identifies the WorkMail organization for which you create the override.
      * </p>
      * 
-     * @return Identifies the Amazon WorkMail organization for which you create the override.
+     * @return Identifies the WorkMail organization for which you create the override.
      */
 
     public String getOrganizationId() {
@@ -101,11 +101,11 @@ public class PutMobileDeviceAccessOverrideRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Identifies the Amazon WorkMail organization for which you create the override.
+     * Identifies the WorkMail organization for which you create the override.
      * </p>
      * 
      * @param organizationId
-     *        Identifies the Amazon WorkMail organization for which you create the override.
+     *        Identifies the WorkMail organization for which you create the override.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

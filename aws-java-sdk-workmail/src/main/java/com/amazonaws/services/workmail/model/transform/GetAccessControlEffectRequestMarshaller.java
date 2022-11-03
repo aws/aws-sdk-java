@@ -35,6 +35,8 @@ public class GetAccessControlEffectRequestMarshaller {
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<String> IMPERSONATIONROLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImpersonationRoleId").build();
 
     private static final GetAccessControlEffectRequestMarshaller instance = new GetAccessControlEffectRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class GetAccessControlEffectRequestMarshaller {
             protocolMarshaller.marshall(getAccessControlEffectRequest.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(getAccessControlEffectRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(getAccessControlEffectRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(getAccessControlEffectRequest.getImpersonationRoleId(), IMPERSONATIONROLEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

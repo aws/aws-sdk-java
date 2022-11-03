@@ -61,7 +61,7 @@ public class AwsEc2NetworkAclEntry implements Serializable, Cloneable, Structure
     private PortRangeFromTo portRange;
     /**
      * <p>
-     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.
      * </p>
      */
     private String protocol;
@@ -296,11 +296,12 @@ public class AwsEc2NetworkAclEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.
      * </p>
      * 
      * @param protocol
-     *        The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     *        The protocol that the rule applies to. To deny or allow access to all protocols, use the value
+     *        <code>-1</code>.
      */
 
     public void setProtocol(String protocol) {
@@ -309,10 +310,11 @@ public class AwsEc2NetworkAclEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.
      * </p>
      * 
-     * @return The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     * @return The protocol that the rule applies to. To deny or allow access to all protocols, use the value
+     *         <code>-1</code>.
      */
 
     public String getProtocol() {
@@ -321,11 +323,12 @@ public class AwsEc2NetworkAclEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     * The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.
      * </p>
      * 
      * @param protocol
-     *        The protocol that the rule applies to. To deny or allow access to all protocols, use the value -1.
+     *        The protocol that the rule applies to. To deny or allow access to all protocols, use the value
+     *        <code>-1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

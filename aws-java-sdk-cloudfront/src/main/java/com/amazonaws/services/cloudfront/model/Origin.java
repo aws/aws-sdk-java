@@ -177,6 +177,17 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      */
     private OriginShield originShield;
+    /**
+     * <p>
+     * The unique identifier of an origin access control for this origin.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    private String originAccessControlId;
 
     /**
      * <p>
@@ -812,6 +823,73 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier of an origin access control for this origin.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param originAccessControlId
+     *        The unique identifier of an origin access control for this origin.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public void setOriginAccessControlId(String originAccessControlId) {
+        this.originAccessControlId = originAccessControlId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of an origin access control for this origin.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return The unique identifier of an origin access control for this origin.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *         >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public String getOriginAccessControlId() {
+        return this.originAccessControlId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of an origin access control for this origin.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param originAccessControlId
+     *        The unique identifier of an origin access control for this origin.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Origin withOriginAccessControlId(String originAccessControlId) {
+        setOriginAccessControlId(originAccessControlId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -840,7 +918,9 @@ public class Origin implements Serializable, Cloneable {
         if (getConnectionTimeout() != null)
             sb.append("ConnectionTimeout: ").append(getConnectionTimeout()).append(",");
         if (getOriginShield() != null)
-            sb.append("OriginShield: ").append(getOriginShield());
+            sb.append("OriginShield: ").append(getOriginShield()).append(",");
+        if (getOriginAccessControlId() != null)
+            sb.append("OriginAccessControlId: ").append(getOriginAccessControlId());
         sb.append("}");
         return sb.toString();
     }
@@ -891,6 +971,10 @@ public class Origin implements Serializable, Cloneable {
             return false;
         if (other.getOriginShield() != null && other.getOriginShield().equals(this.getOriginShield()) == false)
             return false;
+        if (other.getOriginAccessControlId() == null ^ this.getOriginAccessControlId() == null)
+            return false;
+        if (other.getOriginAccessControlId() != null && other.getOriginAccessControlId().equals(this.getOriginAccessControlId()) == false)
+            return false;
         return true;
     }
 
@@ -908,6 +992,7 @@ public class Origin implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getConnectionAttempts() == null) ? 0 : getConnectionAttempts().hashCode());
         hashCode = prime * hashCode + ((getConnectionTimeout() == null) ? 0 : getConnectionTimeout().hashCode());
         hashCode = prime * hashCode + ((getOriginShield() == null) ? 0 : getOriginShield().hashCode());
+        hashCode = prime * hashCode + ((getOriginAccessControlId() == null) ? 0 : getOriginAccessControlId().hashCode());
         return hashCode;
     }
 

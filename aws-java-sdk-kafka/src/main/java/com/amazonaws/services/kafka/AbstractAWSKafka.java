@@ -203,6 +203,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public UpdateStorageResult updateStorage(UpdateStorageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

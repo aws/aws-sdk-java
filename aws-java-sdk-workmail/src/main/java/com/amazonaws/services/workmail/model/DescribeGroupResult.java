@@ -43,7 +43,7 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     private String email;
     /**
      * <p>
-     * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
+     * The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
      * WorkMail).
      * </p>
      */
@@ -183,13 +183,13 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
+     * The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
      * WorkMail).
      * </p>
      * 
      * @param state
-     *        The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *        registered to WorkMail).
+     *        The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *        WorkMail).
      * @see EntityState
      */
 
@@ -199,12 +199,12 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
+     * The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
      * WorkMail).
      * </p>
      * 
-     * @return The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *         registered to WorkMail).
+     * @return The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *         WorkMail).
      * @see EntityState
      */
 
@@ -214,13 +214,13 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
+     * The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
      * WorkMail).
      * </p>
      * 
      * @param state
-     *        The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *        registered to WorkMail).
+     *        The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *        WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -232,13 +232,13 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
+     * The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
      * WorkMail).
      * </p>
      * 
      * @param state
-     *        The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *        registered to WorkMail).
+     *        The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to
+     *        WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */

@@ -29,6 +29,8 @@ public class FsxProtocolMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> NFS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NFS").build();
+    private static final MarshallingInfo<StructuredPojo> SMB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMB").build();
 
     private static final FsxProtocolMarshaller instance = new FsxProtocolMarshaller();
 
@@ -47,6 +49,7 @@ public class FsxProtocolMarshaller {
 
         try {
             protocolMarshaller.marshall(fsxProtocol.getNFS(), NFS_BINDING);
+            protocolMarshaller.marshall(fsxProtocol.getSMB(), SMB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

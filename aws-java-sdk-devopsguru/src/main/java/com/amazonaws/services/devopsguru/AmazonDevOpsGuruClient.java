@@ -1035,6 +1035,8 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
      *         Management</a> in the <i>IAM User Guide</i>.
      * @throws InternalServerException
      *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
      * @throws ThrottlingException
      *         The request was denied due to a request throttling.
      * @throws ValidationException
@@ -1305,6 +1307,75 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Returns the list of log groups that contain log anomalies.
+     * </p>
+     * 
+     * @param listAnomalousLogGroupsRequest
+     * @return Result of the ListAnomalousLogGroups operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
+     * @sample AmazonDevOpsGuru.ListAnomalousLogGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAnomalousLogGroupsResult listAnomalousLogGroups(ListAnomalousLogGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAnomalousLogGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListAnomalousLogGroupsResult executeListAnomalousLogGroups(ListAnomalousLogGroupsRequest listAnomalousLogGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAnomalousLogGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAnomalousLogGroupsRequest> request = null;
+        Response<ListAnomalousLogGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAnomalousLogGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnomalousLogGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAnomalousLogGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAnomalousLogGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAnomalousLogGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to
      * specify which events are returned.
      * </p>
@@ -1429,6 +1500,70 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInsightsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of all log groups that are being monitored and tagged by DevOps Guru.
+     * </p>
+     * 
+     * @param listMonitoredResourcesRequest
+     * @return Result of the ListMonitoredResources operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
+     * @sample AmazonDevOpsGuru.ListMonitoredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMonitoredResourcesResult listMonitoredResources(ListMonitoredResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMonitoredResources(request);
+    }
+
+    @SdkInternalApi
+    final ListMonitoredResourcesResult executeListMonitoredResources(ListMonitoredResourcesRequest listMonitoredResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMonitoredResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMonitoredResourcesRequest> request = null;
+        Response<ListMonitoredResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMonitoredResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMonitoredResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitoredResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMonitoredResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMonitoredResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1792,9 +1927,9 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by
-     * their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one
-     * or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (
-     * <code>REACTIVE</code> or <code>PROACTIVE</code>).
+     * their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (
+     * <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or
+     * <code>PROACTIVE</code>).
      * </p>
      * <p>
      * Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the

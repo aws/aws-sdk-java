@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A resource with the same name or ID already exists. Notification rule names must be unique in your AWS account.
+ * A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web
+ * Services account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

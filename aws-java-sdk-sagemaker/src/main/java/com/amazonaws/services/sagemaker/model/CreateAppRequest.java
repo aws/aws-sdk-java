@@ -39,8 +39,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String userProfileName;
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      */
     private String appType;
@@ -60,6 +59,15 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
+     * <note>
+     * <p>
+     * The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     * <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for
+     * the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three
+     * <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with
+     * a request validation error.
+     * </p>
+     * </note>
      */
     private ResourceSpec resourceSpec;
 
@@ -145,13 +153,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
      * @param appType
-     *        The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *        <code>TensorBoard</code> is not supported.
+     *        The type of app.
      * @see AppType
      */
 
@@ -161,12 +167,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
-     * @return The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *         <code>TensorBoard</code> is not supported.
+     * @return The type of app.
      * @see AppType
      */
 
@@ -176,13 +180,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
      * @param appType
-     *        The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *        <code>TensorBoard</code> is not supported.
+     *        The type of app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
@@ -194,13 +196,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
      * @param appType
-     *        The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *        <code>TensorBoard</code> is not supported.
+     *        The type of app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
@@ -324,9 +324,26 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
+     * <note>
+     * <p>
+     * The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     * <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for
+     * the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three
+     * <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with
+     * a request validation error.
+     * </p>
+     * </note>
      * 
      * @param resourceSpec
-     *        The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     *        The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+     *        <note>
+     *        <p>
+     *        The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     *        <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured
+     *        for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three
+     *        <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call
+     *        fails with a request validation error.
+     *        </p>
      */
 
     public void setResourceSpec(ResourceSpec resourceSpec) {
@@ -337,8 +354,25 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
+     * <note>
+     * <p>
+     * The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     * <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for
+     * the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three
+     * <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with
+     * a request validation error.
+     * </p>
+     * </note>
      * 
-     * @return The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * @return The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+     *         <note>
+     *         <p>
+     *         The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     *         <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code>
+     *         configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of
+     *         those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the
+     *         <code>CreateApp</code> call fails with a request validation error.
+     *         </p>
      */
 
     public ResourceSpec getResourceSpec() {
@@ -349,9 +383,26 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
+     * <note>
+     * <p>
+     * The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     * <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for
+     * the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three
+     * <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with
+     * a request validation error.
+     * </p>
+     * </note>
      * 
      * @param resourceSpec
-     *        The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     *        The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+     *        <note>
+     *        <p>
+     *        The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     *        <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured
+     *        for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three
+     *        <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call
+     *        fails with a request validation error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -86,6 +86,16 @@ public class AcceleratorJsonUnmarshaller implements Unmarshaller<Accelerator, Js
                     context.nextToken();
                     accelerator.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("DualStackDnsName", targetDepth)) {
+                    context.nextToken();
+                    accelerator.setDualStackDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Events", targetDepth)) {
+                    context.nextToken();
+                    accelerator.setEvents(new ListUnmarshaller<AcceleratorEvent>(AcceleratorEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

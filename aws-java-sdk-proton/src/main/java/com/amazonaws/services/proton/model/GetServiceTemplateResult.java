@@ -25,18 +25,18 @@ public class GetServiceTemplateResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the requested service template.
      * </p>
      */
     private ServiceTemplate serviceTemplate;
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the requested service template.
      * </p>
      * 
      * @param serviceTemplate
-     *        The service template detail data that's returned by Proton.
+     *        The detailed data of the requested service template.
      */
 
     public void setServiceTemplate(ServiceTemplate serviceTemplate) {
@@ -45,10 +45,10 @@ public class GetServiceTemplateResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the requested service template.
      * </p>
      * 
-     * @return The service template detail data that's returned by Proton.
+     * @return The detailed data of the requested service template.
      */
 
     public ServiceTemplate getServiceTemplate() {
@@ -57,11 +57,11 @@ public class GetServiceTemplateResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The service template detail data that's returned by Proton.
+     * The detailed data of the requested service template.
      * </p>
      * 
      * @param serviceTemplate
-     *        The service template detail data that's returned by Proton.
+     *        The detailed data of the requested service template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

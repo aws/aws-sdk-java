@@ -138,6 +138,27 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ConnectorConfigResponse connectorConfig;
+    /**
+     * <p>
+     * The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an
+     * Amazon EKS cluster on the Amazon Web Services cloud.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object
+     * isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     */
+    private ClusterHealth health;
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This
+     * object isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     */
+    private OutpostConfigResponse outpostConfig;
 
     /**
      * <p>
@@ -951,6 +972,144 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an
+     * Amazon EKS cluster on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param id
+     *        The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available
+     *        for an Amazon EKS cluster on the Amazon Web Services cloud.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an
+     * Amazon EKS cluster on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @return The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available
+     *         for an Amazon EKS cluster on the Amazon Web Services cloud.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an
+     * Amazon EKS cluster on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param id
+     *        The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available
+     *        for an Amazon EKS cluster on the Amazon Web Services cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object
+     * isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param health
+     *        An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This
+     *        object isn't available for clusters on the Amazon Web Services cloud.
+     */
+
+    public void setHealth(ClusterHealth health) {
+        this.health = health;
+    }
+
+    /**
+     * <p>
+     * An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object
+     * isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @return An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     *         This object isn't available for clusters on the Amazon Web Services cloud.
+     */
+
+    public ClusterHealth getHealth() {
+        return this.health;
+    }
+
+    /**
+     * <p>
+     * An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object
+     * isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param health
+     *        An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This
+     *        object isn't available for clusters on the Amazon Web Services cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withHealth(ClusterHealth health) {
+        setHealth(health);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This
+     * object isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param outpostConfig
+     *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
+     *        Outpost. This object isn't available for clusters on the Amazon Web Services cloud.
+     */
+
+    public void setOutpostConfig(OutpostConfigResponse outpostConfig) {
+        this.outpostConfig = outpostConfig;
+    }
+
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This
+     * object isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @return An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
+     *         Outpost. This object isn't available for clusters on the Amazon Web Services cloud.
+     */
+
+    public OutpostConfigResponse getOutpostConfig() {
+        return this.outpostConfig;
+    }
+
+    /**
+     * <p>
+     * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This
+     * object isn't available for clusters on the Amazon Web Services cloud.
+     * </p>
+     * 
+     * @param outpostConfig
+     *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
+     *        Outpost. This object isn't available for clusters on the Amazon Web Services cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withOutpostConfig(OutpostConfigResponse outpostConfig) {
+        setOutpostConfig(outpostConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -995,7 +1154,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getEncryptionConfig() != null)
             sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
         if (getConnectorConfig() != null)
-            sb.append("ConnectorConfig: ").append(getConnectorConfig());
+            sb.append("ConnectorConfig: ").append(getConnectorConfig()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getHealth() != null)
+            sb.append("Health: ").append(getHealth()).append(",");
+        if (getOutpostConfig() != null)
+            sb.append("OutpostConfig: ").append(getOutpostConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1078,6 +1243,18 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectorConfig() != null && other.getConnectorConfig().equals(this.getConnectorConfig()) == false)
             return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getHealth() == null ^ this.getHealth() == null)
+            return false;
+        if (other.getHealth() != null && other.getHealth().equals(this.getHealth()) == false)
+            return false;
+        if (other.getOutpostConfig() == null ^ this.getOutpostConfig() == null)
+            return false;
+        if (other.getOutpostConfig() != null && other.getOutpostConfig().equals(this.getOutpostConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1103,6 +1280,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         hashCode = prime * hashCode + ((getConnectorConfig() == null) ? 0 : getConnectorConfig().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());
+        hashCode = prime * hashCode + ((getOutpostConfig() == null) ? 0 : getOutpostConfig().hashCode());
         return hashCode;
     }
 

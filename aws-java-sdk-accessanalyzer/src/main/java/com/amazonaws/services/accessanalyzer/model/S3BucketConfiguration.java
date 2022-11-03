@@ -37,11 +37,10 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
-     * 10 new access points per bucket.
+     * The proposed bucket policy for the Amazon S3 bucket.
      * </p>
      */
-    private java.util.Map<String, S3AccessPointConfiguration> accessPoints;
+    private String bucketPolicy;
     /**
      * <p>
      * The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the
@@ -53,88 +52,55 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
     private java.util.List<S3BucketAclGrantConfiguration> bucketAclGrants;
     /**
      * <p>
-     * The proposed bucket policy for the Amazon S3 bucket.
-     * </p>
-     */
-    private String bucketPolicy;
-    /**
-     * <p>
      * The proposed block public access configuration for the Amazon S3 bucket.
      * </p>
      */
     private S3PublicAccessBlockConfiguration bucketPublicAccessBlock;
-
     /**
      * <p>
      * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
      * 10 new access points per bucket.
      * </p>
+     */
+    private java.util.Map<String, S3AccessPointConfiguration> accessPoints;
+
+    /**
+     * <p>
+     * The proposed bucket policy for the Amazon S3 bucket.
+     * </p>
      * 
-     * @return The configuration of Amazon S3 access points or multi-region access points for the bucket. You can
-     *         propose up to 10 new access points per bucket.
+     * @param bucketPolicy
+     *        The proposed bucket policy for the Amazon S3 bucket.
      */
 
-    public java.util.Map<String, S3AccessPointConfiguration> getAccessPoints() {
-        return accessPoints;
+    public void setBucketPolicy(String bucketPolicy) {
+        this.bucketPolicy = bucketPolicy;
     }
 
     /**
      * <p>
-     * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
-     * 10 new access points per bucket.
+     * The proposed bucket policy for the Amazon S3 bucket.
      * </p>
      * 
-     * @param accessPoints
-     *        The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose
-     *        up to 10 new access points per bucket.
+     * @return The proposed bucket policy for the Amazon S3 bucket.
      */
 
-    public void setAccessPoints(java.util.Map<String, S3AccessPointConfiguration> accessPoints) {
-        this.accessPoints = accessPoints;
+    public String getBucketPolicy() {
+        return this.bucketPolicy;
     }
 
     /**
      * <p>
-     * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
-     * 10 new access points per bucket.
+     * The proposed bucket policy for the Amazon S3 bucket.
      * </p>
      * 
-     * @param accessPoints
-     *        The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose
-     *        up to 10 new access points per bucket.
+     * @param bucketPolicy
+     *        The proposed bucket policy for the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public S3BucketConfiguration withAccessPoints(java.util.Map<String, S3AccessPointConfiguration> accessPoints) {
-        setAccessPoints(accessPoints);
-        return this;
-    }
-
-    /**
-     * Add a single AccessPoints entry
-     *
-     * @see S3BucketConfiguration#withAccessPoints
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3BucketConfiguration addAccessPointsEntry(String key, S3AccessPointConfiguration value) {
-        if (null == this.accessPoints) {
-            this.accessPoints = new java.util.HashMap<String, S3AccessPointConfiguration>();
-        }
-        if (this.accessPoints.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.accessPoints.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into AccessPoints.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3BucketConfiguration clearAccessPointsEntries() {
-        this.accessPoints = null;
+    public S3BucketConfiguration withBucketPolicy(String bucketPolicy) {
+        setBucketPolicy(bucketPolicy);
         return this;
     }
 
@@ -234,46 +200,6 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The proposed bucket policy for the Amazon S3 bucket.
-     * </p>
-     * 
-     * @param bucketPolicy
-     *        The proposed bucket policy for the Amazon S3 bucket.
-     */
-
-    public void setBucketPolicy(String bucketPolicy) {
-        this.bucketPolicy = bucketPolicy;
-    }
-
-    /**
-     * <p>
-     * The proposed bucket policy for the Amazon S3 bucket.
-     * </p>
-     * 
-     * @return The proposed bucket policy for the Amazon S3 bucket.
-     */
-
-    public String getBucketPolicy() {
-        return this.bucketPolicy;
-    }
-
-    /**
-     * <p>
-     * The proposed bucket policy for the Amazon S3 bucket.
-     * </p>
-     * 
-     * @param bucketPolicy
-     *        The proposed bucket policy for the Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3BucketConfiguration withBucketPolicy(String bucketPolicy) {
-        setBucketPolicy(bucketPolicy);
-        return this;
-    }
-
-    /**
-     * <p>
      * The proposed block public access configuration for the Amazon S3 bucket.
      * </p>
      * 
@@ -313,6 +239,80 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
+     * 10 new access points per bucket.
+     * </p>
+     * 
+     * @return The configuration of Amazon S3 access points or multi-region access points for the bucket. You can
+     *         propose up to 10 new access points per bucket.
+     */
+
+    public java.util.Map<String, S3AccessPointConfiguration> getAccessPoints() {
+        return accessPoints;
+    }
+
+    /**
+     * <p>
+     * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
+     * 10 new access points per bucket.
+     * </p>
+     * 
+     * @param accessPoints
+     *        The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose
+     *        up to 10 new access points per bucket.
+     */
+
+    public void setAccessPoints(java.util.Map<String, S3AccessPointConfiguration> accessPoints) {
+        this.accessPoints = accessPoints;
+    }
+
+    /**
+     * <p>
+     * The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to
+     * 10 new access points per bucket.
+     * </p>
+     * 
+     * @param accessPoints
+     *        The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose
+     *        up to 10 new access points per bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3BucketConfiguration withAccessPoints(java.util.Map<String, S3AccessPointConfiguration> accessPoints) {
+        setAccessPoints(accessPoints);
+        return this;
+    }
+
+    /**
+     * Add a single AccessPoints entry
+     *
+     * @see S3BucketConfiguration#withAccessPoints
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3BucketConfiguration addAccessPointsEntry(String key, S3AccessPointConfiguration value) {
+        if (null == this.accessPoints) {
+            this.accessPoints = new java.util.HashMap<String, S3AccessPointConfiguration>();
+        }
+        if (this.accessPoints.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.accessPoints.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AccessPoints.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3BucketConfiguration clearAccessPointsEntries() {
+        this.accessPoints = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -324,14 +324,14 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccessPoints() != null)
-            sb.append("AccessPoints: ").append(getAccessPoints()).append(",");
-        if (getBucketAclGrants() != null)
-            sb.append("BucketAclGrants: ").append(getBucketAclGrants()).append(",");
         if (getBucketPolicy() != null)
             sb.append("BucketPolicy: ").append(getBucketPolicy()).append(",");
+        if (getBucketAclGrants() != null)
+            sb.append("BucketAclGrants: ").append(getBucketAclGrants()).append(",");
         if (getBucketPublicAccessBlock() != null)
-            sb.append("BucketPublicAccessBlock: ").append(getBucketPublicAccessBlock());
+            sb.append("BucketPublicAccessBlock: ").append(getBucketPublicAccessBlock()).append(",");
+        if (getAccessPoints() != null)
+            sb.append("AccessPoints: ").append(getAccessPoints());
         sb.append("}");
         return sb.toString();
     }
@@ -346,21 +346,21 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
         if (obj instanceof S3BucketConfiguration == false)
             return false;
         S3BucketConfiguration other = (S3BucketConfiguration) obj;
-        if (other.getAccessPoints() == null ^ this.getAccessPoints() == null)
+        if (other.getBucketPolicy() == null ^ this.getBucketPolicy() == null)
             return false;
-        if (other.getAccessPoints() != null && other.getAccessPoints().equals(this.getAccessPoints()) == false)
+        if (other.getBucketPolicy() != null && other.getBucketPolicy().equals(this.getBucketPolicy()) == false)
             return false;
         if (other.getBucketAclGrants() == null ^ this.getBucketAclGrants() == null)
             return false;
         if (other.getBucketAclGrants() != null && other.getBucketAclGrants().equals(this.getBucketAclGrants()) == false)
             return false;
-        if (other.getBucketPolicy() == null ^ this.getBucketPolicy() == null)
-            return false;
-        if (other.getBucketPolicy() != null && other.getBucketPolicy().equals(this.getBucketPolicy()) == false)
-            return false;
         if (other.getBucketPublicAccessBlock() == null ^ this.getBucketPublicAccessBlock() == null)
             return false;
         if (other.getBucketPublicAccessBlock() != null && other.getBucketPublicAccessBlock().equals(this.getBucketPublicAccessBlock()) == false)
+            return false;
+        if (other.getAccessPoints() == null ^ this.getAccessPoints() == null)
+            return false;
+        if (other.getAccessPoints() != null && other.getAccessPoints().equals(this.getAccessPoints()) == false)
             return false;
         return true;
     }
@@ -370,10 +370,10 @@ public class S3BucketConfiguration implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccessPoints() == null) ? 0 : getAccessPoints().hashCode());
-        hashCode = prime * hashCode + ((getBucketAclGrants() == null) ? 0 : getBucketAclGrants().hashCode());
         hashCode = prime * hashCode + ((getBucketPolicy() == null) ? 0 : getBucketPolicy().hashCode());
+        hashCode = prime * hashCode + ((getBucketAclGrants() == null) ? 0 : getBucketAclGrants().hashCode());
         hashCode = prime * hashCode + ((getBucketPublicAccessBlock() == null) ? 0 : getBucketPublicAccessBlock().hashCode());
+        hashCode = prime * hashCode + ((getAccessPoints() == null) ? 0 : getAccessPoints().hashCode());
         return hashCode;
     }
 

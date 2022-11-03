@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to get information about a collection of <a>ClientCertificate</a> resources.
+ * A request to get information about a collection of ClientCertificate resources.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

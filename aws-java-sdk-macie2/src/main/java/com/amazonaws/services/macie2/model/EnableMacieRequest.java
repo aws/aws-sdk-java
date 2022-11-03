@@ -34,7 +34,7 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
-     * Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      */
     private String findingPublishingFrequency;
@@ -89,12 +89,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
-     * Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        Specifies how often to publish updates to policy findings for the account. This includes publishing
-     *        updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -105,11 +105,11 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
-     * Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @return Specifies how often to publish updates to policy findings for the account. This includes publishing
-     *         updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *         updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -120,12 +120,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
-     * Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        Specifies how often to publish updates to policy findings for the account. This includes publishing
-     *        updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -138,12 +138,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
-     * Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        Specifies how often to publish updates to policy findings for the account. This includes publishing
-     *        updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */

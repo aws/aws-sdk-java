@@ -198,6 +198,11 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public UpdateGlobalSettingsResult updateGlobalSettings(UpdateGlobalSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateLensReviewResult updateLensReview(UpdateLensReviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

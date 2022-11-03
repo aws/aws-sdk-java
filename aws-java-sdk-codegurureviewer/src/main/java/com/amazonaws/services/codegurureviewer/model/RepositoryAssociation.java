@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a repository association. The <a
- * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">
- * <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html"
+ * >DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAssociation"
@@ -47,8 +47,8 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      */
     private String connectionArn;
@@ -124,7 +124,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      * association with this repository if you want to review source code in it later. You can control access to code
-     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * reviews created in anassociated repository with tags after it has been disassociated. For more information, see
      * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
      * </p>
@@ -163,7 +163,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -257,16 +257,16 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     *        <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
+     *        >Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -278,15 +278,15 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      *         <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     *         <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
+     *         >Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      */
 
     public String getConnectionArn() {
@@ -298,16 +298,16 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     * <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
+     * the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-     *        <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
+     *        >Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,7 +524,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      * association with this repository if you want to review source code in it later. You can control access to code
-     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * reviews created in anassociated repository with tags after it has been disassociated. For more information, see
      * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
      * </p>
@@ -582,7 +582,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        <p>
      *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      *        association with this repository if you want to review source code in it later. You can control access to
-     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        code reviews created in anassociated repository with tags after it has been disassociated. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
      *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
@@ -647,7 +647,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      * association with this repository if you want to review source code in it later. You can control access to code
-     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * reviews created in anassociated repository with tags after it has been disassociated. For more information, see
      * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
      * </p>
@@ -705,7 +705,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *         <p>
      *         <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      *         association with this repository if you want to review source code in it later. You can control access to
-     *         code reviews created in an associated repository with tags after it has been disassociated. For more
+     *         code reviews created in anassociated repository with tags after it has been disassociated. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
      *         >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
@@ -770,7 +770,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      * association with this repository if you want to review source code in it later. You can control access to code
-     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * reviews created in anassociated repository with tags after it has been disassociated. For more information, see
      * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
      * </p>
@@ -828,7 +828,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        <p>
      *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      *        association with this repository if you want to review source code in it later. You can control access to
-     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        code reviews created in anassociated repository with tags after it has been disassociated. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
      *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
@@ -895,7 +895,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      * association with this repository if you want to review source code in it later. You can control access to code
-     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * reviews created in anassociated repository with tags after it has been disassociated. For more information, see
      * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
      * </p>
@@ -953,7 +953,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        <p>
      *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
      *        association with this repository if you want to review source code in it later. You can control access to
-     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        code reviews created in anassociated repository with tags after it has been disassociated. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
      *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
@@ -1102,7 +1102,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -1119,7 +1119,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     *        The ID of the Amazon Web Services KMS key that is associated with this repository association.
      *        </p>
      *        </li>
      */
@@ -1141,7 +1141,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -1157,7 +1157,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *         </li>
      *         <li>
      *         <p>
-     *         The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     *         The ID of the Amazon Web Services KMS key that is associated with this repository association.
      *         </p>
      *         </li>
      */
@@ -1179,7 +1179,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     * The ID of the Amazon Web Services KMS key that is associated with this repository association.
      * </p>
      * </li>
      * </ul>
@@ -1196,7 +1196,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        The ID of the Amazon Web Services KMS key that is associated with this respository association.
+     *        The ID of the Amazon Web Services KMS key that is associated with this repository association.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

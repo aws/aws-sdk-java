@@ -71,7 +71,7 @@
     "defaultEndpoint" : "budgets.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "budgets.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>The Amazon Web Services Budgets API enables you to use Amazon Web Services Budgets to plan your service usage, service costs, and instance reservations. The API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Amazon Web Services Budgets. </p> <p>Budgets provide you with a way to see the following information:</p> <ul> <li> <p>How close your plan is to your budgeted amount or to the free tier limits</p> </li> <li> <p>Your usage-to-date, including how much you've used of your Reserved Instances (RIs)</p> </li> <li> <p>Your current estimated charges from Amazon Web Services, and how much your predicted usage will accrue in charges by the end of the month</p> </li> <li> <p>How much of your budget has been used</p> </li> </ul> <p>Amazon Web Services updates your budget status several times a day. Budgets track your unblended costs, subscriptions, refunds, and RIs. You can create the following types of budgets:</p> <ul> <li> <p> <b>Cost budgets</b> - Plan how much you want to spend on a service.</p> </li> <li> <p> <b>Usage budgets</b> - Plan how much you want to use one or more services.</p> </li> <li> <p> <b>RI utilization budgets</b> - Define a utilization threshold, and receive alerts when your RI usage falls below that threshold. This lets you see if your RIs are unused or under-utilized.</p> </li> <li> <p> <b>RI coverage budgets</b> - Define a coverage threshold, and receive alerts when the number of your instance hours that are covered by RIs fall below that threshold. This lets you see how much of your instance usage is covered by a reservation.</p> </li> </ul> <p>Service Endpoint</p> <p>The Amazon Web Services Budgets API provides the following endpoint:</p> <ul> <li> <p>https://budgets.amazonaws.com</p> </li> </ul> <p>For information about costs that are associated with the Amazon Web Services Budgets API, see <a href=\"https://aws.amazon.com/aws-cost-management/pricing/\">Amazon Web Services Cost Management Pricing</a>.</p>",
+    "documentation" : "<p>Use the Amazon Web Services Budgets API to plan your service usage, service costs, and instance reservations. This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the Amazon Web Services Budgets feature. </p> <p>Budgets provide you with a way to see the following information:</p> <ul> <li> <p>How close your plan is to your budgeted amount or to the free tier limits</p> </li> <li> <p>Your usage-to-date, including how much you've used of your Reserved Instances (RIs)</p> </li> <li> <p>Your current estimated charges from Amazon Web Services, and how much your predicted usage will accrue in charges by the end of the month</p> </li> <li> <p>How much of your budget has been used</p> </li> </ul> <p>Amazon Web Services updates your budget status several times a day. Budgets track your unblended costs, subscriptions, refunds, and RIs. You can create the following types of budgets:</p> <ul> <li> <p> <b>Cost budgets</b> - Plan how much you want to spend on a service.</p> </li> <li> <p> <b>Usage budgets</b> - Plan how much you want to use one or more services.</p> </li> <li> <p> <b>RI utilization budgets</b> - Define a utilization threshold, and receive alerts when your RI usage falls below that threshold. This lets you see if your RIs are unused or under-utilized.</p> </li> <li> <p> <b>RI coverage budgets</b> - Define a coverage threshold, and receive alerts when the number of your instance hours that are covered by RIs fall below that threshold. This lets you see how much of your instance usage is covered by a reservation.</p> </li> </ul> <p>Service Endpoint</p> <p>The Amazon Web Services Budgets API provides the following endpoint:</p> <ul> <li> <p>https://budgets.amazonaws.com</p> </li> </ul> <p>For information about costs that are associated with the Amazon Web Services Budgets API, see <a href=\"https://aws.amazon.com/aws-cost-management/pricing/\">Amazon Web Services Cost Management Pricing</a>.</p>",
     "endpointPrefix" : "budgets",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -132,6 +132,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -188,6 +192,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -246,6 +254,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -303,6 +315,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -351,6 +367,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -405,6 +425,10 @@
         "exceptionName" : "ResourceLockedException",
         "documentation" : "<p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -453,6 +477,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -503,6 +531,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -552,6 +584,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -600,6 +636,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -654,6 +694,10 @@
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The pagination token is invalid.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -702,6 +746,10 @@
       }, {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The pagination token is invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -755,6 +803,10 @@
       }, {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The pagination token is invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -813,6 +865,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -869,6 +925,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -927,6 +987,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -983,6 +1047,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1041,6 +1109,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1094,6 +1166,10 @@
         "exceptionName" : "ResourceLockedException",
         "documentation" : "<p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1142,6 +1218,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1196,6 +1276,10 @@
         "exceptionName" : "ResourceLockedException",
         "documentation" : "<p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1249,6 +1333,10 @@
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1301,6 +1389,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to use this operation with the given parameters.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -5352,7 +5444,7 @@
               "interfaceType" : "java.util.List",
               "listMemberModel" : {
                 "c2jName" : "member",
-                "c2jShape" : "GenericString",
+                "c2jShape" : "DimensionValue",
                 "deprecated" : false,
                 "documentation" : "",
                 "endpointDiscoveryId" : false,
@@ -6424,7 +6516,7 @@
                 "interfaceType" : "java.util.List",
                 "listMemberModel" : {
                   "c2jName" : "member",
-                  "c2jShape" : "GenericString",
+                  "c2jShape" : "DimensionValue",
                   "deprecated" : false,
                   "documentation" : "",
                   "endpointDiscoveryId" : false,
@@ -7768,7 +7860,7 @@
               "interfaceType" : "java.util.List",
               "listMemberModel" : {
                 "c2jName" : "member",
-                "c2jShape" : "GenericString",
+                "c2jShape" : "DimensionValue",
                 "deprecated" : false,
                 "documentation" : "",
                 "endpointDiscoveryId" : false,
@@ -8592,7 +8684,7 @@
                 "interfaceType" : "java.util.List",
                 "listMemberModel" : {
                   "c2jName" : "member",
-                  "c2jShape" : "GenericString",
+                  "c2jShape" : "DimensionValue",
                   "deprecated" : false,
                   "documentation" : "",
                   "endpointDiscoveryId" : false,
@@ -34825,6 +34917,47 @@
         "documentation" : null,
         "simpleType" : "ThresholdType",
         "variableSetterType" : "ThresholdType"
+      },
+      "wrapper" : false
+    },
+    "ThrottlingException" : {
+      "c2jName" : "ThrottlingException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.ThrottlingException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "ThrottlingException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ThrottlingException",
+        "variableName" : "throttlingException",
+        "variableType" : "ThrottlingException",
+        "documentation" : null,
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
       },
       "wrapper" : false
     },

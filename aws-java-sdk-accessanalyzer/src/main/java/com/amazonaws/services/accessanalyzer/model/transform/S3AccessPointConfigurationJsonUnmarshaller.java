@@ -52,13 +52,13 @@ public class S3AccessPointConfigurationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     s3AccessPointConfiguration.setAccessPointPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("networkOrigin", targetDepth)) {
-                    context.nextToken();
-                    s3AccessPointConfiguration.setNetworkOrigin(NetworkOriginConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("publicAccessBlock", targetDepth)) {
                     context.nextToken();
                     s3AccessPointConfiguration.setPublicAccessBlock(S3PublicAccessBlockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("networkOrigin", targetDepth)) {
+                    context.nextToken();
+                    s3AccessPointConfiguration.setNetworkOrigin(NetworkOriginConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

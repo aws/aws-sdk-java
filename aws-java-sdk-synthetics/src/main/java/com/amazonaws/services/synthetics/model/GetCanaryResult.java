@@ -25,18 +25,18 @@ public class GetCanaryResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A strucure that contains the full information about the canary.
+     * A structure that contains the full information about the canary.
      * </p>
      */
     private Canary canary;
 
     /**
      * <p>
-     * A strucure that contains the full information about the canary.
+     * A structure that contains the full information about the canary.
      * </p>
      * 
      * @param canary
-     *        A strucure that contains the full information about the canary.
+     *        A structure that contains the full information about the canary.
      */
 
     public void setCanary(Canary canary) {
@@ -45,10 +45,10 @@ public class GetCanaryResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A strucure that contains the full information about the canary.
+     * A structure that contains the full information about the canary.
      * </p>
      * 
-     * @return A strucure that contains the full information about the canary.
+     * @return A structure that contains the full information about the canary.
      */
 
     public Canary getCanary() {
@@ -57,11 +57,11 @@ public class GetCanaryResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A strucure that contains the full information about the canary.
+     * A structure that contains the full information about the canary.
      * </p>
      * 
      * @param canary
-     *        A strucure that contains the full information about the canary.
+     *        A structure that contains the full information about the canary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,10 @@ public class LabelsInputConfigurationJsonUnmarshaller implements Unmarshaller<La
                     context.nextToken();
                     labelsInputConfiguration.setS3InputConfiguration(LabelsS3InputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LabelGroupName", targetDepth)) {
+                    context.nextToken();
+                    labelsInputConfiguration.setLabelGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

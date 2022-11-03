@@ -41,7 +41,14 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientSecret;
     /**
      * <p>
-     * Supports grant types for authorization code, refresh token, and device code request.
+     * Supports grant types for the authorization code, refresh token, and device code request. For device code
+     * requests, specify the following value:
+     * </p>
+     * <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * </p>
+     * <p>
+     * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      */
     private String grantType;
@@ -62,8 +69,13 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String code;
     /**
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired. This token is
-     * not issued by the service.
+     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
+     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.
+     * </p>
+     * <p>
+     * The token used to obtain an access token in the event that the access token is invalid or expired.
      * </p>
      */
     private String refreshToken;
@@ -176,11 +188,24 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Supports grant types for authorization code, refresh token, and device code request.
+     * Supports grant types for the authorization code, refresh token, and device code request. For device code
+     * requests, specify the following value:
+     * </p>
+     * <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * </p>
+     * <p>
+     * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      * 
      * @param grantType
-     *        Supports grant types for authorization code, refresh token, and device code request.
+     *        Supports grant types for the authorization code, refresh token, and device code request. For device code
+     *        requests, specify the following value:</p>
+     *        <p>
+     *        <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     *        </p>
+     *        <p>
+     *        For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      */
 
     public void setGrantType(String grantType) {
@@ -189,10 +214,23 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Supports grant types for authorization code, refresh token, and device code request.
+     * Supports grant types for the authorization code, refresh token, and device code request. For device code
+     * requests, specify the following value:
+     * </p>
+     * <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * </p>
+     * <p>
+     * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      * 
-     * @return Supports grant types for authorization code, refresh token, and device code request.
+     * @return Supports grant types for the authorization code, refresh token, and device code request. For device code
+     *         requests, specify the following value:</p>
+     *         <p>
+     *         <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     *         </p>
+     *         <p>
+     *         For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      */
 
     public String getGrantType() {
@@ -201,11 +239,24 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Supports grant types for authorization code, refresh token, and device code request.
+     * Supports grant types for the authorization code, refresh token, and device code request. For device code
+     * requests, specify the following value:
+     * </p>
+     * <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * </p>
+     * <p>
+     * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      * 
      * @param grantType
-     *        Supports grant types for authorization code, refresh token, and device code request.
+     *        Supports grant types for the authorization code, refresh token, and device code request. For device code
+     *        requests, specify the following value:</p>
+     *        <p>
+     *        <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     *        </p>
+     *        <p>
+     *        For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,13 +365,23 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired. This token is
-     * not issued by the service.
+     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
+     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.
+     * </p>
+     * <p>
+     * The token used to obtain an access token in the event that the access token is invalid or expired.
      * </p>
      * 
      * @param refreshToken
-     *        The token used to obtain an access token in the event that the access token is invalid or expired. This
-     *        token is not issued by the service.
+     *        Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
+     *        about the features and limitations of the current IAM Identity Center OIDC implementation, see
+     *        <i>Considerations for Using this Guide</i> in the <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *        OIDC API Reference</a>.</p>
+     *        <p>
+     *        The token used to obtain an access token in the event that the access token is invalid or expired.
      */
 
     public void setRefreshToken(String refreshToken) {
@@ -329,12 +390,22 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired. This token is
-     * not issued by the service.
+     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
+     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.
+     * </p>
+     * <p>
+     * The token used to obtain an access token in the event that the access token is invalid or expired.
      * </p>
      * 
-     * @return The token used to obtain an access token in the event that the access token is invalid or expired. This
-     *         token is not issued by the service.
+     * @return Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
+     *         about the features and limitations of the current IAM Identity Center OIDC implementation, see
+     *         <i>Considerations for Using this Guide</i> in the <a
+     *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *         OIDC API Reference</a>.</p>
+     *         <p>
+     *         The token used to obtain an access token in the event that the access token is invalid or expired.
      */
 
     public String getRefreshToken() {
@@ -343,13 +414,23 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired. This token is
-     * not issued by the service.
+     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
+     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.
+     * </p>
+     * <p>
+     * The token used to obtain an access token in the event that the access token is invalid or expired.
      * </p>
      * 
      * @param refreshToken
-     *        The token used to obtain an access token in the event that the access token is invalid or expired. This
-     *        token is not issued by the service.
+     *        Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
+     *        about the features and limitations of the current IAM Identity Center OIDC implementation, see
+     *        <i>Considerations for Using this Guide</i> in the <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *        OIDC API Reference</a>.</p>
+     *        <p>
+     *        The token used to obtain an access token in the event that the access token is invalid or expired.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

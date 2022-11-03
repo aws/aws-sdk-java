@@ -624,6 +624,39 @@ public class AmazonDevOpsGuruAsyncClient extends AmazonDevOpsGuruClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnomalousLogGroupsResult> listAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest request) {
+
+        return listAnomalousLogGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnomalousLogGroupsResult> listAnomalousLogGroupsAsync(final ListAnomalousLogGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAnomalousLogGroupsRequest, ListAnomalousLogGroupsResult> asyncHandler) {
+        final ListAnomalousLogGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAnomalousLogGroupsResult>() {
+            @Override
+            public ListAnomalousLogGroupsResult call() throws Exception {
+                ListAnomalousLogGroupsResult result = null;
+
+                try {
+                    result = executeListAnomalousLogGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEventsResult> listEventsAsync(ListEventsRequest request) {
 
         return listEventsAsync(request, null);
@@ -674,6 +707,39 @@ public class AmazonDevOpsGuruAsyncClient extends AmazonDevOpsGuruClient implemen
 
                 try {
                     result = executeListInsights(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourcesResult> listMonitoredResourcesAsync(ListMonitoredResourcesRequest request) {
+
+        return listMonitoredResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourcesResult> listMonitoredResourcesAsync(final ListMonitoredResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMonitoredResourcesRequest, ListMonitoredResourcesResult> asyncHandler) {
+        final ListMonitoredResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMonitoredResourcesResult>() {
+            @Override
+            public ListMonitoredResourcesResult call() throws Exception {
+                ListMonitoredResourcesResult result = null;
+
+                try {
+                    result = executeListMonitoredResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -64,6 +64,16 @@ public class LineItemJsonUnmarshaller implements Unmarshaller<LineItem, JsonUnma
                     context.nextToken();
                     lineItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ShipmentInformation", targetDepth)) {
+                    context.nextToken();
+                    lineItem.setShipmentInformation(ShipmentInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AssetInformationList", targetDepth)) {
+                    context.nextToken();
+                    lineItem.setAssetInformationList(new ListUnmarshaller<LineItemAssetInformation>(LineItemAssetInformationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

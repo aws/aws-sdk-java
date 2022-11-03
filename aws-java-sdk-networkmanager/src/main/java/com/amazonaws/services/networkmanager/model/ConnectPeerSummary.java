@@ -66,7 +66,7 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
     private java.util.Date createdAt;
     /**
      * <p>
-     * The tags associated with a Connect peer summary.
+     * The list of key-value tags associated with the Connect peer summary.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -332,10 +332,10 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The tags associated with a Connect peer summary.
+     * The list of key-value tags associated with the Connect peer summary.
      * </p>
      * 
-     * @return The tags associated with a Connect peer summary.
+     * @return The list of key-value tags associated with the Connect peer summary.
      */
 
     public java.util.List<Tag> getTags() {
@@ -344,11 +344,11 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The tags associated with a Connect peer summary.
+     * The list of key-value tags associated with the Connect peer summary.
      * </p>
      * 
      * @param tags
-     *        The tags associated with a Connect peer summary.
+     *        The list of key-value tags associated with the Connect peer summary.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -362,7 +362,7 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The tags associated with a Connect peer summary.
+     * The list of key-value tags associated with the Connect peer summary.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -371,7 +371,7 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param tags
-     *        The tags associated with a Connect peer summary.
+     *        The list of key-value tags associated with the Connect peer summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,11 +387,11 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The tags associated with a Connect peer summary.
+     * The list of key-value tags associated with the Connect peer summary.
      * </p>
      * 
      * @param tags
-     *        The tags associated with a Connect peer summary.
+     *        The list of key-value tags associated with the Connect peer summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -72,7 +72,7 @@ public class ConnectPeer implements Serializable, Cloneable, StructuredPojo {
     private ConnectPeerConfiguration configuration;
     /**
      * <p>
-     * The tags associated with the Connect peer.
+     * The list of key-value tags associated with the Connect peer.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -378,10 +378,10 @@ public class ConnectPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the Connect peer.
+     * The list of key-value tags associated with the Connect peer.
      * </p>
      * 
-     * @return The tags associated with the Connect peer.
+     * @return The list of key-value tags associated with the Connect peer.
      */
 
     public java.util.List<Tag> getTags() {
@@ -390,11 +390,11 @@ public class ConnectPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the Connect peer.
+     * The list of key-value tags associated with the Connect peer.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the Connect peer.
+     *        The list of key-value tags associated with the Connect peer.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -408,7 +408,7 @@ public class ConnectPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the Connect peer.
+     * The list of key-value tags associated with the Connect peer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -417,7 +417,7 @@ public class ConnectPeer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        The tags associated with the Connect peer.
+     *        The list of key-value tags associated with the Connect peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,11 +433,11 @@ public class ConnectPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the Connect peer.
+     * The list of key-value tags associated with the Connect peer.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the Connect peer.
+     *        The list of key-value tags associated with the Connect peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

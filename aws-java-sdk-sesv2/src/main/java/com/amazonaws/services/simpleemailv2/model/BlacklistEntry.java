@@ -37,7 +37,7 @@ public class BlacklistEntry implements Serializable, Cloneable, StructuredPojo {
     private String rblName;
     /**
      * <p>
-     * The time when the blacklisting event occurred, shown in Unix time format.
+     * The time when the blacklisting event occurred.
      * </p>
      */
     private java.util.Date listingTime;
@@ -90,11 +90,11 @@ public class BlacklistEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the blacklisting event occurred, shown in Unix time format.
+     * The time when the blacklisting event occurred.
      * </p>
      * 
      * @param listingTime
-     *        The time when the blacklisting event occurred, shown in Unix time format.
+     *        The time when the blacklisting event occurred.
      */
 
     public void setListingTime(java.util.Date listingTime) {
@@ -103,10 +103,10 @@ public class BlacklistEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the blacklisting event occurred, shown in Unix time format.
+     * The time when the blacklisting event occurred.
      * </p>
      * 
-     * @return The time when the blacklisting event occurred, shown in Unix time format.
+     * @return The time when the blacklisting event occurred.
      */
 
     public java.util.Date getListingTime() {
@@ -115,11 +115,11 @@ public class BlacklistEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the blacklisting event occurred, shown in Unix time format.
+     * The time when the blacklisting event occurred.
      * </p>
      * 
      * @param listingTime
-     *        The time when the blacklisting event occurred, shown in Unix time format.
+     *        The time when the blacklisting event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

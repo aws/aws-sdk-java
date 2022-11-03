@@ -358,6 +358,77 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Associates a user access logging settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateUserAccessLoggingSettingsRequest
+     * @return Result of the AssociateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.AssociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateUserAccessLoggingSettingsResult associateUserAccessLoggingSettings(AssociateUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final AssociateUserAccessLoggingSettingsResult executeAssociateUserAccessLoggingSettings(
+            AssociateUserAccessLoggingSettingsRequest associateUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateUserAccessLoggingSettingsRequest> request = null;
+        Response<AssociateUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateUserAccessLoggingSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a user settings resource with a web portal.
      * </p>
      * 
@@ -510,6 +581,8 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
      *         Access is denied.
      * @throws ThrottlingException
      *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
      * @throws ValidationException
      *         There is a validation error.
      * @throws ConflictException
@@ -761,6 +834,76 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTrustStoreResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTrustStoreResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a user access logging settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createUserAccessLoggingSettingsRequest
+     * @return Result of the CreateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.CreateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateUserAccessLoggingSettingsResult createUserAccessLoggingSettings(CreateUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserAccessLoggingSettingsResult executeCreateUserAccessLoggingSettings(
+            CreateUserAccessLoggingSettingsRequest createUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserAccessLoggingSettingsRequest> request = null;
+        Response<CreateUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateUserAccessLoggingSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1169,6 +1312,74 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes user access logging settings.
+     * </p>
+     * 
+     * @param deleteUserAccessLoggingSettingsRequest
+     * @return Result of the DeleteUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.DeleteUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteUserAccessLoggingSettingsResult deleteUserAccessLoggingSettings(DeleteUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserAccessLoggingSettingsResult executeDeleteUserAccessLoggingSettings(
+            DeleteUserAccessLoggingSettingsRequest deleteUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserAccessLoggingSettingsRequest> request = null;
+        Response<DeleteUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteUserAccessLoggingSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes user settings.
      * </p>
      * 
@@ -1422,6 +1633,75 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateTrustStoreResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateTrustStoreResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates user access logging settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateUserAccessLoggingSettingsRequest
+     * @return Result of the DisassociateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.DisassociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateUserAccessLoggingSettingsResult disassociateUserAccessLoggingSettings(DisassociateUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateUserAccessLoggingSettingsResult executeDisassociateUserAccessLoggingSettings(
+            DisassociateUserAccessLoggingSettingsRequest disassociateUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateUserAccessLoggingSettingsRequest> request = null;
+        Response<DisassociateUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateUserAccessLoggingSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1961,6 +2241,73 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Gets user access logging settings.
+     * </p>
+     * 
+     * @param getUserAccessLoggingSettingsRequest
+     * @return Result of the GetUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.GetUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetUserAccessLoggingSettingsResult getUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetUserAccessLoggingSettingsResult executeGetUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest getUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUserAccessLoggingSettingsRequest> request = null;
+        Response<GetUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetUserAccessLoggingSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets user settings.
      * </p>
      * 
@@ -2462,6 +2809,71 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTrustStoresResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTrustStoresResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of user access logging settings.
+     * </p>
+     * 
+     * @param listUserAccessLoggingSettingsRequest
+     * @return Result of the ListUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.ListUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListUserAccessLoggingSettingsResult listUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final ListUserAccessLoggingSettingsResult executeListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest listUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUserAccessLoggingSettingsRequest> request = null;
+        Response<ListUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListUserAccessLoggingSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2987,6 +3399,74 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTrustStoreResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTrustStoreResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the user access logging settings.
+     * </p>
+     * 
+     * @param updateUserAccessLoggingSettingsRequest
+     * @return Result of the UpdateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.UpdateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateUserAccessLoggingSettingsResult updateUserAccessLoggingSettings(UpdateUserAccessLoggingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUserAccessLoggingSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserAccessLoggingSettingsResult executeUpdateUserAccessLoggingSettings(
+            UpdateUserAccessLoggingSettingsRequest updateUserAccessLoggingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateUserAccessLoggingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUserAccessLoggingSettingsRequest> request = null;
+        Response<UpdateUserAccessLoggingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUserAccessLoggingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateUserAccessLoggingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserAccessLoggingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserAccessLoggingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateUserAccessLoggingSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

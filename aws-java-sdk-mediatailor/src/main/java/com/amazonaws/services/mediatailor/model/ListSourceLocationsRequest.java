@@ -27,24 +27,31 @@ public class ListSourceLocationsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of source locations that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of source locations that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Upper bound on number of records to return. The maximum number of results is 100.
+     *        The maximum number of source locations that you want MediaTailor to return in response to the current
+     *        request. If there are more than <code>MaxResults</code> source locations, use the value of
+     *        <code>NextToken</code> in the response to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -53,10 +60,14 @@ public class ListSourceLocationsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of source locations that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      * 
-     * @return Upper bound on number of records to return. The maximum number of results is 100.
+     * @return The maximum number of source locations that you want MediaTailor to return in response to the current
+     *         request. If there are more than <code>MaxResults</code> source locations, use the value of
+     *         <code>NextToken</code> in the response to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -65,11 +76,15 @@ public class ListSourceLocationsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Upper bound on number of records to return. The maximum number of results is 100.
+     * The maximum number of source locations that you want MediaTailor to return in response to the current request. If
+     * there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the
+     * response to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Upper bound on number of records to return. The maximum number of results is 100.
+     *        The maximum number of source locations that you want MediaTailor to return in response to the current
+     *        request. If there are more than <code>MaxResults</code> source locations, use the value of
+     *        <code>NextToken</code> in the response to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +95,13 @@ public class ListSourceLocationsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -93,10 +110,12 @@ public class ListSourceLocationsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
-     * @return Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * @return Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *         fetch the next page of results.
      */
 
     public String getNextToken() {
@@ -105,11 +124,13 @@ public class ListSourceLocationsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Pagination token from the GET list request. Use the token to fetch the next page of results.
+     * Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the
+     * next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the GET list request. Use the token to fetch the next page of results.
+     *        Pagination token returned by the list request when results exceed the maximum allowed. Use the token to
+     *        fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

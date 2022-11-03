@@ -44,6 +44,11 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Configuration for building and running the service from a source code repository.
      * </p>
+     * <note>
+     * <p>
+     * <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     * </p>
+     * </note>
      */
     private CodeConfiguration codeConfiguration;
 
@@ -131,9 +136,17 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Configuration for building and running the service from a source code repository.
      * </p>
+     * <note>
+     * <p>
+     * <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     * </p>
+     * </note>
      * 
      * @param codeConfiguration
-     *        Configuration for building and running the service from a source code repository.
+     *        Configuration for building and running the service from a source code repository.</p> <note>
+     *        <p>
+     *        <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     *        </p>
      */
 
     public void setCodeConfiguration(CodeConfiguration codeConfiguration) {
@@ -144,8 +157,16 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Configuration for building and running the service from a source code repository.
      * </p>
+     * <note>
+     * <p>
+     * <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     * </p>
+     * </note>
      * 
-     * @return Configuration for building and running the service from a source code repository.
+     * @return Configuration for building and running the service from a source code repository.</p> <note>
+     *         <p>
+     *         <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     *         </p>
      */
 
     public CodeConfiguration getCodeConfiguration() {
@@ -156,9 +177,17 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Configuration for building and running the service from a source code repository.
      * </p>
+     * <note>
+     * <p>
+     * <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     * </p>
+     * </note>
      * 
      * @param codeConfiguration
-     *        Configuration for building and running the service from a source code repository.
+     *        Configuration for building and running the service from a source code repository.</p> <note>
+     *        <p>
+     *        <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

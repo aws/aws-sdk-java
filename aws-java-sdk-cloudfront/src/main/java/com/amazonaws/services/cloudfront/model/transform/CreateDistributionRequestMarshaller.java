@@ -238,6 +238,10 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         xmlWriter.endElement();
                                     }
                                 }
+
+                                if (originsItemsListValue.getOriginAccessControlId() != null) {
+                                    xmlWriter.startElement("OriginAccessControlId").value(originsItemsListValue.getOriginAccessControlId()).endElement();
+                                }
                                 xmlWriter.endElement();
                             }
                             xmlWriter.endElement();

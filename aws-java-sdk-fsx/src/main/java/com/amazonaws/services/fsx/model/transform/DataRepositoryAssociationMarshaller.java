@@ -52,6 +52,14 @@ public class DataRepositoryAssociationMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> FILECACHEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileCacheId").build();
+    private static final MarshallingInfo<String> FILECACHEPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileCachePath").build();
+    private static final MarshallingInfo<List> DATAREPOSITORYSUBDIRECTORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataRepositorySubdirectories").build();
+    private static final MarshallingInfo<StructuredPojo> NFS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NFS").build();
 
     private static final DataRepositoryAssociationMarshaller instance = new DataRepositoryAssociationMarshaller();
 
@@ -81,6 +89,10 @@ public class DataRepositoryAssociationMarshaller {
             protocolMarshaller.marshall(dataRepositoryAssociation.getS3(), S3_BINDING);
             protocolMarshaller.marshall(dataRepositoryAssociation.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(dataRepositoryAssociation.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(dataRepositoryAssociation.getFileCacheId(), FILECACHEID_BINDING);
+            protocolMarshaller.marshall(dataRepositoryAssociation.getFileCachePath(), FILECACHEPATH_BINDING);
+            protocolMarshaller.marshall(dataRepositoryAssociation.getDataRepositorySubdirectories(), DATAREPOSITORYSUBDIRECTORIES_BINDING);
+            protocolMarshaller.marshall(dataRepositoryAssociation.getNFS(), NFS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

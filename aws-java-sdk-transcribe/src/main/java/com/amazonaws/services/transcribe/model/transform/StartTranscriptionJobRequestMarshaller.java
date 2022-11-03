@@ -57,6 +57,8 @@ public class StartTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentRedaction").build();
     private static final MarshallingInfo<Boolean> IDENTIFYLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyLanguage").build();
+    private static final MarshallingInfo<Boolean> IDENTIFYMULTIPLELANGUAGES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyMultipleLanguages").build();
     private static final MarshallingInfo<List> LANGUAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
     private static final MarshallingInfo<StructuredPojo> SUBTITLES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -96,6 +98,7 @@ public class StartTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startTranscriptionJobRequest.getJobExecutionSettings(), JOBEXECUTIONSETTINGS_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getContentRedaction(), CONTENTREDACTION_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getIdentifyLanguage(), IDENTIFYLANGUAGE_BINDING);
+            protocolMarshaller.marshall(startTranscriptionJobRequest.getIdentifyMultipleLanguages(), IDENTIFYMULTIPLELANGUAGES_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getSubtitles(), SUBTITLES_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getTags(), TAGS_BINDING);

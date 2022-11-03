@@ -35,6 +35,8 @@ public class AwsCloudFrontDistributionOriginItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginPath").build();
     private static final MarshallingInfo<StructuredPojo> S3ORIGINCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OriginConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMORIGINCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomOriginConfig").build();
 
     private static final AwsCloudFrontDistributionOriginItemMarshaller instance = new AwsCloudFrontDistributionOriginItemMarshaller();
 
@@ -56,6 +58,7 @@ public class AwsCloudFrontDistributionOriginItemMarshaller {
             protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getId(), ID_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getOriginPath(), ORIGINPATH_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getS3OriginConfig(), S3ORIGINCONFIG_BINDING);
+            protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getCustomOriginConfig(), CUSTOMORIGINCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

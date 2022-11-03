@@ -93,6 +93,19 @@ public class AbstractAmazonCloudWatchEvidentlyAsync extends AbstractAmazonCloudW
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest request) {
+
+        return createSegmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSegmentRequest, CreateSegmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteExperimentResult> deleteExperimentAsync(DeleteExperimentRequest request) {
 
         return deleteExperimentAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAmazonCloudWatchEvidentlyAsync extends AbstractAmazonCloudW
     @Override
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(DeleteSegmentRequest request) {
+
+        return deleteSegmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(DeleteSegmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSegmentRequest, DeleteSegmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,6 +249,19 @@ public class AbstractAmazonCloudWatchEvidentlyAsync extends AbstractAmazonCloudW
     }
 
     @Override
+    public java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest request) {
+
+        return getSegmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSegmentRequest, GetSegmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExperimentsResult> listExperimentsAsync(ListExperimentsRequest request) {
 
         return listExperimentsAsync(request, null);
@@ -270,6 +309,32 @@ public class AbstractAmazonCloudWatchEvidentlyAsync extends AbstractAmazonCloudW
     @Override
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentReferencesResult> listSegmentReferencesAsync(ListSegmentReferencesRequest request) {
+
+        return listSegmentReferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentReferencesResult> listSegmentReferencesAsync(ListSegmentReferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSegmentReferencesRequest, ListSegmentReferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentsResult> listSegmentsAsync(ListSegmentsRequest request) {
+
+        return listSegmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSegmentsResult> listSegmentsAsync(ListSegmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSegmentsRequest, ListSegmentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -361,6 +426,19 @@ public class AbstractAmazonCloudWatchEvidentlyAsync extends AbstractAmazonCloudW
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestSegmentPatternResult> testSegmentPatternAsync(TestSegmentPatternRequest request) {
+
+        return testSegmentPatternAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestSegmentPatternResult> testSegmentPatternAsync(TestSegmentPatternRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestSegmentPatternRequest, TestSegmentPatternResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

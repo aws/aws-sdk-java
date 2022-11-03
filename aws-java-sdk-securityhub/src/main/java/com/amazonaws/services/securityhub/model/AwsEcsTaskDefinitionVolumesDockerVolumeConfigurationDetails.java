@@ -57,7 +57,7 @@ public class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails impleme
      * <p>
      * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are
      * provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared
-     * persist after the task stops.
+     * persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      * </p>
      */
     private String scope;
@@ -294,13 +294,13 @@ public class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails impleme
      * <p>
      * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are
      * provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared
-     * persist after the task stops.
+     * persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      * </p>
      * 
      * @param scope
      *        The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task
      *        are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that
-     *        are shared persist after the task stops.
+     *        are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      */
 
     public void setScope(String scope) {
@@ -311,12 +311,12 @@ public class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails impleme
      * <p>
      * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are
      * provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared
-     * persist after the task stops.
+     * persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      * </p>
      * 
      * @return The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task
      *         are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that
-     *         are shared persist after the task stops.
+     *         are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      */
 
     public String getScope() {
@@ -327,13 +327,13 @@ public class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails impleme
      * <p>
      * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are
      * provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared
-     * persist after the task stops.
+     * persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      * </p>
      * 
      * @param scope
      *        The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task
      *        are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that
-     *        are shared persist after the task stops.
+     *        are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

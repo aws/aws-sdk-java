@@ -31,7 +31,7 @@ public class CreateCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
     private String costCategoryArn;
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      * </p>
      */
     private String effectiveStart;
@@ -78,11 +78,11 @@ public class CreateCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      * </p>
      * 
      * @param effectiveStart
-     *        The Cost Category's effective start date.
+     *        The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      */
 
     public void setEffectiveStart(String effectiveStart) {
@@ -91,10 +91,10 @@ public class CreateCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      * </p>
      * 
-     * @return The Cost Category's effective start date.
+     * @return The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      */
 
     public String getEffectiveStart() {
@@ -103,11 +103,11 @@ public class CreateCostCategoryDefinitionResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      * </p>
      * 
      * @param effectiveStart
-     *        The Cost Category's effective start date.
+     *        The Cost Category's effective start date. It can only be a billing start date (first day of the month).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

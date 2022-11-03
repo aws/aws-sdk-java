@@ -48,26 +48,6 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("columnMetadata", targetDepth)) {
-                    context.nextToken();
-                    executeStatementResult.setColumnMetadata(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("formattedRecords", targetDepth)) {
-                    context.nextToken();
-                    executeStatementResult.setFormattedRecords(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("generatedFields", targetDepth)) {
-                    context.nextToken();
-                    executeStatementResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("numberOfRecordsUpdated", targetDepth)) {
-                    context.nextToken();
-                    executeStatementResult.setNumberOfRecordsUpdated(context.getUnmarshaller(Long.class).unmarshall(context));
-                }
                 if (context.testExpression("records", targetDepth)) {
                     context.nextToken();
                     executeStatementResult.setRecords(new ListUnmarshaller<java.util.List<Field>>(new ListUnmarshaller<Field>(FieldJsonUnmarshaller
@@ -76,6 +56,26 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
                     )
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("columnMetadata", targetDepth)) {
+                    context.nextToken();
+                    executeStatementResult.setColumnMetadata(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("numberOfRecordsUpdated", targetDepth)) {
+                    context.nextToken();
+                    executeStatementResult.setNumberOfRecordsUpdated(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("generatedFields", targetDepth)) {
+                    context.nextToken();
+                    executeStatementResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("formattedRecords", targetDepth)) {
+                    context.nextToken();
+                    executeStatementResult.setFormattedRecords(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

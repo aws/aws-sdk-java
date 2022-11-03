@@ -28,8 +28,9 @@ public class ListCoreDevicesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing
-     * group by which to filter. If you specify this parameter, the list includes only core devices that are members of
-     * this thing group.
+     * group by which to filter. If you specify this parameter, the list includes only core devices that have
+     * successfully deployed a deployment that targets the thing group. When you remove a core device from a thing
+     * group, the list continues to include that core device.
      * </p>
      */
     private String thingGroupArn;
@@ -68,14 +69,16 @@ public class ListCoreDevicesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing
-     * group by which to filter. If you specify this parameter, the list includes only core devices that are members of
-     * this thing group.
+     * group by which to filter. If you specify this parameter, the list includes only core devices that have
+     * successfully deployed a deployment that targets the thing group. When you remove a core device from a thing
+     * group, the list continues to include that core device.
      * </p>
      * 
      * @param thingGroupArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
      *        IoT thing group by which to filter. If you specify this parameter, the list includes only core devices
-     *        that are members of this thing group.
+     *        that have successfully deployed a deployment that targets the thing group. When you remove a core device
+     *        from a thing group, the list continues to include that core device.
      */
 
     public void setThingGroupArn(String thingGroupArn) {
@@ -85,13 +88,15 @@ public class ListCoreDevicesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing
-     * group by which to filter. If you specify this parameter, the list includes only core devices that are members of
-     * this thing group.
+     * group by which to filter. If you specify this parameter, the list includes only core devices that have
+     * successfully deployed a deployment that targets the thing group. When you remove a core device from a thing
+     * group, the list continues to include that core device.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
      *         IoT thing group by which to filter. If you specify this parameter, the list includes only core devices
-     *         that are members of this thing group.
+     *         that have successfully deployed a deployment that targets the thing group. When you remove a core device
+     *         from a thing group, the list continues to include that core device.
      */
 
     public String getThingGroupArn() {
@@ -101,14 +106,16 @@ public class ListCoreDevicesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing
-     * group by which to filter. If you specify this parameter, the list includes only core devices that are members of
-     * this thing group.
+     * group by which to filter. If you specify this parameter, the list includes only core devices that have
+     * successfully deployed a deployment that targets the thing group. When you remove a core device from a thing
+     * group, the list continues to include that core device.
      * </p>
      * 
      * @param thingGroupArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
      *        IoT thing group by which to filter. If you specify this parameter, the list includes only core devices
-     *        that are members of this thing group.
+     *        that have successfully deployed a deployment that targets the thing group. When you remove a core device
+     *        from a thing group, the list continues to include that core device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

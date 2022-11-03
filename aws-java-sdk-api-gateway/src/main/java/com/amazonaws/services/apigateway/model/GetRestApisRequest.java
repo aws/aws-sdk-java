@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The GET request to list existing <a>RestApis</a> defined for your collection.
+ * The GET request to list existing RestApis defined for your collection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -41,6 +41,8 @@ public class VulnerablePackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("packageManager").build();
     private static final MarshallingInfo<String> RELEASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("release").build();
+    private static final MarshallingInfo<String> REMEDIATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remediation").build();
     private static final MarshallingInfo<String> SOURCELAYERHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceLayerHash").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -69,6 +71,7 @@ public class VulnerablePackageMarshaller {
             protocolMarshaller.marshall(vulnerablePackage.getName(), NAME_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getPackageManager(), PACKAGEMANAGER_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getRelease(), RELEASE_BINDING);
+            protocolMarshaller.marshall(vulnerablePackage.getRemediation(), REMEDIATION_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getSourceLayerHash(), SOURCELAYERHASH_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getVersion(), VERSION_BINDING);
         } catch (Exception e) {

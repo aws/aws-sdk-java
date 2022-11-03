@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary
- * of the bot recommendation results.
+ * The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical
+ * summary of the bot recommendation results.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotRecommendationResults"

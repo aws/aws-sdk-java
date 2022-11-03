@@ -31,6 +31,8 @@ public class AppMarshaller {
 
     private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<String> ASSESSMENTSCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentSchedule").build();
     private static final MarshallingInfo<String> COMPLIANCESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("complianceStatus").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -69,6 +71,7 @@ public class AppMarshaller {
 
         try {
             protocolMarshaller.marshall(app.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(app.getAssessmentSchedule(), ASSESSMENTSCHEDULE_BINDING);
             protocolMarshaller.marshall(app.getComplianceStatus(), COMPLIANCESTATUS_BINDING);
             protocolMarshaller.marshall(app.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(app.getDescription(), DESCRIPTION_BINDING);

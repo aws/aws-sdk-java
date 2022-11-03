@@ -29,6 +29,8 @@ public class DomainSettingsForUpdateMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RStudioServerProDomainSettingsForUpdate").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEIDENTITYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleIdentityConfig").build();
 
     private static final DomainSettingsForUpdateMarshaller instance = new DomainSettingsForUpdateMarshaller();
 
@@ -47,6 +49,7 @@ public class DomainSettingsForUpdateMarshaller {
 
         try {
             protocolMarshaller.marshall(domainSettingsForUpdate.getRStudioServerProDomainSettingsForUpdate(), RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_BINDING);
+            protocolMarshaller.marshall(domainSettingsForUpdate.getExecutionRoleIdentityConfig(), EXECUTIONROLEIDENTITYCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

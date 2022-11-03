@@ -52,6 +52,12 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private UpdateAbpV10X abpV1_0_x;
+    /**
+     * <p>
+     * FPorts object for the positioning information of the device.
+     * </p>
+     */
+    private UpdateFPorts fPorts;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * FPorts object for the positioning information of the device.
+     * </p>
+     * 
+     * @param fPorts
+     *        FPorts object for the positioning information of the device.
+     */
+
+    public void setFPorts(UpdateFPorts fPorts) {
+        this.fPorts = fPorts;
+    }
+
+    /**
+     * <p>
+     * FPorts object for the positioning information of the device.
+     * </p>
+     * 
+     * @return FPorts object for the positioning information of the device.
+     */
+
+    public UpdateFPorts getFPorts() {
+        return this.fPorts;
+    }
+
+    /**
+     * <p>
+     * FPorts object for the positioning information of the device.
+     * </p>
+     * 
+     * @param fPorts
+     *        FPorts object for the positioning information of the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANUpdateDevice withFPorts(UpdateFPorts fPorts) {
+        setFPorts(fPorts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
         if (getAbpV1_1() != null)
             sb.append("AbpV1_1: ").append(getAbpV1_1()).append(",");
         if (getAbpV1_0_x() != null)
-            sb.append("AbpV1_0_x: ").append(getAbpV1_0_x());
+            sb.append("AbpV1_0_x: ").append(getAbpV1_0_x()).append(",");
+        if (getFPorts() != null)
+            sb.append("FPorts: ").append(getFPorts());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAbpV1_0_x() != null && other.getAbpV1_0_x().equals(this.getAbpV1_0_x()) == false)
             return false;
+        if (other.getFPorts() == null ^ this.getFPorts() == null)
+            return false;
+        if (other.getFPorts() != null && other.getFPorts().equals(this.getFPorts()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getServiceProfileId() == null) ? 0 : getServiceProfileId().hashCode());
         hashCode = prime * hashCode + ((getAbpV1_1() == null) ? 0 : getAbpV1_1().hashCode());
         hashCode = prime * hashCode + ((getAbpV1_0_x() == null) ? 0 : getAbpV1_0_x().hashCode());
+        hashCode = prime * hashCode + ((getFPorts() == null) ? 0 : getFPorts().hashCode());
         return hashCode;
     }
 

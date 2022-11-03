@@ -31,12 +31,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     * <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     * <b>Lambda</b>: The target object is a specific version of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -46,7 +46,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      * </p>
      * </li>
      * </ul>
@@ -61,12 +61,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     * <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     * <b>Lambda</b>: The target object is a specific version of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -76,7 +76,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      * </p>
      * </li>
      * </ul>
@@ -87,12 +87,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     *         <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     *         <b>Lambda</b>: The target object is a specific version of an Lambda function.
      *         </p>
      *         </li>
      *         <li>
@@ -102,7 +102,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     *         <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      *         </p>
      *         </li>
      */
@@ -122,12 +122,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     * <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     * <b>Lambda</b>: The target object is a specific version of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -137,7 +137,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      * </p>
      * </li>
      * </ul>
@@ -149,12 +149,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     *        <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     *        <b>Lambda</b>: The target object is a specific version of an Lambda function.
      *        </p>
      *        </li>
      *        <li>
@@ -164,7 +164,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     *        <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      *        </p>
      *        </li>
      */
@@ -186,12 +186,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     * <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     * <b>Lambda</b>: The target object is a specific version of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -201,7 +201,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      * </p>
      * </li>
      * </ul>
@@ -218,12 +218,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     *        <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     *        <b>Lambda</b>: The target object is a specific version of an Lambda function.
      *        </p>
      *        </li>
      *        <li>
@@ -233,7 +233,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     *        <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -257,12 +257,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     * <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     * <b>Lambda</b>: The target object is a specific version of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -272,7 +272,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      * </p>
      * </li>
      * </ul>
@@ -284,12 +284,12 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance.
+     *        <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
+     *        <b>Lambda</b>: The target object is a specific version of an Lambda function.
      *        </p>
      *        </li>
      *        <li>
@@ -299,7 +299,7 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     *        <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

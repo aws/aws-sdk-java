@@ -134,6 +134,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private SelfservicePermissions selfservicePermissions;
+    /**
+     * <p>
+     * Describes the enablement status, user access URL, and relay state parameter name that are used for configuring
+     * federation with an SAML 2.0 identity provider.
+     * </p>
+     */
+    private SamlProperties samlProperties;
 
     /**
      * <p>
@@ -1066,6 +1073,52 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Describes the enablement status, user access URL, and relay state parameter name that are used for configuring
+     * federation with an SAML 2.0 identity provider.
+     * </p>
+     * 
+     * @param samlProperties
+     *        Describes the enablement status, user access URL, and relay state parameter name that are used for
+     *        configuring federation with an SAML 2.0 identity provider.
+     */
+
+    public void setSamlProperties(SamlProperties samlProperties) {
+        this.samlProperties = samlProperties;
+    }
+
+    /**
+     * <p>
+     * Describes the enablement status, user access URL, and relay state parameter name that are used for configuring
+     * federation with an SAML 2.0 identity provider.
+     * </p>
+     * 
+     * @return Describes the enablement status, user access URL, and relay state parameter name that are used for
+     *         configuring federation with an SAML 2.0 identity provider.
+     */
+
+    public SamlProperties getSamlProperties() {
+        return this.samlProperties;
+    }
+
+    /**
+     * <p>
+     * Describes the enablement status, user access URL, and relay state parameter name that are used for configuring
+     * federation with an SAML 2.0 identity provider.
+     * </p>
+     * 
+     * @param samlProperties
+     *        Describes the enablement status, user access URL, and relay state parameter name that are used for
+     *        configuring federation with an SAML 2.0 identity provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withSamlProperties(SamlProperties samlProperties) {
+        setSamlProperties(samlProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1108,7 +1161,9 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         if (getTenancy() != null)
             sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getSelfservicePermissions() != null)
-            sb.append("SelfservicePermissions: ").append(getSelfservicePermissions());
+            sb.append("SelfservicePermissions: ").append(getSelfservicePermissions()).append(",");
+        if (getSamlProperties() != null)
+            sb.append("SamlProperties: ").append(getSamlProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -1187,6 +1242,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSelfservicePermissions() != null && other.getSelfservicePermissions().equals(this.getSelfservicePermissions()) == false)
             return false;
+        if (other.getSamlProperties() == null ^ this.getSamlProperties() == null)
+            return false;
+        if (other.getSamlProperties() != null && other.getSamlProperties().equals(this.getSamlProperties()) == false)
+            return false;
         return true;
     }
 
@@ -1211,6 +1270,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getWorkspaceAccessProperties() == null) ? 0 : getWorkspaceAccessProperties().hashCode());
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime * hashCode + ((getSelfservicePermissions() == null) ? 0 : getSelfservicePermissions().hashCode());
+        hashCode = prime * hashCode + ((getSamlProperties() == null) ? 0 : getSamlProperties().hashCode());
         return hashCode;
     }
 

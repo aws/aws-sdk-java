@@ -50,13 +50,22 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * This operation allows you to perform batch reads or writes on data stored in DynamoDB, using PartiQL.
+     * This operation allows you to perform batch reads or writes on data stored in DynamoDB, using PartiQL. Each read
+     * statement in a <code>BatchExecuteStatement</code> must specify an equality condition on all key attributes. This
+     * enforces that each <code>SELECT</code> statement in a batch returns at most a single item.
      * </p>
      * <note>
      * <p>
      * The entire batch must consist of either read statements or write statements, you cannot mix both in one batch.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * A HTTP 200 response does not mean that all statements in the BatchExecuteStatement succeeded. Error details for
+     * individual statements can be found under the <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error"
+     * >Error</a> field of the <code>BatchStatementResponse</code> for each statement.
+     * </p>
+     * </important>
      * 
      * @param batchExecuteStatementRequest
      * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
@@ -68,13 +77,22 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * This operation allows you to perform batch reads or writes on data stored in DynamoDB, using PartiQL.
+     * This operation allows you to perform batch reads or writes on data stored in DynamoDB, using PartiQL. Each read
+     * statement in a <code>BatchExecuteStatement</code> must specify an equality condition on all key attributes. This
+     * enforces that each <code>SELECT</code> statement in a batch returns at most a single item.
      * </p>
      * <note>
      * <p>
      * The entire batch must consist of either read statements or write statements, you cannot mix both in one batch.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * A HTTP 200 response does not mean that all statements in the BatchExecuteStatement succeeded. Error details for
+     * individual statements can be found under the <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error"
+     * >Error</a> field of the <code>BatchStatementResponse</code> for each statement.
+     * </p>
+     * </important>
      * 
      * @param batchExecuteStatementRequest
      * @param asyncHandler
@@ -1413,6 +1431,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Represents the properties of the import.
+     * </p>
+     * 
+     * @param describeImportRequest
+     * @return A Java Future containing the result of the DescribeImport operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest describeImportRequest);
+
+    /**
+     * <p>
+     * Represents the properties of the import.
+     * </p>
+     * 
+     * @param describeImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImport operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest describeImportRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImportRequest, DescribeImportResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the status of Kinesis streaming.
      * </p>
      * 
@@ -2091,6 +2140,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Imports table data from an S3 bucket.
+     * </p>
+     * 
+     * @param importTableRequest
+     * @return A Java Future containing the result of the ImportTable operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ImportTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportTableResult> importTableAsync(ImportTableRequest importTableRequest);
+
+    /**
+     * <p>
+     * Imports table data from an S3 bucket.
+     * </p>
+     * 
+     * @param importTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportTable operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ImportTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportTableResult> importTableAsync(ImportTableRequest importTableRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportTableRequest, ImportTableResult> asyncHandler);
+
+    /**
+     * <p>
      * List backups associated with an Amazon Web Services account. To list backups for a given table, specify
      * <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of
      * items in a page. You can also specify a maximum number of entries to be returned in a page.
@@ -2247,6 +2327,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Lists completed imports within the past 90 days.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * Lists completed imports within the past 90 days.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of table names associated with the current account and endpoint. The output from
      * <code>ListTables</code> is paginated, with each page returning a maximum of 100 table names.
      * </p>
@@ -2390,68 +2501,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * existing item if it has certain attribute values. You can return the item's attribute values in the same
      * operation, using the <code>ReturnValues</code> parameter.
      * </p>
-     * <important>
-     * <p>
-     * This topic provides general information about the <code>PutItem</code> API.
-     * </p>
-     * <p>
-     * For information on how to call the <code>PutItem</code> API using the Amazon Web Services SDK in specific
-     * languages, see the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem in the Command Line
-     * Interface</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for
-     * .NET</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for C++</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Go</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Java</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for
-     * JavaScript</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for PHP
-     * V3</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Python
-     * (Boto)</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Ruby
-     * V2</a>
-     * </p>
-     * </li>
-     * </ul>
-     * </important>
      * <p>
      * When you add an item, the primary key attributes are the only required attributes. Attribute values cannot be
      * null.
@@ -2495,68 +2544,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * existing item if it has certain attribute values. You can return the item's attribute values in the same
      * operation, using the <code>ReturnValues</code> parameter.
      * </p>
-     * <important>
-     * <p>
-     * This topic provides general information about the <code>PutItem</code> API.
-     * </p>
-     * <p>
-     * For information on how to call the <code>PutItem</code> API using the Amazon Web Services SDK in specific
-     * languages, see the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem in the Command Line
-     * Interface</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for
-     * .NET</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for C++</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Go</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Java</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for
-     * JavaScript</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for PHP
-     * V3</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Python
-     * (Boto)</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem"> PutItem in the SDK for Ruby
-     * V2</a>
-     * </p>
-     * </li>
-     * </ul>
-     * </important>
      * <p>
      * When you add an item, the primary key attributes are the only required attributes. Attribute values cannot be
      * null.
@@ -3243,7 +3230,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or
      * more tables (but not from indexes) in a single account and Region. A <code>TransactGetItems</code> call can
-     * contain up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
+     * contain up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
      * specifies an item to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code>
      * cannot retrieve items from tables in more than one Amazon Web Services account or Region. The aggregate size of
      * the items in the transaction cannot exceed 4 MB.
@@ -3286,7 +3273,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or
      * more tables (but not from indexes) in a single account and Region. A <code>TransactGetItems</code> call can
-     * contain up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
+     * contain up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
      * specifies an item to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code>
      * cannot retrieve items from tables in more than one Amazon Web Services account or Region. The aggregate size of
      * the items in the transaction cannot exceed 4 MB.
@@ -3332,7 +3319,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 25 action requests. These
+     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 100 action requests. These
      * actions can target items in different tables, but not in different Amazon Web Services accounts or Regions, and
      * no two actions can target the same item. For example, you cannot both <code>ConditionCheck</code> and
      * <code>Update</code> the same item. The aggregate size of the items in the transaction cannot exceed 4 MB.
@@ -3423,7 +3410,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 25 action requests. These
+     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 100 action requests. These
      * actions can target items in different tables, but not in different Amazon Web Services accounts or Regions, and
      * no two actions can target the same item. For example, you cannot both <code>ConditionCheck</code> and
      * <code>Update</code> the same item. The aggregate size of the items in the transaction cannot exceed 4 MB.
@@ -3870,11 +3857,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </li>
      * <li>
      * <p>
-     * Enable or disable DynamoDB Streams on the table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Remove a global secondary index from the table.
      * </p>
      * </li>
@@ -3913,11 +3895,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <li>
      * <p>
      * Modify the provisioned throughput settings of the table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Enable or disable DynamoDB Streams on the table.
      * </p>
      * </li>
      * <li>

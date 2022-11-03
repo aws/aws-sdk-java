@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset.
- * The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects.
+ * The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of
+ * <code>SchemaAttribute</code> objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SchemaAttribute" target="_top">AWS API
@@ -38,6 +39,10 @@ public class SchemaAttribute implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The data type of the field.
+     * </p>
+     * <p>
+     * For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes
+     * should be of numerical type (integer/float).
      * </p>
      */
     private String attributeType;
@@ -86,9 +91,16 @@ public class SchemaAttribute implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The data type of the field.
      * </p>
+     * <p>
+     * For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes
+     * should be of numerical type (integer/float).
+     * </p>
      * 
      * @param attributeType
-     *        The data type of the field.
+     *        The data type of the field.</p>
+     *        <p>
+     *        For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all
+     *        attributes should be of numerical type (integer/float).
      * @see AttributeType
      */
 
@@ -100,8 +112,15 @@ public class SchemaAttribute implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The data type of the field.
      * </p>
+     * <p>
+     * For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes
+     * should be of numerical type (integer/float).
+     * </p>
      * 
-     * @return The data type of the field.
+     * @return The data type of the field.</p>
+     *         <p>
+     *         For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all
+     *         attributes should be of numerical type (integer/float).
      * @see AttributeType
      */
 
@@ -113,9 +132,16 @@ public class SchemaAttribute implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The data type of the field.
      * </p>
+     * <p>
+     * For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes
+     * should be of numerical type (integer/float).
+     * </p>
      * 
      * @param attributeType
-     *        The data type of the field.
+     *        The data type of the field.</p>
+     *        <p>
+     *        For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all
+     *        attributes should be of numerical type (integer/float).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttributeType
      */
@@ -129,9 +155,16 @@ public class SchemaAttribute implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The data type of the field.
      * </p>
+     * <p>
+     * For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes
+     * should be of numerical type (integer/float).
+     * </p>
      * 
      * @param attributeType
-     *        The data type of the field.
+     *        The data type of the field.</p>
+     *        <p>
+     *        For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all
+     *        attributes should be of numerical type (integer/float).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttributeType
      */

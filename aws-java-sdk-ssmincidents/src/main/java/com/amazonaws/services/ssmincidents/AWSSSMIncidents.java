@@ -484,7 +484,10 @@ public interface AWSSSMIncidents {
 
     /**
      * <p>
-     * Adds a resource policy to the specified response plan.
+     * Adds a resource policy to the specified response plan. The resource policy is used to share the response plan
+     * using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href=
+     * "https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html"
+     * >Cross-Region and cross-account incident management</a>.
      * </p>
      * 
      * @param putResourcePolicyRequest
@@ -673,6 +676,8 @@ public interface AWSSSMIncidents {
      *         You don't have sufficient access to perform this operation.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AWSSSMIncidents.UpdateReplicationSet
